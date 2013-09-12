@@ -1,0 +1,6 @@
+{
+"version": "3",
+"mappings": "AAAA,UAAW;EACV,cAAc,EAAE,gBAAgB",
+"sources": ["../../scss/conditionizr/firefox.scss"],
+"file": "firefox.css"
+}

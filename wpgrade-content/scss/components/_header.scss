@@ -1,0 +1,198 @@
+.wrapper-header {
+	position: absolute;
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+	top: 0; left: 0;
+	z-index: 400;
+	width: 100%;
+	@extend %clearfix;
+	@include rem(padding, 0 0 0 36px);
+
+	@include media(to lap) {
+		@include rem(padding, 0 0 0 24px);
+	}
+}
+
+.wrapper-header-big {
+	@include rem(height, 3*$unit);
+	padding-right: 0;
+	width: 100%;
+  z-index: 100;
+
+	.admin-bar & {
+		top: 28px;
+	}
+}
+
+.header-margin {
+	@include rem(margin-top, 3*$unit);
+}
+
+.site-header {
+	@extend %clearfix;
+}
+
+.site-branding {
+	float: left;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.125em;
+	@include fs(60px);
+
+	a {
+		color: white;
+	}
+
+}
+
+.site-home-link {
+	display: block;
+	border: 0;
+	@include fs($unit);
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	img {
+		display: block;
+	}
+}
+
+.site-navigation {
+	float: right;
+}
+
+.site-logo, .site-navigation {
+	display: table;
+}
+
+.site-home-link,
+.site-mainmenu > li > a { 
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.site-logo,
+.site-mainmenu > li > a {
+	@include fs(14px);
+	@include rem(height, 3*$unit);
+	font-family: "Lato";
+}
+
+.site-header_bg {
+	position: absolute;
+	top: 0; left: 0;
+	display: block;
+	width: 100%;
+	background-color: $grayDarker;
+	@include opacity(0);
+
+	.l-header-sticky & {
+		@include opacity(1);
+	}
+}
+
+//Small Header
+.wrapper-header-small {
+	@include rem(top, -3*$unit);
+	@include transition(top .3s bezier(easeInOutQuad));
+	position: fixed;
+	padding-right: 0;
+	overflow: hidden;
+	pointer-events: none;
+
+	&.is-visible {
+		top: 0;
+		overflow: visible;
+		pointer-events: auto;
+
+		.admin-bar & { 
+				
+			@include media(from lap) {
+				top: 28px;
+			}
+		}
+	}
+
+
+	.site-logo,
+	.site-mainmenu > li > a {
+		@include rem(height, 2*$unit);
+	}
+
+	.site-branding img {
+		max-height:  2*$unit;
+	}
+
+	@include media(to lap) {
+		background-color: $accentColor;
+		padding: 0;
+	}
+}
+
+.site-mainmenu {
+	float: left;
+}
+
+//Searchform from Large Header
+.site-navigation .header_search-form {
+
+	.lt-ie9 & {
+		display: none;
+	}
+
+	#searchform {
+		@include rem(min-width, 3*$unit);
+		position: relative;
+		overflow: hidden;
+		background: none;
+		@include transition(background-color .2s ease-in-out);
+
+		@include placeholder() {
+			text-transform: uppercase;
+			color: $white;
+			font-weight: 700;
+			letter-spacing: 3px;
+
+		}
+	}
+
+	.btn, .field {
+		@include rem(height, 3 * $unit);
+		@include rem(padding-left, $unit);
+		@include rem(padding-right, $unit);
+	}
+
+	.field {
+		@include rem(width, 8*$unit);
+		@include rem(margin-left, -8*$unit);
+		@include rem(margin-right, 3*$unit);
+		background: none;
+		outline: 0;
+		@include opacity(0);
+
+		font-weight: 700;
+		color: white;
+		
+		@include transition(opacity .3s, margin-left .3s .3s);
+
+		&.is-visible {
+			margin-left: 0;
+			@include transition(margin-left .3s, opacity .3s .3s);
+			@include opacity(1);
+		}
+	}
+
+	.btn {
+		@include rem(width, 3*$unit);
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include border-radius(0);
+		background: none;
+		@include fs(22px);
+		text-align: center;
+	}
+}

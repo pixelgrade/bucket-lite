@@ -1,0 +1,160 @@
+* {@include box-sizing(border-box !important);}
+
+$bpNames: ();
+$bpSizes: ();
+@mixin processBreakpoints() {
+  @each $bp in $breakpoints {
+    @if index($breakpoints, $bp) % 2 == 0 {
+      $bpNames: append($bpNames, $bp);
+    } @else {
+      $bpSizes: append($bpSizes, $bp);
+    }
+  }
+  $bpSizes: append($bpSizes, 0);
+}
+
+@include processBreakpoints();
+
+@function emQuery($px) {
+  // @return $px/16px + em;
+  @return $px;
+}
+
+@function queryString($query) {
+  $string: "";
+  @if length($query) == 1 {
+    @if nth($query, 1) != 0 {
+      $string: " and (min-width: " + emQuery($query) + ")";
+    }
+  }
+  @if length($query) == 2 {
+    @if nth($query, 2) == 0 {
+      @if nth($query, 1) != 0 {
+        $string: " and (min-width: " + emQuery(nth($query,1)) + ")";
+      }
+    } @else {
+      @if nth($query, 1) == 0 {
+        $string: " and (max-width: " + emQuery(nth($query,2)) + ")";
+      } @else {
+        $string: " and (min-width: " + emQuery(nth($query,1)) + ") and (max-width: " + emQuery(nth($query,2)) + ")";
+      }
+    }
+  }
+  @return unquote("only screen" + $string);
+}
+
+@mixin media($query) {
+  @if length($query) == 1 {
+    $index: index($bpNames, $query);
+    @if $index {
+      $bp1: nth($bpSizes, $index);
+      $bp2: nth($bpSizes, $index + 1);
+      @media #{queryString($bp1 $bp2)} {
+        @content;
+      }
+    } @else {
+      @media #{queryString($query 0)} {
+        @content;
+      }
+    }
+  } @else {
+    $bp1: nth($query,1);
+    $bp2: nth($query,2);
+    $index1: index($bpNames, $bp1);
+    $index2: index($bpNames, $bp2);
+    @if $index1 != false {
+      $bp1: nth($bpSizes, $index1);
+    }
+    @if $index2 != false {
+      $bp2: if($bp1 == from, nth($bpSizes, $index2) + 1px, nth($bpSizes, $index2));
+    }
+    @if ($bp1 == from) {
+      $bp1: $bp2;
+      $bp2: 0;
+    }
+    @if ($bp1 == to) {
+      $bp1: 0;
+    }
+    @media #{queryString($bp1 $bp2)} {
+      @content;
+    }
+  }
+}
+
+// IE10 snap mode
+@-ms-viewport {width: device-width}
+@viewport {width: device-width}
+
+%grid {
+  width: $gridWidth;
+  margin-left: auto;
+  margin-right: auto;
+
+  @if $responsive == true and $gridWidth != auto {
+    @media only screen {
+      max-width: 100%;
+    }
+  }
+}
+
+%row {
+  @extend %clearfix;
+
+  @include media(from lap) {
+    @include rem(margin-left, -1 * $gridGutter);
+  }
+}
+
+%column {
+  position: relative;
+  border: 0 solid transparent;
+  @include background-clip(padding-box);
+  @include background-origin(padding-box);
+  @include rem(border-left-width, $gridGutter);
+}
+
+%span {
+  @extend %column;
+    
+  @include media(to lap) {
+    .row & {
+      border-left-width: 0;
+      width: 100%;
+    }
+  }
+
+  @include media(from lap) {
+    float: left;
+    min-height: 1px;
+  }
+}
+
+// watch and learn
+[class*="span"] {
+  @extend %span;
+}
+
+$defaultBreakpoint: lap;
+
+@function getBreakpointSize($bp) {
+  $index: index($bpNames, $bp);
+  @if $index == false {
+    @return $bp;
+  } @else {
+    @return nth($bpSizes, $index);
+  }
+}
+
+$classN: (); // name
+$classR: (); // ratio
+$classP: (); // placeholder
+$classT: (); // type
+
+$columns: 12;
+@for $i from 1 through $columns {
+  @include newClass(span#{$i}, $i / $columns);
+  @include newClass(offset#{$i}, $i / $columns, offset);
+  @include newClass(push#{$i}, $i / $columns, push);
+  @include newClass(pull#{$i}, $i / $columns, pull);
+}
+@include generateClasses();

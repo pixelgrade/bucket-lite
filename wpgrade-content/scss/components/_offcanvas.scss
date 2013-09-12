@@ -1,0 +1,369 @@
+//Main Menu Styling
+#nav-open-btn {
+	@include rem(padding-top, $unit/2);
+	display: none;
+	text-align: center;
+}
+
+.nav-btn i {
+	color: white;
+	@include fs(26px);
+	@include rem(padding-top, 15px);
+}
+
+@include media(to lap) {
+
+	body {
+		background: #292929 !important;
+	}
+
+	#page {
+		@include rem(padding-top, 54px);
+	}
+
+	#nav-open-btn {
+		display: block;
+	}
+
+	.wrapper-header-big {
+		display: none !important;
+	}
+
+	.wrapper-header-small {
+		top: 0 !important;
+		pointer-events: auto !important;
+		overflow: visible !important;
+	}
+
+	.wrapper-header-small .site-navigation {
+		display: block;
+		width: 70%;
+		overflow: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 9999;
+		border-left-width: 0;
+
+		.site-mainmenu {
+			float: left;
+			width: 100%;
+			position: relative;
+			height: 100%;
+
+			li {
+				float: left;
+				width: 100%;
+				height: auto;
+				border: 0;
+
+				a {
+					background: #313131;
+					@include fs(16px);
+					float: left;
+					width: 100%;
+					height: auto;
+					@include rem(padding, 16px 16px 16px 32px);
+					color: #8d8d8d;
+					text-align: left;
+					border-top: none;
+
+					border-top: 1px inset rgba(255, 255, 255, .1);
+					border-bottom: 1px solid rgba(0, 0, 0, .5);
+				}
+
+				&:first-child {
+
+					a {
+						border-top: 0;
+					}
+				}
+
+				.search-container {
+					padding: 0;
+
+					.btn {
+						float: right;
+						@include rem(padding, 16px);
+					}
+
+					.search-query-wrapper {
+						@include rem(margin-right, 108px);
+					}
+
+					.field {
+						background: transparent;
+						padding: 0;
+						border: 0;
+						@include rem(padding, 16px 32px 16px 32px);
+						@include rem(margin-left, -16px);
+						color: white;
+						margin: 0;
+					}
+
+					.btn, .field {
+						@include rem(font-size, 22px);
+						font-weight: 200;
+						text-transform: uppercase;
+					}
+				}
+
+				&.menu-parent-item {
+					position: relative;
+
+					& > a {
+
+						&:after {
+							content: "";
+							display: block;
+							position: absolute;
+							top: 50%;
+							width: 0;
+							height: 0;
+							border: 6px solid transparent;
+							border-top-color: #7a7a79;
+
+							@include media(to hand){
+								right: 10%;
+							}
+
+							@include media(from hand){
+								right: 3%;
+							}
+						}
+					}
+				}
+
+				&.active {
+
+					& > a {
+						color: white;
+
+						&:after {
+							@include rem(top, 24px);
+							border-top-color: transparent;
+							border-bottom-color: #7a7a79;
+						}
+					}
+
+					& > ul.sub-menu {
+						display: block;
+					}
+				}
+
+				ul.sub-menu {
+					top: 0;
+					left: 0 !important;
+					width: 100%;
+					margin: 0;
+					float: left;
+					position: relative;
+					display: none;
+					height: auto;
+					opacity: 1;
+
+					li {
+						&:hover > ul {
+							display: none;
+						}
+
+						&.active:hover > ul {
+							display: block;
+						}
+
+						a {
+							background: #252525;
+							@include rem(padding, 12px 16px 12px 40px);
+							@include rem(top, 22px);
+						}
+
+						// 3rd level
+						ul.sub-menu { 
+							background: $grayDarkest;
+
+							a {
+								@include rem(padding, 8px 16px 8px 48px);
+								@include rem(top, 20px);
+								background: #191919;
+								border-top: 0;
+								border-bottom: 0;
+								font-weight: normal;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	// Open & Close Buttons
+	.nav-btn {
+		z-index: 100;
+		display: block;
+		@include rem(width, 70px);
+		@include rem(height, 50px);
+		padding: 0;
+		border: 0;
+		outline: none;
+		// background-image: url("../images/nav-icon.svg");
+		// background-position:  center center;
+		// background-repeat: no-repeat;
+		// background-size: 30px 24px;
+		@include opacity(1);
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		text-align: left;
+
+		position: absolute;
+		top: 0;
+
+		// .no-svg & {
+		// 	background-image: url("../images/nav-icon.png");
+		// }
+
+		&:hover,
+		&:focus {
+			@include opacity(1);
+		}
+	}
+
+	#nav-close-btn {
+
+		background: url("../images/close-btn.svg") center center no-repeat;
+		left: 1.5rem;
+		top: 1.5rem;
+
+		.no-svg & {
+			background-image: url("../images/close-btn.png");
+		}
+	}
+
+
+	//Page and menu transitions
+
+	$nav-off-canvas-width: 70%;
+
+	.no-js .site-navigation {
+		display: none;
+	}
+
+	.csstransforms3d.csstransitions {
+
+	  #page {
+	    left: 0 !important;
+	    @include transform(translate3d(0,0,0));
+	    @include transition(transform 500ms ease);
+	    @include backface-visibility(hidden);
+	  }
+
+	  .site-navigation {
+	      left: 0;
+	      margin-left:0;
+
+	      @include transform(translate3d(-100%,0,0));
+	      @include transform-origin(70%, 0%);
+	  }
+	}
+
+	.csstransforms3d.csstransitions.js-nav {
+
+	  #page {
+	    @include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
+	  }
+
+	  .site-navigation {
+
+	    & {
+	      @include opacity(1);
+	    }
+	  }
+	}
+
+	.no-csstransforms3d {
+
+	  .site-navigation {
+	    margin-left: 0 !important;
+	    left: -1 * $nav-off-canvas-width !important;
+	  }
+
+	  &.js-nav {
+
+	  	.site-navigation {
+	  		@include opacity(1);
+	  	}
+
+	  	#page {
+		    position: relative;
+		    left: $nav-off-canvas-width;
+			}
+
+			.wrapper-header-small {
+				left: $nav-off-canvas-width;	
+			}
+	  }
+	}
+}
+
+.js-nav html {
+	width: 100%;
+}
+
+.js-nav body {
+	width: 100%;
+	overflow: hidden;
+}
+
+.site-branding {
+	@include rem(margin-left, 3*$unit);
+	height: 3rem;
+	@include media(from lap) {
+		margin-left: 0;
+	}
+}
+
+
+.wrapper-header-small {
+
+	.header_search-form {
+		display: none;
+	}
+	
+	@include media(to lap) {
+
+		.header_search-form{
+			display: block;
+			float: none;
+			width: 70%;
+			position: absolute;
+			top: 0; right: 100%;
+
+			.form{
+				overflow: visible !important;
+			}
+
+			#searchform {
+				position: relative;
+				.field{				
+					@include rem(height, 2*$unit);					
+					@include background(linear-gradient(#262626, #151515));
+					@include rem(padding-left, 32px);
+					@include fs(16px);
+					margin: 0 !important;
+					width: 100%;
+				}
+
+				.btn{
+					@include rem(height, 2*$unit);
+					padding: 0 1rem;					
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index: 100;
+					color: $gray;
+					background: none;
+				}
+			}
+		}
+	}
+
+}

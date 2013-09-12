@@ -1,0 +1,140 @@
+/* =WordPress Core ... these bitches are required
+-------------------------------------------------------------- */
+.hidden, [hidden] {display: none !important}
+
+.alignnone {
+
+}
+
+.small {
+	@include fs(14px);
+	line-height:1.5;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	@include rem(margin, $unit/2 auto);
+}
+
+.alignright {
+	float:right;
+	@include rem(margin, 0 0 $unit $unit);
+}
+
+.alignleft {
+	float: left;
+	@include rem(margin, 0 $unit $unit 0);
+}
+
+.aligncenter {
+	display: block;
+	@include rem(margin, $unit/2 auto);
+}
+
+img {
+	height:auto;
+}
+.icon {
+	& {
+		margin-right:15px;
+	}
+	&.circle {
+		float: left;
+		display: block;
+		padding: $unit*2/3 $unit/2;
+		@include border-radius(1000px);
+		background-color:rgb(0, 0, 0);
+		background-color:rgba(0, 0, 0, 0.15);
+		@include box-shadow(rgba(0,0,0,0.25) 0 1px 2px inset);
+
+		img {
+			margin:0;
+			padding:0;
+		}
+	}
+}
+
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+	// margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.post.sticky {
+
+	.entry-title a {
+		@extend %accentColor;
+	}
+}
+
+.gallery-caption {
+	background-color: $grayLight;
+}
+
+.bypostauthor {
+	background-color: $grayLight;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.inline {
+	display:inline-block;
+}
+
+//Colors
+.white {
+
+	&, a, a:hover {
+		color:#fff !important;
+		text-decoration:none;
+		border:none;
+	}
+}
+.clean {
+	&, a, a:hover {
+		color:$grayDark !important;
+		text-decoration:none;
+		border:none;
+	}
+	a:hover {
+		opacity:0.7;
+	}
+}
+
+//Native gallery
+
+.entry-content .gallery {
+
+	.gallery-item {
+		float: left;
+		margin-bottom:0;
+		text-align: center;
+		width: 33.33% !important;
+		padding:3px;
+		img {
+		   	width:100%;
+		}
+	}
+}

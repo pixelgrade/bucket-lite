@@ -1,0 +1,539 @@
+.pre-article-box {
+	@extend %clearfix;
+}
+
+.pre-article-box, .entry-content blockquote {
+	margin-right: 0;
+
+	@include rem(padding-left, 68px); 
+	@include rem(margin-left, -72px);
+	border-left: 4px solid $accentColor;
+
+	@include media(to lap) {
+		@include rem(padding-left, 44px);
+		@include rem(margin-left, -48px);
+	}
+}
+
+.post {
+	@include rem(padding-bottom, 2*$unit);
+	border-bottom: 1px solid $grayLighter;
+	@include rem(margin-bottom, 2*$unit);
+
+	.single & {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	&.no-results {
+		padding-bottom: 0;
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+	
+
+.article-control {
+  float: right;
+
+  @include media(to lap) {
+  	display: none;
+  }
+}
+
+.article-control-list {
+	margin: 0;
+}
+
+article .article-date {
+
+  @include media(to hand) {
+  	font-style: italic;
+  	text-align: center;
+  	width: 100%;
+  	color: $gray;
+  }
+
+  @include fs(16px);
+  display: block;
+  float: left;
+  color: $black;
+  font-family: "Lato";
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0.1rem;
+
+}
+
+.article-date-text {
+	@include media(to lap) {
+		display: none;
+	}
+}
+
+.article-control-list {
+  @extend %menu;
+  @extend %menu-horizontal;
+}
+
+.article-control {
+  text-align: right;
+}
+
+.article-control-item a {
+  @include rem(margin-left, $unit);
+  @include fs(14px);
+  color: #909090;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+
+  &:hover {
+    color: $accentColor;
+  }
+}
+
+.article-details {
+
+	@include media(to lap) {
+		border: none;
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+  @extend %clearfix;
+  @include rem(min-height, 3*$unit);
+  @include rem(padding-top, $unit);
+  @include rem(margin, $unit 0);
+  border-top: 1px solid $grayLightest;
+  width: 100%;
+  display: block;
+}
+
+.article-title, .entry-title {
+  font-weight: 800;
+  padding: 0;
+
+	@include media(to hand) {
+		text-align: center;
+	}
+}
+
+.author-container {
+  @include fs(14px);
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+}
+
+.author-link {
+  font-weight: bold;
+  color: $accentColor;
+}
+
+.article-meta {
+	@extend %clearfix;
+}
+
+.meta-list-container {
+	@include rem(padding, $unit 0);
+	border-top: 1px solid $grayLightest;
+}
+
+.meta-container_tags,  .meta-container_categories {
+
+	li {
+		a:after {	content: ",";	}
+		&:last-child a:after { content: ""; }
+	}
+}
+
+.meta-list-title {
+	@include rem(margin-bottom, $unit/4);
+
+	@include media(to hand) {
+		text-align: center;
+		text-transform: none;
+	}
+}
+
+.article-link.to-top {
+	display: block;
+	@include rem(margin-top, $unit);
+	border-top: 1px solid $grayLightest;
+	@include rem(padding-top, $unit);
+	text-align: right;
+}
+
+.article-meta-list {
+	@extend %menu;
+	margin: 0;
+
+	@include media(to hand) {
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+		@include rem(padding, 0 $unit/4);
+
+		a {
+			display: block;
+			color: $grayDark;
+		}
+
+		@include media(from hand) {
+			@include rem(padding, 0 $unit/2 0 0);
+		}
+	}
+}
+
+.article-footer {
+	@extend %clearfix;
+}
+
+// Blockquote
+
+.entry-content blockquote {
+	@include media(to lap) {
+		margin: 0 !important;
+		padding: 0 !important;
+		border-left: none !important;
+	}
+
+	p {
+		@include rem(font-size, 24px);
+
+		&:before{
+			content: "\201C";
+			font-family: "Georgia";
+			float: left;
+			margin-right: 5px;
+		}			
+
+		font-family: "Lato";
+		font-weight: bold;
+	}
+}
+
+.entry-content em{
+	color: $gray;
+}
+
+.entry-content .btn{
+	color: white !important;
+}
+
+.post-footer_meta {
+	position: relative;
+	@include fs(16px);
+	color: $grayDark;
+
+	a {
+		color: $grayDark;
+		border: 0;
+
+		&:hover {
+			@extend %accentColor;
+		}
+	}
+}
+
+.post-footer_meta-name {
+	display: inline-block;
+	text-transform: none;
+	@include rem(margin-right, $unit/4);
+}
+
+.post-footer_meta-value { 
+	display: inline-block;
+}
+
+.entry-date {
+	color: $gray;
+}
+
+.excerpt-read-more {
+	@include rem(padding, $unit/2);
+	@include fs(16px);
+	text-transform: none !important;
+	font-family: "Open sans";
+	line-height: 1.69063;
+	font-size: 0.77778rem;
+	color: white !important;
+}
+
+.content-wrap-header {
+	@include rem(margin-bottom, $unit);
+}
+
+// .post-footer {
+// 	@include media(from 1340px) {
+// 		position: absolute;
+// 		@include rem(top, $unit);
+// 		width: 24.875%;
+// 		left: -29.5625%;
+// 		text-align: right;
+// 	}
+	
+// 	@include media(from 1450px) {
+// 		width: 24.875%;
+// 		left: -29.5625%;
+// 	}
+// }
+
+// .post-links {
+// 	@extend %clearfix;
+// 	@include fs(14px);
+// 	@include rem(margin-top, 2*$unit);
+// }
+
+// .article-link-title {
+// 	float: left;
+// 	text-transform: uppercase;
+// }
+
+// .post-links_list {
+// 	@extend %menu;
+// 	@extend %menu-horizontal;
+// 	float: right;
+// 	margin-bottom: 0;
+
+// 	li {
+// 		&:before {
+// 			content: "";
+// 			display: none;
+// 		}
+// 	}
+// }
+
+// .post-links_item {
+// 	@include rem(margin-right, $unit);
+
+// 	&.to-top {
+// 		margin-right: 0;
+
+// 		a {
+// 			color: $gray;
+// 		}
+// 	}
+// }
+
+.wp-caption {
+	width: auto !important;
+	position: relative;
+	@include rem(margin-bottom, $unit);
+	@extend .featured-image-blog;
+
+	img {
+		height: auto !important;
+	}
+}
+
+.wp-caption-text {
+	@include fs(14px);
+	color: $gray;
+	font-style: italic;
+  @include rem(padding-top, $unit/4);
+}
+
+%block-decorated {
+	// @include rem(padding-left, 1.75*$unit - 4px);
+	// @include rem(margin-left, -1.75 * $unit);
+	@extend %accentBorderLeftColor;
+}
+
+.entry-header, .post-footer{
+	@include rem(padding-left, 68px);
+	@include rem(margin-left, -72px);
+
+	@include media(to lap) {
+		@include rem(padding-left, 44px);
+		@include rem(margin-left, -48px);
+	}
+
+	@include media(to hand) {
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	@include media(from lap) {
+		border-left: 4px solid $accentColor;
+	}
+}
+
+.entry-title {
+	@extend .alpha;
+	text-transform: uppercase;
+	
+	a {
+		color: $grayDark;
+	}
+}
+
+.single-title {
+	padding: 0;
+	@include rem(margin-bottom, $unit);
+	position: relative;
+
+	@include media(from hand) {
+		text-align: left;
+		// @include rem(margin-bottom, 2*$unit);
+	}
+
+	@include media(from lap) {
+		border-left: 4px solid $accentColor;		
+		text-align: left;
+	}
+
+	@include media(from lap) {
+		@include rem(padding-left, 68px);
+		@include rem(margin-left, -72px);
+	}		
+}
+
+.main-content, .side-content {
+	@include rem(padding-top, $unit);
+	@include rem(padding-bottom, $unit);
+
+	@include media(from hand) {
+		@include rem(padding-top, 2*$unit);
+		@include rem(padding-bottom, 2*$unit);		
+	}
+}
+
+@include media(from lap) {
+
+	.main-content {
+		float: left;
+		width: percentage(2/3);
+		@include rem(padding, 2*$unit 2*$unit 2*$unit 0);
+		@include rem(padding, 2*$unit 2*$unit 2*$unit 0);
+	}
+
+	.side-content {
+		width: percentage(1/3);
+		float: right;
+		vertical-align: top;
+
+		@include rem(padding, 2*$unit 0 10000px 2*$unit);
+		@include rem(margin-bottom, -10000px);
+	}
+}
+
+.type-post .entry-content {
+
+	ul, ol {
+		@extend %block-decorated;
+	}
+
+	blockquote, q {
+		@extend %block-decorated;
+	}
+}
+
+.featured-image-blog {
+	position: relative;
+	display: block;
+	border: 0;
+	@include rem(margin-bottom, $unit);
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.wpgrade_pagination {
+	@extend %clearfix;
+	@include rem(margin-bottom, $unit);
+	border-bottom: 1px solid $grayLightest;
+	@include fs(15px);
+	font-weight: 600;
+
+	span {
+		@include rem(padding, $unit/2);
+		float: left;
+		color: $grayDarker;
+	}
+
+	a {
+		@include rem(padding, $unit/2 0);
+
+		@include media(from lap) {
+			@include rem(padding, $unit/2);
+		}
+		display: block;
+		border: 0;
+		float: left;
+		color: $grayDarker;
+		cursor: pointer;
+		width: 50%;
+		text-align: center;
+
+		&.next {
+			padding-right: 0;
+			float: right;
+			text-align: right;
+		}
+
+		&.prev {
+			padding-left: 0;
+			float: left;
+			text-align: left;
+		}
+
+		&.disabled {
+			color: $grayLighter;
+			cursor: default;
+
+			&:hover {
+				color:$grayLighter;
+			}
+		}
+	}
+
+	a:hover {
+		color: $accentColor;
+	}
+
+	.pages {
+		display: none;
+	}
+}
+
+//Post Formats 
+
+//Quote 
+.format-quote {
+	@include rem(margin-top, 2*$unit);
+
+	blockquote, blockquote a {
+		color:$grayDark;
+		letter-spacing: 0.1em;
+		line-height: 1.6;
+		font-weight: 600;
+	}
+
+	a .author_name {
+		color: $gray !important;
+		font-weight: 300;
+	}
+
+	a:hover {
+		border-color: $white;
+	}
+}
+
+//Video
+.featured-image_video-overlay {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 50%; left: 50%;
+	@include rem(border-width, 28px 52px);
+	border-style: solid;
+	border-color: transparent;
+	border-left-color: white;
+	pointer-events: none;
+}
+

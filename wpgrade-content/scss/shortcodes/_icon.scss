@@ -1,0 +1,54 @@
+i.shc {
+	display:inline-block;
+
+	&.small {
+		@include rem(font-size, 22px);
+	}
+
+	&.medium {
+		@include rem(font-size, 40px);
+		@include rem(line-height, 40px);
+	}
+
+	&.big {
+		@include rem(font-size, 70px);
+		@include rem(line-height, 70px);
+		@include transition(all 0.2s);
+
+		&:hover {
+			 
+			 @extend %accentColor;
+		}
+	}
+
+	&.square, &.circle {
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		background: rgba(0,0,0,0.2);
+	}
+
+	&.circle {
+		@include border-radius(999px);
+	}
+}
+
+a > i.shc {
+	@include transition(all 0.2s);
+	color:$gray;
+}
+
+a:hover {
+	& {
+		// border:none;
+	} 
+    & > i.shc {
+	text-decoration:none;
+	border:none;
+	color:$accentColor;
+	
+		&.circle {
+			background-color:$grayDarker;
+		}
+	}
+}

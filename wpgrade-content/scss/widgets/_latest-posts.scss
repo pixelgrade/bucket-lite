@@ -1,0 +1,118 @@
+/**
+ * Latest Posts Widget Slider
+*****************************************************/
+
+.wp-slider .latest-posts.slides {
+
+  @include media(to desk) {
+    @include rem(margin-right, -32px);
+  }
+
+  @include media(to lap) {
+    margin-right: 0;
+  }
+
+  li {
+    @include media(from desk) {
+      .desk-span6:last-child {
+        @include rem(border-left-width, $unit)
+      }
+    }
+  }
+}
+
+.latest-posts-title {
+	color: white;
+	@include rem(padding-bottom, $unit/2);
+  text-transform:capitalize;
+
+  a {
+    color: $white;
+  }
+}
+
+.latest-posts-date {
+	color: $grayLight;
+  letter-spacing: 0.125em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.latest-posts-permalink {
+	display: block;
+	border: 0;
+}
+
+.latest-posts-thumnail-wrapper {
+  display: block;
+  // border: 4px solid $grayLighter;
+  @include rem(margin-bottom, $unit/2);
+  overflow:hidden;
+  padding-top:62%;
+  position:relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:10;
+    @include box-shadow(inset 0px 0px 0px 4px rgba(255,255,255,0.5));
+    @include transition(all 0.15s);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  &.no-image {
+    @include rem(padding, 25% $unit);
+    border-color: $gray;
+    color: $gray;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    .lt-ie9 & {
+      border: 5px solid #999999;
+    }
+  }
+
+  &:hover {
+    &:before {
+      @include box-shadow(inset 0px 0px 0px 8px rgba(255,255,255,0.5));
+    }
+  }
+}
+
+.latest-posts-excerpt {
+
+  .btn-more {
+    clear:both;
+    float:right;
+    text-transform:capitalize;
+
+    &:hover {
+      color: $accentColor;
+      background:$white;
+    }
+  }
+
+  .excerpt-read-more {
+    padding: 0 .75em;
+    color: white;
+    letter-spacing: normal;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

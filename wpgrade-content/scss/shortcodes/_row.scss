@@ -1,0 +1,7 @@
+.row-shortcode {
+
+  // Si ce daca?
+  &.full-width-bg {
+    @include rem(padding-top, $unit);
+  }
+}

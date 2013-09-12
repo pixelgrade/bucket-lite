@@ -1,0 +1,1 @@
+<?php wpGrade_gallery_slideshow($post); ?>

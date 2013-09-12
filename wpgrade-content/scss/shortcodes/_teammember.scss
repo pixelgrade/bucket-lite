@@ -1,0 +1,257 @@
+.team-member-container,
+.team-member-image,
+.team-member-description,
+.team-member-name,
+.team-member-position,
+.team-member-social-links {
+	text-align: left;
+
+	@include media(from lap) {
+		text-align: center;
+	}
+}
+
+.team-member-header {
+	@include media(to lap) {
+		@include rem(margin-top, $unit/3);
+		display: inline;
+	}
+
+	.team-member-name {
+		color: $grayDarkest;
+		letter-spacing: 0;
+		padding: 0;
+		@include transition(color .3s ease-in-out);
+	}
+}
+
+.team-member-container {
+	@extend %clearfix;
+	background: white;
+	border-left-width: 0 !important;
+	@include backface-visibility(hidden);
+	width: 100%;
+
+	&:nth-child(odd) {
+		clear:both;
+	}
+
+	@include media(to lap) {
+		@include rem(margin-bottom, 1.5*$unit);
+	}
+
+	&:hover {
+		//Enable Hover Effect
+		@include media(from lap) {
+
+			.team-member-name{
+				color: $accentColor;
+			}
+		}
+		@include media(to hand) {
+			background: $white;
+		}
+	}
+}
+
+.team-member-image {
+	overflow: hidden;
+	display: block;
+	@include rem(margin-bottom, $unit);
+
+	@include media(to lap) {
+			float: right;
+	}
+
+	@include media(from lap) {
+		width: 100%;
+	}
+
+	&:hover .team-member-profile-table{
+		@include opacity(1);
+	}
+
+}
+
+.team-member-image-link{
+	display: block;
+	position: relative;
+}
+
+.rounded-image-container{
+	img {
+		@include media(to hand) {
+			@include rem(max-width, 86px);
+			@include rem(max-height, 86px);
+			@include border-radius(43px);
+		}
+
+		@include media(hand lap) {
+			@include rem(max-width, 120px);
+			@include rem(max-height, 120px);
+			@include border-radius(60px);
+		}
+
+		@include media(from lap) {
+			@include border-radius(50%);
+			position: relative;
+			width: 100%;
+			height: auto;
+			float: none;
+		}
+		margin: 0 auto;
+		display: block;
+	}			
+}
+
+
+
+.team-member-profile-container{
+
+
+	@include rem(top, 3*$unit);
+
+	@include media(to hand) {
+		@include rem(max-width, 86px);
+	}
+
+	@include media(hand lap) {
+		@include rem(max-width, 120px);	
+	}
+
+	@include media(from lap) {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		z-index: 10;
+	}
+}
+
+.team-member-profile-table {
+	@extend %easeInOutQuad;
+
+	@include media(from lap) {
+		background-color: rgba(238, 52, 48, 0.75);
+		@include opacity(0);
+		@include border-radius(50%);
+		display: table;
+		color: white;
+	}
+
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: table;
+}
+
+.team-member-profile-cell{
+	display: table-cell;
+	vertical-align: middle;	
+}
+
+.team-member-description{
+	@include rem(margin-right, 5*$unit);
+
+	@include media(from lap) {
+		text-align: center;
+		margin-right: 0;
+	}
+}
+
+.team-member-header,
+.team-member-description,
+.team-member-footer {
+	@include backface-visibility(hidden);
+}
+
+.team-member-header {
+	@extend %accentBorderTopColor;
+
+	@include media(to 1450px) {
+		h3 {
+			@include fs(19px);
+		}
+	}
+}
+
+.team-member-description > p {
+	margin: 0;
+	padding: 0;
+	color: $grayDark;
+
+	@include media(from lap) {
+		@include rem(padding, 0 $unit);
+	}
+
+	@include media(to 1450px) {
+		line-height: 1.5;
+	}
+}
+
+.team-member-position {
+	color: $accentColor;
+
+	&, .block & {
+		text-transform: none;
+		font-weight: 400;
+		letter-spacing: normal;
+		padding-top: 0;
+	}
+}
+
+.team-member-social-links {
+
+	@include fs(22px);
+	@extend %menu;
+
+	@include media(to lap) {
+		display: inline;
+	}
+
+	@include media(from lap) {
+		text-align: center;
+	}
+
+	@include backface-visibility(hidden);
+	@include perspective(1000px);
+	margin: 0;
+	border: 0 !important;
+
+	& > li.team-member-social-link {
+		display: inline-block;
+		@include rem(margin-right, $unit/2);
+
+		&:before {
+			content: "";
+			display: none;
+		}
+
+		.social-link {
+			display: block;
+			width: 1em;
+			position: relative;
+			display: block;
+			border: 0;
+
+			@include media(from lap) {
+				font-size: 1.5em;
+				text-align: center;
+			}
+		}
+
+		a {
+			display: block;
+			position: relative;
+			@include backface-visibility(hidden);
+			@include transition(all 0.2s);
+			color:$grayLight;
+
+			&:hover {
+				color:$grayDark;
+			}
+		}
+	}
+}
+

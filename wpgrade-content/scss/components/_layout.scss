@@ -1,0 +1,52 @@
+.wrapper {
+	background: white;
+	@include rem(padding, 0 72px);
+	position: relative;
+
+	@include media(to lap) {
+		@include rem(padding, 0 48px);
+	}
+
+	@include media(to hand) {
+		@include rem(padding, 0 24px);
+	}
+}
+
+.wrapper-main {
+	@include rem(padding-top, $unit);
+	@include rem(padding-bottom, $unit);
+
+	@include media(from lap) {
+		@include rem(padding-top, 2*$unit);
+		@include rem(padding-bottom, 2*$unit);
+	}
+}
+
+
+.container {
+	@extend %clearfix;
+	margin: 0 auto;
+	width: 100%;
+	@include rem(max-width, 1280px);
+}
+
+.row {
+	@extend %row;
+}
+
+.unwrap{
+/*	@include media(to lap){
+		@include rem(margin, 0 -72px);
+		@include rem(padding, 0 72px);
+	}*/
+
+	@include media(to lap) {
+		@include rem(padding, 0 48px);
+		@include rem(margin, 0 -48px);
+	}
+
+	@include media(to hand) {
+		@include rem(padding, 0 24px);
+		@include rem(margin, 0 -24px);
+	}	
+}

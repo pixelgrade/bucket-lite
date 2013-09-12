@@ -1,0 +1,304 @@
+%menu {
+	list-style: none;
+	padding: 0;
+}
+
+%menu-horizontal {
+	@extend %clearfix;
+
+	& > li {
+		display: inline-block;
+		float: left;
+	}
+}
+
+.header-transparent .site-mainmenu > li {
+	@extend %easeInOutQuad;
+}
+
+.site-mainmenu {
+	@extend %unstyled;
+	@extend %menu;
+	@extend %menu-horizontal;
+	margin: 0;
+	padding:0;
+	float: left;
+
+	a {
+		color: white;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+		border: 0;
+		text-transform: capitalize;
+
+		& {
+			@include transition(all .3s);
+		}
+	}
+
+	li:hover {
+		@include media(from lap) {
+			background-color: $accentColor;
+		}
+	}
+
+	& > li {
+		position: relative;
+
+		&.menu-parent-item {
+
+			& > a {
+				position: relative;
+				padding-right: 45px;
+
+				&:hover {
+					&:after {
+						@include media(to lap){
+							@include transform(rotate(0deg));
+						}
+						top:55%;
+						@include transform(rotate(225deg));
+					}
+				}
+
+				.lt-ie9 & {
+					position: static;
+				}
+
+				&:after {
+					content: "";
+					display: block;
+					width: 4px;
+					height: 4px;
+					border: 2px solid transparent;
+					border-bottom-color: white;
+					border-right-color: white;
+					position: absolute;
+					top: 50%;
+					right: 25px;
+					margin-top: -7px;
+
+					@include media(from lap){
+						@include transition(all 0.2s);
+						@include transform(rotate(45deg));
+					}
+
+					.ie9 &, .ie10 &{
+						top: 40px;
+					}
+				}
+			}
+		}
+
+		& > a {
+			display: table-cell;
+			@include rem(padding-left, 22px);
+			@include rem(padding-right, 22px);
+			vertical-align: middle;
+			text-align: center;
+			font-weight: normal;
+
+			span {
+				display: block;
+				overflow: hidden;
+				// padding:4px 0;
+				// @include rem(padding-left, 4px);
+				@include rem(padding-bottom, 4px);
+			}
+
+			b {
+				position: relative;
+				display: inline-block;
+				-webkit-transition: -webkit-transform 0.3s;
+				-moz-transition: -moz-transform 0.3s;
+				transition: transform 0.3s;
+				text-align: center;
+				font-weight: normal;
+			}
+
+			b::before {
+				position: absolute;
+				top: 100%;
+				content: attr(data-hover);
+				-webkit-transform: translate3d(0,0,0);
+				-moz-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0);
+			}
+
+			&:hover b,
+			&:focus b {
+
+				@include media(from lap){
+					-webkit-transform: translateY(-100%);
+					-moz-transform: translateY(-100%);
+					transform: translateY(-100%);
+				}
+			}
+
+			@include media(to 900px) {
+				@include rem(padding-left, 12px);
+				@include rem(padding-right, 12px);
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.lt-ie8 & {
+				height: auto;
+			}
+		}
+
+		// Styling menu items that are the current page
+		&.current-menu-parent > a,
+		&.current_page_item > a,
+		&.current-menu-item > a,
+		.current-menu-item > a,
+		&.current_page_parent > a {  
+			font-weight:bold;
+
+			span {
+				position: relative;
+
+				@include media(to lap) {
+					color: white;
+				}
+
+				@include media(from lap) {
+					border-bottom: 1px solid #fff;
+				}
+			}
+		}
+
+		&:hover {
+
+			& > ul.sub-menu, & > ul.sub-menu li:hover > ul.sub-menu  {
+				overflow: visible;
+				opacity: 1;
+				margin-top: 0;
+				pointer-events: auto;
+
+			  .lt-ie9 &, .ie9 &, .ie10 & {
+  				display: block;
+  			}
+
+				@include media(0 lap) { 
+					display:block;
+				}
+			}
+
+			& > ul.sub-menu {
+				margin-top: - 4px;
+			}
+		}
+ 	}
+}
+
+.site-mainmenu li:hover > .main-menu-item{
+  background-color: $accentColor;
+}
+
+.sub-menu {
+	  @extend %menu;
+	  @include box-shadow(rgba(black, .25) 1px 2px 3px);
+
+	  li:first-child{
+	    border-top: 4px solid $accentColor;
+	  }
+
+	li a{
+	  @include rem(width, 9*$unit);
+	  @include fs(14px);
+	  @include rem(padding, 0.5*$unit 3*$unit 0.5*$unit 1*$unit);
+	  font-family: "Lato", Arial, sans-serif;
+
+	  display: block; 
+	  color: black;
+	  background-color: white;
+	  text-transform: capitalize;
+	  text-decoration: none;
+	}  
+
+	li:hover > a {
+	  color: $accentColor;
+	}	
+}
+
+nav ul {
+  position: relative;
+  display: inline-table;
+}
+
+nav ul:after {
+  content: ""; 
+  clear: both; 
+  display: block;
+}
+
+nav ul ul {
+  position: absolute;
+}
+
+nav ul ul li {
+  float: none; 
+  position: relative;
+
+  &.to-the-left > ul {
+  	left: auto;
+  	right: 100%;
+  }
+}
+
+nav ul ul ul {
+  position: absolute; 
+  left: 100%;
+  top: -4px;
+}
+
+nav ul li:hover > ul{
+  display: block;
+}
+
+.sub-menu {
+  @include opacity(0);
+  pointer-events: none;
+
+  .lt-ie9 &, .ie9 &, .ie10 & {
+  	display: none;
+  }
+}
+
+.menu-footer_social {
+	@extend %menu;
+	margin: 0;
+	text-align: center;
+	@include rem(margin-bottom, $unit);
+
+	@include media(from lap) {
+		text-align: right;
+		margin-bottom: 0;
+	}
+
+	& > li {
+		display: inline-block;
+		@include rem(margin-left, $unit/2);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		& > a {
+			display: block;
+			border: 0;
+			color: $gray;
+
+			&:hover {
+				color: $grayLighter;
+			}
+
+			i {
+				// @include fs(21px);
+			}
+		}
+	}	
+}

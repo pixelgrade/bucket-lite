@@ -1,0 +1,183 @@
+// TYPOGRAPHY
+@mixin white-space($wrap-space) {
+  @if $wrap-space == 'pre-wrap' {
+    white-space: #{-moz-}$wrap-space;
+    white-space: $wrap-space;
+  } @else {
+    white-space: $wrap-space;
+  }
+}
+
+@mixin fontSize($fs, $lh, $ratio, $important: false) {
+  $ems: ceil($fs/($fontSizeBase*$lh));
+  $height: ($ems*$fontSizeBase*$lh)/$fs;
+  $height: $height*$ratio;
+  // Change global variables
+  $lineHeight: ($height*$fs + 0.05px)/$fs; //**George
+  $fontSize: $fs;
+  @if($fs <= $fontSizeBase) {
+    line-height: 1.5;
+  } @else {
+    line-height: $lineHeight;
+  }
+  @if ($important) {
+    @include rem(font-size, $fontSize !important);
+  } @else {
+    @include rem(font-size, $fontSize); 
+  }
+}
+
+@mixin fs($fs: $fontSizeBase, $lh: $lineHeightBase, $ratio: 1, $important: false) {
+  @include fontSize($fs, $lh, $ratio, $important);
+}
+
+@mixin rem($property, $values) {
+  $rem: $fontSizeBase/1rem;
+  #{$property}: $values;
+  @if type-of($values) == "number" {
+    #{$property}: $values/$rem;
+  } @else {
+    $rem-values: unquote("");
+    @each $value in $values {
+      @if type-of($value) == number and unit($value) == px {
+        $rem-values: append($rem-values, $value/$rem);
+      } @else {
+        $rem-values: append($rem-values, $value);
+      }
+    }
+    #{$property}: $rem-values;
+  }
+}
+
+@function rem($px) {
+  @return $px*1rem/$fontSizeBase;
+}
+
+@mixin remux($bp1, $bp2, $fs1, $fs2, $fstep: 1px) {
+  $index1: index($bpNames, $bp1);
+  $index2: index($bpNames, $bp2);
+  @if $index1 != false {
+    $bp1: nth($bpSizes, $index1);
+  }
+  @if $index2 != false {
+    $bp2: nth($bpSizes, $index2);
+  }
+  $bprange: $bp2 - $bp1;
+  $steps: ($fs2 - $fs1) / $fstep;
+  $bstep: $bprange / $steps;
+  $bp: $bp1;
+  $fs: $fs1;
+
+  @for $i from 1 through $steps {
+    @include media($bp ($bp + $bstep)) {
+      html {
+        font-size: percentage($fs/16px);
+      }
+    }
+    $fs: $fs + $fstep;
+    $bp: $bp + $bstep;
+  }
+}
+
+// GRID
+
+@mixin newClass($n, $r, $t: span, $p: false) {
+  $classN: append($classN, $n);
+  $classR: append($classR, $r);
+  $classT: append($classT, $t);
+  $classP: append($classP, $p);
+}
+
+@mixin generateClasses() {
+  @for $i from 1 through length($classN) {
+    $n: nth($classN, $i);
+    $r: nth($classR, $i);
+    $t: nth($classT, $i);
+    $p: nth($classP, $i);
+
+    @if $t == span {
+      %#{$n} {
+        @extend %span;
+        width: percentage($r);
+      }
+    }
+
+    @if $t == push {
+      %#{$n} {
+        left: percentage($r);
+      }
+    }
+
+    @if $t == pull {
+      %#{$n} {
+        left: -1 * percentage($r);
+      }
+    }
+
+    @if $t == offset {
+      %#{$n} {
+        margin-left: percentage($r);
+      }
+    }
+
+    @if $p != true {
+      .#{$n} {
+        @extend %#{$n};
+      }
+    }
+  }
+
+  @each $bp in $bpNames {
+    @include media(from $bp) {
+      @for $i from 1 through length($classN) {
+        $n: nth($classN, $i);
+        $r: nth($classR, $i);
+        $t: nth($classT, $i);
+        $p: nth($classP, $i);
+
+        @if $t == span {
+          %#{$bp}-#{$n} {
+            width: percentage($r);
+          }
+        }
+
+        @if $t == offset {
+          %#{$bp}-#{$n} {
+            margin-left: percentage($r);
+          }
+        }
+
+        @if $t == push {
+          %#{$bp}-#{$n} {
+            position: relative;
+            left: percentage($r);
+          }
+        }
+
+        @if $t == pull {
+          %#{$bp}-#{$n} {
+            position: relative;
+            left: -1 * percentage($r);
+          }
+        }
+
+        @if $p != true {
+          .#{$bp}-#{$n} {
+            @extend %#{$bp}-#{$n};
+          }
+        }
+      }
+    }
+  }
+  $classN: (); // name
+  $classR: (); // ratio
+  $classP: (); // placeholder
+  $classT: (); // type
+}
+
+@mixin placeholder() {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder {@content}
+  ::-moz-placeholder {@content}
+  :-ms-input-placeholder {@content}
+}

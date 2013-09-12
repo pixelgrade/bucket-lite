@@ -1,0 +1,79 @@
+html {
+	font-weight:300;
+	color:$grayDark;
+}
+
+a {
+	color:$accentColor;
+}
+
+
+// Headings
+.alpha, .beta, .gama, .delta, .epsylon, .zeta {
+	color: $grayDark;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.zeta {
+	color: $gray;
+}
+
+// Helper classes for content font size
+.s22 {
+	@include fs(22px);
+}
+
+.s18 {
+	@include fs(18px);
+}
+
+.s16 {
+	@include fs(16px);
+}
+
+.s14 {
+	@include fs(14px);
+}
+
+.s12 {
+	@include fs(12px);
+}
+
+// Lists
+.entry-content {
+
+	ol, ul {
+		padding-left: 0;
+		list-style-position: inside;
+
+		ol, ul {
+			@include rem(padding-left, $unit);
+		}
+	}
+
+	dl {
+
+	}
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin-left: 0;
+		@include rem(margin-bottom, $unit/2);
+	}
+}
+
+.entry-content {
+
+	table {
+		@extend .table--striped;
+		@extend .table--bordered;
+	}
+
+	td, th {
+  	@include rem(padding, $unit/4 $unit/2);
+	}
+}

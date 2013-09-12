@@ -1,0 +1,27 @@
+.twitter-shortcode-tweets_container{
+  @include rem(margin, $unit/2 0);
+  overflow: hidden;
+}
+
+.twitter-shortcode-screenname{
+  display: none;
+}
+
+.twitter-shortcode-username,
+.twitter-shortcode-tweet-date{
+  @include rem(padding, $unit/2 0);
+}
+
+.twitter-shortcode-username a{
+  color: black;
+  font-weight: bold;
+}
+
+.twitter-shortcode-tweet-date{
+  color: $grayLight;
+
+  &:before{
+    content: "-";
+    margin: 0 3px;
+  }
+}

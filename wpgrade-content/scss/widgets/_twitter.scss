@@ -1,0 +1,255 @@
+// TWITER
+ul.widget-tweets {
+	@extend %unstyled;
+}
+
+.widget-tweets {
+	@extend %unstyled;
+	@extend %clearfix;
+	@include rem(margin, 0 168px 0 84px);
+
+	.widget-area & {
+		margin: 0;
+		border-top: 0;
+	}
+
+	@include media(to lap) {
+		margin: 0;
+	}
+}
+
+.widget_wpgrade_twitter_widget {
+	height: auto !important;
+
+	.widget-tweets-tweet {
+		border-bottom: 0;
+		padding: 0;
+	}
+
+	.twitter-tweet-meta {
+	}
+
+	.flex-control-paging {
+		@extend %unstyled;
+		display: block;
+		clear: both;
+		border: 0;
+
+		& > li {
+			display: inline-block;
+			@include rem(margin-right, 8px);
+			border-bottom: none;
+			padding: 0;
+
+			& > a {
+				display: block;
+				@include rem(width, 5px);
+				@include rem(height, 5px);
+				@include border-radius(5px);
+				@include border-radius(rem(5px));
+				text-indent: -999em;
+				background-color: $grayLight;
+				cursor: pointer;
+			}
+
+			&:hover > a, & > a.flex-active {
+				@include rem(width, 7px);
+				@include rem(height, 7px);
+				position: relative;
+				@include rem(top, 1px);
+				@include rem(left, 1px);
+				@include rem(margin, 0 -1px);
+				background-color: $gray;
+			}
+		}
+	}
+}
+
+.side-content .widget_wpgrade_twitter_widget {
+	.widget-tweets-tweet{
+		@include rem(padding, 0 2*$unit 0 $unit);
+	}
+
+	.widget-tweets-tweet-content{
+		color: $grayLight;
+
+		a{
+			color: $grayLightest;
+		}
+	}
+
+	.flex-direction-nav{
+		display: block;
+		text-align: right;
+
+		li{
+			display: inline-block;
+
+			a{
+				@include rem(padding, 0.5*$unit 0.2*$unit);
+			}
+		}
+	}
+}
+
+// Footer Slider
+
+.twitter-footer_slider {
+	height: auto !important;
+
+	.flex-direction-nav {
+		@extend %unstyled;
+		@extend %clearfix;
+		position: absolute;
+		top: 50%;
+		@include rem(right, 48px);
+		
+		& > li {
+			float: left;
+
+			& > a {
+				display: block;
+				height: 100%;
+				margin-top: -50%;
+				@include rem(padding, 0 $unit*0.5);
+
+				i {
+					@include fs(30px);
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+li.widget-tweets-tweet {
+	@extend %clearfix;
+	@include transition(opacity .3s bezier(easeInOutQuad));
+	// @include fs(14px);
+	@include opacity(0);
+	visibility:hidden;
+
+	.tweet_block {
+		@include rem(margin-bottom, $unit/2);
+	}
+
+	&.flex-active-slide {
+		@include opacity(1);
+		visibility:visible;
+	}
+}
+
+.twitter-tweet-meta {
+	@extend %clearfix;
+
+	span {
+		float: left;
+		white-space: nowrap;
+	}
+}
+
+.widget-tweets-tweet-date {
+	color: $gray;
+	position: relative;
+
+	&:before {
+		content: " - ";
+		@include rem(margin, 0 $unit/4);
+	}
+}
+
+.widget-tweets-tweet{
+	// font-family: "Open Sans";	
+}
+
+.widget-tweets-tweet-content {
+	// @include fs(16px);
+	// font-family: "Georgia";
+	// font-style: italic;
+	// color: white;
+
+	a{
+		color: $grayLight;
+	}
+}
+
+.twitter-screenname{
+	display: none;
+}
+
+.twitter-username a {
+		color: $grayLight;
+		&:hover {
+			color: $white;
+		}
+}
+
+.widget-tweets-tweet-date{
+	color: $grayLight;
+}
+
+.widget_wpgrade_twitter_widget .twitter-icon{
+	float: left;
+
+	.icon-twitter{
+		@include fs(2*$unit);
+		color: white;
+	}
+}
+
+.main-footer_twitter .twitter-icon {
+	@include media(to hand) {
+		float: none;
+	}
+}
+
+.twitter-footer_slider .flex-direction-nav{
+	margin-top: 0;
+	right: 0;
+}
+
+
+.main-footer_twitter {
+	@include fullbg($accentColor, true, true);
+	@include rem(padding, $unit 0);
+
+	@include media(from lap) {
+		display: table-cell;
+		width: percentage(2/3);
+	}
+}
+
+.side-footer_twitter {
+	@include fullbg(rgba(black,.2), false, true);
+	text-align: center;
+
+	@include media(from lap) {
+		display: table-cell;
+		width: percentage(1/3);
+		vertical-align: middle;
+		border-left: 4px solid white;
+	}
+}
+
+
+.icon-twitter_footer {
+	@extend %accentColor;
+	@include rem(width, 56px);
+	@include rem(height, 56px);
+	@include rem(font-size, 48px);
+	@include rem(padding-top, 5px);
+	line-height: 1;
+	float: left;
+	vertical-align: middle;
+}
+
+.main-footer_twitter .flex-direction-nav{
+	float: right;
+}
+
+.twitter-footer_slider .widget-tweets-tweet {
+
+	@include media(from hand) {
+		@include rem(padding-right, 150px);
+	}
+}

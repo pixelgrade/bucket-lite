@@ -1,0 +1,19 @@
+// CONTACT WIDGET
+.widget-contact-details {
+	// font-weight: bold;
+}
+
+.widget-contact-detail {
+	@include rem(margin-bottom, $unit);
+}
+
+.widget_wpgrade_contact_widget span{
+  // color: $grayLight;
+  // @include fs(14px);
+}
+
+.widget_wpgrade_contact_widget, .widget_recent_entries {
+  li {
+    @include rem(margin-bottom, $unit/2);
+  }
+}

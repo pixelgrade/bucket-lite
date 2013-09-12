@@ -1,0 +1,63 @@
+
+.btn {
+  display: inline-block;
+  padding: .75em 1.25em;
+  border: none;
+  background-color: $accentColor;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  @include transition(all 0.2s);
+
+  & > p:last-child {
+    margin-bottom:0;
+  } 
+
+  &:hover {
+      text-decoration: none;
+      background:$grayDark;
+  }
+
+  &:active, &:focus {
+      outline: none;
+  }
+  
+  &.btn-thick {
+    border: 3px solid $accentColor;
+  }
+  
+  &.btn-transparent {
+    border-color: white;
+    background-color: transparent;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+      background-color: $accentColor;
+      border-color: $accentColor;
+    }
+  }
+  
+  &.btn-small {
+    @include fs(14px);
+  }
+
+  &.btn-large {
+    @include fs(20px);
+  }
+
+  &.btn-more {
+    padding: .25em .5em;
+  }
+}
+
+.btn-slider {
+  @include rem(margin-top, 2.5*$unit);
+}
+
+.btn--natural{
+    vertical-align: baseline;
+    font-size: inherit;
+    line-height: inherit;
+}

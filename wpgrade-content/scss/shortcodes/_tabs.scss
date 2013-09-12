@@ -1,0 +1,78 @@
+//Tabs Shortcode
+.tabs-shortcode {
+	@include rem(margin-top, 32px);
+}
+.tab-titles-list {
+	& {
+		@extend %menu;
+		border-top: 1px solid $grayLight;
+		@include fs(17px);
+	}
+	li {
+		position:relative;
+		margin:0 0 -1px 0 !important;
+		border-bottom: 1px solid $grayLight;
+		color: $grayLight;
+
+		&:before {
+			content:"" !important;
+			width:0;
+			height:0;
+			border:7px solid transparent;
+			border-right-color:$grayLight;
+			position:absolute;
+			top:24px;
+			left:-15px;
+			opacity:0;
+			@include transition(all 0.2s);
+		}
+		&.active {
+			& {
+				&:before {
+					@extend %accentBorderRightColor;
+					opacity:1;
+				}
+			}
+			a { 
+				@extend %accentColor;
+			}
+		}
+		&:hover {
+			&:before {
+				opacity:1;
+			}
+		}
+	}
+	a {
+		& {
+			color:$gray;
+			display: block;
+			padding: 1.2em 0 1.2em 1em;
+			border: 0;
+		}
+		&:hover {
+			@extend %accentColor;
+		}
+		i {
+			text-align:center;
+			font-size: 2em;
+			margin: -0.5em 0.5em -0.5em 0;
+			display:inline-block;
+			width:60px;
+			position: relative;
+			top: .25em; left: 0;
+		}
+	}
+}
+.tabs-content {
+	.tabs-content-pane {
+		display:none;
+		// opacity:0;
+		@include transition(all 0.2s);
+
+		&.active {
+			display:block;
+			// opacity:1;
+		}
+	}
+}

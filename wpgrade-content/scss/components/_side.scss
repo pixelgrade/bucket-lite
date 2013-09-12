@@ -1,0 +1,242 @@
+%fullbg-helper {
+   content: "";
+   position: absolute;
+   top: 0;
+   height: 100%;
+   width: 9999px;
+}
+
+@mixin fullbg($color, $before: true, $after: true) {
+	position: relative;
+
+	&, &%fullbg-bgcolor {
+		background: $color; 
+	}
+
+	@if ($before) {
+		
+		&:before {
+			@extend %fullbg-helper;
+
+			@if ($color == $accentColor) {
+				@extend %accentBgColor;
+			} @else {
+				@extend %fullbg-bgcolor;
+			}
+		}
+
+		&:before {right: 99.99%}
+	}
+
+	@if ($after) {
+
+		&:after {
+			@extend %fullbg-helper;
+
+			@if ($color == $accentColor) {
+				@extend %accentBgColor;
+			} @else {
+				@extend %fullbg-bgcolor;
+			}
+		}
+
+		&:after {left: 99.99%}
+	}
+}
+
+%unstyled {
+	padding-left: 0;
+	list-style: none;
+}
+
+.side-content {
+	@include fullbg($grayDarker, false, true);
+	border-left-width: 0;
+	background: $grayDarker;
+	color: $grayLighter;
+
+	.widget {
+		@include rem(margin-bottom, 2*$unit);
+	}
+
+	.widget-title {
+		@include rem(margin-bottom, $unit);
+		padding: 0;
+		font-weight: bold;
+		color: $grayLightest;
+		text-transform: uppercase;
+	}
+
+	ul, ol {
+		@extend %unstyled;
+		margin-top: -1px;
+		margin-bottom: 0;
+	}
+}
+
+.widget_search {
+	float: none;
+	@include rem(margin-bottom, $unit);
+}
+
+.widget_categories, .widget_tag_cloud, .widget_meta, .widget_pages{
+	// width: 50%;
+	// float: left;
+	// clear: none !important;
+}
+
+.widget_recent_entries{
+	clear: both;
+}
+
+.side-featuredworks {
+	@extend .side-footer_twitter; 
+}
+
+.widget_recent_comments{
+	display: block;
+}
+
+.recentcomments {
+	border-bottom: 1px solid #555;
+	@include rem(padding, $unit/4 0);
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	a {
+		
+		@include media(to lap) {
+			text-decoration: underline;
+		}
+
+		&:last-child {
+			display: block;
+			color: white;
+		}
+	}
+}
+
+
+
+.sidebar{
+
+  @include media(to lap) {
+    @include rem(padding-top, 2*$unit);
+    @include rem(padding-bottom, 2*$unit);
+  }
+	
+}
+.side-content {
+	
+	a {
+		color: $grayLight;
+
+		&:hover{
+			color: $accentColor;
+		}
+	}
+
+	.widget_archive {
+		width: 100%;
+
+		li {
+			width: 100%;
+			color: $gray;
+		}
+	}
+
+	.latest-posts-slider {
+		position: relative;
+
+		.flex-direction-nav{
+			@include rem(width, 2*$unit);
+			@include rem(top, -2*$unit);
+			position: absolute;
+			right: 0;
+			
+
+			li{
+				@include rem(width, $unit);
+				float: left;
+
+				a{
+					display: block;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.widget_recent_entries{
+		width: 100%;
+	}
+
+	.form-search{
+		position: relative;
+		overflow: hidden;
+
+		.submit{
+			position: absolute !important;
+			top: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+.widget_calendar {
+
+	caption {
+		@include rem(margin-bottom, $unit/2);
+	}
+
+	td, th {
+		text-align: center;
+		padding: 0.5em 0;
+
+		a {
+			font-weight: bold;
+		}
+	}
+}
+
+.widget_rss {
+
+	.rsswidget {
+		display: block;
+		font-weight: bold;
+	}
+
+	.rss-date, cite {
+		color: $grayLight;
+		@include fs(16px);
+	}
+
+	cite {
+		color: $grayLightest;
+	}
+
+	.rssSummary {
+
+	}
+	
+	li {
+		@include rem(margin-bottom, $unit/2);
+		@include rem(padding-bottom, $unit/2);
+
+		border-bottom: 1px solid #555;
+	}
+
+	.widget-title .rsswidget {
+		display: inline-block;
+	}
+}
+
+.widget_text {
+
+	select {
+		max-width: 100%;
+	}
+}

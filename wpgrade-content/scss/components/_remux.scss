@@ -1,0 +1,8 @@
+// remux
+@include remux(lap, desk, 18px, 21px);
+@include remux(desk, 2600px, 21px, 24px);
+@include media(from 2600px) {
+  html {
+    font-size: percentage(24px/16px);
+  }
+}

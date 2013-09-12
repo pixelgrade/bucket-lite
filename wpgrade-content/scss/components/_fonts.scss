@@ -1,0 +1,38 @@
+// Required Mixin
+@mixin fontFace($name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url($path + '.eot');
+    src: url($path + '.eot?#iefix') format('embedded-opentype'),
+    url($path + '.woff') format('woff'),
+    url($path + '.ttf') format('truetype'),
+    url($path + '.svg') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: $name;
+      src: url($path + '.svg') format('svg');
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+}
+
+
+@include fontFace('Lato', 'fonts/lato/regular/lato-regular-webfont', normal, normal);
+@include fontFace('Lato', 'fonts/lato/regular/lato-italic-webfont', normal, italic);
+
+@include fontFace('Lato', 'fonts/lato/light/lato-light-webfont', 300, normal);
+@include fontFace('Lato', 'fonts/lato/light/lato-lightitalic-webfont', 300, italic);
+
+@include fontFace('Lato', 'fonts/lato/bold/lato-bold-webfont', bold, normal);
+@include fontFace('Lato', 'fonts/lato/bold/lato-bolditalic-webfont', bold, italic);
+
+@include fontFace('Lato', 'fonts/lato/black/lato-black-webfont', 800, normal);
+@include fontFace('Lato', 'fonts/lato/black/lato-blackitalic-webfont', 800, italic);
+
+// @include fontFace('Oswald', 'fonts/oswald/oswald-regular-webfont');
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
