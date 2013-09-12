@@ -63,3 +63,36 @@
 
 		return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
 	}
+
+	/*
+	 * COMMENT LAYOUT
+	 */
+	function wpgrade_comments($comment, $args, $depth) {
+		$GLOBALS['comment'] = $comment; ?>
+		<li <?php comment_class(); ?>>
+			<article id="comment-<?php comment_ID(); ?>" class="clearfix">
+				<aside class="comment-author-avatar">
+					<!-- custom gravatar call -->
+					<?php
+						$bgauthemail = get_comment_author_email();
+						echo get_avatar($bgauthemail, 70, wpgrade::content_url().'images/avatar.png',"");
+					?>
+				</aside>
+				<header class="comment-author vcard">
+					<?php printf(__('<cite class="fn">%s</cite>', wpgrade::textdomain()), get_comment_author_link()) ?>
+					<!-- <time datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__('j M Y', wpgrade::textdomain())); ?> </a></time> -->
+					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					<?php edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','') ?>
+				</header>
+				<?php if ($comment->comment_approved == '0') : ?>
+				<div class="alert info">
+					<p><?php _e('Your comment is awaiting moderation.', wpgrade::textdomain()) ?></p>
+				</div>
+			<?php endif; ?>
+			<section class="comment_content clearfix">
+				<?php comment_text() ?>
+			</section>
+		</article>
+		<!-- </li> is added by WordPress automatically -->
+		<?php
+	} // don't remove this bracket!

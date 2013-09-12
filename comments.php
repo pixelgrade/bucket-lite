@@ -37,7 +37,7 @@
 							'comment_form_default_fields',
 							array
 							(
-								'author_image' => '<div class="comment-author-image">'.get_avatar($current_user->ID, 90, WPGRADE_LIB_URL.'images/avatar.png',"").'</div>',
+								'author_image' => '<div class="comment-author-image">'.get_avatar($current_user->ID, 90, wpgrade::content_url().'images/avatar.png',"").'</div>',
 								'author' => '<span class="comment-form-author-wrapper">' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="' . __( 'Name', wpgrade::textdomain() ) . '"' . $aria_req . ' /></span>',
 								'email' => '<span class="comment-form-email-wrapper">' . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', wpgrade::textdomain() ) . '" size="30"' . $aria_req . ' /></span>'
 							)
@@ -63,7 +63,7 @@
 							'comment_form_default_fields',
 							array
 							(
-								'author_image' => '<div class="comment-author-image"><img src="'.WPGRADE_LIB_URL.'images/avatar.png" alt=""/></div>',
+								'author_image' => '<div class="comment-author-image"><img src="'.wpgrade::content_url().'images/avatar.png" alt=""/></div>',
 								'author' => '<div class="form-fields"><span class="comment-form-author-wrapper">' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="' . __( 'Name', wpgrade::textdomain() ) . '"' . $aria_req . ' /></span>',
 								'email' => '<span class="comment-form-email-wrapper">' . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', wpgrade::textdomain() ) . '" size="30"' . $aria_req . ' /></span>'
 							)
