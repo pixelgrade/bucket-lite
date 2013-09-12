@@ -49,9 +49,9 @@
 		// cleanup the content (eg. remove <p>s around images)
 		add_filter('the_content', 'wpgrade_callback_cleanup_the_content');
 		// cleanup excerpt (eg. replace [..] with a Read more link)
-		add_filter('excerpt_more', 'wpgrade_callback_cleanup_excerpt');
-		// cleanup read more tag link
-		add_filter('the_content_more_link', 'wpgrade_callback_cleanup_readmore_content', 10, 2);
+//		add_filter('excerpt_more', 'wpgrade_callback_cleanup_excerpt');
+//		// cleanup read more tag link
+//		add_filter('the_content_more_link', 'wpgrade_callback_cleanup_readmore_content', 10, 2);
 	}
 
 	add_action('after_setup_theme', 'wpgrade_callback_themesetup', 16);
