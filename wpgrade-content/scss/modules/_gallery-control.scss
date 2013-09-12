@@ -1,0 +1,90 @@
+/*----------------------------------------*\
+*   $ARROWS, ITEM COUNT
+\*----------------------------------------*/
+/**
+ * Control arrow, current item, total count
+ *
+    <div class="gallery-control gallery-control--gallery-fullscreen">
+        <ul class="gallery-control__items">
+            <li class="gallery-control__item gallery-control__arrow">
+                <a href="#" class="gallery-control__arrow-button arrow-button-left"></a>
+            </li><!--
+            --><li class="gallery-control__item gallery-control__count">
+                <span class="gallery-control__count-current js-gallery-current-slide">
+                    <span class="highlighted">0</span>1
+                </span>    
+            </li><!--
+            --><li class="gallery-control__item gallery-control__count">
+                <sup class="gallery-control__count-total js-gallery-slides-total">03</sup>    
+            </li><!--
+            --><li class="gallery-control__item gallery-control__arrow">
+                <a href="#" class="gallery-control__arrow-button arrow-button-right"></a>
+            </li>
+        </ul>
+    </div>
+ */
+
+.gallery-control{
+    display: block;
+}
+
+    .gallery-control__items{
+        @extend .nav;
+    }
+
+    .gallery-control--popup{
+        @include rem(margin-top, $base-spacing-unit);
+        @include rem(margin-right, - $base-spacing-unit);
+    }
+
+        .gallery-control__item{
+            vertical-align: top;
+        }
+
+        .gallery-control__arrow-button{
+            @include rem(width, 20px);       
+            @include rem(height, 20px);       
+            @include rem(margin, $half-spacing-unit $base-spacing-unit 0 $base-spacing-unit);
+            display: block;
+            color: white;
+            border-color: white;
+            border-bottom: 2px solid;
+            @include transition(all 0.15s ease-in-out);
+
+            &:hover{
+                border-color: $accent-color;
+            }
+        }
+
+        .arrow-button-left{
+            border-left: 2px solid;
+            @include transform(rotate(45deg));
+
+            &:hover{
+                @include transform(translateX(-5px) rotate(45deg));
+            }
+        }
+
+        .arrow-button-right{
+            border-right: 2px solid;
+            @include transform(rotate(-45deg));
+
+            &:hover{
+                @include transform(translateX(5px) rotate(-45deg));
+            }            
+        }
+
+        .gallery-control__count{
+            font-family: "Josefin Slab", serif;
+            color: white;
+            @include font-size(40px);
+        }
+
+            .gallery-control__count-total{
+                font-size: 60%;
+                @include rem(top, - 0.7 * $half-spacing-unit);
+                &:before{
+                    content: "/";
+                }
+            }
+

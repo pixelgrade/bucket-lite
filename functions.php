@@ -1,59 +1,59 @@
 <?php
 
-	// ensure EXT is defined
-	if ( ! defined('EXT')) {
-		define('EXT', '.php');
-	}
+    // ensure EXT is defined
+    if ( ! defined('EXT')) {
+        define('EXT', '.php');
+    }
 
-	$ds = DIRECTORY_SEPARATOR;
-	$themecallbackpath = dirname(__FILE__).$ds.'theme-callbacks'.$ds;
+    $ds = DIRECTORY_SEPARATOR;
+    $themecallbackpath = dirname(__FILE__).$ds.'theme-callbacks'.$ds;
 
-	// Theme specific script enqueue setup handlers
-	// --------------------------------------------
+    // Theme specific script enqueue setup handlers
+    // --------------------------------------------
 
-	include $themecallbackpath.'resource-enqueues'.EXT;
-
-
-	// Theme specific callbacks
-	// ------------------------
-
-	include $themecallbackpath.'theme-features'.EXT;
+    include $themecallbackpath.'resource-enqueues'.EXT;
 
 
-	// Theme content filters
-	// ---------------------
+    // Theme specific callbacks
+    // ------------------------
 
-	include $themecallbackpath.'content-filters'.EXT;
-
-
-	// Pagination Formatter
-	// --------------------
-
-	include $themecallbackpath.'pagination-formatter'.EXT;
+    include $themecallbackpath.'theme-features'.EXT;
 
 
-	// Cleanup
-	// -------
+    // Theme content filters
+    // ---------------------
 
-	// @todo CLEANUP remove unsorted functions
-
-	include $themecallbackpath.'unsorted'.EXT;
+    include $themecallbackpath.'content-filters'.EXT;
 
 
-	// Theme specific settings
-	// -----------------------
+    // Pagination Formatter
+    // --------------------
 
-	// add theme support for post formats
-	// child themes note: use the after_setup_theme hook with a callback
-	$formats = array('quote', 'video', 'audio', 'gallery');
-	add_theme_support('post-formats', $formats);
+    include $themecallbackpath.'pagination-formatter'.EXT;
 
 
-	// Initialize system core
-	// ----------------------
-	require_once 'wpgrade-system/bootstrap'.EXT;
+    // Cleanup
+    // -------
 
-	#
-	# Please perform any initialization via options in wpgrade-config and
-	# calls in wpgrade-system/bootstrap. Required for testing.
-	#
+    // @todo CLEANUP remove unsorted functions
+
+    include $themecallbackpath.'unsorted'.EXT;
+
+
+    // Theme specific settings
+    // -----------------------
+
+    // add theme support for post formats
+    // child themes note: use the after_setup_theme hook with a callback
+    $formats = array('quote', 'video', 'audio', 'gallery');
+    add_theme_support('post-formats', $formats);
+
+
+    // Initialize system core
+    // ----------------------
+    require_once 'wpgrade-system/bootstrap'.EXT;
+
+    #
+    # Please perform any initialization via options in wpgrade-config and
+    # calls in wpgrade-system/bootstrap. Required for testing.
+    #

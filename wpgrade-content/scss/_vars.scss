@@ -1,0 +1,68 @@
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+$giga-size:         96px;
+$mega-size:         72px;
+$kilo-size:         48px;
+
+$h1-size:           36px; // .alpha
+$h2-size:           30px; // .beta
+$h3-size:           24px; // .gamma
+$h4-size:           20px; // .delta
+$h5-size:           16px; // .epsilon
+$h6-size:           14px; // .zeta
+
+$milli-size:        12px;
+$micro-size:        10px;
+
+
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base stuff
+ */
+$base-font-size:    18px;
+$base-line-height:  24px;
+
+/**
+ * Base font-family.
+ */
+$base-font-family:  "Crimson Text", sans-serif;
+$heading-font-family: "Josefin Slab", serif;
+
+/**
+ * Default colour for objects’ borders etc.
+ */
+$base-ui-color:     #ccc;
+
+
+
+
+
+
+/*-------------------------------------*\
+               FONTAWESOME
+\*-------------------------------------*/
+
+$FontAwesomePath: "../fonts/fontawesome";
+
+
+
+
+
+/*--------------------------------*\
+               COLORS
+\*--------------------------------*/
+
+
+$light: #807f7d;
+$gray: #595957;
+$dark: #242423;
+$accent-color: #fffc00;

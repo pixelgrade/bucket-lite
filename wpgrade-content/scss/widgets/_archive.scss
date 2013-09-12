@@ -1,0 +1,25 @@
+/*----------------------------------------*\
+*   $ARCHIVES WIDGET
+\*----------------------------------------*/
+.widget_archive{
+    ul{
+        @extend .nav--stacked;        
+    }
+    
+    li{
+        width: 100%;
+    }
+
+    ul li a{
+        float: left;
+        @include rem(margin-right, $half-spacing-unit/2);
+    }
+}
+
+
+
+
+
+
+
+

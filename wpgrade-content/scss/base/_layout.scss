@@ -1,0 +1,76 @@
+body, html {
+  height: 100%;
+}
+
+@include media(to lap){
+    .page-content{
+        @include rem(padding, 0 $base-spacing-unit);           
+    }
+
+    .single .featured-image-wrapper{
+        @include rem(margin-left, -2 * $base-spacing-unit);
+        @include rem(margin-right, -2 * $base-spacing-unit);
+    }    
+}
+
+@include media(from lap){
+    .page-content{
+        @include rem(max-width, 890px);
+        @include rem(padding-left, 2 * $base-spacing-unit);   
+        padding-right: 0;
+    }
+
+    .featured-image-wrapper{
+        @include rem(max-width, 890px);
+        margin-right: 0;
+    }     
+
+    .page-content, .sidebar{
+        float: left;
+    }
+
+    .sidebar{
+        @include rem(width, 430px);
+    }
+}
+
+.sidebar{
+    @include rem(padding, 2 * $base-spacing-unit);
+}
+
+
+
+
+
+/*----------------------------------------*\
+*   $SINGLE STYLING
+\*----------------------------------------*/
+
+@include media(from lap){
+    .single-post{
+        .page-content{
+            @include rem(padding-left, 10 * $base-spacing-unit);
+        }
+
+        .featured-image-wrapper{
+            @include rem(margin-left, -10 * $base-spacing-unit);
+        }   
+    }
+}
+
+.featured-image-container img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/*----------------------------------------*\
+*   $FULL WIDTH
+\*----------------------------------------*/
+
+.full-width .featured-image-wrapper{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}

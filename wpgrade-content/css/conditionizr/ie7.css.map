@@ -1,6 +1,0 @@
-{
-"version": "3",
-"mappings": "AAAA,gBAAiB;EAAC,SAAS,EAAE,wCAAwC",
-"sources": ["../../scss/conditionizr/ie7.scss"],
-"file": "ie7.css"
-}

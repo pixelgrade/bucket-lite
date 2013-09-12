@@ -1,0 +1,115 @@
+.masonry {
+    @extend .cf;
+    background: #f5f5f5;
+    @include rem(margin-right, $base-spacing-unit);
+}
+
+.masonry__item {
+    background: white;
+    @include rem(margin, $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
+
+    .article-timestamp {
+        @extend .cf;
+        display: block;
+        float: left;
+        @include rem(margin-left, $base-spacing-unit);
+    }
+
+    .entry__title {
+        clear: both;
+        @extend .gamma;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+        @include rem(margin-right, $base-spacing-unit);
+        @include rem(padding, $half-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
+    }
+
+    .entry__content {
+        @include rem(padding, 3*$half-spacing-unit 0 0 $base-spacing-unit);
+        @include rem(margin-right, $base-spacing-unit);
+    }
+
+    .entry--quote__content {
+        border-bottom: 1px dashed black;
+        // @include rem(margin-bottom, $base-spacing-unit);
+    }
+
+    blockquote {
+        margin-top: 0;
+        @include rem(margin-bottom, $base-spacing-unit);
+
+        &:before {
+            float: none;
+            margin-left: 0;
+            margin-top: 0;
+            @include rem(height, 5 * $half-spacing-unit);
+        }
+    }
+
+    .entry__thumbnail {
+        position: relative;
+    }
+
+    .entry--video__thumbnail {
+        @include rem(padding-top, 3*$half-spacing-unit);
+    }
+
+    .entry__meta {
+        @include rem(padding, $base-spacing-unit);
+    }
+}
+
+[data-columns]::before {
+    display: none;
+}
+
+.span {
+    float: left;
+}
+
+@media screen and (max-width: 699px) {
+    .masonry[data-columns]::before {
+        content: '1 .span.span-12';
+    }
+
+    .masonry {
+        margin-right: 0;
+    }
+
+    .masonry__item {
+        margin-left: 0;
+        margin-top: 0;
+        @include rem(padding-top, $base-spacing-unit);
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px) {
+    .masonry[data-columns]::before {
+        content: '2 .span.span-6';
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 949px) {
+    .masonry[data-columns]::before {
+        content: '1 .span.span-12';
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1279px) {
+    .masonry[data-columns]::before {
+        content: '2 .span.span-6';
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1700px) {
+    .masonry[data-columns]::before {
+        content: '3 .span.span-4';
+    }
+}
+
+@media screen and (min-width: 1701px) {
+    .masonry[data-columns]::before {
+        content: '4 .span.span-3';
+    }
+}

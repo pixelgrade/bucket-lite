@@ -17,61 +17,7 @@ function initialize(contact_content, gmap_zoom, latitude, longitude, gmap_custom
 	"use strict";
 	var styles = [];
 	if (gmap_custom_style) {
-		styles = [
-			{
-				stylers: [{
-					hue: gmap_color_rgb
-				}, {
-					saturation: -20
-				}
-				]
-			}, {
-				featureType: "road",
-				elementType: "geometry",
-				stylers: [{
-					lightness: 100
-				}, {
-					visibility: "simplified"
-				}
-				]
-			}, {
-				featureType: "road.arterial",
-				elementType: "geometry.fill",
-				stylers: [  { lightness: -50 },
-					{ saturation: 40 },
-					{ hue: gmap_color_rgb }
-				]
-			}, {
-				featureType: "road.arterial",
-				elementType: "labels.text",
-				stylers: [{
-					color: "#ffffff"
-				}, {
-					weight: 2
-				}
-				]
-			}, {
-				featureType: "poi",
-				elementType: "all",
-				stylers: [{
-					visibility: "off"
-				}
-				]
-			}, {
-				featureType: "water",
-				elementType: "geometry",
-				stylers: [  { lightness: -20 },
-					{ saturation: 20 },
-					{ hue: gmap_color_rgb }
-				]
-			}, {
-				elementType: "labels.text.stroke",
-				stylers: [{
-					visibility: "simplified"
-				}
-				]
-			}
-		];
+		styles = [ { "stylers": [ { "saturation": -100 } ] } ];
 	}
 	var styledMap = new google.maps.StyledMapType(styles, {
 		name: "Styled Map"
@@ -87,9 +33,13 @@ function initialize(contact_content, gmap_zoom, latitude, longitude, gmap_custom
 		disableDefaultUI: false,
 		zoomControl: true,
 		zoomControlOptions: {
-			style: google.maps.ZoomControlStyle.SMALL,
-			position: google.maps.ControlPosition.LEFT_TOP
+			style: google.maps.ZoomControlStyle.LARGE,
+			position: google.maps.ControlPosition.LEFT_BOTTOM
 		},
+	    panControl: true,
+	    panControlOptions: {
+	        position: google.maps.ControlPosition.LEFT_TOP
+	    },
 		zoom: parseInt(gmap_zoom),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
@@ -115,15 +65,14 @@ function initialize(contact_content, gmap_zoom, latitude, longitude, gmap_custom
 		pixelOffset: new google.maps.Size(-24,-24),
 		zIndex: null,
 		boxStyle: {
-			width: "300px",
-			height: "260px"
+			width: "1px",
+			height: "1px"
 		},
 		closeBoxURL: "",
 		infoBoxClearance: new google.maps.Size(1, 1),
 		isHidden: false,
 		pane: "floatPane",
 		enableEventPropagation: false
-
 	};
 	var ib = new InfoBox(myOptions);
 	ib.open(floatMap, marker);

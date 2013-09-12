@@ -1,684 +1,109 @@
-@charset "UTF-8";
- 
-@import "compass";
+@import "compass";   
+@import "vars";
+@import "_vendor/normalize/normalize";   
+@import "_vendor/font-awesome/font-awesome";
+@import "_vendor/inuit/vars";
+@import "_vendor/inuit/inuit";
 
-$fontAwesomePath: "fonts";
 
-// dependencies
-@import "vendor/normalize/normalize";
-@import "vendor/modular-scale/modular-scale";
-@import "vendor/font-awesome/font-awesome"; 
-@import "vendor/magnific-popup/main"; 
 
-// settings
-@import "variables";
-@import "settings";
-@import "vendor/greedy/index";   
 
-@import "components/core-classes";
-@import "components/typography"; 
+/*----------------------------------------*\
+*   $PLUGINS
+\*----------------------------------------*/
 
-// REUSE
-@import "components/tables";
-@import "components/code";
+@import "plugins/_royalslider";
+@import "components/preloader";
+@import "plugins/magnific-popup/_main";
+@import "plugins/_wpcf7.scss";
+@import "plugins/_gmap.scss";
 
-@import "components/layout";
+
+
+
+
+/*------------------------------*\
+               BASE
+\*------------------------------*/
+
+@import "base/helper";
+@import "base/typography"; 
+@import "base/layout";
+
+
+
+
+
+/*--------------------------------*\
+             COMPONENTS  
+\*--------------------------------*/
+
 @import "components/header";
-@import "components/navigation";
-@import "components/side"; 
 @import "components/footer";
-@import "components/widgets";
-@import "components/offcanvas";
- 
-@import "components/remux";
-@import "components/fonts";
-@import "components/slider";
-@import "components/featured-image";
-@import "components/portfolio";
-@import "components/post";
-@import "components/comments";
-@import "components/sidebars";
-@import "components/font-entypo";
-@import "components/font-linecons"; 
-@import "components/block-colors"; 
-@import "components/helpful-classes";
-@import "components/audio-video-player";
+@import "components/navigation"; 
+@import "components/sidebar";
+@import "components/related-projects";
 
-@import "shortcodes/row";
-@import "shortcodes/progressbar";
-@import "shortcodes/divider";
-@import "shortcodes/button";
-@import "shortcodes/teammember"; 
-// @import "shortcodes/arrow";
-// @import "shortcodes/tabs";
+
+
+
+
+/*-------------------------------*\
+              MODULES
+\*-------------------------------*/
+
+@import "modules/mosaic";
+@import "modules/slider";
+@import "modules/comments";
+@import "modules/likes-box";
+@import "modules/social-links";
+@import "modules/meta-box";
+@import "modules/gallery-item";
+@import "modules/gallery-control";
+@import "modules/masonry";
+
+
+
+
+/*-------------------------------*\
+               PAGES
+\*-------------------------------*/
+
+@import "pages/post";
+// @import "pages/gallery-fullscreen";
+// @import "pages/gallery-fullwidth";
+@import "pages/project";
+
+
+
+
+
+/*--------------------------------*\
+             SHORTCODES
+\*--------------------------------*/
+
 @import "shortcodes/icon";
-@import "shortcodes/testimonial";
+@import "shortcodes/progressbar";
+@import "shortcodes/testimonials";
 @import "shortcodes/twitter";
-@import "shortcodes/infobox";
+@import "shortcodes/teammember";
 
-@import "plugins/wpcf7";
 
 
-@mixin verticalGrid($ratio: $lineHeightBase) {
-	@include background-image(linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0) 96%, rgba(0,0,0,.1) 98%, rgba(0,0,0,.1) 100%, rgba(0,0,0,0)));
-	@include background-size($ratio * 1rem $ratio * 1rem);
-}
 
-body { 
-	background: white;  
-}
 
-img {
-	display: block; 
-	max-width: 100%; 
-	height: auto;
-}
+/*---------------------------------*\
+               WIDGETS
+\*---------------------------------*/
 
-#page {
-	@include media(from lap) {
-		overflow: hidden;
-	}
-	
-	.l-boxed & {
-		width: $gridWidth; 
-		margin: 0 auto;
-	}
-}
+@import "widgets/widgets";
 
-.site-header{ 
-	z-index: 9999;
-}
 
 
-a {
-	text-decoration: none;
-	// @extend %accentColor; 
-	// border-bottom: 1px dotted transparent;
 
-	&:hover {
-	// 	@extend %accentBorderBottomColor;
-	// text-decoration: underline;
-	}
-}
 
-// .gama, .delta {
-// 	@include rem(padding, $unit/4 0);
-// }
-
-.block {
-	%heading {
-		text-transform: uppercase;
-		letter-spacing: 0.125em;
-		font-weight: 800;
-	}
-}
-
-%field {
-	display: inline-block;
-    vertical-align: middle;
-    white-space: nowrap;
-    font-family: inherit;
-    border: none;
-    margin: 0;
-	// @include fs(14px);
-}
-
-%field {
-	padding: 0.8em;
-	background: white;
-	color: $gray;
-	height: 100%;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-	@extend %field;
-}
-
-.site-navigation .form{
-	overflow: visible;
-} 
-
-.widget_search {
-	@extend %clearfix;
-
-	.form{
-		background: white;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.field {
-		width: 80%;
-		@include rem(padding, 17px);
-	} 
-
-	.submit {
-		border: 0;
-		color: white;
-		position: absolute !important;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		@include rem(padding, 0 $unit/2 0 $unit/2);
-		text-align: center;
-	}
-}
-
-.headings-uc {
-
-	%heading {
-		text-transform: uppercase;
-		letter-spacing: 0.125em;
-		font-weight: bold;
-
-	}
-
-	.alpha, .beta {
-		padding-top: 0;
-	}
-}
-
-
-
-.red-centered-heading{
-	border: none !important;
-	color: $accentColor !important;
-	text-align: center !important;
-	text-transform: none !important;
-	letter-spacing: 1px !important;
-	padding: 0 !important;
-
-	@include media(from lap) {
-		margin: 0 !important;
-	}
-}
-
-/**
- * Call To Action Area
-*****************************************************/
-
-.wrapper.call-to-action-wrapper {
-	overflow: visible;
-
-	@include media(to lap) {
-		@include rem(padding-bottom, $unit);
-		background-color: $grayDark;
-	}
-}
-
-.call-to-action-container {
-
-	@include media(from lap) {
-		display: table;
-		width: 100%;
-	}
-}
-
-.call-to-action-text {
-  @include rem(padding, $unit*2/3 $unit $unit*2/3 0);
-  @include fullbg($grayDark, true, false);
-	color: white;
-
-	@include media(from lap) {
-		display: table-cell;
-		vertical-align: middle;
-		width: auto;
-	}
-
-	p {
-		margin: 0;
-		@include fs(16px);
-		color:$gray;
-		font-weight:normal;
-	}
-
-	h3 {
-		padding: 0;
-		font-weight: bold;
-		color: white;		
-	}
-}
-
-@-moz-document url-prefix() {
-    .call-to-action-text {
-        padding-left: $unit;
-        padding-left: 1.5rem;
-    }
-}
-
-.call-to-action-button {
-	background-color: $grayDark;
-	text-align: center;
-
-	@include media(from lap) {
-		width: 20%;
-		display: table-cell;
-		vertical-align: middle;
-		white-space: nowrap;
-	}
-
-	.btn {
-		vertical-align: middle;
-		letter-spacing: 0.075em;
-		position: relative;
-		padding: 0;
-		@include perspective(1000px);
-		@include backface-visibility(hidden);
-		@include transition(all 0.4s cubic-bezier(0.77, 0, 0.175, 1));
-		z-index: 100;
-		-webkit-transform-origin: 100% 50%;
-		-moz-transform-origin: 100% 50%;
-		-ms-transform-origin: 100% 50%;
-		-o-transform-origin: 100% 50%;
-		transform-origin: 100% 50%;
-
-		span {
-			display: block;
-			@include transition(all 0.4s cubic-bezier(0.77, 0, 0.175, 1));
-			padding: 1.5em 3em;
-		}
-		
-		@include media (from lap) {
-			background: white;
-			font-size: 1.25em;
-			@include transform(scale(.8));
-			@include box-shadow(white 24px 0 0 30px);
-			
-			span {
-				@include box-shadow(none);
-			}
-
-			&:hover {
-				@include transform(scale(1.1));
-			}
-		}
-	}
-}
-
-.csstransforms3d .call-to-action-button .btn span:before {
-	@include transition(all 0.4s cubic-bezier(0.77, 0, 0.175, 1));
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
-
-	@include media (from lap) {
-		@include box-shadow(none);
-	}
-}
-
-.container-body h2, .featuredworks-title {
-
-	@include rem(margin-bottom, $unit);
-	font-weight: bold;
-	text-transform: uppercase;
-	display: block;
-	text-align: center;
-	color: $grayDark; 
-
-	@include media(from hand) { 
-		text-align: left;
-	}
-
-	@include media(from lap) {
-		border-left: 4px solid $accentColor;		
-		@include rem(padding-left, 68px);
-		@include rem(margin-left, -72px);
-	}
-}
-
-.container-body > h2 {
-		@include rem(margin-bottom, $unit);
-		@include rem(margin-bottom, 2*$unit);
-}
-
-.red-centered-heading {
-
-	@include media(to lap) {
-		margin-top: 3rem !important;
-	}
-}
-
-
-/**
- * Slider Arrows
-*****************************************************/
-
-.direction-nav-container {
-	@extend %menu;
-	@extend %menu-horizontal;
-	text-align: center;
-
-  li {
-
-		a span{
-			display: block;
-			position: relative;
-			@include rem(padding, 0 2/3*$unit);
-			@include rem(height, 2*$unit);
-			background-color: #e3e3e3;
-			color: white;
-			@include transition(background-color .3s ease-in-out);
-
-			&:before {
-				content: "";
-				width: 0;
-				height: 0;
-				border: 10px solid transparent;
-				position: absolute;
-				top: 50%;
-				margin-top: -10px;
-				@include transition(all .15s);
-			}
-
-			&:hover {
-				background-color: $accentColor; 
-			}
-
-			&.arrow-left {
-				@include rem(margin-right, 3px);
-
-				&:before {
-					border-right-color: white;
-					right: 0;
-				}
-
-				&:hover:before {
-					right: 50%;
-					margin-right: -5px;
-				}
-			}
-
-			&.arrow-right {
-				@include rem(margin-left, 3px);
-
-				&:before {
-					border-left-color: white;
-					left: 0;
-				}
-
-				&:hover:before {
-					left: 50%;
-					margin-left: -5px;
-				}
-			}
-		}
-	}
-} 
-
-.wrapper-body, .portfolio-container {
-
-	.flex-direction-nav {
-		@extend %menu;
-		@extend %menu-horizontal;
-		text-align: center;
-
-		@include media(from hand) {
-			position: absolute;
-			z-index: 100;
-		}
-
-		a {
-			display: block;
-			position: relative;
-			background-color: #e3e3e3;
-			@include rem(width, 4/3*$unit);
-			@include rem(height, 2*$unit);
-			color: white;
-			@include transition(background-color .3s ease-in-out);
-
-			&:before {
-				content: "";
-				width: 0;
-				height: 0;
-				border: 10px solid transparent;
-				position: absolute;
-				top: 50%;
-				margin-top: -10px;
-				@include transition(all .15s);
-			}
-
-			&:hover {
-				background-color: $accentColor;
-			}
-
-			&.flex-prev {
-
-				&:before {
-					border-right-color: white;
-					right: 0;
-				}
-
-				&:hover:before {
-					right: 50%;
-					margin-right: -5px;
-				}
-			}
-
-			&.flex-next {
-
-				&:before {
-					border-left-color: white;
-					left: 0;
-				}
-
-				&:hover:before {
-					left: 50%;
-					margin-left: -5px;
-				}
-			}
-		}
-
-		li:first-child {
-			border-right: 4px solid transparent;
-		}
-	}
-}
-
-.portfolio-container .flex-direction-nav > li {
-	@include media (to lap) { 
-		float: none;
-	}
-}
-
-.site-navigation .header_search-form {
-	float: right;
-}
-
-.about-page-heading {
-	@include fs(34px);
-	text-align: center;
-	padding: 0;
-	font-weight: bold;
-	color: black !important;
-	@include rem(margin-top, $unit);
-
-	@include media(from lap) {
-		margin-top: 0;
-		@include rem(margin-bottom, $unit);
-		border-left: 4px solid $accentColor;
-		border-right: 4px solid $accentColor;
-	}
-}
-
-.row {
-	position: relative;
-}
-
-.row-background {
-	position: absolute;
-	top: 0; left: -9000px;
-	width: 20000px;
-	height: 100%;
-}
-
-.left-align-icons-wrapper{
-
-	.shc {
-		@include rem(margin-top, 0.3*$unit);
-		float: left;
-	}
-
-	h3 {
-		@include rem(margin-left, 2*$unit);
-		@include fs(18px);
-		@include media(from lap) {
-			@include rem(margin-left, 2.5*$unit);
-			@include fs(21px);
-		}
-	}
-
-	p {
-		@include media(from lap) {
-			@include rem(margin-left, 2.5*$unit);
-		}
-	}
-
-	h3 {
-		@include rem(padding, $unit/2 0);
-		@include rem(margin-bottom, $unit/2);
-	}
-}
-
-.accent-color-border-left {
-	@include rem(margin-bottom, $unit);
-	@include fs(24px);
-	padding-top: 0;
-	padding-bottom: 0;
-	text-align: center;
-	color: black !important;
-
-	@include rem(padding-left, 68px);
-	@include rem(margin-left, -72px);
-
-	@include media(from lap) {
-		border-left: 4px solid $accentColor;
-		text-transform: none !important;
-		text-align: left;
-	}
-}
-
-.row-shortcode {
-	@include rem(margin-bottom, $unit); 
-}
-
-.headings-small h4 {
-	@include rem(margin-bottom, $unit);
-	padding: 0;
-	font-weight: bold;
-	color: #f7f7f7;
-	text-transform: uppercase;
-}
-
-.content-small {
-	color: $grayLight;
-
-	i {
-		text-align: center;
-		@include rem(margin-right, $unit/2);
-	}
-}
-
-// contact page
-
-.contact-address {
-	@include rem(padding-bottom, $unit);
-	@include rem(margin-bottom, $unit);
-	border-bottom: 1px solid $gray;
-}
-
-.contact-phone, .contact-email {
-	margin: 0;
-}
-
-.contact-page-heading {
-	// @include fs(18px);
-	font-weight: bold;
-	letter-spacing: normal;
-}
-
-#gmap {
-	position: relative;
-	padding-top: 40%;
-	width: 100% !important;
-	@include rem(margin-bottom, $unit);
-	height: auto !important;
-}
-
-#map_canvas {
-	position: absolute;
-	top:0; left: 0;
-}
-
-.page-header{
-
-	%heading {
-		float: left;
-		clear: both;
-		letter-spacing: normal;
-		line-height: 1.25;
-		display: inline;
-		padding: 0;
-	}
-
-	.container > * {
-		clear: both;
-	}
-
-	@include fs(11px);
-	h1  { font-size:3.5em;  }
-	h2  { font-size:3em; 		}
-	h3  { font-size:2em; 		}
-	h4 	{ font-size:1.5em;  }
-	h5 	{ font-size:1em; 		}
-	h6  { font-size:0.7em;  }
-
-	@include media(from hand) {
-		@include fs(17px);
-	}
-
-	@include media(from lap) {
-		@include fs(22px);
-	}
-
-
-
-
-	p {
-		@include fs(30px);
-	}
-}
-
-.member-page-h2 {
-	@include fs(18px);
-}
-
-.progressbar {
-	@extend %clearfix;
-	@include rem(margin, $unit 0);
-	display: block;
-}
-
-.progressbar-title {
-	@include rem(margin-top, -$unit/2);
-	font-family: "Open Sans";
-	font-weight: normal !important;
-	text-transform: none !important;
-
-}
-
-@include media(from hand){
-	.progressbar-title{
-		float: left;
-		width: 30%;
-	}
-
-	.progressbar-bar {
-		float: right;
-		width: 70%;
-	}
-
-}
+/*-------------------------------*\
+               SHAME
+\*-------------------------------*/
 
 @import "shame";
-@import "theme"; 

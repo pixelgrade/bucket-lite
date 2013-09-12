@@ -1,43 +1,25 @@
-// FLICKR / INSTAGRAM
-.widget_wpgrade_flickr_widget {
+/*----------------------------------------*\
+*   $FLICKR WIDGET
+\*----------------------------------------*/
 
-	.widget-title {
-		padding-bottom: 0;
-	}
+.widget .wpgrade-flickr-items{
+    @include rem(margin-left, -1 * $half-spacing-unit);
 }
 
-.wpgrade-flickr-items {
-	@extend %clearfix;
-	border: 0 !important;
-	@include rem(margin-left, -$unit/2);
+.wpgrade-flickr-item{
+    @include rem(border-left, $half-spacing-unit solid transparent);
+    @include rem(margin-bottom, $half-spacing-unit);
+    display: block;
+    float: left;
+    width: percentage(1/3);
+
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 
-.wpgrade-flickr-item {
-	width: 25%;
-	float: left;
-	border: 0 solid transparent;
-	@include rem(margin-bottom, $unit/2);
-	@include rem(border-left-width, $unit/2);
-}
-
-.wpgrade-flickr-break {
-	width: 100%;
-	height: 0;
-}
-
-.wpgrade-flickr-link {
-	border: 2px solid white;
-	@include box-shadow(rgba(black, .25) 1px 1px 3px);
-	display: block;
-	float: left;
-	width: 100%;
-
-	img {
-		display: block;
-		width:100%;
-	}
-
-	&:hover {
-		border: 2px solid white;
-	}
-}
+    .wpgrade-flickr-link{
+        display: block !important;
+    }

@@ -1,534 +1,241 @@
-.hidden {
-	display: none;
+#page {
+    background: $dark;
+}
+
+.content {
+    @extend .cf;
+    background: white;
+    position: relative;
+
+    // project-classic causes horizontal scroll. CAUTION!
+    overflow: hidden;
+
+    @include media(from hand) {
+        @include rem(margin-left, 250px);
+    } 
+
+    @include media(to hand) {
+        position: relative;
+        @include rem(top, 3*$base-spacing-unit);
+        @include transition(opacity .3s ease-in-out);
+
+        // some dark overlay over the content when the navigation is visible
+
+        .navigation--is-visible & {
+            @include opacity(0.15);
+        }
+    }
+}
+
+/* prevent flicker on ios */
+.content, .header, .header__inner-wrap {
+    @include backface-visibility(hidden);
+    @include perspective(1000px);
 }
 
 .wrapper {
-	overflow: hidden;
-
-	&.wrapper-header-small {
-		overflow: visible;
-	}
+    position: relative;
 }
 
-.wrapper.wrapper-header {
-  overflow: visible;
+/* the header stays over the content */
+@include media(to hand) {
+    .header     {z-index: 100}
+    .content    {z-index: 200}
 }
 
-.wrapper-content {
-	// add background-color to overlap fixed featured image
-	position: relative;
-	background-color: white;
+/**
+*
+* There's a 1px vertical line in the grid that seems to appear because of
+* bad computation of widths (I guess) :D
+*
+**/
+.mosaic__item-wrapper {
+    margin: -1px;
 }
 
-.wrapper-body {
-	background: white;
-
-  &:first-child {
-    padding-top:$unit;
-  }
-}
-
-.slides {
-	@extend %unstyled; 
+/**
+ * There's 1px horizontal on the page when there's no sidebar and the page goes
+ * full width, making the horizontal scroll bar appear
+ */
+ 
+.full-width .site-content{
+    overflow: hidden;
 }
 
 
-.portfolio-rows {
-	@include perspective(1000px);
-	@include transform-style(preserve-3d);
-	@include backface-visibility(hidden);
-}
 
-.portfolio-rows .come-in {
-	@include opacity(1);
-	@include transform(translateY(600px));
-	-webkit-animation: come-in 0.8s ease forwards;
-	   -moz-animation: come-in 0.8s ease forwards;
-	     -o-animation: come-in 0.8s ease forwards;
-	        animation: come-in 0.8s ease forwards;
-}
 
-.go-out {
-	@include transform(translateY(600px));
-	-webkit-animation: go-out 0.3s ease forwards;
-	   -moz-animation: go-out 0.3s ease forwards;
-	     -o-animation: go-out 0.3s ease forwards;
-	        animation: go-out 0.3s ease forwards;
-}
 
-.portfolio-rows .block.already-visible {
-	@include opacity(1);
-	@include transform(none);
-	-webkit-animation: none;
-	   -moz-animation: none;
-	     -o-animation: none;
-	        animation: none;
-}
+/*----------------------------------------*\
+*   $GALLERY-CONTROLS
+\*----------------------------------------*/
 
-@-webkit-keyframes come-in {
-  to {
-	@include opacity(1);
-  	-webkit-transform: translateY(0);
-  }
-}
-@-moz-keyframes come-in {
-  to {
-	@include opacity(1);
-  	-moz-transform: translateY(0);
-  }
-}
-@-o-keyframes come-in {
-  to {
-	@include opacity(1);
-  	-o-transform: translateY(0);
-  }
-}
+/**
+ * Partea asta cam trebuie modularizata, facute niste clase si in functie de ele
+ * sa fie stabilita pozitinarea controalelor sliderului, atat controlNav cat si
+ * cele directionale si chiar si afisarea sau nu a pozitiei (ie. 1/3)
+ */
 
-@keyframes come-in {
-  to {
-	@include opacity(1);
-  	transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes go-out {
-	0% {
-		-webkit-transform: none;
-		@include opacity(1);
-	}
-	100% {
-		-webkit-transform: scale(.75);
-		@include opacity(0);
-	}
-}
-@-moz-keyframes go-out {
-	0% {
-		-moz-transform: none;
-		@include opacity(1);
-	}
-	100% {
-		-moz-transform: scale(.75);
-		@include opacity(0);
-	}
-}
-@-o-keyframes go-out {
-	0% {
-		-o-transform: none;
-		@include opacity(1);
-	}
-	100% {
-		-o-transform: scale(.75);
-		@include opacity(0);
-	}
-}
-@keyframes go-out {
-	0% {
-		transform: none;
-		@include opacity(1);
-	}
-	100% {
-		transform: scale(.75);
-		@include opacity(0);
-	}
-}
-
-.video-wrap, .audio-wrap {
-	@include rem(margin, 0 0 $unit);
-
-	iframe {
-		display: block;
-	}
-
-	.portfolio-row & {
-		margin-bottom: 0;
-	}
-}
-
-.portfolio-rows {
-	@extend %unstyled;
-	margin: 0;
-}
-
-.no-transition {
-	@include transition(none !important);
-}
-
-//Contact Map
-.contact-info {
-	display:none;
-
-	.infoBox & {
-		display:block;
-	}
-
-	.pin_ring {
-    @include rem(width, $unit);
-    @include rem(height, $unit);
-    border-radius: 50% 50% 50% 0 / 50% 50% 50% 0;
-    @include transform(rotate(-45deg));
+.gallery-control--gallery-fullscreen{
     position: absolute;
-    top: 0; left: 0;
-    border: 10px solid $accentColor;
-  }
+    z-index: 320;
+    @include rem(bottom, 2 * $base-spacing-unit);
+    @include rem(left, 2 * $base-spacing-unit);
 }
 
-/* The animation */
-/* WebKit/Safari and Chrome */
-@-webkit-keyframes pulse {
-    0% {
-        -webkit-transform: scale(0.3);
-        transform: scale(0.3);
-        opacity: 0.5;
+    .gallery-control__items {
+        margin-bottom: 0;
     }
-    
-    80% {
-        -webkit-transform: scale(1.5);
-        transform: scale(1.5);
-        opacity: 0;
+
+
+
+
+
+
+/*---------------------------------------------------*\
+               $SINGLE GALLERY FULLWIDTH
+\*---------------------------------------------------*/
+
+/* Asa nu :D */
+
+.single-gallery-fullwidth {
+
+    @include media(from hand) {
+        #page, .content, #main, #primary, #content, .post {
+            height: 100%;
+        }
+
+        .content {
+            position: relative;
+        }
     }
-    
-    100% {
-        -webkit-transform: scale(2.5);
-        transform: scale(2.5);
-        opacity: 0;
-    }    
 }
-/* Gecko/Firefox */
-@-moz-keyframes pulse {
-    0% {
-        -moz-transform: scale(0.3);
-        transform: scale(0.3);
-        opacity: 0.5;
+
+.featured-image, .single-gallery-fullwidth {
+
+    .gallery-control--gallery-fullscreen {
+        left: auto;
+        @include rem(right, 2 * $base-spacing-unit);
     }
-    
-    80% {
-        -moz-transform: scale(1.5);
-        transform: scale(1.5);
-        opacity: 0;
-    }
-    
-    100% {
-        -moz-transform: scale(2.5);
-        transform: scale(2.5);
-        opacity: 0;
-    }    
-}
-/* Presto/Opera */
-@-o-keyframes pulse {
-    0% {
-        -o-transform: scale(0.3);
-        transform: scale(0.3);
-        opacity: 0.5;
-    }
-    
-    80% {
-        -o-transform: scale(1.5);
-        transform: scale(1.5);
-        opacity: 0;
-    }
-    
-    100% {
-        -o-transform: scale(2.5);
-        transform: scale(2.5);
-        opacity: 0;
-    }    
-}
-/* Standard */
-@keyframes pulse {
-    0% {
-        transform: scale(0.3);
-        opacity: 0.5;
-    }
-    
-    80% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-    
-    100% {
-        transform: scale(2.5);
-        opacity: 0;
-    }    
-}
-
-//Show s-visible elements
-.s-monitor.s-visible {
-	opacity: 1;
-	@include transform(scale, 1);
-}
-.progressbar.s-monitor.s-visible .progressbar-progress .progressbar-tooltip {
-	opacity: 1;
-}
-
-
-// Shame to the Maxx 
-footer .widget-tweets-tweet-content {
-	height: auto !important;
-	overflow: visible;
-
-	@include media(to lap) {
-		height: auto !important;
-		overflow: visible;
-	}
-}
-
-.twitter-footer {
-	@include media(to lap) {
-	}
-}
-
-// Media elements
-.mejs-container {
-	margin-bottom: 0;
-	background: $grayDarkest;
-
-	.mejs-controls {
-		background: $grayDarker;
-		@include border-radius(0);
-
-		div {
-			background: none;
-		}
-
-		div.mejs-horizontal-volume-slider {
-			width: 60px;
-		}
-	}
-
-  .me-cannotplay span {
-    white-space: nowrap;
-  }
-
-	.mejs-time-rail .mejs-time-total,
-	.mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
-		background: $grayDarkest;
-		border: 0;
-	}
-
-	.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-		height: 6px;
-	}
-
-	.mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
-	.mejs-time-rail span.mejs-time-current,
-	.mejs-time-rail span.mejs-time-loaded,
-	.mejs-time-rail span.mejs-time-buffering {
-		height: 6px;
-	}
-
-	.mejs-controls .mejs-time-rail .mejs-time-current,
-	.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-		@extend %accentBgColor;
-	}
-
-	.mejs-overlay-button {
-		background-position: 0 0;
-	}
-
-	.mejs-overlay:hover .mejs-overlay-button {
-		//background-position: 0 100px;
-	}
-}
-
-
-.header-quote-content {
-	@include rem(max-width, 1000px);
-	margin: 0 auto;
-
-	blockquote {
-		@include fs(42px);
-	}
-}
-
-.wp-smiley {
-	display: inline;
-}
-
-.sticky {
 
 }
 
-.gallery {
-  margin-left: -3px;
-  margin-right: -3px;
-  @include rem(margin-bottom, $unit !important);
+
+
+
+/* */
+.featured-image-wrapper {
+    position: relative;
 }
 
-.gallery-caption{
+/*----------------------------------------------*\
+               $SINGLE PROJECT FULL
+\*----------------------------------------------*/
 
+.featured-image{
+    position: relative;
 }
 
-.gallery-item {
-  margin-top: 0 !important;
-
-  img {
-    border: 0 !important;
-  }
-}
-
-.alignright {
-
-}
-
-.alignleft {
-
-}
-
-.aligncenter {
-
-}
-
-.page-header-video-wrap { 
-	@include rem(max-width, 1200px);
-	margin: 0 auto;
-} 
-
-//Portfolio Grid Fix for Firefox
-@include media(from lap) {
-
-	.block1.lap-push4 {-moz-transform: translateX(percentage(1));}
-	.block1.lap-push8 {-moz-transform: translateX(percentage(2));}
-	.block2.lap-push4 {-moz-transform: translateX(percentage(1/2));}
-	.block2.lap-push8 {-moz-transform: translateX(percentage(1));}
-
-	.block1.lap-pull4 {-moz-transform: translateX(percentage(-1));}
-	.block1.lap-pull8 {-moz-transform: translateX(percentage(-2));}
-	.block2.lap-pull4 {-moz-transform: translateX(percentage(-1/2));}
-	.block2.lap-pull8 {-moz-transform: translateX(percentage(-1));}
-}
-
-//Caption text on image align left
-.alignleft .wp-caption-text  {
-	width:150px;
-	left:-165px;
-}
-.alignright .wp-caption-text {
-	position: relative;
-	left: 0;
-	width: 100%;
-	text-align: left;
-	padding-top: 5px;
-}
-
-pre {
-	max-width:600px;
-}
-
-* {
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-}
-
-.main-footer_sidebar {
-	width: 100%;
-}
-
-.wrapper-content{
-	overflow: hidden;
-}
-
-.main { 
-  position: relative; 
-}
-
-.main-page {
-  width: 100%;
-}
-
-/* Effect 2: 3D rolling links, idea from http://hakim.se/thoughts/rolling-links */
-.cl-effect-2 a {
-  -webkit-perspective: 1000px;
-  -moz-perspective: 1000px;
-  perspective: 1000px;
-}
-
-.cl-effect-2 a span {
-  position: relative;
-  display: inline-block;
-  // line-height: 3;
-  padding: 0 2em;
-  @include box-shadow(white 0 0 0 .2em inset);
-  background: $darkerAccentColor;
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-
-.csstransforms3d .cl-effect-2 a span::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  // height: 100%;
-  background: $darkerAccentColor;
-  content: attr(data-hover);
-  @include box-shadow(white 0 0 0 .2em inset);
-  -webkit-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  transition: background 0.3s;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-}
-
-.cl-effect-2 a:hover span,
-.cl-effect-2 a:focus span {
-  -webkit-transform: rotateX(90deg) translateY(-100%);
-  -moz-transform: rotateX(90deg) translateY(-100%);
-  transform: rotateX(90deg) translateY(-100%);
-
-  .ie10 & {
-    @include transform(none);
-  }
-}
-
-
-
-.csstransforms3d .cl-effect-2 a:hover span:before,
-.csstransforms3d .cl-effect-2 a:focus span:before {
-  background: $accentColor; 
-}
-
-.well {
-  @include rem(padding-top, $unit);
-  @include rem(padding-bottom, $unit);
-}
-
-.well--big {
-  @include rem(padding-top, 2*$unit);
-  @include rem(padding-bottom, 2*$unit);
-}
-
-
-@include media(from lap) {
-  .no-sticky-header .wrapper-header-small{
-    display: none;
-  }
-}
-
-.footer-author-avatar {
-  @include rem(width, 100px);
-  @include rem(padding-right, $unit);
-  @include rem(margin-bottom, $unit);
-  float: left;
-
-  + p {
-    @include rem(margin-left, 100px);
-  }
-  
-  img {
+.gallery{
     width: 100%;
-    height: auto;
-  }
+    overflow: hidden;
+    margin: 0;
+    @include rem(margin-bottom, $base-spacing-unit);
 }
 
-// @debug "done!";
+.gallery--archive {
+    margin-bottom: 0;
+}
+
+    .gallery-item{
+        display: block;
+        margin: 0 !important;
+
+        img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+.single-gallery-fullscreen {
+
+    @include media(from hand) {
+        #page, .content {
+            height: 100%;
+        }
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
+
+.gallery--fullscreen{
+
+    @include media(from hand) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+        &, .rsSlide {
+            height: 100% !important;
+        }
+    }
+
+    .gallery-item{
+
+        img{
+            @include media(from hand) {
+                @include opacity(0);
+            }
+        }
+    }
+
+    .gallery-icon{
+
+        @include media(to hand) {
+            background: none !important;
+        }
+        
+        @include media(from hand) {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: center no-repeat;            
+            @include background-size(cover); 
+        }
+    }
+}
+
+
+
+
+
+/**
+ * The zoom controls are not displayed 
+ * properly without this rule
+ */
+#gmap{
+    padding-top: 50%;
+    @include rem(max-height, 460px);
+
+    img{
+        max-width: none !important;
+    }
+}
+
+
+
+
+
+/**
+ * When it starts, the Magnific Popup pust overflow: hidden;
+ * on body, rule that already exists, but removes it on closing,
+ * making the scroll bar appear.
+ */
+html{
+    overflow: hidden !important;
+    padding-right: 0 !important;
+}

@@ -1,0 +1,69 @@
+$other-color: #464a4d;
+
+.inverse {
+  color: white;
+
+  a {
+    color: $accent-color;
+  }
+}
+
+.highlighted{
+    color: $accent-color;
+}
+
+/**
+ * A padding for the span-#
+ * Also, floats them left.
+ */
+.row-shortcode{
+    margin: 0 -3%;
+
+    div[class*='span-']{
+        padding: 0 3%;
+        float: left;
+    }
+}
+
+/**
+ * Ensure that all the links in the post's entry-content
+ * are black, that images are 100% in width,
+ * nav's are stacked vertically with no bullets,
+ * & others.
+ */
+.entry__content{
+    a{
+      color: black;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    ul{
+        @extend .nav;
+        @extend .nav--stacked;
+
+        li{
+            @include rem(padding, $half-spacing-unit/4 0);
+            font-family: "Josefin Slab", serif;
+            @include font-size(15px);
+            font-weight: bold;
+        }
+    }
+
+    h1, h2, h3{
+        color: $dark;
+    }
+
+    .social-link{
+        display: inline;
+        text-decoration: none;
+
+        i{
+          color: black;
+        }
+    }
+
+}

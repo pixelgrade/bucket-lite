@@ -1,0 +1,147 @@
+/*----------------------------------------*\
+               PORTFOLIO GRID
+\*----------------------------------------*/
+
+/* @todo:
+ * create grid-something module in layout and make .mosaic extend it
+ * deoarece pentru ca fiindca din cauza ca are cateva stiluri specifice
+ */
+.mosaic {
+    @extend .cf;
+    position: relative;
+}
+
+    .mosaic__item {
+        opacity: 0; //
+        display: none; //
+        overflow: hidden;
+        float: left;
+        @extend .span-12;
+        @extend .hand-span-6;
+        @extend .lap-span-4;
+        @extend .desk-span-3;
+    }
+
+
+    .slide-out .image__item-link {
+        -webkit-animation-duration: .6s;
+           -moz-animation-duration: .6s;
+             -o-animation-duration: .6s;
+                animation-duration: .6s;
+        -webkit-animation-name: slide-out;
+           -moz-animation-name: slide-out;
+             -o-animation-name: slide-out;
+                animation-name: slide-out;
+        -webkit-animation-timing-function: cubic-bezier(1.000, -0.600, 0.550, 0.950);
+           -moz-animation-timing-function: cubic-bezier(1.000, -0.600, 0.550, 0.950);
+             -o-animation-timing-function: cubic-bezier(1.000, -0.600, 0.550, 0.950);
+                animation-timing-function: cubic-bezier(1.000, -0.600, 0.550, 0.950);
+        @include transform(translateX(100%));
+    }
+
+    .slide-in .image__item-link {
+        -webkit-animation-duration: .6s;
+           -moz-animation-duration: .6s;
+             -o-animation-duration: .6s;
+                animation-duration: .6s;
+        -webkit-animation-name: slide-in;
+           -moz-animation-name: slide-in;
+             -o-animation-name: slide-in;
+                animation-name: slide-in;
+        -webkit-animation-timing-function: cubic-bezier(0.445, 0.050, 0.000, 1.650);
+           -moz-animation-timing-function: cubic-bezier(0.445, 0.050, 0.000, 1.650);
+             -o-animation-timing-function: cubic-bezier(0.445, 0.050, 0.000, 1.650);
+                animation-timing-function: cubic-bezier(0.445, 0.050, 0.000, 1.650);
+        @include transform(none);
+    }
+
+    @-webkit-keyframes slide-out {
+        0% {-webkit-transform: none;}
+        100% {-webkit-transform: translateX(100%);}
+    }
+
+    @-moz-keyframes slide-out {
+        0% {-moz-transform: none;}
+        100% {-moz-transform: translateX(100%);}
+    }
+
+    @-o-keyframes slide-out {
+        0% {-o-transform: none;}
+        100% {-o-transform: translateX(100%);}
+    }
+
+    @keyframes slide-out {
+        0% {transform: none;}
+        100% {transform: translateX(100%);}
+    }
+
+    @-webkit-keyframes slide-in {
+        0% {-webkit-transform: translateX(-100%);}
+        100% {-webkit-transform: none;}
+    }
+
+    @-moz-keyframes slide-in {
+        0% {-moz-transform: translateX(-100%);}
+        100% {-moz-transform: none;}
+    }
+
+    @-o-keyframes slide-in {
+        0% {-o-transform: translateX(-100%);}
+        100% {-o-transform: none;}
+    }
+
+    @keyframes slide-in {
+        0% {transform: translateX(-100%);}
+        100% {transform: none;}
+    }
+
+
+
+    .image__item-wrapper {
+        position: relative;
+        padding-top: 55.25%;
+        overflow: hidden;
+
+        img { //
+            display: block;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            @include backface-visibility(hidden);
+            @include perspective(1000);
+            @include transition(opacity .3s ease-in-out);
+        }
+    }
+
+    // ensure hover doesn't occur on touch devices
+    .no-touch .image__image-wrapper img:hover {
+        @include opacity(0.2);
+    }
+
+    .js--is-loaded img {
+        opacity: 1;
+    }
+
+
+
+
+
+/*--------------------------------*\
+               FILTER
+\*--------------------------------*/
+
+/*ul*/.mosaic__filter {
+    @extend .nav;
+    @extend .nav--stacked;
+    @extend .text--right;
+    cursor: pointer;
+
+    .filter {
+
+        &.active {
+            color: $accent-color;
+        }
+    }
+}

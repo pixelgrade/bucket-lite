@@ -1,30 +1,22 @@
-.widget_archive, .widget_categories, .widget_tag_cloud, .widget_pages, .widget_nav_menu {
+/*----------------------------------------*\
+*   $CATEGORIES WIDGET
+\*----------------------------------------*/
+.widget_categories{
+    ul{
+        @extend .nav--stacked;
 
-	ul {
-	  @extend %menu;
-	  @extend %clearfix;
-	  overflow: hidden;		
-	}
+        li{
+            width: 100%;
+            @include rem(margin-bottom, $half-spacing-unit/2);
+        }
+    }
 
-	li {
-	  margin-bottom: -1px;
-	  border-bottom: 1px solid #555;
-		
-		@include media(from desk) {
-			width: 50%;
-			float: left;
-		}
-
-		ul {
-			display: none;
-		}
-	}
-
-	a {
-	  text-decoration: none;
-	  color: $grayLightest;
-	  @include rem(line-height, 36px);	
-	  font-size: inherit !important;
-	}
-
+    a{
+        display: inline !important;
+        @include rem(margin-right, $half-spacing-unit/2);
+        text-decoration: none;
+    }
 }
+
+
+
