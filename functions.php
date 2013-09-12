@@ -26,6 +26,20 @@
 	include $themecallbackpath.'content-filters'.EXT;
 
 
+	// Pagination Formatter
+	// --------------------
+
+	include $themecallbackpath.'pagination-formatter'.EXT;
+
+
+	// Cleanup
+	// -------
+
+	// @todo CLEANUP remove unsorted functions
+
+	include $themecallbackpath.'unsorted'.EXT;
+
+
 	// Theme specific settings
 	// -----------------------
 

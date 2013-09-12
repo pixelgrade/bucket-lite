@@ -70,7 +70,7 @@ if (wpgrade::option('blog_header_image')) {
 			<?php endwhile; ?>
 			    <?php wp_reset_postdata(); ?>
 			    <div class="content-wrap">
-			        <?php wpgrade_pagination(); ?>
+			        <?php wpgrade::pagination(); ?>
 			    </div>
 			<?php else:
 				get_template_part( 'no-results', 'index' );

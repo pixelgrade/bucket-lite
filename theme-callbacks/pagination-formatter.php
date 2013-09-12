@@ -23,6 +23,8 @@
 	 */
 	function wpgrade_callback_pagination_formatter($links, $conf) {
 
+		return '[pagination placeholder]';
+
 		// @todo HIGH complete work....
 
 		$pager_links = array();

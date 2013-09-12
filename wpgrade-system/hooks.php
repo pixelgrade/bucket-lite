@@ -95,7 +95,7 @@
 	function wpgrade_callbacks_html5_shim() {
 		global $is_IE;
 		if ($is_IE) {
-			include include wpgrade::themefilepath('wpgrade-partials/ie-shim'.EXT);
+			include wpgrade::themefilepath('wpgrade-partials/ie-shim'.EXT);
 		}
 	}
 
@@ -107,7 +107,7 @@
 	 */
 	function wpgrade_callbacks_admin_head_tweaks() {
 		// @andreilupu shouldn't this be in the plugin itself?
-		include include wpgrade::themefilepath('wpgrade-partials/admin-head-tweaks'.EXT);
+		include wpgrade::themefilepath('wpgrade-partials/admin-head-tweaks'.EXT);
 	}
 
 	add_action('admin_head', 'wpgrade_callbacks_admin_head_tweaks');

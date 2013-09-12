@@ -126,12 +126,18 @@ class WPGradePaginationFormatter {
 		# we're filling in prev_text and next_text seperatly to avoid
 		# requesting the translation when not required
 
-		if ($conf['prev_text']) {
+		if (empty($conf['prev_text'])) {
 			$conf['prev_text'] = __('« Previous');
+		}
+		else { // exists; translate
+			$conf['prev_text'] = __($conf['prev_text'], wpgrade::textdomain());
 		}
 
 		if ($conf['next_text']) {
 			$conf['next_text'] = __('Next »');
+		}
+		else { // exists; translate
+			$conf['next_text'] = __($conf['next_text'], wpgrade::textdomain());
 		}
 
 		// is the pager sorted?
@@ -161,6 +167,9 @@ class WPGradePaginationFormatter {
 
 		if ($conf['formatter'] !== null) {
 			return call_user_func($conf['formatter'], $links, $conf);
+		}
+		else { // formatter === null
+			return inplode('', $links);
 		}
 	}
 

@@ -102,7 +102,7 @@ class wpgrade_social_links_widget extends WP_Widget {
 					</li>
 				<?php endif; endforeach ?>
 			</ul>
-		<?php endif; 
+		<?php endif;
 		echo $after_widget;
 	}
 
@@ -123,7 +123,7 @@ class wpgrade_social_links_widget extends WP_Widget {
 }
 
 class wpgrade_dribbble_widget extends WP_Widget {
-	
+
 	public function __construct()
 	{
 		parent::__construct( 'wpgrade_dribbble_widget', __( wpgrade::themename() .' Dribbble Widget',wpgrade::textdomain()), array('description' => __('Display Dribbble images in your sidebar or footer', wpgrade::textdomain())) );
@@ -147,13 +147,13 @@ class wpgrade_dribbble_widget extends WP_Widget {
 
 		    $my_shots = $dribbble->getPlayerShots($username, 0, $count);
 			// $my_shots = array_slice( $my_shots, 0, $count );
-			
+
 		    echo '<ul class="wpgrade-dribbble-items">';
-		    
+
 		    foreach ($my_shots->shots as $shot) {
 		        echo '<li class="wpgrade-dribbble-item"><a class="wpgrade-dribbble-link" href="' . $shot->url . '"><img src="' . $shot->image_teaser_url . '" alt="' . $shot->title . '"></a></li>';
 		    }
-			
+
 		    echo '</ul>';
 		}
 		catch (DribbbleException $e) {
@@ -162,7 +162,7 @@ class wpgrade_dribbble_widget extends WP_Widget {
 
 		echo $after_widget;
 	}
-	
+
 	/**
 	 * Validate and update widget options.
 	 */
@@ -197,7 +197,7 @@ class wpgrade_dribbble_widget extends WP_Widget {
 }
 
 class wpgrade_instagram_widget extends WP_Widget {
-	
+
 	public function __construct()
 	{
 		parent::__construct( 'wpgrade_instagram_widget', __( wpgrade::themename() .' Instagram Widget',wpgrade::textdomain()), array('description' => __('Display Instagram images in your sidebar or footer', wpgrade::textdomain())) );
@@ -207,8 +207,8 @@ class wpgrade_instagram_widget extends WP_Widget {
 		extract( $args );
 		$title 		= apply_filters('widget_title', $instance['title']);
 		$username 	= $instance['username'];
-		
-		wp_register_script( 'instagram_photostream', WPGRADE_SCRIPT_URL."instagram_photostream_widget.js", array('jquery'), WPGRADE_VERSION, true );
+
+		wp_register_script( 'instagram_photostream', WPGRADE_SCRIPT_URL."instagram_photostream_widget.js", array('jquery'), wpgrade::themeversion(), true );
         wp_enqueue_script( 'instagram_photostream' );
 
 		echo $before_widget;
@@ -216,7 +216,7 @@ class wpgrade_instagram_widget extends WP_Widget {
 
 		//limit the number of images
 		$count = isset( $args['count'] ) ? absint( $args['count'] ) : 8;
-		
+
 		$unique_id =  $username . $count ;
 		$unique_id = preg_replace("/[^A-Za-z0-9]/", '', $unique_id);
 		$html = '<ul id="' . $unique_id  .'" class="wpgrade-instagram-items"></ul>';
@@ -227,7 +227,7 @@ class wpgrade_instagram_widget extends WP_Widget {
 
 		echo $after_widget;
 	}
-	
+
 	/**
 	 * Validate and update widget options.
 	 */
@@ -277,7 +277,7 @@ class wpgrade_contact_widget extends WP_Widget {
 
         echo $before_widget;
         if ( $title ) echo $before_title . $title . $after_title;
-		
+
         $contactinfo = array();
         $contactinfo['address'] = wpgrade::option('contact_address');
         $contactinfo['phone'] = wpgrade::option('contact_phone');
@@ -370,7 +370,7 @@ add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
  * Display the Latest Posts Slider
  */
 class wpgrade_posts_slider_widget extends WP_Widget {
-	
+
 	public function __construct()
 	{
 		parent::__construct( 'wpgrade_posts_slider_widget', __(wpgrade::themename().' Latest Posts Slider',wpgrade::textdomain()), array('description' => __('Display the latest blog posts in your sidebar or footer', wpgrade::textdomain())) );
@@ -412,7 +412,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                 <h4 class="latest-posts-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                 <div class="latest-posts-excerpt">
                   <p>
-                    <?php 
+                    <?php
                       // $excerpt = get_the_excerpt();
                       $excerpt = substr(get_the_excerpt(), 0, 160);
                       echo $excerpt.'&hellip;';
@@ -426,7 +426,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 			</div>
 		<?php endif;
 		echo $after_widget;
-		
+
 		wp_reset_query();
 	}
 
@@ -516,7 +516,7 @@ class wpgrade_flickr_widget extends WP_Widget
 		// do some caching to prevent Flickr from banning us
 		$transient_key = md5( 'wpgrade-flickr-cache-' . print_r( $args, true ) );
 		$cached = get_transient( $transient_key );
-		
+
 		//if there is a cached version use that one
 		if ( $cached )
 		{
@@ -605,7 +605,7 @@ class wpgrade_flickr_widget extends WP_Widget
 		{
 			return false;
 		}
-		
+
 		$body = wp_remote_retrieve_body( $response );
 		$body = preg_replace( "#\\\\'#", "\\\\\\'", $body );
  		$obj = json_decode( $body );
@@ -613,7 +613,7 @@ class wpgrade_flickr_widget extends WP_Widget
 		return $obj ? $obj->items : false;
 
 	}
-	
+
 	/**
 	 * Modify the url to get a new size of the image
 	 */
@@ -630,12 +630,12 @@ class wpgrade_flickr_widget extends WP_Widget
 		  case 'small': $suffix = '_m.';  break;
 		  case 'm640': $suffix = '_z.';  break;
 		  case 'm800': $suffix = '_c.';  break;
-		  case 's320': $suffix = '_n.';  break; 
-		  case 's150': $suffix = '_q.';  break;           
+		  case 's320': $suffix = '_n.';  break;
+		  case 's150': $suffix = '_q.';  break;
 		  case 'large': $suffix = '_b.';  break;
 		  default:  $suffix = '.';  break; // Medium
 		}
-		
+
 		// replace the old size marker with the needed one
 		$url_array[] =  preg_replace('/(_(s|t|c|n|q|m|b|z))?\./i', $suffix, $photo);
 		return implode('/', $url_array);
@@ -728,7 +728,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 				      <div class="tweet_block">
                 <div class="widget-tweets-tweet-content"><?php echo $this->get_parsed_tweet($result); ?></div>
                     <?php
-                    echo 
+                    echo
                     	'<div class="twitter-tweet-meta">' .
                         '<span class="twitter-screenname">' . ucwords($config['screenname']) . '</span>' .
                         '<span class="twitter-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>' .
@@ -782,7 +782,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 	    </p>
     <?php
     }
-	
+
 	function get_parsed_tweet ($tweet) {
 		// check if any entites exist and if so, replace then with hyperlinked versions
 		$tweet_text = $tweet['text'];
@@ -809,9 +809,9 @@ class wpgrade_twitter_widget extends WP_Widget {
 			include_once('vendor/twitter-api/Autolink.php');
 			$autolinker = new Twitter_Autolink($tweet_text);
 
-			$tweet_text = $autolinker->addLinks(); 
+			$tweet_text = $autolinker->addLinks();
 		}
-		
+
 		return $tweet_text;
 	}
 }
@@ -826,9 +826,9 @@ function wpgrade_convert_twitter_date( $time ) {
  * Format timestamp into relative date, with proper i18n
  */
 function gbs_relative_time( $timestamp ){
-                     
+
 	$difference = current_time( 'timestamp' ) - $timestamp;
-	
+
 	if ( $difference >= 60*60*24*365 ){        // if more than a year ago
 		$int = intval( $difference / ( 60*60*24*365 ) );
 		$r = sprintf( _n( '%d year ago', '%d years ago', $int, wpgrade::textdomain() ), $int );

@@ -217,6 +217,33 @@ class wpgrade {
 		return ucfirst($config['name']);
 	}
 
+	/** @var WP_Theme */
+	protected static $theme_data = null;
+
+	/**
+	 * @return WP_Theme
+	 */
+	static function themedata() {
+		if (self::$theme_data === null) {
+			if (is_child_theme()) {
+				$theme_name = get_template();
+				self::$theme_data = wp_get_theme($theme_name);
+			}
+			else {
+				self::$theme_data = wp_get_theme();
+			}
+		}
+
+		return self::$theme_data;
+	}
+
+	/**
+	 * @return string
+	 */
+	static function themeversion() {
+		return wpgrade::themedata()->Version;
+	}
+
 	/**
 	 * Reads theme configuration and returns resolved classes.
 	 *
@@ -260,10 +287,6 @@ class wpgrade {
 		return get_template_directory_uri().'/wpgrade-content/';
 	}
 
-
-	// Helpers
-	// ------------------------------------------------------------------------
-
 	/**
 	 * @return string
 	 */
@@ -276,6 +299,62 @@ class wpgrade {
 		$pager = new WPGradePaginationFormatter($query);
 
 		return $pager->render();
+	}
+
+
+	// Helpers
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Hirarchical array merge. Will always return an array.
+	 *
+	 * @param  ... arrays
+	 * @return array
+	 */
+	static function merge() {
+		$base = array();
+		$args = func_get_args();
+
+		foreach ($args as $arg) {
+			static::array_merge($base, $arg);
+		}
+
+		return $base;
+	}
+
+	/**
+	 * Overwrites base array with overwrite array.
+	 *
+	 * @param array base
+	 * @param array overwrite
+	 */
+	protected static function array_merge(array &$base, array $overwrite) {
+		foreach ($overwrite as $key => &$value)
+		{
+			if (is_int($key))
+			{
+				// add only if it doesn't exist
+				if ( ! in_array($overwrite[$key], $base))
+				{
+					$base[] = $overwrite[$key];
+				}
+			}
+			else if (is_array($value))
+			{
+				if (isset($base[$key]) && is_array($base[$key]))
+				{
+					array_merge($base[$key], $value);
+				}
+				else # does not exist or it's a non-array
+				{
+					$base[$key] = $value;
+				}
+			}
+			else # not an array and not numeric key
+			{
+				$base[$key] = $value;
+			}
+		}
 	}
 
 	/**

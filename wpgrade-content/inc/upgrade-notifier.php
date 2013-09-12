@@ -56,7 +56,7 @@ add_action('admin_menu', 'update_notifier_menu');
 function wpGrade_check_if_new_version(){
 	$xml = get_latest_theme_version(NOTIFIER_CACHE_INTERVAL); // Get the latest remote XML file on our server
 
-	if (version_compare($xml->latest, WPGRADE_VERSION) == 1){
+	if (version_compare($xml->latest, wpgrade::themeversion()) == 1){
 		return true;
 	} else {
 		return false;

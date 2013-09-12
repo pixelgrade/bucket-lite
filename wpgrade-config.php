@@ -226,8 +226,8 @@
 				'prev_next' => true,
 
 				// pagination text
-				'prev_text' => __('Newer posts', wpgrade::textdomain()),
-				'next_text' => __('Older posts', wpgrade::textdomain()),
+				'prev_text' => 'Newer posts',
+				'next_text' => 'Older posts',
 
 				// are the terms used for paging relative to the sort order?
 				// ie. older/newer instead of sorting agnostic previous/next

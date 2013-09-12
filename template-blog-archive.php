@@ -109,7 +109,7 @@
 			<div class="main main-content main-content-archive" role="main">
 
 				<div class="content-wrap">
-					<?php wpgrade_pagination(); ?>
+					<?php wpgrade::pagination(); ?>
 				</div>
 
 				<?php if (have_posts()): ?>
@@ -119,7 +119,7 @@
 					<?php wp_reset_postdata(); ?>
 
 					<div class="content-wrap">
-						<?php wpgrade_pagination(); ?>
+						<?php wpgrade::pagination(); ?>
 					</div>
 
 				<?php else: # no posts ?>
