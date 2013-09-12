@@ -1,304 +1,268 @@
-%menu {
-	list-style: none;
-	padding: 0;
+/*------------------------------------*\
+               NAVIGATION
+\*------------------------------------*/
+
+/*ul*/.site-navigation {
+    @extend .nav;
+    @extend .nav--stacked;
 }
 
-%menu-horizontal {
-	@extend %clearfix;
+/*ul*/.site-navigation--main {
+    text-transform: uppercase;
+    overflow: hidden;
 
-	& > li {
-		display: inline-block;
-		float: left;
-	}
+    @include media(from hand) {
+        margin-top: -1px;
+        border-top: 1px solid #333638;
+        @include rem(margin-left, -1 * $base-spacing-unit);
+    }
 }
 
-.header-transparent .site-mainmenu > li {
-	@extend %easeInOutQuad;
+    /*li*/.menu-item {
+        overflow: hidden;
+
+        a {
+            color: white;
+        }
+    }
+
+    /*li*/.menu-item--main {
+        border-bottom: 1px solid #333638;
+        margin-top: -1px;
+        @include transition(all 300ms 300ms ease-in-out);
+        opacity: 0;
+        right: -20%;
+
+        &.js--is-loaded {
+            opacity: 1;
+            right: 0;
+        }
+
+        a {
+            @include rem(padding, $half-spacing-unit $base-spacing-unit); 
+        }
+    }
+
+
+    /*li*/.menu-item--parent {
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            @include rem(top, $base-spacing-unit);
+            @include rem(right, $half-spacing-unit);
+            @include rem(border, 5px solid transparent);
+            @include rem(margin-top, -3px);
+            border-top-color: #4d4d4d;
+            pointer-events: none;
+        }
+
+        & > ul {
+            display: none;
+        }
+
+        &:hover {
+
+            & > a {
+                color: $accent-color;
+            }
+
+            &:after {
+                border-top-color: $accent-color;
+            }
+        }
+
+        &.js--is-active {
+
+            &:after {
+                border-top-color: transparent;
+                border-bottom-color: #4d4d4d;
+                @include rem(margin-top, -8px);
+            }
+
+            &:hover:after {
+                border-bottom-color: $accent-color;
+            }
+
+            & > ul {
+                display: block;
+            }
+        }
+    }
+
+
+
+/*-----------------------------------*\
+               SUB MENUS
+\*-----------------------------------*/
+
+/*ul*/.site-navigation__sub-menu {
+    @extend .nav;
+    @extend .nav--stacked;
+    font-style: italic;
+    // display: none;
 }
 
-.site-mainmenu {
-	@extend %unstyled;
-	@extend %menu;
-	@extend %menu-horizontal;
-	margin: 0;
-	padding:0;
-	float: left;
+    /*li*/.menu-item--sub-menu-item {
+        color: #a7a7a7;
+        font-style: italic;
+        @include rem(padding, 0 $half-spacing-unit $half-spacing-unit/2);
 
-	a {
-		color: white;
-		font-weight: bold;
-		letter-spacing: 0.1em;
-		border: 0;
-		text-transform: capitalize;
+        a {
+            color: #a7a7a7;
+            @include rem(padding, 0 $base-spacing-unit); 
+        }
+    }
 
-		& {
-			@include transition(all .3s);
-		}
-	}
-
-	li:hover {
-		@include media(from lap) {
-			background-color: $accentColor;
-		}
-	}
-
-	& > li {
-		position: relative;
-
-		&.menu-parent-item {
-
-			& > a {
-				position: relative;
-				padding-right: 45px;
-
-				&:hover {
-					&:after {
-						@include media(to lap){
-							@include transform(rotate(0deg));
-						}
-						top:55%;
-						@include transform(rotate(225deg));
-					}
-				}
-
-				.lt-ie9 & {
-					position: static;
-				}
-
-				&:after {
-					content: "";
-					display: block;
-					width: 4px;
-					height: 4px;
-					border: 2px solid transparent;
-					border-bottom-color: white;
-					border-right-color: white;
-					position: absolute;
-					top: 50%;
-					right: 25px;
-					margin-top: -7px;
-
-					@include media(from lap){
-						@include transition(all 0.2s);
-						@include transform(rotate(45deg));
-					}
-
-					.ie9 &, .ie10 &{
-						top: 40px;
-					}
-				}
-			}
-		}
-
-		& > a {
-			display: table-cell;
-			@include rem(padding-left, 22px);
-			@include rem(padding-right, 22px);
-			vertical-align: middle;
-			text-align: center;
-			font-weight: normal;
-
-			span {
-				display: block;
-				overflow: hidden;
-				// padding:4px 0;
-				// @include rem(padding-left, 4px);
-				@include rem(padding-bottom, 4px);
-			}
-
-			b {
-				position: relative;
-				display: inline-block;
-				-webkit-transition: -webkit-transform 0.3s;
-				-moz-transition: -moz-transform 0.3s;
-				transition: transform 0.3s;
-				text-align: center;
-				font-weight: normal;
-			}
-
-			b::before {
-				position: absolute;
-				top: 100%;
-				content: attr(data-hover);
-				-webkit-transform: translate3d(0,0,0);
-				-moz-transform: translate3d(0,0,0);
-				transform: translate3d(0,0,0);
-			}
-
-			&:hover b,
-			&:focus b {
-
-				@include media(from lap){
-					-webkit-transform: translateY(-100%);
-					-moz-transform: translateY(-100%);
-					transform: translateY(-100%);
-				}
-			}
-
-			@include media(to 900px) {
-				@include rem(padding-left, 12px);
-				@include rem(padding-right, 12px);
-			}
-
-			&:hover {
-				text-decoration: none;
-			}
-
-			.lt-ie8 & {
-				height: auto;
-			}
-		}
-
-		// Styling menu items that are the current page
-		&.current-menu-parent > a,
-		&.current_page_item > a,
-		&.current-menu-item > a,
-		.current-menu-item > a,
-		&.current_page_parent > a {  
-			font-weight:bold;
-
-			span {
-				position: relative;
-
-				@include media(to lap) {
-					color: white;
-				}
-
-				@include media(from lap) {
-					border-bottom: 1px solid #fff;
-				}
-			}
-		}
-
-		&:hover {
-
-			& > ul.sub-menu, & > ul.sub-menu li:hover > ul.sub-menu  {
-				overflow: visible;
-				opacity: 1;
-				margin-top: 0;
-				pointer-events: auto;
-
-			  .lt-ie9 &, .ie9 &, .ie10 & {
-  				display: block;
-  			}
-
-				@include media(0 lap) { 
-					display:block;
-				}
-			}
-
-			& > ul.sub-menu {
-				margin-top: - 4px;
-			}
-		}
- 	}
+/*ul*/.site-social-links {
+    @extend .nav;
 }
 
-.site-mainmenu li:hover > .main-menu-item{
-  background-color: $accentColor;
+
+
+
+
+
+/*-------------------------------------------*\
+               MOBILE NAVIGATION
+\*-------------------------------------------*/
+
+
+// @include media(to hand) {
+    
+//     .navigation--is-visible {
+
+//         &, body, #page, .header, .header__inner-wrap {
+//             height: 100%;
+//         }
+//     }
+
+//     .site-header {
+//         height: 100%; 
+//     }
+// }
+
+// hide navigation on small devices
+
+.site-navigation__trigger {
+    display: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    @include transition(color 1s ease-in-out);
+
+    &:active, &:focus {
+        color: white;
+        @include transition(color .1s ease-in-out);
+    }
+
+    @include media(to hand) {
+        display: block;
+        @include rem(width, 3*$base-spacing-unit);
+        @include rem(height, 3*$base-spacing-unit);
+        position: absolute;
+        top: 0; right: 0;
+        @include font-size(42px);
+        text-align: center;
+        cursor: pointer;
+        color: #807f7d;
+    }
+
+    i {
+        display: block;
+        position: absolute;
+        @include rem(top, $half-spacing-unit + 2px);
+        @include rem(left, $half-spacing-unit);
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+        overflow: hidden;
+    } 
+
+    .icon-reorder {
+        @include transition(opacity .2s, transform .3s);
+    }
+
+    .icon-remove {
+        @include transition(opacity .2s, transform .4s);
+        @include transform(rotate(45deg));
+        @include opacity(0);
+    }
 }
 
-.sub-menu {
-	  @extend %menu;
-	  @include box-shadow(rgba(black, .25) 1px 2px 3px);
+.navigation--is-visible {
 
-	  li:first-child{
-	    border-top: 4px solid $accentColor;
-	  }
+    .icon-remove {
+        @include transform(none);
+        @include opacity(1);
+    }
 
-	li a{
-	  @include rem(width, 9*$unit);
-	  @include fs(14px);
-	  @include rem(padding, 0.5*$unit 3*$unit 0.5*$unit 1*$unit);
-	  font-family: "Lato", Arial, sans-serif;
-
-	  display: block; 
-	  color: black;
-	  background-color: white;
-	  text-transform: capitalize;
-	  text-decoration: none;
-	}  
-
-	li:hover > a {
-	  color: $accentColor;
-	}	
+    .icon-reorder {
+        @include transform(rotate(-45deg));
+        @include opacity(0);
+    }
 }
 
-nav ul {
-  position: relative;
-  display: inline-table;
-}
+@include media(to hand) {
 
-nav ul:after {
-  content: ""; 
-  clear: both; 
-  display: block;
-}
+    #page {
+        overflow: hidden;
+        position: relative; 
+    }
 
-nav ul ul {
-  position: absolute;
-}
+    .menu-item--main a {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-nav ul ul li {
-  float: none; 
-  position: relative;
+    .menu-item--parent:after {
+        right: 0;
+    }
 
-  &.to-the-left > ul {
-  	left: auto;
-  	right: 100%;
-  }
-}
+    .menu-item--sub-menu-item a {
+        @include rem(padding, 0 $half-spacing-unit);
+    }
 
-nav ul ul ul {
-  position: absolute; 
-  left: 100%;
-  top: -4px;
-}
+    /**
+    *
+    * Transitioning the navigation on mobile
+    *
+    **/
+    .wrapper {
+        @include transition(left .25s ease-in-out);
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
 
-nav ul li:hover > ul{
-  display: block;
-}
+        .navigation--is-visible & {
+            left: -70%;
+        }
 
-.sub-menu {
-  @include opacity(0);
-  pointer-events: none;
+        @include media(from hand) {
+            left: 0 !important;
+            @include transform(none !important);
+            @include transition(none !important);
+        }
+    }
 
-  .lt-ie9 &, .ie9 &, .ie10 & {
-  	display: none;
-  }
-}
+    .csstransforms3d {
 
-.menu-footer_social {
-	@extend %menu;
-	margin: 0;
-	text-align: center;
-	@include rem(margin-bottom, $unit);
+        .wrapper {
+            left: 0 !important;
+            @include transition(transform .25s ease-in-out);
+        }
+    }
 
-	@include media(from lap) {
-		text-align: right;
-		margin-bottom: 0;
-	}
+    .csstransforms.navigation--is-visible {
 
-	& > li {
-		display: inline-block;
-		@include rem(margin-left, $unit/2);
+        .wrapper {
+            @include transform(translateX(-75%));
+        }   
+    }
 
-		&:first-child {
-			margin-left: 0;
-		}
+    .csstransforms3d.navigation--is-visible {
 
-		& > a {
-			display: block;
-			border: 0;
-			color: $gray;
-
-			&:hover {
-				color: $grayLighter;
-			}
-
-			i {
-				// @include fs(21px);
-			}
-		}
-	}	
+        .wrapper {
+            @include transform(translate3d(-75%,0,0));
+        }
+    }
 }

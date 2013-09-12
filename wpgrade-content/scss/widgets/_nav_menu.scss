@@ -1,0 +1,12 @@
+/*----------------------------------------*\
+*   $WIDGET NAV MENU
+\*----------------------------------------*/
+.widget_nav_menu{
+    .menu-item-object-page{
+        @include rem(margin-bottom, $half-spacing-unit/2);
+    }
+}
+
+
+
+

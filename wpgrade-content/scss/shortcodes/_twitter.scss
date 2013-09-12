@@ -1,27 +1,32 @@
-.twitter-shortcode-tweets_container{
-  @include rem(margin, $unit/2 0);
-  overflow: hidden;
+/*----------------------------------------*\
+*   $TWITTER WDIGET
+\*----------------------------------------*/
+.widget-tweets__list{
+    width: 100%;
 }
+    .widget-tweets__tweet{
+        display: block;
+        width: 100%;
+    }
 
-.twitter-shortcode-screenname{
-  display: none;
-}
+    .tweet__content a{
+        color: $gray;
+    }
 
-.twitter-shortcode-username,
-.twitter-shortcode-tweet-date{
-  @include rem(padding, $unit/2 0);
-}
+    .tweet__meta{
+        text-align: right;
+        font-family: "Josefin Slab", serif;
+        @include font-size(15px);
+    }
 
-.twitter-shortcode-username a{
-  color: black;
-  font-weight: bold;
-}
+        .tweet__meta-username a{
+            color: $gray;
+            text-decoration: none;
+        }
 
-.twitter-shortcode-tweet-date{
-  color: $grayLight;
-
-  &:before{
-    content: "-";
-    margin: 0 3px;
-  }
-}
+        .tweet__meta-date{
+            &:before{
+                content: "\2014";
+                @include rem(margin, 0 5px);
+            }
+        }

@@ -1,286 +1,33 @@
-.page-template-template-contact-php div.wpcf7 {
-	@include rem(margin-top, $unit/2);
-}
-
-.wpcf7 {
-	input[type="text"],
-	input[type="email"],
-	input[type="password"],
-	input:not([type]),
-	textarea,
-	.wpcf7-radio {
-		@extend %easeInOutQuad;
-		@include rem(padding, $unit/2);
-		@include border-radius(5px);
-		@include fs(14px);
-		font-family: "Open Sans";
-		border: 0;
-		background: $grayLightest;
-		&:focus {
-			outline: none;
-		}
-	}
-
-	input[type="text"],
-	input[type="email"]
-	{
-		@include rem(margin-top, $unit/4);
-		width: 100%;
-		display: inline-block;
-		@extend %clearfix;			
-	}
-
-	@include placeholder() {
-		color: $grayDark;
-		font-weight: 300;
-		letter-spacing: 0.125em;
-	}
-
-	textarea {
-		@include rem(min-height, 4.5*$unit);
-		width: 100%;
-		border-bottom: 0;
-	}
-
-	input[type="submit"]{
-		@include fs(14px);
-		@include rem(margin, $unit/2 0);
-		font-family: "Lato";
-		font-weight: bold;
-		letter-spacing: 1px;
-		color: $accentColor;
-		background: none;
-		border: none;
-		padding-right: 0;
-		float: right;
-	}
-}
-
-.lt-ie9 {
-
-	.wpcf7 {
-
-		input,
-		textarea,
-		.wpcf7-radio {
-			font-size: 21px !important;
-			line-height: 1.5;
-			color: black !important;
-			padding: 0 0.5em !important;
-			margin: 0;
-		}
-
-		input {
-			height: 40px !important;
-		}
-
-		input,
-		textarea {
-			border: 1px solid #ccc !important;
-			background: #eee !important;
-		}
-	}
-}
-
-.wpcf7-arrow {
-	float: right;
-	pointer-events: none;
-
-	.wpcf7-submit {
-		@include fs(14px);
-		font-family: "Lato";
-		font-weight: bold;
-		letter-spacing: 1px;
-		color: $accentColor;
-		background: none;
-		border: none;
-		padding-right: 0;
-	}
-}
-
-.lt-ie9 .wpcf7-arrow {
-	display: block;
-	float: left;
-
-	&:before, &:after {
-		display: none;
-	}
-
-	.wpcf7-submit {
-		@include fs(14px);
-		font-family: "Lato";
-		font-weight: bold;
-		letter-spacing: 1px;
-		color: $accentColor;
-		background: none;
-		border: none;
-		padding-right: 0;
-	}
-}
-
-.wpcf7-form{
-	@extend %clearfix;
-
-	label{
-		display: none;
-
-		.lt-ie9 &{
-			display: inline;
-			width: 50%;
-			float: left;
-			@include rem(margin, $unit/2 0);
-		}
-	}	
-	.your-email, .your-name, .your-message{
-		display: block;
-		float: left;
-	}
-
-	.your-email, .your-name{
-		
-		width: 50%;		
-	}
-
-	.your-email{
-		@include rem(padding-left, 0.2*$unit);
-	}	
-
-	.your-name{
-		@include rem(padding-right, 0.2*$unit);
-	}
-
-	.your-message{
-		@include rem(margin-top, $unit/2);
-		width: 100%;
-	}
-}
-
-//Radio Buttons Styling
-p.radio {
-	& {
-		position:relative;
-	}
-	& > label {
-		color: $grayDark;
-		@include fs(33px);
-		font-weight:300;
-		letter-spacing: 0.125em;
-		position:absolute;
-		top:19px;
-		left:0;
-	}
-	.wpcf7-radio {
-		& {
-			float:left;
-			@include rem(padding-left, 80px);
-		}
-		.wpcf7-list-item {
-			position:relative;
-			float:right;
-			@include rem(margin-left, 10px);
-		}
-		.wpcf7-list-item-label {
-			& {
-				text-transform:uppercase;
-				@include fs(18px);
-				font-weight:500;
-				color:$grayLight;
-			}
-			&:hover {
-				cursor:pointer;
-				color:$accentColor;
-			}
-		}
-		//Hide the Radio Checkbox
-		input[type="radio"] {
-			display:none;
-		}
-		input[type="radio"]:checked ~ span {
-			color:$accentColor;
-			&:after {
-				content: "";
-				height: 0;
-				width: 0;
-				border: solid transparent;
-				border-width: 7px;
-				border-bottom-color: $grayLight;
-				position:absolute;
-				bottom:0px;
-				left:50%;
-			}
-		}
-	}
-
-	@include media(from 1450px) {
-		.wpcf7-radio {
-		  	.wpcf7-list-item-label {
-				@include fs(22px);
-			}
-			.wpcf7-list-item {
-				@include rem(margin-left, 20px);
-			}
-		}
-	}
-}
-
-.wpcf7-form p > .wpcf7-form-control-wrap:only-of-type{
-	float: none;
-	width: 100%;
-	padding: 0;
-}
-
-.lt-ie9 .wpcf7-form p > .wpcf7-form-control-wrap{
-	float: none;
-	width: 100%;
-	padding: 0;
-	@include rem(margin-bottom, $unit/2);	
-}
-
-body .wpcf7 {
-
-  .ajax-loader {
-    float: right;
-    @include rem(margin, 22px 110px 0 0);
-  }
-
-  div.wpcf7-response-output {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: #e74c3c;
-    @include rem(margin-bottom, $unit);
-    color: white;
-    @include rem(padding, $unit/4 $unit/2);
-    clear: both;
-
-    &.wpcf7-mail-sent-ok {
-      background: #2ecc71;
+.wpcf7{
+    p{
+        margin-bottom: 0;
     }
-  }
+}
 
-  span.wpcf7-not-valid-tip {
+.wpcf7-form-control-wrap{
     display: block;
-    left: auto;
-    top: 0;
-    right: 0;
-    border: 0;
-    background: #e74c3c;
-    color: white;
-    @include rem(padding, $unit/4 $unit/2);
+}
 
-    &:after {
-      top: 100%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-color: rgba(136, 183, 213, 0);
-      border-top-color: #e74c3c;
-      border-width: 4px;
-      @include rem(right, $unit/2);
-      margin-left: -4px;
-    }
-  }
+.wpcf7-form-control:not([type="submit"]){
+    width: 100%;
+    border: 0;
+    border-bottom: 1px dotted black;
+    font-family: "Crimson Text", serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 2.3;
+}
+
+.wpcf7-submit{
+    @extend .btn;
+    width: auto;
+    float: right;
+    @include rem(padding, $half-spacing-unit/2 $base-spacing-unit);
+    @include rem(margin-top, $base-spacing-unit);
+    border: 0;
+}
+
+.wpcf7-textarea{
+    background: url('../img/textarea-bg.png');
+    border: 0 !important;
 }

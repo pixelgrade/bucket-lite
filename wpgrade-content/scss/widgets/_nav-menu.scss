@@ -1,0 +1,16 @@
+/*----------------------------------------*\
+*   $WIDGET NAV MENU
+\*----------------------------------------*/
+.widget_nav_menu{
+    ul{
+        @extend .nav--stacked;        
+    }
+    
+    .menu-item-object-page{
+        @include rem(margin-bottom, $half-spacing-unit/2);
+    }
+}
+
+
+
+

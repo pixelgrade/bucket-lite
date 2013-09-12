@@ -1,0 +1,19 @@
+/*----------------------------------------*\
+*   $RECENT COMMENTS
+\*----------------------------------------*/
+.recentcomments{
+    @include rem(margin-bottom, $half-spacing-unit);
+
+    a{
+        font-weight: bold;
+        display: inline !important;
+    }
+
+    a:last-child{
+        display: block !important;
+    }    
+}
+
+
+
+

@@ -1,0 +1,148 @@
+/*----------------------------------------*\
+*   $RELATED PROJECTS
+\*----------------------------------------*/
+
+/**
+ *
+ <section class="related-projects_container">
+    <header class="related-projects_header">
+       <h4 class="related-projects_title">Related projects</h4>
+       <nav class="related-projects_nav">
+           <ul class="related-projects_nav-list">
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><i class="icon-arrow-left"></i>Previous</a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link">All projects</a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link">Next<i class="icon-arrow-right"></i></a></li>
+           </ul>
+       </nav>
+    </header>
+    <div class="related-projects_items-list-container">
+        <ul class="related-projects_items-list"><!--
+            --><li class="related-projects_item">
+              <a href="#" class="image__item-link">
+                <!-- portfolio image item -->
+                </a>
+            </li><!--
+            ...
+        </ul>
+    </div>
+ </section>
+ */
+
+.related-projects_container{
+    border-top: 2px solid #ededef;
+}
+
+    .related-projects_header{
+        @extend .cf;
+    }
+
+        /**
+         * Title is 50% and goes left
+         */
+
+        .related-projects_title{
+            @include media(from hand) {
+                float: left;
+            }
+            @extend .span-12;
+            @extend .hand-span-6;
+
+            @include rem(margin, $base-spacing-unit 0);
+            color: black;
+        }
+
+        /**
+         * Project navigation is 50% and goes right
+         */
+        .related-projects_nav{
+            @extend .span-12;
+            @extend .hand-span-6;
+
+            @include media(to hand) {
+                float: left;
+                display: block;
+                @include rem(margin-bottom, $base-spacing-unit);
+            }
+
+            @include media(from hand) {
+                float: left;
+                @include rem(margin, $base-spacing-unit 0);
+                text-align: right;
+            }
+        }
+  
+            .related-projects_nav-list{
+                @extend .nav;
+                margin-bottom: 0;
+            }
+
+                .related-projects_nav-link{
+                    @include rem(padding, 0 $half-spacing-unit/2);
+                    font-family: "Roboto", sans-serif;
+                    @include font-size(13px);
+                    color: $dark;
+                    text-decoration: none;
+
+                    i{
+                        @include rem(padding, 0 $half-spacing-unit/2);
+                    }
+                }
+
+    .related-projects_items-list{
+        @extend .nav;
+        @include rem(margin, 0 - $half-spacing-unit);
+    }
+
+        .related-projects_item{
+            @include rem(padding, 0 $half-spacing-unit);
+            margin-right: 0;
+            @include rem(margin-bottom, $half-spacing-unit);
+
+            @include media(to small) {
+                width: 100%;
+            }
+
+            @include media(small lap) {
+                width: 50%;
+            }            
+
+            @include media(from lap) {
+                width: 33.33333%;
+            }
+
+            /**
+             * Not enough space for project categories,
+             * hiding the folder icon
+             */
+            .image_item-cat-icon{
+                display: none !important;
+            }            
+
+
+            /**
+             * Again, not enough space, everythins is
+             * too crouded, reducing padding
+             */
+            .image_item-cell{
+                @include rem(padding, 10px);
+            }
+
+            /**
+             * When there is more than 1 category,
+             * the other ones jump on a second line.
+             * Vertically aligning bottom is for the like box.
+             */
+            .image_item-meta .grid__item{
+                vertical-align: bottom;
+            }
+
+            /**
+             * This is for obtaining a differrent image ratio
+             * from the one in the grid.
+             */
+            .image__item-wrapper{
+                padding-top: 62.25%;
+            }
+        }
+
+

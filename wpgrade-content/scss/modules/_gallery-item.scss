@@ -1,0 +1,215 @@
+/*----------------------------------------*\
+*   $GALLERY ITEM STYLING
+\*----------------------------------------*/
+
+/**
+ *
+    <div class="image__item photography">
+        <a href="#" class="image__item-link">
+            <div class="image__item-meta">
+                <div class="image_item-table">
+                    <div class="image_item-cell">
+                        <i class="icon-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image__item-wrapper">
+                <img
+                    class="js-lazy-load"
+                    src="..."
+                    data-src="..."
+                    alt="Photography"
+                />
+            </div>
+        </a>
+    </div>
+ */
+
+.image__item-link{
+    position: relative;
+    display: block;
+    width: 100%;
+    color: white;
+
+    &:hover{
+        .image__item-meta{
+            @include opacity(1);
+        }
+    }
+}
+
+.image__item-meta{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    @include media(from lap){
+        background: rgba($accent-color, 0.5);
+        @include opacity(0);
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+    }
+}
+
+.image_item-table{
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.image_item-cell{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    >i{
+        @include font-size(36px);
+    }
+}
+
+
+/*----------------------------------------*\
+*   $PORTFOLIO ITEM STYLING
+\*----------------------------------------*/
+
+/**
+ *
+    <div class="image__item photography">
+        <a href="#" class="image__item-link">
+            <div class="image__item-meta">
+                <div class="image_item-table">
+                    <div class="image_item-cell image_item-block image_item--top">
+                        <h2 class="image_item-title">New York City</h2>
+                        <span class="image_item-description">Drive by shooting</span>
+                    </div>
+                    <div class="image_item-cell image_item-block image_item--bottom">
+                        <div class="image_item-meta">
+                            <ul class="image_item-categories">
+                                <li class="image_item-category">Models</li>
+                                <li class="image_item-category">Traveling</li>
+                            </ul>
+                            <div class="image_item-like-box likes-box">
+                                <i class="icon-heart"></i>
+                                <div class="likes-text">
+                                    <span class="likes-count">3</span> likes
+                                </div>                                            
+                            </div>
+                        </div>
+                    </div>                                
+                </div>
+            </div>
+            <div class="image__item-wrapper">
+                <img
+                    class="js-lazy-load"
+                    src="..."
+                    data-src="img/medium-1.jpg"
+                    alt="Photography"
+                />
+            </div>
+        </a>
+    </div>
+ */
+
+.image_item--block{
+    display: block;
+    text-align: left;
+    color: black;
+    @include rem(padding, $base-spacing-unit);
+}
+
+.image_item-cell--top{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image_item-cell--bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+    .image_item-title{
+        margin: 0;
+        text-transform: uppercase;
+
+        @include media(to lap) {
+            @include font-size(21px);
+        }
+    }
+
+    .image_item-description{
+        font-family: "Roboto", sans-serif;
+        @include font-size(14px);
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    .image_item-meta--portfolio{
+
+        @include media(to lap) {
+            @include rem(margin-bottom, $base-spacing-unit);
+            @include rem(padding, $half-spacing-unit 0);
+            position: relative;
+            display: block;
+
+            .image_item-cell{
+                position: relative;
+                padding: 0;
+            }
+
+            .image_item-cell--top{
+                margin-bottom: $half-spacing-unit;
+            }
+        }
+    }
+
+        .image_item-categories{            
+            @extend .nav;
+            margin-bottom: 0;
+            width: 60%;
+            text-align: left;
+        }
+
+            .image_item-cat-icon{
+                @include media(to lap){
+                    display: none !important;
+                }
+            }
+
+            .image_item-category{
+                @include rem(margin-right, $half-spacing-unit/2);
+                font-family: "Roboto", sans-serif;
+                @include font-size(13px);
+                font-weight: 300;
+                text-transform: uppercase;
+
+                @include media(to lap) {
+                    @include rem(margin-right, $half-spacing-unit/3);
+                    @include font-size(12px);    
+                }
+            }
+
+        .image_item-like-box{
+            @extend .cf;
+            width: 40%;
+            text-align: right;
+
+            i, .likes-text{
+                display: inline-block;
+            }
+
+            i{
+                @include font-size(14px);
+                @include rem(margin-right, 5px);
+
+                @include media(to lap) {
+                    display: none;
+                }
+            }
+        }

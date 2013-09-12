@@ -1,98 +1,59 @@
 <?php
-    /*
-     * If the current post is protected by a password and
-     * the visitor has not yet entered the password we will
-     * return early without loading the comments.
-     */
-    if (post_password_required()) return;
+/**
+ * The template for displaying Comments.
+ *
+ * The area of the page that contains comments and the comment form.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Thirteen
+ * @since Twenty Thirteen 1.0
+ */
+
+/*
+ * If the current post is protected by a password and the visitor has not yet
+ * entered the password we will return early without loading the comments.
+ */
+if ( post_password_required() )
+	return;
 ?>
 
 <div id="comments" class="comments-area">
-    <h3 class="comments-area-title">
-		<?php if (have_comments()): ?>
-			<?php printf(_n('1 Response / Leave a comment', '%1$s Responses / Leave a comment', get_comments_number(), wpgrade::textdomain()),  number_format_i18n(get_comments_number())); ?>
-		<?php else: # no comments ?>
-			<?php echo __('Leave a comment', wpgrade::textdomain()); ?>
+
+	<?php if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'twentythirteen' ),
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			?>
+		</h2>
+
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 74,
+				) );
+			?>
+		</ol><!-- .comment-list -->
+
+		<?php
+			// Are there comments to navigate through?
+			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+		?>
+		<nav class="navigation comment-navigation" role="navigation">
+			<h1 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', 'twentythirteen' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentythirteen' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentythirteen' ) ); ?></div>
+		</nav><!-- .comment-navigation -->
+		<?php endif; // Check for comment navigation ?>
+
+		<?php if ( ! comments_open() && get_comments_number() ) : ?>
+		<p class="no-comments"><?php _e( 'Comments are closed.' , 'twentythirteen' ); ?></p>
 		<?php endif; ?>
-    </h3>
 
-    <?php
-    $commenter = wp_get_current_commenter();
-    $req = get_option( 'require_name_email' );
-    $aria_req = ( $req ? " aria-required='true'" : '' );
+	<?php endif; // have_comments() ?>
 
-    if(is_user_logged_in()){
-		$current_user = wp_get_current_user();
-        $comments_args = array(
-            // change the title of send button
-            'title_reply'=> __('', wpgrade::textdomain()),
-            // remove "Text or HTML to be displayed after the set of comment fields"
-            'comment_notes_before' => '',
-            'comment_notes_after' => '',
-            'fields' => apply_filters( 'comment_form_default_fields', array(
-                    'author_image' => '<div class="comment-author-image">'.get_avatar($current_user->ID, 90, WPGRADE_LIB_URL.'images/avatar.png',"").'</div>',
-                    'author' => '<span class="comment-form-author-wrapper">' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="' . __( 'Name', wpgrade::textdomain() ) . '"' . $aria_req . ' /></span>',
-                    'email' => '<span class="comment-form-email-wrapper">' . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', wpgrade::textdomain() ) . '" size="30"' . $aria_req . ' /></span>' ) ),
-            'id_submit' => 'comment-submit',
-            'label_submit' => __('Send message', wpgrade::textdomain()),
-            // redefine your own textarea (the comment body)
-            'comment_field' =>
-            '<span class="comment-form-message-wrapper"><textarea id="comment" name="comment" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '" rows="5" cols="100"></textarea></span>');
-    } else {
+	<?php comment_form(); ?>
 
-        $comments_args = array(
-        // change the title of send button
-        'title_reply'=> __('', wpgrade::textdomain()),
-        // remove "Text or HTML to be displayed after the set of comment fields"
-        'comment_notes_before' => '',
-        'comment_notes_after' => '',
-        'fields' => apply_filters( 'comment_form_default_fields', array(
-                'author_image' => '<div class="comment-author-image"><img src="'.WPGRADE_LIB_URL.'images/avatar.png" alt=""/></div>',
-                'author' => '<div class="form-fields"><span class="comment-form-author-wrapper">' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" placeholder="' . __( 'Name', wpgrade::textdomain() ) . '"' . $aria_req . ' /></span>',
-                'email' => '<span class="comment-form-email-wrapper">' . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" placeholder="' . __( 'Email', wpgrade::textdomain() ) . '" size="30"' . $aria_req . ' /></span>' ) ),
-        'id_submit' => 'comment-submit',
-        'label_submit' => __('Send message', wpgrade::textdomain()),
-        // redefine your own textarea (the comment body)
-        'comment_field' => '<span class="comment-form-message-wrapper"><textarea id="comment" name="comment" aria-required="true" wrap="off" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '" rows="5" cols="100"></textarea></span></div>');
-    }
-    comment_form($comments_args); ?>
-
-    <?php if ( have_comments() ) : ?>
-
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-        <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', wpgrade::textdomain() ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', wpgrade::textdomain() ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
-        </nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
-        <?php endif; // check for comment navigation ?>
-
-        <ol class="commentlist">
-            <?php
-                /* Loop through and list the comments. Tell wp_list_comments()
-                 * to use wpgrade_comment() to format the comments.
-                 * If you want to overload this in a child theme then you can
-                 * define wpgrade_comment() and that will be used instead.
-                 * See wpgrade_comment() in inc/template-tags.php for more.
-                 */
-                wp_list_comments( array( 'callback' => 'wpgrade_comments' ) );
-            ?>
-        </ol><!-- .commentlist -->
-
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-        <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', wpgrade::textdomain() ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', wpgrade::textdomain() ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
-        </nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
-        <?php endif; // check for comment navigation ?>
-
-    <?php endif; // have_comments() ?>
-    <?php
-        // If comments are closed and there are comments, let's leave a little note, shall we?
-        if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && !is_page() ) :
-    ?>
-        <p class="nocomments"><?php _e( 'Comments are closed.', wpgrade::textdomain() ); ?></p>
-    <?php endif; ?>
-
-</div><!-- #comments .comments-area -->
+</div><!-- #comments -->

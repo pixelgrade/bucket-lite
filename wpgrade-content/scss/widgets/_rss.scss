@@ -1,0 +1,18 @@
+/*----------------------------------------*\
+*   $RSS WIDGET
+\*----------------------------------------*/
+.widget_rss li{
+    @include rem(margin-bottom, $half-spacing-unit);
+}
+
+.rsswidget{
+    font-weight: bold;
+}
+
+.rss-date{
+    @include font-size(14px);
+}
+
+
+
+

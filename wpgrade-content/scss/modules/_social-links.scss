@@ -1,0 +1,49 @@
+/*----------------------------------------*\
+*   $SOCIAL LINKS
+\*----------------------------------------*/
+
+/**
+ * Social links/icons styling
+ *
+    <div class="social-links">
+        <span class="social-links__message">Share: </span>
+        <ul class="social-links__list">
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-google-plus"></i></a></li>
+            <li><a href="#"><i class="icon-pinterest"></i></a></li>
+        </ul>
+    </div>
+ */
+
+.social-links{
+    display: block;
+
+    @include media(to hand){
+        width: 100%;
+        margin-top: $half-spacing-unit;
+    }
+
+    @include media(from hand) {
+        float: right;
+    }
+}
+
+    .social-links__message{
+        display: inline-block;
+        @include rem(margin-right, $half-spacing-unit);
+        font-family: "Open Sans", sans-serif;
+        @include font-size(12px);
+        text-transform: uppercase;
+    }
+
+    .social-links__list{
+        @extend .nav;
+        display: inline-block;
+
+        a{
+            @include rem(padding, $half-spacing-unit);
+            color: $gray;
+            text-decoration: none;
+        }
+    }

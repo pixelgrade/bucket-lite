@@ -1,0 +1,49 @@
+.widget {
+    @include rem(margin-bottom, 2 * $base-spacing-unit);
+    
+    ul{
+        @extend .nav;
+    }
+
+    a{
+        color: $gray;
+        text-decoration: none;
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+    .widget-title{
+        color: black;
+        @include rem(margin, 0 0 $half-spacing-unit 0);
+    }
+
+    .widget-content{
+        font-family: "Crimson Text", serif;
+        @include font-size(16px);
+    }
+
+    @include media(from hand){
+        .widget--half-size{
+            width: 50%;
+            float: left;    
+        }
+    }
+
+@import "archive";
+@import "categories";
+@import "dribbble";
+@import "flickr";
+@import "gallery";
+@import "instagram";
+@import "nav-menu";
+@import "pages";
+@import "search";
+@import "tag-cloud";
+@import "twitter";
+@import "recent-comments";
+@import "rss";
+@import "text";
+@import "meta";

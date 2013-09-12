@@ -5,10 +5,10 @@
 		# name, unless a custom value is provided)
 		# ---------------------------------------------------------------------
 
-		'name'       => 'CityHub',
-//		'shortname'  => 'cityhub',
-//		'prefix'     => '_cityhub_',
-//		'textdomain' => 'cityhub_txtd',
+		'name'       => 'Lens',
+//		'shortname'  => 'lens',
+//		'prefix'     => '_lens_',
+//		'textdomain' => 'lens_txtd',
 
 		// use theme-options to add any non-customizable options with out going
 		// though any of the backend code; all options added here are available
@@ -27,7 +27,7 @@
 		// callbacks are executed once if more classes refer the same callback.
 		'body-classes' => array
 			(
-				'header-transparent' => 'wpgrade_callback_has_featured_image_class',
+				// empty
 			),
 
 		// filter functions will recieve content as a parameter and must return
@@ -44,17 +44,7 @@
 
 		'shortcodes' => array
 			(
-				'Columns',
-				'ProgressBar',
-				'TeamMemberCityHub',
-				'Icon',
-				'Button',
-				'DividerCityHub',
-				'Quote',
-				'TestimonialsCityHub',
-				'PortfolioCityhub',
-				'TwitterFeed',
-				'InfoBox'
+                // empty
 			),
 
 		'resources' => array
@@ -64,94 +54,18 @@
 					(
 						'head-scripts' => array
 							(
-								'youtube-api' => wpgrade::protocol().'://www.youtube.com/iframe_api',
-								'fitvids' => get_template_directory_uri() . '/wpgrade-content/js/plugins/jquery.fitvids.js'
+                                // empty
 							),
 
 						'footer-scripts' => array
 							(
-								'magnific-popup' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.magnific-popup.min.js',
-								'froogaloop' => get_template_directory_uri().'/wpgrade-content/js/plugins/froogaloop.min.js',
-								'autoresize' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.autoresize.min.js',
-
-								'contact-scripts' => array
+								'wpgrade-main-scripts' => array
 									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/contact.js',
-										'require' => array('jquery', 'gmap-api', 'gmap-infobox')
-									),
-
-								'modernizr' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/modernizr.js',
-										'require' => 'jquery',
-									),
-
-								'caroufredsel' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/jquery.caroufredsel.js',
-										'require' => 'jquery',
-									),
-
-								'nice-scroll' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.nicescroll.min.js',
-										'require' => 'jquery',
-									),
-
-								'isotope' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.isotope.min.js',
-										'require' => 'jquery',
-									),
-
-								'flexslider' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/flexslider.js',
-										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/plugins/flexslider.js')),
-										'require' => 'jquery',
-									),
-
-								'mediaelement' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/mediaelement-and-player.min.js',
-										'require' => 'jquery',
-									),
-
-
-								// Google maps
-								// -----------
-
-								'gmap-api' => wpgrade::protocol().'://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
-								'gmap-infobox' => get_template_directory_uri() . '/wpgrade-content/js/plugins/gmap/infobox.js',
-
-
-								// IE8 polyfill
-								// ------------
-
-								'respond' => get_template_directory_uri().'/wpgrade-content/js/respond.js',
-
-								'backgroundsize' => array
-									(
-										'path' => get_template_directory_uri().'/wpgrade-content/js/jquery.backgroundsize.js',
-										'require' => 'jquery',
-									),
-
-								// Theme Unsorted Scripts
-								// ----------------------
-
-								'wpgrade-unsorted-scripts' => array
-									(
-										'path' => get_template_directory_uri() . '/wpgrade-content/js/scripts.js',
-										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/scripts.js')),
+										'path' => get_template_directory_uri() . '/wpgrade-content/js/main.js',
+										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/main.js')),
 										'require' => array
 											(
-												'flexslider', 'nice-scroll',
-												'autoresize', 'isotope',
-												'jquery', 'youtube-api',
-												'mediaelement', 'froogaloop',
-												'fitvids', 'magnific-popup',
-												'caroufredsel', 'respond',
-												'backgroundsize'
+												'jquery',
 											),
 									),
 
@@ -159,8 +73,6 @@
 
 						'styles' => array
 							(
-								'wpgrade-google-web-fonts' => wpgrade::protocol().'://fonts.googleapis.com/css?family=Lato:400,700,800|Open+Sans:400,700',
-
 								'wpgrade-main-style' => array
 									(
 										'path' => get_template_directory_uri().'/wpgrade-content/css/style.css',
@@ -174,14 +86,13 @@
 				// auto invoke scripts previously registered on theme setup
 				'auto-enqueue-scripts' => array
 					(
-						'modernizr',
-						'wpgrade-unsorted-scripts'
+						'wpgrade-main-scripts'
 					),
 
 				// enques script and localizes
 				'auto-localize-scripts' => array
 					(
-						'wpgrade-unsorted-scripts' => array
+						'wpgrade-main-scripts' => array
 							(
 								'key' => 'ajaxurl',
 								'data' => admin_url('admin-ajax.php')

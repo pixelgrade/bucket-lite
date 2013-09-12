@@ -1,0 +1,184 @@
+html {
+    font-family: $base-font-family;
+    font-size: percentage($base-font-size/16px);
+    color: $gray;
+}
+
+.webfont {
+    opacity: 0;
+    @include transition(opacity .6s ease-in-out);
+}
+
+.wf-loaded {
+    .webfont {
+        opacity: 1;
+    }
+}
+
+.header {
+    @include font-size(13px, true);
+
+    // o fi ok asa?
+    .alpha, .beta, .gamme, .delta, .epsilon, .zeta,
+    ul, ol, dl, p, a {
+        @extend .webfont;
+        font-family: "Roboto", sans-serif;
+        letter-spacing: normal;
+    }
+}
+
+
+
+
+
+/*----------------------------------*\
+               HEADINGS
+\*----------------------------------*/
+
+.hN {
+    font-family: $heading-font-family;
+    @include rem(margin-bottom, $half-spacing-unit);
+    @include rem(margin-top, $base-spacing-unit);
+}
+
+.delta,
+.epsilon,
+.zeta {
+    text-transform: uppercase;
+    @include rem(letter-spacing, 2px);
+}
+
+
+
+
+
+/*------------------------------------*\
+               BLOCKQUOTE
+\*------------------------------------*/
+
+blockquote {
+    text-indent: 0;
+    @include rem(margin, 2*$base-spacing-unit 0);
+
+    .quote__content {
+        @include font-size(24px);
+        @include rem(margin-bottom, $base-spacing-unit);
+        font-family: $heading-font-family;
+        font-weight: 450;
+        text-indent: 0;
+        color: black;
+
+        &:before{
+            content: "";
+        }
+    }
+
+    &:before{
+        @include font-size(132px);
+        content: "\201C";
+        font-family: $base-font-family;
+        display: block;
+        float: left;
+        @include rem(margin-top, -$base-spacing-unit);
+        @include rem(margin-left, -3 * $base-spacing-unit);
+        color: $accent-color;
+    }
+
+    .author__name,
+    .author__title{
+        color: $gray;
+        margin-bottom: 0;
+    }
+
+    .author__name{
+        display: block;
+        font-family: $heading-font-family;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-style: normal;
+        @include rem(letter-spacing, 2px);
+
+        &:before{
+            content: "";
+        }
+    }    
+
+    .author__title{
+        font-family: $base-font-family;
+        font-style: italic;
+
+        &:before{
+            content: "-";
+            @include rem(margin-right, 3px);
+        }
+    }
+}
+
+
+
+/*-------------------------------*\
+               LISTS
+\*-------------------------------*/
+
+ol {
+    @include rem(margin-top, $base-spacing-unit/2);
+    @include rem(margin-bottom, $base-spacing-unit);
+
+    li {
+        @include font-size(20px);
+        font-family: $base-font-family;
+        font-style: italic;
+        color: $light;
+    }
+}
+
+.text-link {
+    font-family: "Roboto", sans-serif;
+    @include font-size(14px);
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+
+    &:after{
+        content: "\00bb";
+        @include rem(margin-left, 3px);
+        @include font-size(16px);
+    }
+    
+}
+
+.btn {
+    font-family: "Roboto", sans-serif;
+    @include font-size(14px);
+    text-transform: uppercase;
+    background-color: $accent-color;
+}
+
+.emphasized {
+
+    &:before {
+        @include font-size(72px);
+        content: "\2014";
+        position: absolute;
+        display: block;
+        @include rem(left, -$base-spacing-unit * 3);
+        @include rem(margin-top, -$base-spacing-unit * 1.5);
+        color: $accent-color;
+    }
+}
+
+
+.entry__title{
+    @include rem(padding, 1.5 * $base-spacing-unit 0);
+    @include rem(margin-bottom, 1.5 * $base-spacing-unit);
+    border-bottom: 1px dashed $gray;
+}
+
+a {
+    color: $dark;
+
+    [class*="icon-"] {
+        text-decoration: none;
+        padding-right: .5em;
+    }
+}
