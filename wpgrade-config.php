@@ -65,55 +65,55 @@
 						'head-scripts' => array
 							(
 								'youtube-api' => wpgrade::protocol().'://www.youtube.com/iframe_api',
-								'fitvids' => get_template_directory_uri() . '/library/js/plugins/jquery.fitvids.js'
+								'fitvids' => get_template_directory_uri() . '/wpgrade-content/js/plugins/jquery.fitvids.js'
 							),
 
 						'footer-scripts' => array
 							(
 								'magnific-popup' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.magnific-popup.min.js',
-								'froogaloop' => get_template_directory_uri().'/library/js/plugins/froogaloop.min.js',
-								'autoresize' => get_template_directory_uri().'/library/js/plugins/jquery.autoresize.min.js',
+								'froogaloop' => get_template_directory_uri().'/wpgrade-content/js/plugins/froogaloop.min.js',
+								'autoresize' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.autoresize.min.js',
 
 								'contact-scripts' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/contact.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/contact.js',
 										'require' => array('jquery', 'gmap-api', 'gmap-infobox')
 									),
 
 								'modernizr' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/plugins/modernizr.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/modernizr.js',
 										'require' => 'jquery',
 									),
 
 								'caroufredsel' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/jquery.caroufredsel.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/jquery.caroufredsel.js',
 										'require' => 'jquery',
 									),
 
 								'nice-scroll' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/plugins/jquery.nicescroll.min.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.nicescroll.min.js',
 										'require' => 'jquery',
 									),
 
 								'isotope' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/plugins/jquery.isotope.min.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/jquery.isotope.min.js',
 										'require' => 'jquery',
 									),
 
 								'flexslider' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/plugins/flexslider.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/flexslider.js',
 										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/plugins/flexslider.js')),
 										'require' => 'jquery',
 									),
 
 								'mediaelement' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/plugins/mediaelement-and-player.min.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/plugins/mediaelement-and-player.min.js',
 										'require' => 'jquery',
 									),
 
@@ -122,17 +122,17 @@
 								// -----------
 
 								'gmap-api' => wpgrade::protocol().'://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
-								'gmap-infobox' => get_template_directory_uri() . '/library/js/plugins/gmap/infobox.js',
+								'gmap-infobox' => get_template_directory_uri() . '/wpgrade-content/js/plugins/gmap/infobox.js',
 
 
 								// IE8 polyfill
 								// ------------
 
-								'respond' => get_template_directory_uri().'/library/js/respond.js',
+								'respond' => get_template_directory_uri().'/wpgrade-content/js/respond.js',
 
 								'backgroundsize' => array
 									(
-										'path' => get_template_directory_uri().'/library/js/jquery.backgroundsize.js',
+										'path' => get_template_directory_uri().'/wpgrade-content/js/jquery.backgroundsize.js',
 										'require' => 'jquery',
 									),
 
@@ -141,7 +141,7 @@
 
 								'wpgrade-unsorted-scripts' => array
 									(
-										'path' => get_template_directory_uri() . '/library/js/scripts.js',
+										'path' => get_template_directory_uri() . '/wpgrade-content/js/scripts.js',
 										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/scripts.js')),
 										'require' => array
 											(
@@ -163,7 +163,7 @@
 
 								'wpgrade-main-style' => array
 									(
-										'path' => get_template_directory_uri().'/library/css/style.css',
+										'path' => get_template_directory_uri().'/wpgrade-content/css/style.css',
 										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/css/style.css')),
 									),
 

@@ -115,8 +115,8 @@
 				<?php if (have_posts()): ?>
 
 					<?php get_template_part('theme-partials/posts', 'index'); ?>
-				
-					<?php wp_reset_postdata(); ?>
+
+					<?php wp_reset_postdata(); # restore original Post Data ?>
 
 					<div class="content-wrap">
 						<?php wpgrade::pagination(); ?>

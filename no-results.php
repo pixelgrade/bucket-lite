@@ -1,14 +1,3 @@
-<?php
-/**
- * The template part for displaying a message that posts cannot be found.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package wpGrade
- * @since wpGrade 1.0
- */
-?>
-
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Nothing Found', wpgrade::textdomain() ); ?></h1>

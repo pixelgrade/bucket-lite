@@ -10,8 +10,7 @@
 
 ?>
 
-
-		<? # content ... ?>
+		<?php # content ... ?>
 
 		<?php get_sidebar('footer'); ?>
 

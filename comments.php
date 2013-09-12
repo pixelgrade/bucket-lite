@@ -1,39 +1,22 @@
 <?php
-/**
- * The template for displaying Comments.
- *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to wpgrade_comment() which is
- * located in the functions.php file.
- *
- * @package wpGrade
- * @since wpGrade 1.0
- */
-?>
-
-<?php
     /*
      * If the current post is protected by a password and
      * the visitor has not yet entered the password we will
      * return early without loading the comments.
      */
-    if (post_password_required()) return; 
+    if (post_password_required()) return;
 ?>
-    
-    <div id="comments" class="comments-area">
-    <h3 class="comments-area-title">        
-    <?php 
-        if ( have_comments() ) { 
-            printf( _n( '1 Response / Leave a comment', '%1$s Responses / Leave a comment', get_comments_number(), wpgrade::textdomain() ),  number_format_i18n(get_comments_number()));
-        } else { _e('Leave a comment', wpgrade::textdomain()); }  
-    ?>
+
+<div id="comments" class="comments-area">
+    <h3 class="comments-area-title">
+		<?php if (have_comments()): ?>
+			<?php printf(_n('1 Response / Leave a comment', '%1$s Responses / Leave a comment', get_comments_number(), wpgrade::textdomain()),  number_format_i18n(get_comments_number())); ?>
+		<?php else: # no comments ?>
+			<?php echo __('Leave a comment', wpgrade::textdomain()); ?>
+		<?php endif; ?>
     </h3>
 
-
-    <?php // You can start editing here -- including this comment! ?>
-
-    <?php 
+    <?php
     $commenter = wp_get_current_commenter();
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
@@ -41,7 +24,7 @@
     if(is_user_logged_in()){
 		$current_user = wp_get_current_user();
         $comments_args = array(
-            // change the title of send button 
+            // change the title of send button
             'title_reply'=> __('', wpgrade::textdomain()),
             // remove "Text or HTML to be displayed after the set of comment fields"
             'comment_notes_before' => '',
@@ -53,12 +36,12 @@
             'id_submit' => 'comment-submit',
             'label_submit' => __('Send message', wpgrade::textdomain()),
             // redefine your own textarea (the comment body)
-            'comment_field' => 
+            'comment_field' =>
             '<span class="comment-form-message-wrapper"><textarea id="comment" name="comment" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '" rows="5" cols="100"></textarea></span>');
     } else {
 
         $comments_args = array(
-        // change the title of send button 
+        // change the title of send button
         'title_reply'=> __('', wpgrade::textdomain()),
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_before' => '',
