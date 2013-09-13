@@ -35,16 +35,9 @@ Template Name: Contact Page
                     </div><!-- .image_item-like-box -->
                 </div><!-- .entry-header__meta -->
                 <h1 class="entry__title"><?php the_title(); ?></h1>
-                <div class="entry__content"><?php the_content(); ?></div>
             </header>
-            
-            <footer class="entry__meta cf">
-            </footer>
+            <div class="entry__content"><?php the_content(); ?></div>
 
-            <?php if ( comments_open() || '0' != get_comments_number() ): ?>
-                <hr class="separator">
-                <?php comments_template(); ?>
-            <?php endif; ?>
         </article>
     <?php endwhile; ?>
 </div><!-- .page-content -->
