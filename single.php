@@ -30,8 +30,41 @@
                 <div class="entry__content"><?php the_content(); ?></div>
             </header>
             <footer class="entry__meta cf">
-                
-            </footer>
+                <?php $categories = wp_get_post_categories($post->ID); ?>
+                <?php if (count($categories)): ?>
+                    <div class="entry__meta-box meta-box--categories">
+                        <span class="meta-box__box-title">Filled under: </span>
+                        <?php foreach ($categories as $cat): ?>
+                                <a href="<?php echo get_category_link($cat); ?>"
+                                   rel="category">
+                                    <?php echo get_category($cat)->name; ?>
+                                </a>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php $tags = wp_get_post_tags($post->ID); ?>
+                <?php if (count($tags)): ?>
+                    <div class="entry__meta-box meta-box--tags">
+                        <span class="meta-box__box-title">Tagged: </span>
+                            <?php foreach ($tags as $tag):  ?>
+                                <a href="<?php echo get_tag_link($tag->term_id); ?>"
+                                   rel="tag">
+                                    <?php echo $tag->name; ?>
+                                </a>
+                            <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>                
+                <div class="social-links">
+                    <span class="social-links__message">Share: </span>
+                    <ul class="social-links__list">
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-google-plus"></i></a></li>
+                        <li><a href="#"><i class="icon-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </footer><!-- .entry-meta -->
             <hr class="separator">
             <?php
                 // If comments are open or we have at least one comment, load up the comment template

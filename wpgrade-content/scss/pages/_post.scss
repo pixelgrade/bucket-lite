@@ -4,14 +4,16 @@
  */
 
 .gallery-item{
-    width: auto !important;
-
     @include media(from hand){
         @include rem(margin-left, $half-spacing-unit);
     }
 
     &:first-child{
         margin-left: 0;
+    }
+
+    a{
+        display: block;
     }
 
     img{

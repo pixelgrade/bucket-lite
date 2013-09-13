@@ -4,53 +4,53 @@
  * Register Widgets areas.
  */
 
+// function lens_sidebars()  {
+//     $args = array(
+//         'id'            => 'sidebar-blog',
+//         'name'          => __( 'Blog Sidebar', 'lens_txtd' ),
+//         'description'   => __( 'Blog Sidebar', 'lens_txtd' ),
+//         'before_title'  => '<h4 class="widget-title">',
+//         'after_title'   => '</h4>',
+//         'before_widget' => '<div id="%1$s" class="widget %2$s">',
+//         'after_widget'  => '</div>',
+//     );
+//     register_sidebar( $args );
+
+//     $args = array(
+//         'id'            => 'sidebar-header',
+//         'name'          => __( 'Header Sidebar', 'lens_txtd' ),
+//         'description'   => __( 'Header Sidebar', 'lens_txtd' ),
+//         'before_title'  => '<h2 class="widget-title">',
+//         'after_title'   => '</h2>',
+//         'before_widget' => '<div id="%1$s" class="widget %2$s">',
+//         'after_widget'  => '</div>',
+//     );
+//     register_sidebar( $args );
+// }
+
 function wpgrade_register_sidebars() {
 
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __('Sidebar 1', wpgrade::textdomain()),
-		'description' => __('The first (primary) sidebar.', wpgrade::textdomain()),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widget-title">',
-		'after_title' => '</h4>',
-	));
-	register_sidebar(array(
-		'id' => 'pagesidebar',
-		'name' => __('Page Sidebar', wpgrade::textdomain()),
-		'description' => __('The sidebar that will be used for pages.', wpgrade::textdomain()),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widget-title">',
-		'after_title' => '</h4>',
-	));
-	register_sidebar(array(
-		'id' => 'footer-left',
-		'name' => __('Footer Left Sidebar', wpgrade::textdomain()),
-		'description' => __('Widget Area on the left side of the footer.', wpgrade::textdomain()),
-		'before_widget' => '<div id="%1$s" class="widget widget_footer widget_footer_left %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widget-title widget-title_footer">',
-		'after_title' => '</h4>',
-	));
-  register_sidebar(array(
-    'id' => 'footer-middle',
-    'name' => __('Footer Middle Sidebar', wpgrade::textdomain()),
-    'description' => __('Widget Area in the middle of the footer.', wpgrade::textdomain()),
-    'before_widget' => '<div id="%1$s" class="widget widget_footer widget_footer_middle %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h4 class="widget-title widget-title_footer">',
-    'after_title' => '</h4>',
-  ));
-  register_sidebar(array(
-    'id' => 'footer-right',
-    'name' => __('Footer Right Sidebar', wpgrade::textdomain()),
-    'description' => __('Widget Area on the right side of the footer.', wpgrade::textdomain()),
-    'before_widget' => '<div id="%1$s" class="widget widget_footer widget_footer_right %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h4 class="widget-title widget-title_footer">',
-    'after_title' => '</h4>',
-  ));
+    register_sidebar( array(
+        'id'            => 'sidebar-blog',
+        'name'          => __( 'Blog Sidebar', 'lens_txtd' ),
+        'description'   => __( 'Blog Sidebar', 'lens_txtd' ),
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        ) 
+    );
+
+    register_sidebar( array(
+        'id'            => 'sidebar-header',
+        'name'          => __( 'Header Sidebar', 'lens_txtd' ),
+        'description'   => __( 'Header Sidebar', 'lens_txtd' ),
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        ) 
+    );
 
 }
 add_action('widgets_init', 'wpgrade_register_sidebars');
