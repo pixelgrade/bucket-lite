@@ -30,8 +30,8 @@ Version: 		0.9.2
  */
 
 /************************************************************************
-		You should not edit the code below or things might explode!
-*************************************************************************/
+You should not edit the code below or things might explode!
+ *************************************************************************/
 
 $meta_boxes = array();
 $meta_boxes = apply_filters ( 'cmb_meta_boxes' , $meta_boxes );
@@ -59,11 +59,11 @@ class cmb_Meta_Box_Validate {
  * If resources do not load, please check the wiki for details.
  */
 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-       //winblows
-    define( 'CMB_META_BOX_URL', trailingslashit( str_replace( DIRECTORY_SEPARATOR, '/', str_replace( str_replace( '/', DIRECTORY_SEPARATOR, WP_CONTENT_DIR ), WP_CONTENT_URL, dirname(__FILE__) ) ) ) );
+	//winblows
+	define( 'CMB_META_BOX_URL', trailingslashit( str_replace( DIRECTORY_SEPARATOR, '/', str_replace( str_replace( '/', DIRECTORY_SEPARATOR, WP_CONTENT_DIR ), WP_CONTENT_URL, dirname(__FILE__) ) ) ) );
 
 } else {
-    define( 'CMB_META_BOX_URL', apply_filters( 'cmb_meta_box_url', trailingslashit( str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, dirname( __FILE__ ) ) ) ) );
+	define( 'CMB_META_BOX_URL', apply_filters( 'cmb_meta_box_url', trailingslashit( str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, dirname( __FILE__ ) ) ) ) );
 }
 
 /**
@@ -196,7 +196,7 @@ class cmb_Meta_Box {
 				echo '<tr>';
 			}
 
-			if ( $field['type'] == "title" || $field['type'] == 'portfolio-gallery' ) {
+			if ( $field['type'] == "title" || $field['type'] == 'portfolio-gallery' || $field['type'] == 'gallery' ) {
 				echo '<td colspan="2">';
 			} else {
 				if( $this->_meta_box['show_names'] == true ) {
@@ -304,7 +304,7 @@ class cmb_Meta_Box {
 					break;
 				case 'wysiwyg':
 					wp_editor( $meta ? $meta : $field['std'], $field['id'], isset( $field['options'] ) ? $field['options'] : array() );
-			        echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
+					echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
 					break;
 				case 'taxonomy_select':
 					echo '<select name="', $field['id'], '" id="', $field['id'], '">';
@@ -347,29 +347,29 @@ class cmb_Meta_Box {
 					}
 					echo '</ul>';
 					echo '<span class="cmb_metabox_description">', $field['desc'], '</span>';
-				break;
+					break;
 				case 'file_list':
 					echo '<input class="cmb_upload_file" type="text" size="36" name="', $field['id'], '" value="" />';
 					echo '<input class="cmb_upload_button button" type="button" value="Upload File" />';
 					echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
-						$args = array(
-								'post_type' => 'attachment',
-								'numberposts' => null,
-								'post_status' => null,
-								'post_parent' => $post->ID
-							);
-							$attachments = get_posts($args);
-							if ($attachments) {
-								echo '<ul class="attach_list">';
-								foreach ($attachments as $attachment) {
-									echo '<li>'.wp_get_attachment_link($attachment->ID, 'thumbnail', 0, 0, 'Download');
-									echo '<span>';
-									echo apply_filters('the_title', '&nbsp;'.$attachment->post_title);
-									echo '</span></li>';
-								}
-								echo '</ul>';
-							}
-						break;
+					$args = array(
+						'post_type' => 'attachment',
+						'numberposts' => null,
+						'post_status' => null,
+						'post_parent' => $post->ID
+					);
+					$attachments = get_posts($args);
+					if ($attachments) {
+						echo '<ul class="attach_list">';
+						foreach ($attachments as $attachment) {
+							echo '<li>'.wp_get_attachment_link($attachment->ID, 'thumbnail', 0, 0, 'Download');
+							echo '<span>';
+							echo apply_filters('the_title', '&nbsp;'.$attachment->post_title);
+							echo '</span></li>';
+						}
+						echo '</ul>';
+					}
+					break;
 				case 'file':
 					$input_type_url = "hidden";
 					if ( 'url' == $field['allow'] || ( is_array( $field['allow'] ) && in_array( 'url', $field['allow'] ) ) )
@@ -379,79 +379,90 @@ class cmb_Meta_Box {
 					echo '<input class="cmb_upload_file_id" type="hidden" id="', $field['id'], '_id" name="', $field['id'], '_id" value="', get_post_meta( $post->ID, $field['id'] . "_id",true), '" />';
 					echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
 					echo '<div id="', $field['id'], '_status" class="cmb_media_status">';
-						if ( $meta != '' ) {
-							$check_image = preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $meta );
-							if ( $check_image ) {
-								echo '<div class="img_status">';
-								echo '<img src="', $meta, '" alt="" />';
-								echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove Image</a>';
-								echo '</div>';
-							} else {
-								$parts = explode( '/', $meta );
-								for( $i = 0; $i < count( $parts ); ++$i ) {
-									$title = $parts[$i];
-								}
-								echo 'File: <strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" target="_blank" rel="external">Download</a> / <a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove</a>)';
+					if ( $meta != '' ) {
+						$check_image = preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $meta );
+						if ( $check_image ) {
+							echo '<div class="img_status">';
+							echo '<img src="', $meta, '" alt="" />';
+							echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove Image</a>';
+							echo '</div>';
+						} else {
+							$parts = explode( '/', $meta );
+							for( $i = 0; $i < count( $parts ); ++$i ) {
+								$title = $parts[$i];
 							}
+							echo 'File: <strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" target="_blank" rel="external">Download</a> / <a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove</a>)';
 						}
+					}
 					echo '</div>';
-				break;
-                case 'attachment':
-                    $input_type_url = "hidden";
+					break;
+				case 'attachment':
+					$input_type_url = "hidden";
 
-                    if ( isset( $field['allow'] ) && ( 'url' == $field['allow'] || ( is_array( $field['allow'] ) && in_array( 'url', $field['allow'] ) ) ) )
-                        $input_type_url="text";
-                    echo '<input class="cmb_upload_file attachment" type="' . $input_type_url . '" size="45" id="', $field['id'], '" name="', $field['id'], '" value=\'', $meta, '\' />';
-                    echo '<input class="cmb_upload_button button" type="button" value="Upload File" />';
-                    echo '<input class="cmb_upload_file_id" type="hidden" id="', $field['id'], '_id" name="', $field['id'], '_id" value="', get_post_meta( $post->ID, $field['id'] . "_id",true), '" />';
-                    echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
-                    echo '<div id="', $field['id'], '_status" class="cmb_media_status">';
-                    if ( $meta != '' ) {
-                        $check_image = preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $meta );
-                        if ( $check_image ) {
-                            echo '<div class="img_status">';
-                            $meta_img = (array)json_decode($meta);
-                            echo '<img src="'. $meta_img["link"]. '" alt="" />';
-                            echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove Image</a>';
-                            echo '</div>';
-                        } else {
-                            $parts = explode( '/', $meta );
-                            for( $i = 0; $i < count( $parts ); ++$i ) {
-                                $title = $parts[$i];
-                            }
-                            echo 'File: <strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" target="_blank" rel="external">Download</a> / <a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove</a>)';
-                        }
-                    }
-                    echo '</div>';
-                    break;
-                case 'portfolio-gallery':
+					if ( isset( $field['allow'] ) && ( 'url' == $field['allow'] || ( is_array( $field['allow'] ) && in_array( 'url', $field['allow'] ) ) ) )
+						$input_type_url="text";
+					echo '<input class="cmb_upload_file attachment" type="' . $input_type_url . '" size="45" id="', $field['id'], '" name="', $field['id'], '" value=\'', $meta, '\' />';
+					echo '<input class="cmb_upload_button button" type="button" value="Upload File" />';
+					echo '<input class="cmb_upload_file_id" type="hidden" id="', $field['id'], '_id" name="', $field['id'], '_id" value="', get_post_meta( $post->ID, $field['id'] . "_id",true), '" />';
+					echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
+					echo '<div id="', $field['id'], '_status" class="cmb_media_status">';
+					if ( $meta != '' ) {
+						$check_image = preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $meta );
+						if ( $check_image ) {
+							echo '<div class="img_status">';
+							$meta_img = (array)json_decode($meta);
+							echo '<img src="'. $meta_img["link"]. '" alt="" />';
+							echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove Image</a>';
+							echo '</div>';
+						} else {
+							$parts = explode( '/', $meta );
+							for( $i = 0; $i < count( $parts ); ++$i ) {
+								$title = $parts[$i];
+							}
+							echo 'File: <strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" target="_blank" rel="external">Download</a> / <a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove</a>)';
+						}
+					}
+					echo '</div>';
+					break;
+				case 'portfolio-gallery':
 
-                    $file_path = WPGRADE_LIB_PATH.'inc/metaboxes/fields/portfolio-gallery.php';
-                    if ( file_exists($file_path) ) {
-                        ob_start();
-                        include( $file_path );
-                        echo ob_get_clean();
-                    } else {
-                        echo '<p>Wrong path </p>';
-                        util::var_dump( $file_path );
-                    }
+					$file_path = wpgrade::themefilepath('wpgrade-content/inc/metaboxes/fields/gallery.php');
+					if ( file_exists($file_path) ) {
+						ob_start();
+						include( $file_path );
+						echo ob_get_clean();
+					} else {
+						echo '<p>Wrong path </p>';
+					}
 
-                break;
+					break;
+				case 'gallery':
+
+					$file_path = wpgrade::themefilepath('wpgrade-content/inc/metaboxes/fields/gallery.php');
+					if ( file_exists($file_path) ) {
+						ob_start();
+						include( $file_path );
+						echo ob_get_clean();
+					} else {
+						echo '<p>Wrong path </p>';
+					}
+
+					break;
 				case 'oembed':
 					echo '<input class="cmb_oembed" type="text" name="', $field['id'], '" id="', $field['id'], '" value="', '' !== $meta ? $meta : $field['std'], '" />','<p class="cmb_metabox_description">', $field['desc'], '</p>';
 					echo '<p class="cmb-spinner spinner"></p>';
 					echo '<div id="', $field['id'], '_status" class="cmb_media_status ui-helper-clearfix embed_wrap">';
-						if ( $meta != '' ) {
-							$check_embed = $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $meta ) .'[/embed]' );
-							if ( $check_embed ) {
-								echo '<div class="embed_status">';
-								echo $check_embed;
-								echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove Embed</a>';
-								echo '</div>';
-							} else {
-								echo 'URL is not a valid oEmbed URL.';
-							}
+					if ( $meta != '' ) {
+						$check_embed = $GLOBALS['wp_embed']->run_shortcode( '[embed]'. esc_url( $meta ) .'[/embed]' );
+						if ( $check_embed ) {
+							echo '<div class="embed_status">';
+							echo $check_embed;
+							echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">Remove Embed</a>';
+							echo '</div>';
+						} else {
+							echo 'URL is not a valid oEmbed URL.';
 						}
+					}
 					echo '</div>';
 					break;
 
@@ -499,14 +510,14 @@ class cmb_Meta_Box {
 				$field['multiple'] = ( 'multicheck' == $field['type'] ) ? true : false;
 
 			$old = get_post_meta( $post_id, $name, !$field['multiple'] /* If multicheck this can be multiple values */ );
-            $new = isset( $_POST[$field['id']] ) ? $_POST[$field['id']] : null;
+			$new = isset( $_POST[$field['id']] ) ? $_POST[$field['id']] : null;
 
 
 
-            if ( $field['type'] == 'portfolio-gallery' ) {
+			if ( $field['type'] == 'portfolio-gallery' || $field['type'] == 'gallery' ) {
 //                util::var_dump($new);
 //                continue;
-            }
+			}
 
 			if ( $type_comp == true && in_array( $field['type'], array( 'taxonomy_select', 'taxonomy_radio', 'taxonomy_multicheck' ) ) )  {
 				$new = wp_set_object_terms( $post_id, $new, $field['taxonomy'] );
@@ -594,7 +605,10 @@ function cmb_scripts( $hook ) {
 			$cmb_script_array[] = 'farbtastic';
 			$cmb_style_array[] = 'farbtastic';
 		}
+//		wp_register_style( 'meta-font-awesome', wpgrade::content_url() .'css/_vendor/font-awesome/font-awesome.css' );
+//		$cmb_style_array[] = 'meta-font-awesome';
 		wp_register_script( 'cmb-timepicker', CMB_META_BOX_URL . 'js/jquery.timePicker.min.js' );
+		wp_register_script( 'pixgallery', CMB_META_BOX_URL . 'js/pixgallery.js' );
 		wp_register_script( 'cmb-scripts', CMB_META_BOX_URL . 'js/cmb.js', $cmb_script_array, '0.9.1' );
 		wp_localize_script( 'cmb-scripts', 'cmb_ajax_data', array( 'ajax_nonce' => wp_create_nonce( 'ajax_nonce' ), 'post_id' => get_the_ID() ) );
 		wp_enqueue_script( 'cmb-timepicker' );
@@ -607,17 +621,17 @@ add_action( 'admin_enqueue_scripts', 'cmb_scripts', 10 );
 
 function cmb_editor_footer_scripts() { ?>
 	<?php
-	if ( isset( $_GET['cmb_force_send'] ) && 'true' == $_GET['cmb_force_send'] ) {
-		$label = $_GET['cmb_send_label'];
-		if ( empty( $label ) ) $label="Select File";
-		?>
-		<script type="text/javascript">
+if ( isset( $_GET['cmb_force_send'] ) && 'true' == $_GET['cmb_force_send'] ) {
+	$label = $_GET['cmb_send_label'];
+	if ( empty( $label ) ) $label="Select File";
+	?>
+	<script type="text/javascript">
 		jQuery(function($) {
 			$('td.savesend input').val('<?php echo $label; ?>');
 		});
-		</script>
-		<?php
-	}
+	</script>
+<?php
+}
 }
 add_action( 'admin_print_footer_scripts', 'cmb_editor_footer_scripts', 99 );
 
@@ -669,7 +683,7 @@ function cmb_force_send( $args ) {
 		';
 	}
 
-    return $args;
+	return $args;
 
 }
 
@@ -687,7 +701,7 @@ function cmb_oembed_ajax_results() {
 	$oembed_string = sanitize_text_field( $_REQUEST['oembed_url'] );
 
 	if ( empty( $oembed_string ) ) {
-		$return = '<p class="ui-state-error-text">'. __( 'Please Try Again', wpgrade::textdomain() ) .'</p>';
+		$return = '<p class="ui-state-error-text">'. __( 'Please Try Again', wpGrade_txtd ) .'</p>';
 		$found = 'not found';
 	} else {
 
@@ -704,13 +718,13 @@ function cmb_oembed_ajax_results() {
 
 		if ( $check_embed && $check_embed != $fallback ) {
 			// Embed data
-			$return = '<div class="embed_status">'. $check_embed .'<a href="#" class="cmb_remove_file_button" rel="'. $_REQUEST['field_id'] .'">'. __( 'Remove Embed', wpgrade::textdomain() ) .'</a></div>';
+			$return = '<div class="embed_status">'. $check_embed .'<a href="#" class="cmb_remove_file_button" rel="'. $_REQUEST['field_id'] .'">'. __( 'Remove Embed', wpGrade_txtd ) .'</a></div>';
 			// set our response id
 			$found = 'found';
 
 		} else {
 			// error info when no oEmbeds were found
-			$return = '<p class="ui-state-error-text">'.sprintf( __( 'No oEmbed Results Found for %s. View more info at', wpgrade::textdomain() ), $fallback ) .' <a href="http://codex.wordpress.org/Embeds" target="_blank">codex.wordpress.org/Embeds</a>.</p>';
+			$return = '<p class="ui-state-error-text">'.sprintf( __( 'No oEmbed Results Found for %s. View more info at', wpGrade_txtd ), $fallback ) .' <a href="http://codex.wordpress.org/Embeds" target="_blank">codex.wordpress.org/Embeds</a>.</p>';
 			// set our response id
 			$found = 'not found';
 		}
@@ -724,386 +738,28 @@ function cmb_oembed_ajax_results() {
 // End. That's it, folks! //
 
 // not yet ... let's ajaxfy things around
-add_action( 'wp_ajax_cmb_portfolio_handler', 'cmb_portfolio_ajax_handler', 1 );
-function cmb_portfolio_ajax_handler(){
-    $result = array('success' => false);
 
-    $type = $_GET['type'];
-    $key = $_GET['key'];
+// create an ajax call which will return a preview to the current gallery
 
-    $output = wpgrade_get_portfolio_backend_type( $type, $key);
+function ajax_pixgallery_preview(){
 
-    if ( !empty($output) ) {
-        $result['success'] = true;
-        $result['output'] = $output;
-    }
+	$result = array('success' => false, 'output' => '');
+	$ids = $_REQUEST['attachments_ids'];
+	if ( empty($ids) ) {
+		echo json_encode( $result );
+		exit;
+	}
 
-    echo json_encode($result);
-    die();
+	$ids = explode( ',', $ids );
+
+	foreach ( $ids as $id ) {
+		$attach = wp_get_attachment_image_src( $id, 'thumbnail', false);
+
+		$result["output"] .= '<li><img src="'.$attach[0] .'" /></li>';
+
+	}
+	$result["success"] = true;
+	echo json_encode( $result );
+	exit;
 }
-
-
-add_action( 'wp_ajax_cmb_portfolio_row_type_change', 'cmb_portfolio_row_type_change', 1 );
-function cmb_portfolio_row_type_change(){
-
-    $result = array('success' => false);
-
-    $type = $_POST['new_type'];
-    $key = $_POST['row_id'];
-    $old_pattern = stripslashes($_POST['pattern']);
-    $content = '';
-    $images = array();
-
-    $pattern = json_decode( $old_pattern, true);
-    $output = wpgrade_get_portfolio_backend_type( $type, $key, $pattern);
-
-    if ( !empty($output) ) {
-        $result['success'] = true;
-        $result['output'] = $output;
-    }
-
-    echo json_encode($result);
-    die();
-}
-
-function wpgrade_get_portfolio_backend_type( $type = 1, $key = 1, $pattern = array()){
-
-    $content = $video = '';
-    $images = array();
-    foreach ( $pattern as $k => $field ) {
-
-//        if ( preg_match('/^pattern_type/', $k )) {
-//            $pattern_type = $field;
-//            continue;
-//        }
-
-        // look for editor
-        if ( preg_match( '/^editor/', $k ) ) {
-            $content = $field;
-            continue;
-        }
-
-        // get images
-        if ( preg_match( '/^image/', $k ) ) {
-            $images[$k] = $field;
-            continue;
-        }
-
-        // get videos
-        if ( preg_match( '/^video/', $k ) ) {
-            $video[$k] = $field;
-            continue;
-        }
-    }
-
-    if ( empty ($type) ) return false; // doesn't matter anymore
-
-    // get keys and values for each image
-    if ( empty($images) ) {
-        $img_key = array();
-        $img_val = array();
-    } else {
-        $img_key = array_keys($images);
-        $img_val = array_values($images);
-    }
-
-    for ( $i = 0; $i <= 3; $i++) {
-        if ( isset( $img_key[$i] ) ){
-            continue;
-        } else {
-            $img_key[$i] = '';
-        }
-
-        if ( isset( $img_val[$i] ) ){
-            continue;
-        } else {
-            $img_val[$i] = '';
-        }
-    }
-
-    ob_start(); ?>
-
-    <li class="portolio-pattern" id="row-<?php echo $key ?>" data-key="<?php echo $key ?>">
-
-        <?php wpgrade_display_row_controls($type); ?>
-
-        <div class="row-content">
-        <div class="row-fluid">
-
-            <?php switch ( $type ) :
-                case 1 : ?>
-
-                    <input type="hidden" name='pattern_type' value="1" class="to_meta"/>
-                    <div class="span4">
-                        <?php wpgrade_generate_portfolio_field_image($key, 1, $img_key[0], $img_val[0], 'mt8'); ?>
-                    </div>
-
-                    <div class="span4 span-border ">
-                        <?php wpgrade_generate_portfolio_field_editor($key, $content); ?>
-                        <div class="row-fluid span-border-top">
-                            <?php wpgrade_generate_portfolio_field_image($key, 2, $img_key[1], $img_val[1], 'image-long'); ?>
-                        </div>
-                    </div>
-
-                    <div class="span4">
-                        <?php wpgrade_generate_portfolio_field_image($key, 3, $img_key[2], $img_val[2], 'mt8'); ?>
-                    </div>
-
-                    <?php
-                    break;
-                case 2 :?>
-
-                    <input type="hidden" name='pattern_type' value="2" class="to_meta"/>
-                    <div class="span8">
-                        <?php wpgrade_generate_portfolio_field_image($key, 1, $img_key[0], $img_val[0], 'image-long mt8'); ?>
-                    </div>
-
-                    <div class="span4 span-border-left">
-
-                        <?php wpgrade_generate_portfolio_field_editor($key,$content); ?>
-                        <div class="row-fluid span-border-top">
-                            <?php wpgrade_generate_portfolio_field_image($key, 2, $img_key[1], $img_val[1], 'image-long'); ?>
-                        </div>
-                    </div>
-
-                    <?php
-                    break;
-                case 3 :?>
-
-                    <input type="hidden" name='pattern_type' value="3" class="to_meta"/>
-
-                    <div class="span4">
-                        <?php wpgrade_generate_portfolio_field_image($key, 1, $img_key[0], $img_val[0]); ?>
-                    </div>
-
-                    <div class="span4 span-border">
-                        <?php wpgrade_generate_portfolio_field_editor($key, $content); ?>
-                    </div>
-
-                    <div class="span4">
-                        <?php wpgrade_generate_portfolio_field_image($key, 2, $img_key[1], $img_val[1]); ?>
-                    </div>
-
-                    <?php
-                    break;
-                case 4 :?>
-
-                    <input type="hidden" name='pattern_type' value="4" class="to_meta"/>
-
-                    <div class="span8">
-                        <?php wpgrade_generate_portfolio_field_image($key, 1, $img_key[0], $img_val[0], 'image-long' ); ?>
-                    </div>
-
-                    <div class="span4 span-border-left">
-                        <?php wpgrade_generate_portfolio_field_editor($key, $content); ?>
-                    </div>
-
-                    <?php
-                    break;
-                case 5 :?>
-
-                    <input type="hidden" name='pattern_type' value="5" class="to_meta"/>
-
-                    <div class="span4">
-                        <?php wpgrade_generate_portfolio_field_image($key, 1, $img_key[0], $img_val[0]); ?>
-                    </div>
-
-                    <div class="span4 span-border">
-                        <?php wpgrade_generate_portfolio_field_image($key, 2, $img_key[1], $img_val[1]); ?>
-                    </div>
-
-                    <div class="span4">
-                        <?php wpgrade_generate_portfolio_field_image($key, 3, $img_key[2], $img_val[2]); ?>
-                    </div>
-                    <?php
-                    break;
-                case 6 :?>
-
-                    <input type="hidden" name='pattern_type' value="6" class="to_meta"/>
-
-                    <div class="span8">
-                        <?php wpgrade_generate_portfolio_field_image($key, 1, $img_key[0], $img_val[0], 'image-long'); ?>
-                    </div>
-
-                    <div class="span4 span-border-left">
-                        <?php wpgrade_generate_portfolio_field_image($key, 2, $img_key[1], $img_val[1]); ?>
-                    </div>
-                    <?php
-                    break;
-                case 7:?>
-
-                    <input type="hidden" name='pattern_type' value="7" class="to_meta"/>
-
-                    <div class="span8">
-                        <?php wpgrade_generate_portfolio_field_video($key, $video); ?>
-                    </div>
-
-                    <div class="span4 span-border-left">
-
-                        <?php wpgrade_generate_portfolio_field_editor($key,$content); ?>
-                        <div class="row-fluid span-border-top">
-                            <?php wpgrade_generate_portfolio_field_image($key, 2, $img_key[0], $img_val[0], 'image-long'); ?>
-                        </div>
-                    </div>
-                    <?php
-                    break;
-                case 8:?>
-
-                    <input type="hidden" name='pattern_type' value="8" class="to_meta"/>
-
-                    <div class="span8">
-                        <?php wpgrade_generate_portfolio_field_video($key, $video); ?>
-                    </div>
-
-                    <div class="span4 span-border-left full-height">
-                        <?php wpgrade_generate_portfolio_field_editor($key, $content); ?>
-                    </div>
-                    <?php
-                    break;
-                default :
-                    echo '';
-                    break;
-            endswitch; ?>
-            </div>
-        </div>
-    </li>
-
-    <?php $the_return = ob_get_clean();
-    return $the_return;
-}
-
-function wpgrade_generate_portfolio_field_editor( $key, $content ){
-
-    $editor_args = array(
-//        'editor_class' => 'to_meta',
-        'media_buttons' => false,
-        'textarea_rows' => 15
-    );
-    ob_start();?>
-
-        <div class="row-fluid editor-box">
-            <?php //wp_editor( $content, 'editor-'. $key .'-2', $editor_args ); ?>
-            <textarea class="to_meta hidden" name="editor-<?php echo $key ?>-2" id="editor-<?php echo $key ?>-2" cols="30" rows="10"><?php echo empty($content) ? '' : $content ?></textarea>
-            <div class="editor_preview">
-                <div class="editor_preview_wrapper"><?php echo empty($content) ? '' : nl2br( $content ); ?></div>
-            </div>
-            <a class="edit_editor" data-editor="editor-<?php echo $key ?>-2" href="#">Edit</a>
-        </div>
-
-    <?php echo ob_get_clean();
-}
-
-function wpgrade_generate_portfolio_field_image( $key = 1, $pos = 1, $img_key = '', $img_val = '', $class = '' ){
-
-    if ( empty( $img_key ) ) {
-        $this_key = 'image-'. $key .'-'. $pos;
-    } else {
-        $this_key = $img_key;
-    } ?>
-
-    <div class="image-box pattern_upload_button <?php echo $class; ?>" id="<?php echo $this_key; ?>" name="<?php echo $this_key; ?>">
-        <label class="hidden" for="<?php echo $this_key; ?>">Image 1</label>
-        <input type="hidden" name='<?php echo $this_key; ?>' class="to_meta"  value='<?php echo $img_val ?>' />
-        <?php
-        $temp_val = (array)json_decode( $img_val );
-        if ( $temp_val ) {
-            $attach_id = $temp_val['id'];
-            $attach = wp_get_attachment_image_src( $attach_id, 'medium');
-            ?>
-            <div class="image-preview">
-                <div class="img_status" style="background-image: url(<?php echo $attach[0]; ?>)">
-                    <a href="#" class="cmb_remove_file_button" rel="<?php echo $this_key; ?>" title="Remove Image"></a>
-                    <a href="#" name="<?php echo $this_key; ?>" class="cmb_edit_file" title="Edit Image"></a>
-                </div>
-            </div>
-        <?php } else {
-            echo '<div class="image-preview"></div>';
-        } ?>
-    </div>
-<?php
-}
-
-function wpgrade_generate_portfolio_field_video( $key = 1, $video = '' ){
-
-    $temp_val = $video;//(array)json_decode( $video );
-//    $temp_val = '';
-    $this_key = 'video-'. $key .'-'. 1; ?>
-    <span class="video_field">
-        <textarea class="to_meta" name="<?php echo $this_key ?>-embed" id="<?php echo $this_key ?>-embed" rows="2" placeholder="Embed"><?php echo isset($video[$this_key .'-embed']) ? $video[$this_key .'-embed'] : ''; ?></textarea>
-    </span>
-
-    <span class="video_field">
-        <a class="clear_upload_btn" href="#" title="Clear field"></a>
-        <input type="text" class="to_meta" name="<?php echo $this_key ?>-mp4" value="<?php echo isset($video[$this_key .'-mp4']) ? $video[$this_key .'-mp4'] : '' ?>" placeholder="MP4" />
-        <a class="button pattern_upload_button" href="#" id="<?php echo $this_key ?>-mp4">Upload</a>
-    </span>
-
-    <span class="video_field">
-        <a class="clear_upload_btn" href="#" title="Clear field"></a>
-        <input type="text" class="to_meta" name="<?php echo $this_key ?>-webm" id="<?php echo $this_key ?>-webm" value="<?php echo isset($video[$this_key .'-webm']) ? $video[$this_key .'-webm'] : '' ?>" placeholder="WebM/VP8" />
-        <a class="button pattern_upload_button" href="#" id="<?php echo $this_key ?>-webm">Upload</a>
-    </span>
-
-    <span class="video_field">
-        <a class="clear_upload_btn" href="#" title="Clear field"></a>
-        <input type="text" class="to_meta" name="<?php echo $this_key ?>-ogg" id="<?php echo $this_key ?>-ogg" value="<?php echo isset($video[$this_key .'-ogg']) ? $video[$this_key .'-ogg'] : '' ?>" placeholder="OGG" />
-        <a class="button pattern_upload_button" href="#" id="<?php echo $this_key ?>-ogg">Upload</a>
-    </span>
-
-    <span class="video_field">
-        <a class="clear_upload_btn" href="#" title="Clear field"></a>
-        <input type="text" class="to_meta video_preview" name="<?php echo $this_key ?>-preview" id="<?php echo $this_key ?>-preview" value="<?php echo isset($video[$this_key .'-preview']) ? $video[$this_key .'-preview'] : '' ?>" placeholder="Image Preview" />
-        <a class="button pattern_upload_button" href="#" id="<?php echo $this_key ?>-preview">Upload</a>
-    </span>
-
-<!--        <input type="hidden" name='--><?php //echo $this_key; ?><!--' class="to_meta"  value='--><?php //echo $img_val ?><!--' />-->
-
-        <?php /*
-        if ( $temp_val ) { ?>
-            <div class="image-preview">
-                <div class="img_status" style="background-image: url(<?php echo $temp_val['link']; ?>)">
-                    <a href="#" class="cmb_remove_file_button" rel="<?php echo $this_key; ?>" title="Remove Image"></a>
-                    <a href="#" name="<?php echo $this_key; ?>" class="cmb_edit_file" title="Edit Image"></a>
-                </div>
-            </div>
-        <?php } else {
-            echo '<div class="image-preview"></div>';
-        }*/ ?>
-
-<!--    </div>-->
-<?php
-}
-
-function wpgrade_generate_types_selector( $key ){
-    ob_start(); ?>
-    <input type="radio" value="1" name="select_pattern-<?php echo $key; ?>" class="select_pattern">Type 1
-    <input type="radio" value="2" name="select_pattern-<?php echo $key; ?>" class="select_pattern">Type 2
-    <input type="radio" value="3" name="select_pattern-<?php echo $key; ?>" class="select_pattern">Type 3
-
-<?php echo ob_get_clean();
-}
-
-function wpgrade_display_row_controls( $type ){ ?>
-
-    <div class="row-controls">
-        <a class="btn order">Order</a>
-        <div class="btn-group">
-            <a class="btn dropdown-toggle" data-toggle="dropdown">Edit <span class="caret-down"></a>
-            <ul class="dropdown-menu row-versions">
-                <div class="row-title">Choose a layout style:</div>
-                <li><a <?php if ( $type == '1' ) echo 'class="s_active"' ?> href="#" data-type="1"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v1.png"></a></li>
-                <li><a <?php if ( $type == '2' ) echo 'class="s_active"' ?> href="#" data-type="2"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v2.png"></a></li>
-                <li><a <?php if ( $type == '3' ) echo 'class="s_active"' ?> href="#" data-type="3"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v3.png"></a></li>
-                <li><a <?php if ( $type == '4' ) echo 'class="s_active"' ?> href="#" data-type="4"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v4.png"></a></li>
-                <li><a <?php if ( $type == '5' ) echo 'class="s_active"' ?> href="#" data-type="5"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v5.png"></a></li>
-                <li><a <?php if ( $type == '6' ) echo 'class="s_active"' ?> href="#" data-type="6"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v6.png"></a></li>
-                <li><a <?php if ( $type == '7' ) echo 'class="s_active"' ?> href="#" data-type="7"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v7.png"></a></li>
-                <li><a <?php if ( $type == '8' ) echo 'class="s_active"' ?> href="#" data-type="8"><img src="<?php echo wpgrade::content_url() ?>inc/metaboxes/images/row-versions/v8.png"></a></li>
-                <div class="row-remove"> <a><span class="icon-trash"></span>Remove this row</a> </div>
-            </ul>
-        </div>
-        <a class="btn add-new">Add</a>
-    </div>
-
-    <?php
-}
+add_action('wp_ajax_ajax_pixgallery_preview', 'ajax_pixgallery_preview');
