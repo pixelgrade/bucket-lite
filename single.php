@@ -23,6 +23,7 @@
                 <h1 class="entry__title"><?php the_title(); ?></h1>
                 <div class="entry__content"><?php the_content(); ?></div>
             </header>
+            
             <footer class="entry__meta cf">
                 <?php $categories = wp_get_post_categories($post->ID); ?>
                 <?php if (count($categories)): ?>
