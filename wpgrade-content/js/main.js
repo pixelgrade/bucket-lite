@@ -1114,13 +1114,13 @@ $(window).resize(function(){
     $('body').resizeVideos();
 });
 
-// // Firefox Opacity Video Hack
-// $(document).ready(function (){
-//     $('iframe').each(function(){
-//         var url = $(this).attr("src");
-//         $(this).attr("src",url+"?wmode=transparent");
-//     });
-// });
+// Firefox Opacity Video Hack
+$(document).ready(function (){
+    $('iframe').each(function(){
+        var url = $(this).attr("src");
+        $(this).attr("src",url+"?wmode=transparent");
+    });
+});
 
 /* ====== INITIALIZE ====== */
 
