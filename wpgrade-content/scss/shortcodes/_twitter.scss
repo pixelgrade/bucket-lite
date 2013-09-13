@@ -3,10 +3,15 @@
 \*----------------------------------------*/
 .widget-tweets__list{
     width: 100%;
+
+    .rsBullets{
+        @include rem(bottom, $half-spacing-unit);
+    }    
 }
     .widget-tweets__tweet{
         display: block;
         width: 100%;
+        @include rem(margin-bottom, 2 * $base-spacing-unit);        
     }
 
     .tweet__content a{

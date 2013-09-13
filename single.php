@@ -2,14 +2,8 @@
 
 <div class="page-content">
     <?php while ( have_posts() ) : the_post(); ?>
-        <?php if ( has_post_thumbnail() ): ?>
-            <div class="featured-image-wrapper">
-                <div class="featured-image-container">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-            </div>
-        <?php endif; ?>
-        <article id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
+        <?php get_template_part('theme-partials/post-templates/single-head', get_post_format()); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
             <header class="entry-header">
                 <div class="entry-header__meta">
                     <div class="article-timestamp article-timestamp--single">

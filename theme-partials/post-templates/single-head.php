@@ -3,8 +3,10 @@
 	$html_title = get_post_meta(get_the_ID(), wpgrade::prefix().'post_html_title', true);
 ?>
 
-<div class="container">
-	<?php if ( ! empty($html_title)): ?>
-		<?php wpgrade::display_content($html_title); ?>
-	<?php endif; ?>
-</div>
+<?php if ( has_post_thumbnail() ): ?>
+    <div class="featured-image-wrapper">
+        <div class="featured-image-container">
+            <?php the_post_thumbnail(); ?>
+        </div>
+    </div>
+<?php endif; ?>

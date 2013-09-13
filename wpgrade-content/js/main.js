@@ -959,20 +959,20 @@ function niceScrollInit() {
 
 /* --- TWITTER WIDGET + ROYAL SLIDER --- */
 jQuery(document).ready(function($) {
-    $(".js-widget-tweets__list").royalSlider({
-        autoScaleSlider: false,
-        arrowsNavAutoHide: false,
-        slidesSpacing: 0
-    });  
+    $('.js-pixslider').each(function(){
+        var arrows = typeof $(this).data('arrows') !== "undefined" ? true : false;
+        var bullets = typeof $(this).data('bullets') !== "undefined" ? "bullets" : "none";
 
-    $(".pixslider").royalSlider({
-        autoScaleSlider: false,
-        autoHeight: true,
-        arrowsNavAutoHide: false,
-        slidesSpacing: 0
-    });  
-});
-
+        $(this).royalSlider({
+            autoScaleSlider: false,
+            autoHeight: true,
+            arrowsNav: arrows,
+            arrowsNavAutoHide: false,
+            controlNavigation: bullets,
+            slidesSpacing: 0,
+        });
+    })
+})
 // Helper function
 // examples
 // console.log(padLeft(23,5));       //=> '00023'
@@ -1121,6 +1121,14 @@ $('body').resizeVideos();
 // recalculate the videos width and height on window resize
 $(window).resize(function(){
     $('body').resizeVideos();
+});
+
+// Firefox Opacity Video Hack
+$(document).ready(function (){
+    $('iframe').each(function(){
+        var url = $(this).attr("src");
+        $(this).attr("src",url+"?wmode=transparent");
+    });
 });
 
 /* ====== INITIALIZE ====== */
