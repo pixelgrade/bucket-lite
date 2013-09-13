@@ -1237,8 +1237,7 @@ $(function(){
     /* --- VISUAL LOADING --- */
 
     var gmap_link, gmap_variables, gmap_zoom;
-    gmap_link = "https://maps.google.com/?ll=51.379937,-2.343757&spn=0.013058,0.033023&t=m&z=14";
-    gmap_link = "https://www.google.com/maps/preview#!data=!1m4!1m3!1d27886!2d-2.343757!3d51.379937";
+    gmap_link = $('#gmap').data('url');
 
     // Overwrite Math.log to accept a second optional parameter as base for logarhitm
     Math.log = (function() {
@@ -1298,8 +1297,16 @@ $(function(){
                 mapTypeControlOptions: {mapTypeIds: []}
             }
         },
-        marker:{
-            latLng: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1])
+        // marker:{
+        //     latLng: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1])
+        // },
+        overlay:{
+            latLng: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1]),
+            options:{
+                content:  '<div class="pin_ring pin_ring--outer">' +
+                    '<div class="pin_ring pin_ring--inner"></div>' +
+                    '</div>',
+            }
         },
         styledmaptype:{
             id: "style1",

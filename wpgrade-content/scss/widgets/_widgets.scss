@@ -1,18 +1,31 @@
 .widget {
     @include rem(margin-bottom, 2 * $base-spacing-unit);
-    
+
     ul{
         @extend .nav;
     }
 
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.widget--header {
+    a {
+        color: $light;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+.widget--sidebar {
+
     a{
         color: $gray;
         text-decoration: none;
-
-        img{
-            max-width: 100%;
-            height: auto;
-        }
     }
 }
     .widget-title{

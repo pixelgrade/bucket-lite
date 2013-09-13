@@ -5,16 +5,9 @@ Template Name: Contact Page
 ?>
 
 <?php get_header(); ?>
-<div id="gmap">
-    <div class="contact-info-wrapper" data-gmap-url="https://maps.google.com/maps?hl=en&ll=40.700797,-73.782163&spn=0.015861,0.033023&sll=47.167718,27.502856&sspn=0.028447,0.066047&t=m&z=16" data-custom-style="1">
-        <div class="contact-info">
-            <div class="pin_ring pin_ring--outer">
-                <div class="pin_ring pin_ring--inner"></div>
-            </div>
-        </div>
-    </div>
-    <div id="map_canvas" style="width: 100%; height: 100%"></div>
-</div>
+<?php if (wpgrade::option('contact_gmap_link')): ?>
+    <div id="gmap" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>"></div>
+<?php endif; ?>
 <div class="page-content">
     <?php while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
