@@ -59,15 +59,23 @@
 
 						'footer-scripts' => array
 							(
-								'wpgrade-main-scripts' => array
-									(
-										'path' => get_template_directory_uri() . '/wpgrade-content/js/main.js',
-										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/main.js')),
-										'require' => array
-											(
-												'jquery',
-											),
-									),
+                                'google-maps-api' => array
+                                    (
+                                        'path' => 'http://maps.google.com/maps/api/js?sensor=false&amp;language=en',
+                                        'require' => array
+                                            (
+                                                'jquery'
+                                            ),
+                                    ),
+                                'wpgrade-main-scripts' => array
+                                    (
+                                        'path' => get_template_directory_uri() . '/wpgrade-content/js/main.js',
+                                        'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/main.js')),
+                                        'require' => array
+                                            (
+                                                'jquery',
+                                            ),
+                                    ),
 
 							),
 
@@ -86,6 +94,7 @@
 				// auto invoke scripts previously registered on theme setup
 				'auto-enqueue-scripts' => array
 					(
+                        'google-maps-api',
 						'wpgrade-main-scripts'
 					),
 
@@ -110,7 +119,6 @@
 				// auto invoke styles previously registered on theme setup
 				'auto-enqueue-styles' => array
 					(
-						'wpgrade-google-web-fonts',
 						'wpgrade-main-style',
 					),
 
