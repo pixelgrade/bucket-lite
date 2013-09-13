@@ -1,5 +1,6 @@
 .wp-caption{
     display: block;
+    max-width: 100%;
 
     a{
         display: block;
@@ -48,6 +49,12 @@
 .project-classic{
     .entry__meta--project{
         @include rem(padding-bottom, $base-spacing-unit);
+    }
+}
+
+.single-portfolio{
+    .featured-image-wrapper{
+        @include rem(margin-left, -2 * $base-spacing-unit);
     }
 }
 
