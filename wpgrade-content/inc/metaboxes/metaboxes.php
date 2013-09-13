@@ -197,6 +197,11 @@ function cmb_wpgrade_metaboxes( array $meta_boxes ) {
         'show_names' => true, // Show field names on the left
         'fields' => array(
             array(
+                'name' => __('Images', wpgrade::textdomain()),
+                'id'   => wpgrade::prefix() . 'portfolio_gallery',
+                'type' => 'gallery',
+            ),
+            array(
                 'name' => __('Featured Project', wpgrade::textdomain()),
                 'desc' => __('Items checked as featured will be displayed first in the homepage portfolio section (ordered by date descending)', wpgrade::textdomain()),
                 'id'   => wpgrade::prefix() . 'portfolio_featured',

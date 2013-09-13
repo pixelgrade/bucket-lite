@@ -7,10 +7,7 @@
 function wpgrade_custom_thumbnails (){
     // Add theme support for Featured Images
     add_theme_support( 'post-thumbnails' );
-    // add_image_size('blog-huge', 1800, 800, true);
-    add_image_size('blog-big', 1200, 500, true);
-    // add_image_size('blog-mini', 62, 46, true);
-    add_image_size('homepage-portfolio', 360, 288, true);
+    add_image_size('blog-archive', 675, 380, true);
 }
 
 add_action( 'after_setup_theme', 'wpgrade_custom_thumbnails');
