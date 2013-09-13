@@ -1,0 +1,1856 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"opaci",
+				"opacity"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"slider",
+				"slider-control"
+			],
+			[
+				"arrows",
+				"arrowsNav"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"border-c",
+				"border-bottom-color"
+			],
+			[
+				"ce",
+				"center"
+			],
+			[
+				"impo",
+				"important"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ta",
+				"table-cell"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"PAD",
+				"padding-bottom"
+			],
+			[
+				"control",
+				"controlNavigation"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"t",
+				"table"
+			],
+			[
+				"bord",
+				"border-top"
+			],
+			[
+				"slide",
+				"slideNumber"
+			],
+			[
+				"curre",
+				"currSlideId"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"navigate",
+				"navigateByClick"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"count",
+				"mfp-counter"
+			],
+			[
+				"gallery",
+				"gallery-control__items"
+			],
+			[
+				"call",
+				"callbacks"
+			],
+			[
+				"tab",
+				"table-row"
+			],
+			[
+				"opac",
+				"opacity"
+			],
+			[
+				"curr",
+				"currSlideId"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"comm",
+				"comment_section	comment--section-title"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"gra",
+				"gray"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"flo",
+				"float"
+			],
+			[
+				"commen",
+				"comment_section	comment--section-title"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"comme",
+				"comment_section	comment--section-title"
+			],
+			[
+				"conte",
+				"content-font"
+			],
+			[
+				"contnt",
+				"content-font"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"fonts",
+				"font-style"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"selec",
+				"selectObject"
+			],
+			[
+				"sele",
+				"selectObject"
+			],
+			[
+				"is",
+				"isIE10"
+			],
+			[
+				"ca",
+				"categories"
+			],
+			[
+				"atta",
+				"attachments"
+			],
+			[
+				"co",
+				"content"
+			],
+			[
+				"gr",
+				"grayLight"
+			],
+			[
+				"flex",
+				"flex-direction-nav"
+			],
+			[
+				"res",
+				"respond"
+			],
+			[
+				"mai",
+				"main-content-archive"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"image",
+				"imagelink"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"B",
+				"bottom"
+			],
+			[
+				"team",
+				"team-member-header"
+			],
+			[
+				"ifo",
+				"infobox-subtitle"
+			],
+			[
+				"al",
+				"align-right"
+			],
+			[
+				"for",
+				"formData"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"select",
+				"selectContainer"
+			],
+			[
+				"dis",
+				"displayBlock"
+			],
+			[
+				"page",
+				"pageIndex"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"li",
+				"lists"
+			],
+			[
+				"new",
+				"newListObject"
+			],
+			[
+				"crea",
+				"createDropDown"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"margi-",
+				"margin-bottom"
+			],
+			[
+				"vi",
+				"viewportWidth"
+			],
+			[
+				"Gr",
+				"gray"
+			],
+			[
+				"dire",
+				"directionNav"
+			],
+			[
+				"acc",
+				"accentColor"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"border-ri",
+				"border-right-color"
+			],
+			[
+				"sear",
+				"searchField"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fon-t",
+				"font-weight"
+			],
+			[
+				"imp",
+				"important"
+			],
+			[
+				"tran",
+				"transparent"
+			],
+			[
+				"a",
+				"absolute"
+			],
+			[
+				"grayLi",
+				"grayLight"
+			],
+			[
+				"data",
+				"data_retina_logo"
+			],
+			[
+				"gray",
+				"grayLight"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"paus",
+				"pauseOnHover"
+			],
+			[
+				"th",
+				"thumb_url"
+			],
+			[
+				"Bac",
+				"background-color"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"border-l",
+				"border-left-width"
+			],
+			[
+				"z-",
+				"z-index"
+			],
+			[
+				"border-le",
+				"border-left"
+			],
+			[
+				"contro",
+				"controlNav"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"border-right",
+				"border-right-width"
+			],
+			[
+				"border-wi",
+				"border-right-width"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"mari",
+				"margin-bottom"
+			],
+			[
+				"fot",
+				"font-family"
+			],
+			[
+				"Gray",
+				"grayLight"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"bol",
+				"bold"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"bacground",
+				"background-color"
+			],
+			[
+				"border-left",
+				"border-left-width"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"border-r",
+				"border-right"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "wpgrade-config.php",
+			"settings":
+			{
+				"buffer_size": 5106,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "wpgrade-content/inc/template-tags.php",
+			"settings":
+			{
+				"buffer_size": 6307,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-callbacks/unsorted.php",
+			"settings":
+			{
+				"buffer_size": 3582,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "comments.php",
+			"settings":
+			{
+				"buffer_size": 6431,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "single.php",
+			"settings":
+			{
+				"buffer_size": 3958,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-partials/posts-single.php",
+			"settings":
+			{
+				"buffer_size": 7961,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "wpgrade-content/scss/modules/_comments.scss",
+			"settings":
+			{
+				"buffer_size": 4091,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/prism-html/single.php",
+			"settings":
+			{
+				"buffer_size": 18828,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 61.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: co",
+				"Snippet: comment--table-of-contents"
+			],
+			[
+				"Snippet: ",
+				"Snippet: @each"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"instak",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax scs",
+				"Set Syntax: SCSS"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"set sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 480.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-single-portfolio.php",
+		"/E/uniserver/www/prism-html/single.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/template-tags.php",
+		"/E/uniserver/www/prism/wp-content/themes/twentytwelve/comments.php",
+		"/E/uniserver/www/prism/wp-content/themes/twentytwelve/header.php",
+		"/E/uniserver/www/prism/wp-content/themes/wpgrade-themes/wpgrade-partials/read-more-content.php",
+		"/E/uniserver/www/prism/wp-content/themes/wpgrade-themes/wpgrade-partials/inline-custom-css.php",
+		"/E/uniserver/www/prism/wp-content/themes/wpgrade-themes/wpgrade-partials/admin-head-tweaks.php",
+		"/E/uniserver/www/prism/wp-content/themes/wpgrade-themes/wpgrade-partials/ie-shim.php",
+		"/E/uniserver/www/prism-html/scss/widgets/_twitter.scss",
+		"/E/uniserver/www/prism-html/scss/shortcodes/_twitter.scss",
+		"/E/!DOWNLOADS/royalslider.css",
+		"/E/uniserver/www/prism-html/single-quote.php",
+		"/E/uniserver/www/prism-html/css/style.css",
+		"/E/uniserver/www/prism-html/scss/pages/_project.scss",
+		"/E/uniserver/www/prism-html/project-sidebar-right.php",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/objects/_grids.scss",
+		"/E/uniserver/www/prism-html/js/main.js",
+		"/E/uniserver/www/prism-html/scss/modules/_gallery-control.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_meta-box.scss",
+		"/E/uniserver/www/prism-html/scss/pages/_post.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_likes-box.scss",
+		"/E/uniserver/www/prism-html/scss/components/_related-projects.scss",
+		"/E/uniserver/www/prism-html/scss/plugins/_royalslider.scss",
+		"/E/uniserver/www/prism-html/scss/plugins/magnific-popup/_main.scss",
+		"/E/uniserver/www/prism-html/about-studio.php",
+		"/E/uniserver/www/prism-html/project-classic.php",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/objects/_flexbox.scss",
+		"/E/uniserver/www/prism-html/scss/base/_layout.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_social-links.scss",
+		"/E/uniserver/www/prism-html/about-personal.php",
+		"/E/uniserver/www/prism-html/gallery-grid.php",
+		"/E/uniserver/www/prism-html/contact.php",
+		"/E/uniserver/www/prism-html/scss/shortcodes/_teammember.scss",
+		"/E/uniserver/www/prism-html/gallery-fullscreen.php",
+		"/E/uniserver/www/prism-html/gallery-fullwidth.php",
+		"/E/uniserver/www/prism-html/masonry.php",
+		"/E/uniserver/www/prism-html/page.php",
+		"/E/uniserver/www/prism-html/project-fullwidth.php",
+		"/E/uniserver/www/prism-html/single-gallery.php",
+		"/E/uniserver/www/prism-html/single-video.php",
+		"/E/uniserver/www/prism-html/typography.php",
+		"/E/uniserver/www/prism-html/scss/_shame.scss",
+		"/E/uniserver/www/prism-html/scss/base/_helper.scss",
+		"/E/uniserver/www/prism-html/js/contact.js",
+		"/E/uniserver/www/prism-html/scss/plugins/_gmap.scss",
+		"/E/uniserver/www/prism-html/scss/shortcodes/_progressbar.scss",
+		"/E/uniserver/www/prism-html/scss/style.scss",
+		"/E/uniserver/www/prism-html/js/infobox.js",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/_vars.scss",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/base/_images.scss",
+		"/E/uniserver/www/prism-html/scss/plugins/_wpcf7.scss",
+		"/E/uniserver/www/prism-html/scss/pages/_gallery-fullscreen.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_gallery-item.scss",
+		"/E/uniserver/www/prism-html/scss/plugins/magnific-popup/_settings.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_mosaic.scss",
+		"/E/uniserver/www/prism-html/portfolio-grid.php",
+		"/C/Users/crist_000/AppData/Roaming/Sublime Text 2/Packages/User/SCSS/comment--section-title.sublime-snippet",
+		"/E/uniserver/www/prism-html/gallery-2.php",
+		"/E/uniserver/www/prism-html/gallery-1.php",
+		"/E/uniserver/www/prism-html/scss/modules/_slider-control.scss",
+		"/E/uniserver/www/prism-html/scss/plugins/magnific-popup/main.scss",
+		"/E/uniserver/www/prism-html/scss/components/_header.scss",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/objects/_nav.scss",
+		"/E/uniserver/www/prism-html/scss/webfonts.scss",
+		"/E/uniserver/www/prism-html/gallery.php",
+		"/E/uniserver/www/prism-html/scss/widgets/_widgets.scss",
+		"/E/uniserver/www/prism-html/header.php",
+		"/E/uniserver/www/prism-html/portfolio-2.php",
+		"/E/uniserver/www/prism-html/sidebar.php",
+		"/E/uniserver/www/prism-html/scss/pages/_gallery_fullscreen.scss",
+		"/E/uniserver/www/prism-html/gallery-full-screen.php",
+		"/E/uniserver/www/prism-html/scss/modules/_meta_box.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_social_links.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_likes_box.scss",
+		"/E/uniserver/www/prism-html/scss/modules/_comments.scss",
+		"/E/uniserver/www/prism-html/sidebar_monster.php",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/_defaults.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_categories.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_archive.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_nav_menu.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_meta.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_pages.scss",
+		"/E/uniserver/www/prism-html/scss/components/_sidebar.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_recentcomments.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_rss.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_flickr.scss",
+		"/E/uniserver/www/prism-html/portfolio-1.php",
+		"/E/uniserver/www/prism-html/scss/widgets/_search.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_tag_cloud.scss",
+		"/E/uniserver/www/prism-html/scss/widgets/_text.scss",
+		"/E/uniserver/www/prism-html/scss/components/_navigation.scss",
+		"/E/uniserver/www/prism-html/scss/_vendor/inuit/objects/_greedy.scss",
+		"/E/uniserver/www/prism-html/scss/_header.scss",
+		"/E/uniserver/www/prism-html/scss/_typography.scss",
+		"/E/uniserver/www/prism-html/scss/inuit.css/generic/_widths.scss",
+		"/E/uniserver/www/prism-html/scss/_post.scss",
+		"/E/uniserver/www/prism-html/scss/_layout.scss",
+		"/E/uniserver/www/prism-html/index.php",
+		"/E/!DOWNLOADS/naming.en.wiki",
+		"/E/uniserver/www/prism-html/about_single.php",
+		"/E/uniserver/www/prism-html/about_team.php",
+		"/E/uniserver/www/prism-html/blog_archive.php",
+		"/E/uniserver/www/prism-html/single_quote.php",
+		"/E/uniserver/www/prism-html/single_video.php",
+		"/E/uniserver/www/prism-html/single_gallery.php",
+		"/E/uniserver/www/prism-html/project_video.php",
+		"/E/uniserver/www/prism-html/project_standard.php",
+		"/E/uniserver/www/prism-html/gallery_fullscreen.php",
+		"/E/uniserver/www/prism-html/gallery_archive.php",
+		"/E/uniserver/www/prism-html/scss/inuit.css/generic/_mixins.scss",
+		"/E/uniserver/www/prism-html/footer_scripts.php",
+		"/E/uniserver/www/prism-html/article.php",
+		"/E/uniserver/www/prism-html/scss/_fonts.scss",
+		"/E/uniserver/www/prism-html/scss/inuit.css/objects/_grids.scss",
+		"/E/uniserver/www/prism-html/scss/inuit.css/generic/_helper.scss",
+		"/E/uniserver/www/prism-html/scss/_navigation.scss",
+		"/C/Users/crist_000/AppData/Roaming/Sublime Text 2/Packages/User/SCSS/comment--table-of-contents.sublime-snippet",
+		"/E/uniserver/www/prism-html/saved_from_wp/The Art of Coffee _Post.htm",
+		"/E/uniserver/www/prism-html/scss/_vars.scss",
+		"/E/uniserver/www/prism-html/css/post.css",
+		"/E/uniserver/www/prism-html/scss/inuit.css/post.scss",
+		"/E/uniserver/www/prism-html/scss/inuit.css/_vars.scss",
+		"/E/uniserver/www/prism-html/saved_from_wp/The Art of Coffee _ Prism.htm",
+		"/E/uniserver/www/prism-html/content_article.php",
+		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/library/scss/components/_fonts.scss",
+		"/E/uniserver/www/prism-html/scss/inuit.css/base/_headings.scss",
+		"/E/uniserver/www/prism-html/content.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 97.0,
+		"where_history":
+		[
+			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
+			"E:\\uniserver\\www\\prism\\wp-content\\themes\\twentytwelve",
+			"E:\\uniserver\\www\\prism-html\\scss\\_vendor\\inuit",
+			"E:\\uniserver\\www\\prism-html\\scss",
+			"E:\\uniserver\\www\\cityhub\\wp-content\\themes\\cityhub\\library\\scss",
+			"E:\\uniserver\\www\\cityhub\\wp-content\\themes\\cityhub",
+			"E:\\uniserver\\www\\cityhub\\wp-content\\themes\\cityhub\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"<project>",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"<project>",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"<project>",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library",
+			"<project>",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\inc",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library\\scss",
+			"E:\\uniserver\\www\\citylife\\wp-content\\themes\\citylife\\library",
+			"<project>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"title",
+			"class=\"clearfix\"",
+			"clearfix",
+			"wp_list_comments",
+			"\"comments",
+			"body { background-color",
+			"background-color",
+			"body",
+			"twentytwelve-style-css",
+			"true",
+			"$grid",
+			"grid",
+			"left",
+			"meta",
+			"one-third",
+			"flex",
+			"nicescroll",
+			"magnific pop",
+			"alert",
+			"magnific pop",
+			"magnific",
+			"infobox",
+			"width: 1.5rem;\n    height: 1.5rem;\n    border-radius: 50% 50% 50% 0px;\n    -webkit-transform: rotate(-45deg);\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    border: 10px solid rgb(238, 52, 48);\n    border-image-source: initial;\n    border-image-slice: initial;\n    border-image-width: initial;\n    border-image-outset: initial;\n    border-image-repeat: initial;",
+			"infobox",
+			"contact_content",
+			"initialize",
+			"contact_html",
+			"contact",
+			"contact-info",
+			"ring",
+			"accent",
+			"gmap_do_custom_style",
+			"left",
+			"$IMAGES",
+			"featured-image-container",
+			"890px",
+			"entry__content",
+			"content",
+			"border",
+			"separator",
+			"social",
+			"h4",
+			"separator",
+			"row-shortcode",
+			"fs",
+			"unit",
+			"single",
+			"\n            ",
+			"\">\n",
+			"href",
+			"\">\n",
+			"                                <",
+			"acce",
+			"accent",
+			"color",
+			"mosaic__item-wrapper",
+			"-cell",
+			"-table",
+			"-meta",
+			"mosaic__item-wrapper",
+			"mosaic__item",
+			"mosaic",
+			"1",
+			"arrow",
+			"'));",
+			"magnific pop",
+			"counter",
+			"magnific pop",
+			"royal",
+			"Djax",
+			"magnific pop",
+			"magnific",
+			"jquery",
+			"console.log",
+			"\n          ",
+			"console.log",
+			">'\n",
+			"slider",
+			"djax",
+			"one-half",
+			"half",
+			"span-",
+			"http://192.168.1.104/prism-html/img/gallery/gallery-1.jpg",
+			"hei",
+			" $",
+			".click",
+			"on('click",
+			"click",
+			"jqu",
+			"arrow-next",
+			"transparent",
+			"30",
+			"    \n",
+			"background",
+			"nav_",
+			"nav",
+			"localhost",
+			"widget_wpgrade_twitter",
+			"meta",
+			" {",
+			"tags",
+			"important",
+			"cf",
+			"blockq",
+			"small)",
+			"header",
+			"media",
+			"small)",
+			"media",
+			"    @include rem(margin-left, -2 * $base-spacing-unit);\n        @include rem(padding-left, 2 * $base-spacing-unit)",
+			"widget__content",
+			" style=\"font-size: 19px;\"",
+			"style=\"font-size: 19px;\"",
+			"meta__date",
+			"article-meta",
+			"first",
+			"hand",
+			"small)",
+			"social",
+			"<span>Post author</span>",
+			"one-whole",
+			".page",
+			"/>\n",
+			"!default",
+			"roboto",
+			"other-color",
+			"2323",
+			"232324"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"flexbox__item one-third",
+			"h5",
+			"font-size",
+			"base-spacing-unit",
+			"image__item-wrapper",
+			"image__item",
+			"image",
+			"portfolio",
+			"gallery",
+			"192.168.1.104",
+			"hand)",
+			"lap)",
+			"hand)",
+			"widget-content",
+			"",
+			"hand)",
+			"",
+			"null",
+			"",
+			"-select-container",
+			"<option value=\"*\" selected=\"selected\">",
+			"Bottom",
+			"60%",
+			"80%",
+			"90%",
+			"narrow-widget-container",
+			"wide-widget-container",
+			"widget-container",
+			"archive",
+			"<li class=\"archive-month\"><a class=\"archibe-month-link\" href=\"#\">March 2013</a></li>",
+			"/a",
+			"<a",
+			"a"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "wpgrade-config.php",
+					"settings":
+					{
+						"buffer_size": 5106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1522,
+								1522
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2124.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "wpgrade-content/inc/template-tags.php",
+					"settings":
+					{
+						"buffer_size": 6307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2451,
+								2451
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 989.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "theme-callbacks/unsorted.php",
+					"settings":
+					{
+						"buffer_size": 3582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3486,
+								3486
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 772.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "comments.php",
+					"settings":
+					{
+						"buffer_size": 6431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								584,
+								584
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "single.php",
+					"settings":
+					{
+						"buffer_size": 3958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2889,
+								2889
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "theme-partials/posts-single.php",
+					"settings":
+					{
+						"buffer_size": 7961,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5809,
+								5216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2057.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "wpgrade-content/scss/modules/_comments.scss",
+					"settings":
+					{
+						"buffer_size": 4091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2737,
+								2737
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1150.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/E/uniserver/www/prism-html/single.php",
+					"settings":
+					{
+						"buffer_size": 18828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9809,
+								9979
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1884.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.538047551594,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"perso",
+				"about-personal.php"
+			],
+			[
+				"ap",
+				"about-personal.php"
+			],
+			[
+				"laou",
+				"scss/base/_layout.scss"
+			],
+			[
+				"twi",
+				"scss/shortcodes/_twitter.scss"
+			],
+			[
+				"twitte",
+				"scss/widgets/_twitter.scss"
+			],
+			[
+				"twitt",
+				"scss/widgets/_twitter.scss"
+			],
+			[
+				"main",
+				"js/main.js"
+			],
+			[
+				"roya",
+				"scss/plugins/_royalslider.scss"
+			],
+			[
+				"twitter",
+				"scss/widgets/_twitter.scss"
+			],
+			[
+				"single",
+				"single.php"
+			],
+			[
+				"relate",
+				"scss/components/_related-projects.scss"
+			],
+			[
+				"project-r",
+				"project-sidebar-right.php"
+			],
+			[
+				"class",
+				"project-classic.php"
+			],
+			[
+				"layo",
+				"scss/base/_layout.scss"
+			],
+			[
+				"gallery-gr",
+				"gallery-grid.php"
+			],
+			[
+				"conta",
+				"js/contact.js"
+			],
+			[
+				"gma",
+				"scss/plugins/_gmap.scss"
+			],
+			[
+				"infobo",
+				"js/infobox.js"
+			],
+			[
+				"style",
+				"css/style.css"
+			],
+			[
+				"page",
+				"page.php"
+			],
+			[
+				"pag",
+				"page.php"
+			],
+			[
+				"projec",
+				"project-fullwidth.php"
+			],
+			[
+				"single-v",
+				"single-video.php"
+			],
+			[
+				"single-q",
+				"single-quote.php"
+			],
+			[
+				"sty",
+				"scss/style.scss"
+			],
+			[
+				"proje",
+				"project-sidebar-right.php"
+			],
+			[
+				"proe",
+				"project-classic.php"
+			],
+			[
+				"post.",
+				"scss/pages/_post.scss"
+			],
+			[
+				"sing",
+				"single.php"
+			],
+			[
+				"galler-co",
+				"scss/modules/_gallery-control.scss"
+			],
+			[
+				"gallery-f",
+				"scss/pages/_gallery-fullscreen.scss"
+			],
+			[
+				"like",
+				"scss/modules/_likes-box.scss"
+			],
+			[
+				"post.sc",
+				"scss/pages/_post.scss"
+			],
+			[
+				"post",
+				"scss/pages/_post.scss"
+			],
+			[
+				"meta-box",
+				"scss/modules/_meta-box.scss"
+			],
+			[
+				"mosaic",
+				"scss/modules/_mosaic.scss"
+			],
+			[
+				"galler",
+				"gallery-grid.php"
+			],
+			[
+				"port",
+				"portfolio-grid.php"
+			],
+			[
+				"gallery-contr",
+				"scss/modules/_gallery-control.scss"
+			],
+			[
+				"main.",
+				"js/main.js"
+			],
+			[
+				"likes",
+				"scss/modules/_likes-box.scss"
+			],
+			[
+				"grid",
+				"scss/_vendor/inuit/objects/_grids.scss"
+			],
+			[
+				"gallery-item",
+				"scss/modules/_gallery-item.scss"
+			],
+			[
+				"gal",
+				"gallery-grid.php"
+			],
+			[
+				"nav",
+				"scss/_vendor/inuit/objects/_nav.scss"
+			],
+			[
+				"header",
+				"scss/components/_header.scss"
+			],
+			[
+				"styl",
+				"scss/style.scss"
+			],
+			[
+				"side",
+				"sidebar.php"
+			],
+			[
+				"layou",
+				"scss/base/_layout.scss"
+			],
+			[
+				"sidebar",
+				"sidebar_monster.php"
+			],
+			[
+				"widge",
+				"scss/widgets/_widgets.scss"
+			],
+			[
+				"categ",
+				"scss/widgets/_categories.scss"
+			],
+			[
+				"sidea",
+				"sidebar_monster.php"
+			],
+			[
+				"slide",
+				"scss/plugins/_royalslider.scss"
+			],
+			[
+				"flick",
+				"scss/widgets/_flickr.scss"
+			],
+			[
+				"royal",
+				"scss/plugins/_royalslider.scss"
+			],
+			[
+				"searc",
+				"scss/widgets/_search.scss"
+			],
+			[
+				"greed",
+				"scss/_vendor/inuit/objects/_greedy.scss"
+			],
+			[
+				"navigat",
+				"scss/components/_navigation.scss"
+			],
+			[
+				"typo",
+				"scss/_typography.scss"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"ty",
+				"scss/_typography.scss"
+			],
+			[
+				"scripts",
+				"library/js/scripts.js"
+			],
+			[
+				"portfol",
+				"library/scss/components/_portfolio.scss"
+			],
+			[
+				"post.s",
+				"library/scss/components/_post.scss"
+			],
+			[
+				"wpgra",
+				"library/wpGrade.php"
+			],
+			[
+				"custom",
+				"library/css/custom.css.php"
+			],
+			[
+				"offcanva",
+				"library/scss/components/_offcanvas.scss"
+			],
+			[
+				"side.s",
+				"library/scss/components/_side.scss"
+			],
+			[
+				"layout",
+				"library/scss/components/_layout.scss"
+			],
+			[
+				"shame",
+				"library/scss/_shame.scss"
+			],
+			[
+				"shame.sc",
+				"library/scss/_shame.scss"
+			],
+			[
+				"feature",
+				"library/scss/components/_featured-image.scss"
+			],
+			[
+				"single-h",
+				"templates/post-templates/single-head.php"
+			],
+			[
+				"single-",
+				"templates/post-templates/single-head.php"
+			],
+			[
+				"slider",
+				"library/scss/components/_slider.scss"
+			],
+			[
+				"scrip",
+				"library/js/scripts.js"
+			],
+			[
+				"wp",
+				"library/wpGrade.php"
+			],
+			[
+				"wpgrade",
+				"library/wpGrade.php"
+			],
+			[
+				"navigatio",
+				"library/scss/components/_navigation.scss"
+			],
+			[
+				"portfolio.sc",
+				"library/scss/components/_portfolio.scss"
+			],
+			[
+				"portfo",
+				"wp-content/themes/citylife/library/scss/components/_portfolio.scss"
+			],
+			[
+				"progess",
+				"wp-content/themes/citylife/library/scss/shortcodes/_progressbar.scss"
+			],
+			[
+				"style.sc",
+				"wp-content/themes/citylife/library/scss/style.scss"
+			],
+			[
+				"naviga",
+				"wp-content/themes/citylife/library/scss/components/_navigation.scss"
+			],
+			[
+				"portfolio",
+				"wp-content/themes/citylife/library/scss/components/_portfolio.scss"
+			],
+			[
+				"progre",
+				"wp-content/themes/citylife/library/scss/shortcodes/_progressbar.scss"
+			],
+			[
+				"progress.scss",
+				"wp-content/themes/senna/library/scss/specific/_shc-progressbar.scss"
+			],
+			[
+				"progr",
+				"wp-content/themes/citylife/library/scss/shortcodes/_progressbar.scss"
+			],
+			[
+				"footer.sc",
+				"wp-content/themes/citylife/library/scss/components/_footer.scss"
+			],
+			[
+				"wpcf7.sc",
+				"wp-content/themes/citylife/library/scss/plugins/_wpcf7.scss"
+			],
+			[
+				"contact.sc",
+				"wp-content/themes/citylife/library/scss/widgets/_contact.scss"
+			],
+			[
+				"comments.sc",
+				"wp-content/themes/citylife/library/scss/components/_comments.scss"
+			],
+			[
+				"portfolio.s",
+				"wp-content/themes/citylife/library/scss/components/_portfolio.scss"
+			],
+			[
+				"navigation",
+				"wp-content/themes/citylife/library/scss/components/_navigation.scss"
+			],
+			[
+				"latest",
+				"wp-content/themes/citylife/library/scss/widgets/_latest-posts.scss"
+			],
+			[
+				"divider",
+				"wp-content/themes/citylife/library/scss/shortcodes/_divider.scss"
+			],
+			[
+				"testimona",
+				"wp-content/themes/citylife/library/scss/shortcodes/_testimonial.scss"
+			],
+			[
+				"team",
+				"wp-content/themes/citylife/library/scss/shortcodes/_teammember.scss"
+			],
+			[
+				"navigati",
+				"wp-content/themes/citylife/library/scss/components/_navigation.scss"
+			],
+			[
+				"mixins",
+				"wp-content/themes/citylife/library/scss/vendor/greedy/_mixins.scss"
+			],
+			[
+				"footer",
+				"wp-includes/theme-compat/footer.php"
+			],
+			[
+				"template-po",
+				"wp-content/themes/citylife/template-portfolio.php"
+			],
+			[
+				"templatepo",
+				"wp-content/themes/citylife/template-portfolio.php"
+			],
+			[
+				"categories.scss",
+				"wp-content/themes/citylife/library/scss/widgets/_categories.scss"
+			],
+			[
+				"header.php",
+				"wp-content/themes/citylife/header.php"
+			],
+			[
+				"headerscss",
+				"wp-content/themes/citylife/library/scss/components/_header.scss"
+			],
+			[
+				"side.sc",
+				"wp-content/themes/citylife/library/scss/components/_side.scss"
+			],
+			[
+				"comments",
+				"wp-content/themes/citylife/comments.php"
+			],
+			[
+				"sidefooter.php",
+				"wp-content/themes/citylife/sidebar-footer.php"
+			],
+			[
+				"style.css",
+				"wp-content/themes/citylife/library/css/style.css"
+			],
+			[
+				"wpgr",
+				"wp-content/themes/citylife/library/wpGrade.php"
+			],
+			[
+				"side.scs",
+				"wp-content/themes/citylife/library/scss/components/_side.scss"
+			],
+			[
+				"wpcf.css",
+				"wp-content/themes/citylife/library/scss/plugins/_wpcf7.scss"
+			],
+			[
+				"footer.scss",
+				"wp-content/themes/citylife/library/scss/components/_footer.scss"
+			],
+			[
+				"flickr",
+				"wp-content/themes/citylife/library/scss/widgets/_flickr.scss"
+			],
+			[
+				"portf",
+				"library/scss/components/_portfolio.scss"
+			],
+			[
+				"divide",
+				"library/scss/shortcodes/_divider.scss"
+			],
+			[
+				"setting",
+				"library/scss/_settings.scss"
+			],
+			[
+				"style.s",
+				"library/scss/style.scss"
+			],
+			[
+				"scrips",
+				"library/js/scripts.js"
+			],
+			[
+				"offcs",
+				"wp-content/themes/citylife/library/scss/components/_offcanvas.scss"
+			],
+			[
+				"settings.scss",
+				"wp-content/themes/citylife/library/scss/_settings.scss"
+			],
+			[
+				"post.css",
+				"wp-content/themes/citylife/library/scss/components/_post.scss"
+			],
+			[
+				"offca",
+				"wp-content/themes/citylife/library/scss/components/_offcanvas.scss"
+			],
+			[
+				"featured-",
+				"wp-content/themes/citylife/library/scss/components/_featured-image.scss"
+			],
+			[
+				"header.sc",
+				"wp-content/themes/citylife/library/scss/components/_header.scss"
+			],
+			[
+				"template-con",
+				"wp-content/themes/citylife/template-contact.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/E/uniserver/www/prism-html/prism-html.sublime-project"
+			],
+			[
+				"cit",
+				"/E/uniserver/www/cityhub/cityhub.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 243.0,
+	"status_bar_visible": true
+}

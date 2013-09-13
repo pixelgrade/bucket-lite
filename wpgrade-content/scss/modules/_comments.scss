@@ -14,6 +14,11 @@
 /*----------------------------------------*\
 *   $COMMENTS
 \*----------------------------------------*/
+.comments-area-title{
+    @include rem(margin, $base-spacing-unit 0);
+}
+
+
 .commentlist{
     @extend .nav;
 }
@@ -50,7 +55,22 @@ li.comment{
 
     .comment__content{
         @include font-size(18px);
+        position: relative;
+
+        &:hover{
+            .comment-reply-link{
+                @include opacity(1);
+            }
+        }
     }
+
+        .comment-reply-link{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include opacity(0);
+            @include transition(opacity .3s ease-in-out);
+        }    
     
     @include media(from lap){
         .children{
@@ -84,6 +104,25 @@ li.comment{
         border-left: 1px dotted $gray;        
     }
 }
+
+.logged-in-as{
+    @extend .col-12;
+}
+
+.comment-respond{
+    position: relative;
+}
+
+#cancel-comment-reply-link{
+    position: absolute;
+    @include rem(bottom, $base-spacing-unit);
+    left: 0;
+    z-index: 5;
+    text-decoration: none;
+    font-style: normal;
+}
+
+
 
 
 
@@ -138,11 +177,14 @@ li.comment{
     }
 }
 
-.form-submit input[type='submit']{
+/**
+ * !Important stuff here to override wordpress styles...
+ */
+.form-submit #comment-submit{
     @extend .btn;
     @include rem(padding, $half-spacing-unit/2 $base-spacing-unit);
-    font-family: "Josefin Slab", serif;
-    @include font-size(16px);
-    text-transform: none;
+    font-size: 0.77778rem !important;
+    line-height: 1.71439 !important;
+    text-transform: uppercase;
     float: right;
 }
