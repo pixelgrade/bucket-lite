@@ -79,13 +79,13 @@
 				<div class="alert info">
 					<p><?php _e('Your comment is awaiting moderation.', wpgrade::textdomain()) ?></p>
 				</div>
-			<?php endif; ?>
-			<section class="comment__content comment">
-				<?php comment_text() ?>
-				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				<?php edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','') ?>				
-			</section>
-		</article>
+				<?php endif; ?>
+				<section class="comment__content comment">
+					<?php comment_text() ?>
+					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					<?php edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','') ?>				
+				</section>
+			</article>
 		<!-- </li> is added by WordPress automatically -->
 		<?php
 	} // don't remove this bracket!

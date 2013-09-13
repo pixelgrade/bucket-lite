@@ -539,15 +539,15 @@
 			"file": "theme-callbacks/unsorted.php",
 			"settings":
 			{
-				"buffer_size": 3582,
+				"buffer_size": 3588,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "comments.php",
+			"file": "/C/Users/crist_000/Desktop/The Art of Coffee _.htm",
 			"settings":
 			{
-				"buffer_size": 6431,
+				"buffer_size": 33605,
 				"line_ending": "Windows"
 			}
 		},
@@ -555,7 +555,7 @@
 			"file": "single.php",
 			"settings":
 			{
-				"buffer_size": 3958,
+				"buffer_size": 3951,
 				"line_ending": "Windows"
 			}
 		},
@@ -568,18 +568,60 @@
 			}
 		},
 		{
-			"file": "wpgrade-content/scss/modules/_comments.scss",
+			"file": "wpgrade-content/scss/pages/_post.scss",
 			"settings":
 			{
-				"buffer_size": 4091,
+				"buffer_size": 11440,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/uniserver/www/prism-html/single.php",
+			"file": "wpgrade-content/inc/widgets.php",
 			"settings":
 			{
-				"buffer_size": 18828,
+				"buffer_size": 33662,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 619 files for \"widget-tweets\"\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\css\\style.css:\n 9039  *   $TWITTER WDIGET\n 9040  \\*----------------------------------------*/\n 9041: .widget-tweets__list {\n 9042    width: 100%; }\n 9043  \n 9044: .widget-tweets__tweet {\n 9045    display: block;\n 9046    width: 100%; }\n ....\n 9281    text-decoration: none; }\n 9282  \n 9283: .widget-tweets {\n 9284    position: relative; }\n 9285  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\inc\\widgets.php:\n  724          if ( $results ){\n  725          	echo '<div class=\"twitter-icon\"><i class=\"icon-twitter\"></i></div>';\n  726:             echo '<div class=\"wp-slider\"><ul class=\"widget-tweets widget-tweets_footer slides\"><li class=\"widget-tweets-tweet slide\">';\n  727              foreach ($results as $key => $result) { ?>\n  728  				      <div class=\"tweet_block\">\n  729:                 <div class=\"widget-tweets-tweet-content\"><?php echo $this->get_parsed_tweet($result); ?></div>\n  730                      <?php\n  731                      echo\n  ...\n  733                          '<span class=\"twitter-screenname\">' . ucwords($config['screenname']) . '</span>' .\n  734                          '<span class=\"twitter-username\"><a href=\"'.$link.'\">@' . $config['screenname'] . '</a></span>' .\n  735:                         '<span class=\"widget-tweets-tweet-date\">' . wpgrade_convert_twitter_date($result[\"created_at\"]) . '</span></div></div>';\n  736  \n  737  	                if ( $slide_count == $tweets_nr ){\n  738  		                echo '</li>';\n  739  	                } elseif ( $slide_count % $nr_per_slide == 0 ) {\n  740: 		                echo '</li><li class=\"widget-tweets-tweet slide\">';\n  741                      }\n  742  	            $slide_count++;\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\js\\main.js:\n  951  /* --- TWITTER WIDGET + ROYAL SLIDER --- */\n  952  jQuery(document).ready(function($) {\n  953:     $(\".js-widget-tweets__list\").royalSlider({\n  954          autoScaleSlider: false,\n  955          arrowsNavAutoHide: false,\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\scss\\shortcodes\\_twitter.scss:\n    2  *   $TWITTER WDIGET\n    3  \\*----------------------------------------*/\n    4: .widget-tweets__list{\n    5      width: 100%;\n    6  }\n    7:     .widget-tweets__tweet{\n    8          display: block;\n    9          width: 100%;\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\scss\\widgets\\_twitter.scss:\n    1: .widget-tweets{\n    2      position: relative;\n    3  }\n\n13 matches across 5 files\n",
+			"settings":
+			{
+				"buffer_size": 2612,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "wpgrade-content/scss/shortcodes/_twitter.scss",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "wpgrade-content/js/main.js",
+			"settings":
+			{
+				"buffer_size": 202807,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "wpgrade-content/scss/widgets/_recentcomments.scss",
+			"settings":
+			{
+				"buffer_size": 345,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "wpgrade-content/scss/widgets/_widgets.scss",
+			"settings":
+			{
+				"buffer_size": 881,
 				"line_ending": "Windows"
 			}
 		}
@@ -652,8 +694,11 @@
 	},
 	"file_history":
 	[
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-single-portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/comments.php",
 		"/E/uniserver/www/prism-html/single.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_comments.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-single-portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/template-tags.php",
 		"/E/uniserver/www/prism/wp-content/themes/twentytwelve/comments.php",
 		"/E/uniserver/www/prism/wp-content/themes/twentytwelve/header.php",
@@ -776,10 +821,7 @@
 		"/E/uniserver/www/prism-html/scss/inuit.css/post.scss",
 		"/E/uniserver/www/prism-html/scss/inuit.css/_vars.scss",
 		"/E/uniserver/www/prism-html/saved_from_wp/The Art of Coffee _ Prism.htm",
-		"/E/uniserver/www/prism-html/content_article.php",
-		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/library/scss/components/_fonts.scss",
-		"/E/uniserver/www/prism-html/scss/inuit.css/base/_headings.scss",
-		"/E/uniserver/www/prism-html/content.php"
+		"/E/uniserver/www/prism-html/content_article.php"
 	],
 	"find":
 	{
@@ -787,7 +829,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 97.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
@@ -858,6 +900,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/article",
+			"<article",
+			"h4",
+			"tweets",
+			"widget-tweets",
+			"twitter",
+			"register_sidebar",
+			"side",
 			"title",
 			"class=\"clearfix\"",
 			"clearfix",
@@ -977,15 +1027,7 @@
 			"hand",
 			"small)",
 			"social",
-			"<span>Post author</span>",
-			"one-whole",
-			".page",
-			"/>\n",
-			"!default",
-			"roboto",
-			"other-color",
-			"2323",
-			"232324"
+			"<span>Post author</span>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1098,15 +1140,15 @@
 					"file": "theme-callbacks/unsorted.php",
 					"settings":
 					{
-						"buffer_size": 3582,
+						"buffer_size": 3588,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3486,
-								3486
+								3492,
+								3492
 							]
 						],
 						"settings":
@@ -1115,25 +1157,53 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 772.0,
+						"translation.y": 718.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "comments.php",
+					"file": "/C/Users/crist_000/Desktop/The Art of Coffee _.htm",
 					"settings":
 					{
-						"buffer_size": 6431,
+						"buffer_size": 33605,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								584,
-								584
+								16589,
+								16597
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2976.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "single.php",
+					"settings":
+					{
+						"buffer_size": 3951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								367
 							]
 						],
 						"settings":
@@ -1144,34 +1214,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "single.php",
-					"settings":
-					{
-						"buffer_size": 3958,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2889,
-								2889
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1202,27 +1244,21 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 6,
-					"file": "wpgrade-content/scss/modules/_comments.scss",
+					"file": "wpgrade-content/scss/pages/_post.scss",
 					"settings":
 					{
-						"buffer_size": 4091,
+						"buffer_size": 11440,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2737,
-								2737
+								588,
+								588
 							]
 						],
 						"settings":
@@ -1232,35 +1268,235 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1150.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "/E/uniserver/www/prism-html/single.php",
+					"file": "wpgrade-content/inc/widgets.php",
 					"settings":
 					{
-						"buffer_size": 18828,
+						"buffer_size": 33662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9809,
-								9979
+								26341,
+								26341
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 12030.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"settings":
+					{
+						"buffer_size": 2612,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										205,
+										218
+									],
+									[
+										267,
+										280
+									],
+									[
+										395,
+										408
+									],
+									[
+										706,
+										719
+									],
+									[
+										720,
+										733
+									],
+									[
+										760,
+										773
+									],
+									[
+										930,
+										943
+									],
+									[
+										1371,
+										1384
+									],
+									[
+										1704,
+										1717
+									],
+									[
+										1987,
+										2000
+									],
+									[
+										2284,
+										2297
+									],
+									[
+										2350,
+										2363
+									],
+									[
+										2530,
+										2543
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								483,
+								483
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "wpgrade-content/scss/shortcodes/_twitter.scss",
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								221,
+								221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1884.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "wpgrade-content/js/main.js",
+					"settings":
+					{
+						"buffer_size": 202807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192957,
+								192957
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 16602.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "wpgrade-content/scss/widgets/_recentcomments.scss",
+					"settings":
+					{
+						"buffer_size": 345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "wpgrade-content/scss/widgets/_widgets.scss",
+					"settings":
+					{
+						"buffer_size": 881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								824,
+								824
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1285,18 +1521,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.538047551594,
 			1.0
 		],
 		"rows":
@@ -1316,6 +1545,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"twitter.sc",
+				"wpgrade-content/scss/shortcodes/_twitter.scss"
+			],
 			[
 				"perso",
 				"about-personal.php"
@@ -1823,10 +2056,6 @@
 			[
 				"header.sc",
 				"wp-content/themes/citylife/library/scss/components/_header.scss"
-			],
-			[
-				"template-con",
-				"wp-content/themes/citylife/template-contact.php"
 			]
 		],
 		"width": 0.0
@@ -1838,7 +2067,7 @@
 		[
 			[
 				"",
-				"/E/uniserver/www/prism-html/prism-html.sublime-project"
+				"/E/uniserver/www/cityhub/cityhub.sublime-project"
 			],
 			[
 				"cit",

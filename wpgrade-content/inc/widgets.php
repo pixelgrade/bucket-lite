@@ -4,30 +4,6 @@
  * Register Widgets areas.
  */
 
-// function lens_sidebars()  {
-//     $args = array(
-//         'id'            => 'sidebar-blog',
-//         'name'          => __( 'Blog Sidebar', 'lens_txtd' ),
-//         'description'   => __( 'Blog Sidebar', 'lens_txtd' ),
-//         'before_title'  => '<h4 class="widget-title">',
-//         'after_title'   => '</h4>',
-//         'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//         'after_widget'  => '</div>',
-//     );
-//     register_sidebar( $args );
-
-//     $args = array(
-//         'id'            => 'sidebar-header',
-//         'name'          => __( 'Header Sidebar', 'lens_txtd' ),
-//         'description'   => __( 'Header Sidebar', 'lens_txtd' ),
-//         'before_title'  => '<h2 class="widget-title">',
-//         'after_title'   => '</h2>',
-//         'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//         'after_widget'  => '</div>',
-//     );
-//     register_sidebar( $args );
-// }
-
 function wpgrade_register_sidebars() {
 
     register_sidebar( array(
@@ -722,22 +698,21 @@ class wpgrade_twitter_widget extends WP_Widget {
 		$slide_count = 1;
 	    $tweets_nr = count($results);
         if ( $results ){
-        	echo '<div class="twitter-icon"><i class="icon-twitter"></i></div>';
-            echo '<div class="wp-slider"><ul class="widget-tweets widget-tweets_footer slides"><li class="widget-tweets-tweet slide">';
+            echo '<div class="wp-slider widget-content"><ul class="widget-tweets__list pixslider js-pixslider" data-bullets="true"><li class="widget-tweets__tweet">';
             foreach ($results as $key => $result) { ?>
-				      <div class="tweet_block">
-                <div class="widget-tweets-tweet-content"><?php echo $this->get_parsed_tweet($result); ?></div>
+				      <div class="tweet__block">
+                <div class="tweet__content"><?php echo $this->get_parsed_tweet($result); ?></div>
                     <?php
                     echo
-                    	'<div class="twitter-tweet-meta">' .
-                        '<span class="twitter-screenname">' . ucwords($config['screenname']) . '</span>' .
-                        '<span class="twitter-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>' .
-                        '<span class="widget-tweets-tweet-date">' . wpgrade_convert_twitter_date($result["created_at"]) . '</span></div></div>';
+                    	'<div class="tweet__meta">' .
+                        //'<span class="twitter-screenname">' . ucwords($config['screenname']) . '</span>' .
+                        '<span class="tweet__meta-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>' .
+                        '<span class="tweet__meta-date">' . wpgrade_convert_twitter_date($result["created_at"]) . '</span></div></div>';
 
 	                if ( $slide_count == $tweets_nr ){
 		                echo '</li>';
 	                } elseif ( $slide_count % $nr_per_slide == 0 ) {
-		                echo '</li><li class="widget-tweets-tweet slide">';
+		                echo '</li><li class="widget-tweets__tweet">';
                     }
 	            $slide_count++;
             }
