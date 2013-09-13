@@ -2,9 +2,9 @@
 
 <?php if ( have_posts() ) : ?>
 
-    <?php while ( have_posts() ) : the_post(); ?>
 
-        <div class="masonry">
+    <div class="masonry" data-columns>
+        <?php while ( have_posts() ) : the_post(); ?>
             <article class="masonry__item">
                 <div class="article-timestamp">
                     <div class="article-timestamp__date"><?php the_time('j'); ?></div>
@@ -58,9 +58,8 @@
                 <?php } ?>
 
             </article><!-- .masonry__item -->
-        </div><!-- .masonry -->
-
-    <?php endwhile; ?>
+        <?php endwhile; ?>
+    </div><!-- .masonry -->
 
 <?php else : ?>
 

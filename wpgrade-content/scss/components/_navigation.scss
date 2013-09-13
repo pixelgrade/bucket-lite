@@ -16,6 +16,10 @@
         border-top: 1px solid #333638;
         @include rem(margin-left, -1 * $base-spacing-unit);
     }
+
+    & > .menu-item {
+        @extend .menu-item--main;
+    }
 }
 
     /*li*/.menu-item {

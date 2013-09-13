@@ -1341,7 +1341,7 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').addClass('window-loaded');
-    $('.menu-item--main').each(function(i,e) {
+    $('.site-navigation--main .menu-item').each(function(i,e) {
         var $self = $(e);
         setTimeout(function() {
             $self.addClass('js--is-loaded');
