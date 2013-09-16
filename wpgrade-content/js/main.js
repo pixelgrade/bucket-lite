@@ -960,22 +960,30 @@ function niceScrollInit() {
 /* --- ROYAL SLIDER --- */
 jQuery(document).ready(function($) {
 
+    // Helper function
+    // examples
+    // console.log(padLeft(23,5));       //=> '00023'
+    // console.log(padLeft(23,5,'>>'));  //=> '>>>>>>23'
+    function padLeft(nr, n, str){
+        return Array(n-String(nr).length+1).join(str||'0')+nr;
+    }
+
     // create the markup for the slider from the gallery shortcode
     // take all the images and insert them in the .gallery <div>
     $('.wp-gallery').each(function() {
         var $old_gallery = $(this),
         $images = $old_gallery.find('img'),
-        $new_gallery = $('<div class="js-pixslider" data-royalSlider data-customArrows>');
+        $new_gallery = $('<div class="js-pixslider" data-royalSlider data-customarrows>');
         $images.prependTo($new_gallery);
         $old_gallery.replaceWith($new_gallery);
     });
 
-    // create the slider controls
+
     $('.js-pixslider').each(function(){
         var $slider = $(this),
             arrows = typeof $slider.data('arrows') !== "undefined" ? true : false,
             bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
-            customArrows = typeof $slider.data('customArrows') !== "undefined" ? true : false;
+            customArrows = typeof $slider.data('customarrows') !== "undefined" ? true : false;
         
         // make sure default arrows won't appear if customArrows is set
         if (customArrows) arrows = false;
@@ -1015,12 +1023,12 @@ jQuery(document).ready(function($) {
                         '</ul>'+
                     '</div>'
                 );
-            $gallery_control.insertAfter($new_gallery);
+            $gallery_control.insertAfter($slider);
 
             // write the total number of slides inside the markup created above
             // make sure it is left padded with 0 in case it is lower then 10
             slidesNumber = (slidesNumber < 10) ? padLeft(slidesNumber, 2) : slidesNumber;
-            $('.js-gallery-slides-total').html(slideNumber);
+            $('.js-gallery-slides-total').html(slidesNumber);
             
             // add event listener to change the current slide number on slide change
             royalSlider.ev.on('rsAfterSlideChange', function(event) {
@@ -1033,15 +1041,8 @@ jQuery(document).ready(function($) {
                 }
             });
         }
-    })
-})
-// Helper function
-// examples
-// console.log(padLeft(23,5));       //=> '00023'
-// console.log(padLeft(23,5,'>>'));  //=> '>>>>>>23'
-function padLeft(nr, n, str){
-    return Array(n-String(nr).length+1).join(str||'0')+nr;
-}
+    });
+});
 
 
 /* --- GALLERY FULL SCREEN + ROYAL SLIDER --- */
