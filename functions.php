@@ -57,3 +57,17 @@
     # Please perform any initialization via options in wpgrade-config and
     # calls in wpgrade-system/bootstrap. Required for testing.
     #
+
+
+    /**
+     * Cutting the titles and adding '...' after
+     * @param  [string] $text       [description]
+     * @param  [int] $cut_length [description]
+     * @param  [int] $limit      [description]
+     * @return [type]             [description]
+     */
+    function short_text($text, $cut_length, $limit){
+        $text = (strlen($text) > $limit) ? substr($text,0,$cut_length).'...' : $text;
+
+        echo $text;
+    }   
