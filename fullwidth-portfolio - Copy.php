@@ -1,14 +1,5 @@
 <?php get_header(); ?>
 
-            <?php
-            $attachments = get_posts( array(
-                'post_type' => 'attachment',
-                'posts_per_page' => -1,
-                'post_parent' => $post->ID,
-                'exclude'     => get_post_thumbnail_id()
-            ) );
-
-            if ( $attachments ) : ?>
             <div class="featured-image">
                 <div id='gallery-1' class='gallery galleryid-143 gallery-columns-3 royalSlider js-gallery'>
                     <dl class='gallery-item'>
@@ -45,9 +36,7 @@
                 </div>
             </div>
 
-            <?php endif; ?>
-
-            <div class="page-content single-portfolio-fullwidth">
+            <div id="page-content">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="row">
                         <div class="col-4">
@@ -58,18 +47,15 @@
                                         <span class="meta-box__box-title">Client: </span>
                                         <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                                     </div>  
-                                    <?php $categories = get_the_terms($post->ID, 'portfolio_cat');
-                                        if (count($categories)): ?>                                    
-                                        <div class="entry__meta-box meta-box--categories">
-                                            <span class="meta-box__box-title">Filled under: </span>
-                                            <?php foreach ($categories as $cat): ?>
-                                                    <a href="<?php echo get_category_link($cat); ?>"
-                                                       rel="category">
-                                                        <?php echo get_category($cat)->name; ?>
-                                                    </a>
-                                            <?php endforeach; ?>
-                                        </div>
-                                <?php endif; ?> 
+                                    <div class="entry__meta-box meta-box--categories">
+                                        <span class="meta-box__box-title">Filled under: </span>
+                                        <?php foreach ($categories as $cat): ?>
+                                                <a href="<?php echo get_category_link($cat); ?>"
+                                                   rel="category">
+                                                    <?php echo get_category($cat)->name; ?>
+                                                </a>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </header><!-- .entry-header -->
                         </div>
