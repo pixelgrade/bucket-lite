@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-left"
+			],
+			[
 				"font-",
 				"font-style"
 			],
@@ -14,10 +18,6 @@
 			[
 				"opaci",
 				"opacity"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"slider",
@@ -606,6 +606,38 @@
 				"buffer_size": 2703,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "single-portfolio.php",
+			"settings":
+			{
+				"buffer_size": 2674,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sidebar-portfolio.php",
+			"settings":
+			{
+				"buffer_size": 2669,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "yarpp-template-example.php",
+			"settings":
+			{
+				"buffer_size": 3452,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wpgrade-content/scss/pages/_project.scss",
+			"settings":
+			{
+				"buffer_size": 4397,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -676,6 +708,8 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/custom-entities.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-photoblog.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/metaboxes/init.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/widgets.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_post.scss",
@@ -801,9 +835,7 @@
 		"/E/uniserver/www/prism-html/footer_scripts.php",
 		"/E/uniserver/www/prism-html/article.php",
 		"/E/uniserver/www/prism-html/scss/_fonts.scss",
-		"/E/uniserver/www/prism-html/scss/inuit.css/objects/_grids.scss",
-		"/E/uniserver/www/prism-html/scss/inuit.css/generic/_helper.scss",
-		"/E/uniserver/www/prism-html/scss/_navigation.scss"
+		"/E/uniserver/www/prism-html/scss/inuit.css/objects/_grids.scss"
 	],
 	"find":
 	{
@@ -882,6 +914,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"register_post_type",
+			"entities",
 			"gallery",
 			"do_shortcode",
 			"wpGrade_gallery_slideshow",
@@ -1007,9 +1041,7 @@
 			"    @include rem(margin-left, -2 * $base-spacing-unit);\n        @include rem(padding-left, 2 * $base-spacing-unit)",
 			"widget__content",
 			" style=\"font-size: 19px;\"",
-			"style=\"font-size: 19px;\"",
-			"meta__date",
-			"article-meta"
+			"style=\"font-size: 19px;\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1060,7 +1092,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 11,
 			"sheets":
 			[
 				{
@@ -1075,8 +1107,8 @@
 						"selection":
 						[
 							[
-								200,
-								200
+								573,
+								573
 							]
 						],
 						"settings":
@@ -1245,7 +1277,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1326,7 +1360,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1346,8 +1382,8 @@
 						"selection":
 						[
 							[
-								2137,
-								2137
+								470,
+								470
 							]
 						],
 						"settings":
@@ -1357,7 +1393,117 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 324.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "single-portfolio.php",
+					"settings":
+					{
+						"buffer_size": 2674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2646,
+								2646
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "sidebar-portfolio.php",
+					"settings":
+					{
+						"buffer_size": 2669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2669,
+								2669
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "yarpp-template-example.php",
+					"settings":
+					{
+						"buffer_size": 3452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1667,
+								1667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "wpgrade-content/scss/pages/_project.scss",
+					"settings":
+					{
+						"buffer_size": 4397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1406,6 +1552,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"proje",
+				"wpgrade-content/scss/pages/_project.scss"
+			],
+			[
+				"projec",
+				"wpgrade-content/scss/pages/_project.scss"
+			],
 			[
 				"twitter.sc",
 				"wpgrade-content/scss/shortcodes/_twitter.scss"
@@ -1495,10 +1649,6 @@
 				"page.php"
 			],
 			[
-				"projec",
-				"project-fullwidth.php"
-			],
-			[
 				"single-v",
 				"single-video.php"
 			],
@@ -1509,10 +1659,6 @@
 			[
 				"sty",
 				"scss/style.scss"
-			],
-			[
-				"proje",
-				"project-sidebar-right.php"
 			],
 			[
 				"proe",

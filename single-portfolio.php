@@ -12,10 +12,14 @@
             </header>
             <hr class="separator--dotted separator--full-left" />
             <footer class="entry__meta entry__meta--project cf">
-                <?php $categories = wp_get_post_categories($post->ID); ?>
-                <?php if (count($categories)): ?>
+                <div class="entry__meta-box meta-box--client">
+                    <span class="meta-box__box-title">Client: </span>
+                    <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
+                </div>                 
+                <?php $categories = get_the_terms($post->ID, 'portfolio_cat');
+                    if (count($categories)): ?>
                     <div class="entry__meta-box meta-box--categories">
-                        <span class="meta-box__box-title">Client: </span>
+                        <span class="meta-box__box-title">Filled under: </span>
                         <?php foreach ($categories as $cat): ?>
                                 <a href="<?php echo get_category_link($cat); ?>"
                                    rel="category">
@@ -23,8 +27,8 @@
                                 </a>
                         <?php endforeach; ?>
                     </div>
-                <?php endif; ?>    
-            </footer><!-- .entry__meta .entry__meta--project -->
+                <?php endif; ?>       
+            </footer><!-- .entry__meta .entry__meta --project -->
             <hr class="separator separator--full-left"/>
             <footer class="entry__meta cf">
                <div class="likes-box likes-box--footer">
@@ -46,9 +50,22 @@
         </article>
         <?php 
             yarpp_related(array(
-                'threshold' => 0,
-                'post_type' => array('project')
-            )); 
+                'threshold' => 1,
+                'post_type' => array('portfolio'),
+                'past_only' => false,
+                'limit' => 5,
+                'require_tax' => array(
+                    'portfolio_cat' => 1
+                ),                
+                'weight' => array(
+                    'body' => 0,
+                    'title' => 0,
+                    'tax' => array(
+                        'portfolio_cat' => 1
+                        )
+                    )                
+                )
+            ); 
         ?>
     <?php endwhile; ?>
 </div><!-- .page-content -->

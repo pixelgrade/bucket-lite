@@ -40,7 +40,7 @@ function wpgrade_register_post_types() {
         'has_archive' => 'portfolio-archive',
         'menu_icon' => wpgrade::content_url().'images/admin-menu-icons/report.png',
         'menu_position' => null,
-        'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
+        'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'),
 		'yarpp_support' => true
     );
 
@@ -103,7 +103,7 @@ function wpgrade_register_post_types() {
         'capability_type'       => 'page',
         'menu_icon' => wpgrade::content_url().'images/admin-menu-icons/x_office_presentation.png',
         'menu_position'         => null,
-        'supports'              => array('title', 'page-attributes', /*'editor', 'thumbnail' */),
+        'supports'              => array('title', 'page-attributes'/*, 'editor', 'thumbnail' */),
 //        'register_meta_box_cb' => 'wpgrade_remove_post_format_panel'
     );
     register_post_type( 'homepage_slide', $hps_args );

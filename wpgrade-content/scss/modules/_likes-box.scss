@@ -34,7 +34,7 @@
         @include rem(height, 1.5 * $base-spacing-unit);
         @include rem(width, 1.5 * $base-spacing-unit);
         @include rem(margin, $half-spacing-unit/2 0);
-        @include rem(padding-top, $half-spacing-unit/2);
+        @include rem(padding-top, $half-spacing-unit/2.5);
         @include rem(margin-right, 15px);
         @include border-radius(50%);
         border: 3px solid black;        

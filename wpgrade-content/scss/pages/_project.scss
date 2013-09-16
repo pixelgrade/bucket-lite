@@ -115,6 +115,16 @@
     }
 }
 
+.project-images{
+    a{
+        display: block;
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
 /**
  * Two titles in the mark-up. One that is on top of the images
  * section and only displayed for mobile devices.
