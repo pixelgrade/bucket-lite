@@ -959,6 +959,41 @@ function niceScrollInit() {
 
 /* --- TWITTER WIDGET + ROYAL SLIDER --- */
 jQuery(document).ready(function($) {
+
+    // create the markup for the slider from the gallery shortcode
+    // take all the images and insert them in the .gallery <div>
+    $('.wp-gallery').each(function() {
+        var $old_gallery = $(this),
+        $images = $old_gallery.find('img'),
+        $new_gallery = $('<div class="gallery js-gallery" data-royalSlider>');
+        $images.prependTo($new_gallery);
+        $old_gallery.replaceWith($new_gallery);
+
+        var slides_count = $images.length,
+            $gallery_control = $(
+                '<div class="gallery_control gallery-control--gallery-fullscreen">'+
+                    '<ul class="gallery-control__items">'+
+                        '<li class="gallery-control__item gallery-control__arrow">'+
+                            '<a href="#" class="gallery-control__arrow-button arrow-button-left js-slider-arrow-prev"></a>'+
+                        '</li>'+
+                        '<li class="gallery-control__item gallery-control__count">'+
+                            '<span class="gallery-control__count-current js-gallery-current-slide"><span class="highlighted js-decimal">0</span><span class="js-unit">1</span></span>'+
+                        '</li>'+
+                        '<li class="gallery-control__item gallery-control__count">'+
+                            '<sup class="gallery-control__count-total js-gallery-slides-total">'+slides_count+'</sup>'+
+                        '</li>'+
+                        '<li class="gallery-control__item gallery-control__arrow">'+
+                            '<a href="#" class="gallery-control__arrow-button arrow-button-right js-slider-arrow-next"></a>'+
+                        '</li>'+
+                    '</ul>'+
+                '</div>'
+            );
+        $gallery_control.insertAfter($new_gallery);
+    });
+
+    // create the slider controls
+
+
     $('.js-pixslider').each(function(){
         var arrows = typeof $(this).data('arrows') !== "undefined" ? true : false;
         var bullets = typeof $(this).data('bullets') !== "undefined" ? "bullets" : "none";
@@ -990,7 +1025,7 @@ jQuery(document).ready(function($) {
         imageScaleMode: 'fill',
         slidesSpacing: 0,
         autoHeight: true,
-        controlNavigation: 'bullets'
+        controlNavigation: 'none'
     });
 
     $(".js-gallery--archive").royalSlider({

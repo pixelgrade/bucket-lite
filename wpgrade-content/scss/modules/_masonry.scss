@@ -34,18 +34,18 @@
         margin-top: 0;
         margin-left: 0;
         margin-bottom: 0;
-        @include rem(margin-right, $base-spacing-unit);
+        @include rem(margin, 0 $base-spacing-unit $base-spacing-unit 0);
         @include rem(padding, $half-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
     }
 
     .entry__content {
-        @include rem(padding, 3*$half-spacing-unit 0 0 $base-spacing-unit);
+        @include rem(padding, 0 0 0 $base-spacing-unit);
         @include rem(margin-right, $base-spacing-unit);
     }
 
     .entry--quote__content {
         border-bottom: 1px dashed black;
-        // @include rem(margin-bottom, $base-spacing-unit);
+        @include rem(padding-top, 3 * $half-spacing-unit);
     }
 
     blockquote {
