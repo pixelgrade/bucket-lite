@@ -29,6 +29,25 @@ li.comment{
     width: 100%;
     display: block;
     position: relative;
+
+    .children{
+        
+        @include media(from lap) {
+            @include rem(margin-top, 2 * $base-spacing-unit);
+        }
+        
+        &:before{
+            content: "";
+            float: left;
+            display: block;
+            @include rem(height, $base-spacing-unit);
+            @include rem(width, $half-spacing-unit);
+            @include rem(margin-left, -$base-spacing-unit);
+            @include rem(margin-top, -$half-spacing-unit);
+            border-left: 2px solid $light;
+            border-bottom: 2px solid $light;
+        }
+    }
 }
     /* .comment__meta{} */
 
@@ -71,25 +90,6 @@ li.comment{
             @include opacity(0);
             @include transition(opacity .3s ease-in-out);
         }    
-    
-    @include media(from lap){
-        .children{
-            @include rem(margin-top, 2 * $base-spacing-unit);
-        }
-    }
-
-
-    .children:before{
-        content: "";
-        float: left;
-        display: block;
-        @include rem(height, $base-spacing-unit);
-        @include rem(width, $half-spacing-unit);
-        @include rem(margin-left, -$base-spacing-unit);
-        @include rem(margin-top, -$half-spacing-unit);
-        border-left: 2px solid $light;
-        border-bottom: 2px solid $light;
-    }
 
 @include media(from hand){
     .comment__meta{

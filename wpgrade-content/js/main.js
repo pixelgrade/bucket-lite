@@ -1236,59 +1236,95 @@ $(function(){
     loadUp();
     /* --- VISUAL LOADING --- */
 
-    var gmap_link, gmap_variables, gmap_zoom;
-    gmap_link = "https://maps.google.com/?ll=51.379937,-2.343757&spn=0.013058,0.033023&t=m&z=14";
+    if ($('#gmap').length) {
 
-    function get_url_parameter(needed_param, gmap_url) {
-        var sURLVariables = (gmap_url.split('?'))[1].split('&');
-        for (var i = 0; i < sURLVariables.length; i++)  {
-            var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] == needed_param) {
-                return sParameterName[1];
+        var gmap_link, gmap_variables, gmap_zoom;
+        gmap_link = $('#gmap').data('url');
+
+        // Overwrite Math.log to accept a second optional parameter as base for logarhitm
+        Math.log = (function() {
+            var log = Math.log;
+            return function(n, base) {
+            return log(n)/(base ? log(base) : 1);
+            };
+        })();
+
+        function get_url_parameter(needed_param, gmap_url) {
+            var sURLVariables = (gmap_url.split('?'))[1];
+            if (typeof sURLVariables === "undefined") {
+                return sURLVariables;
             }
-        }
-    }
-
-    if (gmap_link) {
-        //Parse the URL and load variables (ll = latitude/longitude; z = zoom)
-        console.log(gmap_link);
-        var gmap_variables = get_url_parameter('ll', gmap_link);
-        if (typeof gmap_variables === "undefined") {
-            gmap_variables = get_url_parameter('sll', gmap_link);
-        }
-        var gmap_zoom = get_url_parameter('z', gmap_link);
-        if (typeof gmap_zoom === "undefined") {
-            gmap_zoom = 10;
-        }
-        var gmap_coordinates = gmap_variables.split(',');
-    }
-
-    $("#gmap").gmap3({
-        map:{
-            options:{
-                center: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1]),
-                zoom: parseInt(gmap_zoom),
-                mapTypeId: "style1",
-                mapTypeControlOptions: {mapTypeIds: []}
-            }
-        },
-        marker:{
-            latLng: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1])
-        },
-        styledmaptype:{
-            id: "style1",
-            options:{
-                name: "Style 1"
-            },
-            styles: [
-                {
-                    stylers: [
-                        { saturation: -100 }
-                    ]
+            sURLVariables = sURLVariables.split('&');
+            for (var i = 0; i < sURLVariables.length; i++)  {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == needed_param) {
+                    return sParameterName[1];
                 }
-            ]
+            }
         }
-    });
+
+        if (gmap_link) {
+            //Parse the URL and load variables (ll = latitude/longitude; z = zoom)
+            console.log(gmap_link);
+            var gmap_variables = get_url_parameter('ll', gmap_link);
+            if (typeof gmap_variables === "undefined") {
+                gmap_variables = get_url_parameter('sll', gmap_link);
+            }
+            // if gmap_variables is still undefined that means the url was pasted from the new version of google maps
+            if (typeof gmap_variables === "undefined") {
+                var splis, lt, ln, dist, z;
+                split = gmap_link.split('!3d');
+                lt = split[1];
+                split = split[0].split('!2d');
+                ln = split[1];
+                split = split[0].split('!1d');
+                dist = split[1];
+                var gmap_zoom = 21 - Math.round(Math.log(Math.round(dist/218), 2));
+                var gmap_coordinates = [lt, ln];
+            } else {
+                var gmap_zoom = get_url_parameter('z', gmap_link);
+                if (typeof gmap_zoom === "undefined") {
+                    gmap_zoom = 10;
+                }
+                var gmap_coordinates = gmap_variables.split(',');
+            }
+        }
+
+        $("#gmap").gmap3({
+            map:{
+                options:{
+                    center: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1]),
+                    zoom: parseInt(gmap_zoom),
+                    mapTypeId: "style1",
+                    mapTypeControlOptions: {mapTypeIds: []}
+                }
+            },
+            // marker:{
+            //     latLng: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1])
+            // },
+            overlay:{
+                latLng: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1]),
+                options:{
+                    content:  '<div class="pin_ring pin_ring--outer">' +
+                        '<div class="pin_ring pin_ring--inner"></div>' +
+                        '</div>',
+                }
+            },
+            styledmaptype:{
+                id: "style1",
+                options:{
+                    name: "Style 1"
+                },
+                styles: [
+                    {
+                        stylers: [
+                            { saturation: -100 }
+                        ]
+                    }
+                ]
+            }
+        });
+    }
 
     var clicks = 0;
     $('body').on('click', function() {
