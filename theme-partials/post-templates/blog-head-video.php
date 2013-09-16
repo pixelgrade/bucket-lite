@@ -1,5 +1,5 @@
 <?php
-    $html_title = get_post_meta(get_the_ID(), wpgrade::prefix().'post_html_title', true);
+    $html_title = get_post_meta($post->ID, wpgrade::prefix().'post_html_title', true);
     $audio_embed = get_post_meta($post->ID, wpgrade::prefix().'audio_embed', true)
 ?>
 <?php
