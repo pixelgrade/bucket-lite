@@ -1,3 +1,4 @@
+<?php global $post; ?>
 <div class="article-timestamp">
     <div class="article-timestamp__date"><?php the_time('j'); ?></div>
     <div class="article-timestamp__right-box">
@@ -9,12 +10,8 @@
 <h2 class="entry__title">
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 </h2>
-<div class="entry__content"><?php the_excerpt(); ?></div>
-
-<?php
-    if ( has_post_thumbnail() ) {
-        echo '<div class="entry__featured-image">';
-        the_post_thumbnail();
-        echo '</div>';
-    }
-?>
+<div class="featured-image-container">
+    <div class="featured-image-wrapper">
+        <?php wpGrade_gallery_slideshow($post); ?>     
+    </div>
+</div>
