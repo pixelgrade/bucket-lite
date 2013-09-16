@@ -6,8 +6,8 @@
 		# ---------------------------------------------------------------------
 
 		'name'       => 'Lens',
-//		'shortname'  => 'lens',
-//		'prefix'     => '_lens_',
+		'shortname'  => 'lens',
+		'prefix'     => '_lens_',
 //		'textdomain' => 'lens_txtd',
 
 		// use theme-options to add any non-customizable options with out going
