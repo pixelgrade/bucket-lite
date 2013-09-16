@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-
 <div class="page-content project-sidebar-right">
     <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part('theme-partials/post-templates/single-head', get_post_format()); ?>
@@ -78,4 +76,3 @@
         ?>
     <?php endwhile; ?>
 </div><!-- .page-content -->
-<?php get_footer(); ?>

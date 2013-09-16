@@ -957,7 +957,7 @@ function niceScrollInit() {
     }
 }
 
-/* --- TWITTER WIDGET + ROYAL SLIDER --- */
+/* --- ROYAL SLIDER --- */
 jQuery(document).ready(function($) {
 
     // create the markup for the slider from the gallery shortcode
@@ -969,6 +969,7 @@ jQuery(document).ready(function($) {
         $images.prependTo($new_gallery);
         $old_gallery.replaceWith($new_gallery);
 
+        // create the slider controls
         var slides_count = $images.length,
             $gallery_control = $(
                 '<div class="gallery_control gallery-control--gallery-fullscreen">'+
@@ -990,8 +991,6 @@ jQuery(document).ready(function($) {
             );
         $gallery_control.insertAfter($new_gallery);
     });
-
-    // create the slider controls
 
 
     $('.js-pixslider').each(function(){

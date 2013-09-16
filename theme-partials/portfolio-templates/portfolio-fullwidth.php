@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-
             <?php
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
@@ -10,38 +8,18 @@
 
             if ( $attachments ) : ?>
             <div class="featured-image">
-                <div id='gallery-1' class='gallery galleryid-143 gallery-columns-3 royalSlider js-gallery'>
-                    <dl class='gallery-item'>
-                        <dt class='gallery-icon landscape'>
-                            <img src="http://192.168.1.104/prism-html/img/gallery/gallery-1.jpg" class="attachment-blog-big rsImg" alt="hr10_sample_image_02" />
-                        </dt>
-                    </dl>
-                    <dl class='gallery-item'>
-                        <dt class='gallery-icon landscape'>
-                            <img src="http://192.168.1.104/prism-html/img/gallery/gallery-2.jpg" class="attachment-blog-big rsImg" alt="hr10_sample_image_02" />
-                        </dt>
-                    </dl>
-                    <dl class='gallery-item'>
-                        <dt class='gallery-icon landscape'>
-                            <img src="http://192.168.1.104/prism-html/img/gallery/gallery-3.jpg" class="attachment-blog-big rsImg" alt="hr10_sample_image_02" />
-                        </dt>
-                    </dl>
-                </div>
-                <div class="gallery-control gallery-control--gallery-fullscreen">
-                    <ul class="gallery-control__items">
-                        <li class="gallery-control__item gallery-control__arrow">
-                            <a href="#" class="gallery-control__arrow-button arrow-button-left js-slider-arrow-prev"></a>
-                        </li><!--
-                        --><li class="gallery-control__item gallery-control__count">
-                            <span class="gallery-control__count-current js-gallery-current-slide"><span class="highlighted js-decimal">0</span><span class="js-unit">1</span></span>    
-                        </li><!--
-                        --><li class="gallery-control__item gallery-control__count">
-                            <sup class="gallery-control__count-total js-gallery-slides-total">03</sup>    
-                        </li><!--
-                        --><li class="gallery-control__item gallery-control__arrow">
-                            <a href="#" class="gallery-control__arrow-button arrow-button-right js-slider-arrow-next"></a>
-                        </li>
-                    </ul>
+                <div id="project-gallery" class="gallery royalSlider wp-gallery" data-bullets="true" data-arrows="false">
+                    <?php 
+                        foreach ( $attachments as $attachment ) : 
+                            $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+                            $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );                            
+                    ?>
+                        <dl class='gallery-item <?php echo $class; ?>'>
+                            <dt class='gallery-icon landscape'>
+                                <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="hr10_sample_image_02" />
+                            </dt>
+                        </dl>                    
+                    <?php endforeach; ?>                    
                 </div>
             </div>
 
