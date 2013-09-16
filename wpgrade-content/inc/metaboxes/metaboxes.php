@@ -136,136 +136,6 @@ function cmb_wpgrade_metaboxes( array $meta_boxes ) {
         )
     );
 
-    $meta_boxes[] = array(
-        'id'         => 'page_details_metabox',
-        'title'      => __('Header Settings', wpgrade::textdomain()),
-        'pages'      => array( 'page' ), // Post type
-        'context'    => 'normal',
-        'priority'   => 'high',
-        'show_names' => true, // Show field names on the left
-//        'show_on'    => array( 'key' => 'id', 'value' => array( 2, ), ), // Specific post IDs to display this metabox
-        'fields' => array(
-            array(
-                'name' => __('Hide Title', wpgrade::textdomain()),
-                'desc' => __('Hide the page title?', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'page_display_title',
-                'type' => 'checkbox',
-            ),
-            array(
-                'name' => __('Header HTML Content', wpgrade::textdomain()),
-                'desc' => __('Create your own title and header content with the featured image as background.', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'page_html_title',
-                'type' => 'wysiwyg',
-				'options' => array (
-					'textarea_rows' => 10,
-					),
-            ),
-			array(
-					'name' =>  __('Background Color', wpgrade::textdomain()),
-					'desc' => __('If you haven\'t chosen a featured image this color will be used as background.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'header_background_color',
-					'type' => 'colorpicker',
-                    'std' => '#333333',
-					'options' => array (),
-				)
-        )
-    );
-
-//    $meta_boxes[] = array(
-//        'id'         => 'portfolio_visual_builder',
-//        'title'      => __('Project Builder', wpgrade::textdomain()),
-//        'pages'      => array( 'portfolio' ), // Post type
-//        'context'    => 'normal',
-//        'priority'   => 'high',
-//        'show_names' => true, // Show field names on the left
-//        'fields' => array(
-//            array(
-//                'name' => __('My row', wpgrade::textdomain()),
-//                'desc' => __('Row type', wpgrade::textdomain()),
-//                'id'   => wpgrade::prefix() . 'portfolio_rows',
-//                'type' => 'portfolio-gallery',
-//            )
-//        )
-//    );
-
-    $meta_boxes[] = array(
-        'id'         => 'portfolio_header_features',
-        'title'      => __('Header Settings', wpgrade::textdomain()),
-        'pages'      => array( 'portfolio' ), // Post type
-        'context'    => 'normal',
-        'priority'   => 'high',
-        'show_names' => true, // Show field names on the left
-        'fields' => array(
-            array(
-                'name' => __('Images', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'portfolio_gallery',
-                'type' => 'gallery',
-            ),
-            array(
-                'name' => __('Featured Project', wpgrade::textdomain()),
-                'desc' => __('Items checked as featured will be displayed first in the homepage portfolio section (ordered by date descending)', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'portfolio_featured',
-                'type' => 'checkbox',
-            ),
-			array(
-                'name' => __('Hide Title', wpgrade::textdomain()),
-                'desc' => __('Hide the project title?', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'project_display_title',
-                'type' => 'checkbox',
-				'options' => array (
-					'hidden' => (wpgrade::option('portfolio_single_show_header_image') ) ? false : true,
-					),
-            ),
-			array(
-                'name' => __('Header HTML Content', wpgrade::textdomain()),
-                'desc' => __('Create your own title and header content with the featured image as background.', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'project_html_title',
-                'type' => 'wysiwyg',
-				'options' => array (
-					'textarea_rows' => 10,
-//					'hidden' => (wpgrade::option('portfolio_single_show_header_image') ) ? false : true,
-					),
-            ),
-			array(
-					'name' =>  __('Background Color', wpgrade::textdomain()),
-					'desc' => __('If you haven\'t chosen a featured image this color will be used as background.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'header_background_color',
-					'type' => 'colorpicker',
-                    'std' => '#333333',
-					'options' => array (),
-				),
-        )
-    );
-
-	$meta_boxes[] = array(
-        'id'         => 'post_details_metabox',
-        'title'      => __('Header Settings', wpgrade::textdomain()),
-        'pages'      => array( 'post' ), // Post type
-        'context'    => 'normal',
-        'priority'   => 'high',
-        'show_names' => true, // Show field names on the left
-//        'show_on'    => array( 'key' => 'id', 'value' => array( 2, ), ), // Specific post IDs to display this metabox
-        'fields' => array(
-            array(
-                'name' => __('Header HTML Content', wpgrade::textdomain()),
-                'desc' => __('Create your own title and header content with the featured image as background.', wpgrade::textdomain()),
-                'id'   => wpgrade::prefix() . 'post_html_title',
-                'type' => 'wysiwyg',
-				'options' => array (
-					'textarea_rows' => 10,
-					),
-            ),
-			array(
-					'name' =>  __('Background Color', wpgrade::textdomain()),
-					'desc' => __('If you haven\'t chosen a featured image this color will be used as background.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'header_background_color',
-					'type' => 'colorpicker',
-                    'std' => '#333333',
-					'options' => array (),
-				),
-        )
-    );
-
 	/*
 	 * The Quote Post Format
 	 */
@@ -294,6 +164,13 @@ function cmb_wpgrade_metaboxes( array $meta_boxes ) {
 					'type' => 'text',
 					'std' => '',
 				),
+            array(
+                    'name' => __('Author Title', wpgrade::textdomain()),
+                    'desc' => '',
+                    'id' => wpgrade::prefix() . 'quote_author_title',
+                    'type' => 'text',
+                    'std' => '',
+                ),
 			array(
 					'name' => __('Author Link', wpgrade::textdomain()),
 					'desc' => __('Insert here an url if you want the author name to be linked to that address.', wpgrade::textdomain()),
@@ -310,7 +187,7 @@ function cmb_wpgrade_metaboxes( array $meta_boxes ) {
     $meta_boxes[] = array(
 		'id' => 'post_format_metabox_video',
 		'title' => __('Video Settings', wpgrade::textdomain()),
-		'pages'      => array( 'post'), // Post type
+		'pages'      => array('post'), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
@@ -322,36 +199,43 @@ function cmb_wpgrade_metaboxes( array $meta_boxes ) {
 					'type' => 'textarea_small',
 					'std' => '',
 				),
-			array(
-					'name' => __('MP4 File URL', wpgrade::textdomain()),
-					'desc' => __('Please enter in the URL to your .m4v video file (h.264 codec). This format is need to provide support for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'video_m4v',
-					'type' => 'file',
-					'std' => ''
-				),
-			array(
-					'name' => __('WebM/VP8 File URL', wpgrade::textdomain()),
-					'desc' => __('Please enter in the URL to your .webm video file. This format is need to provide support for Firefox4, Opera, and Chrome', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'video_webm',
-					'type' => 'file',
-					'std' => ''
-				),
-			array(
-					'name' => __('Ogg/Vorbis File URL', wpgrade::textdomain()),
-					'desc' => __('Please enter in the URL to your .ogv video file. This format is need to provide support for older Firefox and Opera versions', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'video_ogv',
-					'type' => 'file',
-					'std' => ''
-				),
-			array(
-					'name' => __('Preview Image', wpgrade::textdomain()),
-					'desc' => __('This will be the image displayed when the video has not been played yet. The image should be at least 640px wide. Click the "Upload" button to open the Media Manager, and click "Use as Preview Image" once you have uploaded or chosen an image from the media library.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'video_poster',
-					'type' => 'file',
-					'std' => ''
-				),
 		)
 	);
+
+    /*
+     * Portfolio Post Type
+     */
+    $meta_boxes[] = array(
+        'id' => 'portfolio_page_layout',
+        'title' => __('Portfolio Template', wpgrade::textdomain()),
+        'pages'      => array('portfolio'), // Post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                    'name' => __('Template', wpgrade::textdomain()),
+                    'desc' => __('Select the template you want for this project.', wpgrade::textdomain()),
+                    'id' => wpgrade::prefix() . 'project_template',
+                    'type' => 'select',
+                    'options' => array(
+                            array(
+                                'name' => 'Classic',
+                                'value' => 'classic'
+                            ),
+                            array(
+                                'name' => 'Full Width',
+                                'value' => 'fullwidth'
+                            ),
+                            array(
+                                'name' => 'Sidebar Right',
+                                'value' => 'sidebar'
+                            ),
+                        ),
+                    'std' => 'classic',
+                ),
+        )
+    );
 
 	/*
 	 * The Audio Post Format

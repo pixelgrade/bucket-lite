@@ -957,83 +957,96 @@ function niceScrollInit() {
     }
 }
 
-/* --- TWITTER WIDGET + ROYAL SLIDER --- */
+/* --- ROYAL SLIDER --- */
 jQuery(document).ready(function($) {
-    $('.js-pixslider').each(function(){
-        var arrows = typeof $(this).data('arrows') !== "undefined" ? true : false;
-        var bullets = typeof $(this).data('bullets') !== "undefined" ? "bullets" : "none";
 
-        $(this).royalSlider({
-            autoScaleSlider: false,
-            autoHeight: true,
-            arrowsNav: arrows,
-            arrowsNavAutoHide: false,
-            controlNavigation: bullets,
+    // Helper function
+    // examples
+    // console.log(padLeft(23,5));       //=> '00023'
+    // console.log(padLeft(23,5,'>>'));  //=> '>>>>>>23'
+    function padLeft(nr, n, str){
+        return Array(n-String(nr).length+1).join(str||'0')+nr;
+    }
+
+    // create the markup for the slider from the gallery shortcode
+    // take all the images and insert them in the .gallery <div>
+    $('.wp-gallery').each(function() {
+        var $old_gallery = $(this),
+        $images = $old_gallery.find('img'),
+        $new_gallery = $('<div class="js-pixslider" data-royalSlider data-customarrows>');
+        $images.prependTo($new_gallery);
+        $old_gallery.replaceWith($new_gallery);
+    });
+
+
+    $('.js-pixslider').each(function(){
+        var $slider = $(this),
+            arrows = typeof $slider.data('arrows') !== "undefined" ? true : false,
+            bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
+            customArrows = typeof $slider.data('customarrows') !== "undefined" ? true : false;
+        
+        // make sure default arrows won't appear if customArrows is set
+        if (customArrows) arrows = false;
+
+        // call royalSlider
+        $slider.royalSlider({
+            keyboardNavEnabled: true,
+            imageAlignCenter: false,
+            imageScaleMode: 'fill',
             slidesSpacing: 0,
+            autoHeight: true,
+            controlNavigation: 'none',
+            arrowsNav: false,
+            autoHeight: true
         });
-    })
-})
-// Helper function
-// examples
-// console.log(padLeft(23,5));       //=> '00023'
-// console.log(padLeft(23,5,'>>'));  //=> '>>>>>>23'
-function padLeft(nr, n, str){
-    return Array(n-String(nr).length+1).join(str||'0')+nr;
-}
+
+        var royalSlider = $slider.data('royalSlider');
+
+        // create the markup for the customArrows
+        if (royalSlider && customArrows) {
+            var slidesNumber = royalSlider.numSlides,
+                $gallery_control = $(
+                    '<div class="gallery_control gallery-control--gallery-fullscreen">'+
+                        '<ul class="gallery-control__items">'+
+                            '<li class="gallery-control__item gallery-control__arrow">'+
+                                '<a href="#" class="gallery-control__arrow-button arrow-button-left js-slider-arrow-prev"></a>'+
+                            '</li>'+
+                            '<li class="gallery-control__item gallery-control__count">'+
+                                '<span class="gallery-control__count-current js-gallery-current-slide"><span class="highlighted js-decimal">0</span><span class="js-unit">1</span></span>'+
+                            '</li>'+
+                            '<li class="gallery-control__item gallery-control__count">'+
+                                '<sup class="gallery-control__count-total js-gallery-slides-total">'+slidesNumber+'</sup>'+
+                            '</li>'+
+                            '<li class="gallery-control__item gallery-control__arrow">'+
+                                '<a href="#" class="gallery-control__arrow-button arrow-button-right js-slider-arrow-next"></a>'+
+                            '</li>'+
+                        '</ul>'+
+                    '</div>'
+                );
+            $gallery_control.insertAfter($slider);
+
+            // write the total number of slides inside the markup created above
+            // make sure it is left padded with 0 in case it is lower then 10
+            slidesNumber = (slidesNumber < 10) ? padLeft(slidesNumber, 2) : slidesNumber;
+            $('.js-gallery-slides-total').html(slidesNumber);
+            
+            // add event listener to change the current slide number on slide change
+            royalSlider.ev.on('rsAfterSlideChange', function(event) {
+                var currentSlide = royalSlider.currSlideId + 1;
+                if(currentSlide < 10){
+                    $('.js-gallery-current-slide .js-unit').html(currentSlide);
+                } else {
+                    $('.js-gallery-current-slide .js-decimal').html(currentSlide / 10);
+                    $('.js-gallery-current-slide .js-unit').html(currentSlide % 10);
+                }
+            });
+        }
+    });
+});
 
 
 /* --- GALLERY FULL SCREEN + ROYAL SLIDER --- */
-jQuery(document).ready(function($) {
-
-    $(".js-gallery").royalSlider({
-        autoScaleSlider: true,
-        imageScaleMode: 'fill',
-        slidesSpacing: 0,
-        autoHeight: true,
-        controlNavigation: 'bullets'
-    });
-
-    $(".js-gallery--archive").royalSlider({
-        keyboardNavEnabled: true,
-        imageAlignCenter: false,
-        imageScaleMode: 'fill',
-        slidesSpacing: 0,
-        autoHeight: true,
-        controlNavigation: 'none',
-        arrowsNav: false
-    });
-
-    $(".js-gallery--fullscreen").royalSlider({
-        keyboardNavEnabled: true,
-        imageAlignCenter: false,
-        imageScaleMode: 'fill',
-        slidesSpacing: 0,
-        autoHeight: true,
-        controlNavigation: 'none',
-        arrowsNav: false,
-        autoHeight: true
-    });
-
-
-    var slider = $('.js-gallery, .js-gallery--fullscreen, .js-gallery--archive').data('royalSlider');
-    if(slider) {
-        var slideNumber = slider.numSlides;
-        if(slideNumber < 10) slideNumber = padLeft(slideNumber, 2);
-
-        $('.js-gallery-slides-total').html(slideNumber);
-        
-        slider.ev.on('rsAfterSlideChange', function(event) {
-            var currentSlide = slider.currSlideId+1;
-            if(currentSlide < 10){
-                $('.js-gallery-current-slide .js-unit').html(currentSlide);
-            } else {
-                $('.js-gallery-current-slide .js-decimal').html(currentSlide/10);
-                $('.js-gallery-current-slide .js-unit').html(currentSlide%10);
-            }
-
-        });    
-    }
-    
+jQuery(document).ready(function($) {    
 
     $(document).on('click', '.js-slider-arrow-prev', function(event){
         event.preventDefault();

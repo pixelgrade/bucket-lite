@@ -8,8 +8,8 @@ body, html {
     }
 
     .single .featured-image-wrapper{
-        @include rem(margin-left, -2 * $base-spacing-unit);
-        @include rem(margin-right, -2 * $base-spacing-unit);
+        @include rem(margin-left, -$base-spacing-unit);
+        @include rem(margin-right, -$base-spacing-unit);
     }    
 }
 
@@ -18,6 +18,10 @@ body, html {
         @include rem(max-width, 890px);
         @include rem(padding-left, 2 * $base-spacing-unit);   
         padding-right: 0;
+    }
+
+    .page-content.project-sidebar-right{
+        max-width: none;
     }
 
     .featured-image-wrapper{

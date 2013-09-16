@@ -30,6 +30,7 @@
 
 .related-projects_container{
     border-top: 2px solid #ededef;
+    @include rem(margin-bottom, $base-spacing-unit);
 }
 
     .related-projects_header{

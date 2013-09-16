@@ -132,11 +132,10 @@ if(!function_exists('wpGrade_gallery_slideshow'))
 		if(!empty($match_gallery))
 		{
 			$gallery = $match_gallery[0];
-
 			if(strpos($gallery, 'style') === false) $gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
-			//output the gallery
-            echo '<div class="wp-slider gallery_format_slider">';
-			echo do_shortcode($gallery);
+			// output the gallery
+            echo '<div class="wp-gallery">';
+                echo do_shortcode($gallery);
             echo '</div>';
 		}
 	}

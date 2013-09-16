@@ -24,6 +24,10 @@
 .entry__title{
     margin-top: 0;
     color: black;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 
@@ -114,10 +118,11 @@
         margin-bottom: 0;
 
         .testimonial_author{
-            @include rem(margin-top, $base-spacing-unit);
+            @include rem(margin-top, 3 * $half-spacing-unit);
         }
 
             a{
+                display: block;
                 text-decoration: none;
             }
 
@@ -161,7 +166,7 @@
 
 @include media(from hand) {
     .header-quote-content blockquote{
-        @include rem(padding, 5 * $base-spacing-unit);
+        @include rem(padding, (7*$base-spacing-unit) (5*$base-spacing-unit) (5*$base-spacing-unit));
 
         &:before{
             @include font-size(155px);
@@ -178,7 +183,7 @@
 @include media(from lap) {
     .header-quote-content blockquote{
         &:before{
-            @include rem(margin-top, -4 * $base-spacing-unit);
+            @include rem(margin-top, -7 * $half-spacing-unit);
         }    
     }
 }
@@ -364,7 +369,21 @@
 }
 
 
+.entry__featured-image {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 
+.entry--archive__featured-image {
+
+}
+
+.entry__permalink {
+    display: block;
+    text-decoration: none;
+}
 
 
 

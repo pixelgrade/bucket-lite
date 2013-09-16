@@ -46,7 +46,7 @@
 				'has_archive' => 'portfolio-archive',
 				'menu_icon' => '../assets/report.png',
 				'menu_position' => NULL,
-				'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes'),
+				'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'),
 				'yarpp_support' => true,
 			),
 		);
