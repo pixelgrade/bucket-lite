@@ -11,10 +11,6 @@
                 
                 <?php
 
-                if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
-                }
-
                 $post_categories = wp_get_post_categories( get_the_ID() );
                 $cats = array();
 
@@ -27,8 +23,8 @@
 
                 <?php if ( count($cats) ) { ?>
                     <div class="entry__meta">
-                        <div class="image_item-meta grid">
-                            <ul class="image_item-categories grid__item one-half">
+                        <div class="image_item-meta grid"><!--
+                         --><ul class="image_item-categories grid__item one-half">
                                 <li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
                                 <?php foreach( $cats as $category ) { ?>
                                     <li class="image_item-category">
@@ -37,8 +33,9 @@
                                         </a>
                                     </li>
                                 <?php } ?>
-                            </ul><!-- .image_item-categories -->
-                            <div class="image_item-like-box likes-box grid__item one-half">
+                            </ul><!--
+                            .image_item-categories
+                         --><div class="image_item-like-box likes-box grid__item one-half">
                                 <i class="icon-heart"></i>
                                 <div class="likes-text">
                                     <span class="likes-count">10</span> likes

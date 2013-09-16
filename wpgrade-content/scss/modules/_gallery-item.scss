@@ -174,10 +174,17 @@
             margin-bottom: 0;
             width: 60%;
             text-align: left;
+
+            a {
+                text-decoration: none;
+            }
         }
 
             .image_item-cat-icon{
-                @include media(to lap){
+                position: relative;
+                top: .1em; left: 0;
+                margin-right: .2em;
+                @include media(to lap) {
                     display: none !important;
                 }
             }
