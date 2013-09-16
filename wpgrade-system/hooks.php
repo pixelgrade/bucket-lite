@@ -10,7 +10,7 @@
 	// theme activation
 	function wpgrade_callback_geting_active() {
 
-		$types_options = get_option('pixtypes_theme_settings');
+		$types_options = get_option('pixtypes_themes_settings');
 		if ( empty($types_options) ) {
 			$types_options = array();
 		}
@@ -44,7 +44,7 @@
 				),
 				'capability_type' => 'post',
 				'has_archive' => 'portfolio-archive',
-				'menu_icon' => 'http://192.168.1.101/wpgrade/wp-content/themes/wpGrade/library/images/admin-menu-icons/report.png',
+				'menu_icon' => '../assets/report.png',
 				'menu_position' => NULL,
 				'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes'),
 				'yarpp_support' => true,
@@ -90,7 +90,7 @@
 				)
 			)
 		);
-		update_option('pixtypes_theme_settings', $types_options);
+		update_option('pixtypes_themes_settings', $types_options);
 		// flush permalinks rules on theme activation
 		flush_rewrite_rules();
 	}
@@ -192,3 +192,15 @@
 	}
 
 	add_action('admin_head', 'wpgrade_callbacks_admin_head_tweaks');
+
+	// replace $query with our own on query object
+//	function wpgrade_callbacks_portfolio_pixquery( $query ){
+//
+//		if ( !empty($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'lens_portfolio' && class_exists('Pix_Query') ) {
+//			$query = new Pix_Query( $query->query_args );
+//			$query->get_gallery_ids();
+//		}
+//
+//	}
+//
+//	add_action( 'pre_get_posts', 'wpgrade_callbacks_portfolio_pixquery' );
