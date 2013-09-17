@@ -239,10 +239,10 @@ if (!$.support.touch) {
         custom: { families: ['Roboto:n3,i3,n5,i5','Open Sans:n3,i3,n4,i4,n7,i7','Crimson Text: n4,i4','Josefin Slab:n4,n6,n7'],
         urls: [ 'wp-content/themes/lens/wpgrade-content/css/webfonts.css' ] },
         active: function(){
-            $('html').addClass('wf-loaded');
+            $('html').addClass('loaded');
         },
         inactive: function(){
-            $('html').addClass('wf-loaded');
+            $('html').addClass('loaded');
         }
     };
 
@@ -728,7 +728,7 @@ function royalSliderInit() {
                 autoScaleSlider:false,
                 imageScaleMode:'none',
                 imageAlignCenter: false,
-                arrowNav: rs_arrows,
+                arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });
         } else {
@@ -982,18 +982,14 @@ function init() {
     /* INSTANTIATE DJAX */
     var djax_transition = function($newEl) {
         var $oldEl = this;      // reference to the DOM element that is about to be replaced
-        
-        $newEl.hide();    // hide the new content before it comes in
-
-        $oldEl.fadeOut(300, function() {
-            $oldEl.replaceWith($newEl);
-            $newEl.fadeIn(300, function() {
-                niceScrollInit();
-                royalSliderInit();
-                magnificPopupInit();
-                gmapInit();
-            });
+        $oldEl.replaceWith($newEl)
+        setTimeout(function() {
+            $('html').addClass('loaded');
         });
+        niceScrollInit();
+        royalSliderInit();
+        magnificPopupInit();
+        gmapInit();
     }
     $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     
@@ -1137,7 +1133,7 @@ $(window).load(function(){
 
     lazyLoad();
 
-    $('html').addClass('window-loaded');
+    $('html').addClass('loaded');
     $('.site-navigation--main .menu-item').each(function(i,e) {
         var $self = $(e);
         setTimeout(function() {
@@ -1153,7 +1149,7 @@ $(window).load(function(){
 $(window).bind('djaxClick', function(e, data) {
     // var bodyelem = $("html,body");
     //     bodyelem.animate({scrollTop: 0});
-    $('body').addClass('.djax-loading');
+    $('html').removeClass('loaded');
     /* --- KILL DISQUS --- */
     /* --- KILL SLIDESHOW TIMERS --- */
     /* --- KILL VIDEO --- */
@@ -1166,7 +1162,6 @@ $(window).bind('djaxClick', function(e, data) {
 /* ====== ON DJAX LOAD ====== */
 
 $(window).bind('djaxLoad', function(e, data) {
-    $('body').removeClass('.djax-loading');
     /* --- PUSH GA TRACK --- */
     /* --- RECHECK HEADER COLOR/POS --- */
     /* --- INSTANTIATE EVENT HANDLERS --- */
