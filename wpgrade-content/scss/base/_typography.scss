@@ -4,27 +4,10 @@ html {
     color: $gray;
 }
 
-.webfont {
-    opacity: 0;
-    @include transition(opacity .6s ease-in-out);
-}
-
-.wf-loaded {
-    .webfont {
-        opacity: 1;
-    }
-}
-
 .header {
     @include font-size(13px, true);
-
-    // o fi ok asa?
-    .alpha, .beta, .gamme, .delta, .epsilon, .zeta,
-    ul, ol, dl, p, a {
-        @extend .webfont;
-        font-family: "Roboto", sans-serif;
-        letter-spacing: normal;
-    }
+    font-family: "Roboto", sans-serif;
+    letter-spacing: normal;
 }
 
 
