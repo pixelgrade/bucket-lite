@@ -1,3 +1,4 @@
+
 <?php
     get_header();
 
@@ -7,4 +8,4 @@
         endwhile;
         
     get_footer();
-?>
+?>  
