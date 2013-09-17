@@ -156,24 +156,24 @@
 					),
 					array(
 						'name' => __('Template', wpgrade::textdomain()),
-						'desc' => __('Select the template you want for this project.', wpgrade::textdomain()),
+						'desc' => __('Select the template you want for this gallery.', wpgrade::textdomain()),
 						'id' => wpgrade::prefix() . 'project_template',
 						'type' => 'select',
 						'options' => array(
 							array(
-								'name' => 'Classic',
-								'value' => 'classic'
+								'name' => 'Masonry Grid',
+								'value' => 'masonry'
 							),
 							array(
 								'name' => 'Full Width',
 								'value' => 'fullwidth'
 							),
 							array(
-								'name' => 'Sidebar Right',
-								'value' => 'sidebar'
+								'name' => 'Fullscreen',
+								'value' => 'fullscreen'
 							),
 						),
-						'std' => 'classic',
+						'std' => 'fullwidth',
 					),
 				)
 			)
