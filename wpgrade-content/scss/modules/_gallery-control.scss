@@ -5,22 +5,12 @@
  * Control arrow, current item, total count
  *
     <div class="gallery-control gallery-control--gallery-fullscreen">
-        <ul class="gallery-control__items">
-            <li class="gallery-control__item gallery-control__arrow">
-                <a href="#" class="gallery-control__arrow-button arrow-button-left"></a>
-            </li><!--
-            --><li class="gallery-control__item gallery-control__count">
-                <span class="gallery-control__count-current js-gallery-current-slide">
-                    <span class="highlighted">0</span>1
-                </span>    
-            </li><!--
-            --><li class="gallery-control__item gallery-control__count">
-                <sup class="gallery-control__count-total js-gallery-slides-total">03</sup>    
-            </li><!--
-            --><li class="gallery-control__item gallery-control__arrow">
-                <a href="#" class="gallery-control__arrow-button arrow-button-right"></a>
-            </li>
-        </ul>
+        <a href="#" class="control-item arrow-button arrow-button--left js-slider-arrow-prev"></a>
+        <div class="control-item count js-gallery-current-slide">
+            <span class="highlighted js-decimal">0</span><span class="js-unit">1</span>
+            <sup class="js-gallery-slides-total">03</sup>
+        </div>    
+        <a href="#" class="control-item arrow-button arrow-button--right js-slider-arrow-next"></a>
     </div>
  */
 
@@ -30,6 +20,10 @@
     @include rem(bottom, $base-spacing-unit);
     @include rem(left, $base-spacing-unit);
 }
+
+    .control-item{
+        display: inline-block;
+    }
 
     .gallery-control__items{
         @extend .nav;
@@ -44,11 +38,10 @@
             vertical-align: top;
         }
 
-        .gallery-control__arrow-button{
+        .arrow-button{
             @include rem(width, 20px);       
             @include rem(height, 20px);       
             @include rem(margin, $half-spacing-unit $base-spacing-unit 0 $base-spacing-unit);
-            display: block;
             color: white;
             border-color: white;
             border-bottom: 2px solid;
@@ -59,7 +52,7 @@
             }
         }
 
-        .arrow-button-left{
+        .arrow-button--left{
             border-left: 2px solid;
             @include transform(rotate(45deg));
 
@@ -68,7 +61,7 @@
             }
         }
 
-        .arrow-button-right{
+        .arrow-button--right{
             border-right: 2px solid;
             @include transform(rotate(-45deg));
 
@@ -77,17 +70,20 @@
             }            
         }
 
-        .gallery-control__count{
+        .count{
             font-family: "Josefin Slab", serif;
             color: white;
             @include font-size(40px);
-        }
 
-            .gallery-control__count-total{
-                font-size: 60%;
-                @include rem(top, - 0.7 * $half-spacing-unit);
+            sup{
+                font-family: "Josefin Slab", serif;
+                font-size: 50%;
+                color: white;               
+                @include rem(top, -$half-spacing-unit);
                 &:before{
                     content: "/";
                 }
             }
+        }
+
 

@@ -23,9 +23,19 @@ function wpgrade_register_required_plugins() {
 //	);
 	$plugins = array(
 		array(
+			'name'     				=> 'PixTypes',
+			'slug'     				=> 'pixtypes',
+			'source'   				=> get_template_directory() . '/wpgrade-content/inc/required-plugins/plugins/pixtypes.zip',
+			'required' 				=> true,
+			'version' 				=> '1.0.0',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
+		),
+		array(
 			'name'     				=> 'Pixelgrade Shortcodes',
 			'slug'     				=> 'pixelgrade-shortcodes',
-			'source'   				=> get_template_directory() . '/library/inc/required-plugins/plugins/pixelgrade-shortcodes.zip',
+			'source'   				=> get_template_directory() . '/wpgrade-content/inc/required-plugins/plugins/pixelgrade-shortcodes.zip',
 			'required' 				=> true,
 			'version' 				=> '1.6.10',
 			'force_activation' 		=> false,

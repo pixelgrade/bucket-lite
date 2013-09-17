@@ -82,7 +82,7 @@
 	require wpgrade::themefilepath('wpgrade-content/inc/portfolio-gallery.php');
 	require wpgrade::themefilepath('wpgrade-content/inc/template-tags.php');
 	require wpgrade::themefilepath('wpgrade-content/inc/theme-defaults.php');
-	include wpgrade::themefilepath('wpgrade-content/inc/metaboxes/metaboxes.php');
+//	include wpgrade::themefilepath('wpgrade-content/inc/metaboxes/metaboxes.php');
 	include wpgrade::themefilepath('wpgrade-content/inc/social.php');
 	include wpgrade::themefilepath('wpgrade-content/inc/admin-help-pointers.php');
 
