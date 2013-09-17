@@ -14,6 +14,7 @@
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
+	            'orderby' => "post__in",
 //                'post_parent' => $post->ID,
 //                'exclude'     => get_post_thumbnail_id(),
                 'post__in'     => $ids
