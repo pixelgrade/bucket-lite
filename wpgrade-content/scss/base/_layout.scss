@@ -15,7 +15,7 @@ body, html {
 
 @include media(from lap){
     .page-content{
-        @include rem(max-width, 890px);
+        @include rem(width, 890px);
         @include rem(padding-left, 2 * $base-spacing-unit);   
         padding-right: 0;
     }

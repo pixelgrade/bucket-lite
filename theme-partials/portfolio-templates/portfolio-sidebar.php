@@ -13,10 +13,12 @@
                 $attachments = get_posts( array(
                     'post_type' => 'attachment',
                     'posts_per_page' => -1,
+    	            'orderby' => "post__in",
                     'post__in'     => $ids
                 ) );
 
                 if ( $attachments ) {
+
                         foreach ( $attachments as $attachment ) {
                             $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                             $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );
@@ -76,7 +78,7 @@
         if (is_plugin_active('yet-another-related-posts-plugin/yarpp.php')) {
             yarpp_related(array(
                 'threshold' => 0,
-                'post_type' => array('portfolio')
+                'post_type' => array('lens_portfolio')
             )); 
         } 
     ?>

@@ -302,6 +302,15 @@
 
 	add_action('admin_head', 'wpgrade_callbacks_admin_head_tweaks');
 
+
+	function wpgrade_callback_sort_query_by_post_in( $sortby, $thequery ) {
+		if ( !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
+			$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
+
+		return $sortby;
+	}
+	add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
+
 	// replace $query with our own on query object
 //	function wpgrade_callbacks_portfolio_pixquery( $query ){
 //
