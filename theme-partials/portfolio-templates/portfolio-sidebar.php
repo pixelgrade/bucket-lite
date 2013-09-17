@@ -58,9 +58,7 @@
             </footer><!-- .entry__meta .entry__meta-project -->
             <hr class="separator" />
             <footer class="entry__meta entry__meta--project row cf">
-
                 <?php if (function_exists( 'display_pixlikes' )) { display_pixlikes('likes-box--footer span-12 hand-span-6'); } ?>
-
                 <div class="social-links span-12 hand-span-6">
                     <span class="social-links__message">Share: </span>
                     <ul class="social-links__list">
