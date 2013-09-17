@@ -8,17 +8,15 @@
 
             if ( $attachments ) : ?>
             <div class="featured-image">
-                <div id="project-gallery" class="js-pixslider" data-bullets data-customarrows>
+                <div class="pixslider js-pixslider" data-bullets data-customarrows data-autoheight data-autoscale>
                     <?php 
                         foreach ( $attachments as $attachment ) : 
                             $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                             $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );                            
                     ?>
-                        <dl class='gallery-item <?php echo $class; ?>'>
-                            <dt class='gallery-icon landscape'>
-                                <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="hr10_sample_image_02" />
-                            </dt>
-                        </dl>                    
+                        <div class="pixslider__slide">
+                            <img src="<?php echo $thumbimg[0]; ?>"/>
+                        </div>
                     <?php endforeach; ?>                    
                 </div>
             </div>
@@ -85,12 +83,12 @@
                         </div>
                     </footer><!-- .entry-meta -->
                 </article><!-- #post -->
-                <?php
+                <?php 
                     if (is_plugin_active('yet-another-related-posts-plugin/yarpp.php')) {
                         yarpp_related(array(
                             'threshold' => 0,
                             'post_type' => array('portfolio')
                         )); 
-                    }
+                    } 
                 ?>                          
             </div><!-- #page-content -->
