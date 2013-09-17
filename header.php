@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> data-nicescroll>
+<html class="djax-loading" <?php language_attributes(); ?> data-nicescroll>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,15 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<?php 
+
+    $class_name = '';
+    if(get_post_type() == 'lens_gallery'){
+        $class_name = 'single-gallery-';
+        $class_name .= get_post_meta(get_the_ID(), wpgrade::prefix().'gallery_template', true);
+    }
+?>
+<body <?php body_class($class_name); ?>>
     <div id="page">
         <div class="wrapper">
             <div class="header">

@@ -239,10 +239,10 @@ if (!$.support.touch) {
         custom: { families: ['Roboto:n3,i3,n5,i5','Open Sans:n3,i3,n4,i4,n7,i7','Crimson Text: n4,i4','Josefin Slab:n4,n6,n7'],
         urls: [ 'wp-content/themes/lens/wpgrade-content/css/webfonts.css' ] },
         active: function(){
-            $('html').addClass('wf-loaded');
+            $('html').addClass('loaded');
         },
         inactive: function(){
-            $('html').addClass('wf-loaded');
+            $('html').addClass('loaded');
         }
     };
 
@@ -728,12 +728,12 @@ function royalSliderInit() {
                 autoScaleSlider:false,
                 imageScaleMode:'none',
                 imageAlignCenter: false,
-                arrowNav: rs_arrows,
+                arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });
         } else {
             $slider.royalSlider({
-                arrowNav: rs_arrows,
+                arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });     
         }
@@ -807,7 +807,7 @@ function magnificPopupInit() {
                 navigateByImgClick: true,
                 tPrev: 'Previous (Left arrow key)', // title for left button
                 tNext: 'Next (Right arrow key)', // title for right button
-                tCounter: '<ul class="gallery-control__items gallery-control--popup"><li class="gallery-control__item gallery-control__arrow"><a href="#" class="gallery-control__arrow-button arrow-button-left js-arrow-popup-prev"></a></li><li class="gallery-control__item gallery-control__count gallery-control__count--current"><span class="gallery-control__count-current js-gallery-current-slide">%curr%</span></li><li class="gallery-control__item gallery-control__count gallery-control__count--total"><sup class="gallery-control__count-total js-gallery-slides-total">%total%</sup></li><li class="gallery-control__item gallery-control__arrow"><a href="#" class="gallery-control__arrow-button arrow-button-right js-arrow-popup-next"></a></li></ul>'
+                tCounter: '<div class="gallery-control gallery-control--popup"><a href="#" class="control-item arrow-button arrow-button--left js-arrow-popup-prev"></a><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div><a href="#" class="control-item arrow-button arrow-button--right js-arrow-popup-next"></a></div>'
             }
         });
     });
@@ -815,7 +815,7 @@ function magnificPopupInit() {
     var magnificPopup = $.magnificPopup.instance;
 
     $(document).on('click', '.js-arrow-popup-prev', function(e){
-        e.preDefault();
+        e.preventDefault();
         magnificPopup.prev();
     });
 
@@ -982,20 +982,16 @@ function init() {
     /* INSTANTIATE DJAX */
     var djax_transition = function($newEl) {
         var $oldEl = this;      // reference to the DOM element that is about to be replaced
-        
-        $newEl.hide();    // hide the new content before it comes in
-
-        $oldEl.fadeOut(300, function() {
-            $oldEl.replaceWith($newEl);
-            $newEl.fadeIn(300, function() {
-                niceScrollInit();
-                royalSliderInit();
-                magnificPopupInit();
-                gmapInit();
-            });
+        $oldEl.replaceWith($newEl)
+        setTimeout(function() {
+            $('html').addClass('loaded');
         });
+        niceScrollInit();
+        royalSliderInit();
+        magnificPopupInit();
+        gmapInit();
     }
-    $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s='], djax_transition);
+    $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     
     /* ONE TIME EVENT HANDLERS */
     eventHandlersOnce();
@@ -1015,7 +1011,7 @@ function loadUp(){
 
     lazyLoad();
 
-    if ($('#work').length) {
+    if ($('#work, #gallery, #main').length) {
 
         $('.mosaic').mixitup({
             targetSelector: '.mosaic__item',
@@ -1079,20 +1075,20 @@ $(function(){
     loadUp();
     /* --- VISUAL LOADING --- */
 
-    var clicks = 0;
-    $('body').on('click', function() {
-        $('.mosaic__item').each(function(){
-            var self = $(this);
-            setTimeout(function(){
-                if (clicks % 2 == 1) {
-                    self.addClass('slide-out').removeClass('slide-in');
-                } else {
-                    self.addClass('slide-in').removeClass('slide-out');
-                }
-            }, Math.floor(Math.random()*3) * 600 + Math.floor(Math.random()*200));
-        });
-        clicks++;
-    });
+    // var clicks = 0;
+    // $('body').on('click', function() {
+    //     $('.mosaic__item').each(function(){
+    //         var self = $(this);
+    //         setTimeout(function(){
+    //             if (clicks % 2 == 1) {
+    //                 self.addClass('slide-out').removeClass('slide-in');
+    //             } else {
+    //                 self.addClass('slide-in').removeClass('slide-out');
+    //             }
+    //         }, Math.floor(Math.random()*3) * 600 + Math.floor(Math.random()*200));
+    //     });
+    //     clicks++;
+    // });
 });
 
 
@@ -1123,7 +1119,7 @@ function lazyLoad() {
 
 $(window).load(function(){
     
-    var domain = 'http://192.168.1.104/prism-html';
+    var domain = 'http://192.168.1.104/prism/';
     /* --- START PRE-CACHING IMAGES --- */
     if (typeof imagesArr !== "undefined") {
         if(!lteie9 && !phone){
@@ -1137,7 +1133,7 @@ $(window).load(function(){
 
     lazyLoad();
 
-    $('html').addClass('window-loaded');
+    $('html').addClass('loaded');
     $('.site-navigation--main .menu-item').each(function(i,e) {
         var $self = $(e);
         setTimeout(function() {
@@ -1153,7 +1149,7 @@ $(window).load(function(){
 $(window).bind('djaxClick', function(e, data) {
     // var bodyelem = $("html,body");
     //     bodyelem.animate({scrollTop: 0});
-    $('body').addClass('.djax-loading');
+    $('html').removeClass('loaded');
     /* --- KILL DISQUS --- */
     /* --- KILL SLIDESHOW TIMERS --- */
     /* --- KILL VIDEO --- */
@@ -1166,7 +1162,6 @@ $(window).bind('djaxClick', function(e, data) {
 /* ====== ON DJAX LOAD ====== */
 
 $(window).bind('djaxLoad', function(e, data) {
-    $('body').removeClass('.djax-loading');
     /* --- PUSH GA TRACK --- */
     /* --- RECHECK HEADER COLOR/POS --- */
     /* --- INSTANTIATE EVENT HANDLERS --- */

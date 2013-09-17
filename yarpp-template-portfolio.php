@@ -43,7 +43,7 @@ YARPP Template: Portfolio Related Projects
                                     <div class="image_item-meta grid">
                                         <ul class="image_item-categories grid__item one-half">
                                             <li class="image_item-cat-icon"><i class="icon-folder-open"></i></li><!--
-                                            <?php $categories = get_the_terms($post->ID, 'portfolio_cat');
+                                            <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                                                 if (count($categories)): ?>
                                                     <?php foreach ($categories as $cat): ?>
                                                         --><li class="image_item-category"><?php echo get_category($cat)->name; ?></li><!--

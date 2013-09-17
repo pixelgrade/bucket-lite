@@ -39,6 +39,47 @@
     }
 }
 
+@-webkit-keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-ms-keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 @-webkit-keyframes slideout {
     0%      { -webkit-transform: none; }
     100%    { -webkit-transform: translate3d(0, 3rem, 0); }
@@ -65,7 +106,7 @@
     -webkit-backface-visibility: hidden;
     @include transition(opacity .3s bezier(easeOutQuad));
 
-    .wf-loaded & {
+    .loaded & {
         opacity: 1;
         -webkit-animation-name: slidein;
            -moz-animation-name: slidein;
@@ -87,12 +128,12 @@
     -webkit-backface-visibility: hidden;
     @include transition(opacity .25s bezier(easeOutQuad));
 
-    .wf-loaded & {
+    .loaded & {
         opacity: 1;
-        -webkit-animation: slidein .25s bezier(easeOutBack);
-           -moz-animation: slidein .25s bezier(easeOutBack);
-             -o-animation: slidein .25s bezier(easeOutBack);
-                animation: slidein .25s bezier(easeOutBack);
+        -webkit-animation: slidein .25s bezier(easeOutBack), fadein .25 ease-in-out;
+           -moz-animation: slidein .25s bezier(easeOutBack), fadein .25 ease-in-out;
+             -o-animation: slidein .25s bezier(easeOutBack), fadein .25 ease-in-out;
+                animation: slidein .25s bezier(easeOutBack), fadein .25 ease-in-out;
     }
 }
 
@@ -101,12 +142,12 @@
     -webkit-backface-visibility: hidden;
     @include transition(opacity .45s .15s bezier(easeOutQuad));
 
-    .wf-loaded & {
+    .loaded & {
         opacity: 1;
-        -webkit-animation: slidein .45s .15s bezier(easeOutBack);
-           -moz-animation: slidein .45s .15s bezier(easeOutBack);
-             -o-animation: slidein .45s .15s bezier(easeOutBack);
-                animation: slidein .45s .15s bezier(easeOutBack);
+        -webkit-animation: slidein .45s .15s bezier(easeOutBack), fadein .45s .15s ease-in-out;
+           -moz-animation: slidein .45s .15s bezier(easeOutBack), fadein .45s .15s ease-in-out;
+             -o-animation: slidein .45s .15s bezier(easeOutBack), fadein .45s .15s ease-in-out;
+                animation: slidein .45s .15s bezier(easeOutBack), fadein .45s .15s ease-in-out;
     }
 }
 
@@ -115,7 +156,7 @@
     @include translate3d(0,0,0);
     @include transition(width .5s .2s bezier(easeOutBack));
 
-    .wf-loaded & {
+    .loaded & {
         width: 100%;
     }
 }
@@ -125,12 +166,12 @@
     -webkit-backface-visibility: hidden;
     @include transition(opacity .35s .25s bezier(easeOutQuad));
 
-    .wf-loaded & {
+    .loaded & {
         opacity: 1;
-        -webkit-animation: slidein .35s .25s bezier(easeOutBack);
-           -moz-animation: slidein .35s .25s bezier(easeOutBack);
-             -o-animation: slidein .35s .25s bezier(easeOutBack);
-                animation: slidein .35s .25s bezier(easeOutBack);
+        -webkit-animation: slidein .35s .25s bezier(easeOutBack), fadein .35s .25s ease-in-out;
+           -moz-animation: slidein .35s .25s bezier(easeOutBack), fadein .35s .25s ease-in-out;
+             -o-animation: slidein .35s .25s bezier(easeOutBack), fadein .35s .25s ease-in-out;
+                animation: slidein .35s .25s bezier(easeOutBack), fadein .35s .25s ease-in-out;
     }
 }
 
@@ -139,11 +180,11 @@
     -webkit-backface-visibility: hidden;
     @include transition(opacity .5s .5s bezier(easeOutQuad));
 
-    .wf-loaded & {
+    .loaded & {
         opacity: 1;
-        -webkit-animation: slidein .5s .5s bezier(easeOutBack);
-           -moz-animation: slidein .5s .5s bezier(easeOutBack);
-             -o-animation: slidein .5s .5s bezier(easeOutBack);
-                animation: slidein .5s .5s bezier(easeOutBack);
+        -webkit-animation: slidein .5s .5s bezier(easeOutBack), fadein .5s .5s ease-in-out;
+           -moz-animation: slidein .5s .5s bezier(easeOutBack), fadein .5s .5s ease-in-out;
+             -o-animation: slidein .5s .5s bezier(easeOutBack), fadein .5s .5s ease-in-out;
+                animation: slidein .5s .5s bezier(easeOutBack), fadein .5s .5s ease-in-out;
     }
 }
