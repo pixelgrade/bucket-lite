@@ -1,9 +1,16 @@
             <?php
+            $ids = array();
+
+            if ( class_exists('Pix_Query') ) {
+                $pixquery = new Pix_Query();
+                $ids = $pixquery->get_gallery_ids('portfolio_gallery');
+            }
+
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
-                'post_parent' => $post->ID,
-                'exclude'     => get_post_thumbnail_id()
+                'orderby' => "post__in",
+                'post__in'     => $ids
             ) );
 
             if ( $attachments ) : ?>
@@ -34,7 +41,7 @@
                                         <span class="meta-box__box-title">Client: </span>
                                         <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                                     </div>  
-                                    <?php $categories = get_the_terms($post->ID, 'portfolio_cat');
+                                    <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                                         if (count($categories)): ?>                                    
                                         <div class="entry__meta-box meta-box--categories">
                                             <span class="meta-box__box-title">Filled under: </span>
@@ -87,8 +94,8 @@
                     if (is_plugin_active('yet-another-related-posts-plugin/yarpp.php')) {
                         yarpp_related(array(
                             'threshold' => 0,
-                            'post_type' => array('portfolio')
+                            'post_type' => array('lens_portfolio')
                         )); 
-                    } 
-                ?>                          
+                    }
+                ?>                      
             </div><!-- #page-content -->

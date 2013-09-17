@@ -12,7 +12,18 @@
                     <span class="meta-box__box-title">Client: </span>
                     <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                 </div>                 
-     
+                <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
+                    if (count($categories) && !is_wp_error($categories)): ?>
+                    <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
+                        <span class="meta-box__box-title">Filled under: </span>
+                        <?php foreach ($categories as $cat): ?>
+                                <a href="<?php echo get_category_link($cat); ?>"
+                                   rel="category">
+                                    <?php echo get_category($cat)->name; ?>
+                                </a>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>       
             </footer><!-- .entry__meta .entry__meta --project -->
             <hr class="separator separator--full-left"/>
             <footer class="entry__meta cf">
@@ -37,7 +48,7 @@
             if (is_plugin_active('yet-another-related-posts-plugin/yarpp.php')) {
                 yarpp_related(array(
                     'threshold' => 0,
-                    'post_type' => array('portfolio')
+                    'post_type' => array('lens_portfolio')
                 )); 
             }
         ?>
