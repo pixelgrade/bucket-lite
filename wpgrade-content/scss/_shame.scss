@@ -239,3 +239,17 @@ html{
     // overflow: hidden !important; 
     padding-right: 0 !important;
 }
+
+
+
+.bleed--left {
+    @include rem(margin-left, -2 * $base-spacing-unit);
+}
+
+.featured-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// djax loading

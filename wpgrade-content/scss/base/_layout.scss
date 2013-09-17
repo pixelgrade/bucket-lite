@@ -2,18 +2,13 @@ body, html {
   height: 100%;
 }
 
-@include media(to lap){
+@include media(to lap) {
     .page-content{
         @include rem(padding, 0 $base-spacing-unit);           
     }
-
-    .single .featured-image-wrapper{
-        @include rem(margin-left, -$base-spacing-unit);
-        @include rem(margin-right, -$base-spacing-unit);
-    }    
 }
 
-@include media(from lap){
+@include media(from lap) {
     .page-content{
         @include rem(max-width, 890px);
         @include rem(padding-left, 2 * $base-spacing-unit);   
@@ -23,11 +18,6 @@ body, html {
     .page-content.project-sidebar-right{
         max-width: none;
     }
-
-    .featured-image-wrapper{
-        @include rem(max-width, 890px);
-        margin-right: 0;
-    }     
 
     .page-content, .sidebar{
         float: left;

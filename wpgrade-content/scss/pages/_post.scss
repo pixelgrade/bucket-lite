@@ -39,12 +39,8 @@
  * Making the title border reach the left margin of its parent container
  */
 
-.entry__title{
-    @include rem(margin-left, -2 * $base-spacing-unit);
-    @include rem(padding-left, 2 * $base-spacing-unit);
-}
-
 .page blockquote{
+    
     p{
         @include rem(margin-left, 2.5 * $base-spacing-unit);
     }

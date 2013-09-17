@@ -170,8 +170,7 @@ ol {
 
 .entry__title{
     @include rem(padding, 1.5 * $base-spacing-unit 0);
-    @include rem(margin-bottom, 1.5 * $base-spacing-unit);
-    border-bottom: 1px dashed $gray;
+    margin-bottom: 0;
 }
 
 a {
