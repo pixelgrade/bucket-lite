@@ -7,9 +7,9 @@
     width: 100%;
     position: absolute;
     z-index: 300;
-    height: 100%;
 
     @include media(from hand) {
+        height: 100%;
         position: fixed;
         overflow-y: auto;
         @include rem(padding-left, $base-spacing-unit);
@@ -33,7 +33,7 @@
         @include rem(width, 7px);
         @include rem(left, $base-spacing-unit);
     }
-
+    
     // the actual gradient
     &:before {
         background-color: $other-color;

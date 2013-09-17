@@ -102,12 +102,12 @@
         padding-top: 55.25%;
         overflow: hidden;
 
-        img { //
+        img { 
             display: block;
             position: absolute;
             top: 0; left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
             opacity: 0;
             @include backface-visibility(hidden);
             @include perspective(1000);

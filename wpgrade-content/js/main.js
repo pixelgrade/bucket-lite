@@ -1006,21 +1006,13 @@ jQuery(document).ready(function($) {
         if (royalSlider && customArrows) {
             var slidesNumber = royalSlider.numSlides,
                 $gallery_control = $(
-                    '<div class="gallery_control gallery-control--gallery-fullscreen">'+
-                        '<ul class="gallery-control__items">'+
-                            '<li class="gallery-control__item gallery-control__arrow">'+
-                                '<a href="#" class="gallery-control__arrow-button arrow-button-left js-slider-arrow-prev"></a>'+
-                            '</li>'+
-                            '<li class="gallery-control__item gallery-control__count">'+
-                                '<span class="gallery-control__count-current js-gallery-current-slide"><span class="highlighted js-decimal">0</span><span class="js-unit">1</span></span>'+
-                            '</li>'+
-                            '<li class="gallery-control__item gallery-control__count">'+
-                                '<sup class="gallery-control__count-total js-gallery-slides-total">'+slidesNumber+'</sup>'+
-                            '</li>'+
-                            '<li class="gallery-control__item gallery-control__arrow">'+
-                                '<a href="#" class="gallery-control__arrow-button arrow-button-right js-slider-arrow-next"></a>'+
-                            '</li>'+
-                        '</ul>'+
+                    '<div class="gallery-control gallery-control--gallery-fullscreen">' +
+                        '<a href="#" class="control-item arrow-button arrow-button--left js-slider-arrow-prev"></a>' +
+                        '<div class="control-item count js-gallery-current-slide">' +
+                            '<span class="highlighted js-decimal">0</span><span class="js-unit">1</span>' +
+                            '<sup class="js-gallery-slides-total">03</sup>' +
+                        '</div>' +
+                        '<a href="#" class="control-item arrow-button arrow-button--right js-slider-arrow-next"></a>'+
                     '</div>'
                 );
             $gallery_control.insertAfter($slider);
