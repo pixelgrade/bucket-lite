@@ -138,7 +138,28 @@
 						'name' => __('Images', wpgrade::textdomain()),
 						'id'   => wpgrade::prefix() . 'portfolio_gallery',
 						'type' => 'gallery',
-					)
+					),
+					array(
+						'name' => __('Template', wpgrade::textdomain()),
+						'desc' => __('Select the template you want for this project.', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'project_template',
+						'type' => 'select',
+						'options' => array(
+							array(
+								'name' => 'Fullwidth',
+								'value' => 'fullwidth'
+							),
+							array(
+								'name' => 'Sidebar Right',
+								'value' => 'sidebar'
+							),
+							array(
+								'name' => 'Classic',
+								'value' => 'classic'
+							),
+						),
+						'std' => 'fullwidth',
+					),					
 				)
 			),
 			'lens_gallery' => array(
@@ -150,14 +171,14 @@
 				'show_names' => true, // Show field names on the left
 				'fields' => array(
 					array(
-						'name' => 'Images',
-						'id'   => 'lens_main_gallery',
+						'name' =>  __('Images', wpgrade::textdomain()),
+						'id'   =>  wpgrade::prefix() . 'main_gallery',
 						'type' => 'gallery',
 					),
 					array(
 						'name' => __('Template', wpgrade::textdomain()),
 						'desc' => __('Select the template you want for this gallery.', wpgrade::textdomain()),
-						'id' => wpgrade::prefix() . 'project_template',
+						'id' => wpgrade::prefix() . 'gallery_template',
 						'type' => 'select',
 						'options' => array(
 							array(

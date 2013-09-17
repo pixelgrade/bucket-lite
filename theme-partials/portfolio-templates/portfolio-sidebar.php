@@ -3,11 +3,22 @@
         <h1 class="entry__title title-mobile"><?php the_title(); ?></h1>            
         <section class="project-images">
             <?php
+
+            $ids = array();
+
+            if ( class_exists('Pix_Query') ) {
+                $pixquery = new Pix_Query();
+                $ids = $pixquery->get_gallery_ids();
+            }
+            
+            var_dump($ids);
+
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
                 'post_parent' => $post->ID,
-                'exclude'     => get_post_thumbnail_id()
+                'exclude'     => get_post_thumbnail_id(),
+                'include'     => $ids
             ) );
 
             if ( $attachments ) {
