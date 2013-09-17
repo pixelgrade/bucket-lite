@@ -43,8 +43,8 @@
                     <span class="meta-box__box-title">Client: </span>
                     <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                 </div>                  
-                <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
-                    if (count($categories) && !is_wp_error($categories)): ?>
+                <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); var_dump($categories);
+                    if ( !empty($categories) && !is_wp_error($categories)): ?>
                     <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
                         <span class="meta-box__box-title">Filled under: </span>
                         <?php foreach ($categories as $cat): ?>
@@ -57,13 +57,10 @@
                 <?php endif; ?>    
             </footer><!-- .entry__meta .entry__meta-project -->
             <hr class="separator" />
-                <footer class="entry__meta entry__meta--project row cf">
-                   <div class="likes-box likes-box--footer span-12 hand-span-6">
-                    <i class="icon-heart"></i>
-                    <div class="likes-text">
-                        <span class="likes-count">3</span> likes
-                    </div>
-                </div>                                
+            <footer class="entry__meta entry__meta--project row cf">
+
+                <?php if (function_exists( 'display_pixlikes' )) { display_pixlikes('likes-box--footer span-12 hand-span-6'); } ?>
+
                 <div class="social-links span-12 hand-span-6">
                     <span class="social-links__message">Share: </span>
                     <ul class="social-links__list">
@@ -80,7 +77,7 @@
         if (is_plugin_active('yet-another-related-posts-plugin/yarpp.php')) {
             yarpp_related(array(
                 'threshold' => 0,
-                'post_type' => array('portfolio')
+                'post_type' => array('lens_portfolio')
             )); 
         } 
     ?>

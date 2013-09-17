@@ -43,6 +43,16 @@ function wpgrade_register_required_plugins() {
 			'external_url' 			=> '',
 		),
 		array(
+			'name'     				=> 'PixLikes',
+			'slug'     				=> 'pixlikes',
+			'source'   				=> get_template_directory() . '/wpgrade-content/inc/required-plugins/plugins/pixlikes.zip',
+			'required' 				=> false,
+			'version' 				=> '1.0.0',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
+		),
+		array(
 			'name' 		=> 'Contact Form 7',
 			'slug' 		=> 'contact-form-7',
 			'required' 	=> false,
