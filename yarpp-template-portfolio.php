@@ -22,20 +22,21 @@ YARPP Template: Portfolio Related Projects
                   <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="image__item-link">
                        <div class="image__item-wrapper">
                             <?php 
-                                if(has_post_thumbnail()) the_post_thumbnail(); 
-                                $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) )
+                                if(has_post_thumbnail()) {
+                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'blog-archive');
+                                } 
                             ?>
                             <img
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                data-src="<?php echo $feat_image; ?>"
+                                data-src="<?php echo $thumb_url[0]; ?>"
                                 alt="Photography"
-                            />>
+                            />
                         </div>                                        
                         <div class="image__item-meta image_item-meta--portfolio">
                             <div class="image_item-table">
                                 <div class="image_item-cell image_item--block image_item-cell--top">
-                                    <h3 class="image_item-title"><?php short_text(get_the_title($post->ID), 13, 13); ?></h3>
+                                    <h3 class="image_item-title"><?php short_text(get_the_title($post->ID), 15, 15); ?></h3>
                                     <span class="image_item-description"><?php short_text(get_the_excerpt(), 13, 13); ?></span>
                                 </div>
                                 <div class="image_item-cell image_item--block image_item-cell--bottom">
@@ -47,7 +48,6 @@ YARPP Template: Portfolio Related Projects
                                                     <?php foreach ($categories as $cat): ?>
                                                         --><li class="image_item-category"><?php echo get_category($cat)->name; ?></li><!--
                                                     <?php endforeach; ?>
-                                                </div>
                                             <?php endif; ?>                                      
                                         --></ul><!--
                                         --><div class="image_item-like-box likes-box grid__item one-half">
