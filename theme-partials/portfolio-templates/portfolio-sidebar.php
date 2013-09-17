@@ -7,7 +7,7 @@
 
                 if ( class_exists('Pix_Query') ) {
                     $pixquery = new Pix_Query();
-                    $ids = $pixquery->get_gallery_ids();
+                    $ids = $pixquery->get_gallery_ids('portfolio_gallery');
                 }
 
                 $attachments = get_posts( array(

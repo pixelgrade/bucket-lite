@@ -264,13 +264,25 @@ img.rsImg{
 \*----------------------------------------*/
 
 .pixslider{
-    position: relative;
-    height: auto !important;
-    @include rem(margin-bottom, $base-spacing-unit);
+    @extend .royalSlider;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
     blockquote{
         @include rem(margin-bottom, 3*$base-spacing-unit);
     }
+}
+
+.pixslider__slide {
+    width: 100%;
 }
 
 /*----------------------------------------*\

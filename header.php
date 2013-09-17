@@ -52,4 +52,4 @@
                     </div><!-- .site-info -->
                 </footer><!-- #colophon -->
             </div><!-- .header -->
-            <div class="content">
+            <div id="main" class="content djax-updatable djax-loading">
