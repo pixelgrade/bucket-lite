@@ -1,9 +1,15 @@
             <?php
+            $ids = array();
+
+            if ( class_exists('Pix_Query') ) {
+                $pixquery = new Pix_Query();
+                $ids = $pixquery->get_gallery_ids();
+            }
+
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
-                'post_parent' => $post->ID,
-                'exclude'     => get_post_thumbnail_id()
+                'post__in'     => $ids
             ) );
 
             if ( $attachments ) : ?>
