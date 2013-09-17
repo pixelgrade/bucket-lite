@@ -39,14 +39,45 @@
 				'show_in_menu' => true,
 				'query_var' => true,
 				'rewrite' => array (
-					'slug' => 'portfolio',
+					'slug' => 'lens_portfolio',
 					'with_front' => false,
 				),
 				'capability_type' => 'post',
 				'has_archive' => 'portfolio-archive',
-				'menu_icon' => '../assets/report.png',
+				'menu_icon' => 'report.png',
 				'menu_position' => NULL,
 				'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'),
+				'yarpp_support' => true,
+			),
+			'lens_gallery' => array(
+				'labels' => array (
+					'name' => 'Gallery',
+					'singular_name' => 'Gallery',
+					'add_new' => 'Add New',
+					'add_new_item' => 'Add New Gallery',
+					'edit_item' => 'Edit Gallery',
+					'new_item' => 'New Gallery',
+					'all_items' => 'All Galleries',
+					'view_item' => 'View Gallery',
+					'search_items' => 'Search Galleries',
+					'not_found' => 'No Gallery found',
+					'not_found_in_trash' => 'No Gallery found in Trash',
+					'parent_item_colon' => '',
+					'menu_name' => 'Galleries',
+				),
+				'public' => true,
+				'publicly_queryable' => true,
+				'show_ui' => true,
+				'show_in_menu' => true,
+				'query_var' => true,
+				'rewrite' => array (
+					'slug' => 'lens_galleries',
+					'with_front' => false,
+				),
+				'capability_type' => 'post',
+				'has_archive' => 'galleries-archive',
+				'menu_position' => NULL,
+				'supports' => array ( 'title', 'thumbnail', 'page-attributes', 'excerpt'),
 				'yarpp_support' => true,
 			),
 		);
@@ -71,7 +102,28 @@
 				'query_var' => true,
 				'rewrite' => array ( 'slug' => 'portfolio-category', 'with_front' => false ),
 				'post_types' => array('lens_portfolio')
-			)
+			),
+			'lens_gallery_categories' => array(
+				'hierarchical' => true,
+				'labels' => array (
+					'name' => 'Gallery Categories',
+					'singular_name' => 'Gallery Category',
+					'search_items' => 'Search Gallery Category',
+					'all_items' => 'All Gallery Categories',
+					'parent_item' => 'Parent Gallery Category',
+					'parent_item_colon' => 'Parent Gallery Category: ',
+					'edit_item' => 'Edit Gallery Category',
+					'update_item' => 'Update Gallery Category',
+					'add_new_item' => 'Add New Gallery Category',
+					'new_item_name' => 'New Gallery Category Name',
+					'menu_name' => 'Gallery Categories',
+				),
+				'show_ui' => true,
+				'show_admin_column' => true,
+				'query_var' => true,
+				'rewrite' => array ( 'slug' => 'gallery-category', 'with_front' => false ),
+				'post_types' => array('lens_gallery')
+			),
 		);
 		$types_options[$theme_key]['metaboxes'] = array(
 			'lens_portfolio' => array(
@@ -87,6 +139,42 @@
 						'id'   => wpgrade::prefix() . 'portfolio_gallery',
 						'type' => 'gallery',
 					)
+				)
+			),
+			'lens_gallery' => array(
+				'id'         => 'lens_gallery',
+				'title'      => 'Gallery',
+				'pages'      => array( 'lens_gallery' ), // Post type
+				'context'    => 'normal',
+				'priority'   => 'high',
+				'show_names' => true, // Show field names on the left
+				'fields' => array(
+					array(
+						'name' => 'Images',
+						'id'   => 'lens_main_gallery',
+						'type' => 'gallery',
+					),
+					array(
+						'name' => __('Template', wpgrade::textdomain()),
+						'desc' => __('Select the template you want for this project.', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'project_template',
+						'type' => 'select',
+						'options' => array(
+							array(
+								'name' => 'Classic',
+								'value' => 'classic'
+							),
+							array(
+								'name' => 'Full Width',
+								'value' => 'fullwidth'
+							),
+							array(
+								'name' => 'Sidebar Right',
+								'value' => 'sidebar'
+							),
+						),
+						'std' => 'classic',
+					),
 				)
 			)
 		);
