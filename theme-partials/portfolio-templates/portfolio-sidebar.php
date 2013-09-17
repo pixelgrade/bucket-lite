@@ -10,15 +10,13 @@
                 $pixquery = new Pix_Query();
                 $ids = $pixquery->get_gallery_ids();
             }
-            
-            var_dump($ids);
 
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
-                'post_parent' => $post->ID,
-                'exclude'     => get_post_thumbnail_id(),
-                'include'     => $ids
+//                'post_parent' => $post->ID,
+//                'exclude'     => get_post_thumbnail_id(),
+                'post__in'     => $ids
             ) );
 
             if ( $attachments ) {
@@ -44,8 +42,8 @@
                     <span class="meta-box__box-title">Client: </span>
                     <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                 </div>                  
-                <?php $categories = get_the_terms($post->ID, 'portfolio_cat');
-                    if (count($categories)): ?>
+                <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
+                    if (count($categories) && !is_wp_error($categories)): ?>
                     <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
                         <span class="meta-box__box-title">Filled under: </span>
                         <?php foreach ($categories as $cat): ?>
