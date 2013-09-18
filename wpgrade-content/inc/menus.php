@@ -30,21 +30,32 @@ function wpgrade_main_nav() {
     /*
      * Test if there are menu locations to prevent errors.
      */
-    $theme_locations = get_nav_menu_locations();
-	
+	$theme_locations = get_nav_menu_locations();
     if ( isset( $theme_locations["main_menu"] ) && ( $theme_locations["main_menu"] != 0 ) ) {
 
-        $menu = wp_nav_menu(array(
-            'theme_location' => 'main_menu',              // where it's located in the theme
-            'container' => false,                           // remove nav container
-            //'container_class' => '',           // class of container (should you choose to use it)
-            'menu_class' => 'site-mainmenu',         // adding custom nav class
-            'depth' => 0,                                // limit the depth of the nav
-            'walker' => new Custom_Walker_Nav_Menu,
-            'echo' => false,
-        ));
+	    $defaults = array(
+		    'theme_location'  => 'main_menu',
+		    'menu'            => '',
+		    'container'       => 'nav',
+		    'container_class' => '',
+		    'container_id'    => '',
+		    'menu_class'      => 'site-navigation site-navigation--main',
+		    'menu_id'         => '',
+		    'echo'            => true,
+		    'fallback_cb'     => 'wp_page_menu',
+		    'before'          => '',
+		    'after'           => '',
+		    'link_before'     => '',
+		    'link_after'      => '',
+		    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		    'depth'           => 0,
+		    'walker'          => new Custom_Walker_Nav_menu
+	    );
 
+		$menu = wp_nav_menu( $defaults );
         echo $menu;
+    } else {
+	    _e('Select a main menu!', wpgrade::textdomain() );
     }
 }
 
@@ -89,7 +100,9 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
 //    function start_el( &$output, $item, $depth, $args, $id) {
         global $wp_query;
         $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
-      
+		if ( !is_array($args)){
+			$args = (array)$args;
+		}
         // depth dependent classes
         $depth_classes = array(
             ( $depth == 0 ? 'menu-item--main' : 'menu-item--sub-menu-item' ),
@@ -111,7 +124,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
         $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
         $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
         $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
-
+//      var_export($args);
         $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
             $args['before'],
             $attributes,
@@ -120,7 +133,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
             $args['link_after'],
             $args['after']
         );
-	    var_export($args['before']);
+
         // build html
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
