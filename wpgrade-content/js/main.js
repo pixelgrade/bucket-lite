@@ -832,8 +832,9 @@ function magnificPopupInit() {
 function gmapInit() {
     if ($('#gmap').length) {
 
-        var gmap_link, gmap_variables, gmap_zoom;
-        gmap_link = $('#gmap').data('url');
+        var gmap_link, gmap_variables, gmap_zoom, gmap_style;
+            gmap_link = $('#gmap').data('url');
+            gmap_style = typeof $('#gmap').data('customstyle') !== "undefined" ? "style1" : google.maps.MapTypeId.ROADMAP;
 
         // Overwrite Math.log to accept a second optional parameter as base for logarhitm
         Math.log = (function() {
@@ -889,7 +890,7 @@ function gmapInit() {
                 options:{
                     center: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1]),
                     zoom: parseInt(gmap_zoom),
-                    mapTypeId: "style1",
+                    mapTypeId: gmap_style,
                     mapTypeControlOptions: {mapTypeIds: []},
                     scrollwheel: false
                 }

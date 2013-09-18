@@ -70,4 +70,4 @@
         $text = (strlen($text) > $limit) ? substr($text,0,$cut_length).'...' : $text;
 
         echo $text;
-    }   
+    }
