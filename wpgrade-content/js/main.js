@@ -298,7 +298,7 @@ $.prototype.v=function(a,b){var c=this.d.id,d=this.c.u,e=this;c?(d.__webfontfont
 })(this,document);
 
 } else {
-    $('html').addClass('wf-loaded');
+    $('html').addClass('loaded');
 };
 
 
@@ -589,7 +589,7 @@ a._h7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 /* INDIVIDUAL LOADING */
 
 function imgLoaded($img){
-    $img.closest('.img_wrapper').addClass('loaded');
+    $img.closest('.img_wrapper');
 }
 
 
@@ -984,7 +984,7 @@ function init() {
         var $oldEl = this;      // reference to the DOM element that is about to be replaced
         $oldEl.replaceWith($newEl)
         setTimeout(function() {
-            $('html').addClass('loaded');
+            $('html').removeClass('loading');
         });
         niceScrollInit();
         royalSliderInit();
@@ -1133,7 +1133,7 @@ $(window).load(function(){
 
     lazyLoad();
 
-    $('html').addClass('loaded');
+    $('html').removeClass('loading');
     $('.site-navigation--main .menu-item').each(function(i,e) {
         var $self = $(e);
         setTimeout(function() {
@@ -1149,7 +1149,7 @@ $(window).load(function(){
 $(window).bind('djaxClick', function(e, data) {
     // var bodyelem = $("html,body");
     //     bodyelem.animate({scrollTop: 0});
-    $('html').removeClass('loaded');
+    $('html').addClass('loading');
     /* --- KILL DISQUS --- */
     /* --- KILL SLIDESHOW TIMERS --- */
     /* --- KILL VIDEO --- */
