@@ -40,7 +40,7 @@ function wpgrade_main_nav() {
             //'container_class' => '',           // class of container (should you choose to use it)
             'menu_class' => 'site-mainmenu',         // adding custom nav class
             'depth' => 0,                                // limit the depth of the nav
-            'walker' => new Arrow_Walker_Nav_Menu,
+            'walker' => new Custom_Walker_Nav_Menu,
             'echo' => false,
         ));
 
@@ -85,7 +85,8 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     // add main/sub classes to li's and links
-    function start_el( &$output, $item, $depth, $args) {
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+//    function start_el( &$output, $item, $depth, $args, $id) {
         global $wp_query;
         $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
       
@@ -110,16 +111,16 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
         $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
         $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
         $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
-      
+
         $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
-            $args->before,
+            $args['before'],
             $attributes,
-            $args->link_before,
+            $args['link_before'],
             apply_filters( 'the_title', $item->title, $item->ID ),
-            $args->link_after,
-            $args->after
+            $args['link_after'],
+            $args['after']
         );
-      
+	    var_export($args['before']);
         // build html
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }

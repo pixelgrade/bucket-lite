@@ -3,254 +3,206 @@
   src: url("../fonts/roboto_light/Roboto-Light-webfont.eot");
   src: url("../fonts/roboto_light/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_light/Roboto-Light-webfont.woff") format("woff"), url("../fonts/roboto_light/Roboto-Light-webfont.svg") format("svg"), url("../fonts/roboto_light/Roboto-Light-webfont.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Roboto";
     src: url("../fonts/roboto_light/Roboto-Light-webfont.svg") format("svg");
     font-weight: 300;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/roboto_lightitalic/Roboto-LightItalic-webfont.eot");
   src: url("../fonts/roboto_lightitalic/Roboto-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_lightitalic/Roboto-LightItalic-webfont.woff") format("woff"), url("../fonts/roboto_lightitalic/Roboto-LightItalic-webfont.svg") format("svg"), url("../fonts/roboto_lightitalic/Roboto-LightItalic-webfont.ttf") format("truetype");
   font-weight: 300;
-  font-style: italic;
-}
+  font-style: italic; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Roboto";
     src: url("../fonts/roboto_lightitalic/Roboto-LightItalic-webfont.svg") format("svg");
     font-weight: 300;
-    font-style: italic;
-}
-}
+    font-style: italic; } }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/roboto_medium/Roboto-Medium-webfont.eot");
   src: url("../fonts/roboto_medium/Roboto-Medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_medium/Roboto-Medium-webfont.woff") format("woff"), url("../fonts/roboto_medium/Roboto-Medium-webfont.svg") format("svg"), url("../fonts/roboto_medium/Roboto-Medium-webfont.ttf") format("truetype");
   font-weight: 500;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Roboto";
     src: url("../fonts/roboto_medium/Roboto-Medium-webfont.svg") format("svg");
     font-weight: 500;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/roboto_mediumitalic/Roboto-MediumItalic-webfont.eot");
   src: url("../fonts/roboto_mediumitalic/Roboto-MediumItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_mediumitalic/Roboto-MediumItalic-webfont.woff") format("woff"), url("../fonts/roboto_mediumitalic/Roboto-MediumItalic-webfont.svg") format("svg"), url("../fonts/roboto_mediumitalic/Roboto-MediumItalic-webfont.ttf") format("truetype");
   font-weight: 500;
-  font-style: italic;
-}
+  font-style: italic; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Roboto";
     src: url("../fonts/roboto_mediumitalic/Roboto-MediumItalic-webfont.svg") format("svg");
     font-weight: 500;
-    font-style: italic;
-}
-}
+    font-style: italic; } }
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/opensans_light/OpenSans-Light-webfont.eot");
   src: url("../fonts/opensans_light/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_light/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans_light/OpenSans-Light-webfont.svg") format("svg"), url("../fonts/opensans_light/OpenSans-Light-webfont.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Open Sans";
     src: url("../fonts/opensans_light/OpenSans-Light-webfont.svg") format("svg");
     font-weight: 300;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/opensans_lightitalic/OpenSans-LightItalic-webfont.eot");
   src: url("../fonts/opensans_lightitalic/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_lightitalic/OpenSans-LightItalic-webfont.woff") format("woff"), url("../fonts/opensans_lightitalic/OpenSans-LightItalic-webfont.svg") format("svg"), url("../fonts/opensans_lightitalic/OpenSans-LightItalic-webfont.ttf") format("truetype");
   font-weight: 300;
-  font-style: italic;
-}
+  font-style: italic; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Open Sans";
     src: url("../fonts/opensans_lightitalic/OpenSans-LightItalic-webfont.svg") format("svg");
     font-weight: 300;
-    font-style: italic;
-}
-}
+    font-style: italic; } }
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/opensans_regular/OpenSans-Regular-webfont.eot");
   src: url("../fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_regular/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans_regular/OpenSans-Regular-webfont.svg") format("svg"), url("../fonts/opensans_regular/OpenSans-Regular-webfont.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Open Sans";
     src: url("../fonts/opensans_regular/OpenSans-Regular-webfont.svg") format("svg");
     font-weight: normal;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/opensans_italic/OpenSans-Italic-webfont.eot");
   src: url("../fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_italic/OpenSans-Italic-webfont.woff") format("woff"), url("../fonts/opensans_italic/OpenSans-Italic-webfont.svg") format("svg"), url("../fonts/opensans_italic/OpenSans-Italic-webfont.ttf") format("truetype");
   font-weight: normal;
-  font-style: italic;
-}
+  font-style: italic; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Open Sans";
     src: url("../fonts/opensans_italic/OpenSans-Italic-webfont.svg") format("svg");
     font-weight: normal;
-    font-style: italic;
-}
-}
+    font-style: italic; } }
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/opensans_bold/OpenSans-Bold-webfont.eot");
   src: url("../fonts/opensans_bold/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_bold/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/opensans_bold/OpenSans-Bold-webfont.svg") format("svg"), url("../fonts/opensans_bold/OpenSans-Bold-webfont.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Open Sans";
     src: url("../fonts/opensans_bold/OpenSans-Bold-webfont.svg") format("svg");
     font-weight: 700;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Open Sans";
   src: url("../fonts/opensans_bolditalic/OpenSans-BoldItalic-webfont.eot");
   src: url("../fonts/opensans_bolditalic/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_bolditalic/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../fonts/opensans_bolditalic/OpenSans-BoldItalic-webfont.svg") format("svg"), url("../fonts/opensans_bolditalic/OpenSans-BoldItalic-webfont.ttf") format("truetype");
   font-weight: 700;
-  font-style: italic;
-}
+  font-style: italic; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Open Sans";
     src: url("../fonts/opensans_bolditalic/OpenSans-BoldItalic-webfont.svg") format("svg");
     font-weight: 700;
-    font-style: italic;
-}
-}
+    font-style: italic; } }
 @font-face {
   font-family: "Crimson Text";
   src: url("../fonts/crimson_roman/crimsontext-roman-webfont.eot");
   src: url("../fonts/crimson_roman/crimsontext-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimson_roman/crimsontext-roman-webfont.woff") format("woff"), url("../fonts/crimson_roman/crimsontext-roman-webfont.svg") format("svg"), url("../fonts/crimson_roman/crimsontext-roman-webfont.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Crimson Text";
     src: url("../fonts/crimson_roman/crimsontext-roman-webfont.svg") format("svg");
     font-weight: normal;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Crimson Text";
   src: url("../fonts/crimson_italic/crimsontext-italic-webfont.eot");
   src: url("../fonts/crimson_italic/crimsontext-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/crimson_italic/crimsontext-italic-webfont.woff") format("woff"), url("../fonts/crimson_italic/crimsontext-italic-webfont.svg") format("svg"), url("../fonts/crimson_italic/crimsontext-italic-webfont.ttf") format("truetype");
   font-weight: normal;
-  font-style: italic;
-}
+  font-style: italic; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Crimson Text";
     src: url("../fonts/crimson_italic/crimsontext-italic-webfont.svg") format("svg");
     font-weight: normal;
-    font-style: italic;
-}
-}
+    font-style: italic; } }
 @font-face {
   font-family: "Josefin Slab";
   src: url("../fonts/josefinslab_regular/josefinslab-regular-webfont.eot");
   src: url("../fonts/josefinslab_regular/josefinslab-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/josefinslab_regular/josefinslab-regular-webfont.woff") format("woff"), url("../fonts/josefinslab_regular/josefinslab-regular-webfont.svg") format("svg"), url("../fonts/josefinslab_regular/josefinslab-regular-webfont.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Josefin Slab";
     src: url("../fonts/josefinslab_regular/josefinslab-regular-webfont.svg") format("svg");
     font-weight: normal;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Josefin Slab";
   src: url("../fonts/josefinslab_semibold/josefinslab-semibold-webfont.eot");
   src: url("../fonts/josefinslab_semibold/josefinslab-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/josefinslab_semibold/josefinslab-semibold-webfont.woff") format("woff"), url("../fonts/josefinslab_semibold/josefinslab-semibold-webfont.svg") format("svg"), url("../fonts/josefinslab_semibold/josefinslab-semibold-webfont.ttf") format("truetype");
   font-weight: 600;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Josefin Slab";
     src: url("../fonts/josefinslab_semibold/josefinslab-semibold-webfont.svg") format("svg");
     font-weight: 600;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Josefin Slab";
   src: url("../fonts/josefinslab_bold/josefinslab-bold-webfont.eot");
   src: url("../fonts/josefinslab_bold/josefinslab-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/josefinslab_bold/josefinslab-bold-webfont.woff") format("woff"), url("../fonts/josefinslab_bold/josefinslab-bold-webfont.svg") format("svg"), url("../fonts/josefinslab_bold/josefinslab-bold-webfont.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Josefin Slab";
     src: url("../fonts/josefinslab_bold/josefinslab-bold-webfont.svg") format("svg");
     font-weight: 700;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
 @font-face {
   font-family: "Josefin Slab";
   src: url("../fonts/josefinslab_thin/josefinslab-thin-webfont.eot");
   src: url("../fonts/josefinslab_thin/josefinslab-thin-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/josefinslab_thin/josefinslab-thin-webfont.woff") format("woff"), url("../fonts/josefinslab_thin/josefinslab-thin-webfont.svg") format("svg"), url("../fonts/josefinslab_thin/josefinslab-thin-webfont.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal;
-}
+  font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Josefin Slab";
     src: url("../fonts/josefinslab_thin/josefinslab-thin-webfont.svg") format("svg");
     font-weight: 300;
-    font-style: normal;
-}
-}
+    font-style: normal; } }
