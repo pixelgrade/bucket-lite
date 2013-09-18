@@ -1,3 +1,4 @@
+        <div id="main" class="content djax-updatable djax-loading">
             <?php
             $ids = array();
 
@@ -44,3 +45,4 @@
             </div>
 
             <?php endif; ?>     
+        </div>

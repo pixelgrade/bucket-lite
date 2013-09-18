@@ -3,9 +3,8 @@
 Template Name: Portfolio
 */
 get_header(); ?>
-
-        <div id="work" class="djax-updatable js-content">
-            <div class="mosaic">
+<div id="work" class="content djax-updatable djax-loading js-content">
+    <div class="mosaic">
 
         <?php
         $args = array(
@@ -66,5 +65,6 @@ get_header(); ?>
         /* Restore original Post Data */
         wp_reset_postdata();
         ?>
-
+    </div><!-- .mosaic -->
+</div><!-- .content -->
 <?php get_footer(); ?>

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<div id="main" class="content djax-updatable djax-loading">
+
 <?php if ( have_posts() ) : ?>
 
 
@@ -54,5 +56,7 @@
     <?php get_template_part( 'no-results', 'index' ); ?>
 
 <?php endif; ?>
+
+</div>
 
 <?php get_footer(); ?>
