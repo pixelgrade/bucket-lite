@@ -298,7 +298,7 @@ $.prototype.v=function(a,b){var c=this.d.id,d=this.c.u,e=this;c?(d.__webfontfont
 })(this,document);
 
 } else {
-    $('html').addClass('wf-loaded');
+    $('html').addClass('loaded');
 };
 
 
@@ -589,7 +589,7 @@ a._h7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 /* INDIVIDUAL LOADING */
 
 function imgLoaded($img){
-    $img.closest('.img_wrapper').addClass('loaded');
+    $img.closest('.img_wrapper');
 }
 
 
@@ -855,8 +855,9 @@ function magnificPopupInit() {
 function gmapInit() {
     if ($('#gmap').length) {
 
-        var gmap_link, gmap_variables, gmap_zoom;
-        gmap_link = $('#gmap').data('url');
+        var gmap_link, gmap_variables, gmap_zoom, gmap_style;
+            gmap_link = $('#gmap').data('url');
+            gmap_style = typeof $('#gmap').data('customstyle') !== "undefined" ? "style1" : google.maps.MapTypeId.ROADMAP;
 
         // Overwrite Math.log to accept a second optional parameter as base for logarhitm
         Math.log = (function() {
@@ -912,7 +913,7 @@ function gmapInit() {
                 options:{
                     center: new google.maps.LatLng(gmap_coordinates[0], gmap_coordinates[1]),
                     zoom: parseInt(gmap_zoom),
-                    mapTypeId: "style1",
+                    mapTypeId: gmap_style,
                     mapTypeControlOptions: {mapTypeIds: []},
                     scrollwheel: false
                 }
@@ -1007,7 +1008,7 @@ function init() {
         var $oldEl = this;      // reference to the DOM element that is about to be replaced
         $oldEl.replaceWith($newEl)
         setTimeout(function() {
-            $('html').addClass('loaded');
+            $('html').removeClass('loading');
         });
         niceScrollInit();
         royalSliderInit();
@@ -1156,7 +1157,7 @@ $(window).load(function(){
 
     lazyLoad();
 
-    $('html').addClass('loaded');
+    $('html').removeClass('loading');
     $('.site-navigation--main .menu-item').each(function(i,e) {
         var $self = $(e);
         setTimeout(function() {
@@ -1172,7 +1173,7 @@ $(window).load(function(){
 $(window).bind('djaxClick', function(e, data) {
     // var bodyelem = $("html,body");
     //     bodyelem.animate({scrollTop: 0});
-    $('html').removeClass('loaded');
+    $('html').addClass('loading');
     /* --- KILL DISQUS --- */
     /* --- KILL SLIDESHOW TIMERS --- */
     /* --- KILL VIDEO --- */
