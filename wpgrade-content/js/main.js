@@ -670,7 +670,7 @@ function platformDetect(){
 /* --- CAROUSELS --- */
 /* --- NICESCROLL --- */
 function niceScrollInit() {
-    var smoothScroll = 'on';
+    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll == 'on' && $(window).width() > 680 && !touch && !is_OSX) {
         $('[data-nicescroll]').niceScroll({
             zindex: 9999,
@@ -1005,7 +1005,7 @@ function init() {
     platformDetect();
     
     /* INSTANTIATE DJAX */
-    if (typeof $('html').data('djax') !== "undefined") {
+    if (typeof $('body').data('ajaxloading') !== "undefined") {
         var djax_transition = function($newEl) {
             var $oldEl = this;      // reference to the DOM element that is about to be replaced
             $oldEl.replaceWith($newEl)
