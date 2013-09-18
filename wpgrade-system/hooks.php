@@ -126,6 +126,109 @@
 			),
 		);
 		$types_options[$theme_key]['metaboxes'] = array(
+			'post_video_format' => array(
+				'id' => 'post_format_metabox_video',
+				'title' => __('Video Settings', wpgrade::textdomain()),
+				'pages'      => array('post'), // Post type
+				'context' => 'normal',
+				'priority' => 'high',
+				'show_names' => true, // Show field names on the left
+				'fields' => array(
+					array(
+						'name' => __('Embed Code', wpgrade::textdomain()),
+						'desc' => __('Enter here a Youtube, Vimeo (or other online video services) embed code here. The width should be a minimum of 640px. We will use this if filled, not the selfhosted options bellow!', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'video_embed',
+						'type' => 'textarea_small',
+						'std' => '',
+					),
+				)
+			),
+			'post_quote_format' => array(
+				'id' => 'post_format_metabox_quote',
+				'title' =>  __('Quote Settings', wpgrade::textdomain()),
+				'pages'      => array( 'post' ), // Post type
+				'context' => 'normal',
+				'priority' => 'high',
+				'show_names' => true, // Show field names on the left
+				'fields' => array(
+					array(
+						'name' =>  __('Quote Content', wpgrade::textdomain()),
+						'desc' => __('Please type the text of your quote here.', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'quote',
+						'type' => 'wysiwyg',
+						'std' => '',
+						'options' => array (
+							'textarea_rows' => 4,
+						),
+					),
+					array(
+						'name' => __('Author Name', wpgrade::textdomain()),
+						'desc' => '',
+						'id' => wpgrade::prefix() . 'quote_author',
+						'type' => 'text',
+						'std' => '',
+					),
+					array(
+						'name' => __('Author Title', wpgrade::textdomain()),
+						'desc' => '',
+						'id' => wpgrade::prefix() . 'quote_author_title',
+						'type' => 'text',
+						'std' => '',
+					),
+					array(
+						'name' => __('Author Link', wpgrade::textdomain()),
+						'desc' => __('Insert here an url if you want the author name to be linked to that address.', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'quote_author_link',
+						'type' => 'text',
+						'std' => '',
+					),
+				)
+			),
+			'post_audio_format' => array(
+				'id' => 'post_format_metabox_audio',
+				'title' =>  __('Audio Settings', wpgrade::textdomain()),
+				'pages'      => array( 'post'), // Post type
+				'context' => 'normal',
+				'priority' => 'high',
+				'show_names' => true, // Show field names on the left
+				'fields' => array(
+					array(
+						'name' => __('Embed Code', wpgrade::textdomain()),
+						'desc' => __('Enter here a embed code here. The width should be a minimum of 640px. We will use this if filled, not the selfhosted options bellow!', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'audio_embed',
+						'type' => 'textarea_small',
+						'std' => '',
+					),
+					array(
+						'name' => __('MP3 File URL', wpgrade::textdomain()),
+						'desc' => __('Please enter in the URL to the .mp3 file', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'audio_mp3',
+						'type' => 'file',
+						'std' => ''
+					),
+					array(
+						'name' => __('M4A File URL', wpgrade::textdomain()),
+						'desc' => __('Please enter in the URL to the .m4a file', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'audio_m4a',
+						'type' => 'file',
+						'std' => ''
+					),
+					array(
+						'name' => __('OGA File URL', wpgrade::textdomain()),
+						'desc' => __('Please enter in the URL to the .ogg or .oga file', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'audio_ogg',
+						'type' => 'file',
+						'std' => ''
+					),
+					array(
+						'name' => __('Poster Image', wpgrade::textdomain()),
+						'desc' => __('This will be the image displayed above the audio controls. The image should be at least 640px wide. Click the "Upload" button to open the Media Manager, and click "Use as Poster Image" once you have uploaded or chosen an image from the media library.', wpgrade::textdomain()),
+						'id' => wpgrade::prefix() . 'audio_poster',
+						'type' => 'file',
+						'std' => ''
+					),
+				)
+			),
 			'lens_portfolio' => array(
 				'id'         => 'portfolio_gallery',
 				'title'      => __('Gallery', wpgrade::textdomain()),

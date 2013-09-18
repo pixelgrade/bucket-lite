@@ -30,30 +30,7 @@
                     </div>
                     <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>
                     <div class="header__inner-wrap">
-                        <?php 
-
-                        $defaults = array(
-                            'theme_location'  => 'menu-header',
-                            'menu'            => '',
-                            'container'       => 'nav',
-                            'container_class' => '',
-                            'container_id'    => '',
-                            'menu_class'      => 'site-navigation site-navigation--main',
-                            'menu_id'         => '',
-                            'echo'            => true,
-                            'fallback_cb'     => 'wp_page_menu',
-                            'before'          => '',
-                            'after'           => '',
-                            'link_before'     => '',
-                            'link_after'      => '',
-                            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth'           => 0,
-                            'walker'          => new Custom_Walker_Nav_menu
-                        );
-
-                        wp_nav_menu( $defaults );
-
-                        ?>
+                        <?php wpgrade_main_nav();?>
                     </div>
                 </header>
                 <?php get_sidebar('header'); ?>
