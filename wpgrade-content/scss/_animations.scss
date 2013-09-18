@@ -135,6 +135,7 @@
     }
 
     .loading & {
+        @include transition(width .5s .2s bezier(easeInBack));
         width: 0;
     }
 }
