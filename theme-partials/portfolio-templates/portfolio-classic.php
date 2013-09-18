@@ -1,3 +1,4 @@
+<div id="main" class="content djax-updatable djax-loading">
     <div class="page-content">        
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
             <header class="entry-header">
@@ -53,3 +54,4 @@
             }
         ?>
     </div><!-- .page-content -->
+</div><!-- .content -->

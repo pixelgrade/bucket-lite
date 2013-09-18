@@ -1,3 +1,4 @@
+<div id="main" class="content djax-updatable djax-loading">
 <div class="page-content project-sidebar-right">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
         <h1 class="entry__title title-mobile"><?php the_title(); ?></h1>            
@@ -82,3 +83,4 @@
         } 
     ?>
 </div><!-- .page-content -->
+</div><!-- .content -->

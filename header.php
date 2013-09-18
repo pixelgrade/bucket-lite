@@ -60,4 +60,3 @@
                     </div><!-- .site-info -->
                 </footer><!-- #colophon -->
             </div><!-- .header -->
-            <div id="main" class="content djax-updatable djax-loading">
