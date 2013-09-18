@@ -1,7 +1,3 @@
-body, html {
-  height: 100%;
-}
-
 @include media(to lap) {
     .page-content{
         @include rem(padding, 0 $base-spacing-unit);           
