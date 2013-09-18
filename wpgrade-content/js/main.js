@@ -730,13 +730,13 @@ function royalSliderInit() {
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
 
-        if(rs_fullScreen){
+        if (rs_fullScreen) {
             $slider.royalSlider({
-                keyboardNavEnabled: true,
+                autoHeight: true,
                 imageAlignCenter: false,
                 imageScaleMode: 'fill',
                 slidesSpacing: 0,
-                autoHeight: true,
+                keyboardNavEnabled: true,
                 controlNavigation: rs_bullets,
                 arrowsNav: rs_arrows
             });
@@ -744,8 +744,9 @@ function royalSliderInit() {
             $slider.royalSlider({
                 autoHeight: true,
                 autoScaleSlider: false,
-                imageScaleMode:'fill',
+                imageScaleMode:'none',
                 imageAlignCenter: false,
+                slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });
@@ -753,7 +754,7 @@ function royalSliderInit() {
             $slider.royalSlider({
                 autoScaleSlider: true,
                 imageScaleMode: 'fill',
-                slidesSpacing: 0,                
+                slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });     
