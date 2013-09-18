@@ -1,5 +1,5 @@
 /*----------------------------------------*\
-*   $GALLERY FULL SCREEN
+*   $GALLERY FULL WIDTH
 \*----------------------------------------*/
 
 /*body*/.single-gallery-fullwidth{
@@ -45,4 +45,10 @@
                 @include background-size(cover);
             }
         }
+
+    .rsBullets{
+        @include rem(left, 2 * $base-spacing-unit);
+        @include rem(bottom, 2 * $base-spacing-unit);
+        float: none;        
+    }        
 }

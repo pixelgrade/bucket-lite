@@ -1,4 +1,4 @@
-    <div id="main" class="content djax-updatable djax-loading">
+    <div id="gallery" class="content djax-updatable djax-loading">
     <?php
     $ids = array();
 
@@ -15,7 +15,7 @@
     ) );
 
     if ( $attachments ) : ?>
-    <div class="pixslider js-pixslider" data-autoheight data-customarrows>
+    <div class="pixslider js-pixslider gallery--fullscreen" data-fullscreen data-customarrows data-bullets>
         <?php 
             foreach ( $attachments as $attachment ) : 
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
