@@ -737,8 +737,8 @@ function royalSliderInit() {
                 imageScaleMode: 'fill',
                 slidesSpacing: 0,
                 keyboardNavEnabled: true,
-                controlNavigation: rs_bullets,
-                arrowsNav: rs_arrows
+                arrowsNav: rs_arrows,
+                controlNavigation: rs_bullets
             });
         } else if (rs_autoheight) {
             $slider.royalSlider({
@@ -1005,18 +1005,20 @@ function init() {
     platformDetect();
     
     /* INSTANTIATE DJAX */
-    var djax_transition = function($newEl) {
-        var $oldEl = this;      // reference to the DOM element that is about to be replaced
-        $oldEl.replaceWith($newEl)
-        setTimeout(function() {
-            $('html').removeClass('loading');
-        });
-        niceScrollInit();
-        royalSliderInit();
-        magnificPopupInit();
-        gmapInit();
+    if (typeof $('html').data('djax') !== "undefined") {
+        var djax_transition = function($newEl) {
+            var $oldEl = this;      // reference to the DOM element that is about to be replaced
+            $oldEl.replaceWith($newEl)
+            setTimeout(function() {
+                $('html').removeClass('loading');
+            });
+            niceScrollInit();
+            royalSliderInit();
+            magnificPopupInit();
+            gmapInit();
+        }
+        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     }
-    $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     
     /* ONE TIME EVENT HANDLERS */
     eventHandlersOnce();
