@@ -42,13 +42,21 @@
 					',
 			),
 			array(
-				'id' => 'use_smooth_scrool',
+				'id' => 'use_smooth_scroll',
 				'type' => 'checkbox',
 				'title' => __('Smooth Scrolling', wpgrade::textdomain()),
-				'sub_desc' => __('Enable/ Disable smooth scrolling option', wpgrade::textdomain()),
+				'sub_desc' => __('Enable / Disable smooth scrolling', wpgrade::textdomain()),
 				'std' => '1',
 				'switch' => true
 			),
+            array(
+                'id' => 'use_ajax_loading',
+                'type' => 'checkbox',
+                'title' => __('Ajax Loading', wpgrade::textdomain()),
+                'sub_desc' => __('Enable / Disable ajax loading', wpgrade::textdomain()),
+                'std' => '1',
+                'switch' => true
+            ),
 			array(
 				'id' => 'portfolio_use_taxonomies_info_alert',
 				'type' => 'info',
