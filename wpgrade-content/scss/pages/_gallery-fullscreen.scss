@@ -4,6 +4,10 @@
 
 /*body*/.single-gallery-fullscreen{
 
+    .wrapper{
+        height: 100%;
+    }
+    
     .content{
         margin-left: 0;
         position: inherit;
@@ -73,8 +77,8 @@
 *   $ROYAL SLIDER BULLETS
 \*----------------------------------------*/
 .single-gallery-fullscreen .rsBullets{
-    position: fixed;
-    z-index: 101;
-    @include rem(bottom, 6 * $base-spacing-unit);
-    @include rem(left, 2 * $base-spacing-unit);
+    @include rem(bottom, 2 * $base-spacing-unit);
+    @include rem(right, 2 * $base-spacing-unit);
+    left: auto;
+    float: none;
 }

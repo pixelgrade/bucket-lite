@@ -32,7 +32,9 @@ body, html {
     @include rem(padding, 2 * $base-spacing-unit);
 }
 
-
+.wrapper{
+    height: 100%;
+}
 
 
 

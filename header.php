@@ -14,6 +14,10 @@
     if(get_post_type() == 'lens_gallery'){
         $class_name = 'single-gallery-';
         $class_name .= get_post_meta(get_the_ID(), wpgrade::prefix().'gallery_template', true);
+
+        if($class_name == 'single-gallery-fullscreen'){
+            $class_name .= ' header-transparent';
+        }
     }
 ?>
 <body <?php body_class($class_name); ?>>

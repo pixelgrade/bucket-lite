@@ -709,6 +709,15 @@ function royalSliderInit() {
         $old_gallery.replaceWith($new_gallery);
     });
 
+    $('.ja-gallery-fullscreen').each(function(){
+        var $slider = $(this),
+            rs_arrows = typeof $slider.data('arrows') !== "undefined",
+            rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
+            rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
+            rs_customArrows = typeof $slider.data('customarrows') !== "undefined";
+
+
+    });
 
     $('.js-pixslider').each(function(){
         var $slider = $(this),
@@ -716,23 +725,35 @@ function royalSliderInit() {
             rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
             rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined";
+            rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
 
-        // call royalSlider
-        if (rs_autoheight) {
-
+        if(rs_fullScreen){
+            $slider.royalSlider({
+                keyboardNavEnabled: true,
+                imageAlignCenter: false,
+                imageScaleMode: 'fill',
+                slidesSpacing: 0,
+                autoHeight: true,
+                controlNavigation: rs_bullets,
+                arrowsNav: rs_arrows
+            });
+        } else if (rs_autoheight) {
             $slider.royalSlider({
                 autoHeight: true,
-                autoScaleSlider:false,
-                imageScaleMode:'none',
+                autoScaleSlider: false,
+                imageScaleMode:'fill',
                 imageAlignCenter: false,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });
         } else {
             $slider.royalSlider({
+                autoScaleSlider: true,
+                imageScaleMode: 'fill',
+                slidesSpacing: 0,                
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });     
@@ -753,7 +774,9 @@ function royalSliderInit() {
                         '<a href="#" class="control-item arrow-button arrow-button--right js-slider-arrow-next"></a>'+
                     '</div>'
                 );
-            $gallery_control.insertAfter($slider);
+            if(rs_fullScreen){
+                $gallery_control.insertBefore('#gallery');
+            } else $gallery_control.insertAfter($slider);
 
             // write the total number of slides inside the markup created above
             // make sure it is left padded with 0 in case it is lower then 10
