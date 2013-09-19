@@ -44,6 +44,7 @@ html {
     @include media(to hand) {
         position: relative;
         @include rem(top, 3*$base-spacing-unit);
+        @include rem(padding-bottom, 5 * $base-spacing-unit);
         @include transition(opacity .3s ease-in-out);
 
         // some dark overlay over the content when the navigation is visible

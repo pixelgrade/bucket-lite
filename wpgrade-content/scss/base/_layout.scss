@@ -29,8 +29,10 @@
     @include rem(padding, 2 * $base-spacing-unit);
 }
 
-.wrapper{
-    height: 100%;
+@include media(from lap){
+    .wrapper{
+        height: 100%;
+    }
 }
 
 

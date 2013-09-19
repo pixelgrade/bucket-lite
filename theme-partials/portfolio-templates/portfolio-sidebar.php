@@ -55,7 +55,7 @@
                     </div>
                 <?php endif; ?>    
             </footer><!-- .entry__meta .entry__meta-project -->
-            <hr class="separator" />
+            <hr class="separator separator--striped" />
             <footer class="entry__meta entry__meta--project row cf">
                 <?php 
                     if (function_exists( 'display_pixlikes' )) { 

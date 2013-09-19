@@ -11,6 +11,11 @@
     &:hover > .team-member-profile-container{
         @include opacity(1);
     }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
 }
 
 .team-member-profile-container{
