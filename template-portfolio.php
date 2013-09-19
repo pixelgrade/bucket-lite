@@ -3,7 +3,7 @@
 Template Name: Portfolio
 */
 get_header(); ?>
-<div id="work" class="content djax-updatable djax-loading js-content">
+<div id="main" class="content djax-updatable">
     <div class="mosaic">
 
         <?php

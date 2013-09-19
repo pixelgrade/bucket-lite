@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="main" class="content djax-updatable djax-loading">
+<div id="main" class="content djax-updatable">
     <div class="page-content">
         <?php while ( have_posts() ) : the_post(); ?>
             <?php if ( has_post_thumbnail() ): ?>

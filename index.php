@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main" class="content djax-updatable djax-loading">
+<div id="main" class="content djax-updatable">
 
 <?php if ( have_posts() ) : ?>
 
