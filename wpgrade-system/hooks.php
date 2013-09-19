@@ -393,20 +393,8 @@
 		}
 	}
 
+	// let queries be sorted by the "post__in" argument
 	add_action('wp_head', 'wpgrade_callbacks_html5_shim');
-
-
-	/**
-	 * Misc admin panel tweaks.
-	 */
-	function wpgrade_callbacks_admin_head_tweaks() {
-		// @andreilupu shouldn't this be in the plugin itself?
-		include wpgrade::themefilepath('wpgrade-partials/admin-head-tweaks'.EXT);
-	}
-
-	add_action('admin_head', 'wpgrade_callbacks_admin_head_tweaks');
-
-
 	function wpgrade_callback_sort_query_by_post_in( $sortby, $thequery ) {
 		if ( !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
 			$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
@@ -417,12 +405,23 @@
 
 
 	// hook shortcodes params
-	add_action('pixcodes_filter_divider', 'wpgrade_callback_setup_params');
+	add_filter('pixcodes_params_filter_divider', 'wpgrade_callback_remove_divider_params', 10, 1);
+	function wpgrade_callback_remove_divider_params( $params ){
 
-	function wpgrade_callback_setup_params( &$params ){
-
+		// unset unneeded params
 		if ( isset( $params['weight'] )) {
 			unset($params['weight']);
+		}
+
+		return $params;
+	}
+
+	add_filter('pixcodes_params_filter_divider', 'wpgrade_callback_remove_columns_params', 10, 1);
+	function wpgrade_callback_setup_params( $params ){
+
+		// unset unneeded params
+		if ( isset( $params['full_width'] )) {
+			unset($params['full_width']);
 		}
 
 		return $params;
