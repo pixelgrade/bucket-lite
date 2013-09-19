@@ -5,9 +5,9 @@ Template Name: Contact Page
 ?>
 
 <?php get_header(); ?>
-<div id="content" class="content">
+<div id="contact" class="content">
     <?php if (wpgrade::option('contact_gmap_link')): ?>
-        <div id="gmap" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>" <?php echo wpgrade::option('contact_gmap_custom_style') ? 'data-customstyle' : ''; ?>></div>
+        <div id="gmap" class="featured-image" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>" <?php echo wpgrade::option('contact_gmap_custom_style') ? 'data-customstyle' : ''; ?>></div>
     <?php endif; ?>
     <div class="page-content entry__body">
         <?php while ( have_posts() ) : the_post(); ?>

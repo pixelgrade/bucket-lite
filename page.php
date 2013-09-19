@@ -3,11 +3,7 @@
     <div class="page-content">
         <?php while ( have_posts() ) : the_post(); ?>
             <?php if ( has_post_thumbnail() ): ?>
-            <div class="featured-image-wrapper">
-                <div class="featured-image-container bleed--left">
-                            <?php the_post_thumbnail(); ?>
-                </div>
-            </div>
+                <div class="featured-image"><?php the_post_thumbnail(); ?></div>
             <?php endif; ?>
             <article id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
                 <header class="entry__header">

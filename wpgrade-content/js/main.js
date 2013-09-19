@@ -704,7 +704,7 @@ function royalSliderInit() {
     $('.wp-gallery').each(function() {
         var $old_gallery = $(this),
         $images = $old_gallery.find('img'),
-        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows data-autoheight data-autoscale>');
+        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows data-autoscale>');
         $images.prependTo($new_gallery).addClass('rsImg');
         $old_gallery.replaceWith($new_gallery);
     });
@@ -730,17 +730,7 @@ function royalSliderInit() {
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
 
-        if (rs_fullScreen) {
-            $slider.royalSlider({
-                autoHeight: true,
-                imageAlignCenter: false,
-                imageScaleMode: 'fill',
-                slidesSpacing: 0,
-                keyboardNavEnabled: true,
-                arrowsNav: rs_arrows,
-                controlNavigation: rs_bullets
-            });
-        } else if (rs_autoheight) {
+        if (rs_autoheight) {
             $slider.royalSlider({
                 autoHeight: true,
                 autoScaleSlider: false,
@@ -776,7 +766,7 @@ function royalSliderInit() {
                     '</div>'
                 );
             if(rs_fullScreen){
-                $gallery_control.insertBefore('#gallery');
+                $gallery_control.insertAfter('#gallery');
             } else $gallery_control.insertAfter($slider);
 
             // write the total number of slides inside the markup created above
@@ -1032,7 +1022,7 @@ function init() {
             magnificPopupInit();
             gmapInit();
         }
-        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
+        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads']);
     }
     
     /* ONE TIME EVENT HANDLERS */
@@ -1076,7 +1066,7 @@ function toggle_submenu() {
 function eventHandlersOnce() {
     
     /* @todo: change classes so style and js don't interfere */
-    $('.menu-item--parent').on('click', toggle_submenu);
+    $('.menu-item--parent').on('hover', toggle_submenu);
 
     $('.js-nav-trigger').on('click', function(e) {
         $('html').toggleClass('navigation--is-visible');
@@ -1204,6 +1194,7 @@ $(window).bind('djaxClick', function(e, data) {
 /* ====== ON DJAX LOAD ====== */
 
 $(window).bind('djaxLoad', function(e, data) {
+    $('html').removeClass('loading');
     /* --- PUSH GA TRACK --- */
     /* --- RECHECK HEADER COLOR/POS --- */
     /* --- INSTANTIATE EVENT HANDLERS --- */
