@@ -81,8 +81,7 @@
 			if (function_exists('check_ajax_referer')) {
 				check_ajax_referer('wpGrade_nonce_import_demo_theme_options');
 			}
-
-			require_once wpgrade::themepath('wpgrade-content/inc/import/import-demo-theme-options'.EXT);
+			require_once wpgrade::themefilepath('wpgrade-content/inc/import/import-demo-theme-options'.EXT);
 
 			$response = new WP_Ajax_Response($response);
 			$response->send();
