@@ -1,4 +1,4 @@
-    <div id="gallery" class="content djax-updatable djax-loading">
+    <div id="main" class="content djax-updatable">
     <?php
     $ids = array();
 

@@ -671,7 +671,7 @@ function platformDetect(){
 /* --- NICESCROLL --- */
 function niceScrollInit() {
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
-    if (smoothScroll == 'on' && $(window).width() > 680 && !touch && !is_OSX) {
+    if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
         $('[data-nicescroll]').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
@@ -734,6 +734,7 @@ function royalSliderInit() {
             $slider.royalSlider({
                 autoHeight: true,
                 autoScaleSlider: false,
+                loop: true,
                 imageScaleMode:'none',
                 imageAlignCenter: false,
                 slidesSpacing: 0,
@@ -743,6 +744,7 @@ function royalSliderInit() {
         } else {
             $slider.royalSlider({
                 autoScaleSlider: true,
+                loop: true,
                 imageScaleMode: 'fill',
                 slidesSpacing: 0,
                 arrowsNav: rs_arrows,
@@ -1014,15 +1016,18 @@ function init() {
         var djax_transition = function($newEl) {
             var $oldEl = this;      // reference to the DOM element that is about to be replaced
             $oldEl.replaceWith($newEl)
+
+            // we should make sure initial transition ended
             setTimeout(function() {
                 $('html').removeClass('loading');
             });
+
             niceScrollInit();
             royalSliderInit();
             magnificPopupInit();
             gmapInit();
         }
-        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads']);
+        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     }
     
     /* ONE TIME EVENT HANDLERS */
@@ -1182,6 +1187,15 @@ $(window).bind('djaxClick', function(e, data) {
     // var bodyelem = $("html,body");
     //     bodyelem.animate({scrollTop: 0});
     $('html').addClass('loading');
+    /* --- GALLERY --- */
+    if ($('#gallery').length) {
+        $('.mosaic__item').each(function(){
+            var $item = $(this);
+            setTimeout(function() {
+                $item.addClass('slide-out');
+            }, 40 * Math.floor((Math.random()*10)+1));
+        });
+    }
     /* --- KILL DISQUS --- */
     /* --- KILL SLIDESHOW TIMERS --- */
     /* --- KILL VIDEO --- */
@@ -1195,6 +1209,15 @@ $(window).bind('djaxClick', function(e, data) {
 
 $(window).bind('djaxLoad', function(e, data) {
     $('html').removeClass('loading');
+    /* --- GALLERY --- */
+    if ($('#gallery').length) {
+        $('.mosaic__item').each(function(){
+            var $item = $(this);
+            setTimeout(function() {
+                $item.addClass('slide-in');
+            }, 40 * Math.floor((Math.random()*10)+1));
+        });
+    }
     /* --- PUSH GA TRACK --- */
     /* --- RECHECK HEADER COLOR/POS --- */
     /* --- INSTANTIATE EVENT HANDLERS --- */

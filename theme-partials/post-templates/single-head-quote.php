@@ -31,12 +31,6 @@
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>				
-        <!--<div class="testimonial_author">
-                <a href="http://en.wikipedia.org/wiki/Thomas_Edison" title="See more about Thomas not Edison">
-                    <span class="author_name">Thomas not Edison</span>
-                </a>
-                <span class="author_description">Theoretician</span>
-            </div>-->
         </blockquote>
     </div>
 </div>
