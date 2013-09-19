@@ -47,13 +47,13 @@
             @include rem(padding-left, 10 * $base-spacing-unit);
         }
 
-        .featured-image-wrapper{
+        .featured-image{
             @include rem(margin-left, -10 * $base-spacing-unit);
         }   
     }
 }
 
-.featured-image-container img{
+.featured-image img{
     width: 100%;
     height: auto;
     display: block;
@@ -64,8 +64,27 @@
 *   $FULL WIDTH
 \*----------------------------------------*/
 
-.full-width .featured-image-wrapper{
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+.full-width{
+    .page-content{
+        width: 100%;
+    }
+
+    article{
+        @include rem(max-width, 890px);
+    }
 }
+
+
+
+
+
+/*----------------------------------------*\
+    $PAGE
+\*----------------------------------------*/
+.page .featured-image{
+    @include rem(margin-left, -2 * $base-spacing-unit);
+}
+
+
+
+

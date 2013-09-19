@@ -4,9 +4,7 @@
 ?>
 
 <?php if ( has_post_thumbnail() ): ?>
-    <div class="featured-image-wrapper">
-        <div class="featured-image-container">
-            <?php the_post_thumbnail(); ?>
-        </div>
+    <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
     </div>
 <?php endif; ?>
