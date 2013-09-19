@@ -992,6 +992,21 @@ $(document).ready(function (){
     });
 });
 
+// Progress bars
+// 
+function progressbar_shortcode(e) {
+    e.each(function() {
+        var self = $(this).find('.progressbar-progress');
+        self.css({'width': self.data('value')});
+    });
+}
+
+var progressbar_shc = $('.progressbar');
+    progressbar_shc.addClass('is-visible');
+if (progressbar_shc.length) {
+    progressbar_shortcode(progressbar_shc);
+}
+
 /* ====== INITIALIZE ====== */
 
 function init() {
