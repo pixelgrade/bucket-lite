@@ -1172,6 +1172,18 @@ $(window).load(function(){
             $self.addClass('js--is-loaded');
         }, (i+1) * 150);
     });
+
+    if ($('#gallery').length) {
+
+        $('.mosaic__item').each(function(){
+            var $item = $(this);
+            setTimeout(function() {
+
+                $item.addClass('slide-in');
+
+            }, 40 * Math.floor((Math.random()*10)+1));
+        });
+    }
 });
 
 
