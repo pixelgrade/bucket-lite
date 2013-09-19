@@ -1017,7 +1017,7 @@ function init() {
             magnificPopupInit();
             gmapInit();
         }
-        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
+        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads']);
     }
     
     /* ONE TIME EVENT HANDLERS */
@@ -1061,7 +1061,7 @@ function toggle_submenu() {
 function eventHandlersOnce() {
     
     /* @todo: change classes so style and js don't interfere */
-    $('.menu-item--parent').on('click', toggle_submenu);
+    $('.menu-item--parent').on('hover', toggle_submenu);
 
     $('.js-nav-trigger').on('click', function(e) {
         $('html').toggleClass('navigation--is-visible');
@@ -1189,6 +1189,7 @@ $(window).bind('djaxClick', function(e, data) {
 /* ====== ON DJAX LOAD ====== */
 
 $(window).bind('djaxLoad', function(e, data) {
+    $('html').removeClass('loading');
     /* --- PUSH GA TRACK --- */
     /* --- RECHECK HEADER COLOR/POS --- */
     /* --- INSTANTIATE EVENT HANDLERS --- */
