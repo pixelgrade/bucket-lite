@@ -171,13 +171,13 @@ html {
     @include rem(margin-bottom, $base-spacing-unit);
 }
 
-.gallery--archive {
+.gallery--archive{
     margin-bottom: 0;
 }
 
     .gallery-item{
         display: block;
-        margin: 0 !important;
+        height: 100%;
 
         img{
             display: block;
@@ -280,4 +280,8 @@ html{
     height: auto;
 }
 
-// djax loading
+// royal slider 1px spacing shit
+.gallery-icon {
+    width: 102% !important;
+    left: -1% !important;
+}
