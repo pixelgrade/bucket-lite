@@ -9,9 +9,10 @@
 
 <h2 class="entry__title">
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-</h2>
-<div class="featured-image-container">
-    <div class="featured-image-wrapper">
-        <?php wpGrade_gallery_slideshow($post); ?>     
+    <div class="bleed-left">
+        <hr class="separator separator--dotted grow">
     </div>
+</h2>
+<div class="featured-image">
+    <?php wpGrade_gallery_slideshow($post); ?>     
 </div>

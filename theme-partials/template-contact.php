@@ -2,10 +2,10 @@
 /*
 Template Name: Contact Page
 */
-?>
 
-<?php get_header(); ?>
-<div id="contact" class="content">
+get_header(); ?>
+
+<div id="main" class="content djax-updatable">
     <?php if (wpgrade::option('contact_gmap_link')): ?>
         <div id="gmap" class="featured-image" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>" <?php echo wpgrade::option('contact_gmap_custom_style') ? 'data-customstyle' : ''; ?>></div>
     <?php endif; ?>

@@ -3,12 +3,10 @@
 ?>
 
 <?php if ( ! empty($video_embed)): ?>
-    <div class="featured-image-wrapper">
-        <div class="featured-image-container">
-            <div class="page-header-video">
-                <div class="video-wrap">
-                    <?php echo stripslashes(htmlspecialchars_decode($video_embed)) ?>
-                </div>
+    <div class="featured-image">
+        <div class="page-header-video">
+            <div class="video-wrap">
+                <?php echo stripslashes(htmlspecialchars_decode($video_embed)) ?>
             </div>
         </div>
     </div>

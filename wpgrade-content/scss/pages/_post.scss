@@ -4,9 +4,6 @@
  */
 
 .gallery-item{
-    @include media(from hand){
-        @include rem(margin-left, $half-spacing-unit);
-    }
 
     &:first-child{
         margin-left: 0;
@@ -27,6 +24,16 @@
 
     a {
         text-decoration: none;
+    }
+}
+
+.entry__content{
+    .gallery{
+        margin: 0 -1% !important;
+    }
+
+    .gallery-item{
+        padding: 0 1%;
     }
 }
 

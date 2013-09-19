@@ -1,4 +1,5 @@
-    <div id="gallery" class="content djax-updatable djax-loading">            
+    <div id="main" class="content djax-updatable">            
+        <div id="gallery">
             <?php
             $ids = array();
 
@@ -15,19 +16,20 @@
             ) );
 
             if ( $attachments ) : ?>
-            <div class="pixslider js-pixslider gallery-fullscreen" data-bullets data-fullscreen data-customarrows>
-                <?php 
-                    foreach ( $attachments as $attachment ) : 
-                        $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                        $thumbimg = wp_get_attachment_image_src($attachment->ID, 'big');                            
-                ?>                
-                <dl class='gallery-item'>
-                    <dt class='gallery-icon landscape' style="background-image: url('<?php echo $thumbimg[0]; ?>');">
-                        <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" />
-                    </dt>
-                </dl>
-                <?php endforeach; ?>
-            </div>
+                <div class="pixslider js-pixslider gallery-fullscreen" data-bullets data-fullscreen data-customarrows>
+                    <?php 
+                        foreach ( $attachments as $attachment ) : 
+                            $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+                            $thumbimg = wp_get_attachment_image_src($attachment->ID, 'big');                            
+                    ?>                
+                    <dl class='gallery-item'>
+                        <dt class='gallery-icon landscape' style="background-image: url('<?php echo $thumbimg[0]; ?>');">
+                            <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" />
+                        </dt>
+                    </dl>
+                    <?php endforeach; ?>
+                </div>
 
             <?php endif; ?>            
+        </div>
     </div>

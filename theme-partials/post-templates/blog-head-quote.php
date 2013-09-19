@@ -6,7 +6,7 @@
     $quote_author_link = get_post_meta($post->ID, wpgrade::prefix().'quote_author_link', true);
 ?>
 
-<div class="entry__content  entry--quote__content">
+<div class="entry__content  entry--quote__content  entry__body">
     <a class="entry__permalink" href="<?php the_permalink(); ?>">
         <blockquote class="pixcode--testimonial testimonial--big-text">
             <?php if ($quote != ''): ?>
