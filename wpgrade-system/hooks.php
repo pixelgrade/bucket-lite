@@ -76,6 +76,7 @@
 				),
 				'capability_type' => 'post',
 				'has_archive' => 'galleries-archive',
+				'menu_icon' => 'slider.png',
 				'menu_position' => NULL,
 				'supports' => array ( 'title', 'thumbnail', 'page-attributes', 'excerpt'),
 				'yarpp_support' => true,

@@ -71,7 +71,7 @@
 		'opt_name' => wpgrade::shortname().'_options',
 
 		// set a custom menu icon
-		'menu_icon' => get_template_directory_uri().'/library/admin-panel/options/img/theme_options.png',
+		'menu_icon' => get_template_directory_uri().'/wpgrade-content/admin-panel/options/img/theme_options.png',
 
 		// set a custom title for the options page
 		'menu_title' => __('Theme Options', wpgrade::textdomain()), # default: Options

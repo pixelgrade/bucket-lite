@@ -670,7 +670,7 @@ function platformDetect(){
 /* --- CAROUSELS --- */
 /* --- NICESCROLL --- */
 function niceScrollInit() {
-    var smoothScroll = 'on';
+    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll == 'on' && $(window).width() > 680 && !touch && !is_OSX) {
         $('[data-nicescroll]').niceScroll({
             zindex: 9999,
@@ -730,22 +730,23 @@ function royalSliderInit() {
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
 
-        if(rs_fullScreen){
+        if (rs_fullScreen) {
             $slider.royalSlider({
-                keyboardNavEnabled: true,
+                autoHeight: true,
                 imageAlignCenter: false,
                 imageScaleMode: 'fill',
                 slidesSpacing: 0,
-                autoHeight: true,
-                controlNavigation: rs_bullets,
-                arrowsNav: rs_arrows
+                keyboardNavEnabled: true,
+                arrowsNav: rs_arrows,
+                controlNavigation: rs_bullets
             });
         } else if (rs_autoheight) {
             $slider.royalSlider({
                 autoHeight: true,
                 autoScaleSlider: false,
-                imageScaleMode:'fill',
+                imageScaleMode:'none',
                 imageAlignCenter: false,
+                slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });
@@ -753,7 +754,7 @@ function royalSliderInit() {
             $slider.royalSlider({
                 autoScaleSlider: true,
                 imageScaleMode: 'fill',
-                slidesSpacing: 0,                
+                slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets
             });     
@@ -1004,18 +1005,20 @@ function init() {
     platformDetect();
     
     /* INSTANTIATE DJAX */
-    var djax_transition = function($newEl) {
-        var $oldEl = this;      // reference to the DOM element that is about to be replaced
-        $oldEl.replaceWith($newEl)
-        setTimeout(function() {
-            $('html').removeClass('loading');
-        });
-        niceScrollInit();
-        royalSliderInit();
-        magnificPopupInit();
-        gmapInit();
+    if (typeof $('body').data('ajaxloading') !== "undefined") {
+        var djax_transition = function($newEl) {
+            var $oldEl = this;      // reference to the DOM element that is about to be replaced
+            $oldEl.replaceWith($newEl)
+            setTimeout(function() {
+                $('html').removeClass('loading');
+            });
+            niceScrollInit();
+            royalSliderInit();
+            magnificPopupInit();
+            gmapInit();
+        }
+        $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     }
-    $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
     
     /* ONE TIME EVENT HANDLERS */
     eventHandlersOnce();
