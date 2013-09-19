@@ -73,7 +73,7 @@
     <?php endif; ?>
 
 </div><!-- #comments .comments-area -->
-<hr class="separator" />
+<hr class="separator separator--striped" />
     <?php 
     $commenter = wp_get_current_commenter();
     $req = get_option( 'require_name_email' );

@@ -69,7 +69,7 @@
                             <hr class="separator separator--full-left"/>
                         </div>
                         <div class="col-8 gutter--double">
-                            <hr class="separator"/>
+                            <hr class="separator separator--striped"/>
                         </div>
                     </div>
 
