@@ -44,7 +44,7 @@
 
 		'shortcodes' => array
 			(
-                 'Testimonials', 'Icon', 'Tabs', 'Columns', 'Portfolio', 'Quote', 'InfoBox', 'TeamMember', 'Divider'
+                 'Button', 'Testimonials', 'Icon', 'Tabs', 'Columns', 'Portfolio', 'Quote', 'InfoBox', 'TeamMember', 'Divider', 'ProgressBar'
 			),
 
 		'resources' => array

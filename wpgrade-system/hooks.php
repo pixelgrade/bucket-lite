@@ -364,7 +364,7 @@
 		// current theme
 		if ($current_options) {
 			$diff = array_diff($shortcodes, $current_options);
-			if (empty($diff) && is_admin()) {
+			if (!empty($diff) && is_admin()) {
 				update_option('wpgrade_shortcodes_list', $shortcodes);
 			}
 		}
@@ -414,6 +414,19 @@
 		return $sortby;
 	}
 	add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
+
+
+	// hook shortcodes params
+	add_action('pixcodes_filter_divider', 'wpgrade_callback_setup_params');
+
+	function wpgrade_callback_setup_params( &$params ){
+
+		if ( isset( $params['weight'] )) {
+			unset($params['weight']);
+		}
+
+		return $params;
+	}
 
 	// replace $query with our own on query object
 //	function wpgrade_callbacks_portfolio_pixquery( $query ){
