@@ -12,6 +12,7 @@
 }
 
     .mosaic__item {
+        position: relative;
         // opacity: 0; //
         display: none; //
         overflow: hidden;
@@ -24,10 +25,15 @@
 
         .image__item-link {
             @include transform(translate3d(-101%,0,0));
+
+            .icon-plus {
+                padding-right: 0;
+                padding-top: 0.1em;
+            }
         }
     }
 
-    .slide-in .image__item-link {
+    .loaded .slide-in .image__item-link {
         -webkit-animation: slide-in .25s bezier(easeOutBack);
            -moz-animation: slide-in .25s bezier(easeOutBack);
              -o-animation: slide-in .25s bezier(easeOutBack);
@@ -35,7 +41,7 @@
         @include transform(none);
     }
 
-    .slide-out .image__item-link {
+    .loaded .slide-out .image__item-link {
         -webkit-animation: slide-out .25s bezier(easeInBack);
            -moz-animation: slide-out .25s bezier(easeInBack);
              -o-animation: slide-out .25s bezier(easeInBack);
@@ -102,15 +108,13 @@
     }
 
     // ensure hover doesn't occur on touch devices
-    .no-touch .image__image-wrapper img:hover {
+    .no-touch .js--is-loaded .image__image-wrapper img:hover {
         @include opacity(0.2);
     }
 
     .js--is-loaded img {
         opacity: 1;
     }
-
-
 
 
 

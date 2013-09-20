@@ -7,12 +7,11 @@
     width: 100%;
     position: absolute;
     z-index: 300;
-    @include transform(translate3d(-100%,0,0));
-    @include transition(transform .3s ease-in-out);
-
-    .loaded & {
-        @include transform(none);
-    }
+    -webkit-animation: slide-in .3s bezier(easeInOutQuart) forwards;
+       -moz-animation: slide-in .3s bezier(easeInOutQuart) forwards;
+         -o-animation: slide-in .3s bezier(easeInOutQuart) forwards;
+            animation: slide-in .3s bezier(easeInOutQuart) forwards;
+    @include transform(none);
 
     @include media(from hand) {
         height: 100%;
