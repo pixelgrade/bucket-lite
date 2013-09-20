@@ -16,14 +16,14 @@
 
     if ( $attachments ) : ?>
     <div class="featured-image">
-        <div class="pixslider js-pixslider" data-bullets data-customarrows data-autoheight>                    
+        <div class="pixslider js-pixslider" data-bullets data-customarrows>                    
             <?php 
                 foreach ( $attachments as $attachment ) : 
                     $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                    $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );                            
+                    $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'full' );                            
             ?>
                 <div class="pixslider__slide">
-                    <img src="<?php echo $thumbimg[0]; ?>"/>
+                    <img src="<?php echo $thumbimg[0]; ?>" class="rsImg"/>
                 </div>
             <?php endforeach; ?>                    
         </div>
@@ -43,14 +43,13 @@
                                 <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                             </div>  
                             <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
-                                if (count($categories)): ?>                                    
+                                if ($categories): ?>                                    
                                 <div class="entry__meta-box meta-box--categories">
                                     <span class="meta-box__box-title">Filled under: </span>
                                     <?php foreach ($categories as $cat): ?>
-                                            <a href="<?php echo get_category_link($cat); ?>"
-                                               rel="category">
-                                                <?php echo get_category($cat)->name; ?>
-                                            </a>
+                                        <a href="<?php echo get_category_link($cat); ?>" rel="category">
+                                            <?php echo get_category($cat)->name; ?>
+                                        </a>
                                     <?php endforeach; ?>
                                 </div>
                         <?php endif; ?> 
