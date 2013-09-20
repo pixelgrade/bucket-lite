@@ -25,6 +25,11 @@
 
         .image__item-link {
             @include transform(translate3d(-101%,0,0));
+
+            .icon-plus {
+                padding-right: 0;
+                padding-top: 0.1em;
+            }
         }
     }
 
@@ -103,15 +108,13 @@
     }
 
     // ensure hover doesn't occur on touch devices
-    .no-touch .image__image-wrapper img:hover {
+    .no-touch .js--is-loaded .image__image-wrapper img:hover {
         @include opacity(0.2);
     }
 
     .js--is-loaded img {
         opacity: 1;
     }
-
-
 
 
 
