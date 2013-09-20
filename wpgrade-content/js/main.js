@@ -753,7 +753,7 @@ function royalSliderInit() {
                 autoHeight: false,
                 loop: true,
                 imageScaleMode: 'fill',
-                imageAlignCenter: true,
+                imageAlignCenter: false,
                 slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets

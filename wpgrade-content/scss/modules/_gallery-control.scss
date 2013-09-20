@@ -106,3 +106,32 @@
         }
 
 
+.masonry__item {
+
+    .gallery-control {
+        width: 100%;
+        @include rem(height, $base-spacing-unit);
+        left: 0; right: auto;
+
+
+        .count {
+            text-align: right;
+            position: absolute;
+            @include rem(right, $base-spacing-unit);
+            top: auto;
+            @include rem(bottom, -1 * $half-spacing-unit);
+        }
+
+        .arrow-button--left{
+            position: absolute;
+            @include rem(left, $base-spacing-unit);
+            @include rem(bottom, 4px);
+        }
+
+        .arrow-button--right{
+            position: absolute;
+            @include rem(left, $base-spacing-unit);
+            @include rem(bottom, 4px);
+        }
+    }
+}
