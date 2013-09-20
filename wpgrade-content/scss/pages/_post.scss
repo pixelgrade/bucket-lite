@@ -234,6 +234,11 @@
         }
     }
 
+    .article-timestamp__right-box{
+        top: 0.3em;
+        line-height: 0.9;
+    }
+
     @include media(from lap) {
         float: left;
         @include rem(margin, 1.5 * $base-spacing-unit 0 0 -8 * $base-spacing-unit);
@@ -259,7 +264,7 @@
         float: left;
         font-size: 0.39em;
         position: relative;
-        top: 0.345em;
+        top: 0.35em;
         left: 0.3em;
     }
 

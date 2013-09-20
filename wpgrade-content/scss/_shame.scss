@@ -113,16 +113,6 @@ html {
     }
 }
 
-.featured-image, .single-gallery-fullwidth {
-
-    .gallery-control--gallery-fullscreen {
-        left: auto;
-        @include rem(right, 2 * $base-spacing-unit);
-    }
-
-}
-
-
 
 
 /* */
@@ -259,3 +249,11 @@ html{
 //     width: 102% !important;
 //     left: -1% !important;
 // }
+
+// that fullscreen royal slider needs some help
+/*body*/.single-gallery-fullwidth,
+/*body*/.single-gallery-fullscreen {
+    .js-pixslider {
+        height: 100% !important;
+    }
+}

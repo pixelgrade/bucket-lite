@@ -1,4 +1,4 @@
-    <div id="main" class="content djax-updatable">
+<div id="main" class="content djax-updatable">
     <?php
     $ids = array();
 
@@ -15,18 +15,16 @@
     ) );
 
     if ( $attachments ) : ?>
-    <div class="pixslider js-pixslider" data-customarrows data-bullets>
-        <?php 
-            foreach ( $attachments as $attachment ) : 
-                $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                $thumbimg = wp_get_attachment_image_src($attachment->ID, 'big');                            
-        ?>                
-        <dl class='gallery-item'>
-            <dt class='gallery-icon landscape' style="background-image: url('<?php echo $thumbimg[0]; ?>');">
+        <div class="pixslider js-pixslider" data-customarrows data-bullets>
+            <?php 
+                foreach ( $attachments as $attachment ) : 
+                    $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+                    $thumbimg = wp_get_attachment_image_src($attachment->ID, 'big');                            
+            ?>                
+            <div class="gallery-item">
                 <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" />
-            </dt>
-        </dl>
-        <?php endforeach; ?>
-    </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
     <?php endif; ?>        
-    </div>
+</div>
