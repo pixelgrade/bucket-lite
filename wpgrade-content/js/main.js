@@ -775,32 +775,35 @@ function royalSliderInit() {
                         '<a href="#" class="control-item arrow-button arrow-button--right js-slider-arrow-next"></a>'+
                     '</div>'
                 );
-            if(rs_fullScreen){
+
+            if (rs_fullScreen) {
                 $gallery_control.insertAfter('#gallery');
-            } else $gallery_control.insertAfter($slider);
+            } else {
+                $gallery_control.insertAfter($slider);
+            }
 
             // write the total number of slides inside the markup created above
             // make sure it is left padded with 0 in case it is lower then 10
             slidesNumber = (slidesNumber < 10) ? padLeft(slidesNumber, 2) : slidesNumber;
-            $('.js-gallery-slides-total').html(slidesNumber);
+            $gallery_control.find('.js-gallery-slides-total').html(slidesNumber);
             
             // add event listener to change the current slide number on slide change
             royalSlider.ev.on('rsAfterSlideChange', function(event) {
                 var currentSlide = royalSlider.currSlideId + 1;
                 if(currentSlide < 10){
-                    $('.js-gallery-current-slide .js-unit').html(currentSlide);
+                    $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide);
                 } else {
-                    $('.js-gallery-current-slide .js-decimal').html(currentSlide / 10);
-                    $('.js-gallery-current-slide .js-unit').html(currentSlide % 10);
+                    $gallery_control.find('.js-gallery-current-slide .js-decimal').html(currentSlide / 10);
+                    $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide % 10);
                 }
             });
 
-            $('.js-slider-arrow-prev').on('click', function(event){
+            $gallery_control.on('click', '.js-slider-arrow-prev', function(event){
                 event.preventDefault();
                 royalSlider.prev();
             });
 
-            $('.js-slider-arrow-next').on('click', function(event){
+            $gallery_control.on('click', '.js-slider-arrow-next', function(event){
                 event.preventDefault();
                 royalSlider.next();
             });    
