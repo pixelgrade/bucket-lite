@@ -706,8 +706,10 @@ class wpgrade_twitter_widget extends WP_Widget {
                     echo
                     	'<div class="tweet__meta">' .
                         //'<span class="twitter-screenname">' . ucwords($config['screenname']) . '</span>' .
-                        '<span class="tweet__meta-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>' .
-                        '<span class="tweet__meta-date">' . wpgrade_convert_twitter_date($result["created_at"]) . '</span></div></div>';
+                        '<span class="tweet__meta-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>';
+	                if ( isset( $result["created_at"] ) ) {
+	                    echo '<span class="tweet__meta-date">' . wpgrade_convert_twitter_date($result["created_at"]) . '</span></div></div>';
+	                }
 
 	                if ( $slide_count == $tweets_nr ){
 		                echo '</li>';
@@ -760,6 +762,9 @@ class wpgrade_twitter_widget extends WP_Widget {
 
 	function get_parsed_tweet ($tweet) {
 		// check if any entites exist and if so, replace then with hyperlinked versions
+
+		if ( !isset($tweet['text']) ) return;
+
 		$tweet_text = $tweet['text'];
 		if (!empty($tweet['entities']['urls']) || !empty($tweet['entities']['hashtags']) || !empty($tweet['entities']['user_mentions'])) {
 			foreach ($tweet['entities']['urls'] as $url) {

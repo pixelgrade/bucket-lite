@@ -65,6 +65,10 @@
     @include rem(margin, $half-spacing-unit 0);
 }
 
+.team-member-description{
+    @include rem(margin-bottom, $half-spacing-unit);
+}
+
 .team-member-name, .team-member-position,
 .team-member-description p{
     text-align: center;

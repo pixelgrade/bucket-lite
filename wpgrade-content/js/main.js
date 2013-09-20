@@ -957,57 +957,46 @@ function gmapInit() {
 /* --- RESIZE VIDEO, KEEPING THE ASPECT RATIO --- */
 
 // Find all videos
-var $allVideos = $(".video-wrap iframe");
-
-// Figure out and save aspect ratio for each video
-$allVideos.each(function() {
-    $(this)
-        .data('aspectRatio', this.width / this.height)
-
-        // and remove the hard coded width/height
-        .removeAttr('height')
-        .removeAttr('width');
-
-});
-
-$.fn.resizeVideos = function() {
-    var theVideos = this.find('.video-wrap iframe, video');
-    theVideos.each(function() {
-        var theVideo = $(this),
-            ratio = theVideo.data('aspectRatio'),
-            newWidth = theVideo.css('width', '100%').width(),
-            newHeight = newWidth/ratio;
-        theVideo.height(newHeight);
-    });
-};
-$('body').resizeVideos();
-
-// recalculate the videos width and height on window resize
-$(window).resize(function(){
-    $('body').resizeVideos();
-});
-
-// Firefox Opacity Video Hack
-$(document).ready(function (){
-    $('iframe').each(function(){
-        var url = $(this).attr("src");
-        $(this).attr("src",url+"?wmode=transparent");
-    });
-});
-
-// Progress bars
 // 
-function progressbar_shortcode(e) {
-    e.each(function() {
-        var self = $(this).find('.progressbar-progress');
-        self.css({'width': self.data('value')});
-    });
-}
 
-var progressbar_shc = $('.progressbar');
-    progressbar_shc.addClass('is-visible');
-if (progressbar_shc.length) {
-    progressbar_shortcode(progressbar_shc);
+function windowResizeVideos(){
+    var $allVideos = $(".video-wrap iframe");
+
+    // Figure out and save aspect ratio for each video
+    $allVideos.each(function() {
+        $(this)
+            .data('aspectRatio', this.width / this.height)
+
+            // and remove the hard coded width/height
+            .removeAttr('height')
+            .removeAttr('width');
+
+    });
+
+    $.fn.resizeVideos = function() {
+        var theVideos = this.find('.video-wrap iframe, video');
+        theVideos.each(function() {
+            var theVideo = $(this),
+                ratio = theVideo.data('aspectRatio'),
+                newWidth = theVideo.css('width', '100%').width(),
+                newHeight = newWidth/ratio;
+            theVideo.height(newHeight);
+        });
+    };
+    $('body').resizeVideos();
+
+    // recalculate the videos width and height on window resize
+    $(window).resize(function(){
+        $('body').resizeVideos();
+    });
+
+    // Firefox Opacity Video Hack
+    $(document).ready(function (){
+        $('iframe').each(function(){
+            var url = $(this).attr("src");
+            $(this).attr("src",url+"?wmode=transparent");
+        });
+    });
 }
 
 /* ====== INITIALIZE ====== */
@@ -1052,6 +1041,22 @@ function init() {
     royalSliderInit();
     magnificPopupInit();
     gmapInit();
+    windowResizeVideos();
+
+    // Progress bars
+    // 
+    function progressbar_shortcode(e) {
+        e.each(function() {
+            var self = $(this).find('.progressbar-progress');
+            self.css({'width': self.data('value')});
+        });
+    }
+
+    var progressbar_shc = $('.progressbar');
+        progressbar_shc.addClass('is-visible');
+    if (progressbar_shc.length) {
+        progressbar_shortcode(progressbar_shc);
+    }    
 };
 
 /* ====== CONDITIONAL LOADING ====== */
@@ -1247,9 +1252,23 @@ $(window).bind('djaxLoad', function(e, data) {
         });
     }
 
+    function progressbar_shortcode(e) {
+        e.each(function() {
+            var self = $(this).find('.progressbar-progress');
+            self.css({'width': self.data('value')});
+        });
+    }
+
+    var progressbar_shc = $('.progressbar');
+        progressbar_shc.addClass('is-visible');
+    if (progressbar_shc.length) {
+        progressbar_shortcode(progressbar_shc);
+    }    
+
     eventHandlers();
     browserSize();
     loadUp();
+    windowResizeVideos();
 });
 
 /* ====== ON RESIZE ====== */
