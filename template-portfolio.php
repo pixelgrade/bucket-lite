@@ -3,7 +3,7 @@
 Template Name: Portfolio
 */
 get_header(); ?>
-<div id="main" class="content djax-updatable">
+<div id="content" class="content djax-updatable">
     <div class="mosaic">
 
         <?php
@@ -94,7 +94,11 @@ get_header(); ?>
                                                 <li class="image_item-category"><?php echo get_category($cat)->name; ?></li>
                                             <?php endforeach; ?>
                                         <?php endif; ?>                                      
-                                    </ul>
+                                    </ul><!--
+                                    --><?php if (function_exists( 'display_pixlikes' )) {
+                                            display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
+                                        } 
+                                    ?>
                                 </div>
                             </div>                                
                         </div>

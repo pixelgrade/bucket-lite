@@ -26,7 +26,7 @@
     @include rem(padding-bottom, $base-spacing-unit);
 
     @include media(from hand) {
-        @include rem(margin, 0 -$half-spacing-unit);
+        @include rem(margin-left, -$half-spacing-unit);
     }
 
     .entry__meta-box{    
