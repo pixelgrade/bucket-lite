@@ -1129,8 +1129,11 @@ $(function(){
 *
 **/
 function imgLoaded(img){
-  var $img = $(img);
-  $img.parent().addClass('js--is-loaded');
+    var $img = $(img);
+    $img.closest('.mosaic__item').addClass('js--is-loaded');
+    setTimeout(function() {
+        $img.closest('.mosaic__item').addClass('slide-in');
+    }, 40 * Math.floor((Math.random()*10)+1));
 };
  
 function lazyLoad() {
