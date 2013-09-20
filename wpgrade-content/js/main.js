@@ -766,7 +766,7 @@ function royalSliderInit() {
         if (royalSlider && rs_customArrows) {
             var slidesNumber = royalSlider.numSlides,
                 $gallery_control = $(
-                    '<div class="gallery-control">' +
+                    '<div class="gallery-control gallery-control--gallery-fullscreen">' +
                         '<a href="#" class="control-item arrow-button arrow-button--left js-slider-arrow-prev"></a>' +
                         '<div class="control-item count js-gallery-current-slide">' +
                             '<span class="highlighted js-decimal">0</span><span class="js-unit">1</span>' +

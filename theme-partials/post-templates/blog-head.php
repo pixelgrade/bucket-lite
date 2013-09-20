@@ -9,8 +9,8 @@
 <div class="entry__header">
     <h2 class="entry__title">
         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <hr class="separator separator--dotted grow">
     </h2>
-    <hr class="separator separator--dotted grow">
 </div>
 <div class="entry__content"><?php the_excerpt(); ?></div>
 
