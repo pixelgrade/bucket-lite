@@ -37,12 +37,11 @@
                                 <?php } ?>
                             </ul><!--
                             .image_item-categories
-                         --><div class="image_item-like-box likes-box grid__item one-half">
-                                <i class="icon-heart"></i>
-                                <div class="likes-text">
-                                    <span class="likes-count">10</span> likes
-                                </div>
-                            </div><!-- .image_item-like-box -->
+                             --><?php 
+                                if (function_exists( 'display_pixlikes' )) { 
+                                    display_pixlikes('image_item-like-box likes-box grid__item one-half'); 
+                                } 
+                            ?><!-- .image_item-like-box -->
                         </div><!-- .image_item-meta -->
                     </div><!-- .entry__meta -->
                 <?php } ?>

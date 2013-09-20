@@ -14,6 +14,11 @@
 
     .page-content.project-sidebar-right{
         max-width: none;
+        width: 100%;
+    }
+
+    .single-portfolio-sidebar .content{
+        @include rem(width, 1275px);
     }
 
     .page-content, .sidebar{
@@ -40,6 +45,15 @@
 /*----------------------------------------*\
 *   $SINGLE STYLING
 \*----------------------------------------*/
+
+@include media(to lap){
+    .single-post{
+        .featured-image{
+            @include rem(margin-left, -$base-spacing-unit);
+            @include rem(margin-right,-$base-spacing-unit);
+        }   
+    }    
+}
 
 @include media(from lap){
     .single-post{
@@ -85,6 +99,12 @@
     @include rem(margin-left, -2 * $base-spacing-unit);
 }
 
+@include media(to hand) { 
+    .page .featured-image{
+        @include rem(margin-right, -$base-spacing-unit);
+        @include rem(margin-left, -$base-spacing-unit);
+    }
+}
 
 
 

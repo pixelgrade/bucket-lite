@@ -19,22 +19,31 @@ get_header(); ?>
                 <a href="<?php the_permalink(); ?>" class="image__item-link">
                    <div class="image__item-wrapper">
                         <?php 
-                            if(has_post_thumbnail()) {
+                            if(has_post_thumbnail()) :
                                 $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'blog-archive');
-                            } 
                         ?>                        
-                        <img
-                            class="js-lazy-load"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-src="<?php echo $thumb_url[0]; ?>"
-                            alt="Photography"
-                        />
+                            <img
+                                class="js-lazy-load"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                data-src="<?php echo $thumb_url[0]; ?>"
+                                alt="Photography"
+                            />
+                        <?php  
+                            else :
+                        ?>
+                            <img
+                                class="js-lazy-load"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                data-src="<?php echo get_template_directory_uri().'/wpgrade-content/img/camera.png'; ?>" 
+                                alt="Photography"
+                            /> 
+                        <?php endif; ?>                           
                     </div>                                        
                     <div class="image__item-meta image_item-meta--portfolio">
                         <div class="image_item-table">
                             <div class="image_item-cell image_item--block image_item-cell--top">
                                 <h3 class="image_item-title"><?php the_title(); //short_text(get_the_title($post->ID), 20, 20); ?></h3>
-                                <span class="image_item-description"><?php short_text(get_the_excerpt($post->ID), 50, 50); ?></span>
+                                <span class="image_item-description"><?php short_text(get_the_excerpt(), 50, 50); ?></span>
                             </div>
                             <div class="image_item-cell image_item--block image_item-cell--bottom">
                                 <div class="image_item-meta grid">

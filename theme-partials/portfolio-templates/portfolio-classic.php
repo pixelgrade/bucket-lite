@@ -26,14 +26,13 @@
                     </div>
                 <?php endif; ?>       
             </footer><!-- .entry__meta .entry__meta --project -->
-            <hr class="separator separator--full-left"/>
+            <hr class="separator separator--striped separator--full-left"/>
             <footer class="entry__meta cf">
-               <div class="likes-box likes-box--footer">
-                    <i class="icon-heart"></i>
-                    <div class="likes-text">
-                        <span class="likes-count">3</span> likes
-                    </div>
-                </div>                                
+                <?php 
+                    if (function_exists( 'display_pixlikes' )) { 
+                        display_pixlikes('likes-box likes-box--footer'); 
+                    } 
+                ?>
                 <div class="social-links">
                     <span class="social-links__message">Share: </span>
                     <ul class="social-links__list">
