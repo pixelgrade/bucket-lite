@@ -42,7 +42,6 @@
         .arrow-button{
             @include rem(width, 20px);       
             @include rem(height, 20px);       
-            @include rem(margin, $half-spacing-unit $base-spacing-unit 0 $base-spacing-unit);
             color: white;
             border-color: white;
             border-bottom: 2px solid;
@@ -56,6 +55,7 @@
         .arrow-button--left{
             border-left: 2px solid;
             @include transform(rotate(45deg));
+            @include rem(margin-right, $half-spacing-unit);
 
             &:hover{
                 @include transform(translateX(-5px) rotate(45deg));
@@ -65,6 +65,7 @@
         .arrow-button--right{
             border-right: 2px solid;
             @include transform(rotate(-45deg));
+            @include rem(margin-left, $half-spacing-unit);
 
             &:hover{
                 @include transform(translateX(5px) rotate(-45deg));
@@ -74,14 +75,22 @@
         .count{
             font-family: "Josefin Slab", serif;
             color: white;
-            @include font-size(40px);
+            @include font-size(42px);
+            position: relative;
+            @include rem(top, 3px);
+            left: 0;
 
             sup{
                 font-family: "Josefin Slab", serif;
                 font-size: 50%;
                 color: white;               
-                @include rem(top, -$half-spacing-unit);
+                @include rem(top, -13px);
+                @include rem(left, 5px);
+
                 &:before{
+                    position: relative;
+                    @include rem(top, 2px);
+                    @include rem(left, -3px);
                     content: "/";
                 }
             }
