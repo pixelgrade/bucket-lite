@@ -21,6 +21,11 @@
     @include rem(right, 2 * $base-spacing-unit);
 }
 
+.gallery-control--left {
+    right: auto;
+    @include rem(left, 2 * $base-spacing-unit);
+}
+
 /*----------------------------------------*\
 *   $GALLERY-CONTROLS
 \*----------------------------------------*/

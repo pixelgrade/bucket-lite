@@ -776,6 +776,10 @@ function royalSliderInit() {
                     '</div>'
                 );
 
+            if ($slider.data('customarrows') == "left") {
+                $gallery_control.addClass('gallery-control--left');
+            }
+
             if (rs_fullScreen) {
                 $gallery_control.insertAfter('#gallery');
             } else {
@@ -1068,7 +1072,7 @@ function loadUp(){
         targetSelector: '.mosaic__item',
         easing: 'snap'
     });
-    $('.mosaic__item').hoverDir();
+    // $('.mosaic__item').hoverDir();
 }
 
 /* ====== EVENT HANDLERS ====== */
