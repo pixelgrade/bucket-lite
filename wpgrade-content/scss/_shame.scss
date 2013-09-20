@@ -94,32 +94,6 @@ html {
 
 
 
-/*----------------------------------------*\
-*   $GALLERY-CONTROLS
-\*----------------------------------------*/
-
-/**
- * Partea asta cam trebuie modularizata, facute niste clase si in functie de ele
- * sa fie stabilita pozitinarea controalelor sliderului, atat controlNav cat si
- * cele directionale si chiar si afisarea sau nu a pozitiei (ie. 1/3)
- */
-
-.gallery-control--gallery-fullscreen{
-    position: absolute;
-    z-index: 320;
-    @include rem(bottom, 2 * $base-spacing-unit);
-    @include rem(left, 2 * $base-spacing-unit);
-}
-
-    .gallery-control__items {
-        margin-bottom: 0;
-    }
-
-
-
-
-
-
 /*---------------------------------------------------*\
                $SINGLE GALLERY FULLWIDTH
 \*---------------------------------------------------*/

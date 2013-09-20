@@ -788,7 +788,7 @@ function royalSliderInit() {
             $gallery_control.find('.js-gallery-slides-total').html(slidesNumber);
             
             // add event listener to change the current slide number on slide change
-            royalSlider.ev.on('rsAfterSlideChange', function(event) {
+            royalSlider.ev.on('rsBeforeAnimStart', function(event) {
                 var currentSlide = royalSlider.currSlideId + 1;
                 if(currentSlide < 10){
                     $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide);
