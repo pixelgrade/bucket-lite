@@ -36,12 +36,10 @@
                                     </li>
                                 <?php } ?>
                             </ul><!--
-                            .image_item-categories
-                             --><?php 
-                                if (function_exists( 'display_pixlikes' )) { 
-                                    display_pixlikes('image_item-like-box likes-box grid__item one-half'); 
-                                } 
-                            ?><!-- .image_item-like-box -->
+                             --><?php if (function_exists( 'display_pixlikes' )) {
+                                            display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
+                                        } 
+                                    ?><!-- .image_item-like-box -->
                         </div><!-- .image_item-meta -->
                     </div><!-- .entry__meta -->
                 <?php } ?>

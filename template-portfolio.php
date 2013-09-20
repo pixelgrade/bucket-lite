@@ -95,12 +95,6 @@ get_header(); ?>
                                             <?php endforeach; ?>
                                         <?php endif; ?>                                      
                                     </ul>
-                                    <div class="image_item-like-box likes-box grid__item one-half">
-                                        <i class="icon-heart"></i>
-                                        <div class="likes-text">
-                                            <span class="likes-count">3</span> likes
-                                        </div>                                            
-                                    </div>
                                 </div>
                             </div>                                
                         </div>
