@@ -39,8 +39,12 @@
         margin-top: 0;
         margin-left: 0;
         margin-bottom: 0;
-        @include rem(margin, 0 $base-spacing-unit $base-spacing-unit 0);
-        @include rem(padding, $half-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
+        @include rem(margin-right, $base-spacing-unit);
+        @include rem(padding, $half-spacing-unit 0 0 $base-spacing-unit);
+    }
+
+    .separator{
+        @include rem(margin-left, -$base-spacing-unit);
     }
 
     .entry__content {

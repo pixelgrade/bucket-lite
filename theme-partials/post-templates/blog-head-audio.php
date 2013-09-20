@@ -12,9 +12,7 @@
 
 <h2 class="entry__title">
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    <div class="bleed-left">
-        <hr class="separator separator--dotted grow">
-    </div>
+    <hr class="separator separator--dotted grow">
 </h2>
 <?php
     if ( has_post_thumbnail() ) {

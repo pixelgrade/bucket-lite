@@ -20,7 +20,7 @@
                         ?><!-- .likes-box -->
                     </div><!-- .entry-header__meta -->
                     <h1 class="entry__title"><?php the_title(); ?></h1>
-                    <hr class="separator separator--dotted grow">
+                    <hr class="separator separator--dotted separator--full-left grow">
                 </header>
                 
                 <div class="entry__content"><?php the_content(); ?></div>
