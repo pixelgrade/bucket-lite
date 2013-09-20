@@ -31,11 +31,11 @@
         margin-top: -1px;
         @include transition(all 300ms 300ms ease-in-out);
         opacity: 0;
-        right: -20%;
+        @include transform(translate3d(30%,0,0));
 
         &.js--is-loaded {
             opacity: 1;
-            right: 0;
+            @include transform(none);
         }
 
         a {

@@ -22,8 +22,10 @@
                         </div><!-- .image_item-like-box -->
                     </div><!-- .entry-header__meta -->
                     <h1 class="entry__title"><?php the_title(); ?></h1>
-                    <div class="entry__content"><?php the_content(); ?></div>
+                    <hr class="separator separator--dotted grow">
                 </header>
+                
+                <div class="entry__content"><?php the_content(); ?></div>
                 
                 <footer class="entry__meta cf">
                     <?php $categories = wp_get_post_categories($post->ID); ?>

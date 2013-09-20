@@ -674,7 +674,7 @@ function platformDetect(){
 function niceScrollInit() {
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
-        $('[data-nicescroll]').niceScroll({
+        $('html').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
             cursorwidth: 7,
@@ -709,16 +709,6 @@ function royalSliderInit() {
         $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows data-autoscale>');
         $images.prependTo($new_gallery).addClass('rsImg');
         $old_gallery.replaceWith($new_gallery);
-    });
-
-    $('.ja-gallery-fullscreen').each(function(){
-        var $slider = $(this),
-            rs_arrows = typeof $slider.data('arrows') !== "undefined",
-            rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
-            rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
-            rs_customArrows = typeof $slider.data('customarrows') !== "undefined";
-
-
     });
 
     $('.js-pixslider').each(function(){
@@ -1174,11 +1164,11 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').removeClass('loading');
-    $('.site-navigation--main .menu-item').each(function(i,e) {
+    $('.site-navigation--main').children().each(function(i,e) {
         var $self = $(e);
         setTimeout(function() {
             $self.addClass('js--is-loaded');
-        }, (i+1) * 150);
+        }, (i+1) * 50);
     });
 });
 
@@ -1187,10 +1177,11 @@ $(window).load(function(){
 /* ====== ON DJAX REQUEST ====== */
 
 $(window).bind('djaxClick', function(e, data) {
-    // var bodyelem = $("html,body");
-    //     bodyelem.animate({scrollTop: 0});
+
     $('html').addClass('loading');
+
     /* --- GALLERY --- */
+    // animate grid gallery in
     if ($('#gallery').length) {
         $('.mosaic__item').each(function(){
             var $item = $(this);
@@ -1199,11 +1190,15 @@ $(window).bind('djaxClick', function(e, data) {
             }, 40 * Math.floor((Math.random()*10)+1));
         });
     }
-    /* --- KILL DISQUS --- */
-    /* --- KILL SLIDESHOW TIMERS --- */
-    /* --- KILL VIDEO --- */
-    /* --- FADE OUT HEADING --- */
-    /* --- SHOW PAGE LOADER --- */
+
+    /* --- KILL ROYALSLIDER ---*/
+    var sliders = $('.js-pixslider');
+    if (sliders.length) {
+        sliders.each(function() {
+            var slider = $(this).data('royalSlider');
+            slider.destroy();
+        });
+    }   
 });
 
 
@@ -1211,7 +1206,18 @@ $(window).bind('djaxClick', function(e, data) {
 /* ====== ON DJAX LOAD ====== */
 
 $(window).bind('djaxLoad', function(e, data) {
+
+    // get data and replace the body tag with a nobody tag
+    // because jquery strips the body tag when creating objects from data
+    data = data.response.replace(/(<\/?)body( .+?)?>/gi,'$1NOTBODY$2>', data);
+    // get the nobody tag's classes
+    var nobodyClass = $(data).filter('notbody').attr("class");
+    // set it to current body tag
+    $('body').attr("class", nobodyClass);
+
+    // let the party begin
     $('html').removeClass('loading');
+
     /* --- GALLERY --- */
     if ($('#gallery').length) {
         $('.mosaic__item').each(function(){
@@ -1221,16 +1227,9 @@ $(window).bind('djaxLoad', function(e, data) {
             }, 40 * Math.floor((Math.random()*10)+1));
         });
     }
-    /* --- PUSH GA TRACK --- */
-    /* --- RECHECK HEADER COLOR/POS --- */
-    /* --- INSTANTIATE EVENT HANDLERS --- */
+
     eventHandlers();
-    /* --- GHOSTBUSTER --- */
-    /* --- RECHECK --- */
-    /* --- GET BROWSER DIMENSIONS --- */
     browserSize();
-    /* --- CONDITIONAL LOADING --- */
-    /* --- VISUAL LOADING --- */
     loadUp();
 });
 
@@ -1238,20 +1237,12 @@ $(window).bind('djaxLoad', function(e, data) {
 
 $(window).resize(function(){
     
-    /* --- GET BROWSER DIMENSIONS --- */
     browserSize();
-    /* --- ON HOME RESIZE --- */
-    /* --- ON WORK RESIZE --- */
-    /* --- ON PROJECT RESIZE --- */
-    /* --- ON CONTACT RESIZE --- */
-    /* --- ON BLOG LANDING RESIZE --- */
-    
 });
 
 /* ====== ON SCROLL ======  */
 
 $(window).scroll(function(e){
-    /* --- MAKE HEADER FIXED --- */
 });
 
 } )( jQuery );
