@@ -6,7 +6,7 @@
 // using our own css
 function wpgrade_login_css()
 {
-    wp_enqueue_style( 'wpgrade_login_css', get_template_directory_uri() . '/library/css/login.css', false );
+    wp_enqueue_style( 'wpgrade_login_css', wpgrade::content_url() . 'css/login.css', false );
 }
 
 // changing the alt text on the logo to show your site name
