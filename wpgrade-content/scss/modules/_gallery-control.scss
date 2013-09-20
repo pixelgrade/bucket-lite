@@ -18,8 +18,12 @@
     display: block;
     position: absolute;
     @include rem(bottom, $base-spacing-unit);
-    @include rem(left, $base-spacing-unit);
+    @include rem(right, 2 * $base-spacing-unit);
 }
+
+/*----------------------------------------*\
+*   $GALLERY-CONTROLS
+\*----------------------------------------*/
 
     .control-item{
         display: inline-block;
@@ -55,7 +59,7 @@
         .arrow-button--left{
             border-left: 2px solid;
             @include transform(rotate(45deg));
-            @include rem(margin-right, $half-spacing-unit);
+            @include rem(margin-right, $base-spacing-unit);
 
             &:hover{
                 @include transform(translateX(-5px) rotate(45deg));
@@ -65,7 +69,7 @@
         .arrow-button--right{
             border-right: 2px solid;
             @include transform(rotate(-45deg));
-            @include rem(margin-left, $half-spacing-unit);
+            @include rem(margin-left, $base-spacing-unit);
 
             &:hover{
                 @include transform(translateX(5px) rotate(-45deg));
