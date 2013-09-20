@@ -116,10 +116,12 @@
 
         .count {
             text-align: right;
+            float: right;
             position: absolute;
-            @include rem(right, $base-spacing-unit);
             top: auto;
+            left: auto;
             @include rem(bottom, -1 * $half-spacing-unit);
+            @include rem(right, $base-spacing-unit);
         }
 
         .arrow-button--left{
