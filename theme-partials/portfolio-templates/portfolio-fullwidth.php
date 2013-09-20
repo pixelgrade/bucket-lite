@@ -1,4 +1,4 @@
-<div id="content" class="content djax-updatable">
+<div id="main" class="content djax-updatable">
     <?php
     $ids = array();
 
