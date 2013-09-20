@@ -57,12 +57,10 @@ get_header(); ?>
                                             </div>
                                         <?php endif; ?>                                      
                                     --></ul><!--
-                                    --><div class="image_item-like-box likes-box grid__item one-half">
-                                        <i class="icon-heart"></i>
-                                        <div class="likes-text">
-                                            <span class="likes-count">3</span> likes
-                                        </div>                                            
-                                    </div>
+                                    --><?php if (function_exists( 'display_pixlikes' )) {
+                                            display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
+                                        } 
+                                    ?>
                                 </div>
                             </div>                                
                         </div>
