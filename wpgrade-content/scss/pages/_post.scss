@@ -292,6 +292,7 @@
         @include rem(width, 2 * $base-spacing-unit);
         @include rem(padding-top, $half-spacing-unit);
         display: block;
+        margin-top: -3px;
     }    
 }
 
