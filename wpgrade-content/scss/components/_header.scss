@@ -100,6 +100,16 @@
 *   $TRANSPARENT
 \*----------------------------------------*/
 
+// this is for transitioning to and from the full screen gallery page
+.header {
+    @include transition(all .3s ease-in-out);
+}
+
+.loading .header-transparent .header {
+    background-repeat: no-repeat;
+    background-position: -300px 0;
+}
+
 @include media(from hand) {
     
     /*body*/.header-transparent{
@@ -124,20 +134,21 @@
         }
 
         .site-navigation--main, .menu-item--main{
-            border: none;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
         }
 
         .menu-item--parent:after{
             border-top-color: white;        
         }
 
-        .site-footer{
-            display: none;
-        }
+        // .site-footer{
+        //     display: none;
+        // }
 
-        .header-extra{
-            display: none;
-        }
+        // .header-extra{
+        //     display: none;
+        // }
     }
 }
 
