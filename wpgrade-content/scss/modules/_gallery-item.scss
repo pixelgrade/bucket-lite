@@ -32,8 +32,14 @@
     color: white;
 
     &:hover{
+
         .image__item-meta{
             @include opacity(1);
+        }
+
+        .image__item-wrapper {
+            @include transform(scale(1.5));
+            @include transition(transform .3s ease-in-out);
         }
     }
 }

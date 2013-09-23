@@ -12,7 +12,6 @@
 }
 
     .mosaic__item {
-        position: relative;
         // opacity: 0; //
         display: none; //
         overflow: hidden;
@@ -21,10 +20,9 @@
         @extend .hand-span-6;
         @extend .lap-span-4;
         @extend .desk-span-3;
-        -webkit-backface-visibility: hidden;
 
         .image__item-link {
-            @include transform(translate3d(-101%,0,0));
+            @include transform(translateX(-101%));
 
             .icon-plus {
                 padding-right: 0;
@@ -46,55 +44,68 @@
            -moz-animation: slide-out .25s bezier(easeInBack);
              -o-animation: slide-out .25s bezier(easeInBack);
                 animation: slide-out .25s bezier(easeInBack);
-        @include transform(translate3d(101%,0,0));
+        @include transform(translateX(101%));
     }
 
     @-webkit-keyframes slide-out {
         0% {-webkit-transform: none;}
-        100% {-webkit-transform: translate3d(101%,0,0);}
+        100% {-webkit-transform: translateX(101%);}
     }
 
     @-moz-keyframes slide-out {
         0% {-moz-transform: none;}
-        100% {-moz-transform: translate3d(101%,0,0);}
+        100% {-moz-transform: translateX(101%);}
     }
 
     @-o-keyframes slide-out {
         0% {-o-transform: none;}
-        100% {-o-transform: translate3d(101%,0,0);}
+        100% {-o-transform: translateX(101%);}
     }
 
     @keyframes slide-out {
         0% {transform: none;}
-        100% {transform: translate3d(101%,0,0);}
+        100% {transform: translateX(101%);}
     }
 
     @-webkit-keyframes slide-in {
-        0% {-webkit-transform: translate3d(-101%,0,0);}
+        0% {-webkit-transform: translateX(-101%);}
         100% {-webkit-transform: none;}
     }
 
     @-moz-keyframes slide-in {
-        0% {-moz-transform: translate3d(-101%,0,0);}
+        0% {-moz-transform: translateX(-101%);}
         100% {-moz-transform: none;}
     }
 
     @-o-keyframes slide-in {
-        0% {-o-transform: translate3d(-101%,0,0);}
+        0% {-o-transform: translateX(-101%);}
         100% {-o-transform: none;}
     }
 
     @keyframes slide-in {
-        0% {transform: translate3d(-101%,0,0);}
+        0% {transform: translateX(-101%);}
         100% {transform: none;}
     }
 
+    .image_item-table {
+        @include opacity(0);
+        @include transition(all .2s .1s ease-out);
+    }
 
+    .mosaic__item:hover {
+
+        .image_item-table {
+            @include opacity(1);
+            @include transition(all .2s ease-out);
+        }
+    }
 
     .image__item-wrapper {
         position: relative;
         padding-top: 55%;
         overflow: hidden;
+        -webkit-backface-visibility: hidden;
+        @include transition(transform .6s bezier(easeInBack));
 
         img { 
             display: block;
@@ -108,9 +119,12 @@
     }
 
     // ensure hover doesn't occur on touch devices
-    .no-touch .js--is-loaded .image__image-wrapper img:hover {
-        @include opacity(0.2);
-    }
+    .no-touch .js--is-loaded:hover {
+
+        img {
+            @include opacity(0.2);
+        }
+    } 
 
     .js--is-loaded img {
         opacity: 1;
