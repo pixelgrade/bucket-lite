@@ -26,7 +26,7 @@
  */
 
 .image__item-link{
-    position: relative;
+    position: relative; 
     display: block;
     width: 100%;
     color: white;
@@ -38,7 +38,6 @@
         }
 
         .image__item-wrapper {
-            @include transform(scale(1.5));
             @include transition(transform .3s ease-in-out);
         }
     }
@@ -156,7 +155,7 @@
         font-style: italic;
     }
 
-    .image_item-meta--portfolio{
+    .image_item-meta{
 
         @include media(to lap) {
             @include rem(margin-bottom, $base-spacing-unit);
