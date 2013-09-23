@@ -17,7 +17,8 @@
         color: black;
         @include font-size(18px);
         text-align: center;
-        padding-left: .5em;
+        margin-left: -3px;
+        padding-right: 0;
     }
 }
 
@@ -30,28 +31,18 @@
     -webkit-animation: like-animation 1s;
 }
 
-@keyframes like-animation
-{
-    0%{
-        @include opacity(1);
-        @include scale(1);
-    }
-    100% {
-        @include opacity(0);
-        @include scale(2);
-    }
+@keyframes like-animation{
+    0%   { @include opacity(1); @include scale(1); }
+    80%  { @include opacity(0); @include scale(2); }
+    81%  { @include opacity(0); @include scale(1); }
+    100% { @include opacity(1); @include scale(1); }
 }
 
-@-webkit-keyframes like-animation
-{
-    0%{
-        @include opacity(1);
-        @include scale(1);
-    }
-    100% {
-        @include opacity(0);
-        @include scale(2);
-    }
+@-webkit-keyframes like-animation{
+    0%   { @include opacity(1); @include scale(1); }
+    80%  { @include opacity(0); @include scale(2); }
+    81%  { @include opacity(0); @include scale(1); }
+    100% { @include opacity(1); @include scale(1); }
 }
 
 .likes-box--footer{
