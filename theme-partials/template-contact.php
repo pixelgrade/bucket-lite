@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div id="main" class="content djax-updatable">
     <?php if (wpgrade::option('contact_gmap_link')): ?>
-        <div id="gmap" class="featured-image" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>" <?php echo wpgrade::option('contact_gmap_custom_style') ? 'data-customstyle' : ''; ?>></div>
+        <div id="gmap" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>" <?php echo wpgrade::option('contact_gmap_custom_style') ? 'data-customstyle' : ''; ?>></div>
     <?php endif; ?>
     <div class="page-content entry__body">
         <?php while ( have_posts() ) : the_post(); ?>

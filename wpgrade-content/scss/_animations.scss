@@ -82,7 +82,7 @@
     100%    { opacity: 0; }
 }
 
-.featured-image {
+.featured-image, #gmap, .single-lens_gallery .pixslider {
     opacity: 0;
     @include backface-visibility(hidden);
     @include perspective(1000px);
@@ -92,6 +92,29 @@
            -moz-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
              -o-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
                 animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
+    }
+
+
+    .loading & {
+        opacity: 1;
+        -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
+           -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
+             -o-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
+                animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
+    }
+}
+
+.single-lens_gallery .pixslider .rsBullets,
+.single-lens_gallery .gallery-control {
+    opacity: 0;
+    @include backface-visibility(hidden);
+    @include perspective(1000px);
+
+    .loaded & {
+        -webkit-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
+           -moz-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
+             -o-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
+                animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
     }
 
 
