@@ -17,7 +17,9 @@
         color: black;
         @include font-size(18px);
         text-align: center;
-        padding-left: .5em;
+        margin-left: -3px;
+        padding-right: 0;
+        @include border-radius(50%);
     }
 }
 
@@ -30,27 +32,36 @@
     -webkit-animation: like-animation 1s;
 }
 
-@keyframes like-animation
-{
-    0%{
-        @include opacity(1);
-        @include scale(1);
+.like-complete{
+    color: black !important; background-color: $accent-color;
+    @include transform(scale(0.75));
+}
+
+@keyframes like-animation{
+    0%   { @include scale(1); }
+    80%  { 
+        @include scale(1.2); 
+        color: black; background-color: $accent-color;
+        margin-top: -3px;
     }
-    100% {
-        @include opacity(0);
-        @include scale(2);
+    100% { 
+        @include scale(0.75); 
+        color: black; background-color: $accent-color;
+        margin-top: -3px;
     }
 }
 
-@-webkit-keyframes like-animation
-{
-    0%{
-        @include opacity(1);
-        @include scale(1);
+@-webkit-keyframes like-animation{
+    0%   { 
+        background-color: white; 
+        @include transform(scale(1) translate3d(0, 0, 0));
     }
-    100% {
-        @include opacity(0);
-        @include scale(2);
+    65%  { 
+        @include transform(scale(1.2));
+    }
+    100% { 
+        color: black; background-color: $accent-color;
+        @include transform(scale(0.75));
     }
 }
 

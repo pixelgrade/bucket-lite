@@ -26,14 +26,19 @@
  */
 
 .image__item-link{
-    position: relative;
+    position: relative; 
     display: block;
     width: 100%;
     color: white;
 
     &:hover{
+
         .image__item-meta{
             @include opacity(1);
+        }
+
+        .image__item-wrapper {
+            @include transition(transform .3s ease-in-out);
         }
     }
 }
@@ -46,8 +51,8 @@
     right: 0;
     bottom: 0;
 
-    @include media(from lap){
-        background: rgba($accent-color, 0.5);
+    @include media(from lap) {
+        background: rgba($accent-color, 0.8);
         @include opacity(0);
         @include transition-property(opacity);
         @include transition-duration(0.3s);
@@ -150,7 +155,7 @@
         font-style: italic;
     }
 
-    .image_item-meta--portfolio{
+    .image_item-meta{
 
         @include media(to lap) {
             @include rem(margin-bottom, $base-spacing-unit);
