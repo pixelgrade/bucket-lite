@@ -1003,6 +1003,12 @@ function windowResizeVideos(){
     });
 }
 
+// Like box animation
+$(document).one('click', '.can_like .like-link', function(event){
+    event.preventDefault();
+    $(this).addClass('animate-like');
+});
+
 /* ====== INITIALIZE ====== */
 
 function init() {

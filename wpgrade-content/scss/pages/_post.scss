@@ -278,14 +278,18 @@
  */
 
 .likes-box--article{
+    .like-link{
+        display: block;
+        @include rem(margin, $half-spacing-unit 0);
+        @include border-radius(50%);
+        border: 3px solid black;                
+    }
+
     i{
         @include rem(height, 2 * $base-spacing-unit);
         @include rem(width, 2 * $base-spacing-unit);
-        @include rem(margin, $half-spacing-unit 0);
-        @include rem(padding-top, $half-spacing-unit);
+        @include rem(padding-top, 1.2 * $half-spacing-unit);
         display: block;
-        @include border-radius(50%);
-        border: 3px solid black;        
     }    
 }
 

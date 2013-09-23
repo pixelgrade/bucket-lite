@@ -45,6 +45,7 @@
 
     .separator{
         @include rem(margin-left, -$base-spacing-unit);
+        @include rem(padding-right, $base-spacing-unit);
     }
 
     .entry__content {

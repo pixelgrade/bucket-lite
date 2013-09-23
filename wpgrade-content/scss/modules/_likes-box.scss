@@ -17,12 +17,42 @@
         color: black;
         @include font-size(18px);
         text-align: center;
+        padding-left: .5em;
     }
 }
 
     .likes-count{
         font-weight: bold;
     }
+
+.animate-like{
+    animation: like-animation 1s;
+    -webkit-animation: like-animation 1s;
+}
+
+@keyframes like-animation
+{
+    0%{
+        @include opacity(1);
+        @include scale(1);
+    }
+    100% {
+        @include opacity(0);
+        @include scale(2);
+    }
+}
+
+@-webkit-keyframes like-animation
+{
+    0%{
+        @include opacity(1);
+        @include scale(1);
+    }
+    100% {
+        @include opacity(0);
+        @include scale(2);
+    }
+}
 
 .likes-box--footer{
     @include media(from hand) {
