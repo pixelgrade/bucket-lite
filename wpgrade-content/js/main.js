@@ -1202,12 +1202,16 @@ function windowResizeVideos(){
 }
 
 // Like box animation
-$(document).one('click', '.can_like .like-link', function(event){
-    event.preventDefault();
-    var $iElem = $(this).find('i');
-    $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
-    // $(this).addClass('animate-like');
-});
+
+function likeBoxAnimation(){
+    $(document).on('click', '.can_like .like-link', function(event){
+        event.preventDefault();
+        var $iElem = $(this).find('i');
+        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
+        // $(this).addClass('animate-like');
+    });
+}
+likeBoxAnimation();
 
 /* ====== INITIALIZE ====== */
 
@@ -1235,6 +1239,8 @@ function init() {
         }
 
         $('body').djax('.djax-updatable', ['wp-admin', 'wp-login', '?s=', '#', 'uploads'], djax_transition);
+
+        likeBoxAnimation();
     }
     
     /* ONE TIME EVENT HANDLERS */

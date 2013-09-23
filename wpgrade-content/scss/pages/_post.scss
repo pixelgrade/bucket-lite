@@ -279,6 +279,7 @@
 
 .likes-box--article{
     .like-link{
+        float: left;
         display: block;
         @include rem(height, 2 * $base-spacing-unit);
         @include rem(width, 2 * $base-spacing-unit);
