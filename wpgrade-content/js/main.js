@@ -1202,8 +1202,7 @@ function windowResizeVideos(){
 }
 
 // Like box animation
-// $(document).one('click', '.can_like .like-link', function(event){
-$(document).one('click', '.like-link', function(event){
+$(document).one('click', '.can_like .like-link', function(event){
     event.preventDefault();
     var $iElem = $(this).find('i');
     $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
