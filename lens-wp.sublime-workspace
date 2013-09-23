@@ -4,12 +4,28 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding-right"
+			],
+			[
 				"mar",
 				"margin-left"
 			],
 			[
-				"pad",
+				"like",
+				"like-animation"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"padding",
 				"padding-bottom"
+			],
+			[
+				"border",
+				"border-left"
 			],
 			[
 				"class",
@@ -44,16 +60,8 @@
 				"arrowsNav"
 			],
 			[
-				"padding",
-				"padding-left"
-			],
-			[
 				"pa",
 				"padding"
-			],
-			[
-				"padd",
-				"padding-right"
 			],
 			[
 				"marg",
@@ -178,10 +186,6 @@
 			[
 				"gra",
 				"gray"
-			],
-			[
-				"border",
-				"border"
 			],
 			[
 				"flo",
@@ -510,36 +514,24 @@
 			[
 				"bacground",
 				"background-color"
-			],
-			[
-				"border-left",
-				"border-left-width"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "theme-partials/post-templates/single-head-quote.php",
+			"file": "wpgrade-content/js/main.js",
 			"settings":
 			{
-				"buffer_size": 1428,
+				"buffer_size": 240281,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "theme-partials/post-templates/single-head-video.php",
+			"file": "wpgrade-content/scss/modules/_likes-box.scss",
 			"settings":
 			{
-				"buffer_size": 381,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-partials/post-templates/single-head.php",
-			"settings":
-			{
-				"buffer_size": 302,
+				"buffer_size": 1680,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +539,25 @@
 			"file": "wpgrade-content/scss/pages/_post.scss",
 			"settings":
 			{
-				"buffer_size": 11759,
+				"buffer_size": 12164,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 667 files for \"0.5)\"\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\admin-panel\\options\\css\\jquery-ui-aristo\\aristo.css:\n  551  }\n  552  .ui-dialog .ui-dialog-titlebar { padding: 0.7em 1em 0.6em 1em; position: relative; border: none; border-bottom: 1px solid #979797; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;  }\n  553: .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .2em 0; font-size: 14px; text-shadow: 0 1px 0 rgba(255,255,255,0.5); } \n  554  .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .8em; top: 55%; width: 16px; margin: -10px 0 0 0; padding: 0; height: 16px; }\n  555  .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; background: url(images/icon_sprite.png) 0 -16px no-repeat; }\n  ...\n  572   */\n  573  .ui-slider { position: relative; text-align: left; background: #d7d7d7; z-index: 1; }\n  574: .ui-slider { -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5) inset; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5) inset; box-shadow: 0 1px 2px rgba(0,0,0,0.5) inset; }\n  575  .ui-slider .ui-slider-handle { background: url(images/slider_handles.png) 0px -23px no-repeat; position: absolute; z-index: 2; width: 23px; height: 23px; cursor: default; border: none; outline: none; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }\n  576  .ui-slider  .ui-state-hover, .ui-slider  .ui-state-active { background-position: 0 0; }\n  ...\n  606  }\n  607  .ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }\n  608: .ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; font-size: 12px; font-weight: bold; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }\n  609  .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; background: #fff; border-color: #B6B6B6; }\n  610  .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; outline: none; }\n  ...\n  628  .ui-datepicker { width: 17em; padding: 0; display: none; border-color: #DDDDDD; }\n  629  .ui-datepicker {\n  630: 	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);\n  631: 	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);\n  632: 	box-shadow: 0 4px 8px rgba(0,0,0,0.5);\n  633  }\n  634  .ui-datepicker .ui-datepicker-header { position:relative; padding:.35em 0; border: none; border-bottom: 1px solid #B6B6B6; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }\n  ...\n  730  .ui-form textarea:focus, .ui-form input:not([type=\"submit\"]):not([type=\"button\"]):not([type=\"checkbox\"]):not([type=\"radio\"]):not([type=\"file\"]):not([type=\"range\"]):focus {\n  731  	border: 1px solid #95bdd4;\n  732: 	-webkit-box-shadow: 0 2px 3px rgba(161,202,226,0.5) inset, 0 1px 0 rgba(255,255,255,0.2);\n  733: 	-moz-box-shadow: 0 2px 3px rgba(161,202,226,0.5) inset, 0 1px 0 rgba(255,255,255,0.2);\n  734: 	box-shadow: 0 2px 3px rgba(161,202,226,0.5) inset, 0 1px 0 rgba(255,255,255,0.2);\n  735  }\n  736  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\admin-panel\\options\\css\\jquery-ui-bootstrap\\jquery-ui-1.10.0.custom.css:\n    1  /*!\n    2:  * jQuery UI Bootstrap (0.5)\n    3   * http://addyosmani.github.com/jquery-ui-bootstrap\n    4   *\n    .\n  295    border-color: #eedc94 #eedc94 #e4c652;\n  296    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);\n  297:   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);\n  298    border-width: 1px;\n  299    border-style: solid;\n  ...\n 1587  \n 1588  .wijmo-wijmenu .wijmo-wijmenu-item input:hover {\n 1589:   background-color: rgba(255, 255, 255, 0.5);\n 1590    color: #FFFFFF;\n 1591  }\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\admin-panel\\options\\css\\options.css:\n   81      color: #468847;\n   82      padding: 8px 35px 8px 14px;\n   83:     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);\n   84  }\n   85  \n   ..\n   90      color: #3A87AD;\n   91      padding: 8px 35px 8px 14px;\n   92:     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);\n   93  }\n   94  \n   ..\n  100      color: #C09853;\n  101      padding: 8px 35px 8px 14px;\n  102:     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);\n  103  }\n  104  \n  ...\n  110      color: #C09853;\n  111      padding: 8px 35px 8px 14px;\n  112:     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);	\n  113  }\n  114  \n  ...\n  120      color: #B94A48;\n  121      padding: 8px 35px 8px 14px;\n  122:     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);	\n  123  }\n  124  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\css\\style.css:\n 6742  /* content at start */\n 6743  .mfp-fade.mfp-wrap .mfp-content {\n 6744:   -webkit-transform: scale(0.5, 0.5);\n 6745:   -moz-transform: scale(0.5, 0.5);\n 6746:   -ms-transform: scale(0.5, 0.5);\n 6747:   -o-transform: scale(0.5, 0.5);\n 6748:   transform: scale(0.5, 0.5);\n 6749    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);\n 6750    opacity: 0;\n ....\n 6766  /* content animate out */\n 6767  .mfp-fade.mfp-wrap.mfp-removing .mfp-content {\n 6768:   -webkit-transform: scale(0.5, 0.5);\n 6769:   -moz-transform: scale(0.5, 0.5);\n 6770:   -ms-transform: scale(0.5, 0.5);\n 6771:   -o-transform: scale(0.5, 0.5);\n 6772:   transform: scale(0.5, 0.5);\n 6773    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);\n 6774    opacity: 0; }\n ....\n 8278    @media only screen and (min-width: 72.27778em) {\n 8279      .image__item-meta {\n 8280:       background: rgba(255, 252, 0, 0.5);\n 8281        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);\n 8282        opacity: 0;\n ....\n 9361        bottom: 0;\n 9362        margin: 0;\n 9363:       background-color: rgba(255, 252, 0, 0.5);\n 9364        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);\n 9365        opacity: 0;\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\scss\\modules\\_gallery-item.scss:\n   48  \n   49      @include media(from lap){\n   50:         background: rgba($accent-color, 0.5);\n   51          @include opacity(0);\n   52          @include transition-property(opacity);\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\scss\\shortcodes\\_teammember.scss:\n   29          bottom: 0;\n   30          margin: 0;\n   31:         background-color: rgba($accent-color, 0.5);\n   32          @include opacity(0);\n   33          @include transition-property(opacity);\n\n33 matches across 6 files\n",
+			"settings":
+			{
+				"buffer_size": 6510,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "wpgrade-content/scss/modules/_gallery-item.scss",
+			"settings":
+			{
+				"buffer_size": 5766,
 				"line_ending": "Windows"
 			}
 		}
@@ -620,25 +630,53 @@
 	},
 	"file_history":
 	[
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-audio.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-gallery.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-gallery.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/template-portfolio.php",
+		"/E/uniserver/www/prism/wp-includes/wp-db.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/footer.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/index.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_gallery-item.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_post.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/unsorted.php",
+		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/js/public.js",
+		"/E/uniserver/www/prism/wp-content/themes/lens/single.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_masonry.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_project.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_likes-box.scss",
+		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/css/public.css",
+		"/E/uniserver/www/prism/wp-content/themes/lens/templates/pixlikes-template.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/js/main.js",
+		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/views/pixlikes-template.php",
+		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/class-pixlikes.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/functions.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-audio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-gallery.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-video.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-sidebar.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-classic.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-quote.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-video.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/searchform.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/widgets.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/base/_layout.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/unsorted.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/thumbnails.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_header.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_teammember.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_related-projects.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-audio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-gallery.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/widgets/_widgets.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/widgets/_recent-entries.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_progressbar.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/js/main.js",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/bar.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Divider.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_ProgressBar.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-config.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/base/_layout.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_teammember.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/team-member.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/single.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/page.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullwidth.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-lens_gallery.php",
@@ -646,42 +684,30 @@
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_gallery-fullscreen.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/_shame.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/comments.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-sidebar.php",
 		"/E/uniserver/www/prism/wp-config.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/hr.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/templates/hr.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/col.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/menus.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/infobox.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/row.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_gallery-fullwidth.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_project.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/plugins/_royalslider.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/footer.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/style.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-masonry.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-classic.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/index.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_gallery-control.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/template-portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-gallery.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_header.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-lens_portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-system/hooks.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/functions2.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/custom-entities.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/metaboxes/metaboxes.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/thumbnails.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_mosaic.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_related-projects.scss",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single.html",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single_edgePreload.js",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single_edgeActions.js",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single_edge.js",
-		"/E/uniserver/www/prism/wp-content/themes/lens/searchform.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-example.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/sidebar-portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/fullwidth-portfolio.php",
@@ -694,13 +720,8 @@
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/media.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_twitter.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/widgets/_recentcomments.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-video.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-quote.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_likes-box.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-photoblog.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/metaboxes/init.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/widgets.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-single.php",
 		"/C/Users/crist_000/Desktop/The Art of Coffee _.htm",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/template-tags.php",
@@ -736,18 +757,7 @@
 		"/E/uniserver/www/prism-html/scss/modules/_social-links.scss",
 		"/E/uniserver/www/prism-html/about-personal.php",
 		"/E/uniserver/www/prism-html/gallery-grid.php",
-		"/E/uniserver/www/prism-html/contact.php",
-		"/E/uniserver/www/prism-html/scss/shortcodes/_teammember.scss",
-		"/E/uniserver/www/prism-html/gallery-fullscreen.php",
-		"/E/uniserver/www/prism-html/gallery-fullwidth.php",
-		"/E/uniserver/www/prism-html/masonry.php",
-		"/E/uniserver/www/prism-html/page.php",
-		"/E/uniserver/www/prism-html/project-fullwidth.php",
-		"/E/uniserver/www/prism-html/single-gallery.php",
-		"/E/uniserver/www/prism-html/single-video.php",
-		"/E/uniserver/www/prism-html/typography.php",
-		"/E/uniserver/www/prism-html/scss/_shame.scss",
-		"/E/uniserver/www/prism-html/scss/base/_helper.scss"
+		"/E/uniserver/www/prism-html/contact.php"
 	],
 	"find":
 	{
@@ -758,6 +768,7 @@
 		"height": 97.0,
 		"where_history":
 		[
+			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\wpgrade-content\\scss",
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
 			"<project>",
@@ -829,6 +840,45 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"0.5)",
+			")''",
+			"transform",
+			"scale(",
+			"transform(sca",
+			"transform(",
+			"djax",
+			"\"#\"",
+			"'#'",
+			"transition",
+			"djax",
+			"get_gallery_ids",
+			"entry__content",
+			"full-left",
+			"mosaic__",
+			"hoverDir",
+			"like-box",
+			"display_only",
+			"class",
+			"icon-heart",
+			"portfolio_template",
+			"_template",
+			"rs_fullscreen",
+			"fullscreen",
+			"pixslider",
+			"royal",
+			"escape",
+			"resizevide",
+			"firefox",
+			"progress",
+			"console.log(\"pr",
+			"console.log(",
+			"djax",
+			"videos",
+			"resize",
+			"description",
+			"#page, .header, .header__inner-wrap{\n        background-color: #f5f5f5;  \n    }\n",
+			"wpgrade-content",
+			"get_the_excerpt",
 			"inverse",
 			"'Divider",
 			"Divider ",
@@ -917,46 +967,7 @@
 			"twentytwelve-style-css",
 			"true",
 			"$grid",
-			"grid",
-			"left",
-			"meta",
-			"one-third",
-			"flex",
-			"nicescroll",
-			"magnific pop",
-			"alert",
-			"magnific pop",
-			"magnific",
-			"infobox",
-			"width: 1.5rem;\n    height: 1.5rem;\n    border-radius: 50% 50% 50% 0px;\n    -webkit-transform: rotate(-45deg);\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    border: 10px solid rgb(238, 52, 48);\n    border-image-source: initial;\n    border-image-slice: initial;\n    border-image-width: initial;\n    border-image-outset: initial;\n    border-image-repeat: initial;",
-			"infobox",
-			"contact_content",
-			"initialize",
-			"contact_html",
-			"contact",
-			"contact-info",
-			"ring",
-			"accent",
-			"gmap_do_custom_style",
-			"left",
-			"$IMAGES",
-			"featured-image-container",
-			"890px",
-			"entry__content",
-			"content",
-			"border",
-			"separator",
-			"social",
-			"h4",
-			"separator",
-			"row-shortcode",
-			"fs",
-			"unit",
-			"single",
-			"\n            ",
-			"\">\n",
-			"href",
-			"\">\n"
+			"grid"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1009,55 +1020,56 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "theme-partials/post-templates/single-head-quote.php",
+					"file": "wpgrade-content/js/main.js",
 					"settings":
 					{
-						"buffer_size": 1428,
+						"buffer_size": 240281,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1388,
-								1388
+								233360,
+								233351
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17611.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "theme-partials/post-templates/single-head-video.php",
+					"file": "wpgrade-content/scss/modules/_likes-box.scss",
 					"settings":
 					{
-						"buffer_size": 381,
+						"buffer_size": 1680,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								201,
-								201
+								3,
+								3
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1069,44 +1081,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "theme-partials/post-templates/single-head.php",
-					"settings":
-					{
-						"buffer_size": 302,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								233,
-								233
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "wpgrade-content/scss/pages/_post.scss",
 					"settings":
 					{
-						"buffer_size": 11759,
+						"buffer_size": 12164,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								756,
-								756
+								5830,
+								5830
 							]
 						],
 						"settings":
@@ -1116,7 +1102,207 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4525.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 6510,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										495,
+										499
+									],
+									[
+										964,
+										968
+									],
+									[
+										1017,
+										1021
+									],
+									[
+										1062,
+										1066
+									],
+									[
+										1808,
+										1812
+									],
+									[
+										2292,
+										2296
+									],
+									[
+										2347,
+										2351
+									],
+									[
+										2394,
+										2398
+									],
+									[
+										2883,
+										2887
+									],
+									[
+										2978,
+										2982
+									],
+									[
+										3068,
+										3072
+									],
+									[
+										3306,
+										3310
+									],
+									[
+										3566,
+										3570
+									],
+									[
+										3747,
+										3751
+									],
+									[
+										4005,
+										4009
+									],
+									[
+										4152,
+										4156
+									],
+									[
+										4299,
+										4303
+									],
+									[
+										4446,
+										4450
+									],
+									[
+										4594,
+										4598
+									],
+									[
+										4806,
+										4810
+									],
+									[
+										4848,
+										4852
+									],
+									[
+										4889,
+										4893
+									],
+									[
+										4929,
+										4933
+									],
+									[
+										4966,
+										4970
+									],
+									[
+										5194,
+										5198
+									],
+									[
+										5236,
+										5240
+									],
+									[
+										5277,
+										5281
+									],
+									[
+										5317,
+										5321
+									],
+									[
+										5354,
+										5358
+									],
+									[
+										5590,
+										5594
+									],
+									[
+										5797,
+										5801
+									],
+									[
+										6089,
+										6093
+									],
+									[
+										6387,
+										6391
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								5968,
+								5968
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1797.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "wpgrade-content/scss/modules/_gallery-item.scss",
+					"settings":
+					{
+						"buffer_size": 5766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								732,
+								732
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1170,16 +1356,100 @@
 				"wpgrade-content/scss/pages/_post.scss"
 			],
 			[
+				"like",
+				"wpgrade-content/scss/modules/_likes-box.scss"
+			],
+			[
+				"post.sc",
+				"wpgrade-content/scss/pages/_post.scss"
+			],
+			[
+				"main",
+				"wpgrade-content/js/main.js"
+			],
+			[
+				"masonry",
+				"wpgrade-content/scss/modules/_masonry.scss"
+			],
+			[
+				"single",
+				"single.php"
+			],
+			[
+				"functi",
+				"functions.php"
+			],
+			[
+				"project",
+				"wpgrade-content/scss/pages/_project.scss"
+			],
+			[
+				"main.js",
+				"wpgrade-content/js/main.js"
+			],
+			[
+				"gallery-item",
+				"wpgrade-content/scss/modules/_gallery-item.scss"
+			],
+			[
+				"tem",
+				"template-portfolio.php"
+			],
+			[
+				"portfolio-cs",
+				"theme-partials/portfolio-templates/portfolio-classic.php"
+			],
+			[
+				"portf",
+				"theme-partials/portfolio-templates/portfolio-sidebar.php"
+			],
+			[
+				"portfolioi",
+				"theme-partials/portfolio-templates/portfolio-sidebar.php"
+			],
+			[
+				"related",
+				"wpgrade-content/scss/components/_related-projects.scss"
+			],
+			[
 				"layout",
 				"wpgrade-content/scss/base/_layout.scss"
 			],
 			[
-				"page.sc",
-				"wpgrade-content/scss/pages/_post.scss"
+				"yar",
+				"yarpp-template-portfolio.php"
 			],
 			[
 				"port",
-				"theme-partials/portfolio-templates/portfolio-fullwidth.php"
+				"theme-partials/portfolio-templates/portfolio-sidebar.php"
+			],
+			[
+				"team",
+				"wpgrade-content/scss/shortcodes/_teammember.scss"
+			],
+			[
+				"header",
+				"wpgrade-content/scss/components/_header.scss"
+			],
+			[
+				"thum",
+				"wpgrade-content/inc/thumbnails.php"
+			],
+			[
+				"unsor",
+				"theme-callbacks/unsorted.php"
+			],
+			[
+				"function",
+				"functions.php"
+			],
+			[
+				"widgets",
+				"wpgrade-content/inc/widgets.php"
+			],
+			[
+				"page.sc",
+				"wpgrade-content/scss/pages/_post.scss"
 			],
 			[
 				"progres",
@@ -1214,10 +1484,6 @@
 				"wpgrade-content/inc/menus.php"
 			],
 			[
-				"header",
-				"header.php"
-			],
-			[
 				"royal",
 				"wpgrade-content/scss/plugins/_royalslider.scss"
 			],
@@ -1228,10 +1494,6 @@
 			[
 				"gallery-contr",
 				"wpgrade-content/scss/modules/_gallery-control.scss"
-			],
-			[
-				"main",
-				"wpgrade-content/js/main.js"
 			],
 			[
 				"rslider",
@@ -1254,10 +1516,6 @@
 				"wpgrade-content/scss/modules/_mosaic.scss"
 			],
 			[
-				"related",
-				"wpgrade-content/scss/components/_related-projects.scss"
-			],
-			[
 				"header.s",
 				"wpgrade-content/scss/components/_header.scss"
 			],
@@ -1275,10 +1533,6 @@
 			],
 			[
 				"proj",
-				"wpgrade-content/scss/pages/_project.scss"
-			],
-			[
-				"project",
 				"wpgrade-content/scss/pages/_project.scss"
 			],
 			[
@@ -1328,10 +1582,6 @@
 			[
 				"twitter",
 				"scss/widgets/_twitter.scss"
-			],
-			[
-				"single",
-				"single.php"
 			],
 			[
 				"project-r",
@@ -1402,14 +1652,6 @@
 				"scss/pages/_gallery-fullscreen.scss"
 			],
 			[
-				"like",
-				"scss/modules/_likes-box.scss"
-			],
-			[
-				"post.sc",
-				"scss/pages/_post.scss"
-			],
-			[
 				"meta-box",
 				"scss/modules/_meta-box.scss"
 			],
@@ -1428,10 +1670,6 @@
 			[
 				"grid",
 				"scss/_vendor/inuit/objects/_grids.scss"
-			],
-			[
-				"gallery-item",
-				"scss/modules/_gallery-item.scss"
 			],
 			[
 				"gal",
@@ -1624,58 +1862,6 @@
 			[
 				"divider",
 				"wp-content/themes/citylife/library/scss/shortcodes/_divider.scss"
-			],
-			[
-				"testimona",
-				"wp-content/themes/citylife/library/scss/shortcodes/_testimonial.scss"
-			],
-			[
-				"team",
-				"wp-content/themes/citylife/library/scss/shortcodes/_teammember.scss"
-			],
-			[
-				"navigati",
-				"wp-content/themes/citylife/library/scss/components/_navigation.scss"
-			],
-			[
-				"mixins",
-				"wp-content/themes/citylife/library/scss/vendor/greedy/_mixins.scss"
-			],
-			[
-				"footer",
-				"wp-includes/theme-compat/footer.php"
-			],
-			[
-				"template-po",
-				"wp-content/themes/citylife/template-portfolio.php"
-			],
-			[
-				"templatepo",
-				"wp-content/themes/citylife/template-portfolio.php"
-			],
-			[
-				"categories.scss",
-				"wp-content/themes/citylife/library/scss/widgets/_categories.scss"
-			],
-			[
-				"header.php",
-				"wp-content/themes/citylife/header.php"
-			],
-			[
-				"headerscss",
-				"wp-content/themes/citylife/library/scss/components/_header.scss"
-			],
-			[
-				"side.sc",
-				"wp-content/themes/citylife/library/scss/components/_side.scss"
-			],
-			[
-				"comments",
-				"wp-content/themes/citylife/comments.php"
-			],
-			[
-				"sidefooter.php",
-				"wp-content/themes/citylife/sidebar-footer.php"
 			]
 		],
 		"width": 0.0

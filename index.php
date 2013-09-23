@@ -37,7 +37,7 @@
                                 <?php } ?>
                             </ul><!--
                              --><?php if (function_exists( 'display_pixlikes' )) {
-                                            display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
+                                            display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box grid__item one-half' ));
                                         } 
                                     ?><!-- .image_item-like-box -->
                         </div><!-- .image_item-meta -->

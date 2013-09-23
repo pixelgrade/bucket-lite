@@ -15,7 +15,7 @@
                             </div>
                         </div><!-- .article-timestamp -->
                         <?php if (function_exists( 'display_pixlikes' )) {
-                                display_pixlikes(array( 'class' => 'likes-box likes-box--article' ));
+                                display_pixlikes(array('class' => 'likes-box--article' ));
                             } 
                         ?><!-- .likes-box -->
                     </div><!-- .entry-header__meta -->
