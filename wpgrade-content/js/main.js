@@ -3258,6 +3258,7 @@ function init() {
         }
 
         $('body').djax('.djax-updatable', ['pdf','doc','eps','png','zip','admin','wp-','feed','#'], djax_transition);
+
     }
     
     /* ONE TIME EVENT HANDLERS */
