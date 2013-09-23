@@ -3,28 +3,20 @@
     background: #f5f5f5;
     @include rem(padding-right, $base-spacing-unit);
 
-    @include opacity(0);
-    @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
-    @include backface-visibility(hidden);
-    @include transform(translate3d(0,2em,0));
-
-    .loaded & {
-        @include opacity(1);
-        @include transform(none);
-    }
-
-    .loading & {
-        @include opacity(0);
-        @include transform(translate3d(0,2em,0));
-    }
 }
 
 .masonry__item {
     background: white;
     @include rem(margin, $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
     @include opacity(0);
+    @include transform(translate3d(0,2em,0));
+    @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
+    @include backface-visibility(hidden);
 
-    .span & { @include opacity(1); }
+    &.is-loaded {
+        @include opacity(1);
+        @include transform(none);
+    }
 
     .article-timestamp {
         @extend .cf;
