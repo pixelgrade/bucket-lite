@@ -176,16 +176,12 @@
 
     .loaded & {
         -webkit-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
-           -moz-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
-             -o-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
                 animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
     }
 
     .loading & {
         opacity: 1;
         -webkit-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
-           -moz-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
-             -o-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
                 animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
     }
 }

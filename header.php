@@ -36,7 +36,7 @@
                         <a href="<?php home_url() ?>" class="site-logo"><?php bloginfo( 'name' ); ?></a>
                     </div>
                     <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>
-                    <div class="header__inner-wrap">
+                    <div id="navigation" class="header__inner-wrap djax-updatable">
                         <?php wpgrade_main_nav();?>
                     </div>
                 </header>
