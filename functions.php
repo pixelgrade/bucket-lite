@@ -77,6 +77,7 @@
         extract( shortcode_atts( array(
             'arrows' => 'false',
             'bullets' => 'true',
+            'autoheight' => 'true'
         ), $atts ) );
 
         $arrows = $atts['arrows'];
@@ -87,7 +88,7 @@
         if($bullets == 'true') $bullets = 'data-bullets'; 
         else  $bullets = '';        
 
-        $return_string .= '<div class="pixslider js-pixslider" ' . $arrows . ' ' . $bullets .'>';
+        $return_string .= '<div class="pixslider js-pixslider" ' . $arrows . ' ' . $bullets .' data-autoheight>';
 
         $return_string .= do_shortcode($content);
 
