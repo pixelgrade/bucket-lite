@@ -3678,12 +3678,12 @@ function magnificPopupInit() {
 
     var magnificPopup = $.magnificPopup.instance;
 
-    $(document).on('click', '.js-arrow-popup-prev', function(e){
-        e.preventDefault();
+    $(document).on('click', '.js-arrow-popup-prev', function(event){
+        event.preventDefault();
         magnificPopup.prev();
     });
 
-    $(document).on('click', '.js-arrow-popup-next', function(e){
+    $(document).on('click', '.js-arrow-popup-next', function(event){
         event.preventDefault();
         magnificPopup.next();
     });
@@ -3838,7 +3838,7 @@ function resizeVideos() {
         var video = $(this),
             ratio = video.data('aspectRatio'),
             w = video.css('width', '100%').width(),
-            h = newWidth/ratio;
+            h = w/ratio;
         video.height(h);
     });
 }
@@ -3953,9 +3953,10 @@ function loadUp(){
 function eventHandlersOnce() {
 
     // Like box animation
-    $('.can_like .like-link').one('click', function(e){
-        e.preventDefault();
-        $(this).addClass('animate-like');
+    $('.can_like .like-link').on('click', function(e){
+        event.preventDefault();
+        var $iElem = $(this).find('i');
+        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
     });
 
     /* @todo: change classes so style and js don't interfere */

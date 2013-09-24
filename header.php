@@ -27,7 +27,7 @@
     $data_ajaxloading = (wpgrade::option('use_ajax_loading') != '') ? 'data-ajaxloading' : '';
     $data_smoothscrolling = (wpgrade::option('use_smooth_scroll') != '') ? 'data-smoothscrolling' : '';
 ?>
-<body <?php body_class($class_name); echo $data_ajaxloading . ' ' . $data_smoothscrolling; ?>>
+<body <?php body_class($class_name); echo ' ' . $data_ajaxloading . ' ' . $data_smoothscrolling; ?>>
     <div id="page">
         <div class="wrapper">
             <div class="header">
