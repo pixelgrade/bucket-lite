@@ -3953,11 +3953,11 @@ function loadUp(){
 function eventHandlersOnce() {
 
     // Like box animation
-    $('.can_like .like-link').on('click', function(e){
-        event.preventDefault();
-        var $iElem = $(this).find('i');
-        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
-    });
+//    $('.can_like .like-link').on('click', function(e){
+//        event.preventDefault();
+//        var $iElem = $(this).find('i');
+//        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
+//    });
 
     $('.js-nav-trigger').on('click', function(e) {
         $('html').toggleClass('navigation--is-visible');

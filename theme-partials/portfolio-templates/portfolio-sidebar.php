@@ -5,10 +5,11 @@
         <section class="project-images">
             <?php
                 $ids = array();
-
+	            $client = '';
                 if ( class_exists('Pix_Query') ) {
                     $pixquery = new Pix_Query();
                     $ids = $pixquery->get_gallery_ids('portfolio_gallery');
+	                $client = $pixquery->get_meta_value('_lens_portfolio_client');
                 }
 
                 $attachments = get_posts( array(
@@ -40,7 +41,7 @@
             <footer class="entry__meta entry__meta--project row cf">
                 <div class="entry__meta-box meta-box--client span-12 hand-span-6">
                     <span class="meta-box__box-title">Client: </span>
-                    <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
+                    <a href="http://localhost/prism/?cat=2"><?php echo $client ?></a>
                 </div>                  
                 <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                     if ( !empty($categories) && !is_wp_error($categories)): ?>

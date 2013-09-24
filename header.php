@@ -8,7 +8,7 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
 </head>
-<?php 
+<?php
 
     $class_name = '';
     if(get_post_type() == 'lens_gallery'){

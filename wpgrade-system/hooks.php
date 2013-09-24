@@ -10,6 +10,8 @@
 	// theme activation
 	function wpgrade_callback_geting_active() {
 
+		var_dump('prima data ia tema iar');
+
 		$types_options = get_option('pixtypes_themes_settings');
 		if ( empty($types_options) ) {
 			$types_options = array();
@@ -216,7 +218,7 @@
 					),
 				)
 			),
-			'lens_portfolio' => array(
+			'lens_portfolio_gallery' => array(
 				'id'         => 'portfolio_gallery',
 				'title'      => __('Gallery', wpgrade::textdomain()),
 				'pages'      => array( 'lens_portfolio' ), // Post type
@@ -228,6 +230,26 @@
 						'name' => __('Images', wpgrade::textdomain()),
 						'id'   => wpgrade::prefix() . 'portfolio_gallery',
 						'type' => 'gallery',
+					),
+				)
+			),
+			'lens_portfolio_metadata' => array(
+				'id'         => 'portfolio_metadata',
+				'title'      => __('Details', wpgrade::textdomain()),
+				'pages'      => array( 'lens_portfolio' ), // Post type
+				'context'    => 'side',
+				'priority'   => 'low',
+				'show_names' => true, // Show field names on the left
+				'fields' => array(
+					array(
+						'name' => __('Client Name', wpgrade::textdomain()),
+						'id'   => wpgrade::prefix() . 'portfolio_client_name',
+						'type' => 'text_medium',
+					),
+					array(
+						'name' => __('Client Link', wpgrade::textdomain()),
+						'id'   => wpgrade::prefix() . 'portfolio_client_link',
+						'type' => 'text_medium',
 					),
 					array(
 						'name' => __('Template', wpgrade::textdomain()),
@@ -249,7 +271,7 @@
 							),
 						),
 						'std' => 'fullwidth',
-					),					
+					),
 				)
 			),
 			'lens_gallery' => array(
@@ -289,6 +311,7 @@
 				)
 			)
 		);
+
 		update_option('pixtypes_themes_settings', $types_options);
 		// flush permalinks rules on theme activation
 		flush_rewrite_rules();
@@ -396,7 +419,6 @@
 
 		//unset unneeded params and keep only the style one
 		if ( isset( $params['style'] )) {
-//			unset($params['select']);
 			$params['style']['admin_class'] = '';
 			return array('style' =>  $params['style']);
 		}
