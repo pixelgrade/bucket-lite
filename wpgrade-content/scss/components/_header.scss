@@ -212,22 +212,32 @@
 \*------------------------------*/
 
 .site-header__branding {
-    @include rem(height, 3 * $base-spacing-unit);
     background-color: $dark;
     @include backface-visibility(hidden);
     @include perspective(1000px);
     overflow: hidden;
 
     @include media(from hand) {
-        @include rem(margin, $base-spacing-unit 0);
+        @include rem(margin, 2*$base-spacing-unit 0);
         padding-left: 0;
         padding-right: 0;
+    }
+    
+    @include media(to hand) {
+        @include rem(height, 3 * $base-spacing-unit);
     }
 }
 
 .site-logo {
     display: block;
     text-transform: uppercase;
+    @include font-size(30px);
+    font-weight: bold;
+
+    @include media(to hand) {
+        @include rem(margin-top, 17px);
+        @include rem(margin-left, 23px);
+    }
 
     h1 {
         margin: 0;

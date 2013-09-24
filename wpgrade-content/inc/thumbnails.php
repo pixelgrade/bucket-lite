@@ -8,6 +8,8 @@ function wpgrade_custom_thumbnails (){
     // Add theme support for Featured Images
     add_theme_support( 'post-thumbnails' );
     add_image_size('portfolio-big', 800, 440, true);
+    add_image_size('portfolio-medium', 600, 330, true);
+    add_image_size('portfolio-small', 400, 220, true);
 }
 
 add_action( 'after_setup_theme', 'wpgrade_custom_thumbnails');

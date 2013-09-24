@@ -16,7 +16,7 @@
         display: none; //
         overflow: hidden;
         float: left;
-        @extend .span-12;
+        @extend .span-6;
         @extend .hand-span-6;
         @extend .lap-span-4;
         @extend .desk-span-3;
@@ -118,7 +118,7 @@
     }
 
     // ensure hover doesn't occur on touch devices
-    .no-touch .js--is-loaded:hover {
+    .js--is-loaded:hover {
 
         img {
             @include opacity(0.2);

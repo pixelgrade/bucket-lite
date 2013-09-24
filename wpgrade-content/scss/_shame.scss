@@ -100,10 +100,11 @@ html {
 
 /* Asa nu :D */
 
-.single-gallery-fullwidth {
+.single-gallery-fullwidth,
+.single-gallery-fullscreen {
 
     @include media(from hand) {
-        #page, .content, #main, #primary, #content, .post {
+        #page, .wrapper, .content, #main, #primary, #content, .post {
             height: 100%;
         }
 
@@ -251,10 +252,13 @@ html{
 // }
 
 // that fullscreen royal slider needs some help
-/*body*/.single-gallery-fullwidth,
-/*body*/.single-gallery-fullscreen {
-    .js-pixslider {
-        height: 100% !important;
+@include media(from hand) {
+
+    /*body*/.single-gallery-fullwidth,
+    /*body*/.single-gallery-fullscreen {
+        .js-pixslider {
+            height: 100% !important;
+        }
     }
 }
 
@@ -288,4 +292,10 @@ img.mfp-img{
         -webkit-animation: none !important;
         @include opacity(1);
     }
+}
+
+// remove tap highlight
+// or change it :D
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

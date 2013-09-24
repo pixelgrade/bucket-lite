@@ -31,10 +31,14 @@
 }
 
 .sidebar{
-    @include rem(padding, 2 * $base-spacing-unit);
+    @include rem(padding, $base-spacing-unit);
+
+    @include media(from lap) {
+        @include rem(padding, 2 * $base-spacing-unit);
+    }
 }
 
-@include media(from lap){
+@include media(from lap) {
     .wrapper{
         height: 100%;
     }

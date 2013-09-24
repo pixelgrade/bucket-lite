@@ -41,6 +41,39 @@
         a {
             @include rem(padding, $half-spacing-unit $base-spacing-unit); 
         }
+
+        &.current-menu-item {
+
+            & > a {
+                color: $accent-color;
+            }
+
+            &:after {
+                border-top-color: $accent-color;
+            }
+        }
+
+        &.current-menu-ancestor, &.current-menu-parent {
+
+            & > ul {
+                display: block;
+            }
+
+            & > a {
+                color: $accent-color;
+            }
+
+            &:after {
+                // border-top-color: $accent-color;
+            }
+        }
+
+        &:hover, &:focus, &:active {
+            
+            & > a {
+                color: $accent-color;
+            }
+        }
     }
 
 
@@ -58,45 +91,35 @@
             @include rem(margin-top, -3px);
             border-top-color: #4d4d4d;
             pointer-events: none;
-            @include transition(all .2s bezier(easeInOutCirc));
+            // @include transition(all .2s bezier(easeInOutCirc));
         }
 
-        & > a {
-            @include transition(color .2s bezier(easeInOutCirc));
-        }
+        // & > a {
+        //     @include transition(color .2s bezier(easeInOutCirc));
+        // }
 
-        & > ul {
-            display: none;
-        }
-
-        &:hover {
-
-            & > a {
-                color: $accent-color;
+        @include media(from hand) {
+            .no-touch & > ul {
+                display: none;
             }
+        }
+
+        &:hover, &:focus, &:active {
 
             &:after {
                 border-top-color: $accent-color;
             }
         }
 
-        &.js--is-active {
+        &:hover, &:focus, &:active {
 
             &:after {
-                @include transform(rotate(180deg));
-                // border-top-color: transparent;
-                // border-bottom-color: #4d4d4d;
+                border-top-color: transparent;
+                border-bottom-color: $accent-color;
                 @include rem(margin-top, -8px);
             }
-
-            // &:hover:after {
-            //     border-bottom-color: $accent-color;
-            // }
-
-            // & > ul {
-            //     display: block;
-            // }
         }
+
     }
 
 
@@ -120,6 +143,19 @@
         a {
             color: #a7a7a7;
             @include rem(padding, 0 $base-spacing-unit); 
+            @include transition(all .2s ease-out);
+        }
+
+        &:hover, &:focus, &:active {
+
+            & > a {
+                @include transform(translate3d(.5em, 0, 0));
+                color: white;
+            }
+        }
+
+        &.current-menu-item > a {
+            color: white;
         }
     }
 
@@ -240,7 +276,7 @@
         @include perspective(1000px);
 
         .navigation--is-visible & {
-            left: -70%;
+            left: -75%;
         }
 
         @include media(from hand) {
