@@ -173,19 +173,19 @@
 \*-------------------------------------------*/
 
 
-@include media(to hand) {
+// @include media(to hand) {
     
-    .navigation--is-visible {
+//     .navigation--is-visible {
 
-        &, body, #page, .header, .header__inner-wrap {
-            height: 100%;
-        }
-    }
+//         &, body, #page, .header, .header__inner-wrap {
+//             height: 100%;
+//         }
+//     }
 
-    .site-header {
-        height: 100%; 
-    }
-}
+//     .site-header {
+//         height: 100%; 
+//     }
+// }
 
 // hide navigation on small devices
 

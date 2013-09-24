@@ -42,7 +42,7 @@
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
-                                <i class="icon-plus"></i>
+                                <div class="image__plus-icon">+</div>
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,36 @@
                HEADER
 \*--------------------------------*/
 
+@keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-o-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-ms-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-moz-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-webkit-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
 .header {
     @extend .inverse;
     width: 100%;
@@ -40,11 +70,19 @@
         background-size: 1px rem(12 * $base-spacing-unit);
         background-repeat: repeat-x;
         @include background-image(linear-gradient($accent-color, $other-color));
-        height: 0%;
-        @include transition(height 3s .5s);
+        @include transition(height 1s .3s ease-in-out);
+        -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
+           -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
+            -ms-animation: loading 1s bezier(easeInOutQuad) forwards;
+             -o-animation: loading 1s bezier(easeInOutQuad) forwards;
+                animation: loading 1s bezier(easeInOutQuad) forwards;
 
-        .loaded & {
-            height: 100%;
+        .loading & {
+            -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
+               -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
+                -ms-animation: loading 1s bezier(easeInOutQuad) forwards;
+                 -o-animation: loading 1s bezier(easeInOutQuad) forwards;
+                    animation: loading 1s bezier(easeInOutQuad) forwards;
         }
     }
 
