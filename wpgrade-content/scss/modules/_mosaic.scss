@@ -9,6 +9,7 @@
 .mosaic {
     @extend .cf;
     position: relative;
+    @include transform(translate3d(0,0,0));
 }
 
     .mosaic__item {
@@ -92,7 +93,7 @@
         @include transition(all .2s .1s ease-out);
     }
 
-    .mosaic__item:hover {
+    .no-touch .mosaic__item:hover {
 
         .image_item-table {
             @include opacity(1);
@@ -118,7 +119,7 @@
     }
 
     // ensure hover doesn't occur on touch devices
-    .js--is-loaded:hover {
+    .no-touch .js--is-loaded:hover {
 
         img {
             @include opacity(0.2);

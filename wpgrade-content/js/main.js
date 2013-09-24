@@ -3971,7 +3971,7 @@ function eventHandlersOnce() {
 /* --- GLOBAL EVENT HANDLERS --- */
 
 function eventHandlers() {
-    
+
     /* @todo: change classes so style and js don't interfere */
     $('.menu-item--parent').hoverIntent({
         over: function() {
@@ -4155,6 +4155,7 @@ function animateBlog(direction) {
 $(window).bind('djaxClick', function(e, data) {
 
     $('html').addClass('loading');
+    $('html, body').animate({scrollTop: 0}, 300);
 
     if ($('html').hasClass('navigation--is-visible')) {
         $('html').removeClass('navigation--is-visible');
