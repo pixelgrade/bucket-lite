@@ -58,6 +58,11 @@
             @include rem(margin-top, -3px);
             border-top-color: #4d4d4d;
             pointer-events: none;
+            @include transition(all .2s bezier(easeInOutCirc));
+        }
+
+        & > a {
+            @include transition(color .2s bezier(easeInOutCirc));
         }
 
         & > ul {
@@ -78,18 +83,19 @@
         &.js--is-active {
 
             &:after {
-                border-top-color: transparent;
-                border-bottom-color: #4d4d4d;
+                @include transform(rotate(180deg));
+                // border-top-color: transparent;
+                // border-bottom-color: #4d4d4d;
                 @include rem(margin-top, -8px);
             }
 
-            &:hover:after {
-                border-bottom-color: $accent-color;
-            }
+            // &:hover:after {
+            //     border-bottom-color: $accent-color;
+            // }
 
-            & > ul {
-                display: block;
-            }
+            // & > ul {
+            //     display: block;
+            // }
         }
     }
 
