@@ -20,17 +20,22 @@
             <?php 
                 foreach ( $attachments as $attachment ) : 
                     $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                    $img = wp_get_attachment_image_src($attachment->ID, 'big');                                                
-                    $thumbimg = wp_get_attachment_image_src($attachment->ID, 'blog-archive', true);                            
+                    $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
+                    $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
+                    $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
+                    $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
             ?>                
             <div class="mosaic__item photography">
                 <div class="rsPreloader"></div>
-                <a href="<?php echo $img[0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
+                <a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
                     <div class="image__item-wrapper">
                         <img
                             class="js-lazy-load"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-src="<?php echo $thumbimg[0]; ?>"
+                            data-src="<?php echo $img['big'][0]; ?>"
+                            data-big="<?php echo $img['big'][0]; ?>"
+                            data-medium="<?php echo $img['medium'][0]; ?>"
+                            data-small="<?php echo $img['small'][0]; ?>"
                             alt=""
                         />
                     </div>                        

@@ -21,19 +21,19 @@ $bpSizes: ();
     $string: "";
     @if length($query) == 1 {
         @if nth($query, 1) != 0 {
-            $string: " and (min-width: " + emQuery($query) + ")";
+            $string: " and (min-width: " + emQuery($query) + 1px + ")";
         }
     }
     @if length($query) == 2 {
         @if nth($query, 2) == 0 {
             @if nth($query, 1) != 0 {
-                $string: " and (min-width: " + emQuery(nth($query,1)) + ")";
+                $string: " and (min-width: " + emQuery(nth($query,1) + 1px) + ")";
             }
         } @else {
             @if nth($query, 1) == 0 {
                 $string: " and (max-width: " + emQuery(nth($query,2)) + ")";
             } @else {
-                $string: " and (min-width: " + emQuery(nth($query,1)) + ") and (max-width: " + emQuery(nth($query,2)) + ")";
+                $string: " and (min-width: " + emQuery(nth($query,1) + 1px) + ") and (max-width: " + emQuery(nth($query,2)) + ")";
             }
         }
     }

@@ -81,6 +81,10 @@
 
 						'styles' => array
 							(
+                                'google-webfonts' => array
+                                    (
+                                        'path' => 'http://fonts.googleapis.com/css?family=Roboto:300,500,300italic,500italic|Open+Sans:300,400,700,300italic,400italic,700italic|Josefin+Slab:400,600,700',
+                                    ),
 								'wpgrade-main-style' => array
 									(
 										'path' => get_template_directory_uri().'/wpgrade-content/css/style.css',
@@ -119,6 +123,7 @@
 				// auto invoke styles previously registered on theme setup
 				'auto-enqueue-styles' => array
 					(
+                        'google-webfonts',
 						'wpgrade-main-style',
 					),
 
