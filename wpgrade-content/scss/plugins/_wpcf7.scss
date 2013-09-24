@@ -15,7 +15,19 @@
     font-family: "Crimson Text", serif;
     font-style: italic;
     font-size: 1rem;
+}
+
+textarea.wpcf7-form-control{
     line-height: 2.3;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input:not([type]){
+    &.wpcf7-form-control{
+        padding: 0.5rem 0;
+    }
 }
 
 .wpcf7-submit{

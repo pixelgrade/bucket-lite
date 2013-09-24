@@ -3334,9 +3334,10 @@ function loadUp(){
 function eventHandlersOnce() {
 
     // Like box animation
-    $('.can_like .like-link').one('click', function(e){
-        e.preventDefault();
-        $(this).addClass('animate-like');
+    $('.can_like .like-link').on('click', function(e){
+        event.preventDefault();
+        var $iElem = $(this).find('i');
+        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
     });
 
     /* @todo: change classes so style and js don't interfere */
