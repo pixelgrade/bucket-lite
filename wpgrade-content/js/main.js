@@ -3063,12 +3063,12 @@ function magnificPopupInit() {
 
     var magnificPopup = $.magnificPopup.instance;
 
-    $(document).on('click', '.js-arrow-popup-prev', function(e){
-        e.preventDefault();
+    $(document).on('click', '.js-arrow-popup-prev', function(event){
+        event.preventDefault();
         magnificPopup.prev();
     });
 
-    $(document).on('click', '.js-arrow-popup-next', function(e){
+    $(document).on('click', '.js-arrow-popup-next', function(event){
         event.preventDefault();
         magnificPopup.next();
     });
@@ -3223,7 +3223,7 @@ function resizeVideos() {
         var video = $(this),
             ratio = video.data('aspectRatio'),
             w = video.css('width', '100%').width(),
-            h = newWidth/ratio;
+            h = w/ratio;
         video.height(h);
     });
 }
