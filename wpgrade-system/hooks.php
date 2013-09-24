@@ -10,8 +10,6 @@
 	// theme activation
 	function wpgrade_callback_geting_active() {
 
-		var_dump('prima data ia tema iar');
-
 		$types_options = get_option('pixtypes_themes_settings');
 		if ( empty($types_options) ) {
 			$types_options = array();
