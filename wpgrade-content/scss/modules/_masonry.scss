@@ -32,12 +32,11 @@
         margin-left: 0;
         margin-bottom: 0;
         @include rem(margin-right, $base-spacing-unit);
-        @include rem(padding, $half-spacing-unit 0 0 $base-spacing-unit);
+        @include rem(padding, $half-spacing-unit 0 $half-spacing-unit $base-spacing-unit);
     }
 
-    .separator{
-        @include rem(margin-left, -$base-spacing-unit);
-        @include rem(padding-right, $base-spacing-unit);
+    .separator {
+        @include rem(margin-right, $base-spacing-unit);
     }
 
     .entry__content {

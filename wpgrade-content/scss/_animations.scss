@@ -131,7 +131,7 @@
 }
 
 .single .entry__title,
-.page .entru__title {
+.page .entry__title {
     opacity: 0;
     @include backface-visibility(hidden);
     @include perspective(1000px);
@@ -152,7 +152,8 @@
     }
 }
 
-.single .separator--dotted {
+.single .separator--dotted,
+.page .separator--dotted {
     width: 0;
     @include translate3d(0,0,0);
     @include transition(width .5s .2s bezier(easeOutBack));

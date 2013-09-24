@@ -264,7 +264,7 @@
         float: left;
         font-size: 0.39em;
         position: relative;
-        top: 0.35em;
+        top: 0.55em;
         left: 0.3em;
     }
 
@@ -386,7 +386,7 @@
 .separator--dotted{
     height: 1px;
     border: 0;
-    border-bottom: 1px dotted black;
+    border-bottom: 1px dashed black;
 }
 
 .separator--striped{
