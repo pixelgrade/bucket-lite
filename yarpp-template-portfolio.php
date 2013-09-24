@@ -5,12 +5,12 @@ YARPP Template: Portfolio Related Projects
 ?>
 <section class="related-projects_container">
     <header class="related-projects_header">
-       <h4 class="related-projects_title">Related projects</h4>
+       <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
        <nav class="related-projects_nav">
            <ul class="related-projects_nav-list">
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><i class="icon-arrow-left"></i>Previous</a></li>
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link">All projects</a></li>
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link">Next<i class="icon-arrow-right"></i></a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><i class="icon-arrow-left"></i><?php _e("Previous", wpGrade::textdomain()); ?></a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("All projects", wpGrade::textdomain()); ?></a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("Next", wpGrade::textdomain()); ?><i class="icon-arrow-right"></i></a></li>
            </ul>
        </nav>
     </header>
@@ -64,7 +64,7 @@ YARPP Template: Portfolio Related Projects
             --></ul>
 
         <?php else: ?>
-        <p>No related projects.</p>
+        <p><?php _e("No related projects", wpGrade::textdomain()); ?>.</p>
         <?php endif; ?>
     </div>
 </section>

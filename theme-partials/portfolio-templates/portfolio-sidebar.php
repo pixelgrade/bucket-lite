@@ -39,13 +39,13 @@
             <hr class="separator separator--dotted" />
             <footer class="entry__meta entry__meta--project row cf">
                 <div class="entry__meta-box meta-box--client span-12 hand-span-6">
-                    <span class="meta-box__box-title">Client: </span>
+                    <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
                     <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                 </div>                  
                 <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                     if ( !empty($categories) && !is_wp_error($categories)): ?>
                     <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
-                        <span class="meta-box__box-title">Filled under: </span>
+                        <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
                         <?php foreach ($categories as $cat): ?>
                                 <a href="<?php echo get_category_link($cat); ?>"
                                    rel="category">
@@ -62,7 +62,7 @@
                     } 
                 ?>
                 <div class="social-links span-12 hand-span-6">
-                    <span class="social-links__message">Share: </span>
+                    <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
                     <ul class="social-links__list">
                         <li><a href="#"><i class="icon-twitter"></i></a></li>
                         <li><a href="#"><i class="icon-facebook"></i></a></li>

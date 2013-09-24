@@ -13,13 +13,25 @@
     @include font-size(14px);
     text-transform: uppercase;
 
+    .like-link{
+        padding: 0;
+        background: none;
+        border: none;
+    }
+
     i{
-        color: black;
-        @include font-size(18px);
-        text-align: center;
         margin-left: -3px;
         padding-right: 0;
         @include border-radius(50%);
+        color: black !important; background-color: $accent-color;
+        @include transform(scale(0.75));
+        @include font-size(18px);
+        text-align: center;
+    }
+
+    .image__item-meta & i{
+        @include transform(scale(1));
+        background-color: transparent;
     }
 }
 
@@ -27,12 +39,17 @@
         font-weight: bold;
     }
 
+.can_like i{
+    background-color: transparent;
+    @include transform(scale(1));
+}
+
 .animate-like{
     animation: like-animation 1s;
     -webkit-animation: like-animation 1s;
 }
 
-.like-complete{
+.can_like .like-complete{
     color: black !important; background-color: $accent-color;
     @include transform(scale(0.75));
 }

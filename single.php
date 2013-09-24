@@ -29,7 +29,7 @@
                     <?php $categories = wp_get_post_categories($post->ID); ?>
                     <?php if (count($categories)): ?>
                         <div class="entry__meta-box meta-box--categories">
-                            <span class="meta-box__box-title">Filled under: </span>
+                            <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
                             <?php foreach ($categories as $cat): ?>
                                     <a href="<?php echo get_category_link($cat); ?>"
                                        rel="category">
@@ -42,7 +42,7 @@
                     <?php $tags = wp_get_post_tags($post->ID); ?>
                     <?php if (count($tags)): ?>
                         <div class="entry__meta-box meta-box--tags">
-                            <span class="meta-box__box-title">Tagged: </span>
+                            <span class="meta-box__box-title"><?php _e("Tagged", wpGrade::textdomain()); ?>: </span>
                                 <?php foreach ($tags as $tag):  ?>
                                     <a href="<?php echo get_tag_link($tag->term_id); ?>"
                                        rel="tag">
@@ -52,7 +52,7 @@
                         </div>
                     <?php endif; ?>                
                     <div class="social-links">
-                        <span class="social-links__message">Share: </span>
+                        <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
                         <ul class="social-links__list">
                             <li><a href="#"><i class="icon-twitter"></i></a></li>
                             <li><a href="#"><i class="icon-facebook"></i></a></li>

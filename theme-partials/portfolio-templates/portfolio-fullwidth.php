@@ -28,8 +28,8 @@
             <?php endforeach; ?>                    
         </div>
     </div>
-
     <?php endif; ?>
+    <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); ?>   
 
     <div class="page-content single-portfolio-fullwidth">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -37,22 +37,22 @@
                 <div class="col-4">
                     <header class="entry__header">
                         <h1 class="entry__title"><?php the_title(); ?></h1>
-                        <div class="entry__meta entry__meta--project cf">
+                        <div class="entry__meta entry__meta--project cf hand-visible">
                             <div class="entry__meta-box meta-box--client">
-                                <span class="meta-box__box-title">Client: </span>
+                                <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
                                 <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
                             </div>  
-                            <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
+                            <?php
                                 if ($categories): ?>                                    
                                 <div class="entry__meta-box meta-box--categories">
-                                    <span class="meta-box__box-title">Filled under: </span>
+                                    <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
                                     <?php foreach ($categories as $cat): ?>
                                         <a href="<?php echo get_category_link($cat); ?>" rel="category">
                                             <?php echo get_category($cat)->name; ?>
                                         </a>
                                     <?php endforeach; ?>
                                 </div>
-                        <?php endif; ?> 
+                            <?php endif; ?> 
                         </div>
                     </header><!-- .entry-header -->
                 </div>
@@ -62,23 +62,41 @@
                     </div><!-- .entry__content -->
                 </div>
             </div>
-
+            <footer class="entry__meta cf to-hand-visible">
+                <hr class="separator separator--dotted" />
+                <div class="entry__meta entry__meta--project cf">
+                    <div class="entry__meta-box meta-box--client">
+                        <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
+                        <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
+                    </div>  
+                    <?php 
+                        if ($categories): ?>                                    
+                        <div class="entry__meta-box meta-box--categories">
+                            <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
+                            <?php foreach ($categories as $cat): ?>
+                                <a href="<?php echo get_category_link($cat); ?>" rel="category">
+                                    <?php echo get_category($cat)->name; ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?> 
+                </div>                
+            </footer>
             <div class="row">
                 <div class="col-4">
-                    <hr class="separator separator--full-left"/>
+                    <hr class="separator separator--striped separator--full-left hand-visible"/>
                 </div>
                 <div class="col-8 gutter--double">
                     <hr class="separator separator--striped"/>
                 </div>
             </div>
-
             <footer class="entry__meta cf">
                 <?php if (function_exists( 'display_pixlikes' )) {
                         display_pixlikes(array('class' => 'likes-box likes-box--footer'));
                     } 
                 ?>                                 
                 <div class="social-links">
-                    <span class="social-links__message">Share: </span>
+                    <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
                     <ul class="social-links__list">
                         <li><a href="#"><i class="icon-twitter"></i></a></li>
                         <li><a href="#"><i class="icon-facebook"></i></a></li>
