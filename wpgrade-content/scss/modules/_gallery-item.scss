@@ -43,6 +43,13 @@
     }
 }
 
+.image__plus-icon {
+    font-size: 5em;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    @include transform(scaleX(.9));
+}
+
 .image__item-meta{
     position: absolute;
     z-index: 1;

@@ -3821,11 +3821,9 @@ function initVideos() {
     });
 
     // Firefox Opacity Video Hack
-    $(document).ready(function (){
-        $('iframe').each(function(){
-            var url = $(this).attr("src");
-            $(this).attr("src",url+"?wmode=transparent");
-        });
+    $('iframe').each(function(){
+        var url = $(this).attr("src");
+        $(this).attr("src",url+"?wmode=transparent");
     });
 }
 
@@ -3951,13 +3949,6 @@ function loadUp(){
 /* ====== EVENT HANDLERS ====== */
 
 function eventHandlersOnce() {
-
-    // Like box animation
-//    $('.can_like .like-link').on('click', function(e){
-//        event.preventDefault();
-//        var $iElem = $(this).find('i');
-//        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
-//    });
 
     $('.js-nav-trigger').on('click', function(e) {
         $('html').toggleClass('navigation--is-visible');
