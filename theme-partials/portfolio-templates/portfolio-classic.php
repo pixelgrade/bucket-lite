@@ -1,4 +1,13 @@
 <div id="main" class="content djax-updatable">
+    <?php
+        $client_name = '';
+        $client_link = '#';
+        if ( class_exists('Pix_Query') ) {
+            $pixquery = new Pix_Query();
+            $client_name = $pixquery->get_meta_value('portfolio_client_name');
+            $client_link = $pixquery->get_meta_value('portfolio_client_link');
+        }
+    ?>    
     <div class="page-content">        
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
             <header class="entry-header">
@@ -9,10 +18,12 @@
             </header>
             <hr class="separator--dotted separator--full-left" />
             <footer class="entry__meta entry__meta--project cf">
+                <?php if($client_name != '') : ?>
                 <div class="entry__meta-box meta-box--client">
                     <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                    <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
-                </div>                 
+                    <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
+                </div>
+                <?php endif; ?>
                 <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                     if (count($categories) && !is_wp_error($categories)): ?>
                     <div class="entry__meta-box meta-box--categories span-12 hand-span-6">

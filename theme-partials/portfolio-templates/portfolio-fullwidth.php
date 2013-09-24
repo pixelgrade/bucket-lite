@@ -5,6 +5,8 @@
     if ( class_exists('Pix_Query') ) {
         $pixquery = new Pix_Query();
         $ids = $pixquery->get_gallery_ids('portfolio_gallery');
+        $client_name = $pixquery->get_meta_value('portfolio_client_name');
+        $client_link = $pixquery->get_meta_value('portfolio_client_link');        
     }
 
     $attachments = get_posts( array(
@@ -38,10 +40,12 @@
                     <header class="entry__header">
                         <h1 class="entry__title"><?php the_title(); ?></h1>
                         <div class="entry__meta entry__meta--project cf hand-visible">
+                            <?php if($client_name != '') : ?>
                             <div class="entry__meta-box meta-box--client">
                                 <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                                <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
-                            </div>  
+                                <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
+                            </div>
+                            <?php endif; ?> 
                             <?php
                                 if ($categories): ?>                                    
                                 <div class="entry__meta-box meta-box--categories">

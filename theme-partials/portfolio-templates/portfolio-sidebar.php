@@ -40,10 +40,12 @@
             </div><!-- .entry__content -->
             <hr class="separator separator--dotted" />
             <footer class="entry__meta entry__meta--project row cf">
-                <div class="entry__meta-box meta-box--client span-12 hand-span-6">
+                <?php if($client_name != '') : ?>
+                <div class="entry__meta-box meta-box--client">
                     <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                    <a href="<?php echo $client_link; ?>"><?php echo $client_name ?></a>
-                </div>                  
+                    <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
+                </div>
+                <?php endif; ?>               
                 <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                     if ( !empty($categories) && !is_wp_error($categories)): ?>
                     <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
