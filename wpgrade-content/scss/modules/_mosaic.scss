@@ -118,14 +118,6 @@
         }
     }
 
-    // ensure hover doesn't occur on touch devices
-    .no-touch .js--is-loaded:hover {
-
-        img {
-            @include opacity(0.2);
-        }
-    } 
-
     .js--is-loaded img {
         opacity: 1;
     }
