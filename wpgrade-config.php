@@ -83,7 +83,7 @@
 							(
                                 'google-webfonts' => array
                                     (
-                                        'path' => 'http://fonts.googleapis.com/css?family=Roboto:300,500,300italic,500italic|Open+Sans:300,400,700,300italic,400italic,700italic|Josefin+Slab:400,600,700',
+                                        'path' => 'http://fonts.googleapis.com/css?family=Roboto:300,500,300italic,500italic|Open+Sans:300,400,700,300italic,400italic,700italic|Josefin+Slab:400,600,700|Crimson+Text:400,400italic',
                                     ),
 								'wpgrade-main-style' => array
 									(

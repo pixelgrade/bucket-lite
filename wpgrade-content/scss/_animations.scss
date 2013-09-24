@@ -131,7 +131,7 @@
 }
 
 .single .entry__title,
-.page .entru__title {
+.page .entry__title {
     opacity: 0;
     @include backface-visibility(hidden);
     @include perspective(1000px);
@@ -152,7 +152,8 @@
     }
 }
 
-.single .separator--dotted {
+.single .separator--dotted,
+.page .separator--dotted {
     width: 0;
     @include translate3d(0,0,0);
     @include transition(width .5s .2s bezier(easeOutBack));
@@ -175,16 +176,12 @@
 
     .loaded & {
         -webkit-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
-           -moz-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
-             -o-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
                 animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
     }
 
     .loading & {
         opacity: 1;
         -webkit-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
-           -moz-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
-             -o-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
                 animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
     }
 }

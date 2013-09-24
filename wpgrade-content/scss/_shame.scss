@@ -288,8 +288,10 @@ img.mfp-img{
 
     .gallery-control{
         @include rem(right, $half-spacing-unit);
-        animation: none !important;
         -webkit-animation: none !important;
+            -ms-animation: none !important;
+             -o-animation: none !important;
+                animation: none !important;
         @include opacity(1);
     }
 }
@@ -298,4 +300,10 @@ img.mfp-img{
 // or change it :D
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// flicker
+.content {
+    @include backface-visibility(hidden);
+    @include perspective(1000px);
 }

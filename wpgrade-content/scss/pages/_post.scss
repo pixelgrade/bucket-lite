@@ -235,13 +235,13 @@
     }
 
     .article-timestamp__right-box{
-        top: 0.3em;
+        top: 0.7em;
         line-height: 0.9;
     }
 
     @include media(from lap) {
         float: left;
-        @include rem(margin, 1.5 * $base-spacing-unit 0 0 -8 * $base-spacing-unit);
+        @include rem(margin, 26px 0 0 -8 * $base-spacing-unit);
     }
 }
 
@@ -264,7 +264,7 @@
         float: left;
         font-size: 0.39em;
         position: relative;
-        top: 0.35em;
+        top: 0.55em;
         left: 0.3em;
     }
 
@@ -386,7 +386,7 @@
 .separator--dotted{
     height: 1px;
     border: 0;
-    border-bottom: 1px dotted black;
+    border-bottom: 1px dashed black;
 }
 
 .separator--striped{

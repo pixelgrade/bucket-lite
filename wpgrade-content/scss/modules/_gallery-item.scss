@@ -43,6 +43,13 @@
     }
 }
 
+.image__plus-icon {
+    font-size: 5em;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    @include transform(scaleX(.9));
+}
+
 .image__item-meta{
     position: absolute;
     z-index: 1;
@@ -50,13 +57,10 @@
     top: 0;
     right: 0;
     bottom: 0;
-
-    @include media(from lap) {
-        background: rgba($accent-color, 0.8);
-        @include opacity(0);
-        @include transition-property(opacity);
-        @include transition-duration(0.3s);
-    }
+    background: rgba($accent-color, 0.8);
+    @include opacity(0);
+    @include transition-property(opacity);
+    @include transition-duration(0.3s);
 }
 
 .image_item-table{

@@ -12,8 +12,8 @@
 
 <h2 class="entry__title">
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    <hr class="separator separator--dotted grow">
 </h2>
+<hr class="separator separator--dotted grow">
 <?php
     if ( has_post_thumbnail() ) {
         echo '<div class="entry__featured-image">';

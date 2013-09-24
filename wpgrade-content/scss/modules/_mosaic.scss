@@ -9,6 +9,7 @@
 .mosaic {
     @extend .cf;
     position: relative;
+    @include transform(translate3d(0,0,0));
 }
 
     .mosaic__item {
@@ -20,6 +21,7 @@
         @extend .hand-span-6;
         @extend .lap-span-4;
         @extend .desk-span-3;
+        position: relative;
 
         .image__item-link {
             @include transform(translateX(-101%));
@@ -92,7 +94,7 @@
         @include transition(all .2s .1s ease-out);
     }
 
-    .mosaic__item:hover {
+    .no-touch .mosaic__item:hover {
 
         .image_item-table {
             @include opacity(1);
@@ -116,14 +118,6 @@
             @include transition(opacity .3s ease-in-out);
         }
     }
-
-    // ensure hover doesn't occur on touch devices
-    .js--is-loaded:hover {
-
-        img {
-            @include opacity(0.2);
-        }
-    } 
 
     .js--is-loaded img {
         opacity: 1;
