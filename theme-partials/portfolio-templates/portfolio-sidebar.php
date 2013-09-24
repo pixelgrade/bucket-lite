@@ -5,11 +5,12 @@
         <section class="project-images">
             <?php
                 $ids = array();
-	            $client = '';
+	            $client_name = $client_link = '';
                 if ( class_exists('Pix_Query') ) {
                     $pixquery = new Pix_Query();
                     $ids = $pixquery->get_gallery_ids('portfolio_gallery');
-	                $client = $pixquery->get_meta_value('_lens_portfolio_client');
+                    $client_name = $pixquery->get_meta_value('portfolio_client_name');
+	                $client_link = $pixquery->get_meta_value('portfolio_client_link');
                 }
 
                 $attachments = get_posts( array(
@@ -41,7 +42,7 @@
             <footer class="entry__meta entry__meta--project row cf">
                 <div class="entry__meta-box meta-box--client span-12 hand-span-6">
                     <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                    <a href="http://localhost/prism/?cat=2"><?php echo $client ?></a>
+                    <a href="<?php echo $client_link; ?>"><?php echo $client_name ?></a>
                 </div>                  
                 <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                     if ( !empty($categories) && !is_wp_error($categories)): ?>
