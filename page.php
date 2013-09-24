@@ -5,7 +5,7 @@
             <?php if ( has_post_thumbnail() ): ?>
                 <div class="featured-image"><?php the_post_thumbnail(); ?></div>
             <?php endif; ?>
-            <article id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <header class="entry__header">
                     <h1 class="entry__title"><?php the_title(); ?></h1>
                     <div class="bleed--left"><hr class="separator separator--dotted grow"></div>
