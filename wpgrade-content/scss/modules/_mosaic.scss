@@ -42,7 +42,7 @@
             @include transform(translateX(-101%));
 
             .icon-plus {
-                padding-right: 0;
+                padding-right: 0; 
                 padding-top: 0.1em;
             }
         }
@@ -54,6 +54,10 @@
              -o-animation: slide-in .25s bezier(easeOutQuad);
                 animation: slide-in .25s bezier(easeOutQuad);
         @include transform(none);
+
+        .lt-ie9 & {
+            display: block;
+        }
     }
 
     .loaded .slide-out .image__item-link {
@@ -62,6 +66,10 @@
              -o-animation: slide-out .25s bezier(easeOutQuad);
                 animation: slide-out .25s bezier(easeOutQuad);
         @include transform(translateX(101%));
+
+        .lt-ie9 & {
+            display: none;
+        }
     }
 
     @-webkit-keyframes slide-out {

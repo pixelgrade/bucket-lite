@@ -233,9 +233,17 @@
         }
     }
 
-    .article-timestamp__right-box{
+    .article-timestamp__right-box {
         top: 0.7em;
         line-height: 0.9;
+    }
+
+    .lt-ie9 & {
+        @include rem(margin-top, 3*$half-spacing-unit);
+
+        .article-timestamp__right-box {
+            top: 0.2em;
+        }
     }
 
     @include media(from lap) {

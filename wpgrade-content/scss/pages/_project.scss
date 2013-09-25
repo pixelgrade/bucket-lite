@@ -190,6 +190,11 @@
         }        
     }
 
+    .entry__header {
+        border-right: 1px dotted $dark;
+        @include rem(margin-bottom, 2 * $base-spacing-unit);
+        @include rem(padding-right, 2 * $base-spacing-unit);
+    }
 
     .entry__title {
         @extend .gamma;
@@ -233,8 +238,13 @@
     }
 }
 
+<<<<<<< HEAD
+@include media(from hand) {
+    
+=======
 
 @include media(from hand) {
+>>>>>>> 4983c02e672acab6702b3dc37b924a42d6f0c04c
     .gutter--double {
         @include rem(border-left-width, 2 * $base-spacing-unit);    
     }

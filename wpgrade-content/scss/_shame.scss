@@ -306,4 +306,20 @@ img.mfp-img{
 .content {
     @include backface-visibility(hidden);
     @include perspective(1000px);
+    word-break: break-all;
+}
+
+.show-on-ie8 {
+    display: none;
+
+    .lt-ie9 .show-on-ie8 {
+        display: block;
+    }
+}
+
+.entry__content {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }

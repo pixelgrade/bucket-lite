@@ -140,8 +140,17 @@ li.comment{
 
 .comment-form-author,
 .comment-form-email,
-.comment-form-url{
+.comment-form-url {
     @extend .col-4;
+
+    .lt-ie9 & {
+        width: 30%;
+        float: none;
+        display: inline-block;
+    }
+}
+
+.comment-respond {
 
     input:not([type]), 
     input[type="color"], 
@@ -160,10 +169,21 @@ li.comment{
             outline: 1px solid #eab03f;
         }
     }
+
+    .lt-ie9 & input {
+        width: 100%;
+        padding: $half-spacing-unit/2 0;
+        border: 1px solid #e5e9eb;
+        outline: 0;
+
+        &:focus {
+            outline: 1px solid #eab03f;
+        }
+    }
 }
 
 .comment-form-comment,
-.form-submit{
+.form-submit {
     @extend .col-12;
 
     textarea{
@@ -187,4 +207,8 @@ li.comment{
     line-height: 1.71439 !important;
     text-transform: uppercase;
     float: right;
+
+    .lt-ie9 & {
+        width: 240px;
+    }
 }

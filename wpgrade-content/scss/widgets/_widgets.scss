@@ -3,6 +3,11 @@
 
     ul{
         @extend .nav;
+        // @extend .nav--stacked;
+
+        li {
+            display: block;
+        }
     }
 
     img{
@@ -28,6 +33,7 @@
         text-decoration: none;
     }
 }
+
     .widget-title{
         color: black;
         @include rem(margin, 0 0 $half-spacing-unit 0);
@@ -45,13 +51,13 @@
         }
     }
 
-@import "archive";
-@import "categories";
+// @import "archive";
+// @import "categories";
+// @import "nav-menu";
 @import "dribbble";
 @import "flickr";
 @import "gallery";
 @import "instagram";
-@import "nav-menu";
 @import "pages";
 @import "search";
 @import "tag-cloud";
