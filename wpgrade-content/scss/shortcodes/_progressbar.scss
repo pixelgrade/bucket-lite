@@ -1,15 +1,16 @@
 .progressbar {
-  @include rem(margin, $base-spacing-unit 0 3/2*$base-spacing-unit);
+  @include rem(margin, $base-spacing-unit 0);
   @include scale(1);
   opacity:1 !important; 
 }
 
     .progressbar-title {
       @include rem(margin-bottom, $base-spacing-unit/2);
-      @include font-size(15px);
+      @include rem(font-size, 15px);
       font-family: "Josefin Slab", serif;
       font-weight: bold;
       text-transform: uppercase;
+      color:$dark;
     }
 
     .progressbar-bar {
