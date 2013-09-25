@@ -1,7 +1,4 @@
 .pixcode--testimonial {
-    &:before{
-        @include rem(margin-top, -$base-spacing-unit);
-    }
 }
 
 .testimonial--big-text {

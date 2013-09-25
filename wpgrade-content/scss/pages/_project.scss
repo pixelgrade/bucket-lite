@@ -238,13 +238,7 @@
     }
 }
 
-<<<<<<< HEAD
 @include media(from hand) {
-    
-=======
-
-@include media(from hand) {
->>>>>>> 4983c02e672acab6702b3dc37b924a42d6f0c04c
     .gutter--double {
         @include rem(border-left-width, 2 * $base-spacing-unit);    
     }
