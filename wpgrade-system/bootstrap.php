@@ -70,7 +70,7 @@
 	}
 
 	// define custom post types and taxonomies
-	require wpgrade::themefilepath('wpgrade-content/inc/custom-entities'.EXT);
+//	require wpgrade::themefilepath('wpgrade-content/inc/custom-entities'.EXT);
 
 	// plugins & custom theme support
 	require wpgrade::themefilepath('wpgrade-content/inc/required-plugins/required-plugins.php');
