@@ -17,11 +17,26 @@
         display: none; //
         overflow: hidden;
         float: left;
-        @extend .span-6;
-        @extend .hand-span-6;
-        @extend .lap-span-4;
-        @extend .desk-span-3;
         position: relative;
+
+        .page-template-template-portfolio-php &{
+            @extend .span-12;
+            @extend .hand-span-6;
+            @extend .lap-span-4;
+            @extend .desk-span-3;            
+        }
+
+        .single-lens_gallery &{
+            @extend .span-6;
+            @extend .hand-span-6;
+            @extend .lap-span-4;
+            @extend .desk-span-3;            
+            margin-bottom: 0 !important;
+
+            .image__item-meta{
+                display: none;
+            }
+        }
 
         .image__item-link {
             @include transform(translateX(-101%));

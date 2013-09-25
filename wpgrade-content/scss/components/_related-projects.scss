@@ -123,13 +123,6 @@
                 @include opacity(1);
             }
 
-            .image_item-title, .image_item-description{
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: block;
-            }            
-
             /**
              * Not enough space for project categories,
              * hiding the folder icon
@@ -164,35 +157,3 @@
                 padding-top: 62.25%;
             }
         }
-
-/**
- * Hopefully for touch devices
- */
-
-.touch .related-projects_item{
-    @include rem(margin-bottom, $base-spacing-unit);
-
-    .image__item-meta{
-        @include opacity(1);
-        position: relative;
-        background: transparent;
-    }
-
-    .image_item-table{
-        @include opacity(1);
-    }
-
-    .image_item-description{
-        display: none;
-    }
-
-    .image_item-cell{
-        position: relative;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .image_item-cell--bottom{
-        display: none;
-    }    
-}

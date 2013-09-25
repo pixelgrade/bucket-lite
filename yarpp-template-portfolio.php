@@ -25,7 +25,7 @@ YARPP Template: Portfolio Related Projects
                                 $image_src = '';
 
                                 if(has_post_thumbnail()) {
-                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'blog-archive');
+                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-medium');
                                     $image_src = $thumb_url[0];
                                 }
                                 else{
@@ -43,7 +43,6 @@ YARPP Template: Portfolio Related Projects
                             <div class="image_item-table">
                                 <div class="image_item-cell image_item--block image_item-cell--top">
                                     <h3 class="image_item-title"><?php echo get_the_title(); ?></h3>
-                                    <span class="image_item-description"><?php short_text(get_the_excerpt(), 150, 150); ?></span>
                                 </div>
                                 <div class="image_item-cell image_item--block image_item-cell--bottom">
                                     <div class="image_item-meta grid">
