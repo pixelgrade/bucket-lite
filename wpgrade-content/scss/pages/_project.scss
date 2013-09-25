@@ -168,6 +168,7 @@
     .entry__header {
         border-right: 1px dotted $dark;
         @include rem(margin-bottom, 2 * $base-spacing-unit);
+        @include rem(padding-right, 2 * $base-spacing-unit);
     }
 
     .entry__title {
@@ -200,8 +201,11 @@
     }
 }
 
-.gutter--double {
-    @include rem(border-left-width, 2 * $base-spacing-unit);    
+@include media(from hand) {
+    
+    .gutter--double {
+        @include rem(border-left-width, 2 * $base-spacing-unit);    
+    }
 }
 
 

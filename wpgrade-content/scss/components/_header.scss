@@ -42,14 +42,21 @@
         height: 100%;
         position: fixed;
         overflow-y: auto;
-        @include rem(padding-left, $base-spacing-unit);
+        @include rem(padding-left, 2*$base-spacing-unit);
         @include rem(padding-right, $base-spacing-unit);
         @include rem(width, 250px);
-        @include rem(padding-left, 2*$base-spacing-unit);
         background-color: $dark;
 
         &:before, &:after { 
             content: "";
+        }
+
+        .lt-ie9 & {
+            @include rem(padding-left, $base-spacing-unit);
+
+            &:before, &:after {
+                content: none;
+            }
         }
     }
 
@@ -70,6 +77,7 @@
         background-size: 1px rem(12 * $base-spacing-unit);
         background-repeat: repeat-x;
         @include background-image(linear-gradient($accent-color, $other-color));
+
         @include transition(height 1s .3s ease-in-out);
         -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
            -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
@@ -84,12 +92,20 @@
                  -o-animation: loading 1s bezier(easeInOutQuad) forwards;
                     animation: loading 1s bezier(easeInOutQuad) forwards;
         }
+
+        .lt-ie9 & {
+            @include filter-gradient($accent-color, $other-color, vertical);
+        }
     }
 
     // the striped overlay
     &:after {
         background-size: 1px rem($base-spacing-unit/2);
         @include background-image(linear-gradient($dark 5%, $dark 91.66%, transparent 91.66%, transparent));
+
+        .lt-ie9 & {
+            display: none;
+        }
     }
 
     a {

@@ -34,7 +34,7 @@
     <div class="page-content single-portfolio-fullwidth">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="row">
-                <div class="col-4">
+                <div class="col-12 hand-col-5 lap-col-4">
                     <header class="entry__header">
                         <h1 class="entry__title"><?php the_title(); ?></h1>
                         <div class="entry__meta entry__meta--project cf">
@@ -56,7 +56,7 @@
                         </div>
                     </header><!-- .entry-header -->
                 </div>
-                <div class="col-8 gutter--double">
+                <div class="col-12 hand-col-7 lap-col-8 gutter--double">
                     <div class="entry__content project-entry-content">
                         <?php the_content(); ?>
                     </div><!-- .entry__content -->
@@ -64,10 +64,10 @@
             </div>
 
             <div class="row">
-                <div class="col-4">
+                <div class="col-12 hand-col-5 lap-col-4">
                     <hr class="separator separator--full-left"/>
                 </div>
-                <div class="col-8 gutter--double">
+                <div class="col-12 hand-col-7 lap-col-8 gutter--double">
                     <hr class="separator separator--striped"/>
                 </div>
             </div>
