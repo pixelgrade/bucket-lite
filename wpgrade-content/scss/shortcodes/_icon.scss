@@ -1,0 +1,54 @@
+/*----------------------------------------*\
+*   ICON SHORTCODE
+\*----------------------------------------*/
+
+i.shc {
+  display:inline-block;
+  line-height:1;
+
+  &.small {
+    @include rem(font-size, 18px);
+  }
+
+  &.medium {
+    @include rem(font-size, 30px);
+  }
+
+  &.big {
+    @include rem(font-size, 40px);
+  }
+
+  &.square, &.circle {
+    text-align:center;
+    line-height: 2em;
+    padding:0;
+    width: 2em;
+    height: 2em;
+    background: rgba(0,0,0,0.2);
+  }
+
+  &.circle {
+    @include border-radius(999px);
+  }
+}
+
+/*----------------------------------------*\
+*   ICON INSIDE A LINK
+\*----------------------------------------*/
+
+a > i.shc {
+  @include transition(all 0.15s);
+}
+
+a:hover {
+
+    & > i.shc {
+    text-decoration:none;
+    border:none;
+    color:$accent-color;
+  
+    &.circle, &.square {
+      background-color:$dark;
+    }
+  }
+}

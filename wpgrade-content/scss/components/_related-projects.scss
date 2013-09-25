@@ -119,6 +119,10 @@
                 width: 33.33333%;
             }
 
+            .image_item-table{
+                @include opacity(1);
+            }
+
             /**
              * Not enough space for project categories,
              * hiding the folder icon
@@ -130,7 +134,7 @@
 
             /**
              * Again, not enough space, everythins is
-             * too crouded, reducing padding
+             * too crowded => no side padding
              */
             .image_item-cell{
                 @include rem(padding, 10px);
@@ -153,5 +157,3 @@
                 padding-top: 62.25%;
             }
         }
-
-

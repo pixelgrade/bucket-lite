@@ -216,7 +216,7 @@
 					),
 				)
 			),
-			'lens_portfolio' => array(
+			'lens_portfolio_gallery' => array(
 				'id'         => 'portfolio_gallery',
 				'title'      => __('Gallery', wpgrade::textdomain()),
 				'pages'      => array( 'lens_portfolio' ), // Post type
@@ -228,6 +228,26 @@
 						'name' => __('Images', wpgrade::textdomain()),
 						'id'   => wpgrade::prefix() . 'portfolio_gallery',
 						'type' => 'gallery',
+					),
+				)
+			),
+			'lens_portfolio_metadata' => array(
+				'id'         => 'portfolio_metadata',
+				'title'      => __('Details', wpgrade::textdomain()),
+				'pages'      => array( 'lens_portfolio' ), // Post type
+				'context'    => 'side',
+				'priority'   => 'low',
+				'show_names' => true, // Show field names on the left
+				'fields' => array(
+					array(
+						'name' => __('Client Name', wpgrade::textdomain()),
+						'id'   => wpgrade::prefix() . 'portfolio_client_name',
+						'type' => 'text_medium',
+					),
+					array(
+						'name' => __('Client Link', wpgrade::textdomain()),
+						'id'   => wpgrade::prefix() . 'portfolio_client_link',
+						'type' => 'text_medium',
 					),
 					array(
 						'name' => __('Template', wpgrade::textdomain()),
@@ -249,7 +269,7 @@
 							),
 						),
 						'std' => 'fullwidth',
-					),					
+					),
 				)
 			),
 			'lens_gallery' => array(
@@ -289,6 +309,7 @@
 				)
 			)
 		);
+
 		update_option('pixtypes_themes_settings', $types_options);
 		// flush permalinks rules on theme activation
 		flush_rewrite_rules();
@@ -390,19 +411,17 @@
 	add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
 
 
-	// hook shortcodes params
-	add_filter('pixcodes_filter_params_for_divider', 'wpgrade_callback_remove_divider_params', 10, 1);
-	function wpgrade_callback_remove_divider_params( $params ){
-
-		//unset unneeded params and keep only the style one
-		if ( isset( $params['style'] )) {
-//			unset($params['select']);
-			$params['style']['admin_class'] = '';
-			return array('style' =>  $params['style']);
+		// hook shortcodes params
+		add_filter('pixcodes_filter_params_for_separator', 'wpgrade_callback_remove_separator_params', 10, 1);
+		
+		function wpgrade_callback_remove_separator_params( $params ){
+				//unset unneeded params and keep only the style one
+				if ( isset( $params['style'] )) {
+					$params['style']['admin_class'] = '';
+					return array('style' =>  $params['style']);
+				}
+				return $params;
 		}
-
-		return $params;
-	}
 
 	add_filter('pixcodes_filter_params_for_columns', 'wpgrade_callback_remove_columns_params', 10, 1);
 	function wpgrade_callback_remove_columns_params( $params ){

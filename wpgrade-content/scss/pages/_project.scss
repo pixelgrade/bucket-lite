@@ -29,11 +29,17 @@
         @include rem(margin-left, -$half-spacing-unit);
     }
 
-    .entry__meta-box{    
-        margin: 0;
+    @include media(to hand) {
+        .entry__meta-box{    
+            @include rem(margin-bottom, $half-spacing-unit);
+        }        
     }
 
     @include media(from hand) {
+        .entry__meta-box{    
+            margin: 0;
+        }
+
         .entry__meta-box, .likes-box, .social-links{
             @include rem(padding, 0 $half-spacing-unit);
         }
@@ -76,11 +82,19 @@
         @include rem(max-width, 1300px);
     }
 
-    .project-images{
-        @include rem(padding, 2 * $base-spacing-unit 0);
+    @include media(to lap) {
+        .project-images{
+            padding-top: 0;
+        }
     }
 
     @include media(from lap){
+        .project-images{
+            @include rem(padding, 2 * $base-spacing-unit 0);
+        }        
+    }
+
+    @include media(from lap) {
         article{
             display: table;
         }
@@ -165,6 +179,17 @@
 
 .single-portfolio-fullwidth {
 
+    @include media(from hand) {
+        .entry__header {
+            border-right: 1px dotted $dark;
+            @include rem(margin-bottom, 2 * $base-spacing-unit);
+        }
+
+        .entry__content {
+            @include rem(padding-top, 5 * $half-spacing-unit);
+        }        
+    }
+
     .entry__header {
         border-right: 1px dotted $dark;
         @include rem(margin-bottom, 2 * $base-spacing-unit);
@@ -196,13 +221,30 @@
         }
     }
 
-    .entry__content {
-        @include rem(padding-top, 5 * $half-spacing-unit);
+    .entry__meta.to-hand-visible{
+        @include rem(margin-bottom, $base-spacing-unit);
+    }            
+
+    @include media(to hand) {
+        .hand-visible{
+            display: none;
+        }
+    }
+
+    @include media(from hand) {
+        .to-hand-visible{
+            display: none;
+        }        
     }
 }
 
+<<<<<<< HEAD
 @include media(from hand) {
     
+=======
+
+@include media(from hand) {
+>>>>>>> 4983c02e672acab6702b3dc37b924a42d6f0c04c
     .gutter--double {
         @include rem(border-left-width, 2 * $base-spacing-unit);    
     }

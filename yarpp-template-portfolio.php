@@ -5,12 +5,12 @@ YARPP Template: Portfolio Related Projects
 ?>
 <section class="related-projects_container">
     <header class="related-projects_header">
-       <h4 class="related-projects_title">Related projects</h4>
+       <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
        <nav class="related-projects_nav">
            <ul class="related-projects_nav-list">
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><i class="icon-arrow-left"></i>Previous</a></li>
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link">All projects</a></li>
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link">Next<i class="icon-arrow-right"></i></a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><i class="icon-arrow-left"></i><?php _e("Previous", wpGrade::textdomain()); ?></a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("All projects", wpGrade::textdomain()); ?></a></li>
+               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("Next", wpGrade::textdomain()); ?><i class="icon-arrow-right"></i></a></li>
            </ul>
        </nav>
     </header>
@@ -22,22 +22,27 @@ YARPP Template: Portfolio Related Projects
                   <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="image__item-link">
                        <div class="image__item-wrapper">
                             <?php 
+                                $image_src = '';
+
                                 if(has_post_thumbnail()) {
-                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'blog-archive');
-                                } 
+                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-medium');
+                                    $image_src = $thumb_url[0];
+                                }
+                                else{
+                                    $image_src = get_template_directory_uri().'/wpgrade-content/img/camera.png';
+                                }
                             ?>
                             <img
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                data-src="<?php echo $thumb_url[0]; ?>"
+                                data-src="<?php echo $image_src; ?>"
                                 alt="Photography"
                             />
                         </div>                                        
                         <div class="image__item-meta image_item-meta--portfolio">
                             <div class="image_item-table">
                                 <div class="image_item-cell image_item--block image_item-cell--top">
-                                    <h3 class="image_item-title"><?php short_text(get_the_title($post->ID), 15, 15); ?></h3>
-                                    <span class="image_item-description"><?php short_text(get_the_excerpt(), 13, 13); ?></span>
+                                    <h3 class="image_item-title"><?php echo get_the_title(); ?></h3>
                                 </div>
                                 <div class="image_item-cell image_item--block image_item-cell--bottom">
                                     <div class="image_item-meta grid">
@@ -64,7 +69,7 @@ YARPP Template: Portfolio Related Projects
             --></ul>
 
         <?php else: ?>
-        <p>No related projects.</p>
+        <p><?php _e("No related projects", wpGrade::textdomain()); ?>.</p>
         <?php endif; ?>
     </div>
 </section>
