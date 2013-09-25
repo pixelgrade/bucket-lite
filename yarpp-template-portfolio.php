@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 YARPP Template: Portfolio Related Projects
 */
@@ -6,13 +6,24 @@ YARPP Template: Portfolio Related Projects
 <section class="related-projects_container">
     <header class="related-projects_header">
        <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
+
+       <?php echo wpgrade::pagination() ?>
+
+       <? /*
        <nav class="related-projects_nav">
            <ul class="related-projects_nav-list">
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><i class="icon-arrow-left"></i><?php _e("Previous", wpGrade::textdomain()); ?></a></li>
+               <li class="related-projects_nav-item">
+                    <a href="#" class="related-projects_nav-link">
+                        <i class="icon-arrow-left"></i>
+                        <?php _e("Previous", wpGrade::textdomain()); ?>
+                    </a>
+                </li>
                <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("All projects", wpGrade::textdomain()); ?></a></li>
                <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("Next", wpGrade::textdomain()); ?><i class="icon-arrow-right"></i></a></li>
            </ul>
        </nav>
+       */ ?>
+
     </header>
     <div class="related-projects_items-list-container">
         <?php if (have_posts()):?>
@@ -21,7 +32,7 @@ YARPP Template: Portfolio Related Projects
                 --><li class="related-projects_item">
                   <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="image__item-link">
                        <div class="image__item-wrapper">
-                            <?php 
+                            <?php
                                 $image_src = '';
 
                                 if(has_post_thumbnail()) {
@@ -29,7 +40,7 @@ YARPP Template: Portfolio Related Projects
                                     $image_src = $thumb_url[0];
                                 }
                                 else{
-                                    $image_src = get_template_directory_uri().'/wpgrade-content/img/camera.png';
+                                    $image_src = get_template_directory_uri().'/theme-content/img/camera.png';
                                 }
                             ?>
                             <img
@@ -38,7 +49,7 @@ YARPP Template: Portfolio Related Projects
                                 data-src="<?php echo $image_src; ?>"
                                 alt="Photography"
                             />
-                        </div>                                        
+                        </div>
                         <div class="image__item-meta image_item-meta--portfolio">
                             <div class="image_item-table">
                                 <div class="image_item-cell image_item--block image_item-cell--top">
@@ -53,14 +64,14 @@ YARPP Template: Portfolio Related Projects
                                                     <?php foreach ($categories as $cat): ?>
                                                         --><li class="image_item-category"><?php echo get_category($cat)->name; ?></li><!--
                                                     <?php endforeach; ?>
-                                            <?php endif; ?>                                      
+                                            <?php endif; ?>
                                         --></ul><!--
                                         --><?php if (function_exists( 'display_pixlikes' )) {
                                             display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
-                                        } 
-                                        ?>                                        
+                                        }
+                                        ?>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </a>
