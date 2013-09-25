@@ -26,7 +26,6 @@
                     $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
             ?>                
             <div class="mosaic__item photography">
-                <div class="rsPreloader"></div>
                 <a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
                     <div class="image__item-wrapper">
                         <img

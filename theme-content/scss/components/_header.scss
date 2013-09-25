@@ -1,0 +1,294 @@
+/*--------------------------------*\
+               HEADER
+\*--------------------------------*/
+
+@keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-o-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-ms-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-moz-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-webkit-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+.header {
+    @extend .inverse;
+    width: 100%;
+    position: absolute;
+    z-index: 300;
+
+    @include media(from hand) {
+        height: 100%;
+        position: fixed;
+        overflow-y: auto;
+        @include rem(padding-left, 2*$base-spacing-unit);
+        @include rem(padding-right, $base-spacing-unit);
+        @include rem(width, 250px);
+        background-color: $dark;
+
+        &:before, &:after { 
+            content: "";
+        }
+
+        .lt-ie9 & {
+            @include rem(padding-left, $base-spacing-unit);
+
+            &:before, &:after {
+                content: none;
+            }
+        }
+    }
+
+    // add the gradient stuff
+    &:before, &:after {
+        position: absolute;
+        display: block;
+        top: 0;
+        height: 100%;
+        z-index: 20;
+        @include rem(width, 7px);
+        @include rem(left, $base-spacing-unit);
+    }
+    
+    // the actual gradient
+    &:before {
+        background-color: $other-color;
+        background-size: 1px rem(12 * $base-spacing-unit);
+        background-repeat: repeat-x;
+        @include background-image(linear-gradient($accent-color, $other-color));
+
+        @include transition(height 1s .3s ease-in-out);
+        -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
+           -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
+            -ms-animation: loading 1s bezier(easeInOutQuad) forwards;
+             -o-animation: loading 1s bezier(easeInOutQuad) forwards;
+                animation: loading 1s bezier(easeInOutQuad) forwards;
+
+        .loading & {
+            -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
+               -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
+                -ms-animation: loading 1s bezier(easeInOutQuad) forwards;
+                 -o-animation: loading 1s bezier(easeInOutQuad) forwards;
+                    animation: loading 1s bezier(easeInOutQuad) forwards;
+        }
+
+        .lt-ie9 & {
+            @include filter-gradient($accent-color, $other-color, vertical);
+        }
+    }
+
+    // the striped overlay
+    &:after {
+        background-size: 1px rem($base-spacing-unit/2);
+        @include background-image(linear-gradient($dark 5%, $dark 91.66%, transparent 91.66%, transparent));
+
+        .lt-ie9 & {
+            display: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.header__inner-wrap {
+
+    @include media(to hand) {
+        position: relative;
+        left: 100%;
+        @include rem(top, -3 * $base-spacing-unit);
+        width: 75%;
+        height: 100%;
+        @include rem(padding, $half-spacing-unit $base-spacing-unit);
+        padding-bottom: 0;
+        background: $dark;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+/**
+*
+* Wrapper used to style navigation on small screens
+*
+**/
+.site-footer {
+  /* @todo: move with javascript */
+  @include media(to hand) {
+    display: none;
+  }
+}
+
+
+
+
+
+/*----------------------------------------*\
+*   $TRANSPARENT
+\*----------------------------------------*/
+
+// this is for transitioning to and from the full screen gallery page
+.header {
+    @include transition(all .3s ease-in-out);
+}
+
+.loading .header-transparent .header {
+    background-repeat: no-repeat;
+    background-position: -300px 0;
+}
+
+@include media(from hand) {
+    
+    /*body*/.header-transparent{
+
+        .header{
+            background-color: transparent;
+            @include background-image(linear-gradient(left, rgba(0,0,0,0.4) 5%, rgba(0,0,0,0) 100%));
+            @include rem(padding-bottom, $base-spacing-unit );
+
+            a{
+                color: white;
+            }
+
+            &:before, &:after{
+                display: none;
+            }
+        }
+
+        .site-header__branding{
+            background: none;
+            color: white;
+        }
+
+        .site-navigation--main, .menu-item--main{
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .menu-item--parent:after{
+            border-top-color: white;        
+        }
+
+        // .site-footer{
+        //     display: none;
+        // }
+
+        // .header-extra{
+        //     display: none;
+        // }
+    }
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $HEADER_INVERSE
+\*----------------------------------------*/
+
+/*body*/.header-inverse-color{
+    #page, .header, .header__inner-wrap{
+        background-color: #f5f5f5;  
+    }
+
+    .header{
+        @include media(to hand) {
+            .site-header__branding{
+                border-bottom: 1px solid white;
+            }
+        }
+
+        @include media(from hand) {
+            border-right: 1px solid white;
+        }
+
+        &:before, &:after{
+            display: none;
+        }
+
+        a{
+            color: black;
+            
+            &:hover{
+                color: #d5d200;
+            }
+        }
+
+        div{
+            color: black;
+        }
+    }
+
+
+    .site-header__branding{
+        background: transparent;
+        color: black;
+    }
+
+    .menu-item--parent:after{
+        border-top-color: black;        
+    }    
+}
+
+
+
+
+/*------------------------------*\
+               LOGO
+\*------------------------------*/
+
+.site-header__branding {
+    background-color: $dark;
+    @include backface-visibility(hidden);
+    @include perspective(1000px);
+    overflow: hidden;
+
+    @include media(from hand) {
+        @include rem(margin, 2*$base-spacing-unit 0);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    @include media(to hand) {
+        @include rem(height, 3 * $base-spacing-unit);
+    }
+}
+
+.site-logo {
+    display: block;
+    text-transform: uppercase;
+    @include font-size(30px);
+    font-weight: bold;
+
+    @include media(to hand) {
+        @include rem(margin-top, 17px);
+        @include rem(margin-left, 23px);
+    }
+
+    h1 {
+        margin: 0;
+    }
+}

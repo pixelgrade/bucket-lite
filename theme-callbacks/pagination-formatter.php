@@ -22,12 +22,6 @@
 	 * @return string
 	 */
 	function wpgrade_callback_pagination_formatter($links, $conf) {
-
-		return '[pagination placeholder]';
-
-		// @todo HIGH complete work....
-
-		$pager_links = array();
 		$linkcount = count($links);
 
 		// Calculate prev link
@@ -60,32 +54,17 @@
 			$next_link = $links[$linkcount - 1];
 		}
 
-		// Format current page
-		// -------------------
-
-		if ( ! empty($pager_links)) {
-			foreach ($links as $key => $link) {
-				if (preg_match('/current/', $link)) {
-					$pager_links[1] = '<span class="page">Page</span>';
-					$pager_links[2] = $link;
-					break;
-				}
-			}
-		}
-
-		if ($last_el > 0) {
-			$pager_links[3] = '<span class="dots-of">of</span>';
-			$pager_links[4] = $links[$last_el];
-		}
-
-		ksort($pager_links);
-
-		$result = '';
-		foreach ($pager_links as $key => $link) {
-			$result .= $link;
-		}
-
-		$result .= '</div>';
-
-		return $result;
+		return
+			'
+				<div class="wpgrade_pagination">
+					'.$prev_page.'
+					<div class="pages">
+						<span class="page">Page</span>
+						<span class="page-numbers current">'.$conf['current'].'</span>
+						<span class="dots-of">of</span>
+						<a class="page-numbers" href="'.str_replace('%#%', $conf['total'], $conf['format']).'">8</a>
+					</div>
+					'.$next_link.'
+				</div>
+			';
 	}

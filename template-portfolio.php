@@ -74,7 +74,7 @@ get_header(); ?>
                             <img
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                data-src="<?php echo get_template_directory_uri().'/wpgrade-content/img/camera.png'; ?>"
+                                data-src="<?php echo get_template_directory_uri().'/theme-content/img/camera.png'; ?>"
                                 alt=""
                             />
                         <?php endif ?>

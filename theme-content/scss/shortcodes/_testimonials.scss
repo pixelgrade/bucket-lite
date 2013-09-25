@@ -1,0 +1,23 @@
+.pixcode--testimonial {
+}
+
+.testimonial--big-text {
+
+    .quote__content {
+        @include font-size(36px);
+    }
+}
+
+.testimonial--medium-text {
+
+    .quote__content {
+        @include font-size(30px);
+    }
+}
+
+.testimonial--small-text {
+
+    .quote__content {
+        @include font-size(20px);
+    }
+}

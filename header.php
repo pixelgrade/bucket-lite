@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +31,9 @@
     $data_smoothscrolling = (wpgrade::option('use_smooth_scroll') != '') ? 'data-smoothscrolling' : '';
 ?>
 <body <?php body_class($class_name); echo ' ' . $data_ajaxloading . ' ' . $data_smoothscrolling; ?>>
+    <div class="pace">
+        <div class="pace-activity"></div>
+    </div>
     <div id="page">
         <div class="wrapper">
             <div class="header">
