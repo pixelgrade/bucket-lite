@@ -1,10 +1,9 @@
 .progressbar {
   @include rem(margin, $base-spacing-unit 0);
   @include scale(1);
-  opacity:1 !important; 
 }
 
-    .progressbar-title {
+    .progressbar__title {
       @include rem(margin-bottom, $base-spacing-unit/2);
       @include rem(font-size, 15px);
       font-family: "Josefin Slab", serif;
@@ -13,14 +12,14 @@
       color:$dark;
     }
 
-    .progressbar-bar {
+    .progressbar__bar {
       position: relative;
       width: 100%;
       @include rem(height, 14px);
       border-bottom: 1px dotted black;
     }
 
-        .progressbar-progress {
+        .progressbar__progress {
           background-color: $accent-color;
           position: absolute;
           top: 0; left: 0;
@@ -29,7 +28,7 @@
           @include transition(all 1s 1s cubic-bezier(0.645, 0.045, 0.355, 1.000));
         }
 
-            .progressbar-tooltip {
+            .progressbar__tooltip {
               @include rem(font-size, 14px);
               @include rem(width, 56px);
               position: absolute;
@@ -47,15 +46,8 @@
               display: block;
             }        
 
-        .progressbar-marker {
+        .progressbar__marker {
           position: absolute;
           top: 0; left: 0;
           @include rem(height, 13px);
         }
-
-.progressbar.is-visible {
-
-  .progressbar-tooltip {
-    @include opacity(1);
-  }
-}
