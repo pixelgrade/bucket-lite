@@ -11,7 +11,6 @@
     position: relative;
     @include transform(translate3d(0,0,0));
 }
-
     .mosaic__item {
         // opacity: 0; //
         display: none; //
@@ -32,10 +31,6 @@
             @extend .lap-span-4;
             @extend .desk-span-3;            
             margin-bottom: 0 !important;
-
-            .touch & .image__item-meta{
-                display: none;
-            }
         }
 
         .image__item-link {
@@ -146,6 +141,9 @@
         opacity: 1;
     }
 
+.touch .single-gallery-masonry .image__item-meta{
+    display: none;
+}
 
 
 /*--------------------------------*\
