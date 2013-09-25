@@ -9931,17 +9931,32 @@ li.comment .children:before {
   text-transform: uppercase;
 }
 .likes-box .like-link {
+  height: 48px;
+  height: 2.66667rem;
+  width: 48px;
+  width: 2.66667rem;
   padding: 0;
   background: none;
   border: none;
   cursor: pointer;
-}
-.likes-box i {
-  margin-left: -3px;
-  padding-right: 0;
+  border: 3px solid black;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+.likes-box i {
+  height: 48px;
+  height: 2.66667rem;
+  width: 48px;
+  width: 2.66667rem;
+  padding-top: 12px;
+  padding-top: 0.66667rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: -3px;
+  margin-left: -3px;
+  padding-right: 0;
   color: black !important;
   background-color: #fffc00;
   -webkit-transform: scale(0.75);
@@ -10054,27 +10069,25 @@ li.comment .children:before {
     float: left;
   }
 }
+.likes-box--footer .like-link {
+  margin-right: 6px;
+  margin-right: 0.33333rem;
+  display: inline-block;
+  float: left;
+}
 .likes-box--footer i {
   display: inline-block;
-  height: 36px;
-  height: 2rem;
-  width: 36px;
-  width: 2rem;
-  margin: 6px 0;
-  margin:  0.33333rem 0;
-  padding-top: 4.8px;
-  padding-top: 0.26667rem;
-  margin-right: 15px;
-  margin-right: 0.83333rem;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 3px solid black;
 }
 .likes-box--footer .likes-text {
+  margin-top: 13.2px;
+  margin-top: 0.73333rem;
   display: inline-block;
-  margin-top: 12px;
-  margin-top: 0.66667rem;
+}
+
+.image_item-table .like-link, .image_item-table i {
+  border: 0;
+  width: auto;
+  height: auto;
 }
 
 /*----------------------------------------*\
@@ -11020,26 +11033,9 @@ li.comment .children:before {
 .likes-box--article .like-link {
   float: left;
   display: block;
-  height: 48px;
-  height: 2.66667rem;
-  width: 48px;
-  width: 2.66667rem;
-  margin: 12px auto;
-  margin:  0.66667rem auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 3px solid black;
 }
 .likes-box--article i {
-  height: 48px;
-  height: 2.66667rem;
-  width: 48px;
-  width: 2.66667rem;
-  padding-top: 12px;
-  padding-top: 0.66667rem;
   display: block;
-  margin-top: -3px;
 }
 
 @media only screen and (min-width: 72.33333em) {
