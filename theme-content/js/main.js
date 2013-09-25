@@ -4222,13 +4222,21 @@ function loadUp(){
 
 function eventHandlersOnce() {
 
+
     $('.js-nav-trigger').on('click', function(e) {
         $('html').toggleClass('navigation--is-visible');
     }); 
 };
 
 
-
+function likeBoxAnimation(){
+    $(document).on('click', '.can_like .like-link', function(event){
+        event.preventDefault();
+        var $iElem = $(this).find('i');
+        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
+        // $(this).addClass('animate-like');
+    });
+}
 
 
 /* --- GLOBAL EVENT HANDLERS --- */
@@ -4247,6 +4255,8 @@ function eventHandlers() {
         },
         timeout: 300
     });    
+
+    likeBoxAnimation();
 };
 
 
