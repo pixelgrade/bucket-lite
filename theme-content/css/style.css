@@ -7916,7 +7916,7 @@ a {
   position: relative; }
   .single-lens_gallery .mosaic__item {
     margin-bottom: 0 !important; }
-    .single-lens_gallery .mosaic__item .image__item-meta {
+    .touch .single-lens_gallery .mosaic__item .image__item-meta {
       display: none; }
   .mosaic__item .image__item-link {
     -webkit-transform: translateX(-101%);

@@ -9,7 +9,7 @@ YARPP Template: Portfolio Related Projects
 
        <?php echo wpgrade::pagination() ?>
 
-       <? /*
+       <?php /*
        <nav class="related-projects_nav">
            <ul class="related-projects_nav-list">
                <li class="related-projects_nav-item">
