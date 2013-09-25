@@ -148,7 +148,13 @@
         text-transform: uppercase;
 
         @include media(to lap) {
-            @include font-size(21px);
+            font-size: 1.2em !important;
+        }
+        
+        @include media(to hand){
+            .touch &{
+                font-size: 1em !important;            
+            }
         }
     }
 
@@ -161,7 +167,7 @@
 
     .image_item-meta{
 
-        @include media(to lap) {
+        .touch{
             @include rem(margin-bottom, $base-spacing-unit);
             @include rem(padding, $half-spacing-unit 0);
             position: relative;
@@ -229,3 +235,42 @@
                 }
             }
         }
+
+/**
+ * Hopefully for touch devices
+ */
+
+.touch {
+    .mosaic__item, .related-projects_item{
+        @include rem(margin-bottom, $base-spacing-unit);
+
+        .image__item-meta{
+            @include opacity(1);
+            position: relative;
+            background: transparent;
+        }
+
+        .image_item-table{
+            @include opacity(1);
+        }
+
+        .image_item-description{
+            display: none;
+        }
+
+        .image_item-cell{
+            position: relative;
+            @include rem(padding, 6px 0 0 0);
+        }
+
+        .image_item-cell--bottom{
+            display: none;
+        }
+    }
+
+    .mosaic__item{
+        .image_item-cell{
+            @include rem(padding-left, 6px);
+        }
+    }    
+}        

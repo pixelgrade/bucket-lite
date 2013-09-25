@@ -22,22 +22,27 @@ YARPP Template: Portfolio Related Projects
                   <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="image__item-link">
                        <div class="image__item-wrapper">
                             <?php 
+                                $image_src = '';
+
                                 if(has_post_thumbnail()) {
-                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'blog-archive');
-                                } 
+                                    $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-medium');
+                                    $image_src = $thumb_url[0];
+                                }
+                                else{
+                                    $image_src = get_template_directory_uri().'/wpgrade-content/img/camera.png';
+                                }
                             ?>
                             <img
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                data-src="<?php echo $thumb_url[0]; ?>"
+                                data-src="<?php echo $image_src; ?>"
                                 alt="Photography"
                             />
                         </div>                                        
                         <div class="image__item-meta image_item-meta--portfolio">
                             <div class="image_item-table">
                                 <div class="image_item-cell image_item--block image_item-cell--top">
-                                    <h3 class="image_item-title"><?php short_text(get_the_title($post->ID), 15, 15); ?></h3>
-                                    <span class="image_item-description"><?php short_text(get_the_excerpt(), 13, 13); ?></span>
+                                    <h3 class="image_item-title"><?php echo get_the_title(); ?></h3>
                                 </div>
                                 <div class="image_item-cell image_item--block image_item-cell--bottom">
                                     <div class="image_item-meta grid">

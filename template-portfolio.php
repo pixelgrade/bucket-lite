@@ -96,9 +96,9 @@ get_header(); ?>
                                             <?php endforeach; ?>
                                         <?php endif; ?>                                      
                                     </ul><!--
-                                    --><?php /* if (function_exists( 'display_pixlikes' )) {
+                                    --><?php  if (function_exists( 'display_pixlikes' )) {
                                             display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
-                                        } */ 
+                                        }  
                                     ?>
                                 </div>
                             </div>                                
