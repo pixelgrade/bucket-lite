@@ -22,12 +22,14 @@ html {
     font-family: $heading-font-family;
     @include rem(margin-bottom, $half-spacing-unit);
     @include rem(margin-top, $base-spacing-unit);
+    color:$dark;
 }
 
 .delta,
 .epsilon,
 .zeta {
     text-transform: uppercase;
+    font-weight:700;
     @include rem(letter-spacing, 2px);
 }
 
@@ -128,13 +130,6 @@ ol {
         @include font-size(16px);
     }
     
-}
-
-.btn {
-    font-family: "Roboto", sans-serif;
-    @include font-size(14px);
-    text-transform: uppercase;
-    background-color: $accent-color;
 }
 
 .emphasized {

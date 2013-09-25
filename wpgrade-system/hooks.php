@@ -411,18 +411,17 @@
 	add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
 
 
-	// hook shortcodes params
-	add_filter('pixcodes_filter_params_for_divider', 'wpgrade_callback_remove_divider_params', 10, 1);
-	function wpgrade_callback_remove_divider_params( $params ){
-
-		//unset unneeded params and keep only the style one
-		if ( isset( $params['style'] )) {
-			$params['style']['admin_class'] = '';
-			return array('style' =>  $params['style']);
+		// hook shortcodes params
+		add_filter('pixcodes_filter_params_for_separator', 'wpgrade_callback_remove_separator_params', 10, 1);
+		
+		function wpgrade_callback_remove_separator_params( $params ){
+				//unset unneeded params and keep only the style one
+				if ( isset( $params['style'] )) {
+					$params['style']['admin_class'] = '';
+					return array('style' =>  $params['style']);
+				}
+				return $params;
 		}
-
-		return $params;
-	}
 
 	add_filter('pixcodes_filter_params_for_columns', 'wpgrade_callback_remove_columns_params', 10, 1);
 	function wpgrade_callback_remove_columns_params( $params ){
