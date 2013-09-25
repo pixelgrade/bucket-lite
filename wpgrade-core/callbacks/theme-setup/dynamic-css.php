@@ -77,6 +77,6 @@
 
 		// if we didn't include the style inline, pass it to the script
 		if ( ! wpgrade::option('display_custom_css_inline')) {
-			 wp_enqueue_style('wpgrade-php-style', get_template_directory_uri().'/library/css/custom.css.php?'.http_build_query($style_query, '', '&amp;'));
+			 wp_enqueue_style('wpgrade-php-style', wpgrade::content_url() . 'css/custom.css.php?'.http_build_query($style_query, '', '&amp;'));
 		}
 	}

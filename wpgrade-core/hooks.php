@@ -7,15 +7,6 @@
 	# This file assigns environment hooks.
 	#
 
-	// theme activation
-
-	function wpgrade_callback_flush_permalinks() {
-		// flush permalinks rules on theme activation
-		flush_rewrite_rules();
-	}
-
-	add_action('after_switch_theme', 'wpgrade_callback_flush_permalinks');
-
 
 	// Theme Setup
 	// ------------------------------------------------------------------------
@@ -50,8 +41,8 @@
 		add_filter('the_content', 'wpgrade_callback_cleanup_the_content');
 		// cleanup excerpt (eg. replace [..] with a Read more link)
 //		add_filter('excerpt_more', 'wpgrade_callback_cleanup_excerpt');
-		// cleanup read more tag link
-		add_filter('the_content_more_link', 'wpgrade_callback_cleanup_readmore_content', 10, 2);
+//		// cleanup read more tag link
+//		add_filter('the_content_more_link', 'wpgrade_callback_cleanup_readmore_content', 10, 2);
 	}
 
 	add_action('after_setup_theme', 'wpgrade_callback_themesetup', 16);
@@ -70,7 +61,7 @@
 		// current theme
 		if ($current_options) {
 			$diff = array_diff($shortcodes, $current_options);
-			if (empty($diff) && is_admin()) {
+			if (!empty($diff) && is_admin()) {
 				update_option('wpgrade_shortcodes_list', $shortcodes);
 			}
 		}
@@ -98,16 +89,3 @@
 			include wpgrade::themefilepath('theme-partials/wpgrade-partials/ie-shim'.EXT);
 		}
 	}
-
-	add_action('wp_head', 'wpgrade_callbacks_html5_shim');
-
-
-	/**
-	 * Misc admin panel tweaks.
-	 */
-	function wpgrade_callbacks_admin_head_tweaks() {
-		// @andreilupu shouldn't this be in the plugin itself?
-		include wpgrade::themefilepath('theme-partials/wpgrade-partials/admin-head-tweaks'.EXT);
-	}
-
-	add_action('admin_head', 'wpgrade_callbacks_admin_head_tweaks');

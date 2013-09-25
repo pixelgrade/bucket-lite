@@ -69,9 +69,6 @@
 		require wpgrade::themefilepath('theme-content/inc/upgrade-notifier'.EXT);
 	}
 
-	// define custom post types and taxonomies
-	require wpgrade::themefilepath('theme-content/inc/custom-entities'.EXT);
-
 	// plugins & custom theme support
 	require wpgrade::themefilepath('theme-content/inc/required-plugins/required-plugins.php');
 	require wpgrade::themefilepath('theme-content/inc/widgets.php');
@@ -82,7 +79,6 @@
 	require wpgrade::themefilepath('theme-content/inc/portfolio-gallery.php');
 	require wpgrade::themefilepath('theme-content/inc/template-tags.php');
 	require wpgrade::themefilepath('theme-content/inc/theme-defaults.php');
-	// include wpgrade::themefilepath('theme-content/inc/metaboxes/metaboxes.php');
 	include wpgrade::themefilepath('theme-content/inc/social.php');
 	include wpgrade::themefilepath('theme-content/inc/admin-help-pointers.php');
 

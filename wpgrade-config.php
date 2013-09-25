@@ -44,7 +44,7 @@
 
 		'shortcodes' => array
 			(
-                 'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'TeamMember', 'Separator', 'ProgressBar'
+                 'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'TeamMember', 'Separator', 'ProgressBar', 'Slider'
 			),
 
 		'resources' => array
