@@ -148,7 +148,7 @@
         text-transform: uppercase;
 
         @include media(to lap) {
-            @include font-size(21px);
+            font-size: 1.2em !important;
         }
     }
 
@@ -161,7 +161,7 @@
 
     .image_item-meta{
 
-        @include media(to lap) {
+        .touch{
             @include rem(margin-bottom, $base-spacing-unit);
             @include rem(padding, $half-spacing-unit 0);
             position: relative;
