@@ -69,8 +69,8 @@
                                     ),
                                 'wpgrade-main-scripts' => array
                                     (
-                                        'path' => get_template_directory_uri() . '/wpgrade-content/js/main.js',
-                                        'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/js/main.js')),
+                                        'path' => get_template_directory_uri() . '/theme-content/js/main.js',
+                                        'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/js/main.js')),
                                         'require' => array
                                             (
                                                 'jquery',
@@ -87,8 +87,8 @@
                                     ),
 								'wpgrade-main-style' => array
 									(
-										'path' => get_template_directory_uri().'/wpgrade-content/css/style.css',
-										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('wpgrade-content/css/style.css')),
+										'path' => get_template_directory_uri().'/theme-content/css/style.css',
+										'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/css/style.css')),
 									),
 
 							)
