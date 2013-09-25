@@ -13,9 +13,10 @@ function wpGrade_add_meta_boxes( $post_type )
         // It's a comment or a link, or something else
         return;
     }
-	
-    remove_meta_box( 'formatdiv', $post_type, 'side' );
-    add_meta_box( 'wpGrade_formatdiv', __( 'Format', wpgrade::textdomain() ), 'wpGrade_post_format_meta_box', $post_type, 'side', 'core' );
+    if ( current_theme_supports( 'post-formats' ) && post_type_supports( $post_type, 'post-formats' ) && ( is_array( $GLOBALS['_wp_post_type_features'][$post_type]['post-formats'] ) )) {
+        remove_meta_box( 'formatdiv', $post_type, 'side' );
+        add_meta_box( 'wpGrade_formatdiv', __( 'Format', wpgrade::textdomain() ), 'wpGrade_post_format_meta_box', $post_type, 'side', 'core' );
+    }
 }
 
 function wpGrade_post_format_meta_box( $post, $box ) {

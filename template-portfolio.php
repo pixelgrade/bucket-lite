@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Portfolio
+Template Name: Portfolio Page
 */
 get_header(); ?>
 <div id="main" class="content djax-updatable">

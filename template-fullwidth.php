@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Full-Width
+Template Name: Full Width Page
 */ 
 get_header(); ?>
 <div id="main" class="content full-width djax-updatable">

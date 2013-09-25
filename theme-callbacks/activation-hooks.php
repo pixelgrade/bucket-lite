@@ -299,7 +299,43 @@ function wpgrade_callback_geting_active() {
 					'std' => 'fullwidth',
 				),
 			)
-		)
+		),
+                'lens_homepage_chooser' => array(
+			'id'         => 'lens_gallery',
+			'title'      => 'Choose Your Home Page',
+			'pages'      => array( 'page' ), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+							array(
+								'name' => __('Choose:', wpgrade::textdomain()),
+								'desc' => __('Select what would you like to be your home page. If you want to have a static page as your homepage simply go the WP classic way and set it up in Settings > Reading (instead of this one).', wpgrade::textdomain()),
+								'id' => wpgrade::prefix() . 'custom_homepage',
+								'type' => 'radio_inline',
+								'options' => array(
+									array(
+										'name' => 'Portfolio Archive',
+										'value' => 'portfolio'
+									),
+									array(
+										'name' => 'Gallery',
+										'value' => 'gallery'
+									),
+								),
+								'std' => 'portfolio',
+							),
+							array(
+								'name' => __('Select a gallery', wpgrade::textdomain()),
+								'desc' => __('Select a gallery and we will show it on your homepage.', wpgrade::textdomain()),
+								'id' => wpgrade::prefix() . 'homepage_gallery',
+								'type' => 'select_cpt_post',
+								'options' => array(
+									'post_type' => 'lens_gallery',
+								),
+							),
+					)
+		),
 	);
 
 	update_option('pixtypes_themes_settings', $types_options);
