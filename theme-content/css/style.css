@@ -232,7 +232,7 @@ figure {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -462,7 +462,7 @@ a [class*=" icon-"] {
 
 .icon-border {
   border: solid 1px #eeeeee;
-  padding: .2em .25em .15em;
+  padding: 0.2em 0.25em 0.15em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; }
@@ -2469,7 +2469,7 @@ figure {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -5705,7 +5705,7 @@ html.flexbox {
  * Add/remove floats
  */
 .float--right {
-  float: right !important; }
+  float: right!important; }
 
 .float--left {
   float: left !important; }
@@ -5720,7 +5720,7 @@ html.flexbox {
   text-align: left !important; }
 
 .text--center {
-  text-align: center !important; }
+  text-align: center!important; }
 
 .text--right, .mosaic__filter {
   text-align: right !important; }
@@ -5729,13 +5729,13 @@ html.flexbox {
  * Font weights
  */
 .weight--light {
-  font-weight: 300 !important; }
+  font-weight: 300!important; }
 
 .weight--normal {
-  font-weight: 400 !important; }
+  font-weight: 400!important; }
 
 .weight--semibold {
-  font-weight: 600 !important; }
+  font-weight: 600!important; }
 
 /**
  * Add/remove margins
@@ -5787,27 +5787,27 @@ html.flexbox {
   margin-left: 12px !important; }
 
 .flush {
-  margin: 0 !important; }
+  margin: 0!important; }
 
 .flush--top {
-  margin-top: 0 !important; }
+  margin-top: 0!important; }
 
 .flush--right {
-  margin-right: 0 !important; }
+  margin-right: 0!important; }
 
 .flush--bottom {
-  margin-bottom: 0 !important; }
+  margin-bottom: 0!important; }
 
 .flush--left {
-  margin-left: 0 !important; }
+  margin-left: 0!important; }
 
 .flush--ends {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important; }
+  margin-top: 0!important;
+  margin-bottom: 0!important; }
 
 .flush--sides {
-  margin-right: 0 !important;
-  margin-left: 0 !important; }
+  margin-right: 0!important;
+  margin-left: 0!important; }
 
 /**
  * Add/remove paddings
@@ -5859,27 +5859,27 @@ html.flexbox {
   padding-left: 12px !important; }
 
 .hard {
-  padding: 0 !important; }
+  padding: 0!important; }
 
 .hard--top {
-  padding-top: 0 !important; }
+  padding-top: 0!important; }
 
 .hard--right {
-  padding-right: 0 !important; }
+  padding-right: 0!important; }
 
 .hard--bottom {
-  padding-bottom: 0 !important; }
+  padding-bottom: 0!important; }
 
 .hard--left {
-  padding-left: 0 !important; }
+  padding-left: 0!important; }
 
 .hard--ends {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important; }
+  padding-top: 0!important;
+  padding-bottom: 0!important; }
 
 .hard--sides {
-  padding-right: 0 !important;
-  padding-left: 0 !important; }
+  padding-right: 0!important;
+  padding-left: 0!important; }
 
 /**
  * Pull items full width of `.island` parents.
@@ -5896,13 +5896,13 @@ html.flexbox {
  * `:hover`.
  */
 .informative {
-  cursor: help !important; }
+  cursor: help!important; }
 
 /**
  * Mute an object by reducing its opacity.
  */
 .muted {
-  opacity: 0.5 !important;
+  opacity: 0.5!important;
   filter: alpha(opacity=50) !important; }
 
 /**
@@ -5912,7 +5912,7 @@ html.flexbox {
  *
  */
 .proceed {
-  text-align: right !important; }
+  text-align: right!important; }
 
 /**
  * Add a right-angled quote to links that imply movement, e.g.:
@@ -5927,7 +5927,7 @@ html.flexbox {
  * Apply capital case to an element (usually a `strong`).
  */
 .caps {
-  text-transform: uppercase !important; }
+  text-transform: uppercase!important; }
 
 /**
  * Hide content off-screen without resorting to `display:none;`, also provide
@@ -5935,81 +5935,81 @@ html.flexbox {
  */
 .accessibility,
 .visuallyhidden {
-  border: 0 !important;
+  border: 0!important;
   clip: rect(0 0 0 0) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important; }
+  height: 1px!important;
+  margin: -1px!important;
+  overflow: hidden!important;
+  padding: 0!important;
+  position: absolute!important;
+  width: 1px!important; }
 
 @media only screen and (max-width: 480px) {
   .accessibility--palm,
   .visuallyhidden--palm {
-    border: 0 !important;
+    border: 0!important;
     clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important; } }
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important; } }
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
   .accessibility--lap,
   .visuallyhidden--lap {
-    border: 0 !important;
+    border: 0!important;
     clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important; } }
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important; } }
 @media only screen and (min-width: 481px) {
   .accessibility--lap-and-up,
   .visuallyhidden--lap-and-up {
-    border: 0 !important;
+    border: 0!important;
     clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important; } }
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important; } }
 @media only screen and (max-width: 1023px) {
   .accessibility--portable,
   .visuallyhidden--portable {
-    border: 0 !important;
+    border: 0!important;
     clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important; } }
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important; } }
 @media only screen and (min-width: 1024px) {
   .accessibility--desk,
   .visuallyhidden--desk {
-    border: 0 !important;
+    border: 0!important;
     clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important; } }
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important; } }
 @media only screen and (min-width: 1200px) {
   .accessibility--desk-wide,
   .visuallyhidden--desk-wide {
-    border: 0 !important;
+    border: 0!important;
     clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important; } }
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important; } }
 /* endif */
 /*----------------------------------------*\
 *   $PLUGINS
@@ -6093,10 +6093,10 @@ html.flexbox {
 .rsHidden {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  -moz-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  -o-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-  transition: visibility 0s linear 0.3s,opacity 0.3s linear; }
+  -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -moz-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -o-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear; }
 
 .rsGCaption {
   width: 100%;
@@ -10187,19 +10187,19 @@ a:hover > i.shc {
   .page .featured-image, .loaded
   .single-lens_gallery .pixslider, .loaded
   #gmap {
-    -webkit-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
-    -moz-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
-    -o-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
-    animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards; }
+    -webkit-animation: slidein 0.25s ease-in-out forwards, fadein 0.25s ease-in-out forwards;
+    -moz-animation: slidein 0.25s ease-in-out forwards, fadein 0.25s ease-in-out forwards;
+    -o-animation: slidein 0.25s ease-in-out forwards, fadein 0.25s ease-in-out forwards;
+    animation: slidein 0.25s ease-in-out forwards, fadein 0.25s ease-in-out forwards; }
   .loading .single .featured-image, .loading
   .page .featured-image, .loading
   .single-lens_gallery .pixslider, .loading
   #gmap {
     opacity: 1;
-    -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
-    -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
-    -o-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
-    animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards; }
+    -webkit-animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards;
+    -moz-animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards;
+    -o-animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards;
+    animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards; }
 
 .single-lens_gallery .pixslider .rsBullets,
 .single-lens_gallery .gallery-control {
@@ -10216,17 +10216,17 @@ a:hover > i.shc {
   perspective: 1000px; }
   .loaded .single-lens_gallery .pixslider .rsBullets, .loaded
   .single-lens_gallery .gallery-control {
-    -webkit-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
-    -moz-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
-    -o-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
-    animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards; }
+    -webkit-animation: slidein 0.25s 0.5s ease-in-out forwards, fadein 0.25s 0.5s ease-in-out forwards;
+    -moz-animation: slidein 0.25s 0.5s ease-in-out forwards, fadein 0.25s 0.5s ease-in-out forwards;
+    -o-animation: slidein 0.25s 0.5s ease-in-out forwards, fadein 0.25s 0.5s ease-in-out forwards;
+    animation: slidein 0.25s 0.5s ease-in-out forwards, fadein 0.25s 0.5s ease-in-out forwards; }
   .loading .single-lens_gallery .pixslider .rsBullets, .loading
   .single-lens_gallery .gallery-control {
     opacity: 1;
-    -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
-    -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
-    -o-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
-    animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards; }
+    -webkit-animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards;
+    -moz-animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards;
+    -o-animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards;
+    animation: slideout 0.25s ease-in-out forwards, fadeout 0.25s ease-in-out forwards; }
 
 .single .entry__title,
 .page .entry__title {
@@ -10564,5 +10564,3 @@ img.mfp-img {
 .entry__content img {
   max-width: 100%;
   height: auto; }
-
-/*@ sourceMappingURL=style.css.map */
