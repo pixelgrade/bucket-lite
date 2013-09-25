@@ -28,7 +28,7 @@
 		// -------------------
 
 		if ($linkcount == 0 || ! preg_match('/class="prev/', $links[0])) {
-			$prev_page =
+			$prev_page = # disabled version
 				'
 					<a class="prev disabled page-numbers">
 						'.$conf['prev_text'].'
@@ -43,7 +43,7 @@
 		// -------------------
 
 		if ($linkcount == 0 || ! preg_match('/class="next/', $links[$linkcount - 1])) {
-			$next_link =
+			$next_page = # disabled version
 				'
 					<a class="next disabled page-numbers">
 						'.$conf['next_text'].'
@@ -51,20 +51,27 @@
 				';
 		}
 		else { // we have next link
-			$next_link = $links[$linkcount - 1];
+			$next_page = $links[$linkcount - 1];
 		}
+
+		$all_projects_link = '#';
 
 		return
 			'
-				<div class="wpgrade_pagination">
-					'.$prev_page.'
-					<div class="pages">
-						<span class="page">Page</span>
-						<span class="page-numbers current">'.$conf['current'].'</span>
-						<span class="dots-of">of</span>
-						<a class="page-numbers" href="'.str_replace('%#%', $conf['total'], $conf['format']).'">8</a>
-					</div>
-					'.$next_link.'
-				</div>
+				<nav class="related-projects_nav">
+					<ul class="related-projects_nav-list">
+						<li class="related-projects_nav-item">
+							'.$prev_page.'
+						</li>
+						<li class="related-projects_nav-item">
+							<a href="'.$all_projects_link.'" class="related-projects_nav-link">
+								'.__("All projects", wpGrade::textdomain()).'
+							</a>
+						</li>
+						<li class="related-projects_nav-item">
+							'.$next_page.'
+						</li>
+					</ul>
+				</nav>
 			';
 	}
