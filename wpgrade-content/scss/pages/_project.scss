@@ -44,6 +44,10 @@
             @include rem(padding, 0 $half-spacing-unit);
         }
 
+        .social-links{
+            padding-right: 0;
+        }
+
     }
 
     .social-links__list a{
