@@ -120,7 +120,7 @@
     }
 }
 
-.masonry__item{
+.mosaic__item{
     .like-link{
         border: none;
         height: auto;
@@ -131,6 +131,7 @@
             height: auto;
             width: auto;
             background: none;
+            padding: 0;
             @include transform(scale(1));
         }
     }

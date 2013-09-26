@@ -2,7 +2,7 @@
 *   ICON SHORTCODE
 \*----------------------------------------*/
 
-i.shc {
+i.pixcode--icon {
   display:inline-block;
   line-height:1;
 
@@ -36,13 +36,13 @@ i.shc {
 *   ICON INSIDE A LINK
 \*----------------------------------------*/
 
-a > i.shc {
+a > i.pixcode--icon {
   @include transition(all 0.15s);
 }
 
 a:hover {
 
-    & > i.shc {
+    & > i.pixcode--icon {
     text-decoration:none;
     border:none;
     color:$accent-color;

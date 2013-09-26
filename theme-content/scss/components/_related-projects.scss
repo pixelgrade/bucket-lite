@@ -54,7 +54,7 @@
         /**
          * Project navigation is 50% and goes right
          */
-        .related-projects_nav{
+        .projects_nav{
             @extend .span-12;
             @extend .hand-span-6;
 
@@ -65,13 +65,13 @@
             }
 
             @include media(from hand) {
-                float: left;
+                float: right;
                 @include rem(margin, $base-spacing-unit 0);
                 text-align: right;
             }
         }
-  
-            .related-projects_nav-list{
+
+            .projects_nav-list{
                 @extend .nav;
                 margin-bottom: 0;
 
@@ -84,7 +84,7 @@
                 }
             }
 
-                .related-projects_nav-link{
+                .projects_nav-item a{
                     @include rem(padding, 0 $half-spacing-unit/2);
                     font-family: "Roboto", sans-serif;
                     @include font-size(13px);
