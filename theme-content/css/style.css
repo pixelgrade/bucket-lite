@@ -11504,13 +11504,13 @@ li.comment .children:before {
   height: auto;
 }
 
-.mosaic__item .like-link {
+.mosaic__item .like-link, .masonry__item .like-link {
   border: none;
   height: auto;
   width: auto;
   cursor: default;
 }
-.mosaic__item .like-link i {
+.mosaic__item .like-link i, .masonry__item .like-link i {
   height: auto;
   width: auto;
   background: none;

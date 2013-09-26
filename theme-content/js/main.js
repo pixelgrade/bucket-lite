@@ -3435,6 +3435,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 /* --- $SALVATTORE --- */
 
 // Salvattore by @rnmp and @ppold
+// 
 // http://github.com/bandd/salvattore
 function salvattore(){
       (function(root, factory) {
