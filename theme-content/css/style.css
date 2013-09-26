@@ -6909,7 +6909,7 @@ html.flexbox {
  * Text alignment
  */
 .text--left {
-  text-align: left !important; }
+  text-align: left  !important; }
 
 .text--center {
   text-align: center !important; }
@@ -11837,5 +11837,3 @@ blockquote p:before {
 
 blockquote p:after {
   content: none; }
-
-/*@ sourceMappingURL=style.css.map */
