@@ -8,7 +8,7 @@
     </div>
  */
 
-.likes-box{
+.likes-box {
     font-family: "Open Sans", sans-serif;
     @include font-size(14px);
     text-transform: uppercase;
@@ -19,77 +19,144 @@
         padding: 0;
         background: none;
         border: none;
-        cursor: pointer;
-        border: 3px solid black;
-        @include border-radius(50%);
+        
     }
-    
-    i{
+
+    i {
+        @include rem(font-size, 22px);
+        @include rem(line-height, 2 * $base-spacing-unit);
+        text-align: center;
+        color: $dark; 
+        padding:0;
+        
         @include rem(height, 2 * $base-spacing-unit);
         @include rem(width, 2 * $base-spacing-unit);
-        @include rem(padding-top, $half-spacing-unit);
+
+        border: 3px solid $dark;
         @include border-radius(50%);
-        margin-top: -3px;
-        margin-left: -3px;
-        padding-right: 0;
-        color: black !important; background-color: $accent-color;
-        @include transform(scale(0.75));
-        @include font-size(18px);
-        text-align: center;
+
+        @include transform(scale(1));
+
+
+        &:after {
+            content:"";
+            display:block;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:$dark;
+           
+            @include border-radius(50%);
+            @include transition(all 1s ease-out);
+            z-index:-1;
+
+
+            backface-visibility: visible;
+            -webkit-backface-visibility: visible;
+            -moz-backface-visibility: visible;
+        }
     }
 
     .image__item-meta & i{
         @include transform(scale(1));
         background-color: transparent;
     }
-}
 
-    .likes-count{
-        font-weight: bold;
-    }
+    .likes-text {
+        position:relative;
+        margin-top:5px;
 
-.can_like i{
-    background-color: transparent;
-    @include transform(scale(1));
-}
-
-.animate-like{
-    animation: like-animation 1s;
-    -webkit-animation: like-animation 1s;
-}
-
-.can_like .like-complete{
-    color: black !important; background-color: $accent-color;
-    @include transform(scale(0.75));
-}
-
-@keyframes like-animation{
-    0%   { 
-        background-color: white; 
-        @include transform(scale(1) translate3d(0, 0, 0));
-    }
-    65%  { 
-        @include transform(scale(1.2));
-    }
-    100% { 
-        color: black; background-color: $accent-color;
-        @include transform(scale(0.75));
+        &:after {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: -17px;
+            content: "";
+            width: 100px;
+            background: #fff;
+            text-transform: none;
+            font-weight: bold;
+            color:$dark;
+        }
     }
 }
 
-@-webkit-keyframes like-animation{
-    0%   { 
-        background-color: white; 
-        @include transform(scale(1) translate3d(0, 0, 0));
+/**
+ * Default State - can like (.likeable)
+ */
+.likeable {
+    .like-link {
+        cursor: pointer;
     }
-    65%  { 
-        @include transform(scale(1.2));
+
+    i {
+        // background-color: transparent;
+        &:after {
+             @include transform(scale(0.15));
+        }
+    } 
+}
+
+
+/**
+* Hover State (.animate)
+*/
+.animate {
+    i:after {
+        @include transform(scale(1.1));
+        @include transition(all 1.7s);
     }
-    100% { 
-        color: black; background-color: $accent-color;
-        @include transform(scale(0.75));
+
+    .likes-text {
+        &:after {
+            content:"Don't move";
+        }
     }
 }
+
+/**
+* Complete animation (.complete)
+*/
+.complete {
+    i {
+        color: $accent-color; 
+        background-color: $dark;
+        @include rem(font-size, 24px);
+        animation: bounce 1s;
+        -webkit-animation: bounce 1s;
+
+        &:after {
+            @include transform(scale(1.1));
+        }
+    }
+}
+
+/**
+* Liked State - cannot like (.liked)
+*/
+.liked {
+
+    i {
+        color: $accent-color; 
+        background-color: $accent-color;
+        @include rem(font-size, 24px);
+        // @include transform(scale(0.75)); 
+        
+
+        &:after {
+            @include transform(scale(1.1));
+        }
+    }
+}
+
+
+
+.likes-count{
+    font-weight: bold;
+}
+
 
 .likes-box--footer{
     @include media(from hand) {
@@ -99,7 +166,7 @@
     .like-link{
         @include rem(margin-right, $half-spacing-unit/2);
         display: inline-block;
-        float: left;
+        // float: left;
     }
 
     i{
@@ -136,4 +203,60 @@
             @include transform(scale(1));
         }
     }
+}
+
+/*
+* Bounce animation for completed state
+*/
+
+
+@keyframes bounce { 
+  0% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: .7;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  80% { transform: scale(1.1) }
+  100% { transform: scale(1) }
+}
+
+@-webkit-keyframes bounce { 
+  0% {
+    -webkit-transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+    opacity: .7;
+  }
+  60% {
+    -webkit-transform: scale(0.6);
+    opacity: 1;
+    }
+  80% { -webkit-transform: scale(1.1) }
+  100% { -webkit-transform: scale(1) }
+}
+
+@-moz-keyframes bounce { 
+  0% {
+    -moz-transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    -moz-transform: scale(1.5);
+    opacity: .7;
+  }
+  60% {
+    -moz-transform: scale(0.6);
+    opacity: 1;
+  }
+  80% { -moz-transform: scale(1.1) }
+  100% { -moz-transform: scale(1) }
 }
