@@ -1,8 +1,9 @@
 <div id="main" class="content djax-updatable">
 	<?php
 	$client_name = '';
-	$client_link = '#';
 	$client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+	
+	$client_link = '#';
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 	?>
     <div class="page-content">        
