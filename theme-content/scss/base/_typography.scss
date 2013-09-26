@@ -6,8 +6,9 @@ html {
 
 .header {
     @include font-size(13px, true);
-    font-family: "Roboto", sans-serif;
+    font-family: $alt-font-family;
     letter-spacing: normal;
+    font-weight:300;
 }
 
 
