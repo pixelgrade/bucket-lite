@@ -1,3 +1,15 @@
+@import "compass";
+@import "vars";
+@import "_vendor/inuit/vars";
+@import "_vendor/inuit/defaults";
+@import "_vendor/inuit/generic/mixins";
+@import "_vendor/inuit/generic/clearfix";
+@import "_vendor/inuit/generic/shared";
+@import "_vendor/inuit/objects/greedy";
+
+
+
+
 /*------------------------------*\
                RTL SUPPORT
 \*------------------------------*/
@@ -20,8 +32,8 @@
  * Content
  */
 
-/*#main*/.content {
-   @include media(from hand) {
+@include media(from hand) {
+  /*#main*/.content {
         margin-left:0;
         @include rem(margin-right, 250px);
     } 

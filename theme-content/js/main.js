@@ -3435,6 +3435,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 /* --- $SALVATTORE --- */
 
 // Salvattore by @rnmp and @ppold
+// 
 // http://github.com/bandd/salvattore
 function salvattore(){
       (function(root, factory) {
@@ -3567,7 +3568,7 @@ function salvattore(){
           i = rules.length;
           while (i--) {
             rule = rules[i];
-            if (rule.selectorText.match(/\[data-columns\](.*)::?before$/)) {
+            if (rule.selectorText !== undefined && rule.selectorText.match(/\[data-columns\](.*)::?before$/)) {
               return true;
             }
           }
@@ -3787,7 +3788,7 @@ function platformDetect(){
 function niceScrollInit() {
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
-        $('html').niceScroll({
+        $('html').addClass('nicescroll').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
             cursorwidth: 7,
@@ -3846,7 +3847,7 @@ function royalSliderInit() {
                 slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: true
+                keyboardNavEnabled: rs_fullScreen
             });
         } else {
             $slider.royalSlider({
@@ -3858,7 +3859,7 @@ function royalSliderInit() {
                 slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: true
+                keyboardNavEnabled: rs_fullScreen
             });     
         }
 
@@ -3883,7 +3884,7 @@ function royalSliderInit() {
             }
 
             if (rs_fullScreen) {
-                $gallery_control.insertAfter('#gallery');
+                $gallery_control.insertAfter('.pixslider');
             } else {
                 $gallery_control.insertAfter($slider);
             }
@@ -4154,6 +4155,7 @@ function init() {
     }
 
     $('html').addClass('loaded');
+    $('header').css({"paddingBottom": $('.site-footer').height()});
 
     $(function() {
         FastClick.attach(document.body);
