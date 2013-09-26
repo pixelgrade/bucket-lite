@@ -316,14 +316,14 @@ function wpgrade_callback_geting_active() {
 								'options' => array(
 									array(
 										'name' => 'Portfolio Archive',
-										'value' => 'portfolio'
+										'value' => 'lens_portfolio'
 									),
 									array(
 										'name' => 'Gallery',
-										'value' => 'gallery'
+										'value' => 'lens_gallery'
 									),
 								),
-								'std' => 'portfolio',
+								'std' => 'lens_portfolio',
 							),
 							array(
 								'name' => __('Select a gallery', wpgrade::textdomain()),

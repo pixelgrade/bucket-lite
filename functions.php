@@ -37,7 +37,6 @@
 
     include $themecallbackpath.'pagination-formatter'.EXT;
 
-
     // Cleanup
     // -------
 
@@ -46,6 +45,13 @@
     include $themecallbackpath.'unsorted'.EXT;
 
 
+	$themeutilspath = dirname(__FILE__).$ds.'theme-utils'.$ds;
+	
+	// Utility class
+    // --------------------
+
+    include $themeutilspath.'lens'.EXT;
+	
     // Theme specific settings
     // -----------------------
 
