@@ -67,25 +67,74 @@
                MODIFIERS
 \*-----------------------------------*/
 
+@include media(from lap) {
+    .testimonial--big-text {
 
-.testimonial--big-text {
+        .testimonial__content {
+            font-weight: 600;
+            @include font-size(36px);
+        }
+    }
 
-    .testimonial__content {
-        font-weight: 600;
-        @include font-size(36px);
+    .testimonial--medium-text {
+
+        .testimonial__content {
+            @include font-size(30px);
+        }
+    }
+
+    .testimonial--small-text {
+
+        .testimonial__content {
+            @include font-size(20px);
+        }
     }
 }
 
-.testimonial--medium-text {
+@include media(hand lap) {
+    .testimonial--big-text {
 
-    .testimonial__content {
-        @include font-size(30px);
+        .testimonial__content {
+            font-weight: 600;
+            @include font-size(32px);
+        }
+    }
+
+    .testimonial--medium-text {
+
+        .testimonial__content {
+            @include font-size(28px);
+        }
+    }
+
+    .testimonial--small-text {
+
+        .testimonial__content {
+            @include font-size(16px);
+        }
     }
 }
 
-.testimonial--small-text {
+@include media(to hand) {
+    .testimonial--big-text {
 
-    .testimonial__content {
-        @include font-size(20px);
+        .testimonial__content {
+            font-weight: 600;
+            @include font-size(28px);
+        }
+    }
+
+    .testimonial--medium-text {
+
+        .testimonial__content {
+            @include font-size(22px);
+        }
+    }
+
+    .testimonial--small-text {
+
+        .testimonial__content {
+            @include font-size(18px);
+        }
     }
 }

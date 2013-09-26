@@ -8954,8 +8954,11 @@ a [class*="icon-"] {
   pointer-events: none;
 }
 @media only screen and (min-width: 50.11111em) {
-  .no-touch .menu-item--parent > ul {
+  .menu-item--parent > ul {
     display: none;
+  }
+  .touch .menu-item--parent > ul {
+    display: block;
   }
 }
 .menu-item--parent.current-menu-ancestor > ul, .menu-item--parent.current-menu-parent > ul {
@@ -11508,25 +11511,66 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 /*-----------------------------------*\
                MODIFIERS
 \*-----------------------------------*/
-.testimonial--big-text .testimonial__content {
-  font-weight: 600;
-  font-size: 36px;
-  font-size: 2rem;
-  line-height: 1.0001;
-}
+@media only screen and (min-width: 72.33333em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 36px;
+    font-size: 2rem;
+    line-height: 1.0001;
+  }
 
-.testimonial--medium-text .testimonial__content {
-  font-size: 30px;
-  font-size: 1.66667rem;
-  line-height: 1.2001;
-}
+  .testimonial--medium-text .testimonial__content {
+    font-size: 30px;
+    font-size: 1.66667rem;
+    line-height: 1.2001;
+  }
 
-.testimonial--small-text .testimonial__content {
-  font-size: 20px;
-  font-size: 1.11111rem;
-  line-height: 1.2001;
+  .testimonial--small-text .testimonial__content {
+    font-size: 20px;
+    font-size: 1.11111rem;
+    line-height: 1.2001;
+  }
 }
+@media only screen and (min-width: 50.05556em) and (max-width: 72.22222em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 32px;
+    font-size: 1.77778rem;
+    line-height: 1.1251;
+  }
 
+  .testimonial--medium-text .testimonial__content {
+    font-size: 28px;
+    font-size: 1.55556rem;
+    line-height: 1.28581;
+  }
+
+  .testimonial--small-text .testimonial__content {
+    font-size: 16px;
+    font-size: 0.88889rem;
+    line-height: 1.5001;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 28px;
+    font-size: 1.55556rem;
+    line-height: 1.28581;
+  }
+
+  .testimonial--medium-text .testimonial__content {
+    font-size: 22px;
+    font-size: 1.22222rem;
+    line-height: 1.09101;
+  }
+
+  .testimonial--small-text .testimonial__content {
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.33343;
+  }
+}
 /*----------------------------------------*\
 *   $TWITTER WDIGET
 \*----------------------------------------*/

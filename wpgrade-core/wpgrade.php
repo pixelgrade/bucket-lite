@@ -41,6 +41,14 @@ class wpgrade {
 	}
 
 	/**
+	 * @return mixed
+	 */
+	static function confoption($key, $default = null) {
+		$config = static::config();
+		return isset($config[$key]) ? $config[$key] : $default;
+	}
+
+	/**
 	 * @return string theme textdomain
 	 */
 	static function textdomain() {
@@ -131,31 +139,24 @@ class wpgrade {
 	// Wordpress Defferred Helpers
 	// ------------------------------------------------------------------------
 
-	/** @var array cached content filtering callbacks */
-	protected static $filter_content_cache = null;
-
 	/**
 	 * Filter content based on settings in wpgrade-config.php
 	 * Filters may be disabled by setting priority to false or null.
 	 *
 	 * @return string $content after being filtered
 	 */
-	static function filter_content($content) {
-		if (self::$filter_content_cache === null) {
-			$config = self::config();
-			$enabled_filters = array();
-			foreach ($config['content-filters'] as $filterfunc => $priority) {
-				if ($priority !== false && $priority !== null) {
-					$enabled_filters[$filterfunc] = $priority;
-				}
+	static function filter_content($content, $filtergroup) {
+		$config = self::config();
+		$enabled_filters = array();
+		foreach ($config['content-filters'][$filtergroup] as $filterfunc => $priority) {
+			if ($priority !== false && $priority !== null) {
+				$enabled_filters[$filterfunc] = $priority;
 			}
-
-			asort($enabled_filters);
-
-			self::$filter_content_cache = $enabled_filters;
 		}
 
-		foreach (self::$filter_content_cache as $filterfunc => $priority) {
+		asort($enabled_filters);
+
+		foreach ($enabled_filters as $filterfunc => $priority) {
 			$content = call_user_func($filterfunc, $content);
 		}
 
@@ -165,8 +166,9 @@ class wpgrade {
 	/**
 	 * @param type $content
 	 */
-	static function display_content($content) {
-		echo self::filter_content($content);
+	static function display_content($content, $filtergroup = null) {
+		$filtergroup !== null or $filtergroup = 'default';
+		echo self::filter_content($content, $filtergroup);
 	}
 
 	/**
