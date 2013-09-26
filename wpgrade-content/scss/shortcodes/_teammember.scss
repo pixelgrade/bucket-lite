@@ -1,4 +1,10 @@
-.team-member-image-link{
+.team-member {
+    .separator {
+         @include rem(margin-bottom, $half-spacing-unit/2);
+    }
+}
+
+.team-member__image__link{
     display: block;
     position: relative;
 
@@ -8,7 +14,7 @@
         @include rem(margin-right, $base-spacing-unit);
     }
 
-    &:hover > .team-member-profile-container{
+    &:hover > .team-member__profile{
         @include opacity(1);
     }
 
@@ -18,7 +24,7 @@
     }
 }
 
-.team-member-profile-container{
+.team-member__profile{
     @include rem(margin, $half-spacing-unit 0);
 
     @include media(from lap) {
@@ -35,13 +41,13 @@
     }
 }
 
-.team-member-profile-table{
+.team-member__profile__table{
     display: table;
     height: 100%;
     width: 100%;
 }
 
-.team-member-profile-cell{
+.team-member__profile__cell{
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -51,59 +57,55 @@
     }    
 }
 
-.team-member-image-container{
+.team-member__image{
     img{
         vertical-align: top;
     }
 }
 
-.team-member-name{
+.team-member__name{
     @include rem(margin, $base-spacing-unit 0 $half-spacing-unit/2);
 }
 
-.team-member-position{
+.team-member__position{
     @include rem(margin, 0 0 $half-spacing-unit/2);
 }
 
-.team-member-description{
+.team-member__description{
     @include rem(margin-bottom, $base-spacing-unit);
     @include font-size(16px);
 }
 
-.team-member-container .separator {
-     @include rem(margin-bottom, $half-spacing-unit/2);
-}
-
-.team-member-name, .team-member-position,
-.team-member-description p{
+.team-member__name, .team-member__position,
+.team-member__description p{
     text-align: center;
     
     @include media(small hand) {
         text-align: left;
     }
 
-    @include media(from lap){
+    @include media(from lap) {
         text-align: left;
     }
 }
 
-.team-member-social-links{
+.team-member__social-links-list{
     text-align: center;
 
     @include media(small hand) {
         text-align: right;
     }
     
-    @include media(from lap){
+    @include media(from lap) {
         text-align: left;
     }    
 }
 
-.team-member-social-link{
+.team-member__social-link{
     display: inline-block !important;
+}
 
-    .social-link{
-        @include font-size(18px);
-        @include rem(padding, $half-spacing-unit/2);
-    }
+.team-member__social-link__link{
+    @include font-size(18px);
+    @include rem(padding, $half-spacing-unit/2);
 }

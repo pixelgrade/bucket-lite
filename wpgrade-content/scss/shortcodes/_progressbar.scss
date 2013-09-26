@@ -1,6 +1,10 @@
 .progressbar {
   @include rem(margin, $base-spacing-unit 0 3/2*$base-spacing-unit);
   @include scale(1);
+
+  &.is-visible .progressbar__tooltip {
+    @include opacity(1);
+  }
 }
 
     .progressbar__title {
