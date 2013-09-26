@@ -2,6 +2,10 @@
 // theme activation
 function wpgrade_callback_geting_active() {
 
+	/**
+	 * Create custom post types, taxonomies and metaboxes
+	 * These will be taken by pixtypes plugin and converted in their own options
+	 */
 	$types_options = get_option('pixtypes_themes_settings');
 	if ( empty($types_options) ) {
 		$types_options = array();
@@ -316,14 +320,14 @@ function wpgrade_callback_geting_active() {
 								'options' => array(
 									array(
 										'name' => 'Portfolio Archive',
-										'value' => 'portfolio'
+										'value' => 'lens_portfolio'
 									),
 									array(
 										'name' => 'Gallery',
-										'value' => 'gallery'
+										'value' => 'lens_gallery'
 									),
 								),
-								'std' => 'portfolio',
+								'std' => 'lens_portfolio',
 							),
 							array(
 								'name' => __('Select a gallery', wpgrade::textdomain()),
@@ -342,6 +346,7 @@ function wpgrade_callback_geting_active() {
 	);
 
 	update_option('pixtypes_themes_settings', $types_options);
+
 	// flush permalinks rules on theme activation
 	flush_rewrite_rules();
 }

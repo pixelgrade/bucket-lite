@@ -4,31 +4,31 @@
         <h1 class="entry__title title-mobile"><?php the_title(); ?></h1>            
         <section class="project-images">
             <?php
-                $ids = array();
-	            $client_name = $client_link = '';
-                if ( class_exists('Pix_Query') ) {
-                    $pixquery = new Pix_Query();
-                    $ids = $pixquery->get_gallery_ids('portfolio_gallery');
-                    $client_name = $pixquery->get_meta_value('portfolio_client_name');
-	                $client_link = $pixquery->get_meta_value('portfolio_client_link');
+	        $client_name = '';
+	        $client_link = '#';
+	        $client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+	        $client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
+
+	        $gallery_ids = array();
+	        $gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
+	        if (!empty($gallery_ids)) {
+		        $gallery_ids = explode(',',$gallery_ids);
+	        }
+
+            $attachments = get_posts( array(
+                'post_type' => 'attachment',
+                'posts_per_page' => -1,
+                'orderby' => "post__in",
+                'post__in'     => $gallery_ids
+            ) );
+
+            if ( $attachments ) {
+                foreach ( $attachments as $attachment ) {
+                    $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+                    $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );
+                    echo '<a href="#" class="' . $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
                 }
-
-                $attachments = get_posts( array(
-                    'post_type' => 'attachment',
-                    'posts_per_page' => -1,
-    	            'orderby' => "post__in",
-                    'post__in'     => $ids
-                ) );
-
-                if ( $attachments ) {
-
-                        foreach ( $attachments as $attachment ) {
-                            $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                            $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );
-                            echo '<a href="#" class="' . $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
-                        }
-                }
-            ?>                
+            } ?>
         </section>
 
         <section class="project-content">

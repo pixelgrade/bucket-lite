@@ -1,13 +1,10 @@
 <div id="main" class="content djax-updatable">
-    <?php
-        $client_name = '';
-        $client_link = '#';
-        if ( class_exists('Pix_Query') ) {
-            $pixquery = new Pix_Query();
-            $client_name = $pixquery->get_meta_value('portfolio_client_name');
-            $client_link = $pixquery->get_meta_value('portfolio_client_link');
-        }
-    ?>    
+	<?php
+	$client_name = '';
+	$client_link = '#';
+	$client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
+	?>
     <div class="page-content">        
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
             <header class="entry-header">
