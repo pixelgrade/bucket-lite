@@ -16,11 +16,11 @@
 	<?php elseif (get_post_format() == 'image'): ?>
 
 		<?php
-			$featured_id = wpgrade_get_attachment_id_from_src(wpgrade_get_post_first_image());
-			$featured_image = wp_get_attachment_image_src($featured_id, 'full');
-			if (empty($height) && empty($html_title)) {
-				$height = 'data-width="'. $featured_image[1] .'" data-height="'. $featured_image[2] .'"';
-			}
+		$featured_id = wpgrade_get_attachment_id_from_src(wpgrade_get_post_first_image());
+		$featured_image = wp_get_attachment_image_src($featured_id, 'full');
+		if (empty($height) && empty($html_title)) {
+			$height = 'data-width="'. $featured_image[1] .'" data-height="'. $featured_image[2] .'"';
+		}
 		?>
 
 		<div class="wrapper-featured-image">
@@ -156,14 +156,13 @@
 							</div>
 						<?php endif; ?>
 					</div>
+					<?php if (wpgrade::option('blog_single_show_share_links')): ?>
 					<div class="meta-list-container meta-container_links">
 						<h3 class="meta-list-title">
 							<?php _e("Share on:", wpgrade::textdomain()); ?>
 						</h3>
 
 						<ul class="article-meta-list">
-							<?php if (wpgrade::option('blog_single_show_share_links')): ?>
-
 								<?php if (wpgrade::option('blog_single_share_links_twitter')): ?>
 									<li class="article-link">
 										<a href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;source=tweetbutton&amp;text=<?php echo urlencode(get_the_title())?>&amp;url=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;via=<?php echo wpgrade::option( 'twitter_card_site' ) ?>" onclick="return popitup(this.href, this.title)"
@@ -171,18 +170,16 @@
 											Twitter
 										</a>
 									</li>
-								<?php endif; ?>
-
-								<?php if (wpgrade::option('blog_single_share_links_facebook')): ?>
+								<?php endif;
+								if (wpgrade::option('blog_single_share_links_facebook')): ?>
 									<li class="article-link">
 										<a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
 										   title="<?php _e('Share on Facebook!', wpgrade::textdomain()) ?>">
 											Facebook
 										</a>
 									</li>
-								<?php endif; ?>
-
-								<?php if (wpgrade::option('blog_single_share_links_googleplus')): ?>
+								<?php endif;
+								if (wpgrade::option('blog_single_share_links_googleplus')): ?>
 									<li class="article-link">
 										<a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
 										   title="<?php _e('Share on Google+!', wpgrade::textdomain()) ?>">
@@ -190,8 +187,8 @@
 										</a>
 									</li>
 								<?php endif; ?>
-							<?php endif; ?>
-						</ul>
+							</ul>
+
 
 						<div class="article-link to-top">
 							<a href="#top" title="<?php _e("Jump to the top of the page", wpgrade::textdomain()); ?>">
@@ -199,7 +196,7 @@
 							</a>
 						</div>
 					</div>
-
+					<?php endif; ?>
 					<?php comments_template(); ?>
 
 				</article>
