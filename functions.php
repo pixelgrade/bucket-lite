@@ -8,38 +8,6 @@
     $ds = DIRECTORY_SEPARATOR;
     $themecallbackpath = dirname(__FILE__).$ds.'theme-callbacks'.$ds;
 
-    // Theme specific script enqueue setup handlers
-    // --------------------------------------------
-
-    include $themecallbackpath.'resource-enqueues'.EXT;
-
-
-    // Theme specific callbacks
-    // ------------------------
-
-    include $themecallbackpath.'theme-features'.EXT;
-
-
-    // Theme content filters
-    // ---------------------
-
-    include $themecallbackpath.'content-filters'.EXT;
-
-
-    // Pagination Formatter
-    // --------------------
-
-    include $themecallbackpath.'pagination-formatter'.EXT;
-
-
-    // Cleanup
-    // -------
-
-    // @todo CLEANUP remove unsorted functions
-
-    include $themecallbackpath.'unsorted'.EXT;
-
-
     // Theme specific settings
     // -----------------------
 
@@ -52,6 +20,18 @@
     // Initialize system core
     // ----------------------
     require_once 'wpgrade-core/bootstrap'.EXT;
+
+	/**
+	 * Require theme-callbacks :
+	 * - Activation hooks
+	 * - Shortcodes filters and scripts
+	 * - Theme specific script enqueue setup handlers
+	 * - Theme specific callbacks
+	 * - Theme content filters
+	 * - Pagination Formatter
+	 * - Cleanup @todo CLEANUP remove unsorted functions
+	 */
+	wpgrade::require_all($themecallbackpath);
 
     #
     # Please perform any initialization via options in wpgrade-config and
