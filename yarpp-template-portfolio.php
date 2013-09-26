@@ -6,24 +6,29 @@ YARPP Template: Portfolio Related Projects
 <section class="related-projects_container">
     <header class="related-projects_header">
        <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
-
-       <?php echo wpgrade::pagination() ?>
-
-       <? /*
        <nav class="related-projects_nav">
            <ul class="related-projects_nav-list">
                <li class="related-projects_nav-item">
-                    <a href="#" class="related-projects_nav-link">
+<!--                     <a href="#" class="related-projects_nav-link">
                         <i class="icon-arrow-left"></i>
-                        <?php _e("Previous", wpGrade::textdomain()); ?>
+                        <?php //_e("Previous", wpGrade::textdomain()); ?>
+                    </a> -->
+                    <?php get_next_posts_link(); ?>
+                </li>
+               <li class="related-projects_nav-item">
+                    <a href="#" class="related-projects_nav-link">
+                        <?php _e("All projects", wpGrade::textdomain()); ?>
                     </a>
                 </li>
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("All projects", wpGrade::textdomain()); ?></a></li>
-               <li class="related-projects_nav-item"><a href="#" class="related-projects_nav-link"><?php _e("Next", wpGrade::textdomain()); ?><i class="icon-arrow-right"></i></a></li>
+                <li class="related-projects_nav-item">
+<!--                     <a href="#" class="related-projects_nav-link">
+                        <?php //_e("Next", wpGrade::textdomain()); ?>
+                        <i class="icon-arrow-right"></i>
+                    </a> -->
+                    <?php get_previous_posts_link(); ?>
+                </li>
            </ul>
        </nav>
-       */ ?>
-
     </header>
     <div class="related-projects_items-list-container">
         <?php if (have_posts()):?>

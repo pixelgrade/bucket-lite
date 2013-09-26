@@ -4144,6 +4144,8 @@ function init() {
 
     }
 
+    $('html').addClass('loaded');
+
     $(function() {
         FastClick.attach(document.body);
     });
@@ -4166,7 +4168,7 @@ function progressbarInit() {
         progressbar_shc.addClass('is-visible');
     if (progressbar_shc.length) {
         progressbar_shc.each(function() {
-            var self = $(this).find('.progressbar-progress');
+            var self = $(this).find('.progressbar__progress');
             self.css({'width': self.data('value')});
         });;
     }
@@ -4207,6 +4209,8 @@ function loadUp(){
     // if contact
     gmapInit();
 
+    $(".pixcode-tabs").tab();
+
 
     /* --- ANIMATE STUFF IN --- */
     animateGallery('in');
@@ -4222,13 +4226,21 @@ function loadUp(){
 
 function eventHandlersOnce() {
 
+
     $('.js-nav-trigger').on('click', function(e) {
         $('html').toggleClass('navigation--is-visible');
     }); 
 };
 
 
-
+function likeBoxAnimation(){
+    $(document).on('click', '.can_like .like-link', function(event){
+        event.preventDefault();
+        var $iElem = $(this).find('i');
+        $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
+        // $(this).addClass('animate-like');
+    });
+}
 
 
 /* --- GLOBAL EVENT HANDLERS --- */
@@ -4247,6 +4259,8 @@ function eventHandlers() {
         },
         timeout: 300
     });    
+
+    likeBoxAnimation();
 };
 
 
@@ -4266,7 +4280,6 @@ $(function(){
     loadUp();
 
     /* --- VISUAL LOADING --- */
-    $('html').addClass('loaded');
 
 });
 

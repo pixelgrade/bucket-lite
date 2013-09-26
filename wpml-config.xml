@@ -8,7 +8,7 @@
         <taxonomy translate="1">portfolio_cat</taxonomy>
     </taxonomies>
 	<admin-texts>
-		<key name="cityhub_options">
+		<key name="lens_options">
 			<key name="footer_twitter_title" />
 			<key name="copyright_text" />
 			<key name="homepage_content1" />

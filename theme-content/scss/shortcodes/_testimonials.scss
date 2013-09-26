@@ -1,23 +1,91 @@
 .pixcode--testimonial {
+    @include rem(margin-left, 3 * $base-spacing-unit);
+
+    p {
+        &:before, &:after {
+            content: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
 }
+
+.testimonial {
+    
+}
+
+
+
+
+
+/*---------------------------------------*\
+               DEFAULT STYLE
+\*---------------------------------------*/
+
+
+.testimonial__content {
+    @include font-size(24px);
+    @include rem(margin-bottom, $base-spacing-unit);
+    font-family: $heading-font-family;
+    font-weight: 450;
+    text-indent: 0;
+    color: black;
+}
+
+    .testimonial__author-name,
+    .testimonial__author-title{
+        color: $gray;
+        margin-bottom: 0;
+    }
+
+    .testimonial__author-name{
+        display: block;
+        font-family: $heading-font-family;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-style: normal;
+        @include rem(letter-spacing, 2px);
+    }
+
+    .testimonial__author-title{
+        font-family: $base-font-family;
+        font-style: italic;
+
+        &:before{
+            content: "-";
+            @include rem(margin-right, 3px);
+        }
+    }
+
+
+
+
+
+/*-----------------------------------*\
+               MODIFIERS
+\*-----------------------------------*/
+
 
 .testimonial--big-text {
 
-    .quote__content {
+    .testimonial__content {
+        font-weight: 600;
         @include font-size(36px);
     }
 }
 
 .testimonial--medium-text {
 
-    .quote__content {
+    .testimonial__content {
         @include font-size(30px);
     }
 }
 
 .testimonial--small-text {
 
-    .quote__content {
+    .testimonial__content {
         @include font-size(20px);
     }
 }

@@ -1,3 +1,60 @@
+/*----------------------------------------*\
+*   $SINGLE_STYLING
+\*----------------------------------------*/
+
+/**
+ * Bigger Font Size for first paragraph on single post (only)
+ */
+
+ .single-post {
+    .entry__content {
+        p:first-child {
+            @include rem(font-size, 22px);
+        }
+    }
+ }
+
+
+/**
+ * Offsetting the blockquote quotes
+ * I have my doubts
+ */
+// @include media(to lap){
+//     blockquote{
+//         p{
+//             @include rem(margin-left, 2.5 * $base-spacing-unit);
+//         }
+
+//         &:before{
+//             margin: 0;
+//         }
+//     }
+// }
+
+@include media(from lap){
+    .single-post blockquote{
+
+        &:before{
+            margin-top: 0;
+            @include rem(margin-left, -3 * $base-spacing-unit);
+        }
+    }
+
+    .single-post .entry__title{
+        @include rem(margin-left, -10 * $base-spacing-unit);
+        @include rem(padding-left, 10 * $base-spacing-unit);
+    }
+}
+
+
+/**
+ * Video header
+ */
+.video-wrap{
+    text-align: center;
+}
+
+
 /**
  * Removing width and margin for gallery images/items
  * Adding a space between elements
@@ -38,76 +95,13 @@
 }
 
 
-/*----------------------------------------*\
-*   $PAGE_STYLING
-\*----------------------------------------*/
-
-/**
- * Making the title border reach the left margin of its parent container
- */
-
-.page blockquote{
-    
-    p{
-        @include rem(margin-left, 2.5 * $base-spacing-unit);
-    }
-
-    &:before{
-        margin-left: 0;
-    }
-}
-
-
-
-
-
-/*----------------------------------------*\
-*   $SINGLE_STYLING
-\*----------------------------------------*/
-
-/**
- * Offsetting the blockquote quotes
- * I have my doubts
- */
-// @include media(to lap){
-//     blockquote{
-//         p{
-//             @include rem(margin-left, 2.5 * $base-spacing-unit);
-//         }
-
-//         &:before{
-//             margin: 0;
-//         }
-//     }
-// }
-
-@include media(from lap){
-    .single-post blockquote{
-
-        &:before{
-            margin-top: 0;
-            @include rem(margin-left, -3 * $base-spacing-unit);
-        }
-    }
-
-    .single-post .entry__title{
-        @include rem(margin-left, -10 * $base-spacing-unit);
-        @include rem(padding-left, 10 * $base-spacing-unit);
-    }
-}
-
-/**
- * Video header
- */
-.video-wrap{
-    text-align: center;
-}
 
 
 
 /*----------------------------------------*\
 *   $SINGLE QUOTE TEMPLATE
 \*----------------------------------------*/
+
 .header-quote-content{
     background: black;
     color: white;
@@ -288,19 +282,10 @@
     .like-link{
         float: left;
         display: block;
-        @include rem(height, 2 * $base-spacing-unit);
-        @include rem(width, 2 * $base-spacing-unit);
-        @include rem(margin, $half-spacing-unit auto);
-        @include border-radius(50%);
-        border: 3px solid black;                
     }
 
     i{
-        @include rem(height, 2 * $base-spacing-unit);
-        @include rem(width, 2 * $base-spacing-unit);
-        @include rem(padding-top, $half-spacing-unit);
         display: block;
-        margin-top: -3px;
     }    
 }
 
@@ -389,4 +374,7 @@
 
 
 
-
+// 
+.first-paragraph p {
+    @include font-size(22px);
+}
