@@ -179,6 +179,20 @@ class wpgrade {
 	}
 
 	/**
+	 * @return string path to core with slash
+	 */
+	static function corepath() {
+		return dirname(__FILE__).DIRECTORY_SEPARATOR;
+	}
+
+	/**
+	 * @return string core uri path
+	 */
+	static function coreuri() {
+		return get_template_directory_uri().'/'.basename(dirname(__FILE__)).'/';
+	}
+
+	/**
 	 * @return string file path
 	 */
 	static function themefilepath($file) {
@@ -602,6 +616,41 @@ class wpgrade {
 		$rgb = array($r, $g, $b);
 
 		return $rgb; // returns an array with the rgb values
+	}
+
+
+	// Internal Bootstrapping Helpers
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Loads in core dependency.
+	 */
+	static function require_coremodule($modulename) {
+
+		if ($modulename == 'redux2') {
+			require static::corepath().'vendor/redux2/options/defaults'.EXT;
+		}
+		elseif ($modulename == 'redux3') {
+			require static::corepath().'vendor/redux3/options/defaults'.EXT;
+		}
+		else { // unsupported module
+			die('Unsuported core module: '.$modulename);
+		}
+	}
+
+	/**
+	 * @return string partial uri path to core module
+	 */
+	static function coremoduleuri($modulename) {
+		if ($modulename == 'redux2') {
+			return wpgrade::coreuri().'vendor/redux2/';
+		}
+		elseif ($modulename == 'redux3') {
+			return wpgrade::coreuri().'vendor/redux3/';
+		}
+		else { // unsupported module
+			die('Unsuported core module: '.$modulename);
+		}
 	}
 
 

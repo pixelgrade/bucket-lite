@@ -1,17 +1,17 @@
 <div id="main" class="content djax-updatable">
     <?php
-    $ids = array();
 
-    if ( class_exists('Pix_Query') ) {
-        $pixquery = new Pix_Query();
-        $ids = $pixquery->get_gallery_ids('main_gallery');
-    }
+	$gallery_ids = array();
+	$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'main_gallery', true );
+	if (!empty($gallery_ids)) {
+		$gallery_ids = explode(',',$gallery_ids);
+	}
 
     $attachments = get_posts( array(
         'post_type' => 'attachment',
         'posts_per_page' => -1,
         'orderby' => "post__in",
-        'post__in'     => $ids
+        'post__in'     => $gallery_ids
     ) );
 
     if ( $attachments ) : ?>
