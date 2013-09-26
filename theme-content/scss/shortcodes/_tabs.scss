@@ -1,0 +1,47 @@
+.pixcode--tabs__nav {
+    @extend .nav;
+    color: red !important;
+    border-bottom: 1px dotted black;
+    text-transform: uppercase;
+
+    & > li {
+
+        &.active {
+            background: white;
+            border: 1px dotted black;
+            border-bottom: 0;
+            @include rem(margin-bottom, -1 * $half-spacing-unit);
+
+            a {
+                @include rem(padding-bottom, $base-spacing-unit);
+            }
+        }
+
+        a {
+            display: block;
+            @include rem(padding, $half-spacing-unit $base-spacing-unit);
+            text-decoration: none;
+        }
+    }
+}
+
+.pixcode--tabs__content {
+    @include rem(margin-bottom, 2*$base-spacing-unit);
+
+    .tab-pane {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.fade {
+    @include opacity(0);
+    @include transition(opacity .3s ease-in-out);
+
+    &.active {
+        @include opacity(1);
+    }
+}

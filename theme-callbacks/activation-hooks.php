@@ -300,8 +300,8 @@ function wpgrade_callback_geting_active() {
 				),
 			)
 		),
-                'lens_homepage_chooser' => array(
-			'id'         => 'lens_gallery',
+        'lens_homepage_chooser' => array(
+			'id'         => 'lens_homepage_chooser',
 			'title'      => 'Choose Your Home Page',
 			'pages'      => array( 'page' ), // Post type
 			'context'    => 'normal',
@@ -331,7 +331,10 @@ function wpgrade_callback_geting_active() {
 								'id' => wpgrade::prefix() . 'homepage_gallery',
 								'type' => 'select_cpt_post',
 								'options' => array(
-									'post_type' => 'lens_gallery',
+									'args' => array (
+										'post_type' => 'lens_gallery',
+									),
+									'hidden' => true,
 								),
 							),
 					)

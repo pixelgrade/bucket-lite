@@ -374,4 +374,7 @@
 
 
 
-
+// 
+.first-paragraph p {
+    @include font-size(22px);
+}
