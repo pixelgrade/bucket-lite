@@ -3847,7 +3847,7 @@ function royalSliderInit() {
                 slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: true
+                keyboardNavEnabled: rs_fullScreen
             });
         } else {
             $slider.royalSlider({
@@ -3859,7 +3859,7 @@ function royalSliderInit() {
                 slidesSpacing: 0,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: true
+                keyboardNavEnabled: rs_fullScreen
             });     
         }
 
@@ -3884,7 +3884,7 @@ function royalSliderInit() {
             }
 
             if (rs_fullScreen) {
-                $gallery_control.insertAfter('#gallery');
+                $gallery_control.insertAfter('.pixslider');
             } else {
                 $gallery_control.insertAfter($slider);
             }

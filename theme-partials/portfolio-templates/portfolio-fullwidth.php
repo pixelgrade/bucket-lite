@@ -20,7 +20,7 @@
 
     if ( $attachments ) : ?>
     <div class="featured-image">
-        <div class="pixslider js-pixslider" data-bullets data-customarrows>                    
+        <div class="pixslider js-pixslider" data-bullets data-customarrows data-fullscreen>                    
             <?php 
                 foreach ( $attachments as $attachment ) : 
                     $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
