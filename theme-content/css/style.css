@@ -8379,8 +8379,8 @@ blockquote:before {
   font-family: "Crimson Text", sans-serif;
   display: block;
   float: left;
-  margin-top: -24px;
-  margin-top: -1.33333rem;
+  margin-top: -18px;
+  margin-top: -1rem;
   margin-left: -72px;
   margin-left: -4rem;
   color: #fffc00;
@@ -9387,9 +9387,6 @@ a [class*="icon-"] {
 .single-lens_gallery .mosaic__item {
   margin-bottom: 0 !important;
 }
-.single-lens_gallery .mosaic__item .image__item-meta {
-  display: none;
-}
 .mosaic__item .image__item-link {
   -webkit-transform: translateX(-101%);
   -moz-transform: translateX(-101%);
@@ -9552,6 +9549,10 @@ a [class*="icon-"] {
 
 .js--is-loaded img {
   opacity: 1;
+}
+
+.touch .single-gallery-masonry .image__item-meta {
+  display: none;
 }
 
 /*--------------------------------*\
@@ -9807,17 +9808,32 @@ li.comment .children:before {
   text-transform: uppercase;
 }
 .likes-box .like-link {
+  height: 48px;
+  height: 2.66667rem;
+  width: 48px;
+  width: 2.66667rem;
   padding: 0;
   background: none;
   border: none;
   cursor: pointer;
-}
-.likes-box i {
-  margin-left: -3px;
-  padding-right: 0;
+  border: 3px solid black;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+.likes-box i {
+  height: 48px;
+  height: 2.66667rem;
+  width: 48px;
+  width: 2.66667rem;
+  padding-top: 12px;
+  padding-top: 0.66667rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: -3px;
+  margin-left: -3px;
+  padding-right: 0;
   color: black !important;
   background-color: #fffc00;
   -webkit-transform: scale(0.75);
@@ -9930,27 +9946,25 @@ li.comment .children:before {
     float: left;
   }
 }
+.likes-box--footer .like-link {
+  margin-right: 6px;
+  margin-right: 0.33333rem;
+  display: inline-block;
+  float: left;
+}
 .likes-box--footer i {
   display: inline-block;
-  height: 36px;
-  height: 2rem;
-  width: 36px;
-  width: 2rem;
-  margin: 6px 0;
-  margin:  0.33333rem 0;
-  padding-top: 4.8px;
-  padding-top: 0.26667rem;
-  margin-right: 15px;
-  margin-right: 0.83333rem;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 3px solid black;
 }
 .likes-box--footer .likes-text {
+  margin-top: 13.2px;
+  margin-top: 0.73333rem;
   display: inline-block;
-  margin-top: 12px;
-  margin-top: 0.66667rem;
+}
+
+.image_item-table .like-link, .image_item-table i {
+  border: 0;
+  width: auto;
+  height: auto;
 }
 
 /*----------------------------------------*\
@@ -10642,6 +10656,42 @@ li.comment .children:before {
 /*-------------------------------*\
                PAGES
 \*-------------------------------*/
+/*----------------------------------------*\
+*   $SINGLE_STYLING
+\*----------------------------------------*/
+/**
+ * Bigger Font Size for first paragraph on single post (only)
+ */
+.single-post .entry__content p:first-child {
+  font-size: 22px;
+  font-size: 1.22222rem;
+}
+
+/**
+ * Offsetting the blockquote quotes
+ * I have my doubts
+ */
+@media only screen and (min-width: 72.33333em) {
+  .single-post blockquote:before {
+    margin-top: 0;
+    margin-left: -72px;
+    margin-left: -4rem;
+  }
+
+  .single-post .entry__title {
+    margin-left: -240px;
+    margin-left: -13.33333rem;
+    padding-left: 240px;
+    padding-left: 13.33333rem;
+  }
+}
+/**
+ * Video header
+ */
+.video-wrap {
+  text-align: center;
+}
+
 /**
  * Removing width and margin for gallery images/items
  * Adding a space between elements
@@ -10669,48 +10719,6 @@ li.comment .children:before {
 }
 .entry__content .gallery-item {
   padding: 0 1%;
-}
-
-/*----------------------------------------*\
-*   $PAGE_STYLING
-\*----------------------------------------*/
-/**
- * Making the title border reach the left margin of its parent container
- */
-.page blockquote p {
-  margin-left: 60px;
-  margin-left: 3.33333rem;
-}
-.page blockquote:before {
-  margin-left: 0;
-}
-
-/*----------------------------------------*\
-*   $SINGLE_STYLING
-\*----------------------------------------*/
-/**
- * Offsetting the blockquote quotes
- * I have my doubts
- */
-@media only screen and (min-width: 72.33333em) {
-  .single-post blockquote:before {
-    margin-top: 0;
-    margin-left: -72px;
-    margin-left: -4rem;
-  }
-
-  .single-post .entry__title {
-    margin-left: -240px;
-    margin-left: -13.33333rem;
-    padding-left: 240px;
-    padding-left: 13.33333rem;
-  }
-}
-/**
- * Video header
- */
-.video-wrap {
-  text-align: center;
 }
 
 /*----------------------------------------*\
@@ -10896,26 +10904,9 @@ li.comment .children:before {
 .likes-box--article .like-link {
   float: left;
   display: block;
-  height: 48px;
-  height: 2.66667rem;
-  width: 48px;
-  width: 2.66667rem;
-  margin: 12px auto;
-  margin:  0.66667rem auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 3px solid black;
 }
 .likes-box--article i {
-  height: 48px;
-  height: 2.66667rem;
-  width: 48px;
-  width: 2.66667rem;
-  padding-top: 12px;
-  padding-top: 0.66667rem;
   display: block;
-  margin-top: -3px;
 }
 
 @media only screen and (min-width: 72.33333em) {
@@ -10994,29 +10985,6 @@ li.comment .children:before {
   line-height: 1.09101;
 }
 
-.wp-caption {
-  display: block;
-  max-width: 100%;
-}
-.wp-caption a {
-  display: block;
-}
-.wp-caption a img {
-  width: 100%;
-  height: auto;
-}
-.wp-caption .wp-caption-text {
-  font-size: 14px;
-  font-size: 0.77778rem;
-  line-height: 1.71439;
-  font-style: italic;
-}
-.wp-caption .wp-caption-text:before {
-  content: "\2014";
-  margin-right: 5px;
-  margin-right: 0.27778rem;
-}
-
 .entry__meta--project {
   padding-bottom: 24px;
   padding-bottom: 1.33333rem;
@@ -11040,6 +11008,9 @@ li.comment .children:before {
   .entry__meta--project .entry__meta-box, .entry__meta--project .likes-box, .entry__meta--project .social-links {
     padding: 0 12px;
     padding:  0 0.66667rem;
+  }
+  .entry__meta--project .social-links {
+    padding-right: 0;
   }
 }
 .entry__meta--project .social-links__list a {
@@ -11401,8 +11372,8 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 }
 
 .progressbar {
-  margin: 24px 0 36px;
-  margin:  1.33333rem 0 2rem;
+  margin: 24px 0;
+  margin:  1.33333rem 0;
   -webkit-transform: scale(1, 1);
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -11419,10 +11390,10 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
   margin-bottom: 0.66667rem;
   font-size: 15px;
   font-size: 0.83333rem;
-  line-height: 1.6001;
   font-family: "Josefin Slab", serif;
   font-weight: bold;
   text-transform: uppercase;
+  color: #242423;
 }
 
 .progressbar__bar {
@@ -11482,6 +11453,17 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
   height: 0.72222rem;
 }
 
+.pixcode--testimonial {
+  margin-left: 72px;
+  margin-left: 4rem;
+}
+.pixcode--testimonial p:before, .pixcode--testimonial p:after {
+  content: none;
+}
+.pixcode--testimonial a {
+  text-decoration: none;
+}
+
 /*---------------------------------------*\
                DEFAULT STYLE
 \*---------------------------------------*/
@@ -11506,7 +11488,7 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 .testimonial__author-name {
   display: block;
   font-family: "Josefin Slab", serif;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   font-style: normal;
   letter-spacing: 2px;
@@ -11526,19 +11508,20 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 /*-----------------------------------*\
                MODIFIERS
 \*-----------------------------------*/
-.testimonial--big-text .quote__content {
+.testimonial--big-text .testimonial__content {
+  font-weight: 600;
   font-size: 36px;
   font-size: 2rem;
   line-height: 1.0001;
 }
 
-.testimonial--medium-text .quote__content {
+.testimonial--medium-text .testimonial__content {
   font-size: 30px;
   font-size: 1.66667rem;
   line-height: 1.2001;
 }
 
-.testimonial--small-text .quote__content {
+.testimonial--small-text .testimonial__content {
   font-size: 20px;
   font-size: 1.11111rem;
   line-height: 1.2001;
@@ -12604,7 +12587,7 @@ img.mfp-img {
   -ms-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .show-on-ie8 {
