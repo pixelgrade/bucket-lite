@@ -102,7 +102,11 @@
 @import "widgets/widgets";
 
 
+/*------------------------------*\
+               LOCALIZATION
+\*------------------------------*/
 
+// @import "localization/rtl";
 
 
 /*-------------------------------*\
@@ -110,4 +114,4 @@
 \*-------------------------------*/
 
 @import "animations";
-@import "shame";
+@import "shame"; 

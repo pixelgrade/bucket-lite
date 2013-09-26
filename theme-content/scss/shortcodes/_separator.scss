@@ -9,15 +9,15 @@
     border-bottom: 1px solid $dark;
 }
 
-    .separator--full-left{
-        @include rem(margin-left, -2 *$base-spacing-unit);
-        @include rem(padding-left, 2 *$base-spacing-unit);
-    }
+.separator--full-left{
+    @include rem(margin-left, -2 *$base-spacing-unit);
+    @include rem(padding-left, 2 *$base-spacing-unit);
+}
 
-    .single-post .separator--full-left{
-        @include rem(margin-left, -10 *$base-spacing-unit);
-        @include rem(padding-left, 10 *$base-spacing-unit);
-    }
+.single-post .separator--full-left{
+    @include rem(margin-left, -10 *$base-spacing-unit);
+    @include rem(padding-left, 10 *$base-spacing-unit);
+}
 
 .separator--dotted{
     height: 1px;
