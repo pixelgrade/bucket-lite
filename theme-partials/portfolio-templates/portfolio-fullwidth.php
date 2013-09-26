@@ -1,19 +1,21 @@
 <div id="main" class="content djax-updatable">
-    <?php
-    $ids = array();
+	<?php
+	$client_name = '';
+	$client_link = '#';
+	$client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 
-    if ( class_exists('Pix_Query') ) {
-        $pixquery = new Pix_Query();
-        $ids = $pixquery->get_gallery_ids('portfolio_gallery');
-        $client_name = $pixquery->get_meta_value('portfolio_client_name');
-        $client_link = $pixquery->get_meta_value('portfolio_client_link');        
-    }
+	$gallery_ids = array();
+	$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
+	if (!empty($gallery_ids)) {
+		$gallery_ids = explode(',',$gallery_ids);
+	}
 
     $attachments = get_posts( array(
         'post_type' => 'attachment',
         'posts_per_page' => -1,
         'orderby' => "post__in",
-        'post__in'     => $ids
+        'post__in'     => $gallery_ids
     ) );
 
     if ( $attachments ) : ?>
