@@ -25,7 +25,10 @@
     else if(get_post_type() == 'lens_portfolio'){
         $class_name = 'single-portfolio-';
         $class_name .= get_post_meta(get_the_ID(), wpgrade::prefix().'project_template', true);        
-    }
+    } 
+	else if(is_page() && get_page_template_slug(get_the_ID()) == 'template-journal.php') {
+		$class_name .= ' blog';
+	}
 
     $data_ajaxloading = (wpgrade::option('use_ajax_loading') != '') ? 'data-ajaxloading' : '';
     $data_smoothscrolling = (wpgrade::option('use_smooth_scroll') != '') ? 'data-smoothscrolling' : '';
