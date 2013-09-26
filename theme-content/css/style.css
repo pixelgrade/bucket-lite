@@ -10244,6 +10244,9 @@ a [class*="icon-"] {
 .header a {
   text-decoration: none;
 }
+.header .hN, .header .alpha, .header h1, .header .beta, .header h2, .header .gamma, .header h3, .header .masonry__item .entry__title, .masonry__item .header .entry__title, .header .single-portfolio-fullwidth .entry__title, .single-portfolio-fullwidth .header .entry__title, .header .delta, .header h4, .header .epsilon, .header h5, .header .zeta, .header h6 {
+  color: #91908e;
+}
 
 @media only screen and (max-width: 50em) {
   .header__inner-wrap {
@@ -11498,16 +11501,17 @@ li.comment .children:before {
   height: auto;
 }
 
-.masonry__item .like-link {
+.mosaic__item .like-link {
   border: none;
   height: auto;
   width: auto;
   cursor: default;
 }
-.masonry__item .like-link i {
+.mosaic__item .like-link i {
   height: auto;
   width: auto;
   background: none;
+  padding: 0;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
@@ -11565,6 +11569,15 @@ li.comment .children:before {
   padding: 0.66667rem;
   color: #595957;
   text-decoration: none;
+}
+
+.site-social-links {
+  font-size: 1.4em;
+  margin-right: 1em;
+}
+
+.site-social-links__social-link a {
+  color: #91908e;
 }
 
 /*----------------------------------------*\

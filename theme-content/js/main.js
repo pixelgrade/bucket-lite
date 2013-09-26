@@ -4144,6 +4144,15 @@ function init() {
 
     }
 
+    if ($('.site-logo--image-2x').length) {
+        var image = $('.site-logo--image-2x').find('img');
+
+        if (image.data('logo2x') !== undefined) {
+            console.log(image.attr('data-logo2x'));
+            image.attr('src', image.data('logo2x'));
+        }
+    }
+
     $('html').addClass('loaded');
 
     $(function() {

@@ -39,7 +39,24 @@
             <div class="header">
                 <header class="site-header">
                     <div class="site-header__branding">
-                        <a href="<?php home_url() ?>" class="site-logo"><?php bloginfo( 'name' ); ?></a>
+                        <?php if (wpgrade::option('main_logo')): ?>
+                            <div class="site-logo site-logo--image <?php if ( wpgrade::option('use_retina_logo') ) echo "site-logo--image-2x"; ?>">
+                                <a class="site-home-link" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name') ?>">
+                                    <?php
+                                    $data_retina_logo  = wpgrade::option('use_retina_logo');
+                                    if ($data_retina_logo)
+                                        $data_retina_logo = 'data-logo2x="'.wpgrade::option('retina_main_logo').'"';
+                                    else
+                                        $data_retina_logo = '';
+                                    ?>
+                                    <img src="<?php echo wpgrade::option('main_logo'); ?>" <?php echo $data_retina_logo; ?> rel="logo" alt="<?php echo get_bloginfo('name') ?>"/>
+                                </a>
+                            </div>
+                        <?php else: ?>
+                            <div class="site-logo site-logo--text">
+                                <a class="site-home-link" href="<?php echo home_url() ?>"><?php echo get_bloginfo('name') ?></a>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>
                     <div id="navigation" class="header__inner-wrap djax-updatable">
@@ -48,9 +65,40 @@
                 </header>
                 <?php get_sidebar('header'); ?>
                 <footer id="colophon" class="site-footer" role="contentinfo">
+                    <?php
+                    $social_icons = wpgrade::option('social_icons');
+                    $target = '';
+                    if (wpgrade::option('social_icons_target_blank')) {
+                        $target = ' target="_blank"';
+                    }
+
+                    if (count($social_icons)): ?>
+                        <h4><?php _e("We are Social", wpgrade::textdomain()); ?></h4>
+                        <ul class="site-social-links">
+                            <?php foreach ($social_icons as $domain => $value): if ($value): ?>
+                                <li class="site-social-links__social-link">
+                                    <a href="<?php echo $value ?>"<?php echo $target ?>>
+                                        <?php switch($domain) {
+                                            case 'youtube':
+                                                ?><i class="shc icon-play"></i>
+                                                <?php break;
+                                            case 'appnet':
+                                                ?><i class="shc icon-user"></i>
+                                                <?php break;
+                                            default:
+                                                ?><i class="shc icon-<?php echo $domain; ?>"></i>
+                                                <?php } ?>
+                                    </a>
+                                </li>
+                            <?php endif; endforeach ?>
+                        </ul>
+                    <?php endif; ?>
+
                     <div class="site-info text--right">
-                        <div>&copy; Copyright 2013</div>
-                        <p><?php printf( __( 'Handcrafted with love by %1$s', 'lens' ), '<a href="http://pixelgrade.com/" rel="designer">PixelGrade Team</a>' ); ?></p>
+                        <?php
+                            $copyright = wpgrade_callback_theme_general_filters(wpgrade::option('copyright_text'));
+                            echo $copyright;
+                        ?>
                     </div><!-- .site-info -->
                 </footer><!-- #colophon -->
             </div><!-- .header -->

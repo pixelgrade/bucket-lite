@@ -47,3 +47,16 @@
             text-decoration: none;
         }
     }
+
+.site-social-links {
+    @extend .nav;
+    font-size: 1.4em;
+    margin-right: 1em;
+}
+
+.site-social-links__social-link {
+    
+    a {
+        color: #91908e;
+    }
+}
