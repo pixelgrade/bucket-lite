@@ -77,13 +77,36 @@
             </footer><!-- .entry__meta -->
         </section><!-- .project-content -->
     </article><!-- #post -->
-    <?php 
-        if (is_plugin_active('yet-another-related-posts-plugin/yarpp.php')) {
-            yarpp_related(array(
-                'threshold' => 0,
-                'post_type' => array('lens_portfolio')
-            )); 
-        } 
-    ?>
+    <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+    <section class="related-projects_container">
+        <header class="related-projects_header">
+            <?php if($yarpp_active) : ?>
+            <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
+            <?php endif; ?>
+           <nav class="projects_nav">
+               <ul class="projects_nav-list">
+                   <li class="projects_nav-item">
+                        <?php next_post_link('%link', '<i class="icon-arrow-left"></i>' . __('Previous', wpGrade::textdomain()) ); ?>
+                    </li>
+                   <li class="projects_nav-item">
+                        <a href="#">
+                            <?php _e("All projects", wpGrade::textdomain()); ?>
+                        </a>
+                    </li>
+                    <li class="projects_nav-item">
+                        <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<i class="icon-arrow-right"></i>'); ?>
+                    </li>
+               </ul>
+           </nav>
+        </header>        
+        <?php 
+            if ($yarpp_active) {
+                yarpp_related(array(
+                    'threshold' => 0,
+                    'post_type' => array('lens_portfolio')
+                )); 
+            }
+        ?>
+    </section>
 </div><!-- .page-content -->
 </div><!-- .content -->

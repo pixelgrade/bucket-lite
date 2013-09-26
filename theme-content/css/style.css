@@ -609,7 +609,7 @@ a [class*=" icon-"] {
 .navbar-inverse .site-navigation > .active > a > [class^="icon-"],
 .navbar-inverse .site-navigation__sub-menu > .active > a > [class^="icon-"],
 .navbar-inverse .site-social-links > .active > a > [class^="icon-"],
-.navbar-inverse .related-projects_nav-list > .active > a > [class^="icon-"],
+.navbar-inverse .projects_nav-list > .active > a > [class^="icon-"],
 .navbar-inverse .related-projects_items-list > .active > a > [class^="icon-"],
 .navbar-inverse .mosaic__filter > .active > a > [class^="icon-"],
 .navbar-inverse .commentlist > .active > a > [class^="icon-"],
@@ -626,7 +626,7 @@ a [class*=" icon-"] {
 .navbar-inverse .site-navigation > .active > a > [class*=" icon-"],
 .navbar-inverse .site-navigation__sub-menu > .active > a > [class*=" icon-"],
 .navbar-inverse .site-social-links > .active > a > [class*=" icon-"],
-.navbar-inverse .related-projects_nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .projects_nav-list > .active > a > [class*=" icon-"],
 .navbar-inverse .related-projects_items-list > .active > a > [class*=" icon-"],
 .navbar-inverse .mosaic__filter > .active > a > [class*=" icon-"],
 .navbar-inverse .commentlist > .active > a > [class*=" icon-"],
@@ -649,14 +649,14 @@ a [class*=" icon-"] {
 .btn [class^="icon-"].icon-large, .wpcf7-submit [class^="icon-"].icon-large, .form-submit #comment-submit [class^="icon-"].icon-large,
 .btn [class*=" icon-"].icon-large,
 .wpcf7-submit [class*=" icon-"].icon-large,
-.form-submit #comment-submit [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large, .rsBullets [class^="icon-"].icon-large, .entry__content ul [class^="icon-"].icon-large, .site-navigation [class^="icon-"].icon-large, .site-navigation__sub-menu [class^="icon-"].icon-large, .site-social-links [class^="icon-"].icon-large, .related-projects_nav-list [class^="icon-"].icon-large, .related-projects_items-list [class^="icon-"].icon-large, .mosaic__filter [class^="icon-"].icon-large, .commentlist [class^="icon-"].icon-large, .social-links__list [class^="icon-"].icon-large, .image_item-categories [class^="icon-"].icon-large, .gallery-control__items [class^="icon-"].icon-large, .pixcode--tabs__nav [class^="icon-"].icon-large, .widget ul [class^="icon-"].icon-large,
+.form-submit #comment-submit [class*=" icon-"].icon-large, .nav [class^="icon-"].icon-large, .rsBullets [class^="icon-"].icon-large, .entry__content ul [class^="icon-"].icon-large, .site-navigation [class^="icon-"].icon-large, .site-navigation__sub-menu [class^="icon-"].icon-large, .site-social-links [class^="icon-"].icon-large, .projects_nav-list [class^="icon-"].icon-large, .related-projects_items-list [class^="icon-"].icon-large, .mosaic__filter [class^="icon-"].icon-large, .commentlist [class^="icon-"].icon-large, .social-links__list [class^="icon-"].icon-large, .image_item-categories [class^="icon-"].icon-large, .gallery-control__items [class^="icon-"].icon-large, .pixcode--tabs__nav [class^="icon-"].icon-large, .widget ul [class^="icon-"].icon-large,
 .nav [class*=" icon-"].icon-large,
 .rsBullets [class*=" icon-"].icon-large,
 .entry__content ul [class*=" icon-"].icon-large,
 .site-navigation [class*=" icon-"].icon-large,
 .site-navigation__sub-menu [class*=" icon-"].icon-large,
 .site-social-links [class*=" icon-"].icon-large,
-.related-projects_nav-list [class*=" icon-"].icon-large,
+.projects_nav-list [class*=" icon-"].icon-large,
 .related-projects_items-list [class*=" icon-"].icon-large,
 .mosaic__filter [class*=" icon-"].icon-large,
 .commentlist [class*=" icon-"].icon-large,
@@ -670,14 +670,14 @@ a [class*=" icon-"] {
 .btn [class^="icon-"].icon-spin, .wpcf7-submit [class^="icon-"].icon-spin, .form-submit #comment-submit [class^="icon-"].icon-spin,
 .btn [class*=" icon-"].icon-spin,
 .wpcf7-submit [class*=" icon-"].icon-spin,
-.form-submit #comment-submit [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin, .rsBullets [class^="icon-"].icon-spin, .entry__content ul [class^="icon-"].icon-spin, .site-navigation [class^="icon-"].icon-spin, .site-navigation__sub-menu [class^="icon-"].icon-spin, .site-social-links [class^="icon-"].icon-spin, .related-projects_nav-list [class^="icon-"].icon-spin, .related-projects_items-list [class^="icon-"].icon-spin, .mosaic__filter [class^="icon-"].icon-spin, .commentlist [class^="icon-"].icon-spin, .social-links__list [class^="icon-"].icon-spin, .image_item-categories [class^="icon-"].icon-spin, .gallery-control__items [class^="icon-"].icon-spin, .pixcode--tabs__nav [class^="icon-"].icon-spin, .widget ul [class^="icon-"].icon-spin,
+.form-submit #comment-submit [class*=" icon-"].icon-spin, .nav [class^="icon-"].icon-spin, .rsBullets [class^="icon-"].icon-spin, .entry__content ul [class^="icon-"].icon-spin, .site-navigation [class^="icon-"].icon-spin, .site-navigation__sub-menu [class^="icon-"].icon-spin, .site-social-links [class^="icon-"].icon-spin, .projects_nav-list [class^="icon-"].icon-spin, .related-projects_items-list [class^="icon-"].icon-spin, .mosaic__filter [class^="icon-"].icon-spin, .commentlist [class^="icon-"].icon-spin, .social-links__list [class^="icon-"].icon-spin, .image_item-categories [class^="icon-"].icon-spin, .gallery-control__items [class^="icon-"].icon-spin, .pixcode--tabs__nav [class^="icon-"].icon-spin, .widget ul [class^="icon-"].icon-spin,
 .nav [class*=" icon-"].icon-spin,
 .rsBullets [class*=" icon-"].icon-spin,
 .entry__content ul [class*=" icon-"].icon-spin,
 .site-navigation [class*=" icon-"].icon-spin,
 .site-navigation__sub-menu [class*=" icon-"].icon-spin,
 .site-social-links [class*=" icon-"].icon-spin,
-.related-projects_nav-list [class*=" icon-"].icon-spin,
+.projects_nav-list [class*=" icon-"].icon-spin,
 .related-projects_items-list [class*=" icon-"].icon-spin,
 .mosaic__filter [class*=" icon-"].icon-spin,
 .commentlist [class*=" icon-"].icon-spin,
@@ -4671,7 +4671,7 @@ textarea:focus {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf:after, .nav:after, .rsBullets:after, .entry__content ul:after, .site-navigation:after, .site-navigation__sub-menu:after, .site-social-links:after, .related-projects_nav-list:after, .related-projects_items-list:after, .mosaic__filter:after, .commentlist:after, .social-links__list:after, .image_item-categories:after, .gallery-control__items:after, .pixcode--tabs__nav:after, .widget ul:after, .media:after, .island:after,
+.cf:after, .nav:after, .rsBullets:after, .entry__content ul:after, .site-navigation:after, .site-navigation__sub-menu:after, .site-social-links:after, .projects_nav-list:after, .related-projects_items-list:after, .mosaic__filter:after, .commentlist:after, .social-links__list:after, .image_item-categories:after, .gallery-control__items:after, .pixcode--tabs__nav:after, .widget ul:after, .media:after, .island:after,
 .islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .comment-form:after, .content:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .article-timestamp:after {
   content: "";
   display: table;
@@ -5712,18 +5712,18 @@ html.flexbox {
  * Demo: jsfiddle.net/inuitcss/Vnph4
  *
  */
-.nav, .rsBullets, .entry__content ul, .site-navigation, .site-navigation__sub-menu, .site-social-links, .related-projects_nav-list, .related-projects_items-list, .mosaic__filter, .commentlist, .social-links__list, .image_item-categories, .gallery-control__items, .pixcode--tabs__nav, .widget ul {
+.nav, .rsBullets, .entry__content ul, .site-navigation, .site-navigation__sub-menu, .site-social-links, .projects_nav-list, .related-projects_items-list, .mosaic__filter, .commentlist, .social-links__list, .image_item-categories, .gallery-control__items, .pixcode--tabs__nav, .widget ul {
   list-style: none;
   margin-left: 0;
 }
-.nav > li, .rsBullets > li, .entry__content ul > li, .site-navigation > li, .site-navigation__sub-menu > li, .site-social-links > li, .related-projects_nav-list > li, .related-projects_items-list > li, .mosaic__filter > li, .commentlist > li, .social-links__list > li, .image_item-categories > li, .gallery-control__items > li, .pixcode--tabs__nav > li, .widget ul > li,
+.nav > li, .rsBullets > li, .entry__content ul > li, .site-navigation > li, .site-navigation__sub-menu > li, .site-social-links > li, .projects_nav-list > li, .related-projects_items-list > li, .mosaic__filter > li, .commentlist > li, .social-links__list > li, .image_item-categories > li, .gallery-control__items > li, .pixcode--tabs__nav > li, .widget ul > li,
 .nav > li > a,
 .rsBullets > li > a,
 .entry__content ul > li > a,
 .site-navigation > li > a,
 .site-navigation__sub-menu > li > a,
 .site-social-links > li > a,
-.related-projects_nav-list > li > a,
+.projects_nav-list > li > a,
 .related-projects_items-list > li > a,
 .mosaic__filter > li > a,
 .commentlist > li > a,
@@ -7044,7 +7044,7 @@ html.flexbox {
 }
 
 .span-12, .col-12, .logged-in-as, .comment-form-comment,
-.form-submit, .related-projects_title, .related-projects_nav, .page-template-template-portfolio-php .mosaic__item {
+.form-submit, .related-projects_title, .projects_nav, .page-template-template-portfolio-php .mosaic__item {
   width: 100%;
 }
 
@@ -7134,7 +7134,7 @@ html.flexbox {
   }
 }
 @media only screen and (min-width: 50.11111em) {
-  .hand-span-6, .related-projects_title, .related-projects_nav, .page-template-template-portfolio-php .mosaic__item, .single-lens_gallery .mosaic__item {
+  .hand-span-6, .related-projects_title, .projects_nav, .page-template-template-portfolio-php .mosaic__item, .single-lens_gallery .mosaic__item {
     width: 50%;
   }
 }
@@ -9804,6 +9804,25 @@ input:not([type]).wpcf7-form-control {
   color: black;
 }
 
+/**
+ * Ensure that a caption won't expand more than the content
+ */
+.wp-caption {
+  max-width: 100%;
+}
+
+.wp-caption-text {
+  font-size: 16px;
+  font-size: 0.88889rem;
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+}
+.wp-caption-text:before {
+  content: "\2014";
+  margin-right: 3px;
+  margin-right: 0.16667rem;
+}
+
 html {
   font-family: "Crimson Text", sans-serif;
   font-size: 112.5%;
@@ -10759,7 +10778,7 @@ a [class*="icon-"] {
  * Project navigation is 50% and goes right
  */
 @media only screen and (max-width: 50em) {
-  .related-projects_nav {
+  .projects_nav {
     float: left;
     display: block;
     margin-bottom: 24px;
@@ -10767,31 +10786,31 @@ a [class*="icon-"] {
   }
 }
 @media only screen and (min-width: 50.11111em) {
-  .related-projects_nav {
-    float: left;
+  .projects_nav {
+    float: right;
     margin: 24px 0;
     margin:  1.33333rem 0;
     text-align: right;
   }
 }
 
-.related-projects_nav-list {
+.projects_nav-list {
   margin-bottom: 0;
 }
 @media only screen and (max-width: 50em) {
-  .related-projects_nav-list {
+  .projects_nav-list {
     margin-left: -12px;
     margin-left: -0.66667rem;
   }
 }
 @media only screen and (min-width: 50.11111em) {
-  .related-projects_nav-list {
+  .projects_nav-list {
     margin-right: -12px;
     margin-right: -0.66667rem;
   }
 }
 
-.related-projects_nav-link {
+.projects_nav-item a {
   padding: 0 6px;
   padding:  0 0.33333rem;
   font-family: "Roboto", sans-serif;
@@ -10801,7 +10820,7 @@ a [class*="icon-"] {
   color: #242423;
   text-decoration: none;
 }
-.related-projects_nav-link i {
+.projects_nav-item a i {
   padding: 0 6px;
   padding:  0 0.33333rem;
 }
