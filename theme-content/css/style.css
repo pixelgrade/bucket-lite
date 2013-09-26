@@ -9722,17 +9722,17 @@ a:hover > i.shc {
   height: 13px;
   height: 0.72222rem; }
 
-.testimonial--big-text .quote__content {
+.quote__content.testimonial--big-text {
   font-size: 36px;
   font-size: 2rem;
   line-height: 1.0001; }
 
-.testimonial--medium-text .quote__content {
+.quote__content.testimonial--medium-text {
   font-size: 30px;
   font-size: 1.66667rem;
   line-height: 1.2001; }
 
-.testimonial--small-text .quote__content {
+.quote__content.testimonial--small-text {
   font-size: 20px;
   font-size: 1.11111rem;
   line-height: 1.2001; }
