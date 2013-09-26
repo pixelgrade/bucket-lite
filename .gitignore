@@ -1,9 +1,9 @@
-wpgrade-content/.sass-cache
-wpgrade-content/css/style.css
-wpgrade-content/css/login.css
-wpgrade-content/inc/vendor/twitter-api/cache.tweetcache
-wpgrade-content/inc/metaboxes/.sass-cache
-wpgrade-content/css/style.css.map
+theme-content/.sass-cache
+theme-content/css/style.css
+theme-content/css/login.css
+theme-content/inc/vendor/twitter-api/cache.tweetcache
+theme-content/inc/metaboxes/.sass-cache
+theme-content/css/style.css.map
 
 .DS_Store
 nbproject

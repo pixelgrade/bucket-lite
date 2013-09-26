@@ -400,6 +400,36 @@
 
 		'desc' => __('<p class="description">Social sharing stuff.</p>', wpgrade::textdomain()),
 		'fields' => array(
+            array(
+                'id' => 'social_icons',
+                'type' => 'text_sortable',
+                'title' => __('Social Icons', wpgrade::textdomain()),
+                'sub_desc' => __('Define and reorder your social links.<br /><b>Note: </b>These will be displayed in the "'. wpgrade::themename() .' Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),
+                'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
+                'options' => array(
+                    'twitter' => __('Twitter', wpgrade::textdomain()),
+                    'facebook' => __('Facebook', wpgrade::textdomain()),
+                    'gplus' => __('Google+', wpgrade::textdomain()),
+                    'skype' => __('Skype', wpgrade::textdomain()),
+                    'linkedin' => __('LinkedIn', wpgrade::textdomain()),
+                    'youtube' => __('Youtube', wpgrade::textdomain()),
+                    'vimeo' => __('Vimeo', wpgrade::textdomain()),
+                    'instagram' => __('Instagram', wpgrade::textdomain()),
+                    'flickr' => __('Flickr', wpgrade::textdomain()),
+                    'pinterest' => __('Pinterest', wpgrade::textdomain()),
+                    'tumblr' => __('Tumblr', wpgrade::textdomain()),
+                    'lastfm' => __('Last.FM', wpgrade::textdomain()),
+                    'appnet' => __('App.net', wpgrade::textdomain())
+                )
+            ),
+            array(
+                'id' => 'social_icons_target_blank',
+                'type' => 'checkbox',
+                'title' => __('Open social icons links in new a window?', wpgrade::textdomain()),
+                'sub_desc' => __('Do you want to open social links in a new window ?', wpgrade::textdomain()),
+                'std' => '1',
+                'switch' => true
+            ),
 			array(
 				'id' => 'prepare_for_social_share',
 				'type' => 'checkbox_hide_below',
@@ -438,7 +468,7 @@
 				'type' => 'upload',
 				'title' => __('Default Social Share Image', wpgrade::textdomain()),
 				'sub_desc' => __('If an image is uploaded, this will be used for content sharing if you don\'t upload a custom image with your content (at least 200px wide recommended).', wpgrade::textdomain()),
-			),
+			)
 		)
 	);
 
