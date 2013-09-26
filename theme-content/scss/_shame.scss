@@ -29,32 +29,6 @@ html {
 //     }
 // }
 
-.content {
-    @extend .cf;
-    background: white;
-    position: relative;
-
-    // project-classic causes horizontal scroll. CAUTION!
-    overflow: hidden;
-
-    @include media(from hand) {
-        @include rem(margin-left, 250px);
-    } 
-
-    @include media(to hand) {
-        position: relative;
-        @include rem(top, 3*$base-spacing-unit);
-        @include rem(padding-bottom, 5 * $base-spacing-unit);
-        @include transition(opacity .3s ease-in-out);
-
-        // some dark overlay over the content when the navigation is visible
-
-        .navigation--is-visible & {
-            @include opacity(0.15);
-        }
-    }
-}
-
 /* prevent flicker on ios */
 .content, .header, .header__inner-wrap {
     @include backface-visibility(hidden);
@@ -229,7 +203,7 @@ html {
  * making the scroll bar appear.
  */
 html{
-    overflow: hidden !important; 
+    // overflow: hidden !important; 
     padding-right: 0 !important;
 }
 
@@ -322,4 +296,13 @@ img.mfp-img{
         max-width: 100%;
         height: auto;
     }
+}
+
+blockquote p:before{
+    content: none;
+}
+
+
+blockquote p:after{
+    content: none;
 }

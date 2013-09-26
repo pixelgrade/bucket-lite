@@ -41,6 +41,14 @@ class wpgrade {
 	}
 
 	/**
+	 * @return mixed
+	 */
+	static function confoption($key, $default = null) {
+		$config = static::config();
+		return isset($config[$key]) ? $config[$key] : $default;
+	}
+
+	/**
 	 * @return string theme textdomain
 	 */
 	static function textdomain() {
@@ -131,31 +139,24 @@ class wpgrade {
 	// Wordpress Defferred Helpers
 	// ------------------------------------------------------------------------
 
-	/** @var array cached content filtering callbacks */
-	protected static $filter_content_cache = null;
-
 	/**
 	 * Filter content based on settings in wpgrade-config.php
 	 * Filters may be disabled by setting priority to false or null.
 	 *
 	 * @return string $content after being filtered
 	 */
-	static function filter_content($content) {
-		if (self::$filter_content_cache === null) {
-			$config = self::config();
-			$enabled_filters = array();
-			foreach ($config['content-filters'] as $filterfunc => $priority) {
-				if ($priority !== false && $priority !== null) {
-					$enabled_filters[$filterfunc] = $priority;
-				}
+	static function filter_content($content, $filtergroup) {
+		$config = self::config();
+		$enabled_filters = array();
+		foreach ($config['content-filters'][$filtergroup] as $filterfunc => $priority) {
+			if ($priority !== false && $priority !== null) {
+				$enabled_filters[$filterfunc] = $priority;
 			}
-
-			asort($enabled_filters);
-
-			self::$filter_content_cache = $enabled_filters;
 		}
 
-		foreach (self::$filter_content_cache as $filterfunc => $priority) {
+		asort($enabled_filters);
+
+		foreach ($enabled_filters as $filterfunc => $priority) {
 			$content = call_user_func($filterfunc, $content);
 		}
 
@@ -165,8 +166,9 @@ class wpgrade {
 	/**
 	 * @param type $content
 	 */
-	static function display_content($content) {
-		echo self::filter_content($content);
+	static function display_content($content, $filtergroup = null) {
+		$filtergroup !== null or $filtergroup = 'default';
+		echo self::filter_content($content, $filtergroup);
 	}
 
 	/**
@@ -174,6 +176,20 @@ class wpgrade {
 	 */
 	static function themepath()	{
 		return get_template_directory().DIRECTORY_SEPARATOR;
+	}
+
+	/**
+	 * @return string path to core with slash
+	 */
+	static function corepath() {
+		return dirname(__FILE__).DIRECTORY_SEPARATOR;
+	}
+
+	/**
+	 * @return string core uri path
+	 */
+	static function coreuri() {
+		return get_template_directory_uri().'/'.basename(dirname(__FILE__)).'/';
 	}
 
 	/**
@@ -600,6 +616,41 @@ class wpgrade {
 		$rgb = array($r, $g, $b);
 
 		return $rgb; // returns an array with the rgb values
+	}
+
+
+	// Internal Bootstrapping Helpers
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Loads in core dependency.
+	 */
+	static function require_coremodule($modulename) {
+
+		if ($modulename == 'redux2') {
+			require static::corepath().'vendor/redux2/options/defaults'.EXT;
+		}
+		elseif ($modulename == 'redux3') {
+			require static::corepath().'vendor/redux3/options/defaults'.EXT;
+		}
+		else { // unsupported module
+			die('Unsuported core module: '.$modulename);
+		}
+	}
+
+	/**
+	 * @return string partial uri path to core module
+	 */
+	static function coremoduleuri($modulename) {
+		if ($modulename == 'redux2') {
+			return wpgrade::coreuri().'vendor/redux2/';
+		}
+		elseif ($modulename == 'redux3') {
+			return wpgrade::coreuri().'vendor/redux3/';
+		}
+		else { // unsupported module
+			die('Unsuported core module: '.$modulename);
+		}
 	}
 
 

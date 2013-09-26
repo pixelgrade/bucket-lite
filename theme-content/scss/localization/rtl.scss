@@ -1,0 +1,234 @@
+/*------------------------------*\
+               RTL SUPPORT
+\*------------------------------*/
+
+/*body*/.rtl {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align:right;
+}
+
+
+
+
+
+/*------------------------------*\
+               LAYOUT
+\*------------------------------*/
+
+/**
+ * Content
+ */
+
+/*#main*/.content {
+   @include media(from hand) {
+        margin-left:0;
+        @include rem(margin-right, 250px);
+    } 
+}
+
+
+
+/*------------------------------*\
+               HEADER
+\*------------------------------*/
+
+.header {
+
+  @include media(from hand) {
+        @include rem(padding-right, 2*$base-spacing-unit);
+        @include rem(padding-left, $base-spacing-unit);
+  }
+
+  &:before, &:after {
+    left:auto;
+    @include rem(right, $base-spacing-unit);
+  }
+
+
+  /*ul*/.site-navigation--main {
+
+      @include media(from hand) {
+          margin-left:0;
+          @include rem(margin-right, -1 * $base-spacing-unit);
+      }
+
+      /*li*/.menu-item--parent {
+          &:after {
+              right:auto;
+              @include rem(left, $half-spacing-unit);
+          }
+        }
+  }
+
+  .site-footer {
+      right:auto;
+      left:0;
+      @include rem(left, $base-spacing-unit);
+      @include rem(margin-right, 2 * $base-spacing-unit);
+  }
+}
+
+/*------------------------------*\
+               PAGE SINGLE
+\*------------------------------*/
+
+@include media(to lap){
+    .single-post{
+        .featured-image{
+            @include rem(margin-right, -$base-spacing-unit);
+            @include rem(margin-left,-$base-spacing-unit);
+        }   
+    }    
+}
+
+@include media(from lap){
+    .single-post{
+        .page-content{
+            padding-left: 0;
+            @include rem(padding-right, 10 * $base-spacing-unit);
+        }
+
+        .featured-image{
+            margin-left:auto;
+            @include rem(margin-right, -10 * $base-spacing-unit);
+        }   
+    }
+}
+
+
+
+/*------------------------------*\
+               BLOG
+\*------------------------------*/
+
+.masonry__item {
+  .article-timestamp {
+      float: right;
+      margin-left:0;
+      @include rem(margin-right, $base-spacing-unit);
+  }
+ .entry__title {
+      margin-right: 0;
+      @include rem(margin-left, $base-spacing-unit);
+      @include rem(padding, $half-spacing-unit $half-spacing-unit $base-spacing-unit 0);
+  }
+}
+
+.image_item-categories {
+  text-align:right;
+
+  li {
+    float:right;
+  }
+}
+
+.span {
+    float: right;
+}
+
+.article-timestamp--single{ 
+  @include media(from lap) {
+        float: right;
+        @include rem(margin, 26px -8 * $base-spacing-unit 0 0);
+    }
+}
+
+.likes-box--article {
+    @include media(from lap) {
+        float: right;
+        @include rem(margin, 6 * $base-spacing-unit -6 * $base-spacing-unit 0 0);          
+    }    
+}
+
+
+
+
+
+/*------------------------------*\
+               SIDEBAR
+\*------------------------------*/
+ @include media(from lap) {
+    .page-content{
+        @include rem(padding-right, 2 * $base-spacing-unit);   
+        padding-left: 0;
+    }
+    .page-content, .sidebar{
+        float: right;
+    }
+}
+
+.form-search {
+  margin-right:0;
+  @include rem(margin-left, -2 * $base-spacing-unit);
+}
+
+    .form-search .btn{
+        margin-right:0;
+        @include rem(margin-left, 2 * $base-spacing-unit);
+        float: left;
+    }
+
+
+/*------------------------------*\
+               PORTFOLIO
+\*------------------------------*/
+
+
+/*------------------------------*\
+               SHORTCODES
+\*------------------------------*/
+
+/**
+ * Team Member
+ */
+
+.team-member-name, .team-member-position,
+.team-member-description p{
+    
+    @include media(small hand) {
+        text-align: right;
+    }
+
+    @include media(from lap){
+        text-align: right;
+    }
+}
+
+.team-member-social-links{
+    text-align: center;
+
+    @include media(small hand) {
+        text-align: left;
+    }
+    
+    @include media(from lap){
+        text-align: right;
+    }    
+}
+
+/**
+* Separator
+*/
+.separator--full-left{
+    margin-left:0;
+    padding-left:0;
+    @include rem(margin-right, -2 *$base-spacing-unit);
+    @include rem(padding-right, 2 *$base-spacing-unit);
+}
+
+.single-post .separator--full-left{
+    margin-left:0;
+    padding-left:0;
+    @include rem(margin-right, -10 *$base-spacing-unit);
+    @include rem(padding-right, 10 *$base-spacing-unit);
+}
+
+/**
+ * Grid
+ */
+
+.row-shortcode div[class*='span-'] {
+  float:right;
+}
+

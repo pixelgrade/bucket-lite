@@ -2684,7 +2684,7 @@ textarea:focus {
  * and over in your markup.
  */
 .cf:after, .nav:after, .rsBullets:after, .entry__content ul:after, .site-navigation:after, .site-navigation__sub-menu:after, .site-social-links:after, .related-projects_nav-list:after, .related-projects_items-list:after, .mosaic__filter:after, .commentlist:after, .social-links__list:after, .image_item-categories:after, .gallery-control__items:after, .pixcode--tabs__nav:after, .widget ul:after, .media:after, .island:after,
-.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .comment-form:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .article-timestamp:after, .content:after {
+.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .comment-form:after, .content:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .article-timestamp:after {
   content: "";
   display: table;
   clear: both; }
@@ -2873,7 +2873,7 @@ hgroup .hN, hgroup .alpha, hgroup h1, hgroup .beta, hgroup h2, hgroup .gamma, hg
  * Inline quotes.
  */
 q {
-  quotes: "\2018" "\2019" "\201C" "\201D"; }
+  quotes: "\2018" "\2019" "\00AB" "\00BB"; }
   q:before {
     content: "\2018";
     content: open-quote; }
@@ -2888,15 +2888,15 @@ q {
     content: close-quote; }
 
 blockquote {
-  quotes: "\201C" "\201D"; }
+  quotes: "\00AB" "\00BB"; }
   blockquote p:before {
-    content: "\201C";
+    content: "\00AB";
     content: open-quote; }
   blockquote p:after {
     content: "";
     content: no-close-quote; }
   blockquote p:last-of-type:after {
-    content: "\201D";
+    content: "\00BB";
     content: close-quote; }
   blockquote q:before {
     content: "\2018";
@@ -7058,8 +7058,8 @@ blockquote {
     font-family: "Crimson Text", sans-serif;
     display: block;
     float: left;
-    margin-top: -24px;
-    margin-top: -1.33333rem;
+    margin-top: -18px;
+    margin-top: -1rem;
     margin-left: -72px;
     margin-left: -4rem;
     color: #fffc00; }
@@ -7119,6 +7119,30 @@ a {
   a [class*="icon-"] {
     text-decoration: none;
     padding-right: .5em; }
+
+/*#main*/
+.content {
+  background: white;
+  position: relative;
+  overflow: hidden; }
+  @media only screen and (min-width: 50.11111em) {
+    .content {
+      margin-left: 250px;
+      margin-left: 13.88889rem; } }
+  @media only screen and (max-width: 50em) {
+    .content {
+      position: relative;
+      top: 72px;
+      top: 4rem;
+      padding-bottom: 120px;
+      padding-bottom: 6.66667rem;
+      -webkit-transition: opacity 0.3s ease-in-out;
+      -moz-transition: opacity 0.3s ease-in-out;
+      -o-transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.3s ease-in-out; }
+      .navigation--is-visible .content {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+        opacity: 0.15; } }
 
 @media only screen and (max-width: 72.22222em) {
   .page-content {
@@ -7520,8 +7544,10 @@ a {
     border-top-color: #4d4d4d;
     pointer-events: none; }
   @media only screen and (min-width: 50.11111em) {
-    .no-touch .menu-item--parent > ul {
-      display: none; } }
+    .menu-item--parent > ul {
+      display: none; }
+    .touch .menu-item--parent > ul {
+      display: block; } }
   .menu-item--parent.current-menu-ancestor > ul, .menu-item--parent.current-menu-parent > ul {
     display: block; }
   .menu-item--parent.current-menu-ancestor > a, .menu-item--parent.current-menu-parent > a {
@@ -8380,6 +8406,21 @@ li.comment {
   width: auto;
   height: auto; }
 
+.masonry__item .like-link {
+  border: none;
+  height: auto;
+  width: auto;
+  cursor: default; }
+  .masonry__item .like-link i {
+    height: auto;
+    width: auto;
+    background: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+
 /*----------------------------------------*\
 *   $SOCIAL LINKS
 \*----------------------------------------*/
@@ -8985,10 +9026,13 @@ li.comment {
  */
 @media only screen and (min-width: 72.33333em) {
   .single-post blockquote:before {
-    margin-top: 0;
     margin-left: -72px;
     margin-left: -4rem; }
-
+  .single-post .pixcode--testimonial {
+    margin-left: -72px;
+    margin-left: -4rem;
+    padding-left: 72px;
+    padding-left: 4rem; }
   .single-post .entry__title {
     margin-left: -240px;
     margin-left: -13.33333rem;
@@ -9623,6 +9667,14 @@ a:hover > i.shc {
   height: 13px;
   height: 0.72222rem; }
 
+.pixcode--testimonial {
+  margin-left: 72px;
+  margin-left: 4rem; }
+  .pixcode--testimonial p:before, .pixcode--testimonial p:after {
+    content: none; }
+  .pixcode--testimonial a {
+    text-decoration: none; }
+
 /*---------------------------------------*\
                DEFAULT STYLE
 \*---------------------------------------*/
@@ -9645,7 +9697,7 @@ a:hover > i.shc {
 .testimonial__author-name {
   display: block;
   font-family: "Josefin Slab", serif;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   font-style: normal;
   letter-spacing: 2px;
@@ -9662,20 +9714,64 @@ a:hover > i.shc {
 /*-----------------------------------*\
                MODIFIERS
 \*-----------------------------------*/
-.testimonial--big-text .quote__content {
-  font-size: 36px;
-  font-size: 2rem;
-  line-height: 1.0001; }
+@media only screen and (min-width: 72.33333em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 36px;
+    font-size: 2rem;
+    line-height: 1.0001; }
 
-.testimonial--medium-text .quote__content {
-  font-size: 30px;
-  font-size: 1.66667rem;
-  line-height: 1.2001; }
+  .testimonial--medium-text .testimonial__content {
+    font-size: 30px;
+    font-size: 1.66667rem;
+    line-height: 1.2001; }
 
-.testimonial--small-text .quote__content {
-  font-size: 20px;
-  font-size: 1.11111rem;
-  line-height: 1.2001; }
+  .testimonial--small-text .testimonial__content {
+    font-size: 20px;
+    font-size: 1.11111rem;
+    line-height: 1.2001; } }
+@media only screen and (min-width: 50.05556em) and (max-width: 72.22222em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 32px;
+    font-size: 1.77778rem;
+    line-height: 1.1251; }
+
+  .testimonial--medium-text .testimonial__content {
+    font-size: 28px;
+    font-size: 1.55556rem;
+    line-height: 1.28581; }
+
+  .testimonial--small-text .testimonial__content {
+    font-size: 16px;
+    font-size: 0.88889rem;
+    line-height: 1.5001; } }
+@media only screen and (max-width: 50em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 28px;
+    font-size: 1.55556rem;
+    line-height: 1.28581; }
+
+  .testimonial--medium-text .testimonial__content {
+    font-size: 22px;
+    font-size: 1.22222rem;
+    line-height: 1.09101; }
+
+  .testimonial--small-text .testimonial__content {
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.33343; } }
+/*----------------------------------------*\
+    $MASONRY ITEM
+\*----------------------------------------*/
+.masonry__item .pixcode--testimonial {
+  margin-left: 0; }
+  .masonry__item .pixcode--testimonial:before {
+    margin-bottom: 24px;
+    margin-bottom: 1.33333rem;
+    margin-top: -36px;
+    margin-top: -2rem; }
 
 /*----------------------------------------*\
 *   $TWITTER WDIGET
@@ -10004,6 +10100,9 @@ a:hover > i.shc {
 /*----------------------------------------*\
 *   $WIDGET META
 \*----------------------------------------*/
+/*------------------------------*\
+               LOCALIZATION
+\*------------------------------*/
 /*-------------------------------*\
                SHAME
 \*-------------------------------*/
@@ -10320,29 +10419,6 @@ a:hover > i.shc {
 html {
   min-height: 0; }
 
-.content {
-  background: white;
-  position: relative;
-  overflow: hidden; }
-  @media only screen and (min-width: 50.11111em) {
-    .content {
-      margin-left: 250px;
-      margin-left: 13.88889rem; } }
-  @media only screen and (max-width: 50em) {
-    .content {
-      position: relative;
-      top: 72px;
-      top: 4rem;
-      padding-bottom: 120px;
-      padding-bottom: 6.66667rem;
-      -webkit-transition: opacity 0.3s ease-in-out;
-      -moz-transition: opacity 0.3s ease-in-out;
-      -o-transition: opacity 0.3s ease-in-out;
-      transition: opacity 0.3s ease-in-out; }
-      .navigation--is-visible .content {
-        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
-        opacity: 0.15; } }
-
 /* prevent flicker on ios */
 .content, .header, .header__inner-wrap {
   -webkit-backface-visibility: hidden;
@@ -10477,7 +10553,6 @@ html {
  * making the scroll bar appear.
  */
 html {
-  overflow: hidden !important;
   padding-right: 0 !important; }
 
 .bleed--left {
@@ -10543,3 +10618,9 @@ img.mfp-img {
 .entry__content img {
   max-width: 100%;
   height: auto; }
+
+blockquote p:before {
+  content: none; }
+
+blockquote p:after {
+  content: none; }

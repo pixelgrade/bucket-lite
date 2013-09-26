@@ -8,12 +8,32 @@
 				"margin-top"
 			],
 			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"image",
+				"image_src"
+			],
+			[
+				"client",
+				"client_name"
+			],
+			[
 				"bac",
 				"background"
 			],
 			[
-				"pa",
-				"padding-bottom"
+				"return",
+				"return_string"
 			],
 			[
 				"back",
@@ -22,10 +42,6 @@
 			[
 				"border",
 				"border-radius"
-			],
-			[
-				"pad",
-				"padding-right"
 			],
 			[
 				"like",
@@ -272,10 +288,6 @@
 				"endif"
 			],
 			[
-				"image",
-				"imagelink"
-			],
-			[
 				"ba",
 				"background"
 			],
@@ -502,92 +514,88 @@
 			[
 				"head",
 				"header	Tag"
-			],
-			[
-				"bol",
-				"bold"
-			],
-			[
-				"hei",
-				"height"
-			],
-			[
-				"bacground",
-				"background-color"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "wpgrade-content/js/main.js",
+			"file": "theme-content/js/main.js",
 			"settings":
 			{
-				"buffer_size": 291318,
+				"buffer_size": 305516,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/uniserver/www/prism/wp-content/plugins/pixlikes/js/public.js",
+			"file": "theme-content/scss/pages/_post.scss",
 			"settings":
 			{
-				"buffer_size": 2588,
+				"buffer_size": 7450,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "templates/pixlikes-template.php",
+			"file": "theme-content/scss/modules/_likes-box.scss",
 			"settings":
 			{
-				"buffer_size": 738,
+				"buffer_size": 2655,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "wpgrade-content/scss/modules/_likes-box.scss",
+			"file": "wpgrade-core/bootstrap.php",
 			"settings":
 			{
-				"buffer_size": 1985,
+				"buffer_size": 2743,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "wpgrade-content/scss/pages/_post.scss",
+			"file": "wpgrade-core/wpgrade.php",
 			"settings":
 			{
-				"buffer_size": 12211,
+				"buffer_size": 14893,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "wpgrade-content/scss/_shame.scss",
+			"file": "/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/templates/bar.php",
 			"settings":
 			{
-				"buffer_size": 5287,
+				"buffer_size": 482,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "wpgrade-content/scss/plugins/magnific-popup/_main.scss",
+			"file": "theme-content/scss/modules/_mosaic.scss",
 			"settings":
 			{
-				"buffer_size": 13740,
+				"buffer_size": 4023,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "wpgrade-content/scss/modules/_gallery-item.scss",
+			"file": "theme-partials/portfolio-templates/portfolio-classic.php",
 			"settings":
 			{
-				"buffer_size": 5859,
+				"buffer_size": 3488,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Divider.php",
+			"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
 			"settings":
 			{
-				"buffer_size": 1336,
+				"buffer_size": 6415,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/shortcodes/_progressbar.scss",
+			"settings":
+			{
+				"buffer_size": 1495,
 				"line_ending": "Windows"
 			}
 		},
@@ -595,7 +603,7 @@
 			"file": "yarpp-template-portfolio.php",
 			"settings":
 			{
-				"buffer_size": 4271,
+				"buffer_size": 4630,
 				"line_ending": "Windows"
 			}
 		}
@@ -668,31 +676,51 @@
 	},
 	"file_history":
 	[
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_gallery-item.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/pagination-formatter.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/style.css",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/style.css",
 		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-sidebar.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/templates/pixlikes-template.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-classic.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/js/main.js",
 		"/E/uniserver/www/prism/wp-content/themes/lens/template-portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/thumbnails.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_testimonials.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/style.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_post.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_project.scss",
+		"/C/Users/crist_000/Desktop/_core.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/inc/metaboxes/metaboxes.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-core/bootstrap.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/js/main.js",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_gallery-item.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_related-projects.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-system/hooks.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_mosaic.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_likes-box.scss",
+		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/js/public.js",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/_shame.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/plugins/magnific-popup/_main.scss",
+		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Divider.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/plugins/_wpcf7.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/functions.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/page.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/single.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/template-fullwidth.php",
 		"/E/uniserver/www/prism/wp-includes/wp-db.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/footer.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/index.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_post.scss",
-		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/js/public.js",
-		"/E/uniserver/www/prism/wp-content/themes/lens/single.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_masonry.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_project.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_likes-box.scss",
 		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/css/public.css",
-		"/E/uniserver/www/prism/wp-content/themes/lens/templates/pixlikes-template.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/js/main.js",
 		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/views/pixlikes-template.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixlikes/class-pixlikes.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/functions.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-audio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-gallery.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-video.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-sidebar.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-classic.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-quote.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-video.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head.php",
@@ -700,27 +728,21 @@
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/widgets.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/base/_layout.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/unsorted.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/thumbnails.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_header.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_teammember.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/components/_related-projects.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-audio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/single-head-gallery.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/widgets/_widgets.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/widgets/_recent-entries.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/shortcodes/_progressbar.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/bar.php",
-		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Divider.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_ProgressBar.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-config.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/team-member.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/page.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullwidth.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-lens_gallery.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullscreen.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_gallery-fullscreen.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/_shame.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/comments.php",
 		"/E/uniserver/www/prism/wp-config.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/hr.php",
@@ -731,17 +753,14 @@
 		"/E/uniserver/www/prism/wp-content/themes/lens/templates/shortcodes/row.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/pages/_gallery-fullwidth.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/plugins/_royalslider.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/style.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-masonry.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_gallery-control.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-gallery.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-lens_portfolio.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-system/hooks.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/functions2.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/custom-entities.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/single-portfolio.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/inc/metaboxes/metaboxes.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-content/scss/modules/_mosaic.scss",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single.html",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single_edgePreload.js",
 		"/E/!DOWNLOADS/intro blog single/intro blog single/intro-blog-single_edgeActions.js",
@@ -784,18 +803,7 @@
 		"/E/uniserver/www/prism-html/scss/modules/_gallery-control.scss",
 		"/E/uniserver/www/prism-html/scss/modules/_meta-box.scss",
 		"/E/uniserver/www/prism-html/scss/pages/_post.scss",
-		"/E/uniserver/www/prism-html/scss/modules/_likes-box.scss",
-		"/E/uniserver/www/prism-html/scss/components/_related-projects.scss",
-		"/E/uniserver/www/prism-html/scss/plugins/_royalslider.scss",
-		"/E/uniserver/www/prism-html/scss/plugins/magnific-popup/_main.scss",
-		"/E/uniserver/www/prism-html/about-studio.php",
-		"/E/uniserver/www/prism-html/project-classic.php",
-		"/E/uniserver/www/prism-html/scss/_vendor/inuit/objects/_flexbox.scss",
-		"/E/uniserver/www/prism-html/scss/base/_layout.scss",
-		"/E/uniserver/www/prism-html/scss/modules/_social-links.scss",
-		"/E/uniserver/www/prism-html/about-personal.php",
-		"/E/uniserver/www/prism-html/gallery-grid.php",
-		"/E/uniserver/www/prism-html/contact.php"
+		"/E/uniserver/www/prism-html/scss/modules/_likes-box.scss"
 	],
 	"find":
 	{
@@ -878,6 +886,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pagination",
+			"head",
+			"display",
+			"eventHandlersOnce",
+			"eventhand",
+			"can_like",
+			"animation",
+			"like",
+			"like ",
+			"mosaic__item",
+			"magnific pop",
+			"meta",
+			"opacity",
+			"box",
+			"initvideos",
+			"royal",
+			"royal sli",
 			"separator",
 			"box-shadow",
 			"box-sh",
@@ -988,24 +1013,7 @@
 			"register_post_type",
 			"entities",
 			"gallery",
-			"do_shortcode",
-			"wpGrade_gallery_slideshow",
-			"video ",
-			"video",
-			"/article",
-			"<article",
-			"h4",
-			"tweets",
-			"widget-tweets",
-			"twitter",
-			"register_sidebar",
-			"side",
-			"title",
-			"class=\"clearfix\"",
-			"clearfix",
-			"wp_list_comments",
-			"\"comments",
-			"body { background-color"
+			"do_shortcode"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1058,23 +1066,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "wpgrade-content/js/main.js",
+					"file": "theme-content/js/main.js",
 					"settings":
 					{
-						"buffer_size": 291318,
+						"buffer_size": 305516,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								286854,
-								286854
+								300861,
+								300861
 							]
 						],
 						"settings":
@@ -1084,30 +1092,140 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 59218.0,
+						"translation.y": 75931.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/E/uniserver/www/prism/wp-content/plugins/pixlikes/js/public.js",
+					"file": "theme-content/scss/pages/_post.scss",
 					"settings":
 					{
-						"buffer_size": 2588,
+						"buffer_size": 7450,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2034,
-								2034
+								5842,
+								5842
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4642.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "theme-content/scss/modules/_likes-box.scss",
+					"settings":
+					{
+						"buffer_size": 2655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2584,
+								2584
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1340.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "wpgrade-core/bootstrap.php",
+					"settings":
+					{
+						"buffer_size": 2743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2555,
+								2555
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 972.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "wpgrade-core/wpgrade.php",
+					"settings":
+					{
+						"buffer_size": 14893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7030,
+								7041
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4787.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/templates/bar.php",
+					"settings":
+					{
+						"buffer_size": 482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1117,45 +1235,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "templates/pixlikes-template.php",
+					"buffer": 6,
+					"file": "theme-content/scss/modules/_mosaic.scss",
 					"settings":
 					{
-						"buffer_size": 738,
+						"buffer_size": 4023,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								577,
-								577
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "wpgrade-content/scss/modules/_likes-box.scss",
-					"settings":
-					{
-						"buffer_size": 1985,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1224,
-								1224
+								3681,
+								3681
 							]
 						],
 						"settings":
@@ -1165,45 +1257,79 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2021.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "wpgrade-content/scss/pages/_post.scss",
+					"buffer": 7,
+					"file": "theme-partials/portfolio-templates/portfolio-classic.php",
 					"settings":
 					{
-						"buffer_size": 12211,
+						"buffer_size": 3488,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5667,
-								5667
+								3154,
+								3154
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4525.0,
+						"translation.y": 432.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "wpgrade-content/scss/_shame.scss",
+					"buffer": 8,
+					"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
 					"settings":
 					{
-						"buffer_size": 5287,
+						"buffer_size": 6415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6059,
+								6059
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1399.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"file": "theme-content/scss/shortcodes/_progressbar.scss",
+					"settings":
+					{
+						"buffer_size": 1495,
 						"regions":
 						{
 						},
@@ -1217,91 +1343,7 @@
 						"settings":
 						{
 							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3924.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "wpgrade-content/scss/plugins/magnific-popup/_main.scss",
-					"settings":
-					{
-						"buffer_size": 13740,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								796,
-								822
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 125.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "wpgrade-content/scss/modules/_gallery-item.scss",
-					"settings":
-					{
-						"buffer_size": 5859,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4039,
-								4039
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2153.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Divider.php",
-					"settings":
-					{
-						"buffer_size": 1336,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								593,
-								593
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1311,19 +1353,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "yarpp-template-portfolio.php",
 					"settings":
 					{
-						"buffer_size": 4271,
+						"buffer_size": 4630,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1982,
-								2008
+								308,
+								308
 							]
 						],
 						"settings":
@@ -1358,11 +1400,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.560190703218,
 			1.0
 		],
 		"rows":
@@ -1383,6 +1432,86 @@
 		"selected_items":
 		[
 			[
+				"wpgrade",
+				"wpgrade-core/wpgrade.php"
+			],
+			[
+				"mosa",
+				"theme-content/scss/modules/_mosaic.scss"
+			],
+			[
+				"progre",
+				"theme-content/scss/shortcodes/_progressbar.scss"
+			],
+			[
+				"bot",
+				"wpgrade-core/bootstrap.php"
+			],
+			[
+				"post.sc",
+				"theme-content/scss/pages/_post.scss"
+			],
+			[
+				"like",
+				"theme-content/scss/modules/_likes-box.scss"
+			],
+			[
+				"main.",
+				"theme-content/js/main.js"
+			],
+			[
+				"main.js",
+				"theme-content/js/main.js"
+			],
+			[
+				"main",
+				"theme-content/js/main.js"
+			],
+			[
+				"meta",
+				"theme-content/inc/metaboxes/metaboxes.php"
+			],
+			[
+				"proje",
+				"wpgrade-content/scss/pages/_project.scss"
+			],
+			[
+				"pos",
+				"wpgrade-content/scss/pages/_post.scss"
+			],
+			[
+				"test",
+				"wpgrade-content/scss/shortcodes/_testimonials.scss"
+			],
+			[
+				"thumb",
+				"wpgrade-content/inc/thumbnails.php"
+			],
+			[
+				"galler",
+				"wpgrade-content/scss/modules/_gallery-item.scss"
+			],
+			[
+				"relate",
+				"wpgrade-content/scss/components/_related-projects.scss"
+			],
+			[
+				"mosai",
+				"wpgrade-content/scss/modules/_mosaic.scss"
+			],
+			[
+				"pixlik",
+				"templates/pixlikes-template.php"
+			],
+			[
+				"likes",
+				"wpgrade-content/scss/modules/_likes-box.scss"
+			],
+			[
+				"wpcf",
+				"wpgrade-content/scss/plugins/_wpcf7.scss"
+			],
+			[
 				"item",
 				"wpgrade-content/scss/modules/_gallery-item.scss"
 			],
@@ -1393,18 +1522,6 @@
 			[
 				"post",
 				"wpgrade-content/scss/pages/_post.scss"
-			],
-			[
-				"like",
-				"wpgrade-content/scss/modules/_likes-box.scss"
-			],
-			[
-				"post.sc",
-				"wpgrade-content/scss/pages/_post.scss"
-			],
-			[
-				"main",
-				"wpgrade-content/js/main.js"
 			],
 			[
 				"masonry",
@@ -1421,10 +1538,6 @@
 			[
 				"project",
 				"wpgrade-content/scss/pages/_project.scss"
-			],
-			[
-				"main.js",
-				"wpgrade-content/js/main.js"
 			],
 			[
 				"gallery-item",
@@ -1563,10 +1676,6 @@
 				"wpgrade-content/inc/thumbnails.php"
 			],
 			[
-				"relate",
-				"wpgrade-content/scss/components/_related-projects.scss"
-			],
-			[
 				"layo",
 				"wpgrade-content/scss/base/_layout.scss"
 			],
@@ -1577,10 +1686,6 @@
 			[
 				"like-bo",
 				"wpgrade-content/scss/modules/_likes-box.scss"
-			],
-			[
-				"proje",
-				"wpgrade-content/scss/pages/_project.scss"
 			],
 			[
 				"projec",
@@ -1693,18 +1798,6 @@
 			[
 				"meta-box",
 				"scss/modules/_meta-box.scss"
-			],
-			[
-				"galler",
-				"gallery-grid.php"
-			],
-			[
-				"main.",
-				"js/main.js"
-			],
-			[
-				"likes",
-				"scss/modules/_likes-box.scss"
 			],
 			[
 				"grid",
@@ -1823,10 +1916,6 @@
 				"library/wpGrade.php"
 			],
 			[
-				"wpgrade",
-				"library/wpGrade.php"
-			],
-			[
 				"navigatio",
 				"library/scss/components/_navigation.scss"
 			],
@@ -1853,46 +1942,6 @@
 			[
 				"portfolio",
 				"wp-content/themes/citylife/library/scss/components/_portfolio.scss"
-			],
-			[
-				"progre",
-				"wp-content/themes/citylife/library/scss/shortcodes/_progressbar.scss"
-			],
-			[
-				"progress.scss",
-				"wp-content/themes/senna/library/scss/specific/_shc-progressbar.scss"
-			],
-			[
-				"progr",
-				"wp-content/themes/citylife/library/scss/shortcodes/_progressbar.scss"
-			],
-			[
-				"footer.sc",
-				"wp-content/themes/citylife/library/scss/components/_footer.scss"
-			],
-			[
-				"wpcf7.sc",
-				"wp-content/themes/citylife/library/scss/plugins/_wpcf7.scss"
-			],
-			[
-				"contact.sc",
-				"wp-content/themes/citylife/library/scss/widgets/_contact.scss"
-			],
-			[
-				"comments.sc",
-				"wp-content/themes/citylife/library/scss/components/_comments.scss"
-			],
-			[
-				"portfolio.s",
-				"wp-content/themes/citylife/library/scss/components/_portfolio.scss"
-			],
-			[
-				"navigation",
-				"wp-content/themes/citylife/library/scss/components/_navigation.scss"
-			],
-			[
-				"latest",
-				"wp-content/themes/citylife/library/scss/widgets/_latest-posts.scss"
 			]
 		],
 		"width": 0.0

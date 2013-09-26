@@ -21,11 +21,12 @@
 	# generally helpful.
 	#
 
-	// load Redux framework
-	require $currentpath.'options/defaults'.EXT;
+	wpgrade::require_coremodule('redux2');
 
-	function wpgrade_call_redux_options_setup() {
+	function wpgrade_callback_redux_options_setup() {
 		$currentpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
+
+		$wpgrade_redux_coremodule = 'redux2'; # used inside configuration files
 		$args = include $currentpath.'redux-args'.EXT;
 		$sections = include $currentpath.'redux-sections'.EXT;
 		$tabs = include $currentpath.'redux-tabs'.EXT;
@@ -34,7 +35,7 @@
 		wpgrade::resolve('redux-instance', $redux);
 	}
 
-	add_action('after_setup_theme', 'wpgrade_call_redux_options_setup', 0);
+	add_action('after_setup_theme', 'wpgrade_callback_redux_options_setup', 0);
 
 	// register callbacks
 	require $currentpath.'callbacks'.EXT;

@@ -17,7 +17,6 @@ get_header(); ?>
                     <div class="bleed--left"><hr class="separator separator--dotted grow"></div>
                 </header>
                 <div class="entry__content"><?php the_content(); ?></div>
-
             </article>
         <?php endwhile; ?>
     </div><!-- .page-content -->

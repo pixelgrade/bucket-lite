@@ -1,16 +1,28 @@
 <?php
 
 	$ds = DIRECTORY_SEPARATOR;
-	$callbackspath = dirname(__FILE__).$ds.'callbacks'.$ds;
 
 	#
 	# This file assigns environment hooks.
 	#
 
+	// Include all theme specific classes and functions
+	// ------------------------------------------------------------------------
+
+	$themeincludepaths = wpgrade::confoption('include-paths', array());
+
+	foreach ($themeincludepaths as $path) {
+		$fullpath = wpgrade::themepath().$ds.$path;
+		if (file_exists($fullpath)) {
+			wpgrade::require_all($fullpath);
+		}
+	}
+
 
 	// Theme Setup
 	// ------------------------------------------------------------------------
 
+	$callbackspath = dirname(__FILE__).$ds.'callbacks'.$ds;
 	wpgrade::require_all($callbackspath.'theme-setup');
 
 	/**
@@ -61,7 +73,7 @@
 		// current theme
 		if ($current_options) {
 			$diff = array_diff($shortcodes, $current_options);
-			if (!empty($diff) && is_admin()) {
+			if ( ! empty($diff) && is_admin()) {
 				update_option('wpgrade_shortcodes_list', $shortcodes);
 			}
 		}
@@ -86,6 +98,6 @@
 	function wpgrade_callbacks_html5_shim() {
 		global $is_IE;
 		if ($is_IE) {
-			include wpgrade::themefilepath('theme-partials/wpgrade-partials/ie-shim'.EXT);
+			include wpgrade::themefilepath('wpgrade-partials/ie-shim'.EXT);
 		}
 	}
