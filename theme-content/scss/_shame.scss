@@ -203,7 +203,7 @@ html {
  * making the scroll bar appear.
  */
 html{
-    overflow: hidden !important; 
+    // overflow: hidden !important; 
     padding-right: 0 !important;
 }
 
@@ -296,4 +296,13 @@ img.mfp-img{
         max-width: 100%;
         height: auto;
     }
+}
+
+blockquote p:before{
+    content: none;
+}
+
+
+blockquote p:after{
+    content: none;
 }

@@ -35,5 +35,5 @@
 		}
 
 		// any variables in scope will be available in the partial
-		include wpgrade::themefilepath('theme-partials/wpgrade-partials/inline-custom-css'.EXT);
+		include wpgrade::themefilepath('wpgrade-partials/inline-custom-css'.EXT);
 	}

@@ -3403,7 +3403,7 @@ hgroup .hN, hgroup .alpha, hgroup h1, hgroup .beta, hgroup h2, hgroup .gamma, hg
  * Inline quotes.
  */
 q {
-  quotes: "\2018" "\2019" "\201C" "\201D";
+  quotes: "\2018" "\2019" "\00AB" "\00BB";
 }
 q:before {
   content: "\2018";
@@ -3423,10 +3423,10 @@ q q:after {
 }
 
 blockquote {
-  quotes: "\201C" "\201D";
+  quotes: "\00AB" "\00BB";
 }
 blockquote p:before {
-  content: "\201C";
+  content: "\00AB";
   content: open-quote;
 }
 blockquote p:after {
@@ -3434,7 +3434,7 @@ blockquote p:after {
   content: no-close-quote;
 }
 blockquote p:last-of-type:after {
-  content: "\201D";
+  content: "\00BB";
   content: close-quote;
 }
 blockquote q:before {
@@ -8984,8 +8984,11 @@ a [class*="icon-"] {
   pointer-events: none;
 }
 @media only screen and (min-width: 50.11111em) {
-  .no-touch .menu-item--parent > ul {
+  .menu-item--parent > ul {
     display: none;
+  }
+  .touch .menu-item--parent > ul {
+    display: block;
   }
 }
 .menu-item--parent.current-menu-ancestor > ul, .menu-item--parent.current-menu-parent > ul {
@@ -9997,6 +10000,23 @@ li.comment .children:before {
   height: auto;
 }
 
+.masonry__item .like-link {
+  border: none;
+  height: auto;
+  width: auto;
+  cursor: default;
+}
+.masonry__item .like-link i {
+  height: auto;
+  width: auto;
+  background: none;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
 /*----------------------------------------*\
 *   $SOCIAL LINKS
 \*----------------------------------------*/
@@ -10703,11 +10723,15 @@ li.comment .children:before {
  */
 @media only screen and (min-width: 72.33333em) {
   .single-post blockquote:before {
-    margin-top: 0;
     margin-left: -72px;
     margin-left: -4rem;
   }
-
+  .single-post .pixcode--testimonial {
+    margin-left: -72px;
+    margin-left: -4rem;
+    padding-left: 72px;
+    padding-left: 4rem;
+  }
   .single-post .entry__title {
     margin-left: -240px;
     margin-left: -13.33333rem;
@@ -11538,23 +11562,77 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 /*-----------------------------------*\
                MODIFIERS
 \*-----------------------------------*/
-.testimonial--big-text .testimonial__content {
-  font-weight: 600;
-  font-size: 36px;
-  font-size: 2rem;
-  line-height: 1.0001;
-}
+@media only screen and (min-width: 72.33333em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 36px;
+    font-size: 2rem;
+    line-height: 1.0001;
+  }
 
-.testimonial--medium-text .testimonial__content {
-  font-size: 30px;
-  font-size: 1.66667rem;
-  line-height: 1.2001;
-}
+  .testimonial--medium-text .testimonial__content {
+    font-size: 30px;
+    font-size: 1.66667rem;
+    line-height: 1.2001;
+  }
 
-.testimonial--small-text .testimonial__content {
-  font-size: 20px;
-  font-size: 1.11111rem;
-  line-height: 1.2001;
+  .testimonial--small-text .testimonial__content {
+    font-size: 20px;
+    font-size: 1.11111rem;
+    line-height: 1.2001;
+  }
+}
+@media only screen and (min-width: 50.05556em) and (max-width: 72.22222em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 32px;
+    font-size: 1.77778rem;
+    line-height: 1.1251;
+  }
+
+  .testimonial--medium-text .testimonial__content {
+    font-size: 28px;
+    font-size: 1.55556rem;
+    line-height: 1.28581;
+  }
+
+  .testimonial--small-text .testimonial__content {
+    font-size: 16px;
+    font-size: 0.88889rem;
+    line-height: 1.5001;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .testimonial--big-text .testimonial__content {
+    font-weight: 600;
+    font-size: 28px;
+    font-size: 1.55556rem;
+    line-height: 1.28581;
+  }
+
+  .testimonial--medium-text .testimonial__content {
+    font-size: 22px;
+    font-size: 1.22222rem;
+    line-height: 1.09101;
+  }
+
+  .testimonial--small-text .testimonial__content {
+    font-size: 18px;
+    font-size: 1rem;
+    line-height: 1.33343;
+  }
+}
+/*----------------------------------------*\
+    $MASONRY ITEM
+\*----------------------------------------*/
+.masonry__item .pixcode--testimonial {
+  margin-left: 0;
+}
+.masonry__item .pixcode--testimonial:before {
+  margin-bottom: 24px;
+  margin-bottom: 1.33333rem;
+  margin-top: -36px;
+  margin-top: -2rem;
 }
 
 /*----------------------------------------*\
@@ -12524,7 +12602,6 @@ html {
  * making the scroll bar appear.
  */
 html {
-  overflow: hidden !important;
   padding-right: 0 !important;
 }
 
@@ -12604,4 +12681,12 @@ img.mfp-img {
 .entry__content img {
   max-width: 100%;
   height: auto;
+}
+
+blockquote p:before {
+  content: none;
+}
+
+blockquote p:after {
+  content: none;
 }

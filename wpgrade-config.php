@@ -10,6 +10,15 @@
 		'prefix'     => '_lens_',
 //		'textdomain' => 'lens_txtd',
 
+		// additional file includes (classes, functions, etc), files are loaded
+		// via wpgrade::require_all and entries should be directories; if the
+		// path does not exist it is automatically ignored
+		'include-paths' => array
+			(
+				'theme-callbacks',
+				'theme-utils'
+			),
+
 		// use theme-options to add any non-customizable options with out going
 		// though any of the backend code; all options added here are available
 		// though the WPGradeOptions driver manager. ie. the  wpgrade::option
@@ -36,10 +45,13 @@
 		// will be ignored in processing
 		'content-filters' => array
 			(
-				'wpgrade_callback_theme_general_filters' => 100,
-				'wpgrade_callback_shortcode_filters'     => 200,
-				'wpgrade_callback_attachement_filters'   => 300,
-				'wpgrade_callback_paragraph_filters'     => 400,
+				'default' => array
+					(
+						'wpgrade_callback_theme_general_filters' => 100,
+						'wpgrade_callback_shortcode_filters'     => 200,
+						'wpgrade_callback_attachement_filters'   => 300,
+						'wpgrade_callback_paragraph_filters'     => 400,
+					),
 			),
 
 		'shortcodes' => array
