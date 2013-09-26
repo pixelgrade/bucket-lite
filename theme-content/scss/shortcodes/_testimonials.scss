@@ -1,5 +1,62 @@
 .pixcode--testimonial {
+
 }
+
+.testimonial {
+    
+}
+
+
+
+
+
+/*---------------------------------------*\
+               DEFAULT STYLE
+\*---------------------------------------*/
+
+
+.testimonial__content {
+    @include font-size(24px);
+    @include rem(margin-bottom, $base-spacing-unit);
+    font-family: $heading-font-family;
+    font-weight: 450;
+    text-indent: 0;
+    color: black;
+}
+
+    .testimonial__author-name,
+    .testimonial__author-title{
+        color: $gray;
+        margin-bottom: 0;
+    }
+
+    .testimonial__author-name{
+        display: block;
+        font-family: $heading-font-family;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-style: normal;
+        @include rem(letter-spacing, 2px);
+    }
+
+    .testimonial__author-title{
+        font-family: $base-font-family;
+        font-style: italic;
+
+        &:before{
+            content: "-";
+            @include rem(margin-right, 3px);
+        }
+    }
+
+
+
+
+
+/*-----------------------------------*\
+               MODIFIERS
+\*-----------------------------------*/
+
 
 .quote__content.testimonial--big-text {
         @include font-size(36px);

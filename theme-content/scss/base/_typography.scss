@@ -45,19 +45,6 @@ blockquote {
     text-indent: 0;
     @include rem(margin, 2*$base-spacing-unit 0);
 
-    .quote__content {
-        @include font-size(24px);
-        @include rem(margin-bottom, $base-spacing-unit);
-        font-family: $heading-font-family;
-        font-weight: 450;
-        text-indent: 0;
-        color: black;
-
-        &:before{
-            content: "";
-        }
-    }
-
     &:before{
         @include font-size(132px);
         content: "\201C";
@@ -69,35 +56,9 @@ blockquote {
         color: $accent-color;
     }
 
-    .author__name,
-    .author__title{
-        color: $gray;
-        margin-bottom: 0;
-    }
-
-    .author__name{
-        display: block;
-        font-family: $heading-font-family;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-style: normal;
-        @include rem(letter-spacing, 2px);
-
-        &:before{
-            content: "";
-        }
-    }    
-
-    .author__title{
-        font-family: $base-font-family;
-        font-style: italic;
-
-        &:before{
-            content: "-";
-            @include rem(margin-right, 3px);
-        }
-    }
 }
+
+
 
 
 
