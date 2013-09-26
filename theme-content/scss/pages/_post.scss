@@ -31,18 +31,24 @@
 //     }
 // }
 
-@include media(from lap){
-    .single-post blockquote{
+@include media(from lap) {
+    .single-post{
+         blockquote{
 
-        &:before{
-            margin-top: 0;
-            @include rem(margin-left, -3 * $base-spacing-unit);
+            &:before{
+                @include rem(margin-left, -3 * $base-spacing-unit);
+            }
         }
-    }
 
-    .single-post .entry__title{
-        @include rem(margin-left, -10 * $base-spacing-unit);
-        @include rem(padding-left, 10 * $base-spacing-unit);
+        .pixcode--testimonial{
+            @include rem(margin-left, -3 * $base-spacing-unit);
+            @include rem(padding-left, 3 * $base-spacing-unit);
+        }
+
+        .entry__title{
+            @include rem(margin-left, -10 * $base-spacing-unit);
+            @include rem(padding-left, 10 * $base-spacing-unit);
+        }
     }
 }
 
