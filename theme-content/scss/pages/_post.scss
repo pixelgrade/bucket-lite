@@ -1,0 +1,380 @@
+/*----------------------------------------*\
+*   $SINGLE_STYLING
+\*----------------------------------------*/
+
+/**
+ * Bigger Font Size for first paragraph on single post (only)
+ */
+
+ .single-post {
+    .entry__content {
+        p:first-child {
+            @include rem(font-size, 22px);
+        }
+    }
+ }
+
+
+/**
+ * Offsetting the blockquote quotes
+ * I have my doubts
+ */
+// @include media(to lap){
+//     blockquote{
+//         p{
+//             @include rem(margin-left, 2.5 * $base-spacing-unit);
+//         }
+
+//         &:before{
+//             margin: 0;
+//         }
+//     }
+// }
+
+@include media(from lap){
+    .single-post blockquote{
+
+        &:before{
+            margin-top: 0;
+            @include rem(margin-left, -3 * $base-spacing-unit);
+        }
+    }
+
+    .single-post .entry__title{
+        @include rem(margin-left, -10 * $base-spacing-unit);
+        @include rem(padding-left, 10 * $base-spacing-unit);
+    }
+}
+
+
+/**
+ * Video header
+ */
+.video-wrap{
+    text-align: center;
+}
+
+
+/**
+ * Removing width and margin for gallery images/items
+ * Adding a space between elements
+ */
+
+.gallery-item{
+
+    &:first-child{
+        margin-left: 0;
+    }
+
+    a{
+        display: block;
+    }
+
+    img{
+        border: 0 !important;
+    }
+}
+
+.entry__title{
+    margin-top: 0;
+    color: black;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.entry__content{
+    .gallery{
+        margin: 0 -1% !important;
+    }
+
+    .gallery-item{
+        padding: 0 1%;
+    }
+}
+
+
+
+
+
+/*----------------------------------------*\
+*   $SINGLE QUOTE TEMPLATE
+\*----------------------------------------*/
+
+.header-quote-content{
+    background: black;
+    color: white;
+
+    blockquote{
+        font-family: "Josefin Slab", serif;
+        @include font-size(48px);
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        .testimonial_author{
+            @include rem(margin-top, 3 * $half-spacing-unit);
+        }
+
+            a{
+                display: block;
+                text-decoration: none;
+            }
+
+            .author_name{
+                @include font-size(16px);
+                font-weight: bold;
+                text-transform: uppercase;
+                color: white;
+            }
+
+            .author_description{
+                font-family: "Crimson Text", serif;
+                @include font-size(16px);
+                font-style: italic;
+                color: $gray;
+
+                &:before{
+                    content: "-";
+                    @include rem(margin-right, 5px);
+                }
+            }
+
+            .author_name, .author_description{
+                display: block;
+                text-align: right;
+            }
+    }
+}
+
+@include media(to hand) {
+    .header-quote-content blockquote{
+        @include rem(padding, $base-spacing-unit);
+
+        &:before{
+            float: none;
+            @include font-size(120px);
+            @include rem(margin-bottom, -1.5 * $base-spacing-unit);
+        }  
+    }
+}
+
+@include media(from hand) {
+    .header-quote-content blockquote{
+        @include rem(padding, (7*$base-spacing-unit) (5*$base-spacing-unit) (5*$base-spacing-unit));
+
+        &:before{
+            @include font-size(155px);
+            @include rem(margin-top, -2 * $base-spacing-unit);
+            @include rem(margin-left, -3 * $base-spacing-unit);
+        }
+
+        .testimonial-author{
+            @include rem(margin-right, -2 * $base-spacing-unit);            
+        }
+    }
+}
+
+@include media(from lap) {
+    .header-quote-content blockquote{
+        &:before{
+            @include rem(margin-top, -7 * $half-spacing-unit);
+        }    
+    }
+}
+
+
+/*----------------------------------------*\
+*   $HEADER META
+\*----------------------------------------*/
+
+@include media(to lap) {
+    .entry-header__meta{
+        @include rem(margin-top, $half-spacing-unit);
+    }
+}
+
+/**
+ * Article meta date styling
+ *
+    <div class="article-timestamp">
+        <span class="article-timestamp__date">13</span>
+        <div class="article-timestamp__right-box">
+            <span class="article-timestamp__month">aug</span>
+            <span class="article-timestamp__year">2013</span>
+        </div>
+    </div>
+ */
+
+.article-timestamp{
+    @extend .cf;
+    font-family: "Josefin Slab", serif;
+    text-transform: uppercase;
+    @include font-size(36px);
+    @include rem(margin-top, $base-spacing-unit);
+}
+
+.article-timestamp--single{
+    @include font-size(48px);
+    
+    .article-timestamp__date{
+        color: $accent-color;
+        font-weight: 400;
+
+        &:after {
+            font-weight: 300;
+        }
+    }
+
+    .article-timestamp__right-box {
+        top: 0.7em;
+        line-height: 0.9;
+    }
+
+    .lt-ie9 & {
+        @include rem(margin-top, 3*$half-spacing-unit);
+
+        .article-timestamp__right-box {
+            top: 0.2em;
+        }
+    }
+
+    @include media(from lap) {
+        float: left;
+        @include rem(margin, 26px 0 0 -8 * $base-spacing-unit);
+    }
+}
+
+    .article-timestamp__date{
+        display: block;
+        float: left;
+        font-weight: 300;
+        color: $dark;
+
+        &:after{
+            content: "/";
+            font-size: 0.9em;
+            color: $dark;
+            padding-left: 0.1em;
+        }
+    }
+
+    .article-timestamp__right-box{
+        display: block;
+        float: left;
+        font-size: 0.39em;
+        position: relative;
+        top: 0.55em;
+        left: 0.3em;
+    }
+
+        .article-timestamp__month,
+        .article-timestamp__year{
+            display: block;
+        }
+
+/**
+ * Article likes box positioning
+ */
+
+.likes-box--article{
+    .like-link{
+        float: left;
+        display: block;
+    }
+
+    i{
+        display: block;
+    }    
+}
+
+@include media(from lap){
+    .likes-box--article{
+        float: left;
+        @include rem(margin, 6 * $base-spacing-unit 0 0 -6 * $base-spacing-unit);            
+    }    
+}
+
+/**
+ * Horizontal aligning the entry-header meta elements in mobile view
+ * 
+ */
+@include media(to lap){
+    .entry-header__meta{
+        display: block;
+    }
+
+        .article-timestamp, .likes-box--article{
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .article-timestamp{
+            @include rem(margin-top, $half-spacing-unit);
+            @include rem(margin-right, $base-spacing-unit);
+        }
+
+        .likes-box--article{
+            i{
+                float: left;
+            }
+
+            .likes-text{
+                float: right;
+                @include rem(margin-top, $base-spacing-unit);
+                @include rem(margin-left, $half-spacing-unit);
+            }
+        }
+
+}
+
+
+
+
+
+/*----------------------------------------*\
+*   $FOOTER META
+\*----------------------------------------*/
+/**
+ * Entry-meta styling. Categories, tags, social icons
+ */
+@include media(to hand){
+    .entry__meta-box{
+        float: none;
+        display: block;
+        @include rem(margin-bottom, $half-spacing-unit);
+    }
+}
+
+@include media(from hand){
+    .entry__meta-box{
+        float: left;
+        @include rem(margin-right, $base-spacing-unit);        
+    }
+}
+
+.entry__featured-image {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.entry--archive__featured-image {
+
+}
+
+.entry__permalink {
+    display: block;
+    text-decoration: none;
+}
+
+
+
+
+
+// 
+.first-paragraph p {
+    @include font-size(22px);
+}
