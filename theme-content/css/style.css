@@ -9838,6 +9838,12 @@ html {
   font-weight: 300;
 }
 
+.header .hN, .header .alpha, .header h1, .header .beta, .header h2, .header .gamma, .header h3, .header .masonry__item .entry__title, .masonry__item .header .entry__title, .header .single-portfolio-fullwidth .entry__title, .single-portfolio-fullwidth .header .entry__title, .header .delta, .header h4, .header .epsilon, .header h5, .header .zeta, .header h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #91908e;
+}
+
 /*----------------------------------*\
                HEADINGS
 \*----------------------------------*/
@@ -10243,9 +10249,6 @@ a [class*="icon-"] {
 }
 .header a {
   text-decoration: none;
-}
-.header .hN, .header .alpha, .header h1, .header .beta, .header h2, .header .gamma, .header h3, .header .masonry__item .entry__title, .masonry__item .header .entry__title, .header .single-portfolio-fullwidth .entry__title, .single-portfolio-fullwidth .header .entry__title, .header .delta, .header h4, .header .epsilon, .header h5, .header .zeta, .header h6 {
-  color: #91908e;
 }
 
 @media only screen and (max-width: 50em) {
@@ -14112,7 +14115,8 @@ html {
  * on <html/>, rule that already exists, but removes it on closing,
  * making the scroll bar appear.
  */
-html {
+html.nicescroll {
+  overflow: hidden !important;
   padding-right: 0 !important;
 }
 

@@ -73,20 +73,20 @@
                     }
 
                     if (count($social_icons)): ?>
-                        <h4><?php _e("We are Social", wpgrade::textdomain()); ?></h4>
+                        <h5><?php _e("We are Social", wpgrade::textdomain()); ?></h5>
                         <ul class="site-social-links">
                             <?php foreach ($social_icons as $domain => $value): if ($value): ?>
                                 <li class="site-social-links__social-link">
                                     <a href="<?php echo $value ?>"<?php echo $target ?>>
                                         <?php switch($domain) {
                                             case 'youtube':
-                                                ?><i class="shc icon-play"></i>
+                                                ?><i class="pixcode  pixcode--icon  icon-play"></i>
                                                 <?php break;
                                             case 'appnet':
-                                                ?><i class="shc icon-user"></i>
+                                                ?><i class="pixcode  pixcode--icon  icon-user"></i>
                                                 <?php break;
                                             default:
-                                                ?><i class="shc icon-<?php echo $domain; ?>"></i>
+                                                ?><i class="pixcode  pixcode--icon  icon-<?php echo $domain; ?>"></i>
                                                 <?php } ?>
                                     </a>
                                 </li>
