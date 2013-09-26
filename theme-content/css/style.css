@@ -7058,8 +7058,8 @@ blockquote {
     font-family: "Crimson Text", sans-serif;
     display: block;
     float: left;
-    margin-top: -24px;
-    margin-top: -1.33333rem;
+    margin-top: -18px;
+    margin-top: -1rem;
     margin-left: -72px;
     margin-left: -4rem;
     color: #fffc00; }
@@ -9623,6 +9623,14 @@ a:hover > i.shc {
   height: 13px;
   height: 0.72222rem; }
 
+.pixcode--testimonial {
+  margin-left: 72px;
+  margin-left: 4rem; }
+  .pixcode--testimonial p:before, .pixcode--testimonial p:after {
+    content: none; }
+  .pixcode--testimonial a {
+    text-decoration: none; }
+
 /*---------------------------------------*\
                DEFAULT STYLE
 \*---------------------------------------*/
@@ -9645,7 +9653,7 @@ a:hover > i.shc {
 .testimonial__author-name {
   display: block;
   font-family: "Josefin Slab", serif;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   font-style: normal;
   letter-spacing: 2px;
@@ -9662,17 +9670,18 @@ a:hover > i.shc {
 /*-----------------------------------*\
                MODIFIERS
 \*-----------------------------------*/
-.quote__content.testimonial--big-text {
+.testimonial--big-text .testimonial__content {
+  font-weight: 600;
   font-size: 36px;
   font-size: 2rem;
   line-height: 1.0001; }
 
-.quote__content.testimonial--medium-text {
+.testimonial--medium-text .testimonial__content {
   font-size: 30px;
   font-size: 1.66667rem;
   line-height: 1.2001; }
 
-.quote__content.testimonial--small-text {
+.testimonial--small-text .testimonial__content {
   font-size: 20px;
   font-size: 1.11111rem;
   line-height: 1.2001; }

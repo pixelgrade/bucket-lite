@@ -51,7 +51,7 @@ blockquote {
         font-family: $base-font-family;
         display: block;
         float: left;
-        @include rem(margin-top, -$base-spacing-unit);
+        @include rem(margin-top, -18px);
         @include rem(margin-left, -3 * $base-spacing-unit);
         color: $accent-color;
     }
