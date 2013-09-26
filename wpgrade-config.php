@@ -36,10 +36,13 @@
 		// will be ignored in processing
 		'content-filters' => array
 			(
-				'wpgrade_callback_theme_general_filters' => 100,
-				'wpgrade_callback_shortcode_filters'     => 200,
-				'wpgrade_callback_attachement_filters'   => 300,
-				'wpgrade_callback_paragraph_filters'     => 400,
+				'default' => array
+					(
+						'wpgrade_callback_theme_general_filters' => 100,
+						'wpgrade_callback_shortcode_filters'     => 200,
+						'wpgrade_callback_attachement_filters'   => 300,
+						'wpgrade_callback_paragraph_filters'     => 400,
+					),
 			),
 
 		'shortcodes' => array
