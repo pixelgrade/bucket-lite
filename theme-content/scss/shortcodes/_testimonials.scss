@@ -138,3 +138,22 @@
         }
     }
 }
+
+
+/*----------------------------------------*\
+    $MASONRY ITEM
+\*----------------------------------------*/
+// The way it is displayed on blog archive
+
+.masonry__item .pixcode--testimonial{
+    margin-left: 0;
+
+    &:before{
+        @include rem(margin-bottom, $base-spacing-unit);
+        @include rem(margin-top, -1.5 * $base-spacing-unit);
+    }
+}
+
+
+
+

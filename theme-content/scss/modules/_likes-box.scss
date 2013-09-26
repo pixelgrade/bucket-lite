@@ -119,3 +119,19 @@
         height: auto;
     }
 }
+
+.masonry__item{
+    .like-link{
+        border: none;
+        height: auto;
+        width: auto;
+        cursor: default;
+        
+        & i{
+            height: auto;
+            width: auto;
+            background: none;
+            @include transform(scale(1));
+        }
+    }
+}

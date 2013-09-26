@@ -323,3 +323,12 @@ img.mfp-img{
         height: auto;
     }
 }
+
+blockquote p:before{
+    content: none;
+}
+
+
+blockquote p:after{
+    content: none;
+}
