@@ -43,7 +43,6 @@
         position: fixed;
         overflow-y: auto;
         @include rem(padding-left, 2*$base-spacing-unit);
-        @include rem(padding-right, $base-spacing-unit);
         @include rem(width, 250px);
         background-color: $dark;
 
@@ -128,19 +127,6 @@
         overflow-x: hidden;
     }
 }
-
-/**
-*
-* Wrapper used to style navigation on small screens
-*
-**/
-.site-footer {
-  /* @todo: move with javascript */
-  @include media(to hand) {
-    display: none;
-  }
-}
-
 
 
 
@@ -251,6 +237,10 @@
     .menu-item--parent:after{
         border-top-color: black;        
     }    
+}
+
+.site-header {
+    @include rem(padding-right, $base-spacing-unit);
 }
 
 

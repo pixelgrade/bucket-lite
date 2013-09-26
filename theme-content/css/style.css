@@ -9838,7 +9838,7 @@ html {
   font-weight: 300;
 }
 
-.header .hN, .header .alpha, .header h1, .header .beta, .header h2, .header .gamma, .header h3, .header .masonry__item .entry__title, .masonry__item .header .entry__title, .header .single-portfolio-fullwidth .entry__title, .single-portfolio-fullwidth .header .entry__title, .header .delta, .header h4, .header .epsilon, .header h5, .header .zeta, .header h6 {
+.header .hN, .header .alpha, .header h1, .header .beta, .header h2, .header .gamma, .header h3, .header .masonry__item .entry__title, .masonry__item .header .entry__title, .header .single-portfolio-fullwidth .entry__title, .single-portfolio-fullwidth .header .entry__title, .header .delta, .header h4, .header .epsilon, .header h5, .header .zeta, .header h6, .footer .hN, .footer .alpha, .footer h1, .footer .beta, .footer h2, .footer .gamma, .footer h3, .footer .masonry__item .entry__title, .masonry__item .footer .entry__title, .footer .single-portfolio-fullwidth .entry__title, .single-portfolio-fullwidth .footer .entry__title, .footer .delta, .footer h4, .footer .epsilon, .footer h5, .footer .zeta, .footer h6 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #91908e;
@@ -10177,8 +10177,6 @@ a [class*="icon-"] {
     overflow-y: auto;
     padding-left: 48px;
     padding-left: 2.66667rem;
-    padding-right: 24px;
-    padding-right: 1.33333rem;
     width: 250px;
     width: 13.88889rem;
     background-color: #242423;
@@ -10268,20 +10266,6 @@ a [class*="icon-"] {
   }
 }
 
-/**
-*
-* Wrapper used to style navigation on small screens
-*
-**/
-.site-footer {
-  /* @todo: move with javascript */
-}
-@media only screen and (max-width: 50em) {
-  .site-footer {
-    display: none;
-  }
-}
-
 /*----------------------------------------*\
 *   $TRANSPARENT
 \*----------------------------------------*/
@@ -10364,6 +10348,11 @@ a [class*="icon-"] {
   border-top-color: black;
 }
 
+.site-header {
+  padding-right: 24px;
+  padding-right: 1.33333rem;
+}
+
 /*------------------------------*\
                LOGO
 \*------------------------------*/
@@ -10416,13 +10405,30 @@ a [class*="icon-"] {
   margin: 0;
 }
 
+/**
+*
+* Wrapper used to style navigation on small screens
+*
+**/
 .site-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   right: 24px;
   right: 1.33333rem;
+  z-index: 320;
+  padding-top: 48px;
+  padding-top: 2.66667rem;
   margin-left: 48px;
   margin-left: 2.66667rem;
+  width: 178px;
+  width: 9.88889rem;
+  /* @todo: move with javascript */
+}
+@media only screen and (max-width: 50em) {
+  .site-footer {
+    display: none;
+  }
 }
 
 /*------------------------------------*\
@@ -12048,8 +12054,7 @@ li.comment .children:before {
   position: absolute;
   top: auto;
   left: auto;
-  bottom: -12px;
-  bottom: -0.66667rem;
+  bottom: 0;
   right: 24px;
   right: 1.33333rem;
 }
