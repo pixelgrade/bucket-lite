@@ -8,11 +8,6 @@
     $ds = DIRECTORY_SEPARATOR;
     $themecallbackpath = dirname(__FILE__).$ds.'theme-callbacks'.$ds;
 	
-	// Theme activation hooks
-    // ---------------------
-
-    include $themecallbackpath.'activation-hooks'.EXT;
-	
 
     // Theme specific settings
     // -----------------------
