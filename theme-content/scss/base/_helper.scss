@@ -66,5 +66,22 @@ $other-color: #464a4d;
           color: black;
         }
     }
+}
 
+
+/**
+ * Ensure that a caption won't expand more than the content
+ */
+.wp-caption{
+    max-width: 100%;
+}
+
+.wp-caption-text{
+    @include rem(font-size, 16px);
+    font-family: "Crimson Text", serif;
+    font-style: italic;
+    &:before{
+        content: "\2014";
+        @include rem(margin-right, 3px);
+    }
 }
