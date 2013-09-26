@@ -439,6 +439,80 @@
 				'title' => __('Default Social Share Image', wpgrade::textdomain()),
 				'sub_desc' => __('If an image is uploaded, this will be used for content sharing if you don\'t upload a custom image with your content (at least 200px wide recommended).', wpgrade::textdomain()),
 			),
+			array(
+				'id' => 'use_twitter_widget',
+				'type' => 'checkbox_hide_below',
+				'title' => __('Use Twitter Widget', wpgrade::textdomain()),
+				'sub_desc' => __('Just a widget to show your latest tweets (Twitter API v1.1 compatible). You can add it in your blog or footer sidebars.<div class="description">', wpgrade::textdomain()),
+				'std' => '1',
+				'switch' => true,
+				"next_to_hide" => 5,
+			),
+			array(
+				'id' => 'info_about_twitter_app',
+				'type' => 'info_box',
+				'title' => __('Important Note : ', wpgrade::textdomain()),
+				'desc' => __('In order to use the Twitter widget you will need to create a Twitter application <a href="https://dev.twitter.com/apps/new" >here</a> and get your own key, secrets and access tokens. This is due to the changes that Twitter made to it\'s API (v1.1). Please note that these defaults are used on the '. wpgrade::themename() .' demo site but they might be disabled at any time, so we <strong>strongly</strong> recommend you to input your own bellow.</div>', wpgrade::textdomain()),
+			),
+			array(
+				'id' => 'twitter_consumer_key',
+				'type' => 'text',
+				'title' => __('Consumer Key', wpgrade::textdomain()),
+				'std' => 'UGciUkPwjDpCRyEqcGsbg'
+			),
+			array(
+				'id' => 'twitter_consumer_secret',
+				'type' => 'text',
+				'title' => __('Consumer Secret', wpgrade::textdomain()),
+				'std' => 'nuHkqRLxKTEIsTHuOjr1XX5YZYetER6HF7pKxkV11E'
+			),
+			array(
+				'id' => 'twitter_oauth_access_token',
+				'type' => 'text',
+				'title' => __('Oauth Access Token', wpgrade::textdomain()),
+				'std' => '205813011-oLyghRwqRNHbZShOimlGKfA6BI4hk3KRBWqlDYIX'
+			),
+			array(
+				'id' => 'twitter_oauth_access_token_secret',
+				'type' => 'text',
+				'title' => __('Oauth Access Token Secret', wpgrade::textdomain()),
+				'std' => '4LqlZjf7jDqmxqXQjc6MyIutHCXPStIa3TvEHX9NEYw'
+			),
+			array(
+				'id' => 'social_seo_social_widget_title',
+				'type' => 'info',
+				'desc' => __('<h2>Social Icons Widget Settings</h2>', wpgrade::textdomain())
+			),
+			array(
+				'id' => 'social_icons',
+				'type' => 'text_sortable',
+				'title' => __('Social Icons', wpgrade::textdomain()),
+				'sub_desc' => __('Define and reorder your social links.<br /><b>Note: </b>These will be displayed in the "'. wpgrade::themename() .' Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),
+				'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
+				'options' => array(
+					'twitter' => __('Twitter', wpgrade::textdomain()),
+					'facebook' => __('Facebook', wpgrade::textdomain()),
+					'gplus' => __('Google+', wpgrade::textdomain()),
+					'skype' => __('Skype', wpgrade::textdomain()),
+					'linkedin' => __('LinkedIn', wpgrade::textdomain()),
+					'youtube' => __('Youtube', wpgrade::textdomain()),
+					'vimeo' => __('Vimeo', wpgrade::textdomain()),
+					'instagram' => __('Instagram', wpgrade::textdomain()),
+					'flickr' => __('Flickr', wpgrade::textdomain()),
+					'pinterest' => __('Pinterest', wpgrade::textdomain()),
+					'tumblr' => __('Tumblr', wpgrade::textdomain()),
+					'lastfm' => __('Last.FM', wpgrade::textdomain()),
+					'appnet' => __('App.net', wpgrade::textdomain())
+				)
+			),
+			array(
+				'id' => 'social_icons_target_blank',
+				'type' => 'checkbox',
+				'title' => __('Open social icons links in new a window?', wpgrade::textdomain()),
+				'sub_desc' => __('Do you want to open social links in a new window ?', wpgrade::textdomain()),
+				'std' => '1',
+				'switch' => true
+			),
 		)
 	);
 
