@@ -12330,7 +12330,6 @@ html {
 .content {
   background: white;
   position: relative;
-  overflow: hidden;
 }
 @media only screen and (min-width: 50.11111em) {
   .content {
@@ -12520,7 +12519,6 @@ html {
  * making the scroll bar appear.
  */
 html {
-  overflow: hidden !important;
   padding-right: 0 !important;
 }
 

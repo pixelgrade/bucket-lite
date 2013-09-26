@@ -35,7 +35,7 @@ html {
     position: relative;
 
     // project-classic causes horizontal scroll. CAUTION!
-    overflow: hidden;
+    // overflow: hidden;
 
     @include media(from hand) {
         @include rem(margin-left, 250px);
@@ -229,7 +229,7 @@ html {
  * making the scroll bar appear.
  */
 html{
-    overflow: hidden !important; 
+    // overflow: hidden !important; 
     padding-right: 0 !important;
 }
 
