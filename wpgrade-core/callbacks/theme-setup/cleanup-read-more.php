@@ -10,7 +10,7 @@
 	 */
 	function wpgrade_callback_cleanup_excerpt($more) {
 		global $post;
-		return include wpgrade::themefilepath('theme-partials/wpgrade-partials/read-more'.EXT);
+		return include wpgrade::themefilepath('wpgrade-partials/read-more'.EXT);
 	}
 
 	/**
@@ -23,5 +23,5 @@
 	 */
 	function wpgrade_callback_cleanup_readmore_content($more_link, $more_link_text) {
 		global $post;
-		return include wpgrade::themefilepath('theme-partials/wpgrade-partials/read-more-content'.EXT);
+		return include wpgrade::themefilepath('wpgrade-partials/read-more-content'.EXT);
 	}

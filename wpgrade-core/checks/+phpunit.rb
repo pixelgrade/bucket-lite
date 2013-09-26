@@ -10,5 +10,5 @@ end
 
 # execute phpunit
 # we have to do it though another script due to parameter passing
-Dir.chdir File.expand_path(File.dirname(__FILE__)+'/..')
-Kernel.exec('sh wpgrade-checks/tools/phpunit-executor');
+Dir.chdir File.expand_path(File.dirname(__FILE__)+'/../../')
+Kernel.exec('sh wpgrade-core/checks/tools/phpunit-executor');

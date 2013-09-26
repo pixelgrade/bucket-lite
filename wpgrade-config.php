@@ -10,6 +10,15 @@
 		'prefix'     => '_lens_',
 //		'textdomain' => 'lens_txtd',
 
+		// additional file includes (classes, functions, etc), files are loaded
+		// via wpgrade::require_all and entries should be directories; if the
+		// path does not exist it is automatically ignored
+		'include-paths' => array
+			(
+				'theme-callbacks',
+				'theme-utils'
+			),
+
 		// use theme-options to add any non-customizable options with out going
 		// though any of the backend code; all options added here are available
 		// though the WPGradeOptions driver manager. ie. the  wpgrade::option
