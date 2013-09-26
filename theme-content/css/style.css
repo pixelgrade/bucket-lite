@@ -3190,7 +3190,7 @@ textarea:focus {
  * and over in your markup.
  */
 .cf:after, .nav:after, .rsBullets:after, .entry__content ul:after, .site-navigation:after, .site-navigation__sub-menu:after, .site-social-links:after, .related-projects_nav-list:after, .related-projects_items-list:after, .mosaic__filter:after, .commentlist:after, .social-links__list:after, .image_item-categories:after, .gallery-control__items:after, .widget ul:after, .media:after, .island:after,
-.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .comment-form:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .article-timestamp:after, .content:after {
+.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .comment-form:after, .content:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .article-timestamp:after {
   content: "";
   display: table;
   clear: both;
@@ -8574,6 +8574,36 @@ a [class*="icon-"] {
   padding-right: .5em;
 }
 
+/*#main*/
+.content {
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (min-width: 50.11111em) {
+  .content {
+    margin-left: 250px;
+    margin-left: 13.88889rem;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .content {
+    position: relative;
+    top: 72px;
+    top: 4rem;
+    padding-bottom: 120px;
+    padding-bottom: 6.66667rem;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .navigation--is-visible .content {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+    opacity: 0.15;
+  }
+}
+
 @media only screen and (max-width: 72.22222em) {
   .page-content {
     padding: 0 24px;
@@ -11939,6 +11969,9 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 /*----------------------------------------*\
 *   $WIDGET META
 \*----------------------------------------*/
+/*------------------------------*\
+               LOCALIZATION
+\*------------------------------*/
 /*-------------------------------*\
                SHAME
 \*-------------------------------*/
@@ -12335,35 +12368,6 @@ a:hover > i.shc.circle, a:hover > i.shc.square {
 
 html {
   min-height: 0;
-}
-
-.content {
-  background: white;
-  position: relative;
-  overflow: hidden;
-}
-@media only screen and (min-width: 50.11111em) {
-  .content {
-    margin-left: 250px;
-    margin-left: 13.88889rem;
-  }
-}
-@media only screen and (max-width: 50em) {
-  .content {
-    position: relative;
-    top: 72px;
-    top: 4rem;
-    padding-bottom: 120px;
-    padding-bottom: 6.66667rem;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    -o-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .navigation--is-visible .content {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
-    opacity: 0.15;
-  }
 }
 
 /* prevent flicker on ios */
