@@ -3567,7 +3567,7 @@ function salvattore(){
           i = rules.length;
           while (i--) {
             rule = rules[i];
-            if (rule.selectorText.match(/\[data-columns\](.*)::?before$/)) {
+            if (rule.selectorText !== undefined && rule.selectorText.match(/\[data-columns\](.*)::?before$/)) {
               return true;
             }
           }
@@ -3787,7 +3787,7 @@ function platformDetect(){
 function niceScrollInit() {
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
-        $('html').niceScroll({
+        $('html').addClass('nicescroll').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
             cursorwidth: 7,
@@ -4154,6 +4154,7 @@ function init() {
     }
 
     $('html').addClass('loaded');
+    $('header').css({"paddingBottom": $('.site-footer').height()});
 
     $(function() {
         FastClick.attach(document.body);
