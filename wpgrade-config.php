@@ -75,6 +75,11 @@
 				// empty
 			),
 
+		// overwrites the inline css class to allow for full control; you may
+		// also leave this null, which will invoke an internal handler and work
+		// with the core partial inline-custom-css
+		'custom-css-handler' => null,
+
 		// filter functions will recieve content as a parameter and must return
 		// content; all functions are ordered by priority and executed from
 		// lowest to highest. If a filter is assigned false as a priority it
