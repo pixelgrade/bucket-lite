@@ -6911,7 +6911,7 @@ html.flexbox {
  * Text alignment
  */
 .text--left {
-  text-align: left !important; }
+  text-align: left  !important; }
 
 .text--center {
   text-align: center !important; }
@@ -12074,5 +12074,3 @@ blockquote p:after {
   border-radius: 0 !important; }
   .header .nicescroll-rails > div {
     background: #777 !important; }
-
-/*@ sourceMappingURL=style.css.map */
