@@ -37,7 +37,8 @@ if ( isset($_GET["color"]) ){
     .article-timestamp--single .article-timestamp__date,
     a:hover > i.pixcode--icon,
     .btn:hover, .wpcf7-submit:hover, .form-submit #comment-submit:hover,
-    .widget--header a:hover {
+    .widget--header a:hover,
+    a.site-home-link {
         color: <?php echo $main_color; ?>;
     }
 

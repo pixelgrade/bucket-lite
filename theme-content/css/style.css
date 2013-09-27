@@ -8171,6 +8171,8 @@ input:not([type]).wpcf7-form-control {
 \*------------------------------*/
 .inverse, .header {
   color: white; }
+  .inverse a, .header a {
+    color: #807f7d; }
 
 .highlighted {
   color: #fffc00; }
@@ -12313,5 +12315,8 @@ blockquote p:after {
   height: 33.33333rem; }
   .featured-image .pixslider img {
     max-width: none; }
+
+a.site-home-link {
+  color: #fffc00; }
 
 /*@ sourceMappingURL=style.css.map */

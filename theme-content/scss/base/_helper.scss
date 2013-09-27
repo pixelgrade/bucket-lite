@@ -2,6 +2,10 @@ $other-color: #464a4d;
 
 .inverse {
   color: white;
+
+  a {
+    color: $light;
+  }
 }
 
 .highlighted{
