@@ -301,3 +301,12 @@ blockquote p:after{
         background: #777 !important;
     }
 }
+
+.featured-image .pixslider {
+    width: 100%;
+    @include rem(height, 600px);
+
+    img {
+        max-width: none;
+    }
+}
