@@ -19,3 +19,13 @@
         display: none;
     }
 }
+
+.header__social-section {
+    border-bottom: 1px solid #4d4d4d;
+    @include rem(margin-bottom, $base-spacing-unit);
+}
+
+.header__social-title {
+    color: #a7a7a7;
+    text-transform: uppercase;
+}

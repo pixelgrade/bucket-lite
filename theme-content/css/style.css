@@ -8882,6 +8882,15 @@ a {
     .site-footer {
       display: none; } }
 
+.header__social-section {
+  border-bottom: 1px solid #4d4d4d;
+  margin-bottom: 24px;
+  margin-bottom: 1.33333rem; }
+
+.header__social-title {
+  color: #a7a7a7;
+  text-transform: uppercase; }
+
 /*------------------------------------*\
                NAVIGATION
 \*------------------------------------*/
@@ -9933,7 +9942,8 @@ li.comment {
   text-transform: uppercase; }
 
 .social-links__list {
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 0; }
   .social-links__list a {
     padding: 12px;
     padding: 0.66667rem;
@@ -9946,6 +9956,8 @@ li.comment {
 
 .site-social-links__social-link a {
   color: #91908e; }
+  .site-social-links__social-link a i {
+    padding-right: 0; }
 
 /*----------------------------------------*\
 *   $META BOXES
