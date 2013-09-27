@@ -40,6 +40,48 @@
     100%    { transform: translate3d(0, -3rem, 0); }
 }
 
+@-webkit-keyframes slidein-fromleft {
+    0%      { -webkit-transform: translate3d(-100%, 0, 0); width: 0; }
+    100%    { -webkit-transform: none; width: 100%; }
+}
+@-moz-keyframes slidein-fromleft {
+    0%      { -moz-transform: translate3d(-100%, 0, 0); width: 0; }
+    100%    { -moz-transform: none; width: 100%; }
+}
+@-ms-keyframes slidein-fromleft {
+    0%      { -ms-transform: translate3d(-100%, 0, 0); width: 0; }
+    100%    { -ms-transform: none; width: 100%; }
+}
+@-o-keyframes slidein-fromleft {
+    0%      { -o-transform: translate3d(-100%, 0, 0); width: 0; }
+    100%    { -o-transform: none; width: 100%; }
+}
+@keyframes slidein-fromleft {
+    0%      { transform: translate3d(-100%, 0, 0); width: 0; }
+    100%    { transform: none; width: 100%; }
+}
+
+@-webkit-keyframes slideout-toright {
+    0%      { -webkit-transform: none; width: 100%; }
+    100%    { -webkit-transform: translate3d(100%, 0, 0); width: 0; }
+}
+@-moz-keyframes slideout-toright {
+    0%      { -moz-transform: none; width: 100%; }
+    100%    { -moz-transform: translate3d(100%, 0, 0); width: 0; }
+}
+@-ms-keyframes slideout-toright {
+    0%      { -ms-transform: none; width: 100%; }
+    100%    { -ms-transform: translate3d(100%, 0, 0); width: 0; }
+}
+@-o-keyframes slideout-toright {
+    0%      { -o-transform: none; width: 100%; }
+    100%    { -o-transform: translate3d(100%, 0, 0); width: 0; }
+}
+@keyframes slideout-toright {
+    0%      { transform: none; width: 100%; }
+    100%    { transform: translate3d(100%, 0, 0); width: 0; }
+}
+
 @-webkit-keyframes fadein {
     0%      { opacity: 0; }
     100%    { opacity: 1; }
@@ -105,7 +147,7 @@
                 animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
     }
 
-    .loading & {
+    .cssanimations.loading & {
         opacity: 1;
         -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
            -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
@@ -120,28 +162,27 @@
     @include backface-visibility(hidden);
     @include perspective(1000px);
 
-    .no-cssanimations.loaded &{
-        opacity: 1;
-    }
-
-    .no-cssanimations.loading & {
-        opacity: 0;
-    }
-
-    .loaded & {
+    .cssanimations.loaded & {
         -webkit-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
            -moz-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
              -o-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
                 animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
     }
 
-
-    .loading & {
+    .cssanimations.loading & {
         opacity: 1;
         -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
            -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
              -o-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
                 animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
+    }
+
+    .no-cssanimations.loaded &{
+        opacity: 1;
+    }
+
+    .no-cssanimations.loading & {
+        opacity: 0;
     }
 }
 
@@ -158,6 +199,14 @@
                 animation: slidein .45s .15s bezier(easeOutBack) forwards, fadein .45s .15s ease-in-out forwards;
     }
 
+    .cssanimations.loading & {
+        opacity: 1;
+        -webkit-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
+           -moz-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
+             -o-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
+                animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
+    }
+
     .no-cssanimations.loaded &{
         opacity: 1;
     }
@@ -165,29 +214,33 @@
     .no-cssanimations.loading & {
         opacity: 0;
     }
-
-    .loading & {
-        opacity: 1;
-        -webkit-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
-           -moz-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
-             -o-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
-                animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
-    }
 }
 
 .single .separator--dotted,
 .page .separator--dotted {
-    width: 0;
-    @include translate3d(0,0,0);
-    @include transition(width .5s .2s bezier(easeOutBack));
+    @include backface-visibility(hidden);
+    @include perspective(1000px);
 
-    .loaded & {
-        width: 100%;
+    .cssanimations.loaded & {
+        -webkit-animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
+           -moz-animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
+             -o-animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
+                animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
     }
 
-    .loading & {
-        @include transition(width .5s .2s bezier(easeInBack));
-        width: 0;
+    .cssanimations.loading & {
+        -webkit-animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
+           -moz-animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
+             -o-animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
+                animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
+    }
+
+    .no-cssanimations.loaded &{
+        opacity: 1;
+    }
+
+    .no-cssanimations.loading & {
+        opacity: 0;
     }
 }
 
