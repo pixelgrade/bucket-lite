@@ -13,7 +13,7 @@
 		'update-notifier' => array
 			(
 				'xml-source' => 'http://pixelgrade.com/updates/',
-//				'xml-file' => 'cityhub.xml',
+//				'xml-file' => 'lens.xml',
 				'cache-interval' => 10800, # 3 hours
 				'update-page-name' => 'theme-update-notifier',
 			),
