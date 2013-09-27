@@ -2,6 +2,10 @@
     @include rem(margin-bottom, 2 * $base-spacing-unit);
     clear: left;
 
+    a:hover{
+        text-decoration: underline;
+    }
+
     ul{
         @extend .nav;
         // @extend .nav--stacked;

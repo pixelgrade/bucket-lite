@@ -40,6 +40,23 @@ class wpgrade {
 		return self::$configuration;
 	}
 
+	/** @var WPGradeMeta wpgrade state information */
+	protected static $state = null;
+
+	/**
+	 * The state consists of variables set by the system, and used to pass data
+	 * between different routines. eg. the update notifier
+	 *
+	 * @return WPGradeMeta current system state
+	 */
+	static function state() {
+		if (self::$state === null) {
+			self::$state = WPGradeMeta::instance(array());
+		}
+
+		return self::$state;
+	}
+
 	/**
 	 * @return mixed
 	 */
@@ -131,7 +148,7 @@ class wpgrade {
 	 */
 	static function resolve($key, $conf) {
 		if (isset(self::$resolvers[$key])) {
-			call_user_func_array(self::$resolvers[$key], array( $conf ));
+			call_user_func_array(self::$resolvers[$key], array($conf));
 		}
 	}
 
@@ -193,10 +210,30 @@ class wpgrade {
 	}
 
 	/**
+	 * @return string resource uri
+	 */
+	static function coreresourceuri($file) {
+		return self::coreuri().'resources/assets/'.$file;
+	}
+
+	/**
 	 * @return string file path
 	 */
 	static function themefilepath($file) {
 		return self::themepath().$file;
+	}
+
+	/**
+	 * @return string path
+	 */
+	static function corepartial($file) {
+		$localpath = self::themepath().rtrim(self::confoption('core-partials-overwrite-path', 'theme-partials/wpgrade-partials'), '/').'/'.$file;
+		if (file_Exists($localpath)) {
+			return $localpath;
+		}
+		else { // local file not available
+			return self::corepath().'resources/views/'.$file;
+		}
 	}
 
 	/**
@@ -297,22 +334,37 @@ class wpgrade {
 	}
 
 	/**
-	 * @return string
+	 * @return string uri to file
 	 */
-	static function content_url() {
-		return get_template_directory_uri().'/theme-content/';
+	static function uri($file) {
+		return get_template_directory_uri().$file;
+	}
+
+	/**
+	 * @return string uri to resource file
+	 */
+	static function resourceuri($file) {
+		return wpgrade::uri(wpgrade::confoption('resource-path', 'theme-content').'/'.ltrim($file, '/'));
 	}
 
 	/**
 	 * @return string
 	 */
-	static function pagination($query = null) {
+	static function pagination($query = null, $target = null) {
 		if ($query === null) {
 			global $wp_query;
 			$query = $wp_query;
 		}
 
-		$pager = new WPGradePaginationFormatter($query);
+		$target_settings = null;
+		if ($target !== null) {
+			$targets = self::confoption('pagination-targets', array());
+			if (isset($targets[$target])) {
+				$target_settings = $targets[$target];
+			}
+		}
+
+		$pager = new WPGradePaginationFormatter($query, $target_settings);
 
 		return $pager->render();
 	}
@@ -386,12 +438,12 @@ class wpgrade {
 
 			// is it a file?
 			if (is_file("$dir/$value")) {
-				$found_files []= "$dir/$value";
+				$found_files[]= "$dir/$value";
 				continue;
 			}
 			else { // it's a directory
 				foreach (self::find_files("$dir/$value") as $value) {
-					$found_files []= $value;
+					$found_files[]= $value;
 				}
 			}
 		}
@@ -616,6 +668,172 @@ class wpgrade {
 		$rgb = array($r, $g, $b);
 
 		return $rgb; // returns an array with the rgb values
+	}
+
+
+	// Upgrade Notifier
+	// ------------------------------------------------------------------------
+
+	/**
+	 * @return string xml file url
+	 */
+	static function updade_notifier_xml() {
+		$config = self::config();
+		$notifier = $config['update-notifier'];
+
+		$baseurl = rtrim($notifier['xml-source'], '/').'/';
+
+		if (isset($notifier['xml-file'])) {
+			$xmlfile = $notifier['xml-file'];
+		}
+		else { // no custom xml filename specified
+			$xmlfile = self::shortname().'.xml';
+		}
+
+		return $baseurl.$xmlfile;
+	}
+
+	/**
+	 * @return int seconds
+	 */
+	static function update_notifier_cacheinterval() {
+		$config = self::config();
+		$notifier = $config['update-notifier'];
+
+		return $notifier['cache-interval'];
+	}
+
+	/**
+	 * @return string
+	 */
+	static function update_notifier_pagename() {
+		$config = self::config();
+		$notifier = $config['update-notifier'];
+
+		return $notifier['update-page-name'];
+	}
+
+
+	// Media Handlers & Helpers
+	// ------------------------------------------------------------------------
+
+	#
+	# Audio
+	#
+
+	/**
+	 * ...
+	 */
+	static function audio_selfhosted($postID) {
+		$audio_mp3 = get_post_meta($postID, wpgrade::prefix().'audio_mp3', TRUE);
+		$audio_m4a = get_post_meta($postID, wpgrade::prefix().'audio_m4a', TRUE);
+		$audio_oga = get_post_meta($postID, wpgrade::prefix().'audio_ogg', TRUE);
+		$audio_poster = get_post_meta($postID, wpgrade::prefix().'audio_poster', true);
+
+		include wpgrade::corepartial('audio-selfhosted'.EXT);
+	}
+
+	#
+	# Video
+	#
+
+	/**
+	 * ...
+	 */
+	static function video_selfhosted($postID) {
+		$video_m4v = get_post_meta($postID, wpgrade::prefix().'video_m4v', true);
+		$video_webm = get_post_meta($postID, wpgrade::prefix().'video_webm', true);
+		$video_ogv = get_post_meta($postID, wpgrade::prefix().'video_ogv', true);
+		$video_poster = get_post_meta($postID, wpgrade::prefix().'video_poster', true);
+
+		include wpgrade::corepartial('video-selfhosted'.EXT);
+	}
+
+	/**
+	 * Given a video link returns an array containing the matched services and
+	 * the corresponding video id.
+	 *
+	 * @return array (youtube, vimeo) id hash if matched
+	 */
+	static function post_videos_id($post_id) {
+		$result = array();
+
+		$vembed = get_post_meta($post_id, wpgrade::prefix().'vimeo_link', true);
+		$vmatches = null;
+		if (preg_match('#(src=\"[^0-9]*)?vimeo\.com/(video/)?(?P<id>[0-9]+)([^\"]*\"|$)#', $vembed, $vmatches)) {
+			$result['vimeo'] = $vmatches["id"];
+		}
+
+		$yembed = get_post_meta($post_id, wpgrade::prefix().'youtube_id', true);
+		$ymatches = null;
+		if (preg_match('/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)(?P<id>[^#\&\?\"]*).*/', $yembed, $ymatches)) {
+			$result['youtube'] = $ymatches["id"];
+		}
+
+		return $result;
+	}
+
+	#
+	# Gallery
+	#
+
+	/**
+	 * We check if there is a gallery shortcode in the content, extract it and
+	 * display it in the form of a slideshow.
+	 */
+	function gallery_slideshow($current_post, $template = null) {
+		if ($template === null) {
+			$template = '<div class="wp-gallery">:gallery</div>';
+		}
+
+		//first check if we have a meta with a gallery
+		$gallery_ids = array();
+		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
+		
+		if (!empty($gallery_ids)) {
+			//recreate the gallery shortcode
+			$gallery = '[gallery ids="'.$gallery_ids.'"]';
+			
+			if (strpos($gallery, 'style') === false) {
+				$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
+			}
+
+			return strtr($template, array(':gallery' => do_shortcode($gallery)));
+		} else {
+			// search for the first gallery shortcode
+			$gallery_matches = null;
+			preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
+
+			if ( ! empty($gallery_matches)) {
+				$gallery = $gallery_matches[0];
+
+				if (strpos($gallery, 'style') === false) {
+					$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
+				}
+
+				return strtr($template, array(':gallery' => do_shortcode($gallery)));
+			}
+			else { // gallery_matches is empty
+				return null;
+			}
+		}
+	}
+
+	/**
+	 * Extract the fist image in the content.
+	 */
+	function post_first_image() {
+		global $post, $posts;
+		$first_img = '';
+		preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		$first_img = $matches[1][0];
+
+		// define a default image
+		if (empty($first_img)){
+			$first_img = "";
+		}
+
+		return $first_img;
 	}
 
 

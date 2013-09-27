@@ -50,7 +50,7 @@ class wpGrade_Archives_Navmenu_Metabox{
           if( 'nav-menus.php' != $hook )
                return;
 
-          //On Appearance>Menu page, enqueue script: 
+          //On Appearance>Menu page, enqueue script:
           wp_enqueue_script( 'my-post-type-archive-links_metabox', get_template_directory_uri().'/library/inc/archive-nav-menu/metabox.js' ,array('jquery'));
 
           //Add nonce variable
@@ -65,7 +65,7 @@ class wpGrade_Archives_Navmenu_Metabox{
           check_ajax_referer('my-add-post-type-archive-links','posttypearchive_nonce');
 
           require_once ABSPATH . 'wp-admin/includes/nav-menu.php';
-          
+
           if(empty($_POST['post_types']))
                exit;
 
@@ -84,7 +84,7 @@ class wpGrade_Archives_Navmenu_Metabox{
 			'menu-item-url' => get_post_type_archive_link($post_type),
 		);
 
-		//Collect the items' IDs. 
+		//Collect the items' IDs.
 		$item_ids[] = wp_update_nav_menu_item(0, 0, $menu_item_data );
           }
 
@@ -177,4 +177,3 @@ class wpGrade_Archives_Navmenu_Metabox{
 }
 
 $navmenu_metabox = new wpGrade_Archives_Navmenu_Metabox();
-?>

@@ -29,7 +29,11 @@ class WPGradePaginationFormatter {
 	 * @param mixed query
 	 * @param array configuration
 	 */
-	function __construct($query, $conf = array()) {
+	function __construct($query, $conf = null) {
+		if ($conf === null) {
+			$conf = array();
+		}
+
 		$this->query = $query;
 
 		$config = wpgrade::config();
@@ -127,14 +131,14 @@ class WPGradePaginationFormatter {
 		# requesting the translation when not required
 
 		if (empty($conf['prev_text'])) {
-			$conf['prev_text'] = __('« Previous');
+			$conf['prev_text'] = __('« Previous', wpgrade::textdomain());
 		}
 		else { // exists; translate
 			$conf['prev_text'] = __($conf['prev_text'], wpgrade::textdomain());
 		}
 
-		if ($conf['next_text']) {
-			$conf['next_text'] = __('Next »');
+		if (empty($conf['next_text'])) {
+			$conf['next_text'] = __('Next »', wpgrade::textdomain());
 		}
 		else { // exists; translate
 			$conf['next_text'] = __($conf['next_text'], wpgrade::textdomain());
@@ -169,7 +173,7 @@ class WPGradePaginationFormatter {
 			return call_user_func($conf['formatter'], $links, $conf);
 		}
 		else { // formatter === null
-			return inplode('', $links);
+			return implode('', $links);
 		}
 	}
 

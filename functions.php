@@ -21,6 +21,7 @@ add_theme_support('post-formats', $formats);
 
 // Initialize system core
 // ----------------------
+
 require_once 'wpgrade-core/bootstrap'.EXT;
 
 #
@@ -31,4 +32,6 @@ require_once 'wpgrade-core/bootstrap'.EXT;
 /**
  * http://codex.wordpress.org/Content_Width
  */
-if ( ! isset( $content_width ) ) $content_width = 960;
+if ( ! isset($content_width)) {
+	$content_width = 960;
+}

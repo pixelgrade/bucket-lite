@@ -10,14 +10,50 @@
 		'prefix'     => '_lens_',
 //		'textdomain' => 'lens_txtd',
 
+		'update-notifier' => array
+			(
+				'xml-source' => 'http://pixelgrade.com/updates/',
+//				'xml-file' => 'cityhub.xml',
+				'cache-interval' => 10800, # 3 hours
+				'update-page-name' => 'theme-update-notifier',
+			),
+
 		// additional file includes (classes, functions, etc), files are loaded
 		// via wpgrade::require_all and entries should be directories; if the
 		// path does not exist it is automatically ignored
 		'include-paths' => array
 			(
 				'theme-callbacks',
-				'theme-utils'
+				'theme-utilities/includes/classes',
+				'theme-utilities/includes/functions',
 			),
+
+		// same as include-paths only instead of files you specify files, to be
+		// used with vendor dependencies to avoid multiple include/requires
+		// happening due to the files in question adding subfiles relative to
+		// their directory (also avoids problems with php configuration files)
+		'include-files' => array
+			(
+				// main theme class
+				'theme-utilities/lens'.EXT,
+				// importer
+				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+				// widgets & template tags
+				'theme-content/inc/template-tags'.EXT,
+				'theme-content/inc/theme-defaults'.EXT,
+				'theme-content/inc/thumbnails'.EXT,
+				'theme-content/inc/widgets'.EXT,
+			),
+
+		// the path where overwrites on the core partials are stored, any files
+		// placed in the partial overwrites will be loaded instead of the core
+		// equivalent view files
+		'core-partials-overwrite-path' => 'theme-partials/wpgrade-partials',
+
+		// the directory where css and other media files are located; used by
+		// wpgrade::resourceuri; utility allows for easy migration of files to
+		// new structures
+		'resource-path' => 'theme-content',
 
 		// use theme-options to add any non-customizable options with out going
 		// though any of the backend code; all options added here are available
@@ -167,7 +203,7 @@
 
 				// are the terms used for paging relative to the sort order?
 				// ie. older/newer instead of sorting agnostic previous/next
-				'sorted_paging' => true,
+				'sorted_paging' => false,
 
 				// the order of the posts (asc or desc); if asc is passed and
 				// sorted_paging is true the values of prev_text and next_text
@@ -189,6 +225,23 @@
 
 				// a string to append to each link
 				'add_fragment' => null,
+			),
+
+		// allows you to create special pagination instances by providing a key
+		// to wpgrade::pagination; the settings defined in the key will be used
+		// to overwrite the defaults defined in pagination above; if the key
+		// is not avilable the pagination system will ignore the request so you
+		// can use the template names while developing and customize at any
+		// time later
+		'pagination-targets' => array
+			(
+				// the following is an example
+				'gallery' => array
+					(
+						'formatter' => null,
+						'prev_text' => 'Prev Images',
+						'next_text' => 'Next Images',
+					)
 			),
 
 	); # end theme configuration
