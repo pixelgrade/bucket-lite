@@ -38,7 +38,7 @@
                             data-small="<?php echo $img['small'][0]; ?>"
                             alt=""
                         />
-                    </div>                        
+                    </div>
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
@@ -48,7 +48,10 @@
                     </div>
                 </a>
             </div>
-            <?php if (++$index == 3) { ?>
+            <?php
+			// if we added 3 it's now time to add the gallery title box
+            if (++$index == 3) {
+            ?>
                 <div class="mosaic__item  mosaic__item--page-title">
                     <div class="image__item-link">
                         <div class="image__item-wrapper"></div>
@@ -64,8 +67,25 @@
             <?php } ?>
 
             <?php endforeach; ?>
+
+            <?php
+            // if there were less than 3, still add the title
+            if ($index < 3) {
+            ?>
+                <div class="mosaic__item  mosaic__item--page-title">
+                    <div class="image__item-link">
+                        <div class="image__item-wrapper"></div>
+                        <div class="image__item-meta">
+                            <div class="image_item-table">
+                                <div class="image_item-cell">
+                                    <h1><?php the_title(); ?></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-    
         <?php endif; ?>     
     </div>
 </div>

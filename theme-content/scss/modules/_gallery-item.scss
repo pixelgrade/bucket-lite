@@ -227,8 +227,8 @@
             }
 
             i{
-                @include font-size(14px);
-                @include rem(margin-right, 5px);
+                @include font-size(18px);
+                margin-right:0;
 
                 @include media(to lap) {
                     display: none;

@@ -14,12 +14,12 @@
     text-transform: uppercase;
 
     .like-link{
-        @include rem(height, 2 * $base-spacing-unit);
-        @include rem(width, 2 * $base-spacing-unit);        
-        padding: 0;
-        background: none;
-        border: none;
-        
+        // @include rem(height, 2 * $base-spacing-unit);
+        // @include rem(width, 2 * $base-spacing-unit);        
+        // background: none;
+        // border: none;
+        // padding: 0;
+        display:inline-block;
     }
 
     i {
@@ -28,6 +28,7 @@
         text-align: center;
         color: $dark; 
         padding:0;
+        display:block;
         
         @include rem(height, 2 * $base-spacing-unit);
         @include rem(width, 2 * $base-spacing-unit);
@@ -52,7 +53,6 @@
             @include transition(all 1s ease-out);
             z-index:-1;
 
-
             backface-visibility: visible;
             -webkit-backface-visibility: visible;
             -moz-backface-visibility: visible;
@@ -66,13 +66,15 @@
 
     .likes-text {
         position:relative;
-        margin-top:5px;
+        top:-3px;
+        margin-left:5px;
+        display:inline-block;
 
         &:after {
             display: block;
             position: absolute;
             bottom: 0;
-            left: -17px;
+            left: 0;
             content: "";
             width: 100px;
             background: #fff;
@@ -142,8 +144,6 @@
         color: $accent-color; 
         background-color: $accent-color;
         @include rem(font-size, 24px);
-        // @include transform(scale(0.75)); 
-        
 
         &:after {
             @include transform(scale(1.1));
@@ -164,18 +164,18 @@
     }
 
     .like-link{
-        @include rem(margin-right, $half-spacing-unit/2);
-        display: inline-block;
+        // @include rem(margin-right, $half-spacing-unit/2);
+        // display: inline-block;
         // float: left;
     }
 
     i{
-        display: inline-block;
+        // display: inline-block;
     }
 
     .likes-text{
-        @include rem(margin-top, 1.1 * $half-spacing-unit);
-        display: inline-block;
+        // @include rem(margin-top, 1.1 * $half-spacing-unit);
+        // display: inline-block;
     }    
 }
 
@@ -190,18 +190,28 @@
 .mosaic__item, .masonry__item{
     
     .like-link{
-        border: none;
-        height: auto;
-        width: auto;
+        // border: none;
+        // height: auto;
+        // width: auto;
         cursor: default;
         
-        & i{
-            height: auto;
-            width: auto;
+        & i {
+            @include rem(height, $base-spacing-unit);
+            @include rem(width, $base-spacing-unit);
             background: none;
+            border:none;
+            color:$dark;
             padding: 0;
             @include transform(scale(1));
+
+            &:after {
+                background:transparent;
+            }
         }
+    }
+    .likes-text {
+        top:-1px;
+        margin-left:0;
     }
 }
 

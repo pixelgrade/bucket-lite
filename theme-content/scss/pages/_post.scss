@@ -214,7 +214,7 @@
  */
 
 .article-timestamp{
-    @extend .cf;
+    // @extend .cf;
     font-family: "Josefin Slab", serif;
     text-transform: uppercase;
     @include font-size(36px);
@@ -281,25 +281,25 @@
         }
 
 /**
- * Article likes box positioning
+ * Article likes box VERTICAL positioning
  */
-
-.likes-box--article{
-    .like-link{
-        // float: left;
-        display: block;
-    }
-
-    i{
-        display: block;
-    }    
-}
 
 @include media(from lap){
     .likes-box--article{
         float: left;
-        @include rem(margin, 6 * $base-spacing-unit 0 0 -6 * $base-spacing-unit);            
-    }    
+        @include rem(margin, 6 * $base-spacing-unit 0 0 -6 * $base-spacing-unit);   
+        .like-link{
+            display: block;
+        }
+        .likes-text {
+            top:5px;
+            margin:0;
+            
+            &:after {
+                left:-13px;
+            }
+        }         
+    }   
 }
 
 /**
@@ -309,29 +309,42 @@
 @include media(to lap){
     .entry-header__meta{
         display: block;
+        width:100%;
+        @include rem(margin-top, $base-spacing-unit);
+
+        //Clearfix
+        &:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
     }
 
-        .article-timestamp, .likes-box--article{
-            display: inline-block;
-            vertical-align: top;
+    .article-timestamp {
+        margin-top:0;
+    }
+
+    .likes-box--article{
+        float:right;
+
+        i{
         }
 
-        .article-timestamp{
-            @include rem(margin-top, $half-spacing-unit);
-            @include rem(margin-right, $base-spacing-unit);
+        .like-link {
+            float:right;
         }
 
-        .likes-box--article{
-            i{
-                float: left;
+        .likes-text{
+            margin-right:8px;
+            margin-top:2px;
+            @include rem(line-height, 2*$base-spacing-unit);
+            &:after {
+                left:auto;
+                right:0;
+                text-align:right;
             }
-
-            .likes-text{
-                float: right;
-                @include rem(margin-top, $base-spacing-unit);
-                @include rem(margin-left, $half-spacing-unit);
-            }
         }
+    }
 
 }
 
