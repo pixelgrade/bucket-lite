@@ -43,6 +43,7 @@
         position: fixed;
         overflow-y: auto;
         @include rem(padding-left, 2*$base-spacing-unit);
+        @include rem(padding-right, $base-spacing-unit);
         @include rem(width, 250px);
         background-color: $dark;
 
@@ -73,24 +74,10 @@
     // the actual gradient
     &:before {
         background-color: $other-color;
-        background-size: 1px rem(12 * $base-spacing-unit);
+        background-size: 1px rem(7 * $base-spacing-unit);
         background-repeat: repeat-x;
-        @include background-image(linear-gradient($accent-color, $other-color));
-
+        @include background-image(linear-gradient($accent-color 50%, $other-color));
         @include transition(height 1s .3s ease-in-out);
-        -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
-           -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
-            -ms-animation: loading 1s bezier(easeInOutQuad) forwards;
-             -o-animation: loading 1s bezier(easeInOutQuad) forwards;
-                animation: loading 1s bezier(easeInOutQuad) forwards;
-
-        .loading & {
-            -webkit-animation: loading 1s bezier(easeInOutQuad) forwards;
-               -moz-animation: loading 1s bezier(easeInOutQuad) forwards;
-                -ms-animation: loading 1s bezier(easeInOutQuad) forwards;
-                 -o-animation: loading 1s bezier(easeInOutQuad) forwards;
-                    animation: loading 1s bezier(easeInOutQuad) forwards;
-        }
 
         .lt-ie9 & {
             @include filter-gradient($accent-color, $other-color, vertical);
@@ -112,14 +99,17 @@
     }
 }
 
-.site-header {
+.header__inner-wrap {
+
+    position: relative;
+    z-index: 30;
 
     @include media(to hand) {
-        position: relative;
         left: 100%;
         @include rem(top, -3 * $base-spacing-unit);
         width: 75%;
         height: 100%;
+        margin-left: 0;
         @include rem(padding, $half-spacing-unit $base-spacing-unit);
         padding-bottom: 0;
         background: $dark;
@@ -239,28 +229,6 @@
     }    
 }
 
-.header__inner-wrap {
-    @include rem(padding-right, $base-spacing-unit);
-
-    @include media(to hand) {
-        overflow: auto !important;
-        padding-right: 0;
-    }
-}
-
-.site-header {
-    @include media(to hand) {
-        height: auto !important;
-    }
-}
-    
-
-.header {
-    
-    @include media(to hand) {
-        height: auto;
-    }
-}
 
 
 
@@ -276,7 +244,7 @@
     overflow: hidden;
 
     @include media(from hand) {
-        @include rem(margin, 2*$base-spacing-unit $base-spacing-unit 2*$base-spacing-unit 0);
+        @include rem(margin, 2*$base-spacing-unit 0);
         padding-left: 0;
         padding-right: 0;
     }
@@ -290,11 +258,14 @@
     display: block;
     text-transform: uppercase;
     @include font-size(30px);
+    @include rem(min-height, 3 * $base-spacing-unit);
     font-weight: bold;
 
     @include media(to hand) {
         @include rem(margin-top, 17px);
         @include rem(margin-left, 23px);
+        min-height: 0;
+        @include rem(max-height, 2 * $base-spacing-unit);
     }
 
     h1 {

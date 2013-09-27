@@ -4148,7 +4148,9 @@ function init() {
 
     }
 
-    if ($('.site-logo--image-2x').length) {
+    var is_retina = (window.retina || window.devicePixelRatio > 1);
+
+    if (is_retina && $('.site-logo--image-2x').length) {
         var image = $('.site-logo--image-2x').find('img');
 
         if (image.data('logo2x') !== undefined) {
@@ -4159,15 +4161,15 @@ function init() {
 
     $('html').addClass('loaded');
     
-    var h = $(window).height(),
-        sh = $('.site-header__branding').outerHeight(true),
-        hh = $('.site-header').outerHeight(true),
-        fh = $('.site-footer').outerHeight(true);
+    // var h = $(window).height(),
+    //     sh = $('.site-header__branding').outerHeight(true),
+    //     hh = $('.site-header').outerHeight(true),
+    //     fh = $('.site-footer').outerHeight(true);
 
-    console.log(h,sh,hh,fh);
-    if (h < hh + sh + fh) {
-        $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
-    }
+    // console.log(h,sh,hh,fh);
+    // if (h < hh + sh + fh) {
+    //     $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
+    // }
 
     $(function() {
         FastClick.attach(document.body);

@@ -1,3 +1,16 @@
+/**
+ * The zoom controls are not displayed 
+ * properly without this rule
+ */
+#gmap{
+    padding-top: 30%;
+    @include rem(max-height, 460px);
+
+    img{
+        max-width: none !important;
+    }
+}
+
 .pin_ring {
 
     @include border-radius(50%);
