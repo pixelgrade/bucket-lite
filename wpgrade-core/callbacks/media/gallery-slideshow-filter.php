@@ -4,7 +4,10 @@
 	 * Remove the first gallery shortcode from the content
 	 */
 	function wpgrade_callback_gallery_slideshow_filter($content) {
-		if (get_post_format() == 'gallery') {
+		$gallery_ids = array();
+		$gallery_ids = get_post_meta(get_the_ID(), wpgrade::prefix() . 'main_gallery', true );
+		
+		if (get_post_format() == 'gallery' && empty($gallery_ids)) {
 			// search for the first gallery shortcode
 			$gallery_matches = null;
 			preg_match("!\[gallery.+?\]!", $content, $gallery_matches);

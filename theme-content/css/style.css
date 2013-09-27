@@ -14629,13 +14629,6 @@ img.mfp-img {
   word-break: break-word;
 }
 
-.show-on-ie8 {
-  display: none;
-}
-.show-on-ie8 .lt-ie9 .show-on-ie8 {
-  display: block;
-}
-
 .entry__content img {
   max-width: 100%;
   height: auto;

@@ -37,10 +37,10 @@
 				// main theme class
 				'theme-utilities/lens'.EXT,
 				// importer
-				'theme-content/inc/wordpress-importer/wordpress-importer'.EXT,
+				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
-				'theme-content/inc/template-defaults'.EXT,
+				'theme-content/inc/theme-defaults'.EXT,
 				'theme-content/inc/thumbnails'.EXT,
 				'theme-content/inc/widgets'.EXT,
 			),
@@ -203,7 +203,7 @@
 
 				// are the terms used for paging relative to the sort order?
 				// ie. older/newer instead of sorting agnostic previous/next
-				'sorted_paging' => true,
+				'sorted_paging' => false,
 
 				// the order of the posts (asc or desc); if asc is passed and
 				// sorted_paging is true the values of prev_text and next_text
