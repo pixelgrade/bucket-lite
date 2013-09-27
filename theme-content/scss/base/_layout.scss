@@ -44,7 +44,7 @@
     }
 
     .single-portfolio-sidebar .content{
-        @include rem(width, 1275px);
+        @include rem(max-width, 1275px);
     }
 
     .page-content, .sidebar{

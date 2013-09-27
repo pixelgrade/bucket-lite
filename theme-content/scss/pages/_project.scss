@@ -58,37 +58,41 @@
         padding-left: 0;
     }
 
-    .site-content{
-        @include rem(max-width, 1300px);
-    }
-
     @include media(to lap) {
         .project-images{
             padding-top: 0;
         }
     }
 
-    @include media(from lap){
+    @include media(from lap) {
         .project-images{
             @include rem(padding, 2 * $base-spacing-unit 0);
         }        
     }
 
+    article{
+        @extend .row;
+        @extend .cf;
+    }
+
+    .project-images, .project-content{
+        float: left;
+    }
+
+    .project-images{
+        @extend .col-12;
+        @extend .lap-col-8;
+    }
+
+    .project-content{
+        @extend .col-12;
+        @extend .lap-col-4;
+
+    }
+
     @include media(from lap) {
-        article{
-            display: table;
-        }
-
-        .project-images{
-            display: table-cell;
-            @include rem(max-width, 815px);
-        }
-
         .project-content{
             @include rem(padding, 2 * $base-spacing-unit);
-            vertical-align: top;
-            display: table-cell;
-            @include rem(max-width, 460px);
         }
     }
 
@@ -125,6 +129,7 @@
  * The second one is located in the sidebar and is visible from 'lap'.
  */
 .title-mobile{
+    @extend .col-12;
     margin-bottom: 0;
     @include rem(margin-left, -2 * $base-spacing-unit);
     @include rem(padding-left, 2 * $base-spacing-unit);
