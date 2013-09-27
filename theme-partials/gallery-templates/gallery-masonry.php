@@ -16,14 +16,16 @@
 
         if ( $attachments ) : ?>
         <div class="mosaic gallery js-gallery">
-            <?php 
-                foreach ( $attachments as $attachment ) : 
-                    $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                    $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
-                    $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
-                    $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-                    $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-            ?>                
+            <?php
+			$idx = 0;
+			foreach ( $attachments as $attachment ) :
+				$idx++;
+				$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+				$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
+				$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
+				$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
+				$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
+            ?>
             <div class="mosaic__item photography">
                 <a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
                     <div class="image__item-wrapper">
@@ -36,7 +38,7 @@
                             data-small="<?php echo $img['small'][0]; ?>"
                             alt=""
                         />
-                    </div>                        
+                    </div>
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
@@ -45,10 +47,47 @@
                         </div>
                     </div>
                 </a>
-            </div>                
-            <?php endforeach; ?>
+            </div>
+            <?php
+			//if we added 3 it's now time to add the gallery title box
+			if ($idx == 3) : ?>
+			<div class="mosaic__item photography">
+                <a href="#" class="image__item-link" title="">
+                    <div class="image__item-wrapper">
+                        
+                    </div>
+                    <div class="image__item-meta">
+                        <div class="image_item-table">
+                            <div class="image_item-cell">
+								<h3 class="image_item-title"><?php the_title(); ?></h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+			<?php endif;
+			
+			endforeach;
+			
+			//if there were less than 3, still add the title
+			if ($idx < 3) : ?>
+			<div class="mosaic__item photography">
+                <a href="#" class="image__item-link" title="">
+                    <div class="image__item-wrapper">
+                        
+                    </div>
+                    <div class="image__item-meta">
+                        <div class="image_item-table">
+                            <div class="image_item-cell">
+								<h3 class="image_item-title"><?php the_title(); ?></h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+			<?php endif;
+			?>
         </div>
-    
         <?php endif; ?>     
     </div>
 </div>

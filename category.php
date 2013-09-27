@@ -1,20 +1,11 @@
-<?php 
-/*
-Template Name: Journal(Blog) Page
-*/
+<?php
+/**
+ * The template for displaying Category pages.
+ *
+ */
 
-get_header();
+get_header(); ?>
 
-// save the page title and excerpt
-$current_title = get_the_title();
-$current_excerpt = get_the_excerpt();
-
-global $paged;
-global $wp_query;
-$paged = 1;
-if ( get_query_var('paged') ) $paged = get_query_var('paged');  
-if ( get_query_var('page') ) $paged = get_query_var('page');
-query_posts( array('post_type' => 'post', 'paged'=>$paged)); ?>
 <div id="main" class="content djax-updatable">
 
 <?php if ( have_posts() ) :
@@ -24,10 +15,10 @@ query_posts( array('post_type' => 'post', 'paged'=>$paged)); ?>
 	<div class="masonry" data-columns>
 		<div class="masonry__item archive-title">
 			<div class="entry__header">
-				<h1 class="entry__title"><?php echo $current_title; ?></h1>
+				<h1 class="entry__title"><?php printf( __( 'Category Archives: %s', wpgrade::textdomain() ), single_cat_title( '', false ) ); ?></h1>
 				<hr class="separator separator--dotted grow">
 			</div>
-			<div class="entry__content"><?php echo $current_excerpt; ?></div>
+			<div class="entry__content"><?php echo category_description(); ?></div>
 		</div><!-- .masonry__item -->
         <?php while ( have_posts() ) : the_post();
 			get_template_part('theme-partials/post-templates/blog-content');
@@ -41,6 +32,5 @@ query_posts( array('post_type' => 'post', 'paged'=>$paged)); ?>
 <?php endif; ?>
 
 </div>
-		
-<?php wp_reset_query();	?>
+
 <?php get_footer(); ?>
