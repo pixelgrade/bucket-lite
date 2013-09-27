@@ -14,6 +14,8 @@
             'post__in'     => $gallery_ids
         ) );
 
+        $index = 0;
+
         if ( $attachments ) : ?>
         <div class="mosaic gallery js-gallery">
             <?php 
@@ -24,7 +26,7 @@
                     $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                     $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
             ?>                
-            <div class="mosaic__item photography">
+            <div class="mosaic__item">
                 <a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
                     <div class="image__item-wrapper">
                         <img
@@ -45,7 +47,22 @@
                         </div>
                     </div>
                 </a>
-            </div>                
+            </div>
+            <?php if (++$index == 3) { ?>
+                <div class="mosaic__item  mosaic__item--page-title">
+                    <div class="image__item-link">
+                        <div class="image__item-wrapper"></div>
+                        <div class="image__item-meta">
+                            <div class="image_item-table">
+                                <div class="image_item-cell">
+                                    <h1><?php the_title(); ?></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
             <?php endforeach; ?>
         </div>
     

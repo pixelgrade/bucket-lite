@@ -1,4 +1,4 @@
-@charset "IBM437";
+@charset "UTF-8";
 /*------------------------------------*\
     $FONT-SIZES
 \*------------------------------------*/
@@ -9291,6 +9291,25 @@ a {
   cursor: pointer; }
   .mosaic__filter .filter.active {
     color: #fffc00; }
+
+/*------------------------------------*\
+               PAGE TITLE
+\*------------------------------------*/
+.mosaic__item--page-title .image__item-meta, .mosaic__item--page-title .image_item-table {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
+.mosaic__item--page-title h1 {
+  padding: 0 48px;
+  padding:  0 2.66667rem;
+  font-size: 32px;
+  font-size: 1.77778rem;
+  margin: 0; }
+  @media only screen and (max-width: 50em) {
+    .mosaic__item--page-title h1 {
+      padding: 0 24px;
+      padding:  0 1.33333rem;
+      font-size: 28px;
+      font-size: 1.55556rem; } }
 
 /*----------------------------------------*\
 *   $CONTENTS

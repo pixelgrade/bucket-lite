@@ -163,3 +163,36 @@
         }
     }
 }
+
+
+
+
+
+/*------------------------------------*\
+               PAGE TITLE
+\*------------------------------------*/
+
+// 600px small 900px hand 1300px lap 1700px desk;
+.mosaic__item--page-title {
+
+    .image__item-meta, .image_item-table {
+        @include opacity(1);
+    }
+
+    h1 {
+        @include rem(padding, 0 2*$base-spacing-unit);
+        @include rem(font-size, 32px);
+        margin: 0;
+
+        @include media(to desk) {
+        }
+
+        @include media(to lap) {
+        }
+
+        @include media(to hand) {
+            @include rem(padding, 0 $base-spacing-unit);
+            @include rem(font-size, 28px);
+        }
+    }
+}
