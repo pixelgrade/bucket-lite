@@ -168,7 +168,7 @@ function wpgrade_get_current_canonical_url() {
 			if ( function_exists( 'icl_get_home_url' ) ) {
 				$link = icl_get_home_url();
 			} else {
-				$link = get_option( 'home' );
+				$link = home_url();
 			}
 		}
 	} elseif ( $wp_query->is_tax && $haspost ) {
