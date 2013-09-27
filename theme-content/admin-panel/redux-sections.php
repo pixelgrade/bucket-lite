@@ -294,11 +294,6 @@
 		'desc' => __('<p class="description">General settings for portfolio items.</p>', wpgrade::textdomain()),
 		'fields' => array(
 			array(
-				'id' => 'portfolio_technical_stuff_info_alert',
-				'type' => 'info',
-				'desc' => __('<h2>Technical Stuff</h2>', wpgrade::textdomain())
-			),
-			array(
 				'id' => 'portfolio_single_show_share_links',
 				'type' => 'checkbox_hide_below',
 				'title' => __('Show Share Links', wpgrade::textdomain()),
