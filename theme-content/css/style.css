@@ -6911,7 +6911,7 @@ html.flexbox {
  * Text alignment
  */
 .text--left {
-  text-align: left !important; }
+  text-align: left  !important; }
 
 .text--center {
   text-align: center !important; }
@@ -12288,5 +12288,3 @@ blockquote p:after {
   height: 33.33333rem; }
   .featured-image .pixslider img {
     max-width: none; }
-
-/*@ sourceMappingURL=style.css.map */
