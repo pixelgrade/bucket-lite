@@ -3833,7 +3833,8 @@ function royalSliderInit() {
             rs_arrows = typeof $slider.data('arrows') !== "undefined",
             rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
             rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
-            rs_customArrows = typeof $slider.data('customarrows') !== "undefined";
+            rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
+            rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
         
         // make sure default arrows won't appear if customArrows is set
@@ -3846,7 +3847,7 @@ function royalSliderInit() {
                 loop: true,
                 imageScaleMode:'none',
                 imageAlignCenter: false,
-                slidesSpacing: 0,
+                slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
@@ -3858,7 +3859,7 @@ function royalSliderInit() {
                 loop: true,
                 imageScaleMode: 'fill',
                 imageAlignCenter: false,
-                slidesSpacing: 0,
+                slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
@@ -4096,7 +4097,7 @@ function initVideos() {
     // Firefox Opacity Video Hack
     $('iframe').each(function(){
         var url = $(this).attr("src");
-        $(this).attr("src",url+"?wmode=transparent");
+        $(this).attr("src", url+"?wmode=transparent");
     });
 }
 
@@ -4341,7 +4342,7 @@ function lazyLoad() {
             src = $img.attr('data-src');
  
         $img.on('load', imgLoaded($img[0]))
-            .attr('src',src);
+            .attr('src', src);
     });
 };
 

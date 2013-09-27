@@ -8389,21 +8389,8 @@ a {
     max-width: 70.83333rem; }
 
   .sidebar {
-<<<<<<< HEAD
-    width: 430px;
-    width: 23.88889rem; } }
-=======
     max-width: 430px;
     max-width: 23.88889rem; } }
-.sidebar {
-  padding: 24px;
-  padding: 1.33333rem; }
-  @media only screen and (min-width: 72.33333em) {
-    .sidebar {
-      padding: 48px;
-      padding: 2.66667rem; } }
-
->>>>>>> 8d69f21731dba1d84333745a368994e26cbfad79
 @media only screen and (min-width: 72.33333em) {
   .wrapper {
     height: 100%; } }
@@ -11104,9 +11091,11 @@ a:hover > i.pixcode--icon {
 
 .widget-tweets__tweet {
   display: block;
-  width: 100%;
-  margin-bottom: 48px;
-  margin-bottom: 2.66667rem; }
+  width: 100%; }
+
+.tweet__block {
+  margin-bottom: 24px;
+  margin-bottom: 1.33333rem; }
 
 .tweet__content a {
   color: #595957; }
