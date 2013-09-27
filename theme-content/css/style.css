@@ -8599,8 +8599,8 @@ a {
 
 @media screen and (min-width: 1921px) {
   .page .page-content {
-    max-width: 100%;
-    width: 100%; } }
+    max-width: 80%;
+    width: 80%; } }
 .page .featured-image {
   margin-left: -48px;
   margin-left: -2.66667rem; }
