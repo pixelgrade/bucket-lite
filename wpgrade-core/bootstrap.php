@@ -20,22 +20,32 @@
 	# the higher the priority
 
 	$classpath = $basepath.'classes'.DIRECTORY_SEPARATOR;
-	$files = wpgrade::find_files($classpath);
+//	$files = wpgrade::find_files($classpath);
+//
+//	// ensure base classes are loaded first
+//	sort($files, SORT_ASC);
+//
+//	foreach ($files as $file) {
+//		if (strpos($file, EXT) !== false) {
+//			require $file;
+//		}
+//	}
 
-	// ensure base classes are loaded first
-	sort($files, SORT_ASC);
-
-	foreach ($files as $file) {
-		if (strpos($file, EXT) !== false) {
-			require $file;
-		}
-	}
+	wpgrade::require_all($classpath);
 
 
 	// Setup translations
 	// ------------------
 
-	load_theme_textdomain(wpgrade::textdomain(), wpgrade::themefilepath('theme-content/languages'));
+	load_theme_textdomain
+		(
+			wpgrade::textdomain(),
+			wpgrade::themefilepath
+				(
+					wpgrade::confoption
+						('language-path', 'theme-content/languages')
+				)
+		);
 
 
 	// Setup Option Drivers
@@ -63,27 +73,31 @@
 	// Plugins & Resolvable Dependencies
 	// ---------------------------------
 
-	require wpgrade::themefilepath('theme-content/admin-panel/bootstrap'.EXT);
-
-	if (is_admin() && basename($_SERVER["PHP_SELF"]) != 'update-core.php') {
-		require wpgrade::themefilepath('theme-content/inc/upgrade-notifier'.EXT);
-	}
-
-	// plugins & custom theme support
-	require wpgrade::themefilepath('theme-content/inc/required-plugins/required-plugins.php');
-	require wpgrade::themefilepath('theme-content/inc/widgets.php');
-	require wpgrade::themefilepath('theme-content/inc/custom-admin-login.php');
-	require wpgrade::themefilepath('theme-content/inc/menus.php');
-	require wpgrade::themefilepath('theme-content/inc/media.php');
-	require wpgrade::themefilepath('theme-content/inc/thumbnails.php');
-	require wpgrade::themefilepath('theme-content/inc/portfolio-gallery.php');
-	require wpgrade::themefilepath('theme-content/inc/template-tags.php');
-	require wpgrade::themefilepath('theme-content/inc/theme-defaults.php');
-	include wpgrade::themefilepath('theme-content/inc/social.php');
-	include wpgrade::themefilepath('theme-content/inc/admin-help-pointers.php');
+	require wpgrade::themefilepath(wpgrade::confoption('theme-adminpanel-path', 'theme-content/admin-panel').'/bootstrap'.EXT);
 
 
 	// Hooks
 	// -----
 
-	require 'hooks.php';
+	require 'hooks'.EXT;
+
+
+	// Upgrade Notifier
+	// ----------------
+
+	if (is_admin() && basename($_SERVER["PHP_SELF"]) != 'update-core.php') {
+	   add_action('admin_enqueue_scripts', 'wpgrade_callback_update_notifier_admin_initialization');
+	   add_action('admin_menu', 'wpgrade_callback_update_notifier_menu');
+	   add_action('admin_bar_menu', 'wpgrade_callback_update_notifier_bar_menu', 1000);
+	   add_action('admin_init', 'wpgrade_callback_update_notifier_handler');
+	   add_action('admin_notices', 'wpgrade_callback_update_notifier_update_notice');
+	}
+
+
+	// Media Handlers
+	// --------------
+
+	// make sure that WordPress allows the upload of our used mime types
+	add_filter('upload_mimes', 'wpgrade_callback_custom_upload_mimes');
+	// remove the first gallery shortcode from the content
+	add_filter('the_content', 'wpgrade_callback_gallery_slideshow_filter');

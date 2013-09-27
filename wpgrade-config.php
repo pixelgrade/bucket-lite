@@ -10,14 +10,42 @@
 		'prefix'     => '_lens_',
 //		'textdomain' => 'lens_txtd',
 
+		'update-notifier' => array
+			(
+				'xml-source' => 'http://pixelgrade.com/updates/',
+//				'xml-file' => 'cityhub.xml',
+				'cache-interval' => 10800, # 3 hours
+				'update-page-name' => 'theme-update-notifier',
+			),
+
 		// additional file includes (classes, functions, etc), files are loaded
 		// via wpgrade::require_all and entries should be directories; if the
 		// path does not exist it is automatically ignored
 		'include-paths' => array
 			(
 				'theme-callbacks',
-				'theme-utils'
+				'theme-utilities/includes/classes',
+				'theme-utilities/includes/functions',
 			),
+
+		// same as include-paths only instead of files you specify files, to be
+		// used with vendor dependencies to avoid multiple include/requires
+		// happening due to the files in question adding subfiles relative to
+		// their directory (also avoids problems with php configuration files)
+		'include-files' => array
+			(
+				'theme-utilities/lens'.EXT,
+			),
+
+		// the path where overwrites on the core partials are stored, any files
+		// placed in the partial overwrites will be loaded instead of the core
+		// equivalent view files
+		'core-partials-overwrite-path' => 'theme-partials/wpgrade-partials',
+
+		// the directory where css and other media files are located; used by
+		// wpgrade::resourceuri; utility allows for easy migration of files to
+		// new structures
+		'resource-path' => 'theme-content',
 
 		// use theme-options to add any non-customizable options with out going
 		// though any of the backend code; all options added here are available
