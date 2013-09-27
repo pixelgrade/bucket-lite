@@ -18,12 +18,21 @@
 		}
 	}
 
+	$themeincludefiles = wpgrade::confoption('include-files', array());
+	foreach ($themeincludefiles as $file) {
+		require wpgrade::themepath().$file;
+	}
+
+
+	// Include core specific callbacks
+	// ------------------------------------------------------------------------
+
+	$callbackspath = dirname(__FILE__).$ds.'callbacks';
+	wpgrade::require_all($callbackspath);
+
 
 	// Theme Setup
 	// ------------------------------------------------------------------------
-
-	$callbackspath = dirname(__FILE__).$ds.'callbacks'.$ds;
-	wpgrade::require_all($callbackspath.'theme-setup');
 
 	/**
 	 * ...
@@ -98,6 +107,6 @@
 	function wpgrade_callbacks_html5_shim() {
 		global $is_IE;
 		if ($is_IE) {
-			include wpgrade::themefilepath('theme-partials/wpgrade-partials/ie-shim'.EXT);
+			include wpgrade::corepartial('ie-shim'.EXT);
 		}
 	}

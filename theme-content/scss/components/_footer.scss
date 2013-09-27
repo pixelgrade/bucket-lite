@@ -4,7 +4,8 @@
 *
 **/
 .site-footer {
-    position: fixed;
+    // position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     @include rem(right, $base-spacing-unit);
