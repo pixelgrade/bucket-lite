@@ -80,6 +80,14 @@
     .entry__meta {
         @include rem(padding, $base-spacing-unit);
     }
+
+    /**
+     * For the post format gallery, ensuring the gallery 
+     * controls to stay where they should
+     */
+    .entry__featured-image{
+        position: relative;
+    }
 }
 
 [data-columns]::before {

@@ -90,6 +90,19 @@
 *   $SINGLE STYLING
 \*----------------------------------------*/
 
+@include media(from lap) {
+    .single .content{
+        @include rem(max-width, 1275px);
+    }
+}
+
+@include media(from desk) {
+    .single .content{
+        max-width: 100%;
+        margin-right: 10%;
+    }
+}
+
 @include media(to lap) {
     .single-post{
         .featured-image{
@@ -118,17 +131,38 @@
 }
 
 
+
+
+
 /*----------------------------------------*\
 *   $FULL WIDTH
 \*----------------------------------------*/
 
 .full-width{
     .page-content{
+        max-width: 100% !important;
         width: 100%;
     }
 
-    article{
-        @include rem(max-width, 890px);
+    @include media(lap desk) {
+        article{
+            @include rem(max-width, 890px);
+        }
+    }
+
+    @include media(from desk) {
+        article{
+            margin-right: 30%;
+        }
+    }
+
+}
+
+.single-portfolio-fullwidth,
+.single-lens_gallery{
+    .content{
+        max-width: 100%;
+        margin-right: 0;
     }
 }
 
@@ -140,10 +174,14 @@
     $PAGE
 \*----------------------------------------*/
 .page .page-content{
-    width: 100%;
 
     @include media(lap desk) {
         @include rem(max-width, 890px);
+    }
+
+    @include media(from desk) {
+        max-width: 100%;
+
     }
 }
 

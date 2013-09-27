@@ -14,23 +14,6 @@
     }
  }
 
-
-/**
- * Offsetting the blockquote quotes
- * I have my doubts
- */
-// @include media(to lap){
-//     blockquote{
-//         p{
-//             @include rem(margin-left, 2.5 * $base-spacing-unit);
-//         }
-
-//         &:before{
-//             margin: 0;
-//         }
-//     }
-// }
-
 @include media(from lap) {
     .single-post{
          blockquote{
@@ -97,6 +80,20 @@
 
     .gallery-item{
         padding: 0 1%;
+    }
+}
+
+
+
+
+/*----------------------------------------*\
+    $PAGE
+\*----------------------------------------*/
+.page
+blockquote:not(.pixcode--testimonial){
+    &:before{
+        margin-left: 0;
+        @include rem(margin-right, $half-spacing-unit);
     }
 }
 
@@ -189,6 +186,9 @@
         }    
     }
 }
+
+
+
 
 
 /*----------------------------------------*\

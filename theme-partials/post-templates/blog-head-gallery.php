@@ -11,6 +11,6 @@
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 </h2>
 <hr class="separator separator--dotted grow">
-<div class="featured-image">
+<div class="entry__featured-image">
     <?php wpGrade_gallery_slideshow($post); ?>     
 </div>
