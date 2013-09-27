@@ -112,7 +112,7 @@
                         <?php next_post_link('%link', '<i class="icon-arrow-left"></i>' . __('Previous', wpGrade::textdomain()) ); ?>
                     </li>
                    <li class="projects_nav-item">
-                        <a href="#">
+                        <a href="<?php echo get_portfolio_page_link(); ?>">
                             <?php _e("All projects", wpGrade::textdomain()); ?>
                         </a>
                     </li>

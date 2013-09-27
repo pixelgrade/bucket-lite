@@ -3786,9 +3786,11 @@ function platformDetect(){
 /* --- NICESCROLL --- */
 
 function niceScrollInit() {
+
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
-        $('html').addClass('nicescroll').niceScroll({
+        $('html').addClass('nicescroll');
+        $('[data-smoothscrolling]').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
             cursorwidth: 7,
@@ -4155,7 +4157,16 @@ function init() {
     }
 
     $('html').addClass('loaded');
-    $('header').css({"paddingBottom": $('.site-footer').height()});
+    
+    var h = $(window).height(),
+        sh = $('.site-header__branding').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
+
+    console.log(h,sh,hh,fh);
+    if (h < hh + sh + fh) {
+        $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
+    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4499,7 +4510,7 @@ $(window).bind('djaxLoad', function(e, data) {
 $(window).resize(function(){
 
     browserSize();
-
+    niceScrollInit();
     resizeVideos();
 
 });

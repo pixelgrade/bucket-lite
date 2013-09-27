@@ -8,7 +8,7 @@
 
  .single-post {
     .entry__content {
-        p:first-child {
+        & > p:first-of-type  {
             @include rem(font-size, 22px);
         }
     }
@@ -286,7 +286,7 @@
 
 .likes-box--article{
     .like-link{
-        float: left;
+        // float: left;
         display: block;
     }
 
@@ -377,10 +377,3 @@
 }
 
 
-
-
-
-// 
-.first-paragraph p {
-    @include font-size(22px);
-}

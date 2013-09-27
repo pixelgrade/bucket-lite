@@ -1,8 +1,9 @@
 <div id="main" class="content djax-updatable">
 	<?php
 	$client_name = '';
-	$client_link = '#';
 	$client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+	
+	$client_link = '#';
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 	?>
     <div class="page-content">        
@@ -86,7 +87,7 @@
                             <?php next_post_link('%link', '<i class="icon-arrow-left"></i>' . __('Previous', wpGrade::textdomain()) ); ?>
                         </li>
                        <li class="projects_nav-item">
-                            <a href="#">
+                            <a href="<?php echo get_portfolio_page_link(); ?>">
                                 <?php _e("All projects", wpGrade::textdomain()); ?>
                             </a>
                         </li>

@@ -43,7 +43,6 @@
         position: fixed;
         overflow-y: auto;
         @include rem(padding-left, 2*$base-spacing-unit);
-        @include rem(padding-right, $base-spacing-unit);
         @include rem(width, 250px);
         background-color: $dark;
 
@@ -113,7 +112,7 @@
     }
 }
 
-.header__inner-wrap {
+.site-header {
 
     @include media(to hand) {
         position: relative;
@@ -128,19 +127,6 @@
         overflow-x: hidden;
     }
 }
-
-/**
-*
-* Wrapper used to style navigation on small screens
-*
-**/
-.site-footer {
-  /* @todo: move with javascript */
-  @include media(to hand) {
-    display: none;
-  }
-}
-
 
 
 
@@ -253,6 +239,29 @@
     }    
 }
 
+.header__inner-wrap {
+    @include rem(padding-right, $base-spacing-unit);
+
+    @include media(to hand) {
+        overflow: auto !important;
+        padding-right: 0;
+    }
+}
+
+.site-header {
+    @include media(to hand) {
+        height: auto !important;
+    }
+}
+    
+
+.header {
+    
+    @include media(to hand) {
+        height: auto;
+    }
+}
+
 
 
 
@@ -267,7 +276,7 @@
     overflow: hidden;
 
     @include media(from hand) {
-        @include rem(margin, 2*$base-spacing-unit 0);
+        @include rem(margin, 2*$base-spacing-unit $base-spacing-unit 2*$base-spacing-unit 0);
         padding-left: 0;
         padding-right: 0;
     }

@@ -224,6 +224,7 @@ function wpgrade_callback_geting_active() {
 					'name' => __('Images', wpgrade::textdomain()),
 					'id'   => wpgrade::prefix() . 'portfolio_gallery',
 					'type' => 'gallery',
+					'hidden' => true,
 				),
 			)
 		),

@@ -1,6 +1,20 @@
+/**
+*
+* Wrapper used to style navigation on small screens
+*
+**/
 .site-footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
     @include rem(right, $base-spacing-unit);
+    z-index: 320;
+    @include rem(padding-top, 2 * $base-spacing-unit);
     @include rem(margin-left, 2 * $base-spacing-unit);
+    @include rem(width, 250px - (3 * $base-spacing-unit));
+
+    /* @todo: move with javascript */
+    @include media(to hand) {
+        display: none;
+    }
 }
