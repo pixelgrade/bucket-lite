@@ -17,10 +17,9 @@ $other-color: #464a4d;
  * Also, floats them left.
  */
 .row-shortcode{
-    margin: 0 -3%;
-
+    margin-left: 0;
+    
     div[class*='span-']{
-        padding: 0 3%;
         float: left;
     }
 }

@@ -7,7 +7,7 @@
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 	?>
     <div class="page-content">        
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+        <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
             <header class="entry-header">
                 <h1 class="entry__title"><?php the_title(); ?></h1>
                 <div class="entry__content project-entry-content">
@@ -76,7 +76,7 @@
             </footer><!-- .entry__meta -->
         </article><!-- #post -->
         <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
-        <section class="related-projects_container">
+        <section class="related-projects_container entry__body">
             <header class="related-projects_header">
                 <?php if($yarpp_active) : ?>
                 <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>

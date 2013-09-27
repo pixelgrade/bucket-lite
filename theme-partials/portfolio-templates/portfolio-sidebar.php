@@ -1,6 +1,6 @@
 <div id="main" class="content djax-updatable">
 <div class="page-content project-sidebar-right">
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+    <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
         <h1 class="entry__title title-mobile"><?php the_title(); ?></h1>            
         <section class="project-images">
             <?php
@@ -26,7 +26,8 @@
                 foreach ( $attachments as $attachment ) {
                     $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                     $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );
-                    echo '<a href="#" class="' . $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
+                    $attachment_url = wp_get_attachment_url( $attachment->ID );
+                    echo '<a href="' . $attachment_url .'" class="' . $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
                 }
             } ?>
         </section>
@@ -101,7 +102,7 @@
         </section><!-- .project-content -->
     </article><!-- #post -->
     <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
-    <section class="related-projects_container">
+    <section class="related-projects_container entry__body">
         <header class="related-projects_header">
             <?php if($yarpp_active) : ?>
             <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>

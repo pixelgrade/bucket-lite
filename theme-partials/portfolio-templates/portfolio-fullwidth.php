@@ -36,7 +36,7 @@
     <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); ?>   
 
     <div class="page-content single-portfolio-fullwidth">
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?>>
             <div class="row">
                 <div class="col-12 hand-col-5 lap-col-4">
                     <header class="entry__header">
@@ -68,7 +68,7 @@
                     </div><!-- .entry__content -->
                 </div>
             </div>
-            <footer class="entry__meta cf to-hand-visible">
+            <footer class="entry__meta entry__body cf to-hand-visible">
                 <hr class="separator separator--dotted" />
                 <div class="entry__meta entry__meta--project cf">
                     <div class="entry__meta-box meta-box--client">
@@ -96,7 +96,7 @@
                     <hr class="separator separator--striped"/>
                 </div>
             </div>
-            <footer class="entry__meta cf">
+            <footer class="entry__meta entry__body cf">
                 <?php
 	            if (function_exists( 'display_pixlikes' )) {
                     display_pixlikes(array('class' => 'likes-box likes-box--footer'));
@@ -136,7 +136,7 @@
             </footer><!-- .entry-meta -->
         </article><!-- #post -->
         <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
-        <section class="related-projects_container">
+        <section class="related-projects_container entry__body">
             <header class="related-projects_header">
                 <?php if($yarpp_active) : ?>
                 <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
