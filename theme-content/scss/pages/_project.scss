@@ -262,3 +262,10 @@
     }
 
 }
+
+/**
+ * Alowing the gallery controls to appear 'unharmed'
+ */
+.single-gallery-fullscreen .site-footer{
+    display: none;
+}

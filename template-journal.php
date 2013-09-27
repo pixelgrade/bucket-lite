@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Journal (Blog) Page
+Template Name: Journal(Blog) Page
 */
 
 get_header(); ?>
