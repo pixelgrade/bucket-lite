@@ -7,181 +7,195 @@
 
 <style>
 
-	<?php if ( ! empty($main_color)): ?>
+<?php function hex2rgb($hex) {
+    $hex = str_replace("#", "", $hex);
 
-		.sidebar-footer-container a:hover, .team-member-position,
-		.wpgrade_pagination a:hover, #comment-submit, .entry-content a,
-		.sidebar-footer_right-container .widget_wpgrade_twitter_widget .widget-tweets-tweet-content a,
-		.side-content .widget li a:hover, .author-link, .wpcf7 input[type="submit"],
-		.sub-menu li:hover > a, a, a:hover > i.shc, .testimonial-content:before,
-		.sidebar-footer-container .widget_wpgrade_twitter_widget .flex-prev:hover,
-		.sidebar-footer-container .widget_wpgrade_twitter_widget .flex-next:hover,
-		.sidebar-footer-container .latest-posts-slider .flex-prev:hover,
-		.sidebar-footer-container .latest-posts-slider .flex-next:hover,
-		.post.sticky .entry-title a, .icon-twitter_footer,
-		.widget_categories a:hover,
-		.widget_tag_cloud a:hover, .portfolio-item_cat-link:hover,
-		.previous-project-link a:hover,
-		.next-project-link a:hover, .load_more a:hover, .previous-project-link span,
-		.next-project-link span, .load_more span, .post-footer_meta a:hover,
-		.comment.bypostauthor .comment-author,
-		.pingback.bypostauthor .comment-author,
-		.trackback.bypostauthor .comment-author, .block-dark a,
-		.tab-titles-list li.active a, .tab-titles-list a:hover, i.shc.big:hover,
-		.latest-posts-excerpt .btn-more:hover,
-		.widget_wpgrade_contact_widget a,
-		.article-control-button:hover {
-			color: <?php echo $main_color; ?>;
-		}
+    if(strlen($hex) == 3) {
+        $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+        $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+        $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+    } else {
+        $r = hexdec(substr($hex,0,2));
+        $g = hexdec(substr($hex,2,2));
+        $b = hexdec(substr($hex,4,2));
+    }
+    $rgb = array($r, $g, $b);
+    // return implode(",", $rgb); // returns the rgb values separated by commas
+    return $rgb; // returns an array with the rgb values
+}
 
-		.navigation-control-menu a, .filter-by-container .list-active,
-		.background-color, .btn, .header_search-form.is-active #searchform,
-		.main-footer_twitter:before, .main-footer_twitter:after,
-		.homepage-slider .flex-control-paging > li > a.flex-active,
-		.gallery_format_slider .flex-direction-nav a:hover, .block-color,
-		.progressbar-progress,
-		.mejs-container .mejs-controls .mejs-time-rail .mejs-time-current,
-		.mejs-container .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
-		.homepage-slider .flex-direction-nav > li > a,
-		.site-navigation .header_search-form #searchform .field.is-visible,
-		.newsletter_subscribe .submit,
-		.homepage-slider .flex-direction-nav a:hover,
-		.wrapper-body .flex-direction-nav a:hover,
-		.portfolio-container .flex-direction-nav a:hover,
-		.cl-effect-2 a span, .csstransforms3d .cl-effect-2 a span::before,
-		.csstransforms3d .cl-effect-2 a:hover span::before,
-		.csstransforms3d .cl-effect-2 a:focus span::before,
-		.sidebar-footer-container .widget_wpgrade_twitter_widget .flex-control-paging > li > a.flex-active, .sidebar-footer-container .latest-posts-slider .flex-control-paging > li > a.flex-active,
-		.testimonial-author_name,
-		.testimonials-slider .flex-direction-nav .flex-prev,
-		.testimonials-slider .flex-direction-nav .flex-next,
-		.filter-by-container > a span, .direction-nav-container li a:hover,
-		.homepage-slider .flex-direction-nav > li > a .slide-thumb,
-		.homepage-slider .flex-direction-nav > li > a .slide-arrow-container .slide-arrow-bg,
-		.direction-nav-container li a span:hover,
-		.lt-ie9 .project-no-image .portfolio-item-info {
-			background-color: <?php echo $main_color; ?>;
-		}
+if ( !empy($main_color) ) ){
+    $rgb = implode(",", hex2rgb($main_color)); ?>
 
-		.border-color {
-			border-color: <?php echo $main_color; ?>;
-		}
+    .inverse a,
+    .highlighted,
+    blockquote:before,
+    .emphasized:before,
+    .menu-item--main.current-menu-item > a,
+    .menu-item--main:hover > a,
+    .menu-item--main:focus > a,
+    .menu-item--main:active > a,
+    .menu-item--parent.current-menu-ancestor > a,
+    .menu-item--parent.current-menu-parent > a,
+    .mosaic__filter .filter.active,
+    .complete i,
+    .liked i,
+    .article-timestamp--single .article-timestamp__date,
+    a:hover > i.pixcode--icon,
+    .btn:hover, .wpcf7-submit:hover, .form-submit #comment-submit:hover,
+    .widget--header a:hover,
+    a.site-home-link {
+        color: <?php echo $main_color; ?>;
+    }
 
-		.border-top-color,
-		.sub-menu li:first-child {
-			border-top-color: <?php echo $main_color; ?>;
-		}
+    .rsNavSelected,
+    .pin_ring--outer,
+    .liked i,
+    .btn, .wpcf7-submit, .form-submit #comment-submit,
+    .progressbar__progress,
+    .rsNavSelected {
+        background-color: <?php echo $main_color; ?>;
+    }
 
-		.border-right-color	{
-			border-right-color: <?php echo $main_color; ?>;
-		}
+    .image__item-meta {
+        background-color: <?php echo $main_color; ?>;
+        background-color: rgba(<?php echo $rgb; ?>, 0.8);
+    }
 
-		.border-bottom-color,
-		.homepage-slider {
-			border-bottom-color: <?php echo $main_color; ?>;
-		}
+    .mosaic__item--page-title .image__item-meta {
+        background-color: <?php echo $main_color; ?>;
+    }
 
-		.border-left-color,
-		.previous-project-link a:before, .previous-project-link a:before,
-		.type-post .entry-content ul, .type-post .entry-content ul,
-		.type-post .entry-content ol, .type-post .entry-content ol,
-		.type-post .entry-content blockquote, article .pre-article-box,
-		.entry-content blockquote, .type-post .entry-content blockquote,
-		.type-post .entry-content q,
-		.type-post .entry-content q {
-			border-left-color: <?php echo $main_color; ?>;
-		}
+    .loading .pace .pace-activity,
+    .no-touch .arrow-button:hover {
+        border-color: <?php echo $main_color; ?> ;
+    }
 
-		@media only screen and (max-width: 1024px) {
-		  .wrapper-header-small {
-			background-color: <?php echo $main_color; ?>;
-		  }
-		}
+    .loading .pace .pace-activity {
+        border-top-color: transparent;
+    }
 
-		@media only screen and (min-width: 1025px) {
+    .menu-item--main.current-menu-item:after {
+        border-top-color: <?php echo $main_color; ?> ;
+    }
 
-			.site-mainmenu li:hover {
-				background-color: <?php echo $main_color; ?>;
-			}
 
-			.entry-header, .post-footer, .comments-area-title,
-			.container-body > h2, .featuredworks-title, .single-title,
-			.project-title {
-				border-left-color: <?php echo $main_color; ?>;
-			}
+    .menu-item--parent:hover:after,
+    .menu-item--parent:focus:after,
+    .menu-item--parent:active:after {
+        border-bottom-color: <?php echo $main_color; ?> ;
+    }
 
-			.portfolio-item-info, .team-member-profile-table {
-				background-color: <?php echo $main_color; ?>;
-				background-color: rgba(<?php echo $rgb . ', 0.75'; ?>);
-			}
+    .header:before {
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, <?php echo $main_color; ?>), color-stop(100%, #464a4d));
+        background-image: -webkit-linear-gradient(<?php echo $main_color; ?> 50%, #464a4d);
+        background-image: -moz-linear-gradient(<?php echo $main_color; ?> 50%, #464a4d);
+        background-image: -o-linear-gradient(<?php echo $main_color; ?> 50%, #464a4d);
+        background-image: linear-gradient(<?php echo $main_color; ?> 50%, #464a4d);
+    }
 
-			.shc-infobox.border-right,
-			.shc-infobox.border-left-right {
-				border-right-color: <?php echo $main_color; ?>;
-			}
+    .lt-ie9 .header:before {
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D'); }
+    }
 
-			.shc-infobox.border-left,
-			.shc-infobox.border-left-right {
-				border-left-color: <?php echo $main_color; ?>;
-			}
+<?php
+}
 
-			.team-member-container:hover .team-member-name {
-				color: <?php echo $main_color; ?>;
-			}
-		}
+if ( isset($fonts["body_font"]) ){
+    $body_font = $fonts["body_font"]; ?>
+    html, 
+    .wpcf7-form-control:not([type="submit"]),
+    .wp-caption-text,
+    blockquote:before,
+    ol li,
+    .comment__timestamp,
+    .comment-form ::-webkit-input-placeholder,
+    .comment-form :-moz-placeholder,
+    .comment-form ::-moz-placeholder,
+    .comment-form :-ms-input-placeholder,
+    .meta-box__box-title,
+    .header-quote-content blockquote .author_description,
+    .testimonial__author-title,
+    .widget-content {
+        font-family: <?php echo $body_font; ?>
+    }
 
-	<?php endif; ?>
+<?php }
 
-	<?php if (isset($fonts['main_font'])):  ?>
+if ( isset($fonts["main_font"]) ){
+    $main_font = $fonts["main_font"]; ?>
+    .count, .count sup,
+    .header-quote-content blockquote,
+    .article-timestamp,
+    .progressbar__title,
+    .progressbar__tooltip,
+    .testimonial__content,
+    .testimonial__author-name,
+    .tweet__meta,
+    .search-query,
+    .mfp-title,
+    .entry__content ul li,
+    .hN, .alpha, h1,
+    .beta, h2, .gamma, h3,
+    .masonry__item .entry__title,
+    .single-portfolio-fullwidth .entry__title,
+    .delta, h4, .epsilon, h5, .zeta, h6,
+    .comment__author-name,
+    .entry__meta-box a {
+        font-family: <?php echo $main_font; ?>
+    }
 
-		h1, h2, h3, h4, h5, h6, .portfolio_items article li a .title,
-		input.dial, blockquote, blockquote p, .site-branding a {
-			font-family: "<?php echo $fonts['main_font']; ?>" !important;
-		}
+<?php }
 
-	<?php endif; ?>
+if ( isset($fonts["menu_font"]) ){
+    $menu_font = $fonts["menu_font"]; ?>
+    .image__plus-icon,
+    .image_item-description,
+    .image_item-category,
+    .btn, .wpcf7-submit, .form-submit #comment-submit,
+    .header, 
+    .header .hN,
+    .header .alpha,
+    .header h1,
+    .header .beta,
+    .header h2,
+    .header .gamma,
+    .header h3,
+    .header .masonry__item .entry__title,
+    .masonry__item .header .entry__title,
+    .header .single-portfolio-fullwidth .entry__title,
+    .single-portfolio-fullwidth .header .entry__title,
+    .header .delta,
+    .header h4,
+    .header .epsilon,
+    .header h5,
+    .header .zeta,
+    .header h6,
+    .footer .hN,
+    .footer .alpha, .footer h1,
+    .footer .beta,
+    .footer h2,
+    .footer .gamma,
+    .footer h3,
+    .footer .masonry__item .entry__title,
+    .masonry__item .footer .entry__title,
+    .footer .single-portfolio-fullwidth .entry__title,
+    .single-portfolio-fullwidth .footer .entry__title,
+    .footer .delta,
+    .footer h4,
+    .footer .epsilon,
+    .footer h5,
+    .footer .zeta,
+    .footer h6,
+    .text-link,
+    .projects_nav-item a {
+        font-family: <?php echo $menu_font; ?>;
+    }
 
-	<?php if (isset($fonts["menu_font"])): ?>
+<?php } ?>
 
-		<?php $menu_font = $fonts["menu_font"]; ?>
-
-		.site-navigation a {
-			font-family: "<?php echo $menu_font; ?>" !important;
-		}
-
-	<?php endif; ?>
-
-	<?php if (isset($fonts["body_font"])): ?>
-
-		<?php $body_font = $fonts["body_font"]; ?>
-
-		body, .testimonial-content {
-			font-family: "<?php echo $body_font; ?>" !important;
-		}
-
-	<?php endif; ?>
-
-	<?php if ( ! empty($port_color)): ?>
-
-		<?php $port_color = '#'.$port_color; ?>
-
-		.portfolio_items article li.big a div.title,
-		.portfolio_single_gallery li a {
-			color: <?php echo $port_color ?>
-		}
-
-		.portfolio_items article li.big a div.title hr {
-			border-color: <?php echo $port_color ?>
-		}
-
-		.portfolio_items article li a .border span, .portfolio_single_gallery li a .border span {
-			border: 1px solid <?php echo $port_color ?>
-		}
-
-	<?php endif; ?>
-
-	<?php if (wpgrade::option('custom_css')): ?>
-		<?php echo wpgrade::option('custom_css'); ?>
-	<?php endif; ?>
+<?php if (wpgrade::option('custom_css')): ?>
+    <?php echo wpgrade::option('custom_css'); ?>
+<?php endif; ?>
 
 </style>
