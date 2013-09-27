@@ -786,14 +786,14 @@ class wpgrade {
 			$template = '<div class="wp-gallery">:gallery</div>';
 		}
 
-		//first check if we have a meta with a gallery
+		// first check if we have a meta with a gallery
 		$gallery_ids = array();
 		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
-		
+
 		if (!empty($gallery_ids)) {
 			//recreate the gallery shortcode
 			$gallery = '[gallery ids="'.$gallery_ids.'"]';
-			
+
 			if (strpos($gallery, 'style') === false) {
 				$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
 			}
