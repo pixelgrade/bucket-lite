@@ -11720,12 +11720,15 @@ a:hover > i.pixcode--icon {
   -ms-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px; }
-  .loaded .single .entry__title, .loaded
+  .cssanimations.loaded .single .entry__title, .cssanimations.loaded
   .page .entry__title {
     -webkit-animation: slidein 0.45s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.45s 0.15s ease-in-out forwards;
     -moz-animation: slidein 0.45s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.45s 0.15s ease-in-out forwards;
     -o-animation: slidein 0.45s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.45s 0.15s ease-in-out forwards;
     animation: slidein 0.45s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.45s 0.15s ease-in-out forwards; }
+  .no-cssanimations.loaded .single .entry__title, .no-cssanimations.loaded
+  .page .entry__title {
+    opacity: 1; }
   .loading .single .entry__title, .loading
   .page .entry__title {
     opacity: 1;
@@ -11772,14 +11775,24 @@ a:hover > i.pixcode--icon {
   -ms-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px; }
-  .loaded .single .entry__body, .loaded
+  .no-cssanimations.loaded .single .entry__body, .no-cssanimations.loaded
+  .page .entry__body {
+    opacity: 1; }
+  .no-cssanimations.loading .single .entry__body, .no-cssanimations.loading
+  .page .entry__body {
+    opacity: 0; }
+  .cssanimations.loaded .single .entry__body, .cssanimations.loaded
   .page .entry__body {
     -webkit-animation: slidein 0.35s 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.35s 0.25s ease-in-out forwards;
+    -moz-animation: slidein 0.35s 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.35s 0.25s ease-in-out forwards;
+    -o-animation: slidein 0.35s 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.35s 0.25s ease-in-out forwards;
     animation: slidein 0.35s 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.35s 0.25s ease-in-out forwards; }
-  .loading .single .entry__body, .loading
+  .cssanimations.loading .single .entry__body, .cssanimations.loading
   .page .entry__body {
     opacity: 1;
     -webkit-animation: slideout 0.35s 0.25s cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards, fadeout 0.35s 0.25s ease-in-out forwards;
+    -moz-animation: slideout 0.35s 0.25s cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards, fadeout 0.35s 0.25s ease-in-out forwards;
+    -o-animation: slideout 0.35s 0.25s cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards, fadeout 0.35s 0.25s ease-in-out forwards;
     animation: slideout 0.35s 0.25s cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards, fadeout 0.35s 0.25s ease-in-out forwards; }
 
 .sidebar--right {
