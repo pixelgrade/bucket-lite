@@ -10250,7 +10250,7 @@ a [class*="icon-"] {
 }
 
 @media only screen and (max-width: 50em) {
-  .header__inner-wrap {
+  .site-header {
     position: relative;
     left: 100%;
     top: -72px;
@@ -10348,9 +10348,27 @@ a [class*="icon-"] {
   border-top-color: black;
 }
 
-.site-header {
+.header__inner-wrap {
   padding-right: 24px;
   padding-right: 1.33333rem;
+}
+@media only screen and (max-width: 50em) {
+  .header__inner-wrap {
+    overflow: auto !important;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .site-header {
+    height: auto !important;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .header {
+    height: auto;
+  }
 }
 
 /*------------------------------*\
@@ -10372,8 +10390,8 @@ a [class*="icon-"] {
 }
 @media only screen and (min-width: 50.11111em) {
   .site-header__branding {
-    margin: 48px 0;
-    margin:  2.66667rem 0;
+    margin: 48px 24px 48px 0;
+    margin:  2.66667rem 1.33333rem 2.66667rem 0;
     padding-left: 0;
     padding-right: 0;
   }
@@ -10658,7 +10676,7 @@ a [class*="icon-"] {
 
 @media only screen and (max-width: 50em) {
   #page {
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
   }
 
@@ -14120,6 +14138,10 @@ html {
  * on <html/>, rule that already exists, but removes it on closing,
  * making the scroll bar appear.
  */
+html {
+  overflow-y: auto;
+}
+
 html.nicescroll {
   overflow: hidden !important;
   padding-right: 0 !important;
@@ -14209,4 +14231,11 @@ blockquote p:before {
 
 blockquote p:after {
   content: none;
+}
+
+.nicescroll-rails > div {
+  border-radius: 0 !important;
+}
+.header .nicescroll-rails > div {
+  background: #777 !important;
 }

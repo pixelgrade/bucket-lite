@@ -262,7 +262,7 @@
 @include media(to hand) {
 
     #page {
-        overflow: hidden;
+        overflow-x: hidden;
         position: relative; 
     }
 

@@ -3789,7 +3789,8 @@ function niceScrollInit() {
 
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
-        $('[data-smoothscrolling]').addClass('nicescroll').niceScroll({
+        $('html').addClass('nicescroll');
+        $('[data-smoothscrolling]').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
             cursorwidth: 7,
@@ -4509,7 +4510,7 @@ $(window).bind('djaxLoad', function(e, data) {
 $(window).resize(function(){
 
     browserSize();
-
+    niceScrollInit();
     resizeVideos();
 
 });

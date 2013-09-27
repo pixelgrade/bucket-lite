@@ -112,7 +112,7 @@
     }
 }
 
-.header__inner-wrap {
+.site-header {
 
     @include media(to hand) {
         position: relative;
@@ -239,8 +239,27 @@
     }    
 }
 
-.site-header {
+.header__inner-wrap {
     @include rem(padding-right, $base-spacing-unit);
+
+    @include media(to hand) {
+        overflow: auto !important;
+        padding-right: 0;
+    }
+}
+
+.site-header {
+    @include media(to hand) {
+        height: auto !important;
+    }
+}
+    
+
+.header {
+    
+    @include media(to hand) {
+        height: auto;
+    }
 }
 
 
@@ -257,7 +276,7 @@
     overflow: hidden;
 
     @include media(from hand) {
-        @include rem(margin, 2*$base-spacing-unit 0);
+        @include rem(margin, 2*$base-spacing-unit $base-spacing-unit 2*$base-spacing-unit 0);
         padding-left: 0;
         padding-right: 0;
     }
