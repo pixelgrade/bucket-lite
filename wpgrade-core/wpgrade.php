@@ -85,7 +85,6 @@ class wpgrade {
 		return is_ssl() ? 'https' : 'http';
 	}
 
-
 	// Options
 	// ------------------------------------------------------------------------
 
@@ -781,7 +780,7 @@ class wpgrade {
 	 * We check if there is a gallery shortcode in the content, extract it and
 	 * display it in the form of a slideshow.
 	 */
-	function gallery_slideshow($current_post, $template = null) {
+	static function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
 			$template = '<div class="wp-gallery">:gallery</div>';
 		}
@@ -822,7 +821,7 @@ class wpgrade {
 	/**
 	 * Extract the fist image in the content.
 	 */
-	function post_first_image() {
+	static function post_first_image() {
 		global $post, $posts;
 		$first_img = '';
 		preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
