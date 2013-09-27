@@ -66,6 +66,12 @@ blockquote {
 
 }
 
+.single, .pixcode--testimonial{
+    blockquote:before{
+        @include rem(margin-left, -3 * $base-spacing-unit);        
+    }
+}
+
 
 
 
