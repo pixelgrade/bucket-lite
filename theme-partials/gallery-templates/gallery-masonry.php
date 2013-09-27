@@ -11,7 +11,7 @@
             'post_type' => 'attachment',
             'posts_per_page' => -1,
             'orderby' => "post__in",
-            'post__in'     => $gallery_ids
+            'post__in'     => $gallery_ids,
         ) );
 
         if ( $attachments ) : ?>
