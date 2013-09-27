@@ -5,8 +5,8 @@
 	 */
 	function wpgrade_callback_gallery_slideshow_filter($content) {
 		$gallery_ids = array();
-		$gallery_ids = get_post_meta(get_the_ID(), wpgrade::prefix() . 'main_gallery', true );
-		
+		$gallery_ids = get_post_meta(get_the_ID(), wpgrade::prefix().'main_gallery', true);
+
 		if (get_post_format() == 'gallery' && empty($gallery_ids)) {
 			// search for the first gallery shortcode
 			$gallery_matches = null;
