@@ -33,6 +33,7 @@ query_posts( array('post_type' => 'post', 'paged'=>$paged)); ?>
 			get_template_part('theme-partials/post-templates/blog-content');
         endwhile; ?>
     </div><!-- .masonry -->
+	<?php wpgrade::pagination(); ?>
 
 <?php else : ?>
 

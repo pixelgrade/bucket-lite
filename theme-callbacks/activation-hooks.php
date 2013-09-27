@@ -344,6 +344,21 @@ function wpgrade_callback_geting_active() {
 							),
 					)
 		),
+		'lens_gallery_post_format' => array(
+			'id'         => 'lens_gallery_post_format',
+			'title'      => 'Gallery',
+			'pages'      => array( 'post' ), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' =>  __('Images', wpgrade::textdomain()),
+					'id'   =>  wpgrade::prefix() . 'main_gallery',
+					'type' => 'gallery',
+				),
+			)
+		),
 	);
 
 	update_option('pixtypes_themes_settings', $types_options);

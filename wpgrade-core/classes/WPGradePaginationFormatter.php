@@ -169,7 +169,7 @@ class WPGradePaginationFormatter {
 			return call_user_func($conf['formatter'], $links, $conf);
 		}
 		else { // formatter === null
-			return inplode('', $links);
+			return implode('', $links);
 		}
 	}
 

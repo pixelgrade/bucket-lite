@@ -54,24 +54,8 @@
 			$next_page = $links[$linkcount - 1];
 		}
 
-		$all_projects_link = '#';
-
 		return
 			'
-				<nav class="related-projects_nav">
-					<ul class="related-projects_nav-list">
-						<li class="related-projects_nav-item">
-							'.$prev_page.'
-						</li>
-						<li class="related-projects_nav-item">
-							<a href="'.$all_projects_link.'" class="related-projects_nav-link">
-								'.__("All projects", wpGrade::textdomain()).'
-							</a>
-						</li>
-						<li class="related-projects_nav-item">
-							'.$next_page.'
-						</li>
-					</ul>
-				</nav>
+				<div class="wpgrade_pagination">'.$prev_page.$next_page.'</div>
 			';
 	}
