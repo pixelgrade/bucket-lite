@@ -23,7 +23,10 @@
 	 */
 	function wpgrade_callback_pagination_formatter($links, $conf) {
 		$linkcount = count($links);
-
+		//don't show anything when no pagination is needed
+		if ($linkcount == 0) {
+			return '';
+		}
 		// Calculate prev link
 		// -------------------
 
@@ -53,7 +56,7 @@
 		else { // we have next link
 			$next_page = $links[$linkcount - 1];
 		}
-
+		
 		return
 			'
 				<div class="wpgrade_pagination">'.$prev_page.$next_page.'</div>
