@@ -4,7 +4,7 @@
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
-		//let's grab the page title first
+		// let's grab the page title first
 		$title = get_the_title();
 		
 		$args = array(
@@ -111,52 +111,38 @@
 				</a>
 			</div>
             <?php
-			//if we added 3 it's now time to add the page title box
+			// if we added 3 it's now time to add the page title box
 			if ($idx == 3) : ?>
-			<div class="mosaic__item">
-				<a href="#" class="image__item-link">
-				   <div class="image__item-wrapper">
-					</div>
-					<div class="image__item-meta image_item-meta--portfolio">
-						<div class="image_item-table">
-							<div class="image_item-cell image_item--block image_item-cell--top">
-								<h3 class="image_item-title"><?php echo $title; ?></h3>
-							</div>
-							<div class="image_item-cell image_item--block image_item-cell--bottom">
-								<div class="image_item-meta grid">
-									<ul class="image_item-categories grid__item one-half">                                
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+			<div class="mosaic__item  mosaic__item--page-title">
+                <div class="image__item-link">
+                    <div class="image__item-wrapper"></div>
+                    <div class="image__item-meta">
+                        <div class="image_item-table">
+                            <div class="image_item-cell">
+                                <h1><?php echo $title; ?></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 			<?php endif;
 			
 			endwhile;
 			
-			//if there were less than 3 items, still add the title box
+			// if there were less than 3 items, still add the title box
 			if ($idx < 3) : ?>
-			<div class="mosaic__item">
-				<a href="#" class="image__item-link">
-				   <div class="image__item-wrapper">
-					</div>
-					<div class="image__item-meta image_item-meta--portfolio">
-						<div class="image_item-table">
-							<div class="image_item-cell image_item--block image_item-cell--top">
-								<h3 class="image_item-title"><?php echo $title; ?></h3>
-							</div>
-							<div class="image_item-cell image_item--block image_item-cell--bottom">
-								<div class="image_item-meta grid">
-									<ul class="image_item-categories grid__item one-half">                                
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+			<div class="mosaic__item  mosaic__item--page-title">
+                <div class="image__item-link">
+                    <div class="image__item-wrapper"></div>
+                    <div class="image__item-meta">
+                        <div class="image_item-table">
+                            <div class="image_item-cell">
+                                <h1><?php echo $title; ?></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 			<?php endif;
 		endif;
         /* Restore original Post Data */

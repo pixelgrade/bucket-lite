@@ -6119,40 +6119,40 @@ html.flexbox {
 @media only screen and (min-width: 72.33333em) {
   .lap-span-12 {
     width: 100%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-1 {
     width: 8.33333%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-2 {
     width: 16.66667%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-3, .portfolio-archive .mosaic__item, .single-lens_gallery .mosaic__item {
     width: 25%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-4 {
     width: 33.33333%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-5 {
     width: 41.66667%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-6 {
     width: 50%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-7 {
     width: 58.33333%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-8 {
     width: 66.66667%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-9 {
     width: 75%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-10 {
     width: 83.33333%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-11 {
     width: 91.66667%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-span-12 {
     width: 100%; } }
 .offset-1 {
@@ -6695,7 +6695,7 @@ html.flexbox {
 
   .lap-pull-12 {
     left: -100%; } }
-@media only screen and (min-width: 94.55556em) {
+@media only screen and (min-width: 104.55556em) {
   .desk-col-1 {
     width: 8.33333%; }
 
@@ -8383,7 +8383,7 @@ a {
 
   .page-content, .sidebar {
     float: left; } }
-@media only screen and (min-width: 72.33333em) and (min-width: 72.27778em) and (max-width: 94.44444em) {
+@media only screen and (min-width: 72.33333em) and (min-width: 72.27778em) and (max-width: 104.44444em) {
   .single-portfolio-sidebar .content {
     max-width: 1275px;
     max-width: 70.83333rem; }
@@ -8429,7 +8429,7 @@ a {
 \*----------------------------------------*/
 .page .page-content {
   width: 100%; }
-  @media only screen and (min-width: 72.27778em) and (max-width: 94.44444em) {
+  @media only screen and (min-width: 72.27778em) and (max-width: 104.44444em) {
     .page .page-content {
       max-width: 890px;
       max-width: 49.44444rem; } }
@@ -9303,7 +9303,8 @@ a {
   padding:  0 2.66667rem;
   font-size: 32px;
   font-size: 1.77778rem;
-  margin: 0; }
+  margin: 0;
+  text-transform: uppercase; }
   @media only screen and (max-width: 50em) {
     .mosaic__item--page-title h1 {
       padding: 0 24px;
