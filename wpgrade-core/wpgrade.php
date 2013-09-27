@@ -789,7 +789,7 @@ class wpgrade {
 		$gallery_ids = array();
 		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
 
-		if (!empty($gallery_ids)) {
+		if ( ! empty($gallery_ids)) {
 			//recreate the gallery shortcode
 			$gallery = '[gallery ids="'.$gallery_ids.'"]';
 
@@ -798,7 +798,8 @@ class wpgrade {
 			}
 
 			return strtr($template, array(':gallery' => do_shortcode($gallery)));
-		} else {
+		}
+		else { // empty gallery_ids
 			// search for the first gallery shortcode
 			$gallery_matches = null;
 			preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
