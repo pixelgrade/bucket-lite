@@ -203,7 +203,10 @@
 // hide navigation on small devices
 
 #navigation {
-    @include rem(margin-left, -1 * $base-spacing-unit);    
+
+    @include media(from hand) {
+        @include rem(margin-left, -1 * $base-spacing-unit);
+    }
 }
 
 .site-navigation__trigger {
