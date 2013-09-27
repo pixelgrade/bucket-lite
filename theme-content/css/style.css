@@ -8842,11 +8842,6 @@ a {
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
   .menu-item--sub-menu-item:hover > a, .menu-item--sub-menu-item:focus > a, .menu-item--sub-menu-item:active > a {
-    -webkit-transform: translate3d(0.5em, 0, 0);
-    -moz-transform: translate3d(0.5em, 0, 0);
-    -ms-transform: translate3d(0.5em, 0, 0);
-    -o-transform: translate3d(0.5em, 0, 0);
-    transform: translate3d(0.5em, 0, 0);
     color: white; }
   .menu-item--sub-menu-item.current-menu-item > a {
     color: white; }

@@ -162,7 +162,6 @@
         &:hover, &:focus, &:active {
 
             & > a {
-                @include transform(translate3d(.5em, 0, 0));
                 color: white;
             }
         }
