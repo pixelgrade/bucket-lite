@@ -3,7 +3,7 @@
  * The default template for displaying content. Used for both single and index/archive/search.
  */
 ?>
-<article class="masonry__item">
+<article <?php post_class('masonry__item'); ?>>
 	<?php 
 	get_template_part('theme-partials/post-templates/blog-head', get_post_format());
 
