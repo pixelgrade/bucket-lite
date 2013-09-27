@@ -9,6 +9,7 @@
 		
 		$args = array(
 			'post_type' => 'lens_portfolio',
+			'order' => 'menu_order',
 			'posts_per_page' => -1
 		);
 
