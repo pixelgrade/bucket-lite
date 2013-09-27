@@ -24,7 +24,7 @@
     return $rgb; // returns an array with the rgb values
 }
 
-if ( !empy($main_color) ) ){
+if ( !empty($main_color) ){
     $rgb = implode(",", hex2rgb($main_color)); ?>
 
     .inverse a,
