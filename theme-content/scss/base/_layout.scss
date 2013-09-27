@@ -1,5 +1,6 @@
 /*#main*/.content {
     @extend .cf;
+    @extend .row;
     background: white;
     position: relative;
 
@@ -26,14 +27,24 @@
 
 @include media(to lap) {
     .page-content{
+        max-width: 100%;
         @include rem(padding, 0 $base-spacing-unit);           
     }
 }
 
+.page-content{
+    @extend .col-12;
+    @extend .lap-col-8;
+    border-left-width: 0;
+}
+
+.sidebar{
+    @extend .col-12;
+    @extend .lap-col-4;    
+}
+
 @include media(from lap) {
     .page-content{
-        @include rem(width, 890px);
-        max-width: 100%;
         @include rem(padding-left, 2 * $base-spacing-unit);   
         padding-right: 0;
     }
@@ -43,16 +54,19 @@
         width: 100%;
     }
 
-    .single-portfolio-sidebar .content{
-        @include rem(max-width, 1275px);
+    @include media(lap desk) {
+        .single-portfolio-sidebar .content{
+            @include rem(max-width, 1275px);
+        }
+
+
+        .sidebar{
+            @include rem(max-width, 430px);
+        }        
     }
 
     .page-content, .sidebar{
         float: left;
-    }
-
-    .sidebar{
-        @include rem(width, 430px);
     }
 }
 
@@ -76,7 +90,7 @@
 *   $SINGLE STYLING
 \*----------------------------------------*/
 
-@include media(to lap){
+@include media(to lap) {
     .single-post{
         .featured-image{
             @include rem(margin-left, -$base-spacing-unit);
@@ -85,7 +99,7 @@
     }    
 }
 
-@include media(from lap){
+@include media(from lap) {
     .single-post{
         .page-content{
             @include rem(padding-left, 10 * $base-spacing-unit);
@@ -125,6 +139,14 @@
 /*----------------------------------------*\
     $PAGE
 \*----------------------------------------*/
+.page .page-content{
+    width: 100%;
+
+    @include media(lap desk) {
+        @include rem(max-width, 890px);
+    }
+}
+
 .page .featured-image{
     @include rem(margin-left, -2 * $base-spacing-unit);
 }

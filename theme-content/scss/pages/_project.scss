@@ -173,12 +173,12 @@
         .entry__content {
             @include rem(padding-top, 5 * $half-spacing-unit);
         }        
-    }
 
-    .entry__header {
-        border-right: 1px dotted $dark;
-        @include rem(margin-bottom, 2 * $base-spacing-unit);
-        @include rem(padding-right, 2 * $base-spacing-unit);
+        .entry__header {
+            border-right: 1px dotted $dark;
+            @include rem(margin-bottom, 2 * $base-spacing-unit);
+            @include rem(padding-right, 2 * $base-spacing-unit);
+        }        
     }
 
     .entry__title {
