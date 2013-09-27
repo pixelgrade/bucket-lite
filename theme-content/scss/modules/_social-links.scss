@@ -40,6 +40,7 @@
     .social-links__list{
         @extend .nav;
         display: inline-block;
+        margin-bottom: 0;
 
         a{
             @include rem(padding, $half-spacing-unit);
@@ -58,5 +59,9 @@
     
     a {
         color: #91908e;
+
+        i {
+            padding-right: 0;
+        }
     }
 }

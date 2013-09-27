@@ -37,7 +37,8 @@
 				// main theme class
 				'theme-utilities/lens'.EXT,
 				// importer
-				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+//				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+				'theme-content/inc/required-plugins/required-plugins.php',
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
 				'theme-content/inc/theme-defaults'.EXT,

@@ -66,7 +66,7 @@ class wpGrade_import extends WPGrade_WP_Import
 			$this->process_menus();
 		}
 
-		$this->prepare_yarpp();
+//		$this->prepare_yarpp();
 
 		// update incorrect/missing information in the DB
 		$this->backfill_parents();
@@ -395,6 +395,7 @@ class wpGrade_import extends WPGrade_WP_Import
 
 	function prepare_yarpp(){
 
+		// this is wrong
 		$yarp_options = array (
 			'limit' => '6',
 			'template' => 'yarpp-template-portfolio.php',

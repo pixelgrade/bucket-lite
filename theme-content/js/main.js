@@ -3484,7 +3484,6 @@ function salvattore(){
 
           _ref = obtain_grid_settings(grid), numberOfColumns = _ref.numberOfColumns, columnClasses = _ref.columnClasses;
           columnsItems = new Array(+numberOfColumns);
-          console.log('settings', numberOfColumns, columnClasses);
           i = numberOfColumns;
           while (i-- !== 0) {
             selector = "[data-columns] > *:nth-child(" + numberOfColumns + "n-" + i + ")";
@@ -3950,7 +3949,7 @@ function magnificPopupInit() {
         });
     });
 
-    window.magnificPopup = $.magnificPopup.instance;
+    var magnificPopup = $.magnificPopup.instance;
 }
 
 
@@ -4151,15 +4150,19 @@ function init() {
 
     $('html').addClass('loaded');
     
-    // var h = $(window).height(),
-    //     sh = $('.site-header__branding').outerHeight(true),
-    //     hh = $('.site-header').outerHeight(true),
-    //     fh = $('.site-footer').outerHeight(true);
+    var h = $(window).height(),
+        sh = $('.site-header__branding').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
 
-    // console.log(h,sh,hh,fh);
-    // if (h < hh + sh + fh) {
-    //     $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
-    // }
+    console.log(h,sh,hh,fh);
+    if (h < hh + sh + fh) {
+        $('.site-footer').css({
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4264,12 +4267,16 @@ function eventHandlers() {
 
     $('.js-arrow-popup-prev').on('click', function(e){
         e.preventDefault();
-        window.magnificPopup.prev();
+        alert('prev');
+        // var magnificPopup = $.magnificPopup.instance;
+        // magnificPopup.prev();
     });
 
     $('.js-arrow-popup-next').on('click', function(e){
         e.preventDefault();
-        window.magnificPopup.next();
+        alert('next');
+        // var magnificPopup = $.magnificPopup.instance;
+        // magnificPopup.next();
     });
 
     /* @todo: change classes so style and js don't interfere */

@@ -7,7 +7,9 @@
 
 <style>
 
-<?php function hex2rgb($hex) {
+<?php
+
+function hex2rgb($hex) {
     $hex = str_replace("#", "", $hex);
 
     if(strlen($hex) == 3) {
@@ -20,7 +22,7 @@
         $b = hexdec(substr($hex,4,2));
     }
     $rgb = array($r, $g, $b);
-    // return implode(",", $rgb); // returns the rgb values separated by commas
+//     return implode(",", $rgb); // returns the rgb values separated by commas
     return $rgb; // returns an array with the rgb values
 }
 
