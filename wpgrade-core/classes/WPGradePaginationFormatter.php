@@ -29,7 +29,11 @@ class WPGradePaginationFormatter {
 	 * @param mixed query
 	 * @param array configuration
 	 */
-	function __construct($query, $conf = array()) {
+	function __construct($query, $conf = null) {
+		if ($conf === null) {
+			$conf = array();
+		}
+
 		$this->query = $query;
 
 		$config = wpgrade::config();

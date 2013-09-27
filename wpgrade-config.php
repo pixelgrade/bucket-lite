@@ -34,7 +34,15 @@
 		// their directory (also avoids problems with php configuration files)
 		'include-files' => array
 			(
+				// main theme class
 				'theme-utilities/lens'.EXT,
+				// importer
+				'theme-content/inc/wordpress-importer/wordpress-importer'.EXT,
+				// widgets & template tags
+				'theme-content/inc/template-tags'.EXT,
+				'theme-content/inc/template-defaults'.EXT,
+				'theme-content/inc/thumbnails'.EXT,
+				'theme-content/inc/widgets'.EXT,
 			),
 
 		// the path where overwrites on the core partials are stored, any files
@@ -217,6 +225,23 @@
 
 				// a string to append to each link
 				'add_fragment' => null,
+			),
+
+		// allows you to create special pagination instances by providing a key
+		// to wpgrade::pagination; the settings defined in the key will be used
+		// to overwrite the defaults defined in pagination above; if the key
+		// is not avilable the pagination system will ignore the request so you
+		// can use the template names while developing and customize at any
+		// time later
+		'pagination-targets' => array
+			(
+				// the following is an example
+				'gallery' => array
+					(
+						'formatter' => null,
+						'prev_text' => 'Prev Images',
+						'next_text' => 'Next Images',
+					)
 			),
 
 	); # end theme configuration
