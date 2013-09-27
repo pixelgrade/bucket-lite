@@ -13,7 +13,7 @@
 		'update-notifier' => array
 			(
 				'xml-source' => 'http://pixelgrade.com/updates/',
-//				'xml-file' => 'cityhub.xml',
+//				'xml-file' => 'lens.xml',
 				'cache-interval' => 10800, # 3 hours
 				'update-page-name' => 'theme-update-notifier',
 			),
@@ -37,7 +37,8 @@
 				// main theme class
 				'theme-utilities/lens'.EXT,
 				// importer
-				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+//				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+				'theme-content/inc/required-plugins/required-plugins.php',
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
 				'theme-content/inc/theme-defaults'.EXT,

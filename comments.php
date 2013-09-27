@@ -13,21 +13,20 @@
 ?>
 
 <?php
-	global $wpGrade_Options;
     /*
      * If the current post is protected by a password and
      * the visitor has not yet entered the password we will
      * return early without loading the comments.
      */
-    if (post_password_required()) return; 
+    if (post_password_required()) return;
 ?>
-    
+
     <div id="comments" class="comments-area">
-    <h4 class="comments-area-title">        
-    <?php 
-        if ( have_comments() ) { 
+    <h4 class="comments-area-title">
+    <?php
+        if ( have_comments() ) {
             printf( _n( 'Comments (1)', 'Comments (%1$s)', get_comments_number(), wpgrade::textdomain() ),  number_format_i18n(get_comments_number()));
-        } else { _e('Leave a comment', wpgrade::textdomain()); }  
+        } else { _e('Leave a comment', wpgrade::textdomain()); }
     ?>
     </h4>
 
@@ -74,7 +73,7 @@
 
 </div><!-- #comments .comments-area -->
 <hr class="separator separator--striped" />
-    <?php 
+    <?php
     $commenter = wp_get_current_commenter();
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
@@ -82,7 +81,7 @@
     if(is_user_logged_in()){
 		$current_user = wp_get_current_user();
         $comments_args = array(
-            // change the title of send button 
+            // change the title of send button
             'title_reply'=> __('', wpgrade::textdomain()),
             // remove "Text or HTML to be displayed after the set of comment fields"
             'comment_notes_before' => '',
@@ -97,7 +96,7 @@
     } else {
 
         $comments_args = array(
-        // change the title of send button 
+        // change the title of send button
         'title_reply'=> __('', wpgrade::textdomain()),
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_before' => '',

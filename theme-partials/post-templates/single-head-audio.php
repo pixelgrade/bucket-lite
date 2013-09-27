@@ -7,6 +7,6 @@
     <?php if( ! empty($audio_embed)): ?>
 		<?php echo stripslashes(htmlspecialchars_decode($audio_embed)) ?>
     <?php else: # audio_embed is empty ?>
-    	<?php wpGrade_audio_selfhosted($post->ID); ?>
+    	<?php wpgrade::audio_selfhosted($post->ID); ?>
     <?php endif; ?>
 </div>

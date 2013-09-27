@@ -85,7 +85,6 @@ class wpgrade {
 		return is_ssl() ? 'https' : 'http';
 	}
 
-
 	// Options
 	// ------------------------------------------------------------------------
 
@@ -781,7 +780,7 @@ class wpgrade {
 	 * We check if there is a gallery shortcode in the content, extract it and
 	 * display it in the form of a slideshow.
 	 */
-	function gallery_slideshow($current_post, $template = null) {
+	static function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
 			$template = '<div class="wp-gallery">:gallery</div>';
 		}
@@ -790,7 +789,7 @@ class wpgrade {
 		$gallery_ids = array();
 		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
 
-		if (!empty($gallery_ids)) {
+		if ( ! empty($gallery_ids)) {
 			//recreate the gallery shortcode
 			$gallery = '[gallery ids="'.$gallery_ids.'"]';
 
@@ -799,7 +798,8 @@ class wpgrade {
 			}
 
 			return strtr($template, array(':gallery' => do_shortcode($gallery)));
-		} else {
+		}
+		else { // empty gallery_ids
 			// search for the first gallery shortcode
 			$gallery_matches = null;
 			preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
@@ -822,7 +822,7 @@ class wpgrade {
 	/**
 	 * Extract the fist image in the content.
 	 */
-	function post_first_image() {
+	static function post_first_image() {
 		global $post, $posts;
 		$first_img = '';
 		preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
