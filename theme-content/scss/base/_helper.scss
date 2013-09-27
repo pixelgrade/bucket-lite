@@ -41,7 +41,7 @@ $other-color: #464a4d;
         // @extend .nav--stacked;
 
         li{
-            // display: block;
+            display: block;
             @include rem(padding, $half-spacing-unit/4 0);
             font-family: "Josefin Slab", serif;
             @include font-size(15px);
