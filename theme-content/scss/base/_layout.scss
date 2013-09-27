@@ -3,7 +3,10 @@
     @extend .row;
     background: white;
     position: relative;
-    @include rem(padding-bottom, 2 * $base-spacing-unit);
+
+    @include media(from hand) {
+        @include rem(padding-bottom, 2 * $base-spacing-unit);
+    }
 
     // project-classic causes horizontal scroll. CAUTION!
     overflow: hidden;

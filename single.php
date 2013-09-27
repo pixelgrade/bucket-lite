@@ -1,9 +1,8 @@
 <?php get_header(); ?>
 <div id="main" class="content djax-updatable">
-<div class="page-content">
+<div class="page-content entry__body">
     <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part('theme-partials/post-templates/single-head', get_post_format()); ?>
-        <div class="entry__body">
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
                 <header class="entry-header">
                     <div class="entry-header__meta">
@@ -90,7 +89,6 @@
                         comments_template();
                 ?>
             </article>
-        </div>
     <?php endwhile; ?>
 </div><!-- .page-content -->
 <?php get_sidebar(); ?>

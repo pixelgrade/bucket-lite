@@ -8171,9 +8171,8 @@ input:not([type]).wpcf7-form-control {
  * Also, floats them left.
  */
 .row-shortcode {
-  margin: 0 -3%; }
+  margin-left: 0; }
   .row-shortcode div[class*='span-'] {
-    padding: 0 3%;
     float: left; }
 
 /**
@@ -8343,9 +8342,11 @@ a {
 .content {
   background: white;
   position: relative;
-  padding-bottom: 48px;
-  padding-bottom: 2.66667rem;
   overflow: hidden; }
+  @media only screen and (min-width: 50.11111em) {
+    .content {
+      padding-bottom: 48px;
+      padding-bottom: 2.66667rem; } }
   @media only screen and (min-width: 50.11111em) {
     .content {
       margin-left: 250px;
