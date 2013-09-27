@@ -358,7 +358,7 @@ blockquote:not(.pixcode--testimonial){
 /**
  * Entry-meta styling. Categories, tags, social icons
  */
-@include media(to hand){
+@include media(to hand) {
     .entry__meta-box{
         float: none;
         display: block;
@@ -366,7 +366,7 @@ blockquote:not(.pixcode--testimonial){
     }
 }
 
-@include media(from hand){
+@include media(from hand) {
     .entry__meta-box{
         float: left;
         @include rem(margin-right, $base-spacing-unit);        
@@ -388,5 +388,3 @@ blockquote:not(.pixcode--testimonial){
     display: block;
     text-decoration: none;
 }
-
-

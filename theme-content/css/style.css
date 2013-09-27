@@ -8047,8 +8047,7 @@ input:not([type]).wpcf7-form-control {
   border-radius: 50%;
   position: absolute;
   border: 1px dotted black;
-  pointer-events: none;
-  display: none; }
+  pointer-events: none; }
 
 .pin_ring--outer {
   margin-top: -1.25rem;
@@ -8068,9 +8067,6 @@ input:not([type]).wpcf7-form-control {
   border-radius: 50%;
   top: 30%;
   left: 30%; }
-
-#map_canvas .pin_ring {
-  display: block; }
 
 .pace {
   -webkit-pointer-events: none;
@@ -8283,6 +8279,10 @@ blockquote {
     margin-left: -4rem;
     color: #fffc00; }
 
+.single blockquote:before, .pixcode--testimonial blockquote:before {
+  margin-left: -72px;
+  margin-left: -4rem; }
+
 /*-------------------------------*\
                LISTS
 \*-------------------------------*/
@@ -8397,6 +8397,14 @@ a {
 /*----------------------------------------*\
 *   $SINGLE STYLING
 \*----------------------------------------*/
+@media only screen and (min-width: 72.33333em) {
+  .single .content {
+    max-width: 1275px;
+    max-width: 70.83333rem; } }
+@media only screen and (min-width: 104.55556em) {
+  .single .content {
+    max-width: 100%;
+    margin-right: 10%; } }
 @media only screen and (max-width: 72.22222em) {
   .single-post .featured-image {
     margin-left: -24px;
@@ -8419,20 +8427,31 @@ a {
 *   $FULL WIDTH
 \*----------------------------------------*/
 .full-width .page-content {
+  max-width: 100% !important;
   width: 100%; }
-.full-width article {
-  max-width: 890px;
-  max-width: 49.44444rem; }
+@media only screen and (min-width: 72.27778em) and (max-width: 104.44444em) {
+  .full-width article {
+    max-width: 890px;
+    max-width: 49.44444rem; } }
+@media only screen and (min-width: 104.55556em) {
+  .full-width article {
+    margin-right: 30%; } }
+
+.single-portfolio-fullwidth .content,
+.single-lens_gallery .content {
+  max-width: 100%;
+  margin-right: 0; }
 
 /*----------------------------------------*\
     $PAGE
 \*----------------------------------------*/
-.page .page-content {
-  width: 100%; }
-  @media only screen and (min-width: 72.27778em) and (max-width: 104.44444em) {
-    .page .page-content {
-      max-width: 890px;
-      max-width: 49.44444rem; } }
+@media only screen and (min-width: 72.27778em) and (max-width: 104.44444em) {
+  .page .page-content {
+    max-width: 890px;
+    max-width: 49.44444rem; } }
+@media only screen and (min-width: 104.55556em) {
+  .page .page-content {
+    max-width: 100%; } }
 
 .page .featured-image {
   margin-left: -48px;
@@ -10250,7 +10269,11 @@ li.comment {
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  /**
+   * For the post format gallery, ensuring the gallery 
+   * controls to stay where they should
+   */ }
   .masonry__item.is-loaded {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
@@ -10303,6 +10326,8 @@ li.comment {
   .masonry__item .entry__meta {
     padding: 24px;
     padding: 1.33333rem; }
+  .masonry__item .entry__featured-image {
+    position: relative; }
 
 [data-columns]::before {
   display: none; }
@@ -10350,10 +10375,6 @@ li.comment {
   font-size: 22px;
   font-size: 1.22222rem; }
 
-/**
- * Offsetting the blockquote quotes
- * I have my doubts
- */
 @media only screen and (min-width: 72.33333em) {
   .single-post blockquote:before {
     margin-left: -72px;
@@ -10395,6 +10416,15 @@ li.comment {
   margin: 0 -1% !important; }
 .entry__content .gallery-item {
   padding: 0 1%; }
+
+/*----------------------------------------*\
+    $PAGE
+\*----------------------------------------*/
+.page
+blockquote:not(.pixcode--testimonial):before {
+  margin-left: 0;
+  margin-right: 12px;
+  margin-right: 0.66667rem; }
 
 /*----------------------------------------*\
 *   $SINGLE QUOTE TEMPLATE

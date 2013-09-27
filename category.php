@@ -13,10 +13,9 @@ get_header(); ?>
 	//we will use the page title
 	?>
 	<div class="masonry" data-columns>
-		<div class="masonry__item archive-title">
+		<div class="masonry__item  masonry__item--archive-title">
 			<div class="entry__header">
 				<h1 class="entry__title"><?php printf( __( 'Category Archives: %s', wpgrade::textdomain() ), single_cat_title( '', false ) ); ?></h1>
-				<hr class="separator separator--dotted grow">
 			</div>
 			<div class="entry__content"><?php echo category_description(); ?></div>
 		</div><!-- .masonry__item -->

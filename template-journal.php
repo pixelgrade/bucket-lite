@@ -22,12 +22,12 @@ query_posts( array('post_type' => 'post', 'paged'=>$paged)); ?>
 	//we will use the page title
 	?>
 	<div class="masonry" data-columns>
-		<div class="masonry__item archive-title">
+		<div class="masonry__item  masonry__item--archive-title">
 			<div class="entry__header">
 				<h1 class="entry__title"><?php echo $current_title; ?></h1>
-				<hr class="separator separator--dotted grow">
+				<?php if ($current_excerpt != ""): ?><hr class="separator separator--dotted grow"><?php endif; ?>
 			</div>
-			<div class="entry__content"><?php echo $current_excerpt; ?></div>
+			<?php if ($current_excerpt != ""): ?><div class="entry__content"><?php echo $current_excerpt; ?></div><?php endif; ?>
 		</div><!-- .masonry__item -->
         <?php while ( have_posts() ) : the_post();
 			get_template_part('theme-partials/post-templates/blog-content');
