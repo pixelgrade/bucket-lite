@@ -14,7 +14,6 @@
     @include media(from hand) {
         margin-top: -1px;
         border-top: 1px solid #333638;
-        @include rem(margin-left, -1 * $base-spacing-unit);
     }
 
     a {
@@ -163,7 +162,6 @@
         &:hover, &:focus, &:active {
 
             & > a {
-                @include transform(translate3d(.5em, 0, 0));
                 color: white;
             }
         }
@@ -202,6 +200,13 @@
 // }
 
 // hide navigation on small devices
+
+#navigation {
+
+    @include media(from hand) {
+        @include rem(margin-left, -1 * $base-spacing-unit);
+    }
+}
 
 .site-navigation__trigger {
     display: none;
@@ -262,7 +267,7 @@
 @include media(to hand) {
 
     #page {
-        overflow-x: hidden;
+        overflow: hidden;
         position: relative; 
     }
 
