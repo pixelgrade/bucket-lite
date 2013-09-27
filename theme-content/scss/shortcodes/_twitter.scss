@@ -11,7 +11,10 @@
     .widget-tweets__tweet{
         display: block;
         width: 100%;
-        @include rem(margin-bottom, 2 * $base-spacing-unit);        
+    }
+
+    .tweet__block {
+        @include rem(margin-bottom, $base-spacing-unit);        
     }
 
     .tweet__content a{
