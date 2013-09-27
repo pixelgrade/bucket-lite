@@ -1,5 +1,6 @@
 .widget {
     @include rem(margin-bottom, 2 * $base-spacing-unit);
+    clear: left;
 
     ul{
         @extend .nav;
@@ -7,6 +8,12 @@
 
         li {
             display: block;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: .25em 0;
         }
     }
 
@@ -16,7 +23,15 @@
     }
 }
 
+.widget__title {
+    
+    a {
+        text-decoration: none;
+    }
+}
+
 .widget--header {
+
     a {
         color: $light;
 
@@ -60,10 +75,57 @@
 @import "instagram";
 @import "pages";
 @import "search";
-@import "tag-cloud";
 @import "twitter";
 @import "recent-comments";
 @import "recent-entries";
 @import "rss";
 @import "text";
 @import "meta";
+
+.sidebar--right{
+    @include rem(padding, $base-spacing-unit);
+    @include rem(padding-left, $half-spacing-unit);
+
+    .widget {
+        @include rem(padding-left, $half-spacing-unit);
+    }
+
+    @include media(from lap) {
+        @include rem(padding, 2 * $base-spacing-unit);
+        @include rem(padding-left, $base-spacing-unit);
+
+        .widget {
+            @include rem(padding-left, $base-spacing-unit);
+        }
+    }
+
+    select {
+        max-width: 100%;
+    }
+}
+
+.widget_categories, .widget_archive, .widget_pages, .widget_meta, .widget_tag_cloud, .widget_nav_menu {
+    width: 50%;
+    float: left;
+    clear: none;
+
+    &, a {
+        color: #595957;
+    }
+}
+
+
+// calendar widget
+
+#wp-calendar {
+
+    thead, tbody {
+        th, td {
+            text-align: center;
+        }
+    }
+
+    tfoot a {
+        text-decoration: none;
+    }
+}

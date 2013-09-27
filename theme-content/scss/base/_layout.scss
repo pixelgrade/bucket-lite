@@ -1,5 +1,6 @@
 /*#main*/.content {
     @extend .cf;
+    @extend .row;
     background: white;
     position: relative;
 
@@ -26,14 +27,24 @@
 
 @include media(to lap) {
     .page-content{
+        max-width: 100%;
         @include rem(padding, 0 $base-spacing-unit);           
     }
 }
 
+.page-content{
+    @extend .col-12;
+    @extend .lap-col-8;
+    border-left-width: 0;
+}
+
+.sidebar{
+    @extend .col-12;
+    @extend .lap-col-4;    
+}
+
 @include media(from lap) {
     .page-content{
-        @include rem(width, 890px);
-        max-width: 100%;
         @include rem(padding-left, 2 * $base-spacing-unit);   
         padding-right: 0;
     }
@@ -43,24 +54,19 @@
         width: 100%;
     }
 
-    .single-portfolio-sidebar .content{
-        @include rem(width, 1275px);
+    @include media(lap desk) {
+        .single-portfolio-sidebar .content{
+            @include rem(max-width, 1275px);
+        }
+
+
+        .sidebar{
+            @include rem(max-width, 430px);
+        }        
     }
 
     .page-content, .sidebar{
         float: left;
-    }
-
-    .sidebar{
-        @include rem(width, 430px);
-    }
-}
-
-.sidebar{
-    @include rem(padding, $base-spacing-unit);
-
-    @include media(from lap) {
-        @include rem(padding, 2 * $base-spacing-unit);
     }
 }
 
@@ -76,7 +82,20 @@
 *   $SINGLE STYLING
 \*----------------------------------------*/
 
-@include media(to lap){
+@include media(from lap) {
+    .single .content{
+        @include rem(max-width, 1275px);
+    }
+}
+
+@include media(from desk) {
+    .single .content{
+        max-width: 100%;
+        margin-right: 10%;
+    }
+}
+
+@include media(to lap) {
     .single-post{
         .featured-image{
             @include rem(margin-left, -$base-spacing-unit);
@@ -85,7 +104,7 @@
     }    
 }
 
-@include media(from lap){
+@include media(from lap) {
     .single-post{
         .page-content{
             @include rem(padding-left, 10 * $base-spacing-unit);
@@ -104,17 +123,38 @@
 }
 
 
+
+
+
 /*----------------------------------------*\
 *   $FULL WIDTH
 \*----------------------------------------*/
 
 .full-width{
     .page-content{
+        max-width: 100% !important;
         width: 100%;
     }
 
-    article{
-        @include rem(max-width, 890px);
+    @include media(lap desk) {
+        article{
+            @include rem(max-width, 890px);
+        }
+    }
+
+    @include media(from desk) {
+        article{
+            margin-right: 30%;
+        }
+    }
+
+}
+
+.single-portfolio-fullwidth,
+.single-lens_gallery{
+    .content{
+        max-width: 100%;
+        margin-right: 0;
     }
 }
 
@@ -125,6 +165,18 @@
 /*----------------------------------------*\
     $PAGE
 \*----------------------------------------*/
+.page .page-content{
+
+    @include media(lap desk) {
+        @include rem(max-width, 890px);
+    }
+
+    @include media(from desk) {
+        max-width: 100%;
+
+    }
+}
+
 .page .featured-image{
     @include rem(margin-left, -2 * $base-spacing-unit);
 }

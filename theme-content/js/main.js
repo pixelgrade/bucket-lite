@@ -3786,9 +3786,11 @@ function platformDetect(){
 /* --- NICESCROLL --- */
 
 function niceScrollInit() {
+
     var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
-        $('html').addClass('nicescroll').niceScroll({
+        $('html').addClass('nicescroll');
+        $('[data-smoothscrolling]').niceScroll({
             zindex: 9999,
             cursoropacitymin: 0.8,
             cursorwidth: 7,
@@ -3831,7 +3833,8 @@ function royalSliderInit() {
             rs_arrows = typeof $slider.data('arrows') !== "undefined",
             rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
             rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
-            rs_customArrows = typeof $slider.data('customarrows') !== "undefined";
+            rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
+            rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
         
         // make sure default arrows won't appear if customArrows is set
@@ -3844,7 +3847,7 @@ function royalSliderInit() {
                 loop: true,
                 imageScaleMode:'none',
                 imageAlignCenter: false,
-                slidesSpacing: 0,
+                slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
@@ -3856,7 +3859,7 @@ function royalSliderInit() {
                 loop: true,
                 imageScaleMode: 'fill',
                 imageAlignCenter: false,
-                slidesSpacing: 0,
+                slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
@@ -4094,7 +4097,7 @@ function initVideos() {
     // Firefox Opacity Video Hack
     $('iframe').each(function(){
         var url = $(this).attr("src");
-        $(this).attr("src",url+"?wmode=transparent");
+        $(this).attr("src", url+"?wmode=transparent");
     });
 }
 
@@ -4155,7 +4158,16 @@ function init() {
     }
 
     $('html').addClass('loaded');
-    $('header').css({"paddingBottom": $('.site-footer').height()});
+    
+    var h = $(window).height(),
+        sh = $('.site-header__branding').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
+
+    console.log(h,sh,hh,fh);
+    if (h < hh + sh + fh) {
+        $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
+    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4330,7 +4342,7 @@ function lazyLoad() {
             src = $img.attr('data-src');
  
         $img.on('load', imgLoaded($img[0]))
-            .attr('src',src);
+            .attr('src', src);
     });
 };
 
@@ -4499,7 +4511,7 @@ $(window).bind('djaxLoad', function(e, data) {
 $(window).resize(function(){
 
     browserSize();
-
+    niceScrollInit();
     resizeVideos();
 
 });

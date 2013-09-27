@@ -120,7 +120,7 @@
             position: absolute;
             top: auto;
             left: auto;
-            @include rem(bottom, -1 * $half-spacing-unit);
+            bottom: 0;
             @include rem(right, $base-spacing-unit);
         }
 

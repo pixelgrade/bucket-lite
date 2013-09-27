@@ -11,7 +11,7 @@ html {
     font-weight:300;
 }
 
-.header {
+.header, .footer {
 
     .hN {
         font-family: $alt-font-family;
@@ -64,6 +64,12 @@ blockquote {
         color: $accent-color;
     }
 
+}
+
+.single, .pixcode--testimonial{
+    blockquote:before{
+        @include rem(margin-left, -3 * $base-spacing-unit);        
+    }
 }
 
 

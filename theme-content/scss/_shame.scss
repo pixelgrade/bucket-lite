@@ -202,6 +202,9 @@ html {
  * on <html/>, rule that already exists, but removes it on closing,
  * making the scroll bar appear.
  */
+html {
+    overflow-y: auto;
+}
 html.nicescroll {
     overflow: hidden !important; 
     padding-right: 0 !important;
@@ -305,4 +308,14 @@ blockquote p:before{
 
 blockquote p:after{
     content: none;
+}
+
+// nicescroll
+
+.nicescroll-rails > div {
+    border-radius: 0 !important;
+
+    .header & {
+        background: #777 !important;
+    }
 }

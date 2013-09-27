@@ -23,15 +23,7 @@
                     <hr class="separator separator--dotted separator--full-left grow">
                 </header>
                 
-                <div class="entry__content">
-                    <?php
-                        $my_content = apply_filters('the_content', get_the_content());
-                        $start = strpos($my_content, '<p>') + 3;
-                        $end = strpos($my_content, '</p>');
-                        echo '<div class="first-paragraph">' . wpgrade_callback_theme_general_filters(substr($my_content, $start, $end - $start)) . '</div>';
-                        echo substr($my_content, $end + 4);
-                    ?>
-                </div>
+                <div class="entry__content"><?php the_content(); ?></div>
                 
                 <footer class="entry__meta cf">
                     <?php $categories = wp_get_post_categories($post->ID); ?>
