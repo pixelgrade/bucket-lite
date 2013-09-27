@@ -1,8 +1,13 @@
 /*----------------------------------------*\
 *   $RSS WIDGET
 \*----------------------------------------*/
-.widget_rss li{
-    @include rem(margin-bottom, $half-spacing-unit);
+
+.widget_rss {
+    @extend .widget_recent_comments;
+
+    li{
+        @include rem(margin-bottom, $half-spacing-unit);
+    }
 }
 
 .rsswidget{

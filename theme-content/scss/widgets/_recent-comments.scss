@@ -4,17 +4,34 @@
 .recentcomments{
     @include rem(margin-bottom, $half-spacing-unit);
     width: 100%;
+    color: #979795;
 
-    a{
-        font-weight: bold;
+    a {
         display: inline !important;
+        font-weight: bold;
+        color: black;
     }
 
     a:last-child{
         display: block !important;
+        font-weight: normal;
     }    
 }
 
+.widget_recent_comments {
 
+    ul {
+        @extend .block-list;
+        border-top: 0;
 
+        & > li {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
 
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}
