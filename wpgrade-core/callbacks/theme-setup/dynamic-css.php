@@ -26,7 +26,7 @@
 
 			if ( ! empty($families)) {
 				// any variables in scope will be available in the partial
-				include wpgrade::themefilepath('wpgrade-partials/google-fonts-script'.EXT);
+				include wpgrade::themefilepath('theme-partials/wpgrade-partials/google-fonts-script'.EXT);
 			}
 		}
 	}

@@ -44,7 +44,7 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function confoption($key, $default = null) {
-		$config = static::config();
+		$config = self::config();
 		return isset($config[$key]) ? $config[$key] : $default;
 	}
 
@@ -131,7 +131,7 @@ class wpgrade {
 	 */
 	static function resolve($key, $conf) {
 		if (isset(self::$resolvers[$key])) {
-			call_user_func_array(self::$resolvers[$key], [ $conf ]);
+			call_user_func_array(self::$resolvers[$key], array( $conf ));
 		}
 	}
 
@@ -332,7 +332,7 @@ class wpgrade {
 		$args = func_get_args();
 
 		foreach ($args as $arg) {
-			static::array_merge($base, $arg);
+			self::array_merge($base, $arg);
 		}
 
 		return $base;
@@ -628,10 +628,10 @@ class wpgrade {
 	static function require_coremodule($modulename) {
 
 		if ($modulename == 'redux2') {
-			require static::corepath().'vendor/redux2/options/defaults'.EXT;
+			require self::corepath().'vendor/redux2/options/defaults'.EXT;
 		}
 		elseif ($modulename == 'redux3') {
-			require static::corepath().'vendor/redux3/options/defaults'.EXT;
+			require self::corepath().'vendor/redux3/options/defaults'.EXT;
 		}
 		else { // unsupported module
 			die('Unsuported core module: '.$modulename);
