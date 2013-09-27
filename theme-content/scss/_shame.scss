@@ -179,24 +179,6 @@ html {
 
 
 
-
-/**
- * The zoom controls are not displayed 
- * properly without this rule
- */
-#gmap{
-    padding-top: 50%;
-    @include rem(max-height, 460px);
-
-    img{
-        max-width: none !important;
-    }
-}
-
-
-
-
-
 /**
  * When it starts, the Magnific Popup pust overflow: hidden;
  * on <html/>, rule that already exists, but removes it on closing,
