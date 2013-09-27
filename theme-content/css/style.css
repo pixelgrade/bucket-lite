@@ -8530,6 +8530,8 @@ a {
       overflow-y: auto;
       padding-left: 48px;
       padding-left: 2.66667rem;
+      padding-right: 24px;
+      padding-right: 1.33333rem;
       width: 250px;
       width: 13.88889rem;
       background-color: #242423; }
@@ -8552,29 +8554,18 @@ a {
     left: 1.33333rem; }
   .header:before {
     background-color: #464a4d;
-    background-size: 1px 16rem;
+    background-size: 1px 9.33333rem;
     background-repeat: repeat-x;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffc00), color-stop(100%, #464a4d));
-    background-image: -webkit-linear-gradient(#fffc00, #464a4d);
-    background-image: -moz-linear-gradient(#fffc00, #464a4d);
-    background-image: -o-linear-gradient(#fffc00, #464a4d);
-    background-image: linear-gradient(#fffc00, #464a4d);
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #fffc00), color-stop(100%, #464a4d));
+    background-image: -webkit-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -moz-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -o-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: linear-gradient(#fffc00 50%, #464a4d);
     -webkit-transition: height 1s 0.3s;
     -webkit-transition-delay: ease-in-out;
     -moz-transition: height 1s 0.3s ease-in-out;
     -o-transition: height 1s 0.3s ease-in-out;
-    transition: height 1s 0.3s ease-in-out;
-    -webkit-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-    -moz-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-    -ms-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-    -o-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-    animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; }
-    .loading .header:before {
-      -webkit-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-      -moz-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-      -ms-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-      -o-animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-      animation: loading 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; }
+    transition: height 1s 0.3s ease-in-out; }
     .lt-ie9 .header:before {
       *zoom: 1;
       filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D'); }
@@ -8590,20 +8581,23 @@ a {
   .header a {
     text-decoration: none; }
 
-@media only screen and (max-width: 50em) {
-  .site-header {
-    position: relative;
-    left: 100%;
-    top: -72px;
-    top: -4rem;
-    width: 75%;
-    height: 100%;
-    padding: 12px 24px;
-    padding:  0.66667rem 1.33333rem;
-    padding-bottom: 0;
-    background: #242423;
-    overflow-y: auto;
-    overflow-x: hidden; } }
+.header__inner-wrap {
+  position: relative;
+  z-index: 30; }
+  @media only screen and (max-width: 50em) {
+    .header__inner-wrap {
+      left: 100%;
+      top: -72px;
+      top: -4rem;
+      width: 75%;
+      height: 100%;
+      margin-left: 0;
+      padding: 12px 24px;
+      padding:  0.66667rem 1.33333rem;
+      padding-bottom: 0;
+      background: #242423;
+      overflow-y: auto;
+      overflow-x: hidden; } }
 
 /*----------------------------------------*\
 *   $TRANSPARENT
@@ -8667,22 +8661,6 @@ a {
 .header-inverse-color .menu-item--parent:after {
   border-top-color: black; }
 
-.header__inner-wrap {
-  padding-right: 24px;
-  padding-right: 1.33333rem; }
-  @media only screen and (max-width: 50em) {
-    .header__inner-wrap {
-      overflow: auto !important;
-      padding-right: 0; } }
-
-@media only screen and (max-width: 50em) {
-  .site-header {
-    height: auto !important; } }
-
-@media only screen and (max-width: 50em) {
-  .header {
-    height: auto; } }
-
 /*------------------------------*\
                LOGO
 \*------------------------------*/
@@ -8701,8 +8679,8 @@ a {
   overflow: hidden; }
   @media only screen and (min-width: 50.11111em) {
     .site-header__branding {
-      margin: 48px 24px 48px 0;
-      margin:  2.66667rem 1.33333rem 2.66667rem 0;
+      margin: 48px 0;
+      margin:  2.66667rem 0;
       padding-left: 0;
       padding-right: 0; } }
   @media only screen and (max-width: 50em) {
@@ -8716,13 +8694,18 @@ a {
   font-size: 30px;
   font-size: 1.66667rem;
   line-height: 1.2001;
+  min-height: 72px;
+  min-height: 4rem;
   font-weight: bold; }
   @media only screen and (max-width: 50em) {
     .site-logo {
       margin-top: 17px;
       margin-top: 0.94444rem;
       margin-left: 23px;
-      margin-left: 1.27778rem; } }
+      margin-left: 1.27778rem;
+      min-height: 0;
+      max-height: 48px;
+      max-height: 2.66667rem; } }
   .site-logo h1 {
     margin: 0; }
 
@@ -8732,7 +8715,7 @@ a {
 *
 **/
 .site-footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 24px;
@@ -8760,9 +8743,7 @@ a {
   @media only screen and (min-width: 50.11111em) {
     .site-navigation--main {
       margin-top: -1px;
-      border-top: 1px solid #333638;
-      margin-left: -24px;
-      margin-left: -1.33333rem; } }
+      border-top: 1px solid #333638; } }
   .site-navigation--main a {
     color: white; }
 
@@ -8857,6 +8838,10 @@ a {
 /*-------------------------------------------*\
                MOBILE NAVIGATION
 \*-------------------------------------------*/
+#navigation {
+  margin-left: -24px;
+  margin-left: -1.33333rem; }
+
 .site-navigation__trigger {
   display: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -8941,7 +8926,7 @@ a {
 
 @media only screen and (max-width: 50em) {
   #page {
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative; }
 
   .menu-item--main a {
