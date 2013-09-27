@@ -173,7 +173,7 @@
 \*----------------------------------------*/
 .page .page-content{
 
-    @include media(lap desk) {
+    @include media(from lap) {
         @include rem(max-width, 890px);
         width: 100%;
     }
@@ -181,8 +181,8 @@
 
 @media screen and (min-width: 1921px) {
     .page .page-content{
-        max-width: 100%;
-        width: 100%;
+        max-width: 80%;
+        width: 80%;
     }
 }
 

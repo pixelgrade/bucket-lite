@@ -8198,6 +8198,7 @@ input:not([type]).wpcf7-form-control {
     width: 100%;
     height: auto; }
 .entry__content ul li {
+  display: block;
   padding: 3px 0;
   padding:  0.16667rem 0;
   font-family: "Josefin Slab", serif;
@@ -8592,7 +8593,7 @@ a {
 /*----------------------------------------*\
     $PAGE
 \*----------------------------------------*/
-@media only screen and (min-width: 72.27778em) and (max-width: 104.44444em) {
+@media only screen and (min-width: 72.33333em) {
   .page .page-content {
     max-width: 890px;
     max-width: 49.44444rem;
@@ -8600,8 +8601,8 @@ a {
 
 @media screen and (min-width: 1921px) {
   .page .page-content {
-    max-width: 100%;
-    width: 100%; } }
+    max-width: 80%;
+    width: 80%; } }
 .page .featured-image {
   margin-left: -48px;
   margin-left: -2.66667rem; }
@@ -12293,6 +12294,11 @@ img.mfp-img {
   -o-perspective: 1000px;
   perspective: 1000px;
   word-break: break-word; }
+
+.show-on-ie8 {
+  display: none; }
+  .lt-ie9 .show-on-ie8 {
+    display: block; }
 
 .entry__content img {
   max-width: 100%;
