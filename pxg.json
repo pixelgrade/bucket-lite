@@ -5,17 +5,13 @@
 		{
 			"repo": "git@github.com:pixelgrade/wpgrade-core.git",
 			"path": "wpgrade-core",
-			"version": "2.2.0",
+			"version": "2.3.0",
 			"features": {
 				"src": "features/available",
 				"local": "wpgrade-core/features/enabled",
 				"ensure": [
 					"user-404"
 				]
-			},
-			"partials": {
-				"src": "views/partials",
-				"local": "theme-partials/wpgrade-partials"
 			}
 		}
 	]

@@ -21,6 +21,7 @@
 
 	// Initialize system core
 	// ----------------------
+
 	require_once 'wpgrade-core/bootstrap'.EXT;
 
 	#
