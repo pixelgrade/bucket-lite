@@ -219,4 +219,21 @@
 				'add_fragment' => null,
 			),
 
+		// allows you to create special pagination instances by providing a key
+		// to wpgrade::pagination; the settings defined in the key will be used
+		// to overwrite the defaults defined in pagination above; if the key
+		// is not avilable the pagination system will ignore the request so you
+		// can use the template names while developing and customize at any
+		// time later
+		'pagination-targets' => array
+			(
+				// the following is an example
+				'gallery' => array
+					(
+						'formatter' => null,
+						'prev_text' => 'Prev Images',
+						'next_text' => 'Next Images',
+					)
+			),
+
 	); # end theme configuration

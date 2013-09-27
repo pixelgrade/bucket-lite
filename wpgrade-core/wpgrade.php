@@ -350,13 +350,21 @@ class wpgrade {
 	/**
 	 * @return string
 	 */
-	static function pagination($query = null) {
+	static function pagination($query = null, $target = null) {
 		if ($query === null) {
 			global $wp_query;
 			$query = $wp_query;
 		}
 
-		$pager = new WPGradePaginationFormatter($query);
+		$target_settings = null;
+		if ($target !== null) {
+			$targets = self::confoption('pagination-targets', array());
+			if (isset($targets[$target])) {
+				$target_settings = $targets[$target];
+			}
+		}
+
+		$pager = new WPGradePaginationFormatter($query, $target_settings);
 
 		return $pager->render();
 	}
