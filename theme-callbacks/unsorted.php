@@ -1,6 +1,6 @@
 <?php
 
-	// @todo CLEANUP refactor function
+	//@todo CLEANUP refactor function
 	function wpgrade_better_excerpt($text) {
 		global $post;
 
@@ -101,6 +101,16 @@
         $text = (strlen($text) > $limit) ? substr($text,0,$cut_length).'...' : $text;
 
         echo $text;
-    }    
+    }
+	
+	function custom_excerpt_length( $length ) {
+		// Set custom excerpt length - number of words to be shown in excerpts
+		if (wpgrade::option('blog_excerpt_length'))	{
+			return absint(wpgrade::option('blog_excerpt_length'));
+		} else {
+			return 55;
+		}
+	}
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
  	

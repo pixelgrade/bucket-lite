@@ -103,7 +103,7 @@
 					$link = icl_get_home_url();
 				}
 				else { // icl_get_home_url does not exist
-					$link = get_option('home');
+					$link = home_url();
 				}
 			}
 		}

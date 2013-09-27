@@ -53,7 +53,7 @@
     }
 
     .entry--quote__content {
-        border-bottom: 1px dashed black;
+        border-bottom: 1px dotted black;
         @include rem(padding-top, 3 * $half-spacing-unit);
     }
 
@@ -79,6 +79,14 @@
 
     .entry__meta {
         @include rem(padding, $base-spacing-unit);
+    }
+
+    /**
+     * For the post format gallery, ensuring the gallery 
+     * controls to stay where they should
+     */
+    .entry__featured-image{
+        position: relative;
     }
 }
 

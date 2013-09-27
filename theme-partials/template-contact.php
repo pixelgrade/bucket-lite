@@ -5,7 +5,7 @@ Template Name: Contact Page
 
 get_header(); ?>
 
-<div id="main" class="content djax-updatable">
+<div id="main" class="content content--contact djax-updatable">
     <?php if (wpgrade::option('contact_gmap_link')): ?>
         <div id="gmap" data-url="<?php echo wpgrade::option('contact_gmap_link'); ?>" <?php echo wpgrade::option('contact_gmap_custom_style') ? 'data-customstyle' : ''; ?>></div>
     <?php endif; ?>

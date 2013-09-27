@@ -4,6 +4,10 @@
     background: white;
     position: relative;
 
+    @include media(from hand) {
+        @include rem(padding-bottom, 2 * $base-spacing-unit);
+    }
+
     // project-classic causes horizontal scroll. CAUTION!
     overflow: hidden;
 
@@ -70,14 +74,6 @@
     }
 }
 
-.sidebar{
-    @include rem(padding, $base-spacing-unit);
-
-    @include media(from lap) {
-        @include rem(padding, 2 * $base-spacing-unit);
-    }
-}
-
 @include media(from lap) {
     .wrapper{
         height: 100%;
@@ -89,6 +85,19 @@
 /*----------------------------------------*\
 *   $SINGLE STYLING
 \*----------------------------------------*/
+
+@include media(from lap) {
+    .single .content{
+        @include rem(max-width, 1275px);
+    }
+}
+
+@include media(from desk) {
+    .single .content{
+        max-width: 100%;
+        margin-right: 10%;
+    }
+}
 
 @include media(to lap) {
     .single-post{
@@ -118,17 +127,40 @@
 }
 
 
+
+
+
 /*----------------------------------------*\
 *   $FULL WIDTH
 \*----------------------------------------*/
 
 .full-width{
     .page-content{
+        max-width: 100% !important;
         width: 100%;
     }
 
-    article{
-        @include rem(max-width, 890px);
+    @include media(lap desk) {
+        article{
+            @include rem(max-width, 890px);
+        }
+    }
+
+    @include media(from desk) {
+        article{
+            margin-right: 30%;
+        }
+    }
+
+}
+
+.single-portfolio-fullwidth,
+.single-lens_gallery,
+.portfolio-archive{
+    .content{
+        max-width: 100%;
+        margin-right: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -140,10 +172,17 @@
     $PAGE
 \*----------------------------------------*/
 .page .page-content{
-    width: 100%;
 
     @include media(lap desk) {
         @include rem(max-width, 890px);
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .page .page-content{
+        max-width: 100%;
+        width: 100%;
     }
 }
 
