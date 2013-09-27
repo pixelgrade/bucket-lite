@@ -98,6 +98,6 @@
 	function wpgrade_callbacks_html5_shim() {
 		global $is_IE;
 		if ($is_IE) {
-			include wpgrade::themefilepath('wpgrade-partials/ie-shim'.EXT);
+			include wpgrade::themefilepath('theme-partials/wpgrade-partials/ie-shim'.EXT);
 		}
 	}

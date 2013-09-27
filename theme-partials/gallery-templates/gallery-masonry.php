@@ -23,8 +23,7 @@
 				$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
 				$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
 				$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-				$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-				?>
+				$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true); ?>
 				<div class="mosaic__item">
 					<a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
 						<div class="image__item-wrapper">
@@ -49,8 +48,7 @@
 				</div>
 				<?php
 				// if we added 3 it's now time to add the gallery title box
-				if (++$index == 3) {
-					?>
+				if (++$index == 3) { ?>
 					<div class="mosaic__item  mosaic__item--page-title">
 						<div class="image__item-link">
 							<div class="image__item-wrapper"></div>
@@ -63,14 +61,10 @@
 							</div>
 						</div>
 					</div>
-				<?php } ?>
-
-			<?php endforeach; ?>
-
-			<?php
+				<?php }
+			endforeach;
 			// if there were less than 3, still add the title
-			if ($index < 3) {
-				?>
+			if ($index < 3) { ?>
 				<div class="mosaic__item  mosaic__item--page-title">
 					<div class="image__item-link">
 						<div class="image__item-wrapper"></div>

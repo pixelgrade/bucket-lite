@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Search Results pages.
+ */
+
+get_header(); ?>
 
 <div id="main" class="content djax-updatable">
 
@@ -7,8 +12,12 @@
 	//we will use the page title
 	?>
 	<div class="masonry" data-columns>
-		<?php		
-		while ( have_posts() ) : the_post();
+		<div class="masonry__item archive-title">
+			<div class="entry__header">
+				<h1 class="entry__title"><?php printf( __( 'Search Results for: %s', wpgrade::textdomain() ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			</div>
+		</div><!-- .masonry__item -->
+        <?php while ( have_posts() ) : the_post();
 			get_template_part('theme-partials/post-templates/blog-content');
         endwhile; ?>
     </div><!-- .masonry -->

@@ -9983,6 +9983,8 @@ a [class*="icon-"] {
 .content {
   background: white;
   position: relative;
+  padding-bottom: 48px;
+  padding-bottom: 2.66667rem;
   overflow: hidden;
 }
 @media only screen and (min-width: 50.11111em) {
@@ -10111,9 +10113,11 @@ a [class*="icon-"] {
 }
 
 .single-portfolio-fullwidth .content,
-.single-lens_gallery .content {
+.single-lens_gallery .content,
+.portfolio-archive .content {
   max-width: 100%;
   margin-right: 0;
+  padding-bottom: 0;
 }
 
 /*----------------------------------------*\
@@ -10123,14 +10127,16 @@ a [class*="icon-"] {
   .page .page-content {
     max-width: 890px;
     max-width: 49.44444rem;
-  }
-}
-@media only screen and (min-width: 104.55556em) {
-  .page .page-content {
-    max-width: 100%;
+    width: 100%;
   }
 }
 
+@media screen and (min-width: 1921px) {
+  .page .page-content {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .page .featured-image {
   margin-left: -48px;
   margin-left: -2.66667rem;
@@ -12329,7 +12335,7 @@ li.comment .children:before {
   margin-right: 1.33333rem;
 }
 .masonry__item .entry--quote__content {
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dotted black;
   padding-top: 36px;
   padding-top: 2rem;
 }
@@ -14027,9 +14033,21 @@ a:hover > i.pixcode--icon.circle, a:hover > i.pixcode--icon.square {
   -o-perspective: 1000px;
   perspective: 1000px;
 }
-.loaded .single .featured-image, .loaded
-.page .featured-image, .loaded
-.single-lens_gallery .pixslider, .loaded
+.no-cssanimations.loaded .single .featured-image, .no-cssanimations.loaded
+.page .featured-image, .no-cssanimations.loaded
+.single-lens_gallery .pixslider, .no-cssanimations.loaded
+#gmap {
+  opacity: 1;
+}
+.no-cssanimations.loading .single .featured-image, .no-cssanimations.loading
+.page .featured-image, .no-cssanimations.loading
+.single-lens_gallery .pixslider, .no-cssanimations.loading
+#gmap {
+  opacity: 0;
+}
+.cssanimations.loaded .single .featured-image, .cssanimations.loaded
+.page .featured-image, .cssanimations.loaded
+.single-lens_gallery .pixslider, .cssanimations.loaded
 #gmap {
   -webkit-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
   -moz-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
@@ -14060,6 +14078,14 @@ a:hover > i.pixcode--icon.circle, a:hover > i.pixcode--icon.square {
   -ms-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px;
+}
+.no-cssanimations.loaded .single-lens_gallery .pixslider .rsBullets, .no-cssanimations.loaded
+.single-lens_gallery .gallery-control {
+  opacity: 1;
+}
+.no-cssanimations.loading .single-lens_gallery .pixslider .rsBullets, .no-cssanimations.loading
+.single-lens_gallery .gallery-control {
+  opacity: 0;
 }
 .loaded .single-lens_gallery .pixslider .rsBullets, .loaded
 .single-lens_gallery .gallery-control {
@@ -14101,6 +14127,10 @@ a:hover > i.pixcode--icon.circle, a:hover > i.pixcode--icon.square {
 .no-cssanimations.loaded .single .entry__title, .no-cssanimations.loaded
 .page .entry__title {
   opacity: 1;
+}
+.no-cssanimations.loading .single .entry__title, .no-cssanimations.loading
+.page .entry__title {
+  opacity: 0;
 }
 .loading .single .entry__title, .loading
 .page .entry__title {
@@ -14195,6 +14225,12 @@ a:hover > i.pixcode--icon.circle, a:hover > i.pixcode--icon.square {
   -moz-animation: slidein 0.5s 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.5s 0.5s ease-in-out forwards;
   -o-animation: slidein 0.5s 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.5s 0.5s ease-in-out forwards;
   animation: slidein 0.5s 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.5s 0.5s ease-in-out forwards;
+}
+.no-cssanimations.loaded .sidebar--right {
+  opacity: 1;
+}
+.no-cssanimations.loading .sidebar--right {
+  opacity: 0;
 }
 .loading .sidebar--right {
   opacity: 1;

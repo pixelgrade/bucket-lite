@@ -90,13 +90,20 @@
     @include backface-visibility(hidden);
     @include perspective(1000px);
 
-    .loaded & {
+    .no-cssanimations.loaded &{
+        opacity: 1;
+    }
+
+    .no-cssanimations.loading & {
+        opacity: 0;
+    }
+
+    .cssanimations.loaded & {
         -webkit-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
            -moz-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
              -o-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
                 animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
     }
-
 
     .loading & {
         opacity: 1;
@@ -112,6 +119,14 @@
     opacity: 0;
     @include backface-visibility(hidden);
     @include perspective(1000px);
+
+    .no-cssanimations.loaded &{
+        opacity: 1;
+    }
+
+    .no-cssanimations.loading & {
+        opacity: 0;
+    }
 
     .loaded & {
         -webkit-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
@@ -143,8 +158,12 @@
                 animation: slidein .45s .15s bezier(easeOutBack) forwards, fadein .45s .15s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded & {
+    .no-cssanimations.loaded &{
         opacity: 1;
+    }
+
+    .no-cssanimations.loading & {
+        opacity: 0;
     }
 
     .loading & {
@@ -213,6 +232,14 @@
              -o-animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
                 animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
     }
+
+    .no-cssanimations.loaded &{
+        opacity: 1;
+    }
+
+    .no-cssanimations.loading & {
+        opacity: 0;
+    }    
 
     .loading & {
         opacity: 1;
