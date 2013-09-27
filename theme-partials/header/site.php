@@ -30,10 +30,15 @@
             $target = '';
             if (wpgrade::option('social_icons_target_blank')) {
                 $target = ' target="_blank"';
-            }
+            } ?>
             
-            if (count($social_icons)): ?>
-                <h5><?php _e("We are Social", wpgrade::textdomain()); ?></h5>
+        </div>
+    </header>
+    <?php get_sidebar('header'); ?>
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="header__social-section">
+            <?php if (count($social_icons)): ?>
+                <div class="header__social-title"><?php _e("We are Social", wpgrade::textdomain()); ?></div>
                 <ul class="site-social-links">
                     <?php foreach ($social_icons as $domain => $value): if ($value): ?>
                         <li class="site-social-links__social-link">
@@ -54,9 +59,6 @@
                 </ul>
             <?php endif; ?>
         </div>
-    </header>
-    <?php get_sidebar('header'); ?>
-    <footer id="colophon" class="site-footer" role="contentinfo">
 
         <div class="site-info text--right">
             <?php

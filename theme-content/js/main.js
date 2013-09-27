@@ -3484,7 +3484,6 @@ function salvattore(){
 
           _ref = obtain_grid_settings(grid), numberOfColumns = _ref.numberOfColumns, columnClasses = _ref.columnClasses;
           columnsItems = new Array(+numberOfColumns);
-          console.log('settings', numberOfColumns, columnClasses);
           i = numberOfColumns;
           while (i-- !== 0) {
             selector = "[data-columns] > *:nth-child(" + numberOfColumns + "n-" + i + ")";
@@ -3951,16 +3950,6 @@ function magnificPopupInit() {
     });
 
     var magnificPopup = $.magnificPopup.instance;
-
-    $(document).on('click', '.js-arrow-popup-prev', function(event){
-        event.preventDefault();
-        magnificPopup.prev();
-    });
-
-    $(document).on('click', '.js-arrow-popup-next', function(event){
-        event.preventDefault();
-        magnificPopup.next();
-    });
 }
 
 
@@ -4161,15 +4150,19 @@ function init() {
 
     $('html').addClass('loaded');
     
-    // var h = $(window).height(),
-    //     sh = $('.site-header__branding').outerHeight(true),
-    //     hh = $('.site-header').outerHeight(true),
-    //     fh = $('.site-footer').outerHeight(true);
+    var h = $(window).height(),
+        sh = $('.site-header__branding').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
 
-    // console.log(h,sh,hh,fh);
-    // if (h < hh + sh + fh) {
-    //     $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
-    // }
+    console.log(h,sh,hh,fh);
+    if (h < hh + sh + fh) {
+        $('.site-footer').css({
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4259,8 +4252,8 @@ function eventHandlersOnce() {
 
 
 function likeBoxAnimation(){
-    $(document).on('click', '.can_like .like-link', function(event){
-        event.preventDefault();
+    $(document).on('click', '.can_like .like-link', function(e){
+        e.preventDefault();
         var $iElem = $(this).find('i');
         $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
         // $(this).addClass('animate-like');
@@ -4271,6 +4264,20 @@ function likeBoxAnimation(){
 /* --- GLOBAL EVENT HANDLERS --- */
 
 function eventHandlers() {
+
+    $('.js-arrow-popup-prev').on('click', function(e){
+        e.preventDefault();
+        alert('prev');
+        // var magnificPopup = $.magnificPopup.instance;
+        // magnificPopup.prev();
+    });
+
+    $('.js-arrow-popup-next').on('click', function(e){
+        e.preventDefault();
+        alert('next');
+        // var magnificPopup = $.magnificPopup.instance;
+        // magnificPopup.next();
+    });
 
     /* @todo: change classes so style and js don't interfere */
     $('.menu-item--parent').hoverIntent({

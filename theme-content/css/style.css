@@ -8290,8 +8290,12 @@ html.flexbox {
  * Text alignment
  */
 .text--left {
+<<<<<<< HEAD
   text-align: left  !important;
 }
+=======
+  text-align: left  !important; }
+>>>>>>> d184977399ef47b1e196d57c861a157677a452bc
 
 .text--center {
   text-align: center !important;
@@ -9801,7 +9805,6 @@ input:not([type]).wpcf7-form-control {
   height: auto;
 }
 .entry__content ul li {
-  display: block;
   padding: 3px 0;
   padding:  0.16667rem 0;
   font-family: "Josefin Slab", serif;
@@ -10288,7 +10291,7 @@ a [class*="icon-"] {
 /*----------------------------------------*\
     $PAGE
 \*----------------------------------------*/
-@media only screen and (min-width: 72.33333em) {
+@media only screen and (min-width: 72.27778em) and (max-width: 104.44444em) {
   .page .page-content {
     max-width: 890px;
     max-width: 49.44444rem;
@@ -10650,6 +10653,15 @@ a [class*="icon-"] {
     display: none;
   }
 }
+
+.header__social-section {
+  border-bottom: 1px solid #4d4d4d;
+  margin-bottom: 24px;
+  margin-bottom: 1.33333rem; }
+
+.header__social-title {
+  color: #a7a7a7;
+  text-transform: uppercase; }
 
 /*------------------------------------*\
                NAVIGATION
@@ -11900,6 +11912,7 @@ li.comment .children:before {
 
 .social-links__list {
   display: inline-block;
+<<<<<<< HEAD
 }
 .social-links__list a {
   padding: 12px;
@@ -11907,6 +11920,14 @@ li.comment .children:before {
   color: #595957;
   text-decoration: none;
 }
+=======
+  margin-bottom: 0; }
+  .social-links__list a {
+    padding: 12px;
+    padding: 0.66667rem;
+    color: #595957;
+    text-decoration: none; }
+>>>>>>> d184977399ef47b1e196d57c861a157677a452bc
 
 .site-social-links {
   font-size: 1.4em;
@@ -11914,8 +11935,14 @@ li.comment .children:before {
 }
 
 .site-social-links__social-link a {
+<<<<<<< HEAD
   color: #91908e;
 }
+=======
+  color: #91908e; }
+  .site-social-links__social-link a i {
+    padding-right: 0; }
+>>>>>>> d184977399ef47b1e196d57c861a157677a452bc
 
 /*----------------------------------------*\
 *   $META BOXES
@@ -14779,8 +14806,14 @@ blockquote p:after {
 .featured-image .pixslider {
   width: 100%;
   height: 600px;
+<<<<<<< HEAD
   height: 33.33333rem;
 }
 .featured-image .pixslider img {
   max-width: none;
 }
+=======
+  height: 33.33333rem; }
+  .featured-image .pixslider img {
+    max-width: none; }
+>>>>>>> d184977399ef47b1e196d57c861a157677a452bc

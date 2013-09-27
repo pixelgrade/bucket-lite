@@ -21,11 +21,11 @@ class wpGrade_import extends WPGrade_WP_Import
 			//set the front and blog page
 			// Use a static front page
 			update_option( 'show_on_front', 'page' );
-			$home = get_page_by_title( 'Home' );
+			$home = get_page_by_title( 'Hello' );
 			update_option( 'page_on_front', $home->ID );
 
 			// Set the blog page
-			$blog   = get_page_by_title( 'Blog' );
+			$blog   = get_page_by_title( 'Journal' );
 			update_option( 'page_for_posts', $blog->ID );
 		}
 		
@@ -65,7 +65,9 @@ class wpGrade_import extends WPGrade_WP_Import
 			//we process the menus because there are problems when the pages, posts, etc that don't first exist
 			$this->process_menus();
 		}
-		
+
+//		$this->prepare_yarpp();
+
 		// update incorrect/missing information in the DB
 		$this->backfill_parents();
 		$this->backfill_attachment_urls();
@@ -390,7 +392,17 @@ class wpGrade_import extends WPGrade_WP_Import
 			}
 		}
 	}
-	
+
+	function prepare_yarpp(){
+
+		// this is wrong
+		$yarp_options = array (
+			'limit' => '6',
+			'template' => 'yarpp-template-portfolio.php',
+		);
+		update_option('yarpp', $yarp_options);
+	}
+
 	function import_theme_options($option_file)
 	{
 		if($option_file) @include_once($option_file);

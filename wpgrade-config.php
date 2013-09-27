@@ -13,7 +13,7 @@
 		'update-notifier' => array
 			(
 				'xml-source' => 'http://pixelgrade.com/updates/',
-//				'xml-file' => 'cityhub.xml',
+//				'xml-file' => 'lens.xml',
 				'cache-interval' => 10800, # 3 hours
 				'update-page-name' => 'theme-update-notifier',
 			),
@@ -37,7 +37,8 @@
 				// main theme class
 				'theme-utilities/lens'.EXT,
 				// importer
-				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+//				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
+				'theme-content/inc/required-plugins/required-plugins.php',
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
 				'theme-content/inc/theme-defaults'.EXT,
@@ -74,6 +75,11 @@
 			(
 				// empty
 			),
+
+		// overwrites the inline css class to allow for full control; you may
+		// also leave this null, which will invoke an internal handler and work
+		// with the core partial inline-custom-css
+		'custom-css-handler' => null,
 
 		// filter functions will recieve content as a parameter and must return
 		// content; all functions are ordered by priority and executed from
