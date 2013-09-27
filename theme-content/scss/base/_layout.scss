@@ -86,6 +86,7 @@
 *   $SINGLE STYLING
 \*----------------------------------------*/
 
+
 @include media(from lap) {
     .single .content{
         @include rem(max-width, 1275px);
