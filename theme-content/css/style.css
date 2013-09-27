@@ -3871,7 +3871,7 @@ textarea:focus {
  * and over in your markup.
  */
 .cf:after, .nav:after, .rsBullets:after, .entry__content ul:after, .site-navigation:after, .site-navigation__sub-menu:after, .site-social-links:after, .projects_nav-list:after, .related-projects_items-list:after, .mosaic__filter:after, .commentlist:after, .social-links__list:after, .image_item-categories:after, .gallery-control__items:after, .pixcode--tabs__nav:after, .widget ul:after, .media:after, .island:after,
-.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .content:after, .comment-form:after, .project-sidebar-right article:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .masonry__item .article-timestamp:after, .masonry__pagination:after {
+.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .content:after, .comment-form:after, .project-sidebar-right article:after, .form-search:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .masonry__item .article-timestamp:after, .masonry__pagination:after {
   content: "";
   display: table;
   clear: both; }
@@ -5975,7 +5975,7 @@ html.flexbox {
 .span-1, .col-1 {
   width: 8.33333%; }
 
-.span-2, .col-2 {
+.span-2, .col-2, .form-search .btn, .form-search .wpcf7-submit, .form-search .form-submit #comment-submit, .form-submit .form-search #comment-submit {
   width: 16.66667%; }
 
 .span-3, .col-3 {
@@ -5995,7 +5995,7 @@ html.flexbox {
 .span-7, .col-7 {
   width: 58.33333%; }
 
-.span-8, .col-8 {
+.span-8, .col-8, .search-query {
   width: 66.66667%; }
 
 .span-9, .col-9 {
@@ -6839,24 +6839,24 @@ html.flexbox {
 
   .desk-pull-12 {
     left: -100%; } }
-.row, .content, .comment-form, .project-sidebar-right article {
+.row, .content, .comment-form, .project-sidebar-right article, .form-search {
   margin-left: -24px; }
   @media only screen and (max-width: 50em) {
-    .row, .content, .comment-form, .project-sidebar-right article {
+    .row, .content, .comment-form, .project-sidebar-right article, .form-search {
       margin-left: 0; } }
 
-.column, .columns, .col-1, .col-2, .col-3, .col-4, .comment-form-author,
+.column, .columns, .col-1, .col-2, .form-search .btn, .form-search .wpcf7-submit, .form-search .form-submit #comment-submit, .form-submit .form-search #comment-submit, .col-3, .col-4, .comment-form-author,
 .comment-form-email,
-.comment-form-url, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .page-content, .sidebar, .logged-in-as, .comment-form-comment,
+.comment-form-url, .col-5, .col-6, .col-7, .col-8, .search-query, .col-9, .col-10, .col-11, .col-12, .page-content, .sidebar, .logged-in-as, .comment-form-comment,
 .form-submit, .project-sidebar-right .project-images, .project-sidebar-right .project-content, .title-mobile {
   float: left;
   border-left: 24px solid transparent;
   min-height: 1px;
   position: relative; }
   @media only screen and (max-width: 50em) {
-    .column, .columns, .col-1, .col-2, .col-3, .col-4, .comment-form-author,
+    .column, .columns, .col-1, .col-2, .form-search .btn, .form-search .wpcf7-submit, .form-search .form-submit #comment-submit, .form-submit .form-search #comment-submit, .col-3, .col-4, .comment-form-author,
     .comment-form-email,
-    .comment-form-url, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .page-content, .sidebar, .logged-in-as, .comment-form-comment,
+    .comment-form-url, .col-5, .col-6, .col-7, .col-8, .search-query, .col-9, .col-10, .col-11, .col-12, .page-content, .sidebar, .logged-in-as, .comment-form-comment,
     .form-submit, .project-sidebar-right .project-images, .project-sidebar-right .project-content, .title-mobile {
       float: none;
       border-left-width: 0;
@@ -9249,10 +9249,6 @@ a {
    * When there is more than 1 category,
    * the other ones jump on a second line.
    * Vertically aligning bottom is for the like box.
-   */
-  /**
-   * This is for obtaining a differrent image ratio
-   * from the one in the grid.
    */ }
   @media only screen and (max-width: 33.33333em) {
     .related-projects_item {
@@ -9273,8 +9269,6 @@ a {
     padding: 0.55556rem; }
   .related-projects_item .image_item-meta .grid__item {
     vertical-align: bottom; }
-  .related-projects_item .image__item-wrapper {
-    padding-top: 62.25%; }
 
 /*-------------------------------*\
               MODULES
@@ -11543,7 +11537,8 @@ a:hover > i.pixcode--icon {
 .form-search {
   margin-right: -48px;
   margin-right: -2.66667rem;
-  border-bottom: 1px dotted black; }
+  border-bottom: 1px dotted black;
+  margin-left: 0; }
 
 .search-query {
   padding: 12px 0;
@@ -11555,18 +11550,11 @@ a:hover > i.pixcode--icon {
   line-height: 1.33343;
   font-weight: bold;
   text-transform: uppercase;
-  color: black;
-  width: 80%; }
-  @media only screen and (max-width: 33.33333em) {
-    .search-query {
-      width: 70%; } }
+  color: black; }
 
 .form-search .btn, .form-search .wpcf7-submit, .form-search .form-submit #comment-submit, .form-submit .form-search #comment-submit {
   padding: 12px 0;
   padding:  0.66667rem 0;
-  margin-right: 48px;
-  margin-right: 2.66667rem;
-  float: right;
   font-size: 16px;
   font-size: 0.88889rem;
   line-height: 1.5001;
