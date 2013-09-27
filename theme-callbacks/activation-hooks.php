@@ -126,6 +126,21 @@ function wpgrade_callback_geting_active() {
 				),
 			)
 		),
+		'post_gallery_format' => array(
+			'id'         => 'post_format_metabox_gallery',
+			'title'      => 'Gallery Settings',
+			'pages'      => array( 'post' ), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' =>  __('Images', wpgrade::textdomain()),
+					'id'   =>  wpgrade::prefix() . 'main_gallery',
+					'type' => 'gallery',
+				),
+			)
+		),
 		'post_quote_format' => array(
 			'id' => 'post_format_metabox_quote',
 			'title' =>  __('Quote Settings', wpgrade::textdomain()),
@@ -343,21 +358,6 @@ function wpgrade_callback_geting_active() {
 								),
 							),
 					)
-		),
-		'lens_gallery_post_format' => array(
-			'id'         => 'lens_gallery_post_format',
-			'title'      => 'Gallery',
-			'pages'      => array( 'post' ), // Post type
-			'context'    => 'normal',
-			'priority'   => 'high',
-			'show_names' => true, // Show field names on the left
-			'fields' => array(
-				array(
-					'name' =>  __('Images', wpgrade::textdomain()),
-					'id'   =>  wpgrade::prefix() . 'main_gallery',
-					'type' => 'gallery',
-				),
-			)
 		),
 	);
 

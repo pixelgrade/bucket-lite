@@ -775,24 +775,39 @@ class wpgrade {
 	 */
 	function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
-			$template = '<div class="wp-slider gallery_format_slider">:gallery</div>';
+			$template = '<div class="wp-gallery">:gallery</div>';
 		}
 
-		// search for the first gallery shortcode
-		$gallery_matches = null;
-		preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
-
-		if ( ! empty($gallery_matches)) {
-			$gallery = $gallery_matches[0];
-
+		//first check if we have a meta with a gallery
+		$gallery_ids = array();
+		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
+		
+		if (!empty($gallery_ids)) {
+			//recreate the gallery shortcode
+			$gallery = '[gallery ids="'.$gallery_ids.'"]';
+			
 			if (strpos($gallery, 'style') === false) {
 				$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
 			}
 
 			return strtr($template, array(':gallery' => do_shortcode($gallery)));
-		}
-		else { // gallery_matches is empty
-			return null;
+		} else {
+			// search for the first gallery shortcode
+			$gallery_matches = null;
+			preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
+
+			if ( ! empty($gallery_matches)) {
+				$gallery = $gallery_matches[0];
+
+				if (strpos($gallery, 'style') === false) {
+					$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
+				}
+
+				return strtr($template, array(':gallery' => do_shortcode($gallery)));
+			}
+			else { // gallery_matches is empty
+				return null;
+			}
 		}
 	}
 

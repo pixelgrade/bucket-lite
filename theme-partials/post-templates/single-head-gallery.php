@@ -1,3 +1,3 @@
 <div class="featured-image">
-    <?php wpGrade_gallery_slideshow($post); ?>     
+    <?php echo wpgrade::gallery_slideshow($post); ?>     
 </div>

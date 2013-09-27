@@ -133,7 +133,7 @@ class WPGradePaginationFormatter {
 			$conf['prev_text'] = __($conf['prev_text'], wpgrade::textdomain());
 		}
 
-		if ($conf['next_text']) {
+		if (empty($conf['next_text'])) {
 			$conf['next_text'] = __('Next »', wpgrade::textdomain());
 		}
 		else { // exists; translate

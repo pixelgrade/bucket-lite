@@ -12,5 +12,5 @@
 </h2>
 <hr class="separator separator--dotted grow">
 <div class="entry__featured-image">
-    <?php wpGrade_gallery_slideshow($post); ?>     
+    <?php echo wpgrade::gallery_slideshow($post); ?>     
 </div>
