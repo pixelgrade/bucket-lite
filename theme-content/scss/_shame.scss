@@ -268,13 +268,13 @@ img.mfp-img{
     word-break: break-word;
 }
 
-.show-on-ie8 {
-    display: none;
+// .show-on-ie8 {
+//     display: none;
 
-    .lt-ie9 .show-on-ie8 {
-        display: block;
-    }
-}
+//     .lt-ie9 & {
+//         display: block;
+//     }
+// }
 
 .entry__content {
     img {
@@ -299,5 +299,14 @@ blockquote p:after{
 
     .header & {
         background: #777 !important;
+    }
+}
+
+.featured-image .pixslider {
+    width: 100%;
+    @include rem(height, 600px);
+
+    img {
+        max-width: none;
     }
 }
