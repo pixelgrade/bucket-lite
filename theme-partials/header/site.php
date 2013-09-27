@@ -30,33 +30,33 @@
             $target = '';
             if (wpgrade::option('social_icons_target_blank')) {
                 $target = ' target="_blank"';
-            }
+            } ?>
             
-            if (count($social_icons)): ?>
-                <h5><?php _e("We are Social", wpgrade::textdomain()); ?></h5>
-                <ul class="site-social-links">
-                    <?php foreach ($social_icons as $domain => $value): if ($value): ?>
-                        <li class="site-social-links__social-link">
-                            <a href="<?php echo $value ?>"<?php echo $target ?>>
-                                <?php switch($domain) {
-                                    case 'youtube':
-                                        ?><i class="pixcode  pixcode--icon  icon-play"></i>
-                                        <?php break;
-                                    case 'appnet':
-                                        ?><i class="pixcode  pixcode--icon  icon-user"></i>
-                                        <?php break;
-                                    default:
-                                        ?><i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
-                                        <?php } ?>
-                            </a>
-                        </li>
-                    <?php endif; endforeach ?>
-                </ul>
-            <?php endif; ?>
         </div>
     </header>
     <?php get_sidebar('header'); ?>
     <footer id="colophon" class="site-footer" role="contentinfo">
+        <?php if (count($social_icons)): ?>
+            <h5><?php _e("We are Social", wpgrade::textdomain()); ?></h5>
+            <ul class="site-social-links">
+                <?php foreach ($social_icons as $domain => $value): if ($value): ?>
+                    <li class="site-social-links__social-link">
+                        <a href="<?php echo $value ?>"<?php echo $target ?>>
+                            <?php switch($domain) {
+                                case 'youtube':
+                                    ?><i class="pixcode  pixcode--icon  icon-play"></i>
+                                    <?php break;
+                                case 'appnet':
+                                    ?><i class="pixcode  pixcode--icon  icon-user"></i>
+                                    <?php break;
+                                default:
+                                    ?><i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
+                                    <?php } ?>
+                        </a>
+                    </li>
+                <?php endif; endforeach ?>
+            </ul>
+        <?php endif; ?>
 
         <div class="site-info text--right">
             <?php
