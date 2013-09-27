@@ -3950,17 +3950,7 @@ function magnificPopupInit() {
         });
     });
 
-    var magnificPopup = $.magnificPopup.instance;
-
-    $(document).on('click', '.js-arrow-popup-prev', function(event){
-        event.preventDefault();
-        magnificPopup.prev();
-    });
-
-    $(document).on('click', '.js-arrow-popup-next', function(event){
-        event.preventDefault();
-        magnificPopup.next();
-    });
+    window.magnificPopup = $.magnificPopup.instance;
 }
 
 
@@ -4259,8 +4249,8 @@ function eventHandlersOnce() {
 
 
 function likeBoxAnimation(){
-    $(document).on('click', '.can_like .like-link', function(event){
-        event.preventDefault();
+    $(document).on('click', '.can_like .like-link', function(e){
+        e.preventDefault();
         var $iElem = $(this).find('i');
         $iElem.addClass('animate-like').delay(1000).queue(function(){$(this).addClass('like-complete');});
         // $(this).addClass('animate-like');
@@ -4271,6 +4261,16 @@ function likeBoxAnimation(){
 /* --- GLOBAL EVENT HANDLERS --- */
 
 function eventHandlers() {
+
+    $('.js-arrow-popup-prev').on('click', function(e){
+        e.preventDefault();
+        window.magnificPopup.prev();
+    });
+
+    $('.js-arrow-popup-next').on('click', function(e){
+        e.preventDefault();
+        window.magnificPopup.next();
+    });
 
     /* @todo: change classes so style and js don't interfere */
     $('.menu-item--parent').hoverIntent({
