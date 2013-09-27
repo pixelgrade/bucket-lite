@@ -3871,7 +3871,7 @@ textarea:focus {
  * and over in your markup.
  */
 .cf:after, .nav:after, .rsBullets:after, .entry__content ul:after, .site-navigation:after, .site-navigation__sub-menu:after, .site-social-links:after, .projects_nav-list:after, .related-projects_items-list:after, .mosaic__filter:after, .commentlist:after, .social-links__list:after, .image_item-categories:after, .gallery-control__items:after, .pixcode--tabs__nav:after, .widget ul:after, .media:after, .island:after,
-.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .content:after, .comment-form:after, .project-sidebar-right article:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .masonry__item .article-timestamp:after {
+.islet:after, .matrix:after, .multi-list:after, .stat-group:after, .row:after, .content:after, .comment-form:after, .project-sidebar-right article:after, .related-projects_header:after, .mosaic:after, li.comment:after, .image_item-like-box:after, .masonry:after, .masonry__item .article-timestamp:after, .masonry__pagination:after {
   content: "";
   display: table;
   clear: both; }
@@ -10457,6 +10457,31 @@ li.comment {
     padding: 1.33333rem; }
   .masonry__item .entry__featured-image {
     position: relative; }
+
+.masonry__pagination {
+  padding: 0 24px 24px;
+  padding:  0 1.33333rem 1.33333rem;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out; }
+  .masonry__pagination a {
+    text-decoration: none; }
+    .masonry__pagination a:hover {
+      background-color: #fcfcfc; }
+  .loaded .masonry__pagination {
+    background-color: #f5f5f5; }
+  .loading .masonry__pagination {
+    background-color: transparent; }
+  .masonry__pagination .prev, .masonry__pagination .next {
+    display: inline-block;
+    background: white;
+    padding: 12px 24px;
+    padding:  0.66667rem 1.33333rem; }
+    .masonry__pagination .prev.disabled, .masonry__pagination .next.disabled {
+      display: none; }
+  .masonry__pagination .next {
+    float: right; }
 
 [data-columns]::before {
   display: none; }
