@@ -12,6 +12,7 @@
 			get_template_part('theme-partials/post-templates/blog-content');
         endwhile; ?>
     </div><!-- .masonry -->
+	<?php wpgrade::pagination(); ?>
 
 <?php else : ?>
 
