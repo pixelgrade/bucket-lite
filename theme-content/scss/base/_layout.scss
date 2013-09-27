@@ -3,6 +3,7 @@
     @extend .row;
     background: white;
     position: relative;
+    @include rem(padding-bottom, 2 * $base-spacing-unit);
 
     // project-classic causes horizontal scroll. CAUTION!
     overflow: hidden;
@@ -151,10 +152,12 @@
 }
 
 .single-portfolio-fullwidth,
-.single-lens_gallery{
+.single-lens_gallery,
+.portfolio-archive{
     .content{
         max-width: 100%;
         margin-right: 0;
+        padding-bottom: 0;
     }
 }
 

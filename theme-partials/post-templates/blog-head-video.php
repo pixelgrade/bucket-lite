@@ -6,12 +6,13 @@
     </div>
 </div><!-- .article-timestamp -->
 
-<h2 class="entry__title">
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+<div class="entry__header">
+    <h2 class="entry__title">
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    </h2>
     <hr class="separator separator--dotted grow">    
-</h2>
-<div class="entry__content"><?php the_excerpt(); ?></div>
-
+    <div class="entry__content"><?php the_excerpt(); ?></div>
+</div>
 <?php
     if ( has_post_thumbnail() ) {
         echo '<div class="entry__featured-image">';

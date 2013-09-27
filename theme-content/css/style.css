@@ -8343,6 +8343,8 @@ a {
 .content {
   background: white;
   position: relative;
+  padding-bottom: 48px;
+  padding-bottom: 2.66667rem;
   overflow: hidden; }
   @media only screen and (min-width: 50.11111em) {
     .content {
@@ -8438,9 +8440,11 @@ a {
     margin-right: 30%; } }
 
 .single-portfolio-fullwidth .content,
-.single-lens_gallery .content {
+.single-lens_gallery .content,
+.portfolio-archive .content {
   max-width: 100%;
-  margin-right: 0; }
+  margin-right: 0;
+  padding-bottom: 0; }
 
 /*----------------------------------------*\
     $PAGE
@@ -10305,7 +10309,7 @@ li.comment {
     margin-right: 24px;
     margin-right: 1.33333rem; }
   .masonry__item .entry--quote__content {
-    border-bottom: 1px dashed black;
+    border-bottom: 1px dotted black;
     padding-top: 36px;
     padding-top: 2rem; }
   .masonry__item blockquote {
@@ -11662,9 +11666,19 @@ a:hover > i.pixcode--icon {
   -ms-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px; }
-  .loaded .single .featured-image, .loaded
-  .page .featured-image, .loaded
-  .single-lens_gallery .pixslider, .loaded
+  .no-cssanimations.loaded .single .featured-image, .no-cssanimations.loaded
+  .page .featured-image, .no-cssanimations.loaded
+  .single-lens_gallery .pixslider, .no-cssanimations.loaded
+  #gmap {
+    opacity: 1; }
+  .no-cssanimations.loading .single .featured-image, .no-cssanimations.loading
+  .page .featured-image, .no-cssanimations.loading
+  .single-lens_gallery .pixslider, .no-cssanimations.loading
+  #gmap {
+    opacity: 0; }
+  .cssanimations.loaded .single .featured-image, .cssanimations.loaded
+  .page .featured-image, .cssanimations.loaded
+  .single-lens_gallery .pixslider, .cssanimations.loaded
   #gmap {
     -webkit-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
     -moz-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
@@ -11693,6 +11707,12 @@ a:hover > i.pixcode--icon {
   -ms-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px; }
+  .no-cssanimations.loaded .single-lens_gallery .pixslider .rsBullets, .no-cssanimations.loaded
+  .single-lens_gallery .gallery-control {
+    opacity: 1; }
+  .no-cssanimations.loading .single-lens_gallery .pixslider .rsBullets, .no-cssanimations.loading
+  .single-lens_gallery .gallery-control {
+    opacity: 0; }
   .loaded .single-lens_gallery .pixslider .rsBullets, .loaded
   .single-lens_gallery .gallery-control {
     -webkit-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
@@ -11729,6 +11749,9 @@ a:hover > i.pixcode--icon {
   .no-cssanimations.loaded .single .entry__title, .no-cssanimations.loaded
   .page .entry__title {
     opacity: 1; }
+  .no-cssanimations.loading .single .entry__title, .no-cssanimations.loading
+  .page .entry__title {
+    opacity: 0; }
   .loading .single .entry__title, .loading
   .page .entry__title {
     opacity: 1;
@@ -11812,6 +11835,10 @@ a:hover > i.pixcode--icon {
     -moz-animation: slidein 0.5s 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.5s 0.5s ease-in-out forwards;
     -o-animation: slidein 0.5s 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.5s 0.5s ease-in-out forwards;
     animation: slidein 0.5s 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards, fadein 0.5s 0.5s ease-in-out forwards; }
+  .no-cssanimations.loaded .sidebar--right {
+    opacity: 1; }
+  .no-cssanimations.loading .sidebar--right {
+    opacity: 0; }
   .loading .sidebar--right {
     opacity: 1;
     -webkit-animation: slideout 0.5s 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards, fadeout 0.5s 0.5s ease-in-out forwards;
