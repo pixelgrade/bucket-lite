@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" data-smoothscrolling>
     <header class="site-header">
         <div class="site-header__branding">
             <?php if (wpgrade::option('main_logo')): ?>
