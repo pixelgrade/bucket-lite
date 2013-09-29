@@ -164,7 +164,7 @@
                <nav class="projects_nav">
                    <ul class="projects_nav-list">
                        <li class="projects_nav-item">
-                            <?php next_post_link('%link', '<i class="icon-arrow-left"></i>' . __('Previous', wpGrade::textdomain()) ); ?>
+                            <?php next_post_link('%link', '<span class="prev">&#8592;</span>' . __('Previous', wpGrade::textdomain()) ); ?>
                         </li>
                        <li class="projects_nav-item">
                             <a href="<?php echo get_portfolio_page_link(); ?>">
@@ -172,7 +172,7 @@
                             </a>
                         </li>
                         <li class="projects_nav-item">
-                            <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<i class="icon-arrow-right"></i>'); ?>
+                            <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<span class="next">&#8594;</span>'); ?>
                         </li>
                    </ul>
                </nav>

@@ -1,3 +1,10 @@
+/*----------------------------------------*\
+*   $PROJECT LAYOUT
+\*----------------------------------------*/
+footer.entry__meta {
+    @include rem(margin-bottom, 3/2*$base-spacing-unit);
+}
+
 .entry__meta--project{
     @include rem(padding-bottom, $base-spacing-unit);
 
