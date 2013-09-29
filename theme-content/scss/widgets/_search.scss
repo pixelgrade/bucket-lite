@@ -10,13 +10,16 @@
 
     .search-query{
         @extend .col-8;
-        @include rem(padding, $half-spacing-unit 0);
-        border: 0;
+
         font-family: "Josefin Slab", serif;
         @include font-size(18px);
         font-weight: bold;
         text-transform: uppercase;
         color: black;
+        letter-spacing:2px;
+
+        @include rem(padding, $half-spacing-unit 0);
+        border: 0;
     }
 
     .form-search .btn{

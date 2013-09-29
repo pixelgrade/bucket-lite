@@ -101,8 +101,18 @@
         opacity: 1;
     }
 
-.touch .single-gallery-masonry .image__item-meta{
-    display: none;
+.touch {
+
+    /*
+    * Hide Mosaic Items Page-Title block on touch devices
+    */
+    .mosaic__item--page-title {
+        display:none !important;
+    }
+
+    .single-gallery-masonry .image__item-meta{
+        display: none;
+    }
 }
 
 
