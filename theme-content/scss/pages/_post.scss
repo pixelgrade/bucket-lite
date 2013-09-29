@@ -12,6 +12,9 @@
             @include rem(font-size, 22px);
         }
     }
+    .entry__meta {
+        @include rem(margin-top, 2.5*$base-spacing-unit)
+    }
  }
 
 @include media(from lap) {

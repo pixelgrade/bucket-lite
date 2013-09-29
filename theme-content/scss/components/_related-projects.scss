@@ -135,10 +135,12 @@
             }
 
             /**
-             * Smaller Title for smaller space container
+             * Smaller Title for smaller space container (on smaller screens :)
              */
-            .image_item-title {
-                @include rem(font-size, 22px);
+             @include media(to lap) {
+                .image_item-title {
+                    @include rem(font-size, 22px);
+                }
             }
 
             /**
