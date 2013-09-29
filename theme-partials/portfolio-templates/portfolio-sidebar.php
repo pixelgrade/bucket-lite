@@ -84,36 +84,36 @@
                 }
 
 	            if (wpgrade::option('portfolio_single_show_share_links')): ?>
-		            <div class="social-links">
-			            <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
-			            <ul class="social-links__list">
-				            <?php if (wpgrade::option('portfolio_single_share_links_twitter')): ?>
-					            <li>
-						            <a href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;source=tweetbutton&amp;text=<?php echo urlencode(get_the_title())?>&amp;url=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;via=<?php echo wpgrade::option( 'twitter_card_site' ) ?>" onclick="return popitup(this.href, this.title)"
-						               title="<?php _e('Share on Twitter!', wpgrade::textdomain()) ?>">
-							            <i class="icon-twitter"></i>
-						            </a>
-					            </li>
-				            <?php endif;
-				            if (wpgrade::option('portfolio_single_share_links_facebook')): ?>
-					            <li>
-						            <a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
-						               title="<?php _e('Share on Facebook!', wpgrade::textdomain()) ?>">
-							            <i class="icon-facebook"></i>
-						            </a>
-					            </li>
-				            <?php endif;
-				            if (wpgrade::option('portfolio_single_share_links_googleplus')): ?>
-					            <li>
-						            <a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
-						               title="<?php _e('Share on Google+!', wpgrade::textdomain()) ?>">
-							            <i class="icon-google-plus"></i>
-						            </a>
-					            </li>
-				            <?php endif; ?>
-			            </ul>
-		            </div>
-	            <?php endif; ?>
+                    <div class="social-links">
+                        <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
+                        <ul class="social-links__list">
+                            <?php if (wpgrade::option('portfolio_single_share_links_twitter')): ?>
+                                <li>
+                                    <a href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;source=tweetbutton&amp;text=<?php echo urlencode(get_the_title())?>&amp;url=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;via=<?php echo wpgrade::option( 'twitter_card_site' ) ?>" onclick="return popitup(this.href, this.title)"
+                                       title="<?php _e('Share on Twitter!', wpgrade::textdomain()) ?>">
+                                        <i class="icon-e-twitter-circled"></i>
+                                    </a>
+                                </li>
+                            <?php endif;
+                            if (wpgrade::option('portfolio_single_share_links_facebook')): ?>
+                                <li>
+                                    <a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
+                                       title="<?php _e('Share on Facebook!', wpgrade::textdomain()) ?>">
+                                        <i class="icon-e-facebook-circled"></i>
+                                    </a>
+                                </li>
+                            <?php endif;
+                            if (wpgrade::option('portfolio_single_share_links_googleplus')): ?>
+                                <li>
+                                    <a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
+                                       title="<?php _e('Share on Google+!', wpgrade::textdomain()) ?>">
+                                        <i class="icon-e-gplus-circled"></i>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
             </footer><!-- .entry__meta -->
         </section><!-- .project-content -->
     </article><!-- #post -->
