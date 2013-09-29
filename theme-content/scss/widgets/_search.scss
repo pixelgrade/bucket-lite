@@ -6,6 +6,10 @@
     border-bottom: 1px dotted black;
     @extend .row;
     margin-left: 0;
+    
+    input::input-placeholder, input::-webkit-input-placeholder, input::-moz-input-placeholder, input:-ms-input-placeholder {
+        color:$dark;
+    }
 }
 
     .search-query{
@@ -15,7 +19,7 @@
         @include font-size(18px);
         font-weight: bold;
         text-transform: uppercase;
-        color: black;
+        color: $dark;
         letter-spacing:2px;
 
         @include rem(padding, $half-spacing-unit 0);
