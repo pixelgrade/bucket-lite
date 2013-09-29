@@ -5,8 +5,9 @@
         <section class="project-images">
             <?php
 	        $client_name = '';
-	        $client_link = '#';
 	        $client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+			
+			$client_link = '#';
 	        $client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 
 	        $gallery_ids = array();
@@ -21,6 +22,21 @@
                 'orderby' => "post__in",
                 'post__in'     => $gallery_ids
             ) );
+			
+			//let's get the video
+			//first get the youtube one
+			$video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_youtube', true );
+			$video = trim($video);
+
+			if (empty($video)) {
+				//let's try getting the vimeo video link
+				$video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_vimeo', true );
+				$video = trim($video);
+			}
+			
+			if (!empty($video)) {
+				echo html_entity_decode($video);
+			}
 
             if ( $attachments ) {
                 foreach ( $attachments as $attachment ) {

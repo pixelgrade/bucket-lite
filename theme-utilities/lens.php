@@ -2021,4 +2021,33 @@ class lens
 
 		return $array;
 	}
+	
+	/**
+	* get youtube video ID from URL
+	*
+	* @param string $url
+	* @return string Youtube video id or FALSE if none found. 
+	*/
+   static function youtube_id_from_url($url) {
+	   $pattern = '#(?:https?://)?(?:www\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})(?:.+)?#x';
+	   $result = preg_match($pattern, $url, $matches);
+
+	   if (false !== $result) {
+		   return $matches[1];
+	   }
+	   return false;
+   }
+   
+   
+   static function vimeo_id_from_url($url)
+	{
+		$pattern = '/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/';
+		preg_match($pattern, $url, $matches);
+		if (count($matches))
+		{
+		  return $matches[2];
+		}
+
+		return '';
+	}
 }
