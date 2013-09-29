@@ -134,3 +134,23 @@ a {
         padding-right: .5em;
     }
 }
+
+
+
+
+/*-------------------------------*\
+               CAPTIONS
+\*-------------------------------*/
+
+.wp-caption{
+    max-width: 100%;
+}
+
+.wp-caption-text{
+    @include rem(font-size, 16px);
+    font-style: italic;
+    &:before{
+        content: "\2014";
+        @include rem(margin-right, 3px);
+    }
+}
