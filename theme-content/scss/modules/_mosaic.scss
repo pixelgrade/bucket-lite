@@ -67,46 +67,6 @@
         }
     }
 
-    @-webkit-keyframes slide-out {
-        0% {-webkit-transform: none;}
-        100% {-webkit-transform: translateX(101%);}
-    }
-
-    @-moz-keyframes slide-out {
-        0% {-moz-transform: none;}
-        100% {-moz-transform: translateX(101%);}
-    }
-
-    @-o-keyframes slide-out {
-        0% {-o-transform: none;}
-        100% {-o-transform: translateX(101%);}
-    }
-
-    @keyframes slide-out {
-        0% {transform: none;}
-        100% {transform: translateX(101%);}
-    }
-
-    @-webkit-keyframes slide-in {
-        0% {-webkit-transform: translateX(-101%);}
-        100% {-webkit-transform: none;}
-    }
-
-    @-moz-keyframes slide-in {
-        0% {-moz-transform: translateX(-101%);}
-        100% {-moz-transform: none;}
-    }
-
-    @-o-keyframes slide-in {
-        0% {-o-transform: translateX(-101%);}
-        100% {-o-transform: none;}
-    }
-
-    @keyframes slide-in {
-        0% {transform: translateX(-101%);}
-        100% {transform: none;}
-    }
-
     .image_item-table {
         @include opacity(0);
         @include transition(all .2s .1s ease-out);
@@ -181,7 +141,8 @@
 
     h1 {
         @include rem(padding, 0 2*$base-spacing-unit);
-        @include rem(font-size, 32px);
+        @include rem(font-size, 36px);
+        font-weight:300;
         margin: 0;
         text-transform: uppercase;
 
@@ -190,4 +151,45 @@
             @include rem(font-size, 28px);
         }
     }
+}
+
+
+@-webkit-keyframes slide-out {
+    0% {-webkit-transform: none;}
+    100% {-webkit-transform: translateX(101%);}
+}
+
+@-moz-keyframes slide-out {
+    0% {-moz-transform: none;}
+    100% {-moz-transform: translateX(101%);}
+}
+
+@-o-keyframes slide-out {
+    0% {-o-transform: none;}
+    100% {-o-transform: translateX(101%);}
+}
+
+@keyframes slide-out {
+    0% {transform: none;}
+    100% {transform: translateX(101%);}
+}
+
+@-webkit-keyframes slide-in {
+    0% {-webkit-transform: translateX(-101%);}
+    100% {-webkit-transform: none;}
+}
+
+@-moz-keyframes slide-in {
+    0% {-moz-transform: translateX(-101%);}
+    100% {-moz-transform: none;}
+}
+
+@-o-keyframes slide-in {
+    0% {-o-transform: translateX(-101%);}
+    100% {-o-transform: none;}
+}
+
+@keyframes slide-in {
+    0% {transform: translateX(-101%);}
+    100% {transform: none;}
 }

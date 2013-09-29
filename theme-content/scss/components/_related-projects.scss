@@ -135,6 +135,13 @@
             }
 
             /**
+             * Smaller Title for smaller space container
+             */
+            .image_item-title {
+                @include rem(font-size, 22px);
+            }
+
+            /**
              * Not enough space for project categories,
              * hiding the folder icon
              */
