@@ -4086,8 +4086,8 @@ function initVideos() {
     });
 
     // Firefox Opacity Video Hack
-    $('iframe').each(function(){
-        var url = $(this).attr("src");
+    $('.featured-image iframe').each(function(){
+        var url = $(this).attr("src"); console.log(url);
         $(this).attr("src", url+"?wmode=transparent");
     });
 }
