@@ -25,40 +25,34 @@
             <div id="navigation" class="djax-updatable">
                 <?php wpgrade_main_nav();?>
             </div>
-            <?php
-            $social_icons = wpgrade::option('social_icons');
-            $target = '';
-            if (wpgrade::option('social_icons_target_blank')) {
-                $target = ' target="_blank"';
-            } ?>
             
         </div>
     </header>
     <?php get_sidebar('header'); ?>
     <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="header__social-section">
-            <?php if (count($social_icons)): ?>
-                <div class="header__social-title"><?php _e("We are Social", wpgrade::textdomain()); ?></div>
+        <?php if(wpgrade::option('do_social_footer_menu')): ?>
+            <div class="header__social-section">
+                <?php
+                $social_icons = wpgrade::option('social_icons');
+                $target = '';
+                $title = wpgrade::option('social_footer_menu_title');
+                if (wpgrade::option('social_icons_target_blank')) {
+                    $target = ' target="_blank"';
+                }
+                if (count($social_icons)): ?>
+                <?php if ($title): ?><h4 class="widget__title"><?php echo $title; ?></h4><?php endif; ?>
                 <ul class="site-social-links">
                     <?php foreach ($social_icons as $domain => $value): if ($value): ?>
                         <li class="site-social-links__social-link">
                             <a href="<?php echo $value ?>"<?php echo $target ?>>
-                                <?php switch($domain) {
-                                    case 'youtube':
-                                        ?><i class="pixcode  pixcode--icon  icon-play"></i>
-                                        <?php break;
-                                    case 'appnet':
-                                        ?><i class="pixcode  pixcode--icon  icon-user"></i>
-                                        <?php break;
-                                    default:
-                                        ?><i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
-                                        <?php } ?>
+                                <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
                             </a>
                         </li>
                     <?php endif; endforeach ?>
                 </ul>
-            <?php endif; ?>
-        </div>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
 
         <div class="site-info text--right">
             <?php

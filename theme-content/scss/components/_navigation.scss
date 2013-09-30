@@ -5,6 +5,7 @@
 /*ul*/.site-navigation {
     @extend .nav;
     @extend .nav--stacked;
+    margin-bottom: 0;
 }
 
 /*ul*/.site-navigation--main {

@@ -3786,7 +3786,7 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
+    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
@@ -3835,6 +3835,7 @@ function royalSliderInit() {
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
+            rs_imageScale  = $slider.data('imagescale');
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
@@ -3845,19 +3846,21 @@ function royalSliderInit() {
                 autoScaleSlider: false,
                 loop: true,
                 imageScaleMode: 'none',
-                imageAlignCenter: false,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
             });
         } else {
+            console.log('image-scale ' + rs_imageScale);
+
             $slider.royalSlider({
                 autoScaleSlider: true,
                 autoHeight: false,
                 loop: true,
-                imageScaleMode: 'fill',
-                imageAlignCenter: false,
+                imageScaleMode: rs_imageScale,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
@@ -4107,6 +4110,30 @@ function resizeVideos() {
 
 
 
+function placeFooter() {
+
+    var sh = $('.sidebar--header').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
+
+    if (wh < hh + fh + sh) {
+        $('.site-footer').css({ 
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    } else {
+        $('.site-footer').css({ 
+            "position": "",
+            "margin-left": "",
+            "padding-right": ""
+        });
+    }
+}
+
+
+
+
 
 /* ====== INITIALIZE ====== */
 
@@ -4117,6 +4144,7 @@ function init() {
     
     /* GET BROWSER DIMENSIONS */
     browserSize();
+    placeFooter();
     
     /* DETECT PLATFORM */
     platformDetect();
@@ -4149,20 +4177,6 @@ function init() {
     }
 
     $('html').addClass('loaded');
-    
-    var h = $(window).height(),
-        sh = $('.site-header__branding').outerHeight(true),
-        hh = $('.site-header').outerHeight(true),
-        fh = $('.site-footer').outerHeight(true);
-
-    console.log(h,sh,hh,fh);
-    if (h < hh + sh + fh) {
-        $('.site-footer').css({
-            "position": "static",
-            "margin-left": 0,
-            "padding-right": "24px"
-        });
-    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4506,6 +4520,7 @@ $(window).bind('djaxLoad', function(e, data) {
     eventHandlers();
 
     browserSize();
+    placeFooter();
     resizeVideos();
 
     loadUp();
@@ -4520,6 +4535,7 @@ $(window).bind('djaxLoad', function(e, data) {
 $(window).resize(function(){
 
     browserSize();
+    placeFooter();
     niceScrollInit();
     resizeVideos();
 
