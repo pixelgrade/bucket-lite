@@ -58,27 +58,18 @@ class wpgrade_social_links_widget extends WP_Widget {
 		wp_reset_postdata();
 
 		echo $before_widget;
-		if ( $title ) echo $before_title . $title . $after_title;
 		if (count($social_links)): ?>
-			<ul class="menu-footer_social">
-				<?php foreach ($social_links as $domain => $value): if ($value): ?>
-					<li class="footer-social-link">
-						<a href="<?php echo $value ?>"<?php echo $target ?>>
-							<?php switch($domain) {
-								case 'youtube':
-									?><i class="shc icon-e-play"></i>
-									<?php break;
-								case 'appnet':
-									?><i class="shc icon-user"></i>
-									<?php break;
-								default:
-									?><i class="shc icon-e-<?php echo $domain; ?>"></i>
-									<?php } ?>
-						</a>
-					</li>
-				<?php endif; endforeach ?>
-			</ul>
-		<?php endif;
+        <?php if ($title): ?><h4 class="widget__title"><?php echo $title; ?></h4><?php endif; ?>
+            <ul class="site-social-links">
+                <?php foreach ($social_links as $domain => $value): if ($value): ?>
+                    <li class="site-social-links__social-link">
+                        <a href="<?php echo $value ?>"<?php echo $target ?>>
+                            <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
+                        </a>
+                    </li>
+                <?php endif; endforeach ?>
+            </ul>
+        <?php endif;
 		echo $after_widget;
 	}
 

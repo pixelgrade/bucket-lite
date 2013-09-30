@@ -5,13 +5,14 @@
 /*ul*/.site-navigation {
     @extend .nav;
     @extend .nav--stacked;
+    margin-bottom: 0;
 }
 
 /*ul*/.site-navigation--main {
     text-transform: uppercase;
     overflow: hidden;
 
-    @include media(from hand) {
+    @include media(from hand) { 
         margin-top: -1px;
         border-top: 1px solid #333638;
     }

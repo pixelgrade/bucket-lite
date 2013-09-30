@@ -1,8 +1,9 @@
 <div id="main" class="content djax-updatable">
 	<?php
 	$client_name = '';
-	$client_link = '#';
 	$client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
+	
+	$client_link = '#';
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 
 	$gallery_ids = array();
@@ -17,11 +18,30 @@
         'orderby' => "post__in",
         'post__in'     => $gallery_ids
     ) );
+	
+	//let's get the video
+	//first get the youtube one
+	$video = lens::youtube_id_from_url(get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_youtube', true ));
+	$video = trim($video);
+	
+	if (empty($video)) {
+		//let's try getting the vimeo video link
+		$video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_vimeo', true );
+		$video = trim($video);
+	}
+	
+	$videoimg = json_decode(get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_image', true ), true);
+	$videoimg = $videoimg['link'];
 
-    if ( $attachments ) : ?>
+    if ( !empty($attachments) || !empty($video)) : ?>
     <div class="featured-image">
-        <div class="pixslider js-pixslider" data-bullets data-fullscreen>                    
-            <?php 
+        <div class="pixslider js-pixslider" data-bullets data-fullscreen data-customarrows>                    
+            <?php
+				if (!empty($video)) { ?>
+				<div class="pixslider__slide video">
+                    <img src="<?php echo $videoimg; ?>" class="rsImg" data-rsVideo="http://www.youtube.com/watch?v=<?php echo $video ?>" />
+                </div>
+				<?php }
                 foreach ( $attachments as $attachment ) : 
                     $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                     $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'full' );                            
@@ -110,7 +130,7 @@
 					            <li>
 						            <a href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;source=tweetbutton&amp;text=<?php echo urlencode(get_the_title())?>&amp;url=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;via=<?php echo wpgrade::option( 'twitter_card_site' ) ?>" onclick="return popitup(this.href, this.title)"
 						               title="<?php _e('Share on Twitter!', wpgrade::textdomain()) ?>">
-							            <i class="icon-twitter"></i>
+							            <i class="icon-e-twitter-circled"></i>
 						            </a>
 					            </li>
 				            <?php endif;
@@ -118,7 +138,7 @@
 					            <li>
 						            <a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
 						               title="<?php _e('Share on Facebook!', wpgrade::textdomain()) ?>">
-							            <i class="icon-facebook"></i>
+							            <i class="icon-e-facebook-circled"></i>
 						            </a>
 					            </li>
 				            <?php endif;
@@ -126,7 +146,7 @@
 					            <li>
 						            <a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
 						               title="<?php _e('Share on Google+!', wpgrade::textdomain()) ?>">
-							            <i class="icon-google-plus"></i>
+							            <i class="icon-e-gplus-circled"></i>
 						            </a>
 					            </li>
 				            <?php endif; ?>
@@ -144,7 +164,7 @@
                <nav class="projects_nav">
                    <ul class="projects_nav-list">
                        <li class="projects_nav-item">
-                            <?php next_post_link('%link', '<i class="icon-arrow-left"></i>' . __('Previous', wpGrade::textdomain()) ); ?>
+                            <?php next_post_link('%link', '<span class="prev">&#8592;</span>' . __('Previous', wpGrade::textdomain()) ); ?>
                         </li>
                        <li class="projects_nav-item">
                             <a href="<?php echo get_portfolio_page_link(); ?>">
@@ -152,7 +172,7 @@
                             </a>
                         </li>
                         <li class="projects_nav-item">
-                            <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<i class="icon-arrow-right"></i>'); ?>
+                            <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<span class="next">&#8594;</span>'); ?>
                         </li>
                    </ul>
                </nav>

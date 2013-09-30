@@ -192,7 +192,7 @@ function wpgrade_callback_geting_active() {
 			'fields' => array(
 				array(
 					'name' => __('Embed Code', wpgrade::textdomain()),
-					'desc' => __('Enter here a embed code here. The width should be a minimum of 640px. We will use this if filled, not the selfhosted options bellow!', wpgrade::textdomain()),
+					'desc' => __('Enter here a embed code here. The width should be a minimum of 640px.', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'audio_embed',
 					'type' => 'textarea_small',
 					'std' => '',
@@ -240,6 +240,37 @@ function wpgrade_callback_geting_active() {
 					'id'   => wpgrade::prefix() . 'portfolio_gallery',
 					'type' => 'gallery',
 					'hidden' => true,
+				),
+			)
+		),
+		'lens_portfolio_video' => array(
+			'id' => 'portfolio_video',
+			'title' => __('Video Settings (optional)', wpgrade::textdomain()),
+			'pages'      => array( 'lens_portfolio' ), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => __('Video Image', wpgrade::textdomain()),
+					'desc' => __('Choose an image for your video.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'portfolio_video_image',
+					'type' => 'attachment',
+					'std' => '',
+				),
+				array(
+					'name' => __('YouTube Embed Code', wpgrade::textdomain()),
+					'desc' => __('Enter here a YouTube embed code. This video will be shown as one of the gallery items (first by default).', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'portfolio_video_youtube',
+					'type' => 'textarea_small',
+					'std' => '',
+				),
+				array(
+					'name' => __('Vimeo Embed Code', wpgrade::textdomain()),
+					'desc' => __('Enter here a Vimeo embed code. This video will be shown as one of the gallery items (first by default).<br /><i>If you have entered a YouTube video link, this will be ignored!</i>', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'portfolio_video_vimeo',
+					'type' => 'textarea_small',
+					'std' => '',
 				),
 			)
 		),
@@ -318,6 +349,27 @@ function wpgrade_callback_geting_active() {
 					),
 					'std' => 'fullwidth',
 				),
+				array(
+					'name' => __('Image scale mode', wpgrade::textdomain()),
+					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'image_scale_mode',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => 'Fit',
+							'value' => 'fit'
+						),
+						array(
+							'name' => 'Fill',
+							'value' => 'fill'
+						),
+						array(
+							'name' => 'Fit if smaller',
+							'value' => 'fit-if-smaller'
+						),
+					),
+					'std' => 'fill'					
+				)
 			)
 		),
         'lens_homepage_chooser' => array(

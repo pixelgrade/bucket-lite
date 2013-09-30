@@ -201,11 +201,46 @@
             ),
             array(
                 'id' => 'do_social_footer_menu',
-                'type' => 'checkbox',
+                'type' => 'checkbox_hide_below',
                 'title' => __('Social Footer Menu', wpgrade::textdomain()),
                 'sub_desc' => __('Show social icons in the footer. The links and order are taken from the Social and SEO Options tabs.', wpgrade::textdomain()),
                 'std' => '1',
                 'switch' => true,
+                'next_to_hide' => 2,
+            ),
+            array(
+                'id' => 'social_footer_menu_title',
+                'type' => 'text',
+                'title' => __('Social Footer Menu Title', wpgrade::textdomain()),
+                'std' => 'We Are Social',
+                'sub_desc' => __('', wpgrade::textdomain()),
+            ),
+            array(
+                'id' => 'social_icons',
+                'type' => 'text_sortable',
+                'title' => __('Social Icons', wpgrade::textdomain()),
+                'sub_desc' => __('Define and reorder your social links.<br /><b>Note: </b>These will be displayed in the "'. wpgrade::themename() .' Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),
+                'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
+                'options' => array(
+                    'flickr' => __('Flickr', wpgrade::textdomain()),
+                    'tumblr' => __('Tumblr', wpgrade::textdomain()),
+                    'pinterest' => __('Pinterest', wpgrade::textdomain()),
+                    'instagram' => __('Instagram', wpgrade::textdomain()),
+                    'behance' => __('Behance', wpgrade::textdomain()),
+                    'fivehundredpx' => __('500px', wpgrade::textdomain()),
+                    'dribbble' => __('Dribbble', wpgrade::textdomain()),
+                    'twitter' => __('Twitter', wpgrade::textdomain()),
+                    'facebook' => __('Facebook', wpgrade::textdomain()),
+                    'gplus' => __('Google+', wpgrade::textdomain()),
+                    'youtube' => __('Youtube', wpgrade::textdomain()),
+                    'vimeo' => __('Vimeo', wpgrade::textdomain()),
+                    'linkedin' => __('LinkedIn', wpgrade::textdomain()),
+                    'skype' => __('Skype', wpgrade::textdomain()),
+                    'soundcloud' => __('SoundCloud', wpgrade::textdomain()),
+                    'digg' => __('Digg', wpgrade::textdomain()),
+                    'lastfm' => __('Last.FM', wpgrade::textdomain()),
+                    'appnet' => __('App.net', wpgrade::textdomain())
+                )
             ),
         )
 	);
@@ -393,28 +428,6 @@
 
 		'desc' => __('<p class="description">Social sharing stuff.</p>', wpgrade::textdomain()),
 		'fields' => array(
-            array(
-                'id' => 'social_icons',
-                'type' => 'text_sortable',
-                'title' => __('Social Icons', wpgrade::textdomain()),
-                'sub_desc' => __('Define and reorder your social links.<br /><b>Note: </b>These will be displayed in the "'. wpgrade::themename() .' Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),
-                'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
-                'options' => array(
-                    'twitter' => __('Twitter', wpgrade::textdomain()),
-                    'facebook' => __('Facebook', wpgrade::textdomain()),
-                    'gplus' => __('Google+', wpgrade::textdomain()),
-                    'skype' => __('Skype', wpgrade::textdomain()),
-                    'linkedin' => __('LinkedIn', wpgrade::textdomain()),
-                    'youtube' => __('Youtube', wpgrade::textdomain()),
-                    'vimeo' => __('Vimeo', wpgrade::textdomain()),
-                    'instagram' => __('Instagram', wpgrade::textdomain()),
-                    'flickr' => __('Flickr', wpgrade::textdomain()),
-                    'pinterest' => __('Pinterest', wpgrade::textdomain()),
-                    'tumblr' => __('Tumblr', wpgrade::textdomain()),
-                    'lastfm' => __('Last.FM', wpgrade::textdomain()),
-                    'appnet' => __('App.net', wpgrade::textdomain())
-                )
-            ),
             array(
                 'id' => 'social_icons_target_blank',
                 'type' => 'checkbox',

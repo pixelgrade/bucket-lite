@@ -31,6 +31,14 @@ html {
     @include rem(margin-bottom, $half-spacing-unit);
     @include rem(margin-top, $base-spacing-unit);
     color:$dark;
+
+    /*
+    * Bigger spacing for headings inside content
+    */
+
+    .entry__content & {
+        @include rem(margin-top, 1.5*$base-spacing-unit);
+    }
 }
 
 .delta,
@@ -81,19 +89,20 @@ blockquote {
 \*-------------------------------*/
 
 ol {
-    @include rem(margin-top, $base-spacing-unit/2);
+    @include rem(margin-top, $base-spacing-unit);
     @include rem(margin-bottom, $base-spacing-unit);
 
     li {
-        @include font-size(20px);
+        @include rem(font-size, 20px);
         font-family: $base-font-family;
         font-style: italic;
         color: $light;
+        @include rem(margin-bottom, $half-spacing-unit/2);
     }
 }
 
 .text-link {
-    font-family: "Roboto", sans-serif;
+    font-family: $alt-font-family;
     @include font-size(14px);
     text-transform: uppercase;
     color: black;
@@ -132,5 +141,26 @@ a {
     [class*="icon-"] {
         text-decoration: none;
         padding-right: .5em;
+    }
+}
+
+
+
+
+/*-------------------------------*\
+               CAPTIONS
+\*-------------------------------*/
+
+.wp-caption{
+    max-width: 100%;
+}
+
+.wp-caption-text{
+    @include rem(font-size, 16px);
+    font-style: italic;
+
+    &:before{
+        content: "\2014";
+        @include rem(margin-right, 3px);
     }
 }

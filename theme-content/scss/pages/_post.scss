@@ -12,6 +12,10 @@
             @include rem(font-size, 22px);
         }
     }
+    .entry__meta {
+        @include rem(margin-top, 2*$base-spacing-unit);
+        @include rem(margin-bottom, $base-spacing-unit)
+    }
  }
 
 @include media(from lap) {
@@ -234,7 +238,6 @@ blockquote:not(.pixcode--testimonial){
     }
 
     .article-timestamp__right-box {
-        top: 0.7em;
         line-height: 0.9;
     }
 
@@ -271,7 +274,7 @@ blockquote:not(.pixcode--testimonial){
         float: left;
         font-size: 0.39em;
         position: relative;
-        top: 0.55em;
+        top: 0.35em;
         left: 0.3em;
     }
 
@@ -388,3 +391,20 @@ blockquote:not(.pixcode--testimonial){
     display: block;
     text-decoration: none;
 }
+
+
+
+
+
+/*----------------------------------------*\
+    $GALLERY POST FORMAT
+\*----------------------------------------*/
+.single-gallery-fullscreen, .single-gallery-fullwidth{
+    .content{
+        background-color: black;
+    }
+}
+
+
+
+

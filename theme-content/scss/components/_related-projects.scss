@@ -27,6 +27,8 @@
     </div>
  </section>
  */
+
+
 .related-projects_container{
     border-top: 2px solid #ededef;
     @include rem(margin-bottom, $base-spacing-unit);
@@ -47,7 +49,7 @@
             @extend .span-12;
             @extend .hand-span-6;
 
-            @include rem(margin, $base-spacing-unit 0);
+            @include rem(margin, $half-spacing-unit 0);
             color: black;
         }
 
@@ -57,16 +59,15 @@
         .projects_nav{
             @extend .span-12;
             @extend .hand-span-6;
+            @include rem(margin, $half-spacing-unit 0);
 
             @include media(to hand) {
                 float: left;
-                display: block;
-                @include rem(margin-bottom, $base-spacing-unit);
+                display: block;  
             }
 
             @include media(from hand) {
                 float: right;
-                @include rem(margin, $base-spacing-unit 0);
                 text-align: right;
             }
         }
@@ -86,20 +87,30 @@
 
                 .projects_nav-item a{
                     @include rem(padding, 0 $half-spacing-unit/2);
-                    font-family: "Roboto", sans-serif;
+                    font-family: $alt-font-family;
                     @include font-size(13px);
-                    color: $dark;
+                    font-weight:500;
+                    color: $gray;
                     text-decoration: none;
 
-                    i{
-                        @include rem(padding, 0 $half-spacing-unit/2);
+                    span {
+                        &.prev {
+                            margin-right:3px;
+                        }
+                        &.next {
+                            margin-left:3px;
+                        }
+                    }
+
+                    &:hover {
+                        color:$dark;
                     }
                 }
 
     .related-projects_items-list{
         @extend .nav;
         @include rem(margin-left, -$half-spacing-unit);
-        @include rem(margin-right, -$half-spacing-unit);
+        @include rem(margin-right, -$half-spacing-unit/2);
     }
 
         .related-projects_item{
@@ -121,6 +132,15 @@
 
             .image_item-table{
                 @include opacity(1);
+            }
+
+            /**
+             * Smaller Title for smaller space container (on smaller screens :)
+             */
+             @include media(to lap) {
+                .image_item-title {
+                    @include rem(font-size, 22px);
+                }
             }
 
             /**

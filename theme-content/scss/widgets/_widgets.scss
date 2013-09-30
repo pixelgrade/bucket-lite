@@ -1,5 +1,5 @@
 .widget {
-    @include rem(margin-bottom, 2 * $base-spacing-unit);
+    @include rem(margin-bottom, $base-spacing-unit);
     clear: left;
 
     a:hover{
@@ -9,16 +9,6 @@
     ul{
         @extend .nav;
         // @extend .nav--stacked;
-
-        li {
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            display: inline-block;
-            padding: .25em 0;
-        }
     }
 
     img{
@@ -86,11 +76,21 @@
 @import "text";
 @import "meta";
 
+.widget_tag_cloud{
+
+    a{
+        text-decoration: none;
+        font-size: inherit !important;   
+    }
+}
+
+
 .sidebar--right{
     @include rem(padding, $base-spacing-unit);
     @include rem(padding-left, $half-spacing-unit);
 
     .widget {
+        @include rem(margin-bottom, 2 * $base-spacing-unit);
         @include rem(padding-left, $half-spacing-unit);
     }
 
@@ -106,17 +106,31 @@
     select {
         max-width: 100%;
     }
+
+    .widget_categories, .widget_archive, .widget_pages, .widget_meta, .widget_tag_cloud, .widget_nav_menu {
+        width: 50%;
+        float: left;
+        clear: none;
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: .25em 0;
+        }
+
+        &, a {
+            color: #595957;
+        }
+    }
 }
 
 .widget_categories, .widget_archive, .widget_pages, .widget_meta, .widget_tag_cloud, .widget_nav_menu {
-    width: 50%;
-    float: left;
-    clear: none;
 
-    &, a {
-        color: #595957;
+    ul > li {
+        display: block;
     }
 }
+
 
 
 // calendar widget
@@ -129,7 +143,27 @@
         }
     }
 
+    th, td {
+        padding: 0;
+    }
+
     tfoot a {
         text-decoration: none;
+    }
+}
+
+.header {
+
+    .widget__title {
+        @include rem(font-size, 13px);
+    }
+}
+
+.sidebar--header {
+    overflow: hidden;
+    color: #a7a7a7;
+
+    a {
+        color: #bbb;
     }
 }

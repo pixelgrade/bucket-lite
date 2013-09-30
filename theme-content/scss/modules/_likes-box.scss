@@ -187,12 +187,9 @@
     }
 }
 
-.mosaic__item, .masonry__item{
+.mosaic__item, .masonry__item, .related-projects_item{
     
     .like-link{
-        // border: none;
-        // height: auto;
-        // width: auto;
         cursor: default;
         
         & i {

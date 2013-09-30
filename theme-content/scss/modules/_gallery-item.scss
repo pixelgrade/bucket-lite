@@ -161,7 +161,7 @@
 
     .image_item-description{
         font-family: "Roboto", sans-serif;
-        @include font-size(14px);
+        @include rem(font-size, 14px);
         font-weight: 300;
         font-style: italic;
     }
@@ -199,7 +199,12 @@
             .image_item-cat-icon{
                 position: relative;
                 top: .1em; left: 0;
-                margin-right: .2em;
+                margin-right: 0;
+
+                i{
+                    padding-right:3px;
+                }
+
                 @include media(to lap) {
                     display: none !important;
                 }

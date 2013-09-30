@@ -35,8 +35,7 @@ $other-color: #464a4d;
       color: black;
 
       img{
-        width: 100%;
-        height: auto;
+
       }
     }
 
@@ -60,10 +59,6 @@ $other-color: #464a4d;
     .social-link{
         display: inline;
         text-decoration: none;
-
-        i{
-          color: black;
-        }
     }
 }
 
@@ -78,16 +73,6 @@ $other-color: #464a4d;
  */
 .wp-caption{
     max-width: 100%;
-}
-
-.wp-caption-text{
-    @include rem(font-size, 16px);
-    font-family: "Crimson Text", serif;
-    font-style: italic;
-    &:before{
-        content: "\2014";
-        @include rem(margin-right, 3px);
-    }
 }
 
 .hidden, [hidden] {display: none !important}
@@ -156,13 +141,6 @@ a img.aligncenter {
     max-width: 98.5%;
     padding: 0;
     width: auto;
-}
-
-.wp-caption p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
 }
 
 .gallery-caption {
