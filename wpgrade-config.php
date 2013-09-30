@@ -10,6 +10,8 @@
 		'prefix'     => '_lens_',
 //		'textdomain' => 'lens_txtd',
 
+		'language-path' => 'languages',
+
 		'update-notifier' => array
 			(
 				'xml-source' => 'http://pixelgrade.com/updates/',
