@@ -3786,7 +3786,7 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
+    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
@@ -3835,7 +3835,10 @@ function royalSliderInit() {
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
-            rs_imageScale  = $slider.data('imagescale');
+            rs_imageScale  = typeof $slider.data('imagescale') !== "undefined";
+
+        if(!rs_imageScale) rs_imageScale = 'fill';
+            else rs_imageScale = $slider.data('imagescale');
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
@@ -3853,7 +3856,6 @@ function royalSliderInit() {
                 keyboardNavEnabled: rs_fullScreen
             });
         } else {
-            console.log('image-scale ' + rs_imageScale);
 
             $slider.royalSlider({
                 autoScaleSlider: true,
@@ -4108,8 +4110,6 @@ function resizeVideos() {
 }
 
 
-
-
 function placeFooter() {
 
     var sh = $('.sidebar--header').outerHeight(true),
@@ -4132,9 +4132,6 @@ function placeFooter() {
 }
 
 
-
-
-
 /* ====== INITIALIZE ====== */
 
 function init() {
@@ -4144,7 +4141,6 @@ function init() {
     
     /* GET BROWSER DIMENSIONS */
     browserSize();
-    placeFooter();
     
     /* DETECT PLATFORM */
     platformDetect();
@@ -4171,12 +4167,24 @@ function init() {
         var image = $('.site-logo--image-2x').find('img');
 
         if (image.data('logo2x') !== undefined) {
-            console.log(image.attr('data-logo2x'));
             image.attr('src', image.data('logo2x'));
         }
     }
 
     $('html').addClass('loaded');
+    
+    var h = $(window).height(),
+        sh = $('.site-header__branding').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
+
+    if (h < hh + sh + fh) {
+        $('.site-footer').css({
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4520,7 +4528,6 @@ $(window).bind('djaxLoad', function(e, data) {
     eventHandlers();
 
     browserSize();
-    placeFooter();
     resizeVideos();
 
     loadUp();
@@ -4535,7 +4542,6 @@ $(window).bind('djaxLoad', function(e, data) {
 $(window).resize(function(){
 
     browserSize();
-    placeFooter();
     niceScrollInit();
     resizeVideos();
 
