@@ -88,7 +88,7 @@ if ( !empty($main_color) ){
         border-bottom-color: <?php echo $main_color; ?> ;
     }
 
-    .header:before {
+    .header__gradients:before {
         background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, <?php echo $main_color; ?>), color-stop(100%, #464a4d));
         background-image: -webkit-linear-gradient(<?php echo $main_color; ?> 50%, #464a4d);
         background-image: -moz-linear-gradient(<?php echo $main_color; ?> 50%, #464a4d);

@@ -17,10 +17,6 @@
         @include rem(width, 250px);
         background-color: $dark;
 
-        &:before, &:after { 
-            content: "";
-        }
-
         .lt-ie9 & {
             @include rem(padding-left, $base-spacing-unit);
 
@@ -30,15 +26,29 @@
         }
     }
 
+    a {
+        text-decoration: none;
+    }
+}
+
+.header__gradients {
+    position: relative;
+    // prevent inner elements' margins leak
+    padding-bottom: 1px;
+
     // add the gradient stuff
     &:before, &:after {
         position: absolute;
         display: block;
         top: 0;
-        height: 1000%;
+        height: 100%;
         z-index: 20;
         @include rem(width, 7px);
-        @include rem(left, $base-spacing-unit);
+        @include rem(left, -1 * $base-spacing-unit);
+
+        @include media(from hand) {
+            content: "";
+        }
     }
     
     // the actual gradient
@@ -62,10 +72,6 @@
         .lt-ie9 & {
             display: none;
         }
-    }
-
-    a {
-        text-decoration: none;
     }
 }
 
