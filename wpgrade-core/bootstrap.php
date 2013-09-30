@@ -43,7 +43,7 @@
 			wpgrade::themefilepath
 				(
 					wpgrade::confoption
-						('language-path', 'theme-content/languages')
+						('language-path', 'languages')
 				)
 		);
 

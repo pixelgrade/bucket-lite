@@ -73,6 +73,10 @@
             border-top-color: #4d4d4d;
             pointer-events: none;
             // @include transition(all .2s bezier(easeInOutCirc));
+
+            .header-transparent & {
+                @include rem(top, 3/2 * $half-spacing-unit - 2px);
+            }
         }
 
         // & > a {
@@ -282,13 +286,6 @@
             left: 0 !important;
             @include transition(transform .25s ease-in-out);
         }
-    }
-
-    .csstransforms.navigation--is-visible {
-
-        .wrapper {
-            @include transform(translateX(-75%));
-        }   
     }
 
     .csstransforms3d.navigation--is-visible {

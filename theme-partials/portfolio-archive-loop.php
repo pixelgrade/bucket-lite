@@ -128,10 +128,18 @@
 										<?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
 										if ($categories): ?>
 										<li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
-											<?php foreach ($categories as $cat): ?>
+											<?php 
+                                                $categories_index = 1;
+                                                foreach ($categories as $cat):
+                                                    if($categories_index < 3) :
+                                            ?>
 												<li class="image_item-category"><?php echo get_category($cat)->name; ?></li>
-											<?php endforeach; ?>
-										<?php endif; ?>                                      
+											<?php
+                                                    else : break;
+                                                    endif;
+                                                $categories_index++;
+                                                endforeach;
+										endif; ?>                                      
 									</ul><!--
 									--><?php  if (function_exists( 'display_pixlikes' )) {
 											display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));

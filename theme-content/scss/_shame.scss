@@ -125,16 +125,32 @@ html {
         }
     }
 
-.single-gallery-fullscreen {
+.single-gallery-fullscreen, .single-gallery-fullwidth {
 
-    @include media(from hand) {
-        #page, .content {
-            height: 100%;
-        }
+    #page, .wrapper {
+        height: 100%;
     }
 
-    .content {
-        margin-left: 0;
+    .pixslider {
+        height: 100% !important;
+    }
+
+    #page {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+    }
+
+    @include media(to hand) {
+
+        .content {
+            position: absolute;
+            @include rem(top, 3 * $base-spacing-unit);
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
     }
 }
 

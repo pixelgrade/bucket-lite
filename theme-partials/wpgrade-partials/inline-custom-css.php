@@ -5,7 +5,7 @@
 	/* @var string $rgb */
  ?>
 
-<style>
+<style type="text/css">
 
 <?php
 
@@ -95,7 +95,7 @@ if ( !empty($main_color) ){
     }
 
     .lt-ie9 .header:before {
-        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D'); }
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D');
     }
 
 <?php
@@ -103,21 +103,18 @@ if ( !empty($main_color) ){
 
 if ( isset($fonts["body_font"]) ){
     $body_font = $fonts["body_font"]; ?>
+
     html, 
     .wpcf7-form-control:not([type="submit"]),
     .wp-caption-text,
     blockquote:before,
     ol li,
     .comment__timestamp,
-    .comment-form ::-webkit-input-placeholder,
-    .comment-form :-moz-placeholder,
-    .comment-form ::-moz-placeholder,
-    .comment-form :-ms-input-placeholder,
     .meta-box__box-title,
     .header-quote-content blockquote .author_description,
     .testimonial__author-title,
     .widget-content {
-        font-family: <?php echo $body_font; ?>
+        font-family: <?php echo $body_font; ?>;
     }
 
 <?php }
