@@ -4327,6 +4327,7 @@ function eventHandlers() {
         console.log('arrow next');
         var magnificPopup = $.magnificPopup.instance;
         magnificPopup.next();
+		return false;
     });
 
     /* @todo: change classes so style and js don't interfere */
