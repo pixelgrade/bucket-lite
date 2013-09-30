@@ -44,12 +44,6 @@
                         <li class="site-social-links__social-link">
                             <a href="<?php echo $value ?>"<?php echo $target ?>>
                                 <?php switch($domain) {
-                                    case 'youtube':
-                                        ?><i class="pixcode  pixcode--icon  icon-play"></i>
-                                        <?php break;
-                                    case 'appnet':
-                                        ?><i class="pixcode  pixcode--icon  icon-user"></i>
-                                        <?php break;
                                     default:
                                         ?><i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
                                         <?php } ?>
