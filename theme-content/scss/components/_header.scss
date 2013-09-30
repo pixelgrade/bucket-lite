@@ -35,7 +35,7 @@
         position: absolute;
         display: block;
         top: 0;
-        height: 1000%;
+        height: 100%;
         z-index: 20;
         @include rem(width, 7px);
         @include rem(left, $base-spacing-unit);
