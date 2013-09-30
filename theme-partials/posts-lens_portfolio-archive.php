@@ -1,5 +1,5 @@
 <?php
-
+	
 ?>
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
