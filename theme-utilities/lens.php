@@ -2032,7 +2032,7 @@ class lens
 	   $pattern = '#(?:https?://)?(?:www\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})(?:.+)?#x';
 	   $result = preg_match($pattern, $url, $matches);
 
-	   if (false !== $result) {
+	   if (false != $result) {
 		   return $matches[1];
 	   }
 	   return false;
