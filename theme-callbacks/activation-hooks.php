@@ -243,37 +243,37 @@ function wpgrade_callback_geting_active() {
 				),
 			)
 		),
-		'lens_portfolio_video' => array(
-			'id' => 'portfolio_video',
-			'title' => __('Video Settings (optional)', wpgrade::textdomain()),
-			'pages'      => array( 'lens_portfolio' ), // Post type
-			'context'    => 'normal',
-			'priority'   => 'high',
-			'show_names' => true, // Show field names on the left
-			'fields' => array(
-				array(
-					'name' => __('Video Image', wpgrade::textdomain()),
-					'desc' => __('Choose an image for your video.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'portfolio_video_image',
-					'type' => 'attachment',
-					'std' => '',
-				),
-				array(
-					'name' => __('YouTube Embed Code', wpgrade::textdomain()),
-					'desc' => __('Enter here a YouTube embed code. This video will be shown as one of the gallery items (first by default).', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'portfolio_video_youtube',
-					'type' => 'textarea_small',
-					'std' => '',
-				),
-				array(
-					'name' => __('Vimeo Embed Code', wpgrade::textdomain()),
-					'desc' => __('Enter here a Vimeo embed code. This video will be shown as one of the gallery items (first by default).<br /><i>If you have entered a YouTube video link, this will be ignored!</i>', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'portfolio_video_vimeo',
-					'type' => 'textarea_small',
-					'std' => '',
-				),
-			)
-		),
+//		'lens_portfolio_video' => array(
+//			'id' => 'portfolio_video',
+//			'title' => __('Video Settings (optional)', wpgrade::textdomain()),
+//			'pages'      => array( 'lens_portfolio' ), // Post type
+//			'context'    => 'normal',
+//			'priority'   => 'high',
+//			'show_names' => true, // Show field names on the left
+//			'fields' => array(
+//				array(
+//					'name' => __('Video Image', wpgrade::textdomain()),
+//					'desc' => __('Choose an image for your video.', wpgrade::textdomain()),
+//					'id' => wpgrade::prefix() . 'portfolio_video_image',
+//					'type' => 'attachment',
+//					'std' => '',
+//				),
+//				array(
+//					'name' => __('YouTube Embed Code', wpgrade::textdomain()),
+//					'desc' => __('Enter here a YouTube embed code. This video will be shown as one of the gallery items (first by default).', wpgrade::textdomain()),
+//					'id' => wpgrade::prefix() . 'portfolio_video_youtube',
+//					'type' => 'textarea_small',
+//					'std' => '',
+//				),
+//				array(
+//					'name' => __('Vimeo Embed Code', wpgrade::textdomain()),
+//					'desc' => __('Enter here a Vimeo embed code. This video will be shown as one of the gallery items (first by default).<br /><i>If you have entered a YouTube video link, this will be ignored!</i>', wpgrade::textdomain()),
+//					'id' => wpgrade::prefix() . 'portfolio_video_vimeo',
+//					'type' => 'textarea_small',
+//					'std' => '',
+//				),
+//			)
+//		),
 		'lens_portfolio_metadata' => array(
 			'id'         => 'portfolio_metadata',
 			'title'      => __('Details', wpgrade::textdomain()),
