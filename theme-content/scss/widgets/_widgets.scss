@@ -131,6 +131,16 @@
     }
 }
 
+.sidebar--header {
+
+    .widget_recent_comments, .widget_rss {
+
+        ul > li {
+            border-bottom-color: #444;
+        }
+    }
+}
+
 
 
 // calendar widget
