@@ -27,6 +27,7 @@
     @include media(from hand) {
         float: right;
     }
+
 }
 
     .social-links__message{
@@ -35,16 +36,29 @@
         font-family: "Open Sans", sans-serif;
         @include font-size(12px);
         text-transform: uppercase;
+        float:left;
+        line-height:3.5;
     }
 
     .social-links__list{
         @extend .nav;
         display: inline-block;
+        margin-bottom: 0;
+        @include rem(margin-right, -$half-spacing-unit/2);
 
         a{
-            @include rem(padding, $half-spacing-unit);
-            color: $gray;
+            @include rem(padding, $half-spacing-unit/2 0);
+            @include rem(font-size, 22px);
+            color: $light;
             text-decoration: none;
+
+            i {
+                padding-right:0;
+            }
+
+            &:hover {
+                color:$gray;
+            }
         }
     }
 
@@ -58,5 +72,9 @@
     
     a {
         color: #91908e;
+
+        i {
+            padding-right: 0;
+        }
     }
 }

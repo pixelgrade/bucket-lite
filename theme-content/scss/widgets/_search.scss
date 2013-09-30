@@ -4,27 +4,31 @@
 .form-search{
     @include rem(margin-right, -2 * $base-spacing-unit);
     border-bottom: 1px dotted black;
+    @extend .row;
+    margin-left: 0;
+    
+    input::input-placeholder, input::-webkit-input-placeholder, input::-moz-input-placeholder, input:-ms-input-placeholder {
+        color:$dark;
+    }
 }
 
     .search-query{
-        @include rem(padding, $half-spacing-unit 0);
-        border: 0;
+        @extend .col-8;
+
         font-family: "Josefin Slab", serif;
         @include font-size(18px);
         font-weight: bold;
         text-transform: uppercase;
-        color: black;
-        width: 80%;
+        color: $dark;
+        letter-spacing:2px;
 
-        @include media(to small) {
-            width: 70%;
-        }
+        @include rem(padding, $half-spacing-unit 0);
+        border: 0;
     }
 
     .form-search .btn{
+        @extend .col-2;
         @include rem(padding, $half-spacing-unit 0);
-        @include rem(margin-right, 2 * $base-spacing-unit);
-        float: right;
         @include font-size(16px);
         background: none;
         border: none;

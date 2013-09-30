@@ -3484,7 +3484,6 @@ function salvattore(){
 
           _ref = obtain_grid_settings(grid), numberOfColumns = _ref.numberOfColumns, columnClasses = _ref.columnClasses;
           columnsItems = new Array(+numberOfColumns);
-          console.log('settings', numberOfColumns, columnClasses);
           i = numberOfColumns;
           while (i-- !== 0) {
             selector = "[data-columns] > *:nth-child(" + numberOfColumns + "n-" + i + ")";
@@ -3787,7 +3786,7 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
+    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
@@ -3836,6 +3835,7 @@ function royalSliderInit() {
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
+            rs_imageScale  = typeof $slider.data('imagescale') !== "undefined" ? $slider.data('imagescale') : 'fill';
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
@@ -3846,19 +3846,20 @@ function royalSliderInit() {
                 autoScaleSlider: false,
                 loop: true,
                 imageScaleMode: 'none',
-                imageAlignCenter: false,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
             });
         } else {
+
             $slider.royalSlider({
                 autoScaleSlider: true,
                 autoHeight: false,
                 loop: true,
-                imageScaleMode: 'fill',
-                imageAlignCenter: false,
+                imageScaleMode: rs_imageScale,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
@@ -3950,7 +3951,7 @@ function magnificPopupInit() {
         });
     });
 
-    window.magnificPopup = $.magnificPopup.instance;
+    var magnificPopup = $.magnificPopup.instance;
 }
 
 
@@ -4085,8 +4086,8 @@ function initVideos() {
     });
 
     // Firefox Opacity Video Hack
-    $('iframe').each(function(){
-        var url = $(this).attr("src");
+    $('.featured-image iframe').each(function(){
+        var url = $(this).attr("src"); console.log(url);
         $(this).attr("src", url+"?wmode=transparent");
     });
 }
@@ -4106,7 +4107,26 @@ function resizeVideos() {
 }
 
 
+function placeFooter() {
 
+    var sh = $('.sidebar--header').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
+
+    if (wh < hh + fh + sh) {
+        $('.site-footer').css({ 
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    } else {
+        $('.site-footer').css({ 
+            "position": "",
+            "margin-left": "",
+            "padding-right": ""
+        });
+    }
+}
 
 
 /* ====== INITIALIZE ====== */
@@ -4144,22 +4164,24 @@ function init() {
         var image = $('.site-logo--image-2x').find('img');
 
         if (image.data('logo2x') !== undefined) {
-            console.log(image.attr('data-logo2x'));
             image.attr('src', image.data('logo2x'));
         }
     }
 
     $('html').addClass('loaded');
     
-    // var h = $(window).height(),
-    //     sh = $('.site-header__branding').outerHeight(true),
-    //     hh = $('.site-header').outerHeight(true),
-    //     fh = $('.site-footer').outerHeight(true);
+    var h = $(window).height(),
+        sh = $('.site-header__branding').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
 
-    // console.log(h,sh,hh,fh);
-    // if (h < hh + sh + fh) {
-    //     $('.site-header').height(h - sh - fh).css("overflow-y", "auto");
-    // }
+    if (h < hh + sh + fh) {
+        $('.site-footer').css({
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4264,12 +4286,16 @@ function eventHandlers() {
 
     $('.js-arrow-popup-prev').on('click', function(e){
         e.preventDefault();
-        window.magnificPopup.prev();
+        alert('prev');
+        // var magnificPopup = $.magnificPopup.instance;
+        // magnificPopup.prev();
     });
 
     $('.js-arrow-popup-next').on('click', function(e){
         e.preventDefault();
-        window.magnificPopup.next();
+        alert('next');
+        // var magnificPopup = $.magnificPopup.instance;
+        // magnificPopup.next();
     });
 
     /* @todo: change classes so style and js don't interfere */

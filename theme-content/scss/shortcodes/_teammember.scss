@@ -51,6 +51,7 @@
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    @include font-size(36px);
 
     @include media(to lap) {
         text-decoration: underline;        

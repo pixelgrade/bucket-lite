@@ -31,8 +31,8 @@
 
 @include media(from hand) {
   /*#main*/.content {
-        margin-left:0;
-        @include rem(margin-right, 250px);
+        margin-left:0 !important;
+        @include rem(margin-right, 250px !important);
     } 
 }
 
@@ -71,12 +71,13 @@
   }
 
   .site-footer {
-      right:auto;
-      left:0;
-      @include rem(left, $base-spacing-unit);
-      @include rem(margin-right, 2 * $base-spacing-unit);
+    padding-right: 0 !important;
   }
 }
+
+
+
+
 
 /*------------------------------*\
                PAGE SINGLE
@@ -117,6 +118,10 @@
       margin-left:0;
       @include rem(margin-right, $base-spacing-unit);
   }
+  .article-timestamp__date {
+    float:right;
+    margin-left:5px;
+  }
  .entry__title {
       margin-right: 0;
       @include rem(margin-left, $base-spacing-unit);
@@ -154,6 +159,7 @@
 
 
 
+
 /*------------------------------*\
                SIDEBAR
 \*------------------------------*/
@@ -179,9 +185,23 @@
     }
 
 
+
+
+
 /*------------------------------*\
                PORTFOLIO
 \*------------------------------*/
+
+.portfolio-archive .content {
+
+}
+
+.image_item--block, .image_item-like-box {
+  text-align:right;
+}
+
+
+
 
 
 /*------------------------------*\
@@ -236,8 +256,44 @@
 /**
  * Grid
  */
-
 .row-shortcode div[class*='span-'] {
   float:right;
 }
 
+/**
+* Progress Bar
+*/
+.progressbar__progress {
+  right:0;
+  left:auto;
+}
+.progressbar__tooltip {
+  @include rem(left, -55px);
+  right:auto;
+}
+
+
+
+/*------------------------------*\
+               PLUGINS
+\*------------------------------*/
+
+/* 
+* Like Box
+*/
+
+.image_item--block, .image_item-like-box {
+  text-align:left;
+}
+
+.likes-box {
+
+  .like-link {
+    float:left;
+  }
+
+  .likes-text:after {
+    right:0;
+    left:auto;
+  }
+}

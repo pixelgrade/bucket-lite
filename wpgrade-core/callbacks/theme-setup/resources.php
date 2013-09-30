@@ -46,13 +46,6 @@
 			}
 		}
 
-		// extra equeue handlers
-		foreach ($themeconfiguration['resources']['script-enqueue-handlers'] as $callback) {
-			if ($callback !== null) {
-				call_user_func($callback);
-			}
-		}
-
 		// Style registers and enqueues
 		// ----------------------------
 
@@ -60,11 +53,5 @@
 		foreach ($themeconfiguration['resources']['auto-enqueue-styles'] as $stylename) {
 			wp_enqueue_style($stylename);
 		}
-
-		// extra equeue handlers
-		foreach ($themeconfiguration['resources']['style-enqueue-handlers'] as $callback) {
-			if ($callback !== null) {
-				call_user_func($callback);
-			}
-		}
+		
 	}

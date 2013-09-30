@@ -2,36 +2,6 @@
                HEADER
 \*--------------------------------*/
 
-@keyframes loading {
-    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
-    50%  { background-size: 1px 100%; }
-    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
-}
-
-@-o-keyframes loading {
-    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
-    50%  { background-size: 1px 100%; }
-    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
-}
-
-@-ms-keyframes loading {
-    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
-    50%  { background-size: 1px 100%; }
-    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
-}
-
-@-moz-keyframes loading {
-    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
-    50%  { background-size: 1px 100%; }
-    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
-}
-
-@-webkit-keyframes loading {
-    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
-    50%  { background-size: 1px 100%; }
-    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
-}
-
 .header {
     @extend .inverse;
     width: 100%;
@@ -244,7 +214,7 @@
     overflow: hidden;
 
     @include media(from hand) {
-        @include rem(margin, 2*$base-spacing-unit 0);
+        @include rem(padding, 2*$base-spacing-unit 0);
         padding-left: 0;
         padding-right: 0;
     }
@@ -271,4 +241,34 @@
     h1 {
         margin: 0;
     }
+}
+
+@keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-o-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-ms-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-moz-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
+}
+
+@-webkit-keyframes loading {
+    0%  { background-size: 1px rem(12 * $base-spacing-unit); }
+    50%  { background-size: 1px 100%; }
+    100%  { background-size: 1px rem(12 * $base-spacing-unit); }
 }

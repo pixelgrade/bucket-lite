@@ -30,10 +30,6 @@
 
 if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
-	if ( !defined('wpGrade_txd') ) {
-		define('wpGrade_txd', 'wpGrade_txd');
-	}
-
 	/**
 	 * Automatic plugin installation and activation library.
 	 *
@@ -104,7 +100,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @var string
 		 */
-		public $domain = 'wpGrade_txd';
+		public $domain = null;
 
 		/**
 		 * Default absolute path to folder containing pre-packaged plugin zip files.
@@ -163,13 +159,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		public function __construct() {
 
+			$this->domain = wpgrade::textdomain();
+
 			self::$instance =& $this;
 
 			$this->strings = array(
-				'page_title'                      => __( 'Install Required Plugins', wpGrade_txd ),
-				'menu_title'                      => __( 'Install Plugins', wpGrade_txd ),
-				'installing'                      => __( 'Installing Plugin: %s', wpGrade_txd ),
-				'oops'                            => __( 'Something went wrong.', wpGrade_txd ),
+				'page_title'                      => __( 'Install Required Plugins', wpgrade::textdomain() ),
+				'menu_title'                      => __( 'Install Plugins', wpgrade::textdomain() ),
+				'installing'                      => __( 'Installing Plugin: %s', wpgrade::textdomain() ),
+				'oops'                            => __( 'Something went wrong.', wpgrade::textdomain() ),
 				'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
 				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
 				'notice_can_install_update'       => _n_noop( 'There is a new update for %1$s.', 'There are several plugins updates available %1$s.' ),
@@ -182,9 +180,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'install_link' 					  => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 				'update_link' 					  => _n_noop( 'Begin updating plugin', 'Begin updating plugins' ),
 				'activate_link' 				  => _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
-				'return'                          => __( 'Return to Required Plugins Installer', wpGrade_txd ),
-				'plugin_activated'                => __( 'Plugin activated successfully.', wpGrade_txd ),
-				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', wpGrade_txd ),
+				'return'                          => __( 'Return to Required Plugins Installer', wpgrade::textdomain() ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', wpgrade::textdomain() ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', wpgrade::textdomain() ),
 			);
 
 			/** Annouce that the class is ready, and pass the object (for advanced use) */
@@ -512,7 +510,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 					if ( is_wp_error( $activate ) ) {
 						echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
-						echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . __( 'Return to Required Plugins Installer', wpGrade_txd ) . '</a></p>';
+						echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . __( 'Return to Required Plugins Installer', wpgrade::textdomain() ) . '</a></p>';
 						return true; // End it here if there is an error with automatic activation
 					}
 					else {
@@ -539,7 +537,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				/** All plugins are active, so we display the complete string and hide the plugin menu */
 				if ( empty( $complete ) ) {
-					echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', wpGrade_txd ) . '">' . __( 'Return to the Dashboard', wpGrade_txd ) . '</a>' ) . '</p>';
+					echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', wpgrade::textdomain() ) . '">' . __( 'Return to the Dashboard', wpgrade::textdomain() ) . '</a>' ) . '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				}
 
@@ -567,7 +565,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				else {
 					/** Make sure message doesn't display again if bulk activation is performed immediately after a single activation */
 					if ( ! isset( $_POST[sanitize_key( 'action' )] ) ) {
-						$msg = sprintf( __( 'The following plugin was activated successfully: %s.', wpGrade_txd ), '<strong>' . $plugin['name'] . '</strong>' );
+						$msg = sprintf( __( 'The following plugin was activated successfully: %s.', wpgrade::textdomain() ), '<strong>' . $plugin['name'] . '</strong>' );
 						echo '<div id="message" class="updated"><p>' . $msg . '</p></div>';
 					}
 				}
@@ -724,14 +722,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						$last_plugin = array_pop( $plugin_groups ); // Pop off last name to prep for readability
 						$imploded    = empty( $plugin_groups ) ? '<em>' . $last_plugin . '</em>' : '<em>' . ( implode( ', ', $plugin_groups ) . '</em> and <em>' . $last_plugin . '</em>' );
 
-						$rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, wpGrade_txd ), $imploded, $count ) . '</p>'; // All messages now stored
+						$rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, wpgrade::textdomain() ), $imploded, $count ) . '</p>'; // All messages now stored
 					}
 
 					/** Setup variables to determine if action links are needed */
 
-					$show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, wpGrade_txd ) . '</a>' : '';
-					$show_activate_link = $activate_link ? '<a href="' . admin_url( 'plugins.php' ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, wpGrade_txd ) . '</a>'  : '';
-					$show_update_link  = $update_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '">' . translate_nooped_plural( $this->strings['update_link'], $update_link_count, wpGrade_txd ) . '</a>' : '';
+					$show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, wpgrade::textdomain() ) . '</a>' : '';
+					$show_activate_link = $activate_link ? '<a href="' . admin_url( 'plugins.php' ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, wpgrade::textdomain() ) . '</a>'  : '';
+					$show_update_link  = $update_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '">' . translate_nooped_plural( $this->strings['update_link'], $update_link_count, wpgrade::textdomain() ) . '</a>' : '';
 
 					/** Define all of the action links */
 					$action_links = apply_filters(
@@ -740,7 +738,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 							'install'  => ( current_user_can( 'install_plugins' ) ) ? $show_install_link : '',
 							'update'  => ( current_user_can( 'install_plugins' ) ) ? $show_update_link : '',
 							'activate' => ( current_user_can( 'activate_plugins' ) ) ? $show_activate_link : '',
-							'dismiss'  => '<a class="dismiss-notice" href="' . add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ) . '" target="_parent">' . __( 'Dismiss this notice', wpGrade_txd ) . '</a>',
+							'dismiss'  => '<a class="dismiss-notice" href="' . add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ) . '" target="_parent">' . __( 'Dismiss this notice', wpgrade::textdomain() ) . '</a>',
 						)
 					);
 
@@ -1127,31 +1125,31 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				if ( isset( $plugin['external_url'] ) ) {
 					/** The plugin is linked to an external source */
-					$table_data[$i]['source'] = __( 'External Link', wpGrade_txd );
+					$table_data[$i]['source'] = __( 'External Link', wpgrade::textdomain() );
 				}
 				elseif ( isset( $plugin['source'] ) ) {
 					/** The plugin must be from a private repository */
 					if ( preg_match( '|^http(s)?://|', $plugin['source'] ) )
-						$table_data[$i]['source'] = __( 'Private Repository', wpGrade_txd );
+						$table_data[$i]['source'] = __( 'Private Repository', wpgrade::textdomain() );
 					/** The plugin is pre-packaged with the theme */
 					else
-						$table_data[$i]['source'] = __( 'Pre-Packaged', wpGrade_txd );
+						$table_data[$i]['source'] = __( 'Pre-Packaged', wpgrade::textdomain() );
 				}
 				/** The plugin is from the WordPress repository */
 				else {
-					$table_data[$i]['source'] = __( 'WordPress Repository', wpGrade_txd );
+					$table_data[$i]['source'] = __( 'WordPress Repository', wpgrade::textdomain() );
 				}
 
-				$table_data[$i]['type'] = $plugin['required'] ? __( 'Required', wpGrade_txd ) : __( 'Recommended', wpGrade_txd );
+				$table_data[$i]['type'] = $plugin['required'] ? __( 'Required', wpgrade::textdomain() ) : __( 'Recommended', wpgrade::textdomain() );
 
 				if ( ! isset( $installed_plugins[$plugin['file_path']] ) )
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', wpGrade_txd ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', wpgrade::textdomain() ) );
 				elseif ( is_plugin_inactive( $plugin['file_path'] ) )
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', wpGrade_txd ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', wpgrade::textdomain() ) );
 				elseif ( version_compare( $installed_plugins[$plugin['file_path']]['Version'], $plugin['version'], '<' ) )
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Updated', wpGrade_txd ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Updated', wpgrade::textdomain() ) );
 				else
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Active', wpGrade_txd ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Active', wpgrade::textdomain() ) );
 
 				$table_data[$i]['file_path'] = $plugin['file_path'];
 				$table_data[$i]['version'] = $plugin['version'];
@@ -1345,7 +1343,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		public function no_items() {
 
-			printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', wpGrade_txd ), admin_url() );
+			printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', wpgrade::textdomain() ), admin_url() );
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
 		}
@@ -1361,10 +1359,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', wpGrade_txd ),
-				'source' => __( 'Source', wpGrade_txd ),
-				'type'   => __( 'Type', wpGrade_txd ),
-				'status' => __( 'Status', wpGrade_txd )
+				'plugin' => __( 'Plugin', wpgrade::textdomain() ),
+				'source' => __( 'Source', wpgrade::textdomain() ),
+				'type'   => __( 'Type', wpgrade::textdomain() ),
+				'status' => __( 'Status', wpgrade::textdomain() )
 			);
 
 			return $columns;
@@ -1382,8 +1380,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_bulk_actions() {
 
 			$actions = array(
-				'tgmpa-bulk-install'  => __( 'Install', wpGrade_txd ),
-				'tgmpa-bulk-activate' => __( 'Activate', wpGrade_txd ),
+				'tgmpa-bulk-install'  => __( 'Install', wpgrade::textdomain() ),
+				'tgmpa-bulk-activate' => __( 'Activate', wpgrade::textdomain() ),
 			);
 
 			return $actions;
@@ -1608,7 +1606,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				if ( is_wp_error( $activate ) )
 					echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
 				else
-					printf( '<div id="message" class="updated"><p>%1$s %2$s</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, wpGrade_txd ), $imploded );
+					printf( '<div id="message" class="updated"><p>%1$s %2$s</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, wpgrade::textdomain() ), $imploded );
 
 				/** Update recently activated plugins option */
 				$recent = (array) get_option( 'recently_activated' );
@@ -1893,12 +1891,12 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] )
 			 */
 			public function install_strings() {
 
-				$this->strings['no_package']          = __( 'Install package not available.', wpGrade_txd );
-				$this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', wpGrade_txd );
-				$this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', wpGrade_txd );
-				$this->strings['installing_package']  = __( 'Installing the plugin&#8230;', wpGrade_txd );
-				$this->strings['process_failed']      = __( 'Plugin install failed.', wpGrade_txd );
-				$this->strings['process_success']     = __( 'Plugin installed successfully.', wpGrade_txd );
+				$this->strings['no_package']          = __( 'Install package not available.', wpgrade::textdomain() );
+				$this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', wpgrade::textdomain() );
+				$this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', wpgrade::textdomain() );
+				$this->strings['installing_package']  = __( 'Installing the plugin&#8230;', wpgrade::textdomain() );
+				$this->strings['process_failed']      = __( 'Plugin install failed.', wpgrade::textdomain() );
+				$this->strings['process_success']     = __( 'Plugin installed successfully.', wpgrade::textdomain() );
 
 			}
 
@@ -1909,8 +1907,8 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] )
 			 */
 			public function activate_strings() {
 
-				$this->strings['activation_failed']  = __( 'Plugin activation failed.', wpGrade_txd );
-				$this->strings['activation_success'] = __( 'Plugin activated successfully.', wpGrade_txd );
+				$this->strings['activation_failed']  = __( 'Plugin activation failed.', wpgrade::textdomain() );
+				$this->strings['activation_success'] = __( 'Plugin activated successfully.', wpgrade::textdomain() );
 
 			}
 
@@ -2019,19 +2017,19 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] )
 
 				/** Automatic activation strings */
 				if ( TGM_Plugin_Activation::$instance->is_automatic ) {
-					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', wpGrade_txd );
-					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', wpGrade_txd ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', wpGrade_txd ) . '</span><span class="hidden">' . __( 'Hide Details', wpGrade_txd ) . '</span>.</a>';
-					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', wpGrade_txd );
-					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', wpGrade_txd );
+					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', wpgrade::textdomain() );
+					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', wpgrade::textdomain() ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', wpgrade::textdomain() ) . '</span><span class="hidden">' . __( 'Hide Details', wpgrade::textdomain() ) . '</span>.</a>';
+					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', wpgrade::textdomain() );
+					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', wpgrade::textdomain() );
 				}
 				/** Default installation strings */
 				else {
-					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', wpGrade_txd );
-					$this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', wpGrade_txd );
-					$this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', wpGrade_txd );
-					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', wpGrade_txd ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', wpGrade_txd ) . '</span><span class="hidden">' . __( 'Hide Details', wpGrade_txd ) . '</span>.</a>';
-					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', wpGrade_txd );
-					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', wpGrade_txd );
+					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', wpgrade::textdomain() );
+					$this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', wpgrade::textdomain() );
+					$this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', wpgrade::textdomain() );
+					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', wpgrade::textdomain() ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', wpgrade::textdomain() ) . '</span><span class="hidden">' . __( 'Hide Details', wpgrade::textdomain() ) . '</span>.</a>';
+					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', wpgrade::textdomain() );
+					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', wpgrade::textdomain() );
 				}
 
 			}
@@ -2122,7 +2120,7 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] )
 
 				/** All plugins are active, so we display the complete string and hide the menu to protect users */
 				if ( empty( $complete ) ) {
-					echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', wpGrade_txd ) . '">' . __( 'Return to the Dashboard', wpGrade_txd ) . '</a>' ) . '</p>';
+					echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', wpgrade::textdomain() ) . '">' . __( 'Return to the Dashboard', wpgrade::textdomain() ) . '</a>' ) . '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				}
 

@@ -75,8 +75,12 @@
 			$style_query['custom_css'] = $custom_css;
 		}
 
-		// if we didn't include the style inline, pass it to the script
+		/**
+		 * if we didn't include the style inline, pass it to the script
+		 * keep it the last, it should overide all
+		 */
+
 		if ( ! wpgrade::option('display_custom_css_inline')) {
-			 wp_enqueue_style('wpgrade-php-style', wpgrade::resourceuri('css/custom.css.php?'.http_build_query($style_query, '', '&amp;')));
+			 wp_enqueue_style('wpgrade-php-style', wpgrade::resourceuri('css/custom.css.php?'.http_build_query($style_query, '', '&amp;')) );
 		}
 	}
