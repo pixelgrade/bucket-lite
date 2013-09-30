@@ -6,16 +6,25 @@
     width: 100%;
     color: #979795;
 
-    a {
-        display: inline !important;
-        font-weight: bold;
-        color: black;
-    }
+    // a {
+    //     display: inline !important;
+    //     font-weight: bold;
+    //     color: black;
+    // }
 
     a:last-child{
         display: block !important;
         font-weight: normal;
     }    
+}
+
+.sidebar--right .recentcomments {
+    
+    a {
+        display: inline !important;
+        font-weight: bold;
+        color: black;
+    }
 }
 
 .widget_recent_comments {

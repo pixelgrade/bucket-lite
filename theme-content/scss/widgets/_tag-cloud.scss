@@ -2,6 +2,7 @@
 *   $TAG CLOUD WIDGET
 \*----------------------------------------*/
 .widget_tag_cloud{
+
     ul{
         @extend .nav--stacked;
 
@@ -12,9 +13,6 @@
 
     a{
         text-decoration: none;
-    }    
+        font-size: inherit !important;   
+    }
 }
-
-
-
-
