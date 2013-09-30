@@ -519,3 +519,14 @@
   @include rem(left, $base-spacing-unit);
   right:auto;
 }
+
+
+
+
+/*----------------------------------------------*\
+               $WIDGETS
+\*----------------------------------------------*/
+.site-social-links {
+  margin-left: 1em;
+  margin-right:0;
+}
