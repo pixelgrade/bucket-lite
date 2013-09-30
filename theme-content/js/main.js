@@ -3835,7 +3835,7 @@ function royalSliderInit() {
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
-            rs_imageScale  = typeof $slider.data('imagescale') !== "undefined" ? $slider.data('imagescale') : 'fill';
+            rs_imageScale  = typeof $slider.data('imagescale') !== "undefined" && $slider.data('imagescale') != '' ? $slider.data('imagescale') : 'fill';
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
@@ -3930,7 +3930,7 @@ function royalSliderInit() {
 
 function magnificPopupInit() {
 
-    $('.gallery').each(function() { // the containers for all your galleries should have the class gallery
+    $('.js-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
             delegate: '.mosaic__item a', // the container for each your gallery items
             type: 'image',
@@ -3951,7 +3951,26 @@ function magnificPopupInit() {
         });
     });
 
-    var magnificPopup = $.magnificPopup.instance;
+    $('.js-project-gallery').each(function() { // the containers for all your galleries should have the class gallery
+        $(this).magnificPopup({
+            delegate: 'a', // the container for each your gallery items
+            type: 'image',
+            removalDelay: 500,
+            mainClass: 'mfp-fade',
+            image: {
+                titleSrc: function (item){
+                    return item.el.attr('title');
+                }
+            },
+            gallery:{
+                enabled:true,
+                navigateByImgClick: true,
+                tPrev: 'Previous (Left arrow key)', // title for left button
+                tNext: 'Next (Right arrow key)', // title for right button
+                tCounter: '<div class="gallery-control gallery-control--popup"><a href="#" class="control-item arrow-button arrow-button--left js-arrow-popup-prev"></a><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div><a href="#" class="control-item arrow-button arrow-button--right js-arrow-popup-next"></a></div>'
+            }
+        });
+    });
 }
 
 
@@ -4286,16 +4305,16 @@ function eventHandlers() {
 
     $('.js-arrow-popup-prev').on('click', function(e){
         e.preventDefault();
-        alert('prev');
-        // var magnificPopup = $.magnificPopup.instance;
-        // magnificPopup.prev();
+        console.log('arrow prev');
+        var magnificPopup = $.magnificPopup.instance;
+        magnificPopup.prev();
     });
 
     $('.js-arrow-popup-next').on('click', function(e){
         e.preventDefault();
-        alert('next');
-        // var magnificPopup = $.magnificPopup.instance;
-        // magnificPopup.next();
+        console.log('arrow next');
+        var magnificPopup = $.magnificPopup.instance;
+        magnificPopup.next();
     });
 
     /* @todo: change classes so style and js don't interfere */

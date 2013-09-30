@@ -203,6 +203,29 @@
 
 
 
+/*----------------------------------------*\
+    $GALLERY-FULLSCREEN MENU MODS
+\*----------------------------------------*/
+
+.single-gallery-fullscreen{
+    .site-logo{
+        min-height: inherit;
+    }
+
+    .site-header__branding{
+        @include rem(padding-bottom, $half-spacing-unit);
+    }
+
+    .menu-link{
+        @include rem(padding-top, $half-spacing-unit/2);
+        @include rem(padding-bottom, $half-spacing-unit/2);
+    }
+}
+
+
+
+
+
 /*------------------------------*\
                LOGO
 \*------------------------------*/
