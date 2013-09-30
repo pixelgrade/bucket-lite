@@ -89,7 +89,7 @@ if ( isset($_GET["color"]) ){
     }
 
     .lt-ie9 .header:before {
-        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D'); }
+        filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D');
     }
 
 <?php
@@ -188,8 +188,6 @@ if ( isset($_GET["menu_font"]) ){
 
 <?php }
 
-if ( isset($_GET["custom_css"]) ){
-	echo $_GET["custom_css"];
-}
-
-?>
+if ( isset($_GET["custom_css"]) ){?>
+	<?php echo $_GET["custom_css"]; ?>
+<? }

@@ -54,7 +54,7 @@
 		// the directory where css and other media files are located; used by
 		// wpgrade::resourceuri; utility allows for easy migration of files to
 		// new structures
-		'resource-path' => 'theme-content',
+		'resource-path' => '/theme-content',
 
 		// use theme-options to add any non-customizable options with out going
 		// though any of the backend code; all options added here are available
