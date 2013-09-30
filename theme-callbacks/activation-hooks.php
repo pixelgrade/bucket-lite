@@ -349,6 +349,27 @@ function wpgrade_callback_geting_active() {
 					),
 					'std' => 'fullwidth',
 				),
+				array(
+					'name' => __('Image scale mode', wpgrade::textdomain()),
+					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'image_scale_mode',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => 'Fit',
+							'value' => 'fit'
+						),
+						array(
+							'name' => 'Fill',
+							'value' => 'fill'
+						),
+						array(
+							'name' => 'Fit if smaller',
+							'value' => 'fit-if-smaller'
+						),
+					),
+					'std' => 'fill'					
+				)
 			)
 		),
         'lens_homepage_chooser' => array(
