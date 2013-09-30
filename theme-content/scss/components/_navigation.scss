@@ -43,21 +43,17 @@
             }
         }
 
-        &.current-menu-item {
 
+        &.current-menu-item,
+        &.current-menu-ancestor, &.current-menu-parent,
+        &:hover, &:focus, &:active {
+            
             & > a {
                 color: $accent-color;
             }
 
             &:after {
                 border-top-color: $accent-color;
-            }
-        }
-
-        &:hover, &:focus, &:active {
-            
-            & > a {
-                color: $accent-color;
             }
         }
     }
@@ -92,32 +88,6 @@
                 display: block;
             }
         }
-
-        &.current-menu-ancestor, &.current-menu-parent {
-
-            & > ul {
-                display: block;
-            }
-
-            & > a {
-                color: $accent-color;
-            }
-
-            &:after {
-                // border-top-color: $accent-color;
-            }
-        }
-
-
-        &:hover, &:focus, &:active {
-
-            &:after {
-                border-top-color: transparent;
-                border-bottom-color: $accent-color;
-                @include rem(margin-top, -5px);
-            }
-        }
-
     }
 
 

@@ -4303,14 +4303,14 @@ function likeBoxAnimation(){
 
 function eventHandlers() {
 
-    $('.js-arrow-popup-prev').on('click', function(e){
+    $('body').on('click', '.js-arrow-popup-prev', function(e){
         e.preventDefault();
         console.log('arrow prev');
         var magnificPopup = $.magnificPopup.instance;
         magnificPopup.prev();
     });
 
-    $('.js-arrow-popup-next').on('click', function(e){
+    $('body').on('click', '.js-arrow-popup-next', function(e){
         e.preventDefault();
         console.log('arrow next');
         var magnificPopup = $.magnificPopup.instance;
