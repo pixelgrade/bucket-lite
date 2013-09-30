@@ -4,199 +4,55 @@
     background: white;
     position: relative;
 
-    @include media(from hand) {
-        @include rem(padding-bottom, 2 * $base-spacing-unit);
-    }
-
-    // project-classic causes horizontal scroll. CAUTION!
-    overflow: hidden;
-
-    @include media(from hand) {
-        @include rem(margin-left, 250px);
-    } 
-
     @include media(to hand) {
-        position: relative;
         @include rem(top, 3*$base-spacing-unit);
         @include rem(padding-bottom, 5 * $base-spacing-unit);
         @include transition(opacity .3s ease-in-out);
 
         // some dark overlay over the content when the navigation is visible
-
         .navigation--is-visible & {
             @include opacity(0.15);
         }
     }
+
+    @include media(from hand) {
+        @include rem(padding-bottom, 2 * $base-spacing-unit);
+        @include rem(margin-left, 250px);
+    } 
 }
 
-@include media(to lap) {
-    .page-content{
-        max-width: 100%;
-        @include rem(padding, 0 $base-spacing-unit);           
-    }
+.page-content {
+    @include rem(padding-right, 2 * $base-spacing-unit); 
 }
 
-.page-content{
-    @extend .col-12;
-    @extend .lap-col-8;
-    border-left-width: 0;
+.page-main, .page-side {
+    float: left;
+    @include rem(padding-left, 2 * $base-spacing-unit);
 }
 
-.sidebar{
-    @extend .col-12;
-    @extend .lap-col-4;    
-}
+.page-main {
 
-@include media(from lap) {
-    .page-content{
-        @include rem(padding-left, 2 * $base-spacing-unit);   
-        padding-right: 0;
-    }
+    .single-post & {
+        @include rem(padding-left, 10 * $base-spacing-unit);
 
-    .page-content.project-sidebar-right{
-        max-width: none;
-        width: 100%;
-    }
-
-    @include media(lap desk) {
-        .single-portfolio-sidebar .content{
-            @include rem(max-width, 1275px);
-        }
-
-
-        .sidebar{
-            @include rem(max-width, 430px);
-        }        
-    }
-
-    .page-content, .sidebar{
-        float: left;
-    }
-}
-
-// @include media(from lap) {
-//     .wrapper{
-//         height: 100%;
-//     }
-// }
-
-
-
-/*----------------------------------------*\
-*   $SINGLE STYLING
-\*----------------------------------------*/
-
-
-@include media(from lap) {
-    .single .content{
-        @include rem(max-width, 1275px);
-    }
-}
-
-@include media(from desk) {
-    .single .content{
-        max-width: 100%;
-        margin-right: 10%;
-    }
-}
-
-@include media(to lap) {
-    .single-post{
-        .featured-image{
-            @include rem(margin-left, -$base-spacing-unit);
-            @include rem(margin-right,-$base-spacing-unit);
-        }   
-    }    
-}
-
-@include media(from lap) {
-    .single-post{
-        .page-content{
-            @include rem(padding-left, 10 * $base-spacing-unit);
-        }
-
-        .featured-image{
+        .featured-image {
             @include rem(margin-left, -10 * $base-spacing-unit);
-        }   
-    }
-}
-
-.featured-image img{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-
-
-
-/*----------------------------------------*\
-*   $FULL WIDTH
-\*----------------------------------------*/
-
-.full-width{
-    .page-content{
-        max-width: 100% !important;
-        width: 100%;
-    }
-
-    @include media(lap desk) {
-        article{
-            @include rem(max-width, 890px);
         }
     }
-
-    @include media(from desk) {
-        article{
-            margin-right: 30%;
-        }
-    }
-
-}
-
-.single-portfolio-fullwidth,
-.single-lens_gallery,
-.portfolio-archive {
-    .content{
-        max-width: 100%;
-        margin-right: 0;
-        padding-bottom: 0;
-    }
-}
-
-
-
-
-
-/*----------------------------------------*\
-    $PAGE
-\*----------------------------------------*/
-.page .page-content{
-
+    
     @include media(from lap) {
         @include rem(max-width, 890px);
-        width: 100%;
+
+        .page-content--with-sidebar & {
+            width: 67%;
+        }
     }
 }
 
-@media screen and (min-width: 1921px) {
-    .page .page-content{
-        max-width: 80%;
-        width: 80%;
+.page-side {
+        
+    @include media(from lap) {
+        width: 33%;
+        @include rem(max-width, 420px);
     }
 }
-
-.page .featured-image{
-    @include rem(margin-left, -2 * $base-spacing-unit);
-}
-
-@include media(to hand) { 
-    .page .featured-image{
-        @include rem(margin-right, -$base-spacing-unit);
-        @include rem(margin-left, -$base-spacing-unit);
-    }
-}
-
-
-

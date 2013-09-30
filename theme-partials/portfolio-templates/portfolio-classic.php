@@ -6,7 +6,7 @@
 	$client_link = '#';
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 	?>
-    <div class="page-content">        
+    <div class="page-content  page-content--with-sidebar">        
         <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
             <header class="entry-header">
                 <h1 class="entry__title"><?php the_title(); ?></h1>
@@ -39,7 +39,7 @@
             <footer class="entry__meta cf">
                 <?php
 	            if (function_exists( 'display_pixlikes' )) {
-                    display_pixlikes(array('class' => 'likes-box likes-box--footer'));
+                    display_pixlikes(array('class' => 'likes-box  likes-box--footer'));
                 }
 
                 if (wpgrade::option('portfolio_single_show_share_links')): ?>
@@ -75,7 +75,9 @@
                 <?php endif; ?>
             </footer><!-- .entry__meta -->
         </article><!-- #post -->
+
         <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+
         <section class="related-projects_container entry__body">
             <header class="related-projects_header">
                 <?php if($yarpp_active) : ?>
@@ -106,5 +108,6 @@
                 }
             ?>
         </section>
+
     </div><!-- .page-content -->
 </div><!-- .content -->

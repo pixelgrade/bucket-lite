@@ -27,8 +27,8 @@
         @include rem(line-height, 2 * $base-spacing-unit);
         text-align: center;
         color: $dark; 
-        padding:0;
-        display:block;
+        padding: 0;
+        display: block;
         
         @include rem(height, 2 * $base-spacing-unit);
         @include rem(width, 2 * $base-spacing-unit);
@@ -66,8 +66,8 @@
 
     .likes-text {
         position:relative;
-        top:-3px;
-        margin-left:5px;
+        top: -0.35em;
+        @include rem(margin-left, 7px);
         display:inline-block;
 
         &:after {
@@ -159,9 +159,9 @@
 
 
 .likes-box--footer{
-    @include media(from hand) {
-        float: left;
-    }
+    // @include media(from hand) {
+    //     float: left;
+    // }
 
     .like-link{
         // @include rem(margin-right, $half-spacing-unit/2);

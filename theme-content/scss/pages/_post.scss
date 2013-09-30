@@ -362,36 +362,45 @@ blockquote:not(.pixcode--testimonial){
 /**
  * Entry-meta styling. Categories, tags, social icons
  */
-@include media(to hand) {
-    .entry__meta-box{
-        float: none;
-        display: block;
-        @include rem(margin-bottom, $half-spacing-unit);
-    }
+
+.entry__meta--social {
+    @include rem(margin-bottom, 2 * $base-spacing-unit);
 }
 
-@include media(from hand) {
-    .entry__meta-box{
-        float: left;
-        @include rem(margin-right, $base-spacing-unit);        
-    }
+.entry__meta--project {
+    @include rem(margin-bottom, $base-spacing-unit);
 }
 
-.entry__featured-image {
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
+// @include media(to hand) {
+//     .entry__meta-box{
+//         float: none;
+//         display: block;
+//         @include rem(margin-bottom, $half-spacing-unit);
+//     }
+// }
 
-.entry--archive__featured-image {
+// @include media(from hand) {
+//     .entry__meta-box{
+//         float: left;
+//         @include rem(margin-right, $base-spacing-unit);        
+//     }
+// }
 
-}
+// .entry__featured-image {
+//     img {
+//         width: 100%;
+//         height: auto;
+//     }
+// }
 
-.entry__permalink {
-    display: block;
-    text-decoration: none;
-}
+// .entry--archive__featured-image {
+
+// }
+
+// .entry__permalink {
+//     display: block;
+//     text-decoration: none;
+// }
 
 
 
