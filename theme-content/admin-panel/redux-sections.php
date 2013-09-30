@@ -228,6 +228,7 @@
                     'instagram' => __('Instagram', wpgrade::textdomain()),
                     'behance' => __('Behance', wpgrade::textdomain()),
                     'fivehundredpx' => __('500px', wpgrade::textdomain()),
+                    'deviantart' => __('DeviantART', wpgrade::textdomain()),
                     'dribbble' => __('Dribbble', wpgrade::textdomain()),
                     'twitter' => __('Twitter', wpgrade::textdomain()),
                     'facebook' => __('Facebook', wpgrade::textdomain()),

@@ -14,6 +14,37 @@
 			'posts_per_page' => -1
 		);
 
+        $has_post_thumbnail = has_post_thumbnail();
+
+        if ($has_post_thumbnail) {
+            $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
+            $post_featured_image = $post_featured_image[0];
+        } 
+        ?>
+
+        <div class="mosaic__item  mosaic__item--page-title-mobile">
+            <div class="image__item-link">
+                <div class="image__item-wrapper">
+                    <?php if ($has_post_thumbnail) : ?>
+                    <img
+                        class="js-lazy-load"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="<?php echo $post_featured_image; ?>"
+                        alt=""
+                        />
+                    <?php endif; ?>                         
+                </div>
+                <div class="image__item-meta">
+                    <div class="image_item-table">
+                        <div class="image_item-cell">
+                            <h1><?php echo $title; ?></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :
 
@@ -117,7 +148,16 @@
 			if ($idx == 3) : ?>
 			<div class="mosaic__item  mosaic__item--page-title">
                 <div class="image__item-link">
-                    <div class="image__item-wrapper"></div>
+                    <div class="image__item-wrapper">
+                        <?php if ($has_post_thumbnail) : ?>
+                        <img
+                            class="js-lazy-load"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            data-src="<?php echo $post_featured_image; ?>"
+                            alt=""
+                            />
+                        <?php endif; ?>                         
+                    </div>
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
@@ -135,7 +175,16 @@
 			if ($idx < 3) : ?>
 			<div class="mosaic__item  mosaic__item--page-title">
                 <div class="image__item-link">
-                    <div class="image__item-wrapper"></div>
+                    <div class="image__item-wrapper">
+                        <?php if ($has_post_thumbnail) : ?>
+                        <img
+                            class="js-lazy-load"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            data-src="<?php echo $post_featured_image; ?>"
+                            alt=""
+                            />
+                        <?php endif; ?>                         
+                    </div>
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">

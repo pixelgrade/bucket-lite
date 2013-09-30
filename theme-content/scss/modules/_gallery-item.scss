@@ -57,7 +57,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: $accent-color;
     background-color: rgba($accent-color, 0.8);
     @include opacity(0);
     @include transition-property(opacity);
@@ -166,25 +165,6 @@
         font-style: italic;
     }
 
-    .image_item-meta{
-
-        .touch{
-            @include rem(margin-bottom, $base-spacing-unit);
-            @include rem(padding, $half-spacing-unit 0);
-            position: relative;
-            display: block;
-
-            .image_item-cell{
-                position: relative;
-                padding: 0;
-            }
-
-            .image_item-cell--top{
-                margin-bottom: $half-spacing-unit;
-            }
-        }
-    }
-
         .image_item-categories{            
             @extend .nav;
             margin-bottom: 0;
@@ -274,9 +254,26 @@
         }
     }
 
+    .mosaic__item--page-title, .mosaic__item--page-title-mobile{
+
+        .image__item-meta{
+            position: absolute;
+            background-color: rgba($accent-color, 0.8);
+        }
+
+    } 
+
     .mosaic__item{
         .image_item-cell{
             @include rem(padding-left, 6px);
         }
-    }    
+    }
+
+    .single-lens_gallery .image__item-meta{
+        display: none;
+    }
+
+    .single-lens_gallery .mosaic__item--page-title-mobile .image__item-meta{
+        display: block;
+    }
 }        
