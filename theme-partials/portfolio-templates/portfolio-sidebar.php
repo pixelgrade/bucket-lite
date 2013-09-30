@@ -2,7 +2,7 @@
 <div class="page-content project-sidebar-right">
     <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
         <h1 class="entry__title title-mobile"><?php the_title(); ?></h1>            
-        <section class="project-images">
+        <section class="project-images js-project-gallery">
             <?php
 	        $client_name = '';
 	        $client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );

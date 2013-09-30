@@ -10,10 +10,10 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
             <header class="entry-header">
                 <h1 class="entry__title"><?php the_title(); ?></h1>
-                <div class="entry__content project-entry-content">
-                    <?php the_content(); ?>
-                </div><!-- .entry__content -->
             </header>
+            <div class="entry__content project-entry-content js-project-gallery">
+                <?php the_content(); ?>
+            </div><!-- .entry__content -->
             <hr class="separator--dotted separator--full-left" />
             <footer class="entry__meta entry__meta--project cf">
                 <?php if($client_name != '') : ?>
