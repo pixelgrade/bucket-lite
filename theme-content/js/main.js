@@ -4109,10 +4109,11 @@ function resizeVideos() {
 
 function placeFooter() {
 
-    var hh = $('.site-header').outerHeight(true),
+    var sh = $('.sidebar--header').outerHeight(true),
+        hh = $('.site-header').outerHeight(true),
         fh = $('.site-footer').outerHeight(true);
 
-    if (wh < hh + fh) {
+    if (wh < hh + fh + sh) {
         $('.site-footer').css({ 
             "position": "static",
             "margin-left": 0,
