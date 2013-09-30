@@ -3835,6 +3835,7 @@ function royalSliderInit() {
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
+            rs_imageScale  = $slider.data('imagescale');
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
@@ -3845,19 +3846,21 @@ function royalSliderInit() {
                 autoScaleSlider: false,
                 loop: true,
                 imageScaleMode: 'none',
-                imageAlignCenter: false,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_fullScreen
             });
         } else {
+            console.log('image-scale ' + rs_imageScale);
+
             $slider.royalSlider({
                 autoScaleSlider: true,
                 autoHeight: false,
                 loop: true,
-                imageScaleMode: 'fill',
-                imageAlignCenter: false,
+                imageScaleMode: rs_imageScale,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,

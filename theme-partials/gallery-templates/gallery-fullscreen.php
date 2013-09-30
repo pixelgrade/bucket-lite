@@ -13,8 +13,10 @@
         'post__in'     => $gallery_ids
     ) );
 
+    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'image_scale_mode', true);
+
     if ( $attachments ) : ?>
-        <div class="pixslider js-pixslider" data-fullscreen data-customarrows="right">
+        <div class="pixslider js-pixslider" data-fullscreen data-customarrows="right" data-imagescale="<?php echo $image_scale_mode; ?>">
             <?php 
                 foreach ( $attachments as $attachment ) : 
                     $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
