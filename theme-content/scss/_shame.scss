@@ -184,8 +184,11 @@ html {
  * on <html/>, rule that already exists, but removes it on closing,
  * making the scroll bar appear.
  */
+
+// overflow scroll makes the html tag always have a scrollbar
+// this way we prevent the flickering from the magnific pop up
 html {
-    overflow-y: auto;
+    overflow-y: scroll !important;
 }
 html.nicescroll {
     overflow: hidden !important; 

@@ -214,7 +214,7 @@
     overflow: hidden;
 
     @include media(from hand) {
-        @include rem(margin, 2*$base-spacing-unit 0);
+        @include rem(padding, 2*$base-spacing-unit 0);
         padding-left: 0;
         padding-right: 0;
     }

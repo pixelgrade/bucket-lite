@@ -3786,7 +3786,7 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
+    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
@@ -4107,6 +4107,29 @@ function resizeVideos() {
 
 
 
+function placeFooter() {
+
+    var hh = $('.site-header').outerHeight(true),
+        fh = $('.site-footer').outerHeight(true);
+
+    if (wh < hh + fh) {
+        $('.site-footer').css({ 
+            "position": "static",
+            "margin-left": 0,
+            "padding-right": "24px"
+        });
+    } else {
+        $('.site-footer').css({ 
+            "position": "",
+            "margin-left": "",
+            "padding-right": ""
+        });
+    }
+}
+
+
+
+
 
 /* ====== INITIALIZE ====== */
 
@@ -4117,6 +4140,7 @@ function init() {
     
     /* GET BROWSER DIMENSIONS */
     browserSize();
+    placeFooter();
     
     /* DETECT PLATFORM */
     platformDetect();
@@ -4149,20 +4173,6 @@ function init() {
     }
 
     $('html').addClass('loaded');
-    
-    var h = $(window).height(),
-        sh = $('.site-header__branding').outerHeight(true),
-        hh = $('.site-header').outerHeight(true),
-        fh = $('.site-footer').outerHeight(true);
-
-    console.log(h,sh,hh,fh);
-    if (h < hh + sh + fh) {
-        $('.site-footer').css({
-            "position": "static",
-            "margin-left": 0,
-            "padding-right": "24px"
-        });
-    }
 
     $(function() {
         FastClick.attach(document.body);
@@ -4506,6 +4516,7 @@ $(window).bind('djaxLoad', function(e, data) {
     eventHandlers();
 
     browserSize();
+    placeFooter();
     resizeVideos();
 
     loadUp();
@@ -4520,6 +4531,7 @@ $(window).bind('djaxLoad', function(e, data) {
 $(window).resize(function(){
 
     browserSize();
+    placeFooter();
     niceScrollInit();
     resizeVideos();
 
