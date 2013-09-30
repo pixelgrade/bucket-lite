@@ -3786,7 +3786,7 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = typeof ($('body').data('smoothscrolling') !== undefined);
+    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
     if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
