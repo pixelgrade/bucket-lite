@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"bac",
+				"background"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"comme",
+				"comment_section	comment--section-title"
+			],
+			[
 				"pa",
 				"padding-top"
 			],
@@ -14,14 +26,6 @@
 			[
 				"mar",
 				"margin-top"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"back",
-				"background"
 			],
 			[
 				"pad",
@@ -423,6 +427,94 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "theme-content/scss/style.scss",
+			"settings":
+			{
+				"buffer_size": 2227,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/js/main.js",
+			"settings":
+			{
+				"buffer_size": 307285,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-callbacks/activation-hooks.php",
+			"settings":
+			{
+				"buffer_size": 14936,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-partials/gallery-templates/gallery-fullscreen.php",
+			"settings":
+			{
+				"buffer_size": 1278,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-partials/gallery-templates/gallery-fullwidth.php",
+			"settings":
+			{
+				"buffer_size": 1267,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/pages/_post.scss",
+			"settings":
+			{
+				"buffer_size": 7981,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/inc/thumbnails.php",
+			"settings":
+			{
+				"buffer_size": 2354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-partials/gallery-templates/gallery-masonry.php",
+			"settings":
+			{
+				"buffer_size": 4316,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-partials/portfolio-archive-loop.php",
+			"settings":
+			{
+				"buffer_size": 7445,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/modules/_mosaic.scss",
+			"settings":
+			{
+				"buffer_size": 4821,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/modules/_gallery-item.scss",
+			"settings":
+			{
+				"buffer_size": 6821,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -472,6 +564,7 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-utilities/lens.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Icon.php",
 		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/library/scss/shortcodes/_progressbar.scss",
 		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/wpml-config.xml",
@@ -598,8 +691,7 @@
 		"/E/uniserver/www/citylife/wp-content/plugins/pixelgrade-shortcodes/shortcodes/WpGradeShortcode_TwitterFeed.php",
 		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/inc/custom-entities.php",
 		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/inc/widgets.php",
-		"/E/uniserver/www/citylife/wp-admin/widgets.php",
-		"/E/uniserver/www/citylife/wp-content/plugins/pixelgrade-shortcodes/plugin.php"
+		"/E/uniserver/www/citylife/wp-admin/widgets.php"
 	],
 	"find":
 	{
@@ -607,9 +699,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 97.0,
 		"where_history":
 		[
+			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
 			"E:\\uniserver\\www\\cityhub\\wp-content\\themes\\cityhub\\library\\js",
 			"E:\\uniserver\\www\\cityhub\\wp-content\\themes\\cityhub",
 			"E:\\uniserver\\www\\cityhub\\wp-content\\themes\\cityhub\\library\\scss",
@@ -676,6 +769,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"image__item-meta",
+			"item-meta",
+			"has_post_thumbnail",
+			"featured_image",
+			"$idx",
+			"console.log",
+			"<<<",
+			">>>",
+			">>>>>>",
+			"Masonry Grid",
 			"                  \"e-",
 			"\"e-",
 			"progress",
@@ -793,17 +896,7 @@
 			"esk-span6",
 			"unit",
 			"$unit",
-			"sidebar-footer_left",
-			".post-footer_meta-group",
-			"enque",
-			"wpc",
-			";\n",
-			"main-content-archive",
-			"side",
-			"unwrap",
-			"$accentColor",
-			"	@include media(to hand) {\n		@include rem(max-width, 86px);\n		@include rem(max-height, 86px);\n		@include border-radius(43px);\n	}\n\n	@include media(hand lap) {\n		@include rem(max-width, 120px);\n		@include rem(max-height, 120px);\n		@include border-radius(60px);\n	}\n\n	@include media(from lap) {\n		@include border-radius(50%);\n		position: relative;\n		width: auto;\n		height: auto;\n		float: none;\n	}",
-			"team-member-footer"
+			"sidebar-footer_left"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -839,8 +932,311 @@
 	"groups":
 	[
 		{
+			"selected": 9,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "theme-content/scss/style.scss",
+					"settings":
+					{
+						"buffer_size": 2227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								508,
+								508
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "theme-content/js/main.js",
+					"settings":
+					{
+						"buffer_size": 307285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288502,
+								288502
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 68467.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "theme-callbacks/activation-hooks.php",
+					"settings":
+					{
+						"buffer_size": 14936,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13031,
+								13049
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6059.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "theme-partials/gallery-templates/gallery-fullscreen.php",
+					"settings":
+					{
+						"buffer_size": 1278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								632,
+								632
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "theme-partials/gallery-templates/gallery-fullwidth.php",
+					"settings":
+					{
+						"buffer_size": 1267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								702,
+								702
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "theme-content/scss/pages/_post.scss",
+					"settings":
+					{
+						"buffer_size": 7981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7935,
+								7935
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6516.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "theme-content/inc/thumbnails.php",
+					"settings":
+					{
+						"buffer_size": 2354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "theme-partials/gallery-templates/gallery-masonry.php",
+					"settings":
+					{
+						"buffer_size": 4316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1158,
+								1158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1455.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "theme-partials/portfolio-archive-loop.php",
+					"settings":
+					{
+						"buffer_size": 7445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								629,
+								629
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 123.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "theme-content/scss/modules/_mosaic.scss",
+					"settings":
+					{
+						"buffer_size": 4821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3571,
+								3571
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2454.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "theme-content/scss/modules/_gallery-item.scss",
+					"settings":
+					{
+						"buffer_size": 6821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6805,
+								6805
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4091.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -885,6 +1281,30 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"gallery-item",
+				"theme-content/scss/modules/_gallery-item.scss"
+			],
+			[
+				"mosa",
+				"theme-content/scss/modules/_mosaic.scss"
+			],
+			[
+				"lens.ph",
+				"theme-utilities/lens.php"
+			],
+			[
+				"thumn",
+				"theme-content/inc/thumbnails.php"
+			],
+			[
+				"post.sc",
+				"theme-content/scss/pages/_post.scss"
+			],
+			[
+				"main",
+				"theme-content/js/main.js"
+			],
 			[
 				"wpcf",
 				"library/scss/plugins/_wpcf7.scss"
@@ -1142,10 +1562,6 @@
 				"wp-content/themes/citylife/library/scss/components/_side.scss"
 			],
 			[
-				"post.sc",
-				"wp-content/themes/citylife/library/scss/components/_post.scss"
-			],
-			[
 				"comments",
 				"wp-content/themes/citylife/comments.php"
 			],
@@ -1376,6 +1792,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 241.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true
 }
