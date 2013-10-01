@@ -37,19 +37,30 @@
     <div class="featured-image">
         <div class="pixslider js-pixslider" data-bullets data-fullscreen data-customarrows>                    
             <?php
-				if (!empty($video)) { ?>
+			if (!empty($video)) { ?>
 				<div class="pixslider__slide video">
                     <img src="<?php echo $videoimg; ?>" class="rsImg" data-rsVideo="http://www.youtube.com/watch?v=<?php echo $video ?>" />
                 </div>
-				<?php }
-                foreach ( $attachments as $attachment ) : 
-                    $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                    $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'full' );                            
-            ?>
-                <div class="pixslider__slide">
-                    <img src="<?php echo $thumbimg[0]; ?>" class="rsImg"/>
-                </div>
-            <?php endforeach; ?>                    
+			<?php }
+            foreach ( $attachments as $attachment ) :
+                $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+                $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'full' );
+                $attachment_fields = get_post_custom( $attachment->ID );
+
+	            // check if this attachment has a video url
+	            $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
+
+	            //  if there is one let royal slider know about it
+	            if ( !empty($video_url) ) { ?>
+		            <div class="pixslider__slide video">
+			            <img src="<?php echo $thumbimg[0]; ?>" class="rsImg" data-rsVideo="<?php echo $video_url; ?>" />
+		            </div>
+	            <?php } else { ?>
+	                <div class="pixslider__slide">
+	                    <img src="<?php echo $thumbimg[0]; ?>" class="rsImg"/>
+	                </div>
+                <?php }
+            endforeach; ?>
         </div>
     </div>
     <?php endif; ?>
