@@ -470,6 +470,71 @@ function wpgrade_callback_geting_active() {
 
 	update_option('pixtypes_themes_settings', $types_options);
 
+	// prepare yarpp
+	$current_yarpp = get_option('yarpp');
+
+	if ( empty($current_yarpp) ) {
+
+		$plugins_url = plugins_url();
+		$yarp_settings = array (
+			'threshold' => '4',
+			'limit' => '6',
+			'excerpt_length' => '10',
+			'recent' => false,
+			'before_title' => '<li>',
+			'after_title' => '</li>',
+			'before_post' => ' <small>',
+			'after_post' => '</small>',
+			'before_related' => '<h3>Related posts:</h3><ol>',
+			'after_related' => '</ol>',
+			'no_results' => '<p>No related posts.</p>',
+			'order' => 'score DESC',
+			'rss_limit' => '3',
+			'rss_excerpt_length' => '10',
+			'rss_before_title' => '<li>',
+			'rss_after_title' => '</li>',
+			'rss_before_post' => ' <small>',
+			'rss_after_post' => '</small>',
+			'rss_before_related' => '<h3>Related posts:</h3><ol>',
+			'rss_after_related' => '</ol>',
+			'rss_no_results' => '<p>No related posts.</p>',
+			'rss_order' => 'score DESC',
+			'past_only' => false,
+			'show_excerpt' => false,
+			'rss_show_excerpt' => false,
+			'template' => 'yarpp-template-portfolio.php',
+			'rss_template' => false,
+			'show_pass_post' => false,
+			'cross_relate' => false,
+			'rss_display' => false,
+			'rss_excerpt_display' => true,
+			'promote_yarpp' => false,
+			'rss_promote_yarpp' => false,
+			'myisam_override' => false,
+			'exclude' => '',
+			'weight' => array (
+				'title' => 1,
+				'body' => 1,
+				'tax' => array (
+					'category' => 1,
+					'post_tag' => 1,
+				),
+			),
+			'require_tax' => array (),
+			'optin' => true,
+			'thumbnails_heading' => 'Related posts:',
+			'thumbnails_default' => $plugins_url . '/yet-another-related-posts-plugin/default.png',
+			'rss_thumbnails_heading' => 'Related posts:',
+			'rss_thumbnails_default' => $plugins_url . '/yet-another-related-posts-plugin/default.png',
+			'display_code' => false,
+			'auto_display_archive' => false,
+			'auto_display_post_types' => array (),
+			'pools' => array (),
+			'manually_using_thumbnails' => false,
+		);
+
+//		update_option( 'yarpp', $yarp_settings );
+	}
 	// flush permalinks rules on theme activation
 	flush_rewrite_rules();
 }
