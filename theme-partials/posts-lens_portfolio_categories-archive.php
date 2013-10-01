@@ -4,19 +4,19 @@
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
-			while ( have_posts() ) : the_post();
+		while ( have_posts() ) : the_post();
 
-            $gallery = array();
-            if ( class_exists('Pix_Query') ) {
-                $pixquery = new Pix_Query();
-                $gallery = $pixquery->get_gallery_ids('portfolio_gallery');
-            }
+			$gallery_ids = array();
+			$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
+			if (!empty($gallery_ids)) {
+				$gallery_ids = explode(',',$gallery_ids);
+			}
 
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
                 'orderby' => "post__in",
-                'post__in' => $gallery
+                'post__in' => $gallery_ids
             ) );
 
             $featured_image = "";
@@ -24,12 +24,12 @@
                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big');
                 $featured_image = $featured_image[0];
             } else {
-                if ($gallery != "") {
+                if ($gallery_ids != "") {
                     $attachments = get_posts( array(
                         'post_type' => 'attachment',
                         'posts_per_page' => -1,
                         'orderby' => "post__in",
-                        'post__in' => $gallery
+                        'post__in' => $gallery_ids
                     ) ); 
                 } else {
                     $attachments = get_posts( array(

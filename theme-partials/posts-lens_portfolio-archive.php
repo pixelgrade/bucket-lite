@@ -4,19 +4,19 @@
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
-			while ( have_posts() ) : the_post();
+		while ( have_posts() ) : the_post();
 
-            $gallery = array();
-            if ( class_exists('Pix_Query') ) {
-                $pixquery = new Pix_Query();
-                $gallery = $pixquery->get_gallery_ids('portfolio_gallery');
-            }
+			$gallery_ids = array();
+			$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
+			if (!empty($gallery_ids)) {
+				$gallery_ids = explode(',',$gallery_ids);
+			}
 
             $attachments = get_posts( array(
                 'post_type' => 'attachment',
                 'posts_per_page' => -1,
                 'orderby' => "post__in",
-                'post__in' => $gallery
+                'post__in' => $gallery_ids
             ) );
 
             $featured_image = "";
@@ -24,12 +24,12 @@
                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big');
                 $featured_image = $featured_image[0];
             } else {
-                if ($gallery != "") {
+                if ($gallery_ids != "") {
                     $attachments = get_posts( array(
                         'post_type' => 'attachment',
                         'posts_per_page' => -1,
                         'orderby' => "post__in",
-                        'post__in' => $gallery
+                        'post__in' => $gallery_ids
                     ) ); 
                 } else {
                     $attachments = get_posts( array(
@@ -71,31 +71,31 @@
                             />
                         <?php endif ?>
                     </div>                                        
-                    <div class="image__item-meta image_item-meta--portfolio">
-                        <div class="image_item-table">
-                            <div class="image_item-cell image_item--block image_item-cell--top">
-                                <h3 class="image_item-title"><?php the_title(); //short_text(get_the_title($post->ID), 20, 20); ?></h3>
-                                <span class="image_item-description"><?php short_text(get_the_excerpt(), 50, 50); ?></span>
-                            </div>
-                            <div class="image_item-cell image_item--block image_item-cell--bottom">
-                                <div class="image_item-meta grid">
-                                    <ul class="image_item-categories grid__item one-half">
-                                        <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
-                                        if ($categories): ?>
-                                        <li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
-                                            <?php foreach ($categories as $cat): ?>
-                                                <li class="image_item-category"><?php echo get_category($cat)->name; ?></li>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>                                      
-                                    </ul><!--
-                                    --><?php  if (function_exists( 'display_pixlikes' )) {
-                                            display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
-                                        }  
-                                    ?>
-                                </div>
-                            </div>                                
-                        </div>
-                    </div>
+					<div class="image__item-meta image_item-meta--portfolio">
+					    <div class="image_item-table">
+					        <div class="image_item-cell image_item--block image_item-cell--top">
+					            <h3 class="image_item-title"><?php the_title(); //short_text(get_the_title($post->ID), 20, 20); ?></h3>
+					            <span class="image_item-description"><?php short_text(get_the_excerpt(), 50, 50); ?></span>
+					        </div>
+					        <div class="image_item-cell image_item--block image_item-cell--bottom">
+					            <div class="image_item-meta grid">
+					                <ul class="image_item-categories grid__item one-half">
+					                    <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
+					                    if ($categories): ?>
+					                    <li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
+					                        <?php foreach ($categories as $cat): ?>
+					                            <li class="image_item-category"><?php echo get_category($cat)->name; ?></li>
+					                        <?php endforeach; ?>
+					                    <?php endif; ?>
+					                </ul><!--
+					                --><?php  if (function_exists( 'display_pixlikes' )) {
+					                        display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
+					                    }
+					                ?>
+					            </div>
+					        </div>
+					    </div>
+					</div>
                 </a>
             </div>            
             <?php
