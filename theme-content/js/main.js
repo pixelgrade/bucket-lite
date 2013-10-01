@@ -3787,8 +3787,13 @@ function platformDetect(){
 function niceScrollInit() {
 
     var smoothScroll = $('body').data('smoothscrolling') !== undefined,
-        offset = $('.site-navigation').offset();
+        mobile = false;
+    
+    if ($('.site-navigation').length) {
+        var offset = $('.site-navigation').offset();
         mobile = offset.left > ww;
+    }
+
     if (smoothScroll && !mobile && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
