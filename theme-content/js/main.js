@@ -3894,7 +3894,7 @@ function royalSliderInit() {
             }
 
             // write the total number of slides inside the markup created above
-            // make sure it is left padded with 0 in case it is lower then 10
+            // make sure it is left padded with 0 in case it is lower than 10
             slidesNumber = (slidesNumber < 10) ? padLeft(slidesNumber, 2) : slidesNumber;
             $gallery_control.find('.js-gallery-slides-total').html(slidesNumber);
             
@@ -3902,10 +3902,14 @@ function royalSliderInit() {
             royalSlider.ev.on('rsBeforeAnimStart', function(event) {
                 var currentSlide = royalSlider.currSlideId + 1;
                 if(currentSlide < 10){
+                    $gallery_control.find('.js-gallery-current-slide .js-decimal').html('0');
                     $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide);
                 } else {
-                    $gallery_control.find('.js-gallery-current-slide .js-decimal').html(currentSlide / 10);
+                    $gallery_control.find('.js-gallery-current-slide .js-decimal').html(Math.floor(currentSlide / 10));
                     $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide % 10);
+                    console.log(currentSlide/10);
+                    console.log(currentSlide%10);
+                    console.log('-------');
                 }
             });
 
