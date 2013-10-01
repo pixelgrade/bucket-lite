@@ -99,15 +99,7 @@
             </header>        
             <?php 
                 if ($yarpp_active) {
-                    yarpp_related(array(
-                        'threshold' => 1,
-                        'post_type' => array('lens_portfolio'),
-                        'weight' => array(
-                            'tax' => array(
-                                'lens_portfolio_categories' => 5
-                            )
-                        )
-                    )); 
+                    yarpp_related(); 
                 }
             ?>
         </section>
