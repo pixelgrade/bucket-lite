@@ -53,7 +53,7 @@
 	            // check if this attachment has a video url
 	            $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
 
-	            //  if there is one let royal slider know about it
+	            //  if there is a video let royal slider know about it
 	            if ( !empty($video_url) ) { ?>
 		            <div class="pixslider__slide video">
 			            <img src="<?php echo $thumbimg[0]; ?>" class="rsImg" data-rsVideo="<?php echo $video_url; ?>" />
