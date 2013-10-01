@@ -132,7 +132,7 @@
     @include backface-visibility(hidden);
     @include perspective(1000px);
 
-    .no-cssanimations.loaded &{
+    .no-cssanimations.loaded & {
         opacity: 1;
     }
 
@@ -177,7 +177,7 @@
                 animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded &{
+    .no-cssanimations.loaded & {
         opacity: 1;
     }
 
@@ -207,7 +207,7 @@
                 animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded &{
+    .no-cssanimations.loaded & {
         opacity: 1;
     }
 
@@ -235,7 +235,7 @@
                 animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
     }
 
-    .no-cssanimations.loaded &{
+    .no-cssanimations.loaded & {
         opacity: 1;
     }
 
@@ -286,7 +286,7 @@
                 animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded &{
+    .no-cssanimations.loaded & {
         opacity: 1;
     }
 

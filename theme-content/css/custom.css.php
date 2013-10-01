@@ -25,12 +25,12 @@ if ( isset($_GET["color"]) ){
     .highlighted,
     blockquote:before,
     .emphasized:before,
-    .menu-item--main.current-menu-item > a,
     .menu-item--main:hover > a,
     .menu-item--main:focus > a,
     .menu-item--main:active > a,
-    .menu-item--parent.current-menu-ancestor > a,
-    .menu-item--parent.current-menu-parent > a,
+    .menu-item--main.current-menu-item > a,
+    .menu-item--main.current-menu-ancestor > a,
+    .menu-item--main.current-menu-parent > a,
     .mosaic__filter .filter.active,
     .complete i,
     .liked i,
@@ -69,15 +69,13 @@ if ( isset($_GET["color"]) ){
         border-top-color: transparent;
     }
 
-    .menu-item--main.current-menu-item:after {
+    .menu-item--main.current-menu-item:after,
+    .menu-item--main.current-menu-ancestor:after,
+    .menu-item--main.current-menu-parent:after,
+    .menu-item--main:hover:after,
+    .menu-item--main:focus:after,
+    .menu-item--main:active:after {
         border-top-color: <?php echo $main_color; ?> ;
-    }
-
-
-    .menu-item--parent:hover:after,
-    .menu-item--parent:focus:after,
-    .menu-item--parent:active:after {
-        border-bottom-color: <?php echo $main_color; ?> ;
     }
 
     .header:before {
@@ -184,6 +182,6 @@ if ( isset($_GET["menu_font"]) ){
 
 <?php }
 
-if ( isset($_GET["custom_css"]) ){?>
-	<?php echo $_GET["custom_css"]; ?>
-<? }
+if ( isset($_GET["custom_css"]) ){
+	echo $_GET["custom_css"];
+}

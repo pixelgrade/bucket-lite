@@ -8,6 +8,11 @@
     position: absolute;
     z-index: 300;
 
+    @include media(to hand) {
+        // when resizing from desktop to handheld nicescroll puts overflow: hidden on the header
+        overflow: visible !important;
+    }
+
     @include media(from hand) {
         height: 100%;
         position: fixed;

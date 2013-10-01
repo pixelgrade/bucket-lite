@@ -3786,8 +3786,15 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
-    if (smoothScroll && $(window).width() > 680 && !touch && !is_OSX) {
+    var smoothScroll = $('body').data('smoothscrolling') !== undefined,
+        mobile = false;
+    
+    if ($('.site-navigation').length) {
+        var offset = $('.site-navigation').offset();
+        mobile = offset.left > ww;
+    }
+
+    if (smoothScroll && !mobile && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
             zindex: 9999,
@@ -4206,9 +4213,9 @@ function init() {
         });
     }
 
-    $(function() {
-        FastClick.attach(document.body);
-    });
+    // $(function() {
+    //     FastClick.attach(document.body);
+    // });
     
     /* ONE TIME EVENT HANDLERS */
     eventHandlersOnce();
@@ -4288,6 +4295,16 @@ function eventHandlersOnce() {
 
 
     $('.js-nav-trigger').on('click', function(e) {
+        var hh = $('.header').height(),
+            ch = $('.content').height(),
+            max = Math.max(wh,ch,hh);
+            console.log(max);
+        if ($('html').hasClass('navigation--is-visible')) {
+            $('#page').css({'height': ''});
+        } else {
+            $('#page').css({'height': max});
+        }
+
         $('html').toggleClass('navigation--is-visible');
     }); 
 };
@@ -4307,18 +4324,19 @@ function likeBoxAnimation(){
 
 function eventHandlers() {
 
-    $('.js-arrow-popup-prev').on('click', function(e){
+    $('body').on('click', '.js-arrow-popup-prev', function(e){
         e.preventDefault();
         console.log('arrow prev');
         var magnificPopup = $.magnificPopup.instance;
         magnificPopup.prev();
     });
 
-    $('.js-arrow-popup-next').on('click', function(e){
+    $('body').on('click', '.js-arrow-popup-next', function(e){
         e.preventDefault();
         console.log('arrow next');
         var magnificPopup = $.magnificPopup.instance;
         magnificPopup.next();
+		return false;
     });
 
     /* @todo: change classes so style and js don't interfere */
@@ -4508,7 +4526,9 @@ $(window).bind('djaxClick', function(e, data) {
     $('html, body').animate({scrollTop: 0}, 300);
 
     if ($('html').hasClass('navigation--is-visible')) {
+        $('#page').css({'height': ''});
         $('html').removeClass('navigation--is-visible');
+        // $(window).trigger('resize');
     }
 
     /* --- ANIMATE STUFF OUT --- */
