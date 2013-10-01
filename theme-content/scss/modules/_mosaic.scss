@@ -176,24 +176,22 @@
     }
 
     h1 {
-        @include rem(padding, 0 2*$base-spacing-unit);
-        @include rem(font-size, 36px);
+        @include media(from lap) {
+            @include rem(padding, 0 $half-spacing-unit);
+            @include rem(font-size, 36px);
+        }
 
         @include media(to lap) {
             @include rem(font-size, 28px);
         }        
 
         @include media(to hand) {
+            padding: 0;
             @include rem(font-size, 22px);
         }
         font-weight:300;
         margin: 0;
         text-transform: uppercase;
-
-        @include media(to hand) {
-            @include rem(padding, 0 $base-spacing-unit);
-            @include rem(font-size, 28px);
-        }
     }
 }
 
