@@ -1,11 +1,11 @@
 @import "compass";
-@import "vars";
-@import "_vendor/inuit/vars";
-@import "_vendor/inuit/defaults";
-@import "_vendor/inuit/generic/mixins";
-@import "_vendor/inuit/generic/clearfix";
-@import "_vendor/inuit/generic/shared";
-@import "_vendor/inuit/objects/greedy";
+@import "../vars";
+@import "../_vendor/inuit/vars";
+@import "../_vendor/inuit/defaults";
+@import "../_vendor/inuit/generic/mixins";
+@import "../_vendor/inuit/generic/clearfix";
+@import "../_vendor/inuit/generic/shared";
+@import "../_vendor/inuit/objects/greedy";
 
 
 
@@ -75,6 +75,101 @@
   }
 }
 
+.site-logo {
+    @include media(to hand) {
+        @include rem(margin-right, 23px);
+    }
+}
+
+
+#navigation {
+    @include media(from hand) {
+        margin-left:0;
+        // @include rem(margin-right, -1 * $base-spacing-unit);
+    }
+}
+
+
+
+
+/*-------------------------------------------*\
+               MOBILE NAVIGATION
+\*-------------------------------------------*/
+.site-header__branding {
+
+}
+
+.site-navigation__trigger {
+    @include media(to hand) {
+        right: auto; 
+        left: 0;
+    }
+
+    i {
+        @include rem(right, $half-spacing-unit);
+        left:auto;;
+    } 
+}
+
+@include media(to hand) {
+
+    .menu-item--parent:after {
+        left: 0;
+        right:auto;
+    }
+
+    /**
+    * Transitioning the navigation on mobile
+    */
+    .wrapper {
+        @include transition(right .25s ease-in-out);
+
+        .navigation--is-visible & {
+            right: -75%;
+            left:auto;
+        }
+
+        @include media(from hand) {
+            right: 0 !important;
+            left:auto !important;
+        }
+    }
+
+    .csstransforms3d {
+
+        .wrapper {
+            right: 0 !important;
+            left:auto !important;
+        }
+    }
+
+    .csstransforms.navigation--is-visible {
+
+        .wrapper {
+            @include transform(translateX(75%));
+        }   
+    }
+
+    .csstransforms3d.navigation--is-visible {
+
+        .wrapper {
+            @include transform(translate3d(75%,0,0));
+        }
+    }
+}
+
+.header__inner-wrap {
+
+    position: relative;
+    z-index: 30;
+
+    @include media(to hand) {
+        right: 100%;
+        left:auto;
+        margin-right: 0;
+    }
+}
+
 
 
 
@@ -142,7 +237,7 @@
 }
 
 .article-timestamp--single{ 
-  @include media(from lap) {
+  @include media(from lap) { 
         float: right;
         @include rem(margin, 26px -8 * $base-spacing-unit 0 0);
     }
@@ -153,6 +248,10 @@
         float: right;
         @include rem(margin, 6 * $base-spacing-unit -6 * $base-spacing-unit 0 0);          
     }    
+}
+
+.social-links {
+  float:left;
 }
 
 
@@ -289,11 +388,145 @@
 .likes-box {
 
   .like-link {
-    float:left;
+    // float:left;
   }
 
   .likes-text:after {
     right:0;
     left:auto;
   }
+}
+
+.likes-box--footer{
+    @include media(from hand) {
+        float: right;
+    }
+}
+
+/**
+ * Article likes box VERTICAL positioning
+ */
+
+@include media(from lap){
+    .likes-box--article{
+        float: right;
+        @include rem(margin, 6 * $base-spacing-unit -6 * $base-spacing-unit 0 0);   
+
+        .likes-text {    
+            &:after {
+                right:-13px;
+                left:auto;
+            }
+        }         
+    }   
+}
+
+
+
+
+/*------------------------------*\
+               GALLERIES & SLIDERS
+\*------------------------------*/
+.gallery-control{
+    right:auto;
+    @include rem(left, 2 * $base-spacing-unit);
+}
+
+.gallery-control--left {
+    left: auto;
+    @include rem(right, 2 * $base-spacing-unit);
+}
+
+
+/*----------------------------------------*\
+*   $GALLERY-CONTROLS
+\*----------------------------------------*/
+
+
+    .gallery-control{
+        @include rem(margin-left, $half-spacing-unit/2);
+        margin-right:auto;
+        direction:ltr;
+    }
+
+    .mfp-counter {
+      left:0;
+      right:auto;
+    }
+
+       
+
+
+.masonry__item {
+
+    .gallery-control {
+        left: auto; right: 0;
+        direction:ltr;
+
+
+        .count {
+            text-align: right;
+            float: right;
+            position: absolute;
+            top: auto;
+            left: auto;
+            bottom: 0;
+            @include rem(right, $base-spacing-unit);
+        }
+
+        .arrow-button--left{
+            position: absolute;
+            @include rem(left, $base-spacing-unit);
+            @include rem(bottom, 4px);
+        }
+
+        .arrow-button--right{
+            position: absolute;
+            @include rem(left, $base-spacing-unit);
+            @include rem(bottom, 4px);
+        }
+    }
+}
+
+
+
+
+/*----------------------------------------------*\
+               $SINGLE PROJECT/ GALLERY FULL
+\*----------------------------------------------*/
+.single-gallery-fullscreen {
+    .content {
+        margin-right: 0 !important;
+        margin-left:auto !important;
+    }
+}
+
+.gallery--fullscreen{
+    @include media(from hand) {
+        right: 0;
+        left:auto;
+    }
+}
+
+
+
+
+/*----------------------------------------------*\
+               $PRELOADER
+\*----------------------------------------------*/
+.pace .pace-activity {
+  @include rem(top, $base-spacing-unit);
+  @include rem(left, $base-spacing-unit);
+  right:auto;
+}
+
+
+
+
+/*----------------------------------------------*\
+               $WIDGETS
+\*----------------------------------------------*/
+.site-social-links {
+  margin-left: 1em;
+  margin-right:0;
 }

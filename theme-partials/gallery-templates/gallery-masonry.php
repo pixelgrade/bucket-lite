@@ -13,10 +13,42 @@
 		'post__in'     => $gallery_ids
 	) );
 
-	$index = 0;
+	$show_gallery_title = get_post_meta( $post->ID, wpgrade::prefix() . 'show_gallery_title', true );
+	if (empty($show_gallery_title)) {
+		$show_gallery_title = false;
+	}
 
+	$has_post_thumbnail = has_post_thumbnail();
+	if ($has_post_thumbnail) {
+		$featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
+		$featured_image = $featured_image[0];
+	} 
+
+	$index = 0;
 	if ( $attachments ) : ?>
 		<div class="mosaic gallery js-gallery">
+			<div class="mosaic__item  mosaic__item--page-title-mobile">
+				<div class="image__item-link">
+					<div class="image__item-wrapper">
+					<?php if ($has_post_thumbnail) : ?>
+					<img
+						class="js-lazy-load"
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+						data-src="<?php echo $featured_image; ?>"
+						alt=""
+						/>
+					<?php endif; ?>								
+					</div>
+					<div class="image__item-meta">
+						<div class="image_item-table">
+							<div class="image_item-cell">
+								<h1><?php the_title(); ?></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<?php
 			foreach ( $attachments as $attachment ) :
 				$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
@@ -47,11 +79,22 @@
 					</a>
 				</div>
 				<?php
+
 				// if we added 3 it's now time to add the gallery title box
-				if (++$index == 3) { ?>
+
+				if (++$index == 3 && $show_gallery_title) : ?>
 					<div class="mosaic__item  mosaic__item--page-title">
 						<div class="image__item-link">
-							<div class="image__item-wrapper"></div>
+							<div class="image__item-wrapper">
+							<?php if ($has_post_thumbnail) : ?>
+							<img
+								class="js-lazy-load"
+								src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+								data-src="<?php echo $featured_image; ?>"
+								alt=""
+								/>
+							<?php endif; ?>								
+							</div>
 							<div class="image__item-meta">
 								<div class="image_item-table">
 									<div class="image_item-cell">
@@ -61,13 +104,22 @@
 							</div>
 						</div>
 					</div>
-				<?php }
+				<?php endif;
 			endforeach;
 			// if there were less than 3, still add the title
-			if ($index < 3) { ?>
+			if ($index < 3 && $show_gallery_title) : ?>
 				<div class="mosaic__item  mosaic__item--page-title">
 					<div class="image__item-link">
-						<div class="image__item-wrapper"></div>
+						<div class="image__item-wrapper">
+							<?php if ($has_post_thumbnail) : ?>
+							<img
+								class="js-lazy-load"
+								src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+								data-src="<?php echo $featured_image; ?>"
+								alt=""
+								/>
+							<?php endif; ?>					
+						</div>
 						<div class="image__item-meta">
 							<div class="image_item-table">
 								<div class="image_item-cell">
@@ -77,7 +129,7 @@
 						</div>
 					</div>
 				</div>
-			<?php } ?>
+			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 </div>

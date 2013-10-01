@@ -14,6 +14,37 @@
 			'posts_per_page' => -1
 		);
 
+        $has_post_thumbnail = has_post_thumbnail();
+
+        if ($has_post_thumbnail) {
+            $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
+            $post_featured_image = $post_featured_image[0];
+        } 
+        ?>
+
+        <div class="mosaic__item  mosaic__item--page-title-mobile">
+            <div class="image__item-link">
+                <div class="image__item-wrapper">
+                    <?php if ($has_post_thumbnail) : ?>
+                    <img
+                        class="js-lazy-load"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="<?php echo $post_featured_image; ?>"
+                        alt=""
+                        />
+                    <?php endif; ?>                         
+                </div>
+                <div class="image__item-meta">
+                    <div class="image_item-table">
+                        <div class="image_item-cell">
+                            <h1><?php echo $title; ?></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :
 
@@ -97,10 +128,18 @@
 										<?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
 										if ($categories): ?>
 										<li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
-											<?php foreach ($categories as $cat): ?>
+											<?php 
+                                                $categories_index = 1;
+                                                foreach ($categories as $cat):
+                                                    if($categories_index < 3) :
+                                            ?>
 												<li class="image_item-category"><?php echo get_category($cat)->name; ?></li>
-											<?php endforeach; ?>
-										<?php endif; ?>                                      
+											<?php
+                                                    else : break;
+                                                    endif;
+                                                $categories_index++;
+                                                endforeach;
+										endif; ?>                                      
 									</ul><!--
 									--><?php  if (function_exists( 'display_pixlikes' )) {
 											display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box likes-box grid__item one-half' ));
@@ -117,7 +156,16 @@
 			if ($idx == 3) : ?>
 			<div class="mosaic__item  mosaic__item--page-title">
                 <div class="image__item-link">
-                    <div class="image__item-wrapper"></div>
+                    <div class="image__item-wrapper">
+                        <?php if ($has_post_thumbnail) : ?>
+                        <img
+                            class="js-lazy-load"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            data-src="<?php echo $post_featured_image; ?>"
+                            alt=""
+                            />
+                        <?php endif; ?>                         
+                    </div>
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
@@ -135,7 +183,16 @@
 			if ($idx < 3) : ?>
 			<div class="mosaic__item  mosaic__item--page-title">
                 <div class="image__item-link">
-                    <div class="image__item-wrapper"></div>
+                    <div class="image__item-wrapper">
+                        <?php if ($has_post_thumbnail) : ?>
+                        <img
+                            class="js-lazy-load"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            data-src="<?php echo $post_featured_image; ?>"
+                            alt=""
+                            />
+                        <?php endif; ?>                         
+                    </div>
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">

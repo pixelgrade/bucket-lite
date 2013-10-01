@@ -11,20 +11,21 @@
             <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
                 <header class="entry-header">
                     <h1 class="entry__title"><?php the_title(); ?></h1>
-                    <div class="entry__content project-entry-content">
-                        <?php the_content(); ?>
-                    </div><!-- .entry__content -->
                 </header>
+                <div class="entry__content project-entry-content js-project-gallery">
+                    <?php the_content(); ?>
+                </div><!-- .entry__content -->
                 <hr class="separator--dotted separator--full-left" />
                 <footer class="entry__meta entry__meta--project cf">
                     <?php if($client_name != '') : ?>
-                    <div class="entry__meta-box meta-box--client">
-                        <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                        <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
-                    </div>
+                        <div class="entry__meta-box meta-box--client">
+                            <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
+                            <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
+                        </div>
                     <?php endif; ?>
-                    <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
-                        if (count($categories) && !is_wp_error($categories)): ?>
+                    <?php
+                    $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
+                    if (count($categories) && !is_wp_error($categories)): ?>
                         <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
                             <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
                             <?php foreach ($categories as $cat): ?>
@@ -34,12 +35,12 @@
                                     </a>
                             <?php endforeach; ?>
                         </div>
-                    <?php endif; ?>       
+                    <?php endif; ?>
                 </footer><!-- .entry__meta .entry__meta--project -->
                 <hr class="separator separator--striped separator--full-left"/>
                 <footer class="entry__meta  flexbox">
                     <?php
-                            if (function_exists( 'display_pixlikes' )) {
+                    if (function_exists( 'display_pixlikes' )) {
                         display_pixlikes(array('class' => 'likes-box  likes-box--footer  flexbox__item'));
                     }
             

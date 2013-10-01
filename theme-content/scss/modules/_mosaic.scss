@@ -107,12 +107,20 @@
     * Hide Mosaic Items Page-Title block on touch devices
     */
     .mosaic__item--page-title {
-        display:none !important;
+        display: none !important;
     }
 
     .single-gallery-masonry .image__item-meta{
         display: none;
     }
+
+    .mosaic__item--page-title-mobile {
+        display: block !important;
+    }    
+}
+
+.mosaic__item--page-title-mobile {
+    display: none !important;
 }
 
 
@@ -143,7 +151,7 @@
 \*------------------------------------*/
 
 // 600px small 900px hand 1300px lap 1700px desk;
-.mosaic__item--page-title {
+.mosaic__item--page-title, .mosaic__item--page-title-mobile {
 
     .image__item-meta, .image_item-table {
         @include opacity(1);
@@ -152,6 +160,14 @@
     h1 {
         @include rem(padding, 0 2*$base-spacing-unit);
         @include rem(font-size, 36px);
+
+        @include media(to lap) {
+            @include rem(font-size, 28px);
+        }        
+
+        @include media(to hand) {
+            @include rem(font-size, 22px);
+        }
         font-weight:300;
         margin: 0;
         text-transform: uppercase;

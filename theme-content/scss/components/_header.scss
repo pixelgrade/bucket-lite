@@ -8,6 +8,11 @@
     position: absolute;
     z-index: 300;
 
+    @include media(to hand) {
+        // when resizing from desktop to handheld nicescroll puts overflow: hidden on the header
+        overflow: visible !important;
+    }
+
     @include media(from hand) {
         height: 100%;
         position: fixed;
@@ -197,6 +202,29 @@
     .menu-item--parent:after{
         border-top-color: black;        
     }    
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $GALLERY-FULLSCREEN MENU MODS
+\*----------------------------------------*/
+
+.single-gallery-fullscreen{
+    .site-logo{
+        min-height: inherit;
+    }
+
+    .site-header__branding{
+        @include rem(padding-bottom, $half-spacing-unit);
+    }
+
+    .menu-link{
+        @include rem(padding-top, $half-spacing-unit/2);
+        @include rem(padding-bottom, $half-spacing-unit/2);
+    }
 }
 
 
