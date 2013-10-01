@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="main" class="content djax-updatable">
 
-<div class="page-content">
+<div class="page-content  page-content--with-sidebar">
 
     <div class="page-main entry__body">
         <?php while ( have_posts() ) : the_post(); ?>
@@ -16,16 +16,20 @@
                                     <span class="article-timestamp__year"><?php the_time('Y'); ?></span>
                                 </div>
                             </div><!-- .article-timestamp -->
-                            <?php if (function_exists( 'display_pixlikes' )) {
-                                    display_pixlikes(array('class' => 'likes-box--article' ));
-                                } 
-                            ?><!-- .likes-box -->
                         </div><!-- .entry-header__meta -->
                         <h1 class="entry__title"><?php the_title(); ?></h1>
                         <hr class="separator separator--dotted separator--full-left grow">
                     </header>
+
                     
-                    <div class="entry__content"><?php the_content(); ?></div>
+                    <div class="entry__wrap">
+                        <div class="entry__likes">
+                            <?php if (function_exists( 'display_pixlikes' )) {
+                                display_pixlikes(array('class' => 'likes-box--article' ));
+                            } ?><!-- .likes-box -->
+                        </div>
+                        <div class="entry__content"><?php the_content(); ?></div>
+                    </div>
                     
                     <footer class="entry__meta cf">
                         <?php $categories = wp_get_post_categories($post->ID); ?>

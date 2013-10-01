@@ -289,14 +289,17 @@ blockquote:not(.pixcode--testimonial){
  * Article likes box VERTICAL positioning
  */
 
-@include media(from lap){
+@include media(from lap) {
+
     .likes-box--article{
         float: left;
-        @include rem(margin, 6 * $base-spacing-unit 0 0 -6 * $base-spacing-unit);   
+        // @include rem(margin-left, -6 * $base-spacing-unit);   
+        
         .like-link{
             display: block;
         }
-        .likes-text {
+
+        .likes-text{
             top:5px;
             margin:0;
             
@@ -311,7 +314,7 @@ blockquote:not(.pixcode--testimonial){
  * Horizontal aligning the entry-header meta elements in mobile view
  * 
  */
-@include media(to lap){
+@include media(to lap) {
     .entry-header__meta{
         display: block;
         width:100%;

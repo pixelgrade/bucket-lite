@@ -69,6 +69,35 @@
 
 
 
+/*--------------------------------*\
+               SINGLE
+\*--------------------------------*/
+
+.entry__wrap {
+    @extend .cf;
+    @include rem(margin-left, -10 * $base-spacing-unit);
+
+    .entry__content {
+        @include rem(padding-top, $base-spacing-unit);
+        @include rem(margin-left, 10 * $base-spacing-unit);
+    }
+}
+
+.entry__likes {
+    @include rem(padding-top, $base-spacing-unit + 4px);
+    @include rem(padding-bottom, $base-spacing-unit);
+    @include rem(width, 10 * $base-spacing-unit);
+    text-align: center;
+    float: left;
+
+    .likes-box {
+        display: inline-block;
+        float: none;
+    }
+}
+
+
+
 
 /*-----------------------------------------*\
                PROJECT SIDEBAR

@@ -105,9 +105,12 @@
     }
 
     .widget_categories, .widget_archive, .widget_pages, .widget_meta, .widget_tag_cloud, .widget_nav_menu {
-        width: 50%;
-        float: left;
-        clear: none;
+        
+        @include media(from desk) {
+            width: 50%;
+            float: left;
+            clear: none;
+        }
 
         a {
             text-decoration: none;

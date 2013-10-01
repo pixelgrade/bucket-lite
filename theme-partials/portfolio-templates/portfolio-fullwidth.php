@@ -114,7 +114,7 @@
 
                 <div class="row">
                     <div class="project--fullwidth__separator--header">
-                        <hr class="separator separator--striped separator--full-left hand-visible"/>
+                        <hr class="separator separator--striped separator--full-left"/>
                     </div>
                     <div class="project--fullwidth__separator--content">
                         <hr class="separator separator--striped"/>
