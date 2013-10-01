@@ -3914,9 +3914,6 @@ function royalSliderInit() {
                 } else {
                     $gallery_control.find('.js-gallery-current-slide .js-decimal').html(Math.floor(currentSlide / 10));
                     $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide % 10);
-                    console.log(currentSlide/10);
-                    console.log(currentSlide%10);
-                    console.log('-------');
                 }
             });
 

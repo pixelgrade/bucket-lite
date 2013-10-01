@@ -377,16 +377,33 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'True',
+							'name' => 'Yes',
 							'value' => true
 						),
 						array(
-							'name' => 'False',
+							'name' => 'No',
 							'value' => false
 						)
 					),
 					'std' => false
-				)				
+				),
+				array(
+					'name' => __('Gallery grid thumbnail orientation', wpgrade::textdomain()),
+					'desc' => __('Horizontal thumbnails or vertical thumbnails (for grid galleries)', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'thumb_orientation',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => 'Horizontal',
+							'value' => 'horizontal'
+						),
+						array(
+							'name' => 'Vertical',
+							'value' => 'vertical'
+						)
+					),
+					'std' => 'horizontal'
+				)								
 			)
 		),
         'lens_homepage_chooser' => array(

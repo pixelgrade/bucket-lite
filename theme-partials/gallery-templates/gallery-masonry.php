@@ -6,6 +6,9 @@
 		$gallery_ids = explode(',',$gallery_ids);
 	}
 
+	$thumb_orientation = get_post_meta( $post->ID, wpgrade::prefix() . 'thumb_orientation', true );
+	if(empty($thumb_orientation)) $thumb_orientation = 'horizontal';
+
 	$attachments = get_posts( array(
 		'post_type' => 'attachment',
 		'posts_per_page' => -1,
@@ -20,14 +23,17 @@
 
 	$has_post_thumbnail = has_post_thumbnail();
 	if ($has_post_thumbnail) {
-		$featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
+		if($thumb_orientation == 'vertical')
+			$featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big-v', true);
+		else 
+			$featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
 		$featured_image = $featured_image[0];
 	} 
 
 	$index = 0;
 	if ( $attachments ) : ?>
 		<div class="mosaic gallery js-gallery">
-			<div class="mosaic__item  mosaic__item--page-title-mobile">
+			<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; ?> mosaic__item--page-title-mobile">
 				<div class="image__item-link">
 					<div class="image__item-wrapper">
 					<?php if ($has_post_thumbnail) : ?>
@@ -52,11 +58,21 @@
 			<?php
 			foreach ( $attachments as $attachment ) :
 				$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-				$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
-				$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
-				$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-				$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true); ?>
-				<div class="mosaic__item">
+
+				if($thumb_orientation == 'vertical'){
+					$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
+					$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v', true);
+					$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true);
+					$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true); 
+				}
+				else{
+					$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
+					$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
+					$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
+					$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true); 
+				}
+				?>
+				<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; ?>">
 					<a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
 						<div class="image__item-wrapper">
 							<img
@@ -83,7 +99,7 @@
 				// if we added 3 it's now time to add the gallery title box
 
 				if (++$index == 3 && $show_gallery_title) : ?>
-					<div class="mosaic__item  mosaic__item--page-title">
+					<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; ?> mosaic__item--page-title">
 						<div class="image__item-link">
 							<div class="image__item-wrapper">
 							<?php if ($has_post_thumbnail) : ?>
@@ -108,7 +124,7 @@
 			endforeach;
 			// if there were less than 3, still add the title
 			if ($index < 3 && $show_gallery_title) : ?>
-				<div class="mosaic__item  mosaic__item--page-title">
+				<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; ?> mosaic__item--page-title">
 					<div class="image__item-link">
 						<div class="image__item-wrapper">
 							<?php if ($has_post_thumbnail) : ?>

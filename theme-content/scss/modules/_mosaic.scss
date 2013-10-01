@@ -43,6 +43,24 @@
         }
     }
 
+    .mosaic__item.mosaic__item--vertical{
+        .single-lens_gallery &{
+            @extend .span-6;
+            @extend .hand-span-4;
+            @extend .lap-span-3;
+            @extend .desk-span-2;
+            margin-bottom: 0 !important;
+        }        
+
+        .image__item-wrapper{
+            padding-top: 150%;
+        }
+
+        h1{
+            padding: 0;
+        }
+    }
+
     .loaded .slide-in .image__item-link {
         -webkit-animation: slide-in .25s bezier(easeOutQuad);
            -moz-animation: slide-in .25s bezier(easeOutQuad);
@@ -158,24 +176,22 @@
     }
 
     h1 {
-        @include rem(padding, 0 2*$base-spacing-unit);
-        @include rem(font-size, 36px);
+        @include media(from lap) {
+            @include rem(padding, 0 $half-spacing-unit);
+            @include rem(font-size, 36px);
+        }
 
         @include media(to lap) {
             @include rem(font-size, 28px);
         }        
 
         @include media(to hand) {
+            padding: 0;
             @include rem(font-size, 22px);
         }
         font-weight:300;
         margin: 0;
         text-transform: uppercase;
-
-        @include media(to hand) {
-            @include rem(padding, 0 $base-spacing-unit);
-            @include rem(font-size, 28px);
-        }
     }
 }
 
