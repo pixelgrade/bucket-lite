@@ -43,6 +43,24 @@
         }
     }
 
+    .mosaic__item.mosaic__item--vertical{
+        .single-lens_gallery &{
+            @extend .span-6;
+            @extend .hand-span-4;
+            @extend .lap-span-3;
+            @extend .desk-span-2;
+            margin-bottom: 0 !important;
+        }        
+
+        .image__item-wrapper{
+            padding-top: 150%;
+        }
+
+        h1{
+            padding: 0;
+        }
+    }
+
     .loaded .slide-in .image__item-link {
         -webkit-animation: slide-in .25s bezier(easeOutQuad);
            -moz-animation: slide-in .25s bezier(easeOutQuad);
