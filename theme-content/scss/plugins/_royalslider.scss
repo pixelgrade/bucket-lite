@@ -358,8 +358,8 @@ img.rsImg{
 \*----------------------------------------*/ 
 
 .rsArrow{
-    @include rem(width, $base-spacing-unit);       
-    @include rem(height, $base-spacing-unit);       
+    @include rem(width, $base-spacing-unit*0.75);       
+    @include rem(height, $base-spacing-unit*0.75);       
     @include rem(margin, $half-spacing-unit $base-spacing-unit 0 $base-spacing-unit);
     display: block;
     color: white;

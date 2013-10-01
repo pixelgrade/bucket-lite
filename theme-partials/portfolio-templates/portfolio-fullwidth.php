@@ -12,12 +12,15 @@
 		$gallery_ids = explode(',',$gallery_ids);
 	}
 
+    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'image_scale_mode', true);
+
     $attachments = get_posts( array(
         'post_type' => 'attachment',
         'posts_per_page' => -1,
         'orderby' => "post__in",
         'post__in'     => $gallery_ids
     ) );
+
 	
 	//let's get the video
 	//first get the youtube one
@@ -35,7 +38,7 @@
 
     if ( !empty($attachments) || !empty($video)) : ?>
     <div class="featured-image">
-        <div class="pixslider js-pixslider" data-bullets data-fullscreen data-customarrows>                    
+        <div class="pixslider js-pixslider" data-bullets data-fullscreen data-customarrows data-imagescale="<?php echo $image_scale_mode; ?>">                    
             <?php
 			if (!empty($video)) { ?>
 				<div class="pixslider__slide video">
@@ -189,12 +192,9 @@
                </nav>
             </header>        
             <?php 
-            if ($yarpp_active) {
-                yarpp_related(array(
-                    'threshold' => 0,
-                    'post_type' => array('lens_portfolio')
-                ));
-            }
+                if ($yarpp_active) {
+                    yarpp_related(); 
+                }
             ?>
         </section>                   
     </div><!-- #page-content -->

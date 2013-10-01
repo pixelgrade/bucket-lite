@@ -51,13 +51,11 @@ if ( isset($_GET["color"]) ){
         background-color: <?php echo $main_color; ?>;
     }
 
+
+    
     .image__item-meta {
         background-color: <?php echo $main_color; ?>;
         background-color: rgba(<?php echo $rgb; ?>, 0.8);
-    }
-
-    .mosaic__item--page-title .image__item-meta {
-        background-color: <?php echo $main_color; ?>;
     }
 
     .loading .pace .pace-activity,

@@ -141,10 +141,7 @@
         </header>        
         <?php 
             if ($yarpp_active) {
-                yarpp_related(array(
-                    'threshold' => 0,
-                    'post_type' => array('lens_portfolio')
-                )); 
+                yarpp_related(); 
             }
         ?>
     </section>

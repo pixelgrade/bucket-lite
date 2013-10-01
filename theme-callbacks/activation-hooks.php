@@ -299,7 +299,7 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Fullwidth',
+							'name' => 'Full width',
 							'value' => 'fullwidth'
 						),
 						array(
@@ -313,6 +313,27 @@ function wpgrade_callback_geting_active() {
 					),
 					'std' => 'fullwidth',
 				),
+				array(
+					'name' => __('Full width template slider: image scale mode', wpgrade::textdomain()),
+					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'image_scale_mode',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => 'Fit',
+							'value' => 'fit'
+						),
+						array(
+							'name' => 'Fill',
+							'value' => 'fill'
+						),
+						array(
+							'name' => 'Fit if smaller',
+							'value' => 'fit-if-smaller'
+						),
+					),
+					'std' => 'fill'					
+				),				
 			)
 		),
 		'lens_gallery' => array(

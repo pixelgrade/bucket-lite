@@ -14,15 +14,23 @@
 			'posts_per_page' => -1
 		);
 
+        $thumb_orientation = '';
+        if(wpgrade::option('portfolio_thumb_orientation') == 'vertical') $thumb_orientation = ' mosaic__item--vertical';
+        else $thumb_orientation = '';        
+
         $has_post_thumbnail = has_post_thumbnail();
 
         if ($has_post_thumbnail) {
-            $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
+            if($thumb_orientation)
+                $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big-v', true);
+            else
+                $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
             $post_featured_image = $post_featured_image[0];
-        } 
+        }
+
         ?>
 
-        <div class="mosaic__item  mosaic__item--page-title-mobile">
+        <div class="mosaic__item <?php echo $thumb_orientation; ?> mosaic__item--page-title-mobile">
             <div class="image__item-link">
                 <div class="image__item-wrapper">
                     <?php if ($has_post_thumbnail) : ?>
@@ -66,8 +74,11 @@
 
 			$featured_image = "";
 			if (has_post_thumbnail()) {
-				$featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big');
-				$featured_image = $featured_image[0];
+                if($thumb_orientation)
+                    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big-v');
+                else
+				    $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big');
+                $featured_image = $featured_image[0];
 			} else {
 				if ($gallery_ids != "") {
 					$attachments = get_posts( array(
@@ -87,7 +98,10 @@
 
 				if ( $attachments ) {
 					foreach ( $attachments as $attachment ) {
-						$featured_image = wp_get_attachment_image_src($attachment->ID, 'portfolio-big');
+                        if($thumb_orientation)
+                            $featured_image = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v');
+						else
+                            $featured_image = wp_get_attachment_image_src($attachment->ID, 'portfolio-big');
 						$featured_image = $featured_image[0];
 						break;
 					}
@@ -97,7 +111,7 @@
 			$categories = get_the_terms($post->ID, 'lens_portfolio_categories');
 			?>
 
-			<div class="mosaic__item <?php if($categories) foreach($categories as $cat) { echo strtolower($cat->name) . ' '; } ?> ">
+			<div class="mosaic__item <?php echo $thumb_orientation . ' '; if($categories) foreach($categories as $cat) { echo strtolower($cat->name) . ' '; } ?> ">
 				<a href="<?php the_permalink(); ?>" class="image__item-link">
 				   <div class="image__item-wrapper">
 						<?php if ($featured_image != ""): ?>
@@ -111,7 +125,12 @@
 							<img
 								class="js-lazy-load"
 								src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-								data-src="<?php echo get_template_directory_uri().'/theme-content/img/camera.png'; ?>"
+								data-src="<?php 
+                                if($thumb_orientation)   
+                                    echo get_template_directory_uri().'/theme-content/img/camera-v.png';
+                                else
+                                    echo get_template_directory_uri().'/theme-content/img/camera.png';
+                                ?>"
 								alt=""
 							/>
 						<?php endif ?>
@@ -154,7 +173,7 @@
             <?php
 			// if we added 3 it's now time to add the page title box
 			if ($idx == 3) : ?>
-			<div class="mosaic__item  mosaic__item--page-title">
+			<div class="mosaic__item  <?php echo $thumb_orientation; ?> mosaic__item--page-title">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                         <?php if ($has_post_thumbnail) : ?>
@@ -181,7 +200,7 @@
 			
 			// if there were less than 3 items, still add the title box
 			if ($idx < 3) : ?>
-			<div class="mosaic__item  mosaic__item--page-title">
+			<div class="mosaic__item  <?php echo $thumb_orientation; ?> mosaic__item--page-title">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                         <?php if ($has_post_thumbnail) : ?>
