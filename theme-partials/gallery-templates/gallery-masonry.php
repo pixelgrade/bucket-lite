@@ -14,6 +14,9 @@
 	) );
 
 	$show_gallery_title = get_post_meta( $post->ID, wpgrade::prefix() . 'show_gallery_title', true );
+	if (empty($show_gallery_title)) {
+		$show_gallery_title = false;
+	}
 
 	$has_post_thumbnail = has_post_thumbnail();
 	if ($has_post_thumbnail) {
