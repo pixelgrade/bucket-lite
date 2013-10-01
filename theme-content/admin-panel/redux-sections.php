@@ -362,6 +362,17 @@
 				'std' => '1',
 				'switch' => true,
 			),
+            array(
+                'title' => __('Portfolio grid thumbnail orientation', wpgrade::textdomain()),
+                'sub_desc' => __('Horizontal thumbnails or vertical thumbnails', wpgrade::textdomain()),
+                'id' => 'portfolio_thumb_orientation',
+                'type' => 'select',
+                'options' => array(
+                    'horizontal' => 'Horizontal',
+                    'vertical' => 'Vertical',
+                ),
+                'std' => 'horizontal'
+            )            
 		)
 	);
 

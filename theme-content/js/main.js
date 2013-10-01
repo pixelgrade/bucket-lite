@@ -3857,7 +3857,8 @@ function royalSliderInit() {
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: rs_fullScreen
+                keyboardNavEnabled: rs_fullScreen,
+                arrowsNavAutoHide: false
             });
         } else {
 
@@ -3870,7 +3871,8 @@ function royalSliderInit() {
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: rs_fullScreen
+                keyboardNavEnabled: rs_fullScreen,
+                arrowsNavAutoHide: false
             });     
         }
 
@@ -3914,9 +3916,6 @@ function royalSliderInit() {
                 } else {
                     $gallery_control.find('.js-gallery-current-slide .js-decimal').html(Math.floor(currentSlide / 10));
                     $gallery_control.find('.js-gallery-current-slide .js-unit').html(currentSlide % 10);
-                    console.log(currentSlide/10);
-                    console.log(currentSlide%10);
-                    console.log('-------');
                 }
             });
 
