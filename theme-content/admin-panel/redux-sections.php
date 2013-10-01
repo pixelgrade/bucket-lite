@@ -123,7 +123,7 @@
 				'type' => 'color',
 				'title' => __('Main Color', wpgrade::textdomain()),
 				'sub_desc' => __('Use the color picker to change the main color of the site to match your brand color.', wpgrade::textdomain()),
-				'std' => '#ee3430'
+				'std' => '#fffc00'
 			),
 			array(
 				'id' => 'use_google_fonts',
