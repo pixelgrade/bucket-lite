@@ -1,9 +1,9 @@
 <div id="main" class="content djax-updatable">
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
-    <div class="page-content  page-content--with-sidebar">
+    <div class="page-content  page-content--with-sidebar  project--sidebar">
 
-        <div class="page-main">
-            <h1 class="entry__title title-mobile"><?php the_title(); ?></h1>    
+        <div class="page-main  project--sidebar__images">
+            <h1 class="beta  entry__title  title-mobile"><?php the_title(); ?></h1>    
 
             <?php
                 $client_name = '';
@@ -50,73 +50,44 @@
                 }
             ?>
 
-            <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
-            <aside class="related-projects_container entry__body">
-                <div class="related-projects_header">
-                    <?php if($yarpp_active) : ?>
-                    <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
-                    <?php endif; ?>
-                    <div class="projects_nav">
-                       <ul class="projects_nav-list">
-                           <li class="projects_nav-item">
-                                <?php next_post_link('%link', '<span class="prev">&#8592;</span>' . __('Previous', wpGrade::textdomain()) ); ?>
-                            </li>
-                           <li class="projects_nav-item">
-                                <a href="<?php echo get_portfolio_page_link(); ?>">
-                                    <?php _e("All projects", wpGrade::textdomain()); ?>
-                                </a>
-                            </li>
-                            <li class="projects_nav-item">
-                                <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<span class="next">&#8594;</span>'); ?>
-                            </li>
-                       </ul>
-                   </div>
-                </div>        
-                <?php
-                    if ($yarpp_active):
-                        yarpp_related(array(
-                            'threshold' => 0,
-                            'post_type' => array('lens_portfolio')
-                        ));
-                    endif;
-                ?>
-            </aside>
-
         </div><!-- .page-main -->
 
 
-        <div class="page-side">
+        <div class="page-side  project--sidebar__content">
 
             <div class="entry-header">
                 <div class="beta  entry__title  title-lap"><?php the_title(); ?></div>
             </div>
+            <hr class="separator separator--dotted" />
 
             <div class="entry__content project-entry-content">
                 <?php the_content(); ?>
             </div><!-- .entry__content -->
 
-            <hr class="separator separator--dotted" />
 
-            <footer class="entry__meta entry__meta--project row cf">
-                <?php if($client_name != '') : ?>
-                <div class="entry__meta-box meta-box--client">
-                    <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                    <a href="<?php echo $client_link; ?>" title="View all posts for this client" rel="category"><?php echo $client_name; ?></a>
-                </div>
-                <?php endif; ?>               
-                <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
-                if ( !empty($categories) && !is_wp_error($categories)): ?>
-                <div class="entry__meta-box meta-box--categories col-12 hand-col-6">
-                    <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
-                    <?php foreach ($categories as $cat): ?>
-                            <a href="<?php echo get_category_link($cat); ?>"
-                               rel="category">
-                                <?php echo get_category($cat)->name; ?>
-                            </a>
-                    <?php endforeach; ?>
-                </div>
-                <?php endif; ?>    
-            </footer><!-- .entry__meta .entry__meta-project -->
+            <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); ?>
+            <?php if ($client_name !== '' && !empty($categories) && !is_wp_error($categories)): ?>
+                <hr class="separator separator--dotted" />
+                <footer class="entry__meta entry__meta--project row cf">
+                    <?php if($client_name !== '') : ?>
+                    <div class="entry__meta-box meta-box--client">
+                        <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
+                        <a href="<?php echo $client_link; ?>" title="View all posts for this client" rel="category"><?php echo $client_name; ?></a>
+                    </div>
+                    <?php endif; ?>               
+                    <?php if ( !empty($categories) && !is_wp_error($categories)): ?>
+                    <div class="entry__meta-box meta-box--categories col-12 hand-col-6">
+                        <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
+                        <?php foreach ($categories as $cat): ?>
+                                <a href="<?php echo get_category_link($cat); ?>"
+                                   rel="category">
+                                    <?php echo get_category($cat)->name; ?>
+                                </a>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php endif; ?>    
+                </footer><!-- .entry__meta .entry__meta-project -->
+            <?php endif; ?>
 
             <hr class="separator separator--striped" />
 
@@ -159,6 +130,40 @@
                 <?php endif; ?>
             </footer><!-- .entry__meta -->
         </div><!-- .page-side -->
+
+        <div class="page-main  project--sidebar__related">
+            <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+            <aside class="related-projects_container entry__body">
+                <div class="related-projects_header">
+                    <?php if($yarpp_active) : ?>
+                    <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
+                    <?php endif; ?>
+                    <div class="projects_nav">
+                       <ul class="projects_nav-list">
+                           <li class="projects_nav-item">
+                                <?php next_post_link('%link', '<span class="prev">&#8592;</span>' . __('Previous', wpGrade::textdomain()) ); ?>
+                            </li>
+                           <li class="projects_nav-item">
+                                <a href="<?php echo get_portfolio_page_link(); ?>">
+                                    <?php _e("All projects", wpGrade::textdomain()); ?>
+                                </a>
+                            </li>
+                            <li class="projects_nav-item">
+                                <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<span class="next">&#8594;</span>'); ?>
+                            </li>
+                       </ul>
+                   </div>
+                </div>        
+                <?php
+                    if ($yarpp_active):
+                        yarpp_related(array(
+                            'threshold' => 0,
+                            'post_type' => array('lens_portfolio')
+                        ));
+                    endif;
+                ?>
+            </aside>
+        </div>
     </div>
 </article><!-- #post -->
 </div><!-- .content -->

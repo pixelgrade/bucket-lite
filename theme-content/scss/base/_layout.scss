@@ -31,6 +31,7 @@
 }
 
 .page-main {
+    width: 100%;
 
     .single-post & {
         @include rem(padding-left, 10 * $base-spacing-unit);
@@ -50,9 +51,108 @@
 }
 
 .page-side {
+    width: 100%;
         
     @include media(from lap) {
         width: 33%;
         @include rem(max-width, 420px);
     }
 }
+
+.featured-image {
+
+    img {
+        width: 100%;
+    }
+}
+
+
+
+
+
+/*-----------------------------------------*\
+               PROJECT SIDEBAR
+\*-----------------------------------------*/
+
+.project--sidebar__images {
+
+    @include media(from lap) {
+        @include rem(padding-top, 2 * $base-spacing-unit);
+        @include rem(padding-bottom, $base-spacing-unit);
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.project--sidebar__content {
+    @include rem(padding-top, 2 * $base-spacing-unit);
+
+    .entry__title {
+        @include rem(padding-bottom, $half-spacing-unit);
+    }
+
+    .social-links__message {
+
+        @include media(lap 1600px) {
+            display: none;
+        }
+    }
+}
+
+.project--sidebar__related {
+    clear: both;
+}
+
+
+
+
+
+/*-------------------------------------------*\
+               PROJECT FULLWIDTH
+\*-------------------------------------------*/
+
+.project--fullwidth__header {
+    @extend .col-12;
+    @extend .lap-span-5;
+    
+    @include media(from lap) {
+        border-right: 1px dotted $dark;
+    }
+}
+
+.project--fullwidth__separator--header {
+    @extend .col-12;
+    @extend .lap-span-5;
+}
+
+.project--fullwidth__content {
+    @extend .col-12;
+    @extend .lap-span-7;
+    @include rem(padding-bottom, $base-spacing-unit);
+
+    @include media(from lap) {
+        @include rem(border-left-width, 2 * $base-spacing-unit);
+        @include rem(padding-top, 5 * $half-spacing-unit);
+    }
+} 
+
+.project--fullwidth__separator--content {
+    @extend .col-12;
+    @extend .lap-span-7;
+    @include rem(border-left-width, 2 * $base-spacing-unit);
+    display: none;
+
+    @include media(from lap) {
+        display: block;
+    }
+}
+
+
+
+
+/*---------------------------------*\
+               PROJECT
+\*---------------------------------*/

@@ -17,16 +17,6 @@
  */
 
 .social-links{
-    // display: block;
-
-    @include media(to hand) {
-        width: 100%;
-        margin-top: $half-spacing-unit;
-    }
-
-    // @include media(from hand) {
-    //     float: right;
-    // }
 
 }
 

@@ -59,7 +59,7 @@
         <div class="page-main">
             <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?>>
                 <div class="row">
-                    <div class="col-12 hand-col-5 lap-col-4">
+                    <div class="project--fullwidth__header">
                         <header class="entry__header">
                             <h1 class="entry__title"><?php the_title(); ?></h1>
                             <div class="entry__meta entry__meta--project cf hand-visible">
@@ -83,7 +83,7 @@
                             </div>
                         </header><!-- .entry-header -->
                     </div>
-                    <div class="col-12 hand-col-7 lap-col-8 gutter--double">
+                    <div class="project--fullwidth__content">
                         <div class="entry__content project-entry-content">
                             <?php the_content(); ?>
                         </div><!-- .entry__content -->
@@ -113,51 +113,51 @@
                 </footer>
 
                 <div class="row">
-                    <div class="col-12 hand-col-5 lap-col-4">
+                    <div class="project--fullwidth__separator--header">
                         <hr class="separator separator--striped separator--full-left hand-visible"/>
                     </div>
-                    <div class="col-12 hand-col-7 lap-col-8 gutter--double">
+                    <div class="project--fullwidth__separator--content">
                         <hr class="separator separator--striped"/>
                     </div>
                 </div>
 
                 <footer class="entry__meta  entry__meta--social  entry__body  flexbox  cf">
                     <?php
-                            if (function_exists( 'display_pixlikes' )) {
+                    if (function_exists( 'display_pixlikes' )) {
                         display_pixlikes(array('class' => 'likes-box likes-box--footer flexbox__item'));
                     }
-            
-                            if (wpgrade::option('portfolio_single_show_share_links')): ?>
-                                <div class="social-links flexbox__item text--right">
-                                    <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
-                                    <ul class="social-links__list">
-                                        <?php if (wpgrade::option('portfolio_single_share_links_twitter')): ?>
-                                            <li>
-                                                <a href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;source=tweetbutton&amp;text=<?php echo urlencode(get_the_title())?>&amp;url=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;via=<?php echo wpgrade::option( 'twitter_card_site' ) ?>" onclick="return popitup(this.href, this.title)"
-                                                   title="<?php _e('Share on Twitter!', wpgrade::textdomain()) ?>">
-                                                    <i class="icon-e-twitter-circled"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif;
-                                        if (wpgrade::option('portfolio_single_share_links_facebook')): ?>
-                                            <li>
-                                                <a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
-                                                   title="<?php _e('Share on Facebook!', wpgrade::textdomain()) ?>">
-                                                    <i class="icon-e-facebook-circled"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif;
-                                        if (wpgrade::option('portfolio_single_share_links_googleplus')): ?>
-                                            <li>
-                                                <a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
-                                                   title="<?php _e('Share on Google+!', wpgrade::textdomain()) ?>">
-                                                    <i class="icon-e-gplus-circled"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-                                    </ul>
-                                </div>
-                            <?php endif; ?>
+        
+                    if (wpgrade::option('portfolio_single_show_share_links')): ?>
+                        <div class="social-links flexbox__item text--right">
+                            <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
+                            <ul class="social-links__list">
+                                <?php if (wpgrade::option('portfolio_single_share_links_twitter')): ?>
+                                    <li>
+                                        <a href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;source=tweetbutton&amp;text=<?php echo urlencode(get_the_title())?>&amp;url=<?php echo urlencode(get_permalink(get_the_ID()))?>&amp;via=<?php echo wpgrade::option( 'twitter_card_site' ) ?>" onclick="return popitup(this.href, this.title)"
+                                           title="<?php _e('Share on Twitter!', wpgrade::textdomain()) ?>">
+                                            <i class="icon-e-twitter-circled"></i>
+                                        </a>
+                                    </li>
+                                <?php endif;
+                                if (wpgrade::option('portfolio_single_share_links_facebook')): ?>
+                                    <li>
+                                        <a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
+                                           title="<?php _e('Share on Facebook!', wpgrade::textdomain()) ?>">
+                                            <i class="icon-e-facebook-circled"></i>
+                                        </a>
+                                    </li>
+                                <?php endif;
+                                if (wpgrade::option('portfolio_single_share_links_googleplus')): ?>
+                                    <li>
+                                        <a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink(get_the_ID()))?>" onclick="return popitup(this.href, this.title)"
+                                           title="<?php _e('Share on Google+!', wpgrade::textdomain()) ?>">
+                                            <i class="icon-e-gplus-circled"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
                 </footer><!-- .entry-meta -->
             </article><!-- #post -->
             <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
