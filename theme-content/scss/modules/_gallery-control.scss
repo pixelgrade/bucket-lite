@@ -66,9 +66,9 @@
             @include transform(rotate(45deg));
             @include rem(margin-right, $base-spacing-unit);
 
-            .no-touch &:hover{
-                @include transform(translateX(-5px) rotate(45deg));
-            }
+            // .no-touch &:hover{
+            //     @include transform(translateX(-5px) rotate(45deg));
+            // }
         }
 
         .arrow-button--right{
@@ -76,9 +76,9 @@
             @include transform(rotate(-45deg));
             @include rem(margin-left, $base-spacing-unit);
 
-            .no-touch &:hover{
-                @include transform(translateX(5px) rotate(-45deg));
-            }            
+            // .no-touch &:hover{
+            //     @include transform(translateX(5px) rotate(-45deg));
+            // }            
         }
 
         .count{

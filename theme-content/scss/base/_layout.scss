@@ -4,10 +4,6 @@
     background: white;
     position: relative;
 
-    @include media(from hand) {
-        @include rem(padding-bottom, 2 * $base-spacing-unit);
-    }
-
     // project-classic causes horizontal scroll. CAUTION!
     overflow: hidden;
 
@@ -18,28 +14,29 @@
     @include media(to hand) {
         position: relative;
         @include rem(top, 3*$base-spacing-unit);
-        @include rem(padding-bottom, 5 * $base-spacing-unit);
+        @include rem(padding-bottom, 3*$base-spacing-unit);
         @include transition(opacity .3s ease-in-out);
 
         // some dark overlay over the content when the navigation is visible
-
         .navigation--is-visible & {
             @include opacity(0.15);
         }
     }
 }
 
-@include media(to lap) {
-    .page-content{
+.page-content{
+    @extend .col-12; 
+    @extend .lap-col-8;
+    border-left-width: 0;
+
+    @include media(from hand) {
+        @include rem(padding-bottom, 2 * $base-spacing-unit);
+    }
+
+    @include media(to lap) {
         max-width: 100%;
         @include rem(padding, 0 $base-spacing-unit);           
     }
-}
-
-.page-content{
-    @extend .col-12;
-    @extend .lap-col-8;
-    border-left-width: 0;
 }
 
 .sidebar{

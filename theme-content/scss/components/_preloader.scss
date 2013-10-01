@@ -11,3 +11,10 @@
     @include transform(translate3d(0,0,0));
     @include transition(opacity 3s ease-in-out);
 }
+
+.single-gallery-fullscreen, .single-gallery-fullwidth {
+
+    .rsPreloader {
+        background: url('../img/preloader-inverse.gif') top left no-repeat;
+    }
+}
