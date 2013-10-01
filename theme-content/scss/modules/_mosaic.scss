@@ -24,7 +24,6 @@
             @extend .lap-span-4;
             @extend .desk-span-3;            
         }
-
         .single-lens_gallery &{
             @extend .span-6;
             @extend .hand-span-6;
@@ -50,7 +49,14 @@
             @extend .lap-span-3;
             @extend .desk-span-2;
             margin-bottom: 0 !important;
-        }        
+        }
+
+        .portfolio-archive &{
+            @extend .span-12;
+            @extend .hand-span-4;
+            @extend .lap-span-3;
+            @extend .desk-span-2;
+        }                
 
         .image__item-wrapper{
             padding-top: 150%;
@@ -173,6 +179,7 @@
 
     .image__item-meta, .image_item-table {
         @include opacity(1);
+        // background: rgba($accent-color, 0.8);
     }
 
     h1 {

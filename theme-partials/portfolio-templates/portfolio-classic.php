@@ -100,8 +100,13 @@
             <?php 
                 if ($yarpp_active) {
                     yarpp_related(array(
-                        'threshold' => 0,
-                        'post_type' => array('lens_portfolio')
+                        'threshold' => 1,
+                        'post_type' => array('lens_portfolio'),
+                        'weight' => array(
+                            'tax' => array(
+                                'lens_portfolio_categories' => 5
+                            )
+                        )
                     )); 
                 }
             ?>

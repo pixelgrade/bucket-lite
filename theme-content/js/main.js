@@ -3857,7 +3857,8 @@ function royalSliderInit() {
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: rs_fullScreen
+                keyboardNavEnabled: rs_fullScreen,
+                arrowsNavAutoHide: false
             });
         } else {
 
@@ -3870,7 +3871,8 @@ function royalSliderInit() {
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: rs_fullScreen
+                keyboardNavEnabled: rs_fullScreen,
+                arrowsNavAutoHide: false
             });     
         }
 
