@@ -251,7 +251,7 @@ blockquote:not(.pixcode--testimonial){
         }
     }
 
-    @include media(from lap) {
+    @include media(from 1600px) {
         float: left;
         @include rem(margin, 26px 0 0 -8 * $base-spacing-unit);
     }
@@ -314,7 +314,7 @@ blockquote:not(.pixcode--testimonial){
  * Horizontal aligning the entry-header meta elements in mobile view
  * 
  */
-@include media(to lap) {
+@include media(to 1600px) {
     .entry-header__meta{
         display: block;
         width:100%;
@@ -334,9 +334,6 @@ blockquote:not(.pixcode--testimonial){
 
     .likes-box--article{
         float:right;
-
-        i{
-        }
 
         .like-link {
             float:right;
