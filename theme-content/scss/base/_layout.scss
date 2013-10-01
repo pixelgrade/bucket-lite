@@ -4,10 +4,6 @@
     background: white;
     position: relative;
 
-    // @include media(from hand) {
-    //     @include rem(padding-bottom, 2 * $base-spacing-unit);
-    // }
-
     // project-classic causes horizontal scroll. CAUTION!
     overflow: hidden;
 
@@ -22,7 +18,6 @@
         @include transition(opacity .3s ease-in-out);
 
         // some dark overlay over the content when the navigation is visible
-
         .navigation--is-visible & {
             @include opacity(0.15);
         }
