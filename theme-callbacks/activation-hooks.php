@@ -312,18 +312,22 @@ function wpgrade_callback_geting_active() {
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
 					'options' => array(
-						array(
-							'name' => 'Fit',
-							'value' => 'fit'
-						),
-						array(
-							'name' => 'Fill',
-							'value' => 'fill'
-						),
-						array(
-							'name' => 'Fit if Smaller',
-							'value' => 'fit-if-smaller'
-						),
+                        array(
+                            'name' => 'Fit',
+                            'value' => 'fit'
+                        ),
+                        array(
+                            'name' => 'Fill',
+                            'value' => 'fill'
+                        ),
+                        array(
+                            'name' => 'Fit if Smaller',
+                            'value' => 'fit-if-smaller'
+                        ),
+                        array(
+                            'name' => 'Auto Height',
+                            'value' => 'auto'
+                        ),
 					),
 					'std' => 'fill'					
 				),

@@ -161,6 +161,10 @@ html {
     }
 }
 
+
+
+
+
 .gallery--fullscreen{
 
     @include media(from hand) {
@@ -330,7 +334,7 @@ blockquote p:after{
 
 .featured-image .pixslider {
     width: 100%;
-    @include rem(height, 600px);
+    // @include rem(height, 600px);
 
     img {
         max-width: none;
@@ -350,4 +354,19 @@ a.site-home-link {
 \*----------------------------------------------*/
 iframe {
     border:none;
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $GALLERY POST FORMAT
+\*----------------------------------------*/
+
+.single-gallery-fullscreen, .single-gallery-fullwidth, .single-portfolio-fullwidth {
+
+    .pixslider {
+        background-color: black;
+    }
 }

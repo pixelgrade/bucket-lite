@@ -3855,7 +3855,7 @@ function royalSliderInit() {
             rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
             rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
-            rs_fullScreen  = typeof $slider.data('fullscreen') !== "undefined";
+            rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined";
             rs_imageScale  = typeof $slider.data('imagescale') !== "undefined" && $slider.data('imagescale') != '' ? $slider.data('imagescale') : 'fill';
         
         // make sure default arrows won't appear if customArrows is set
@@ -3867,15 +3867,14 @@ function royalSliderInit() {
                 autoScaleSlider: false,
                 loop: true,
                 imageScaleMode: 'none',
-                imageAlignCenter: true,
+                imageAlignCenter: false,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: rs_fullScreen,
+                keyboardNavEnabled: rs_keyboardNav,
                 arrowsNavAutoHide: false
             });
         } else {
-
             $slider.royalSlider({
                 autoScaleSlider: true,
                 autoHeight: false,
@@ -3885,7 +3884,7 @@ function royalSliderInit() {
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
-                keyboardNavEnabled: rs_fullScreen,
+                keyboardNavEnabled: rs_keyboardNav,
                 arrowsNavAutoHide: false
             });     
         }
@@ -3910,11 +3909,7 @@ function royalSliderInit() {
                 $gallery_control.addClass('gallery-control--left');
             }
 
-            if (rs_fullScreen) {
-                $gallery_control.insertAfter('.pixslider');
-            } else {
-                $gallery_control.insertAfter($slider);
-            }
+            $gallery_control.insertAfter($slider);
 
             // write the total number of slides inside the markup created above
             // make sure it is left padded with 0 in case it is lower than 10

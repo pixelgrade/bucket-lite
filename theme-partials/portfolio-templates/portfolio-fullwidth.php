@@ -38,7 +38,10 @@
 
     if ( !empty($attachments) || !empty($video)) : ?>
     <div class="featured-image">
-        <div class="pixslider js-pixslider" data-bullets data-fullscreen data-customarrows data-imagescale="<?php echo $image_scale_mode; ?>">                    
+        <?php 
+            $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagescale="'.$image_scale_mode.'"';
+        ?>
+        <div class="pixslider js-pixslider" data-bullets data-customarrows <?php echo $data_scaling; ?>>
             <?php
 			if (!empty($video)) { ?>
 				<div class="pixslider__slide video">

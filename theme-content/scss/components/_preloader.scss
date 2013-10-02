@@ -12,7 +12,7 @@
     @include transition(opacity 3s ease-in-out);
 }
 
-.single-gallery-fullscreen, .single-gallery-fullwidth {
+.single-gallery-fullscreen, .single-gallery-fullwidth, .single-portfolio-fullwidth {
 
     .rsPreloader {
         background: url('../img/preloader-inverse.gif') top left no-repeat;
