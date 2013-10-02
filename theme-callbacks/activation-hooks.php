@@ -315,7 +315,7 @@ function wpgrade_callback_geting_active() {
 				),
 				array(
 					'name' => __('Full width template slider: image scale mode', wpgrade::textdomain()),
-					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images.', wpgrade::textdomain()),
+					'desc' => __('Fit is recommended for portrait images, fill is recommended for landscape images.', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
 					'options' => array(
@@ -372,7 +372,7 @@ function wpgrade_callback_geting_active() {
 				),
 				array(
 					'name' => __('Image scale mode', wpgrade::textdomain()),
-					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images. (for full-screen and full-width galleries)', wpgrade::textdomain()),
+					'desc' => __('Fit is recommended for portrait images, fill is recommended for landscape images. (for full-screen and full-width galleries)', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
 					'options' => array(

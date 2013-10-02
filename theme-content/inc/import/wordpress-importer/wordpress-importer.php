@@ -266,7 +266,7 @@ class WPGrade_WP_Import extends WP_Importer {
 	<h3><?php _e( 'Assign Authors', wpgrade::textdomain() ); ?></h3>
 	<p><?php _e( 'To make it easier for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site. For example, you may want to import all the entries as <code>admin</code>s entries.', wpgrade::textdomain() ); ?></p>
 <?php if ( $this->allow_create_users() ) : ?>
-	<p><?php printf( __( 'If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary.', wpgrade::textdomain() ), esc_html( get_option('default_role') ) ); ?></p>
+	<p><?php printf( __( 'If a new user is created by WordPress, a new password will be randomly generated and the new user\'s role will be set as %s. Manually changing the new user\'s details will be necessary.', wpgrade::textdomain() ), esc_html( get_option('default_role') ) ); ?></p>
 <?php endif; ?>
 	<ol id="authors">
 <?php foreach ( $this->authors as $author ) : ?>
@@ -534,7 +534,7 @@ class WPGrade_WP_Import extends WP_Importer {
 			$post = apply_filters( 'wp_import_post_data_raw', $post );
 
 			if ( ! post_type_exists( $post['post_type'] ) ) {
-				printf( __( 'Failed to import &#8220;%s&#8221;: Invalid post type %s', wpgrade::textdomain() ),
+				printf( __( 'Failed to import "%s": Invalid post type %s', wpgrade::textdomain() ),
 					esc_html($post['post_title']), esc_html($post['post_type']) );
 				echo '<br />';
 				do_action( 'wp_import_post_exists', $post );
@@ -556,7 +556,7 @@ class WPGrade_WP_Import extends WP_Importer {
 
 			$post_exists = post_exists( $post['post_title'], '', $post['post_date'] );
 			if ( $post_exists && get_post_type( $post_exists ) == $post['post_type'] ) {
-				printf( __('%s &#8220;%s&#8221; already exists.', wpgrade::textdomain()), $post_type_object->labels->singular_name, esc_html($post['post_title']) );
+				printf( __('%s "%s" already exists.', wpgrade::textdomain()), $post_type_object->labels->singular_name, esc_html($post['post_title']) );
 				echo '<br />';
 				$comment_post_ID = $post_id = $post_exists;
 			} else {
@@ -615,7 +615,7 @@ class WPGrade_WP_Import extends WP_Importer {
 				}
 
 				if ( is_wp_error( $post_id ) ) {
-					printf( __( 'Failed to import %s &#8220;%s&#8221;', wpgrade::textdomain() ),
+					printf( __( 'Failed to import %s "%s"', wpgrade::textdomain() ),
 						$post_type_object->labels->singular_name, esc_html($post['post_title']) );
 					if ( defined('IMPORT_DEBUG') && IMPORT_DEBUG )
 						echo ': ' . $post_id->get_error_message();
@@ -1053,7 +1053,7 @@ class WPGrade_WP_Import extends WP_Importer {
 	 */
 	function greet() {
 		echo '<div class="narrow">';
-		echo '<p>'.__( 'Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site.', wpgrade::textdomain() ).'</p>';
+		echo '<p>'.__( 'Howdy! Upload your WordPress eXtended RSS (WXR) file and we\'ll import the posts, pages, comments, custom fields, categories, and tags into this site.', wpgrade::textdomain() ).'</p>';
 		echo '<p>'.__( 'Choose a WXR (.xml) file to upload, then click Upload file and import.', wpgrade::textdomain() ).'</p>';
 		wp_import_upload_form( 'admin.php?import=wordpress&amp;step=1' );
 		echo '</div>';

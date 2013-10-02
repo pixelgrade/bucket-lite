@@ -131,14 +131,14 @@ class WPGradePaginationFormatter {
 		# requesting the translation when not required
 
 		if (empty($conf['prev_text'])) {
-			$conf['prev_text'] = __('« Previous', wpgrade::textdomain());
+			$conf['prev_text'] = __('&laquo; Previous', wpgrade::textdomain());
 		}
 		else { // exists; translate
 			$conf['prev_text'] = __($conf['prev_text'], wpgrade::textdomain());
 		}
 
 		if (empty($conf['next_text'])) {
-			$conf['next_text'] = __('Next »', wpgrade::textdomain());
+			$conf['next_text'] = __('Next &raquo;', wpgrade::textdomain());
 		}
 		else { // exists; translate
 			$conf['next_text'] = __($conf['next_text'], wpgrade::textdomain());

@@ -32,7 +32,7 @@ class Redux_Options_color_gradient {
             echo '<div class="farb-popup-wrapper" id="' . $this->field['id'] . '">';
             echo __('From:', Redux_TEXT_DOMAIN) . ' <input type="text" id="' . $this->field['id'] . '-from" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][from]" value="' . $this->value['from'] . '" class="' . $class . ' popup-colorpicker" style="width:70px;"/>';
             echo '<div class="farb-popup"><div class="farb-popup-inside"><div id="' . $this->field['id'] . '-frompicker" class="color-picker"></div></div></div>';
-            echo __(' To:', Redux_TEXT_DOMAIN) . ' <input type="text" id="' . $this->field['id'] . '-to" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][to]" value="' . $this->value['to'] . '" class="' . $class . ' popup-colorpicker" style="width:70px;"/>';
+            echo __('To:', Redux_TEXT_DOMAIN) . ' <input type="text" id="' . $this->field['id'] . '-to" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][to]" value="' . $this->value['to'] . '" class="' . $class . ' popup-colorpicker" style="width:70px;"/>';
             echo '<div class="farb-popup"><div class="farb-popup-inside"><div id="' . $this->field['id'] . '-topicker" class="color-picker"></div></div></div>';
             echo (isset($this->field['desc']) && !empty($this->field['desc'])) ? ' <span class="description">' . $this->field['desc'] . '</span>' : '';
             echo '</div>';

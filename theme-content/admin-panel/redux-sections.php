@@ -10,7 +10,7 @@
 		'icon' => 'cogs',
 		'icon_class' => '',
 		'title' => __('General Options', wpgrade::textdomain()),
-		'desc' => __('<p class="description">Welcome to the '. wpgrade::themename() .' options panel! You can switch between option groups by using the left-hand tabs.</p>', wpgrade::textdomain()),
+		'desc' => sprintf(__('<p class="description">Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.</p>', wpgrade::textdomain()),wpgrade::themename()),
 		'fields' => array(
 			array(
 				'id' => 'wpGrade_import_demodata_button',
@@ -219,7 +219,7 @@
                 'id' => 'social_icons',
                 'type' => 'text_sortable',
                 'title' => __('Social Icons', wpgrade::textdomain()),
-                'sub_desc' => __('Define and reorder your social links.<br /><b>Note: </b>These will be displayed in the "'. wpgrade::themename() .' Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),
+                'sub_desc' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
                 'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
                 'options' => array(
                     'flickr' => __('Flickr', wpgrade::textdomain()),

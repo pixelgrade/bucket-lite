@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-09-30 17:04+0200\n"
-"PO-Revision-Date: 2013-09-30 18:29+0200\n"
+"POT-Creation-Date: 2013-10-02 12:22+0200\n"
+"PO-Revision-Date: 2013-10-02 13:33+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: Spanish\n"
@@ -18,6 +18,17 @@ msgstr ""
 #: ../404.php:7 ../no-results.php:10
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! That page can&rsquo;t be found."
+
+#: ../404.php:8 ../no-results.php:11
+#, php-format
+msgid ""
+"This may be because of a mistyped URL, faulty referral or out-of-date search "
+"engine listing.<br />You should try the <a href=\"%s\">homepage</a> instead "
+"or maybe do a search?"
+msgstr ""
+"Esto puede ser debido a una URL mal escrita, derivación defectuosa o fuera "
+"de la fecha de inclusión de motores de búsqueda. <br/> Usted debe probar el "
+"<a href=\"%s\">página</a> en lugar o tal vez hacer un buscar?"
 
 #: ../archive.php:20
 #, php-format
@@ -89,16 +100,6 @@ msgstr "Mensaje"
 msgid "404"
 msgstr "404"
 
-#: ../no-results.php:11
-msgid ""
-"This may be because of a mistyped URL, faulty referral or out-of-date search "
-"engine listing. <br />\n"
-"                                   You should try the <a href=\""
-msgstr ""
-"Esto puede ser debido a una URL, derivación defectuosa mal escrita o fuera "
-"de la fecha de inclusión de motores de búsqueda. <br /> \n"
-" Usted debe probar el <a href=\""
-
 #: ../search.php:17
 #, php-format
 msgid "Search Results for: %s"
@@ -106,8 +107,8 @@ msgstr "Resultados de la búsqueda para: %s"
 
 #: ../single.php:31
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:28
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:74
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:101
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:88
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:69
 msgid "Filled under"
 msgstr "Archivado en"
@@ -118,28 +119,28 @@ msgstr "Tagged:"
 
 #: ../single.php:55
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:47
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:127
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:141
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:88
 msgid "Share"
 msgstr "Compartir"
 
 #: ../single.php:60 ../theme-partials/posts-single.php:169
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:52
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:132
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:146
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:93
 msgid "Share on Twitter!"
 msgstr "Compartir en Twitter!"
 
 #: ../single.php:68 ../theme-partials/posts-single.php:177
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:60
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:140
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:101
 msgid "Share on Facebook!"
 msgstr "Compartir en Facebook!"
 
 #: ../single.php:76 ../theme-partials/posts-single.php:185
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:68
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:148
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:109
 msgid "Share on Google+!"
 msgstr "Compartir en Google+!"
@@ -174,7 +175,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:327
+#: ../theme-callbacks/activation-hooks.php:348
 msgid "Images"
 msgstr "Imágenes"
 
@@ -277,7 +278,7 @@ msgid "Client Link"
 msgstr "Client Enlace"
 
 #: ../theme-callbacks/activation-hooks.php:296
-#: ../theme-callbacks/activation-hooks.php:332
+#: ../theme-callbacks/activation-hooks.php:353
 msgid "Template"
 msgstr "Plantilla"
 
@@ -285,36 +286,57 @@ msgstr "Plantilla"
 msgid "Select the template you want for this project."
 msgstr "Seleccione la plantilla que desea para este proyecto."
 
-#: ../theme-callbacks/activation-hooks.php:333
+#: ../theme-callbacks/activation-hooks.php:317
+msgid "Full width template slider: image scale mode"
+msgstr "Ancho total slider plantilla: el modo escala de la imagen"
+
+#: ../theme-callbacks/activation-hooks.php:318
+msgid ""
+"Fit is recommended for portrait images, fill is recommended for landscape "
+"images."
+msgstr ""
+"Fit se recomienda para imágenes de retrato, de relleno se recomienda para "
+"imágenes de paisajes."
+
+#: ../theme-callbacks/activation-hooks.php:354
 msgid "Select the template you want for this gallery."
 msgstr "Seleccione la plantilla que desea para esta galería."
 
-#: ../theme-callbacks/activation-hooks.php:353
+#: ../theme-callbacks/activation-hooks.php:374
 msgid "Image scale mode"
 msgstr "Modo de escala de la imagen"
 
-#: ../theme-callbacks/activation-hooks.php:354
+#: ../theme-callbacks/activation-hooks.php:375
 msgid ""
-"Fit is reccomended for portrait images, fill is recommended for landscape "
+"Fit is recommended for portrait images, fill is recommended for landscape "
 "images. (for full-screen and full-width galleries)"
 msgstr ""
-"Fit está recomendado para imágenes de retrato, de relleno se recomienda para "
-"imágenes de paisajes. (Para las galerías de pantalla completa y de ancho "
+"Fit se recomienda para imágenes de retrato, de relleno se recomienda para "
+"imágenes de paisajes. (para las galerías de pantalla completa y de ancho "
 "completo)"
 
-#: ../theme-callbacks/activation-hooks.php:374
+#: ../theme-callbacks/activation-hooks.php:395
 msgid "Display the gallery title"
 msgstr "Muestra el título galería"
 
-#: ../theme-callbacks/activation-hooks.php:375
+#: ../theme-callbacks/activation-hooks.php:396
 msgid "Show the title of the gallery or not. (for grid galleries)"
 msgstr "Mostrar el título de la galería o no. (Para las galerías de la red)"
 
-#: ../theme-callbacks/activation-hooks.php:401
+#: ../theme-callbacks/activation-hooks.php:412
+msgid "Gallery grid thumbnail orientation"
+msgstr "Galería rejilla orientación miniatura"
+
+#: ../theme-callbacks/activation-hooks.php:413
+msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
+msgstr ""
+"Thumbnails o miniaturas horizontales verticales (para las galerías de la red)"
+
+#: ../theme-callbacks/activation-hooks.php:439
 msgid "Choose:"
 msgstr "elegirías?"
 
-#: ../theme-callbacks/activation-hooks.php:402
+#: ../theme-callbacks/activation-hooks.php:440
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -324,11 +346,11 @@ msgstr ""
 "una página estática como página de inicio simplemente ir por el camino "
 "clásico WP y configurarlo en Ajustes> Lectura (en lugar de éste)."
 
-#: ../theme-callbacks/activation-hooks.php:418
+#: ../theme-callbacks/activation-hooks.php:456
 msgid "Select a gallery"
 msgstr "Seleccione una galería"
 
-#: ../theme-callbacks/activation-hooks.php:419
+#: ../theme-callbacks/activation-hooks.php:457
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Seleccione una galería y vamos a mostrar en su página web."
 
@@ -381,8 +403,13 @@ msgid "General Options"
 msgstr "Opciones generales"
 
 #: ../theme-content/admin-panel/redux-sections.php:13
-msgid "<p class=\"description\">Welcome to the "
-msgstr "<p class=\"description\"> Bienvenidos a la "
+#, php-format
+msgid ""
+"<p class=\"description\">Welcome to the %s options panel! You can switch "
+"between option groups by using the left-hand tabs.</p>"
+msgstr ""
+"<p class=\"description\"> Bienvenido al panel de opciones de %s! Se puede "
+"cambiar entre grupos de opciones mediante las fichas de la izquierda.</p>"
 
 #: ../theme-content/admin-panel/redux-sections.php:18
 msgid "Import Demo Data"
@@ -611,12 +638,15 @@ msgid "Social Icons"
 msgstr "Iconos Sociales"
 
 #: ../theme-content/admin-panel/redux-sections.php:222
+#, php-format
 msgid ""
-"Define and reorder your social links.<br /><b>Note: </b>These will be "
-"displayed in the \""
+"Define and reorder your social links.<br /><b>Note:</b> These will be "
+"displayed in the \"%s Social Links\" widget so you can put them anywhere on "
+"your site. Only those filled will appear."
 msgstr ""
-"Definir y cambiar el orden de los vínculos sociales <br /> <b> Nota:. </b> "
-"Estos se muestran en el \""
+"Definir y cambiar el orden de los vínculos sociales.<br /><b>Nota:</ B> "
+"Estos se muestran en el \"%s Social Enlaces\" tu currículum para que pueda "
+"poner en cualquier lugar de tu sitio. Sólo aquellos llena aparecerá."
 
 #: ../theme-content/admin-panel/redux-sections.php:223
 msgid ""
@@ -755,7 +785,7 @@ msgstr ""
 "p>"
 
 #: ../theme-content/admin-panel/redux-sections.php:335
-#: ../theme-content/admin-panel/redux-sections.php:388
+#: ../theme-content/admin-panel/redux-sections.php:399
 msgid "Show Share Links"
 msgstr "Mostrar Compartir Links"
 
@@ -764,25 +794,33 @@ msgid "Do you want to show the share links bellow the projects?"
 msgstr "¿Desea mostrar los vínculos compartir bramido de los proyectos?"
 
 #: ../theme-content/admin-panel/redux-sections.php:344
-#: ../theme-content/admin-panel/redux-sections.php:397
+#: ../theme-content/admin-panel/redux-sections.php:408
 msgid "Twitter Share Link"
 msgstr "Twitter Compartir Enlace"
 
 #: ../theme-content/admin-panel/redux-sections.php:352
-#: ../theme-content/admin-panel/redux-sections.php:405
+#: ../theme-content/admin-panel/redux-sections.php:416
 msgid "Facebook Share Link"
 msgstr "Facebook Share Enlace"
 
 #: ../theme-content/admin-panel/redux-sections.php:360
-#: ../theme-content/admin-panel/redux-sections.php:413
+#: ../theme-content/admin-panel/redux-sections.php:424
 msgid "Google+ Share Link"
 msgstr "Google+ Compartir Enlace"
 
-#: ../theme-content/admin-panel/redux-sections.php:375
+#: ../theme-content/admin-panel/redux-sections.php:366
+msgid "Portfolio grid thumbnail orientation"
+msgstr "Portafolio rejilla orientación miniatura"
+
+#: ../theme-content/admin-panel/redux-sections.php:367
+msgid "Horizontal thumbnails or vertical thumbnails"
+msgstr "Thumbnails o miniaturas horizontales verticales"
+
+#: ../theme-content/admin-panel/redux-sections.php:386
 msgid "Blog Options"
 msgstr "Opciones del blog"
 
-#: ../theme-content/admin-panel/redux-sections.php:376
+#: ../theme-content/admin-panel/redux-sections.php:387
 msgid ""
 "<p class=\"description\">Change blog archive and single post related options "
 "here.</p>"
@@ -790,40 +828,40 @@ msgstr ""
 "<p class=\"description\"> Change Archivo del blog y las opciones "
 "relacionadas con puestos individuales aquí. </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:381
+#: ../theme-content/admin-panel/redux-sections.php:392
 msgid "Excerpt Length"
 msgstr "Extracto Longitud"
 
-#: ../theme-content/admin-panel/redux-sections.php:382
+#: ../theme-content/admin-panel/redux-sections.php:393
 msgid "Set here the excerpt length for the blog archive (number of words)."
 msgstr ""
 "Ajuste aquí la longitud fragmento del archivo blog (número de palabras)."
 
-#: ../theme-content/admin-panel/redux-sections.php:389
+#: ../theme-content/admin-panel/redux-sections.php:400
 msgid "Do you want to show the share links bellow the article?"
 msgstr "¿Desea mostrar los vínculos compartir bramido del artículo?"
 
-#: ../theme-content/admin-panel/redux-sections.php:428
+#: ../theme-content/admin-panel/redux-sections.php:439
 msgid "Social and SEO Options"
 msgstr "Opciones Social y SEO"
 
-#: ../theme-content/admin-panel/redux-sections.php:430
+#: ../theme-content/admin-panel/redux-sections.php:441
 msgid "<p class=\"description\">Social sharing stuff.</p>"
 msgstr "<p class=\"description\"> stuff Compartir redes sociales. </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:435
+#: ../theme-content/admin-panel/redux-sections.php:446
 msgid "Open social icons links in new a window?"
 msgstr "Abre vínculos iconos sociales en una ventana nueva?"
 
-#: ../theme-content/admin-panel/redux-sections.php:436
+#: ../theme-content/admin-panel/redux-sections.php:447
 msgid "Do you want to open social links in a new window ?"
 msgstr "¿Quieres abrir vínculos sociales en una nueva ventana?"
 
-#: ../theme-content/admin-panel/redux-sections.php:443
+#: ../theme-content/admin-panel/redux-sections.php:454
 msgid "Add Social Meta Tags"
 msgstr "Añadir Sociales Meta Tags"
 
-#: ../theme-content/admin-panel/redux-sections.php:444
+#: ../theme-content/admin-panel/redux-sections.php:455
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
@@ -832,11 +870,11 @@ msgstr ""
 "descubrimiento mediante la adición de los metatags necesarios en la sección "
 "head."
 
-#: ../theme-content/admin-panel/redux-sections.php:452
+#: ../theme-content/admin-panel/redux-sections.php:463
 msgid "Facebook Application ID"
 msgstr "Aplicación de Facebook ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:453
+#: ../theme-content/admin-panel/redux-sections.php:464
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
@@ -846,11 +884,11 @@ msgstr ""
 "asocia a este sitio web. Puede crear una <a href=\"https://developers."
 "facebook.com/apps\"> aquí </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:458
+#: ../theme-content/admin-panel/redux-sections.php:469
 msgid "Facebook Admin ID"
 msgstr "Facebook admin id"
 
-#: ../theme-content/admin-panel/redux-sections.php:459
+#: ../theme-content/admin-panel/redux-sections.php:470
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
@@ -860,11 +898,11 @@ msgstr ""
 "Facebook para poder acceder al <a href=\"https://www.facebook.com/insights/"
 "\"> Facebook Insights </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:464
+#: ../theme-content/admin-panel/redux-sections.php:475
 msgid "Google+ Publisher"
 msgstr "Google+ Editorial"
 
-#: ../theme-content/admin-panel/redux-sections.php:465
+#: ../theme-content/admin-panel/redux-sections.php:476
 msgid ""
 "Enter your Google Plus page URL (example: https://plus.google."
 "com/105345678532237339285) here if you have set up a \"Google+ Page\"."
@@ -872,11 +910,11 @@ msgstr ""
 "Introduzca su URL de la página Google Plus (ejemplo: https://plus.google."
 "com/105345678532237339285) aquí si ha creado un \"página de Google+ \"."
 
-#: ../theme-content/admin-panel/redux-sections.php:470
+#: ../theme-content/admin-panel/redux-sections.php:481
 msgid "Twitter Site Username"
 msgstr "Twitter Sitio Nombre de usuario"
 
-#: ../theme-content/admin-panel/redux-sections.php:471
+#: ../theme-content/admin-panel/redux-sections.php:482
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
@@ -884,11 +922,11 @@ msgstr ""
 "El nombre de usuario de Twitter de todo el sitio. El nombre de usuario para "
 "el autor será tomada de perfil del autor (no tome la @)"
 
-#: ../theme-content/admin-panel/redux-sections.php:476
+#: ../theme-content/admin-panel/redux-sections.php:487
 msgid "Default Social Share Image"
 msgstr "Defecto Social Compartir Fotos"
 
-#: ../theme-content/admin-panel/redux-sections.php:477
+#: ../theme-content/admin-panel/redux-sections.php:488
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
@@ -897,11 +935,11 @@ msgstr ""
 "si no se carga una imagen personalizada con el contenido (se recomienda al "
 "menos 200 píxeles de ancho)."
 
-#: ../theme-content/admin-panel/redux-sections.php:482
+#: ../theme-content/admin-panel/redux-sections.php:493
 msgid "Use Twitter Widget"
 msgstr "El uso de Twitter Widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:483
+#: ../theme-content/admin-panel/redux-sections.php:494
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
@@ -910,11 +948,11 @@ msgstr ""
 "compatible). Usted puede agregar a su blog o barras laterales de pie de "
 "página. <div Class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:491
+#: ../theme-content/admin-panel/redux-sections.php:502
 msgid "Important Note : "
 msgstr "Notas Importante "
 
-#: ../theme-content/admin-panel/redux-sections.php:492
+#: ../theme-content/admin-panel/redux-sections.php:503
 msgid ""
 "In order to use the Twitter widget you will need to create a Twitter "
 "application <a href=\"https://dev.twitter.com/apps/new\" >here</a> and get "
@@ -928,27 +966,27 @@ msgstr ""
 "Twitter hizo a su API (v1.1). Por favor, tenga en cuenta que estos valores "
 "predeterminados se utilizan en la "
 
-#: ../theme-content/admin-panel/redux-sections.php:497
+#: ../theme-content/admin-panel/redux-sections.php:508
 msgid "Consumer Key"
 msgstr "Clave del Usuario"
 
-#: ../theme-content/admin-panel/redux-sections.php:503
+#: ../theme-content/admin-panel/redux-sections.php:514
 msgid "Consumer Secret"
 msgstr "Clave secreta del Usuario"
 
-#: ../theme-content/admin-panel/redux-sections.php:509
+#: ../theme-content/admin-panel/redux-sections.php:520
 msgid "Oauth Access Token"
 msgstr "Oauth acceso Token"
 
-#: ../theme-content/admin-panel/redux-sections.php:515
+#: ../theme-content/admin-panel/redux-sections.php:526
 msgid "Oauth Access Token Secret"
 msgstr "Oauth acceso Token Secret"
 
-#: ../theme-content/admin-panel/redux-sections.php:528
+#: ../theme-content/admin-panel/redux-sections.php:539
 msgid "Theme Auto Update"
 msgstr "Tema actualización automática"
 
-#: ../theme-content/admin-panel/redux-sections.php:529
+#: ../theme-content/admin-panel/redux-sections.php:540
 msgid ""
 "<p class=\"description\">Let us notify you when new versions of this theme "
 "are live on ThemeForest! Update with just one button click. Forget about "
@@ -958,33 +996,33 @@ msgstr ""
 "versiones de este tema son en vivo en ThemeForest! Actualizar con un solo "
 "clic de botón. Olvídese de las actualizaciones manuales! </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:534
+#: ../theme-content/admin-panel/redux-sections.php:545
 msgid "Use Auto Update"
 msgstr "Utilice Actualización automática"
 
-#: ../theme-content/admin-panel/redux-sections.php:535
+#: ../theme-content/admin-panel/redux-sections.php:546
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 "Active esta opción para introducir la información necesaria para la "
 "actualización automática tema a trabajar."
 
-#: ../theme-content/admin-panel/redux-sections.php:543
+#: ../theme-content/admin-panel/redux-sections.php:554
 msgid "ThemeForest Username"
 msgstr "ThemeForest Usuario"
 
-#: ../theme-content/admin-panel/redux-sections.php:544
+#: ../theme-content/admin-panel/redux-sections.php:555
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr ""
 "Ingrese aquí su (o Envato) cuenta ThemeForest nombre de usuario (es decir "
 "pixelgrade)."
 
-#: ../theme-content/admin-panel/redux-sections.php:549
+#: ../theme-content/admin-panel/redux-sections.php:560
 msgid "ThemeForest Secret API Key"
 msgstr "ThemeForest Secret API Clave"
 
-#: ../theme-content/admin-panel/redux-sections.php:550
+#: ../theme-content/admin-panel/redux-sections.php:561
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
@@ -1316,12 +1354,12 @@ msgstr ""
 #, php-format
 msgid ""
 "If a new user is created by WordPress, a new password will be randomly "
-"generated and the new user&#8217;s role will be set as %s. Manually changing "
-"the new user&#8217;s details will be necessary."
+"generated and the new user's role will be set as %s. Manually changing the "
+"new user's details will be necessary."
 msgstr ""
-"Si un usuario se crea con WordPress, una nueva contraseña será generada al "
-"azar y el papel del nuevo usuario se configurará como %s. Será necesario "
-"cambiar manualmente los datos del nuevo usuario."
+"Si un nuevo usuario es creado con WordPress, se generará aleatoriamente una "
+"nueva contraseña y la nueva función del usuario se establece como %s. Cambio "
+"manual de los detalles del nuevo usuario será necesario."
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:279
 msgid "Import Attachments"
@@ -1384,20 +1422,19 @@ msgstr "Se ha fallado al importar %s %s"
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:537
 #: ../theme-content/inc/import/wordpress-importer/wpgrade-import-class.php:109
 #, php-format
-msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
-msgstr ""
-"Se ha fallado al importar &#8220;%s&#8221;: Tipo de entrada inválido %s"
+msgid "Failed to import \"%s\": Invalid post type %s"
+msgstr "No se pudo importar \"%s\": tipo de artículo no válido%s"
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:559
 #, php-format
-msgid "%s &#8220;%s&#8221; already exists."
-msgstr "%s &#8220;%s&#8221; ya existe."
+msgid "%s \"%s\" already exists."
+msgstr "%s \"%s\" ya existe."
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:618
 #: ../theme-content/inc/import/wordpress-importer/wpgrade-import-class.php:205
 #, php-format
-msgid "Failed to import %s &#8220;%s&#8221;"
-msgstr "Se ha fallado al importar %s &#8220;%s&#8221;"
+msgid "Failed to import %s \"%s\""
+msgstr "Se ha fallado al importar %s \"%s\""
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:784
 msgid "Menu item skipped due to missing menu slug"
@@ -1454,13 +1491,12 @@ msgstr ""
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:1056
 msgid ""
-"Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import "
-"the posts, pages, comments, custom fields, categories, and tags into this "
-"site."
+"Howdy! Upload your WordPress eXtended RSS (WXR) file and we'll import the "
+"posts, pages, comments, custom fields, categories, and tags into this site."
 msgstr ""
-"Hola! Cargue su archivo WordPress eXtended RSS (WXR) y nosotros&#8217;ll "
-"vamos a importar los posts, páginas, comentarios, campos personalizados, "
-"categorías, y etiquetas en este sitio."
+"¡Hola! Cargue su archivo RSS WordPress eXtended (WXR) y vamos a importar los "
+"mensajes, páginas, comentarios, campos personalizados, categorías y "
+"etiquetas en este sitio."
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:1057
 msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
@@ -1807,32 +1843,32 @@ msgid "Back to top"
 msgstr "Volver arriba"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:21
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:67
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:95
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:81
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:109
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:62
 msgid "Client"
 msgstr "Patrocinador"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:82
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:176
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
 msgid "Related projects"
 msgstr "Proyectos Relacionados"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:87
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:167
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:181
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:129
 msgid "Previous"
 msgstr "Anterior"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:171
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:185
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:133
 msgid "All projects"
 msgstr "Todos los proyectos"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:175
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:137
 msgid "Next"
 msgstr "SIGUIENTE >"
@@ -1846,12 +1882,12 @@ msgid "Header Menu"
 msgstr "Menú de cabecera"
 
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:134
-msgid "« Previous"
-msgstr "«Anterior"
+msgid "&laquo; Previous"
+msgstr "&laquo; Anterior"
 
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:141
-msgid "Next »"
-msgstr "SIGUIENTE >"
+msgid "Next &raquo;"
+msgstr "Siguiente &raquo;"
 
 #: ../wpgrade-core/resources/views/read-more-content.php:11
 #: ../wpgrade-core/resources/views/read-more.php:9
@@ -2029,14 +2065,11 @@ msgid "From:"
 msgstr "De:"
 
 #: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:29
+#: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:35
 #: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:29
+#: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:35
 msgid "To:"
 msgstr "Para:"
-
-#: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:35
-#: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:35
-msgid " To:"
-msgstr " A/A:"
 
 #: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:31
 #: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:35
@@ -2687,3 +2720,15 @@ msgstr ""
 "Las fuentes que aparecen a continuación son libres para usar fuentes "
 "personalizadas de <a href=\"http://www.google.com/webfonts\" target=\"_blank"
 "\"> Directorio Google Web Fonts</a>"
+
+#~ msgid "<p class=\"description\">Welcome to the "
+#~ msgstr "<p class=\"description\"> Bienvenidos a la "
+
+#~ msgid "Failed to import %s &#8220;%s&#8221;"
+#~ msgstr "Se ha fallado al importar %s &#8220;%s&#8221;"
+
+#~ msgid "Next »"
+#~ msgstr "SIGUIENTE >"
+
+#~ msgid " To:"
+#~ msgstr " A/A:"

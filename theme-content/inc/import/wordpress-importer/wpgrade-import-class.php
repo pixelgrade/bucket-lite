@@ -106,7 +106,7 @@ class wpGrade_import extends WPGrade_WP_Import
 			$post = apply_filters( 'wp_import_post_data_raw', $post );
 
 			if ( ! post_type_exists( $post['post_type'] ) ) {
-				printf( __( 'Failed to import &#8220;%s&#8221;: Invalid post type %s', wpgrade::textdomain() ),
+				printf( __( 'Failed to import "%s": Invalid post type %s', wpgrade::textdomain() ),
 					esc_html($post['post_title']), esc_html($post['post_type']) );
 				echo '<br />';
 				do_action( 'wp_import_post_exists', $post );
@@ -202,7 +202,7 @@ class wpGrade_import extends WPGrade_WP_Import
 				}
 
 				if ( is_wp_error( $post_id ) ) {
-					printf( __( 'Failed to import %s &#8220;%s&#8221;', wpgrade::textdomain() ),
+					printf( __( 'Failed to import %s "%s"', wpgrade::textdomain() ),
 						$post_type_object->labels->singular_name, esc_html($post['post_title']) );
 					if ( defined('IMPORT_DEBUG') && IMPORT_DEBUG )
 						echo ': ' . $post_id->get_error_message();
