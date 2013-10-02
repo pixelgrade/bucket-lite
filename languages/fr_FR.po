@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-09-30 17:04+0200\n"
-"PO-Revision-Date: 2013-09-30 18:30+0200\n"
+"POT-Creation-Date: 2013-10-02 13:46+0200\n"
+"PO-Revision-Date: 2013-10-02 13:56+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -18,6 +18,18 @@ msgstr ""
 #: ../404.php:7 ../no-results.php:10
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! Que la page ne ​​peut pas être trouvé."
+
+#: ../404.php:8 ../no-results.php:11
+#, php-format
+msgid ""
+"This may be because of a mistyped URL, faulty referral or out-of-date search "
+"engine listing.<br />You should try the <a href=\"%s\">homepage</a> instead "
+"or maybe do a search?"
+msgstr ""
+"C'est peut-être à cause d'une adresse URL mal, d'aiguillage défectueux ou "
+"out-of-date de la liste des moteurs de recherche.<br />Vous devriez essayer "
+"le <a href=\"%s\"> page d'accueil </ a> à la place ou bien faire un "
+"rechercher?"
 
 #: ../archive.php:20
 #, php-format
@@ -89,58 +101,48 @@ msgstr "Message"
 msgid "404"
 msgstr "404"
 
-#: ../no-results.php:11
-msgid ""
-"This may be because of a mistyped URL, faulty referral or out-of-date search "
-"engine listing. <br />\n"
-"                                   You should try the <a href=\""
-msgstr ""
-"C'est peut-être à cause d'une adresse URL mal, d'aiguillage défectueux ou "
-"out-of-date de la liste des moteurs de recherche. <br /> \n"
-" Vous devriez essayer le <a href= \""
-
 #: ../search.php:17
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Résultats pour : %s"
 
-#: ../single.php:31
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:28
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:74
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:101
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:69
+#: ../single.php:38
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:30
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
 msgid "Filled under"
 msgstr "Rempli sous"
 
-#: ../single.php:44
+#: ../single.php:51
 msgid "Tagged"
 msgstr "Tagué"
 
-#: ../single.php:55
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:47
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:127
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:88
+#: ../single.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:49
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
 msgid "Share"
 msgstr "Partager"
 
-#: ../single.php:60 ../theme-partials/posts-single.php:169
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:52
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:132
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:93
+#: ../single.php:67 ../theme-partials/posts-single.php:169
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:54
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
 msgid "Share on Twitter!"
 msgstr "Partager sur Twitter!"
 
-#: ../single.php:68 ../theme-partials/posts-single.php:177
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:60
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:140
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:101
+#: ../single.php:75 ../theme-partials/posts-single.php:177
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:62
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
 msgid "Share on Facebook!"
 msgstr "Partager sur Facebook!"
 
-#: ../single.php:76 ../theme-partials/posts-single.php:185
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:68
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:148
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:109
+#: ../single.php:83 ../theme-partials/posts-single.php:185
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
 msgid "Share on Google+!"
 msgstr "Partager sur Google+!"
 
@@ -149,7 +151,7 @@ msgstr "Partager sur Google+!"
 msgid "Tag Archives: %s"
 msgstr "Archives du mot clé : %s"
 
-#: ../yarpp-template-portfolio.php:61
+#: ../yarpp-template-portfolio.php:71
 msgid "No related projects"
 msgstr "Pas de projets connexes"
 
@@ -174,7 +176,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:327
+#: ../theme-callbacks/activation-hooks.php:355
 msgid "Images"
 msgstr "Images"
 
@@ -264,57 +266,73 @@ msgid "Gallery"
 msgstr "Galerie"
 
 #: ../theme-callbacks/activation-hooks.php:279
-msgid "Details"
-msgstr "Détails"
+msgid "Project Details"
+msgstr "Détails du projet"
 
 #: ../theme-callbacks/activation-hooks.php:286
-msgid "Client Name"
-msgstr "Nom du client"
+#: ../theme-callbacks/activation-hooks.php:360
+msgid "Template Style"
+msgstr "Style Template"
 
-#: ../theme-callbacks/activation-hooks.php:291
-msgid "Client Link"
-msgstr "URL du client"
-
-#: ../theme-callbacks/activation-hooks.php:296
-#: ../theme-callbacks/activation-hooks.php:332
-msgid "Template"
-msgstr "Modèle"
-
-#: ../theme-callbacks/activation-hooks.php:297
+#: ../theme-callbacks/activation-hooks.php:287
 msgid "Select the template you want for this project."
 msgstr "Sélectionnez le modèle que vous souhaitez pour ce projet."
 
-#: ../theme-callbacks/activation-hooks.php:333
-msgid "Select the template you want for this gallery."
-msgstr "Sélectionnez le modèle que vous souhaitez pour cette galerie."
+#: ../theme-callbacks/activation-hooks.php:307
+#: ../theme-callbacks/activation-hooks.php:380
+msgid "Image Scaling"
+msgstr "Redimensionnement de l'image"
 
-#: ../theme-callbacks/activation-hooks.php:353
-msgid "Image scale mode"
-msgstr "Mode d'échelle de l'image"
-
-#: ../theme-callbacks/activation-hooks.php:354
+#: ../theme-callbacks/activation-hooks.php:308
+#: ../theme-callbacks/activation-hooks.php:381
 msgid ""
-"Fit is reccomended for portrait images, fill is recommended for landscape "
-"images. (for full-screen and full-width galleries)"
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less then size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
 msgstr ""
-"Fit est reccomended pour les images de portrait, de remplissage est "
-"recommandée pour les images de paysage. (Pour les galeries en plein écran et "
-"pleine largeur)"
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> images échelles "
+"pour remplir complètement conteneur de curseur (recommandée pour les images "
+"de paysage).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> image Échelles "
+"pour adapter le conteneur (recommandé pour les images en mode portrait).</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> image "
+"Échelles pour s'adapter uniquement si la taille du conteneur curseur est "
+"inférieure à la taille de l'image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Explication visuelle</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:374
-msgid "Display the gallery title"
-msgstr "Afficher le titre de la galerie"
+#: ../theme-callbacks/activation-hooks.php:335
+msgid "Client Name"
+msgstr "Nom du client"
 
-#: ../theme-callbacks/activation-hooks.php:375
-msgid "Show the title of the gallery or not. (for grid galleries)"
-msgstr ""
-"Afficher le titre de la galerie ou non. (Pour les galeries de la grille)"
+#: ../theme-callbacks/activation-hooks.php:340
+msgid "Client Link"
+msgstr "URL du client"
 
-#: ../theme-callbacks/activation-hooks.php:401
+#: ../theme-callbacks/activation-hooks.php:404
+msgid "Grid Thumbnails Orientation"
+msgstr "Grille Miniatures Orientation"
+
+#: ../theme-callbacks/activation-hooks.php:420
+msgid "Gallery Title Box"
+msgstr "Galerie boîte de titre"
+
+#: ../theme-callbacks/activation-hooks.php:421
+msgid "Show the title of the gallery in a thumbnail box or not."
+msgstr "Afficher le titre de la galerie dans une boîte de vignettes ou non."
+
+#: ../theme-callbacks/activation-hooks.php:447
 msgid "Choose:"
 msgstr "Sélectionner..."
 
-#: ../theme-callbacks/activation-hooks.php:402
+#: ../theme-callbacks/activation-hooks.php:448
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -324,18 +342,18 @@ msgstr ""
 "avoir une page statique comme page d'accueil simplement suivre la voie "
 "classique de WP et mis en place dans Réglages> lecture (au lieu de celui-ci)."
 
-#: ../theme-callbacks/activation-hooks.php:418
+#: ../theme-callbacks/activation-hooks.php:464
 msgid "Select a gallery"
 msgstr "Sélectionnez une galerie"
 
-#: ../theme-callbacks/activation-hooks.php:419
+#: ../theme-callbacks/activation-hooks.php:465
 msgid "Select a gallery and we will show it on your homepage."
 msgstr ""
 "Sélectionnez une galerie et nous allons l'afficher sur votre page d'accueil."
 
 #: ../theme-callbacks/unsorted.php:75
 msgid "M j, Y \\a\\t H:i"
-msgstr "M j, Y \\a\\t H: i"
+msgstr "M j, Y \\a\\t H:i"
 
 #: ../theme-callbacks/unsorted.php:76
 #, php-format
@@ -382,8 +400,13 @@ msgid "General Options"
 msgstr "Options générales"
 
 #: ../theme-content/admin-panel/redux-sections.php:13
-msgid "<p class=\"description\">Welcome to the "
-msgstr "<p class=\"description\"> Bienvenue à l' "
+#, php-format
+msgid ""
+"<p class=\"description\">Welcome to the %s options panel! You can switch "
+"between option groups by using the left-hand tabs.</p>"
+msgstr ""
+"<p class=\"description\">Bienvenue sur le panneau d'options %s! Vous pouvez "
+"basculer entre les groupes d'options en utilisant les onglets à gauche.</p>"
 
 #: ../theme-content/admin-panel/redux-sections.php:18
 msgid "Import Demo Data"
@@ -415,7 +438,7 @@ msgstr "Activer / Désactiver le chargement d'Ajax"
 
 #: ../theme-content/admin-panel/redux-sections.php:63
 msgid "<h2>Branding Options</h2>"
-msgstr "<h2> Options de marquage </ h2>"
+msgstr "<h2>Options de marquage</h2>"
 
 #: ../theme-content/admin-panel/redux-sections.php:68
 msgid "Main Logo"
@@ -612,12 +635,16 @@ msgid "Social Icons"
 msgstr "Icônes sociaux"
 
 #: ../theme-content/admin-panel/redux-sections.php:222
+#, php-format
 msgid ""
-"Define and reorder your social links.<br /><b>Note: </b>These will be "
-"displayed in the \""
+"Define and reorder your social links.<br /><b>Note:</b> These will be "
+"displayed in the \"%s Social Links\" widget so you can put them anywhere on "
+"your site. Only those filled will appear."
 msgstr ""
-"Définir et réorganiser vos liens sociaux <br /> <b>. Remarque: </b> Ceux-ci "
-"seront affichés dans la \""
+"Définir et réorganiser vos liens sociaux.<br /><b>Remarque:</b> Ceux-ci "
+"seront affichés dans les \"%s Social Links\" widget de sorte que vous pouvez "
+"les mettre n'importe où sur votre site. Seulement ceux qui sont remplis "
+"apparaît."
 
 #: ../theme-content/admin-panel/redux-sections.php:223
 msgid ""
@@ -732,8 +759,8 @@ msgid ""
 "\"_blank\">a short movie</a> showing you how to get the URL"
 msgstr ""
 "Coller ici le l'URL que vous avez à partir de Google Maps, après avoir "
-"navigué à votre emplacement. <br /> Ici, il est <a href = \"http://screenr."
-"com/MjV7 \" target = \"_blank \"> un court-métrage </a> vous montre comment "
+"navigué à votre emplacement.<br />Ici, il est <a href = \"http://screenr.com/"
+"MjV7 \" target = \"_blank\"> un court-métrage </a> vous montre comment "
 "obtenir l'URL"
 
 #: ../theme-content/admin-panel/redux-sections.php:312
@@ -757,7 +784,7 @@ msgstr ""
 "portefeuille. </p>"
 
 #: ../theme-content/admin-panel/redux-sections.php:335
-#: ../theme-content/admin-panel/redux-sections.php:388
+#: ../theme-content/admin-panel/redux-sections.php:399
 msgid "Show Share Links"
 msgstr "Afficher Share links"
 
@@ -766,25 +793,33 @@ msgid "Do you want to show the share links bellow the projects?"
 msgstr "Voulez-vous montrer les liens d'actions dessous, les projets?"
 
 #: ../theme-content/admin-panel/redux-sections.php:344
-#: ../theme-content/admin-panel/redux-sections.php:397
+#: ../theme-content/admin-panel/redux-sections.php:408
 msgid "Twitter Share Link"
 msgstr "Twitter Share Link"
 
 #: ../theme-content/admin-panel/redux-sections.php:352
-#: ../theme-content/admin-panel/redux-sections.php:405
+#: ../theme-content/admin-panel/redux-sections.php:416
 msgid "Facebook Share Link"
 msgstr "Facebook Share Link"
 
 #: ../theme-content/admin-panel/redux-sections.php:360
-#: ../theme-content/admin-panel/redux-sections.php:413
+#: ../theme-content/admin-panel/redux-sections.php:424
 msgid "Google+ Share Link"
 msgstr "Google+ Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:375
+#: ../theme-content/admin-panel/redux-sections.php:366
+msgid "Portfolio grid thumbnail orientation"
+msgstr "Portefeuille grille orientation des vignettes"
+
+#: ../theme-content/admin-panel/redux-sections.php:367
+msgid "Horizontal thumbnails or vertical thumbnails"
+msgstr "Vignettes horizontales ou verticales vignettes"
+
+#: ../theme-content/admin-panel/redux-sections.php:386
 msgid "Blog Options"
 msgstr "Options du blog"
 
-#: ../theme-content/admin-panel/redux-sections.php:376
+#: ../theme-content/admin-panel/redux-sections.php:387
 msgid ""
 "<p class=\"description\">Change blog archive and single post related options "
 "here.</p>"
@@ -792,39 +827,39 @@ msgstr ""
 "<p class=\"description\">Changer archive de blog et articles individuels "
 "liés options ici.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:381
+#: ../theme-content/admin-panel/redux-sections.php:392
 msgid "Excerpt Length"
 msgstr "Extrait longueur"
 
-#: ../theme-content/admin-panel/redux-sections.php:382
+#: ../theme-content/admin-panel/redux-sections.php:393
 msgid "Set here the excerpt length for the blog archive (number of words)."
 msgstr "Réglez ici la longueur d'extrait de l'archive blogue (nombre de mots)."
 
-#: ../theme-content/admin-panel/redux-sections.php:389
+#: ../theme-content/admin-panel/redux-sections.php:400
 msgid "Do you want to show the share links bellow the article?"
 msgstr "Voulez-vous montrer les liens d'actions soufflet cet article?"
 
-#: ../theme-content/admin-panel/redux-sections.php:428
+#: ../theme-content/admin-panel/redux-sections.php:439
 msgid "Social and SEO Options"
 msgstr "Options sociales et SEO"
 
-#: ../theme-content/admin-panel/redux-sections.php:430
+#: ../theme-content/admin-panel/redux-sections.php:441
 msgid "<p class=\"description\">Social sharing stuff.</p>"
 msgstr "<p class=\"description\">Des trucs de partage social.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:435
+#: ../theme-content/admin-panel/redux-sections.php:446
 msgid "Open social icons links in new a window?"
 msgstr "Ouvrez les liens icônes sociaux dans la nouvelle fenêtre?"
 
-#: ../theme-content/admin-panel/redux-sections.php:436
+#: ../theme-content/admin-panel/redux-sections.php:447
 msgid "Do you want to open social links in a new window ?"
 msgstr "Voulez-vous ouvrir les liens sociaux dans une nouvelle fenêtre?"
 
-#: ../theme-content/admin-panel/redux-sections.php:443
+#: ../theme-content/admin-panel/redux-sections.php:454
 msgid "Add Social Meta Tags"
 msgstr "Ajouter étiquettes de méta sociaux"
 
-#: ../theme-content/admin-panel/redux-sections.php:444
+#: ../theme-content/admin-panel/redux-sections.php:455
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
@@ -832,11 +867,11 @@ msgstr ""
 "Préparons-nous correctement votre thème pour le partage social et de "
 "découverte en ajoutant les metatags nécessaires dans la section <head>."
 
-#: ../theme-content/admin-panel/redux-sections.php:452
+#: ../theme-content/admin-panel/redux-sections.php:463
 msgid "Facebook Application ID"
 msgstr "Application Facebook ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:453
+#: ../theme-content/admin-panel/redux-sections.php:464
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
@@ -846,11 +881,11 @@ msgstr ""
 "site. Vous pouvez créer un <a href=\"https://developers.facebook.com/apps\"> "
 "ici </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:458
+#: ../theme-content/admin-panel/redux-sections.php:469
 msgid "Facebook Admin ID"
 msgstr "Facebook Administrateur ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:459
+#: ../theme-content/admin-panel/redux-sections.php:470
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
@@ -860,11 +895,11 @@ msgstr ""
 "votre appli Facebook pour que vous puissiez accéder à la <a href=\"https://"
 "www.facebook.com/insights/\"> Facebook Insights </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:464
+#: ../theme-content/admin-panel/redux-sections.php:475
 msgid "Google+ Publisher"
 msgstr "Editeur Google+"
 
-#: ../theme-content/admin-panel/redux-sections.php:465
+#: ../theme-content/admin-panel/redux-sections.php:476
 msgid ""
 "Enter your Google Plus page URL (example: https://plus.google."
 "com/105345678532237339285) here if you have set up a \"Google+ Page\"."
@@ -873,11 +908,11 @@ msgstr ""
 "com/105345678532237339285) ici si vous avez mis en place un \"page Google+ "
 "\"."
 
-#: ../theme-content/admin-panel/redux-sections.php:470
+#: ../theme-content/admin-panel/redux-sections.php:481
 msgid "Twitter Site Username"
 msgstr "Twitter du site Nom d'utilisateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:471
+#: ../theme-content/admin-panel/redux-sections.php:482
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
@@ -885,11 +920,11 @@ msgstr ""
 "Le nom d'utilisateur Twitter de l'ensemble du site. Le nom de l'auteur sera "
 "prélevé sur le profil de l'auteur (sauter le signe @)"
 
-#: ../theme-content/admin-panel/redux-sections.php:476
+#: ../theme-content/admin-panel/redux-sections.php:487
 msgid "Default Social Share Image"
 msgstr "Par défaut Partager Social image"
 
-#: ../theme-content/admin-panel/redux-sections.php:477
+#: ../theme-content/admin-panel/redux-sections.php:488
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
@@ -898,11 +933,11 @@ msgstr ""
 "vous ne téléchargez une image personnalisée avec votre contenu (au moins "
 "200px de large recommandée)."
 
-#: ../theme-content/admin-panel/redux-sections.php:482
+#: ../theme-content/admin-panel/redux-sections.php:493
 msgid "Use Twitter Widget"
 msgstr "Utilisez Twitter Widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:483
+#: ../theme-content/admin-panel/redux-sections.php:494
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
@@ -911,11 +946,11 @@ msgstr ""
 "compatible). Vous pouvez ajouter dans votre blog ou encadrés bas de page. "
 "<div class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:491
+#: ../theme-content/admin-panel/redux-sections.php:502
 msgid "Important Note : "
 msgstr "Remarque importante: "
 
-#: ../theme-content/admin-panel/redux-sections.php:492
+#: ../theme-content/admin-panel/redux-sections.php:503
 msgid ""
 "In order to use the Twitter widget you will need to create a Twitter "
 "application <a href=\"https://dev.twitter.com/apps/new\" >here</a> and get "
@@ -929,27 +964,27 @@ msgstr ""
 "Twitter a fait à son API (v1.1). S'il vous plaît noter que ces valeurs par "
 "défaut sont utilisés sur le "
 
-#: ../theme-content/admin-panel/redux-sections.php:497
+#: ../theme-content/admin-panel/redux-sections.php:508
 msgid "Consumer Key"
 msgstr "Clé des consommateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:503
+#: ../theme-content/admin-panel/redux-sections.php:514
 msgid "Consumer Secret"
 msgstr "Secret consommateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:509
+#: ../theme-content/admin-panel/redux-sections.php:520
 msgid "Oauth Access Token"
 msgstr "Oauth accès token"
 
-#: ../theme-content/admin-panel/redux-sections.php:515
+#: ../theme-content/admin-panel/redux-sections.php:526
 msgid "Oauth Access Token Secret"
 msgstr "Oauth token d'accès secret"
 
-#: ../theme-content/admin-panel/redux-sections.php:528
+#: ../theme-content/admin-panel/redux-sections.php:539
 msgid "Theme Auto Update"
 msgstr "Thème Upgrade automatique"
 
-#: ../theme-content/admin-panel/redux-sections.php:529
+#: ../theme-content/admin-panel/redux-sections.php:540
 msgid ""
 "<p class=\"description\">Let us notify you when new versions of this theme "
 "are live on ThemeForest! Update with just one button click. Forget about "
@@ -959,33 +994,33 @@ msgstr ""
 "versions de ce thème sont en direct sur ThemeForest! Mise à jour avec un "
 "seul clic de bouton. Oubliez les mises à jour manuelles!</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:534
+#: ../theme-content/admin-panel/redux-sections.php:545
 msgid "Use Auto Update"
 msgstr "Utilisez upgrade automatique"
 
-#: ../theme-content/admin-panel/redux-sections.php:535
+#: ../theme-content/admin-panel/redux-sections.php:546
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 "Activez cette option pour entrer les informations nécessaires pour le thème "
 "de mise à jour automatique de travailler."
 
-#: ../theme-content/admin-panel/redux-sections.php:543
+#: ../theme-content/admin-panel/redux-sections.php:554
 msgid "ThemeForest Username"
 msgstr "ThemeForest Nom d'utilisateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:544
+#: ../theme-content/admin-panel/redux-sections.php:555
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr ""
 "Entrez ici votre ThemeForest utilisateur du compte (ou Envato) (c. "
 "pixelgrade)."
 
-#: ../theme-content/admin-panel/redux-sections.php:549
+#: ../theme-content/admin-panel/redux-sections.php:560
 msgid "ThemeForest Secret API Key"
 msgstr "ThemeForest secret API Key"
 
-#: ../theme-content/admin-panel/redux-sections.php:550
+#: ../theme-content/admin-panel/redux-sections.php:561
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
@@ -996,22 +1031,22 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-tabs.php:25
 #: ../wpgrade-core/vendor/redux3/options.php:777
 msgid "<strong>Theme URL:</strong> "
-msgstr "<strong> Thème URL: </ strong> "
+msgstr "<strong>Thème URL:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:30
 #: ../wpgrade-core/vendor/redux3/options.php:778
 msgid "<strong>Author:</strong> "
-msgstr "<strong> Auteur: </ strong> "
+msgstr "<strong>Auteur:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:34
 #: ../wpgrade-core/vendor/redux3/options.php:779
 msgid "<strong>Version:</strong> "
-msgstr "<strong> Version: </ strong> "
+msgstr "<strong>Version:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:42
 #: ../wpgrade-core/vendor/redux3/options.php:781
 msgid "<strong>Tags:</strong> "
-msgstr "<strong> Balises: </ strong> "
+msgstr "<strong>Balises:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:51
 #: ../wpgrade-core/vendor/redux3/options.php:787
@@ -1045,8 +1080,8 @@ msgid ""
 "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" "
 "datetime=\"%3$s\" pubdate>%4$s</time></a>"
 msgstr ""
-"<a href=\"%1$s\" title =\"%2$s\" rel=\"bookmark \"><time class=\"entry-date"
-"\" datetime=\"%3$s \" pubdate>%4$s</time></ a>"
+"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" "
+"datetime=\"%3$s\" pubdate>%4$s</time></a>"
 
 #: ../theme-content/inc/template-tags.php:132
 #, php-format
@@ -1318,12 +1353,12 @@ msgstr ""
 #, php-format
 msgid ""
 "If a new user is created by WordPress, a new password will be randomly "
-"generated and the new user&#8217;s role will be set as %s. Manually changing "
-"the new user&#8217;s details will be necessary."
+"generated and the new user's role will be set as %s. Manually changing the "
+"new user's details will be necessary."
 msgstr ""
 "Si un nouvel utilisateur est créé par WordPress, un nouveau mot de passe "
 "sera généré aléatoirement et le rôle du nouvel utilisateur sera créé en tant "
-"que %s . Changer manuellement les détails du nouvel utilisateur sera "
+"que %s. Changer manuellement les détails du nouvel utilisateur sera "
 "nécessaire."
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:279
@@ -1387,19 +1422,19 @@ msgstr "Échec de l'import %s %s"
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:537
 #: ../theme-content/inc/import/wordpress-importer/wpgrade-import-class.php:109
 #, php-format
-msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
-msgstr "Échec de l'importation “%s” : Type d'article invalide %s"
+msgid "Failed to import \"%s\": Invalid post type %s"
+msgstr "Échec de l'importation de \"%s\": Invalid type de message %s"
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:559
 #, php-format
-msgid "%s &#8220;%s&#8221; already exists."
-msgstr "%s“%s” existe déjà."
+msgid "%s \"%s\" already exists."
+msgstr "%s \"%s\" existe déjà."
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:618
 #: ../theme-content/inc/import/wordpress-importer/wpgrade-import-class.php:205
 #, php-format
-msgid "Failed to import %s &#8220;%s&#8221;"
-msgstr "Échec de l'import %s “%s”"
+msgid "Failed to import %s \"%s\""
+msgstr "Échec de l'import de %s \"%s\""
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:784
 msgid "Menu item skipped due to missing menu slug"
@@ -1459,11 +1494,10 @@ msgstr ""
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:1056
 msgid ""
-"Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import "
-"the posts, pages, comments, custom fields, categories, and tags into this "
-"site."
+"Howdy! Upload your WordPress eXtended RSS (WXR) file and we'll import the "
+"posts, pages, comments, custom fields, categories, and tags into this site."
 msgstr ""
-"Téléchargez votre fichier WordPress eXtended RSS (WXR) et nous allons "
+"Howdy! Téléchargez votre fichier WordPress eXtended RSS (WXR) et nous allons "
 "importer les messages, pages, commentaires, champs personnalisés, les "
 "catégories et les étiquettes dans ce site."
 
@@ -1491,7 +1525,7 @@ msgstr "Installation Plugin: %s"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:170
 msgid "Something went wrong."
-msgstr "Une erreur est survenue !"
+msgstr "Une erreur est survenue."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:171
 #: ../theme-content/inc/required-plugins/required-plugins.php:91
@@ -1762,7 +1796,7 @@ msgstr ""
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
-"Une erreur s'est produite lors de l'installation %1$s : <strong> %2$s </ "
+"Une erreur s'est produite lors de l'installation %1$s : <strong>%2$s</"
 "strong>."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2029
@@ -1813,34 +1847,34 @@ msgstr "Aller au haut de la page"
 msgid "Back to top"
 msgstr "Retour en haut"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:21
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:67
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:95
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:22
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
 msgid "Client"
 msgstr "Client"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:82
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:86
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
 msgid "Related projects"
 msgstr "Les projets connexes"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:87
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:167
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:129
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:171
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:133
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
 msgid "All projects"
 msgstr "Tous les projets"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:175
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:137
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:99
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
 msgid "Next"
 msgstr "Next"
 
@@ -1853,12 +1887,12 @@ msgid "Header Menu"
 msgstr "Header Menu"
 
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:134
-msgid "« Previous"
-msgstr "« Précédent"
+msgid "&laquo; Previous"
+msgstr "&laquo; Précédent"
 
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:141
-msgid "Next »"
-msgstr "Suivant &#187;"
+msgid "Next &raquo;"
+msgstr "Suivant &raquo;"
 
 #: ../wpgrade-core/resources/views/read-more-content.php:11
 #: ../wpgrade-core/resources/views/read-more.php:9
@@ -1886,11 +1920,11 @@ msgstr "L'API \"set\" est un paramètre obligatoire."
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "Le marché Envato \"item ID\" est un paramètre obligatoire."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:286
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:287
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Télécharger le pack de mise à jour de l'API Envato ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:297
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:298
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Téléchargement package d'installation de l'API Envato ..."
 
@@ -1932,27 +1966,27 @@ msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:644
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:626
 msgid "<strong>Settings Imported!</strong>"
-msgstr "<strong> Paramètres importés </ strong>"
+msgstr "<strong>Paramètres importés</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:646
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:628
 msgid "<strong>Settings Saved!</strong>"
-msgstr "<strong> Paramètres Saved! </ strong>"
+msgstr "<strong>Paramètres ont été sauvés!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:651
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:633
 msgid "<strong>Settings have changed, you should save them!</strong>"
-msgstr "<strong> Paramètres ont changé, vous devez les sauver! </ strong>"
+msgstr "<strong>Paramètres ont changé, vous devez les sauver!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:652
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:634
 msgid "<strong><span></span> error(s) were found!</strong>"
-msgstr "<strong> <span> </ span> erreur (s) ont été trouvé! </ strong>"
+msgstr "<strong><span></ span> erreur (s) ont été trouvé!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:653
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:635
 msgid "<strong><span></span> warning(s) were found!</strong>"
-msgstr "<strong> <span> </ span> avertissement (s) ont été trouvé! </ strong>"
+msgstr "<strong><span></ span> avertissement (s) ont été trouvé!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:740
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:717
@@ -2036,14 +2070,11 @@ msgid "From:"
 msgstr "de:"
 
 #: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:29
-#: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:29
-msgid "To:"
-msgstr "à:"
-
 #: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:35
+#: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:29
 #: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:35
-msgid " To:"
-msgstr " à:"
+msgid "To:"
+msgstr "Vers:"
 
 #: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:31
 #: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:35
@@ -2138,9 +2169,9 @@ msgid ""
 "<p>This text is displayed above the options panel. It isn't required, but "
 "more info is always better! The intro_text field accepts all HTML.</p>"
 msgstr ""
-"<p> Ce texte s'affiche au-dessus du panneau d'options. Il n'est pas "
+"<p>Ce texte s'affiche au-dessus du panneau d'options. Il n'est pas "
 "nécessaire, mais plus d'info est toujours mieux! Le champ intro_text accepte "
-"tous les fichiers HTML. </p>"
+"tous les fichiers HTML.</p>"
 
 #: ../wpgrade-core/vendor/redux3/options.php:101
 msgid ""
@@ -2360,7 +2391,7 @@ msgstr "Option Editor 2"
 
 #: ../wpgrade-core/vendor/redux3/options.php:409
 msgid "Radio/Checkbox Fields"
-msgstr "Radio / cocher les champs"
+msgstr "Radio/cocher champs"
 
 #: ../wpgrade-core/vendor/redux3/options.php:410
 #: ../wpgrade-core/vendor/redux3/options.php:482
@@ -2437,7 +2468,7 @@ msgstr "Sélectionner les champs"
 
 #: ../wpgrade-core/vendor/redux3/options.php:487
 msgid "Select Option"
-msgstr ",sélect option"
+msgstr "Sélect option"
 
 #: ../wpgrade-core/vendor/redux3/options.php:496
 msgid "Multi Select Option"
@@ -2462,7 +2493,7 @@ msgstr "Option de dégradé de couleur"
 
 #: ../wpgrade-core/vendor/redux3/options.php:530
 msgid "Date Option"
-msgstr "Date d'Option"
+msgstr "Option de date"
 
 #: ../wpgrade-core/vendor/redux3/options.php:537
 msgid "Button Set Option"
@@ -2526,7 +2557,7 @@ msgstr ""
 
 #: ../wpgrade-core/vendor/redux3/options.php:601
 msgid "Cats Select Option"
-msgstr "Chats Choisissez l'option"
+msgstr "Cats Choisissez l'option"
 
 #: ../wpgrade-core/vendor/redux3/options.php:603
 msgid "This field creates a drop down menu of all the sites cats."
@@ -2658,8 +2689,8 @@ msgid ""
 "<p class=\"description\">This is the info field, if you want to break "
 "sections up.</p>"
 msgstr ""
-"<p class=\"description\"> C'est le champ d'information, si vous voulez "
-"briser sections place. </p>"
+"<p class=\"description\">C'est le champ d'information, si vous voulez briser "
+"sections place.</p>"
 
 #: ../wpgrade-core/vendor/redux3/options.php:795
 msgid "Documentation"
@@ -2693,3 +2724,50 @@ msgstr ""
 "Les polices fournies ci-dessous sont libres d'utiliser des polices "
 "personnalisées à partir du <a href=\"http://www.google.com/webfonts\" target="
 "\"_blank\"> Google répertoire Fonts Web </ a>"
+
+#~ msgid "Details"
+#~ msgstr "Détails"
+
+#~ msgid "Full width template slider: image scale mode"
+#~ msgstr "Largeur curseur de modèle: mode d'échelle de l'image"
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images."
+#~ msgstr ""
+#~ "Fit est recommandée pour les images de portrait, de remplissage est "
+#~ "recommandée pour les images de paysage."
+
+#~ msgid "Select the template you want for this gallery."
+#~ msgstr "Sélectionnez le modèle que vous souhaitez pour cette galerie."
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images. (for full-screen and full-width galleries)"
+#~ msgstr ""
+#~ "Fit est recommandée pour les images de portrait, de remplissage est "
+#~ "recommandée pour les images de paysage. (pour les galeries en plein écran "
+#~ "et pleine largeur)"
+
+#~ msgid "Display the gallery title"
+#~ msgstr "Afficher le titre de la galerie"
+
+#~ msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
+#~ msgstr ""
+#~ "Vignettes horizontales ou verticales (vignettes pour les galeries de type "
+#~ "grille)"
+
+#~ msgid "Next »"
+#~ msgstr "Suivant &#187;"
+
+#~ msgid " To:"
+#~ msgstr " à:"
+
+#~ msgid "Failed to import %s &#8220;%s&#8221;"
+#~ msgstr "Échec de l'import %s “%s”"
+
+#~ msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+#~ msgstr "Échec de l'importation “%s” : Type d'article invalide %s"
+
+#~ msgid "<p class=\"description\">Welcome to the "
+#~ msgstr "<p class=\"description\"> Bienvenue à l' "

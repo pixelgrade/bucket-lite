@@ -7,8 +7,8 @@
 		if (isset($_GET['page']) && ($_GET['page'] == 'theme-update-notifier')) {
 			wp_enqueue_script('jquery');
 			wp_enqueue_script('jquery-ui-dialog');
-			wp_enqueue_script('wpgrade-update', wpgrade::coreuri().'views/resources/update-notifier/update-notifier.js');
-			wp_enqueue_style('wpgrade-update-style', wpgrade::coreuri().'views/resources/update-notifier/update-notifier.css');
+			wp_enqueue_script('wpgrade-update', wpgrade::coreuri().'resources/assets/update-notifier/update-notifier.js');
+			wp_enqueue_style('wpgrade-update-style', wpgrade::coreuri().'resources/assets/update-notifier/update-notifier.css');
 		}
 	}
 
