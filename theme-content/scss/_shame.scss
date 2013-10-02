@@ -266,6 +266,11 @@ img.mfp-img{
     //max-height: 90% !important;
 }
 
+.mfp-figure--video .mfp-bottom-bar {
+    bottom: 0;
+    margin-top: 0;
+}
+
 .mfp-figure:after{
     background: none;
     box-shadow: none;
@@ -276,7 +281,6 @@ img.mfp-img{
     top: auto;
 
     .gallery-control{
-        @include rem(right, $half-spacing-unit);
         -webkit-animation: none !important;
             -ms-animation: none !important;
              -o-animation: none !important;
