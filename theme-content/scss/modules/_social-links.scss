@@ -17,16 +17,6 @@
  */
 
 .social-links{
-    display: block;
-
-    @include media(to hand){
-        width: 100%;
-        margin-top: $half-spacing-unit;
-    }
-
-    @include media(from hand) {
-        float: right;
-    }
 
 }
 
@@ -36,15 +26,16 @@
         font-family: "Open Sans", sans-serif;
         @include font-size(12px);
         text-transform: uppercase;
-        float:left;
-        line-height:3.5;
+        // line-height:3.5;
+        position: relative;
+        top: -0.25em;
     }
 
     .social-links__list{
         @extend .nav;
         display: inline-block;
         margin-bottom: 0;
-        @include rem(margin-right, -$half-spacing-unit/2);
+        // @include rem(margin-right, -$half-spacing-unit/2);
 
         a{
             @include rem(padding, $half-spacing-unit/2 0);

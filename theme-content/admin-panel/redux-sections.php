@@ -368,10 +368,10 @@
                 'id' => 'portfolio_thumb_orientation',
                 'type' => 'select',
                 'options' => array(
-                    'horizontal' => 'Horizontal',
-                    'vertical' => 'Vertical',
+                    'landscape' => 'Landscape',
+                    'portrait' => 'Portrait',
                 ),
-                'std' => 'horizontal'
+                'std' => 'Landscape'
             )            
 		)
 	);

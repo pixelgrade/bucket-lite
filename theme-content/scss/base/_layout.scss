@@ -4,15 +4,7 @@
     background: white;
     position: relative;
 
-    // project-classic causes horizontal scroll. CAUTION!
-    overflow: hidden;
-
-    @include media(from hand) {
-        @include rem(margin-left, 250px);
-    } 
-
     @include media(to hand) {
-        position: relative;
         @include rem(top, 3*$base-spacing-unit);
         @include rem(padding-bottom, 3*$base-spacing-unit);
         @include transition(opacity .3s ease-in-out);
@@ -22,143 +14,187 @@
             @include opacity(0.15);
         }
     }
-}
-
-.page-content{
-    @extend .col-12; 
-    @extend .lap-col-8;
-    border-left-width: 0;
 
     @include media(from hand) {
-        @include rem(padding-bottom, 2 * $base-spacing-unit);
-    }
+        // @include rem(padding-bottom, 2 * $base-spacing-unit);
+        @include rem(margin-left, 250px);
+    } 
+}
 
-    @include media(to lap) {
-        max-width: 100%;
-        @include rem(padding, 0 $base-spacing-unit);           
+.page-content {
+    @include rem(padding-right, $base-spacing-unit);
+
+    @include media(from hand) {
+        @include rem(padding-right, 2 * $base-spacing-unit);
     }
 }
 
-.sidebar{
-    @extend .col-12;
-    @extend .lap-col-4;    
-}
+.page-main, .page-side {
+    float: left;
+    @include rem(padding-left, $base-spacing-unit);
 
-@include media(from lap) {
-    .page-content{
-        @include rem(padding-left, 2 * $base-spacing-unit);   
-        padding-right: 0;
-    }
-
-    .page-content.project-sidebar-right{
-        max-width: none;
-        width: 100%;
-    }
-
-    @include media(lap desk) {
-        .single-portfolio-sidebar .content{
-            @include rem(max-width, 1275px);
-        }
-
-
-        .sidebar{
-            @include rem(max-width, 430px);
-        }        
-    }
-
-    .page-content, .sidebar{
-        float: left;
+    @include media(from hand) {
+        @include rem(padding-left, 2 * $base-spacing-unit);
     }
 }
 
-// @include media(from lap) {
-//     .wrapper{
-//         height: 100%;
-//     }
-// }
-
-
-
-/*----------------------------------------*\
-*   $SINGLE STYLING
-\*----------------------------------------*/
-
-
-@include media(from lap) {
-    .single .content{
-        @include rem(max-width, 1275px);
-    }
-}
-
-@include media(from desk) {
-    .single .content{
-        max-width: 100%;
-        margin-right: 10%;
-    }
-}
-
-@include media(to lap) {
-    .single-post{
-        .featured-image{
-            @include rem(margin-left, -$base-spacing-unit);
-            @include rem(margin-right,-$base-spacing-unit);
-        }   
-    }    
-}
-
-@include media(from lap) {
-    .single-post{
-        .page-content{
-            @include rem(padding-left, 10 * $base-spacing-unit);
-        }
-
-        .featured-image{
-            @include rem(margin-left, -10 * $base-spacing-unit);
-        }   
-    }
-}
-
-.featured-image img{
+.page-main {
     width: 100%;
-    height: auto;
-    display: block;
+
+    .single-post & {
+
+        @include media(from 1600px) {
+            @include rem(padding-left, 6 * $base-spacing-unit);
+
+            .featured-image {
+                @include rem(margin-left, -6 * $base-spacing-unit);
+            }
+        }
+
+        @include media(from 1750px) {
+            @include rem(padding-left, 10 * $base-spacing-unit);
+
+            .featured-image {
+                @include rem(margin-left, -10 * $base-spacing-unit);
+            }
+        }
+    }
+    
+    @include media(from lap) {
+        @include rem(max-width, 890px);
+
+        .page-content--with-sidebar & {
+            width: 67%;
+        }
+    }
 }
 
+.page-side {
+    width: 100%;
+        
+    @include media(from lap) {
+        width: 33%;
+        @include rem(max-width, 420px);
+    }
+}
 
+.featured-image {
 
-
-
-/*----------------------------------------*\
-*   $FULL WIDTH
-\*----------------------------------------*/
-
-.full-width{
-    .page-content{
-        max-width: 100% !important;
+    img {
         width: 100%;
     }
-
-    @include media(lap desk) {
-        article{
-            @include rem(max-width, 890px);
-        }
-    }
-
-    @include media(from desk) {
-        article{
-            margin-right: 30%;
-        }
-    }
-
 }
 
-.single-portfolio-fullwidth,
-.single-lens_gallery,
-.portfolio-archive {
-    .content{
-        max-width: 100%;
-        margin-right: 0;
+
+
+
+/*--------------------------------*\
+               SINGLE
+\*--------------------------------*/
+
+.entry__wrap {
+    @extend .cf;
+
+    @include media(from 1600px) {
+
+        @include rem(margin-left, -6 * $base-spacing-unit);
+
+        .entry__content {
+            @include rem(padding-top, $base-spacing-unit);
+            @include rem(margin-left, 6 * $base-spacing-unit);
+        }
     }
+
+    @include media(from 1750px) {
+
+        @include rem(margin-left, -10 * $base-spacing-unit);
+
+        .entry__content {
+            @include rem(margin-left, 10 * $base-spacing-unit);
+        }
+    }
+}
+
+.post {
+    position: relative;
+}
+
+.page, .post {
+    .featured-image {
+        @include rem(margin, 0 -2*$base-spacing-unit);
+    }
+
+    @include media(from lap) {
+        .featured-image {
+            margin-right: 0;
+        }
+    }
+}
+
+.entry__likes {
+    @include rem(padding-top, $base-spacing-unit + 4px);
+    @include rem(padding-bottom, $base-spacing-unit);
+    @extend .cf;
+
+    @include media(to 1600px) {
+        position: absolute;
+        top: 0; right: 0;
+        @include rem(padding-top, $half-spacing-unit - 4px);
+    }
+
+    @include media(from 1600px) {
+        @include rem(width, 6 * $base-spacing-unit);
+        text-align: center;
+        float: left;
+
+        .likes-box {
+            display: inline-block;
+            float: none;
+        }
+    }
+
+    @include media(from 1750px) {
+        @include rem(width, 10 * $base-spacing-unit);
+    }
+}
+
+
+
+
+/*-----------------------------------------*\
+               PROJECT SIDEBAR
+\*-----------------------------------------*/
+
+.project--sidebar__images {
+
+    @include media(from lap) {
+        @include rem(padding-top, 2 * $base-spacing-unit);
+        @include rem(padding-bottom, $base-spacing-unit);
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.project--sidebar__content {
+    @include rem(padding-top, 2 * $base-spacing-unit);
+
+    .entry__title {
+        @include rem(padding-bottom, $half-spacing-unit);
+    }
+
+    .social-links__message {
+
+        @include media(lap 1750px) {
+            display: none;
+        }
+    }
+}
+
+.project--sidebar__related {
+    clear: both;
 }
 
 .single-lens_gallery .content{
@@ -168,34 +204,49 @@
 
 
 
-/*----------------------------------------*\
-    $PAGE
-\*----------------------------------------*/
-.page .page-content{
+/*-------------------------------------------*\
+               PROJECT FULLWIDTH
+\*-------------------------------------------*/
+
+.project--fullwidth__header {
+    @extend .col-12;
+    @extend .lap-span-5;
+    
+    @include media(from lap) {
+        border-right: 1px dotted $dark;
+    }
+}
+
+.project--fullwidth__separator--header {
+    @extend .col-12;
+    @extend .lap-span-5;
+}
+
+.project--fullwidth__content {
+    @extend .col-12;
+    @extend .lap-span-7;
+    @include rem(padding-bottom, $base-spacing-unit);
 
     @include media(from lap) {
-        @include rem(max-width, 890px);
-        width: 100%;
+        @include rem(border-left-width, 2 * $base-spacing-unit);
+        @include rem(padding-top, 5 * $half-spacing-unit);
     }
-}
+} 
 
-@media screen and (min-width: 1921px) {
-    .page .page-content{
-        max-width: 80%;
-        width: 80%;
-    }
-}
+.project--fullwidth__separator--content {
+    @extend .col-12;
+    @extend .lap-span-7;
+    @include rem(border-left-width, 2 * $base-spacing-unit);
+    display: none;
 
-.page .featured-image{
-    @include rem(margin-left, -2 * $base-spacing-unit);
-}
-
-@include media(to hand) { 
-    .page .featured-image{
-        @include rem(margin-right, -$base-spacing-unit);
-        @include rem(margin-left, -$base-spacing-unit);
+    @include media(from lap) {
+        display: block;
     }
 }
 
 
 
+
+/*---------------------------------*\
+               PROJECT
+\*---------------------------------*/

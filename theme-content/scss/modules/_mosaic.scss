@@ -42,7 +42,7 @@
         }
     }
 
-    .mosaic__item.mosaic__item--vertical{
+    .mosaic__item.mosaic__item--portrait{
         .single-lens_gallery &{
             @extend .span-6;
             @extend .hand-span-4;

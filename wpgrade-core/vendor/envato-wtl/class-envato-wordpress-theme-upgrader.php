@@ -70,10 +70,9 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
             }
             
             $purchased_themes             = $this->filter_purchased_themes_by_name($purchased_themes, $theme_name);
-            if ( function_exists( 'wp_get_themes' ) )
-            	$themes_list = wp_get_themes();
-            else
-            	$themes_list = get_themes();
+
+            $themes_list = wp_get_themes();
+
             $result->updated_themes       = $this->get_updated_themes($themes_list, $purchased_themes);
             $result->updated_themes_count = count($result->updated_themes);
             
@@ -229,10 +228,12 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
 
         protected function is_theme_installed($theme_name) 
         {
-        	if ( function_exists( 'wp_get_theme' ) )
-        		$installed_theme = wp_get_theme();
-        	else
-	            $installed_theme = get_theme();
+	        $installed_theme = wp_get_theme();
+
+	        if (  is_child_theme() ) {
+		        $installed_theme = wp_get_theme( $installed_theme->template );
+	        }
+
             //our modification - get only the active theme
 			if (strcmp($installed_theme['Name'], $theme_name) == 0) {
 				return $installed_theme;
