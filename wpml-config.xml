@@ -11,22 +11,7 @@
 		<key name="lens_options">
 			<key name="footer_twitter_title" />
 			<key name="copyright_text" />
-			<key name="homepage_content1" />
-			<key name="site_wide_section" />
-			<key name="site_wide_button_label" />
-			<key name="homepage_portfolio_title" />
-			<key name="homepage_portfolio_more" />
-			<key name="homepage_content2" />
-			<key name="contact_sidebar_title" />
-			<key name="contact_form_title" />
-			<key name="contact_content_left" />
-			<key name="contact_phone" />
-			<key name="contact_email" />
-			<key name="contact_address" />
-			<key name="portfolio_title" />
-			<key name="portfolio_single_label" />
-			<key name="portfolio_plural_label" />
-			<key name="blog_archive_title" />
+			<key name="social_footer_menu_title" />
 		</key>
    </admin-texts>
     <language-switcher-settings>
