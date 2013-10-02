@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 12:13+0200\n"
-"PO-Revision-Date: 2013-10-02 12:21+0200\n"
+"POT-Creation-Date: 2013-10-02 13:46+0200\n"
+"PO-Revision-Date: 2013-10-02 13:56+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -106,43 +106,43 @@ msgstr "404"
 msgid "Search Results for: %s"
 msgstr "Résultats pour : %s"
 
-#: ../single.php:31
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:28
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:88
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:69
+#: ../single.php:38
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:30
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
 msgid "Filled under"
 msgstr "Rempli sous"
 
-#: ../single.php:44
+#: ../single.php:51
 msgid "Tagged"
 msgstr "Tagué"
 
-#: ../single.php:55
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:47
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:141
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:88
+#: ../single.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:49
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
 msgid "Share"
 msgstr "Partager"
 
-#: ../single.php:60 ../theme-partials/posts-single.php:169
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:52
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:146
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:93
+#: ../single.php:67 ../theme-partials/posts-single.php:169
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:54
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
 msgid "Share on Twitter!"
 msgstr "Partager sur Twitter!"
 
-#: ../single.php:68 ../theme-partials/posts-single.php:177
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:60
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:101
+#: ../single.php:75 ../theme-partials/posts-single.php:177
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:62
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
 msgid "Share on Facebook!"
 msgstr "Partager sur Facebook!"
 
-#: ../single.php:76 ../theme-partials/posts-single.php:185
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:68
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:109
+#: ../single.php:83 ../theme-partials/posts-single.php:185
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
 msgid "Share on Google+!"
 msgstr "Partager sur Google+!"
 
@@ -151,7 +151,7 @@ msgstr "Partager sur Google+!"
 msgid "Tag Archives: %s"
 msgstr "Archives du mot clé : %s"
 
-#: ../yarpp-template-portfolio.php:61
+#: ../yarpp-template-portfolio.php:71
 msgid "No related projects"
 msgstr "Pas de projets connexes"
 
@@ -176,7 +176,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:348
+#: ../theme-callbacks/activation-hooks.php:355
 msgid "Images"
 msgstr "Images"
 
@@ -266,79 +266,73 @@ msgid "Gallery"
 msgstr "Galerie"
 
 #: ../theme-callbacks/activation-hooks.php:279
-msgid "Details"
-msgstr "Détails"
+msgid "Project Details"
+msgstr "Détails du projet"
 
 #: ../theme-callbacks/activation-hooks.php:286
-msgid "Client Name"
-msgstr "Nom du client"
+#: ../theme-callbacks/activation-hooks.php:360
+msgid "Template Style"
+msgstr "Style Template"
 
-#: ../theme-callbacks/activation-hooks.php:291
-msgid "Client Link"
-msgstr "URL du client"
-
-#: ../theme-callbacks/activation-hooks.php:296
-#: ../theme-callbacks/activation-hooks.php:353
-msgid "Template"
-msgstr "Modèle"
-
-#: ../theme-callbacks/activation-hooks.php:297
+#: ../theme-callbacks/activation-hooks.php:287
 msgid "Select the template you want for this project."
 msgstr "Sélectionnez le modèle que vous souhaitez pour ce projet."
 
-#: ../theme-callbacks/activation-hooks.php:317
-msgid "Full width template slider: image scale mode"
-msgstr "Largeur curseur de modèle: mode d'échelle de l'image"
+#: ../theme-callbacks/activation-hooks.php:307
+#: ../theme-callbacks/activation-hooks.php:380
+msgid "Image Scaling"
+msgstr "Redimensionnement de l'image"
 
-#: ../theme-callbacks/activation-hooks.php:318
+#: ../theme-callbacks/activation-hooks.php:308
+#: ../theme-callbacks/activation-hooks.php:381
 msgid ""
-"Fit is recommended for portrait images, fill is recommended for landscape "
-"images."
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less then size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
 msgstr ""
-"Fit est recommandée pour les images de portrait, de remplissage est "
-"recommandée pour les images de paysage."
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> images échelles "
+"pour remplir complètement conteneur de curseur (recommandée pour les images "
+"de paysage).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> image Échelles "
+"pour adapter le conteneur (recommandé pour les images en mode portrait).</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> image "
+"Échelles pour s'adapter uniquement si la taille du conteneur curseur est "
+"inférieure à la taille de l'image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Explication visuelle</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:354
-msgid "Select the template you want for this gallery."
-msgstr "Sélectionnez le modèle que vous souhaitez pour cette galerie."
+#: ../theme-callbacks/activation-hooks.php:335
+msgid "Client Name"
+msgstr "Nom du client"
 
-#: ../theme-callbacks/activation-hooks.php:374
-msgid "Image scale mode"
-msgstr "Mode d'échelle de l'image"
+#: ../theme-callbacks/activation-hooks.php:340
+msgid "Client Link"
+msgstr "URL du client"
 
-#: ../theme-callbacks/activation-hooks.php:375
-msgid ""
-"Fit is recommended for portrait images, fill is recommended for landscape "
-"images. (for full-screen and full-width galleries)"
-msgstr ""
-"Fit est recommandée pour les images de portrait, de remplissage est "
-"recommandée pour les images de paysage. (pour les galeries en plein écran et "
-"pleine largeur)"
+#: ../theme-callbacks/activation-hooks.php:404
+msgid "Grid Thumbnails Orientation"
+msgstr "Grille Miniatures Orientation"
 
-#: ../theme-callbacks/activation-hooks.php:395
-msgid "Display the gallery title"
-msgstr "Afficher le titre de la galerie"
+#: ../theme-callbacks/activation-hooks.php:420
+msgid "Gallery Title Box"
+msgstr "Galerie boîte de titre"
 
-#: ../theme-callbacks/activation-hooks.php:396
-msgid "Show the title of the gallery or not. (for grid galleries)"
-msgstr ""
-"Afficher le titre de la galerie ou non. (Pour les galeries de la grille)"
+#: ../theme-callbacks/activation-hooks.php:421
+msgid "Show the title of the gallery in a thumbnail box or not."
+msgstr "Afficher le titre de la galerie dans une boîte de vignettes ou non."
 
-#: ../theme-callbacks/activation-hooks.php:412
-msgid "Gallery grid thumbnail orientation"
-msgstr "Galerie grille orientation des vignettes"
-
-#: ../theme-callbacks/activation-hooks.php:413
-msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
-msgstr ""
-"Vignettes horizontales ou verticales (vignettes pour les galeries de type "
-"grille)"
-
-#: ../theme-callbacks/activation-hooks.php:439
+#: ../theme-callbacks/activation-hooks.php:447
 msgid "Choose:"
 msgstr "Sélectionner..."
 
-#: ../theme-callbacks/activation-hooks.php:440
+#: ../theme-callbacks/activation-hooks.php:448
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -348,11 +342,11 @@ msgstr ""
 "avoir une page statique comme page d'accueil simplement suivre la voie "
 "classique de WP et mis en place dans Réglages> lecture (au lieu de celui-ci)."
 
-#: ../theme-callbacks/activation-hooks.php:456
+#: ../theme-callbacks/activation-hooks.php:464
 msgid "Select a gallery"
 msgstr "Sélectionnez une galerie"
 
-#: ../theme-callbacks/activation-hooks.php:457
+#: ../theme-callbacks/activation-hooks.php:465
 msgid "Select a gallery and we will show it on your homepage."
 msgstr ""
 "Sélectionnez une galerie et nous allons l'afficher sur votre page d'accueil."
@@ -1037,22 +1031,22 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-tabs.php:25
 #: ../wpgrade-core/vendor/redux3/options.php:777
 msgid "<strong>Theme URL:</strong> "
-msgstr "<strong> Thème URL: </strong> "
+msgstr "<strong>Thème URL:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:30
 #: ../wpgrade-core/vendor/redux3/options.php:778
 msgid "<strong>Author:</strong> "
-msgstr "<strong> Auteur: </strong> "
+msgstr "<strong>Auteur:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:34
 #: ../wpgrade-core/vendor/redux3/options.php:779
 msgid "<strong>Version:</strong> "
-msgstr "<strong> Version: </strong> "
+msgstr "<strong>Version:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:42
 #: ../wpgrade-core/vendor/redux3/options.php:781
 msgid "<strong>Tags:</strong> "
-msgstr "<strong> Balises: </strong> "
+msgstr "<strong>Balises:</strong> "
 
 #: ../theme-content/admin-panel/redux-tabs.php:51
 #: ../wpgrade-core/vendor/redux3/options.php:787
@@ -1440,7 +1434,7 @@ msgstr "%s \"%s\" existe déjà."
 #: ../theme-content/inc/import/wordpress-importer/wpgrade-import-class.php:205
 #, php-format
 msgid "Failed to import %s \"%s\""
-msgstr "Échec de l'import de %s %s"
+msgstr "Échec de l'import de %s \"%s\""
 
 #: ../theme-content/inc/import/wordpress-importer/wordpress-importer.php:784
 msgid "Menu item skipped due to missing menu slug"
@@ -1802,7 +1796,7 @@ msgstr ""
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
-"Une erreur s'est produite lors de l'installation %1$s : <strong> %2$s </ "
+"Une erreur s'est produite lors de l'installation %1$s : <strong>%2$s</"
 "strong>."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2029
@@ -1853,34 +1847,34 @@ msgstr "Aller au haut de la page"
 msgid "Back to top"
 msgstr "Retour en haut"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:21
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:81
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:109
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:22
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
 msgid "Client"
 msgstr "Client"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:82
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:176
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:86
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
 msgid "Related projects"
 msgstr "Les projets connexes"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:87
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:181
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:129
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:185
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:133
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
 msgid "All projects"
 msgstr "Tous les projets"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:137
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:99
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
 msgid "Next"
 msgstr "Next"
 
@@ -1926,11 +1920,11 @@ msgstr "L'API \"set\" est un paramètre obligatoire."
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "Le marché Envato \"item ID\" est un paramètre obligatoire."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:286
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:287
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Télécharger le pack de mise à jour de l'API Envato ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:297
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:298
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Téléchargement package d'installation de l'API Envato ..."
 
@@ -2080,7 +2074,7 @@ msgstr "de:"
 #: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:29
 #: ../wpgrade-core/vendor/redux3/options/fields/color_gradient/field_color_gradient.php:35
 msgid "To:"
-msgstr "à:"
+msgstr "Vers:"
 
 #: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:31
 #: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:35
@@ -2563,7 +2557,7 @@ msgstr ""
 
 #: ../wpgrade-core/vendor/redux3/options.php:601
 msgid "Cats Select Option"
-msgstr "Chats Choisissez l'option"
+msgstr "Cats Choisissez l'option"
 
 #: ../wpgrade-core/vendor/redux3/options.php:603
 msgid "This field creates a drop down menu of all the sites cats."
@@ -2730,6 +2724,38 @@ msgstr ""
 "Les polices fournies ci-dessous sont libres d'utiliser des polices "
 "personnalisées à partir du <a href=\"http://www.google.com/webfonts\" target="
 "\"_blank\"> Google répertoire Fonts Web </ a>"
+
+#~ msgid "Details"
+#~ msgstr "Détails"
+
+#~ msgid "Full width template slider: image scale mode"
+#~ msgstr "Largeur curseur de modèle: mode d'échelle de l'image"
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images."
+#~ msgstr ""
+#~ "Fit est recommandée pour les images de portrait, de remplissage est "
+#~ "recommandée pour les images de paysage."
+
+#~ msgid "Select the template you want for this gallery."
+#~ msgstr "Sélectionnez le modèle que vous souhaitez pour cette galerie."
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images. (for full-screen and full-width galleries)"
+#~ msgstr ""
+#~ "Fit est recommandée pour les images de portrait, de remplissage est "
+#~ "recommandée pour les images de paysage. (pour les galeries en plein écran "
+#~ "et pleine largeur)"
+
+#~ msgid "Display the gallery title"
+#~ msgstr "Afficher le titre de la galerie"
+
+#~ msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
+#~ msgstr ""
+#~ "Vignettes horizontales ou verticales (vignettes pour les galeries de type "
+#~ "grille)"
 
 #~ msgid "Next »"
 #~ msgstr "Suivant &#187;"

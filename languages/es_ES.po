@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 12:22+0200\n"
-"PO-Revision-Date: 2013-10-02 13:33+0200\n"
+"POT-Creation-Date: 2013-10-02 13:38+0200\n"
+"PO-Revision-Date: 2013-10-02 13:46+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: Spanish\n"
@@ -105,43 +105,43 @@ msgstr "404"
 msgid "Search Results for: %s"
 msgstr "Resultados de la búsqueda para: %s"
 
-#: ../single.php:31
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:28
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:88
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:69
+#: ../single.php:38
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:30
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
 msgid "Filled under"
 msgstr "Archivado en"
 
-#: ../single.php:44
+#: ../single.php:51
 msgid "Tagged"
 msgstr "Tagged:"
 
-#: ../single.php:55
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:47
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:141
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:88
+#: ../single.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:49
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
 msgid "Share"
 msgstr "Compartir"
 
-#: ../single.php:60 ../theme-partials/posts-single.php:169
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:52
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:146
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:93
+#: ../single.php:67 ../theme-partials/posts-single.php:169
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:54
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
 msgid "Share on Twitter!"
 msgstr "Compartir en Twitter!"
 
-#: ../single.php:68 ../theme-partials/posts-single.php:177
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:60
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:101
+#: ../single.php:75 ../theme-partials/posts-single.php:177
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:62
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
 msgid "Share on Facebook!"
 msgstr "Compartir en Facebook!"
 
-#: ../single.php:76 ../theme-partials/posts-single.php:185
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:68
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:109
+#: ../single.php:83 ../theme-partials/posts-single.php:185
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
 msgid "Share on Google+!"
 msgstr "Compartir en Google+!"
 
@@ -150,7 +150,7 @@ msgstr "Compartir en Google+!"
 msgid "Tag Archives: %s"
 msgstr "Archivos de la etiqueta: %s"
 
-#: ../yarpp-template-portfolio.php:61
+#: ../yarpp-template-portfolio.php:71
 msgid "No related projects"
 msgstr "No hay proyectos relacionados"
 
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:348
+#: ../theme-callbacks/activation-hooks.php:355
 msgid "Images"
 msgstr "Imágenes"
 
@@ -266,77 +266,72 @@ msgid "Gallery"
 msgstr "Galeria"
 
 #: ../theme-callbacks/activation-hooks.php:279
-msgid "Details"
-msgstr "Detalles"
+msgid "Project Details"
+msgstr "Detalles del Proyecto"
 
 #: ../theme-callbacks/activation-hooks.php:286
-msgid "Client Name"
-msgstr "Nombre del cliente"
+#: ../theme-callbacks/activation-hooks.php:360
+msgid "Template Style"
+msgstr "Plantilla de estilo"
 
-#: ../theme-callbacks/activation-hooks.php:291
-msgid "Client Link"
-msgstr "Client Enlace"
-
-#: ../theme-callbacks/activation-hooks.php:296
-#: ../theme-callbacks/activation-hooks.php:353
-msgid "Template"
-msgstr "Plantilla"
-
-#: ../theme-callbacks/activation-hooks.php:297
+#: ../theme-callbacks/activation-hooks.php:287
 msgid "Select the template you want for this project."
 msgstr "Seleccione la plantilla que desea para este proyecto."
 
-#: ../theme-callbacks/activation-hooks.php:317
-msgid "Full width template slider: image scale mode"
-msgstr "Ancho total slider plantilla: el modo escala de la imagen"
+#: ../theme-callbacks/activation-hooks.php:307
+#: ../theme-callbacks/activation-hooks.php:380
+msgid "Image Scaling"
+msgstr "Escalamiento de la imagen"
 
-#: ../theme-callbacks/activation-hooks.php:318
+#: ../theme-callbacks/activation-hooks.php:308
+#: ../theme-callbacks/activation-hooks.php:381
 msgid ""
-"Fit is recommended for portrait images, fill is recommended for landscape "
-"images."
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less then size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
 msgstr ""
-"Fit se recomienda para imágenes de retrato, de relleno se recomienda para "
-"imágenes de paisajes."
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> imagen Escalas "
+"para llenar completamente el recipiente slider (se recomienda para imágenes "
+"de paisajes).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> Imagen escalas "
+"para encajar el recipiente (se recomienda para imágenes de retrato).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> imagen "
+"Escalas para encajar sólo si el tamaño del contenedor slider es menos "
+"entonces el tamaño de la imagen.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Explicación visual</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:354
-msgid "Select the template you want for this gallery."
-msgstr "Seleccione la plantilla que desea para esta galería."
+#: ../theme-callbacks/activation-hooks.php:335
+msgid "Client Name"
+msgstr "Nombre del cliente"
 
-#: ../theme-callbacks/activation-hooks.php:374
-msgid "Image scale mode"
-msgstr "Modo de escala de la imagen"
+#: ../theme-callbacks/activation-hooks.php:340
+msgid "Client Link"
+msgstr "Client Enlace"
 
-#: ../theme-callbacks/activation-hooks.php:375
-msgid ""
-"Fit is recommended for portrait images, fill is recommended for landscape "
-"images. (for full-screen and full-width galleries)"
-msgstr ""
-"Fit se recomienda para imágenes de retrato, de relleno se recomienda para "
-"imágenes de paisajes. (para las galerías de pantalla completa y de ancho "
-"completo)"
+#: ../theme-callbacks/activation-hooks.php:404
+msgid "Grid Thumbnails Orientation"
+msgstr "Rejilla Miniaturas Orientación"
 
-#: ../theme-callbacks/activation-hooks.php:395
-msgid "Display the gallery title"
-msgstr "Muestra el título galería"
+#: ../theme-callbacks/activation-hooks.php:420
+msgid "Gallery Title Box"
+msgstr "Título de la galería Caja"
 
-#: ../theme-callbacks/activation-hooks.php:396
-msgid "Show the title of the gallery or not. (for grid galleries)"
-msgstr "Mostrar el título de la galería o no. (Para las galerías de la red)"
+#: ../theme-callbacks/activation-hooks.php:421
+msgid "Show the title of the gallery in a thumbnail box or not."
+msgstr "Mostrar el título de la galería en una caja de miniaturas o no."
 
-#: ../theme-callbacks/activation-hooks.php:412
-msgid "Gallery grid thumbnail orientation"
-msgstr "Galería rejilla orientación miniatura"
-
-#: ../theme-callbacks/activation-hooks.php:413
-msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
-msgstr ""
-"Thumbnails o miniaturas horizontales verticales (para las galerías de la red)"
-
-#: ../theme-callbacks/activation-hooks.php:439
+#: ../theme-callbacks/activation-hooks.php:447
 msgid "Choose:"
 msgstr "elegirías?"
 
-#: ../theme-callbacks/activation-hooks.php:440
+#: ../theme-callbacks/activation-hooks.php:448
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -346,11 +341,11 @@ msgstr ""
 "una página estática como página de inicio simplemente ir por el camino "
 "clásico WP y configurarlo en Ajustes> Lectura (en lugar de éste)."
 
-#: ../theme-callbacks/activation-hooks.php:456
+#: ../theme-callbacks/activation-hooks.php:464
 msgid "Select a gallery"
 msgstr "Seleccione una galería"
 
-#: ../theme-callbacks/activation-hooks.php:457
+#: ../theme-callbacks/activation-hooks.php:465
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Seleccione una galería y vamos a mostrar en su página web."
 
@@ -441,7 +436,7 @@ msgstr "Activar / Desactivar ajax loading"
 
 #: ../theme-content/admin-panel/redux-sections.php:63
 msgid "<h2>Branding Options</h2>"
-msgstr "<h2> Opciones de marca </ h2>"
+msgstr "<h2>Opciones de marca</h2>"
 
 #: ../theme-content/admin-panel/redux-sections.php:68
 msgid "Main Logo"
@@ -546,8 +541,8 @@ msgid ""
 "Tap into the massive <a href=\"http://www.google.com/fonts/\">Google Fonts</"
 "a> collection (with Live preview)."
 msgstr ""
-"Acceda a la masiva <a href=\"http://www.google.com/fonts/\"> Google Fonts </"
-"a> colección (con vista previa en vivo)."
+"Acceda a la masiva <a href=\"http://www.google.com/fonts/\">Google Fonts</a> "
+"colección (con vista previa en vivo)."
 
 #: ../theme-content/admin-panel/redux-sections.php:140
 msgid "Main Font"
@@ -644,15 +639,15 @@ msgid ""
 "displayed in the \"%s Social Links\" widget so you can put them anywhere on "
 "your site. Only those filled will appear."
 msgstr ""
-"Definir y cambiar el orden de los vínculos sociales.<br /><b>Nota:</ B> "
-"Estos se muestran en el \"%s Social Enlaces\" tu currículum para que pueda "
-"poner en cualquier lugar de tu sitio. Sólo aquellos llena aparecerá."
+"Definir y cambiar el orden de los vínculos sociales.<br /><b>Nota:</b> Estos "
+"se muestran en el \"%s Social Enlaces\" tu currículum para que pueda poner "
+"en cualquier lugar de tu sitio. Sólo aquellos llena aparecerá."
 
 #: ../theme-content/admin-panel/redux-sections.php:223
 msgid ""
 "Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>."
 msgstr ""
-"Iconos proporcionados por <strong> FontAwesome </strong> y <strong> Entypo </"
+"Iconos proporcionados por <strong>FontAwesome</strong> y <strong>Entypo</"
 "strong>."
 
 #: ../theme-content/admin-panel/redux-sections.php:225
@@ -761,8 +756,8 @@ msgid ""
 "\"_blank\">a short movie</a> showing you how to get the URL"
 msgstr ""
 "Pegue aquí la URL de la que usted tiene los mapas de Google, después de "
-"navegar a la ubicación. <br /> Aquí es <a href=\"http://screenr.com/MjV7\" "
-"target=\"_blank \"> un cortometraje </a> que muestra cómo obtener el URL"
+"navegar a la ubicación.<br />Aquí es <a href=\"http://screenr.com/MjV7\" "
+"target=\"_blank \">un cortometraje</a> que muestra cómo obtener el URL"
 
 #: ../theme-content/admin-panel/redux-sections.php:312
 msgid "Custom Styling for Map?"
@@ -1730,11 +1725,11 @@ msgstr ""
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1896
 msgid "Unpacking the package&#8230;"
-msgstr "Descomprimiendo el paquete &#8230;"
+msgstr "Descomprimiendo el paquete&#8230;"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1897
 msgid "Installing the plugin&#8230;"
-msgstr "Instalando el plugin &#8230;"
+msgstr "Instalando el plugin&#8230;"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1898
 msgid "Plugin install failed."
@@ -1842,34 +1837,34 @@ msgstr "Ir a la parte superior de la página"
 msgid "Back to top"
 msgstr "Volver arriba"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:21
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:81
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:109
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:22
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
 msgid "Client"
 msgstr "Patrocinador"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:82
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:176
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:86
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
 msgid "Related projects"
 msgstr "Proyectos Relacionados"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:87
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:181
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:129
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:185
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:133
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
 msgid "All projects"
 msgstr "Todos los proyectos"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:137
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:99
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
 msgid "Next"
 msgstr "SIGUIENTE >"
 
@@ -1915,11 +1910,11 @@ msgstr "La API \"set\" es un parámetro obligatorio."
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "El Envato Marketplace \"item ID\" es un parámetro obligatorio."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:286
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:287
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Descarga de paquete de actualización de la API Envato ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:297
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:298
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Descarga de paquete de instalación de la API Envato ..."
 
@@ -1930,8 +1925,8 @@ msgid ""
 "<span id=\"footer-thankyou\">Options panel created using <a href=\"%s\" "
 "target=\"_blank\">Redux Framework</a> v%s</span>"
 msgstr ""
-"<span panel Opciones id=\"footer-thankyou\"> creado usando <a href=\" %s "
-"\"target = \" _blank \"> Redux marco </a> v %s </ span>"
+"<span id=\"footer-thankyou\">Panel Opciones creado usando <a href=\" %s "
+"\"target = \" _blank \">Redux Framework</a> v%s </ span>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:250
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:251
@@ -1961,27 +1956,27 @@ msgstr "¿Está seguro? Se perderán todos los valores personalizados."
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:644
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:626
 msgid "<strong>Settings Imported!</strong>"
-msgstr "Configuración <strong> importados </strong>"
+msgstr "<strong>Configuración importados!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:646
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:628
 msgid "<strong>Settings Saved!</strong>"
-msgstr "Configuración <strong> Guardadas </strong>"
+msgstr "<strong>Los ajustes guardados!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:651
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:633
 msgid "<strong>Settings have changed, you should save them!</strong>"
-msgstr "Configuración <strong> han cambiado, debe salvarlos! </strong>"
+msgstr "<strong>La configuración ha cambiado, debe salvarlos!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:652
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:634
 msgid "<strong><span></span> error(s) were found!</strong>"
-msgstr "<strong> <span> </ span> error (s) fueron encontrados </strong>"
+msgstr "<strong><span></ span> error (s) fueron encontrados!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:653
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:635
 msgid "<strong><span></span> warning(s) were found!</strong>"
-msgstr "<strong> <span> </ span> aviso (s) fue encontrado! </strong>"
+msgstr "<strong><span></ span> aviso (s) fue encontrado!</strong>"
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:740
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:717
@@ -2388,7 +2383,7 @@ msgstr "Opción 2 Editor"
 
 #: ../wpgrade-core/vendor/redux3/options.php:409
 msgid "Radio/Checkbox Fields"
-msgstr "/ Casilla de campos"
+msgstr "Radio/Casilla campos"
 
 #: ../wpgrade-core/vendor/redux3/options.php:410
 #: ../wpgrade-core/vendor/redux3/options.php:482
@@ -2720,6 +2715,38 @@ msgstr ""
 "Las fuentes que aparecen a continuación son libres para usar fuentes "
 "personalizadas de <a href=\"http://www.google.com/webfonts\" target=\"_blank"
 "\"> Directorio Google Web Fonts</a>"
+
+#~ msgid "Details"
+#~ msgstr "Detalles"
+
+#~ msgid "Full width template slider: image scale mode"
+#~ msgstr "Ancho total slider plantilla: el modo escala de la imagen"
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images."
+#~ msgstr ""
+#~ "Fit se recomienda para imágenes de retrato, de relleno se recomienda para "
+#~ "imágenes de paisajes."
+
+#~ msgid "Select the template you want for this gallery."
+#~ msgstr "Seleccione la plantilla que desea para esta galería."
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images. (for full-screen and full-width galleries)"
+#~ msgstr ""
+#~ "Fit se recomienda para imágenes de retrato, de relleno se recomienda para "
+#~ "imágenes de paisajes. (para las galerías de pantalla completa y de ancho "
+#~ "completo)"
+
+#~ msgid "Display the gallery title"
+#~ msgstr "Muestra el título galería"
+
+#~ msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
+#~ msgstr ""
+#~ "Thumbnails o miniaturas horizontales verticales (para las galerías de la "
+#~ "red)"
 
 #~ msgid "<p class=\"description\">Welcome to the "
 #~ msgstr "<p class=\"description\"> Bienvenidos a la "
