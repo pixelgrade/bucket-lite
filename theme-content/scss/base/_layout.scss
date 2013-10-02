@@ -16,7 +16,7 @@
     }
 
     @include media(from hand) {
-        @include rem(padding-bottom, 2 * $base-spacing-unit);
+        // @include rem(padding-bottom, 2 * $base-spacing-unit);
         @include rem(margin-left, 250px);
     } 
 }

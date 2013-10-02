@@ -276,30 +276,20 @@ function wpgrade_callback_geting_active() {
 //		),
 		'lens_portfolio_metadata' => array(
 			'id'         => 'portfolio_metadata',
-			'title'      => __('Details', wpgrade::textdomain()),
+			'title'      => __('Project Details', wpgrade::textdomain()),
 			'pages'      => array( 'lens_portfolio' ), // Post type
 			'context'    => 'normal',
 			'priority'   => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
 				array(
-					'name' => __('Client Name', wpgrade::textdomain()),
-					'id'   => wpgrade::prefix() . 'portfolio_client_name',
-					'type' => 'text_medium',
-				),
-				array(
-					'name' => __('Client Link', wpgrade::textdomain()),
-					'id'   => wpgrade::prefix() . 'portfolio_client_link',
-					'type' => 'text_medium',
-				),
-				array(
-					'name' => __('Template', wpgrade::textdomain()),
+					'name' => __('Template Style', wpgrade::textdomain()),
 					'desc' => __('Select the template you want for this project.', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'project_template',
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Full width',
+							'name' => 'Full Width Slider',
 							'value' => 'fullwidth'
 						),
 						array(
@@ -314,8 +304,11 @@ function wpgrade_callback_geting_active() {
 					'std' => 'fullwidth',
 				),
 				array(
-					'name' => __('Full width template slider: image scale mode', wpgrade::textdomain()),
-					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images.', wpgrade::textdomain()),
+					'name' => __('Image Scaling', wpgrade::textdomain()),
+					'desc' => __('<p class="cmb_metabox_description"><strong>Fill</strong> scales image to completely fill slider container (recommended for landscape images)</p>
+												<p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
+												<p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less then size of image.</p>
+												<p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
 					'options' => array(
@@ -328,17 +321,27 @@ function wpgrade_callback_geting_active() {
 							'value' => 'fill'
 						),
 						array(
-							'name' => 'Fit if smaller',
+							'name' => 'Fit if Smaller',
 							'value' => 'fit-if-smaller'
 						),
 					),
 					'std' => 'fill'					
-				),				
+				),
+				array(
+					'name' => __('Client Name', wpgrade::textdomain()),
+					'id'   => wpgrade::prefix() . 'portfolio_client_name',
+					'type' => 'text_medium',
+				),
+				array(
+					'name' => __('Client Link', wpgrade::textdomain()),
+					'id'   => wpgrade::prefix() . 'portfolio_client_link',
+					'type' => 'text_medium',
+				)				
 			)
 		),
 		'lens_gallery' => array(
 			'id'         => 'lens_gallery',
-			'title'      => 'Gallery',
+			'title'      => 'Gallery Detail',
 			'pages'      => array( 'lens_gallery' ), // Post type
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -350,81 +353,82 @@ function wpgrade_callback_geting_active() {
 					'type' => 'gallery',
 				),
 				array(
-					'name' => __('Template', wpgrade::textdomain()),
-					'desc' => __('Select the template you want for this gallery.', wpgrade::textdomain()),
+					'name' => __('Template Style', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'gallery_template',
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Masonry Grid',
+							'name' => 'Grid Thumbnails',
 							'value' => 'masonry'
 						),
 						array(
-							'name' => 'Full Width',
+							'name' => 'Full Width Slider',
 							'value' => 'fullwidth'
 						),
 						array(
-							'name' => 'Fullscreen',
+							'name' => 'Full Screen Slider',
 							'value' => 'fullscreen'
 						),
 					),
 					'std' => 'fullwidth',
 				),
 				array(
-					'name' => __('Image scale mode', wpgrade::textdomain()),
-					'desc' => __('Fit is reccomended for portrait images, fill is recommended for landscape images. (for full-screen and full-width galleries)', wpgrade::textdomain()),
+					'name' => __('Image Scaling', wpgrade::textdomain()),
+					'desc' => __('<p class="cmb_metabox_description"><strong>Fill</strong> scales image to completely fill slider container (recommended for landscape images)</p>
+												<p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
+												<p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less then size of image.</p>
+												<p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
 					'options' => array(
-						array(
-							'name' => 'Fit',
-							'value' => 'fit'
-						),
 						array(
 							'name' => 'Fill',
 							'value' => 'fill'
 						),
 						array(
-							'name' => 'Fit if smaller',
+							'name' => 'Fit',
+							'value' => 'fit'
+						),
+						array(
+							'name' => 'Fit if Smaller',
 							'value' => 'fit-if-smaller'
 						),
 					),
 					'std' => 'fill'					
 				),
 				array(
-					'name' => __('Display the gallery title', wpgrade::textdomain()),
-					'desc' => __('Show the title of the gallery or not. (for grid galleries)', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'show_gallery_title',
-					'type' => 'select',
-					'options' => array(
-						array(
-							'name' => 'Yes',
-							'value' => true
-						),
-						array(
-							'name' => 'No',
-							'value' => false
-						)
-					),
-					'std' => false
-				),
-				array(
-					'name' => __('Gallery grid thumbnail orientation', wpgrade::textdomain()),
-					'desc' => __('Horizontal thumbnails or vertical thumbnails (for grid galleries)', wpgrade::textdomain()),
+					'name' => __('Grid Thumbnails Orientation', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'thumb_orientation',
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Horizontal',
-							'value' => 'horizontal'
+							'name' => 'Landscape',
+							'value' => 'landscape'
 						),
 						array(
-							'name' => 'Vertical',
-							'value' => 'vertical'
+							'name' => 'Portrait',
+							'value' => 'portrait'
 						)
 					),
-					'std' => 'horizontal'
-				)								
+					'std' => 'landscape'
+				),
+				array(
+					'name' => __('Gallery Title Box', wpgrade::textdomain()),
+					'desc' => __('Show the title of the gallery in a thumbnail box or not.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'show_gallery_title',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => 'Show',
+							'value' => true
+						),
+						array(
+							'name' => 'Hide',
+							'value' => false
+						)
+					),
+					'std' => false
+				)							
 			)
 		),
         'lens_homepage_chooser' => array(
