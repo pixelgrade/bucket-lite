@@ -71,6 +71,7 @@
 .entry__title{
     margin-top: 0;
     color: black;
+    font-weight: bold;
 
     a {
         text-decoration: none;
@@ -250,8 +251,12 @@ blockquote:not(.pixcode--testimonial){
         }
     }
 
-    @include media(from lap) {
+    @include media(from 1600px) {
         float: left;
+        @include rem(margin, 26px 0 0 -5 * $base-spacing-unit);
+    }
+
+    @include media(from 1750px) {
         @include rem(margin, 26px 0 0 -8 * $base-spacing-unit);
     }
 }
@@ -288,14 +293,17 @@ blockquote:not(.pixcode--testimonial){
  * Article likes box VERTICAL positioning
  */
 
-@include media(from lap){
+@include media(from lap) {
+
     .likes-box--article{
         float: left;
-        @include rem(margin, 6 * $base-spacing-unit 0 0 -6 * $base-spacing-unit);   
+        // @include rem(margin-left, -6 * $base-spacing-unit);   
+        
         .like-link{
             display: block;
         }
-        .likes-text {
+
+        .likes-text{
             top:5px;
             margin:0;
             
@@ -310,7 +318,7 @@ blockquote:not(.pixcode--testimonial){
  * Horizontal aligning the entry-header meta elements in mobile view
  * 
  */
-@include media(to lap){
+@include media(to 1600px) {
     .entry-header__meta{
         display: block;
         width:100%;
@@ -330,9 +338,6 @@ blockquote:not(.pixcode--testimonial){
 
     .likes-box--article{
         float:right;
-
-        i{
-        }
 
         .like-link {
             float:right;
@@ -362,36 +367,45 @@ blockquote:not(.pixcode--testimonial){
 /**
  * Entry-meta styling. Categories, tags, social icons
  */
-@include media(to hand) {
-    .entry__meta-box{
-        float: none;
-        display: block;
-        @include rem(margin-bottom, $half-spacing-unit);
-    }
+
+.entry__meta--social {
+    @include rem(margin-bottom, 2 * $base-spacing-unit);
 }
 
-@include media(from hand) {
-    .entry__meta-box{
-        float: left;
-        @include rem(margin-right, $base-spacing-unit);        
-    }
+.entry__meta--project {
+    @include rem(margin-bottom, $base-spacing-unit);
 }
 
-.entry__featured-image {
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
+// @include media(to hand) {
+//     .entry__meta-box{
+//         float: none;
+//         display: block;
+//         @include rem(margin-bottom, $half-spacing-unit);
+//     }
+// }
 
-.entry--archive__featured-image {
+// @include media(from hand) {
+//     .entry__meta-box{
+//         float: left;
+//         @include rem(margin-right, $base-spacing-unit);        
+//     }
+// }
 
-}
+// .entry__featured-image {
+//     img {
+//         width: 100%;
+//         height: auto;
+//     }
+// }
 
-.entry__permalink {
-    display: block;
-    text-decoration: none;
-}
+// .entry--archive__featured-image {
+
+// }
+
+// .entry__permalink {
+//     display: block;
+//     text-decoration: none;
+// }
 
 
 
