@@ -4392,22 +4392,24 @@ function likeBoxAnimation(){
 
 /* --- GLOBAL EVENT HANDLERS --- */
 
-function eventHandlers() {
-
-    $('body').on('click', '.js-arrow-popup-prev', function(e){
+function magnificPrev(e) {
         e.preventDefault();
-        console.log('arrow prev');
         var magnificPopup = $.magnificPopup.instance;
         magnificPopup.prev();
-    });
+        return false;
+}
 
-    $('body').on('click', '.js-arrow-popup-next', function(e){
+function magnificNext(e) {
         e.preventDefault();
-        console.log('arrow next');
         var magnificPopup = $.magnificPopup.instance;
         magnificPopup.next();
-		return false;
-    });
+        return false;
+}
+
+function eventHandlers() {
+
+    $('body').on('click', '.js-arrow-popup-prev', magnificPrev);
+    $('body').on('click', '.js-arrow-popup-next', magnificNext);
 
     /* @todo: change classes so style and js don't interfere */
     $('.menu-item--parent').hoverIntent({
