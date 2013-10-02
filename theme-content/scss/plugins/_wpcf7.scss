@@ -1,6 +1,10 @@
 .wpcf7{
     p{
         margin-bottom: 0;
+
+        label{
+            @include rem(margin-top, $half-spacing-unit);
+        }
     }
 }
 
