@@ -13,7 +13,15 @@
 	function wpgrade_callback_update_notifier_handler() {
 		if (wpgrade::option('themeforest_upgrade') && isset($_GET['wpgrade_update']) &&  $_GET['wpgrade_update'] == 'true') {
 			$theme_data = wp_get_theme();
-			$theme_name = $theme_data->Name;
+
+			// ensure the name of the template. Only the template needs to be updated.
+			if (  is_child_theme() ) {
+				$template = wp_get_theme( $theme_data->template );
+				$theme_name = $template->Name;
+			} else {
+				$theme_name = $theme_data->Name;
+			}
+
 			$allow_cache = true;
 
 			// include the updater library from envato
