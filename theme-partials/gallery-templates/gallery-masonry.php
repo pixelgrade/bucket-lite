@@ -33,7 +33,7 @@
 	$index = 0;
 	if ( $attachments ) : ?>
 		<div class="mosaic gallery js-gallery">
-			<div class="mosaic__item<?php if($thumb_orientation == 'portrait') echo ' mosaic__item--portrait'; ?> mosaic__item--page-title-mobile">
+			<div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?> mosaic__item--page-title-mobile">
 				<div class="image__item-link">
 					<div class="image__item-wrapper">
 					<?php if ($has_post_thumbnail) : ?>
@@ -80,8 +80,8 @@
 					$img['full'][0] = $video_url;
 					$is_video = true;
 				} ?>
-				<div class="mosaic__item<?php if($thumb_orientation == 'portrait') echo ' mosaic__item--portrait'; if ( $is_video ) { echo ' magnific-video'; } ?>">
-					<a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
+				<div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?>">
+					<a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe'; } else { echo 'mfp-image'; } ?> image__item-link" title="" data-effect="mfp-zoom-in">
 						<div class="image__item-wrapper">
 							<img
 								class="js-lazy-load"
