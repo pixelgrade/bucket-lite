@@ -14,10 +14,12 @@
 </div>
 <div class="entry__content"><?php the_excerpt(); ?></div>
 
-<?php
-    if ( has_post_thumbnail() ) {
-        echo '<div class="entry__featured-image">';
-        the_post_thumbnail();
-        echo '</div>';
-    }
-?>
+<?php if ( has_post_thumbnail() ) : ?>
+    <div class="entry__featured-image">
+        <a href="<?php the_permalink(); ?>" class="image__item-link mfp-video">
+            <div class="image__item-wrapper">
+                <?php the_post_thumbnail(); ?>
+            </div>          
+        </a>
+    </div>
+<?php endif; ?>

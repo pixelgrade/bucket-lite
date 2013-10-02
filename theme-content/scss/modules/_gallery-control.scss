@@ -121,7 +121,7 @@
             top: auto;
             left: auto;
             bottom: 0;
-            // @include rem(right, $base-spacing-unit);
+            @include rem(right, $base-spacing-unit);
         }
 
         .arrow-button--left{

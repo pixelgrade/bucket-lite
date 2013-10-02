@@ -3843,7 +3843,7 @@ function royalSliderInit() {
     $('.wp-gallery').each(function() {
         var $old_gallery = $(this),
         $images = $old_gallery.find('img'),
-        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows data-autoscale>');
+        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows>');
         $images.prependTo($new_gallery).addClass('rsImg');
         $old_gallery.replaceWith($new_gallery);
     });
@@ -3880,7 +3880,7 @@ function royalSliderInit() {
                 autoHeight: false,
                 loop: true,
                 imageScaleMode: rs_imageScale,
-                imageAlignCenter: true,
+                imageAlignCenter: false,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,

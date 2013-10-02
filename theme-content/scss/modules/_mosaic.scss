@@ -11,10 +11,11 @@
     position: relative;
     @include transform(translate3d(0,0,0));
 
-    .icon-play {
+}
+
+.image_item-cell i {
         font-size: 2em;
         padding-right: 0;
-    }
 }
 
     .mosaic__item {

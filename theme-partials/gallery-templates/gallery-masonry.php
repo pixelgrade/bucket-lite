@@ -97,9 +97,9 @@
 							<div class="image_item-table">
 								<div class="image_item-cell">
 									<?php if ( $is_video ) { ?>
-										<div class="icon-play"></div>
+										<i class="icon-play"></i>
 									<?php } else { ?>
-										<div class="image__plus-icon">+</div>
+										<i class="image__plus-icon">+</i>
 									<?php } ?>
 								</div>
 							</div>
