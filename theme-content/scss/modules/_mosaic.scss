@@ -10,7 +10,13 @@
     @extend .cf;
     position: relative;
     @include transform(translate3d(0,0,0));
+
+    .icon-play {
+        font-size: 2em;
+        padding-right: 0;
+    }
 }
+
     .mosaic__item {
         // opacity: 0; //
         display: none; //
