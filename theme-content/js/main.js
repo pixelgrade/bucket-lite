@@ -4269,15 +4269,12 @@ function loadUp(){
     lazyLoad();
 
     // if single
-    if ($('.entry__likes').length) {
+    if ($('.entry__likes').length && ww > 1430) {
         $('.entry__likes').stick_in_parent()
             .on("sticky_kit:stick", function(e) {
                 var self = $(e.target),
                     offset = self.offset(),
                     left = offset.left;
-
-                console.log(left);
-                    
                 self.appendTo('#page').css('left', left);
             })
             .on("sticky_kit:unstick", function(e) {

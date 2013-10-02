@@ -253,6 +253,10 @@ blockquote:not(.pixcode--testimonial){
 
     @include media(from 1600px) {
         float: left;
+        @include rem(margin, 26px 0 0 -5 * $base-spacing-unit);
+    }
+
+    @include media(from 1750px) {
         @include rem(margin, 26px 0 0 -8 * $base-spacing-unit);
     }
 }
