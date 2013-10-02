@@ -80,7 +80,7 @@
 					$img['full'][0] = $video_url;
 					$is_video = true;
 				} ?>
-				<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; if ( $is_video ) { echo ' magnific-video'; } else { echo ' magnific-image'; } ?>">
+				<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; if ( $is_video ) { echo ' magnific-video'; } ?>">
 					<a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
 						<div class="image__item-wrapper">
 							<img

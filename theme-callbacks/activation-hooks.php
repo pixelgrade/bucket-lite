@@ -36,7 +36,7 @@ function wpgrade_callback_geting_active() {
 			'has_archive' => 'portfolio-archive',
 			'menu_icon' => 'report.png',
 			'menu_position' => NULL,
-			'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'),
+			'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt', 'comments'),
 			'yarpp_support' => true,
 		),
 		'lens_gallery' => array(
@@ -278,8 +278,8 @@ function wpgrade_callback_geting_active() {
 			'id'         => 'portfolio_metadata',
 			'title'      => __('Details', wpgrade::textdomain()),
 			'pages'      => array( 'lens_portfolio' ), // Post type
-			'context'    => 'side',
-			'priority'   => 'low',
+			'context'    => 'normal',
+			'priority'   => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
 				array(
@@ -435,36 +435,36 @@ function wpgrade_callback_geting_active() {
 			'priority'   => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
-							array(
-								'name' => __('Choose:', wpgrade::textdomain()),
-								'desc' => __('Select what would you like to be your home page. If you want to have a static page as your homepage simply go the WP classic way and set it up in Settings > Reading (instead of this one).', wpgrade::textdomain()),
-								'id' => wpgrade::prefix() . 'custom_homepage',
-								'type' => 'radio_inline',
-								'options' => array(
-									array(
-										'name' => 'Portfolio Archive',
-										'value' => 'lens_portfolio'
-									),
-									array(
-										'name' => 'Gallery',
-										'value' => 'lens_gallery'
-									),
-								),
-								'std' => 'lens_portfolio',
-							),
-							array(
-								'name' => __('Select a gallery', wpgrade::textdomain()),
-								'desc' => __('Select a gallery and we will show it on your homepage.', wpgrade::textdomain()),
-								'id' => wpgrade::prefix() . 'homepage_gallery',
-								'type' => 'select_cpt_post',
-								'options' => array(
-									'args' => array (
-										'post_type' => 'lens_gallery',
-									),
-									'hidden' => true,
-								),
-							),
-					)
+				array(
+					'name' => __('Choose:', wpgrade::textdomain()),
+					'desc' => __('Select what would you like to be your home page. If you want to have a static page as your homepage simply go the WP classic way and set it up in Settings > Reading (instead of this one).', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'custom_homepage',
+					'type' => 'radio_inline',
+					'options' => array(
+						array(
+							'name' => 'Portfolio Archive',
+							'value' => 'lens_portfolio'
+						),
+						array(
+							'name' => 'Gallery',
+							'value' => 'lens_gallery'
+						),
+					),
+					'std' => 'lens_portfolio',
+				),
+				array(
+					'name' => __('Select a gallery', wpgrade::textdomain()),
+					'desc' => __('Select a gallery and we will show it on your homepage.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'homepage_gallery',
+					'type' => 'select_cpt_post',
+					'options' => array(
+						'args' => array (
+							'post_type' => 'lens_gallery',
+						),
+						'hidden' => true,
+					),
+				),
+			)
 		),
 	);
 
