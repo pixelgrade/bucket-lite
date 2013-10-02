@@ -4003,12 +4003,20 @@ function magnificPopupInit() {
                 // tCounter: '<div class="gallery-control gallery-control--popup"><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div></div>'
                 tCounter: '<div class="gallery-control gallery-control--popup"><a href="#" class="control-item arrow-button arrow-button--left js-arrow-popup-prev"></a><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div><a href="#" class="control-item arrow-button arrow-button--right js-arrow-popup-next"></a></div>'
             },
-            // callbacks:{
-            //     open: function() {
-            //         $('.mfp-arrow-left').prependTo($('.gallery-control'));
-            //         $('.mfp-arrow-right').appendTo($('.gallery-control'));
-            //     }
-            // }
+            callbacks:{
+                elementParse: function(item) {
+                    $(item).find('iframe').each(function(){
+                        var url = $(this).attr("src");
+                        $(this).attr("src", url+"?wmode=transparent");
+                    });
+                },
+                change: function() {
+                    $(this.content).find('iframe').each(function(){
+                        var url = $(this).attr("src");
+                        $(this).attr("src", url+"?wmode=transparent");
+                    });
+                }                
+            }
         });
     });
 
@@ -4166,7 +4174,7 @@ function initVideos() {
     });
 
     // Firefox Opacity Video Hack
-    $('.featured-image iframe').each(function(){
+    $('iframe').each(function(){
         var url = $(this).attr("src"); console.log(url);
         $(this).attr("src", url+"?wmode=transparent");
     });
