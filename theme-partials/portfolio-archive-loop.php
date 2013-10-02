@@ -15,7 +15,7 @@
 		);
 
         $thumb_orientation = '';
-        if(wpgrade::option('portfolio_thumb_orientation') == 'vertical') $thumb_orientation = ' mosaic__item--vertical';
+        if(wpgrade::option('portfolio_thumb_orientation') == 'portrait') $thumb_orientation = ' mosaic__item--portrait';
         else $thumb_orientation = '';        
 
         $has_post_thumbnail = has_post_thumbnail();
