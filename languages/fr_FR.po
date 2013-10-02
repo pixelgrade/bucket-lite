@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 13:46+0200\n"
-"PO-Revision-Date: 2013-10-02 13:56+0200\n"
+"POT-Creation-Date: 2013-10-02 14:45+0200\n"
+"PO-Revision-Date: 2013-10-02 14:46+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -1028,6 +1028,28 @@ msgstr ""
 "Saisissez ici la clé API secret que vous avez créé sur ThemeForest. Vous "
 "pouvez créer un nouveau dans le Paramètres> API section Clés de votre profil."
 
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Backup Theme Before Upgrade?"
+msgstr "Sauvegarde thème avant de mettre à niveau?"
+
+#: ../theme-content/admin-panel/redux-sections.php:567
+msgid ""
+"Check this if you want us to automatically save your theme as a ZIP archive "
+"before an upgrade. The directory those backups get saved to is <code>wp-"
+"content/envato-backups</code>. However, if you're experiencing problems "
+"while attempting to upgrade, it's likely to be a permissions issue and you "
+"may want to manually backup your theme before upgrading. Alternatively, if "
+"you don't want to backup your theme you can uncheck this."
+msgstr ""
+"Cochez cette case si vous souhaitez que nous économisons automatiquement "
+"votre thème comme une archive ZIP avant une mise à niveau. Le répertoire de "
+"ces sauvegardes sont sauvés à <code>wp-content/envato-backups</code>. "
+"Toutefois, si vous rencontrez des problèmes en essayant de mettre à niveau, "
+"il est susceptible d'être un problème d'autorisations et vous voudrez peut-"
+"être sauvegarder manuellement votre thème avant la mise à niveau. "
+"Alternativement, si vous ne voulez pas sauvegarder votre thème, vous pouvez "
+"décocher cette."
+
 #: ../theme-content/admin-panel/redux-tabs.php:25
 #: ../wpgrade-core/vendor/redux3/options.php:777
 msgid "<strong>Theme URL:</strong> "
@@ -1886,6 +1908,29 @@ msgstr "Voir plus sur: auteur"
 msgid "Header Menu"
 msgstr "Header Menu"
 
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+msgid "If you want, you can download the automatic theme backup."
+msgstr ""
+"Si vous le souhaitez, vous pouvez télécharger la sauvegarde automatique "
+"thème."
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+msgid "Download Backup"
+msgstr "Télécharger sauvegarde"
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:104
+msgid ""
+"Error: The theme was not updated, because the automatic backup is activated, "
+"but for some reason (probably due to file permissions) it failed. We "
+"recommend you disable the automatic backup and backup your theme manually "
+"before upgrade."
+msgstr ""
+"Erreur: Le thème n'a pas été mis à jour, parce que la sauvegarde automatique "
+"est activée, mais pour une raison quelconque (probablement dû à déposer "
+"autorisations) il a échoué. Nous vous recommandons de désactiver la "
+"sauvegarde automatique et de sauvegarder votre thème manuellement avant mise "
+"à niveau."
+
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:134
 msgid "&laquo; Previous"
 msgstr "&laquo; Précédent"
@@ -1904,6 +1949,15 @@ msgstr "En savoir plus sur"
 msgid "Read more"
 msgstr "Lire la suite"
 
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-backup.php:392
+msgid "The backup file was not created"
+msgstr "Le fichier de sauvegarde n'a pas été créée"
+
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-backup.php:461
+msgid "The following files are unreadable and could not be backed up: "
+msgstr ""
+"Les fichiers suivants sont illisibles et ne peuvent pas être sauvegardés:"
+
 #: ../wpgrade-core/vendor/envato-wtl/class-envato-protected-api.php:67
 msgid "Please enter your Envato Marketplace Username."
 msgstr "S'il vous plaît entrer votre Nom d'utilisateur Envato du marché."
@@ -1920,13 +1974,21 @@ msgstr "L'API \"set\" est un paramètre obligatoire."
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "Le marché Envato \"item ID\" est un paramètre obligatoire."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:287
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:308
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Télécharger le pack de mise à jour de l'API Envato ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:298
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:319
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Téléchargement package d'installation de l'API Envato ..."
+
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:413
+msgid ""
+"This .htaccess file ensures that other people cannot download your backup "
+"files."
+msgstr ""
+"Ce fichier .htaccess assure que d'autres personnes ne peuvent pas "
+"télécharger vos fichiers de sauvegarde."
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:62
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:58
