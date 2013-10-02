@@ -546,7 +546,7 @@
 				'sub_desc' => __('Activate this to enter the info needed for the theme auto update to work.', wpgrade::textdomain()),
 				'std' => '1',
 				'switch' => true,
-				"next_to_hide" => 2,
+				"next_to_hide" => 3,
 			),
 			array(
 				'id' => 'marketplace_username',
@@ -560,6 +560,14 @@
 				'title' => __('ThemeForest Secret API Key', wpgrade::textdomain()),
 				'sub_desc' => __('Enter here the secret api key you\'ve created on ThemeForest. You can create a new one in the Settings > API Keys section of your profile.', wpgrade::textdomain()),
 			),
+			array(
+                'id' => 'themeforest_upgrade_backup',
+                'type' => 'checkbox',
+                'title' => __('Backup Theme Before Upgrade?', wpgrade::textdomain()),
+                'sub_desc' => __('Check this if you want us to automatically save your theme as a ZIP archive before an upgrade. The directory those backups get saved to is <code>wp-content/envato-backups</code>. However, if you\'re experiencing problems while attempting to upgrade, it\'s likely to be a permissions issue and you may want to manually backup your theme before upgrading. Alternatively, if you don\'t want to backup your theme you can uncheck this.', wpgrade::textdomain()),
+				'std' => '0',
+                'switch' => true
+            ),
 		)
 	);
 

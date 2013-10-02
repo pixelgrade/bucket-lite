@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 12:12+0200\n"
-"PO-Revision-Date: 2013-10-02 12:13+0200\n"
+"POT-Creation-Date: 2013-10-02 14:44+0200\n"
+"PO-Revision-Date: 2013-10-02 14:45+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: German\n"
@@ -105,43 +105,43 @@ msgstr "404"
 msgid "Search Results for: %s"
 msgstr "Suchergebnis von %s"
 
-#: ../single.php:31
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:28
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:88
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:69
+#: ../single.php:38
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:30
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
 msgid "Filled under"
 msgstr "Gefüllt unter"
 
-#: ../single.php:44
+#: ../single.php:51
 msgid "Tagged"
 msgstr "Gekennzeichnet"
 
-#: ../single.php:55
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:47
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:141
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:88
+#: ../single.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:49
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
 msgid "Share"
 msgstr "Teilen"
 
-#: ../single.php:60 ../theme-partials/posts-single.php:169
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:52
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:146
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:93
+#: ../single.php:67 ../theme-partials/posts-single.php:169
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:54
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
 msgid "Share on Twitter!"
 msgstr "Share on Twitter!"
 
-#: ../single.php:68 ../theme-partials/posts-single.php:177
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:60
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:101
+#: ../single.php:75 ../theme-partials/posts-single.php:177
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:62
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
 msgid "Share on Facebook!"
 msgstr "Share on Facebook!"
 
-#: ../single.php:76 ../theme-partials/posts-single.php:185
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:68
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:109
+#: ../single.php:83 ../theme-partials/posts-single.php:185
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
 msgid "Share on Google+!"
 msgstr "Share on Google+!"
 
@@ -150,7 +150,7 @@ msgstr "Share on Google+!"
 msgid "Tag Archives: %s"
 msgstr "Tag Archives: %s"
 
-#: ../yarpp-template-portfolio.php:61
+#: ../yarpp-template-portfolio.php:71
 msgid "No related projects"
 msgstr "Keine verwandten Projekten"
 
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:348
+#: ../theme-callbacks/activation-hooks.php:355
 msgid "Images"
 msgstr "Images"
 
@@ -265,77 +265,72 @@ msgid "Gallery"
 msgstr "Galerie"
 
 #: ../theme-callbacks/activation-hooks.php:279
-msgid "Details"
-msgstr "Details"
+msgid "Project Details"
+msgstr "Projekt-Details"
 
 #: ../theme-callbacks/activation-hooks.php:286
-msgid "Client Name"
-msgstr "Kundenname"
+#: ../theme-callbacks/activation-hooks.php:360
+msgid "Template Style"
+msgstr "Template Design"
 
-#: ../theme-callbacks/activation-hooks.php:291
-msgid "Client Link"
-msgstr "Client Link"
-
-#: ../theme-callbacks/activation-hooks.php:296
-#: ../theme-callbacks/activation-hooks.php:353
-msgid "Template"
-msgstr "Vorlage"
-
-#: ../theme-callbacks/activation-hooks.php:297
+#: ../theme-callbacks/activation-hooks.php:287
 msgid "Select the template you want for this project."
 msgstr "Wählen Sie die gewünschte Vorlage für dieses Projekt."
 
-#: ../theme-callbacks/activation-hooks.php:317
-msgid "Full width template slider: image scale mode"
-msgstr "Volle Breite Vorlage Schieber: Abbildungsmaßstab Modus"
+#: ../theme-callbacks/activation-hooks.php:307
+#: ../theme-callbacks/activation-hooks.php:380
+msgid "Image Scaling"
+msgstr "Bild-Skalierung"
 
-#: ../theme-callbacks/activation-hooks.php:318
+#: ../theme-callbacks/activation-hooks.php:308
+#: ../theme-callbacks/activation-hooks.php:381
 msgid ""
-"Fit is recommended for portrait images, fill is recommended for landscape "
-"images."
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less then size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
 msgstr ""
-"Fit für die Portrait-Bilder wird empfohlen, ist Füllung für "
-"Landschaftsaufnahmen empfohlen."
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> Skalen "
+"vollständig zu füllen Schieberegler Behälter (empfohlen für "
+"Landschaftsaufnahmen).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> Skalen, um den "
+"Behälter passen (empfohlen für die Portrait-Bilder).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> Skalen "
+"passen nur, wenn Größe des Schiebers Behälter ist weniger als die Größe des "
+"Bildes.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visuelle Erklärung</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:354
-msgid "Select the template you want for this gallery."
-msgstr "Wählen Sie die gewünschte Vorlage für diese Galerie."
+#: ../theme-callbacks/activation-hooks.php:335
+msgid "Client Name"
+msgstr "Kundenname"
 
-#: ../theme-callbacks/activation-hooks.php:374
-msgid "Image scale mode"
-msgstr "Abbildungsmaßstab Modus"
+#: ../theme-callbacks/activation-hooks.php:340
+msgid "Client Link"
+msgstr "Client Link"
 
-#: ../theme-callbacks/activation-hooks.php:375
-msgid ""
-"Fit is recommended for portrait images, fill is recommended for landscape "
-"images. (for full-screen and full-width galleries)"
-msgstr ""
-"Fit für die Portrait-Bilder wird empfohlen, ist Füllung für "
-"Landschaftsaufnahmen empfohlen. (für Vollbild-und voller Breite Galerien)"
+#: ../theme-callbacks/activation-hooks.php:404
+msgid "Grid Thumbnails Orientation"
+msgstr "Grid Thumbnails Ausrichtung"
 
-#: ../theme-callbacks/activation-hooks.php:395
-msgid "Display the gallery title"
-msgstr "Fotogalerie anzeigen Titel"
+#: ../theme-callbacks/activation-hooks.php:420
+msgid "Gallery Title Box"
+msgstr "Gallery Title Box"
 
-#: ../theme-callbacks/activation-hooks.php:396
-msgid "Show the title of the gallery or not. (for grid galleries)"
-msgstr ""
-"Zeigen Sie den Titel der Galerie oder nicht. (Für netzgekoppelte Galerien)"
+#: ../theme-callbacks/activation-hooks.php:421
+msgid "Show the title of the gallery in a thumbnail box or not."
+msgstr "Zeigen Sie den Titel der Galerie in einem Thumbnail-Box oder nicht."
 
-#: ../theme-callbacks/activation-hooks.php:412
-msgid "Gallery grid thumbnail orientation"
-msgstr "Galerie Raster Thumbnail Orientierung"
-
-#: ../theme-callbacks/activation-hooks.php:413
-msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
-msgstr ""
-"Horizontal oder vertikal Thumbnails Thumbnails (für netzgekoppelte Galerien)"
-
-#: ../theme-callbacks/activation-hooks.php:439
+#: ../theme-callbacks/activation-hooks.php:447
 msgid "Choose:"
 msgstr "Wählen Sie:"
 
-#: ../theme-callbacks/activation-hooks.php:440
+#: ../theme-callbacks/activation-hooks.php:448
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -346,11 +341,11 @@ msgstr ""
 "und Weise WP und stellen Sie es in den Einstellungen> Reading (anstelle von "
 "diesem)."
 
-#: ../theme-callbacks/activation-hooks.php:456
+#: ../theme-callbacks/activation-hooks.php:464
 msgid "Select a gallery"
 msgstr "Wählen Sie eine Galerie"
 
-#: ../theme-callbacks/activation-hooks.php:457
+#: ../theme-callbacks/activation-hooks.php:465
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Wählen Sie eine Galerie und wir werden es auf Ihrer Homepage zeigen."
 
@@ -1030,6 +1025,27 @@ msgstr ""
 "Geben Sie hier die geheimen Schlüssel, den Sie auf api ThemeForest erstellt "
 "haben. Sie können eine neue erstellen in dem Einstellungen> API Keys "
 "Abschnitt Ihres Profils."
+
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Backup Theme Before Upgrade?"
+msgstr "Backup Theme vor einem Upgrade?"
+
+#: ../theme-content/admin-panel/redux-sections.php:567
+msgid ""
+"Check this if you want us to automatically save your theme as a ZIP archive "
+"before an upgrade. The directory those backups get saved to is <code>wp-"
+"content/envato-backups</code>. However, if you're experiencing problems "
+"while attempting to upgrade, it's likely to be a permissions issue and you "
+"may want to manually backup your theme before upgrading. Alternatively, if "
+"you don't want to backup your theme you can uncheck this."
+msgstr ""
+"Aktivieren Sie diese Option, wenn Sie uns zum automatischen Speichern Ihr "
+"Thema als ZIP-Archiv vor einem Upgrade wollen. Das Verzeichnis diese Backups "
+"erhalten gespeichert ist <code>wp-content/envato-backups</code>. Allerdings, "
+"wenn Sie auf Probleme stoßen bei dem Versuch, zu aktualisieren, ist es "
+"wahrscheinlich ein Problem mit den Berechtigungen sein und möchten Sie "
+"vielleicht manuell sichern Ihr Thema vor dem Upgrade. Alternativ, wenn Sie "
+"nicht wollen, zu Ihrem Thema können Sie deaktivieren Sie diese sichern."
 
 #: ../theme-content/admin-panel/redux-tabs.php:25
 #: ../wpgrade-core/vendor/redux3/options.php:777
@@ -1842,34 +1858,34 @@ msgstr "Sprung zum Seitenanfang"
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:21
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:81
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:109
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:62
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:22
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
 msgid "Client"
 msgstr "Client:"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:82
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:176
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:86
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
 msgid "Related projects"
 msgstr "Related Projekte"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:87
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:181
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:129
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
 msgid "Previous"
 msgstr "Zurück"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:185
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:133
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
 msgid "All projects"
 msgstr "Alle Projekte"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:137
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:99
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
 msgid "Next"
 msgstr "Weiter"
 
@@ -1880,6 +1896,27 @@ msgstr "Sehen Sie mehr über: author"
 #: ../theme-utilities/includes/functions/menus.php:14
 msgid "Header Menu"
 msgstr "Kopfzeilenmenü"
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+msgid "If you want, you can download the automatic theme backup."
+msgstr "Wenn Sie möchten, können Sie die automatische Backup-Thema."
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+msgid "Download Backup"
+msgstr "Download von Backup"
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:104
+msgid ""
+"Error: The theme was not updated, because the automatic backup is activated, "
+"but for some reason (probably due to file permissions) it failed. We "
+"recommend you disable the automatic backup and backup your theme manually "
+"before upgrade."
+msgstr ""
+"Fehler: Das Thema wurde nicht aktualisiert, da die automatische Sicherung "
+"aktiviert ist, aber aus irgendeinem Grund (wahrscheinlich wegen "
+"Dateizugriffrechten) es ist fehlgeschlagen. Wir empfehlen Ihnen, "
+"deaktivieren Sie die automatische Sicherung und Backup Ihrer Thema manuell "
+"vor dem Upgrade."
 
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:134
 msgid "&laquo; Previous"
@@ -1899,6 +1936,15 @@ msgstr "Lesen Sie mehr über"
 msgid "Read more"
 msgstr "Mehr Infos"
 
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-backup.php:392
+msgid "The backup file was not created"
+msgstr "Die Backup-Datei wurde nicht erstellt"
+
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-backup.php:461
+msgid "The following files are unreadable and could not be backed up: "
+msgstr ""
+"Die folgenden Dateien sind nicht lesbar und konnte nicht gesichert werden:"
+
 #: ../wpgrade-core/vendor/envato-wtl/class-envato-protected-api.php:67
 msgid "Please enter your Envato Marketplace Username."
 msgstr "Bitte geben Sie Ihren Benutzernamen Envato Marketplace."
@@ -1916,13 +1962,21 @@ msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr ""
 "Die Envato Marktplatz \"Artikel ID \" ist ein erforderlicher Parameter."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:286
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:308
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Herunterladen Upgrade-Paket aus dem Envato API ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:297
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:319
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Herunterladen Installationspaket aus dem Envato API ..."
+
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:413
+msgid ""
+"This .htaccess file ensures that other people cannot download your backup "
+"files."
+msgstr ""
+"Diese .htaccess-Datei sorgt dafür, dass andere Menschen können nicht "
+"heruntergeladen werden Ihre Backup-Dateien."
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:62
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:58
@@ -2715,6 +2769,37 @@ msgstr ""
 "Die Schriftarten unten sind frei, eigene Schriften aus dem <a href=\"http://"
 "www.google.com/webfonts\" target=\"_blank\"> Google Web Fonts-Verzeichnis </"
 "a> verwenden"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "Full width template slider: image scale mode"
+#~ msgstr "Volle Breite Vorlage Schieber: Abbildungsmaßstab Modus"
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images."
+#~ msgstr ""
+#~ "Fit für die Portrait-Bilder wird empfohlen, ist Füllung für "
+#~ "Landschaftsaufnahmen empfohlen."
+
+#~ msgid "Select the template you want for this gallery."
+#~ msgstr "Wählen Sie die gewünschte Vorlage für diese Galerie."
+
+#~ msgid ""
+#~ "Fit is recommended for portrait images, fill is recommended for landscape "
+#~ "images. (for full-screen and full-width galleries)"
+#~ msgstr ""
+#~ "Fit für die Portrait-Bilder wird empfohlen, ist Füllung für "
+#~ "Landschaftsaufnahmen empfohlen. (für Vollbild-und voller Breite Galerien)"
+
+#~ msgid "Display the gallery title"
+#~ msgstr "Fotogalerie anzeigen Titel"
+
+#~ msgid "Horizontal thumbnails or vertical thumbnails (for grid galleries)"
+#~ msgstr ""
+#~ "Horizontal oder vertikal Thumbnails Thumbnails (für netzgekoppelte "
+#~ "Galerien)"
 
 #~ msgid " To:"
 #~ msgstr " Bis:"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 13:38+0200\n"
-"PO-Revision-Date: 2013-10-02 13:46+0200\n"
+"POT-Creation-Date: 2013-10-02 14:45+0200\n"
+"PO-Revision-Date: 2013-10-02 14:45+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: Spanish\n"
@@ -1025,6 +1025,27 @@ msgstr ""
 "Introduzca aquí la clave secreta api que haya creado en ThemeForest. Puede "
 "crear una nueva en la Configuración> API sección de teclas de tu perfil."
 
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Backup Theme Before Upgrade?"
+msgstr "Copia de seguridad de Tema Antes Upgrade?"
+
+#: ../theme-content/admin-panel/redux-sections.php:567
+msgid ""
+"Check this if you want us to automatically save your theme as a ZIP archive "
+"before an upgrade. The directory those backups get saved to is <code>wp-"
+"content/envato-backups</code>. However, if you're experiencing problems "
+"while attempting to upgrade, it's likely to be a permissions issue and you "
+"may want to manually backup your theme before upgrading. Alternatively, if "
+"you don't want to backup your theme you can uncheck this."
+msgstr ""
+"Seleccione esta opción si desea que le guardará automáticamente su tema como "
+"un archivo ZIP antes de una actualización. El directorio de las copias de "
+"seguridad se guardan en el es <code>wp-content/envato-backups</code>. Sin "
+"embargo, si usted está experimentando problemas al intentar actualizar, es "
+"probable que sea un problema de permisos, y es posible que desee hacer copia "
+"de seguridad de forma manual el tema antes de actualizar. Alternativamente, "
+"si usted no quiere respaldar su tema puede desmarcar esta."
+
 #: ../theme-content/admin-panel/redux-tabs.php:25
 #: ../wpgrade-core/vendor/redux3/options.php:777
 msgid "<strong>Theme URL:</strong> "
@@ -1876,6 +1897,27 @@ msgstr "Ver más sobre: ​​autor"
 msgid "Header Menu"
 msgstr "Menú de cabecera"
 
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+msgid "If you want, you can download the automatic theme backup."
+msgstr "Si desea, puede descargar la copia de seguridad automática de tema."
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+msgid "Download Backup"
+msgstr "Descarga Backup"
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:104
+msgid ""
+"Error: The theme was not updated, because the automatic backup is activated, "
+"but for some reason (probably due to file permissions) it failed. We "
+"recommend you disable the automatic backup and backup your theme manually "
+"before upgrade."
+msgstr ""
+"Error: El tema no se ha actualizado, ya que la copia de seguridad automática "
+"se activa, pero por alguna razón (probablemente debido a permisos de "
+"archivos) que falló. Le recomendamos desactivar la copia de seguridad "
+"automática y copia de seguridad de su tema de forma manual antes de la "
+"actualización."
+
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:134
 msgid "&laquo; Previous"
 msgstr "&laquo; Anterior"
@@ -1894,6 +1936,16 @@ msgstr "Más información sobre"
 msgid "Read more"
 msgstr "Leer más"
 
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-backup.php:392
+msgid "The backup file was not created"
+msgstr "El archivo de copia de seguridad no se ha creado"
+
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-backup.php:461
+msgid "The following files are unreadable and could not be backed up: "
+msgstr ""
+"Los siguientes archivos no se pueden leer y no podían hacer copias de "
+"seguridad:"
+
 #: ../wpgrade-core/vendor/envato-wtl/class-envato-protected-api.php:67
 msgid "Please enter your Envato Marketplace Username."
 msgstr "Por favor, introduzca su nombre de usuario Envato Marketplace."
@@ -1910,13 +1962,21 @@ msgstr "La API \"set\" es un parámetro obligatorio."
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "El Envato Marketplace \"item ID\" es un parámetro obligatorio."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:287
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:308
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Descarga de paquete de actualización de la API Envato ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:298
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:319
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Descarga de paquete de instalación de la API Envato ..."
+
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:413
+msgid ""
+"This .htaccess file ensures that other people cannot download your backup "
+"files."
+msgstr ""
+"Este archivo .htaccess garantiza que otras personas no pueden descargar los "
+"archivos de copia de seguridad."
 
 #: ../wpgrade-core/vendor/redux2/options/defaults.php:62
 #: ../wpgrade-core/vendor/redux3/options/defaults.php:58
