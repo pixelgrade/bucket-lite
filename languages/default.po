@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cityhub - Responsive Portfolio/ Blog WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 14:44+0200\n"
-"PO-Revision-Date: 2013-10-02 14:44+0200\n"
+"POT-Creation-Date: 2013-10-02 16:28+0200\n"
+"PO-Revision-Date: 2013-10-02 16:28+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -10,9 +10,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;_x;_n_noop\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_xn;_ex;_nx_noop:1,2;"
+"translate_nooped_plural;_n:1,2;_nx:1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ../..\n"
 
 #: ../../lens/404.php:7 ../../lens/no-results.php:10
@@ -71,6 +73,13 @@ msgstr ""
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
+
+#: ../../lens/comments.php:28
+#, php-format
+msgid "Comments (1)"
+msgid_plural "Comments (%1$s)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/comments.php:29 ../../twentythirteen/content-gallery.php:36
 #: ../../twentythirteen/content-image.php:32
@@ -704,8 +713,22 @@ msgstr ""
 msgid "Select Form"
 msgstr ""
 
+#: ../../lens/theme-content/admin-panel/redux-sections.php:280
+#, php-format
+msgid ""
+"Select a contact form previously created with the Contact Form 7 plugin. You "
+"can create one <a href=\"%s\" title=\"Contact Form 7\">here</a>"
+msgstr ""
+
 #: ../../lens/theme-content/admin-panel/redux-sections.php:288
 msgid "Notice"
+msgstr ""
+
+#: ../../lens/theme-content/admin-panel/redux-sections.php:289
+#, php-format
+msgid ""
+"<p class=\"description\">The Contact Form 7 plugin is not active. You can "
+"install/activate it from <a href=\"%s\" title=\"Contact Form 7\">here</a></p>"
 msgstr ""
 
 #: ../../lens/theme-content/admin-panel/redux-sections.php:300
@@ -1197,6 +1220,48 @@ msgstr ""
 msgid "Number of tweets per slide"
 msgstr ""
 
+#: ../../lens/theme-content/inc/widgets.php:804
+#, php-format
+msgid "%d year ago"
+msgid_plural "%d years ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/widgets.php:807
+#, php-format
+msgid "%d month ago"
+msgid_plural "%d months ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/widgets.php:810
+#, php-format
+msgid "%d week ago"
+msgid_plural "%d weeks ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/widgets.php:813
+#, php-format
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/widgets.php:816
+#, php-format
+msgid "%d hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/widgets.php:819
+#, php-format
+msgid "%d minute ago"
+msgid_plural "%d minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ../../lens/theme-content/inc/widgets.php:821
 msgid "moments ago"
 msgstr ""
@@ -1443,267 +1508,315 @@ msgstr ""
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:91
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
-msgstr ""
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:172
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:92
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
-msgstr ""
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "There is a new update for %1$s."
-msgstr ""
+msgid_plural "There are several plugins updates available %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:174
+#, php-format
+msgid "This theme requires the following plugin to be updated: %1$s."
+msgid_plural "This theme requires the following plugins to be updated: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:175
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:93
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
 "installed."
-msgstr ""
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:175
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:176
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:94
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
-msgstr ""
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:176
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:177
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:95
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
-msgstr ""
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:177
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:178
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:96
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugin. Contact the administrator of this site for help on getting the "
 "plugin activated."
-msgstr ""
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:178
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:179
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:97
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this theme: %1$s."
-msgstr ""
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:179
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:180
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:98
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
 "updated."
-msgstr ""
-
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:180
-#: ../../lens/theme-content/inc/required-plugins/required-plugins.php:99
-msgid "Begin installing plugin"
-msgstr ""
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:181
-msgid "Begin updating plugin"
-msgstr ""
+#: ../../lens/theme-content/inc/required-plugins/required-plugins.php:99
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:182
-#: ../../lens/theme-content/inc/required-plugins/required-plugins.php:100
-msgid "Activate installed plugin"
-msgstr ""
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:183
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:513
+#: ../../lens/theme-content/inc/required-plugins/required-plugins.php:100
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:184
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:514
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:101
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:184
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1911
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:185
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1912
 #: ../../lens/theme-content/inc/required-plugins/required-plugins.php:102
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:185
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:186
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:540
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2123
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:541
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2124
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:568
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:569
 #, php-format
 msgid "The following plugin was activated successfully: %s."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:741
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:742
 msgid "Dismiss this notice"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1128
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1129
 msgid "External Link"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1133
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1134
 msgid "Private Repository"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1136
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1137
 msgid "Pre-Packaged"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1140
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1141
 msgid "WordPress Repository"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1143
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1144
 msgid "Required"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1143
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1144
 msgid "Recommended"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1146
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1147
 msgid "Not Installed"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1148
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1149
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1150
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1151
 msgid "Not Updated"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1152
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1153
 msgid "Active"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1346
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1347
 #, php-format
 msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1362
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1363
 msgid "Plugin"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1363
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1364
 msgid "Source"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1364
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1365
 msgid "Type"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1365
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1366
 msgid "Status"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1383
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1384
 msgid "Install"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1384
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1385
 msgid "Activate"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1894
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1610
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1895
 msgid "Install package not available."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1895
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1896
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1896
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1897
 msgid "Unpacking the package&#8230;"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1897
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1898
 msgid "Installing the plugin&#8230;"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1898
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1899
 msgid "Plugin install failed."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1899
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1900
 msgid "Plugin installed successfully."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1910
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1911
 msgid "Plugin activation failed."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2020
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
 msgid "Show Details"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
 msgid "Hide Details"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2023
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2023
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2024
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2027
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2028
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2028
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2029
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2029
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2032
 msgid "All installations have been completed."
 msgstr ""
 
-#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2032
+#: ../../lens/theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2033
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -1776,15 +1889,15 @@ msgstr ""
 msgid "Header Menu"
 msgstr ""
 
-#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
 msgid "If you want, you can download the automatic theme backup."
 msgstr ""
 
-#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
 msgid "Download Backup"
 msgstr ""
 
-#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:104
+#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:107
 msgid ""
 "Error: The theme was not updated, because the automatic backup is activated, "
 "but for some reason (probably due to file permissions) it failed. We "
@@ -1834,11 +1947,11 @@ msgstr ""
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr ""
 
-#: ../../lens/wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:308
+#: ../../lens/wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:309
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr ""
 
-#: ../../lens/wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:319
+#: ../../lens/wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:320
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr ""
 
@@ -2605,6 +2718,13 @@ msgstr ""
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
+
+#: ../../twentythirteen/comments.php:25 ../../twentytwelve/comments.php:31
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../../twentythirteen/content-aside.php:13
 #: ../../twentythirteen/content-audio.php:24

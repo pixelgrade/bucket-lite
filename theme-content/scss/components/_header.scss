@@ -249,6 +249,10 @@
     
     @include media(to hand) {
         @include rem(height, 3 * $base-spacing-unit);
+
+        img {
+            @include rem(max-height, 1.6*$base-spacing-unit);
+        }
     }
 }
 
