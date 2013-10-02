@@ -87,6 +87,11 @@
      */
     .entry__featured-image{
         position: relative;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
 

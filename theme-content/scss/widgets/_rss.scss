@@ -12,10 +12,16 @@
 
 .rsswidget{
     font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .rss-date{
     @include font-size(14px);
+    display: block;
 }
 
 

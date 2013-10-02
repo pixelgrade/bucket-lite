@@ -86,8 +86,6 @@
 
 
 .sidebar--right{
-    @include rem(padding, $base-spacing-unit);
-    @include rem(padding-left, $half-spacing-unit);
 
     .widget {
         @include rem(margin-bottom, 2 * $base-spacing-unit);
@@ -95,8 +93,7 @@
     }
 
     @include media(from lap) {
-        @include rem(padding, 2 * $base-spacing-unit);
-        @include rem(padding-left, $base-spacing-unit);
+        @include rem(margin-left, -1 * $base-spacing-unit);
 
         .widget {
             @include rem(padding-left, $base-spacing-unit);
@@ -108,9 +105,12 @@
     }
 
     .widget_categories, .widget_archive, .widget_pages, .widget_meta, .widget_tag_cloud, .widget_nav_menu {
-        width: 50%;
-        float: left;
-        clear: none;
+        
+        @include media(from desk) {
+            width: 50%;
+            float: left;
+            clear: none;
+        }
 
         a {
             text-decoration: none;
@@ -147,6 +147,10 @@
 
 #wp-calendar {
 
+    caption {
+        padding: 1em;
+    }
+
     thead, tbody {
         th, td {
             text-align: center;
@@ -158,7 +162,9 @@
     }
 
     tfoot a {
+        display: inline-block;
         text-decoration: none;
+        padding: 1em;
     }
 }
 

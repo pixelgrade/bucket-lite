@@ -1,55 +1,6 @@
 /*----------------------------------------*\
 *   $PROJECT LAYOUT
 \*----------------------------------------*/
-footer.entry__meta {
-    @include rem(margin-bottom, 3/2*$base-spacing-unit);
-}
-
-.entry__meta--project{
-    @include rem(padding-bottom, $base-spacing-unit);
-
-    @include media(from hand) {
-        @include rem(margin-left, -$half-spacing-unit);
-    }
-
-    @include media(to hand) {
-        .entry__meta-box{    
-            @include rem(margin-bottom, $half-spacing-unit);
-        }        
-    }
-
-    @include media(from hand) {
-        .entry__meta-box{    
-            margin: 0;
-        }
-
-        .entry__meta-box, .likes-box, .social-links{
-            @include rem(padding, 0 $half-spacing-unit);
-        }
-
-        .social-links{
-            padding-right: 0;
-        }
-
-    }
-
-    .social-links__list a{
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.project-classic{
-    .entry__meta--project{
-        @include rem(padding-bottom, $base-spacing-unit);
-    }
-}
-
-.single-portfolio{
-    .featured-image-wrapper{
-        @include rem(margin-left, -2 * $base-spacing-unit);
-    }
-}
 
 
 
@@ -59,101 +10,14 @@ footer.entry__meta {
 *   $PROJECT SIDEBAR-RIGHT
 \*----------------------------------------*/
 
-.project-sidebar-right{
-    .title-lap{
-        margin-left: 0;
-        padding-left: 0;
-    }
-
-    @include media(to lap) {
-        .project-images{
-            padding-top: 0;
-        }
-    }
-
-    @include media(from lap) {
-        .project-images{
-            @include rem(padding, 2 * $base-spacing-unit 0);
-        }        
-    }
-
-    article{
-        @extend .row;
-        @extend .cf;
-    }
-
-    .project-images, .project-content{
-        float: left;
-    }
-
-    .project-images{
-        @extend .col-12;
-        @extend .lap-col-8;
-    }
-
-    .project-content{
-        @extend .col-12;
-        @extend .lap-col-4;
-
-    }
-
-    @include media(from lap) {
-        .project-content{
-            @include rem(padding, 2 * $base-spacing-unit);
-        }
-    }
-
-    .related-projects_container{
-        @include media(from lap) {
-            @include rem(margin-right, 2 * $base-spacing-unit);
-        }
-    }
-
-}
-
-.project-image{
-    display: block;
-
-    img{
-        width: 100%;
-        height: auto;
-    }
-}
-
-.project-images{
-    a{
-        display: block;
-
-        img{
-            width: 100%;
-        }
-    }
-
-	iframe {
-		width: 100%;
-	}
-}
-
 /**
  * Two titles in the mark-up. One that is on top of the images
  * section and only displayed for mobile devices.
  * The second one is located in the sidebar and is visible from 'lap'.
  */
-.title-mobile{
-    @extend .col-12;
-    margin-bottom: 0;
-    @include rem(margin-left, -2 * $base-spacing-unit);
-    @include rem(padding-left, 2 * $base-spacing-unit);
-}
 
-@include media(to lap) {
-    .title-mobile{
-        display: block;
-    }
-
-    .title-lap{
-        display: none;
-    }
+.title-lap{
+    display: none;
 }
 
 @include media(from lap) {
@@ -174,23 +38,6 @@ footer.entry__meta {
 \*-------------------------------------*/
 
 .single-portfolio-fullwidth {
-
-    @include media(from hand) {
-        .entry__header {
-            border-right: 1px dotted $dark;
-            @include rem(margin-bottom, 2 * $base-spacing-unit);
-        }
-
-        .entry__content {
-            @include rem(padding-top, 5 * $half-spacing-unit);
-        }        
-
-        .entry__header {
-            border-right: 1px dotted $dark;
-            @include rem(margin-bottom, 2 * $base-spacing-unit);
-            @include rem(padding-right, 2 * $base-spacing-unit);
-        }        
-    }
 
     .entry__title {
         @extend .gamma;
