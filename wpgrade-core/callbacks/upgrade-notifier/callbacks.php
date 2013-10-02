@@ -82,11 +82,10 @@
 					
 					//in case we have backups activated
 					//add a link to download the backup archive
-
 					$backup_uri =  wpgrade::state()->get('backup_uri', null);
 
 					if ( !empty( $backup_uri ) ) {
-						$message .= '<br/><br/><i>'.__('If you want, you can download the automatic theme backup.', wpgrade::textdomain()).' <a href="' . wpgrade::state()->get('backup_uri') . '" title="' . esc_attr( __( 'Download Backup', wpgrade::textdomain() ) ) . '">' . esc_attr( __( 'Download Backup', wpgrade::textdomain() ) ) . '</a></i>';
+						$message .= '<br/><br/><i>'.__('If you want, you can download the automatic theme backup.', wpgrade::textdomain()).' <a href="' . $backup_uri . '" title="' . esc_attr( __( 'Download Backup', wpgrade::textdomain() ) ) . '">' . esc_attr( __( 'Download Backup', wpgrade::textdomain() ) ) . '</a></i>';
 					}
 				}
 				else { // error while updating theme
