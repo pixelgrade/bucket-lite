@@ -10,6 +10,7 @@
 
 include_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
 include_once( 'class-envato-protected-api.php' );
+include_once( 'class-envato-backup.php' );
 
 if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme_Upgrader' ) ) {
 
@@ -36,7 +37,7 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
             $this->installation_feedback = array();
             $this->username              = $username;
             $this->api_key               = $api_key;
-            $this->api                   = &new Envato_Protected_API( $this->username, $this->api_key );
+            $this->api                   = new Envato_Protected_API( $this->username, $this->api_key );
         }
         
         /**
@@ -70,9 +71,10 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
             }
             
             $purchased_themes             = $this->filter_purchased_themes_by_name($purchased_themes, $theme_name);
-
-            $themes_list = wp_get_themes();
-
+            if ( function_exists( 'wp_get_themes' ) )
+            	$themes_list = wp_get_themes();
+            else
+            	$themes_list = get_themes();
             $result->updated_themes       = $this->get_updated_themes($themes_list, $purchased_themes);
             $result->updated_themes_count = count($result->updated_themes);
             
@@ -136,6 +138,10 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
             
             return $result;
         }
+		
+		public function backup_theme($theme) {
+			return $this->_backup_theme($theme);
+		}
       
         /**
          * @since   1.0
@@ -179,6 +185,23 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
         protected function constants() 
         {
             define( 'ETU_MAX_EXECUTION_TIME' , 60 * 5);
+			
+			/**
+			* Theme Backup Directory Path
+			*/
+		   define( 'EWPT_BACKUP_DIR', WP_CONTENT_DIR . '/envato-backups/' );
+
+		   /**
+			* Theme Backup Directory URL
+			*/
+		   define( 'EWPT_BACKUP_URL', WP_CONTENT_URL . '/envato-backups/' );
+
+		   /**
+			* Create a key for the .htaccess secure download link.
+			*
+			* @uses    NONCE_KEY     Defined in the WP root config.php
+			*/
+		   define( 'EWPT_SECURE_KEY', md5( NONCE_KEY ) );
         }
       
         /**
@@ -228,12 +251,10 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
 
         protected function is_theme_installed($theme_name) 
         {
-	        $installed_theme = wp_get_theme();
-
-	        if (  is_child_theme() ) {
-		        $installed_theme = wp_get_theme( $installed_theme->template );
-	        }
-
+        	if ( function_exists( 'wp_get_theme' ) )
+        		$installed_theme = wp_get_theme();
+        	else
+	            $installed_theme = get_theme();
             //our modification - get only the active theme
 			if (strcmp($installed_theme['Name'], $theme_name) == 0) {
 				return $installed_theme;
@@ -253,7 +274,7 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
             $callback = array( &$this , '_http_request_args' );
 
             add_filter( 'http_request_args', $callback, 10, 1 );
-            $result = $this->upgrade( $installed_theme_name, $this->api->wp_download( $marketplace_theme_id ) );
+            $result = $this->envato_upgrade( $installed_theme_name, $this->api->wp_download( $marketplace_theme_id ) );
             remove_filter( 'http_request_args', $callback );
             
             return $result;
@@ -284,7 +305,7 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
          */ 
         public function upgrade_strings() {
             parent::upgrade_strings();
-            $this->strings['downloading_package'] = __( 'Downloading upgrade package from the Envato API&#8230;', wpgrade::textdomain() );
+            $this->strings['downloading_package'] = __( 'Downloading upgrade package from the Envato API&#8230;', 'envato' );
         }
   
         /**
@@ -295,7 +316,7 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
          */ 
         public function install_strings() {
             parent::install_strings();
-            $this->strings['downloading_package'] = __( 'Downloading install package from the Envato API&#8230;', wpgrade::textdomain() );
+            $this->strings['downloading_package'] = __( 'Downloading install package from the Envato API&#8230;', 'envato' );
         }
     
         /**
@@ -304,8 +325,8 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
          *
          * @return  array         Boolean.
          */ 
-        public function upgrade( $theme, $package ) {
-  
+        public function envato_upgrade( $theme, $package ) {
+			
             $this->init();
             $this->upgrade_strings();
   
@@ -326,6 +347,144 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
   
             return true;
         }
+		
+		/**
+		* Backup an Envato theme.
+		*
+		* This function requires the template/theme slug
+		* to locate and backup that theme.
+		*
+		* @access    private
+		* @since     1.4
+		*
+		* @param     string    Template slug
+		* @return    void
+		*/
+	   protected function _backup_theme( $theme ) {
+
+		 $backup_errors = array();
+
+		 $theme_backup = Envato_Backup::get_instance();
+
+		 $theme_backup->path = EWPT_BACKUP_DIR;
+
+		 $theme_backup->root = get_theme_root() . '/' . $theme . '/';
+
+		 $theme_backup->archive_filename = strtolower( sanitize_file_name( $theme . '.backup.' . date( 'Y-m-d-H-i-s', time() + ( current_time( 'timestamp' ) - time() ) ) . '.zip' ) );
+
+		 if ( ( ! is_dir( $theme_backup->path() ) && ( ! is_writable( dirname( $theme_backup->path() ) ) || ! mkdir( $theme_backup->path() ) ) ) || ! is_writable( $theme_backup->path() ) ) {
+		   array_push( $backup_errors, 'Invalid backup path' );
+		   return false;
+		 }
+
+		 if ( ! is_dir( $theme_backup->root() ) || ! is_readable( $theme_backup->root() ) ) {
+		   array_push( $backup_errors, 'Invalid root path' );
+		   return false;
+		 }
+
+		 $theme_backup->backup();
+
+		 if ( file_exists( Envato_Backup::get_instance()->archive_filepath() ) ) {
+		   return true;
+		 } else {
+		   return $backup_errors;
+		 }
+	   }
+
+	   /**
+		* Prepare the envato backup directory and .htaccess
+		*
+		* @access    private
+		* @since     1.4
+		*
+		* @return    void
+		*/
+	   function _prepare_envato_backup() {
+
+		 $path = EWPT_BACKUP_DIR;
+
+		 /* Create the backups directory if it doesn't exist */
+		 if ( is_writable( dirname( $path ) ) && ! is_dir( $path ) )
+		   mkdir( $path, 0755 );
+
+		 /* Secure the directory with a .htaccess file */
+		 $htaccess = $path . '.htaccess';
+
+		 $contents[]	= '# ' . __( 'This .htaccess file ensures that other people cannot download your backup files.', 'envato' );
+		 $contents[] = '';
+		 $contents[] = '<IfModule mod_rewrite.c>';
+		 $contents[] = 'RewriteEngine On';
+		 $contents[] = 'RewriteCond %{QUERY_STRING} !key=' . md5( EWPT_SECURE_KEY );
+		 $contents[] = 'RewriteRule (.*) - [F]';
+		 $contents[] = '</IfModule>';
+		 $contents[] = '';
+
+		 if ( ! file_exists( $htaccess ) && is_writable( $path ) && require_once( ABSPATH . '/wp-admin/includes/misc.php' ) )
+		   insert_with_markers( $htaccess, 'EnvatoBackup', $contents );
+
+	   }
+
+	   /**
+		* Get the backup directory path for a given theme.
+		*
+		* @access    private
+		* @since     1.4
+		*
+		* @param     string        Theme slug.
+		* @return    bool|string   Return the theme path or false.
+		*/
+	   protected function _get_theme_backup_dir( $theme ) {
+
+		 $backup_path = EWPT_BACKUP_DIR;
+
+		 if ( $handle = @opendir( $backup_path ) ) {
+		   $files = array();
+		   while ( false !== ( $file = readdir( $handle ) ) ) {
+			 $temp_theme = reset( explode( '.', $file ) );
+			 $temp_ext = end( explode( '.', $file ) );
+			 if ( $temp_theme == $theme &&  $temp_ext == 'zip' ) {
+			   $files[@filemtime( trailingslashit( $backup_path ) . $file )] = trailingslashit( $backup_path ) . $file;
+			 }
+		   }
+		   closedir( $handle );
+		   krsort( $files );
+		 }
+
+		 if ( isset( $files ) && ! empty( $files ) )
+		   return array_shift( $files );
+
+		 return false;
+	   }
+
+	   /**
+		* Get the backup directory URI for a given theme.
+		*
+		* @uses      get_theme_backup_dir()
+		*
+		* @access    public
+		* @since     1.4
+		*
+		* @param     string      Theme slug.
+		* @return    bool|string Return the theme URI or false.
+		*/
+	   public function get_theme_backup_uri( $theme ) {
+
+		 $theme_backup = $this->_get_theme_backup_dir( $theme );
+
+		 if ( empty( $theme_backup ) )
+		   return false;
+
+		 $theme_backup_uri = str_replace( EWPT_BACKUP_DIR, EWPT_BACKUP_URL, $theme_backup );
+
+		 if ( defined( 'EWPT_SECURE_KEY' ) ) {
+		   $theme_backup_uri = $theme_backup_uri . '?key=' . md5( EWPT_SECURE_KEY );
+		 }
+
+		 if ( '' != $theme_backup_uri )
+		   return $theme_backup_uri;
+
+		 return false;
+	   }
     }
 
     /**
@@ -387,4 +546,3 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
     }
     
 }
-

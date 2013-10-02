@@ -31,9 +31,10 @@
 			$marketplace_api_key = wpgrade::option('marketplace_api_key');
 
 			if ( ! empty($marketplace_username) && ! empty($marketplace_api_key)) {
-				if (in_array('curl', get_loaded_extensions())) {
-					// cURL is enabled, the Envato Toolkit uses cURL, so the update can be performed
-					$upgrader = new Envato_WordPress_Theme_Upgrader( $marketplace_username, $marketplace_api_key );
+				
+				$upgrader = new Envato_WordPress_Theme_Upgrader( $marketplace_username, $marketplace_api_key );
+
+				if ( !$wpGrade_Options->get('themeforest_upgrade_backup') || $upgrader->backup_theme( $theme_name ) === true ) {
 					$upgrader->check_for_theme_update($theme_name, $allow_cache);
 					$res = $upgrader->upgrade_theme($theme_name, $allow_cache);
 					$success = $res->success;
@@ -45,9 +46,6 @@
 					if (isset($res->errors)) {
 						wpgrade::state()->set('theme_update_error', $res->errors);
 					}
-				}
-				else { // curl not available
-					wpgrade::state()->set('curl_disabled', true);
 				}
 			}
 		}

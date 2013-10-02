@@ -79,6 +79,12 @@
 			if (wpgrade::state()->has('theme_updated') && isset($_GET['wpgrade_update']) &&  $_GET['wpgrade_update'] == 'true') {
 				if (wpgrade::state()->get('theme_updated')) {
 					$message = 'The theme has been updated successfully';
+					
+					//in case we have backups activated
+					//add a link to download the backup archive
+					if (isset($wpGrade_data->backup_uri) && !empty($wpGrade_data->backup_uri)) {
+						$message .= '<br/><br/><i>'.__('If you want, you can download the automatic theme backup.', wpGrade_txtd).' <a href="' . $wpGrade_data->backup_uri . '" title="' . esc_attr( __( 'Download Backup', wpGrade_txtd ) ) . '">' . esc_attr( __( 'Download Backup', wpGrade_txtd ) ) . '</a></i>';
+					}
 				}
 				else { // error while updating theme
 					$message = 'An error occurred, the theme has not been updated. Please try again later or install the update manually.';
@@ -93,6 +99,9 @@
 			}
 			elseif (wpgrade::state()->get('curl_disabled', false)) {
 				$message = 'Error: The theme was not updated, because the cURL extension is not enabled on your server. In order to update the theme automatically, the Envato Toolkit Library requires cURL to be enabled on your server. You can contact your hosting provider to enable this extension for you.';
+				$message_type = "error";
+			}elseif(isset($wpGrade_data->backup_failed) && $wpGrade_data->backup_failed === true){
+				$message = __('Error: The theme was not updated, because the automatic backup is activated, but for some reason (probably due to file permissions) it failed. We recommend you disable the automatic backup and backup your theme manually before upgrade.', wpGrade_txtd);
 				$message_type = "error";
 			}
 
