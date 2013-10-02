@@ -3952,7 +3952,6 @@ function magnificPopupInit() {
     $('.js-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
             delegate: '.mosaic__item a', // the container for each your gallery items
-            type: 'image',
             removalDelay: 500,
             mainClass: 'mfp-fade',
             image: {
@@ -3960,51 +3959,42 @@ function magnificPopupInit() {
                     return item.el.attr('title');
                 }
             },
+            iframe: {
+                markup: '<div class="mfp-iframe-scaler">'+
+                    '<div class="mfp-close"></div>'+
+                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                    '</div>',
+                patterns: {
+                youtube: {
+                    index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+                    id: 'v=', // String that splits URL in a two parts, second part should be %id%
+                    // Or null - full URL will be returned
+                    // Or a function that should return %id%, for example:
+                    // id: function(url) { return 'parsed id'; }
+                    src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
+                },
+                vimeo: {
+                    index: 'vimeo.com/',
+                    id: '/',
+                    src: '//player.vimeo.com/video/%id%?autoplay=1'
+                },
+                gmaps: {
+                    index: '//maps.google.',
+                    src: '%id%&output=embed'
+                }
+                // you may add here more sources
+                },
+                srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+            },
             gallery:{
                 enabled:true,
                 navigateByImgClick: true,
                 tPrev: 'Previous (Left arrow key)', // title for left button
                 tNext: 'Next (Right arrow key)', // title for right button
                 tCounter: '<div class="gallery-control gallery-control--popup"><a href="#" class="control-item arrow-button arrow-button--left js-arrow-popup-prev"></a><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div><a href="#" class="control-item arrow-button arrow-button--right js-arrow-popup-next"></a></div>'
-            },
+            }
         });
     });
-
-	$('.magnific-video').each(function() { // the containers for all your galleries should have the class gallery
-		$(this).magnificPopup({
-			delegate: 'a', // the container for each your gallery items
-			type: 'iframe',
-			removalDelay: 500,
-			mainClass: 'mfp-fade',
-			iframe: {
-				markup: '<div class="mfp-iframe-scaler">'+
-					'<div class="mfp-close"></div>'+
-					'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-					'</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
-				patterns: {
-					youtube: {
-						index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
-						id: 'v=', // String that splits URL in a two parts, second part should be %id%
-						// Or null - full URL will be returned
-						// Or a function that should return %id%, for example:
-						// id: function(url) { return 'parsed id'; }
-						src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
-					},
-					vimeo: {
-						index: 'vimeo.com/',
-						id: '/',
-						src: '//player.vimeo.com/video/%id%?autoplay=1'
-					},
-					gmaps: {
-						index: '//maps.google.',
-						src: '%id%&output=embed'
-					}
-					// you may add here more sources
-				},
-				srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
-			}
-		});
-	});
 
     $('.js-project-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
