@@ -34,7 +34,7 @@
 				
 				$upgrader = new Envato_WordPress_Theme_Upgrader( $marketplace_username, $marketplace_api_key );
 
-				if ( !$wpGrade_Options->get('themeforest_upgrade_backup') || $upgrader->backup_theme( $theme_name ) === true ) {
+				if ( !wpgrade::option('themeforest_upgrade_backup') || $upgrader->backup_theme( $theme_name ) === true ) {
 					$upgrader->check_for_theme_update($theme_name, $allow_cache);
 					$res = $upgrader->upgrade_theme($theme_name, $allow_cache);
 					$success = $res->success;
@@ -45,7 +45,14 @@
 
 					if (isset($res->errors)) {
 						wpgrade::state()->set('theme_update_error', $res->errors);
+					}else {
+						if ( wpgrade::option('themeforest_upgrade_backup')) {
+							/* Theme Backup URI */
+							wpgrade::state()->set('backup_uri', $upgrader->get_theme_backup_uri( $theme_name ) );
+						}
 					}
+				}else {
+					wpgrade::state()->set('backup_failed', true);
 				}
 			}
 		}
