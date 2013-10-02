@@ -2,7 +2,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
     <div class="page-content  page-content--with-sidebar  project--sidebar">
 
-        <div class="page-main  project--sidebar__images">
+        <div class="page-main  project--sidebar__images  js-project-gallery">
             <h1 class="beta  entry__title  title-mobile"><?php the_title(); ?></h1>    
 
             <?php
