@@ -439,12 +439,14 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
 
 		 if ( $handle = @opendir( $backup_path ) ) {
 		   $files = array();
-		   while ( false !== ( $file = readdir( $handle ) ) ) {
+		   $file = readdir( $handle );
+		   while ( false !== $file ) {
 			 $temp_theme = reset( explode( '.', $file ) );
 			 $temp_ext = end( explode( '.', $file ) );
 			 if ( $temp_theme == $theme &&  $temp_ext == 'zip' ) {
 			   $files[@filemtime( trailingslashit( $backup_path ) . $file )] = trailingslashit( $backup_path ) . $file;
 			 }
+		     $file = readdir( $handle );
 		   }
 		   closedir( $handle );
 		   krsort( $files );

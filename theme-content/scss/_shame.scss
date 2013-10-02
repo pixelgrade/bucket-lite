@@ -55,6 +55,11 @@ html {
     margin: -1px;
 }
 
+.image__item-wrapper img{
+    width: 100.5%;
+    max-width: none;
+}
+
 /**
  * There's 1px horizontal on the page when there's no sidebar and the page goes
  * full width, making the horizontal scroll bar appear
