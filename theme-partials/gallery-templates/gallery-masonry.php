@@ -58,21 +58,29 @@
 			<?php
 			foreach ( $attachments as $attachment ) :
 				$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+				$attachment_fields = get_post_custom( $attachment->ID );
 
-				if($thumb_orientation == 'vertical'){
+				if ($thumb_orientation == 'vertical') {
 					$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
 					$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v', true);
 					$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true);
 					$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true); 
-				}
-				else{
+				} else {
 					$img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
 					$img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
 					$img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
 					$img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true); 
 				}
-				?>
-				<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; ?>">
+
+				// check if this attachment has a video url
+				$video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
+				$is_video = false;
+				//  if there is one let royal slider know about it
+				if ( !empty($video_url) ) {
+					$img['full'][0] = $video_url;
+					$is_video = true;
+				} ?>
+				<div class="mosaic__item<?php if($thumb_orientation == 'vertical') echo ' mosaic__item--vertical'; if ( $is_video ) { echo ' magnific-video'; } ?>">
 					<a href="<?php echo $img['full'][0]; ?>" class="image__item-link" title="" data-effect="mfp-zoom-in">
 						<div class="image__item-wrapper">
 							<img
@@ -88,7 +96,11 @@
 						<div class="image__item-meta">
 							<div class="image_item-table">
 								<div class="image_item-cell">
-									<div class="image__plus-icon">+</div>
+									<?php if ( $is_video ) { ?>
+										<div class="icon-play"></div>
+									<?php } else { ?>
+										<div class="image__plus-icon">+</div>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
