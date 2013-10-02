@@ -36,7 +36,7 @@ function wpgrade_callback_geting_active() {
 			'has_archive' => 'portfolio-archive',
 			'menu_icon' => 'report.png',
 			'menu_position' => NULL,
-			'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'),
+			'supports' => array ( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt', 'comments'),
 			'yarpp_support' => true,
 		),
 		'lens_gallery' => array(
@@ -278,8 +278,8 @@ function wpgrade_callback_geting_active() {
 			'id'         => 'portfolio_metadata',
 			'title'      => __('Details', wpgrade::textdomain()),
 			'pages'      => array( 'lens_portfolio' ), // Post type
-			'context'    => 'side',
-			'priority'   => 'low',
+			'context'    => 'normal',
+			'priority'   => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
 				array(
