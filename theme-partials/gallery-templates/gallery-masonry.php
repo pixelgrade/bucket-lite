@@ -99,7 +99,7 @@
 									<?php if ( $is_video ) { ?>
 										<i class="icon-play"></i>
 									<?php } else { ?>
-										<i class="image__plus-icon">+</i>
+										<div class="image__plus-icon">+</div>
 									<?php } ?>
 								</div>
 							</div>
