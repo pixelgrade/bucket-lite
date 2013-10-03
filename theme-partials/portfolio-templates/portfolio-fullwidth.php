@@ -12,7 +12,7 @@
 		$gallery_ids = explode(',',$gallery_ids);
 	}
 
-    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'image_scale_mode', true);
+    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'portfolio_image_scale_mode', true);
 
     $attachments = get_posts( array(
         'post_type' => 'attachment',
