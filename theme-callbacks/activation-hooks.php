@@ -310,7 +310,7 @@ function wpgrade_callback_geting_active() {
 <p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less than size of image.</p>
 <p class="cmb_metabox_description"><strong>Auto Height</strong> scales the container to fit the full size image.</p>
 <p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'image_scale_mode',
+					'id' => wpgrade::prefix() . 'portfolio_image_scale_mode',
 					'type' => 'select',
 					'show_on'    => array( 'key' => 'select_value', 'value' => array( 'project_template' => 'fullwidth', 'project_template' => 'sidebar' ), ),
 					'options' => array(
@@ -384,7 +384,7 @@ function wpgrade_callback_geting_active() {
 <p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
 <p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less then size of image.</p>
 <p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'image_scaling_mode',
+					'id' => wpgrade::prefix() . 'gallery_image_scale_mode',
 					'type' => 'select',
 					'options' => array(
 						array(
