@@ -16,8 +16,10 @@
     </div>
  */
 
-.social-links{
-
+@include media(from hand) {
+    .social-links{
+        float: right;
+    }
 }
 
     .social-links__message{

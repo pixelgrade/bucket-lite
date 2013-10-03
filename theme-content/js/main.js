@@ -4471,8 +4471,8 @@ function magnificNext(e) {
 
 function eventHandlers() {
 
-    $('body').on('click', '.js-arrow-popup-prev', magnificPrev);
-    $('body').on('click', '.js-arrow-popup-next', magnificNext);
+    $('body').off('click', '.js-arrow-popup-prev', magnificPrev).on('click', '.js-arrow-popup-prev', magnificPrev);
+    $('body').off('click', '.js-arrow-popup-next', magnificNext).on('click', '.js-arrow-popup-next', magnificNext);
 
     /* @todo: change classes so style and js don't interfere */
     $('.menu-item--parent').hoverIntent({
