@@ -149,6 +149,10 @@
         // .header-extra{
         //     display: none;
         // }
+        .menu-link{
+            @include rem(padding-top, $half-spacing-unit/2);
+            @include rem(padding-bottom, $half-spacing-unit/2);
+        }
     }
 }
 
@@ -160,9 +164,9 @@
     $HEADER_INVERSE
 \*----------------------------------------*/
 
-/*body*/.header-inverse-color{
+/*body*/.header-inverse{
     #page, .header, .header__inner-wrap{
-        background-color: #f5f5f5;  
+        background-color: #fff;  
     }
 
     .header{
@@ -219,11 +223,6 @@
 
     .site-header__branding{
         @include rem(padding-bottom, $half-spacing-unit);
-    }
-
-    .menu-link{
-        @include rem(padding-top, $half-spacing-unit/2);
-        @include rem(padding-bottom, $half-spacing-unit/2);
     }
 }
 
