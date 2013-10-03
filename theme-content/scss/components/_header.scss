@@ -153,6 +153,11 @@
             @include rem(padding-top, $half-spacing-unit/2);
             @include rem(padding-bottom, $half-spacing-unit/2);
         }
+
+        .sub-menu-link {
+            @include rem(padding-top, $half-spacing-unit/4);
+            @include rem(padding-bottom, $half-spacing-unit/4);
+        }
     }
 }
 
@@ -185,26 +190,26 @@
         }
 
         a{
-            color: black;
+            color: $dark;
             
             &:hover{
                 color: #d5d200;
             }
         }
 
-        div{
-            color: black;
+        div {
+            color: $dark;
         }
     }
 
 
     .site-header__branding{
         background: transparent;
-        color: black;
+        color: $dark;
     }
 
     .menu-item--parent:after{
-        border-top-color: black;        
+        border-top-color: $dark;        
     }    
 }
 
@@ -221,9 +226,9 @@
         min-height: inherit;
     }
 
-    .site-header__branding{
-        @include rem(padding-bottom, $half-spacing-unit);
-    }
+    // .site-header__branding{
+    //     @include rem(padding-bottom, $half-spacing-unit);
+    // }
 }
 
 
