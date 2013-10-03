@@ -504,14 +504,6 @@
 			}
 		},
 		{
-			"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
-			"settings":
-			{
-				"buffer_size": 11755,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 			"settings":
 			{
@@ -584,6 +576,7 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/js/main.js",
 		"/E/uniserver/www/prism/wp-content/themes/lens/style.css",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_wpcf7.scss",
@@ -603,7 +596,6 @@
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/base/_layout.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullscreen.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/inc/thumbnails.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-classic.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-sidebar.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_royalslider.scss",
@@ -719,7 +711,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 97.0,
 		"where_history":
 		[
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
@@ -957,7 +949,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1000,8 +992,8 @@
 						"selection":
 						[
 							[
-								4240,
-								4240
+								53,
+								53
 							]
 						],
 						"settings":
@@ -1009,8 +1001,8 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 160.0,
-						"translation.y": 948.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1185,34 +1177,6 @@
 				},
 				{
 					"buffer": 8,
-					"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
-					"settings":
-					{
-						"buffer_size": 11755,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3975,
-								3975
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 818.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
 					"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 					"settings":
 					{
@@ -1240,7 +1204,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "theme-content/scss/pages/_post.scss",
 					"settings":
 					{
@@ -1268,7 +1232,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "theme-content/scss/modules/_social-links.scss",
 					"settings":
 					{
