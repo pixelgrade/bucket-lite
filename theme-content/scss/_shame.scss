@@ -51,13 +51,8 @@ html {
 * bad computation of widths (I guess) :D
 *
 **/
-.mosaic__item-wrapper {
-    margin: -1px;
-}
-
-.image__item-wrapper img{
+.mosaic__item .image__item-link{
     width: 100.5%;
-    max-width: none;
 }
 
 /**
