@@ -72,7 +72,7 @@
                     <?php if($client_name !== '') : ?>
                     <div class="entry__meta-box meta-box--client">
                         <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                        <a href="<?php echo $client_link; ?>" title="View all posts for this client" rel="category"><?php echo $client_name; ?></a>
+                        <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                     </div>
                     <?php endif; ?>               
                     <?php if ( !empty($categories) && !is_wp_error($categories)): ?>
