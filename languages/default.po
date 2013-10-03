@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cityhub - Responsive Portfolio/ Blog WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 16:28+0200\n"
-"PO-Revision-Date: 2013-10-02 16:28+0200\n"
+"POT-Creation-Date: 2013-10-03 15:13+0200\n"
+"PO-Revision-Date: 2013-10-03 15:16+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -129,9 +129,9 @@ msgstr ""
 
 #: ../../lens/single.php:38
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:92
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:121
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:80
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:77
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:106
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:77
 msgid "Filled under"
 msgstr ""
 
@@ -141,29 +141,29 @@ msgstr ""
 
 #: ../../lens/single.php:62
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:149
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:102
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:134
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:99
 msgid "Share"
 msgstr ""
 
 #: ../../lens/single.php:67 ../../lens/theme-partials/posts-single.php:169
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:107
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:139
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:104
 msgid "Share on Twitter!"
 msgstr ""
 
 #: ../../lens/single.php:75 ../../lens/theme-partials/posts-single.php:177
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:115
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:147
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:112
 msgid "Share on Facebook!"
 msgstr ""
 
 #: ../../lens/single.php:83 ../../lens/theme-partials/posts-single.php:185
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:170
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:123
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:155
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:120
 msgid "Share on Google+!"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 
 #: ../../lens/theme-callbacks/activation-hooks.php:138
 #: ../../lens/theme-callbacks/activation-hooks.php:239
-#: ../../lens/theme-callbacks/activation-hooks.php:355
+#: ../../lens/theme-callbacks/activation-hooks.php:357
 msgid "Images"
 msgstr ""
 
@@ -281,7 +281,7 @@ msgid "Project Details"
 msgstr ""
 
 #: ../../lens/theme-callbacks/activation-hooks.php:286
-#: ../../lens/theme-callbacks/activation-hooks.php:360
+#: ../../lens/theme-callbacks/activation-hooks.php:362
 msgid "Template Style"
 msgstr ""
 
@@ -290,12 +290,34 @@ msgid "Select the template you want for this project."
 msgstr ""
 
 #: ../../lens/theme-callbacks/activation-hooks.php:307
-#: ../../lens/theme-callbacks/activation-hooks.php:380
+#: ../../lens/theme-callbacks/activation-hooks.php:382
 msgid "Image Scaling"
 msgstr ""
 
 #: ../../lens/theme-callbacks/activation-hooks.php:308
-#: ../../lens/theme-callbacks/activation-hooks.php:381
+msgid ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less than size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> scales the "
+"container to fit the full size image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
+msgstr ""
+
+#: ../../lens/theme-callbacks/activation-hooks.php:337
+msgid "Client Name"
+msgstr ""
+
+#: ../../lens/theme-callbacks/activation-hooks.php:342
+msgid "Client Link"
+msgstr ""
+
+#: ../../lens/theme-callbacks/activation-hooks.php:383
 msgid ""
 "<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
 "completely fill slider container (recommended for landscape images)</p>\n"
@@ -308,42 +330,34 @@ msgid ""
 "ly/slider-image-scaling\">Visual explanation</a></p>"
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:335
-msgid "Client Name"
-msgstr ""
-
-#: ../../lens/theme-callbacks/activation-hooks.php:340
-msgid "Client Link"
-msgstr ""
-
-#: ../../lens/theme-callbacks/activation-hooks.php:404
+#: ../../lens/theme-callbacks/activation-hooks.php:406
 msgid "Grid Thumbnails Orientation"
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:420
+#: ../../lens/theme-callbacks/activation-hooks.php:422
 msgid "Gallery Title Box"
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:421
+#: ../../lens/theme-callbacks/activation-hooks.php:423
 msgid "Show the title of the gallery in a thumbnail box or not."
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:447
+#: ../../lens/theme-callbacks/activation-hooks.php:449
 msgid "Choose:"
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:448
+#: ../../lens/theme-callbacks/activation-hooks.php:450
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
 "Settings > Reading (instead of this one)."
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:464
+#: ../../lens/theme-callbacks/activation-hooks.php:466
 msgid "Select a gallery"
 msgstr ""
 
-#: ../../lens/theme-callbacks/activation-hooks.php:465
+#: ../../lens/theme-callbacks/activation-hooks.php:467
 msgid "Select a gallery and we will show it on your homepage."
 msgstr ""
 
@@ -1851,33 +1865,33 @@ msgid "Back to top"
 msgstr ""
 
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:85
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:74
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:70
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:100
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:71
 msgid "Client"
 msgstr ""
 
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:86
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:184
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:139
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:169
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:136
 msgid "Related projects"
 msgstr ""
 
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:144
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:174
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:141
 msgid "Previous"
 msgstr ""
 
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:193
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:148
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:178
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:145
 msgid "All projects"
 msgstr ""
 
 #: ../../lens/theme-partials/portfolio-templates/portfolio-classic.php:99
-#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:197
-#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:152
+#: ../../lens/theme-partials/portfolio-templates/portfolio-fullwidth.php:182
+#: ../../lens/theme-partials/portfolio-templates/portfolio-sidebar.php:149
 msgid "Next"
 msgstr ""
 
@@ -1889,15 +1903,15 @@ msgstr ""
 msgid "Header Menu"
 msgstr ""
 
-#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
+#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "If you want, you can download the automatic theme backup."
 msgstr ""
 
-#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
+#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "Download Backup"
 msgstr ""
 
-#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:107
+#: ../../lens/wpgrade-core/callbacks/upgrade-notifier/callbacks.php:106
 msgid ""
 "Error: The theme was not updated, because the automatic backup is activated, "
 "but for some reason (probably due to file permissions) it failed. We "
