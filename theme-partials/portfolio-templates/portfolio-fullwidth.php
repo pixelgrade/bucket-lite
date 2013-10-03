@@ -12,7 +12,7 @@
 		$gallery_ids = explode(',',$gallery_ids);
 	}
 
-    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'image_scale_mode', true);
+    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'portfolio_image_scale_mode', true);
 
     $attachments = get_posts( array(
         'post_type' => 'attachment',
@@ -21,22 +21,7 @@
         'post__in'     => $gallery_ids
     ) );
 
-	
-	//let's get the video
-	//first get the youtube one
-//	$video = lens::youtube_id_from_url(get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_youtube', true ));
-//	$video = trim($video);
-//	
-//	if (empty($video)) {
-//		//let's try getting the vimeo video link
-//		$video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_vimeo', true );
-//		$video = trim($video);
-//	}
-//	
-//	$videoimg = json_decode(get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_image', true ), true);
-//	$videoimg = $videoimg['link'];
-
-    if ( !empty($attachments) || !empty($video)) : ?>
+    if ( !empty($attachments) ) : ?>
     <div class="featured-image">
         <?php 
             $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagescale="'.$image_scale_mode.'"';

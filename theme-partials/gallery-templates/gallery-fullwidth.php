@@ -14,7 +14,7 @@
         'post__in'     => $gallery_ids
     ) );
 
-    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'image_scale_mode', true);
+    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'gallery_image_scale_mode', true);
 
     if ( $attachments ) : ?>
         <div class="pixslider js-pixslider" data-customarrows data-bullets data-fullscreen data-imagescale="<?php echo $image_scale_mode; ?>">
