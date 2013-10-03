@@ -307,7 +307,8 @@ function wpgrade_callback_geting_active() {
 					'name' => __('Image Scaling', wpgrade::textdomain()),
 					'desc' => __('<p class="cmb_metabox_description"><strong>Fill</strong> scales image to completely fill slider container (recommended for landscape images)</p>
 <p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
-<p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less then size of image.</p>
+<p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less than size of image.</p>
+<p class="cmb_metabox_description"><strong>Auto Height</strong> scales the container to fit the full size image.</p>
 <p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
