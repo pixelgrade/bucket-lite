@@ -17,7 +17,7 @@
 .gallery-control{
     display: block;
     position: absolute;
-    @include rem(bottom, $base-spacing-unit);
+    @include rem(bottom, 1.5* $base-spacing-unit);
     @include rem(right, 2 * $base-spacing-unit);
 }
 
