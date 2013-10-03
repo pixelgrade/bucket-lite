@@ -312,6 +312,7 @@ function wpgrade_callback_geting_active() {
 <p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'image_scale_mode',
 					'type' => 'select',
+					'show_on'    => array( 'key' => 'select_value', 'value' => array( 'project_template' => 'fullwidth', 'project_template' => 'sidebar' ), ),
 					'options' => array(
                         array(
                             'name' => 'Fit',
@@ -378,12 +379,12 @@ function wpgrade_callback_geting_active() {
 					'std' => 'fullwidth',
 				),
 				array(
-					'name' => __('Image Scaling', wpgrade::textdomain()),
+					'name' => __( 'Image Scaling', wpgrade::textdomain() ),
 					'desc' => __('<p class="cmb_metabox_description"><strong>Fill</strong> scales image to completely fill slider container (recommended for landscape images)</p>
 <p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
 <p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less then size of image.</p>
 <p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'image_scale_mode',
+					'id' => wpgrade::prefix() . 'image_scaling_mode',
 					'type' => 'select',
 					'options' => array(
 						array(
@@ -399,7 +400,7 @@ function wpgrade_callback_geting_active() {
 							'value' => 'fit-if-smaller'
 						),
 					),
-					'std' => 'fill'					
+					'std' => 'fill',
 				),
 				array(
 					'name' => __('Grid Thumbnails Orientation', wpgrade::textdomain()),
@@ -542,7 +543,7 @@ function wpgrade_callback_geting_active() {
 			'manually_using_thumbnails' => false,
 		);
 
-//		update_option( 'yarpp', $yarp_settings );
+		update_option( 'yarpp', $yarp_settings );
 	}
 	// flush permalinks rules on theme activation
 	flush_rewrite_rules();
