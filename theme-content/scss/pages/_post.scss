@@ -376,20 +376,20 @@ blockquote:not(.pixcode--testimonial){
     @include rem(margin-bottom, $base-spacing-unit);
 }
 
-// @include media(to hand) {
-//     .entry__meta-box{
-//         float: none;
-//         display: block;
-//         @include rem(margin-bottom, $half-spacing-unit);
-//     }
-// }
+@include media(to hand) {
+    .entry__meta-box{
+        float: none;
+        display: block;
+        @include rem(margin-bottom, $half-spacing-unit);
+    }
+}
 
-// @include media(from hand) {
-//     .entry__meta-box{
-//         float: left;
-//         @include rem(margin-right, $base-spacing-unit);        
-//     }
-// }
+@include media(from hand) {
+    .entry__meta-box{
+        float: left;
+        @include rem(margin-right, $base-spacing-unit);        
+    }
+}
 
 // .entry__featured-image {
 //     img {

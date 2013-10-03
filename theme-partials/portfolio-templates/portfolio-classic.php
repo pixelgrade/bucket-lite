@@ -20,7 +20,7 @@
                     <?php if($client_name != '') : ?>
                         <div class="entry__meta-box meta-box--client">
                             <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                            <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
+                            <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                         </div>
                     <?php endif; ?>
                     <?php
@@ -76,6 +76,12 @@
                         </div>
                     <?php endif; ?>
                 </footer><!-- .entry__meta -->
+                
+                <?php
+                    // If comments are open or we have at least one comment, load up the comment template
+                       if ( comments_open() || '0' != get_comments_number() )
+                          comments_template();
+                ?>
             </article><!-- #post -->
             
             <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>

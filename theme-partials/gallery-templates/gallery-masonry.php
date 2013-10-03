@@ -81,7 +81,7 @@
 					$is_video = true;
 				} ?>
 				<div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?>">
-					<a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe'; } else { echo 'mfp-image'; } ?> image__item-link" title="" data-effect="mfp-zoom-in">
+					<a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe mfp-video'; } else { echo 'mfp-image'; } ?> image__item-link" title="" data-effect="mfp-zoom-in">
 						<div class="image__item-wrapper">
 							<img
 								class="js-lazy-load"
@@ -97,7 +97,7 @@
 							<div class="image_item-table">
 								<div class="image_item-cell">
 									<?php if ( $is_video ) { ?>
-										<div class="icon-play"></div>
+										<i class="icon-play"></i>
 									<?php } else { ?>
 										<div class="image__plus-icon">+</div>
 									<?php } ?>

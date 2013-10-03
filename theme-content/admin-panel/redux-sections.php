@@ -277,7 +277,7 @@
 			'id' => 'contact_form_7',
 			'type' => 'select', // create a new type with font preview
 			'title' => __('Select Form', wpgrade::textdomain()),
-			'sub_desc' => 'Select a contact form previously created with the Contact Form 7 plugin. You can create one <a href="'.admin_url( 'admin.php?page=wpcf7' ).'" title="Contact Form 7">here</a>',
+			'sub_desc' => sprintf(__('Select a contact form previously created with the Contact Form 7 plugin. You can create one <a href="%s" title="Contact Form 7">here</a>',wpgrade::textdomain()),admin_url( 'admin.php?page=wpcf7' )),
 			'options' => $contact_forms
 		);
 	}
@@ -286,7 +286,7 @@
 			'id' => 'contact_form_7_inactive',
 			'type' => 'info', // create a new type with font preview
 			'title' => __('Notice', wpgrade::textdomain()),
-			'desc' => '<p class="description">Contact form 7 is not active. You can install/activate it from <a href="'.admin_url( 'themes.php?page=install-required-plugins' ).'" title="Contact Form 7">here</a></p>',
+			'desc' => sprintf(__('<p class="description">The Contact Form 7 plugin is not active. You can install/activate it from <a href="%s" title="Contact Form 7">here</a></p>',wpgrade::textdomain()),admin_url( 'themes.php?page=install-required-plugins' )),
 		);
 	}
 

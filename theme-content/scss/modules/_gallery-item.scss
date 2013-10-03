@@ -81,6 +81,25 @@
     }
 }
 
+.mfp-video .image__item-meta{
+    @include opacity(1);
+    background: transparent;
+
+    .image_item-table{
+        @include opacity(1);
+    }
+}
+
+.mfp-video:hover .image__item-meta{
+    background: rgba($accent-color, 0.8);
+    @include transition-property(background);
+    @include transition-duration(0.3s);    
+}
+
+
+
+
+
 
 /*----------------------------------------*\
 *   $PORTFOLIO ITEM STYLING

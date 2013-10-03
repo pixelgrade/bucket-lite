@@ -712,7 +712,7 @@
                 <wp:meta_value><![CDATA[376,377,378,379,380]]></wp:meta_value>
             </wp:postmeta>
             <wp:postmeta>
-                <wp:meta_key>_lens_image_scale_mode</wp:meta_key>
+                <wp:meta_key>_lens_gallery_image_scale_mode</wp:meta_key>
                 <wp:meta_value><![CDATA[fill]]></wp:meta_value>
             </wp:postmeta>
         </item>
@@ -750,7 +750,7 @@
                 <wp:meta_value><![CDATA[376,377,378,379,380]]></wp:meta_value>
             </wp:postmeta>
             <wp:postmeta>
-                <wp:meta_key>_lens_image_scale_mode</wp:meta_key>
+                <wp:meta_key>_lens_gallery_image_scale_mode</wp:meta_key>
                 <wp:meta_value><![CDATA[fill]]></wp:meta_value>
             </wp:postmeta>
         </item>
@@ -789,7 +789,7 @@
                 <wp:meta_value><![CDATA[376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395]]></wp:meta_value>
             </wp:postmeta>
             <wp:postmeta>
-                <wp:meta_key>_lens_image_scale_mode</wp:meta_key>
+                <wp:meta_key>_lens_gallery_image_scale_mode</wp:meta_key>
                 <wp:meta_value><![CDATA[fill]]></wp:meta_value>
             </wp:postmeta>
         </item>

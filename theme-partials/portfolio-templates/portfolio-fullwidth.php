@@ -12,7 +12,7 @@
 		$gallery_ids = explode(',',$gallery_ids);
 	}
 
-    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'image_scale_mode', true);
+    $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'portfolio_image_scale_mode', true);
 
     $attachments = get_posts( array(
         'post_type' => 'attachment',
@@ -21,22 +21,7 @@
         'post__in'     => $gallery_ids
     ) );
 
-	
-	//let's get the video
-	//first get the youtube one
-//	$video = lens::youtube_id_from_url(get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_youtube', true ));
-//	$video = trim($video);
-//	
-//	if (empty($video)) {
-//		//let's try getting the vimeo video link
-//		$video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_vimeo', true );
-//		$video = trim($video);
-//	}
-//	
-//	$videoimg = json_decode(get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_image', true ), true);
-//	$videoimg = $videoimg['link'];
-
-    if ( !empty($attachments) || !empty($video)) : ?>
+    if ( !empty($attachments) ) : ?>
     <div class="featured-image">
         <?php 
             $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagescale="'.$image_scale_mode.'"';
@@ -83,7 +68,7 @@
                                 <?php if($client_name != '') : ?>
                                 <div class="entry__meta-box meta-box--client">
                                     <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                                    <a href="<?php echo $client_link; ?>" title="View all posts in Ideas" rel="category"><?php echo $client_name; ?></a>
+                                    <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                                 </div>
                                 <?php endif; ?> 
                                 <?php
@@ -176,6 +161,11 @@
                         </div>
                     <?php endif; ?>
                 </footer><!-- .entry-meta -->
+                <?php
+                    // If comments are open or we have at least one comment, load up the comment template
+                       if ( comments_open() || '0' != get_comments_number() )
+                          comments_template();
+                ?>
             </article><!-- #post -->
             <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
             <section class="related-projects_container entry__body">

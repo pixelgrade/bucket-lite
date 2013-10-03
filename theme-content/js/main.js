@@ -3831,7 +3831,7 @@ function royalSliderInit() {
     $('.wp-gallery').each(function() {
         var $old_gallery = $(this),
         $images = $old_gallery.find('img'),
-        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows data-autoscale>');
+        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows>');
         $images.prependTo($new_gallery).addClass('rsImg');
         $old_gallery.replaceWith($new_gallery);
     });
@@ -3868,7 +3868,7 @@ function royalSliderInit() {
                 autoHeight: false,
                 loop: true,
                 imageScaleMode: rs_imageScale,
-                imageAlignCenter: true,
+                imageAlignCenter: false,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
@@ -3991,12 +3991,20 @@ function magnificPopupInit() {
                 // tCounter: '<div class="gallery-control gallery-control--popup"><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div></div>'
                 tCounter: '<div class="gallery-control gallery-control--popup"><a href="#" class="control-item arrow-button arrow-button--left js-arrow-popup-prev"></a><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div><a href="#" class="control-item arrow-button arrow-button--right js-arrow-popup-next"></a></div>'
             },
-            // callbacks:{
-            //     open: function() {
-            //         $('.mfp-arrow-left').prependTo($('.gallery-control'));
-            //         $('.mfp-arrow-right').appendTo($('.gallery-control'));
-            //     }
-            // }
+            callbacks:{
+                elementParse: function(item) {
+                    $(item).find('iframe').each(function(){
+                        var url = $(this).attr("src");
+                        $(this).attr("src", url+"?wmode=transparent");
+                    });
+                },
+                change: function() {
+                    $(this.content).find('iframe').each(function(){
+                        var url = $(this).attr("src");
+                        $(this).attr("src", url+"?wmode=transparent");
+                    });
+                }                
+            }
         });
     });
 
@@ -4011,13 +4019,62 @@ function magnificPopupInit() {
                     return item.el.attr('title');
                 }
             },
+	        iframe: {
+		        markup:
+			        '<div class="mfp-figure mfp-figure--video">'+
+				        '<div class="mfp-img">'+
+				        '<div class="mfp-iframe-scaler">'+
+				        '<div class="mfp-close"></div>'+
+				        '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+				        '</div>'+
+				        '</div>'+
+				        '<div class="mfp-bottom-bar">'+
+				        '<div class="mfp-counter"></div>'+
+				        '</div>'+
+				        '</div>',
+		        patterns: {
+			        youtube: {
+				        index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+				        id: 'v=', // String that splits URL in a two parts, second part should be %id%
+				        // Or null - full URL will be returned
+				        // Or a function that should return %id%, for example:
+				        // id: function(url) { return 'parsed id'; }
+				        src: '//www.youtube.com/embed/%id%' // URL that will be set as a source for iframe.
+			        },
+			        vimeo: {
+				        index: 'vimeo.com/',
+				        id: '/',
+				        src: '//player.vimeo.com/video/%id%'
+			        },
+			        gmaps: {
+				        index: '//maps.google.',
+				        src: '%id%&output=embed'
+			        }
+			        // you may add here more sources
+		        },
+		        srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+	        },
             gallery:{
                 enabled:true,
                 navigateByImgClick: true,
                 tPrev: 'Previous (Left arrow key)', // title for left button
                 tNext: 'Next (Right arrow key)', // title for right button
                 tCounter: '<div class="gallery-control gallery-control--popup"><a href="#" class="control-item arrow-button arrow-button--left js-arrow-popup-prev"></a><div class="control-item count js-gallery-current-slide"><span class="js-unit">%curr%</span><sup class="js-gallery-slides-total">%total%</sup></div><a href="#" class="control-item arrow-button arrow-button--right js-arrow-popup-next"></a></div>'
-            }
+            },
+	        callbacks:{
+		        elementParse: function(item) {
+			        $(item).find('iframe').each(function(){
+				        var url = $(this).attr("src");
+				        $(this).attr("src", url+"?wmode=transparent");
+			        });
+		        },
+		        change: function() {
+			        $(this.content).find('iframe').each(function(){
+				        var url = $(this).attr("src");
+				        $(this).attr("src", url+"?wmode=transparent");
+			        });
+		        }
+	        }
         });
     });
 }
@@ -4154,7 +4211,7 @@ function initVideos() {
     });
 
     // Firefox Opacity Video Hack
-    $('.featured-image iframe').each(function(){
+    $('iframe').each(function(){
         var url = $(this).attr("src"); console.log(url);
         $(this).attr("src", url+"?wmode=transparent");
     });
@@ -4376,8 +4433,8 @@ function magnificNext(e) {
 
 function eventHandlers() {
 
-    $('body').on('click', '.js-arrow-popup-prev', magnificPrev);
-    $('body').on('click', '.js-arrow-popup-next', magnificNext);
+    $('body').off('click', '.js-arrow-popup-prev', magnificPrev).on('click', '.js-arrow-popup-prev', magnificPrev);
+    $('body').off('click', '.js-arrow-popup-next', magnificNext).on('click', '.js-arrow-popup-next', magnificNext);
 
     /* @todo: change classes so style and js don't interfere */
     $('.menu-item--parent').hoverIntent({

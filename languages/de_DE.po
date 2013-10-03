@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 14:44+0200\n"
-"PO-Revision-Date: 2013-10-02 14:45+0200\n"
+"POT-Creation-Date: 2013-10-03 15:16+0200\n"
+"PO-Revision-Date: 2013-10-03 15:16+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: German\n"
@@ -10,9 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;_x;_n_noop\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_nx:1,2;_n:1,2;_nx_noop:1,2;_ex\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:7 ../no-results.php:10
@@ -68,6 +69,13 @@ msgstr "Alle Beiträge von: %s"
 msgid "Category Archives: %s"
 msgstr "Archiv der Kategorie: %s"
 
+#: ../comments.php:28
+#, php-format
+msgid "Comments (1)"
+msgid_plural "Comments (%1$s)"
+msgstr[0] "Kommentare (1)"
+msgstr[1] "Kommentare (%1$s)"
+
 #: ../comments.php:29
 msgid "Leave a comment"
 msgstr "Hinterlasse ein kommentar."
@@ -103,13 +111,13 @@ msgstr "404"
 #: ../search.php:17
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Suchergebnis von %s"
+msgstr "Suchergebnisse für: %s"
 
 #: ../single.php:38
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:77
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:106
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:77
 msgid "Filled under"
 msgstr "Gefüllt unter"
 
@@ -119,29 +127,29 @@ msgstr "Gekennzeichnet"
 
 #: ../single.php:62
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:134
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:99
 msgid "Share"
 msgstr "Teilen"
 
 #: ../single.php:67 ../theme-partials/posts-single.php:169
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:139
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:104
 msgid "Share on Twitter!"
 msgstr "Share on Twitter!"
 
 #: ../single.php:75 ../theme-partials/posts-single.php:177
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:147
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:112
 msgid "Share on Facebook!"
 msgstr "Share on Facebook!"
 
 #: ../single.php:83 ../theme-partials/posts-single.php:185
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:155
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:120
 msgid "Share on Google+!"
 msgstr "Share on Google+!"
 
@@ -175,7 +183,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:355
+#: ../theme-callbacks/activation-hooks.php:357
 msgid "Images"
 msgstr "Images"
 
@@ -269,7 +277,7 @@ msgid "Project Details"
 msgstr "Projekt-Details"
 
 #: ../theme-callbacks/activation-hooks.php:286
-#: ../theme-callbacks/activation-hooks.php:360
+#: ../theme-callbacks/activation-hooks.php:362
 msgid "Template Style"
 msgstr "Template Design"
 
@@ -278,12 +286,46 @@ msgid "Select the template you want for this project."
 msgstr "Wählen Sie die gewünschte Vorlage für dieses Projekt."
 
 #: ../theme-callbacks/activation-hooks.php:307
-#: ../theme-callbacks/activation-hooks.php:380
+#: ../theme-callbacks/activation-hooks.php:382
 msgid "Image Scaling"
 msgstr "Bild-Skalierung"
 
 #: ../theme-callbacks/activation-hooks.php:308
-#: ../theme-callbacks/activation-hooks.php:381
+msgid ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less than size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> scales the "
+"container to fit the full size image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
+msgstr ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> Skalen "
+"vollständig zu füllen Schieberegler Behälter (empfohlen für "
+"Landschaftsaufnahmen).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> Skalen, um den "
+"Behälter passen (empfohlen für die Portrait-Bilder).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> Skalen "
+"passen nur, wenn Größe des Schiebers Behälter ist weniger als die Größe des "
+"Bildes.</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> Skalen der "
+"Behälter zu passen das Bild in Originalgröße.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visuelle Erklärung</a></p>"
+
+#: ../theme-callbacks/activation-hooks.php:337
+msgid "Client Name"
+msgstr "Kundenname"
+
+#: ../theme-callbacks/activation-hooks.php:342
+msgid "Client Link"
+msgstr "Client Link"
+
+#: ../theme-callbacks/activation-hooks.php:383
 msgid ""
 "<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
 "completely fill slider container (recommended for landscape images)</p>\n"
@@ -306,31 +348,23 @@ msgstr ""
 "<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
 "ly/slider-image-scaling\">Visuelle Erklärung</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:335
-msgid "Client Name"
-msgstr "Kundenname"
-
-#: ../theme-callbacks/activation-hooks.php:340
-msgid "Client Link"
-msgstr "Client Link"
-
-#: ../theme-callbacks/activation-hooks.php:404
+#: ../theme-callbacks/activation-hooks.php:406
 msgid "Grid Thumbnails Orientation"
 msgstr "Grid Thumbnails Ausrichtung"
 
-#: ../theme-callbacks/activation-hooks.php:420
+#: ../theme-callbacks/activation-hooks.php:422
 msgid "Gallery Title Box"
 msgstr "Gallery Title Box"
 
-#: ../theme-callbacks/activation-hooks.php:421
+#: ../theme-callbacks/activation-hooks.php:423
 msgid "Show the title of the gallery in a thumbnail box or not."
 msgstr "Zeigen Sie den Titel der Galerie in einem Thumbnail-Box oder nicht."
 
-#: ../theme-callbacks/activation-hooks.php:447
+#: ../theme-callbacks/activation-hooks.php:449
 msgid "Choose:"
 msgstr "Wählen Sie:"
 
-#: ../theme-callbacks/activation-hooks.php:448
+#: ../theme-callbacks/activation-hooks.php:450
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -341,11 +375,11 @@ msgstr ""
 "und Weise WP und stellen Sie es in den Einstellungen> Reading (anstelle von "
 "diesem)."
 
-#: ../theme-callbacks/activation-hooks.php:464
+#: ../theme-callbacks/activation-hooks.php:466
 msgid "Select a gallery"
 msgstr "Wählen Sie eine Galerie"
 
-#: ../theme-callbacks/activation-hooks.php:465
+#: ../theme-callbacks/activation-hooks.php:467
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Wählen Sie eine Galerie und wir werden es auf Ihrer Homepage zeigen."
 
@@ -729,9 +763,28 @@ msgstr "App.net"
 msgid "Select Form"
 msgstr "Formular auswählen"
 
+#: ../theme-content/admin-panel/redux-sections.php:280
+#, php-format
+msgid ""
+"Select a contact form previously created with the Contact Form 7 plugin. You "
+"can create one <a href=\"%s\" title=\"Contact Form 7\">here</a>"
+msgstr ""
+"Wählen Sie ein Kontaktformular zuvor mit dem Contact Form 7 Plugin erstellt. "
+"Sie können eine <a href=\"%s\" title=\"Contact Formular 7\">hier</a>"
+
 #: ../theme-content/admin-panel/redux-sections.php:288
 msgid "Notice"
 msgstr "Aufmerksamkeit"
+
+#: ../theme-content/admin-panel/redux-sections.php:289
+#, php-format
+msgid ""
+"<p class=\"description\">The Contact Form 7 plugin is not active. You can "
+"install/activate it from <a href=\"%s\" title=\"Contact Form 7\">here</a></p>"
+msgstr ""
+"<p class=\"description\">Die Contact Form 7 Plugin ist nicht aktiv. Sie "
+"können installieren / aktivieren von <a href=\"%s\" title=\"Contact Formular "
+"7\">hier</a></p>"
 
 #: ../theme-content/admin-panel/redux-sections.php:300
 msgid "Contact Page"
@@ -1270,6 +1323,48 @@ msgstr "Anzahl der Tweets"
 msgid "Number of tweets per slide"
 msgstr "Anzahl der Tweets pro Folie"
 
+#: ../theme-content/inc/widgets.php:804
+#, php-format
+msgid "%d year ago"
+msgid_plural "%d years ago"
+msgstr[0] "Vor %d Jahr"
+msgstr[1] "Vor %d Jahren"
+
+#: ../theme-content/inc/widgets.php:807
+#, php-format
+msgid "%d month ago"
+msgid_plural "%d months ago"
+msgstr[0] "Vor %d Monat"
+msgstr[1] "Vor %d Monaten"
+
+#: ../theme-content/inc/widgets.php:810
+#, php-format
+msgid "%d week ago"
+msgid_plural "%d weeks ago"
+msgstr[0] "Vor %d Woche"
+msgstr[1] "Vor %d Wochen"
+
+#: ../theme-content/inc/widgets.php:813
+#, php-format
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] "Vor %d Tag"
+msgstr[1] "Vor %d Tagen"
+
+#: ../theme-content/inc/widgets.php:816
+#, php-format
+msgid "%d hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] "Vor %d Stunde"
+msgstr[1] "Vor %d Stunden"
+
+#: ../theme-content/inc/widgets.php:819
+#, php-format
+msgid "%d minute ago"
+msgid_plural "%d minutes ago"
+msgstr[0] "Vor %d Minute"
+msgstr[1] "%d Minuten her"
+
 #: ../theme-content/inc/widgets.php:821
 msgid "moments ago"
 msgstr "Momente vor"
@@ -1544,163 +1639,217 @@ msgstr "Es gab ein Problem"
 #: ../theme-content/inc/required-plugins/required-plugins.php:91
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
-msgstr "Dieses Thema erfordert die folgende plugin: %1$s ."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Dieses Thema erfordert die folgende Plugins: %1$s ."
+msgstr[1] "Dieses Thema erfordert die folgenden Plugins: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:172
 #: ../theme-content/inc/required-plugins/required-plugins.php:92
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
-msgstr "Dieses Thema empfiehlt folgende plugin: %1$s ."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Dieses Thema empfiehlt folgende Plugins: %1$s ."
+msgstr[1] "Dieses Thema empfiehlt die folgenden Plugins: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "There is a new update for %1$s."
-msgstr "Es gibt ein neues Update für %1$s ."
+msgid_plural "There are several plugins updates available %1$s."
+msgstr[0] "Es gibt ein neues Update für %1$s ."
+msgstr[1] "Es gibt mehrere Plugins Updates verfügbar %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:174
+#, php-format
+msgid "This theme requires the following plugin to be updated: %1$s."
+msgid_plural "This theme requires the following plugins to be updated: %1$s."
+msgstr[0] ""
+"Dieses Thema erfordert die folgenden Plugins aktualisiert werden: %1$s ."
+msgstr[1] "Dieses Thema erfordert die folgende plugin: %1$s ."
+
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:175
 #: ../theme-content/inc/required-plugins/required-plugins.php:93
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
 "installed."
-msgstr ""
-"Es tut uns leid, aber Sie haben nicht die erforderlichen Berechtigungen, um "
-"die Installation %s Plugin. Kontaktieren Sie den Administrator dieser Seite, "
-"um Hilfe zu bekommen das Plugin installiert."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+"Es tut uns leid, aber Sie haben nicht die richtigen Berechtigungen für die"
+"% s-Plugin installieren. Kontaktieren Sie den Administrator dieser Seite, um "
+"Hilfe zu bekommen das Plugin installiert."
+msgstr[1] ""
+"Es tut uns leid, aber Sie haben nicht die richtigen Berechtigungen für den"
+"% s Plugins installieren. Kontaktieren Sie den Administrator dieser Seite, "
+"um Hilfe zu bekommen die Plugins installiert."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:175
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:176
 #: ../theme-content/inc/required-plugins/required-plugins.php:94
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
-msgstr "Die folgende erforderliche Plugin ist derzeit inaktiv: %1$s ."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Das folgende Plugin erforderlich ist derzeit inaktiv: %1$s ."
+msgstr[1] "Die folgenden erforderlichen Plugins sind derzeit inaktiv: %1$s ."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:176
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:177
 #: ../theme-content/inc/required-plugins/required-plugins.php:95
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
-msgstr "Die folgenden empfohlenen Plugin ist derzeit inaktiv: %1$s ."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Die folgenden empfohlenen Plugin ist derzeit inaktiv: %1$s ."
+msgstr[1] "Die folgenden empfohlenen Plugins sind derzeit inaktiv: %1$s ."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:177
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:178
 #: ../theme-content/inc/required-plugins/required-plugins.php:96
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugin. Contact the administrator of this site for help on getting the "
 "plugin activated."
-msgstr ""
-"Es tut uns leid, aber Sie haben nicht die erforderlichen Berechtigungen, um "
-"die Aktivierung %s Plugin. Kontaktieren Sie den Administrator dieser Seite, "
-"um Hilfe zu bekommen das Plugin aktiviert."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+"Es tut uns leid, aber Sie haben nicht die richtigen Berechtigungen für das "
+"%s Plugin aktivieren. Kontaktieren Sie den Administrator dieser Seite, um "
+"Hilfe zu bekommen das Plugin aktiviert."
+msgstr[1] ""
+"Es tut uns leid, aber Sie haben nicht die richtigen Berechtigungen für den "
+"%s plugins aktivieren. Kontaktieren Sie den Administrator dieser Seite, um "
+"Hilfe zu bekommen die Plugins aktiviert."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:178
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:179
 #: ../theme-content/inc/required-plugins/required-plugins.php:97
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this theme: %1$s."
-msgstr ""
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
 "Das folgende Plugin muss auf die neueste Version aktualisiert werden, um "
 "maximale Kompatibilität mit diesem Thema zu gewährleisten: %1$s ."
+msgstr[1] ""
+"Folgende Plugins müssen, um ihre neueste Version aktualisiert werden, um "
+"maximale Kompatibilität mit diesem Thema zu gewährleisten: %1$s ."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:179
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:180
 #: ../theme-content/inc/required-plugins/required-plugins.php:98
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
 "updated."
-msgstr ""
-"Es tut uns leid, aber Sie haben nicht die erforderlichen Berechtigungen, um "
-"das Update %s Plugin. Kontaktieren Sie den Administrator dieser Seite, um "
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+"Es tut uns leid, aber Sie haben nicht die richtigen Berechtigungen für das "
+"%s Plugin aktualisieren. Kontaktieren Sie den Administrator dieser Seite, um "
 "Hilfe zu bekommen das Plugin aktualisiert."
-
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:180
-#: ../theme-content/inc/required-plugins/required-plugins.php:99
-msgid "Begin installing plugin"
-msgstr "Fangen Sie an, plugin"
+msgstr[1] ""
+"Es tut uns leid, aber Sie haben nicht die richtigen Berechtigungen für den "
+"%s Plugins aktualisieren. Kontaktieren Sie den Administrator dieser Seite, "
+"um Hilfe zu bekommen die Plugins aktualisiert."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:181
-msgid "Begin updating plugin"
-msgstr "Beginnen Aktualisierung Plugin"
+#: ../theme-content/inc/required-plugins/required-plugins.php:99
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Start der Installation des Plugin"
+msgstr[1] "Beginnen Sie die Installation der Plugins"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:182
-#: ../theme-content/inc/required-plugins/required-plugins.php:100
-msgid "Activate installed plugin"
-msgstr "Aktivieren installiert plugin"
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Beginnen Aktualisierung Plugin"
+msgstr[1] "Beginnen Aktualisierung Plugins"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:183
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:513
+#: ../theme-content/inc/required-plugins/required-plugins.php:100
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] "Aktivieren installiert plugin"
+msgstr[1] "Aktivieren installierten Plugins"
+
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:184
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:514
 #: ../theme-content/inc/required-plugins/required-plugins.php:101
 msgid "Return to Required Plugins Installer"
 msgstr "Return to Required Plugins Installer"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:184
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1911
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:185
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1912
 #: ../theme-content/inc/required-plugins/required-plugins.php:102
 msgid "Plugin activated successfully."
 msgstr "Plugin activated successfully."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:185
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:186
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Alle Plugins installiert und erfolgreich aktiviert. %1$s"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:540
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2123
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:541
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2124
 msgid "Return to the Dashboard"
 msgstr "Zurück zur Übersicht"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:568
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:569
 #, php-format
 msgid "The following plugin was activated successfully: %s."
 msgstr "Das folgende Plugin wurde erfolgreich aktiviert: %s ."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:741
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:742
 msgid "Dismiss this notice"
 msgstr "Storniere diese Bekanntmachung"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1128
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1129
 msgid "External Link"
 msgstr "Externe Weblinks"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1133
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1134
 msgid "Private Repository"
 msgstr "Private Directory"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1136
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1137
 msgid "Pre-Packaged"
 msgstr "re-Archiv"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1140
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1141
 msgid "WordPress Repository"
 msgstr "WordPress Directory"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1143
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1144
 msgid "Required"
 msgstr "Erforderlich"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1143
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1144
 msgid "Recommended"
 msgstr "Empfohlen"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1146
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1147
 msgid "Not Installed"
 msgstr "Nicht installiert"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1148
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1149
 msgid "Installed But Not Activated"
 msgstr "Installiert, aber nicht aktiviert"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1150
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1151
 msgid "Not Updated"
 msgstr "Nicht aktualisiert"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1152
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1153
 msgid "Active"
 msgstr "Aktiv"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1346
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1347
 #, php-format
 msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
@@ -1709,61 +1858,67 @@ msgstr ""
 "Keine Plugins zu installieren oder zu aktivieren. <a href=\"%1$s\" title="
 "\"zurück zur Übersicht\"> Zurück zur Übersicht</a>"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1362
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1363
 msgid "Plugin"
 msgstr "Plug-ins"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1363
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1364
 msgid "Source"
 msgstr "Source"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1364
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1365
 msgid "Type"
 msgstr "Typ"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1365
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1366
 msgid "Status"
 msgstr "Status"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1383
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1384
 msgid "Install"
 msgstr "Installieren"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1384
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1385
 msgid "Activate"
 msgstr "Aktivieren"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1894
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1610
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Das folgende Plugin wurde erfolgreich aktiviert:"
+msgstr[1] "Die folgenden Plugins wurden erfolgreich aktiviert:"
+
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1895
 msgid "Install package not available."
 msgstr "Installieren Sie das Paket ist nicht zur Verfügung."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1895
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1896
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 msgstr ""
 "Herunterladen Installationspaket von <span class=\"code\">%s</ span>&#8230;"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1896
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1897
 msgid "Unpacking the package&#8230;"
 msgstr "Auspacken des Packets&#8230;"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1897
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1898
 msgid "Installing the plugin&#8230;"
 msgstr "Installation des Plugins&#8230;"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1898
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1899
 msgid "Plugin install failed."
 msgstr "Plugin-Installation ist fehlgeschlagen."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1899
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1900
 msgid "Plugin installed successfully."
 msgstr "Plugin erfolgreich installiert."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1910
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1911
 msgid "Plugin activation failed."
 msgstr "Plugin Aktivierung fehlgeschlagen."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2020
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
@@ -1771,31 +1926,31 @@ msgstr ""
 "Die Installation und Aktivierung beginnt. Dieser Vorgang kann eine Weile "
 "dauern, bitte haben Sie Geduld."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr "%1$s erfolgreich installiert und aktiviert."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
 msgid "Show Details"
 msgstr "Details Anzeigen"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2021
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
 msgid "Hide Details"
 msgstr "Einzelheiten ausblenden"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2022
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2023
 msgid "All installations and activations have been completed."
 msgstr "Alle Installationen und Aktivierungen wurden abgeschlossen."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2023
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2024
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr "Installation und Aktivierung Plugin %1$s ( %2$d / %3$d )"
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2027
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2028
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
@@ -1803,28 +1958,28 @@ msgstr ""
 "Die Installation wird gestartet. Dieser Vorgang kann eine Weile dauern, "
 "bitte haben Sie Geduld."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2028
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2029
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 "Opps, Schrek Ein Fehler ist während der Installation aufgetreten  %1$s : "
 "<strong> %2$s </strong>."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2029
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr "Die Installation von %1$s fehlgeschlagen."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2030
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
 #, php-format
 msgid "%1$s installed successfully."
 msgstr "%1$s erfolgreich installiert."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2031
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2032
 msgid "All installations have been completed."
 msgstr "Alle Installationen sind abgeschlossen."
 
-#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2032
+#: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:2033
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installieren Plugin %1$s ( %2$d / %3$d )"
@@ -1859,33 +2014,33 @@ msgid "Back to top"
 msgstr "Nach oben"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:100
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:71
 msgid "Client"
 msgstr "Client:"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:86
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:169
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:136
 msgid "Related projects"
 msgstr "Related Projekte"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:174
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:141
 msgid "Previous"
 msgstr "Zurück"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:178
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:145
 msgid "All projects"
 msgstr "Alle Projekte"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:99
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:182
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:149
 msgid "Next"
 msgstr "Weiter"
 
@@ -1897,15 +2052,15 @@ msgstr "Sehen Sie mehr über: author"
 msgid "Header Menu"
 msgstr "Kopfzeilenmenü"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "If you want, you can download the automatic theme backup."
 msgstr "Wenn Sie möchten, können Sie die automatische Backup-Thema."
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:86
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "Download Backup"
 msgstr "Download von Backup"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:104
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:106
 msgid ""
 "Error: The theme was not updated, because the automatic backup is activated, "
 "but for some reason (probably due to file permissions) it failed. We "
@@ -1962,11 +2117,11 @@ msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr ""
 "Die Envato Marktplatz \"Artikel ID \" ist ein erforderlicher Parameter."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:308
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:309
 msgid "Downloading upgrade package from the Envato API&#8230;"
 msgstr "Herunterladen Upgrade-Paket aus dem Envato API ..."
 
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:319
+#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:320
 msgid "Downloading install package from the Envato API&#8230;"
 msgstr "Herunterladen Installationspaket aus dem Envato API ..."
 

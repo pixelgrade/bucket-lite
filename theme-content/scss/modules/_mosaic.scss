@@ -11,10 +11,11 @@
     position: relative;
     @include transform(translate3d(0,0,0));
 
-    .icon-play {
+}
+
+.image_item-cell i {
         font-size: 2em;
         padding-right: 0;
-    }
 }
 
     .mosaic__item {
@@ -115,13 +116,12 @@
         padding-top: 55%;
         overflow: hidden;
         -webkit-backface-visibility: hidden;
-
+        
         img { 
             display: block;
             position: absolute;
             top: 0; left: 0;
-            width: 100%;
-            height: 100%;
+            width: 101%;
             // opacity: 0;
             @include transition(opacity .3s ease-in-out);
         }
@@ -196,11 +196,12 @@
 
         @include media(to lap) {
             @include rem(font-size, 28px);
+            @include rem(padding, 0 $half-spacing-unit/2);
         }        
 
         @include media(to hand) {
-            padding: 0;
             @include rem(font-size, 22px);
+            @include rem(padding, 0 $half-spacing-unit/2);
         }
         font-weight:300;
         margin: 0;

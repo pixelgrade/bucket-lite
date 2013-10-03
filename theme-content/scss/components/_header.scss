@@ -149,6 +149,15 @@
         // .header-extra{
         //     display: none;
         // }
+        .menu-link{
+            @include rem(padding-top, $half-spacing-unit/2);
+            @include rem(padding-bottom, $half-spacing-unit/2);
+        }
+
+        .sub-menu-link {
+            @include rem(padding-top, $half-spacing-unit/4);
+            @include rem(padding-bottom, $half-spacing-unit/4);
+        }
     }
 }
 
@@ -160,9 +169,9 @@
     $HEADER_INVERSE
 \*----------------------------------------*/
 
-/*body*/.header-inverse-color{
+/*body*/.header-inverse{
     #page, .header, .header__inner-wrap{
-        background-color: #f5f5f5;  
+        background-color: #fff;  
     }
 
     .header{
@@ -181,26 +190,26 @@
         }
 
         a{
-            color: black;
+            color: $dark;
             
             &:hover{
                 color: #d5d200;
             }
         }
 
-        div{
-            color: black;
+        div {
+            color: $dark;
         }
     }
 
 
     .site-header__branding{
         background: transparent;
-        color: black;
+        color: $dark;
     }
 
     .menu-item--parent:after{
-        border-top-color: black;        
+        border-top-color: $dark;        
     }    
 }
 
@@ -217,14 +226,9 @@
         min-height: inherit;
     }
 
-    .site-header__branding{
-        @include rem(padding-bottom, $half-spacing-unit);
-    }
-
-    .menu-link{
-        @include rem(padding-top, $half-spacing-unit/2);
-        @include rem(padding-bottom, $half-spacing-unit/2);
-    }
+    // .site-header__branding{
+    //     @include rem(padding-bottom, $half-spacing-unit);
+    // }
 }
 
 
@@ -249,6 +253,10 @@
     
     @include media(to hand) {
         @include rem(height, 3 * $base-spacing-unit);
+
+        img {
+            @include rem(max-height, 1.6*$base-spacing-unit);
+        }
     }
 }
 

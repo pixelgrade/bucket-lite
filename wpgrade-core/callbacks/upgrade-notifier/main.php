@@ -33,7 +33,7 @@
 			if ( ! empty($marketplace_username) && ! empty($marketplace_api_key)) {
 				
 				$upgrader = new Envato_WordPress_Theme_Upgrader( $marketplace_username, $marketplace_api_key );
-
+				
 				if ( !wpgrade::option('themeforest_upgrade_backup') || $upgrader->backup_theme( $theme_name ) === true ) {
 					$upgrader->check_for_theme_update($theme_name, $allow_cache);
 					$res = $upgrader->upgrade_theme($theme_name, $allow_cache);
@@ -42,7 +42,7 @@
 
 					// make sure the nag notices appear again
 					delete_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice' );
-
+					
 					if (isset($res->errors)) {
 						wpgrade::state()->set('theme_update_error', $res->errors);
 					}else {

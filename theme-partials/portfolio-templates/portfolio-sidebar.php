@@ -24,34 +24,31 @@
                     'orderby' => "post__in",
                     'post__in'     => $gallery_ids
                 ));
-        		
-        		// let's get the video
-        		// first get the youtube one
-        		// $video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_youtube', true );
-        		// $video = trim($video);
-
-        		// if (empty($video)) {
-        		// 	// let's try getting the vimeo video link
-        		// 	$video = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_video_vimeo', true );
-        		// 	$video = trim($video);
-        		// }
-        		
-        		// if (!empty($video)) {
-        		// 	echo html_entity_decode($video);
-        		// }
 
                 if ($attachments) {
                     foreach ( $attachments as $attachment ) {
                         $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                         $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );
                         $attachment_url = wp_get_attachment_url( $attachment->ID );
-                        echo '<a href="' . $attachment_url .'" class="' . $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
+
+	                    $attachment_fields = get_post_custom( $attachment->ID );
+	                    $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
+	                    $is_video = false;
+	                    //  if there is one let royal slider know about it
+	                    if ( !empty($video_url) ) {
+		                    $attachment_url = $video_url;
+		                    $is_video = true;
+		                    $class .= ' mfp-iframe mfp-video';
+	                    } else {
+		                    $class = ' mfp-image';
+	                    }
+
+                        echo '<a href="' . $attachment_url .'" class="'. $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
                     }
                 }
             ?>
 
         </div><!-- .page-main -->
-
 
         <div class="page-side  project--sidebar__content">
 
@@ -68,11 +65,11 @@
             <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); ?>
             <?php if ($client_name !== '' && !empty($categories) && !is_wp_error($categories)): ?>
                 <hr class="separator separator--dotted" />
-                <footer class="entry__meta entry__meta--project row cf">
+                <footer class="entry__meta entry__meta--project row cf ">
                     <?php if($client_name !== '') : ?>
-                    <div class="entry__meta-box meta-box--client">
+                    <div class="entry__meta-box meta-box--client col-12 hand-col-6">
                         <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                        <a href="<?php echo $client_link; ?>" title="View all posts for this client" rel="category"><?php echo $client_name; ?></a>
+                        <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                     </div>
                     <?php endif; ?>               
                     <?php if ( !empty($categories) && !is_wp_error($categories)): ?>
@@ -162,5 +159,10 @@
             </aside>
         </div>
     </div>
+    <?php
+        // If comments are open or we have at least one comment, load up the comment template
+           if ( comments_open() || '0' != get_comments_number() )
+              comments_template();
+    ?>
 </article><!-- #post -->
 </div><!-- .content -->
