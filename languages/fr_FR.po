@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 16:28+0200\n"
-"PO-Revision-Date: 2013-10-02 16:28+0200\n"
+"POT-Creation-Date: 2013-10-03 15:26+0200\n"
+"PO-Revision-Date: 2013-10-03 15:43+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -71,11 +71,11 @@ msgid "Category Archives: %s"
 msgstr "Archives de catégorie: %s"
 
 #: ../comments.php:28
-#, fuzzy, php-format
+#, php-format
 msgid "Comments (1)"
 msgid_plural "Comments (%1$s)"
-msgstr[0] "il ya quelques instants"
-msgstr[1] "il ya quelques instants"
+msgstr[0] "Commentaires (1)"
+msgstr[1] "Commentaires (%1$s)"
 
 #: ../comments.php:29
 msgid "Leave a comment"
@@ -116,9 +116,9 @@ msgstr "Résultats pour : %s"
 
 #: ../single.php:38
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:77
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:106
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:77
 msgid "Filled under"
 msgstr "Rempli sous"
 
@@ -128,29 +128,29 @@ msgstr "Tagué"
 
 #: ../single.php:62
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:134
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:99
 msgid "Share"
 msgstr "Partager"
 
 #: ../single.php:67 ../theme-partials/posts-single.php:169
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:139
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:104
 msgid "Share on Twitter!"
 msgstr "Partager sur Twitter!"
 
 #: ../single.php:75 ../theme-partials/posts-single.php:177
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:147
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:112
 msgid "Share on Facebook!"
 msgstr "Partager sur Facebook!"
 
 #: ../single.php:83 ../theme-partials/posts-single.php:185
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:155
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:120
 msgid "Share on Google+!"
 msgstr "Partager sur Google+!"
 
@@ -184,7 +184,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:355
+#: ../theme-callbacks/activation-hooks.php:357
 msgid "Images"
 msgstr "Images"
 
@@ -278,7 +278,7 @@ msgid "Project Details"
 msgstr "Détails du projet"
 
 #: ../theme-callbacks/activation-hooks.php:286
-#: ../theme-callbacks/activation-hooks.php:360
+#: ../theme-callbacks/activation-hooks.php:362
 msgid "Template Style"
 msgstr "Style Template"
 
@@ -287,12 +287,47 @@ msgid "Select the template you want for this project."
 msgstr "Sélectionnez le modèle que vous souhaitez pour ce projet."
 
 #: ../theme-callbacks/activation-hooks.php:307
-#: ../theme-callbacks/activation-hooks.php:380
+#: ../theme-callbacks/activation-hooks.php:382
 msgid "Image Scaling"
 msgstr "Redimensionnement de l'image"
 
 #: ../theme-callbacks/activation-hooks.php:308
-#: ../theme-callbacks/activation-hooks.php:381
+msgid ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less than size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> scales the "
+"container to fit the full size image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
+msgstr ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> images échelles "
+"pour remplir complètement conteneur de curseur (recommandée pour les images "
+"de paysage).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> image Échelles "
+"pour adapter le conteneur (recommandé pour les images en mode portrait).</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> image "
+"Échelles pour s'adapter uniquement si la taille du conteneur curseur est "
+"inférieure à la taille de l'image.</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> échelles "
+"du conteneur pour ajuster l'image en taille réelle.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Explication visuelle</a></p>"
+
+#: ../theme-callbacks/activation-hooks.php:337
+msgid "Client Name"
+msgstr "Nom du client"
+
+#: ../theme-callbacks/activation-hooks.php:342
+msgid "Client Link"
+msgstr "URL du client"
+
+#: ../theme-callbacks/activation-hooks.php:383
 msgid ""
 "<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
 "completely fill slider container (recommended for landscape images)</p>\n"
@@ -316,31 +351,23 @@ msgstr ""
 "<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
 "ly/slider-image-scaling\">Explication visuelle</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:335
-msgid "Client Name"
-msgstr "Nom du client"
-
-#: ../theme-callbacks/activation-hooks.php:340
-msgid "Client Link"
-msgstr "URL du client"
-
-#: ../theme-callbacks/activation-hooks.php:404
+#: ../theme-callbacks/activation-hooks.php:406
 msgid "Grid Thumbnails Orientation"
 msgstr "Grille Miniatures Orientation"
 
-#: ../theme-callbacks/activation-hooks.php:420
+#: ../theme-callbacks/activation-hooks.php:422
 msgid "Gallery Title Box"
 msgstr "Galerie boîte de titre"
 
-#: ../theme-callbacks/activation-hooks.php:421
+#: ../theme-callbacks/activation-hooks.php:423
 msgid "Show the title of the gallery in a thumbnail box or not."
 msgstr "Afficher le titre de la galerie dans une boîte de vignettes ou non."
 
-#: ../theme-callbacks/activation-hooks.php:447
+#: ../theme-callbacks/activation-hooks.php:449
 msgid "Choose:"
 msgstr "Sélectionner..."
 
-#: ../theme-callbacks/activation-hooks.php:448
+#: ../theme-callbacks/activation-hooks.php:450
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -350,11 +377,11 @@ msgstr ""
 "avoir une page statique comme page d'accueil simplement suivre la voie "
 "classique de WP et mis en place dans Réglages> lecture (au lieu de celui-ci)."
 
-#: ../theme-callbacks/activation-hooks.php:464
+#: ../theme-callbacks/activation-hooks.php:466
 msgid "Select a gallery"
 msgstr "Sélectionnez une galerie"
 
-#: ../theme-callbacks/activation-hooks.php:465
+#: ../theme-callbacks/activation-hooks.php:467
 msgid "Select a gallery and we will show it on your homepage."
 msgstr ""
 "Sélectionnez une galerie et nous allons l'afficher sur votre page d'accueil."
@@ -1306,43 +1333,43 @@ msgstr "Nombre de tweets par diapositive"
 #, php-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "il ya %d an"
+msgstr[1] "il ya %d ans"
 
 #: ../theme-content/inc/widgets.php:807
-#, fuzzy, php-format
+#, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
-msgstr[0] "il ya quelques instants"
-msgstr[1] "il ya quelques instants"
+msgstr[0] "il ya %d mois"
+msgstr[1] "il ya %d mois"
 
 #: ../theme-content/inc/widgets.php:810
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "il ya %d semaine"
+msgstr[1] "il ya %d semaines"
 
 #: ../theme-content/inc/widgets.php:813
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "il ya %d jour"
+msgstr[1] "il ya %d jours"
 
 #: ../theme-content/inc/widgets.php:816
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "il ya %d heure"
+msgstr[1] "il ya %d heures"
 
 #: ../theme-content/inc/widgets.php:819
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "il ya %d minute"
+msgstr[1] "il ya %d minutes"
 
 #: ../theme-content/inc/widgets.php:821
 msgid "moments ago"
@@ -1621,37 +1648,37 @@ msgstr "Une erreur est survenue."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:171
 #: ../theme-content/inc/required-plugins/required-plugins.php:91
-#, fuzzy, php-format
+#, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "Ce thème nécessite le plugin suivant: %1$s ."
-msgstr[1] "Ce thème nécessite le plugin suivant: %1$s ."
+msgstr[1] "Ce thème nécessite les plugins suivants: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:172
 #: ../theme-content/inc/required-plugins/required-plugins.php:92
-#, fuzzy, php-format
+#, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] "Ce thème recommande le plugin suivant: %1$s ."
-msgstr[1] "Ce thème recommande le plugin suivant: %1$s ."
+msgstr[1] "Ce thème recommande les plugins suivants: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:173
-#, fuzzy, php-format
+#, php-format
 msgid "There is a new update for %1$s."
 msgid_plural "There are several plugins updates available %1$s."
 msgstr[0] "Il ya une nouvelle mise à jour pour %1$s ."
-msgstr[1] "Il ya une nouvelle mise à jour pour %1$s ."
+msgstr[1] "Il ya plusieurs mises à jour de plugins disponibles %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:174
-#, fuzzy, php-format
+#, php-format
 msgid "This theme requires the following plugin to be updated: %1$s."
 msgid_plural "This theme requires the following plugins to be updated: %1$s."
 msgstr[0] "Ce thème nécessite le plugin suivant: %1$s ."
-msgstr[1] "Ce thème nécessite le plugin suivant: %1$s ."
+msgstr[1] "Ce thème nécessite les plugins suivants soient mis à jour: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:175
 #: ../theme-content/inc/required-plugins/required-plugins.php:93
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
@@ -1665,29 +1692,30 @@ msgstr[0] ""
 "%s du plugin. Contactez l'administrateur de ce site à l'aide sur l'obtention "
 "du plugin installé."
 msgstr[1] ""
-"Désolé, mais vous n'avez pas les autorisations nécessaires pour installer l' "
-"%s du plugin. Contactez l'administrateur de ce site à l'aide sur l'obtention "
-"du plugin installé."
+"Désolé, mais vous n'avez pas les autorisations nécessaires pour installer "
+"les plugins %s. Contactez l'administrateur de ce site à l'aide sur "
+"l'obtention des plugins installés."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:176
 #: ../theme-content/inc/required-plugins/required-plugins.php:94
-#, fuzzy, php-format
+#, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "Le plugin requis suivant est actuellement inactif: %1$s ."
-msgstr[1] "Le plugin requis suivant est actuellement inactif: %1$s ."
+msgstr[1] "Les plugins requis suivants sont actuellement inactives: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:177
 #: ../theme-content/inc/required-plugins/required-plugins.php:95
-#, fuzzy, php-format
+#, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "Le plugin recommandé suivant est actuellement inactif: %1$s ."
-msgstr[1] "Le plugin recommandé suivant est actuellement inactif: %1$s ."
+msgstr[1] ""
+"Les plugins recommandées suivantes sont actuellement inactives: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:178
 #: ../theme-content/inc/required-plugins/required-plugins.php:96
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugin. Contact the administrator of this site for help on getting the "
@@ -1701,13 +1729,13 @@ msgstr[0] ""
 "%s du plugin. Contactez l'administrateur de ce site à l'aide sur l'obtention "
 "du plugin activé."
 msgstr[1] ""
-"Désolé, mais vous n'avez pas les autorisations nécessaires pour activer l' "
-"%s du plugin. Contactez l'administrateur de ce site à l'aide sur l'obtention "
-"du plugin activé."
+"Désolé, mais vous n'avez pas les autorisations nécessaires pour activer les "
+"plugins %s. Contactez l'administrateur de ce site à l'aide sur l'obtention "
+"des plugins activés."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:179
 #: ../theme-content/inc/required-plugins/required-plugins.php:97
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this theme: %1$s."
@@ -1718,12 +1746,12 @@ msgstr[0] ""
 "Le plugin suivante doit être mis à jour pour sa dernière version afin "
 "d'assurer une compatibilité maximale avec ce thème: %1$s ."
 msgstr[1] ""
-"Le plugin suivante doit être mis à jour pour sa dernière version afin "
-"d'assurer une compatibilité maximale avec ce thème: %1$s ."
+"Les plugins suivants doivent être mis à jour leur version la plus récente "
+"afin d'assurer une compatibilité maximale avec ce thème: %1$s ."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:180
 #: ../theme-content/inc/required-plugins/required-plugins.php:98
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
@@ -1738,31 +1766,28 @@ msgstr[0] ""
 "l'obtention du plug-in mis à jour."
 msgstr[1] ""
 "Désolé, mais vous n'avez pas les autorisations nécessaires pour mettre à "
-"jour l' %s du plugin. Contactez l'administrateur de ce site à l'aide sur "
-"l'obtention du plug-in mis à jour."
+"jour les plugins de %s. Contactez l'administrateur de ce site à l'aide sur "
+"l'obtention des plugins mis à jour."
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:181
 #: ../theme-content/inc/required-plugins/required-plugins.php:99
-#, fuzzy
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Commencez l'installation plug-in"
-msgstr[1] "Commencez l'installation plug-in"
+msgstr[1] "Commencez à installer des plugins"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:182
-#, fuzzy
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Commencer la mise à jour plug-in"
-msgstr[1] "Commencer la mise à jour plug-in"
+msgstr[1] "Commencer la mise à jour des plugins"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:183
 #: ../theme-content/inc/required-plugins/required-plugins.php:100
-#, fuzzy
 msgid "Activate installed plugin"
 msgid_plural "Activate installed plugins"
 msgstr[0] "Activer plug-in installé"
-msgstr[1] "Activer plug-in installé"
+msgstr[1] "Activer les plugins installés"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:184
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:514
@@ -1869,11 +1894,10 @@ msgid "Activate"
 msgstr "Activer"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1610
-#, fuzzy
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Le plug-in suivant a été activé avec succès: %s ."
-msgstr[1] "Le plug-in suivant a été activé avec succès: %s ."
+msgstr[0] "Le plug-in suivant a été activé avec succès:"
+msgstr[1] "Les plugins suivants ont été activés avec succès:"
 
 #: ../theme-content/inc/required-plugins/class-tgm-plugin-activation.php:1895
 msgid "Install package not available."
@@ -2003,33 +2027,33 @@ msgid "Back to top"
 msgstr "Retour en haut"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:100
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:71
 msgid "Client"
 msgstr "Client"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:86
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:169
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:136
 msgid "Related projects"
 msgstr "Les projets connexes"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:174
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:141
 msgid "Previous"
 msgstr "Précédent"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:178
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:145
 msgid "All projects"
 msgstr "Tous les projets"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:99
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:182
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:149
 msgid "Next"
 msgstr "Next"
 
@@ -2041,17 +2065,17 @@ msgstr "Voir plus sur: auteur"
 msgid "Header Menu"
 msgstr "Header Menu"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "If you want, you can download the automatic theme backup."
 msgstr ""
 "Si vous le souhaitez, vous pouvez télécharger la sauvegarde automatique "
 "thème."
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "Download Backup"
 msgstr "Télécharger sauvegarde"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:107
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:106
 msgid ""
 "Error: The theme was not updated, because the automatic backup is activated, "
 "but for some reason (probably due to file permissions) it failed. We "

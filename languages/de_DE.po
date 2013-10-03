@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-02 16:08+0200\n"
-"PO-Revision-Date: 2013-10-02 16:28+0200\n"
+"POT-Creation-Date: 2013-10-03 15:16+0200\n"
+"PO-Revision-Date: 2013-10-03 15:16+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: German\n"
@@ -115,9 +115,9 @@ msgstr "Suchergebnisse für: %s"
 
 #: ../single.php:38
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:92
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:121
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:80
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:77
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:106
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:77
 msgid "Filled under"
 msgstr "Gefüllt unter"
 
@@ -127,29 +127,29 @@ msgstr "Gekennzeichnet"
 
 #: ../single.php:62
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:102
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:134
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:99
 msgid "Share"
 msgstr "Teilen"
 
 #: ../single.php:67 ../theme-partials/posts-single.php:169
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:154
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:107
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:139
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:104
 msgid "Share on Twitter!"
 msgstr "Share on Twitter!"
 
 #: ../single.php:75 ../theme-partials/posts-single.php:177
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:162
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:115
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:147
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:112
 msgid "Share on Facebook!"
 msgstr "Share on Facebook!"
 
 #: ../single.php:83 ../theme-partials/posts-single.php:185
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:170
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:123
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:155
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:120
 msgid "Share on Google+!"
 msgstr "Share on Google+!"
 
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:138
 #: ../theme-callbacks/activation-hooks.php:239
-#: ../theme-callbacks/activation-hooks.php:355
+#: ../theme-callbacks/activation-hooks.php:357
 msgid "Images"
 msgstr "Images"
 
@@ -277,7 +277,7 @@ msgid "Project Details"
 msgstr "Projekt-Details"
 
 #: ../theme-callbacks/activation-hooks.php:286
-#: ../theme-callbacks/activation-hooks.php:360
+#: ../theme-callbacks/activation-hooks.php:362
 msgid "Template Style"
 msgstr "Template Design"
 
@@ -286,12 +286,46 @@ msgid "Select the template you want for this project."
 msgstr "Wählen Sie die gewünschte Vorlage für dieses Projekt."
 
 #: ../theme-callbacks/activation-hooks.php:307
-#: ../theme-callbacks/activation-hooks.php:380
+#: ../theme-callbacks/activation-hooks.php:382
 msgid "Image Scaling"
 msgstr "Bild-Skalierung"
 
 #: ../theme-callbacks/activation-hooks.php:308
-#: ../theme-callbacks/activation-hooks.php:381
+msgid ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
+"completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to "
+"fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales "
+"image to fit only if size of slider container is less than size of image.</"
+"p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> scales the "
+"container to fit the full size image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visual explanation</a></p>"
+msgstr ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> Skalen "
+"vollständig zu füllen Schieberegler Behälter (empfohlen für "
+"Landschaftsaufnahmen).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> Skalen, um den "
+"Behälter passen (empfohlen für die Portrait-Bilder).</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> Skalen "
+"passen nur, wenn Größe des Schiebers Behälter ist weniger als die Größe des "
+"Bildes.</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Auto Height</strong> Skalen der "
+"Behälter zu passen das Bild in Originalgröße.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
+"ly/slider-image-scaling\">Visuelle Erklärung</a></p>"
+
+#: ../theme-callbacks/activation-hooks.php:337
+msgid "Client Name"
+msgstr "Kundenname"
+
+#: ../theme-callbacks/activation-hooks.php:342
+msgid "Client Link"
+msgstr "Client Link"
+
+#: ../theme-callbacks/activation-hooks.php:383
 msgid ""
 "<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
 "completely fill slider container (recommended for landscape images)</p>\n"
@@ -314,31 +348,23 @@ msgstr ""
 "<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
 "ly/slider-image-scaling\">Visuelle Erklärung</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:335
-msgid "Client Name"
-msgstr "Kundenname"
-
-#: ../theme-callbacks/activation-hooks.php:340
-msgid "Client Link"
-msgstr "Client Link"
-
-#: ../theme-callbacks/activation-hooks.php:404
+#: ../theme-callbacks/activation-hooks.php:406
 msgid "Grid Thumbnails Orientation"
 msgstr "Grid Thumbnails Ausrichtung"
 
-#: ../theme-callbacks/activation-hooks.php:420
+#: ../theme-callbacks/activation-hooks.php:422
 msgid "Gallery Title Box"
 msgstr "Gallery Title Box"
 
-#: ../theme-callbacks/activation-hooks.php:421
+#: ../theme-callbacks/activation-hooks.php:423
 msgid "Show the title of the gallery in a thumbnail box or not."
 msgstr "Zeigen Sie den Titel der Galerie in einem Thumbnail-Box oder nicht."
 
-#: ../theme-callbacks/activation-hooks.php:447
+#: ../theme-callbacks/activation-hooks.php:449
 msgid "Choose:"
 msgstr "Wählen Sie:"
 
-#: ../theme-callbacks/activation-hooks.php:448
+#: ../theme-callbacks/activation-hooks.php:450
 msgid ""
 "Select what would you like to be your home page. If you want to have a "
 "static page as your homepage simply go the WP classic way and set it up in "
@@ -349,11 +375,11 @@ msgstr ""
 "und Weise WP und stellen Sie es in den Einstellungen> Reading (anstelle von "
 "diesem)."
 
-#: ../theme-callbacks/activation-hooks.php:464
+#: ../theme-callbacks/activation-hooks.php:466
 msgid "Select a gallery"
 msgstr "Wählen Sie eine Galerie"
 
-#: ../theme-callbacks/activation-hooks.php:465
+#: ../theme-callbacks/activation-hooks.php:467
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Wählen Sie eine Galerie und wir werden es auf Ihrer Homepage zeigen."
 
@@ -1988,33 +2014,33 @@ msgid "Back to top"
 msgstr "Nach oben"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:74
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:70
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:100
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:71
 msgid "Client"
 msgstr "Client:"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:86
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:139
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:169
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:136
 msgid "Related projects"
 msgstr "Related Projekte"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:144
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:174
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:141
 msgid "Previous"
 msgstr "Zurück"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:193
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:148
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:178
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:145
 msgid "All projects"
 msgstr "Alle Projekte"
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:99
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:197
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:152
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:182
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:149
 msgid "Next"
 msgstr "Weiter"
 
@@ -2026,15 +2052,15 @@ msgstr "Sehen Sie mehr über: author"
 msgid "Header Menu"
 msgstr "Kopfzeilenmenü"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "If you want, you can download the automatic theme backup."
 msgstr "Wenn Sie möchten, können Sie die automatische Backup-Thema."
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
 msgid "Download Backup"
 msgstr "Download von Backup"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:107
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:106
 msgid ""
 "Error: The theme was not updated, because the automatic backup is activated, "
 "but for some reason (probably due to file permissions) it failed. We "

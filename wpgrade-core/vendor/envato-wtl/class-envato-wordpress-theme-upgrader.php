@@ -436,14 +436,15 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
 	   protected function _get_theme_backup_dir( $theme ) {
 
 		 $backup_path = EWPT_BACKUP_DIR;
-
-		 if ( $handle = @opendir( $backup_path ) ) {
+		
+		 $handle = @opendir( $backup_path);
+		 if ( $handle ) {
 		   $files = array();
 		   $file = readdir( $handle );
 		   while ( false !== $file ) {
 			 $temp_theme = reset( explode( '.', $file ) );
 			 $temp_ext = end( explode( '.', $file ) );
-			 if ( $temp_theme == $theme &&  $temp_ext == 'zip' ) {
+			 if ( $temp_theme == strtolower($theme) &&  $temp_ext == 'zip' ) {
 			   $files[@filemtime( trailingslashit( $backup_path ) . $file )] = trailingslashit( $backup_path ) . $file;
 			 }
 		     $file = readdir( $handle );
@@ -472,7 +473,7 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
 	   public function get_theme_backup_uri( $theme ) {
 
 		 $theme_backup = $this->_get_theme_backup_dir( $theme );
-
+		 var_dump($theme,$theme_backup);die;
 		 if ( empty( $theme_backup ) )
 		   return false;
 
