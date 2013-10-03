@@ -8,14 +8,14 @@
             <?php
                 $client_name = '';
                 $client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
-        		
-        		$client_link = '#';
+                
+                $client_link = '#';
                 $client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 
                 $gallery_ids = array();
                 $gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
                 if (!empty($gallery_ids)) {
-        	        $gallery_ids = explode(',',$gallery_ids);
+                    $gallery_ids = explode(',',$gallery_ids);
                 }
 
                 $attachments = get_posts(array(
@@ -31,23 +31,27 @@
                         $thumbimg = wp_get_attachment_image_src( $attachment->ID, 'thumbnail-size', true );
                         $attachment_url = wp_get_attachment_url( $attachment->ID );
 
-	                    $attachment_fields = get_post_custom( $attachment->ID );
-	                    $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
-	                    $is_video = false;
-	                    //  if there is one let royal slider know about it
-	                    if ( !empty($video_url) ) {
-		                    $attachment_url = $video_url;
-		                    $is_video = true;
-		                    $class .= ' mfp-iframe mfp-video';
-	                    } else {
-		                    $class = ' mfp-image';
-	                    }
+                        $attachment_fields = get_post_custom( $attachment->ID );
+                        $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
+                        $is_video = false;
+                        //  if there is one let royal slider know about it
+                        if ( !empty($video_url) ) {
+                            $attachment_url = $video_url;
+                            $is_video = true;
+                            $class .= ' mfp-iframe mfp-video';
+                        } else {
+                            $class = ' mfp-image';
+                        }
 
                         echo '<a href="' . $attachment_url .'" class="'. $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
                     }
                 }
             ?>
-
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template
+               if ( comments_open() || '0' != get_comments_number() )
+                  comments_template();
+            ?>
         </div><!-- .page-main -->
 
         <div class="page-side  project--sidebar__content">
@@ -65,9 +69,9 @@
             <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); ?>
             <?php if ($client_name !== '' && !empty($categories) && !is_wp_error($categories)): ?>
                 <hr class="separator separator--dotted" />
-                <footer class="entry__meta entry__meta--project row cf ">
+                <footer class="entry__meta entry__meta--project row cf">
                     <?php if($client_name !== '') : ?>
-                    <div class="entry__meta-box meta-box--client col-12 hand-col-6">
+                    <div class="entry__meta-box meta-box--client">
                         <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
                         <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                     </div>
@@ -159,10 +163,5 @@
             </aside>
         </div>
     </div>
-    <?php
-        // If comments are open or we have at least one comment, load up the comment template
-           if ( comments_open() || '0' != get_comments_number() )
-              comments_template();
-    ?>
 </article><!-- #post -->
 </div><!-- .content -->
