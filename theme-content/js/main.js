@@ -3868,7 +3868,7 @@ function royalSliderInit() {
                 autoHeight: false,
                 loop: true,
                 imageScaleMode: rs_imageScale,
-                imageAlignCenter: false,
+                imageAlignCenter: true,
                 slidesSpacing: rs_slidesSpacing,
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
@@ -4690,6 +4690,7 @@ $(window).resize(function(){
 
 /* ====== ON SCROLL ======  */
 
-$(window).scroll(function(e){});
+$(window).scroll(function(e){
 
+});
 })(jQuery, window);
