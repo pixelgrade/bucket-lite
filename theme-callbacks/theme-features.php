@@ -35,12 +35,8 @@ function wpgrade_callback_has_featured_image_class() {
 
 	return false;
 }
-
-
-/**
- * let queries be sorted by the "post__in" argument
- */
 add_action('wp_head', 'wpgrade_callbacks_html5_shim');
+
 function wpgrade_callback_sort_query_by_post_in( $sortby, $thequery ) {
 	if ( !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
 		$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
@@ -51,15 +47,14 @@ add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
 
 function wpgrade_add_desktop_icons(){
 
-//	$favicon = wpgrade::option( 'favicon' );
 	if ( wpgrade::option( 'favicon' ) ) {
 		echo "<link rel='icon' href=\"".wpgrade::option( 'favicon' )."\" >\n";
 	}
-//	$apple_icon = wpgrade::option( 'apple_touch_icon' );
+
 	if ( wpgrade::option( 'apple_touch_icon' ) ) {
 		echo "<link rel=\"apple-touch-icon\" href=\"".wpgrade::option( 'apple_touch_icon' )."\" >\n";
 	}
-//	$win8icon = wpgrade::option( 'metro_icon' );
+
 	if ( wpgrade::option( 'metro_icon' ) ) {
 		echo "<meta name=\"msapplication-TileColor\" content=\"#f01d4f\">\n";
 		echo "<meta name=\"msapplication-TileImage\" content=\"".wpgrade::option( 'metro_icon' )."\" >\n";
