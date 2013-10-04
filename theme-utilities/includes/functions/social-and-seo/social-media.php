@@ -44,7 +44,7 @@
 							$socialimg = wpgrade::option('social_share_default_image');
 						}
 						else { // ! social_share_default_image (use the default thumb gif)
-							$socialimg = wpgrade::uri('theme-utilities/assets/social-and-seo/nothumb.png');
+							$socialimg = wpgrade::uri('/theme-utilities/assets/social-and-seo/nothumb.png');
 						}
 					}
 				}

@@ -3788,24 +3788,23 @@ function platformDetect(){
 
 function niceScrollInit() {
 
-    var smoothScroll = $('body').data('smoothscrolling') !== undefined,
-        mobile = false;
+    var smoothScroll = $('body').data('smoothscrolling') !== undefined;
     
     if ($('.site-navigation').length) {
         var offset = $('.site-navigation').offset();
         mobile = offset.left > ww;
     }
 
-    if (smoothScroll && !mobile && !touch && !is_OSX) {
+    if (smoothScroll && ww > 899 && !touch && !is_OSX) {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
             zindex: 9999,
-            cursoropacitymin: 0.8,
+            cursoropacitymin: 0.3,
             cursorwidth: 7,
             cursorborder: 0,
-            mousescrollstep: 60,
-            scrollspeed: 80,
-            cursorcolor: "#000000"
+            mousescrollstep: 40,
+            scrollspeed: 100,
+            cursorcolor: '#000000'
         });
     }
 }
@@ -4589,7 +4588,7 @@ function animateBlog(direction) {
                     if (direction == "in") {
 
                         var $item = $(columns[column][item]),
-                            timeout = item * max + column;
+                            timeout = item * columns.length + column;
 
                         setTimeout(function() {
                             $item.addClass('is-loaded');
@@ -4598,7 +4597,7 @@ function animateBlog(direction) {
                     } else {
 
                         var $item = $(columns[column][item]),
-                            timeout = items - (item * max + column);
+                            timeout = item * columns.length + column;
 
                         setTimeout(function() {
                             $item.removeClass('is-loaded');
@@ -4683,7 +4682,12 @@ $(window).resize(function(){
     browserSize();
     niceScrollInit();
     resizeVideos();
-    $('[data-smoothscrolling]').getNiceScroll().hide();
+
+    if (ww < 901) {
+        $('[data-smoothscrolling]').getNiceScroll().hide();
+    } else {
+        $('[data-smoothscrolling]').getNiceScroll().show();
+    }
 });
 
 
@@ -4694,5 +4698,66 @@ $(window).resize(function(){
 
 $(window).scroll(function(e){
 
+    var likes = $('.entry__likes'),
+        likesOffset = likes.offset(),
+        likesh = likes.height(),
+        likesTop = likesOffset.top,
+        likesBottom = likesTop + likesh,
+        post = $('.post .entry__wrap'),
+        posth = post.height(),
+        postOffset = post.offset(),
+        postTop = postOffset.top,
+        postBottom = postTop + posth;
+
+    if ($('.entry__likes').length && ww > 1599) {
+        var scroll = $('body').scrollTop();
+
+        // hacky way to get scroll consisten in chrome / firefox
+        if (scroll == 0) scroll = $('html').scrollTop();
+
+        // if scrolled past the top of the container but not below the bottom of it
+        if (scroll > postTop && scroll + likesh < postBottom) {
+
+            // insert after content for fixed position to work properly
+            // set left value to the box's initial left offset
+            likes.insertAfter('.content').css({
+                position: 'fixed',
+                top: 0,
+                left: likesOffset.left
+            });
+
+        // the box should follow scroll anymore
+        } else {
+
+            // we are below the container's bottom
+            // so we have to move to box back up while scrolling down
+            if (scroll + likesh > postBottom) {
+
+                likes.insertAfter('.content').css({
+                    top: postBottom - scroll - likesh,
+                });
+
+            // we are back up so we must put the box back in it's place
+            } else {
+
+                likes.prependTo('.entry__wrap').css({
+                    position: '',
+                    top: 0,
+                    left: ''
+                });
+
+            }
+        }
+
+    } else {
+
+        // make sure that the box is in it's lace when resizing the browser
+        likes.prependTo('.entry__wrap').css({
+            position: '',
+            top: 0,
+            left: ''
+        });
+        
+    }
 });
 })(jQuery, window);

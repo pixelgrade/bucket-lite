@@ -473,7 +473,7 @@
 				'id' => 'google_page_url',
 				'type' => 'text',
 				'title' => __('Google+ Publisher', wpgrade::textdomain()),
-				'sub_desc' => __('Enter your Google Plus page URL (example: https://plus.google.com/105345678532237339285) here if you have set up a "Google+ Page".', wpgrade::textdomain()),
+				'sub_desc' => __('Enter your Google Plus page ID (example: https://plus.google.com/<b>105345678532237339285</b>) here if you have set up a "Google+ Page".', wpgrade::textdomain()),
 			),
 			array(
 				'id' => 'twitter_card_site',
