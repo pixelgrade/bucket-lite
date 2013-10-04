@@ -16,7 +16,7 @@
 	}
 	if ( count($cats) ) { ?>
 		<div class="entry__meta">
-			<div class="image_item-meta grid"><!--
+			<div class="image_item-meta grid cf"><!--
 			 --><ul class="image_item-categories grid__item one-half">
 					<li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
 					<?php foreach( $cats as $category ) { ?>
