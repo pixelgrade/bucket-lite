@@ -159,19 +159,19 @@
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 799px) {
+@media screen and (min-width: 700px) and (max-width: 900px) {
     .masonry[data-columns]::before {
         content: '2 .span.span-6';
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 949px) {
+@media screen and (min-width: 901px) and (max-width: 1049px) {
     .masonry[data-columns]::before {
         content: '1 .span.span-12';
     }
 }
 
-@media screen and (min-width: 950px) and (max-width: 1279px) {
+@media screen and (min-width: 1050px) and (max-width: 1279px) {
     .masonry[data-columns]::before {
         content: '2 .span.span-6';
     }
