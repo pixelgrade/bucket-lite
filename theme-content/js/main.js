@@ -4683,7 +4683,7 @@ $(window).resize(function(){
     browserSize();
     niceScrollInit();
     resizeVideos();
-
+    $('[data-smoothscrolling]').getNiceScroll().hide();
 });
 
 

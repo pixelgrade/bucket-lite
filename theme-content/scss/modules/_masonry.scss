@@ -34,7 +34,7 @@
         @extend .cf;
         display: block;
         float: left;
-        @include rem(margin-left, $base-spacing-unit);
+        @include rem(margin, $base-spacing-unit 0 0 $base-spacing-unit);
     }
 
     .entry__title {
