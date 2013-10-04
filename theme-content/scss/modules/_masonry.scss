@@ -15,11 +15,14 @@
 
 .masonry__item {
     background: white;
-    @include rem(margin, $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
     @include opacity(0);
     @include transform(translate3d(0,2em,0));
     @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
     @include backface-visibility(hidden);
+
+    @include media(to hand) {
+        @include rem(margin-bottom, $half-spacing-unit);
+    }
 
     &.is-loaded {
         @include opacity(1);

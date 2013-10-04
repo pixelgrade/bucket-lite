@@ -13,7 +13,7 @@
 
 }
 
-.image_item-cell i.icon-play {
+.image_item-cell > i {
         font-size: 2em;
         padding-right: 0;
 }
@@ -24,13 +24,11 @@
         overflow: hidden;
         float: left;
         position: relative;
+        @extend .span-12;
+        @extend .hand-span-6;
+        @extend .lap-span-4;
+        @extend .desk-span-3;            
 
-        .portfolio-archive &{
-            @extend .span-12;
-            @extend .hand-span-6;
-            @extend .lap-span-4;
-            @extend .desk-span-3;            
-        }
         .single-lens_gallery &{
             @extend .span-6;
             @extend .hand-span-6;
@@ -48,7 +46,7 @@
             }
         }
     }
-
+    
     .mosaic__item.mosaic__item--portrait{
         .single-lens_gallery &{
             @extend .span-6;

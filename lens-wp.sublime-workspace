@@ -5,7 +5,7 @@
 		[
 			[
 				"mar",
-				"margin-top"
+				"margin-right"
 			],
 			[
 				"a",
@@ -459,7 +459,7 @@
 			"file": "theme-content/scss/modules/_mosaic.scss",
 			"settings":
 			{
-				"buffer_size": 5609,
+				"buffer_size": 5703,
 				"line_ending": "Windows"
 			}
 		},
@@ -507,7 +507,7 @@
 			"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 			"settings":
 			{
-				"buffer_size": 8949,
+				"buffer_size": 9058,
 				"line_ending": "Windows"
 			}
 		},
@@ -524,6 +524,30 @@
 			"settings":
 			{
 				"buffer_size": 1677,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/base/_layout.scss",
+			"settings":
+			{
+				"buffer_size": 5114,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/pages/_project.scss",
+			"settings":
+			{
+				"buffer_size": 2698,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/js/main.js",
+			"settings":
+			{
+				"buffer_size": 316921,
 				"line_ending": "Windows"
 			}
 		}
@@ -785,6 +809,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sticky",
+			".entry__meta-box",
+			"title",
 			"transparent\\",
 			"transparent",
 			"i",
@@ -909,10 +936,7 @@
 			"lt-ie",
 			"none !",
 			"!important",
-			"display: none !im",
-			"portfolio-item-info",
-			"black",
-			".portfolio-item-info"
+			"display: none !im"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -949,7 +973,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 13,
 			"sheets":
 			[
 				{
@@ -1012,15 +1036,15 @@
 					"file": "theme-content/scss/modules/_mosaic.scss",
 					"settings":
 					{
-						"buffer_size": 5609,
+						"buffer_size": 5703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								393,
-								393
+								4672,
+								4672
 							]
 						],
 						"settings":
@@ -1030,7 +1054,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2715.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1180,15 +1204,15 @@
 					"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 					"settings":
 					{
-						"buffer_size": 8949,
+						"buffer_size": 9058,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								254
+								3398,
+								3398
 							]
 						],
 						"settings":
@@ -1198,7 +1222,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 892.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1226,7 +1250,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6531.0,
+						"translation.y": 3343.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1255,6 +1279,90 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "theme-content/scss/base/_layout.scss",
+					"settings":
+					{
+						"buffer_size": 5114,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4097,
+								4097
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2871.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "theme-content/scss/pages/_project.scss",
+					"settings":
+					{
+						"buffer_size": 2698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								658,
+								658
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "theme-content/js/main.js",
+					"settings":
+					{
+						"buffer_size": 316921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								309743,
+								309306
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 78377.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1304,16 +1412,32 @@
 		"selected_items":
 		[
 			[
+				"mai",
+				"theme-content/js/main.js"
+			],
+			[
+				"proje",
+				"theme-content/scss/pages/_project.scss"
+			],
+			[
+				"post",
+				"theme-content/scss/pages/_post.scss"
+			],
+			[
+				"mosai",
+				"theme-content/scss/modules/_mosaic.scss"
+			],
+			[
+				"layout",
+				"theme-content/scss/base/_layout.scss"
+			],
+			[
 				"main",
 				"theme-content/js/main.js"
 			],
 			[
 				"social-",
 				"theme-content/scss/modules/_social-links.scss"
-			],
-			[
-				"post",
-				"theme-content/scss/pages/_post.scss"
 			],
 			[
 				"main.js",
@@ -1366,10 +1490,6 @@
 			[
 				"grid",
 				"theme-content/scss/_vendor/inuit/objects/_grids.scss"
-			],
-			[
-				"mosai",
-				"theme-content/scss/modules/_mosaic.scss"
 			],
 			[
 				"thum",
@@ -1474,10 +1594,6 @@
 			[
 				"side.s",
 				"library/scss/components/_side.scss"
-			],
-			[
-				"layout",
-				"library/scss/components/_layout.scss"
 			],
 			[
 				"shame.sc",
@@ -1806,14 +1922,6 @@
 			[
 				"grid.sc",
 				"wp-content/plugins/pixelgrade-shortcodes/scss/_grid.scss"
-			],
-			[
-				"heade.p",
-				"wp-includes/theme-compat/header.php"
-			],
-			[
-				"sidebar.sc",
-				"wp-content/themes/senna/library/scss/components/_sidebar.scss"
 			]
 		],
 		"width": 0.0
@@ -1825,7 +1933,7 @@
 		[
 			[
 				"",
-				"/E/uniserver/www/cityhub/cityhub.sublime-project"
+				"/E/uniserver/www/fuse/wp-content/themes/fuse/fuse-wp.sublime-project"
 			]
 		],
 		"width": 380.0
