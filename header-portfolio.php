@@ -1,19 +1,19 @@
 <?php //this is just for the doctype and <head> section
-get_template_part('theme-partials/header/head'); ?>
-<?php
-    $class_name = '';
-	if(is_single() && get_post_type() == 'lens_portfolio'){
-        $class_name = 'single-portfolio-';
-        $class_name .= get_post_meta(get_the_ID(), wpgrade::prefix().'project_template', true);        
-    } else {
-		//we are in some sort of archive
-		$class_name = 'portfolio-archive';
-	}
-	
+get_template_part('theme-partials/header/head');
 
-    $data_ajaxloading = (wpgrade::option('use_ajax_loading') != '') ? 'data-ajaxloading' : '';
-    $data_smoothscrolling = (wpgrade::option('use_smooth_scroll') != '') ? 'data-smoothscrolling' : '';
-?>
+$class_name = '';
+if(is_single() && get_post_type() == 'lens_portfolio'){
+    $class_name = 'single-portfolio-';
+    $class_name .= get_post_meta(get_the_ID(), wpgrade::prefix().'project_template', true);
+} else {
+	//we are in some sort of archive
+	$class_name = 'portfolio-archive';
+}
+
+
+$data_ajaxloading = (wpgrade::option('use_ajax_loading') != '') ? 'data-ajaxloading' : '';
+$data_smoothscrolling = (wpgrade::option('use_smooth_scroll') != '') ? 'data-smoothscrolling' : ''; ?>
+
 <body <?php body_class($class_name); echo ' ' . $data_ajaxloading . ' ' . $data_smoothscrolling; ?>>
     <div class="pace">
         <div class="pace-activity"></div>
