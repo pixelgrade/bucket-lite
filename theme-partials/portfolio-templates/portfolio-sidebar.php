@@ -71,7 +71,7 @@
                 <hr class="separator separator--dotted" />
                 <footer class="entry__meta entry__meta--project row cf">
                     <?php if($client_name !== '') : ?>
-                    <div class="entry__meta-box meta-box--client">
+                    <div class="entry__meta-box meta-box--client col-12 hand-col-6">
                         <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
                         <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                     </div>

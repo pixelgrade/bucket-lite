@@ -186,9 +186,11 @@
 
         .image_item-categories{            
             @extend .nav;
+            @extend .col-6;
+            border-left-width: 0;
             margin-bottom: 0;
-            width: 60%;
             text-align: left;
+
 
             a {
                 text-decoration: none;
@@ -224,7 +226,8 @@
 
         .image_item-like-box{
             @extend .cf;
-            width: 40%;
+            @extend .col-6;
+            border-left-width: 0;
             text-align: right;
 
             i, .likes-text{
