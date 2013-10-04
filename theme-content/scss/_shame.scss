@@ -222,7 +222,13 @@ html.nicescroll {
     padding-right: 0 !important; 
 }
 
+.mfp-counter{
+    @include rem(top, 10px);
 
+    .mfp-figure--video &{
+        top: 0;
+    }
+}
 
 .bleed--left {
     @include rem(margin-left, -2 * $base-spacing-unit);
