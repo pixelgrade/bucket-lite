@@ -323,7 +323,7 @@ blockquote:not(.pixcode--testimonial){
  * Horizontal aligning the entry-header meta elements in mobile view
  * 
  */
-@include media(to 1600px) {
+@include media(to 1599px) {
     .entry-header__meta{
         display: block;
         width:100%;

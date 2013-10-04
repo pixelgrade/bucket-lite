@@ -14,7 +14,8 @@ $bpSizes: ();
 @include processBreakpoints();
 
 @function emQuery($px) {
-    @return $px/$base-font-size + em;
+    @return $px;
+    // @return $px/$base-font-size + em;
 }
 
 @function queryString($query) {
