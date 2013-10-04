@@ -37,7 +37,7 @@ YARPP Template: Portfolio Related Projects
                                 <div class="image_item-table">
 
                                     <div class="image_item-cell image_item--block image_item-cell--top">
-                                        <h3 class="image_item-title"><?php echo get_the_title(); ?></h3>
+                                        <h4 class="image_item-title"><?php echo get_the_title(); ?></h4>
                                     </div>
 
                                     <div class="image_item-cell image_item--block image_item-cell--bottom">

@@ -15,11 +15,15 @@
 
 .masonry__item {
     background: white;
-    @include rem(margin, $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
     @include opacity(0);
+    @include rem(margin, $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
     @include transform(translate3d(0,2em,0));
     @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
     @include backface-visibility(hidden);
+
+    @include media(to hand) {
+        @include rem(margin-bottom, $half-spacing-unit);
+    }
 
     &.is-loaded {
         @include opacity(1);
@@ -30,7 +34,7 @@
         @extend .cf;
         display: block;
         float: left;
-        @include rem(margin-left, $base-spacing-unit);
+        @include rem(margin, $base-spacing-unit 0 0 $base-spacing-unit);
     }
 
     .entry__title {
@@ -155,19 +159,19 @@
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 799px) {
+@media screen and (min-width: 700px) and (max-width: 900px) {
     .masonry[data-columns]::before {
         content: '2 .span.span-6';
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 949px) {
+@media screen and (min-width: 901px) and (max-width: 1049px) {
     .masonry[data-columns]::before {
         content: '1 .span.span-12';
     }
 }
 
-@media screen and (min-width: 950px) and (max-width: 1279px) {
+@media screen and (min-width: 1050px) and (max-width: 1279px) {
     .masonry[data-columns]::before {
         content: '2 .span.span-6';
     }
