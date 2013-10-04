@@ -267,7 +267,7 @@
 /*----------------------------------------*\
     $CONTACT PAGE
 \*----------------------------------------*/
-.content--contact{
+.content--contact .page{
     @include rem(margin-bottom, $base-spacing-unit);
 }
 

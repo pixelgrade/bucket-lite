@@ -12,7 +12,7 @@ get_header(); ?>
     <div class="page-content entry__body">
         <div class="page-main">
             <?php while ( have_posts() ) : the_post(); ?>
-                <article id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header class="entry-header">
                         <h1 class="entry__title"><?php the_title(); ?></h1>
                         <div class="bleed--left"><hr class="separator separator--dotted grow"></div>
