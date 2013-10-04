@@ -13,7 +13,7 @@
 
 }
 
-.image_item-cell i {
+.image_item-cell i.icon-play {
         font-size: 2em;
         padding-right: 0;
 }
@@ -196,11 +196,12 @@
 
         @include media(to lap) {
             @include rem(font-size, 28px);
+            @include rem(padding, 0 $half-spacing-unit/2);
         }        
 
         @include media(to hand) {
-            padding: 0;
             @include rem(font-size, 22px);
+            @include rem(padding, 0 $half-spacing-unit/2);
         }
         font-weight:300;
         margin: 0;

@@ -161,6 +161,11 @@
                         </div>
                     <?php endif; ?>
                 </footer><!-- .entry-meta -->
+                <?php
+                    // If comments are open or we have at least one comment, load up the comment template
+                       if ( comments_open() || '0' != get_comments_number() )
+                          comments_template();
+                ?>
             </article><!-- #post -->
             <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
             <section class="related-projects_container entry__body">

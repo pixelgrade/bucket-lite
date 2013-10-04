@@ -7,7 +7,7 @@
     @extend .row;
     margin-left: 0;
     
-    input::input-placeholder, input::-webkit-input-placeholder, input::-moz-input-placeholder, input:-ms-input-placeholder {
+    @include placeholder() {
         color:$dark;
     }
 }
