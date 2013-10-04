@@ -4,15 +4,9 @@
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
+        
 		// let's grab the page title first
 		$title = get_the_title();
-		
-		$args = array(
-			'post_type' => 'lens_portfolio',
-			'orderby' => 'menu_order',
-            'order' => 'ASC',
-			'posts_per_page' => -1
-		);
 
         $thumb_orientation = '';
         if(wpgrade::option('portfolio_thumb_orientation') == 'portrait') $thumb_orientation = ' mosaic__item--portrait';
@@ -53,6 +47,14 @@
         </div>
 
         <?php
+        
+        $args = array(
+            'post_type' => 'lens_portfolio',
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+            'posts_per_page' => -1
+        );
+
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :
 

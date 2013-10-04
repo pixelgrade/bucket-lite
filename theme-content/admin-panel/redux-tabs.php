@@ -17,6 +17,10 @@
 		$author_title = $author;
 	}
 
+	if ( !empty($tags) ) { // yes, tags could miss sometimes
+		$tags = implode(', ', $tags);
+	}
+
     $item_info =
 		'
 			<div class="redux-opts-section-desc">
@@ -39,7 +43,7 @@
 				</p>
 
 				<p class="redux-opts-item-data description item-tags">
-					'.__('<strong>Tags:</strong> ', wpgrade::textdomain()).implode(', ', $tags).'
+					'.__('<strong>Tags:</strong> ', wpgrade::textdomain()).$tags.'
 				</p>
 
 			</div>
