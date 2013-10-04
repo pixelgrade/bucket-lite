@@ -473,7 +473,7 @@ if ( class_exists( 'Theme_Upgrader' ) && ! class_exists( 'Envato_WordPress_Theme
 	   public function get_theme_backup_uri( $theme ) {
 
 		 $theme_backup = $this->_get_theme_backup_dir( $theme );
-		 var_dump($theme,$theme_backup);die;
+
 		 if ( empty( $theme_backup ) )
 		   return false;
 
