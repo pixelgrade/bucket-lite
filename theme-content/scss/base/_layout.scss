@@ -47,6 +47,18 @@
 
     .single-post & {
 
+        .featured-image {
+            @include rem(margin, 0 -1 * $base-spacing-unit);
+
+            @include media(from hand) {
+                @include rem(margin, 0 -2 * $base-spacing-unit);
+            }
+
+            @include media(from lap) {
+                margin-right: 0;
+            }
+        }
+
         @include media(from 1600px) {
             @include rem(padding-left, 6 * $base-spacing-unit);
 
