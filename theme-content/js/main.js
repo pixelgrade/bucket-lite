@@ -4692,5 +4692,59 @@ $(window).resize(function(){
 
 $(window).scroll(function(e){
 
+    var likes = $('.entry__likes'),
+        likesOffset = likes.offset(),
+        likesh = likes.height(),
+        likesTop = likesOffset.top,
+        likesBottom = likesTop + likesh,
+        post = $('.post .entry__wrap'),
+        posth = post.height(),
+        postOffset = post.offset(),
+        postTop = postOffset.top,
+        postBottom = postTop + posth;
+
+        console.log(likes);
+            
+    if ($('.entry__likes').length && ww > 1430) {
+        var scroll = $('body').scrollTop();
+        
+        console.log(scroll, likesTop, likesBottom, postTop, postBottom);
+        // console.log(scroll > postTop && likesBottom <= postBottom);
+
+        if (scroll > postTop && scroll + likesh < postBottom) {
+
+            console.log('a');
+
+            likes.insertAfter('.content').css({
+                position: 'fixed',
+                top: 0,
+                left: likesOffset.left
+            });
+
+        } else {
+
+            console.log(postBottom, scroll, likesh);
+
+            if (scroll + likesh > postBottom) {
+
+                console.log('b');
+
+                likes.insertAfter('.content').css({
+                    top: postBottom - scroll - likesh,
+                });
+
+            } else {
+
+                console.log('c');
+
+                likes.prependTo('.entry__wrap').css({
+                    position: '',
+                    top: 0,
+                    left: ''
+                });
+
+            }
+        }
+    }
 });
 })(jQuery, window);
