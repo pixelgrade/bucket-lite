@@ -108,8 +108,16 @@
     .rsBullets{
         @include rem(margin, 0 -8px);
         position: absolute;
-        @include rem(bottom, $base-spacing-unit);
-        @include rem(left, 2 * $base-spacing-unit);
+
+        @include media(to hand) {
+            @include rem(left, $base-spacing-unit);
+            @include rem(bottom, $half-spacing-unit);
+        }
+
+        @include media(from hand) {
+            @include rem(left, 2 * $base-spacing-unit);
+            @include rem(bottom, $base-spacing-unit);
+        }
     }
 
     .rsBullet{
