@@ -152,7 +152,7 @@
     @include rem(padding-bottom, $base-spacing-unit);
     @extend .cf;
 
-    @include media(to 1600px) {
+    @include media(to 1599px) {
         position: absolute;
         top: 0; right: 0;
         @include rem(padding-top, $half-spacing-unit - 4px);
