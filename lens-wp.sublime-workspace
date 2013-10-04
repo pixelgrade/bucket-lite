@@ -5,7 +5,15 @@
 		[
 			[
 				"mar",
-				"margin-right"
+				"margin-bottom"
+			],
+			[
+				"rs_Ima",
+				"rs_imageAlignCenter"
+			],
+			[
+				"slides",
+				"slidesNumber"
 			],
 			[
 				"a",
@@ -440,66 +448,10 @@
 	"buffers":
 	[
 		{
-			"file": "theme-partials/post-templates/blog-head-video.php",
+			"file": "wpgrade-core/wpgrade.php",
 			"settings":
 			{
-				"buffer_size": 1193,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-partials/gallery-templates/gallery-masonry.php",
-			"settings":
-			{
-				"buffer_size": 6093,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/scss/modules/_mosaic.scss",
-			"settings":
-			{
-				"buffer_size": 5703,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-partials/post-templates/blog-head.php",
-			"settings":
-			{
-				"buffer_size": 925,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/scss/base/_helper.scss",
-			"settings":
-			{
-				"buffer_size": 3504,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/scss/base/_typography.scss",
-			"settings":
-			{
-				"buffer_size": 3106,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/scss/_shame.scss",
-			"settings":
-			{
-				"buffer_size": 6462,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-partials/portfolio-templates/portfolio-classic.php",
-			"settings":
-			{
-				"buffer_size": 6973,
+				"buffer_size": 21868,
 				"line_ending": "Windows"
 			}
 		},
@@ -507,7 +459,23 @@
 			"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 			"settings":
 			{
-				"buffer_size": 9058,
+				"buffer_size": 9360,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/style.scss",
+			"settings":
+			{
+				"buffer_size": 2227,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/modules/_gallery-control.scss",
+			"settings":
+			{
+				"buffer_size": 4111,
 				"line_ending": "Windows"
 			}
 		},
@@ -515,23 +483,7 @@
 			"file": "theme-content/scss/pages/_post.scss",
 			"settings":
 			{
-				"buffer_size": 8080,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/scss/modules/_social-links.scss",
-			"settings":
-			{
-				"buffer_size": 1677,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/scss/base/_layout.scss",
-			"settings":
-			{
-				"buffer_size": 5114,
+				"buffer_size": 8189,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,15 +491,7 @@
 			"file": "theme-content/scss/pages/_project.scss",
 			"settings":
 			{
-				"buffer_size": 2698,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme-content/js/main.js",
-			"settings":
-			{
-				"buffer_size": 316921,
+				"buffer_size": 2904,
 				"line_ending": "Windows"
 			}
 		}
@@ -600,34 +544,51 @@
 	},
 	"file_history":
 	[
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/js/main.js",
-		"/E/uniserver/www/prism/wp-content/themes/lens/style.css",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_wpcf7.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-masonry.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_mosaic.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/pages/_project.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/pages/_post.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_gallery-item.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_mosaic.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/yarpp-template-portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/magnific-popup/_main.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/_shame.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-archive-loop.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-lens_portfolio-archive.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_gallery-control.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-core/wpgrade.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/custom.css.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/style.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/activation-hooks.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/admin-panel/redux-sections.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_wpcf7.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/base/_layout.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullscreen.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/inc/thumbnails.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/template-contact.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-core/wpgrade.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header-portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/js/main.js",
+		"/E/uniserver/www/prism/wp-content/themes/lens/template-galleries.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header-gallery.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/archive-lens_gallery.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/header-homepage.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/galleries-archive-loop.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-lens_galleries-archive.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-archive-loop.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/activation-hooks.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/archive-lens_portfolio.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/posts-lens_portfolio-archive.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head-video.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-masonry.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/post-templates/blog-head.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/base/_helper.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/base/_typography.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-classic.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-sidebar.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_social-links.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullscreen.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullwidth.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/style.css",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/portfolio-templates/portfolio-fullwidth.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_gallery-control.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/custom.css.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/style.scss",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/admin-panel/redux-sections.php",
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/inc/thumbnails.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_royalslider.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/style.css.map",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/_vendor/inuit/objects/_grids.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/style.css",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullwidth.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/pages/_post.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/components/_header.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-utilities/lens.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Icon.php",
@@ -710,24 +671,7 @@
 		"/E/uniserver/www/citylife/wp-includes/theme-compat/footer.php",
 		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/widgets/_categories.scss",
 		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/_variables.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/footer.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/template-front-page.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/_shame.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/components/_header.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/header.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/components/_offcanvas.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/page.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/template-contact.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/components/_layout.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/sidebar-footer.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/css/style.css",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/_settings.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/comments.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/wpGrade.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/js/plugins_stack.js",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/template-blog-archive.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/template-page-sidebar-left.php",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/sidebar.php"
+		"/E/uniserver/www/citylife/wp-content/themes/citylife/footer.php"
 	],
 	"find":
 	{
@@ -809,6 +753,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gallery_slideshow(",
+			"<dl",
+			"<dt",
+			"dt",
+			"dd",
+			"gallery_slideshow(",
+			"contact",
+			"portfolio-archive",
+			"pix",
+			"pixsli",
+			"gallery",
+			"thumb_orien",
+			"        <!-- <div class=\"mosaic__item <?php //echo $thumb_orientation; ?> mosaic__item--page-title-mobile\"> -->\nthumb_or",
+			"thumb_ori",
+			"');\n",
+			"thumb_orient",
+			"portfolio",
+			"lens_gallery",
+			"Gallery Detail",
+			"'portfolio_gallery'",
+			"portfolio",
+			"lens_portfolio_categories",
+			"port",
+			"portfolio-archive",
+			"lens_gallery",
+			".pace",
+			"lens_portfolio",
+			"$args",
+			"gallery_image_scale_mode",
+			"Royal",
+			"royal slider",
 			"sticky",
 			".entry__meta-box",
 			"title",
@@ -905,38 +880,7 @@
 			"btn",
 			"nav-bt",
 			"site-nav",
-			"#page",
-			"all",
-			"nav-",
-			"transition",
-			"html",
-			"js-nav",
-			"call-to-action-text",
-			".call-to-action-text",
-			"unwrap",
-			".cl-effect",
-			"page-header",
-			"audio-wrap",
-			"audio",
-			"video",
-			"do_shor",
-			"video",
-			"margin-left",
-			"@include background",
-			"@include rgba",
-			"rgba",
-			");\n",
-			"prevText",
-			"gallery",
-			"portfolio-item-info",
-			".lt-ie9 &{\n		display",
-			"none !important",
-			"lt-ie",
-			"important",
-			"lt-ie",
-			"none !",
-			"!important",
-			"display: none !im"
+			"#page"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -973,51 +917,23 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "theme-partials/post-templates/blog-head-video.php",
+					"file": "wpgrade-core/wpgrade.php",
 					"settings":
 					{
-						"buffer_size": 1193,
+						"buffer_size": 21868,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1071,
-								1071
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "theme-partials/gallery-templates/gallery-masonry.php",
-					"settings":
-					{
-						"buffer_size": 6093,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53,
-								53
+								19121,
+								19129
 							]
 						],
 						"settings":
@@ -1026,81 +942,107 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 14038.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
+					"settings":
+					{
+						"buffer_size": 9360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3700,
+								3700
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 777.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "theme-content/scss/modules/_mosaic.scss",
+					"file": "theme-content/scss/style.scss",
 					"settings":
 					{
-						"buffer_size": 5703,
+						"buffer_size": 2227,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4672,
-								4672
+								506,
+								506
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2715.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "theme-partials/post-templates/blog-head.php",
+					"file": "theme-content/scss/modules/_gallery-control.scss",
 					"settings":
 					{
-						"buffer_size": 925,
+						"buffer_size": 4111,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								875,
-								875
+								4103,
+								4103
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1974.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "theme-content/scss/base/_helper.scss",
+					"file": "theme-content/scss/pages/_post.scss",
 					"settings":
 					{
-						"buffer_size": 3504,
+						"buffer_size": 8189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								956,
-								956
+								141,
+								143
 							]
 						],
 						"settings":
@@ -1110,221 +1052,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 440.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "theme-content/scss/base/_typography.scss",
-					"settings":
-					{
-						"buffer_size": 3106,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1599,
-								1599
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 864.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "theme-content/scss/_shame.scss",
-					"settings":
-					{
-						"buffer_size": 6462,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								993,
-								993
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "theme-partials/portfolio-templates/portfolio-classic.php",
-					"settings":
-					{
-						"buffer_size": 6973,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1223,
-								1223
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
-					"settings":
-					{
-						"buffer_size": 9058,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3398,
-								3398
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 892.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "theme-content/scss/pages/_post.scss",
-					"settings":
-					{
-						"buffer_size": 8080,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7540,
-								7841
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3343.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "theme-content/scss/modules/_social-links.scss",
-					"settings":
-					{
-						"buffer_size": 1677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								108,
-								108
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "theme-content/scss/base/_layout.scss",
-					"settings":
-					{
-						"buffer_size": 5114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4097,
-								4097
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2871.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
 					"file": "theme-content/scss/pages/_project.scss",
 					"settings":
 					{
-						"buffer_size": 2698,
+						"buffer_size": 2904,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								658,
-								658
+								1663,
+								1663
 							]
 						],
 						"settings":
@@ -1334,35 +1080,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "theme-content/js/main.js",
-					"settings":
-					{
-						"buffer_size": 316921,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								309743,
-								309306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 78377.0,
+						"translation.y": 1566.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1412,16 +1130,60 @@
 		"selected_items":
 		[
 			[
-				"mai",
-				"theme-content/js/main.js"
+				"pro",
+				"theme-content/scss/pages/_project.scss"
+			],
+			[
+				"post",
+				"theme-content/scss/pages/_post.scss"
 			],
 			[
 				"proje",
 				"theme-content/scss/pages/_project.scss"
 			],
 			[
-				"post",
-				"theme-content/scss/pages/_post.scss"
+				"galler",
+				"theme-content/scss/modules/_gallery-control.scss"
+			],
+			[
+				"style.sc",
+				"theme-content/scss/style.scss"
+			],
+			[
+				"la",
+				"theme-content/scss/base/_layout.scss"
+			],
+			[
+				"wpc",
+				"theme-content/scss/plugins/_wpcf7.scss"
+			],
+			[
+				"shame",
+				"theme-content/scss/_shame.scss"
+			],
+			[
+				"main.scss",
+				"theme-content/scss/plugins/magnific-popup/_main.scss"
+			],
+			[
+				"main",
+				"theme-content/js/main.js"
+			],
+			[
+				"mosa",
+				"theme-content/scss/modules/_mosaic.scss"
+			],
+			[
+				"mos",
+				"theme-content/scss/modules/_mosaic.scss"
+			],
+			[
+				"mai",
+				"theme-content/js/main.js"
+			],
+			[
+				"styl",
+				"style.css"
 			],
 			[
 				"mosai",
@@ -1432,10 +1194,6 @@
 				"theme-content/scss/base/_layout.scss"
 			],
 			[
-				"main",
-				"theme-content/js/main.js"
-			],
-			[
 				"social-",
 				"theme-content/scss/modules/_social-links.scss"
 			],
@@ -1444,24 +1202,12 @@
 				"theme-content/js/main.js"
 			],
 			[
-				"shame",
-				"theme-content/scss/_shame.scss"
-			],
-			[
-				"mosa",
-				"theme-content/scss/modules/_mosaic.scss"
-			],
-			[
 				"galler-con",
 				"theme-content/scss/modules/_gallery-control.scss"
 			],
 			[
 				"custom",
 				"theme-content/css/custom.css.php"
-			],
-			[
-				"galler",
-				"theme-content/scss/modules/_gallery-item.scss"
 			],
 			[
 				"wpcf",
@@ -1478,10 +1224,6 @@
 			[
 				"royal",
 				"theme-content/scss/plugins/_royalslider.scss"
-			],
-			[
-				"styl",
-				"style.css"
 			],
 			[
 				"grd",
@@ -1642,10 +1384,6 @@
 			[
 				"progess",
 				"wp-content/themes/citylife/library/scss/shortcodes/_progressbar.scss"
-			],
-			[
-				"style.sc",
-				"wp-content/themes/citylife/library/scss/style.scss"
 			],
 			[
 				"naviga",
@@ -1902,26 +1640,6 @@
 			[
 				"_tem",
 				"wp-content/themes/citylife/library/scss/shortcodes/_teammember.scss"
-			],
-			[
-				"_port",
-				"wp-content/themes/citylife/library/scss/components/_portfolio.scss"
-			],
-			[
-				"_post",
-				"wp-content/themes/citylife/library/scss/components/_post.scss"
-			],
-			[
-				"_lao",
-				"wp-content/themes/citylife/library/scss/components/_layout.scss"
-			],
-			[
-				"_l",
-				"wp-content/themes/citylife/library/scss/components/_layout.scss"
-			],
-			[
-				"grid.sc",
-				"wp-content/plugins/pixelgrade-shortcodes/scss/_grid.scss"
 			]
 		],
 		"width": 0.0
@@ -1933,7 +1651,7 @@
 		[
 			[
 				"",
-				"/E/uniserver/www/fuse/wp-content/themes/fuse/fuse-wp.sublime-project"
+				"/E/uniserver/www/lens-individ/wp-content/themes/lens/lens-individ.sublime-project"
 			]
 		],
 		"width": 380.0
