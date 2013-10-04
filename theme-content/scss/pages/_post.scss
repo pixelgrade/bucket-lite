@@ -7,6 +7,11 @@
  */
 
  .single-post {
+
+    .page-side {
+        @include rem(padding-top, 3*$base-spacing-unit);
+    }
+
     .entry__content {
         & > p:first-of-type  {
             @include rem(font-size, 22px);
