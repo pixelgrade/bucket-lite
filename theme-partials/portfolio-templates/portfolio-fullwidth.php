@@ -23,9 +23,13 @@
 
     if ( !empty($attachments) ) : ?>
     <div class="featured-image">
-        <?php 
-            $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagescale="'.$image_scale_mode.'"';
+        <?php
+            if ($image_scale_mode == '') {
+                $image_scale_mode = 'fill';
+            }
+            $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagealigncenter data-imagescale="'.$image_scale_mode.'"';
         ?>
+        <?php echo $data_scaling ?>
         <div class="pixslider js-pixslider" data-bullets data-customarrows <?php echo $data_scaling; ?>>
             <?php
 			if (!empty($video)) { ?>
