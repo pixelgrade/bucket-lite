@@ -337,10 +337,6 @@ blockquote:not(.pixcode--testimonial){
         }
     }
 
-    .article-timestamp {
-        margin-top:0;
-    }
-
     .likes-box--article{
         float:right;
 
@@ -359,7 +355,12 @@ blockquote:not(.pixcode--testimonial){
             }
         }
     }
+}
 
+@include media(to hand) {
+    .article-timestamp {
+        margin-top:0;
+    }
 }
 
 
