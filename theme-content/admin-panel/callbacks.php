@@ -13,6 +13,36 @@
 		return $return;
 	}
 
+    function write_custom_css($field, $value, $existing_value) {
+        $return['value'] = $value;
+        if ( wpgrade::option('inject_custom_css') !== 'file' ) return $return;
+
+        $error = false;
+        if ( $value != $existing_value ) {
+
+            global $wp_filesystem;
+            // Initialise the Wordpress filesystem, no more using file_put_contents function
+            if (empty($wp_filesystem)) {
+                require_once(ABSPATH .'/wp-admin/includes/file.php');
+                WP_Filesystem();
+            }
+
+            $css_dir = get_template_directory() . '/theme-content/css/';
+
+            $css = $value; // Get the custom css
+            $wp_filesystem->put_contents(
+                $css_dir . 'custom.css',
+                $css,
+                FS_CHMOD_FILE // predefined mode settings for WP files
+            );
+
+        }
+
+        if($error == true) {
+            $return['error'] = $field;
+        }
+        return $return;
+    }
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
 

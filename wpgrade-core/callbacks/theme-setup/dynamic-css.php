@@ -76,7 +76,9 @@
 		}
 
 		// if we didn't include the style inline, pass it to the script
-		if ( wpgrade::option('inject_custom_css') == 'http_query') {
-			 wp_enqueue_style('wpgrade-php-style', wpgrade::content_url() . 'css/custom.css.php?'.http_build_query($style_query, '', '&amp;'));
-		}
+		if ( wpgrade::option('inject_custom_css') == 'http_query' ) {
+			 wp_enqueue_style('wpgrade-php-style', get_template_directory_uri() . '/theme-content/css/custom.css.php?'.http_build_query($style_query, '', '&amp;'));
+		} elseif ( wpgrade::option('inject_custom_css') == 'file' ){
+            wp_enqueue_style('wpgrade-custom-style', get_template_directory_uri() . '/theme-content/css/custom.css' );
+        }
 	}

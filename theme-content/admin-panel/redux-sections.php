@@ -158,7 +158,7 @@
 				'title' => __('Custom CSS Style', wpgrade::textdomain()),
 				'sub_desc' => __('Use this area to make slight css changes. It will be included in the head section of the page.', wpgrade::textdomain()),
 				'desc' => __('', wpgrade::textdomain()),
-				'validate' => 'html'
+                'validate_callback' => 'write_custom_css',
 			),
 			array(
 				'id' => 'custom_js',
