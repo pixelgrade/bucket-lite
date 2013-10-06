@@ -26,7 +26,7 @@
 
 			if ( ! empty($families)) {
 				// any variables in scope will be available in the partial
-				include wpgrade::corepartial('google-fonts-script'.EXT);
+				include wpgrade::themefilepath('wpgrade-partials/google-fonts-script'.EXT);
 			}
 		}
 	}
@@ -76,7 +76,7 @@
 		}
 
 		// if we didn't include the style inline, pass it to the script
-		if ( ! wpgrade::option('display_custom_css_inline')) {
-			 wp_enqueue_style('wpgrade-php-style', wpgrade::resourceuri('css/custom.css.php?'.http_build_query($style_query, '', '&amp;')));
+		if ( wpgrade::option('inject_custom_css') == 'http_query') {
+			 wp_enqueue_style('wpgrade-php-style', wpgrade::content_url() . 'css/custom.css.php?'.http_build_query($style_query, '', '&amp;'));
 		}
 	}
