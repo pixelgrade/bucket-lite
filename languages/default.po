@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-03 17:06+0200\n"
-"PO-Revision-Date: 2013-10-03 17:06+0200\n"
+"POT-Creation-Date: 2013-10-07 16:02+0200\n"
+"PO-Revision-Date: 2013-10-07 16:02+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_xn;_ex;_nx_noop:1,2;"
 "translate_nooped_plural;_n:1,2;_nx:1,2\n"
 "X-Poedit-Basepath: .\n"
@@ -113,9 +113,9 @@ msgstr ""
 
 #: ../single.php:38
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:77
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:106
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:77
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:80
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:111
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:81
 msgid "Filled under"
 msgstr ""
 
@@ -125,29 +125,29 @@ msgstr ""
 
 #: ../single.php:62
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:134
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:99
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:139
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:103
 msgid "Share"
 msgstr ""
 
 #: ../single.php:67 ../theme-partials/posts-single.php:169
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:139
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:104
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:144
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:108
 msgid "Share on Twitter!"
 msgstr ""
 
 #: ../single.php:75 ../theme-partials/posts-single.php:177
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:147
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:112
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:152
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:116
 msgid "Share on Facebook!"
 msgstr ""
 
 #: ../single.php:83 ../theme-partials/posts-single.php:185
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:155
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:120
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:160
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
 msgid "Share on Google+!"
 msgstr ""
 
@@ -746,7 +746,7 @@ msgid "<p class=\"description\">General settings for portfolio items.</p>"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:335
-#: ../theme-content/admin-panel/redux-sections.php:399
+#: ../theme-content/admin-panel/redux-sections.php:406
 msgid "Show Share Links"
 msgstr ""
 
@@ -755,17 +755,17 @@ msgid "Do you want to show the share links bellow the projects?"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:344
-#: ../theme-content/admin-panel/redux-sections.php:408
+#: ../theme-content/admin-panel/redux-sections.php:415
 msgid "Twitter Share Link"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:352
-#: ../theme-content/admin-panel/redux-sections.php:416
+#: ../theme-content/admin-panel/redux-sections.php:423
 msgid "Facebook Share Link"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:360
-#: ../theme-content/admin-panel/redux-sections.php:424
+#: ../theme-content/admin-panel/redux-sections.php:431
 msgid "Google+ Share Link"
 msgstr ""
 
@@ -777,121 +777,125 @@ msgstr ""
 msgid "Horizontal thumbnails or vertical thumbnails"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:386
+#: ../theme-content/admin-panel/redux-sections.php:377
+msgid "How many projects on portfolio page"
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:393
 msgid "Blog Options"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:387
+#: ../theme-content/admin-panel/redux-sections.php:394
 msgid ""
 "<p class=\"description\">Change blog archive and single post related options "
 "here.</p>"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:392
+#: ../theme-content/admin-panel/redux-sections.php:399
 msgid "Excerpt Length"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:393
+#: ../theme-content/admin-panel/redux-sections.php:400
 msgid "Set here the excerpt length for the blog archive (number of words)."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:400
+#: ../theme-content/admin-panel/redux-sections.php:407
 msgid "Do you want to show the share links bellow the article?"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:439
+#: ../theme-content/admin-panel/redux-sections.php:446
 msgid "Social and SEO Options"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:441
+#: ../theme-content/admin-panel/redux-sections.php:448
 msgid "<p class=\"description\">Social sharing stuff.</p>"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:446
+#: ../theme-content/admin-panel/redux-sections.php:453
 msgid "Open social icons links in new a window?"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:447
+#: ../theme-content/admin-panel/redux-sections.php:454
 msgid "Do you want to open social links in a new window ?"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:454
+#: ../theme-content/admin-panel/redux-sections.php:461
 msgid "Add Social Meta Tags"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:455
+#: ../theme-content/admin-panel/redux-sections.php:462
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:463
+#: ../theme-content/admin-panel/redux-sections.php:470
 msgid "Facebook Application ID"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:464
+#: ../theme-content/admin-panel/redux-sections.php:471
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
 "apps\">here</a>."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:469
+#: ../theme-content/admin-panel/redux-sections.php:476
 msgid "Facebook Admin ID"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:470
+#: ../theme-content/admin-panel/redux-sections.php:477
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
 "\">Facebook Insights</a>."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:475
+#: ../theme-content/admin-panel/redux-sections.php:482
 msgid "Google+ Publisher"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:476
+#: ../theme-content/admin-panel/redux-sections.php:483
 msgid ""
-"Enter your Google Plus page URL (example: https://plus.google."
-"com/105345678532237339285) here if you have set up a \"Google+ Page\"."
+"Enter your Google Plus page ID (example: https://plus.google.com/"
+"<b>105345678532237339285</b>) here if you have set up a \"Google+ Page\"."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:481
+#: ../theme-content/admin-panel/redux-sections.php:488
 msgid "Twitter Site Username"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:482
+#: ../theme-content/admin-panel/redux-sections.php:489
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:487
+#: ../theme-content/admin-panel/redux-sections.php:494
 msgid "Default Social Share Image"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:488
+#: ../theme-content/admin-panel/redux-sections.php:495
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:493
+#: ../theme-content/admin-panel/redux-sections.php:500
 msgid "Use Twitter Widget"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:494
+#: ../theme-content/admin-panel/redux-sections.php:501
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:502
+#: ../theme-content/admin-panel/redux-sections.php:509
 msgid "Important Note : "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:503
+#: ../theme-content/admin-panel/redux-sections.php:510
 msgid ""
 "In order to use the Twitter widget you will need to create a Twitter "
 "application <a href=\"https://dev.twitter.com/apps/new\" >here</a> and get "
@@ -900,66 +904,66 @@ msgid ""
 "the "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:508
+#: ../theme-content/admin-panel/redux-sections.php:515
 msgid "Consumer Key"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:514
+#: ../theme-content/admin-panel/redux-sections.php:521
 msgid "Consumer Secret"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:520
+#: ../theme-content/admin-panel/redux-sections.php:527
 msgid "Oauth Access Token"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:526
+#: ../theme-content/admin-panel/redux-sections.php:533
 msgid "Oauth Access Token Secret"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:539
+#: ../theme-content/admin-panel/redux-sections.php:546
 msgid "Theme Auto Update"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:540
+#: ../theme-content/admin-panel/redux-sections.php:547
 msgid ""
 "<p class=\"description\">Let us notify you when new versions of this theme "
 "are live on ThemeForest! Update with just one button click. Forget about "
 "manual updates!</p>"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:545
+#: ../theme-content/admin-panel/redux-sections.php:552
 msgid "Use Auto Update"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:546
+#: ../theme-content/admin-panel/redux-sections.php:553
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:554
+#: ../theme-content/admin-panel/redux-sections.php:561
 msgid "ThemeForest Username"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:555
+#: ../theme-content/admin-panel/redux-sections.php:562
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:560
+#: ../theme-content/admin-panel/redux-sections.php:567
 msgid "ThemeForest Secret API Key"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:561
+#: ../theme-content/admin-panel/redux-sections.php:568
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:566
+#: ../theme-content/admin-panel/redux-sections.php:573
 msgid "Backup Theme Before Upgrade?"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:567
+#: ../theme-content/admin-panel/redux-sections.php:574
 msgid ""
 "Check this if you want us to automatically save your theme as a ZIP archive "
 "before an upgrade. The directory those backups get saved to is <code>wp-"
@@ -969,27 +973,27 @@ msgid ""
 "you don't want to backup your theme you can uncheck this."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-tabs.php:25
+#: ../theme-content/admin-panel/redux-tabs.php:29
 #: ../wpgrade-core/vendor/redux3/options.php:777
 msgid "<strong>Theme URL:</strong> "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-tabs.php:30
+#: ../theme-content/admin-panel/redux-tabs.php:34
 #: ../wpgrade-core/vendor/redux3/options.php:778
 msgid "<strong>Author:</strong> "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-tabs.php:34
+#: ../theme-content/admin-panel/redux-tabs.php:38
 #: ../wpgrade-core/vendor/redux3/options.php:779
 msgid "<strong>Version:</strong> "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-tabs.php:42
+#: ../theme-content/admin-panel/redux-tabs.php:46
 #: ../wpgrade-core/vendor/redux3/options.php:781
 msgid "<strong>Tags:</strong> "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-tabs.php:51
+#: ../theme-content/admin-panel/redux-tabs.php:55
 #: ../wpgrade-core/vendor/redux3/options.php:787
 msgid "Theme Information"
 msgstr ""
@@ -1819,33 +1823,33 @@ msgid "Back to top"
 msgstr ""
 
 #: ../theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:100
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:71
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:73
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:104
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:75
 msgid "Client"
 msgstr ""
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:86
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:169
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:136
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:92
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:179
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:140
 msgid "Related projects"
 msgstr ""
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:91
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:174
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:141
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:97
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:184
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:145
 msgid "Previous"
 msgstr ""
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:178
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:145
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:101
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:188
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:149
 msgid "All projects"
 msgstr ""
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:99
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:182
-#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:149
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:105
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:192
+#: ../theme-partials/portfolio-templates/portfolio-sidebar.php:153
 msgid "Next"
 msgstr ""
 
