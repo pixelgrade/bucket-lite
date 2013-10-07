@@ -35,7 +35,7 @@
                         <?php $categories = wp_get_post_categories($post->ID); ?>
                         <?php if (count($categories)): ?>
                             <div class="entry__meta-box meta-box--categories">
-                                <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
+                                <span class="meta-box__box-title"><?php _e("Filled under", wpgrade::textdomain()); ?>: </span>
                                 <?php foreach ($categories as $cat): ?>
                                         <a href="<?php echo get_category_link($cat); ?>"
                                            rel="category">
@@ -48,7 +48,7 @@
                         <?php $tags = wp_get_post_tags($post->ID); ?>
                         <?php if (count($tags)): ?>
                             <div class="entry__meta-box meta-box--tags">
-                                <span class="meta-box__box-title"><?php _e("Tagged", wpGrade::textdomain()); ?>: </span>
+                                <span class="meta-box__box-title"><?php _e("Tagged", wpgrade::textdomain()); ?>: </span>
                                     <?php foreach ($tags as $tag):  ?>
                                         <a href="<?php echo get_tag_link($tag->term_id); ?>"
                                            rel="tag">
@@ -59,7 +59,7 @@
                         <?php endif; ?>
     	                <?php if (wpgrade::option('portfolio_single_show_share_links')): ?>
                         <div class="social-links">
-                            <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
+                            <span class="social-links__message"><?php _e("Share", wpgrade::textdomain()); ?>: </span>
                             <ul class="social-links__list">
                                 <?php if (wpgrade::option('portfolio_single_share_links_twitter')): ?>
                                     <li>
