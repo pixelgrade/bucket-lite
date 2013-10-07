@@ -499,7 +499,7 @@
 			"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
 			"settings":
 			{
-				"buffer_size": 11421,
+				"buffer_size": 11656,
 				"line_ending": "Windows"
 			}
 		}
@@ -552,6 +552,7 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_masonry.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/pages/_project.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/pages/_post.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_gallery-item.scss",
@@ -678,8 +679,7 @@
 		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/plugins/_wpcf7.scss",
 		"/E/uniserver/www/citylife/wp-includes/theme-compat/footer.php",
 		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/widgets/_categories.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/_variables.scss",
-		"/E/uniserver/www/citylife/wp-content/themes/citylife/footer.php"
+		"/E/uniserver/www/citylife/wp-content/themes/citylife/library/scss/_variables.scss"
 	],
 	"find":
 	{
@@ -761,6 +761,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"HEAD",
 			"yale",
 			"gallery_slideshow(",
 			"<dl",
@@ -887,8 +888,7 @@
 			"entry-content",
 			".entry-content a",
 			"btn",
-			"nav-bt",
-			"site-nav"
+			"nav-bt"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1098,15 +1098,15 @@
 					"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
 					"settings":
 					{
-						"buffer_size": 11421,
+						"buffer_size": 11656,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5540,
+								5540
 							]
 						],
 						"settings":
@@ -1116,7 +1116,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 432.0,
+						"translation.y": 1319.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1165,6 +1165,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"mas",
+				"theme-content/scss/modules/_masonry.scss"
+			],
 			[
 				"full",
 				"theme-partials/portfolio-templates/portfolio-fullwidth.php"
@@ -1672,10 +1676,6 @@
 			[
 				"_grid",
 				"wp-content/plugins/pixelgrade-shortcodes/scss/_grid.scss"
-			],
-			[
-				"featured",
-				"wp-content/themes/citylife/library/scss/components/_featured-image.scss"
 			]
 		],
 		"width": 0.0
