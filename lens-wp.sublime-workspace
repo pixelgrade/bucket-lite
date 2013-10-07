@@ -494,6 +494,14 @@
 				"buffer_size": 2904,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
+			"settings":
+			{
+				"buffer_size": 11421,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -753,6 +761,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"yale",
 			"gallery_slideshow(",
 			"<dl",
 			"<dt",
@@ -879,8 +888,7 @@
 			".entry-content a",
 			"btn",
 			"nav-bt",
-			"site-nav",
-			"#page"
+			"site-nav"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -917,7 +925,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1084,6 +1092,34 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
+					"settings":
+					{
+						"buffer_size": 11421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -1129,6 +1165,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"full",
+				"theme-partials/portfolio-templates/portfolio-fullwidth.php"
+			],
 			[
 				"pro",
 				"theme-content/scss/pages/_project.scss"
@@ -1636,10 +1676,6 @@
 			[
 				"featured",
 				"wp-content/themes/citylife/library/scss/components/_featured-image.scss"
-			],
-			[
-				"_tem",
-				"wp-content/themes/citylife/library/scss/shortcodes/_teammember.scss"
 			]
 		],
 		"width": 0.0

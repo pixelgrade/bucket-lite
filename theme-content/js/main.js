@@ -4597,7 +4597,7 @@ function animateBlog(direction) {
                     } else {
 
                         var $item = $(columns[column][item]),
-                            timeout = item * columns.length + column;
+                            timeout = items - (item * columns.length + column);
 
                         setTimeout(function() {
                             $item.removeClass('is-loaded');
