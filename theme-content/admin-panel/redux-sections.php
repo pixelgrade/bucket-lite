@@ -372,7 +372,14 @@
                     'portrait' => 'Portrait',
                 ),
                 'std' => 'Landscape'
-            )            
+            ),
+			array(
+				'title' => __('How many projects on portfolio page'),
+				'id' => 'portfolio_archive_limit',
+				'type' => 'text',
+				'validation' => 'validation_numeric',
+				'std' => '2'
+			),
 		)
 	);
 
