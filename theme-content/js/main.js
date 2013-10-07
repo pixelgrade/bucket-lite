@@ -3799,12 +3799,12 @@ function niceScrollInit() {
         $('html').addClass('nicescroll');
         $('[data-smoothscrolling]').niceScroll({
             zindex: 9999,
-            cursoropacitymin: 0.8,
+            cursoropacitymin: 0.3,
             cursorwidth: 7,
             cursorborder: 0,
-            mousescrollstep: 60,
-            scrollspeed: 80,
-            cursorcolor: "#000000"
+            mousescrollstep: 40,
+            scrollspeed: 100,
+            cursorcolor: '#000000'
         });
     }
 }
@@ -4597,7 +4597,7 @@ function animateBlog(direction) {
                     } else {
 
                         var $item = $(columns[column][item]),
-                            timeout = item * columns.length + column;
+                            timeout = items - (item * columns.length + column);
 
                         setTimeout(function() {
                             $item.removeClass('is-loaded');

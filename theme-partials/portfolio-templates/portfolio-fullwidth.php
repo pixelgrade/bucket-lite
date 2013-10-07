@@ -23,8 +23,11 @@
 
     if ( !empty($attachments) ) : ?>
     <div class="featured-image">
-        <?php 
-            $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagescale="'.$image_scale_mode.'"';
+        <?php
+            if ($image_scale_mode == '') {
+                $image_scale_mode = 'fill';
+            }
+            $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagealigncenter data-imagescale="'.$image_scale_mode.'"';
         ?>
         <div class="pixslider js-pixslider" data-bullets data-customarrows <?php echo $data_scaling; ?>>
             <?php
@@ -96,10 +99,12 @@
                     <hr class="separator separator--dotted" />
 
                     <div class="entry__meta entry__meta--project cf">
-                        <div class="entry__meta-box meta-box--client">
-                            <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                            <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
-                        </div>  
+                        <?php if($client_name != '') : ?>
+                            <div class="entry__meta-box meta-box--client">
+                                <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
+                                <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
+                            </div>
+                        <?php endif; ?> 
                         <?php 
                             if ($categories): ?>                                    
                             <div class="entry__meta-box meta-box--categories">

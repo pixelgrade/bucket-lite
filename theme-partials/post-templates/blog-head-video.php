@@ -13,6 +13,7 @@
     <hr class="separator separator--dotted grow">    
     <div class="entry__content"><?php the_excerpt(); ?></div>
 </div>
+
 <?php if ( has_post_thumbnail() ) : ?>
     <div class="entry__featured-image">
         <a href="<?php the_permalink(); ?>" class="image__item-link mfp-video">
