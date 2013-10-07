@@ -99,10 +99,12 @@
                     <hr class="separator separator--dotted" />
 
                     <div class="entry__meta entry__meta--project cf">
-                        <div class="entry__meta-box meta-box--client">
-                            <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                            <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
-                        </div>  
+                        <?php if($client_name != '') : ?>
+                            <div class="entry__meta-box meta-box--client">
+                                <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
+                                <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
+                            </div>
+                        <?php endif; ?> 
                         <?php 
                             if ($categories): ?>                                    
                             <div class="entry__meta-box meta-box--categories">
