@@ -98,7 +98,7 @@
                     <div class="entry__meta entry__meta--project cf">
                         <div class="entry__meta-box meta-box--client">
                             <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
-                            <a href="http://localhost/prism/?cat=2" title="View all posts in Ideas" rel="category">Yale House of Style</a>
+                            <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                         </div>  
                         <?php 
                             if ($categories): ?>                                    
