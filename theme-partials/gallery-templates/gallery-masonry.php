@@ -30,10 +30,10 @@
                     <h4 class="text--error">Wrong Password</h4>
                     <p>Please enter your password again:</p>
                     <div class="row">
-                        <div class="col-8 hand-span-6">
-                            <input class="col-8 hand-span-6" type="password" required="required" size="20" id="pwbox-531" name="post_password" placeholder="Password.."/></label><br/>
+                        <div class="col-6 hand-span-6">
+                            <input type="password" required="required" size="20" id="pwbox-531" name="post_password" placeholder="Password.."/></label><br/>
                         </div>
-                        <div class="col-4 hand-span-6">
+                        <div class="col-6 hand-span-6">
                             <input type="submit" name="Submit" class="btn btn--huge"/>
                         </div>
                     </div>
