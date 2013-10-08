@@ -69,14 +69,6 @@
 			$style_query['port_color'] = $port_color;
 		}
 
-//		$custom_css = wpgrade::option('custom_css');
-//
-//		if ($custom_css) {
-//			$style_query['custom_css'] = $custom_css;
-//		}
-
-//		wp_enqueue_style('wpgrade-php-style', get_template_directory_uri() . '/theme-content/css/options.css.php?'.http_build_query($style_query, '', '&amp;'));
-
 		if ( wpgrade::option('inject_custom_css') == 'file' ){
             wp_enqueue_style('wpgrade-custom-style', get_template_directory_uri() . '/theme-content/css/custom.css' );
         }

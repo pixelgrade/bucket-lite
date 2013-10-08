@@ -61,4 +61,13 @@ function wpgrade_add_desktop_icons(){
 	}
 
 }
-add_action('wp_head', 'wpgrade_add_desktop_icons');
+add_action('head', 'wpgrade_add_desktop_icons');
+
+function wpgrade_prepare_password_for_custom_post_types(){
+
+	global $wpgrade_private_post;
+	$wpgrade_private_post = lens::is_password_protected();
+
+}
+
+add_action('wp', 'wpgrade_prepare_password_for_custom_post_types');
