@@ -158,7 +158,7 @@
 				'title' => __('Custom CSS Style', wpgrade::textdomain()),
 				'sub_desc' => __('Use this area to make slight css changes. It will be included in the head section of the page.', wpgrade::textdomain()),
 				'desc' => __('', wpgrade::textdomain()),
-				'validate' => 'html'
+                'validate_callback' => 'write_custom_css',
 			),
 			array(
 				'id' => 'custom_js',
@@ -169,12 +169,15 @@
 				'validate' => 'html'
 			),
 			array(
-				'id' => 'display_custom_css_inline',
-				'type' => 'checkbox',
-				'title' => __('Display Custom Css Inline', wpgrade::textdomain()),
-				'sub_desc' => __('By default '.wpgrade::themename().' saves all custom css settings in a file custom_css.css.php.<br />If your host doesn\'t support the .css.php mimetype you will need to display the custom css inline by turning this setting on.', wpgrade::textdomain()),
+				'id' => 'inject_custom_css',
+				'type' => 'select',
+				'title' => __('How to inject the custom css', wpgrade::textdomain()),
+				'sub_desc' => __('By default '.wpgrade::themename().' saves all custom css inline.<br />'.
+                            'You could choose to write a .css file when you save this setting (Note: You will need permisions to write a file to this host)<br />'.
+                            'For a few css rules it would be recommended to select Http query, but the characters number is limited to 100 in IE.', wpgrade::textdomain()),
 				'std' => '0',
 				'switch' => true,
+                'options' => array('inline' => 'Inline', 'file' => 'Write To File', 'http_query' => 'Http Query' ),
 			),
 		)
 	);
