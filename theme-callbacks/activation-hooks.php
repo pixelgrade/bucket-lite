@@ -15,18 +15,18 @@ function wpgrade_callback_geting_active() {
 	$types_options[$theme_key]['post_types'] = array(
 		'lens_portfolio' => array(
 			'labels' => array (
-				'name' => 'Project',
-				'singular_name' => 'Project',
-				'add_new' => 'Add New',
-				'add_new_item' => 'Add New Project',
-				'edit_item' => 'Edit Project',
-				'new_item' => 'New Project',
-				'all_items' => 'All Projects',
-				'view_item' => 'View Project',
-				'search_items' => 'Search Projects',
-				'not_found' => 'No Project found',
-				'not_found_in_trash' => 'No Project found in Trash',
-				'menu_name' => 'Projects',
+				'name' => __('Project', wpgrade::textdomain()),
+				'singular_name' => __('Project', wpgrade::textdomain()),
+				'add_new' => __('Add New', wpgrade::textdomain()),
+				'add_new_item' => __('Add New Project', wpgrade::textdomain()),
+				'edit_item' => __('Edit Project', wpgrade::textdomain()),
+				'new_item' => __('New Project', wpgrade::textdomain()),
+				'all_items' => __('All Projects', wpgrade::textdomain()),
+				'view_item' => __('View Project', wpgrade::textdomain()),
+				'search_items' => __('Search Projects', wpgrade::textdomain()),
+				'not_found' => __('No Project found', wpgrade::textdomain()),
+				'not_found_in_trash' => __('No Project found in Trash', wpgrade::textdomain()),
+				'menu_name' => __('Projects', wpgrade::textdomain()),
 			),
 			'public' => true,
 			'rewrite' => array (
@@ -41,18 +41,18 @@ function wpgrade_callback_geting_active() {
 		),
 		'lens_gallery' => array(
 			'labels' => array (
-				'name' => 'Gallery',
-				'singular_name' => 'Gallery',
-				'add_new' => 'Add New',
-				'add_new_item' => 'Add New Gallery',
-				'edit_item' => 'Edit Gallery',
-				'new_item' => 'New Gallery',
-				'all_items' => 'All Galleries',
-				'view_item' => 'View Gallery',
-				'search_items' => 'Search Galleries',
-				'not_found' => 'No Gallery found',
-				'not_found_in_trash' => 'No Gallery found in Trash',
-				'menu_name' => 'Galleries',
+				'name' => __('Gallery', wpgrade::textdomain()),
+				'singular_name' => __('Gallery', wpgrade::textdomain()),
+				'add_new' => __('Add New', wpgrade::textdomain()),
+				'add_new_item' => __('Add New Gallery', wpgrade::textdomain()),
+				'edit_item' => __('Edit Gallery', wpgrade::textdomain()),
+				'new_item' => __('New Gallery', wpgrade::textdomain()),
+				'all_items' => __('All Galleries', wpgrade::textdomain()),
+				'view_item' => __('View Gallery', wpgrade::textdomain()),
+				'search_items' => __('Search Galleries', wpgrade::textdomain()),
+				'not_found' => __('No Gallery found', wpgrade::textdomain()),
+				'not_found_in_trash' => __('No Gallery found in Trash', wpgrade::textdomain()),
+				'menu_name' => __('Galleries', wpgrade::textdomain()),
 			),
 			'public' => true,
 			'rewrite' => array (
@@ -70,17 +70,17 @@ function wpgrade_callback_geting_active() {
 		'lens_portfolio_categories' => array(
 			'hierarchical' => true,
 			'labels' => array (
-				'name' => 'Portfolio Categories',
-				'singular_name' => 'Portfolio Category',
-				'search_items' => 'Search Portfolio Category',
-				'all_items' => 'All Portfolio Categories',
-				'parent_item' => 'Parent Portfolio Category',
-				'parent_item_colon' => 'Parent Portfolio Category: ',
-				'edit_item' => 'Edit Portfolio Category',
-				'update_item' => 'Update Portfolio Category',
-				'add_new_item' => 'Add New Portfolio Category',
-				'new_item_name' => 'New Portfolio Category Name',
-				'menu_name' => 'Portfolio Categories',
+				'name' => __('Portfolio Categories', wpgrade::textdomain()),
+				'singular_name' => __('Portfolio Category', wpgrade::textdomain()),
+				'search_items' => __('Search Portfolio Category', wpgrade::textdomain()),
+				'all_items' => __('All Portfolio Categories', wpgrade::textdomain()),
+				'parent_item' => __('Parent Portfolio Category', wpgrade::textdomain()),
+				'parent_item_colon' => __('Parent Portfolio Category: ', wpgrade::textdomain()),
+				'edit_item' => __('Edit Portfolio Category', wpgrade::textdomain()),
+				'update_item' => __('Update Portfolio Category', wpgrade::textdomain()),
+				'add_new_item' => __('Add New Portfolio Category', wpgrade::textdomain()),
+				'new_item_name' => __('New Portfolio Category Name', wpgrade::textdomain()),
+				'menu_name' => __('Portfolio Categories', wpgrade::textdomain()),
 			),
 			'show_admin_column' => true,
 			'rewrite' => array ( 'slug' => 'portfolio-category', 'with_front' => false ),
@@ -90,17 +90,17 @@ function wpgrade_callback_geting_active() {
 		'lens_gallery_categories' => array(
 			'hierarchical' => true,
 			'labels' => array (
-				'name' => 'Gallery Categories',
-				'singular_name' => 'Gallery Category',
-				'search_items' => 'Search Gallery Category',
-				'all_items' => 'All Gallery Categories',
-				'parent_item' => 'Parent Gallery Category',
-				'parent_item_colon' => 'Parent Gallery Category: ',
-				'edit_item' => 'Edit Gallery Category',
-				'update_item' => 'Update Gallery Category',
-				'add_new_item' => 'Add New Gallery Category',
-				'new_item_name' => 'New Gallery Category Name',
-				'menu_name' => 'Gallery Categories',
+				'name' => __('Gallery Categories', wpgrade::textdomain()),
+				'singular_name' => __('Gallery Category', wpgrade::textdomain()),
+				'search_items' => __('Search Gallery Category', wpgrade::textdomain()),
+				'all_items' => __('All Gallery Categories', wpgrade::textdomain()),
+				'parent_item' => __('Parent Gallery Category', wpgrade::textdomain()),
+				'parent_item_colon' => __('Parent Gallery Category: ', wpgrade::textdomain()),
+				'edit_item' => __('Edit Gallery Category', wpgrade::textdomain()),
+				'update_item' => __('Update Gallery Category', wpgrade::textdomain()),
+				'add_new_item' => __('Add New Gallery Category', wpgrade::textdomain()),
+				'new_item_name' => __('New Gallery Category Name', wpgrade::textdomain()),
+				'menu_name' => __('Gallery Categories', wpgrade::textdomain()),
 			),
 			'show_admin_column' => true,
 			'rewrite' => array ( 'slug' => 'gallery-category', 'with_front' => false ),
@@ -128,7 +128,7 @@ function wpgrade_callback_geting_active() {
 		),
 		'post_gallery_format' => array(
 			'id'         => 'post_format_metabox_gallery',
-			'title'      => 'Gallery Settings',
+			'title'      => __('Gallery Settings', wpgrade::textdomain()),
 			'pages'      => array( 'post' ), // Post type
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -289,15 +289,15 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Full Width Slider',
+							'name' => __('Full Width Slider', wpgrade::textdomain()),
 							'value' => 'fullwidth'
 						),
 						array(
-							'name' => 'Sidebar Right',
+							'name' => __('Sidebar Right', wpgrade::textdomain()),
 							'value' => 'sidebar'
 						),
 						array(
-							'name' => 'Classic',
+							'name' => __('Classic', wpgrade::textdomain()),
 							'value' => 'classic'
 						),
 					),
@@ -315,19 +315,19 @@ function wpgrade_callback_geting_active() {
 					'show_on'    => array( 'key' => 'select_value', 'value' => array( 'project_template' => 'fullwidth', 'project_template' => 'sidebar' ), ),
 					'options' => array(
                         array(
-                            'name' => 'Fit',
+                            'name' => __('Fit', wpgrade::textdomain()),
                             'value' => 'fit'
                         ),
                         array(
-                            'name' => 'Fill',
+                            'name' => __('Fill', wpgrade::textdomain()),
                             'value' => 'fill'
                         ),
                         array(
-                            'name' => 'Fit if Smaller',
+                            'name' => __('Fit if Smaller', wpgrade::textdomain()),
                             'value' => 'fit-if-smaller'
                         ),
                         array(
-                            'name' => 'Auto Height',
+                            'name' => __('Auto Height', wpgrade::textdomain()),
                             'value' => 'auto'
                         ),
 					),
@@ -347,7 +347,7 @@ function wpgrade_callback_geting_active() {
 		),
 		'lens_gallery' => array(
 			'id'         => 'lens_gallery',
-			'title'      => 'Gallery Detail',
+			'title'      => __('Gallery Detail', wpgrade::textdomain()),
 			'pages'      => array( 'lens_gallery' ), // Post type
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -364,15 +364,15 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Grid Thumbnails',
+							'name' => __('Grid Thumbnails', wpgrade::textdomain()),
 							'value' => 'masonry'
 						),
 						array(
-							'name' => 'Full Width Slider',
+							'name' => __('Full Width Slider', wpgrade::textdomain()),
 							'value' => 'fullwidth'
 						),
 						array(
-							'name' => 'Full Screen Slider',
+							'name' => __('Full Screen Slider', wpgrade::textdomain()),
 							'value' => 'fullscreen'
 						),
 					),
@@ -388,15 +388,15 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Fill',
+							'name' => __('Fill', wpgrade::textdomain()),
 							'value' => 'fill'
 						),
 						array(
-							'name' => 'Fit',
+							'name' => __('Fit', wpgrade::textdomain()),
 							'value' => 'fit'
 						),
 						array(
-							'name' => 'Fit if Smaller',
+							'name' => __('Fit if Smaller', wpgrade::textdomain()),
 							'value' => 'fit-if-smaller'
 						),
 					),
@@ -408,11 +408,11 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Landscape',
+							'name' => __('Landscape', wpgrade::textdomain()),
 							'value' => 'landscape'
 						),
 						array(
-							'name' => 'Portrait',
+							'name' => __('Portrait', wpgrade::textdomain()),
 							'value' => 'portrait'
 						)
 					),
@@ -425,11 +425,11 @@ function wpgrade_callback_geting_active() {
 					'type' => 'select',
 					'options' => array(
 						array(
-							'name' => 'Show',
+							'name' => __('Show', wpgrade::textdomain()),
 							'value' => true
 						),
 						array(
-							'name' => 'Hide',
+							'name' => __('Hide', wpgrade::textdomain()),
 							'value' => false
 						)
 					),
@@ -439,7 +439,7 @@ function wpgrade_callback_geting_active() {
 		),
         'lens_homepage_chooser' => array(
 			'id'         => 'lens_homepage_chooser',
-			'title'      => 'Choose Your Home Page',
+			'title'      => __('Choose Your Home Page', wpgrade::textdomain()),
 			'pages'      => array( 'page' ), // Post type
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -452,11 +452,11 @@ function wpgrade_callback_geting_active() {
 					'type' => 'radio_inline',
 					'options' => array(
 						array(
-							'name' => 'Portfolio Archive',
+							'name' => __('Portfolio Archive', wpgrade::textdomain()),
 							'value' => 'lens_portfolio'
 						),
 						array(
-							'name' => 'Gallery',
+							'name' => __('Gallery', wpgrade::textdomain()),
 							'value' => 'lens_gallery'
 						),
 					),
