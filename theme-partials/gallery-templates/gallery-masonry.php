@@ -8,7 +8,7 @@
                 if ( $post->post_password ===  $_POST['post_password'] ) {
                     $password = true;
                 } else {
-                    echo '<h3 class="warning">Wrong Password</h3>';
+                    echo '<h3 class="text--error">Wrong Password</h3>';
                 }
             }
 
@@ -16,14 +16,31 @@
     }
 
     if ( post_password_required() && !$password ) { // password protection ?>
-            <form method="post" action="<?php the_permalink() ?>">
-                <?php wp_nonce_field('password_protection','submit_password_nonce'); ?>
-                <input type="hidden" name="submit_password" value="1" />
-                <h3>Sorry but this requires a password</h3>
-                <p><label for="pwbox-531">Password:<br/>
-                    <input type="password" required="required" size="20" id="pwbox-531" name="post_password"/></label><br/>
-                    <input type="submit" name="Submit"/></p>
-            </form>
+    <div class="page-content">
+        <div class="page-main">
+            <header class="entry__header">
+                <h1 class="entry__title">Password <?php the_title(); ?></h1>
+                <div class="bleed--left"><hr class="separator separator--dotted grow"></div>
+            </header>
+            <div class="entry__body">
+                <form method="post" action="<?php the_permalink() ?>" class="comment-respond">
+                    <?php wp_nonce_field('password_protection','submit_password_nonce'); ?>
+                    <input type="hidden" name="submit_password" value="1" />
+                    <p>To view it please enter your password below:</p>
+                    <h4 class="text--error">Wrong Password</h4>
+                    <p>Please enter your password again:</p>
+                    <div class="row">
+                        <div class="col-8 hand-span-6">
+                            <input class="col-8 hand-span-6" type="password" required="required" size="20" id="pwbox-531" name="post_password" placeholder="Password.."/></label><br/>
+                        </div>
+                        <div class="col-4 hand-span-6">
+                            <input type="submit" name="Submit" class="btn btn--huge"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
         <?php
     } else { // password protection
 
