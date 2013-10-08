@@ -10,6 +10,6 @@
 function wpgrade_callback_load_custom_js() {
     $custom_js = wpgrade::option('custom_js');
     if ( ! empty($custom_js)) {
-		echo '<script type="text/javascript">'.$custom_js.'</script>';
+		echo "<script type=\"text/javascript\">\n;(function($){\n".$custom_js."\n})(jQuery);\n</script>\n";
     }
 }

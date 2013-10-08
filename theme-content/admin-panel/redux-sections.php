@@ -158,23 +158,25 @@
 				'title' => __('Custom CSS Style', wpgrade::textdomain()),
 				'sub_desc' => __('Use this area to make slight css changes. It will be included in the head section of the page.', wpgrade::textdomain()),
 				'desc' => __('', wpgrade::textdomain()),
-				'validate' => 'html'
+//                'validate_callback' => 'write_custom_css',
 			),
 			array(
 				'id' => 'custom_js',
 				'type' => 'textarea',
 				'title' => __('Custom Javascript', wpgrade::textdomain()),
 				'sub_desc' => __('Use this area to make custom javascript calls.This code will be loaded in head section', wpgrade::textdomain()),
-				'desc' => __('jQuery is available here.', wpgrade::textdomain()),
+				'desc' => __('jQuery is available here as $', wpgrade::textdomain()),
 				'validate' => 'html'
 			),
 			array(
-				'id' => 'display_custom_css_inline',
-				'type' => 'checkbox',
-				'title' => __('Display Custom Css Inline', wpgrade::textdomain()),
-				'sub_desc' => __('By default '.wpgrade::themename().' saves all custom css settings in a file custom_css.css.php.<br />If your host doesn\'t support the .css.php mimetype you will need to display the custom css inline by turning this setting on.', wpgrade::textdomain()),
-				'std' => '0',
+				'id' => 'inject_custom_css',
+				'type' => 'select',
+				'title' => __('How to inject the custom css', wpgrade::textdomain()),
+				'sub_desc' => __('By default '.wpgrade::themename().' saves the custom css in a file.<br />'.
+                            'If for some reason you don\'t have permisions to write a file on your host you should chose the "Inline" option', wpgrade::textdomain()),
+				'std' => 'file',
 				'switch' => true,
+                'options' => array( 'file' => 'Write To File', 'inline' => 'Inline' ),
 			),
 		)
 	);
