@@ -61,7 +61,7 @@ function wpgrade_add_desktop_icons(){
 	}
 
 }
-add_action('wp_head', 'wpgrade_add_desktop_icons');
+add_action('head', 'wpgrade_add_desktop_icons');
 
 function wpgrade_prepare_password_for_custom_post_types(){
 
@@ -70,4 +70,4 @@ function wpgrade_prepare_password_for_custom_post_types(){
 
 }
 
-add_action('wp_head', 'wpgrade_prepare_password_for_custom_post_types');
+add_action('wp', 'wpgrade_prepare_password_for_custom_post_types');

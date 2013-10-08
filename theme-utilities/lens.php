@@ -2125,7 +2125,7 @@ class lens
 							$wp_hasher = new PasswordHash(8, true);
 						}
 
-						var_dump( setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH ));
+						setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH );
 
 					} else {
 						$private_post['error'] = '<h4 class="text--error">Wrong Password</h4>';
