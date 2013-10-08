@@ -53,7 +53,8 @@ if ( isset($_GET["color"]) ){
 
 
     .mfp-video:hover .image__item-meta,
-    .image__item-meta {
+    .image__item-meta,
+    .touch .mosaic__item--page-title-mobile .image__item-meta {
         background-color: <?php echo $main_color; ?>;
         background-color: rgba(<?php echo $rgb; ?>, 0.8);
     }
