@@ -12,40 +12,39 @@
 		}
 		return $return;
 	}
-	add_action( 'redux-saved-lens', 'write_custom_css' );
+
     function write_custom_css($options) {
 
-	    var_dump($options);die();
+        if ( wpgrade::option('inject_custom_css') !== 'file' ) return;
 
-//        $return['value'] = $value;
-//        if ( wpgrade::option('inject_custom_css') !== 'file' ) return $return;
-//
-//        $error = false;
-//        if ( $value != $existing_value ) {
-//
-//            global $wp_filesystem;
-//            // Initialise the Wordpress filesystem, no more using file_put_contents function
-//            if (empty($wp_filesystem)) {
-//                require_once(ABSPATH .'/wp-admin/includes/file.php');
-//                WP_Filesystem();
-//            }
-//
-//            $css_dir = get_template_directory() . '/theme-content/css/';
-//
-//            $css = $value; // Get the custom css
-//            $wp_filesystem->put_contents(
-//                $css_dir . 'custom.css',
-//                $css,
-//                FS_CHMOD_FILE // predefined mode settings for WP files
-//            );
-//
-//        }
-//
-//        if($error == true) {
-//            $return['error'] = $field;
-//        }
-//        return $return;
+        $error = false;
+
+        global $wp_filesystem;
+        // Initialise the Wordpress filesystem, no more using file_put_contents function
+        if (empty($wp_filesystem)) {
+            require_once(ABSPATH .'/wp-admin/includes/file.php');
+            WP_Filesystem();
+        }
+
+        $css_dir = get_template_directory() . '/theme-content/css/';
+
+	    ob_start();
+        include wpgrade::corepartial('inline-custom-css'.EXT);
+	    $css = ob_get_clean();
+
+        $wp_filesystem->put_contents(
+            $css_dir . 'custom.css',
+            $css,
+            FS_CHMOD_FILE // predefined mode settings for WP files
+        );
+
+        if($error == true) {
+            echo 'There is been an error around';
+        }
+
     }
+	add_action( 'redux-opts-saved-lens_options', 'write_custom_css' );
+
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
 
