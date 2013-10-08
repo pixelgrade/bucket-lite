@@ -2122,10 +2122,10 @@ class lens
 						global $wp_hasher;
 						if ( empty( $wp_hasher ) ) {
 							require_once( ABSPATH . 'wp-includes/class-phpass.php' );
-							$wp_hasher = new PasswordHash(10, true);
+							$wp_hasher = new PasswordHash(8, true);
 						}
 
-						setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH );
+						var_dump( setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH ));
 
 					} else {
 						$private_post['error'] = '<h4 class="text--error">Wrong Password</h4>';

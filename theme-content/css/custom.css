@@ -17,7 +17,7 @@ a:hover > i.pixcode--icon,
 .btn:hover, .wpcf7-submit:hover, .form-submit #comment-submit:hover,
 .widget--header a:hover,
 a.site-home-link {
-    color: #0043ff;
+    color: #fffc00;
 }
 
 .rsNavSelected,
@@ -26,21 +26,21 @@ a.site-home-link {
 .btn, .wpcf7-submit, .form-submit #comment-submit,
 .progressbar__progress,
 .rsNavSelected {
-    background-color: #0043ff;
+    background-color: #fffc00;
 }
 
 .image__item-meta {
-    background-color: #0043ff;
-    background-color: rgba(0,67,255, 0.8);
+    background-color: #fffc00;
+    background-color: rgba(255,252,0, 0.8);
 }
 
 .mosaic__item--page-title .image__item-meta {
-    background-color: #0043ff;
+    background-color: #fffc00;
 }
 
 .loading .pace .pace-activity,
 .no-touch .arrow-button:hover {
-    border-color: #0043ff ;
+    border-color: #fffc00 ;
 }
 
 .loading .pace .pace-activity {
@@ -53,15 +53,15 @@ a.site-home-link {
 .menu-item--main:hover:after,
 .menu-item--main:focus:after,
 .menu-item--main:active:after {
-    border-top-color: #0043ff ;
+    border-top-color: #fffc00 ;
 }
 
 .header:before {
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #0043ff), color-stop(100%, #464a4d));
-    background-image: -webkit-linear-gradient(#0043ff 50%, #464a4d);
-    background-image: -moz-linear-gradient(#0043ff 50%, #464a4d);
-    background-image: -o-linear-gradient(#0043ff 50%, #464a4d);
-    background-image: linear-gradient(#0043ff 50%, #464a4d);
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #fffc00), color-stop(100%, #464a4d));
+    background-image: -webkit-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -moz-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -o-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: linear-gradient(#fffc00 50%, #464a4d);
 }
 
 .lt-ie9 .header:before {
@@ -69,80 +69,3 @@ a.site-home-link {
 }
 
 
-html,
-.wpcf7-form-control:not([type="submit"]),
-.wp-caption-text,
-blockquote:before,
-ol li,
-.comment__timestamp,
-.meta-box__box-title,
-.header-quote-content blockquote .author_description,
-.testimonial__author-title,
-.widget-content {
-    font-family: Allan;
-}
-
-.count, .count sup,
-.header-quote-content blockquote,
-.article-timestamp,
-.progressbar__title,
-.progressbar__tooltip,
-.testimonial__content,
-.testimonial__author-name,
-.tweet__meta,
-.search-query,
-.mfp-title,
-.entry__content ul li,
-.hN, .alpha, h1,
-.beta, h2, .gamma, h3,
-.masonry__item .entry__title,
-.single-portfolio-fullwidth .entry__title,
-.delta, h4, .epsilon, h5, .zeta, h6,
-.comment__author-name,
-.entry__meta-box a {
-    font-family: Almendra}
-
-.image__plus-icon,
-.image_item-description,
-.image_item-category,
-.btn, .wpcf7-submit, .form-submit #comment-submit,
-.header,
-.header .hN,
-.header .alpha,
-.header h1,
-.header .beta,
-.header h2,
-.header .gamma,
-.header h3,
-.header .masonry__item .entry__title,
-.masonry__item .header .entry__title,
-.header .single-portfolio-fullwidth .entry__title,
-.single-portfolio-fullwidth .header .entry__title,
-.header .delta,
-.header h4,
-.header .epsilon,
-.header h5,
-.header .zeta,
-.header h6,
-.footer .hN,
-.footer .alpha, .footer h1,
-.footer .beta,
-.footer h2,
-.footer .gamma,
-.footer h3,
-.footer .masonry__item .entry__title,
-.masonry__item .footer .entry__title,
-.footer .single-portfolio-fullwidth .entry__title,
-.single-portfolio-fullwidth .footer .entry__title,
-.footer .delta,
-.footer h4,
-.footer .epsilon,
-.footer h5,
-.footer .zeta,
-.footer h6,
-.text-link,
-.projects_nav-item a {
-    font-family: Simonetta;
-}
-
-.site-logo { opacity: 0.5; }
