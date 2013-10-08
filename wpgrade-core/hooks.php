@@ -86,7 +86,7 @@ function wpgrade_callback_themesetup() {
     // custom javascript handlers
     add_action('wp_enqueue_scripts', 'wpgrade_callback_load_custom_js', 9001);
 
-    if ( wpgrade::option('display_custom_css_inline')) {
+    if ( wpgrade::option('inject_custom_css') == 'inline' ) {
         $handler = wpgrade::confoption('custom-css-handler', null);
 
         if (empty($handler)) {

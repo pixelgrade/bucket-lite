@@ -181,6 +181,3 @@ if ( isset($_GET["menu_font"]) ){
 
 <?php }
 
-if ( isset($_GET["custom_css"]) ){
-	echo $_GET["custom_css"];
-}
