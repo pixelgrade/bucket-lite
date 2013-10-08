@@ -2099,4 +2099,43 @@ class lens
 
 		return '';
 	}
+
+	/**
+	 * Checks if a psot type object needs password aproval
+	 *
+	 * @return if the form was submited it returns an array with the success status and a message
+	 */
+
+	static function is_password_protected(){
+		global $post;
+		$private_post = array('allowed' => false, 'error' => '');
+
+		if ( isset( $_POST['submit_password']) ) { // when we have a submision check the password and its submision
+			if ( isset( $_POST['submit_password_nonce'] ) && wp_verify_nonce( $_POST['submit_password_nonce'], 'password_protection') ) {
+				if ( isset ( $_POST['post_password'] ) && !empty($_POST['post_password']) ) { // some simple checks on password
+					// finally test if the password submitted is correct
+					if ( $post->post_password ===  $_POST['post_password'] ) {
+						$private_post['allowed'] = true;
+
+						// ok if we have a correct password we should inform wordpress too
+						// otherwise the mad dog will put the password form again in the_content() and other filters
+						global $wp_hasher;
+						if ( empty( $wp_hasher ) ) {
+							require_once( ABSPATH . 'wp-includes/class-phpass.php' );
+							$wp_hasher = new PasswordHash(10, true);
+						}
+
+						setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH );
+
+					} else {
+						$private_post['error'] = '<h4 class="text--error">Wrong Password</h4>';
+					}
+				}
+			}
+		}
+
+		return $private_post;
+	}
+
+
 }
