@@ -165,7 +165,7 @@
 				'type' => 'textarea',
 				'title' => __('Custom Javascript', wpgrade::textdomain()),
 				'sub_desc' => __('Use this area to make custom javascript calls.This code will be loaded in head section', wpgrade::textdomain()),
-				'desc' => __('jQuery is available here.', wpgrade::textdomain()),
+				'desc' => __('jQuery is available here as $', wpgrade::textdomain()),
 				'validate' => 'html'
 			),
 			array(

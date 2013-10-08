@@ -7,7 +7,9 @@
 	 */
 	function wpgrade_callback_inlined_custom_style() {
 
-		echo '<style  type="text/css">';
+		ob_start();
 		include wpgrade::corepartial('inline-custom-css'.EXT);
-		echo '</style>';
+		$custom_css = ob_get_clean();;
+
+		wp_add_inline_style( 'wpgrade-main-style', $custom_css );
 	}
