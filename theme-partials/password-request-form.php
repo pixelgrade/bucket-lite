@@ -10,9 +10,16 @@
 				<form method="post" action="<?php the_permalink() ?>" class="comment-respond">
 					<?php wp_nonce_field('password_protection','submit_password_nonce'); ?>
 					<input type="hidden" name="submit_password" value="1" />
-					<p>To view it please enter your password below:</p>
-					<?php echo $wpgrade_private_post['error']; ?>
-					<p>Please enter your password again:</p>
+				
+					<?php 
+						if($wpgrade_private_post['error']) {
+							echo $wpgrade_private_post['error'];
+							echo '<p>Please enter your password again:</p>';
+						} else {
+							echo '<p>To view it please enter your password below:</p>';
+						}
+					?>
+					
 					<div class="row">
 						<div class="col-6 hand-span-6">
 							<input type="password" required="required" size="20" id="pwbox-531" name="post_password" placeholder="Password.."/></label><br/>
