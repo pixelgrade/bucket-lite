@@ -1,0 +1,71 @@
+
+.inverse a,
+.highlighted,
+blockquote:before,
+.emphasized:before,
+.menu-item--main:hover > a,
+.menu-item--main:focus > a,
+.menu-item--main:active > a,
+.menu-item--main.current-menu-item > a,
+.menu-item--main.current-menu-ancestor > a,
+.menu-item--main.current-menu-parent > a,
+.mosaic__filter .filter.active,
+.complete i,
+.liked i,
+.article-timestamp--single .article-timestamp__date,
+a:hover > i.pixcode--icon,
+.btn:hover, .wpcf7-submit:hover, .form-submit #comment-submit:hover,
+.widget--header a:hover,
+a.site-home-link {
+    color: #fffc00;
+}
+
+.rsNavSelected,
+.pin_ring--outer,
+.liked i,
+.btn, .wpcf7-submit, .form-submit #comment-submit,
+.progressbar__progress,
+.rsNavSelected {
+    background-color: #fffc00;
+}
+
+.image__item-meta {
+    background-color: #fffc00;
+    background-color: rgba(255,252,0, 0.8);
+}
+
+.mosaic__item--page-title .image__item-meta {
+    background-color: #fffc00;
+}
+
+.loading .pace .pace-activity,
+.no-touch .arrow-button:hover {
+    border-color: #fffc00 ;
+}
+
+.loading .pace .pace-activity {
+    border-top-color: transparent;
+}
+
+.menu-item--main.current-menu-item:after,
+.menu-item--main.current-menu-ancestor:after,
+.menu-item--main.current-menu-parent:after,
+.menu-item--main:hover:after,
+.menu-item--main:focus:after,
+.menu-item--main:active:after {
+    border-top-color: #fffc00 ;
+}
+
+.header:before {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #fffc00), color-stop(100%, #464a4d));
+    background-image: -webkit-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -moz-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -o-linear-gradient(#fffc00 50%, #464a4d);
+    background-image: linear-gradient(#fffc00 50%, #464a4d);
+}
+
+.lt-ie9 .header:before {
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D');
+}
+
+

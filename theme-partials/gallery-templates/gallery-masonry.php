@@ -11,7 +11,6 @@
                     echo '<h3 class="text--error">Wrong Password</h3>';
                 }
             }
-
         }
     }
 
