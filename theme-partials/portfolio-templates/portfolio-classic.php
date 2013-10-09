@@ -84,7 +84,10 @@
                 ?>
             </article><!-- #post -->
             
-            <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+            <?php // $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php');
+	        if ( function_exists('yarpp_related') ) {
+		        $yarpp_active = true;
+	        } ?>
             
             <section class="related-projects_container entry__body">
                 <header class="related-projects_header">

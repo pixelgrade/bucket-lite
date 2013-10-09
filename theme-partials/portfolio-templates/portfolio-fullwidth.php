@@ -6,20 +6,26 @@
 	$client_link = '#';
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 
-	$gallery_ids = array();
+
 	$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
 	if (!empty($gallery_ids)) {
 		$gallery_ids = explode(',',$gallery_ids);
+	} else {
+		$gallery_ids = array();
 	}
 
     $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'portfolio_image_scale_mode', true);
 
-    $attachments = get_posts( array(
-        'post_type' => 'attachment',
-        'posts_per_page' => -1,
-        'orderby' => "post__in",
-        'post__in'     => $gallery_ids
-    ) );
+	if ( !empty($gallery_ids) ) {
+		$attachments = get_posts( array(
+			'post_type' => 'attachment',
+			'posts_per_page' => -1,
+			'orderby' => "post__in",
+			'post__in'     => $gallery_ids
+		) );
+	} else {
+		$attachments = array();
+	}
 
     if ( !empty($attachments) ) : ?>
     <div class="featured-image">
@@ -166,13 +172,19 @@
                         </div>
                     <?php endif; ?>
                 </footer><!-- .entry-meta -->
-                <?php
-                    // If comments are open or we have at least one comment, load up the comment template
-                       if ( comments_open() || '0' != get_comments_number() )
-                          comments_template();
-                ?>
+                <?php // If comments are open or we have at least one comment, load up the comment template
+                   if ( comments_open() || '0' != get_comments_number() )
+                      comments_template(); ?>
             </article><!-- #post -->
-            <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+            <?php //	        $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php');
+	        // is_plugin_active() is available only in plugins.
+	        // you need to include_once(ABSPATH.'wp-admin/includes/plugin.php'); to have this function
+	        // and it sucks.
+	        //                   andreilupu
+
+	        if ( function_exists('yarpp_related') ) {
+		        $yarpp_active = true;
+	        } ?>
             <section class="related-projects_container entry__body">
                 <header class="related-projects_header">
                     <?php if($yarpp_active) : ?>
