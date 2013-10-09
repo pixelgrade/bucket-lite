@@ -2,8 +2,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry__body'); ?> >
     <div class="page-content  page-content--with-sidebar  project--sidebar">
 
+        <h1 class="beta  entry__title  title-mobile"><?php the_title(); ?></h1>    
         <div class="page-main  project--sidebar__images  js-project-gallery">
-            <h1 class="beta  entry__title  title-mobile"><?php the_title(); ?></h1>    
 
             <?php
                 $client_name = '';
@@ -47,15 +47,9 @@
                         } else {
                             $class = ' mfp-image';
                         }
-
                         echo '<a href="' . $attachment_url .'" class="'. $class . ' data-design-thumbnail"><img alt="" src="' . $thumbimg[0] . '" /></a>';
                     }
                 }
-            ?>
-            <?php
-                // If comments are open or we have at least one comment, load up the comment template
-               if ( comments_open() || '0' != get_comments_number() )
-                  comments_template();
             ?>
         </div><!-- .page-main -->
 
@@ -138,7 +132,11 @@
         </div><!-- .page-side -->
 
         <div class="page-main  project--sidebar__related">
-            <?php //$yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php');
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template
+               if ( comments_open() || '0' != get_comments_number() )
+                  comments_template();
+            //$yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php');
 	        if ( function_exists('yarpp_related') ) {
 		        $yarpp_active = true;
 	        } ?>

@@ -19,12 +19,14 @@
     position: absolute;
     @include rem(bottom, 1.5* $base-spacing-unit);
     @include rem(right, 2 * $base-spacing-unit);
+    z-index: 100;
 }
 
 .gallery-control--left {
     right: auto;
     @include rem(left, 2 * $base-spacing-unit);
 }
+
 
 /*----------------------------------------*\
 *   $GALLERY-CONTROLS
@@ -148,9 +150,15 @@
 
 @include media(to hand) {
     .single-lens_portfolio.single-portfolio-fullwidth{
-        .gallery-control--gallery-fullscreen{
+        .gallery-control{
             display: none;
         }
+    }
+}
+
+.single-portfolio-fullwidth{
+    .rsBullets{
+        z-index: 100;
     }
 }
 
