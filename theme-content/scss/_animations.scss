@@ -157,7 +157,8 @@
 }
 
 .single-lens_gallery .pixslider .rsBullets,
-.single-lens_gallery .gallery-control {
+.single-lens_gallery .gallery-control,
+.single-portfolio-fullwidth .gallery-control{
     opacity: 0;
     @include backface-visibility(hidden);
     @include perspective(1000px);

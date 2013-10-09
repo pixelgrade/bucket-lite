@@ -14,9 +14,10 @@
     ) );
 
     $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'gallery_image_scale_mode', true);
+    $slider_transition = get_post_meta(get_the_ID(), wpgrade::prefix().'gallery_slider_transition', true);
 
     if ( $attachments ) : ?>
-        <div class="pixslider js-pixslider" data-customarrows="right" data-fullscreen  data-imagealigncenter  data-imagescale="<?php echo $image_scale_mode; ?>">
+        <div class="pixslider js-pixslider" data-customarrows="right" data-fullscreen  data-imagealigncenter  data-imagescale="<?php echo $image_scale_mode; ?>" data-slidertransition="<?php echo $slider_transition; ?>">
             <?php 
             foreach ( $attachments as $attachment ) :
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );

@@ -13,6 +13,7 @@
 	}
 
     $image_scale_mode = get_post_meta(get_the_ID(), wpgrade::prefix().'portfolio_image_scale_mode', true);
+    $slider_transition = get_post_meta(get_the_ID(), wpgrade::prefix().'portfolio_slider_transition', true);
 
     $attachments = get_posts( array(
         'post_type' => 'attachment',
@@ -29,7 +30,7 @@
             }
             $data_scaling = $image_scale_mode == 'auto' ? 'data-autoheight' : 'data-imagealigncenter data-imagescale="'.$image_scale_mode.'"';
         ?>
-        <div class="pixslider js-pixslider" data-bullets data-customarrows <?php echo $data_scaling; ?>>
+        <div class="pixslider js-pixslider" data-bullets data-customarrows <?php echo $data_scaling; ?> data-slidertransition="<?php echo $slider_transition; ?>">
             <?php
 			if (!empty($video)) { ?>
 				<div class="pixslider__slide video">
