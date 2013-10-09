@@ -735,7 +735,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 97.0,
 		"where_history":
 		[
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
@@ -973,7 +973,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -1069,8 +1069,8 @@
 						"selection":
 						[
 							[
-								4103,
-								4103
+								0,
+								4111
 							]
 						],
 						"settings":
@@ -1125,8 +1125,8 @@
 						"selection":
 						[
 							[
-								1663,
-								1663
+								0,
+								2904
 							]
 						],
 						"settings":
@@ -1382,6 +1382,14 @@
 		"selected_items":
 		[
 			[
+				"proje",
+				"theme-content/scss/pages/_project.scss"
+			],
+			[
+				"gallery-co",
+				"theme-content/scss/modules/_gallery-control.scss"
+			],
+			[
 				"gallery-im",
 				"theme-content/scss/modules/_gallery-item.scss"
 			],
@@ -1416,10 +1424,6 @@
 			[
 				"post",
 				"theme-content/scss/pages/_post.scss"
-			],
-			[
-				"proje",
-				"theme-content/scss/pages/_project.scss"
 			],
 			[
 				"galler",
@@ -1888,10 +1892,6 @@
 			[
 				"footer.scs",
 				"wp-content/themes/citylife/library/scss/components/_footer.scss"
-			],
-			[
-				"header.scss",
-				"wp-content/themes/citylife/library/scss/components/_header.scss"
 			]
 		],
 		"width": 0.0
