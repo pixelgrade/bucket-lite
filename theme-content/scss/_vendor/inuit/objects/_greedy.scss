@@ -207,10 +207,6 @@ $classT: (); // type
 .row {
     @extend .cf;
     @include rem(margin-left, -1 * $greedy-gutter);
-
-    @include media(to hand) {
-        margin-left: 0;
-    }
 }
 
 .column, .columns {
@@ -219,10 +215,4 @@ $classT: (); // type
   @include rem(border-left-width, $greedy-gutter);
   min-height: 1px;
   position: relative;
-
-  @include media(to hand) {
-    float: none;
-    border-left-width: 0;
-    width: 100%;
-  }
 }

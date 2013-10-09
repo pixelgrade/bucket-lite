@@ -32,7 +32,7 @@ html {
 /* prevent flicker on ios */
 .content, .header, .header__inner-wrap {
     @include backface-visibility(hidden);
-    @include perspective(1000px);
+    // @include perspective(1000px);
 }
 
 .wrapper {
@@ -304,7 +304,7 @@ img.mfp-img{
 // flicker
 .content {
     @include backface-visibility(hidden);
-    @include perspective(1000px);
+    // @include perspective(1000px);
     word-break: break-word;
 }
 

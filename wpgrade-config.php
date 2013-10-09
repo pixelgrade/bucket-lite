@@ -69,7 +69,7 @@
 				// empty
 			),
 
-		// Usege: body_class(wpgrade::body_class()) in header.php
+		// Usage: body_class(wpgrade::body_class()) in header.php
 		// Syntax: class => callback or boolean; eg. 'myclass' => true,
 		// 'myclass' => false, 'myclass' => 'class_check_function'. All
 		// callbacks are executed once if more classes refer the same callback.

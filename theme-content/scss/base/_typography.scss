@@ -122,20 +122,6 @@ ol {
     
 }
 
-.emphasized {
-
-    &:before {
-        @include font-size(72px);
-        content: "\2014";
-        position: absolute;
-        display: block;
-        @include rem(left, -$base-spacing-unit * 3);
-        @include rem(margin-top, -$base-spacing-unit * 1.5);
-        color: $accent-color;
-    }
-}
-
-
 .entry__title{
     @include rem(padding, 1.5 * $base-spacing-unit 0);
     margin-bottom: 0;
@@ -169,4 +155,83 @@ a {
         content: "\2014";
         @include rem(margin-right, 3px);
     }
+}
+
+/*-------------------------------*\
+               EMPHASIS 
+\*-------------------------------*/
+
+/*
+* Convey meaning through color with a handful of emphasis utility classes.
+*/
+
+// <p class="muted"> Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh. </p>
+// <p class="text-warning"> Etiam porta sem malesuada magna mollis euismod. </p>
+// <p class="text-error"> Donec ullamcorper nulla non metus auctor fringilla. </p>
+// <p class="text-info"> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis. </p>
+// <p class="text-success"> Duis mollis, est non commodo luctus, nisi erat porttitor ligula. </p>
+
+$muted: #999999;
+$warning: #ff9000;
+$error: #ff3000;
+$info: #00a2cb;
+$success: #00cb56;
+
+
+.emphasized {
+
+    &:before {
+        @include font-size(72px);
+        content: "\2014";
+        position: absolute;
+        display: block;
+        @include rem(left, -$base-spacing-unit * 3);
+        @include rem(margin-top, -$base-spacing-unit * 1.5);
+        color: $accent-color;
+    }
+}
+
+.muted {
+  color: $muted;
+}
+
+a.muted:hover,
+a.muted:focus {
+  color: #808080;
+}
+
+.text--warning {
+  color: $warning;
+}
+
+a.text--warning:hover,
+a.text--warning:focus {
+  color: #a47e3c;
+}
+
+.text--error {
+  color: $error;
+}
+
+a.text--error:hover,
+a.text--error:focus {
+  color: #953b39;
+}
+
+.text--info {
+  color: $info;
+}
+
+a.text--info:hover,
+a.text--info:focus {
+  color: #2d6987;
+}
+
+.text--success {
+  color: $success;
+}
+
+a.text--success:hover,
+a.text--success:focus {
+  color: #356635;
 }

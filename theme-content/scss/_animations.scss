@@ -130,7 +130,7 @@
 #gmap {
     opacity: 0;
     @include backface-visibility(hidden);
-    @include perspective(1000px);
+    // @include perspective(1000px);
 
     .no-cssanimations.loaded & {
         opacity: 1;
@@ -248,7 +248,7 @@
 .page .entry__body {
     opacity: 0;
     @include backface-visibility(hidden);
-    @include perspective(1000px);
+    // @include perspective(1000px);
 
     .no-cssanimations.loaded & {
         opacity: 1;
