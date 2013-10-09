@@ -12,18 +12,23 @@
                 $client_link = '#';
                 $client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
 
-                $gallery_ids = array();
                 $gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
                 if (!empty($gallery_ids)) {
                     $gallery_ids = explode(',',$gallery_ids);
+                } else {
+	                $gallery_ids = array();
                 }
 
-                $attachments = get_posts(array(
-                    'post_type' => 'attachment',
-                    'posts_per_page' => -1,
-                    'orderby' => "post__in",
-                    'post__in'     => $gallery_ids
-                ));
+		        if ( !empty($gallery_ids) ) {
+			        $attachments = get_posts( array(
+				        'post_type' => 'attachment',
+				        'posts_per_page' => -1,
+				        'orderby' => "post__in",
+				        'post__in'     => $gallery_ids
+			        ) );
+		        } else {
+			        $attachments = array();
+		        }
 
                 if ($attachments) {
                     foreach ( $attachments as $attachment ) {
@@ -131,9 +136,10 @@
                 // If comments are open or we have at least one comment, load up the comment template
                if ( comments_open() || '0' != get_comments_number() )
                   comments_template();
-            ?>
-                        
-            <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+            //$yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php');
+	        if ( function_exists('yarpp_related') ) {
+		        $yarpp_active = true;
+	        } ?>
             <aside class="related-projects_container entry__body">
                 <div class="related-projects_header">
                     <?php if($yarpp_active) : ?>

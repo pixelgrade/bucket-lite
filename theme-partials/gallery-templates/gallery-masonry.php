@@ -1,20 +1,25 @@
 <div id="main" class="content djax-updatable">
 	<?php
-    $gallery_ids = array();
     $gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'main_gallery', true );
     if (!empty($gallery_ids)) {
         $gallery_ids = explode(',',$gallery_ids);
+    } else {
+	    $gallery_ids = array();
     }
 
     $thumb_orientation = get_post_meta( $post->ID, wpgrade::prefix() . 'thumb_orientation', true );
     if(empty($thumb_orientation)) $thumb_orientation = 'horizontal';
 
-    $attachments = get_posts( array(
-        'post_type' => 'attachment',
-        'posts_per_page' => -1,
-        'orderby' => "post__in",
-        'post__in'     => $gallery_ids
-    ) );
+	if ( !empty($gallery_ids) ) {
+		$attachments = get_posts( array(
+			'post_type' => 'attachment',
+			'posts_per_page' => -1,
+			'orderby' => "post__in",
+			'post__in'     => $gallery_ids
+		) );
+	} else {
+		$attachments = array();
+	}
 
     $show_gallery_title = get_post_meta( $post->ID, wpgrade::prefix() . 'show_gallery_title', true );
     if (empty($show_gallery_title)) {
