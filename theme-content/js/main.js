@@ -3967,7 +3967,14 @@ function magnificPopupInit() {
             mainClass: 'mfp-fade',
             image: {
                 titleSrc: function (item){
-                    return item.el.attr('title');
+                    var output = '';
+					if ( typeof item.el.attr('data-title') !== "undefined" && item.el.attr('data-title') !== "") {
+						output = item.el.attr('data-title');
+					}
+					if ( typeof item.el.attr('data-alt') !== "undefined" && item.el.attr('data-alt') !== "") {
+						output += '<small>'+item.el.attr('data-alt')+'</small>';
+					}
+					return output;
                 }
             },
             iframe: {
@@ -4030,6 +4037,19 @@ function magnificPopupInit() {
             }
         });
     });
+	
+	// hide title on hover over images so we don't have that ugly tooltip
+	// replace when hover leaves
+	var tempGalleryTitle = '';
+	$('.js-gallery a').hover(
+		function () {			
+			tempGalleryTitle = $(this).attr('title');
+			$(this).attr({'title':''});
+		}, 
+		function () {
+			$(this).attr({'title':tempGalleryTitle});
+		}
+	);
 
     $('.js-project-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
@@ -4039,7 +4059,14 @@ function magnificPopupInit() {
             mainClass: 'mfp-fade',
             image: {
                 titleSrc: function (item){
-                    return item.el.attr('title');
+                    var output = '';
+					if ( typeof item.el.attr('data-title') !== "undefined" && item.el.attr('data-title') !== "") {
+						output = item.el.attr('data-title');
+					}
+					if ( typeof item.el.attr('data-alt') !== "undefined" && item.el.attr('data-alt') !== "") {
+						output += '<small>'+item.el.attr('data-alt')+'</small>';
+					}
+					return output;
                 }
             },
 	        iframe: {
@@ -4100,6 +4127,19 @@ function magnificPopupInit() {
 	        }
         });
     });
+	
+	// hide title on hover over images so we don't have that ugly tooltip
+	// replace when hover leaves
+	var tempProjectTitle = '';
+	$('.js-project-gallery a').hover(
+		function () {			
+			tempProjectTitle = $(this).attr('title');
+			$(this).attr({'title':''});
+		}, 
+		function () {
+			$(this).attr({'title':tempProjectTitle});
+		}
+	);
 }
 
 

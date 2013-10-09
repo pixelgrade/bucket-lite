@@ -58,6 +58,14 @@
                 'switch' => true
             ),
 			array(
+                'id' => 'show_title_caption_popup',
+                'type' => 'checkbox',
+                'title' => __('Show Title and Caption In Popup', wpgrade::textdomain()),
+                'sub_desc' => __('Show the image title and caption in popups. The caption is optional and will only be shown if set.', wpgrade::textdomain()),
+                'std' => '0',
+                'switch' => true
+            ),
+			array(
 				'id' => 'portfolio_use_taxonomies_info_alert',
 				'type' => 'info',
 				'desc' => __('<h2>Branding Options</h2>', wpgrade::textdomain())

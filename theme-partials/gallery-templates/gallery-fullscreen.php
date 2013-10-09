@@ -39,8 +39,8 @@
 		                <img src="<?php echo $thumbimg[0]; ?>" class="rsImg" data-rsVideo="<?php echo $video_url; ?>" />
 	                </div>
                 <?php } else { ?>
-		            <div class="gallery-item">
-		                <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" />
+		            <div class="gallery-item" itemscope itemtype="http://schema.org/ImageObject" >
+		                <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" itemprop="contentURL" />
 		            </div>
                 <?php }
             endforeach; ?>
