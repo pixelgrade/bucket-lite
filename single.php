@@ -6,7 +6,7 @@
     <div class="page-main entry__body">
         <?php while ( have_posts() ) : the_post(); ?>
             <?php get_template_part('theme-partials/post-templates/single-head', get_post_format()); ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/Article">
                     <header class="entry-header">
                         <div class="entry-header__meta">
                             <div class="article-timestamp article-timestamp--single">

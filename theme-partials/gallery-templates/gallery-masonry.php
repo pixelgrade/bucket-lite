@@ -76,6 +76,14 @@
                     $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                     $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                 }
+				
+				//whether or not to show the title and caption in popups
+				$img_title = '';
+				$img_caption = '';
+				if (wpgrade::option('show_title_caption_popup') == 1) {
+					$img_title = $attachment->post_title;
+					$img_caption = $attachment->post_excerpt;
+				}
 
                 // check if this attachment has a video url
                 $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
@@ -85,8 +93,8 @@
                     $img['full'][0] = $video_url;
                     $is_video = true;
                 } ?>
-                <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?>">
-                    <a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe mfp-video'; } else { echo 'mfp-image'; } ?> image__item-link" title="" data-effect="mfp-zoom-in">
+                <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?>" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe mfp-video'; } else { echo 'mfp-image'; } ?> image__item-link" title="<?php echo $attachment->post_title ?>" data-title="<?php echo $img_title ?>" data-alt="<?php echo $img_caption ?>" data-effect="mfp-zoom-in" itemprop="contentURL">
                         <div class="image__item-wrapper">
                             <img
                                 class="js-lazy-load"
