@@ -15,19 +15,9 @@
 
 .masonry__item {
     background: white;
-    @include opacity(0);
     @include rem(margin, $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit);
-    @include transform(translate3d(0,2em,0));
-    @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
-    @include backface-visibility(hidden);
-
     @include media(to hand) {
         @include rem(margin-bottom, $half-spacing-unit);
-    }
-
-    &.is-loaded {
-        @include opacity(1);
-        @include transform(none);
     }
 
     .article-timestamp {
@@ -96,6 +86,20 @@
             max-width: 100%;
             height: auto;
         }
+    }
+}
+
+.no-android-browser{
+    .masonry__item{            
+        @include opacity(0);
+        @include transform(translate3d(0,2em,0));
+        @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
+        @include backface-visibility(hidden);        
+    }
+
+    .masonry__item.is-loaded{
+        @include opacity(1);
+        @include transform(none);
     }
 }
 

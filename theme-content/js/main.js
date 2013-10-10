@@ -17,6 +17,9 @@ var is_ancient_ie = ua.match(/msie 6/i);
 var is_mobile = ua.match(/mobile/i);
 var is_OSX = (ua.match(/(iPad|iPhone|iPod|Macintosh)/g) ? true : false);
 
+var nua = navigator.userAgent;
+var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
+
 var useTransform = true;
 var use2DTransform = (ua.match(/msie 9/i) || winLoc.match(/transform\=2d/i));
 // 
@@ -1573,6 +1576,12 @@ function init() {
 
     }
 
+    if (is_android) {
+        $('html').addClass('android-browser');
+    } else {
+        $('html').addClass('no-android-browser');
+    }    
+
     var is_retina = (window.retina || window.devicePixelRatio > 1);
 
     if (is_retina && $('.site-logo--image-2x').length) {
@@ -1644,7 +1653,7 @@ function loadUp(){
     lazyLoad();
 
     // if blog archive
-    if ($('.masonry').length) {
+    if ($('.masonry').length && !is_android) {
         salvattore();
     }
 
@@ -1854,51 +1863,54 @@ function animateGallery(direction) {
 
 function animateBlog(direction) {
     
-    direction = direction == "in" ? direction : "out";
+        if (!is_android) {
 
+            direction = direction == "in" ? direction : "out";
 
-        var sizes = new Array();
-        var columns = new Array();
-        var items = $('.masonry .span .masonry__item').length;
+            var sizes = new Array();
+            var columns = new Array();
+            var items = $('.masonry .span .masonry__item').length;
 
-        $('.masonry .span').each(function(i, e){
-            columns[i] = $(this).children('.masonry__item');
-            sizes[i] = columns[i].length;
-        });
-
-        var max = Math.max.apply(null, sizes);
-        
-        for (var item = 0; item < max; item++) {
-
-            $(columns).each(function(column) {
-
-                if (columns[column][item] !== undefined) {
-
-                    if (direction == "in") {
-
-                        var $item = $(columns[column][item]),
-                            timeout = item * columns.length + column;
-
-                        setTimeout(function() {
-                            $item.addClass('is-loaded');
-                        }, 100 * timeout);
-
-                    } else {
-
-                        var $item = $(columns[column][item]),
-                            timeout = items - (item * columns.length + column);
-
-                        setTimeout(function() {
-                            $item.removeClass('is-loaded');
-                        }, 100 * timeout);
-                        
-                    }
-
-                }
-
+            $('.masonry .span').each(function(i, e){
+                columns[i] = $(this).children('.masonry__item');
+                sizes[i] = columns[i].length;
             });
 
+            var max = Math.max.apply(null, sizes);
+            
+            for (var item = 0; item < max; item++) {
+
+                $(columns).each(function(column) {
+
+                    if (columns[column][item] !== undefined) {
+
+                        if (direction == "in") {
+
+                            var $item = $(columns[column][item]),
+                                timeout = item * columns.length + column;
+
+                            setTimeout(function() {
+                                $item.addClass('is-loaded');
+                            }, 100 * timeout);
+
+                        } else {
+
+                            var $item = $(columns[column][item]),
+                                timeout = items - (item * columns.length + column);
+
+                            setTimeout(function() {
+                                $item.removeClass('is-loaded');
+                            }, 100 * timeout);
+                            
+                        }
+
+                    }
+
+                });
+
+            }
         }
+
 }
 
 
