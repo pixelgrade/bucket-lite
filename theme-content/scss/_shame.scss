@@ -282,6 +282,12 @@ img.mfp-img{
     box-shadow: none;
 }
 
+@include media(to hand) {
+    .mfp-counter{
+        position: relative;
+    }
+}
+
 .mfp-bottom-bar{
     @include rem(bottom, 3.5*$base-spacing-unit);
     @include rem(height, 3*$base-spacing-unit);
