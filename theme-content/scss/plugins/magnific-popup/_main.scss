@@ -56,8 +56,8 @@ $iframe-ratio:                    9/16 !default;
 // Image-type options
 $include-image-type:              true !default;
 $image-background:                #444 !default;
-$image-padding-top:               40px !default;
-$image-padding-bottom:            40px !default;
+// $image-padding-top:               40px !default;
+// $image-padding-bottom:            40px !default;
 $include-mobile-layout-for-image: true !default; // Removes paddings from top and bottom
 
 // Image caption options
@@ -467,7 +467,7 @@ button::-moz-focus-inner {
     cursor: auto;
   }
   .mfp-title {
-    @include rem(margin-top, 1.2 * $base-spacing-unit);
+    @include rem(margin-top, 0.8 * $base-spacing-unit);
     text-align: left;
     @include font-size(18px);
     color: $caption-title-color;
