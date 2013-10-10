@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-top"
+			],
+			[
 				"yar",
 				"yarpp_active"
 			],
@@ -34,10 +38,6 @@
 			[
 				"ch",
 				"children"
-			],
-			[
-				"mar",
-				"margin-left"
 			],
 			[
 				"rs_Ima",
@@ -471,7 +471,7 @@
 			"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 			"settings":
 			{
-				"buffer_size": 9522,
+				"buffer_size": 9504,
 				"line_ending": "Windows"
 			}
 		},
@@ -479,7 +479,63 @@
 			"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
 			"settings":
 			{
-				"buffer_size": 12171,
+				"buffer_size": 10848,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/plugins/magnific-popup/_main.scss",
+			"settings":
+			{
+				"buffer_size": 14110,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-partials/gallery-templates/gallery-masonry.php",
+			"settings":
+			{
+				"buffer_size": 8899,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/_shame.scss",
+			"settings":
+			{
+				"buffer_size": 6568,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/js/main.js",
+			"settings":
+			{
+				"buffer_size": 318573,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/modules/_gallery-control.scss",
+			"settings":
+			{
+				"buffer_size": 4448,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/_animations.scss",
+			"settings":
+			{
+				"buffer_size": 11393,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/modules/_masonry.scss",
+			"settings":
+			{
+				"buffer_size": 4079,
 				"line_ending": "Windows"
 			}
 		}
@@ -741,6 +797,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"is_android",
+			"init()",
+			"img.mfp-image",
+			"mfp-image",
+			"mfp-bottom",
+			"$image-padding-top",
+			"img_title",
+			"mfp-close",
 			"gallery_slideshow(",
 			"post_",
 			"post",
@@ -860,15 +924,7 @@
 			"$idx",
 			"console.log",
 			"<<<",
-			">>>",
-			">>>>>>",
-			"Masonry Grid",
-			"                  \"e-",
-			"\"e-",
-			"progress",
-			"$attach",
-			"'gmap",
-			"gmap"
+			">>>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -908,7 +964,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -916,7 +972,7 @@
 					"file": "theme-partials/portfolio-templates/portfolio-sidebar.php",
 					"settings":
 					{
-						"buffer_size": 9522,
+						"buffer_size": 9504,
 						"regions":
 						{
 						},
@@ -944,15 +1000,15 @@
 					"file": "theme-partials/portfolio-templates/portfolio-fullwidth.php",
 					"settings":
 					{
-						"buffer_size": 12171,
+						"buffer_size": 10848,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10557,
-								10557
+								0,
+								0
 							]
 						],
 						"settings":
@@ -963,6 +1019,202 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 2813.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "theme-content/scss/plugins/magnific-popup/_main.scss",
+					"settings":
+					{
+						"buffer_size": 14110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8758,
+								8758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7485.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "theme-partials/gallery-templates/gallery-masonry.php",
+					"settings":
+					{
+						"buffer_size": 8899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3127,
+								3127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1278.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "theme-content/scss/_shame.scss",
+					"settings":
+					{
+						"buffer_size": 6568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4816,
+								4822
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4281.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "theme-content/js/main.js",
+					"settings":
+					{
+						"buffer_size": 318573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								714,
+								714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "theme-content/scss/modules/_gallery-control.scss",
+					"settings":
+					{
+						"buffer_size": 4448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3966,
+								3966
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1724.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "theme-content/scss/_animations.scss",
+					"settings":
+					{
+						"buffer_size": 11393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11393,
+								11393
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4765.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "theme-content/scss/modules/_masonry.scss",
+					"settings":
+					{
+						"buffer_size": 4079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4079,
+								3083
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2038.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1012,16 +1264,32 @@
 		"selected_items":
 		[
 			[
-				"sidebar",
-				"theme-partials/portfolio-templates/portfolio-sidebar.php"
+				"masonry",
+				"theme-content/scss/modules/_masonry.scss"
+			],
+			[
+				"anim",
+				"theme-content/scss/_animations.scss"
+			],
+			[
+				"gallery-con",
+				"theme-content/scss/modules/_gallery-control.scss"
 			],
 			[
 				"main",
 				"theme-content/js/main.js"
 			],
 			[
-				"gallery-con",
-				"theme-content/scss/modules/_gallery-control.scss"
+				"shame.c",
+				"theme-content/scss/_shame.scss"
+			],
+			[
+				"main.scss",
+				"theme-content/scss/plugins/magnific-popup/_main.scss"
+			],
+			[
+				"sidebar",
+				"theme-partials/portfolio-templates/portfolio-sidebar.php"
 			],
 			[
 				"royal",
@@ -1114,10 +1382,6 @@
 			[
 				"shame",
 				"theme-content/scss/_shame.scss"
-			],
-			[
-				"main.scss",
-				"theme-content/scss/plugins/magnific-popup/_main.scss"
 			],
 			[
 				"mos",
@@ -1510,18 +1774,6 @@
 			[
 				"template-ta",
 				"wp-content/themes/citylife/library/inc/template-tags.php"
-			],
-			[
-				"custom-ent",
-				"wp-content/themes/citylife/library/inc/custom-entities.php"
-			],
-			[
-				"widgets.php",
-				"wp-content/themes/citylife/library/inc/widgets.php"
-			],
-			[
-				"widge",
-				"wp-admin/widgets.php"
 			]
 		],
 		"width": 0.0
