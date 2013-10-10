@@ -162,7 +162,7 @@
 .single-lens_gallery .pixslider .rsBullets,
 .single-lens_gallery .gallery-control {
 
-    .no-android-browser & {    
+    &{    
         opacity: 0;
         @include backface-visibility(hidden);
         @include perspective(1000px);
