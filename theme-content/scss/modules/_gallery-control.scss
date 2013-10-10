@@ -140,6 +140,16 @@
     }
 }
 
+// Magnific popup image caption/title
+.mfp-title{
+    @include font-size(24px);
+
+    small{
+        @include rem(margin-top, 5px);
+        font-family: "Roboto", sans-serif;
+        @include font-size(12px);
+    }
+}
 
 
 
