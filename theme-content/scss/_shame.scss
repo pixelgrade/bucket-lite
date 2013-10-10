@@ -380,3 +380,19 @@ iframe {
         background-color: black;
     }
 }
+
+
+
+
+
+/*----------------------------------------*\
+    $ANDROID F&*^)#G NATIVE BROWSER
+\*----------------------------------------*/
+.android-browser .menu-link{
+    @include rem(padding, $half-spacing-unit 0);
+    @include rem(font-size, 20px);
+}
+
+
+
+
