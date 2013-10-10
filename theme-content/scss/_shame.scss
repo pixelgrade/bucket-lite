@@ -273,7 +273,7 @@ img.mfp-img{
 }
 
 .mfp-figure--video .mfp-bottom-bar {
-    bottom: 0;
+    top: 100%;
     margin-top: 0;
 }
 
@@ -284,6 +284,7 @@ img.mfp-img{
 
 .mfp-bottom-bar{
     @include rem(bottom, 3.5*$base-spacing-unit);
+    @include rem(height, 3*$base-spacing-unit);
     top: auto;
 
     .gallery-control{
