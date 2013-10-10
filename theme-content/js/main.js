@@ -4352,7 +4352,7 @@ function init() {
     if (is_android) {
         $('html').addClass('android-browser');
     } else {
-        $('html').addClass('android-browser');
+        $('html').addClass('no-android-browser');
     }    
 
     var is_retina = (window.retina || window.devicePixelRatio > 1);
