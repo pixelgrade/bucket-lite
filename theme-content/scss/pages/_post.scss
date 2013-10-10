@@ -397,21 +397,17 @@ blockquote:not(.pixcode--testimonial){
     }
 }
 
-// .entry__featured-image {
-//     img {
-//         width: 100%;
-//         height: auto;
-//     }
-// }
+/*----------------------------------------*\
+    $POST PASSWORD
+\*----------------------------------------*/
+.post-password-submit{
+    @include rem(padding, 11px 0);
+    line-height: normal !important;
+}
 
-// .entry--archive__featured-image {
 
-// }
 
-// .entry__permalink {
-//     display: block;
-//     text-decoration: none;
-// }
+
 
 
 

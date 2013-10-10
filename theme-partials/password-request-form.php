@@ -25,7 +25,7 @@
 							<input type="password" required="required" size="20" id="pwbox-531" name="post_password" placeholder="<?php _e('Password..', wpgrade::textdomain()) ?>"/></label><br/>
 						</div>
 						<div class="col-6 hand-span-6">
-							<input type="submit" name="Submit" class="btn btn--huge"/>
+							<input type="submit" name="Submit" class="btn btn--huge post-password-submit"/>
 						</div>
 					</div>
 				</form>
