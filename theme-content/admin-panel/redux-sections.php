@@ -383,7 +383,7 @@
                 'std' => 'Landscape'
             ),
 			array(
-				'title' => __('How many projects on portfolio page'),
+				'title' => __('How many projects on portfolio page', wpgrade::textdomain()),
 				'id' => 'portfolio_archive_limit',
 				'type' => 'text',
 				'validation' => 'validation_numeric',
