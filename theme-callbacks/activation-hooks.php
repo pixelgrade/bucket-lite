@@ -139,6 +139,22 @@ function wpgrade_callback_geting_active() {
 					'id'   =>  wpgrade::prefix() . 'main_gallery',
 					'type' => 'gallery',
 				),
+				array(
+					'name' => __('Slider transition', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'post_slider_transition',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => __('Slide/Move', wpgrade::textdomain()),
+							'value' => 'move'
+						),
+						array(
+							'name' => __('Fade', wpgrade::textdomain()),
+							'value' => 'fade'
+						)
+					),
+					'std' => 'move'
+				)				
 			)
 		),
 		'post_quote_format' => array(
@@ -334,6 +350,22 @@ function wpgrade_callback_geting_active() {
 					'std' => 'fill'					
 				),
 				array(
+					'name' => __('Slider transition', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'portfolio_slider_transition',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => __('Slide/Move', wpgrade::textdomain()),
+							'value' => 'move'
+						),
+						array(
+							'name' => __('Fade', wpgrade::textdomain()),
+							'value' => 'fade'
+						)
+					),
+					'std' => 'move'
+				),
+				array(
 					'name' => __('Client Name', wpgrade::textdomain()),
 					'id'   => wpgrade::prefix() . 'portfolio_client_name',
 					'type' => 'text_medium',
@@ -401,6 +433,22 @@ function wpgrade_callback_geting_active() {
 						),
 					),
 					'std' => 'fill',
+				),
+				array(
+					'name' => __('Slider transition', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'gallery_slider_transition',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => __('Slide/Move', wpgrade::textdomain()),
+							'value' => 'move'
+						),
+						array(
+							'name' => __('Fade', wpgrade::textdomain()),
+							'value' => 'fade'
+						)
+					),
+					'std' => 'move'
 				),
 				array(
 					'name' => __('Grid Thumbnails Orientation', wpgrade::textdomain()),

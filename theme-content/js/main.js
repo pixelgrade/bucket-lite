@@ -3830,12 +3830,16 @@ function royalSliderInit() {
     $('.wp-gallery').each(function() {
         var $old_gallery = $(this),
         $images = $old_gallery.find('img'),
-        $new_gallery = $('<div class="pixslider js-pixslider" data-royalslider data-customarrows>');
+        $new_gallery = $('<div class="pixslider js-pixslider">');
         $images.prependTo($new_gallery).addClass('rsImg');
         $old_gallery.replaceWith($new_gallery);
+
+        var gallery_data = $(this).data();
+        $new_gallery.data(gallery_data);
     });
 
     $('.js-pixslider').each(function(){
+
         var $slider = $(this),
             rs_arrows = typeof $slider.data('arrows') !== "undefined",
             rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
@@ -3844,7 +3848,21 @@ function royalSliderInit() {
             rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
             rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined";
             rs_imageScale  = typeof $slider.data('imagescale') !== "undefined" && $slider.data('imagescale') != '' ? $slider.data('imagescale') : 'fill';
-            rs_imageAlignCenter  = typeof $slider.data('imagealigncenter') !== "undefined";
+            rs_imageAlignCenter  = typeof $slider.data('imagealigncenter') !== "undefined",
+            rs_transition = typeof $slider.data('slidertransition') !== "undefined" && $slider.data('slidertransition') != '' ? $slider.data('slidertransition') : 'move',
+            rs_drag = true;
+
+
+        var $children = $(this).children();
+
+        if($children.length == 1){
+            rs_arrows = false;
+            rs_bullets = 'none';
+            rs_customArrows = false;
+            rs_keyboardNav = false;
+            rs_drag = false;
+            rs_transition = 'fade';
+        }
         
         // make sure default arrows won't appear if customArrows is set
         if (rs_customArrows) arrows = false;
@@ -3860,7 +3878,9 @@ function royalSliderInit() {
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_keyboardNav,
-                arrowsNavAutoHide: false
+                arrowsNavAutoHide: false,
+                sliderDrag: rs_drag,
+                transitionType: rs_transition
             });
         } else {
             $slider.royalSlider({
@@ -3873,7 +3893,9 @@ function royalSliderInit() {
                 arrowsNav: rs_arrows,
                 controlNavigation: rs_bullets,
                 keyboardNavEnabled: rs_keyboardNav,
-                arrowsNavAutoHide: false
+                arrowsNavAutoHide: false,
+                sliderDrag: rs_drag,
+                transitionType: rs_transition
             });     
         }
 
@@ -3884,7 +3906,7 @@ function royalSliderInit() {
         if(slidesNumber > 1)
         if (royalSlider && rs_customArrows) {
                 var $gallery_control = $(
-                    '<div class="gallery-control gallery-control--gallery-fullscreen">' +
+                    '<div class="gallery-control">' +
                         '<a href="#" class="control-item arrow-button arrow-button--left js-slider-arrow-prev"></a>' +
                         '<div class="control-item count js-gallery-current-slide">' +
                             '<span class="highlighted js-decimal">0</span><span class="js-unit">1</span>' +
@@ -3945,7 +3967,14 @@ function magnificPopupInit() {
             mainClass: 'mfp-fade',
             image: {
                 titleSrc: function (item){
-                    return item.el.attr('title');
+                    var output = '';
+					if ( typeof item.el.attr('data-title') !== "undefined" && item.el.attr('data-title') !== "") {
+						output = item.el.attr('data-title');
+					}
+					if ( typeof item.el.attr('data-alt') !== "undefined" && item.el.attr('data-alt') !== "") {
+						output += '<small>'+item.el.attr('data-alt')+'</small>';
+					}
+					return output;
                 }
             },
             iframe: {
@@ -4008,6 +4037,19 @@ function magnificPopupInit() {
             }
         });
     });
+	
+	// hide title on hover over images so we don't have that ugly tooltip
+	// replace when hover leaves
+	var tempGalleryTitle = '';
+	$('.js-gallery a').hover(
+		function () {			
+			tempGalleryTitle = $(this).attr('title');
+			$(this).attr({'title':''});
+		}, 
+		function () {
+			$(this).attr({'title':tempGalleryTitle});
+		}
+	);
 
     $('.js-project-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
@@ -4017,7 +4059,14 @@ function magnificPopupInit() {
             mainClass: 'mfp-fade',
             image: {
                 titleSrc: function (item){
-                    return item.el.attr('title');
+                    var output = '';
+					if ( typeof item.el.attr('data-title') !== "undefined" && item.el.attr('data-title') !== "") {
+						output = item.el.attr('data-title');
+					}
+					if ( typeof item.el.attr('data-alt') !== "undefined" && item.el.attr('data-alt') !== "") {
+						output += '<small>'+item.el.attr('data-alt')+'</small>';
+					}
+					return output;
                 }
             },
 	        iframe: {
@@ -4078,6 +4127,19 @@ function magnificPopupInit() {
 	        }
         });
     });
+	
+	// hide title on hover over images so we don't have that ugly tooltip
+	// replace when hover leaves
+	var tempProjectTitle = '';
+	$('.js-project-gallery a').hover(
+		function () {			
+			tempProjectTitle = $(this).attr('title');
+			$(this).attr({'title':''});
+		}, 
+		function () {
+			$(this).attr({'title':tempProjectTitle});
+		}
+	);
 }
 
 

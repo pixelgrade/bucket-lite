@@ -1,20 +1,25 @@
 <div id="main" class="content djax-updatable">
 	<?php
-    $gallery_ids = array();
     $gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'main_gallery', true );
     if (!empty($gallery_ids)) {
         $gallery_ids = explode(',',$gallery_ids);
+    } else {
+	    $gallery_ids = array();
     }
 
     $thumb_orientation = get_post_meta( $post->ID, wpgrade::prefix() . 'thumb_orientation', true );
     if(empty($thumb_orientation)) $thumb_orientation = 'horizontal';
 
-    $attachments = get_posts( array(
-        'post_type' => 'attachment',
-        'posts_per_page' => -1,
-        'orderby' => "post__in",
-        'post__in'     => $gallery_ids
-    ) );
+	if ( !empty($gallery_ids) ) {
+		$attachments = get_posts( array(
+			'post_type' => 'attachment',
+			'posts_per_page' => -1,
+			'orderby' => "post__in",
+			'post__in'     => $gallery_ids
+		) );
+	} else {
+		$attachments = array();
+	}
 
     $show_gallery_title = get_post_meta( $post->ID, wpgrade::prefix() . 'show_gallery_title', true );
     if (empty($show_gallery_title)) {
@@ -71,6 +76,14 @@
                     $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                     $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                 }
+				
+				//whether or not to show the title and caption in popups
+				$img_title = '';
+				$img_caption = '';
+				if (wpgrade::option('show_title_caption_popup') == 1) {
+					$img_title = $attachment->post_title;
+					$img_caption = $attachment->post_excerpt;
+				}
 
                 // check if this attachment has a video url
                 $video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
@@ -80,8 +93,8 @@
                     $img['full'][0] = $video_url;
                     $is_video = true;
                 } ?>
-                <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?>">
-                    <a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe mfp-video'; } else { echo 'mfp-image'; } ?> image__item-link" title="" data-effect="mfp-zoom-in">
+                <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?>" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="<?php echo $img['full'][0]; ?>" class="<?php if ($is_video) { echo 'mfp-iframe mfp-video'; } else { echo 'mfp-image'; } ?> image__item-link" title="<?php echo $attachment->post_title ?>" data-title="<?php echo $img_title ?>" data-alt="<?php echo $img_caption ?>" data-effect="mfp-zoom-in" itemprop="contentURL">
                         <div class="image__item-wrapper">
                             <img
                                 class="js-lazy-load"
