@@ -268,7 +268,7 @@ html.nicescroll {
     right: 0;
 }
 img.mfp-img{
-    @include rem(padding-bottom, 6*$base-spacing-unit);
+    @include rem(padding-bottom, 5*$base-spacing-unit);
     //max-height: 90% !important;
 }
 
@@ -289,7 +289,7 @@ img.mfp-img{
 }
 
 .mfp-bottom-bar{
-    @include rem(bottom, 3.5*$base-spacing-unit);
+    @include rem(bottom, 2.5*$base-spacing-unit);
     @include rem(height, 3*$base-spacing-unit);
     top: auto;
 
