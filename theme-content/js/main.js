@@ -1785,11 +1785,6 @@ function imgLoaded(img) {
 
     var $img = $(img);
 
-    console.log('imgLoaded');
-    setTimeout(function() {
-        $img.closest('.mosaic__item').addClass('js--is-loaded');
-    }, 2000 + 40 * Math.floor((Math.random()*10)+1));
-
 };
 
 
@@ -1802,8 +1797,15 @@ function lazyLoad() {
         var $img = $(this),
             src = $img.attr('data-src');
 
-        $img.on('load', imgLoaded($img[0]));
-        $img.attr('src', src);
+        var $newImg = $('<img/>');
+
+        $img.replaceWith($newImg);
+
+        $newImg.on('load', function() {
+            $newImg.closest('.mosaic__item').addClass('js--is-loaded');
+        });
+
+        $newImg.attr('src', src);
     });
 };
 
@@ -1831,13 +1833,6 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').removeClass('loading');
-
-    $('.site-navigation--main').children().each(function(i,e) {
-        var $self = $(e);
-        setTimeout(function() {
-            $self.addClass('js--is-loaded');
-        }, (i+1) * 50);
-    });
 });
 
 
@@ -1851,7 +1846,7 @@ function animateGallery(direction) {
         var $item = $(this);
         setTimeout(function() {
             $item.addClass('slide-' + direction);
-        }, 4000 + 40 * Math.floor((Math.random()*10)+1));
+        }, 80 * Math.floor((Math.random()*5)+1));
     });
 
 }
@@ -1859,54 +1854,49 @@ function animateGallery(direction) {
 
 function animateBlog(direction) {
     
-        if (!is_android) {
+    if (!is_android) {
 
-            direction = direction == "in" ? direction : "out";
+        direction = direction == "in" ? direction : "out";
 
-            var sizes = new Array();
-            var columns = new Array();
-            var items = $('.masonry .span .masonry__item').length;
+        var sizes = new Array();
+        var columns = new Array();
+        var items = $('.masonry .span .masonry__item').length;
 
-            $('.masonry .span').each(function(i, e){
-                columns[i] = $(this).children('.masonry__item');
-                sizes[i] = columns[i].length;
-            });
+        $('.masonry .span').each(function(i, e){
+            columns[i] = $(this).children('.masonry__item');
+            sizes[i] = columns[i].length;
+        });
 
-            var max = Math.max.apply(null, sizes);
-            
-            for (var item = 0; item < max; item++) {
+        var max = Math.max.apply(null, sizes);
+        
+        for (var item = 0; item < max; item++) {
 
-                $(columns).each(function(column) {
+            $(columns).each(function(column) {
 
-                    if (columns[column][item] !== undefined) {
+                if (columns[column][item] !== undefined) {
 
-                        if (direction == "in") {
+                    if (direction == "in") {
 
-                            var $item = $(columns[column][item]),
-                                timeout = item * columns.length + column;
+                        var $item = $(columns[column][item]),
+                            timeout = item * columns.length + column;
 
-                            setTimeout(function() {
-                                $item.addClass('is-loaded');
-                            }, 100 * timeout);
+                        setTimeout(function() {
+                            $item.addClass('is-loaded');
+                        }, 100 * timeout);
 
-                        } else {
+                    } else {
 
-                            var $item = $(columns[column][item]),
-                                timeout = items - (item * columns.length + column);
+                        var $item = $(columns[column][item]),
+                            timeout = items - (item * columns.length + column);
 
-                            setTimeout(function() {
-                                $item.removeClass('is-loaded');
-                            }, 100 * timeout);
-                            
-                        }
-
+                        setTimeout(function() {
+                            $item.removeClass('is-loaded');
+                        }, 100 * timeout);
                     }
-
-                });
-
-            }
+                }
+            });
         }
-
+    }
 }
 
 
