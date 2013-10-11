@@ -984,31 +984,6 @@ function platformDetect(){
     if (safari) $bod.addClass('safari');
     if (phone) $bod.addClass('phone');
     
-    // if (ltie9) {
-    //     $bod.addClass('shitmode');
-        
-    //     var $ieBlocker = $('#IEBlocker'),
-    //     firstVisit = $.readCookie('firstvisit');
-    //     if(firstVisit != 'no'){
-    //         $ieBlocker.show();
-    //         $('#LetMeIn').click(function(){
-    //             $.setCookie('firstvisit', 'no', { 
-    //                 duration : 1, 
-    //                 path: '/'
-    //             });
-    //             $('#IEBlocker').remove();
-    //         });
-    //     };
-    // };
-    
-    // if (!svgSupport || !svgSupportAlt || lteie9 || ff3x){
-    //     $bod.addClass('no_svg');
-    // };
-    
-    // if(!phone && !touch && !lteie9 && !$('html').hasClass('wf-active')){
-    //     $('#PageLoader').show();
-    // };
-    
 };
 
 
@@ -1284,7 +1259,7 @@ function magnificPopupInit() {
 
     $('.js-project-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
-            delegate: 'a', // the container for each your gallery items
+            delegate: 'a[href$=".jpg"], a[href$=".png"], a[href$=".gif"]', // the container for each your gallery items
             type: 'image',
             removalDelay: 500,
             mainClass: 'mfp-fade',
