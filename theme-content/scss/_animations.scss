@@ -262,7 +262,7 @@
     .no-android-browser & {
         opacity: 0;
         @include backface-visibility(hidden);
-        @include perspective(1000px);
+        // @include perspective(1000px);
     }
 
     .no-android-browser.no-cssanimations.loaded & {
@@ -294,7 +294,7 @@
     .no-android-browser & {
         opacity: 0;
         @include backface-visibility(hidden);
-        @include perspective(1000px);
+        // @include perspective(1000px);
     }
 
     .no-android-browser.loaded & {
