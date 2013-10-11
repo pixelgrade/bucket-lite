@@ -1803,9 +1803,9 @@ function lazyLoad() {
 
         var $img = $(this),
             src = $img.attr('data-src');
- 
-        $img.on('load', imgLoaded($img[0]))
-            .attr('src', src);
+
+        $img.on('load', imgLoaded($img[0]));
+        $img.attr('src', src);
     });
 };
 
