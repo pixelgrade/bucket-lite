@@ -44,9 +44,9 @@
                     <?php if ($has_post_thumbnail) : ?>
                     <img
                         class="js-lazy-load"
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                        data-src="<?php echo $featured_image; ?>"
+                        src="<?php echo $featured_image; ?>"
                         alt=""
+                        onload="imgLoaded(this)"
                         />
                     <?php endif; ?>
                     </div>
@@ -98,12 +98,9 @@
                         <div class="image__item-wrapper">
                             <img
                                 class="js-lazy-load"
-                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                data-src="<?php echo $img['big'][0]; ?>"
-                                data-big="<?php echo $img['big'][0]; ?>"
-                                data-medium="<?php echo $img['medium'][0]; ?>"
-                                data-small="<?php echo $img['small'][0]; ?>"
+                                src="<?php echo $img['big'][0]; ?>"
                                 alt=""
+                                onload="imgLoaded(this)"
                                 />
                         </div>
                         <div class="image__item-meta">

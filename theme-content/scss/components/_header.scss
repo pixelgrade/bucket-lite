@@ -16,6 +16,8 @@
     @include media(from hand) {
         height: 100%;
         position: fixed;
+        top: 0;
+        left: 0;
         overflow-y: auto;
         @include rem(padding-left, 2*$base-spacing-unit);
         @include rem(padding-right, $base-spacing-unit);
