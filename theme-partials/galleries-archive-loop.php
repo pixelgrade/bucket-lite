@@ -10,18 +10,15 @@
         $args = array(
             'post_type' => 'lens_gallery',
             'orderby' => 'menu_order date',
-            'order' => 'ASC',
+            'order' => 'DESC',
             'posts_per_page' => -1
         );
 
         $has_post_thumbnail = has_post_thumbnail();
-
         if ($has_post_thumbnail) {
             $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
             $post_featured_image = $post_featured_image[0];
-        }
-
-        ?>
+        } ?>
 
         <div class="mosaic__item  mosaic__item--page-title-mobile">
             <div class="image__item-link">
@@ -95,9 +92,7 @@
                 }
             }
 
-            $categories = get_the_terms($post->ID, 'lens_gallery_categories');
-            ?>
-
+            $categories = get_the_terms($post->ID, 'lens_gallery_categories'); ?>
             <div class="mosaic__item <?php if($categories) foreach($categories as $cat) { echo strtolower($cat->name) . ' '; } ?> ">
                 <a href="<?php the_permalink(); ?>" class="image__item-link">
                    <div class="image__item-wrapper">
