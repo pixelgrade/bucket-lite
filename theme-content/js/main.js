@@ -1784,8 +1784,9 @@ $(function(){
 function imgLoaded(img) {
 
     var $img = $(img);
-
-    $img.closest('.mosaic__item').addClass('js--is-loaded');
+    setTimeout(function() {
+        $img.closest('.mosaic__item').addClass('js--is-loaded');
+    }, 80 * Math.floor((Math.random()*5)+1));
 
 };
 
@@ -1800,7 +1801,7 @@ function lazyLoad() {
             src = $img.attr('data-src');
 
         $img.on('load', imgLoaded($img[0]));
-        $img.attr('src', src);
+            $img.attr('src', src);
     });
 };
 
@@ -1828,13 +1829,6 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').removeClass('loading');
-
-    $('.site-navigation--main').children().each(function(i,e) {
-        var $self = $(e);
-        setTimeout(function() {
-            $self.addClass('js--is-loaded');
-        }, (i+1) * 50);
-    });
 });
 
 
@@ -1848,7 +1842,7 @@ function animateGallery(direction) {
         var $item = $(this);
         setTimeout(function() {
             $item.addClass('slide-' + direction);
-        }, 40 * Math.floor((Math.random()*10)+1));
+        }, 80 * Math.floor((Math.random()*5)+1));
     });
 
 }

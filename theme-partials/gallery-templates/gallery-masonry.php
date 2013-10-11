@@ -46,6 +46,7 @@
                         class="js-lazy-load"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         data-src="<?php echo $featured_image; ?>"
+                        onload="loadImage(this)"
                         alt=""
                         />
                     <?php endif; ?>
@@ -123,6 +124,7 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $featured_image; ?>"
+                                onload="loadImage(this)"
                                 alt=""
                                 />
                             <?php endif; ?>
@@ -148,6 +150,7 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $featured_image; ?>"
+                                onload="loadImage(this)"
                                 alt=""
                                 />
                             <?php endif; ?>
