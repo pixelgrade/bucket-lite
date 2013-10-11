@@ -97,8 +97,7 @@
     }
 
     .image_item-table {
-        @include opacity(0);
-        @include transition(all .2s .1s ease-out);
+        @include transition(transform .2s .1s ease-out);
     }
 
     .no-touch .mosaic__item:hover {

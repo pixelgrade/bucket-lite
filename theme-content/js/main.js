@@ -4698,66 +4698,70 @@ $(window).resize(function(){
 
 $(window).scroll(function(e){
 
-    var likes = $('.entry__likes'),
-        likesOffset = likes.offset(),
-        likesh = likes.height(),
-        likesTop = likesOffset.top,
-        likesBottom = likesTop + likesh,
-        post = $('.post .entry__wrap'),
-        posth = post.height(),
-        postOffset = post.offset(),
-        postTop = postOffset.top,
-        postBottom = postTop + posth;
 
-    if ($('.entry__likes').length && ww > 1599) {
-        var scroll = $('body').scrollTop();
+    if ($('.entry__likes').length) {
 
-        // hacky way to get scroll consisten in chrome / firefox
-        if (scroll == 0) scroll = $('html').scrollTop();
+        if (ww > 1599) {
+            
+            var likes = $('.entry__likes'),
+                likesOffset = likes.offset(),
+                likesh = likes.height(),
+                likesTop = likesOffset.top,
+                likesBottom = likesTop + likesh,
+                post = $('.post .entry__wrap'),
+                posth = post.height(),
+                postOffset = post.offset(),
+                postTop = postOffset.top,
+                postBottom = postTop + posth,
+                scroll = $('body').scrollTop();
 
-        // if scrolled past the top of the container but not below the bottom of it
-        if (scroll > postTop && scroll + likesh < postBottom) {
+            // hacky way to get scroll consisten in chrome / firefox
+            if (scroll == 0) scroll = $('html').scrollTop();
 
-            // insert after content for fixed position to work properly
-            // set left value to the box's initial left offset
-            likes.insertAfter('.content').css({
-                position: 'fixed',
-                top: 0,
-                left: likesOffset.left
-            });
+            // if scrolled past the top of the container but not below the bottom of it
+            if (scroll > postTop && scroll + likesh < postBottom) {
 
-        // the box should follow scroll anymore
-        } else {
-
-            // we are below the container's bottom
-            // so we have to move to box back up while scrolling down
-            if (scroll + likesh > postBottom) {
-
+                // insert after content for fixed position to work properly
+                // set left value to the box's initial left offset
                 likes.insertAfter('.content').css({
-                    top: postBottom - scroll - likesh,
+                    position: 'fixed',
+                    top: 0,
+                    left: likesOffset.left
                 });
 
-            // we are back up so we must put the box back in it's place
+            // the box should follow scroll anymore
             } else {
 
-                likes.prependTo('.entry__wrap').css({
-                    position: '',
-                    top: 0,
-                    left: ''
-                });
+                // we are below the container's bottom
+                // so we have to move to box back up while scrolling down
+                if (scroll + likesh > postBottom) {
 
+                    likes.insertAfter('.content').css({
+                        top: postBottom - scroll - likesh,
+                    });
+
+                // we are back up so we must put the box back in it's place
+                } else {
+
+                    likes.prependTo('.entry__wrap').css({
+                        position: '',
+                        top: 0,
+                        left: ''
+                    });
+
+                }
             }
+
+        } else {
+
+            // make sure that the box is in it's lace when resizing the browser
+            likes.prependTo('.entry__wrap').css({
+                position: '',
+                top: 0,
+                left: ''
+            });
+            
         }
-
-    } else {
-
-        // make sure that the box is in it's lace when resizing the browser
-        likes.prependTo('.entry__wrap').css({
-            position: '',
-            top: 0,
-            left: ''
-        });
-        
     }
 });
 })(jQuery, window);
