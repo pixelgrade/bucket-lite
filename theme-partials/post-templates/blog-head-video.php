@@ -18,7 +18,7 @@
     <div class="entry__featured-image">
         <a href="<?php the_permalink(); ?>" class="image__item-link mfp-video">
             <div class="image__item-wrapper">
-                <?php the_post_thumbnail('portfolio-big'); ?>
+                <?php the_post_thumbnail('blog-big'); ?>
             </div>
             <div class="image__item-meta">
                 <div class="image_item-table">
