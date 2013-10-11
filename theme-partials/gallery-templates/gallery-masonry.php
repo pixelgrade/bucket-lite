@@ -65,6 +65,8 @@
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                 $attachment_fields = get_post_custom( $attachment->ID );
 
+                $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full', true);
+
                 if ($thumb_orientation == 'portrait') {
                     $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v', true);
                 } else {

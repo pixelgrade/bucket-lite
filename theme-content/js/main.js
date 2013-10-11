@@ -1798,7 +1798,7 @@ function lazyLoad() {
             src = $img.attr('data-src');
 
         $img.on('load', function() {
-            $newImg.closest('.mosaic__item').addClass('js--is-loaded');
+            $img.closest('.mosaic__item').addClass('js--is-loaded');
         });
 
         $img.attr('src', src);
