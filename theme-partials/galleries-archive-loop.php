@@ -9,7 +9,7 @@
         
         $args = array(
             'post_type' => 'lens_gallery',
-            'orderby' => 'menu_order',
+            'orderby' => 'menu_order date',
             'order' => 'ASC',
             'posts_per_page' => -1
         );

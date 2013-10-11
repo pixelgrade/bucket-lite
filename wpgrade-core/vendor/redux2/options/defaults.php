@@ -4,7 +4,7 @@ if(!class_exists('Redux_Options') ){
     // Windows-proof constants: replace backward by forward slashes - thanks to: https://github.com/peterbouwmeester
     $fslashed_dir = trailingslashit(str_replace('\\','/', dirname(__FILE__)));
     $fslashed_abs = trailingslashit(str_replace('\\','/', ABSPATH));
-    
+
     if(!defined('Redux_OPTIONS_DIR')) {
         define('Redux_OPTIONS_DIR', $fslashed_dir);
     }
@@ -645,6 +645,9 @@ if(!class_exists('Redux_Options') ){
                 } else {
                     echo '<div id="redux-opts-save">' . apply_filters('redux-opts-saved-text-' . $this->args['opt_name'], __('<strong>Settings Saved!</strong>', wpgrade::textdomain())).'</div>';
                 }
+				// this action is successfull only when is silent, otherwize trigger an error.
+	            echo '<div id="redux-opts-field-errors">' . do_action( 'redux-opts-saved-'. $this->args['opt_name'], $this->options ) . '</div>';
+
                 delete_transient('redux-opts-saved');
             }
 

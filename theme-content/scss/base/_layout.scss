@@ -1,6 +1,6 @@
 /*#main*/.content {
     @extend .cf;
-    @extend .row;
+    // @extend .row;
     background: white;
     position: relative;
 
@@ -135,14 +135,17 @@
     position: relative;
 }
 
-.page, .post {
-    .featured-image {
-        @include rem(margin, 0 -2*$base-spacing-unit);
+.page-content{
+    @include media(to hand) {
+        .featured-image {
+            @include rem(margin-left, -$base-spacing-unit);
+            @include rem(margin-right, -$base-spacing-unit);
+        }
     }
 
-    @include media(from lap) {
+    @include media(from hand) {
         .featured-image {
-            margin-right: 0;
+            @include rem(margin-left, -2*$base-spacing-unit);
         }
     }
 }

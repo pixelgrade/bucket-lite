@@ -68,6 +68,6 @@ YARPP Template: Portfolio Related Projects
             --></ul>
 
         <?php else: ?>
-        <p><?php _e("No related projects", wpGrade::textdomain()); ?>.</p>
+        <p><?php _e("No related projects", wpgrade::textdomain()); ?>.</p>
         <?php endif; ?>
     </div>

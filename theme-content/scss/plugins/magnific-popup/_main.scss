@@ -56,8 +56,8 @@ $iframe-ratio:                    9/16 !default;
 // Image-type options
 $include-image-type:              true !default;
 $image-background:                #444 !default;
-$image-padding-top:               40px !default;
-$image-padding-bottom:            40px !default;
+// $image-padding-top:               40px !default;
+// $image-padding-bottom:            40px !default;
 $include-mobile-layout-for-image: true !default; // Removes paddings from top and bottom
 
 // Image caption options
@@ -266,6 +266,7 @@ button::-moz-focus-inner {
   opacity: $controls-opacity;
   padding: 0 0 18px 10px;
   color: $controls-color;
+  outline: 0;
 
   font-style: normal;
   font-size: 28px;
@@ -286,9 +287,9 @@ button::-moz-focus-inner {
 .mfp-image-holder .mfp-close,
 .mfp-iframe-holder .mfp-close {
   color: $controls-color;
-  right: -6px;
+  // right: -6px;
   text-align: right;
-  padding-right: 6px;
+  // padding-right: 6px;
   width: 100%;
 }
 
@@ -466,7 +467,7 @@ button::-moz-focus-inner {
     cursor: auto;
   }
   .mfp-title {
-    @include rem(margin-top, 1.2 * $base-spacing-unit);
+    @include rem(margin-top, 0.8 * $base-spacing-unit);
     text-align: left;
     @include font-size(18px);
     color: $caption-title-color;

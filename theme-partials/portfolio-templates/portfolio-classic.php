@@ -19,7 +19,7 @@
                 <footer class="entry__meta entry__meta--project cf">
                     <?php if($client_name != '') : ?>
                         <div class="entry__meta-box meta-box--client">
-                            <span class="meta-box__box-title"><?php _e("Client", wpGrade::textdomain()); ?>: </span>
+                            <span class="meta-box__box-title"><?php _e("Client", wpgrade::textdomain()); ?>: </span>
                             <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                         </div>
                     <?php endif; ?>
@@ -27,7 +27,7 @@
                     $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
                     if (count($categories) && !is_wp_error($categories)): ?>
                         <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
-                            <span class="meta-box__box-title"><?php _e("Filled under", wpGrade::textdomain()); ?>: </span>
+                            <span class="meta-box__box-title"><?php _e("Filled under", wpgrade::textdomain()); ?>: </span>
                             <?php foreach ($categories as $cat): ?>
                                     <a href="<?php echo get_category_link($cat); ?>"
                                        rel="category">
@@ -46,7 +46,7 @@
             
                     if (wpgrade::option('portfolio_single_show_share_links')): ?>
                         <div class="social-links  flexbox__item  text--right">
-                            <span class="social-links__message"><?php _e("Share", wpGrade::textdomain()); ?>: </span>
+                            <span class="social-links__message"><?php _e("Share", wpgrade::textdomain()); ?>: </span>
                             <ul class="social-links__list">
                                 <?php if (wpgrade::option('portfolio_single_share_links_twitter')): ?>
                                     <li>
@@ -84,25 +84,28 @@
                 ?>
             </article><!-- #post -->
             
-            <?php $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php'); ?>
+            <?php // $yarpp_active = is_plugin_active('yet-another-related-posts-plugin/yarpp.php');
+	        if ( function_exists('yarpp_related') ) {
+		        $yarpp_active = true;
+	        } ?>
             
             <section class="related-projects_container entry__body">
                 <header class="related-projects_header">
                     <?php if($yarpp_active) : ?>
-                    <h4 class="related-projects_title"><?php _e("Related projects", wpGrade::textdomain()); ?></h4>
+                    <h4 class="related-projects_title"><?php _e("Related projects", wpgrade::textdomain()); ?></h4>
                     <?php endif; ?>
                    <nav class="projects_nav">
                        <ul class="projects_nav-list">
                            <li class="projects_nav-item">
-                                <?php next_post_link('%link', '<span class="prev">&#8592;</span>' . __('Previous', wpGrade::textdomain()) ); ?>
+                                <?php next_post_link('%link', '<span class="prev">&#8592;</span>' . __('Previous', wpgrade::textdomain()) ); ?>
                             </li>
                            <li class="projects_nav-item">
                                 <a href="<?php echo get_portfolio_page_link(); ?>">
-                                    <?php _e("All projects", wpGrade::textdomain()); ?>
+                                    <?php _e("All projects", wpgrade::textdomain()); ?>
                                 </a>
                             </li>
                             <li class="projects_nav-item">
-                                <?php previous_post_link('%link', __('Next', wpGrade::textdomain()). '<span class="next">&#8594;</span>'); ?>
+                                <?php previous_post_link('%link', __('Next', wpgrade::textdomain()). '<span class="next">&#8594;</span>'); ?>
                             </li>
                        </ul>
                    </nav>

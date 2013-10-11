@@ -69,7 +69,7 @@
 				// empty
 			),
 
-		// Usege: body_class(wpgrade::body_class()) in header.php
+		// Usage: body_class(wpgrade::body_class()) in header.php
 		// Syntax: class => callback or boolean; eg. 'myclass' => true,
 		// 'myclass' => false, 'myclass' => 'class_check_function'. All
 		// callbacks are executed once if more classes refer the same callback.
@@ -161,10 +161,16 @@
 				// enques script and localizes
 				'auto-localize-scripts' => array
 					(
-						'wpgrade-main-scripts' => array
+						'wpgrade-main-scripts' =>
+						array
 							(
-								'key' => 'ajaxurl',
-								'data' => admin_url('admin-ajax.php')
+								'ajaxurl' => admin_url('admin-ajax.php'),
+								'objectl10n' => array
+									(
+										'tPrev' => __('Previous (Left arrow key)', 'lens_txtd'),
+										'tNext' => __('Next (Right arrow key)', 'lens_txtd'),
+										'tCounter' => __('of', 'lens_txtd')
+									),
 							),
 					),
 
@@ -211,8 +217,8 @@
 				'prev_next' => true,
 
 				// pagination text
-				'prev_text' => 'Newer posts',
-				'next_text' => 'Older posts',
+				'prev_text' => __('Newer posts', 'lens_txtd'),
+				'next_text' => __('Older posts', 'lens_txtd'),
 
 				// are the terms used for paging relative to the sort order?
 				// ie. older/newer instead of sorting agnostic previous/next
@@ -252,8 +258,8 @@
 				'gallery' => array
 					(
 						'formatter' => null,
-						'prev_text' => 'Prev Images',
-						'next_text' => 'Next Images',
+						'prev_text' => __('Prev Images', 'lens_txtd'),
+						'next_text' => __('Next Images', 'lens_txtd'),
 					)
 			),
 

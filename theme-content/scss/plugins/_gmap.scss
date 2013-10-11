@@ -4,10 +4,14 @@
  */
 #gmap{
     padding-top: 30%;
-    @include rem(max-height, 460px);
+    @include rem(min-height, 260px);
 
     img{
         max-width: none !important;
+    }
+
+    @include media(from hand) {
+        @include rem(max-height, 460px);
     }
 }
 

@@ -32,7 +32,7 @@ html {
 /* prevent flicker on ios */
 .content, .header, .header__inner-wrap {
     @include backface-visibility(hidden);
-    @include perspective(1000px);
+    // @include perspective(1000px);
 }
 
 .wrapper {
@@ -268,12 +268,12 @@ html.nicescroll {
     right: 0;
 }
 img.mfp-img{
-    @include rem(padding-bottom, 100px);
+    @include rem(padding-bottom, 5*$base-spacing-unit);
     //max-height: 90% !important;
 }
 
 .mfp-figure--video .mfp-bottom-bar {
-    bottom: 0;
+    top: 100%;
     margin-top: 0;
 }
 
@@ -282,8 +282,15 @@ img.mfp-img{
     box-shadow: none;
 }
 
+@include media(to hand) {
+    .mfp-counter{
+        position: relative;
+    }
+}
+
 .mfp-bottom-bar{
-    @include rem(bottom, 78px);
+    @include rem(bottom, 2.5*$base-spacing-unit);
+    @include rem(height, 3*$base-spacing-unit);
     top: auto;
 
     .gallery-control{
@@ -304,7 +311,7 @@ img.mfp-img{
 // flicker
 .content {
     @include backface-visibility(hidden);
-    @include perspective(1000px);
+    // @include perspective(1000px);
     word-break: break-word;
 }
 
@@ -380,3 +387,19 @@ iframe {
         background-color: black;
     }
 }
+
+
+
+
+
+/*----------------------------------------*\
+    $ANDROID F&*^)#G NATIVE BROWSER
+\*----------------------------------------*/
+.android-browser .menu-link{
+    @include rem(padding, $half-spacing-unit 0);
+    @include rem(font-size, 20px);
+}
+
+
+
+

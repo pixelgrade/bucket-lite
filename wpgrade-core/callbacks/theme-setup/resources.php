@@ -39,10 +39,12 @@
 		}
 
 		// auto-localize
-		foreach ($themeconfiguration['resources']['auto-localize-scripts'] as $stylename => $conf) {
+		foreach ($themeconfiguration['resources']['auto-localize-scripts'] as $stylename => $script) {
 			// allow child themes to remove the localization
-			if ($conf !== null) {
-				wp_localize_script($stylename, $conf['key'], $conf['data']);
+			if ($script !== null) {
+				foreach ( $script as $key => $data) {
+					wp_localize_script($stylename, $key, $data);
+				}
 			}
 		}
 

@@ -188,10 +188,17 @@ class wpgrade {
 	}
 
 	/**
-	 * @return string theme path WITH TRAILING SLAH
+	 * @return string template path WITH TRAILING SLASH
 	 */
 	static function themepath()	{
 		return get_template_directory().DIRECTORY_SEPARATOR;
+	}
+
+	/**
+	 * @return string theme path (it may be a child theme) WITH TRAILING SLASH
+	 */
+	static function childpath()	{
+		return get_stylesheet_directory().DIRECTORY_SEPARATOR;
 	}
 
 	/**
@@ -226,11 +233,15 @@ class wpgrade {
 	 * @return string path
 	 */
 	static function corepartial($file) {
-		$localpath = self::themepath().rtrim(self::confoption('core-partials-overwrite-path', 'theme-partials/wpgrade-partials'), '/').'/'.$file;
-		if (file_Exists($localpath)) {
-			return $localpath;
-		}
-		else { // local file not available
+
+		$templatepath = self::themepath().rtrim(self::confoption('core-partials-overwrite-path', 'theme-partials/wpgrade-partials'), '/').'/'.$file;
+		$childpath = self::childpath().rtrim(self::confoption('core-partials-overwrite-path', 'theme-partials/wpgrade-partials'), '/').'/'.$file;
+
+		if (file_exists($childpath)) {
+			return $childpath;
+		} elseif (file_exists($templatepath)) {
+			return $templatepath;
+		} else { // local file not available
 			return self::corepath().'resources/views/'.$file;
 		}
 	}
@@ -782,7 +793,8 @@ class wpgrade {
 	 */
 	static function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
-			$template = '<div class="wp-gallery">:gallery</div>';
+			$slider_transition = get_post_meta($current_post->ID, '_lens_post_slider_transition', true);
+			$template = '<div class="wp-gallery pixslider js-pixslider" data-royalslider data-customarrows data-slidertransition="' . $slider_transition . '">:gallery</div>';
 		}
 
 		// first check if we have a meta with a gallery

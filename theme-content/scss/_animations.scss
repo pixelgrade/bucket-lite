@@ -128,26 +128,29 @@
 .page .featured-image,
 .single-lens_gallery .pixslider,
 #gmap {
-    opacity: 0;
-    @include backface-visibility(hidden);
-    @include perspective(1000px);
 
-    .no-cssanimations.loaded & {
+    .no-android-browser & {
+        opacity: 0;
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+    }
+
+    .no-android-browser.no-cssanimations.loaded & {
         opacity: 1;
     }
 
-    .no-cssanimations.loading & {
+    .no-android-browser.no-cssanimations.loading & {
         opacity: 0;
     }
 
-    .cssanimations.loaded & {
+    .no-android-browser.cssanimations.loaded & {
         -webkit-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
            -moz-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
              -o-animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
                 animation: slidein .25s ease-in-out forwards, fadein .25s ease-in-out forwards;
     }
 
-    .cssanimations.loading & {
+    .no-android-browser.cssanimations.loading & {
         opacity: 1;
         -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
            -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
@@ -158,18 +161,21 @@
 
 .single-lens_gallery .pixslider .rsBullets,
 .single-lens_gallery .gallery-control {
-    opacity: 0;
-    @include backface-visibility(hidden);
-    @include perspective(1000px);
 
-    .cssanimations.loaded & {
+    &{    
+        opacity: 0;
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+    }
+
+    .no-android-browser.cssanimations.loaded & {
         -webkit-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
            -moz-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
              -o-animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
                 animation: slidein .25s .5s ease-in-out forwards, fadein .25s .5s ease-in-out forwards;
     }
 
-    .cssanimations.loading & {
+    .no-android-browser.cssanimations.loading & {
         opacity: 1;
         -webkit-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
            -moz-animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
@@ -177,29 +183,32 @@
                 animation: slideout .25s ease-in-out forwards, fadeout .25s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded & {
+    .no-android-browser.no-cssanimations.loaded & {
         opacity: 1;
     }
 
-    .no-cssanimations.loading & {
+    .no-android-browser.no-cssanimations.loading & {
         opacity: 0;
     }
 }
 
 .single .entry__title,
 .page .entry__title {
-    opacity: 0;
-    @include backface-visibility(hidden);
-    @include perspective(1000px);
 
-    .cssanimations.loaded & {
+    .no-android-browser &{
+        opacity: 0;
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+    }
+
+    .no-android-browser.cssanimations.loaded & {
         -webkit-animation: slidein .45s .15s bezier(easeOutBack) forwards, fadein .45s .15s ease-in-out forwards;
            -moz-animation: slidein .45s .15s bezier(easeOutBack) forwards, fadein .45s .15s ease-in-out forwards;
              -o-animation: slidein .45s .15s bezier(easeOutBack) forwards, fadein .45s .15s ease-in-out forwards;
                 animation: slidein .45s .15s bezier(easeOutBack) forwards, fadein .45s .15s ease-in-out forwards;
     }
 
-    .cssanimations.loading & {
+    .no-android-browser.cssanimations.loading & {
         opacity: 1;
         -webkit-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
            -moz-animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
@@ -207,65 +216,71 @@
                 animation: slideout .45s .15s bezier(easeInBack) forwards, fadeout .45s .15s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded & {
+    .no-android-browser.no-cssanimations.loaded & {
         opacity: 1;
     }
 
-    .no-cssanimations.loading & {
+    .no-android-browser.no-cssanimations.loading & {
         opacity: 0;
     }
 }
 
 .single .separator--dotted,
 .page .separator--dotted {
-    @include backface-visibility(hidden);
-    @include perspective(1000px);
 
-    .cssanimations.loaded & {
+    .no-android-browser & {
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+    }
+
+    .no-android-browser.cssanimations.loaded & {
         -webkit-animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
            -moz-animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
              -o-animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
                 animation: slidein-fromleft .3s .3s bezier(easeOutBack) forwards;
     }
 
-    .cssanimations.loading & {
+    .no-android-browser.cssanimations.loading & {
         -webkit-animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
            -moz-animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
              -o-animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
                 animation: slideout-toright .2s .3s bezier(easeInBack) forwards;
     }
 
-    .no-cssanimations.loaded & {
+    .no-android-browser.no-cssanimations.loaded & {
         opacity: 1;
     }
 
-    .no-cssanimations.loading & {
+    .no-android-browser.no-cssanimations.loading & {
         opacity: 0;
     }
 }
 
 .single .entry__body,
 .page .entry__body {
-    opacity: 0;
-    @include backface-visibility(hidden);
-    @include perspective(1000px);
 
-    .no-cssanimations.loaded & {
+    .no-android-browser & {
+        opacity: 0;
+        @include backface-visibility(hidden);
+        // @include perspective(1000px);
+    }
+
+    .no-android-browser.no-cssanimations.loaded & {
         opacity: 1;
     }
 
-    .no-cssanimations.loading & {
+    .no-android-browser.no-cssanimations.loading & {
         opacity: 0;
     }
 
-    .cssanimations.loaded & {
+    .no-android-browser.cssanimations.loaded & {
         -webkit-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
            -moz-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
              -o-animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
                 animation: slidein .35s .25s bezier(easeOutBack) forwards, fadein .35s .25s ease-in-out forwards;
     }
 
-    .cssanimations.loading & {
+    .no-android-browser.cssanimations.loading & {
         opacity: 1;
         -webkit-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
            -moz-animation: slideout .35s .25s bezier(easeInBack) forwards, fadeout .35s .25s ease-in-out forwards;
@@ -275,26 +290,29 @@
 }
 
 .sidebar--right {
-    opacity: 0;
-    @include backface-visibility(hidden);
-    @include perspective(1000px);
 
-    .loaded & {
+    .no-android-browser & {
+        opacity: 0;
+        @include backface-visibility(hidden);
+        // @include perspective(1000px);
+    }
+
+    .no-android-browser.loaded & {
         -webkit-animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
            -moz-animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
              -o-animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
                 animation: slidein .5s .5s bezier(easeOutBack) forwards, fadein .5s .5s ease-in-out forwards;
     }
 
-    .no-cssanimations.loaded & {
+    .no-android-browser.no-cssanimations.loaded & {
         opacity: 1;
     }
 
-    .no-cssanimations.loading & {
+    .no-android-browser.no-cssanimations.loading & {
         opacity: 0;
     }    
 
-    .loading & {
+    .no-android-browser.loading & {
         opacity: 1;
         -webkit-animation: slideout .5s .5s bezier(easeInBack) forwards, fadeout .5s .5s ease-in-out forwards;
            -moz-animation: slideout .5s .5s bezier(easeInBack) forwards, fadeout .5s .5s ease-in-out forwards;
