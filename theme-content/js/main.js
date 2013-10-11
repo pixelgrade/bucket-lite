@@ -1829,6 +1829,7 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').removeClass('loading');
+    console.log($('.mosaic__item'));
 });
 
 
