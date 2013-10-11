@@ -1784,9 +1784,6 @@ $(function(){
 function imgLoaded(img) {
 
     var $img = $(img);
-    setTimeout(function() {
-        $img.closest('.mosaic__item').addClass('js--is-loaded');
-    }, 80 * Math.floor((Math.random()*5)+1));
 
 };
 
@@ -1800,8 +1797,17 @@ function lazyLoad() {
         var $img = $(this),
             src = $img.attr('data-src');
 
-        $img.on('load', imgLoaded($img[0]));
-            $img.attr('src', src);
+        var $newImg = $('<img/>');
+
+        $img.replaceWith($newImg);
+
+        $newImg.on('load', function() {
+            setTimeout(function() {
+                $newImg.closest('.mosaic__item').addClass('js--is-loaded');
+            }, 80 * Math.floor((Math.random()*5)+1));
+        });
+
+        $newImg.attr('src', src);
     });
 };
 
