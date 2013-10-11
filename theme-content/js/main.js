@@ -1653,7 +1653,7 @@ function loadUp(){
     lazyLoad();
 
     // if blog archive
-    if ($('.masonry').length && !is_android) {
+    if ($('.masonry').length && !lteie9 && !is_android) {
         salvattore();
     }
 
