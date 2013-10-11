@@ -6,7 +6,7 @@
 
 var phone, touch, ltie9, lteie9, wh, ww, dh, ar, fonts;
 
-var ua = navigator.userAgent.toLowerCase();
+var ua = navigator.userAgent;
 var winLoc = window.location.toString();
 
 var is_webkit = ua.match(/webkit/i);
@@ -16,7 +16,6 @@ var is_older_ie = ua.match(/msie/i) && !is_newer_ie;
 var is_ancient_ie = ua.match(/msie 6/i);
 var is_mobile = ua.match(/mobile/i);
 var is_OSX = (ua.match(/(iPad|iPhone|iPod|Macintosh)/g) ? true : false);
-var is_safari_win = ua.indexOf("safari/") !== -1 && ua.indexOf("windows") !== -1;
 
 var nua = navigator.userAgent;
 var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
@@ -1650,13 +1649,6 @@ function loadUp(){
     resizeVideos();
     progressbarInit();
 
-    if (is_safari_win) {
-        $('html').removeClass('cssanimations').addClass('no-cssanimations');
-    }    
-
-    // 
-    lazyLoad();
-    
     // if blog archive
     if ($('.masonry').length && !lteie9 && !is_android) {
         salvattore();
@@ -1804,8 +1796,12 @@ function lazyLoad() {
     var $images = $('.js-lazy-load');
 
     $images.each(function(){
-        var $img = $(this);
+
+        var $img = $(this),
+            src = $img.attr('data-src');
+
         $img.on('load', imgLoaded($img[0]));
+            $img.attr('src', src);
     });
 };
 
