@@ -1126,8 +1126,7 @@ function royalSliderInit() {
                 keyboardNavEnabled: rs_keyboardNav,
                 arrowsNavAutoHide: false,
                 sliderDrag: rs_drag,
-                transitionType: rs_transition,
-                transitionSpeed: 100           
+                transitionType: rs_transition
             });     
         }
 
