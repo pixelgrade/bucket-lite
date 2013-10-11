@@ -1802,9 +1802,7 @@ function lazyLoad() {
         $img.replaceWith($newImg);
 
         $newImg.on('load', function() {
-            setTimeout(function() {
-                $newImg.closest('.mosaic__item').addClass('js--is-loaded');
-            }, 80 * Math.floor((Math.random()*5)+1));
+            $newImg.closest('.mosaic__item').addClass('js--is-loaded');
         });
 
         $newImg.attr('src', src);
