@@ -1797,15 +1797,11 @@ function lazyLoad() {
         var $img = $(this),
             src = $img.attr('data-src');
 
-        var $newImg = $('<img/>');
-
-        $img.replaceWith($newImg);
-
-        $newImg.on('load', function() {
+        $img.on('load', function() {
             $newImg.closest('.mosaic__item').addClass('js--is-loaded');
         });
 
-        $newImg.attr('src', src);
+        $img.attr('src', src);
     });
 };
 
