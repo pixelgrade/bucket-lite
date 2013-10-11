@@ -17,7 +17,7 @@
 <?php
     if ( has_post_thumbnail() ) {
         echo '<div class="entry__featured-image">';
-        the_post_thumbnail();
+        the_post_thumbnail('portfolio-big');
         echo '</div>';
     } else {
 ?>

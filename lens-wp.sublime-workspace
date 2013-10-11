@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
 				"mar",
 				"margin-top"
 			],
@@ -62,14 +70,6 @@
 			[
 				"cate",
 				"categories_index"
-			],
-			[
-				"padd",
-				"padding"
-			],
-			[
-				"pad",
-				"padding-bottom"
 			],
 			[
 				"min",
@@ -503,7 +503,7 @@
 			"file": "theme-content/scss/_shame.scss",
 			"settings":
 			{
-				"buffer_size": 6568,
+				"buffer_size": 6975,
 				"line_ending": "Windows"
 			}
 		},
@@ -511,7 +511,25 @@
 			"file": "theme-content/js/main.js",
 			"settings":
 			{
-				"buffer_size": 318573,
+				"buffer_size": 272286,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 813 files for \"post_password\"\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\comments.php:\n   19       * return early without loading the comments.\n   20       */\n   21:     if (post_password_required()) return;\n   22  ?>\n   23  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\single-lens_gallery.php:\n    4  global $wpgrade_private_post;\n    5  \n    6: if ( post_password_required() && !$wpgrade_private_post['allowed'] ) {\n    7  \n    8  	get_template_part('theme-partials/password-request-form');\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\single-lens_portfolio.php:\n    4  global $wpgrade_private_post;\n    5  \n    6: if ( post_password_required() && !$wpgrade_private_post['allowed'] ) {\n    7  \n    8  	get_template_part('theme-partials/password-request-form');\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\theme-content\\inc\\import\\demo-data\\demo_data.xml:\n   78              <wp:menu_order>0</wp:menu_order>\n   79              <wp:post_type>attachment</wp:post_type>\n   80:             <wp:post_password></wp:post_password>\n   81              <wp:is_sticky>0</wp:is_sticky>\n   82              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image1.png</wp:attachment_url>\n   ..\n  109              <wp:menu_order>0</wp:menu_order>\n  110              <wp:post_type>attachment</wp:post_type>\n  111:             <wp:post_password></wp:post_password>\n  112              <wp:is_sticky>0</wp:is_sticky>\n  113              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image2.png</wp:attachment_url>\n  ...\n  140              <wp:menu_order>0</wp:menu_order>\n  141              <wp:post_type>attachment</wp:post_type>\n  142:             <wp:post_password></wp:post_password>\n  143              <wp:is_sticky>0</wp:is_sticky>\n  144              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image11.png</wp:attachment_url>\n  ...\n  171              <wp:menu_order>0</wp:menu_order>\n  172              <wp:post_type>attachment</wp:post_type>\n  173:             <wp:post_password></wp:post_password>\n  174              <wp:is_sticky>0</wp:is_sticky>\n  175              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image21.png</wp:attachment_url>\n  ...\n  202              <wp:menu_order>0</wp:menu_order>\n  203              <wp:post_type>attachment</wp:post_type>\n  204:             <wp:post_password></wp:post_password>\n  205              <wp:is_sticky>0</wp:is_sticky>\n  206              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image12.png</wp:attachment_url>\n  ...\n  233              <wp:menu_order>0</wp:menu_order>\n  234              <wp:post_type>attachment</wp:post_type>\n  235:             <wp:post_password></wp:post_password>\n  236              <wp:is_sticky>0</wp:is_sticky>\n  237              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image22.png</wp:attachment_url>\n  ...\n  264              <wp:menu_order>0</wp:menu_order>\n  265              <wp:post_type>attachment</wp:post_type>\n  266:             <wp:post_password></wp:post_password>\n  267              <wp:is_sticky>0</wp:is_sticky>\n  268              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image13.png</wp:attachment_url>\n  ...\n  295              <wp:menu_order>0</wp:menu_order>\n  296              <wp:post_type>attachment</wp:post_type>\n  297:             <wp:post_password></wp:post_password>\n  298              <wp:is_sticky>0</wp:is_sticky>\n  299              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image23.png</wp:attachment_url>\n  ...\n  326              <wp:menu_order>0</wp:menu_order>\n  327              <wp:post_type>attachment</wp:post_type>\n  328:             <wp:post_password></wp:post_password>\n  329              <wp:is_sticky>0</wp:is_sticky>\n  330              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image14.png</wp:attachment_url>\n  ...\n  357              <wp:menu_order>0</wp:menu_order>\n  358              <wp:post_type>attachment</wp:post_type>\n  359:             <wp:post_password></wp:post_password>\n  360              <wp:is_sticky>0</wp:is_sticky>\n  361              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image24.png</wp:attachment_url>\n  ...\n  388              <wp:menu_order>0</wp:menu_order>\n  389              <wp:post_type>attachment</wp:post_type>\n  390:             <wp:post_password></wp:post_password>\n  391              <wp:is_sticky>0</wp:is_sticky>\n  392              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image15.png</wp:attachment_url>\n  ...\n  419              <wp:menu_order>0</wp:menu_order>\n  420              <wp:post_type>attachment</wp:post_type>\n  421:             <wp:post_password></wp:post_password>\n  422              <wp:is_sticky>0</wp:is_sticky>\n  423              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image25.png</wp:attachment_url>\n  ...\n  450              <wp:menu_order>0</wp:menu_order>\n  451              <wp:post_type>attachment</wp:post_type>\n  452:             <wp:post_password></wp:post_password>\n  453              <wp:is_sticky>0</wp:is_sticky>\n  454              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image16.png</wp:attachment_url>\n  ...\n  481              <wp:menu_order>0</wp:menu_order>\n  482              <wp:post_type>attachment</wp:post_type>\n  483:             <wp:post_password></wp:post_password>\n  484              <wp:is_sticky>0</wp:is_sticky>\n  485              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image26.png</wp:attachment_url>\n  ...\n  512              <wp:menu_order>0</wp:menu_order>\n  513              <wp:post_type>attachment</wp:post_type>\n  514:             <wp:post_password></wp:post_password>\n  515              <wp:is_sticky>0</wp:is_sticky>\n  516              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image17.png</wp:attachment_url>\n  ...\n  543              <wp:menu_order>0</wp:menu_order>\n  544              <wp:post_type>attachment</wp:post_type>\n  545:             <wp:post_password></wp:post_password>\n  546              <wp:is_sticky>0</wp:is_sticky>\n  547              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image27.png</wp:attachment_url>\n  ...\n  574              <wp:menu_order>0</wp:menu_order>\n  575              <wp:post_type>attachment</wp:post_type>\n  576:             <wp:post_password></wp:post_password>\n  577              <wp:is_sticky>0</wp:is_sticky>\n  578              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image18.png</wp:attachment_url>\n  ...\n  605              <wp:menu_order>0</wp:menu_order>\n  606              <wp:post_type>attachment</wp:post_type>\n  607:             <wp:post_password></wp:post_password>\n  608              <wp:is_sticky>0</wp:is_sticky>\n  609              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image28.png</wp:attachment_url>\n  ...\n  636              <wp:menu_order>0</wp:menu_order>\n  637              <wp:post_type>attachment</wp:post_type>\n  638:             <wp:post_password></wp:post_password>\n  639              <wp:is_sticky>0</wp:is_sticky>\n  640              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image19.png</wp:attachment_url>\n  ...\n  667              <wp:menu_order>0</wp:menu_order>\n  668              <wp:post_type>attachment</wp:post_type>\n  669:             <wp:post_password></wp:post_password>\n  670              <wp:is_sticky>0</wp:is_sticky>\n  671              <wp:attachment_url>http://pixelgrade.com/demos/lens/wp-content/uploads/2013/10/placeholder_image29.png</wp:attachment_url>\n  ...\n  698              <wp:menu_order>0</wp:menu_order>\n  699              <wp:post_type>lens_gallery</wp:post_type>\n  700:             <wp:post_password></wp:post_password>\n  701              <wp:is_sticky>0</wp:is_sticky>\n  702              <wp:postmeta>\n  ...\n  736              <wp:menu_order>0</wp:menu_order>\n  737              <wp:post_type>lens_gallery</wp:post_type>\n  738:             <wp:post_password></wp:post_password>\n  739              <wp:is_sticky>0</wp:is_sticky>\n  740              <wp:postmeta>\n  ...\n  774              <wp:menu_order>0</wp:menu_order>\n  775              <wp:post_type>lens_gallery</wp:post_type>\n  776:             <wp:post_password></wp:post_password>\n  777              <wp:is_sticky>0</wp:is_sticky>\n  778              <category domain=\"lens_gallery_categories\" nicename=\"models\"><![CDATA[Models]]></category>\n  ...\n  817              <wp:menu_order>4</wp:menu_order>\n  818              <wp:post_type>lens_portfolio</wp:post_type>\n  819:             <wp:post_password></wp:post_password>\n  820              <wp:is_sticky>0</wp:is_sticky>\n  821              <category domain=\"lens_portfolio_categories\" nicename=\"models\"><![CDATA[Models]]></category>\n  ...\n  869              <wp:menu_order>3</wp:menu_order>\n  870              <wp:post_type>lens_portfolio</wp:post_type>\n  871:             <wp:post_password></wp:post_password>\n  872              <wp:is_sticky>0</wp:is_sticky>\n  873              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n  ...\n  920              <wp:menu_order>5</wp:menu_order>\n  921              <wp:post_type>lens_portfolio</wp:post_type>\n  922:             <wp:post_password></wp:post_password>\n  923              <wp:is_sticky>0</wp:is_sticky>\n  924              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n  ...\n  970              <wp:menu_order>2</wp:menu_order>\n  971              <wp:post_type>lens_portfolio</wp:post_type>\n  972:             <wp:post_password></wp:post_password>\n  973              <wp:is_sticky>0</wp:is_sticky>\n  974              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n  ...\n 1022              <wp:menu_order>7</wp:menu_order>\n 1023              <wp:post_type>lens_portfolio</wp:post_type>\n 1024:             <wp:post_password></wp:post_password>\n 1025              <wp:is_sticky>0</wp:is_sticky>\n 1026              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n ....\n 1073              <wp:menu_order>8</wp:menu_order>\n 1074              <wp:post_type>lens_portfolio</wp:post_type>\n 1075:             <wp:post_password></wp:post_password>\n 1076              <wp:is_sticky>0</wp:is_sticky>\n 1077              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n ....\n 1124              <wp:menu_order>9</wp:menu_order>\n 1125              <wp:post_type>lens_portfolio</wp:post_type>\n 1126:             <wp:post_password></wp:post_password>\n 1127              <wp:is_sticky>0</wp:is_sticky>\n 1128              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n ....\n 1176              <wp:menu_order>10</wp:menu_order>\n 1177              <wp:post_type>lens_portfolio</wp:post_type>\n 1178:             <wp:post_password></wp:post_password>\n 1179              <wp:is_sticky>0</wp:is_sticky>\n 1180              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n ....\n 1227              <wp:menu_order>11</wp:menu_order>\n 1228              <wp:post_type>lens_portfolio</wp:post_type>\n 1229:             <wp:post_password></wp:post_password>\n 1230              <wp:is_sticky>0</wp:is_sticky>\n 1231              <category domain=\"lens_portfolio_categories\" nicename=\"photography\"><![CDATA[Photography]]></category>\n ....\n 1278              <wp:menu_order>12</wp:menu_order>\n 1279              <wp:post_type>lens_portfolio</wp:post_type>\n 1280:             <wp:post_password></wp:post_password>\n 1281              <wp:is_sticky>0</wp:is_sticky>\n 1282              <category domain=\"lens_portfolio_categories\" nicename=\"models\"><![CDATA[Models]]></category>\n ....\n 1329              <wp:menu_order>15</wp:menu_order>\n 1330              <wp:post_type>lens_portfolio</wp:post_type>\n 1331:             <wp:post_password></wp:post_password>\n 1332              <wp:is_sticky>0</wp:is_sticky>\n 1333              <category domain=\"lens_portfolio_categories\" nicename=\"couple\"><![CDATA[Couple]]></category>\n ....\n 1380              <wp:menu_order>16</wp:menu_order>\n 1381              <wp:post_type>lens_portfolio</wp:post_type>\n 1382:             <wp:post_password></wp:post_password>\n 1383              <wp:is_sticky>0</wp:is_sticky>\n 1384              <category domain=\"lens_portfolio_categories\" nicename=\"models\"><![CDATA[Models]]></category>\n ....\n 1432              <wp:menu_order>6</wp:menu_order>\n 1433              <wp:post_type>lens_portfolio</wp:post_type>\n 1434:             <wp:post_password></wp:post_password>\n 1435              <wp:is_sticky>0</wp:is_sticky>\n 1436              <category domain=\"lens_portfolio_categories\" nicename=\"photography\"><![CDATA[Photography]]></category>\n ....\n 1483              <wp:menu_order>17</wp:menu_order>\n 1484              <wp:post_type>lens_portfolio</wp:post_type>\n 1485:             <wp:post_password></wp:post_password>\n 1486              <wp:is_sticky>0</wp:is_sticky>\n 1487              <category domain=\"lens_portfolio_categories\" nicename=\"cars-2\"><![CDATA[Cars]]></category>\n ....\n 1534              <wp:menu_order>14</wp:menu_order>\n 1535              <wp:post_type>lens_portfolio</wp:post_type>\n 1536:             <wp:post_password></wp:post_password>\n 1537              <wp:is_sticky>0</wp:is_sticky>\n 1538              <category domain=\"lens_portfolio_categories\" nicename=\"models\"><![CDATA[Models]]></category>\n ....\n 1585              <wp:menu_order>1</wp:menu_order>\n 1586              <wp:post_type>lens_portfolio</wp:post_type>\n 1587:             <wp:post_password></wp:post_password>\n 1588              <wp:is_sticky>0</wp:is_sticky>\n 1589              <category domain=\"lens_portfolio_categories\" nicename=\"photography\"><![CDATA[Photography]]></category>\n ....\n 1636              <wp:menu_order>13</wp:menu_order>\n 1637              <wp:post_type>lens_portfolio</wp:post_type>\n 1638:             <wp:post_password></wp:post_password>\n 1639              <wp:is_sticky>0</wp:is_sticky>\n 1640              <category domain=\"lens_portfolio_categories\" nicename=\"photography\"><![CDATA[Photography]]></category>\n ....\n 1687              <wp:menu_order>19</wp:menu_order>\n 1688              <wp:post_type>lens_portfolio</wp:post_type>\n 1689:             <wp:post_password></wp:post_password>\n 1690              <wp:is_sticky>0</wp:is_sticky>\n 1691              <category domain=\"lens_portfolio_categories\" nicename=\"models\"><![CDATA[Models]]></category>\n ....\n 1738              <wp:menu_order>20</wp:menu_order>\n 1739              <wp:post_type>lens_portfolio</wp:post_type>\n 1740:             <wp:post_password></wp:post_password>\n 1741              <wp:is_sticky>0</wp:is_sticky>\n 1742              <category domain=\"lens_portfolio_categories\" nicename=\"photography\"><![CDATA[Photography]]></category>\n ....\n 1781              <wp:menu_order>6</wp:menu_order>\n 1782              <wp:post_type>nav_menu_item</wp:post_type>\n 1783:             <wp:post_password></wp:post_password>\n 1784              <wp:is_sticky>0</wp:is_sticky>\n 1785              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 1836              <wp:menu_order>12</wp:menu_order>\n 1837              <wp:post_type>nav_menu_item</wp:post_type>\n 1838:             <wp:post_password></wp:post_password>\n 1839              <wp:is_sticky>0</wp:is_sticky>\n 1840              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 1891              <wp:menu_order>11</wp:menu_order>\n 1892              <wp:post_type>nav_menu_item</wp:post_type>\n 1893:             <wp:post_password></wp:post_password>\n 1894              <wp:is_sticky>0</wp:is_sticky>\n 1895              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 1946              <wp:menu_order>19</wp:menu_order>\n 1947              <wp:post_type>nav_menu_item</wp:post_type>\n 1948:             <wp:post_password></wp:post_password>\n 1949              <wp:is_sticky>0</wp:is_sticky>\n 1950              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2001              <wp:menu_order>1</wp:menu_order>\n 2002              <wp:post_type>nav_menu_item</wp:post_type>\n 2003:             <wp:post_password></wp:post_password>\n 2004              <wp:is_sticky>0</wp:is_sticky>\n 2005              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2056              <wp:menu_order>5</wp:menu_order>\n 2057              <wp:post_type>nav_menu_item</wp:post_type>\n 2058:             <wp:post_password></wp:post_password>\n 2059              <wp:is_sticky>0</wp:is_sticky>\n 2060              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2111              <wp:menu_order>4</wp:menu_order>\n 2112              <wp:post_type>nav_menu_item</wp:post_type>\n 2113:             <wp:post_password></wp:post_password>\n 2114              <wp:is_sticky>0</wp:is_sticky>\n 2115              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2166              <wp:menu_order>3</wp:menu_order>\n 2167              <wp:post_type>nav_menu_item</wp:post_type>\n 2168:             <wp:post_password></wp:post_password>\n 2169              <wp:is_sticky>0</wp:is_sticky>\n 2170              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2221              <wp:menu_order>13</wp:menu_order>\n 2222              <wp:post_type>nav_menu_item</wp:post_type>\n 2223:             <wp:post_password></wp:post_password>\n 2224              <wp:is_sticky>0</wp:is_sticky>\n 2225              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2276              <wp:menu_order>7</wp:menu_order>\n 2277              <wp:post_type>nav_menu_item</wp:post_type>\n 2278:             <wp:post_password></wp:post_password>\n 2279              <wp:is_sticky>0</wp:is_sticky>\n 2280              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2331              <wp:menu_order>8</wp:menu_order>\n 2332              <wp:post_type>nav_menu_item</wp:post_type>\n 2333:             <wp:post_password></wp:post_password>\n 2334              <wp:is_sticky>0</wp:is_sticky>\n 2335              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2386              <wp:menu_order>15</wp:menu_order>\n 2387              <wp:post_type>nav_menu_item</wp:post_type>\n 2388:             <wp:post_password></wp:post_password>\n 2389              <wp:is_sticky>0</wp:is_sticky>\n 2390              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2441              <wp:menu_order>16</wp:menu_order>\n 2442              <wp:post_type>nav_menu_item</wp:post_type>\n 2443:             <wp:post_password></wp:post_password>\n 2444              <wp:is_sticky>0</wp:is_sticky>\n 2445              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2496              <wp:menu_order>17</wp:menu_order>\n 2497              <wp:post_type>nav_menu_item</wp:post_type>\n 2498:             <wp:post_password></wp:post_password>\n 2499              <wp:is_sticky>0</wp:is_sticky>\n 2500              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2551              <wp:menu_order>14</wp:menu_order>\n 2552              <wp:post_type>nav_menu_item</wp:post_type>\n 2553:             <wp:post_password></wp:post_password>\n 2554              <wp:is_sticky>0</wp:is_sticky>\n 2555              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2606              <wp:menu_order>2</wp:menu_order>\n 2607              <wp:post_type>nav_menu_item</wp:post_type>\n 2608:             <wp:post_password></wp:post_password>\n 2609              <wp:is_sticky>0</wp:is_sticky>\n 2610              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2671              <wp:menu_order>18</wp:menu_order>\n 2672              <wp:post_type>lens_portfolio</wp:post_type>\n 2673:             <wp:post_password></wp:post_password>\n 2674              <wp:is_sticky>0</wp:is_sticky>\n 2675              <category domain=\"lens_portfolio_categories\" nicename=\"photography\"><![CDATA[Photography]]></category>\n ....\n 2714              <wp:menu_order>9</wp:menu_order>\n 2715              <wp:post_type>nav_menu_item</wp:post_type>\n 2716:             <wp:post_password></wp:post_password>\n 2717              <wp:is_sticky>0</wp:is_sticky>\n 2718              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2769              <wp:menu_order>10</wp:menu_order>\n 2770              <wp:post_type>nav_menu_item</wp:post_type>\n 2771:             <wp:post_password></wp:post_password>\n 2772              <wp:is_sticky>0</wp:is_sticky>\n 2773              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2824              <wp:menu_order>18</wp:menu_order>\n 2825              <wp:post_type>nav_menu_item</wp:post_type>\n 2826:             <wp:post_password></wp:post_password>\n 2827              <wp:is_sticky>0</wp:is_sticky>\n 2828              <category domain=\"nav_menu\" nicename=\"header-menu\"><![CDATA[Header Menu]]></category>\n ....\n 2879              <wp:menu_order>0</wp:menu_order>\n 2880              <wp:post_type>post</wp:post_type>\n 2881:             <wp:post_password></wp:post_password>\n 2882              <wp:is_sticky>0</wp:is_sticky>\n 2883              <category domain=\"post_tag\" nicename=\"design\"><![CDATA[Design]]></category>\n ....\n 2921              <wp:menu_order>0</wp:menu_order>\n 2922              <wp:post_type>post</wp:post_type>\n 2923:             <wp:post_password></wp:post_password>\n 2924              <wp:is_sticky>0</wp:is_sticky>\n 2925              <category domain=\"post_tag\" nicename=\"cars\"><![CDATA[cars]]></category>\n ....\n 2972              <wp:menu_order>0</wp:menu_order>\n 2973              <wp:post_type>post</wp:post_type>\n 2974:             <wp:post_password></wp:post_password>\n 2975              <wp:is_sticky>0</wp:is_sticky>\n 2976              <category domain=\"category\" nicename=\"life\"><![CDATA[Life]]></category>\n ....\n 3011              <wp:menu_order>0</wp:menu_order>\n 3012              <wp:post_type>post</wp:post_type>\n 3013:             <wp:post_password></wp:post_password>\n 3014              <wp:is_sticky>0</wp:is_sticky>\n 3015              <category domain=\"category\" nicename=\"ideas\"><![CDATA[Ideas]]></category>\n ....\n 3063              <wp:menu_order>0</wp:menu_order>\n 3064              <wp:post_type>post</wp:post_type>\n 3065:             <wp:post_password></wp:post_password>\n 3066              <wp:is_sticky>0</wp:is_sticky>\n 3067              <category domain=\"post_tag\" nicename=\"cars\"><![CDATA[cars]]></category>\n ....\n 3100              <wp:menu_order>1</wp:menu_order>\n 3101              <wp:post_type>page</wp:post_type>\n 3102:             <wp:post_password></wp:post_password>\n 3103              <wp:is_sticky>0</wp:is_sticky>\n 3104              <wp:postmeta>\n ....\n 3186              <wp:menu_order>3</wp:menu_order>\n 3187              <wp:post_type>page</wp:post_type>\n 3188:             <wp:post_password></wp:post_password>\n 3189              <wp:is_sticky>0</wp:is_sticky>\n 3190              <wp:postmeta>\n ....\n 3228              <wp:menu_order>7</wp:menu_order>\n 3229              <wp:post_type>page</wp:post_type>\n 3230:             <wp:post_password></wp:post_password>\n 3231              <wp:is_sticky>0</wp:is_sticky>\n 3232              <wp:postmeta>\n ....\n 3329              <wp:menu_order>8</wp:menu_order>\n 3330              <wp:post_type>page</wp:post_type>\n 3331:             <wp:post_password></wp:post_password>\n 3332              <wp:is_sticky>0</wp:is_sticky>\n 3333              <wp:postmeta>\n ....\n 3395              <wp:menu_order>7</wp:menu_order>\n 3396              <wp:post_type>page</wp:post_type>\n 3397:             <wp:post_password></wp:post_password>\n 3398              <wp:is_sticky>0</wp:is_sticky>\n 3399              <wp:postmeta>\n ....\n 3437              <wp:menu_order>6</wp:menu_order>\n 3438              <wp:post_type>page</wp:post_type>\n 3439:             <wp:post_password></wp:post_password>\n 3440              <wp:is_sticky>0</wp:is_sticky>\n 3441              <wp:postmeta>\n ....\n 3467              <wp:menu_order>4</wp:menu_order>\n 3468              <wp:post_type>page</wp:post_type>\n 3469:             <wp:post_password></wp:post_password>\n 3470              <wp:is_sticky>0</wp:is_sticky>\n 3471              <wp:postmeta>\n ....\n 3497              <wp:menu_order>5</wp:menu_order>\n 3498              <wp:post_type>page</wp:post_type>\n 3499:             <wp:post_password></wp:post_password>\n 3500              <wp:is_sticky>0</wp:is_sticky>\n 3501              <wp:postmeta>\n ....\n 3527              <wp:menu_order>2</wp:menu_order>\n 3528              <wp:post_type>page</wp:post_type>\n 3529:             <wp:post_password></wp:post_password>\n 3530              <wp:is_sticky>0</wp:is_sticky>\n 3531              <wp:postmeta>\n ....\n 3599              <wp:menu_order>1</wp:menu_order>\n 3600              <wp:post_type>page</wp:post_type>\n 3601:             <wp:post_password></wp:post_password>\n 3602              <wp:is_sticky>0</wp:is_sticky>\n 3603              <wp:postmeta>\n ....\n 3792              <wp:menu_order>2</wp:menu_order>\n 3793              <wp:post_type>page</wp:post_type>\n 3794:             <wp:post_password></wp:post_password>\n 3795              <wp:is_sticky>0</wp:is_sticky>\n 3796              <wp:postmeta>\n ....\n 3954              <wp:menu_order>3</wp:menu_order>\n 3955              <wp:post_type>page</wp:post_type>\n 3956:             <wp:post_password></wp:post_password>\n 3957              <wp:is_sticky>0</wp:is_sticky>\n 3958              <wp:postmeta>\n ....\n 3998              <wp:menu_order>0</wp:menu_order>\n 3999              <wp:post_type>post</wp:post_type>\n 4000:             <wp:post_password></wp:post_password>\n 4001              <wp:is_sticky>0</wp:is_sticky>\n 4002              <category domain=\"category\" nicename=\"ideas\"><![CDATA[Ideas]]></category>\n ....\n 4063              <wp:menu_order>0</wp:menu_order>\n 4064              <wp:post_type>post</wp:post_type>\n 4065:             <wp:post_password></wp:post_password>\n 4066              <wp:is_sticky>0</wp:is_sticky>\n 4067              <category domain=\"category\" nicename=\"life\"><![CDATA[Life]]></category>\n ....\n 4102              <wp:menu_order>0</wp:menu_order>\n 4103              <wp:post_type>post</wp:post_type>\n 4104:             <wp:post_password></wp:post_password>\n 4105              <wp:is_sticky>0</wp:is_sticky>\n 4106              <category domain=\"category\" nicename=\"life\"><![CDATA[Life]]></category>\n ....\n 4198              <wp:menu_order>0</wp:menu_order>\n 4199              <wp:post_type>wpcf7_contact_form</wp:post_type>\n 4200:             <wp:post_password></wp:post_password>\n 4201              <wp:is_sticky>0</wp:is_sticky>\n 4202              <wp:postmeta>\n ....\n 4290              <wp:menu_order>0</wp:menu_order>\n 4291              <wp:post_type>post</wp:post_type>\n 4292:             <wp:post_password></wp:post_password>\n 4293              <wp:is_sticky>0</wp:is_sticky>\n 4294              <category domain=\"post_tag\" nicename=\"coffee\"><![CDATA[Coffee]]></category>\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\theme-content\\inc\\import\\wordpress-importer\\parsers.php:\n  172  			$post['menu_order'] = (int) $wp->menu_order;\n  173  			$post['post_type'] = (string) $wp->post_type;\n  174: 			$post['post_password'] = (string) $wp->post_password;\n  175  			$post['is_sticky'] = (int) $wp->is_sticky;\n  176  \n  ...\n  244  	var $wp_tags = array(\n  245  		'wp:post_id', 'wp:post_date', 'wp:post_date_gmt', 'wp:comment_status', 'wp:ping_status', 'wp:attachment_url',\n  246: 		'wp:status', 'wp:post_name', 'wp:post_parent', 'wp:menu_order', 'wp:post_type', 'wp:post_password',\n  247  		'wp:is_sticky', 'wp:term_id', 'wp:category_nicename', 'wp:category_parent', 'wp:cat_name', 'wp:category_description',\n  248  		'wp:tag_slug', 'wp:tag_name', 'wp:tag_description', 'wp:term_taxonomy', 'wp:term_parent',\n  ...\n  553  		$menu_order     = $this->get_tag( $post, 'wp:menu_order' );\n  554  		$post_type      = $this->get_tag( $post, 'wp:post_type' );\n  555: 		$post_password  = $this->get_tag( $post, 'wp:post_password' );\n  556  		$is_sticky      = $this->get_tag( $post, 'wp:is_sticky' );\n  557  		$guid           = $this->get_tag( $post, 'guid' );\n  ...\n  570  		$postdata = compact( 'post_id', 'post_author', 'post_date', 'post_date_gmt', 'post_content', 'post_excerpt',\n  571  			'post_title', 'status', 'post_name', 'comment_status', 'ping_status', 'guid', 'post_parent',\n  572: 			'menu_order', 'post_type', 'post_password', 'is_sticky'\n  573  		);\n  574  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\theme-content\\inc\\import\\wordpress-importer\\wordpress-importer.php:\n  587  					'comment_status' => $post['comment_status'], 'ping_status' => $post['ping_status'],\n  588  					'guid' => $post['guid'], 'post_parent' => $post_parent, 'menu_order' => $post['menu_order'],\n  589: 					'post_type' => $post['post_type'], 'post_password' => $post['post_password']\n  590  				);\n  591  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\theme-content\\inc\\import\\wordpress-importer\\wpgrade-import-class.php:\n  174  					'comment_status' => $post['comment_status'], 'ping_status' => $post['ping_status'],\n  175  					'guid' => $post['guid'], 'post_parent' => $post_parent, 'menu_order' => $post['menu_order'],\n  176: 					'post_type' => $post['post_type'], 'post_password' => $post['post_password']\n  177  				);\n  178  \n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\theme-partials\\password-request-form.php:\n   23  					<div class=\"row\">\n   24  						<div class=\"col-6 hand-span-6\">\n   25: 							<input type=\"password\" required=\"required\" size=\"20\" id=\"pwbox-531\" name=\"post_password\" placeholder=\"<?php _e('Password..', wpgrade::textdomain()) ?>\"/></label><br/>\n   26  						</div>\n   27  						<div class=\"col-6 hand-span-6\">\n\nE:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\theme-utilities\\lens.php:\n 2113  		if ( isset( $_POST['submit_password']) ) { // when we have a submision check the password and its submision\n 2114  			if ( isset( $_POST['submit_password_nonce'] ) && wp_verify_nonce( $_POST['submit_password_nonce'], 'password_protection') ) {\n 2115: 				if ( isset ( $_POST['post_password'] ) && !empty($_POST['post_password']) ) { // some simple checks on password\n 2116  					// finally test if the password submitted is correct\n 2117: 					if ( $post->post_password ===  $_POST['post_password'] ) {\n 2118  						$private_post['allowed'] = true;\n 2119  \n ....\n 2126  						}\n 2127  \n 2128: 						setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH );\n 2129  \n 2130  					} else {\n\n187 matches across 9 files\n",
+			"settings":
+			{
+				"buffer_size": 31904,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "theme-partials/password-request-form.php",
+			"settings":
+			{
+				"buffer_size": 1389,
 				"line_ending": "Windows"
 			}
 		},
@@ -527,7 +545,7 @@
 			"file": "theme-content/scss/_animations.scss",
 			"settings":
 			{
-				"buffer_size": 11393,
+				"buffer_size": 11372,
 				"line_ending": "Windows"
 			}
 		},
@@ -535,7 +553,23 @@
 			"file": "theme-content/scss/modules/_masonry.scss",
 			"settings":
 			{
-				"buffer_size": 4079,
+				"buffer_size": 4176,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/components/_navigation.scss",
+			"settings":
+			{
+				"buffer_size": 6254,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/pages/_post.scss",
+			"settings":
+			{
+				"buffer_size": 8161,
 				"line_ending": "Windows"
 			}
 		}
@@ -588,12 +622,13 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/style.css",
+		"/E/uniserver/www/prism/wp-content/themes/lens/style.css",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/templates/slider.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Slider.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes - Copy/shortcodes/templates/slider.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes - Copy/shortcodes/WpGradeShortcode_Slider.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/gallery-templates/gallery-fullwidth.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/style.css",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_gallery-control.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_royalslider.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/_animations.scss",
@@ -645,7 +680,6 @@
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/inc/thumbnails.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/style.css.map",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/_vendor/inuit/objects/_grids.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/css/style.css",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/components/_header.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-utilities/lens.php",
 		"/E/uniserver/www/prism/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Icon.php",
@@ -723,7 +757,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 97.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
@@ -797,6 +831,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"post_password",
+			"100px",
+			"gallery-control",
+			"base",
+			"animateblog",
+			"salvattore",
+			"masonry__item",
+			"is-loaded",
+			"animateblog",
+			"opacity",
+			"is-loaded",
+			"is_loaded",
 			"is_android",
 			"init()",
 			"img.mfp-image",
@@ -912,19 +958,7 @@
 			".grid-",
 			".grid",
 			"'fit-if-smaller'",
-			"eventHandlers",
-			"js-arrow-popup-next",
-			"magnific pop",
-			"magnific",
-			"transparent",
-			"image__item-meta",
-			"item-meta",
-			"has_post_thumbnail",
-			"featured_image",
-			"$idx",
-			"console.log",
-			"<<<",
-			">>>"
+			"eventHandlers"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -964,7 +998,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1084,15 +1118,15 @@
 					"file": "theme-content/scss/_shame.scss",
 					"settings":
 					{
-						"buffer_size": 6568,
+						"buffer_size": 6975,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4816,
-								4822
+								4795,
+								4871
 							]
 						],
 						"settings":
@@ -1102,7 +1136,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4281.0,
+						"translation.y": 5023.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1112,15 +1146,15 @@
 					"file": "theme-content/js/main.js",
 					"settings":
 					{
-						"buffer_size": 318573,
+						"buffer_size": 272286,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								714,
-								714
+								272286,
+								272286
 							]
 						],
 						"settings":
@@ -1130,13 +1164,828 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 36774.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 31904,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										188,
+										201
+									],
+									[
+										369,
+										382
+									],
+									[
+										641,
+										654
+									],
+									[
+										1013,
+										1026
+									],
+									[
+										1032,
+										1045
+									],
+									[
+										1378,
+										1391
+									],
+									[
+										1397,
+										1410
+									],
+									[
+										1743,
+										1756
+									],
+									[
+										1762,
+										1775
+									],
+									[
+										2109,
+										2122
+									],
+									[
+										2128,
+										2141
+									],
+									[
+										2475,
+										2488
+									],
+									[
+										2494,
+										2507
+									],
+									[
+										2841,
+										2854
+									],
+									[
+										2860,
+										2873
+									],
+									[
+										3207,
+										3220
+									],
+									[
+										3226,
+										3239
+									],
+									[
+										3573,
+										3586
+									],
+									[
+										3592,
+										3605
+									],
+									[
+										3939,
+										3952
+									],
+									[
+										3958,
+										3971
+									],
+									[
+										4305,
+										4318
+									],
+									[
+										4324,
+										4337
+									],
+									[
+										4671,
+										4684
+									],
+									[
+										4690,
+										4703
+									],
+									[
+										5037,
+										5050
+									],
+									[
+										5056,
+										5069
+									],
+									[
+										5403,
+										5416
+									],
+									[
+										5422,
+										5435
+									],
+									[
+										5769,
+										5782
+									],
+									[
+										5788,
+										5801
+									],
+									[
+										6135,
+										6148
+									],
+									[
+										6154,
+										6167
+									],
+									[
+										6501,
+										6514
+									],
+									[
+										6520,
+										6533
+									],
+									[
+										6867,
+										6880
+									],
+									[
+										6886,
+										6899
+									],
+									[
+										7233,
+										7246
+									],
+									[
+										7252,
+										7265
+									],
+									[
+										7599,
+										7612
+									],
+									[
+										7618,
+										7631
+									],
+									[
+										7965,
+										7978
+									],
+									[
+										7984,
+										7997
+									],
+									[
+										8333,
+										8346
+									],
+									[
+										8352,
+										8365
+									],
+									[
+										8592,
+										8605
+									],
+									[
+										8611,
+										8624
+									],
+									[
+										8851,
+										8864
+									],
+									[
+										8870,
+										8883
+									],
+									[
+										9189,
+										9202
+									],
+									[
+										9208,
+										9221
+									],
+									[
+										9529,
+										9542
+									],
+									[
+										9548,
+										9561
+									],
+									[
+										9867,
+										9880
+									],
+									[
+										9886,
+										9899
+									],
+									[
+										10205,
+										10218
+									],
+									[
+										10224,
+										10237
+									],
+									[
+										10543,
+										10556
+									],
+									[
+										10562,
+										10575
+									],
+									[
+										10881,
+										10894
+									],
+									[
+										10900,
+										10913
+									],
+									[
+										11219,
+										11232
+									],
+									[
+										11238,
+										11251
+									],
+									[
+										11558,
+										11571
+									],
+									[
+										11577,
+										11590
+									],
+									[
+										11897,
+										11910
+									],
+									[
+										11916,
+										11929
+									],
+									[
+										12248,
+										12261
+									],
+									[
+										12267,
+										12280
+									],
+									[
+										12589,
+										12602
+									],
+									[
+										12608,
+										12621
+									],
+									[
+										12930,
+										12943
+									],
+									[
+										12949,
+										12962
+									],
+									[
+										13270,
+										13283
+									],
+									[
+										13289,
+										13302
+									],
+									[
+										13621,
+										13634
+									],
+									[
+										13640,
+										13653
+									],
+									[
+										13960,
+										13973
+									],
+									[
+										13979,
+										13992
+									],
+									[
+										14300,
+										14313
+									],
+									[
+										14319,
+										14332
+									],
+									[
+										14651,
+										14664
+									],
+									[
+										14670,
+										14683
+									],
+									[
+										15002,
+										15015
+									],
+									[
+										15021,
+										15034
+									],
+									[
+										15343,
+										15356
+									],
+									[
+										15362,
+										15375
+									],
+									[
+										15692,
+										15705
+									],
+									[
+										15711,
+										15724
+									],
+									[
+										16025,
+										16038
+									],
+									[
+										16044,
+										16057
+									],
+									[
+										16358,
+										16371
+									],
+									[
+										16377,
+										16390
+									],
+									[
+										16691,
+										16704
+									],
+									[
+										16710,
+										16723
+									],
+									[
+										17023,
+										17036
+									],
+									[
+										17042,
+										17055
+									],
+									[
+										17355,
+										17368
+									],
+									[
+										17374,
+										17387
+									],
+									[
+										17687,
+										17700
+									],
+									[
+										17706,
+										17719
+									],
+									[
+										18019,
+										18032
+									],
+									[
+										18038,
+										18051
+									],
+									[
+										18352,
+										18365
+									],
+									[
+										18371,
+										18384
+									],
+									[
+										18684,
+										18697
+									],
+									[
+										18703,
+										18716
+									],
+									[
+										19016,
+										19029
+									],
+									[
+										19035,
+										19048
+									],
+									[
+										19349,
+										19362
+									],
+									[
+										19368,
+										19381
+									],
+									[
+										19682,
+										19695
+									],
+									[
+										19701,
+										19714
+									],
+									[
+										20015,
+										20028
+									],
+									[
+										20034,
+										20047
+									],
+									[
+										20348,
+										20361
+									],
+									[
+										20367,
+										20380
+									],
+									[
+										20680,
+										20693
+									],
+									[
+										20699,
+										20712
+									],
+									[
+										21014,
+										21027
+									],
+									[
+										21033,
+										21046
+									],
+									[
+										21363,
+										21376
+									],
+									[
+										21382,
+										21395
+									],
+									[
+										21696,
+										21709
+									],
+									[
+										21715,
+										21728
+									],
+									[
+										22029,
+										22042
+									],
+									[
+										22048,
+										22061
+									],
+									[
+										22352,
+										22365
+									],
+									[
+										22371,
+										22384
+									],
+									[
+										22665,
+										22678
+									],
+									[
+										22684,
+										22697
+									],
+									[
+										22974,
+										22987
+									],
+									[
+										22993,
+										23006
+									],
+									[
+										23283,
+										23296
+									],
+									[
+										23302,
+										23315
+									],
+									[
+										23594,
+										23607
+									],
+									[
+										23613,
+										23626
+									],
+									[
+										23903,
+										23916
+									],
+									[
+										23922,
+										23935
+									],
+									[
+										24154,
+										24167
+									],
+									[
+										24173,
+										24186
+									],
+									[
+										24405,
+										24418
+									],
+									[
+										24424,
+										24437
+									],
+									[
+										24656,
+										24669
+									],
+									[
+										24675,
+										24688
+									],
+									[
+										24907,
+										24920
+									],
+									[
+										24926,
+										24939
+									],
+									[
+										25158,
+										25171
+									],
+									[
+										25177,
+										25190
+									],
+									[
+										25409,
+										25422
+									],
+									[
+										25428,
+										25441
+									],
+									[
+										25660,
+										25673
+									],
+									[
+										25679,
+										25692
+									],
+									[
+										25911,
+										25924
+									],
+									[
+										25930,
+										25943
+									],
+									[
+										26162,
+										26175
+									],
+									[
+										26181,
+										26194
+									],
+									[
+										26413,
+										26426
+									],
+									[
+										26432,
+										26445
+									],
+									[
+										26664,
+										26677
+									],
+									[
+										26683,
+										26696
+									],
+									[
+										26915,
+										26928
+									],
+									[
+										26934,
+										26947
+									],
+									[
+										27226,
+										27239
+									],
+									[
+										27245,
+										27258
+									],
+									[
+										27535,
+										27548
+									],
+									[
+										27554,
+										27567
+									],
+									[
+										27858,
+										27871
+									],
+									[
+										27877,
+										27890
+									],
+									[
+										28109,
+										28122
+									],
+									[
+										28128,
+										28141
+									],
+									[
+										28520,
+										28533
+									],
+									[
+										28552,
+										28565
+									],
+									[
+										28876,
+										28889
+									],
+									[
+										29271,
+										29284
+									],
+									[
+										29315,
+										29328
+									],
+									[
+										29726,
+										29739
+									],
+									[
+										30138,
+										30151
+									],
+									[
+										30163,
+										30176
+									],
+									[
+										30567,
+										30580
+									],
+									[
+										30592,
+										30605
+									],
+									[
+										30882,
+										30895
+									],
+									[
+										31398,
+										31411
+									],
+									[
+										31434,
+										31447
+									],
+									[
+										31578,
+										31591
+									],
+									[
+										31605,
+										31618
+									],
+									[
+										31809,
+										31822
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								30839,
+								30839
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9761.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "theme-partials/password-request-form.php",
+					"settings":
+					{
+						"buffer_size": 1389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1315,
+								1315
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "theme-content/scss/modules/_gallery-control.scss",
 					"settings":
 					{
@@ -1164,19 +2013,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "theme-content/scss/_animations.scss",
 					"settings":
 					{
-						"buffer_size": 11393,
+						"buffer_size": 11372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11393,
-								11393
+								4954,
+								4954
 							]
 						],
 						"settings":
@@ -1186,25 +2035,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4765.0,
+						"translation.y": 2657.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "theme-content/scss/modules/_masonry.scss",
 					"settings":
 					{
-						"buffer_size": 4079,
+						"buffer_size": 4176,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4079,
-								3083
+								2436,
+								2436
 							]
 						],
 						"settings":
@@ -1214,7 +2063,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2038.0,
+						"translation.y": 1186.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "theme-content/scss/components/_navigation.scss",
+					"settings":
+					{
+						"buffer_size": 6254,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								444,
+								449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4572.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "theme-content/scss/pages/_post.scss",
+					"settings":
+					{
+						"buffer_size": 8161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8157,
+								8157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6670.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1263,6 +2168,30 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"post",
+				"theme-content/scss/pages/_post.scss"
+			],
+			[
+				"shame",
+				"theme-content/scss/_shame.scss"
+			],
+			[
+				"navi",
+				"theme-content/scss/components/_navigation.scss"
+			],
+			[
+				"style",
+				"theme-content/css/style.css"
+			],
+			[
+				"styl",
+				"theme-content/css/style.css"
+			],
+			[
+				"style.css",
+				"style.css"
+			],
 			[
 				"masonry",
 				"theme-content/scss/modules/_masonry.scss"
@@ -1364,10 +2293,6 @@
 				"theme-content/scss/pages/_project.scss"
 			],
 			[
-				"post",
-				"theme-content/scss/pages/_post.scss"
-			],
-			[
 				"style.sc",
 				"theme-content/scss/style.scss"
 			],
@@ -1380,20 +2305,12 @@
 				"theme-content/scss/plugins/_wpcf7.scss"
 			],
 			[
-				"shame",
-				"theme-content/scss/_shame.scss"
-			],
-			[
 				"mos",
 				"theme-content/scss/modules/_mosaic.scss"
 			],
 			[
 				"mai",
 				"theme-content/js/main.js"
-			],
-			[
-				"styl",
-				"style.css"
 			],
 			[
 				"mosai",
@@ -1510,10 +2427,6 @@
 			[
 				"fonts",
 				"library/scss/components/_fonts.scss"
-			],
-			[
-				"style",
-				"library/scss/style.scss"
 			],
 			[
 				"ty",
@@ -1704,10 +2617,6 @@
 				"wp-content/themes/citylife/sidebar-footer.php"
 			],
 			[
-				"style.css",
-				"wp-content/themes/citylife/library/css/style.css"
-			],
-			[
 				"wpgr",
 				"wp-content/themes/citylife/library/wpGrade.php"
 			],
@@ -1770,10 +2679,6 @@
 			[
 				"template-con",
 				"wp-content/themes/citylife/template-contact.php"
-			],
-			[
-				"template-ta",
-				"wp-content/themes/citylife/library/inc/template-tags.php"
 			]
 		],
 		"width": 0.0

@@ -6,7 +6,7 @@
 
 var phone, touch, ltie9, lteie9, wh, ww, dh, ar, fonts;
 
-var ua = navigator.userAgent;
+var ua = navigator.userAgent.toLowerCase();
 var winLoc = window.location.toString();
 
 var is_webkit = ua.match(/webkit/i);
@@ -16,6 +16,7 @@ var is_older_ie = ua.match(/msie/i) && !is_newer_ie;
 var is_ancient_ie = ua.match(/msie 6/i);
 var is_mobile = ua.match(/mobile/i);
 var is_OSX = (ua.match(/(iPad|iPhone|iPod|Macintosh)/g) ? true : false);
+var is_safari_win = ua.indexOf("safari/") !== -1 && ua.indexOf("windows") !== -1;
 
 var nua = navigator.userAgent;
 var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
@@ -1125,7 +1126,8 @@ function royalSliderInit() {
                 keyboardNavEnabled: rs_keyboardNav,
                 arrowsNavAutoHide: false,
                 sliderDrag: rs_drag,
-                transitionType: rs_transition
+                transitionType: rs_transition,
+                transitionSpeed: 100           
             });     
         }
 
@@ -1648,6 +1650,10 @@ function loadUp(){
     initVideos();
     resizeVideos();
     progressbarInit();
+
+    if (is_safari_win) {
+        $('html').removeClass('cssanimations').addClass('no-cssanimations');
+    }    
 
     // 
     lazyLoad();
