@@ -1759,6 +1759,7 @@ $(function(){
     /* --- INITIALIZE --- */
 
     init();
+    lazyLoad();
 
     /* --- CONDITIONAL LOADING --- */
 
@@ -1782,8 +1783,8 @@ $(function(){
 **/
 
 function imgLoaded(img) {
-
     var $img = $(img);
+    console.log($img.attr('src'));
     setTimeout(function() {
         $img.closest('.mosaic__item').addClass('js--is-loaded');
     }, 80 * Math.floor((Math.random()*5)+1));
@@ -1825,8 +1826,6 @@ $(window).load(function(){
             });
         };
     }
-
-    lazyLoad();
 
     $('html').removeClass('loading');
 });
