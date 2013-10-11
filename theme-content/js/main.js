@@ -1784,12 +1784,9 @@ $(function(){
 function imgLoaded(img) {
 
     var $img = $(img);
-    console.log($img.attr('src'), img.attr('data-src'));
-    if ($img.attr('src') == $img.attr('data-src')) {
         setTimeout(function() {
             $img.closest('.mosaic__item').addClass('js--is-loaded');
         }, 80 * Math.floor((Math.random()*5)+1));
-    }
 
 };
 
