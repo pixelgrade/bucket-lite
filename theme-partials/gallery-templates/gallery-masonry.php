@@ -46,7 +46,6 @@
                         class="js-lazy-load"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         data-src="<?php echo $featured_image; ?>"
-                        onload="loadImage(this)"
                         alt=""
                         />
                     <?php endif; ?>
@@ -65,6 +64,8 @@
             foreach ( $attachments as $attachment ) :
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                 $attachment_fields = get_post_custom( $attachment->ID );
+
+                $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full', true);
 
                 if ($thumb_orientation == 'portrait') {
                     $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v', true);
@@ -124,7 +125,6 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $featured_image; ?>"
-                                onload="loadImage(this)"
                                 alt=""
                                 />
                             <?php endif; ?>
@@ -150,7 +150,6 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $featured_image; ?>"
-                                onload="loadImage(this)"
                                 alt=""
                                 />
                             <?php endif; ?>
