@@ -1788,9 +1788,9 @@ function imgLoaded(img) {
 
     var $img = $(img);
 
-    setTimeout(function() {
+    // setTimeout(function() {
         $img.closest('.mosaic__item').addClass('js--is-loaded');
-    }, 2500 + 40 * Math.floor((Math.random()*10)+1));
+    // }, 40 * Math.floor((Math.random()*10)+1));
 
 };
 
