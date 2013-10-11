@@ -119,9 +119,9 @@
 						<?php if ($featured_image != ""): ?>
 							<img
 								class="js-lazy-load"
-								src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-								data-src="<?php echo $featured_image; ?>"
+								src="<?php echo $featured_image; ?>"
 								alt=""
+                                onload="imgLoaded(this)"
 							/>
 						<?php else: ?>
 							<img
@@ -181,9 +181,9 @@
                         <?php if ($has_post_thumbnail) : ?>
                         <img
                             class="js-lazy-load"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-src="<?php echo $post_featured_image; ?>"
+                            src="<?php echo $post_featured_image; ?>"
                             alt=""
+                            onload="imgLoaded(this)"
                             />
                         <?php endif; ?>                         
                     </div>
@@ -208,9 +208,9 @@
                         <?php if ($has_post_thumbnail) : ?>
                         <img
                             class="js-lazy-load"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            data-src="<?php echo $post_featured_image; ?>"
+                            src="<?php echo $post_featured_image; ?>"
                             alt=""
+                            onload="imgLoaded(this)"
                             />
                         <?php endif; ?>                         
                     </div>
