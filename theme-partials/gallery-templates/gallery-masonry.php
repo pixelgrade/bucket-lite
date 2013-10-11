@@ -44,9 +44,9 @@
                     <?php if ($has_post_thumbnail) : ?>
                     <img
                         class="js-lazy-load"
-                        src="<?php echo $featured_image; ?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="<?php echo $featured_image; ?>"
                         alt=""
-                        onload="imgLoaded(this)"
                         />
                     <?php endif; ?>
                     </div>
@@ -66,15 +66,9 @@
                 $attachment_fields = get_post_custom( $attachment->ID );
 
                 if ($thumb_orientation == 'portrait') {
-                    $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
                     $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v', true);
-                    $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true);
-                    $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true);
                 } else {
-                    $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
                     $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
-                    $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-                    $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                 }
 				
 				//whether or not to show the title and caption in popups
@@ -98,9 +92,9 @@
                         <div class="image__item-wrapper">
                             <img
                                 class="js-lazy-load"
-                                src="<?php echo $img['big'][0]; ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                data-src="<?php echo $img['big'][0]; ?>"
                                 alt=""
-                                onload="imgLoaded(this)"
                                 />
                         </div>
                         <div class="image__item-meta">
