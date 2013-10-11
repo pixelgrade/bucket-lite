@@ -1784,9 +1784,12 @@ $(function(){
 function imgLoaded(img) {
 
     var $img = $(img);
-    setTimeout(function() {
-        $img.closest('.mosaic__item').addClass('js--is-loaded');
-    }, 80 * Math.floor((Math.random()*5)+1));
+
+    if ($img.attr('src') == $img.attr('data-src')) {
+        setTimeout(function() {
+            $img.closest('.mosaic__item').addClass('js--is-loaded');
+        }, 80 * Math.floor((Math.random()*5)+1));
+    }
 
 };
 
@@ -1829,7 +1832,6 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').removeClass('loading');
-    console.log($('.mosaic__item'));
 });
 
 
