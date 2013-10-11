@@ -46,6 +46,7 @@
                         class="js-lazy-load"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         data-src="<?php echo $featured_image; ?>"
+                        onload="loadImage(this)"
                         alt=""
                         />
                     <?php endif; ?>
@@ -66,15 +67,9 @@
                 $attachment_fields = get_post_custom( $attachment->ID );
 
                 if ($thumb_orientation == 'portrait') {
-                    $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
                     $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big-v', true);
-                    $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true);
-                    $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium-v', true);
                 } else {
-                    $img['full'] = wp_get_attachment_image_src($attachment->ID, 'full');
                     $img['big'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-big', true);
-                    $img['medium'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
-                    $img['small'] = wp_get_attachment_image_src($attachment->ID, 'portfolio-medium', true);
                 }
 				
 				//whether or not to show the title and caption in popups
@@ -100,9 +95,6 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $img['big'][0]; ?>"
-                                data-big="<?php echo $img['big'][0]; ?>"
-                                data-medium="<?php echo $img['medium'][0]; ?>"
-                                data-small="<?php echo $img['small'][0]; ?>"
                                 alt=""
                                 />
                         </div>
@@ -132,6 +124,7 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $featured_image; ?>"
+                                onload="loadImage(this)"
                                 alt=""
                                 />
                             <?php endif; ?>
@@ -157,6 +150,7 @@
                                 class="js-lazy-load"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 data-src="<?php echo $featured_image; ?>"
+                                onload="loadImage(this)"
                                 alt=""
                                 />
                             <?php endif; ?>

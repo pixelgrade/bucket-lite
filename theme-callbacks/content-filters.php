@@ -51,3 +51,14 @@
 	function wpgrade_callback_paragraph_filters($content) {
 		return do_shortcode($content);
 	}
+
+	/**
+	 * Password form submit button
+	 */
+
+	add_filter('the_password_form', 'wpgrade_change_password_submit_label');
+
+	function wpgrade_change_password_submit_label( $form ){
+		$return = str_replace('value="Submit"', 'value="Access"', $form);
+		return $return;
+	}

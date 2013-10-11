@@ -20,9 +20,7 @@
             else
                 $post_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'portfolio-big', true);
             $post_featured_image = $post_featured_image[0];
-        }
-
-        ?>
+        } ?>
 
         <div class="mosaic__item <?php echo $thumb_orientation; ?> mosaic__item--page-title-mobile">
             <div class="image__item-link">
@@ -51,7 +49,7 @@
         $args = array(
             'post_type' => 'lens_portfolio',
             'orderby' => 'menu_order date',
-            'order' => 'ASC',
+            'order' => 'DESC',
             'posts_per_page' => -1
         );
 
