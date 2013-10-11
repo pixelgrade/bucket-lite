@@ -1790,7 +1790,7 @@ function imgLoaded(img) {
 
     setTimeout(function() {
         $img.closest('.mosaic__item').addClass('js--is-loaded');
-    }, 40 * Math.floor((Math.random()*10)+1));
+    }, 2500 + 40 * Math.floor((Math.random()*10)+1));
 
 };
 
