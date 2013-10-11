@@ -1649,9 +1649,6 @@ function loadUp(){
     resizeVideos();
     progressbarInit();
 
-    // 
-    lazyLoad();
-
     // if blog archive
     if ($('.masonry').length && !lteie9 && !is_android) {
         salvattore();
@@ -1788,9 +1785,10 @@ function imgLoaded(img) {
 
     var $img = $(img);
 
-    // setTimeout(function() {
+    console.log('imgLoaded');
+    setTimeout(function() {
         $img.closest('.mosaic__item').addClass('js--is-loaded');
-    // }, 40 * Math.floor((Math.random()*10)+1));
+    }, 2000 + 40 * Math.floor((Math.random()*10)+1));
 
 };
 
@@ -1853,7 +1851,7 @@ function animateGallery(direction) {
         var $item = $(this);
         setTimeout(function() {
             $item.addClass('slide-' + direction);
-        }, 40 * Math.floor((Math.random()*10)+1));
+        }, 4000 + 40 * Math.floor((Math.random()*10)+1));
     });
 
 }
@@ -1967,6 +1965,7 @@ $(window).bind('djaxLoad', function(e, data) {
     browserSize();
     resizeVideos();
 
+    lazyLoad();
     loadUp();
 });
 
