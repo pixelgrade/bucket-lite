@@ -1783,8 +1783,9 @@ $(function(){
 
 function imgLoaded(img) {
 
+    var $img = $(img);
     setTimeout(function() {
-        img.closest('.mosaic__item').addClass('js--is-loaded');
+        $img.closest('.mosaic__item').addClass('js--is-loaded');
     }, 80 * Math.floor((Math.random()*5)+1));
 
 };
@@ -1795,13 +1796,8 @@ function lazyLoad() {
     var $images = $('.js-lazy-load');
 
     $images.each(function(){
-
-        var $img = $(this),
-            src = $img.attr('data-src'),
-            $newImg = $('<img src="'+src+'" />');
-
-        $img.replaceWith($newImg);
-        $newImg.on('load', imgLoaded($newImg));
+        var $img = $(this);
+        $img.on('load', imgLoaded($img[0]));
     });
 };
 
@@ -1826,9 +1822,9 @@ $(window).load(function(){
         };
     }
 
-    $('html').removeClass('loading');
-
     lazyLoad();
+
+    $('html').removeClass('loading');
 });
 
 

@@ -117,15 +117,13 @@
 						<?php if ($featured_image != ""): ?>
 							<img
 								class="js-lazy-load"
-								src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-								data-src="<?php echo $featured_image; ?>"
+								src="<?php echo $featured_image; ?>"
 								alt=""
 							/>
 						<?php else: ?>
 							<img
 								class="js-lazy-load"
-								src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-								data-src="<?php 
+								src="<?php 
                                 if($thumb_orientation)   
                                     echo get_template_directory_uri().'/theme-content/img/camera-v.png';
                                 else
