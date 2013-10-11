@@ -89,16 +89,17 @@
     }
 }
 
-.no-android-browser{
-    .masonry__item{            
-        @include opacity(0);
+.no-android-browser {
+    
+    .masonry__item {
+        opacity: 0;
         @include transform(translate3d(0,2em,0));
         @include transition(opacity .3s ease-in-out, transform .3s ease-in-out);
         @include backface-visibility(hidden);        
     }
 
-    .masonry__item.is-loaded{
-        @include opacity(1);
+    .masonry__item.is-loaded {
+        opacity: 1;
         @include transform(none);
     }
 }

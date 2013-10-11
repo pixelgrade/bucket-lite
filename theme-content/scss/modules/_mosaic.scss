@@ -72,7 +72,7 @@
         }
     }
 
-    .loaded .slide-in .image__item-link {
+    .loaded .js--is-loaded.slide-in .image__item-link {
         -webkit-animation: slide-in .25s bezier(easeOutQuad);
            -moz-animation: slide-in .25s bezier(easeOutQuad);
              -o-animation: slide-in .25s bezier(easeOutQuad);
@@ -84,7 +84,7 @@
         }
     }
 
-    .loaded .slide-out .image__item-link {
+    .loaded .js--is-loaded.slide-out .image__item-link {
         -webkit-animation: slide-out .25s bezier(easeOutQuad);
            -moz-animation: slide-out .25s bezier(easeOutQuad);
              -o-animation: slide-out .25s bezier(easeOutQuad);
@@ -97,8 +97,7 @@
     }
 
     .image_item-table {
-        @include opacity(0);
-        @include transition(all .2s .1s ease-out);
+        @include transition(transform .2s .1s ease-out);
     }
 
     .no-touch .mosaic__item:hover {
