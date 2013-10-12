@@ -215,7 +215,7 @@
                 'sub_desc' => __('Show social icons in the footer. The links and order are taken from the Social and SEO Options tabs.', wpgrade::textdomain()),
                 'std' => '1',
                 'switch' => true,
-                'next_to_hide' => 2,
+                'next_to_hide' => 3,
             ),
             array(
                 'id' => 'social_footer_menu_title',
@@ -251,6 +251,14 @@
                     'lastfm' => __('Last.FM', wpgrade::textdomain()),
                     'appnet' => __('App.net', wpgrade::textdomain())
                 )
+            ),
+			array(
+                'id' => 'social_icons_target_blank',
+                'type' => 'checkbox',
+                'title' => __('Open Links In A New Window', wpgrade::textdomain()),
+                'sub_desc' => __('Check this to open social links in a new window (target="_blank").', wpgrade::textdomain()),
+                'std' => '0',
+                'switch' => true,
             ),
         )
 	);
