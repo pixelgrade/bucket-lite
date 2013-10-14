@@ -29,7 +29,7 @@
                 <div class="image__item-meta">
                     <div class="image_item-table">
                         <div class="image_item-cell">
-                            <h1>Galleries</h1>
+                            <h1><?php _e('Galleries',wpgrade::textdomain()) ?></h1>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
-                                <h1>Galleries</h1>
+                                <h1><?php _e('Galleries',wpgrade::textdomain()) ?></h1>
                             </div>
                         </div>
                     </div>
@@ -187,7 +187,7 @@
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
-                                <h1>Galleries</h1>
+                                <h1><?php _e('Galleries',wpgrade::textdomain()) ?></h1>
                             </div>
                         </div>
                     </div>

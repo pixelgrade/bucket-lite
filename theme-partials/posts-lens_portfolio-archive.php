@@ -4,10 +4,10 @@
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
-
         $thumb_orientation = '';
-        if(wpgrade::option('portfolio_thumb_orientation') == 'portrait') $thumb_orientation = ' mosaic__item--portrait';
-        else $thumb_orientation = '';        
+        if(wpgrade::option('portfolio_thumb_orientation') == 'portrait') {
+			$thumb_orientation = ' mosaic__item--portrait';
+		}
 
         $has_post_thumbnail = has_post_thumbnail();
 
@@ -36,7 +36,7 @@
                 <div class="image__item-meta">
                     <div class="image_item-table">
                         <div class="image_item-cell">
-                            <h1>Portfolio</h1>
+                            <h1><?php _e('Portfolio',wpgrade::textdomain()) ?></h1>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,7 @@
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
-                                <h1>Portfolio</h1>
+                                <h1><?php _e('Portfolio',wpgrade::textdomain()) ?></h1>
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@
                     <div class="image__item-meta">
                         <div class="image_item-table">
                             <div class="image_item-cell">
-                                <h1>Portfolio</h1>
+                                <h1><?php _e('Portfolio',wpgrade::textdomain()) ?></h1>
                             </div>
                         </div>
                     </div>
