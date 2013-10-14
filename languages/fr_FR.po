@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-11 14:57+0200\n"
-"PO-Revision-Date: 2013-10-11 14:59+0200\n"
+"POT-Creation-Date: 2013-10-12 20:36+0200\n"
+"PO-Revision-Date: 2013-10-12 20:38+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: French\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_nx:1,2;_n:1,2;_nx_noop:1,2;_ex\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -1071,11 +1071,21 @@ msgstr "Last.FM"
 msgid "App.net"
 msgstr "App.net"
 
-#: ../theme-content/admin-panel/redux-sections.php:288
+#: ../theme-content/admin-panel/redux-sections.php:258
+msgid "Open Links In A New Window"
+msgstr "Liens s'ouvrent dans une nouvelle fenêtre"
+
+#: ../theme-content/admin-panel/redux-sections.php:259
+msgid "Check this to open social links in a new window (target=\"_blank\")."
+msgstr ""
+"Cochez cette case pour ouvrir les liens sociaux dans une nouvelle fenêtre "
+"(target=\"_blank\")."
+
+#: ../theme-content/admin-panel/redux-sections.php:296
 msgid "Select Form"
 msgstr "Sélectionner un formulaire"
 
-#: ../theme-content/admin-panel/redux-sections.php:289
+#: ../theme-content/admin-panel/redux-sections.php:297
 #, php-format
 msgid ""
 "Select a contact form previously created with the Contact Form 7 plugin. You "
@@ -1085,11 +1095,11 @@ msgstr ""
 "7 plugin. Vous pouvez créer un <a href=\"%s\" title=\"Contact Form 7\">ici</"
 "a>"
 
-#: ../theme-content/admin-panel/redux-sections.php:297
+#: ../theme-content/admin-panel/redux-sections.php:305
 msgid "Notice"
 msgstr "Notice"
 
-#: ../theme-content/admin-panel/redux-sections.php:298
+#: ../theme-content/admin-panel/redux-sections.php:306
 #, php-format
 msgid ""
 "<p class=\"description\">The Contact Form 7 plugin is not active. You can "
@@ -1099,22 +1109,22 @@ msgstr ""
 "pouvez installer/activer à partir de <a href=\"%s\" title=\"Contact Form "
 "7\">ici</a></p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:309
+#: ../theme-content/admin-panel/redux-sections.php:317
 msgid "Contact Page"
 msgstr "Page de contact"
 
-#: ../theme-content/admin-panel/redux-sections.php:310
+#: ../theme-content/admin-panel/redux-sections.php:318
 msgid ""
 "<p class=\"description\">General settings for the contact page template!</p>"
 msgstr ""
 "<p class=\"description\">Paramètres généraux pour le modèle de page de "
 "contact!</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:315
+#: ../theme-content/admin-panel/redux-sections.php:323
 msgid "Google Maps Link"
 msgstr "Lien vers Google Maps"
 
-#: ../theme-content/admin-panel/redux-sections.php:316
+#: ../theme-content/admin-panel/redux-sections.php:324
 msgid ""
 "Paste here the the URL that you've got from Google Maps, after navigating to "
 "your location.<br />Here it is <a href=\"http://screenr.com/MjV7\" target="
@@ -1125,67 +1135,67 @@ msgstr ""
 "MjV7 \" target = \"_blank\"> un court-métrage </a> vous montre comment "
 "obtenir l'URL"
 
-#: ../theme-content/admin-panel/redux-sections.php:321
+#: ../theme-content/admin-panel/redux-sections.php:329
 msgid "Custom Styling for Map?"
 msgstr "Styling personnalisé pour la carte?"
 
-#: ../theme-content/admin-panel/redux-sections.php:322
+#: ../theme-content/admin-panel/redux-sections.php:330
 msgid "Allow us to change the map colors to better match your website."
 msgstr ""
 "Nous permettent de changer les couleurs de la carte pour mieux correspondre "
 "à votre site web."
 
-#: ../theme-content/admin-panel/redux-sections.php:338
+#: ../theme-content/admin-panel/redux-sections.php:346
 msgid "Portfolio Options"
 msgstr "Options du portefolio"
 
-#: ../theme-content/admin-panel/redux-sections.php:339
+#: ../theme-content/admin-panel/redux-sections.php:347
 msgid "<p class=\"description\">General settings for portfolio items.</p>"
 msgstr ""
 "<p class=\"description\"> Paramètres généraux pour les articles du "
 "portefeuille. </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:344
-#: ../theme-content/admin-panel/redux-sections.php:415
+#: ../theme-content/admin-panel/redux-sections.php:352
+#: ../theme-content/admin-panel/redux-sections.php:423
 msgid "Show Share Links"
 msgstr "Afficher Share links"
 
-#: ../theme-content/admin-panel/redux-sections.php:345
+#: ../theme-content/admin-panel/redux-sections.php:353
 msgid "Do you want to show the share links bellow the projects?"
 msgstr "Voulez-vous montrer les liens d'actions dessous, les projets?"
 
-#: ../theme-content/admin-panel/redux-sections.php:353
-#: ../theme-content/admin-panel/redux-sections.php:424
+#: ../theme-content/admin-panel/redux-sections.php:361
+#: ../theme-content/admin-panel/redux-sections.php:432
 msgid "Twitter Share Link"
 msgstr "Twitter Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:361
-#: ../theme-content/admin-panel/redux-sections.php:432
+#: ../theme-content/admin-panel/redux-sections.php:369
+#: ../theme-content/admin-panel/redux-sections.php:440
 msgid "Facebook Share Link"
 msgstr "Facebook Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:369
-#: ../theme-content/admin-panel/redux-sections.php:440
+#: ../theme-content/admin-panel/redux-sections.php:377
+#: ../theme-content/admin-panel/redux-sections.php:448
 msgid "Google+ Share Link"
 msgstr "Google+ Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:375
+#: ../theme-content/admin-panel/redux-sections.php:383
 msgid "Portfolio grid thumbnail orientation"
 msgstr "Portefeuille grille orientation des vignettes"
 
-#: ../theme-content/admin-panel/redux-sections.php:376
+#: ../theme-content/admin-panel/redux-sections.php:384
 msgid "Horizontal thumbnails or vertical thumbnails"
 msgstr "Vignettes horizontales ou verticales vignettes"
 
-#: ../theme-content/admin-panel/redux-sections.php:386
+#: ../theme-content/admin-panel/redux-sections.php:394
 msgid "How many projects on portfolio page"
 msgstr "Combien de projets sur la page de portefeuille"
 
-#: ../theme-content/admin-panel/redux-sections.php:402
+#: ../theme-content/admin-panel/redux-sections.php:410
 msgid "Blog Options"
 msgstr "Options du blog"
 
-#: ../theme-content/admin-panel/redux-sections.php:403
+#: ../theme-content/admin-panel/redux-sections.php:411
 msgid ""
 "<p class=\"description\">Change blog archive and single post related options "
 "here.</p>"
@@ -1193,39 +1203,39 @@ msgstr ""
 "<p class=\"description\">Changer archive de blog et articles individuels "
 "liés options ici.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:408
+#: ../theme-content/admin-panel/redux-sections.php:416
 msgid "Excerpt Length"
 msgstr "Extrait longueur"
 
-#: ../theme-content/admin-panel/redux-sections.php:409
+#: ../theme-content/admin-panel/redux-sections.php:417
 msgid "Set here the excerpt length for the blog archive (number of words)."
 msgstr "Réglez ici la longueur d'extrait de l'archive blogue (nombre de mots)."
 
-#: ../theme-content/admin-panel/redux-sections.php:416
+#: ../theme-content/admin-panel/redux-sections.php:424
 msgid "Do you want to show the share links bellow the article?"
 msgstr "Voulez-vous montrer les liens d'actions soufflet cet article?"
 
-#: ../theme-content/admin-panel/redux-sections.php:455
+#: ../theme-content/admin-panel/redux-sections.php:463
 msgid "Social and SEO Options"
 msgstr "Options sociales et SEO"
 
-#: ../theme-content/admin-panel/redux-sections.php:457
+#: ../theme-content/admin-panel/redux-sections.php:465
 msgid "<p class=\"description\">Social sharing stuff.</p>"
 msgstr "<p class=\"description\">Des trucs de partage social.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:462
+#: ../theme-content/admin-panel/redux-sections.php:470
 msgid "Open social icons links in new a window?"
 msgstr "Ouvrez les liens icônes sociaux dans la nouvelle fenêtre?"
 
-#: ../theme-content/admin-panel/redux-sections.php:463
+#: ../theme-content/admin-panel/redux-sections.php:471
 msgid "Do you want to open social links in a new window ?"
 msgstr "Voulez-vous ouvrir les liens sociaux dans une nouvelle fenêtre?"
 
-#: ../theme-content/admin-panel/redux-sections.php:470
+#: ../theme-content/admin-panel/redux-sections.php:478
 msgid "Add Social Meta Tags"
 msgstr "Ajouter étiquettes de méta sociaux"
 
-#: ../theme-content/admin-panel/redux-sections.php:471
+#: ../theme-content/admin-panel/redux-sections.php:479
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
@@ -1233,11 +1243,11 @@ msgstr ""
 "Préparons-nous correctement votre thème pour le partage social et de "
 "découverte en ajoutant les metatags nécessaires dans la section <head>."
 
-#: ../theme-content/admin-panel/redux-sections.php:479
+#: ../theme-content/admin-panel/redux-sections.php:487
 msgid "Facebook Application ID"
 msgstr "Application Facebook ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:480
+#: ../theme-content/admin-panel/redux-sections.php:488
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
@@ -1247,11 +1257,11 @@ msgstr ""
 "site. Vous pouvez créer un <a href=\"https://developers.facebook.com/apps\"> "
 "ici </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:485
+#: ../theme-content/admin-panel/redux-sections.php:493
 msgid "Facebook Admin ID"
 msgstr "Facebook Administrateur ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:486
+#: ../theme-content/admin-panel/redux-sections.php:494
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
@@ -1261,11 +1271,11 @@ msgstr ""
 "votre appli Facebook pour que vous puissiez accéder à la <a href=\"https://"
 "www.facebook.com/insights/\"> Facebook Insights </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:491
+#: ../theme-content/admin-panel/redux-sections.php:499
 msgid "Google+ Publisher"
 msgstr "Editeur Google+"
 
-#: ../theme-content/admin-panel/redux-sections.php:492
+#: ../theme-content/admin-panel/redux-sections.php:500
 msgid ""
 "Enter your Google Plus page ID (example: https://plus.google.com/"
 "<b>105345678532237339285</b>) here if you have set up a \"Google+ Page\"."
@@ -1274,11 +1284,11 @@ msgstr ""
 "com/105345678532237339285) ici si vous avez mis en place un \"page Google+ "
 "\"."
 
-#: ../theme-content/admin-panel/redux-sections.php:497
+#: ../theme-content/admin-panel/redux-sections.php:505
 msgid "Twitter Site Username"
 msgstr "Twitter du site Nom d'utilisateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:498
+#: ../theme-content/admin-panel/redux-sections.php:506
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
@@ -1286,11 +1296,11 @@ msgstr ""
 "Le nom d'utilisateur Twitter de l'ensemble du site. Le nom de l'auteur sera "
 "prélevé sur le profil de l'auteur (sauter le signe @)"
 
-#: ../theme-content/admin-panel/redux-sections.php:503
+#: ../theme-content/admin-panel/redux-sections.php:511
 msgid "Default Social Share Image"
 msgstr "Par défaut Partager Social image"
 
-#: ../theme-content/admin-panel/redux-sections.php:504
+#: ../theme-content/admin-panel/redux-sections.php:512
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
@@ -1299,11 +1309,11 @@ msgstr ""
 "vous ne téléchargez une image personnalisée avec votre contenu (au moins "
 "200px de large recommandée)."
 
-#: ../theme-content/admin-panel/redux-sections.php:509
+#: ../theme-content/admin-panel/redux-sections.php:517
 msgid "Use Twitter Widget"
 msgstr "Utilisez Twitter Widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:510
+#: ../theme-content/admin-panel/redux-sections.php:518
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
@@ -1312,11 +1322,11 @@ msgstr ""
 "compatible). Vous pouvez ajouter dans votre blog ou encadrés bas de page. "
 "<div class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:518
+#: ../theme-content/admin-panel/redux-sections.php:526
 msgid "Important Note : "
 msgstr "Remarque importante: "
 
-#: ../theme-content/admin-panel/redux-sections.php:519
+#: ../theme-content/admin-panel/redux-sections.php:527
 msgid ""
 "In order to use the Twitter widget you will need to create a Twitter "
 "application <a href=\"https://dev.twitter.com/apps/new\" >here</a> and get "
@@ -1330,27 +1340,27 @@ msgstr ""
 "Twitter a fait à son API (v1.1). S'il vous plaît noter que ces valeurs par "
 "défaut sont utilisés sur le "
 
-#: ../theme-content/admin-panel/redux-sections.php:524
+#: ../theme-content/admin-panel/redux-sections.php:532
 msgid "Consumer Key"
 msgstr "Clé des consommateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:530
+#: ../theme-content/admin-panel/redux-sections.php:538
 msgid "Consumer Secret"
 msgstr "Secret consommateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:536
+#: ../theme-content/admin-panel/redux-sections.php:544
 msgid "Oauth Access Token"
 msgstr "Oauth accès token"
 
-#: ../theme-content/admin-panel/redux-sections.php:542
+#: ../theme-content/admin-panel/redux-sections.php:550
 msgid "Oauth Access Token Secret"
 msgstr "Oauth token d'accès secret"
 
-#: ../theme-content/admin-panel/redux-sections.php:555
+#: ../theme-content/admin-panel/redux-sections.php:563
 msgid "Theme Auto Update"
 msgstr "Thème Upgrade automatique"
 
-#: ../theme-content/admin-panel/redux-sections.php:556
+#: ../theme-content/admin-panel/redux-sections.php:564
 msgid ""
 "<p class=\"description\">Let us notify you when new versions of this theme "
 "are live on ThemeForest! Update with just one button click. Forget about "
@@ -1360,33 +1370,33 @@ msgstr ""
 "versions de ce thème sont en direct sur ThemeForest! Mise à jour avec un "
 "seul clic de bouton. Oubliez les mises à jour manuelles!</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:561
+#: ../theme-content/admin-panel/redux-sections.php:569
 msgid "Use Auto Update"
 msgstr "Utilisez upgrade automatique"
 
-#: ../theme-content/admin-panel/redux-sections.php:562
+#: ../theme-content/admin-panel/redux-sections.php:570
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 "Activez cette option pour entrer les informations nécessaires pour le thème "
 "de mise à jour automatique de travailler."
 
-#: ../theme-content/admin-panel/redux-sections.php:570
+#: ../theme-content/admin-panel/redux-sections.php:578
 msgid "ThemeForest Username"
 msgstr "ThemeForest Nom d'utilisateur"
 
-#: ../theme-content/admin-panel/redux-sections.php:571
+#: ../theme-content/admin-panel/redux-sections.php:579
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr ""
 "Entrez ici votre ThemeForest utilisateur du compte (ou Envato) (c. "
 "pixelgrade)."
 
-#: ../theme-content/admin-panel/redux-sections.php:576
+#: ../theme-content/admin-panel/redux-sections.php:584
 msgid "ThemeForest Secret API Key"
 msgstr "ThemeForest secret API Key"
 
-#: ../theme-content/admin-panel/redux-sections.php:577
+#: ../theme-content/admin-panel/redux-sections.php:585
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
@@ -1394,11 +1404,11 @@ msgstr ""
 "Saisissez ici la clé API secret que vous avez créé sur ThemeForest. Vous "
 "pouvez créer un nouveau dans le Paramètres> API section Clés de votre profil."
 
-#: ../theme-content/admin-panel/redux-sections.php:582
+#: ../theme-content/admin-panel/redux-sections.php:590
 msgid "Backup Theme Before Upgrade?"
 msgstr "Sauvegarde thème avant de mettre à niveau?"
 
-#: ../theme-content/admin-panel/redux-sections.php:583
+#: ../theme-content/admin-panel/redux-sections.php:591
 msgid ""
 "Check this if you want us to automatically save your theme as a ZIP archive "
 "before an upgrade. The directory those backups get saved to is <code>wp-"
