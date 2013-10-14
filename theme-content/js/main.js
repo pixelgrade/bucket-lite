@@ -983,31 +983,6 @@ function platformDetect(){
     if (safari) $bod.addClass('safari');
     if (phone) $bod.addClass('phone');
     
-    // if (ltie9) {
-    //     $bod.addClass('shitmode');
-        
-    //     var $ieBlocker = $('#IEBlocker'),
-    //     firstVisit = $.readCookie('firstvisit');
-    //     if(firstVisit != 'no'){
-    //         $ieBlocker.show();
-    //         $('#LetMeIn').click(function(){
-    //             $.setCookie('firstvisit', 'no', { 
-    //                 duration : 1, 
-    //                 path: '/'
-    //             });
-    //             $('#IEBlocker').remove();
-    //         });
-    //     };
-    // };
-    
-    // if (!svgSupport || !svgSupportAlt || lteie9 || ff3x){
-    //     $bod.addClass('no_svg');
-    // };
-    
-    // if(!phone && !touch && !lteie9 && !$('html').hasClass('wf-active')){
-    //     $('#PageLoader').show();
-    // };
-    
 };
 
 
@@ -1125,7 +1100,7 @@ function royalSliderInit() {
                 keyboardNavEnabled: rs_keyboardNav,
                 arrowsNavAutoHide: false,
                 sliderDrag: rs_drag,
-                transitionType: rs_transition
+                transitionType: rs_transition           
             });     
         }
 
@@ -1136,7 +1111,7 @@ function royalSliderInit() {
         if(slidesNumber > 1)
         if (royalSlider && rs_customArrows) {
                 var $gallery_control = $(
-                    '<div class="gallery-control">' +
+                    '<div class="gallery-control js-gallery-control">' +
                         '<a href="#" class="control-item arrow-button arrow-button--left js-slider-arrow-prev"></a>' +
                         '<div class="control-item count js-gallery-current-slide">' +
                             '<span class="highlighted js-decimal">0</span><span class="js-unit">1</span>' +
@@ -1178,6 +1153,16 @@ function royalSliderInit() {
                 event.preventDefault();
                 royalSlider.next();
             });    
+
+            royalSlider.ev.on('rsVideoPlay', function() {
+                $('.header').hide();
+                $('.js-gallery-control').hide();
+            });
+            
+            royalSlider.ev.on('rsVideoStop', function() {
+                $('.header').show();
+                $('.js-gallery-control').show();
+            });            
         }
     });
 };
@@ -1283,7 +1268,7 @@ function magnificPopupInit() {
 
     $('.js-project-gallery').each(function() { // the containers for all your galleries should have the class gallery
         $(this).magnificPopup({
-            delegate: 'a', // the container for each your gallery items
+            delegate: 'a[href$=".jpg"], a[href$=".png"], a[href$=".gif"]', // the container for each your gallery items
             type: 'image',
             removalDelay: 500,
             mainClass: 'mfp-fade',
@@ -1785,8 +1770,6 @@ function imgLoaded(img) {
 
     var $img = $(img);
 
-    $img.closest('.mosaic__item').addClass('js--is-loaded');
-
 };
 
 
@@ -1799,7 +1782,10 @@ function lazyLoad() {
         var $img = $(this),
             src = $img.attr('data-src');
 
-        $img.on('load', imgLoaded($img[0]));
+        $img.on('load', function() {
+            $img.closest('.mosaic__item').addClass('js--is-loaded');
+        });
+
         $img.attr('src', src);
     });
 };
@@ -1828,13 +1814,6 @@ $(window).load(function(){
     lazyLoad();
 
     $('html').removeClass('loading');
-
-    $('.site-navigation--main').children().each(function(i,e) {
-        var $self = $(e);
-        setTimeout(function() {
-            $self.addClass('js--is-loaded');
-        }, (i+1) * 50);
-    });
 });
 
 
@@ -1848,7 +1827,7 @@ function animateGallery(direction) {
         var $item = $(this);
         setTimeout(function() {
             $item.addClass('slide-' + direction);
-        }, 40 * Math.floor((Math.random()*10)+1));
+        }, 80 * Math.floor((Math.random()*5)+1));
     });
 
 }

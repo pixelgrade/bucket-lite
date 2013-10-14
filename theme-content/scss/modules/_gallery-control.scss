@@ -175,3 +175,8 @@
 .pixslider .gallery-item{
     width: 100%;
 }
+
+// Add pointer cursor when slider has the fade transition
+.rsFade .rsContainer{
+    cursor: pointer;
+}

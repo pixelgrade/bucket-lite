@@ -1,11 +1,37 @@
 <?php
-
+	$cat_param = get_query_var('lens_portfolio_categories');
+	$cat_data = get_term_by('slug', $cat_param, 'lens_portfolio_categories');
 ?>
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
+		$thumb_orientation = '';
+        if(wpgrade::option('portfolio_thumb_orientation') == 'portrait') {
+			$thumb_orientation = ' mosaic__item--portrait';
+		}
+		?>
+		<div class="mosaic__item <?php echo $thumb_orientation; ?> mosaic__item--page-title-mobile">
+            <div class="image__item-link">
+                <div class="image__item-wrapper">                       
+                </div>
+                <div class="image__item-meta">
+                    <div class="image_item-table">
+                        <div class="image_item-cell">
+                            <h1><?php echo $cat_data->name; ?></h1>
+							<?php
+							// show an optional category description
+							if ( !empty($cat_data->description) )
+								echo apply_filters( 'category_archive_meta', '<span class="image_item-description">' . $cat_data->description . '</span>' );
+							?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<?php
+		$idx = 0;
 		while ( have_posts() ) : the_post();
-
+			$idx++;
 			$gallery_ids = array();
 			$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
 			if (!empty($gallery_ids)) {
@@ -54,7 +80,7 @@
             
             <div class="mosaic__item <?php if($categories) foreach($categories as $cat) { echo strtolower($cat->name) . ' '; } ?> ">
                 <a href="<?php the_permalink(); ?>" class="image__item-link">
-                   <div class="image__item-wrapper">
+                  <div class="image__item-wrapper">
                         <?php if ($featured_image != ""): ?>
                             <img
                                 class="js-lazy-load"
@@ -98,8 +124,52 @@
                     </div>
                 </a>
             </div>            
-            <?php
+			<?php
+            // if we added 3 it's now time to add the page title box
+            if ($idx == 3) : ?>
+            <div class="mosaic__item  <?php echo $thumb_orientation; ?> mosaic__item--page-title">
+                <div class="image__item-link">
+                    <div class="image__item-wrapper">                      
+                    </div>
+                    <div class="image__item-meta">
+                        <div class="image_item-table">
+                            <div class="image_item-cell">
+								<h1><?php echo $cat_data->name; ?></h1>
+								<?php
+								// show an optional category description
+								if ( !empty($cat_data->description) )
+									echo apply_filters( 'category_archive_meta', '<span class="image_item-description">' . $cat_data->description . '</span>' );
+								?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif;
         endwhile;
+		
+		// if there were less than 3 items, still add the title box
+		if ($idx < 3) : ?>
+		<div class="mosaic__item  <?php echo $thumb_orientation; ?> mosaic__item--page-title">
+			<div class="image__item-link">
+				<div class="image__item-wrapper">                    
+				</div>
+				<div class="image__item-meta">
+					<div class="image_item-table">
+						<div class="image_item-cell">
+							<h1><?php echo $cat_data->name; ?></h1>
+							<?php
+							// show an optional category description
+							if ( !empty($cat_data->description) )
+								echo apply_filters( 'category_archive_meta', '<span class="image_item-description">' . $cat_data->description . '</span>' );
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php 
+		endif;
         ?>
     </div><!-- .mosaic -->
 </div><!-- .content -->

@@ -1,11 +1,33 @@
 <?php
-
+	$cat_param = get_query_var('lens_gallery_categories');
+	$cat_data = get_term_by('slug', $cat_param, 'lens_gallery_categories');
 ?>
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
+		
+		<div class="mosaic__item  mosaic__item--page-title-mobile">
+            <div class="image__item-link">
+                <div class="image__item-wrapper">                    
+                </div>
+                <div class="image__item-meta">
+                    <div class="image_item-table">
+                        <div class="image_item-cell">
+                            <h1><?php echo $cat_data->name; ?></h1>
+							<?php
+							// show an optional category description
+							if ( !empty($cat_data->description) )
+								echo apply_filters( 'category_archive_meta', '<span class="image_item-description">' . $cat_data->description . '</span>' );
+							?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
         <?php
+		$idx = 0;
 		while ( have_posts() ) : the_post();
-
+			$idx++;
 			$gallery_ids = array();
 			$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'main_gallery', true );
 			if (!empty($gallery_ids)) {
@@ -49,7 +71,7 @@
                 }
             }
 
-            $categories = get_the_terms($post->ID, 'lens_portfolio_categories'); ?>
+            $categories = get_the_terms($post->ID, 'lens_gallery_categories'); ?>
             
             <div class="mosaic__item <?php if($categories) foreach($categories as $cat) { echo strtolower($cat->name) . ' '; } ?> ">
                 <a href="<?php the_permalink(); ?>" class="image__item-link">
@@ -79,7 +101,7 @@
                             <div class="image_item-cell image_item--block image_item-cell--bottom">
                                 <div class="image_item-meta grid">
                                     <ul class="image_item-categories grid__item one-half">
-                                        <?php $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
+                                        <?php $categories = get_the_terms($post->ID, 'lens_gallery_categories');
                                         if ($categories): ?>
                                         <li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
                                             <?php foreach ($categories as $cat): ?>
@@ -98,7 +120,50 @@
                 </a>
             </div>            
             <?php
+            // if we added 3 it's now time to add the page title box
+            if ($idx == 3) : ?>
+            <div class="mosaic__item mosaic__item--page-title">
+                <div class="image__item-link">
+                    <div class="image__item-wrapper">                      
+                    </div>
+                    <div class="image__item-meta">
+                        <div class="image_item-table">
+                            <div class="image_item-cell">
+								<h1><?php echo $cat_data->name; ?></h1>
+								<?php
+								// show an optional category description
+								if ( !empty($cat_data->description) )
+									echo apply_filters( 'category_archive_meta', '<span class="image_item-description">' . $cat_data->description . '</span>' );
+								?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif;
         endwhile;
+		// if there were less than 3 items, still add the title box
+		if ($idx < 3) : ?>
+		<div class="mosaic__item mosaic__item--page-title">
+			<div class="image__item-link">
+				<div class="image__item-wrapper">                    
+				</div>
+				<div class="image__item-meta">
+					<div class="image_item-table">
+						<div class="image_item-cell">
+							<h1><?php echo $cat_data->name; ?></h1>
+							<?php
+							// show an optional category description
+							if ( !empty($cat_data->description) )
+								echo apply_filters( 'category_archive_meta', '<span class="image_item-description">' . $cat_data->description . '</span>' );
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php 
+		endif;
         ?>
     </div><!-- .mosaic -->
 </div><!-- .content -->

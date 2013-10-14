@@ -88,9 +88,9 @@ a.site-home-link {
     background-color: rgba(<?php echo $rgb; ?>, 0.8);
 }
 
-.mosaic__item--page-title .image__item-meta, .mosaic__item--page-title-mobile .image__item-meta
+.mosaic__item--page-title-mobile .image__item-meta
 .touch .mosaic__item--page-title .image__item-meta, .touch .mosaic__item--page-title-mobile .image__item-meta {
-    background-color: <?php echo $main_color; ?>;
+    background-color: rgba(<?php echo $rgb; ?>, 0.8);
 }
 
 .loading .pace .pace-activity,
