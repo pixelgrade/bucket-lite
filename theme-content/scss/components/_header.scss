@@ -117,17 +117,25 @@
     /*body*/.header-transparent{
 
         .header{
-            background-color: transparent;
+            background-color: transparent !important;
             @include background-image(linear-gradient(left, rgba(0,0,0,0.4) 5%, rgba(0,0,0,0) 100%));
             @include rem(padding-bottom, $base-spacing-unit );
 
             a{
-                color: white;
+                color: white !important;
             }
 
             &:before, &:after{
                 display: none;
             }
+
+            div {
+                color: white;
+            }            
+        }
+
+        .header__inner-wrap{
+            background-color: transparent !important;
         }
 
         .site-header__branding{
@@ -141,16 +149,14 @@
         }
 
         .menu-item--parent:after{
-            border-top-color: white;        
+            border-top-color: white !important;        
+        }        
+
+        .menu-header-menu-container .current-menu-item > a{
+            font-weight: bold;
+            color: white !important ;
         }
 
-        // .site-footer{
-        //     display: none;
-        // }
-
-        // .header-extra{
-        //     display: none;
-        // }
         .menu-link{
             @include rem(padding-top, $half-spacing-unit/2);
             @include rem(padding-bottom, $half-spacing-unit/2);
@@ -171,51 +177,54 @@
     $HEADER_INVERSE
 \*----------------------------------------*/
 
-/*body*/.header-inverse{
-    #page, .header, .header__inner-wrap{
-        background-color: #fff;  
-    }
+@include media(from hand) {
 
-    .header{
-        @include media(to hand) {
-            .site-header__branding{
-                border-bottom: 1px solid white;
+    /*body*/.header-inverse{
+        #page, .header, .header__inner-wrap{
+            background-color: #fff;  
+        }
+
+        .header{
+            @include media(to hand) {
+                .site-header__branding{
+                    border-bottom: 1px solid white;
+                }
+            }
+
+            &:before, &:after{
+                display: none;
+            }
+
+            a{
+                color: $dark;
+                
+                &:hover{
+                    font-weight: bold;
+                    color: $dark;
+                }
+            }
+
+            div {
+                color: $dark;
             }
         }
 
-        @include media(from hand) {
-            border-right: 1px solid white;
+        .current-menu-item > a{
+            font-weight: bold;
+            color: $dark !important ;
         }
 
-        &:before, &:after{
-            display: none;
-        }
-
-        a{
-            color: $dark;
-            
-            &:hover{
-                color: #d5d200;
-            }
-        }
-
-        div {
+        .site-header__branding{
+            background: transparent;
             color: $dark;
         }
+
+        .menu-item--parent:after{
+            border-top-color: $dark;        
+        }    
     }
 
-
-    .site-header__branding{
-        background: transparent;
-        color: $dark;
-    }
-
-    .menu-item--parent:after{
-        border-top-color: $dark;        
-    }    
 }
-
-
 
 
 

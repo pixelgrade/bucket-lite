@@ -232,7 +232,9 @@
     @extend .lap-span-5;
     
     @include media(from lap) {
-        border-right: 1px dotted $dark;
+        .entry__header{
+            border-right: 1px dotted $dark;
+        }
     }
 }
 
