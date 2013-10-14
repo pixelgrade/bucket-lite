@@ -84,7 +84,7 @@
                         <a href="<?php echo $client_link; ?>"><?php echo $client_name; ?></a>
                     </div>
                     <?php endif; ?>               
-                    <?php if ( !empty($categories) && !is_wp_error($categories)): ?>
+                    <?php if ($categories && !empty($categories) && !is_wp_error($categories)): ?>
                     <div class="entry__meta-box meta-box--categories col-12 hand-col-6">
                         <span class="meta-box__box-title"><?php _e("Filled under", wpgrade::textdomain()); ?>: </span>
                         <?php foreach ($categories as $cat): ?>

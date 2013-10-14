@@ -809,7 +809,13 @@ class wpgrade {
 				$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
 			}
 
-			return strtr($template, array(':gallery' => do_shortcode($gallery)));
+			$shrtcode = do_shortcode($gallery);
+				
+			if (!empty($shrtcode)) {
+				return strtr($template, array(':gallery' => $shrtcode));
+			} else {
+				return null;
+			}
 		}
 		else { // empty gallery_ids
 			// search for the first gallery shortcode
@@ -822,8 +828,13 @@ class wpgrade {
 				if (strpos($gallery, 'style') === false) {
 					$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
 				}
-
-				return strtr($template, array(':gallery' => do_shortcode($gallery)));
+				$shrtcode = do_shortcode($gallery);
+				
+				if (!empty($shrtcode)) {
+					return strtr($template, array(':gallery' => $shrtcode));
+				} else {
+					return null;
+				}
 			}
 			else { // gallery_matches is empty
 				return null;

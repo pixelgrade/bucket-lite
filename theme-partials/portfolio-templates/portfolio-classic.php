@@ -26,14 +26,11 @@
                     <?php endif; ?>
                     <?php
                     $categories = get_the_terms($post->ID, 'lens_portfolio_categories');
-                    if (count($categories) && !is_wp_error($categories)): ?>
+                    if ($categories && !is_wp_error($categories)): ?>
                         <div class="entry__meta-box meta-box--categories span-12 hand-span-6">
                             <span class="meta-box__box-title"><?php _e("Filled under", wpgrade::textdomain()); ?>: </span>
                             <?php foreach ($categories as $cat): ?>
-                                    <a href="<?php echo get_category_link($cat); ?>"
-                                       rel="category">
-                                        <?php echo get_category($cat)->name; ?>
-                                    </a>
+                                    <a href="<?php echo get_category_link($cat); ?>" rel="category"><?php echo get_category($cat)->name; ?></a>
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>

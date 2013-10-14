@@ -33,7 +33,7 @@
                     
                     <footer class="entry__meta cf">
                         <?php $categories = wp_get_post_categories($post->ID); ?>
-                        <?php if (count($categories)): ?>
+                        <?php if ($categories && count($categories)): ?>
                             <div class="entry__meta-box meta-box--categories">
                                 <span class="meta-box__box-title"><?php _e("Filled under", wpgrade::textdomain()); ?>: </span>
                                 <?php foreach ($categories as $cat): ?>
