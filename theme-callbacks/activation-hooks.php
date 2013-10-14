@@ -374,7 +374,7 @@ function wpgrade_callback_geting_active() {
 					'name' => __('Client Link', wpgrade::textdomain()),
 					'id'   => wpgrade::prefix() . 'portfolio_client_link',
 					'type' => 'text_medium',
-				)				
+				)
 			)
 		),
 		'lens_gallery' => array(
@@ -522,6 +522,12 @@ function wpgrade_callback_geting_active() {
 						'hidden' => true,
 					),
 				),
+				array(
+					'name' => __('Projects Number', wpgrade::textdomain()),
+					'desc' => __('Select a number of projects to show on your homepage. For unlimited projects keep it empty', wpgrade::textdomain()),
+					'id'   => wpgrade::prefix() . 'homepage_projects_number',
+					'type' => 'text_small',
+				)
 			)
 		),
 	);
