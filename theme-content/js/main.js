@@ -1100,12 +1100,7 @@ function royalSliderInit() {
                 keyboardNavEnabled: rs_keyboardNav,
                 arrowsNavAutoHide: false,
                 sliderDrag: rs_drag,
-                transitionType: rs_transition,
-                autoPlay: {
-                    // autoplay options go gere
-                    enabled: true,
-                    pauseOnHover: true
-                }                
+                transitionType: rs_transition           
             });     
         }
 
