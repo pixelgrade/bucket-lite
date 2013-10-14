@@ -3,9 +3,10 @@
 	$client_name = '';
 	$client_name = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_name', true );
 	
-	$client_link = '#';
 	$client_link = get_post_meta( get_the_ID(), wpgrade::prefix() . 'portfolio_client_link', true );
+    if($client_link == '') $client_link = '#';
 
+    var_dump($client_link);
 
 	$gallery_ids = get_post_meta( $post->ID, wpgrade::prefix() . 'portfolio_gallery', true );
 	if (!empty($gallery_ids)) {
