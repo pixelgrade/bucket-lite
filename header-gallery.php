@@ -14,6 +14,8 @@ if(is_single() && get_post_type() == 'lens_gallery'){
 	 $class_name = 'gallery-archive';
 }
 
+if(wpgrade::option('header_inverse') == "1") $class_name .= " header-inverse";
+
 $data_ajaxloading = (wpgrade::option('use_ajax_loading') == 1) ? 'data-ajaxloading' : '';
 $data_smoothscrolling = (wpgrade::option('use_smooth_scroll') == 1) ? 'data-smoothscrolling' : ''; ?>
 

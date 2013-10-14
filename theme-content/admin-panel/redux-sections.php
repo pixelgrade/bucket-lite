@@ -133,6 +133,14 @@
 				'sub_desc' => __('Use the color picker to change the main color of the site to match your brand color.', wpgrade::textdomain()),
 				'std' => '#fffc00'
 			),
+            array(
+                'id' => 'header_inverse',
+                'type' => 'checkbox',
+                'title' => __('Inverse header contrast.', wpgrade::textdomain()),
+                'sub_desc' => __('Change the header contrast: black text, white background.', wpgrade::textdomain()),
+                'std' => '0',
+                'switch' => true,
+            ),            
 			array(
 				'id' => 'use_google_fonts',
 				'type' => 'checkbox_hide_below',

@@ -1111,7 +1111,7 @@ function royalSliderInit() {
         if(slidesNumber > 1)
         if (royalSlider && rs_customArrows) {
                 var $gallery_control = $(
-                    '<div class="gallery-control">' +
+                    '<div class="gallery-control js-gallery-control">' +
                         '<a href="#" class="control-item arrow-button arrow-button--left js-slider-arrow-prev"></a>' +
                         '<div class="control-item count js-gallery-current-slide">' +
                             '<span class="highlighted js-decimal">0</span><span class="js-unit">1</span>' +
@@ -1153,6 +1153,16 @@ function royalSliderInit() {
                 event.preventDefault();
                 royalSlider.next();
             });    
+
+            royalSlider.ev.on('rsVideoPlay', function() {
+                $('.header').hide();
+                $('.js-gallery-control').hide();
+            });
+            
+            royalSlider.ev.on('rsVideoStop', function() {
+                $('.header').show();
+                $('.js-gallery-control').show();
+            });            
         }
     });
 };
