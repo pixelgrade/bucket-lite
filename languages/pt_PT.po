@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
-"POT-Creation-Date: 2013-10-12 20:40+0200\n"
-"PO-Revision-Date: 2013-10-12 20:40+0200\n"
+"POT-Creation-Date: 2013-10-14 20:21+0200\n"
+"PO-Revision-Date: 2013-10-14 20:23+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: Portuguese\n"
@@ -115,42 +115,42 @@ msgstr "404"
 msgid "Search Results for: %s"
 msgstr "Resultados da pesquisa para: %s"
 
-#: ../single.php:38
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:86
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:116
+#: ../single.php:40
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:31
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:89
 msgid "Filled under"
 msgstr "Preenchida de acordo com"
 
-#: ../single.php:51
+#: ../single.php:53
 msgid "Tagged"
 msgstr "Tagged"
 
-#: ../single.php:62
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:144
+#: ../single.php:64
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:47
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:143
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:111
 msgid "Share"
 msgstr "Ação"
 
-#: ../single.php:67 ../theme-partials/posts-single.php:169
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
+#: ../single.php:69
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:52
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:148
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:116
 msgid "Share on Twitter!"
 msgstr "Share on Twitter!"
 
-#: ../single.php:75 ../theme-partials/posts-single.php:177
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:157
+#: ../single.php:77
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:60
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:156
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
 msgid "Share on Facebook!"
 msgstr "Share on Facebook!"
 
-#: ../single.php:83 ../theme-partials/posts-single.php:185
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:165
+#: ../single.php:85
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:68
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:164
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:132
 msgid "Share on Google+!"
 msgstr "Compartilhar no Google+!"
@@ -278,6 +278,9 @@ msgid "No Gallery found in Trash"
 msgstr "Não galeria encontrado em Trash"
 
 #: ../theme-callbacks/activation-hooks.php:55
+#: ../theme-partials/posts-lens_galleries-archive.php:32
+#: ../theme-partials/posts-lens_galleries-archive.php:163
+#: ../theme-partials/posts-lens_galleries-archive.php:190
 msgid "Galleries"
 msgstr "Galerias"
 
@@ -669,6 +672,18 @@ msgstr "Selecione uma galeria"
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Selecione uma galeria e vamos mostrá-lo em sua homepage."
 
+#: ../theme-callbacks/activation-hooks.php:526
+msgid "Projects Number"
+msgstr "Número de projetos"
+
+#: ../theme-callbacks/activation-hooks.php:527
+msgid ""
+"Select a number of projects to show on your homepage. For unlimited projects "
+"keep it empty"
+msgstr ""
+"Selecione uma série de projetos para mostrar na sua página inicial. Para "
+"projetos ilimitados mantê-lo vazio"
+
 #: ../theme-callbacks/unsorted.php:75
 msgid "M j, Y \\a\\t H:i"
 msgstr "M j, Y \\a\\t H:i"
@@ -866,10 +881,18 @@ msgstr ""
 "cor da marca."
 
 #: ../theme-content/admin-panel/redux-sections.php:139
+msgid "Inverse header contrast."
+msgstr "Contraste cabeçalho invertido."
+
+#: ../theme-content/admin-panel/redux-sections.php:140
+msgid "Change the header contrast: black text, white background."
+msgstr "Alterar o contraste do cabeçalho: texto preto, fundo branco."
+
+#: ../theme-content/admin-panel/redux-sections.php:147
 msgid "Do you need custom web fonts?"
 msgstr "Você precisa de fontes web personalizados?"
 
-#: ../theme-content/admin-panel/redux-sections.php:140
+#: ../theme-content/admin-panel/redux-sections.php:148
 msgid ""
 "Tap into the massive <a href=\"http://www.google.com/fonts/\">Google Fonts</"
 "a> collection (with Live preview)."
@@ -877,23 +900,23 @@ msgstr ""
 "Toque no maciço <a href=\"http://www.google.com/fonts/\"> Google Fontes </a> "
 "coleção (com visualização ao vivo)."
 
-#: ../theme-content/admin-panel/redux-sections.php:148
+#: ../theme-content/admin-panel/redux-sections.php:156
 msgid "Main Font"
 msgstr "Fonte principal"
 
-#: ../theme-content/admin-panel/redux-sections.php:154
+#: ../theme-content/admin-panel/redux-sections.php:162
 msgid "Body Font"
 msgstr "Font corpo"
 
-#: ../theme-content/admin-panel/redux-sections.php:160
+#: ../theme-content/admin-panel/redux-sections.php:168
 msgid "Menu Font"
 msgstr "Menu Fonte"
 
-#: ../theme-content/admin-panel/redux-sections.php:166
+#: ../theme-content/admin-panel/redux-sections.php:174
 msgid "Custom CSS Style"
 msgstr "Estilo custom CSS"
 
-#: ../theme-content/admin-panel/redux-sections.php:167
+#: ../theme-content/admin-panel/redux-sections.php:175
 msgid ""
 "Use this area to make slight CSS changes. It will be included in the head "
 "section of the page."
@@ -901,11 +924,11 @@ msgstr ""
 "Utilizzare questo campo per fare lievi modifiche CSS. Sarà inclusa nella "
 "sezione head della pagina."
 
-#: ../theme-content/admin-panel/redux-sections.php:174
+#: ../theme-content/admin-panel/redux-sections.php:182
 msgid "Custom JavaScript"
 msgstr "Personalizado JavaScript"
 
-#: ../theme-content/admin-panel/redux-sections.php:175
+#: ../theme-content/admin-panel/redux-sections.php:183
 msgid ""
 "Use this area to make custom JavaScript calls.This code will be loaded in "
 "head section"
@@ -913,15 +936,15 @@ msgstr ""
 "Utilizzare quest'area per rendere il codice personalizzato JavaScript calls."
 "This verrà caricato nella sezione head"
 
-#: ../theme-content/admin-panel/redux-sections.php:176
+#: ../theme-content/admin-panel/redux-sections.php:184
 msgid "jQuery is available here as $"
 msgstr "jQuery è disponibile qui da $"
 
-#: ../theme-content/admin-panel/redux-sections.php:182
+#: ../theme-content/admin-panel/redux-sections.php:190
 msgid "How to inject the custom CSS"
 msgstr "Come iniettare il CSS personalizzato"
 
-#: ../theme-content/admin-panel/redux-sections.php:183
+#: ../theme-content/admin-panel/redux-sections.php:191
 #, php-format
 msgid ""
 "By default %s saves the custom CSS in a file.<br />If for some reason you "
@@ -932,21 +955,21 @@ msgstr ""
 ">Se per qualche motivo non è permisions di scrivere un file sul vostro host "
 "si consiglia di scegliere l'opzione \"Inline\""
 
-#: ../theme-content/admin-panel/redux-sections.php:200
+#: ../theme-content/admin-panel/redux-sections.php:208
 msgid "Sidebar Options"
 msgstr "Opções de Sidebar"
 
-#: ../theme-content/admin-panel/redux-sections.php:201
+#: ../theme-content/admin-panel/redux-sections.php:209
 msgid "<p class=\"description\">Change sidebar related options from here.</p>"
 msgstr ""
 "<p class=\"description\"> Alterar barra lateral de opções relacionadas aqui. "
 "</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:206
+#: ../theme-content/admin-panel/redux-sections.php:214
 msgid "Copyright Text"
 msgstr "Texto copyright"
 
-#: ../theme-content/admin-panel/redux-sections.php:207
+#: ../theme-content/admin-panel/redux-sections.php:215
 #, php-format
 msgid ""
 "Text that will appear in footer left area (eg. Copyright 2013 %s | All "
@@ -955,11 +978,11 @@ msgstr ""
 "O texto que será exibido na área de rodapé esquerdo (por exemplo, Copyright "
 "2013 %s | All Rights Reserved)."
 
-#: ../theme-content/admin-panel/redux-sections.php:214
+#: ../theme-content/admin-panel/redux-sections.php:222
 msgid "Social Footer Menu"
 msgstr "Menu social Rodapé"
 
-#: ../theme-content/admin-panel/redux-sections.php:215
+#: ../theme-content/admin-panel/redux-sections.php:223
 msgid ""
 "Show social icons in the footer. The links and order are taken from the "
 "Social and SEO Options tabs."
@@ -967,15 +990,15 @@ msgstr ""
 "Mostrar ícones sociais no rodapé. Os links e ordem são retirados do Social e "
 "Opções SEO guias."
 
-#: ../theme-content/admin-panel/redux-sections.php:223
+#: ../theme-content/admin-panel/redux-sections.php:231
 msgid "Social Footer Menu Title"
 msgstr "Sociais menu Rodapé Título"
 
-#: ../theme-content/admin-panel/redux-sections.php:230
+#: ../theme-content/admin-panel/redux-sections.php:238
 msgid "Social Icons"
 msgstr "Ícones sociais"
 
-#: ../theme-content/admin-panel/redux-sections.php:231
+#: ../theme-content/admin-panel/redux-sections.php:239
 #, php-format
 msgid ""
 "Define and reorder your social links.<br /><b>Note:</b> These will be "
@@ -986,102 +1009,102 @@ msgstr ""
 "exibidos nos \" %s ligações sociais \"widget para que você possa colocá-los "
 "em qualquer lugar em seu site. Somente aqueles preenchidos serão exibidos."
 
-#: ../theme-content/admin-panel/redux-sections.php:232
+#: ../theme-content/admin-panel/redux-sections.php:240
 msgid ""
 "Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>."
 msgstr ""
 "Ícones fornecidos por <strong> FontAwesome </strong> e <strong> Entypo </"
 "strong>."
 
-#: ../theme-content/admin-panel/redux-sections.php:234
+#: ../theme-content/admin-panel/redux-sections.php:242
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../theme-content/admin-panel/redux-sections.php:235
+#: ../theme-content/admin-panel/redux-sections.php:243
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../theme-content/admin-panel/redux-sections.php:236
+#: ../theme-content/admin-panel/redux-sections.php:244
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../theme-content/admin-panel/redux-sections.php:237
+#: ../theme-content/admin-panel/redux-sections.php:245
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../theme-content/admin-panel/redux-sections.php:238
+#: ../theme-content/admin-panel/redux-sections.php:246
 msgid "Behance"
 msgstr "Behance"
 
-#: ../theme-content/admin-panel/redux-sections.php:239
+#: ../theme-content/admin-panel/redux-sections.php:247
 msgid "500px"
 msgstr "500px"
 
-#: ../theme-content/admin-panel/redux-sections.php:240
+#: ../theme-content/admin-panel/redux-sections.php:248
 msgid "DeviantART"
 msgstr "DeviantART"
 
-#: ../theme-content/admin-panel/redux-sections.php:241
+#: ../theme-content/admin-panel/redux-sections.php:249
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../theme-content/admin-panel/redux-sections.php:242
+#: ../theme-content/admin-panel/redux-sections.php:250
 msgid "Twitter"
 msgstr "Chilro"
 
-#: ../theme-content/admin-panel/redux-sections.php:243
+#: ../theme-content/admin-panel/redux-sections.php:251
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../theme-content/admin-panel/redux-sections.php:244
+#: ../theme-content/admin-panel/redux-sections.php:252
 msgid "Google+"
 msgstr "Google+"
 
-#: ../theme-content/admin-panel/redux-sections.php:245
+#: ../theme-content/admin-panel/redux-sections.php:253
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../theme-content/admin-panel/redux-sections.php:246
+#: ../theme-content/admin-panel/redux-sections.php:254
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../theme-content/admin-panel/redux-sections.php:247
+#: ../theme-content/admin-panel/redux-sections.php:255
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../theme-content/admin-panel/redux-sections.php:248
+#: ../theme-content/admin-panel/redux-sections.php:256
 msgid "Skype"
 msgstr "Skype"
 
-#: ../theme-content/admin-panel/redux-sections.php:249
+#: ../theme-content/admin-panel/redux-sections.php:257
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../theme-content/admin-panel/redux-sections.php:250
+#: ../theme-content/admin-panel/redux-sections.php:258
 msgid "Digg"
 msgstr "Digg"
 
-#: ../theme-content/admin-panel/redux-sections.php:251
+#: ../theme-content/admin-panel/redux-sections.php:259
 msgid "Last.FM"
 msgstr "Last.FM"
 
-#: ../theme-content/admin-panel/redux-sections.php:252
+#: ../theme-content/admin-panel/redux-sections.php:260
 msgid "App.net"
 msgstr "App.net"
 
-#: ../theme-content/admin-panel/redux-sections.php:258
+#: ../theme-content/admin-panel/redux-sections.php:266
 msgid "Open Links In A New Window"
 msgstr "Abrir links ícones sociais em uma nova janela"
 
-#: ../theme-content/admin-panel/redux-sections.php:259
+#: ../theme-content/admin-panel/redux-sections.php:267
 msgid "Check this to open social links in a new window (target=\"_blank\")."
 msgstr "Você quer abrir vínculos sociais em uma nova janela"
 
-#: ../theme-content/admin-panel/redux-sections.php:296
+#: ../theme-content/admin-panel/redux-sections.php:304
 msgid "Select Form"
 msgstr "Selecione Formulário"
 
-#: ../theme-content/admin-panel/redux-sections.php:297
+#: ../theme-content/admin-panel/redux-sections.php:305
 #, php-format
 msgid ""
 "Select a contact form previously created with the Contact Form 7 plugin. You "
@@ -1091,11 +1114,11 @@ msgstr ""
 "contato 7 plugin. Você pode criar um <a href=\" %s \"title = \" Contact Form "
 "7 \"> aqui </a>"
 
-#: ../theme-content/admin-panel/redux-sections.php:305
+#: ../theme-content/admin-panel/redux-sections.php:313
 msgid "Notice"
 msgstr "Notar"
 
-#: ../theme-content/admin-panel/redux-sections.php:306
+#: ../theme-content/admin-panel/redux-sections.php:314
 #, php-format
 msgid ""
 "<p class=\"description\">The Contact Form 7 plugin is not active. You can "
@@ -1105,22 +1128,22 @@ msgstr ""
 "Você pode instalar / ativá-lo a partir de <a href=\" %s \"title = \" Contact "
 "Form 7 \"> aqui </a> </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:317
+#: ../theme-content/admin-panel/redux-sections.php:325
 msgid "Contact Page"
 msgstr "Página de contato"
 
-#: ../theme-content/admin-panel/redux-sections.php:318
+#: ../theme-content/admin-panel/redux-sections.php:326
 msgid ""
 "<p class=\"description\">General settings for the contact page template!</p>"
 msgstr ""
 "<p class=\"description\"> configurações gerais para o modelo de página de "
 "contato! </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:323
+#: ../theme-content/admin-panel/redux-sections.php:331
 msgid "Google Maps Link"
 msgstr "Google Maps ligação"
 
-#: ../theme-content/admin-panel/redux-sections.php:324
+#: ../theme-content/admin-panel/redux-sections.php:332
 msgid ""
 "Paste here the the URL that you've got from Google Maps, after navigating to "
 "your location.<br />Here it is <a href=\"http://screenr.com/MjV7\" target="
@@ -1130,66 +1153,66 @@ msgstr ""
 "<br /> Aqui é <a href=\"http://screenr.com/MjV7 \" target = \"_blank \"> um "
 "curto filme </a> mostrando-lhe como obter o URL"
 
-#: ../theme-content/admin-panel/redux-sections.php:329
+#: ../theme-content/admin-panel/redux-sections.php:337
 msgid "Custom Styling for Map?"
 msgstr "Styling personalizado para Map?"
 
-#: ../theme-content/admin-panel/redux-sections.php:330
+#: ../theme-content/admin-panel/redux-sections.php:338
 msgid "Allow us to change the map colors to better match your website."
 msgstr ""
 "Nos permitem alterar as cores do mapa para melhor corresponder ao seu "
 "website."
 
-#: ../theme-content/admin-panel/redux-sections.php:346
+#: ../theme-content/admin-panel/redux-sections.php:354
 msgid "Portfolio Options"
 msgstr "Opções de carteira"
 
-#: ../theme-content/admin-panel/redux-sections.php:347
+#: ../theme-content/admin-panel/redux-sections.php:355
 msgid "<p class=\"description\">General settings for portfolio items.</p>"
 msgstr ""
 "<p class=\"description\"> configurações gerais para a carteira de itens. </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:352
-#: ../theme-content/admin-panel/redux-sections.php:423
+#: ../theme-content/admin-panel/redux-sections.php:360
+#: ../theme-content/admin-panel/redux-sections.php:431
 msgid "Show Share Links"
 msgstr "Mostrar Compartilhe Links"
 
-#: ../theme-content/admin-panel/redux-sections.php:353
+#: ../theme-content/admin-panel/redux-sections.php:361
 msgid "Do you want to show the share links bellow the projects?"
 msgstr "Você quer mostrar as partes links abaixo os projetos?"
 
-#: ../theme-content/admin-panel/redux-sections.php:361
-#: ../theme-content/admin-panel/redux-sections.php:432
+#: ../theme-content/admin-panel/redux-sections.php:369
+#: ../theme-content/admin-panel/redux-sections.php:440
 msgid "Twitter Share Link"
 msgstr "Twitter Compartilhar ligação"
 
-#: ../theme-content/admin-panel/redux-sections.php:369
-#: ../theme-content/admin-panel/redux-sections.php:440
+#: ../theme-content/admin-panel/redux-sections.php:377
+#: ../theme-content/admin-panel/redux-sections.php:448
 msgid "Facebook Share Link"
 msgstr "Facebook Compartilhar ligação"
 
-#: ../theme-content/admin-panel/redux-sections.php:377
-#: ../theme-content/admin-panel/redux-sections.php:448
+#: ../theme-content/admin-panel/redux-sections.php:385
+#: ../theme-content/admin-panel/redux-sections.php:456
 msgid "Google+ Share Link"
 msgstr "Google+ Partilhar ligação"
 
-#: ../theme-content/admin-panel/redux-sections.php:383
+#: ../theme-content/admin-panel/redux-sections.php:391
 msgid "Portfolio grid thumbnail orientation"
 msgstr "Portfolio grade de orientação de miniaturas"
 
-#: ../theme-content/admin-panel/redux-sections.php:384
+#: ../theme-content/admin-panel/redux-sections.php:392
 msgid "Horizontal thumbnails or vertical thumbnails"
 msgstr "Thumbnails horizontais ou verticais miniaturas"
 
-#: ../theme-content/admin-panel/redux-sections.php:394
+#: ../theme-content/admin-panel/redux-sections.php:402
 msgid "How many projects on portfolio page"
 msgstr "Quantos projetos na página portfolio"
 
-#: ../theme-content/admin-panel/redux-sections.php:410
+#: ../theme-content/admin-panel/redux-sections.php:418
 msgid "Blog Options"
 msgstr "Opções de Blog"
 
-#: ../theme-content/admin-panel/redux-sections.php:411
+#: ../theme-content/admin-panel/redux-sections.php:419
 msgid ""
 "<p class=\"description\">Change blog archive and single post related options "
 "here.</p>"
@@ -1197,41 +1220,41 @@ msgstr ""
 "<p class=\"description\"> Mudança do blog archive e opções relacionadas pós "
 "único aqui. </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:416
+#: ../theme-content/admin-panel/redux-sections.php:424
 msgid "Excerpt Length"
 msgstr "Trecho Comprimento"
 
-#: ../theme-content/admin-panel/redux-sections.php:417
+#: ../theme-content/admin-panel/redux-sections.php:425
 msgid "Set here the excerpt length for the blog archive (number of words)."
 msgstr ""
 "Defina aqui o comprimento do trecho para o arquivo do blog (número de "
 "palavras)."
 
-#: ../theme-content/admin-panel/redux-sections.php:424
+#: ../theme-content/admin-panel/redux-sections.php:432
 msgid "Do you want to show the share links bellow the article?"
 msgstr "Você quer mostrar as partes links abaixo o artigo?"
 
-#: ../theme-content/admin-panel/redux-sections.php:463
+#: ../theme-content/admin-panel/redux-sections.php:471
 msgid "Social and SEO Options"
 msgstr "Social e SEO Opções"
 
-#: ../theme-content/admin-panel/redux-sections.php:465
+#: ../theme-content/admin-panel/redux-sections.php:473
 msgid "<p class=\"description\">Social sharing stuff.</p>"
 msgstr "<p class=\"description\"> coisas partilha social. </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:470
+#: ../theme-content/admin-panel/redux-sections.php:478
 msgid "Open social icons links in new a window?"
 msgstr "Abrir links ícones sociais em uma nova janela?"
 
-#: ../theme-content/admin-panel/redux-sections.php:471
+#: ../theme-content/admin-panel/redux-sections.php:479
 msgid "Do you want to open social links in a new window ?"
 msgstr "Você quer abrir vínculos sociais em uma nova janela?"
 
-#: ../theme-content/admin-panel/redux-sections.php:478
+#: ../theme-content/admin-panel/redux-sections.php:486
 msgid "Add Social Meta Tags"
 msgstr "Adicionar Sociais Meta Tags"
 
-#: ../theme-content/admin-panel/redux-sections.php:479
+#: ../theme-content/admin-panel/redux-sections.php:487
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
@@ -1239,11 +1262,11 @@ msgstr ""
 "Vamos nos preparar adequadamente o seu tema para o compartilhamento social e "
 "descoberta adicionando as metatags necessários na seção <head>."
 
-#: ../theme-content/admin-panel/redux-sections.php:487
+#: ../theme-content/admin-panel/redux-sections.php:495
 msgid "Facebook Application ID"
 msgstr "Facebook Application ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:488
+#: ../theme-content/admin-panel/redux-sections.php:496
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
@@ -1253,11 +1276,11 @@ msgstr ""
 "site. Você pode criar um <a href=\"https://developers.facebook.com/apps\"> "
 "aqui </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:493
+#: ../theme-content/admin-panel/redux-sections.php:501
 msgid "Facebook Admin ID"
 msgstr "Facebook ID admin"
 
-#: ../theme-content/admin-panel/redux-sections.php:494
+#: ../theme-content/admin-panel/redux-sections.php:502
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
@@ -1267,11 +1290,11 @@ msgstr ""
 "Facebook para que você possa acessar o <a href=\"https://www.facebook.com/"
 "insights/\"> Facebook Insights </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:499
+#: ../theme-content/admin-panel/redux-sections.php:507
 msgid "Google+ Publisher"
 msgstr "Google+ Editor"
 
-#: ../theme-content/admin-panel/redux-sections.php:500
+#: ../theme-content/admin-panel/redux-sections.php:508
 msgid ""
 "Enter your Google Plus page ID (example: https://plus.google.com/"
 "<b>105345678532237339285</b>) here if you have set up a \"Google+ Page\"."
@@ -1280,11 +1303,11 @@ msgstr ""
 "com/105345678532237339285) aqui, se você tiver configurado a \"Google+ "
 "Página \"."
 
-#: ../theme-content/admin-panel/redux-sections.php:505
+#: ../theme-content/admin-panel/redux-sections.php:513
 msgid "Twitter Site Username"
 msgstr "Twitter do site Usuário"
 
-#: ../theme-content/admin-panel/redux-sections.php:506
+#: ../theme-content/admin-panel/redux-sections.php:514
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
@@ -1292,11 +1315,11 @@ msgstr ""
 "O nome de usuário do Twitter de todo o site. O nome de usuário para o autor "
 "será retirado o perfil do autor (pular o @)"
 
-#: ../theme-content/admin-panel/redux-sections.php:511
+#: ../theme-content/admin-panel/redux-sections.php:519
 msgid "Default Social Share Image"
 msgstr "Padrão social Compartilhar Imagem"
 
-#: ../theme-content/admin-panel/redux-sections.php:512
+#: ../theme-content/admin-panel/redux-sections.php:520
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
@@ -1305,11 +1328,11 @@ msgstr ""
 "conteúdo, se você não fizer o upload de uma imagem personalizada com o seu "
 "conteúdo (pelo menos 200px de largura recomendada)."
 
-#: ../theme-content/admin-panel/redux-sections.php:517
+#: ../theme-content/admin-panel/redux-sections.php:525
 msgid "Use Twitter Widget"
 msgstr "Use Twitter Widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:518
+#: ../theme-content/admin-panel/redux-sections.php:526
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
@@ -1318,11 +1341,11 @@ msgstr ""
 "compatível). Você pode adicioná-lo em seu blog ou barras laterais de rodapé. "
 "<div Class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:526
+#: ../theme-content/admin-panel/redux-sections.php:534
 msgid "Important Note : "
 msgstr "Nota Importante: "
 
-#: ../theme-content/admin-panel/redux-sections.php:527
+#: ../theme-content/admin-panel/redux-sections.php:535
 msgid ""
 "In order to use the Twitter widget you will need to create a Twitter "
 "application <a href=\"https://dev.twitter.com/apps/new\" >here</a> and get "
@@ -1336,27 +1359,27 @@ msgstr ""
 "para que o Twitter é API (v1.1). Por favor note que esses padrões são usados ​​"
 "no "
 
-#: ../theme-content/admin-panel/redux-sections.php:532
+#: ../theme-content/admin-panel/redux-sections.php:540
 msgid "Consumer Key"
 msgstr "Chave do Consumidor"
 
-#: ../theme-content/admin-panel/redux-sections.php:538
+#: ../theme-content/admin-panel/redux-sections.php:546
 msgid "Consumer Secret"
 msgstr "Segredo do Consumidor"
 
-#: ../theme-content/admin-panel/redux-sections.php:544
+#: ../theme-content/admin-panel/redux-sections.php:552
 msgid "Oauth Access Token"
 msgstr "OAuth token de acesso"
 
-#: ../theme-content/admin-panel/redux-sections.php:550
+#: ../theme-content/admin-panel/redux-sections.php:558
 msgid "Oauth Access Token Secret"
 msgstr "OAuth token de acesso secreto"
 
-#: ../theme-content/admin-panel/redux-sections.php:563
+#: ../theme-content/admin-panel/redux-sections.php:571
 msgid "Theme Auto Update"
 msgstr "Tema de Atualização Automática"
 
-#: ../theme-content/admin-panel/redux-sections.php:564
+#: ../theme-content/admin-panel/redux-sections.php:572
 msgid ""
 "<p class=\"description\">Let us notify you when new versions of this theme "
 "are live on ThemeForest! Update with just one button click. Forget about "
@@ -1366,33 +1389,33 @@ msgstr ""
 "são ao vivo na ThemeForest! Atualize com apenas um clique de botão. Esqueça "
 "as atualizações manuais! </p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:569
+#: ../theme-content/admin-panel/redux-sections.php:577
 msgid "Use Auto Update"
 msgstr "Use a Atualização Automática"
 
-#: ../theme-content/admin-panel/redux-sections.php:570
+#: ../theme-content/admin-panel/redux-sections.php:578
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 "Ative-a para inserir as informações necessárias para a atualização "
 "automática tema para o trabalho."
 
-#: ../theme-content/admin-panel/redux-sections.php:578
+#: ../theme-content/admin-panel/redux-sections.php:586
 msgid "ThemeForest Username"
 msgstr "ThemeForest Usuário"
 
-#: ../theme-content/admin-panel/redux-sections.php:579
+#: ../theme-content/admin-panel/redux-sections.php:587
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr ""
 "Digite aqui seu ThemeForest (ou Envato) conta nome de usuário (ou seja, "
 "pixelgrade)."
 
-#: ../theme-content/admin-panel/redux-sections.php:584
+#: ../theme-content/admin-panel/redux-sections.php:592
 msgid "ThemeForest Secret API Key"
 msgstr "ThemeForest chave secreta API"
 
-#: ../theme-content/admin-panel/redux-sections.php:585
+#: ../theme-content/admin-panel/redux-sections.php:593
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
@@ -1400,11 +1423,11 @@ msgstr ""
 "Digite aqui a chave api segredo que você criou no ThemeForest. Você pode "
 "criar um novo em Configurações> API seção Chaves de seu perfil."
 
-#: ../theme-content/admin-panel/redux-sections.php:590
+#: ../theme-content/admin-panel/redux-sections.php:598
 msgid "Backup Theme Before Upgrade?"
 msgstr "Antes de fazer o backup Tema atualização?"
 
-#: ../theme-content/admin-panel/redux-sections.php:591
+#: ../theme-content/admin-panel/redux-sections.php:599
 msgid ""
 "Check this if you want us to automatically save your theme as a ZIP archive "
 "before an upgrade. The directory those backups get saved to is <code>wp-"
@@ -2325,53 +2348,39 @@ msgstr "Para vê-lo, digite sua senha abaixo:"
 msgid "Password.."
 msgstr "Senha.."
 
-#: ../theme-partials/posts-single.php:107
-msgid "Previous post"
-msgstr "Post anterior"
+#: ../theme-partials/posts-lens_portfolio-archive.php:39
+#: ../theme-partials/posts-lens_portfolio-archive.php:180
+#: ../theme-partials/posts-lens_portfolio-archive.php:207
+msgid "Portfolio"
+msgstr "Portfolio"
 
-#: ../theme-partials/posts-single.php:108
-msgid "Next post"
-msgstr "Próximo post"
-
-#: ../theme-partials/posts-single.php:162
-msgid "Share on:"
-msgstr "Compartilhe em:"
-
-#: ../theme-partials/posts-single.php:194
-msgid "Jump to the top of the page"
-msgstr "Ir para o início da página"
-
-#: ../theme-partials/posts-single.php:195
-msgid "Back to top"
-msgstr "Voltar ao topo"
-
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:80
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:110
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:23
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:79
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:109
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:83
 msgid "Client"
 msgstr "Cliente"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:190
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:93
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:155
 msgid "Related projects"
 msgstr "Projetos relacionados"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:100
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:195
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:98
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:194
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:160
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:104
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:199
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:102
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:198
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:164
 msgid "All projects"
 msgstr "Todos os projetos"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:108
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:203
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:106
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:202
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:168
 msgid "Next"
 msgstr "Próximo"
@@ -3250,6 +3259,21 @@ msgstr ""
 "As fontes fornecidas abaixo são livres para usar fontes personalizadas do <a "
 "href=\"http://www.google.com/webfonts\" target=\"_blank\">Google Web Fonts "
 "directory</a>"
+
+#~ msgid "Previous post"
+#~ msgstr "Post anterior"
+
+#~ msgid "Next post"
+#~ msgstr "Próximo post"
+
+#~ msgid "Share on:"
+#~ msgstr "Compartilhe em:"
+
+#~ msgid "Jump to the top of the page"
+#~ msgstr "Ir para o início da página"
+
+#~ msgid "Back to top"
+#~ msgstr "Voltar ao topo"
 
 #~ msgid "Display Custom Css Inline"
 #~ msgstr "Exibição personalizada Css inline"
