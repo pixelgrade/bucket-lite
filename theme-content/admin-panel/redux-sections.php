@@ -403,7 +403,7 @@
 				'id' => 'portfolio_archive_limit',
 				'type' => 'text',
 				'validation' => 'validation_numeric',
-				'std' => '2'
+				'std' => '12'
 			),
 		)
 	);
