@@ -4,7 +4,7 @@
  * Create a walker which will add a class to items with submenus
  * More http://stackoverflow.com/questions/3558198/php-wordpress-add-arrows-to-parent-menus
  */
-class WPGrade_Lens_Walker_Nav_Menu extends Walker_Nav_Menu {
+class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 
     function start_lvl(&$output, $depth = 0, $args = array()) {
         $indent = str_repeat("\t", $depth);

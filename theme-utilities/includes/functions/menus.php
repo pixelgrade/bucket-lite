@@ -46,7 +46,7 @@
 					'link_after'      => '',
 					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 					'depth'           => 0,
-					'walker'          => new WPGrade_Lens_Walker_Nav_Menu()
+					'walker'          => new WPGrade_Walker_Nav_Menu()
 				);
 
 			$menu = wp_nav_menu($defaults);

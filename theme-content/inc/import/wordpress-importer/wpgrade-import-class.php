@@ -21,7 +21,7 @@ class wpGrade_import extends WPGrade_WP_Import
 			//set the front and blog page
 			// Use a static front page
 			update_option( 'show_on_front', 'page' );
-			$home = get_page_by_title( 'Welcome to Lens' );
+			$home = get_page_by_title( 'Home' );
 			update_option( 'page_on_front', $home->ID );
 
 			// Set the blog page
