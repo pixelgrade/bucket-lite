@@ -30,10 +30,12 @@
                         </div>
                         <div class="entry__content"><?php the_content(); ?></div>
                     </div>
-                    
+
+	                <?php wp_link_pages(); // pagination for posts with <!--nextpage--> ?>
+
                     <footer class="entry__meta cf">
                         <?php $categories = wp_get_post_categories($post->ID); ?>
-                        <?php if (count($categories)): ?>
+                        <?php if ($categories && count($categories)): ?>
                             <div class="entry__meta-box meta-box--categories">
                                 <span class="meta-box__box-title"><?php _e("Filled under", wpgrade::textdomain()); ?>: </span>
                                 <?php foreach ($categories as $cat): ?>
@@ -91,12 +93,14 @@
                     </footer><!-- .entry-meta -->
                     <hr class="separator separator--striped">
                     <?php
-                        // If comments are open or we have at least one comment, load up the comment template
+
+	                // If comments are open or we have at least one comment, load up the comment template
                         if ( comments_open() || '0' != get_comments_number() )
                             comments_template();
                     ?>
                 </article>
         <?php endwhile; ?>
+
     </div><!-- .page-main -->
 
     <div class="page-side">

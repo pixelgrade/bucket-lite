@@ -45,12 +45,24 @@
         </div>
 
         <?php
-        
+
+        if ( wpgrade::option('portfolio_archive_limit') ) {
+	        $projects_number = wpgrade::option('portfolio_archive_limit');
+        } else {
+	        $projects_number = -1;
+        }
+
+        if ( is_front_page() ) {
+	        $projects_number_meta = get_post_meta(lens::lang_page_id(get_the_ID()), wpgrade::prefix() . 'homepage_projects_number', true);
+            if ( !empty( $projects_number_meta ) && is_numeric($projects_number_meta) ) {
+	            $projects_number = $projects_number_meta;
+	        }
+        }
         $args = array(
             'post_type' => 'lens_portfolio',
             'orderby' => 'menu_order date',
             'order' => 'DESC',
-            'posts_per_page' => -1
+            'posts_per_page' => $projects_number
         );
 
 		$query = new WP_Query( $args );

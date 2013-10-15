@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lens – Norsk oversettelse\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-12 20:40+0200\n"
-"PO-Revision-Date: 2013-10-12 20:40+0200\n"
+"POT-Creation-Date: 2013-10-14 20:21+0200\n"
+"PO-Revision-Date: 2013-10-14 20:21+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: AD. MOMENT <post@admoment.no>\n"
 "Language: English\n"
@@ -115,42 +115,42 @@ msgstr "404"
 msgid "Search Results for: %s"
 msgstr "Søkeresultat for: %s"
 
-#: ../single.php:38
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:30
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:86
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:116
+#: ../single.php:40
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:31
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:85
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:115
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:89
 msgid "Filled under"
 msgstr "Arkivert under"
 
-#: ../single.php:51
+#: ../single.php:53
 msgid "Tagged"
 msgstr "Merket"
 
-#: ../single.php:62
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:49
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:144
+#: ../single.php:64
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:47
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:143
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:111
 msgid "Share"
 msgstr "Del på:"
 
-#: ../single.php:67 ../theme-partials/posts-single.php:169
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:54
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:149
+#: ../single.php:69
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:52
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:148
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:116
 msgid "Share on Twitter!"
 msgstr "Del på Twitter!"
 
-#: ../single.php:75 ../theme-partials/posts-single.php:177
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:62
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:157
+#: ../single.php:77
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:60
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:156
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:124
 msgid "Share on Facebook!"
 msgstr "Del på Facebook!"
 
-#: ../single.php:83 ../theme-partials/posts-single.php:185
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:70
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:165
+#: ../single.php:85
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:68
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:164
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:132
 msgid "Share on Google+!"
 msgstr "Del på Google+!"
@@ -278,6 +278,9 @@ msgid "No Gallery found in Trash"
 msgstr "Fant ingen gallerier i papirkurven"
 
 #: ../theme-callbacks/activation-hooks.php:55
+#: ../theme-partials/posts-lens_galleries-archive.php:32
+#: ../theme-partials/posts-lens_galleries-archive.php:163
+#: ../theme-partials/posts-lens_galleries-archive.php:190
 msgid "Galleries"
 msgstr "Gallerier"
 
@@ -666,6 +669,17 @@ msgstr "Velg et galleri"
 msgid "Select a gallery and we will show it on your homepage."
 msgstr "Velg et galleri og det vil bli vist på forsiden."
 
+#: ../theme-callbacks/activation-hooks.php:526
+#, fuzzy
+msgid "Projects Number"
+msgstr "Prosjekter"
+
+#: ../theme-callbacks/activation-hooks.php:527
+msgid ""
+"Select a number of projects to show on your homepage. For unlimited projects "
+"keep it empty"
+msgstr ""
+
 #: ../theme-callbacks/unsorted.php:75
 msgid "M j, Y \\a\\t H:i"
 msgstr "j. M Y \\k\\l H:i"
@@ -862,10 +876,18 @@ msgstr ""
 "merkevarefargen din."
 
 #: ../theme-content/admin-panel/redux-sections.php:139
+msgid "Inverse header contrast."
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:140
+msgid "Change the header contrast: black text, white background."
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:147
 msgid "Do you need custom web fonts?"
 msgstr "Trenger du egne webfonter?"
 
-#: ../theme-content/admin-panel/redux-sections.php:140
+#: ../theme-content/admin-panel/redux-sections.php:148
 msgid ""
 "Tap into the massive <a href=\"http://www.google.com/fonts/\">Google Fonts</"
 "a> collection (with Live preview)."
@@ -873,23 +895,23 @@ msgstr ""
 "Benytt deg av det massive<a href=\"http://www.google.com/fonts/\">Google "
 "Fonts</a>-biblioteket."
 
-#: ../theme-content/admin-panel/redux-sections.php:148
+#: ../theme-content/admin-panel/redux-sections.php:156
 msgid "Main Font"
 msgstr "Hovedfont"
 
-#: ../theme-content/admin-panel/redux-sections.php:154
+#: ../theme-content/admin-panel/redux-sections.php:162
 msgid "Body Font"
 msgstr "Brødtekstfont"
 
-#: ../theme-content/admin-panel/redux-sections.php:160
+#: ../theme-content/admin-panel/redux-sections.php:168
 msgid "Menu Font"
 msgstr "Menyfont"
 
-#: ../theme-content/admin-panel/redux-sections.php:166
+#: ../theme-content/admin-panel/redux-sections.php:174
 msgid "Custom CSS Style"
 msgstr "Tilpasset CSS-stiler"
 
-#: ../theme-content/admin-panel/redux-sections.php:167
+#: ../theme-content/admin-panel/redux-sections.php:175
 msgid ""
 "Use this area to make slight CSS changes. It will be included in the head "
 "section of the page."
@@ -897,11 +919,11 @@ msgstr ""
 "Bruk dette feltet til å gjøre mindre css-endringer. Det vil bli inkludert i "
 "sidens toppseksjon."
 
-#: ../theme-content/admin-panel/redux-sections.php:174
+#: ../theme-content/admin-panel/redux-sections.php:182
 msgid "Custom JavaScript"
 msgstr "Tilpasset Javascript"
 
-#: ../theme-content/admin-panel/redux-sections.php:175
+#: ../theme-content/admin-panel/redux-sections.php:183
 msgid ""
 "Use this area to make custom JavaScript calls.This code will be loaded in "
 "head section"
@@ -909,15 +931,15 @@ msgstr ""
 "Bruk dette feltet til å gjøre egne javascript-calls. Koden vil bli plassert "
 "i sidens toppseksjon."
 
-#: ../theme-content/admin-panel/redux-sections.php:176
+#: ../theme-content/admin-panel/redux-sections.php:184
 msgid "jQuery is available here as $"
 msgstr "jQuery er tilgjengelig som $."
 
-#: ../theme-content/admin-panel/redux-sections.php:182
+#: ../theme-content/admin-panel/redux-sections.php:190
 msgid "How to inject the custom CSS"
 msgstr "Hvordan legge inn tilpasset CSS"
 
-#: ../theme-content/admin-panel/redux-sections.php:183
+#: ../theme-content/admin-panel/redux-sections.php:191
 #, php-format
 msgid ""
 "By default %s saves the custom CSS in a file.<br />If for some reason you "
@@ -928,19 +950,19 @@ msgstr ""
 "har rettigheter til å skrive til en fil hos serverleverandøren bør du velge "
 "\"Inline\" alternativet"
 
-#: ../theme-content/admin-panel/redux-sections.php:200
+#: ../theme-content/admin-panel/redux-sections.php:208
 msgid "Sidebar Options"
 msgstr "Sidebaralternativ"
 
-#: ../theme-content/admin-panel/redux-sections.php:201
+#: ../theme-content/admin-panel/redux-sections.php:209
 msgid "<p class=\"description\">Change sidebar related options from here.</p>"
 msgstr "<p class=\"description\">Endre sidebarrelaterte alternativ her.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:206
+#: ../theme-content/admin-panel/redux-sections.php:214
 msgid "Copyright Text"
 msgstr "Opphavsrettstekst"
 
-#: ../theme-content/admin-panel/redux-sections.php:207
+#: ../theme-content/admin-panel/redux-sections.php:215
 #, php-format
 msgid ""
 "Text that will appear in footer left area (eg. Copyright 2013 %s | All "
@@ -949,11 +971,11 @@ msgstr ""
 "Tekst som kommer til å dukke opp i det venstre footerfeltet (f.eks. "
 "Copyright 2013 %s | All Rights Reserved)."
 
-#: ../theme-content/admin-panel/redux-sections.php:214
+#: ../theme-content/admin-panel/redux-sections.php:222
 msgid "Social Footer Menu"
 msgstr "Sosial footermeny"
 
-#: ../theme-content/admin-panel/redux-sections.php:215
+#: ../theme-content/admin-panel/redux-sections.php:223
 msgid ""
 "Show social icons in the footer. The links and order are taken from the "
 "Social and SEO Options tabs."
@@ -961,15 +983,15 @@ msgstr ""
 "Vis sosiale ikoner i footeren. Linkene og rekkefølgen kommer fra Social og "
 "SEO alternativer fanen."
 
-#: ../theme-content/admin-panel/redux-sections.php:223
+#: ../theme-content/admin-panel/redux-sections.php:231
 msgid "Social Footer Menu Title"
 msgstr "Sosial footermenytittel"
 
-#: ../theme-content/admin-panel/redux-sections.php:230
+#: ../theme-content/admin-panel/redux-sections.php:238
 msgid "Social Icons"
 msgstr "Sosiale ikoner"
 
-#: ../theme-content/admin-panel/redux-sections.php:231
+#: ../theme-content/admin-panel/redux-sections.php:239
 #, php-format
 msgid ""
 "Define and reorder your social links.<br /><b>Note:</b> These will be "
@@ -980,100 +1002,100 @@ msgstr ""
 "bli vist i \"%s Sosiale linker\"-widgeten slik at du kan sette dem hvor som "
 "helst på nettstedet. Bare feltene som er fylt ut vil vise."
 
-#: ../theme-content/admin-panel/redux-sections.php:232
+#: ../theme-content/admin-panel/redux-sections.php:240
 msgid ""
 "Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>."
 msgstr "Ikoner fra <strong>FontAwesome</strong> og <strong>Entypo</strong>."
 
-#: ../theme-content/admin-panel/redux-sections.php:234
+#: ../theme-content/admin-panel/redux-sections.php:242
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../theme-content/admin-panel/redux-sections.php:235
+#: ../theme-content/admin-panel/redux-sections.php:243
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../theme-content/admin-panel/redux-sections.php:236
+#: ../theme-content/admin-panel/redux-sections.php:244
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../theme-content/admin-panel/redux-sections.php:237
+#: ../theme-content/admin-panel/redux-sections.php:245
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../theme-content/admin-panel/redux-sections.php:238
+#: ../theme-content/admin-panel/redux-sections.php:246
 msgid "Behance"
 msgstr "Behance"
 
-#: ../theme-content/admin-panel/redux-sections.php:239
+#: ../theme-content/admin-panel/redux-sections.php:247
 msgid "500px"
 msgstr "500px"
 
-#: ../theme-content/admin-panel/redux-sections.php:240
+#: ../theme-content/admin-panel/redux-sections.php:248
 msgid "DeviantART"
 msgstr "DeviantART"
 
-#: ../theme-content/admin-panel/redux-sections.php:241
+#: ../theme-content/admin-panel/redux-sections.php:249
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../theme-content/admin-panel/redux-sections.php:242
+#: ../theme-content/admin-panel/redux-sections.php:250
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../theme-content/admin-panel/redux-sections.php:243
+#: ../theme-content/admin-panel/redux-sections.php:251
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../theme-content/admin-panel/redux-sections.php:244
+#: ../theme-content/admin-panel/redux-sections.php:252
 msgid "Google+"
 msgstr "Google+"
 
-#: ../theme-content/admin-panel/redux-sections.php:245
+#: ../theme-content/admin-panel/redux-sections.php:253
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../theme-content/admin-panel/redux-sections.php:246
+#: ../theme-content/admin-panel/redux-sections.php:254
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../theme-content/admin-panel/redux-sections.php:247
+#: ../theme-content/admin-panel/redux-sections.php:255
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../theme-content/admin-panel/redux-sections.php:248
+#: ../theme-content/admin-panel/redux-sections.php:256
 msgid "Skype"
 msgstr "Skype"
 
-#: ../theme-content/admin-panel/redux-sections.php:249
+#: ../theme-content/admin-panel/redux-sections.php:257
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../theme-content/admin-panel/redux-sections.php:250
+#: ../theme-content/admin-panel/redux-sections.php:258
 msgid "Digg"
 msgstr "Digg"
 
-#: ../theme-content/admin-panel/redux-sections.php:251
+#: ../theme-content/admin-panel/redux-sections.php:259
 msgid "Last.FM"
 msgstr "Last.FM"
 
-#: ../theme-content/admin-panel/redux-sections.php:252
+#: ../theme-content/admin-panel/redux-sections.php:260
 msgid "App.net"
 msgstr "App.net"
 
-#: ../theme-content/admin-panel/redux-sections.php:258
+#: ../theme-content/admin-panel/redux-sections.php:266
 msgid "Open Links In A New Window"
 msgstr "Åpne sosiale linker i nytt vindu"
 
-#: ../theme-content/admin-panel/redux-sections.php:259
+#: ../theme-content/admin-panel/redux-sections.php:267
 msgid "Check this to open social links in a new window (target=\"_blank\")."
 msgstr "Ønsker du å åpne sosiale linker i et nytt vindu."
 
-#: ../theme-content/admin-panel/redux-sections.php:296
+#: ../theme-content/admin-panel/redux-sections.php:304
 msgid "Select Form"
 msgstr "Velg skjema"
 
-#: ../theme-content/admin-panel/redux-sections.php:297
+#: ../theme-content/admin-panel/redux-sections.php:305
 #, php-format
 msgid ""
 "Select a contact form previously created with the Contact Form 7 plugin. You "
@@ -1082,11 +1104,11 @@ msgstr ""
 "Velg et kontaktskjema opprettet av Kontaktskjema 7-utvidelsen. Du kan "
 "opprette et nytt <a href=\"%s\" title=\"Contact Form 7\">her</a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:305
+#: ../theme-content/admin-panel/redux-sections.php:313
 msgid "Notice"
 msgstr "Merknad"
 
-#: ../theme-content/admin-panel/redux-sections.php:306
+#: ../theme-content/admin-panel/redux-sections.php:314
 #, php-format
 msgid ""
 "<p class=\"description\">The Contact Form 7 plugin is not active. You can "
@@ -1095,20 +1117,20 @@ msgstr ""
 "<p class=\"description\">Kontaktskjema 7-utvidelsen er ikke aktivt. Du kan "
 "installere/aktivere det <a href=\"%s\" title=\"Contact Form 7\">her</a></p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:317
+#: ../theme-content/admin-panel/redux-sections.php:325
 msgid "Contact Page"
 msgstr "Kontaktside"
 
-#: ../theme-content/admin-panel/redux-sections.php:318
+#: ../theme-content/admin-panel/redux-sections.php:326
 msgid ""
 "<p class=\"description\">General settings for the contact page template!</p>"
 msgstr "<p class=\"description\">Generelle innstillinger for kontaktsiden</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:323
+#: ../theme-content/admin-panel/redux-sections.php:331
 msgid "Google Maps Link"
 msgstr "Google Maps-link"
 
-#: ../theme-content/admin-panel/redux-sections.php:324
+#: ../theme-content/admin-panel/redux-sections.php:332
 msgid ""
 "Paste here the the URL that you've got from Google Maps, after navigating to "
 "your location.<br />Here it is <a href=\"http://screenr.com/MjV7\" target="
@@ -1118,64 +1140,64 @@ msgstr ""
 "<br /><a href=\"http://screenr.com/MjV7\" target=\"_blank\">Se en liten "
 "video</a> for å se hvordan du får tak i URLen."
 
-#: ../theme-content/admin-panel/redux-sections.php:329
+#: ../theme-content/admin-panel/redux-sections.php:337
 msgid "Custom Styling for Map?"
 msgstr "Tilpasset utseende på kartet?"
 
-#: ../theme-content/admin-panel/redux-sections.php:330
+#: ../theme-content/admin-panel/redux-sections.php:338
 msgid "Allow us to change the map colors to better match your website."
 msgstr "Endrer fargen på kartet til å bedre passe til din nettside."
 
-#: ../theme-content/admin-panel/redux-sections.php:346
+#: ../theme-content/admin-panel/redux-sections.php:354
 msgid "Portfolio Options"
 msgstr "Porteføljealternativ"
 
-#: ../theme-content/admin-panel/redux-sections.php:347
+#: ../theme-content/admin-panel/redux-sections.php:355
 msgid "<p class=\"description\">General settings for portfolio items.</p>"
 msgstr ""
 "<p class=\"description\">Generelle innstillinger for porteføljeelementer.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:352
-#: ../theme-content/admin-panel/redux-sections.php:423
+#: ../theme-content/admin-panel/redux-sections.php:360
+#: ../theme-content/admin-panel/redux-sections.php:431
 msgid "Show Share Links"
 msgstr "Vis deleknapper"
 
-#: ../theme-content/admin-panel/redux-sections.php:353
+#: ../theme-content/admin-panel/redux-sections.php:361
 msgid "Do you want to show the share links bellow the projects?"
 msgstr "Ønsker du å vise delelinkene under prosjektene?"
 
-#: ../theme-content/admin-panel/redux-sections.php:361
-#: ../theme-content/admin-panel/redux-sections.php:432
+#: ../theme-content/admin-panel/redux-sections.php:369
+#: ../theme-content/admin-panel/redux-sections.php:440
 msgid "Twitter Share Link"
 msgstr "Twitter delelink"
 
-#: ../theme-content/admin-panel/redux-sections.php:369
-#: ../theme-content/admin-panel/redux-sections.php:440
+#: ../theme-content/admin-panel/redux-sections.php:377
+#: ../theme-content/admin-panel/redux-sections.php:448
 msgid "Facebook Share Link"
 msgstr "Facebook delelink"
 
-#: ../theme-content/admin-panel/redux-sections.php:377
-#: ../theme-content/admin-panel/redux-sections.php:448
+#: ../theme-content/admin-panel/redux-sections.php:385
+#: ../theme-content/admin-panel/redux-sections.php:456
 msgid "Google+ Share Link"
 msgstr "Google+ delelink"
 
-#: ../theme-content/admin-panel/redux-sections.php:383
+#: ../theme-content/admin-panel/redux-sections.php:391
 msgid "Portfolio grid thumbnail orientation"
 msgstr "Portefølje gridminiatyrbile orientering"
 
-#: ../theme-content/admin-panel/redux-sections.php:384
+#: ../theme-content/admin-panel/redux-sections.php:392
 msgid "Horizontal thumbnails or vertical thumbnails"
 msgstr "Horisontale eller vertikale miniatyrbilder"
 
-#: ../theme-content/admin-panel/redux-sections.php:394
+#: ../theme-content/admin-panel/redux-sections.php:402
 msgid "How many projects on portfolio page"
 msgstr "Hvor mange prosjekter på porteføljesiden"
 
-#: ../theme-content/admin-panel/redux-sections.php:410
+#: ../theme-content/admin-panel/redux-sections.php:418
 msgid "Blog Options"
 msgstr "Bloggalternativer"
 
-#: ../theme-content/admin-panel/redux-sections.php:411
+#: ../theme-content/admin-panel/redux-sections.php:419
 msgid ""
 "<p class=\"description\">Change blog archive and single post related options "
 "here.</p>"
@@ -1183,39 +1205,39 @@ msgstr ""
 "<p class=\"description\">Endre bloggarkivet og alternativer for "
 "enkeltinnlegg.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:416
+#: ../theme-content/admin-panel/redux-sections.php:424
 msgid "Excerpt Length"
 msgstr "Utdragslengde"
 
-#: ../theme-content/admin-panel/redux-sections.php:417
+#: ../theme-content/admin-panel/redux-sections.php:425
 msgid "Set here the excerpt length for the blog archive (number of words)."
 msgstr "Sett utdragslengden for bloggarkivet (antall ord)."
 
-#: ../theme-content/admin-panel/redux-sections.php:424
+#: ../theme-content/admin-panel/redux-sections.php:432
 msgid "Do you want to show the share links bellow the article?"
 msgstr "Ønsker du å vise delelinkene under artikkelen?"
 
-#: ../theme-content/admin-panel/redux-sections.php:463
+#: ../theme-content/admin-panel/redux-sections.php:471
 msgid "Social and SEO Options"
 msgstr "Social og SEO alternativer"
 
-#: ../theme-content/admin-panel/redux-sections.php:465
+#: ../theme-content/admin-panel/redux-sections.php:473
 msgid "<p class=\"description\">Social sharing stuff.</p>"
 msgstr "<p class=\"description\">Sosial deling.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:470
+#: ../theme-content/admin-panel/redux-sections.php:478
 msgid "Open social icons links in new a window?"
 msgstr "Åpne sosiale linker i nytt vindu?"
 
-#: ../theme-content/admin-panel/redux-sections.php:471
+#: ../theme-content/admin-panel/redux-sections.php:479
 msgid "Do you want to open social links in a new window ?"
 msgstr "Ønsker du å åpne sosiale linker i et nytt vindu?"
 
-#: ../theme-content/admin-panel/redux-sections.php:478
+#: ../theme-content/admin-panel/redux-sections.php:486
 msgid "Add Social Meta Tags"
 msgstr "Legg til sosial meta-tagger"
 
-#: ../theme-content/admin-panel/redux-sections.php:479
+#: ../theme-content/admin-panel/redux-sections.php:487
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
@@ -1223,11 +1245,11 @@ msgstr ""
 "Forbered temaet skikkelig for sosial deling og oppdagelse ved å legge til "
 "nødvendige metategger i <head>-seksjonen."
 
-#: ../theme-content/admin-panel/redux-sections.php:487
+#: ../theme-content/admin-panel/redux-sections.php:495
 msgid "Facebook Application ID"
 msgstr "Facebook Application ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:488
+#: ../theme-content/admin-panel/redux-sections.php:496
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
@@ -1236,11 +1258,11 @@ msgstr ""
 "Fyll inn Facebook Application IDen som er assosiert med dette nettstedet. Du "
 "kan lage en <a href=\"https://developers.facebook.com/apps\">her</a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:493
+#: ../theme-content/admin-panel/redux-sections.php:501
 msgid "Facebook Admin ID"
 msgstr "Facebook Admin ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:494
+#: ../theme-content/admin-panel/redux-sections.php:502
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
@@ -1250,11 +1272,11 @@ msgstr ""
 "slik at du kan få tilgang til <a href=\"https://www.facebook.com/insights/"
 "\">Facebook Insights</a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:499
+#: ../theme-content/admin-panel/redux-sections.php:507
 msgid "Google+ Publisher"
 msgstr "Google+ publisher"
 
-#: ../theme-content/admin-panel/redux-sections.php:500
+#: ../theme-content/admin-panel/redux-sections.php:508
 msgid ""
 "Enter your Google Plus page ID (example: https://plus.google.com/"
 "<b>105345678532237339285</b>) here if you have set up a \"Google+ Page\"."
@@ -1262,11 +1284,11 @@ msgstr ""
 "Fyll inn din Google Plus side-ID (eksempel: https://plus.google.com/"
 "<b>105345678532237339285</b>) her hvis du har satt opp en \"Google+ Page\"."
 
-#: ../theme-content/admin-panel/redux-sections.php:505
+#: ../theme-content/admin-panel/redux-sections.php:513
 msgid "Twitter Site Username"
 msgstr "Twitter-brukernavn"
 
-#: ../theme-content/admin-panel/redux-sections.php:506
+#: ../theme-content/admin-panel/redux-sections.php:514
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
@@ -1274,11 +1296,11 @@ msgstr ""
 "Twitter-brukernavnet til hele nettstedet. Brukernavnet til forfatteren vil "
 "bli tatt fra forfatterens brukerprofil."
 
-#: ../theme-content/admin-panel/redux-sections.php:511
+#: ../theme-content/admin-panel/redux-sections.php:519
 msgid "Default Social Share Image"
 msgstr "Standard delingsbilde i sosiale medier"
 
-#: ../theme-content/admin-panel/redux-sections.php:512
+#: ../theme-content/admin-panel/redux-sections.php:520
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
@@ -1286,11 +1308,11 @@ msgstr ""
 "Hvis du laster opp et bilde vil dette bli brukt for sosial deling for alt "
 "innhold som ikke har et eget bilde (minimum 200px bredt anbefales)."
 
-#: ../theme-content/admin-panel/redux-sections.php:517
+#: ../theme-content/admin-panel/redux-sections.php:525
 msgid "Use Twitter Widget"
 msgstr "Bruk Twitter widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:518
+#: ../theme-content/admin-panel/redux-sections.php:526
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
@@ -1298,11 +1320,11 @@ msgstr ""
 "En widget for å vise dine siste tweets (kompatibel med Twitter API v1.1). Du "
 "kan legge den til blogg- eller footersidebars.<div class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:526
+#: ../theme-content/admin-panel/redux-sections.php:534
 msgid "Important Note : "
 msgstr "Viktig merknad:"
 
-#: ../theme-content/admin-panel/redux-sections.php:527
+#: ../theme-content/admin-panel/redux-sections.php:535
 msgid ""
 "In order to use the Twitter widget you will need to create a Twitter "
 "application <a href=\"https://dev.twitter.com/apps/new\" >here</a> and get "
@@ -1315,27 +1337,27 @@ msgstr ""
 "hemmelighet og tilgangstegn. Dette er et resultat av endringene Twitter "
 "gjorde med sin API (v1.1). Vennligst merk at disse standardene brukes til "
 
-#: ../theme-content/admin-panel/redux-sections.php:532
+#: ../theme-content/admin-panel/redux-sections.php:540
 msgid "Consumer Key"
 msgstr "Forbrukernøkkel"
 
-#: ../theme-content/admin-panel/redux-sections.php:538
+#: ../theme-content/admin-panel/redux-sections.php:546
 msgid "Consumer Secret"
 msgstr "Forbrukerhemmelighet"
 
-#: ../theme-content/admin-panel/redux-sections.php:544
+#: ../theme-content/admin-panel/redux-sections.php:552
 msgid "Oauth Access Token"
 msgstr "Oauth tilgangstegn"
 
-#: ../theme-content/admin-panel/redux-sections.php:550
+#: ../theme-content/admin-panel/redux-sections.php:558
 msgid "Oauth Access Token Secret"
 msgstr "Oauth tilgangstegn hemmelighet"
 
-#: ../theme-content/admin-panel/redux-sections.php:563
+#: ../theme-content/admin-panel/redux-sections.php:571
 msgid "Theme Auto Update"
 msgstr "Autooppdater tema"
 
-#: ../theme-content/admin-panel/redux-sections.php:564
+#: ../theme-content/admin-panel/redux-sections.php:572
 msgid ""
 "<p class=\"description\">Let us notify you when new versions of this theme "
 "are live on ThemeForest! Update with just one button click. Forget about "
@@ -1345,31 +1367,31 @@ msgstr ""
 "publiseres på ThemeForest. Oppdater med bare ett klikk, glem manuelle "
 "oppdateringer.</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:569
+#: ../theme-content/admin-panel/redux-sections.php:577
 msgid "Use Auto Update"
 msgstr "Bruk automatiske oppdateringer"
 
-#: ../theme-content/admin-panel/redux-sections.php:570
+#: ../theme-content/admin-panel/redux-sections.php:578
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 "Aktiver denne for å legge til nødvendig informasjon for at automatiske "
 "oppdateringer skal fungere."
 
-#: ../theme-content/admin-panel/redux-sections.php:578
+#: ../theme-content/admin-panel/redux-sections.php:586
 msgid "ThemeForest Username"
 msgstr "ThemeForest brukernavn"
 
-#: ../theme-content/admin-panel/redux-sections.php:579
+#: ../theme-content/admin-panel/redux-sections.php:587
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr "Fyll inn ditt ThemeForest (eller Envato) brukernavn."
 
-#: ../theme-content/admin-panel/redux-sections.php:584
+#: ../theme-content/admin-panel/redux-sections.php:592
 msgid "ThemeForest Secret API Key"
 msgstr "Hemmelig ThemeForest API-nøkkel"
 
-#: ../theme-content/admin-panel/redux-sections.php:585
+#: ../theme-content/admin-panel/redux-sections.php:593
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
@@ -1377,11 +1399,11 @@ msgstr ""
 "Fyll inn den hemmelige API-nøkkelen du lagde på ThemeForest. Lag din egen "
 "via \"Settings\" > \"API Keys\" i din profil."
 
-#: ../theme-content/admin-panel/redux-sections.php:590
+#: ../theme-content/admin-panel/redux-sections.php:598
 msgid "Backup Theme Before Upgrade?"
 msgstr "Sikkerhetskopier temaet før oppdatering?"
 
-#: ../theme-content/admin-panel/redux-sections.php:591
+#: ../theme-content/admin-panel/redux-sections.php:599
 msgid ""
 "Check this if you want us to automatically save your theme as a ZIP archive "
 "before an upgrade. The directory those backups get saved to is <code>wp-"
@@ -2298,53 +2320,40 @@ msgstr "For å se, vennligst fyll inn passordet ditt under:"
 msgid "Password.."
 msgstr "Passord …"
 
-#: ../theme-partials/posts-single.php:107
-msgid "Previous post"
-msgstr "Forrige innlegg"
+#: ../theme-partials/posts-lens_portfolio-archive.php:39
+#: ../theme-partials/posts-lens_portfolio-archive.php:180
+#: ../theme-partials/posts-lens_portfolio-archive.php:207
+#, fuzzy
+msgid "Portfolio"
+msgstr "Porteføljearkiv"
 
-#: ../theme-partials/posts-single.php:108
-msgid "Next post"
-msgstr "Neste innlegg"
-
-#: ../theme-partials/posts-single.php:162
-msgid "Share on:"
-msgstr "Del på:"
-
-#: ../theme-partials/posts-single.php:194
-msgid "Jump to the top of the page"
-msgstr "Gå til toppen av siden"
-
-#: ../theme-partials/posts-single.php:195
-msgid "Back to top"
-msgstr "Tilbake til toppen"
-
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:22
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:80
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:110
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:23
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:79
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:109
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:83
 msgid "Client"
 msgstr "Kunde"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:95
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:190
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:93
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:189
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:155
 msgid "Related projects"
 msgstr "Lignende prosjekter"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:100
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:195
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:98
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:194
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:160
 msgid "Previous"
 msgstr "Forrige"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:104
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:199
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:102
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:198
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:164
 msgid "All projects"
 msgstr "Alle prosjekter"
 
-#: ../theme-partials/portfolio-templates/portfolio-classic.php:108
-#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:203
+#: ../theme-partials/portfolio-templates/portfolio-classic.php:106
+#: ../theme-partials/portfolio-templates/portfolio-fullwidth.php:202
 #: ../theme-partials/portfolio-templates/portfolio-sidebar.php:168
 msgid "Next"
 msgstr "Neste"
@@ -3216,6 +3225,21 @@ msgid ""
 msgstr ""
 "Fontene under er gratis, tilpassede fonter fra <a href=\"http://www.google."
 "com/webfonts\" target=\"_blank\">Google Web Fonts biblioteket</a>."
+
+#~ msgid "Previous post"
+#~ msgstr "Forrige innlegg"
+
+#~ msgid "Next post"
+#~ msgstr "Neste innlegg"
+
+#~ msgid "Share on:"
+#~ msgstr "Del på:"
+
+#~ msgid "Jump to the top of the page"
+#~ msgstr "Gå til toppen av siden"
+
+#~ msgid "Back to top"
+#~ msgstr "Tilbake til toppen"
 
 #~ msgid "Display Custom Css Inline"
 #~ msgstr "Vis tilpasset CSS inline"

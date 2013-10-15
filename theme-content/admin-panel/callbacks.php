@@ -13,7 +13,7 @@
 		return $return;
 	}
 
-    function write_custom_css($options) {
+    function wpgrade_write_custom_css($options) {
 
         if ( wpgrade::option('inject_custom_css') !== 'file' ) return;
 
@@ -43,7 +43,7 @@
         }
 
     }
-	add_action( 'redux-opts-saved-lens_options', 'write_custom_css' );
+	add_action( 'redux-opts-saved-lens_options', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------

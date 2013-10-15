@@ -17,6 +17,9 @@
 		$existing_mimes['mp4'] = 'video/mp4';
 		$existing_mimes['weba'] = 'audio/webm';
 		$existing_mimes['webm'] = 'video/webm';
+		
+		//and some more
+		$existing_mimes['svg'] = 'image/svg+xml';
 
 		return $existing_mimes;
 	}
