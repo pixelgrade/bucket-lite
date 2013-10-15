@@ -43,7 +43,7 @@
         }
 
     }
-	add_action( 'redux-opts-saved-lens_options', 'wpgrade_write_custom_css' );
+	add_action( 'redux-opts-saved-'. wpgrade::themename() .'_options', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------

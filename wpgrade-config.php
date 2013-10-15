@@ -5,17 +5,17 @@
 		# name, unless a custom value is provided)
 		# ---------------------------------------------------------------------
 
-		'name'       => 'Lens',
-		'shortname'  => 'lens',
-		'prefix'     => '_lens_',
-//		'textdomain' => 'lens_txtd',
+		'name'       => 'Bucket',
+		'shortname'  => 'bucket',
+		'prefix'     => '_bucket_',
+//		'textdomain' => 'bucket_txtd',
 
 		'language-path' => 'languages',
 
 		'update-notifier' => array
 			(
 				'xml-source' => 'http://pixelgrade.com/updates/',
-//				'xml-file' => 'lens.xml',
+//				'xml-file' => 'bucket.xml',
 				'cache-interval' => 10800, # 3 hours
 				'update-page-name' => 'theme-update-notifier',
 			),
@@ -37,7 +37,7 @@
 		'include-files' => array
 			(
 				// main theme class
-				'theme-utilities/lens'.EXT,
+				'theme-utilities/bucket'.EXT,
 				// importer
 //				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
 				'theme-content/inc/required-plugins/required-plugins.php',
@@ -167,9 +167,9 @@
 								'ajaxurl' => admin_url('admin-ajax.php'),
 								'objectl10n' => array
 									(
-										'tPrev' => __('Previous (Left arrow key)', 'lens_txtd'),
-										'tNext' => __('Next (Right arrow key)', 'lens_txtd'),
-										'tCounter' => __('of', 'lens_txtd')
+										'tPrev' => __('Previous (Left arrow key)', 'bucket_txtd'),
+										'tNext' => __('Next (Right arrow key)', 'bucket_txtd'),
+										'tCounter' => __('of', 'bucket_txtd')
 									),
 							),
 					),
@@ -217,8 +217,8 @@
 				'prev_next' => true,
 
 				// pagination text
-				'prev_text' => __('Newer posts', 'lens_txtd'),
-				'next_text' => __('Older posts', 'lens_txtd'),
+				'prev_text' => __('Newer posts', 'bucket_txtd'),
+				'next_text' => __('Older posts', 'bucket_txtd'),
 
 				// are the terms used for paging relative to the sort order?
 				// ie. older/newer instead of sorting agnostic previous/next
@@ -258,8 +258,8 @@
 				'gallery' => array
 					(
 						'formatter' => null,
-						'prev_text' => __('Prev Images', 'lens_txtd'),
-						'next_text' => __('Next Images', 'lens_txtd'),
+						'prev_text' => __('Prev Images', 'bucket_txtd'),
+						'next_text' => __('Next Images', 'bucket_txtd'),
 					)
 			),
 

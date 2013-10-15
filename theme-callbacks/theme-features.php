@@ -66,7 +66,7 @@ add_action('wp_head', 'wpgrade_add_desktop_icons');
 function wpgrade_prepare_password_for_custom_post_types(){
 
 	global $wpgrade_private_post;
-	$wpgrade_private_post = lens::is_password_protected();
+	$wpgrade_private_post = bucket::is_password_protected();
 
 }
 

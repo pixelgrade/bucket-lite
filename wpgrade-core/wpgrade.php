@@ -793,7 +793,7 @@ class wpgrade {
 	 */
 	static function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
-			$slider_transition = get_post_meta($current_post->ID, '_lens_post_slider_transition', true);
+			$slider_transition = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_transition', true);
 			$template = '<div class="wp-gallery" data-royalslider data-customarrows data-slidertransition="' . $slider_transition . '">:gallery</div>';
 		}
 

@@ -75,4 +75,4 @@ function wpgrade_callback_portfolio_posts_per_page( $query ) {
 	}
 	return $query;
 }
-add_filter( 'pre_get_posts', 'wpgrade_callback_portfolio_posts_per_page' );
+//add_filter( 'pre_get_posts', 'wpgrade_callback_portfolio_posts_per_page' );

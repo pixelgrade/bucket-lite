@@ -2,13 +2,6 @@
 get_template_part('theme-partials/header/head');
 
 $class_name = '';
-if(is_single() && get_post_type() == 'lens_portfolio'){
-    $class_name = 'single-portfolio-';
-    $class_name .= get_post_meta(get_the_ID(), wpgrade::prefix().'project_template', true);
-} else {
-	//we are in some sort of archive
-	$class_name = 'portfolio-archive';
-}
 
 if(wpgrade::option('header_inverse') == 1) $class_name .= " header-inverse";
 
