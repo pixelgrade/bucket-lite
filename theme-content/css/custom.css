@@ -17,7 +17,7 @@ a:hover > i.pixcode--icon,
 .btn:hover, .wpcf7-submit:hover, .form-submit #comment-submit:hover,
 .widget--header a:hover,
 a.site-home-link {
-    color: #fffc00;
+    color: #0079a5;
 }
 
 .rsNavSelected,
@@ -26,22 +26,22 @@ a.site-home-link {
 .btn, .wpcf7-submit, .form-submit #comment-submit,
 .progressbar__progress,
 .rsNavSelected {
-    background-color: #fffc00;
+    background-color: #0079a5;
 }
 
 .image__item-meta, .mfp-video:hover .image__item-meta {
-    background-color: #fffc00;
-    background-color: rgba(255,252,0, 0.8);
+    background-color: #0079a5;
+    background-color: rgba(0,121,165, 0.8);
 }
 
 .mosaic__item--page-title-mobile .image__item-meta
 .touch .mosaic__item--page-title .image__item-meta, .touch .mosaic__item--page-title-mobile .image__item-meta {
-    background-color: rgba(255,252,0, 0.8);
+    background-color: rgba(0,121,165, 0.8);
 }
 
 .loading .pace .pace-activity,
 .no-touch .arrow-button:hover {
-    border-color: #fffc00 ;
+    border-color: #0079a5 ;
 }
 
 .loading .pace .pace-activity {
@@ -54,15 +54,15 @@ a.site-home-link {
 .menu-item--main:hover:after,
 .menu-item--main:focus:after,
 .menu-item--main:active:after {
-    border-top-color: #fffc00 ;
+    border-top-color: #0079a5 ;
 }
 
 .header:before {
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #fffc00), color-stop(100%, #464a4d));
-    background-image: -webkit-linear-gradient(#fffc00 50%, #464a4d);
-    background-image: -moz-linear-gradient(#fffc00 50%, #464a4d);
-    background-image: -o-linear-gradient(#fffc00 50%, #464a4d);
-    background-image: linear-gradient(#fffc00 50%, #464a4d);
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #0079a5), color-stop(100%, #464a4d));
+    background-image: -webkit-linear-gradient(#0079a5 50%, #464a4d);
+    background-image: -moz-linear-gradient(#0079a5 50%, #464a4d);
+    background-image: -o-linear-gradient(#0079a5 50%, #464a4d);
+    background-image: linear-gradient(#0079a5 50%, #464a4d);
 }
 
 .lt-ie9 .header:before {
