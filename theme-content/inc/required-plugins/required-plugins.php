@@ -64,12 +64,6 @@ function wpgrade_register_required_plugins() {
 			'required' 	=> false,
 			'version' 	=> ''
 		),
-		array(
-			'name'      => 'Yet Another Related Posts Plugin (YARPP)',
-			'slug'      => 'yet-another-related-posts-plugin',
-			'required'  => false,
-			'version'   => ''
-		),
 	);
 	// Change this to your theme text domain, used for internationalising strings
 	$theme_text_domain = wpgrade::textdomain();
