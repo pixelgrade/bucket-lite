@@ -2,296 +2,44 @@
                NAVIGATION
 \*------------------------------------*/
 
-/*ul*/.site-navigation {
-    @extend .nav;
-    @extend .nav--stacked;
-    margin-bottom: 0;
+.navigation {
+    background-color: $dark;
+    @include font-size(14px);
 }
 
-/*ul*/.site-navigation--main {
-    text-transform: uppercase;
-    overflow: hidden;
+.navigation--top {
 
-    @include media(from hand) { 
-        margin-top: -1px;
-        border-top: 1px solid #333638;
+    a {
+        color: #a6a1a1;
     }
+}
+
+.navigation--main {
 
     a {
         color: white;
     }
 }
 
-    /*li*/.menu-item--main {
-        border-bottom: 1px solid #333638;
-        margin-top: -1px;
-        overflow: hidden;
-        // @include transition(all 300ms 300ms ease-in-out);
-        // opacity: 0;
-        // @include transform(translate3d(30%,0,0));
 
-        // &.js--is-loaded {
-        //     opacity: 1;
-        //     @include transform(none);
-        // }
+
+/*ul*/.site-navigation--main {
+    @extend .nav;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+    /*li*/.menu-item--main {
 
         a {
-            @include rem(padding, $half-spacing-unit $base-spacing-unit); 
-
-            &:hover {
-                color: white;
-            }
+            display: block;
+            @include rem(padding, $_u2 $_u);
         }
-
 
         &.current-menu-item,
-        &.current-menu-ancestor, &.current-menu-parent,
+        &.current-menu-ancestor,
+        &.current-menu-parent,
         &:hover, &:focus, &:active {
             
-            & > a {
-                color: $accent-color;
-            }
-
-            &:after {
-                border-top-color: $accent-color;
-            }
         }
     }
-
-
-    /*li*/.menu-item--parent {
-        position: relative;
-
-        &:after {
-            content: "";
-            width: 0;
-            height: 0;
-            position: absolute;
-            @include rem(top, $base-spacing-unit - 2px);
-            @include rem(right, $half-spacing-unit);
-            @include rem(border, 5px solid transparent);
-            border-top-color: #4d4d4d;
-            pointer-events: none;
-            // @include transition(all .2s bezier(easeInOutCirc));
-
-            .header-transparent & {
-                @include rem(top, 3/2 * $half-spacing-unit - 2px);
-            }
-        }
-
-        // & > a {
-        //     @include transition(color .2s bezier(easeInOutCirc));
-        // }
-
-        @include media(from hand) {
-            & > ul {
-                display: none;
-            }
-
-            .touch & > ul {
-                display: block;
-            }
-        }
-    }
-
-
-
-/*-----------------------------------*\
-               SUB MENUS
-\*-----------------------------------*/
-
-/*ul*/.site-navigation__sub-menu {
-    @extend .nav;
-    @extend .nav--stacked;
-    font-style: italic;
-    // display: none;
-}
-
-    /*li*/.menu-item--sub-menu-item {
-        color: #a7a7a7;
-        font-style: italic;
-        line-height: 1.2;
-        @include rem(margin, $half-spacing-unit/2 0 $half-spacing-unit $half-spacing-unit);
-
-        .menu-item {
-            margin-bottom: 0;
-        }
-
-        &.menu-item--parent {
-
-            &:after {
-                @include rem(top, 5px);
-            }
-
-            &:hover:after {
-                border-bottom-color: white;
-            }
-        }
-
-        a {
-            color: #a7a7a7;
-            @include rem(padding, 0 $base-spacing-unit); 
-            @include transition(all .2s ease-out);
-        }
-
-        &:hover, &:focus, &:active {
-
-            & > a {
-                color: white;
-            }
-        }
-
-        &.current-menu-item > a {
-            color: white;
-        }
-    }
-
-/*ul*/.site-social-links {
-    @extend .nav;
-}
-
-
-
-
-
-
-/*-------------------------------------------*\
-               MOBILE NAVIGATION
-\*-------------------------------------------*/
-
-
-// @include media(to hand) {
-    
-//     .navigation--is-visible {
-
-//         &, body, #page, .header, .header__inner-wrap {
-//             height: 100%;
-//         }
-//     }
-
-//     .site-header {
-//         height: 100%; 
-//     }
-// }
-
-// hide navigation on small devices
-
-#navigation {
-
-    @include media(from hand) {
-        @include rem(margin-left, -1 * $base-spacing-unit);
-    }
-}
-
-.site-navigation__trigger {
-    display: none;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-    @include transition(color 1s ease-in-out);
-
-    &:active, &:focus {
-        color: white;
-        @include transition(color .1s ease-in-out);
-    }
-
-    @include media(to hand) {
-        display: block;
-        @include rem(width, 3*$base-spacing-unit);
-        @include rem(height, 3*$base-spacing-unit);
-        position: absolute;
-        top: 0; right: 0;
-        @include font-size(42px);
-        text-align: center;
-        cursor: pointer;
-        color: #807f7d;
-    }
-
-    i {
-        display: block;
-        position: absolute;
-        @include rem(top, $half-spacing-unit + 2px);
-        @include rem(left, $half-spacing-unit);
-        @include backface-visibility(hidden);
-        @include perspective(1000px);
-        overflow: hidden;
-    } 
-
-    .icon-reorder {
-        @include transition(opacity .2s, transform .3s);
-    }
-
-    .icon-remove {
-        @include transition(opacity .2s, transform .4s);
-        @include transform(rotate(45deg));
-        @include opacity(0);
-    }
-}
-
-.navigation--is-visible {
-
-    .icon-remove {
-        @include transform(none);
-        @include opacity(1);
-    }
-
-    .icon-reorder {
-        @include transform(rotate(-45deg));
-        @include opacity(0);
-    }
-}
-
-@include media(to hand) {
-
-    #page {
-        overflow: hidden;
-        position: relative; 
-    }
-
-    .menu-item--main a {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .menu-item--parent:after {
-        right: 0;
-    }
-
-    .menu-item--sub-menu-item a {
-        @include rem(padding, 0 $half-spacing-unit);
-    }
-
-    /**
-    *
-    * Transitioning the navigation on mobile
-    *
-    **/
-    .wrapper {
-        @include transition(left .25s ease-in-out);
-        @include backface-visibility(hidden);
-        @include perspective(1000px);
-
-        .navigation--is-visible & {
-            left: -75%;
-        }
-
-        @include media(from hand) {
-            left: 0 !important;
-            @include transform(none !important);
-            @include transition(none !important);
-        }
-    }
-
-    .csstransforms3d {
-
-        .wrapper {
-            left: 0 !important;
-            @include transition(transform .25s ease-in-out);
-        }
-    }
-
-    .csstransforms3d.navigation--is-visible {
-
-        .wrapper {
-            @include transform(translate3d(-75%,0,0));
-        }
-    }
-}

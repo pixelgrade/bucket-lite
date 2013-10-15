@@ -1,0 +1,28 @@
+/*----------------------------------------------*\
+               $POPULAR POSTS WIDGET
+\*----------------------------------------------*/
+
+.widget--popular-posts {
+    @extend %block-separator;
+}
+
+.popular-posts__time {
+    @extend .nav;
+    @extend .nav--fit;
+    @include rem(padding, $_u4 $_u);
+    color: white;
+    background: $dark;
+    text-transform: uppercase;
+    font-family: $heading-font-family;
+    @include rem(font-size, 13px);
+    @include rem(margin-bottom, $_u2);
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: $red;
+        }
+    }
+}

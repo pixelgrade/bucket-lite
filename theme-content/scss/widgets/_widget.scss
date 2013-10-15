@@ -1,0 +1,26 @@
+/*---------------------------------*\
+               $WIDGET
+\*---------------------------------*/
+
+.widget {
+}
+
+.widget--sidebar__title {
+    @extend .heading;
+    @extend .heading--sidebar;
+}
+
+
+.widget--footer {
+    @include rem(margin-bottom, $_2u);
+}
+
+.widget--footer__title {
+    @extend .heading;
+    @extend .heading--footer;
+
+    em {
+        color: $red;
+        font-style: normal;
+    }
+}

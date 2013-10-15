@@ -1,0 +1,15 @@
+.tweet {
+    @include rem(padding-right, $_6u);
+}
+
+.tweet__author {
+    color: white;
+}
+
+.tweet__content {
+    color: white;
+} 
+
+.tweet__date::before {
+    content: " - ";
+}

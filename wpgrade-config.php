@@ -139,7 +139,7 @@
 							(
                                 'google-webfonts' => array
                                     (
-                                        'path' => 'http://fonts.googleapis.com/css?family=Roboto:300,500,300italic,500italic|Open+Sans:300,400,700,300italic,400italic,700italic|Josefin+Slab:400,600,700|Crimson+Text:400,400italic',
+                                        'path' => 'http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
                                     ),
 								'wpgrade-main-style' => array
 									(

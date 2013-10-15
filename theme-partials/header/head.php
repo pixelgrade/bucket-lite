@@ -20,8 +20,7 @@
 
 <?php
 /**
- * Wordpress Head. This is REQUIRED.Never remove this
+ * One does not simply remove this and walk away alive!
  */
 wp_head(); ?>
-
 </head>

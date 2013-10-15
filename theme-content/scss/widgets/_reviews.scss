@@ -1,0 +1,20 @@
+/*-----------------------------------------------*\
+               $LATEST REVIEWS WIDGET
+\*-----------------------------------------------*/
+
+.reviews {
+    @extend .island;
+    background-color: $dark;
+    color: white;
+}
+
+.review {
+    @include rem(margin-bottom, $_u2 + $_u4);
+}
+
+.review__title {
+    margin-top: .3em;
+    font-family: $heading-font-family;
+    font-weight: normal;
+    text-transform: uppercase;
+}

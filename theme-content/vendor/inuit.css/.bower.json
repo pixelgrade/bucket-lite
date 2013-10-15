@@ -1,0 +1,15 @@
+{
+  "name": "inuit.css",
+  "dependencies": {},
+  "private": true,
+  "homepage": "https://github.com/razwan/inuit.css",
+  "_release": "b75c8bc317",
+  "_resolution": {
+    "type": "branch",
+    "branch": "v5.1",
+    "commit": "b75c8bc31735f7430b3155fbbf3c0e744789c92c"
+  },
+  "_source": "git://github.com/razwan/inuit.css.git",
+  "_target": "v5.1",
+  "_originalSource": "git://github.com/razwan/inuit.css"
+}
