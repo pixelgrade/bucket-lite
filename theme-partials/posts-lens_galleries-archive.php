@@ -14,7 +14,7 @@
 
         ?>
 
-        <div class="mosaic__item  mosaic__item--page-title-mobile">
+        <div class="mosaic__item mosaic__item--page-title-mobile js--is-loaded">
             <div class="image__item-link">
                 <div class="image__item-wrapper">
                     <?php if ($has_post_thumbnail) : ?>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
 
         <?php
 
@@ -145,7 +145,7 @@
             <?php
             // if we added 3 it's now time to add the page title box
             if ($idx == 3) : ?>
-            <div class="mosaic__item  mosaic__item--page-title">
+            <div class="mosaic__item  mosaic__item--page-title js--is-loaded">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                         <?php if ($has_post_thumbnail) : ?>
@@ -165,14 +165,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
             <?php endif;
             
             endwhile;
             
             // if there were less than 3 items, still add the title box
             if ($idx < 3) : ?>
-            <div class="mosaic__item  mosaic__item--page-title">
+            <div class="mosaic__item  mosaic__item--page-title js--is-loaded">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                         <?php if ($has_post_thumbnail) : ?>
@@ -192,7 +192,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
             <?php endif;
         ?>
     </div><!-- .mosaic -->

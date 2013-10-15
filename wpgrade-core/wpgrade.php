@@ -794,7 +794,7 @@ class wpgrade {
 	static function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
 			$slider_transition = get_post_meta($current_post->ID, '_lens_post_slider_transition', true);
-			$template = '<div class="wp-gallery pixslider js-pixslider" data-royalslider data-customarrows data-slidertransition="' . $slider_transition . '">:gallery</div>';
+			$template = '<div class="wp-gallery" data-royalslider data-customarrows data-slidertransition="' . $slider_transition . '">:gallery</div>';
 		}
 
 		// first check if we have a meta with a gallery

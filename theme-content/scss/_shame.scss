@@ -403,3 +403,16 @@ iframe {
 
 
 
+// The padding-bottom was added to make sure that the content
+// won't touch the bottom of the page
+// The following removes content padding-bottom on pages that do not need it
+.blog,
+.portfolio-archive, 
+.single-gallery-fullwidth, 
+.single-gallery-fullscreen,
+.single-gallery-masonry
+{
+    .content{
+        padding-bottom: 0;
+    }
+}

@@ -3,6 +3,7 @@
     // @extend .row;
     background: white;
     position: relative;
+    @include rem(padding-bottom, $base-spacing-unit);
 
     @include media(to hand) {
         @include rem(top, 3*$base-spacing-unit);

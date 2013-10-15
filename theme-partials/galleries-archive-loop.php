@@ -20,7 +20,7 @@
             $post_featured_image = $post_featured_image[0];
         } ?>
 
-        <div class="mosaic__item  mosaic__item--page-title-mobile">
+        <div class="mosaic__item  mosaic__item--page-title-mobile <?php echo $has_post_thumbnail ? '' : 'js--is-loaded'; ?>">
             <div class="image__item-link">
                 <div class="image__item-wrapper">
                     <?php if ($has_post_thumbnail) : ?>
@@ -151,7 +151,7 @@
             <?php
             // if we added 3 it's now time to add the page title box
             if ($idx == 3) : ?>
-            <div class="mosaic__item  mosaic__item--page-title">
+            <div class="mosaic__item  mosaic__item--page-title <?php echo $has_post_thumbnail ? '' : 'js--is-loaded'; ?>">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                         <?php if ($has_post_thumbnail) : ?>
@@ -178,7 +178,7 @@
             
             // if there were less than 3 items, still add the title box
             if ($idx < 3) : ?>
-            <div class="mosaic__item  mosaic__item--page-title">
+            <div class="mosaic__item  mosaic__item--page-title <?php echo $has_post_thumbnail ? '' : 'js--is-loaded'; ?>">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                         <?php if ($has_post_thumbnail) : ?>
