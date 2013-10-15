@@ -38,7 +38,7 @@
     $index = 0;
     if ( $attachments ) : ?>
         <div class="mosaic gallery js-gallery">
-            <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; ?> mosaic__item--page-title-mobile">
+            <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; echo $has_post_thumbnail ? "" : "js--is-loaded"; ?> mosaic__item--page-title-mobile  ">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                     <?php if ($has_post_thumbnail) : ?>
@@ -117,7 +117,7 @@
                 // if we added 3 it's now time to add the gallery title box
 
                 if (++$index == 3 && $show_gallery_title) : ?>
-                    <div class="mosaic__item<?php if($thumb_orientation == 'portrait') echo ' mosaic__item--portrait'; ?> mosaic__item--page-title">
+                    <div class="mosaic__item<?php if($thumb_orientation == 'portrait') echo ' mosaic__item--portrait'; echo $has_post_thumbnail ? "" : "js--is-loaded"; ?> mosaic__item--page-title">
                         <div class="image__item-link">
                             <div class="image__item-wrapper">
                             <?php if ($has_post_thumbnail) : ?>
@@ -142,7 +142,7 @@
             endforeach;
             // if there were less than 3, still add the title
             if ($index < 3 && $show_gallery_title) : ?>
-                <div class="mosaic__item<?php if($thumb_orientation == 'portrait') echo ' mosaic__item--portrait'; ?> mosaic__item--page-title">
+                <div class="mosaic__item<?php if($thumb_orientation == 'portrait') echo ' mosaic__item--portrait'; echo $has_post_thumbnail ? "" : "js--is-loaded"; ?> mosaic__item--page-title">
                     <div class="image__item-link">
                         <div class="image__item-wrapper">
                             <?php if ($has_post_thumbnail) : ?>
