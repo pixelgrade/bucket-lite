@@ -1,13 +1,13 @@
 <?php
-	
+    
 ?>
 <div id="main" class="content djax-updatable">
     <div class="mosaic">
         <?php
         $thumb_orientation = '';
         if(wpgrade::option('portfolio_thumb_orientation') == 'portrait') {
-			$thumb_orientation = ' mosaic__item--portrait';
-		}
+            $thumb_orientation = ' mosaic__item--portrait';
+        }
 
         $has_post_thumbnail = has_post_thumbnail();
 
