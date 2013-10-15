@@ -38,7 +38,9 @@
     $index = 0;
     if ( $attachments ) : ?>
         <div class="mosaic gallery js-gallery">
-            <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; echo $has_post_thumbnail ? "" : "js--is-loaded"; ?> mosaic__item--page-title-mobile  ">
+
+            <?php if($show_gallery_title): ?>
+            <div class="mosaic__item <?php if($thumb_orientation == 'portrait') echo 'mosaic__item--portrait'; echo $has_post_thumbnail ? "" : "js--is-loaded"; ?> mosaic__item--page-title-mobile">
                 <div class="image__item-link">
                     <div class="image__item-wrapper">
                     <?php if ($has_post_thumbnail) : ?>
@@ -59,8 +61,8 @@
                     </div>
                 </div>
             </div>
+            <?php endif; 
 
-            <?php
             foreach ( $attachments as $attachment ) :
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
                 $attachment_fields = get_post_custom( $attachment->ID );
