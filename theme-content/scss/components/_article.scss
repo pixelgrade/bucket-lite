@@ -77,14 +77,14 @@
 
 .article--thumb {
 
-    .article--grid__meta-links {
+    .article__meta-links {
         position: absolute;
         bottom: 0; left: 0;
     }
 }
 
     .article--thumb__title {
-        @include rem(margin-bottom, $_2u);
+        @include rem(margin-bottom, $_u + $_u2);
         line-height: 1;
 
         .hN {

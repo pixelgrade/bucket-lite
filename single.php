@@ -5,7 +5,7 @@
     <div class="grid">
 
         <div class="grid__item  float--left  two-thirds  article__featured-image">
-            <div class="image-wrap"></div>
+            <?php get_template_part('theme-partials/post-templates/header-single'); ?>
         </div>
         <div class="grid__item  float--left  two-thirds  palm-one-whole">
 

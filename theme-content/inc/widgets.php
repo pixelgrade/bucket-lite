@@ -7,12 +7,23 @@
 function wpgrade_register_sidebars() {
 
     register_sidebar( array(
-        'id'            => 'sidebar-blog',
-        'name'          => __( 'Blog Sidebar', 'bucket_txtd' ),
-        'description'   => __( 'Blog Sidebar', 'bucket_txtd' ),
+        'id'            => 'sidebar',
+        'name'          => __( 'Main Sidebar', 'bucket_txtd' ),
+        'description'   => __( 'Main Sidebar', 'bucket_txtd' ),
         'before_title'  => '<div class="widget__title  widget--sidebar__title"><h2 class="hN">',
         'after_title'   => '</h2></div>',
-        'before_widget' => '<div id="%1$s" class="widget  widget--sidebar-blog %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget  widget--main %2$s">',
+        'after_widget'  => '</div>',
+        ) 
+    );
+
+    register_sidebar( array(
+        'id'            => 'sidebar-footer',
+        'name'          => __( 'Footer Sidebar', 'bucket_txtd' ),
+        'description'   => __( 'Footer Sidebar', 'bucket_txtd' ),
+        'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
+        'after_title'   => '</h3></div>',
+        'before_widget' => '<div id="%1$s" class="widget  widget--footer %2$s  grid__item one-third  palm-one-whole">',
         'after_widget'  => '</div>',
         ) 
     );

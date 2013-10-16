@@ -34,7 +34,7 @@ $use-split           : true;
 
 $responsive          : true;
 $lap-start           : 769px;
-$desk-start          : 1025px; 
+$desk-start          : 1024px; 
 $desk-wide-start     : 1366px; 
 
 $base-font-size      : 14px;
@@ -120,4 +120,6 @@ $_8u   : 8 * $_u; // 192px
 @import "widgets/latest-comments";
 
 // SHAMELESS SHAME
+@import "core";
 @import "shame";
+@import "masonry";

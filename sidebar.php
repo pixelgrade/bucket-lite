@@ -1,2 +1,2 @@
-<?php if ( ! dynamic_sidebar( 'sidebar-blog' ) ) : ?>
+<?php if (!dynamic_sidebar('sidebar')): ?>
 <?php endif; ?>

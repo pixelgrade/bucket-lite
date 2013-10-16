@@ -2,8 +2,10 @@
 
     <nav class="navigation  navigation--top">
 
-        <h2 class="accessibility">Secondary Navigation</h2>
-        <?php wpgrade_top_nav(); ?>
+        <div class="container">
+            <h2 class="accessibility">Secondary Navigation</h2>
+            <?php wpgrade_top_nav(); ?>
+        </div>
 
     </nav>
 
