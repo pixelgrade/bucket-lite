@@ -24,3 +24,58 @@
         font-style: normal;
     }
 }
+
+
+
+
+
+/*-----------------------------------*\
+               TAG CLOUD
+\*-----------------------------------*/
+
+.widget_tag_cloud {
+
+    .wp-tag-cloud {
+        @extend .btn-list;
+    }
+
+    a {
+        @extend .btn;
+        @extend .btn--negative;
+        @include rem(font-size, 12px !important);
+    }
+}
+
+
+
+
+
+/*-----------------------------------------*\
+               WIDGET NAV MENU
+\*-----------------------------------------*/
+
+
+// rename and @extend this
+
+.widget_nav_menu {
+    
+    ul {
+
+        @extend .multi-list;
+        @extend .two-cols;
+        @include rem(margin-top, -$_u2);
+
+        > li {
+            @include rem(padding, $_u2 0);
+
+            + li + li {
+                border-top: 1px solid #262525;
+                margin-top: -1px;
+            }
+        }
+
+        ul {
+            display: none;
+        }
+    }
+}

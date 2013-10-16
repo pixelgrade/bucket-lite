@@ -56,9 +56,11 @@
 
 .btn-list {
     @extend .cf;
-    margin-left: -2px;
+    padding: 0;
+    margin: 0 0 0 -2px;
+    list-style: none;
 
-    > .btn {
+    > .btn, > li {
         float: left;
         margin-left: 2px;
         margin-bottom: 2px;

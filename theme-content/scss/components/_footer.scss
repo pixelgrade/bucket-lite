@@ -13,23 +13,6 @@
     }
 }
 
-// rename and @extend this
-
-/*ul*/.widget__menu {
-    @extend .multi-list;
-    @extend .two-cols;
-    @include rem(margin-top, -$_u2);
-
-    > li {
-        @include rem(padding, $_u2 0);
-
-        + li + li {
-            border-top: 1px solid #262525;
-            margin-top: -1px;
-        }
-    }
-}
-
 .colophon {
     background: black;
     @include rem(padding, $_u2 0);

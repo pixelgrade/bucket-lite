@@ -26,7 +26,7 @@ $use-arrows          : true;
 $use-lozenges        : true;
 
 $use-greybox         : true;
-$use-island          : true;
+$use-island          : true; 
 $use-flexbox         : true;
 $use-debug           : true;
 $use-media           : true;
@@ -34,7 +34,7 @@ $use-split           : true;
 
 $responsive          : true;
 $lap-start           : 769px;
-$desk-start          : 1025px; 
+$desk-start          : 1024px; 
 $desk-wide-start     : 1366px; 
 
 $base-font-size      : 14px;
@@ -81,7 +81,7 @@ $_u4   : $_u / 4; // 6px
 $_u2   : $_u / 2; // 12px
 $_2u   : 2 * $_u; // 48px
 $_3u   : 3 * $_u; // 72px
-$_4u   : 4 * $_u; // 96px
+$_4u   : 4 * $_u; // 96px  
 $_5u   : 5 * $_u; // 120px
 $_6u   : 6 * $_u; // 144px
 $_7u   : 7 * $_u; // 168px 
@@ -94,6 +94,9 @@ $_8u   : 8 * $_u; // 192px
 /*-----------------------------------------------*\
               IMPORT THEME COMPONENTS
 \*-----------------------------------------------*/
+
+// VENDOR
+@import "vendor/royalslider";
 
 // UTILITIES
 @import "easings";
@@ -120,4 +123,6 @@ $_8u   : 8 * $_u; // 192px
 @import "widgets/latest-comments";
 
 // SHAMELESS SHAME
+@import "core";
 @import "shame";
+@import "masonry";

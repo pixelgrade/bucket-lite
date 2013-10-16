@@ -57,7 +57,7 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'site-navigation site-navigation--main',
+                    'menu_class'      => 'site-navigation site-navigation--main flush--bottom',
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
                     'walker'          => new WPGrade_Walker_Nav_Menu()

@@ -5,7 +5,7 @@
 ?>
 <article <?php post_class('article  article--grid'); ?>>
 
-	<?php get_template_part('theme-partials/post-templates/blog-head', get_post_format()); ?>
+	<?php get_template_part('theme-partials/post-templates/header-blog', get_post_format()); ?>
 
     <div class="article--grid__body">
 

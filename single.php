@@ -4,10 +4,23 @@
 
     <div class="grid">
 
-        <div class="grid__item  float--left  two-thirds  article__featured-image">
-            <div class="image-wrap"></div>
+        <?php
+
+            // let's get to know this post a little better
+            $full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
+            $disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
+
+            // let's use what we know
+            $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
+            $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
+
+        ?>
+
+        <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
+            <?php get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
         </div>
-        <div class="grid__item  float--left  two-thirds  palm-one-whole">
+
+        <div class="grid__item  float--left  <?php echo $content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
 
@@ -47,9 +60,13 @@
 
         </div><!--
         
-     --><div class="grid__item  one-third  palm-one-whole  sidebar">
-            <?php get_sidebar(); ?>
-        </div>
+        <?php if ($disable_sidebar != 'on'): ?>
+         --><div class="grid__item  one-third  palm-one-whole  sidebar">
+                <?php get_sidebar(); ?>
+            </div>
+        <?php else: // ugly ?>
+         -->
+        <?php endif; ?>
 
     </div>
 

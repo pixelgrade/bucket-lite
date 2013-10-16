@@ -1,6 +1,4 @@
 <div class="article__featured-image">
-
-
         <?php
             if (has_post_thumbnail()):
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
