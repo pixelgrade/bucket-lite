@@ -1,0 +1,18 @@
+/*-------------------------------------*\
+               PROGRESSBAR
+\*-------------------------------------*/
+
+.progressbar {
+    @extend .cf;
+    height: .25em;
+    margin-top: -.25em;
+    background-color: $gray;
+    @include rem(margin-right, $_u2);
+}
+
+.progressbar__progress {
+    float: left;
+    width: 50%;
+    height: .25em;
+    background-color: $red;
+}

@@ -1,54 +1,53 @@
-/*----------------------------------------*\
-*   ICON SHORTCODE
-\*----------------------------------------*/
+/*-----------------------------------------*\
+               $ICON SHORTCODE
+\*-----------------------------------------*/
 
-i.pixcode--icon {
-  display:inline-block;
-  line-height:1;
 
-  &.small {
-    @include rem(font-size, 18px);
-  }
+.pixcode--icon {
+    display: inline-block;
+    line-height: 1;
 
-  &.medium {
-    @include rem(font-size, 30px);
-  }
+    &.small { @include rem(font-size, 14px); }
+    &.medium { @include rem(font-size, 24px); }
+    &.big { @include rem(font-size, 40px); }
 
-  &.big {
-    @include rem(font-size, 40px);
-  }
-
-  &.square, &.circle {
-    text-align:center;
-    line-height: 2em;
-    padding:0;
-    width: 2em;
-    height: 2em;
-    background: rgba(0,0,0,0.2);
-  }
-
-  &.circle {
-    @include border-radius(999px);
-  }
-}
-
-/*----------------------------------------*\
-*   ICON INSIDE A LINK
-\*----------------------------------------*/
-
-a > i.pixcode--icon {
-  @include transition(all 0.15s);
-}
-
-a:hover {
-
-    & > i.pixcode--icon {
-    text-decoration:none;
-    border:none;
-    color:$accent-color;
-  
-    &.circle, &.square {
-      background-color:$dark;
+    &.square,
+    &.circle {
+        @extend .btn;
+        @extend .btn--negative;
+        text-align: center;
+        line-height: 2em;
+        padding: 0;
+        width: 2em;
+        height: 2em;
     }
-  }
+
+    &.circle {
+        @include border-radius(999px);
+    }
+}
+
+
+
+
+
+/*--------------------------------------------*\
+               ICON INSIDE A LINK
+\*--------------------------------------------*/
+
+.pixcode--icon {
+
+    a > & {
+        @include transition(all 0.15s);
+    }
+
+    a:hover > & {
+        text-decoration: none;
+        border: none;
+        color: $red;
+  
+        &.circle, &.square {
+            background-color: $dark;
+        }
+    }
 }

@@ -1,25 +1,40 @@
 <?php get_header(); ?>
 
-<div id="main" class="content djax-updatable">
+<div class="container">
 
-<?php if ( have_posts() ) :
-	//lets handle the title display
-	//we will use the page title
-	?>
-	<div class="masonry" data-columns>
-		<?php		
-		while ( have_posts() ) : the_post();
-			get_template_part('theme-partials/post-templates/blog-content');
-        endwhile; ?>
-    </div><!-- .masonry -->
-	<?php wpgrade::pagination(); ?>
+    <div class="grid">
 
-<?php else : ?>
+        <div class="grid__item  two-thirds  palm-one-whole">
 
-    <?php get_template_part( 'no-results', 'index' ); ?>
+            <?php if (have_posts()): ?>
 
-<?php endif; ?>
+                <div class="heading  heading--main">
+                    <h2 class="hN">Latest Articles</h2>
+                </div>
+                <div class="grid">
+
+                    <?php while (have_posts()): the_post(); ?><!--
+
+                     --><div class="grid__item one-half palm-one-whole">
+                            <?php get_template_part('theme-partials/post-templates/blog-content'); ?>
+                        </div><!--
+
+                 --><?php endwhile; ?>
+
+                    <?php wpgrade::pagination(); ?>
+
+                </div>
+
+            <?php else: get_template_part( 'no-results', 'index' ); endif; ?>
+
+        </div><!--
+        
+     --><div class="grid__item  one-third  palm-one-whole  sidebar">
+            <?php get_sidebar(); ?>
+        </div>
+
+    </div>
 
 </div>
-
+    
 <?php get_footer(); ?>

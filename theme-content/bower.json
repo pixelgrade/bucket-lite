@@ -1,0 +1,20 @@
+{
+    "name": "Bucket Wordpress Theme",
+    "version": "1.0",
+    "authors": [
+        "PixelGrade Team"
+    ],
+    "license": "GNU General Public License v2 or later",
+    "dependencies": {
+        "inuit.css": "git://github.com/razwan/inuit.css#v5.1",
+        "font-awesome": "git://github.com/FortAwesome/Font-Awesome"
+    },
+    "private": true,
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+    ]
+}

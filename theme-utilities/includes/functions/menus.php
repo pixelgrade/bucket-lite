@@ -11,7 +11,8 @@
 				array
 				(
 					// main nav in header
-					'main_menu' => __('Header Menu', wpgrade::textdomain()),
+                    'main_menu' => __('Header Menu', wpgrade::textdomain()),
+					'top_menu' => __('Top Menu', wpgrade::textdomain()),
 				)
 			);
 
@@ -29,47 +30,39 @@
 		$theme_locations = get_nav_menu_locations();
 
 		if (isset($theme_locations["main_menu"]) && ($theme_locations["main_menu"] != 0)) {
-			$defaults = array
+			$args = array
 				(
 					'theme_location'  => 'main_menu',
-					'menu'            => '',
-					'container'       => 'nav',
-					'container_class' => '',
-					'container_id'    => '',
-					'menu_class'      => 'site-navigation site-navigation--main',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => new WPGrade_Walker_Nav_Menu()
-				);
+                    'menu'            => '',
+                    'container'       => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'site-navigation site-navigation--main',
+                    'menu_id'         => '',
+                    'fallback_cb'     => 'wp_page_menu',
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'walker'          => new WPGrade_Walker_Nav_Menu()
+                );
 
-			$menu = wp_nav_menu($defaults);
-			echo $menu;
-		}
-	}
+            wp_nav_menu($args);
+        }
+    }
 
-	function wpgrade_footer_nav() {
-		$theme_locations = get_nav_menu_locations();
+    function wpgrade_top_nav() {
+        $theme_locations = get_nav_menu_locations();
 
-		if (isset($theme_locations["footer_menu"]) && ($theme_locations["footer_menu"] != 0)) {
-			$menu = wp_nav_menu
-				(
-					array
-					(
-						'theme_location' => 'footer_menu',
-						'container'      => 'div',
-						'container_id'   => 'menu-main-navigation',
-						'depth'          => 1,
-						'echo'           => false
-					)
-				);
+        if (isset($theme_locations["top_menu"]) && ($theme_locations["top_menu"] != 0)) {
+            $args = array
+                (
+                    'theme_location'  => 'top_menu',
+                    'menu'            => '',
+                    'container'       => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'site-navigation site-navigation--main',
+                    'fallback_cb'     => 'wp_page_menu',
+                    'menu_id'         => '',
+                    'walker'          => new WPGrade_Walker_Nav_Menu()
+                );
 
-			echo $menu;
+            wp_nav_menu($args);
 		}
 	}

@@ -3,35 +3,44 @@
  * The default template for displaying content. Used for both single and index/archive/search.
  */
 ?>
-<article <?php post_class('masonry__item'); ?>>
-	<?php 
-	get_template_part('theme-partials/post-templates/blog-head', get_post_format());
+<article <?php post_class('article  article--grid'); ?>>
 
-	$post_categories = wp_get_post_categories( get_the_ID() );
-	$cats = array();
+	<?php get_template_part('theme-partials/post-templates/blog-head', get_post_format()); ?>
 
-	foreach( $post_categories as $c ) {
-		$cat = get_category( $c );
-		$cats[] = array( 'name' => $cat->name, 'url' => get_category_link($c) );
-	}
-	if ( count($cats) ) { ?>
-		<div class="entry__meta">
-			<div class="image_item-meta grid cf"><!--
-			 --><ul class="image_item-categories grid__item one-half">
-					<li class="image_item-cat-icon"><i class="icon-folder-open"></i></li>
-					<?php foreach( $cats as $category ) { ?>
-						<li class="image_item-category">
-							<a href="<?php echo $category['url']; ?>">
-								<?php echo $category['name']; ?>
-							</a>
-						</li>
-					<?php } ?>
-				</ul><!--
-				 --><?php if (function_exists( 'display_pixlikes' )) {
-								display_pixlikes(array('display_only' => 'true', 'class' => 'image_item-like-box grid__item one-half' ));
-							} 
-						?><!-- .image_item-like-box -->
-			</div><!-- .image_item-meta -->
-		</div><!-- .entry__meta -->
-	<?php } ?>
-</article><!-- .masonry__item -->
+    <div class="article--grid__body">
+
+        <?php 
+            $has_thumb = has_post_thumbnail();
+            $flush_top = $has_thumb ? '' : 'flush--top'
+        ?>
+
+        <a href="<?php the_permalink(); ?>" class="article__title  article--grid__title <?php echo $flush_top; ?>">
+            <h3 class="hN"><?php the_title(); ?></h3>
+        </a>
+
+        <div class="article__content">
+            <?php the_excerpt(); ?>
+        </div>
+
+        <div class="article__meta  article--grid__meta">
+            <div class="split">
+                <div class="split__title  article__category">
+                    <?php
+                        $categories = get_the_category();
+                        if ($categories) {
+                            $category = $categories[0];
+                            echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+                        }
+                    ?>
+                </div>
+                <ul class="nav  article__meta-links">
+                    <li><a href="#"><i class="icon-time"></i> <?php the_time('j M') ?></a></li>
+                    <li><a href="#"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></a></li>
+                    <li><a href="#"><i class="icon-heart"></i> 12</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</article><!-- .article -->

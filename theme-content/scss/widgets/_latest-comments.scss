@@ -1,0 +1,52 @@
+/*------------------------------------------------*\
+               $LATEST COMMENTS WIDGET
+\*------------------------------------------------*/
+
+.widget--latest-comments {
+    @extend %block-separator;
+}
+
+.comment--list {
+    @extend .media;
+    @include font-size(13px);
+
+    &:last-child {
+        margin-bottom: 0;
+
+        .comment__body {
+            border-bottom: 0;
+        }
+    }
+}
+
+.comment__avatar {
+    @extend .media__img;
+    @include rem(margin-right, $_u2);
+}
+
+.comment__body {
+    @extend .media__body;
+    border-bottom: 1px solid #ccc;
+}
+
+.comment__title {
+    @extend .article__title;
+    @extend .article__title--inverse;
+    @include rem(padding, 0 $_u4);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.comment__author {
+    font-family: $heading-font-family;
+    text-transform: uppercase;
+    color: $dark;
+}
+
+.comment__content {
+    font-style: italic;
+    @include rem(margin-top, $_u2);
+    line-height: 1.4;
+}

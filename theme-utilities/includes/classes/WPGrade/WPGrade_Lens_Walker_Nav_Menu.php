@@ -7,8 +7,11 @@
 class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 
     function start_lvl(&$output, $depth = 0, $args = array()) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"site-navigation__sub-menu\">\n";
+        $output .= "<ul class=\"site-navigation__sub-menu\">";
+    }
+
+    function end_lvl(&$output, $depth=0, $args=array()) {  
+        $output .= "</ul>";  
     }
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
@@ -24,29 +27,26 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
         global $wp_query;
 
-		// code indent
-        $indent = $depth > 0 ? str_repeat("\t", $depth) : '';
-
-		if ( !is_array($args)){
+		if (!is_array($args)) {
 			$args = (array)$args;
 		}
 
         // depth dependent classes
         $depth_classes = array
 			(
-				($depth == 0 ? 'menu-item--main' : 'menu-item--sub-menu-item'),
+				($depth == 0 ? 'menu-item--main' : 'menu-item--main  menu-item--sub-menu-item'),
 				($depth % 2 ? 'menu-item--odd' : 'menu-item--even'),
-				'menu-item-depth-'.$depth
+				'menu-item-depth--'.$depth
 			);
 
         $depth_class_names = esc_attr(implode(' ', $depth_classes));
 
         // passed classes
-        $classes = empty($item->classes) ? array() : (array) $item->classes;
+        $classes = empty($item->classes) ? array() : (array)$item->classes;
         $class_names = esc_attr(implode(' ', apply_filters( 'nav_menu_css_class', array_filter($classes), $item)));
 
         // build html
-        $output .= $indent.'<li id="nav-menu-item-'.$item->ID. '" class="site-navigation__menu-item  menu-item '.$depth_class_names.' '.$class_names.'">';
+        $output .= '<li id="nav-menu-item-'.$item->ID. '" class="site-navigation__menu-item  menu-item '.$depth_class_names.' '.$class_names.'">';
 
         // link attributes
         $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -68,6 +68,10 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         // build html
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
+
+    function end_el(&$output, $item, $depth=0, $args=array()) {  
+        $output .= "</li>";  
     }
 
 } # class

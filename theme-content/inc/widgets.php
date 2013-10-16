@@ -10,20 +10,9 @@ function wpgrade_register_sidebars() {
         'id'            => 'sidebar-blog',
         'name'          => __( 'Blog Sidebar', 'bucket_txtd' ),
         'description'   => __( 'Blog Sidebar', 'bucket_txtd' ),
-        'before_title'  => '<h4 class="widget__title widget--sidebar-blog__title">',
-        'after_title'   => '</h4>',
-        'before_widget' => '<div id="%1$s" class="widget widget--sidebar-blog %2$s">',
-        'after_widget'  => '</div>',
-        ) 
-    );
-
-    register_sidebar( array(
-        'id'            => 'sidebar-header',
-        'name'          => __( 'Header Sidebar', 'bucket_txtd' ),
-        'description'   => __( 'Header Sidebar', 'bucket_txtd' ),
-        'before_title'  => '<h4 class="widget__title widget--header__title">',
-        'after_title'   => '</h4>',
-        'before_widget' => '<div id="%1$s" class="widget widget--header %2$s">',
+        'before_title'  => '<div class="widget__title  widget--sidebar__title"><h2 class="hN">',
+        'after_title'   => '</h2></div>',
+        'before_widget' => '<div id="%1$s" class="widget  widget--sidebar-blog %2$s">',
         'after_widget'  => '</div>',
         ) 
     );
