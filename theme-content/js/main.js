@@ -726,6 +726,114 @@
 
 
 
+    /* --- ROYALSLIDER --- */
+
+    function royalSliderInit() {
+
+        // Helper function
+        function padLeft(nr, n, str){
+            return Array(n-String(nr).length+1).join(str||'0')+nr;
+        }
+
+        // create the markup for the slider from the gallery shortcode
+        // take all the images and insert them in the .gallery <div>
+        $('.wp-gallery').each(function() {
+            var $old_gallery = $(this),
+            $images = $old_gallery.find('img'),
+            $new_gallery = $('<div class="pixslider js-pixslider">');
+            $images.prependTo($new_gallery).addClass('rsImg');
+            $old_gallery.replaceWith($new_gallery);
+
+            var gallery_data = $(this).data();
+            $new_gallery.data(gallery_data);
+        });
+
+        $('.js-pixslider').each(function(){
+
+            var $slider = $(this),
+                rs_arrows = typeof $slider.data('arrows') !== "undefined",
+                rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
+                rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
+                rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
+                rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
+                rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined";
+                rs_imageScale  = typeof $slider.data('imagescale') !== "undefined" && $slider.data('imagescale') != '' ? $slider.data('imagescale') : 'fill';
+                rs_imageAlignCenter  = typeof $slider.data('imagealigncenter') !== "undefined",
+                rs_transition = typeof $slider.data('slidertransition') !== "undefined" && $slider.data('slidertransition') != '' ? $slider.data('slidertransition') : 'move',
+                rs_autoPlay = typeof $slider.data('sliderautoplay') !== "undefined" ? true : false,
+                rs_delay = typeof $slider.data('sliderdelay') !== "undefined" && $slider.data('sliderdelay') != '' ? $slider.data('sliderdelay') : '1000';
+                rs_drag = true;
+
+
+            var $children = $(this).children();
+
+            if ($children.length == 1){
+                rs_arrows = false;
+                rs_bullets = 'none';
+                rs_customArrows = false;
+                rs_keyboardNav = false;
+                rs_drag = false;
+                rs_transition = 'fade';
+            }
+            
+            // make sure default arrows won't appear if customArrows is set
+            if (rs_customArrows) arrows = false;
+
+            if (rs_autoheight) {
+                $slider.royalSlider({
+                    autoHeight: true,
+                    autoScaleSlider: false,
+                    loop: true,
+                    imageScaleMode: rs_imageScale,
+                    imageAlignCenter: rs_imageAlignCenter,
+                    slidesSpacing: rs_slidesSpacing,
+                    arrowsNav: rs_arrows,
+                    controlNavigation: rs_bullets,
+                    keyboardNavEnabled: rs_keyboardNav,
+                    arrowsNavAutoHide: false,
+                    sliderDrag: rs_drag,
+                    transitionType: rs_transition,
+                    autoPlay: {
+                        enabled: rs_autoPlay,
+                        stopAtAction: false,
+                        pauseOnHover: true,
+                        delay: rs_delay                    
+                    }                            
+                });
+            } else {
+                $slider.royalSlider({
+                    autoScaleSlider: true,
+                    autoHeight: false,
+                    loop: true,
+                    imageScaleMode: rs_imageScale,
+                    imageAlignCenter: rs_imageAlignCenter,
+                    slidesSpacing: rs_slidesSpacing,
+                    arrowsNav: rs_arrows,
+                    controlNavigation: rs_bullets,
+                    keyboardNavEnabled: rs_keyboardNav,
+                    arrowsNavAutoHide: false,
+                    sliderDrag: rs_drag,
+                    transitionType: rs_transition,
+                    autoPlay: {
+                        enabled: rs_autoPlay,
+                        stopAtAction: false,
+                        pauseOnHover: true,
+                        delay: rs_delay                    
+                    }            
+                });     
+            }
+
+            var royalSlider = $slider.data('royalSlider');
+            var slidesNumber = royalSlider.numSlides;
+
+            // move arrows outside rsOverflow
+            $('.rsArrow').insertAfter($slider);
+
+        });
+    };
+
+
+
     function footerWidgetsTitles() {
         $('.widget--footer__title .hN').each(function() {
             var $title = $(this),
@@ -785,6 +893,7 @@
         footerWidgetsTitles();
         // if blog archive
         salvattore();
+        royalSliderInit();
     }
 
 
