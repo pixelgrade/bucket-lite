@@ -15,7 +15,7 @@ if ( ! defined('EXT')) {
 
 // add theme support for post formats
 // child themes note: use the after_setup_theme hook with a callback
-$formats = array('quote', 'video', 'audio', 'gallery');
+$formats = array('video', 'audio', 'gallery');
 add_theme_support('post-formats', $formats);
 
 
