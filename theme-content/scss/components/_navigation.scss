@@ -26,10 +26,10 @@
 /*ul*/.site-navigation--main {
     @extend .nav;
     text-transform: uppercase;
-    overflow: hidden;
 }
 
     /*li*/.menu-item--main {
+        position: relative;
 
         a {
             display: block;
@@ -42,4 +42,25 @@
         &:hover, &:focus, &:active {
             
         }
+        
+        &:hover > .site-navigation__sub-menu {
+            display: block;
+        }
     }
+
+.site-navigation__sub-menu {
+    @extend .nav;
+    @extend .nav--stacked;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 300;
+    background-color: $dark;
+    @include rem(width, 240px);
+
+    .site-navigation__sub-menu {
+        top: 0;
+        left: 100%;
+    }
+}    

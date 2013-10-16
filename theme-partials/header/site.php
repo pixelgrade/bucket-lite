@@ -3,16 +3,7 @@
     <nav class="navigation  navigation--top">
 
         <h2 class="accessibility">Secondary Navigation</h2>
-
-        <div class="container">
-            <ul class="site-navigation  site-navigation--main">
-                <li class="menu-item  menu-item--main"><a href="#">Homepages</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Headers</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Categories</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Pages</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Shortcodes</a></li>
-            </ul>
-        </div>
+        <?php wpgrade_top_nav(); ?>
 
     </nav>
 
@@ -48,16 +39,7 @@
         <nav class="navigation  navigation--main">
 
             <h2 class="accessibility">Primary Navigation</h2>
-
-            <ul class="site-navigation  site-navigation--main">
-                <li class="menu-item  menu-item--main"><a href="#">Home</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Style</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Photography</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Travel</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Music</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Gear</a></li><!--
-             --><li class="menu-item  menu-item--main"><a href="#">Food &amp; Drink</a></li>
-            </ul>
+            <?php wpgrade_main_nav(); ?>
 
         </nav>
 
