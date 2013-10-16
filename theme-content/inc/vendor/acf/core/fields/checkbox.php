@@ -64,10 +64,8 @@ class acf_field_checkbox extends acf_field
 		$field['value'] = array_map('trim', $field['value']);
 		
 		
-		// vars
-		$i = 0;
-		$e = '<input type="hidden" name="' .  esc_attr($field['name']) . '" value="" />';
-		$e .= '<ul class="acf-checkbox-list ' . esc_attr($field['class']) . ' ' . esc_attr($field['layout']) . '">';
+		echo '<input type="hidden" name="' . $field['name'] . '" value="" />';
+		echo '<ul class="checkbox_list ' . $field['class'] . ' ' . $field['layout'] . '">';
 		
 		
 		// checkbox saves an array
@@ -75,39 +73,32 @@ class acf_field_checkbox extends acf_field
 		
 		
 		// foreach choices
-		foreach( $field['choices'] as $key => $value )
+		foreach($field['choices'] as $key => $value)
 		{
-			// vars
-			$i++;
-			$atts = '';
-			
-			
+			$selected = '';
 			if( in_array($key, $field['value']) )
 			{
-				$atts = 'checked="yes"';
+				$selected = 'checked="yes"';
 			}
 			if( isset($field['disabled']) && in_array($key, $field['disabled']) )
 			{
-				$atts .= ' disabled="true"';
+				$selected .= ' disabled="true"';
 			}
 			
 			
+			// ID
 			// each checkbox ID is generated with the $key, however, the first checkbox must not use $key so that it matches the field's label for attribute
 			$id = $field['id'];
 			
-			if( $i > 1 )
+			if( $key > 1 )
 			{
 				$id .= '-' . $key;
 			}
 			
-			$e .= '<li><label><input id="' . esc_attr($id) . '" type="checkbox" class="' . esc_attr($field['class']) . '" name="' . esc_attr($field['name']) . '" value="' . esc_attr($key) . '" ' . $atts . ' />' . $value . '</label></li>';
+			echo '<li><label><input id="' . $id . '" type="checkbox" class="' . $field['class'] . '" name="' . $field['name'] . '" value="' . $key . '" ' . $selected . ' />' . $value . '</label></li>';
 		}
 		
-		$e .= '</ul>';
-		
-		
-		// return
-		echo $e;
+		echo '</ul>';
 	}
 	
 	

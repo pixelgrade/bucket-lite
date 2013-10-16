@@ -1,5 +1,9 @@
 <?php
 
+define( 'ACF_LITE', true );
+include_once('theme-content/inc/vendor/acf/acf.php');
+include_once('theme-content/inc/vendor/acf/acf-config.php');
+
 // ensure EXT is defined
 if ( ! defined('EXT')) {
 	define('EXT', '.php');
@@ -35,3 +39,4 @@ require_once 'wpgrade-core/bootstrap'.EXT;
 if ( ! isset($content_width)) {
 	$content_width = 960;
 }
+

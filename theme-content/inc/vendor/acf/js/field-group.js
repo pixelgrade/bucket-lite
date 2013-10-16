@@ -1,36 +1,28 @@
-/*
-*  field-group.js
-*
-*  All javascript needed to create a field group
-*
-*  @type	JS
-*  @date	1/08/13
-*/ 
-
 var acf = {
-	
-	// vars
-	ajaxurl				:	'',
-	admin_url			:	'',
-	post_id				:	0,
-	nonce				:	'',
-	l10n				:	{},
-	text				:	{},
-	
-	
-	// helper functions
-	helpers				:	{
-		uniqid			: 	null,
-		sortable		:	null,
-		create_field	:	null
+	post_id : 0,
+	nonce : '',
+	admin_url : '',
+	ajaxurl : '',
+	text : {},
+	l10n : {},
+	helpers : {
+		uniqid : function(){},
+		sortable : function(){},
+		create_field : function(){}
 	},
-	
-	
-	// modules
-	conditional_logic	:	null,
-	location			:	null
+	conditional_logic : {
+		fields : [],
+		setup : function(){}
+	},
+	location : {
+		$el : null,
+		init : function(){},
+		add_rule : function(){},
+		remove_rule : function(){},
+		add_group : function(){},
+		remove_group : function(){}
+	}
 };
-
 
 (function($){
 
@@ -331,20 +323,20 @@ var acf = {
 	
 	$(document).on('click', '#acf_fields a.acf_edit_field', function(){
 		
-		var $field = $(this).closest('.field');
+		var field = $(this).closest('.field');
 		
-		if( $field.hasClass('form_open') )
+		if( field.hasClass('form_open') )
 		{
-			$field.removeClass('form_open');
-			$(document).trigger('acf/field_form-close', [ $field ]);
+			field.removeClass('form_open');
+			$(document).trigger('acf/field_form-close', field);
 		}
 		else
 		{
-			$field.addClass('form_open');
-			$(document).trigger('acf/field_form-open', [ $field ]);
+			field.addClass('form_open');
+			$(document).trigger('acf/field_form-open', field);
 		}
 		
-		$field.children('.field_form_mask').animate({'height':'toggle'}, 250);
+		field.children('.field_form_mask').animate({'height':'toggle'}, 250);
 		
 	});
 	
@@ -654,8 +646,6 @@ var acf = {
 		
 		acf.location.init();
 		
-		acf.conditional_logic.init();
-		
 	});
 	
 	
@@ -853,32 +843,6 @@ var acf = {
 		$('#submitdiv #publish').attr('class', 'acf-button');
 		$('#submitdiv a.submitdelete').attr('class', 'delete-field-group').attr('id', 'submit-delete');
 		
-		
-		// hide on screen toggle
-		var $ul = $('#hide-on-screen ul.acf-checkbox-list'),
-			$li = $('<li><label><input type="checkbox" value="" name="" >' + acf.l10n.hide_show_all + '</label></li>');
-		
-		
-		// start checked?
-		if( $ul.find('input:not(:checked)').length == 0 )
-		{
-			$li.find('input').attr('checked', 'checked');
-		}
-		
-		
-		// event
-		$li.on('change', 'input', function(){
-			
-			var checked = $(this).is(':checked');
-			
-			$ul.find('input').attr('checked', checked);
-			
-		});
-		
-		
-		// add to ul
-		$ul.prepend( $li );
-		
 	});
 	
 	
@@ -905,7 +869,7 @@ var acf = {
 	
 	
 	/*
-	*  Create Field
+	*  Conditional Logic
 	*
 	*  @description: 
 	*  @since 3.5.1
@@ -916,10 +880,10 @@ var acf = {
 		
 		// dafaults
 		var defaults = {
-			'type' 		: 'text',
-			'classname'	: '',
-			'name' 		: '',
-			'value' 	: ''
+			'type' : 'text',
+			'classname' : '',
+			'name' : '',
+			'value' : ''
 		};
 		options = $.extend(true, defaults, options);
 		
@@ -933,68 +897,19 @@ var acf = {
 		}
 		else if( options.type == "select" )
 		{
-			// vars
-			var groups = {};
-			
-			
-			// populate groups
-			$.each(options.choices, function(k, v){
-				
-				// group may not exist
-				if( v.group === undefined )
-				{
-					v.group = 0;
-				}
-				
-				
-				// instantiate group
-				if( groups[ v.group ] === undefined )
-				{
-					groups[ v.group ] = [];
-				}
-				
-				
-				// add to group
-				groups[ v.group ].push( v );
-				
-			});
-			
-			
 			html += '<select class="select ' + options.classname + '" id="' + options.name + '" name="' + options.name + '">';
-			
-			$.each(groups, function(k, v){
-				
-				// start optgroup?
-				if( k != 0 )
+			if( options.choices )
+			{
+				for( var i = 0; i < options.choices.length; i++ )
 				{
-					html += '<optgroup label="' + k + '">';
-				}
-				
-				
-				// options
-				$.each(v, function(k2, v2){
-					
 					var attr = '';
-					
-					if( v2.value == options.value )
+					if( options.choices[i].value == options.value )
 					{
 						attr = 'selected="selected"';
 					}
-					
-					html += '<option ' + attr + ' value="' + v2.value + '">' + v2.label + '</option>';
-					
-				});
-				
-				
-				// end optgroup?
-				if( k != 0 )
-				{
-					html += '</optgroup>';
+					html += '<option ' + attr + ' value="' + options.choices[i].value + '">' + options.choices[i].label + '</option>';
 				}
-				
-			});
-			
-			
+			}
 			html += '</select>';
 		}
 		
@@ -1004,395 +919,268 @@ var acf = {
 			
 	};
 	
-	
-	/*
-	*  Conditional Logic
-	*
-	*  This object contains all the functionality for seting up the conditional logic rules for fields
-	*
-	*  @type	object
-	*  @date	21/08/13
-	*
-	*  @param	N/A
-	*  @return	N/A
-	*/
-	
-	acf.conditional_logic = {
+	$(document).on('acf/field_form-open', function(e, field){
 		
-		triggers : null,
+		// populate fields
+		acf.conditional_logic.setup();
 		
-		init : function(){
-			
-			
-			// reference
-			var _this = this;
-			
-			
-			// events
-			$(document).on('acf/field_form-open', function(e, $field){
-				
-				// populate the triggers
-				_this.sync();
-				
-				
-				// render select elements
-				_this.render( $field );
-			
-			});
-			
-			$(document).on('change', '#acf_fields tr.field_label input.label', function(){
-				
-				// populate the triggers
-				_this.sync();
-				
-				
-				// re render all open fields
-				$('#acf_fields .field.form_open').each(function(){
-					
-					_this.render( $(this) );
-					
-				});
-				
-				
-			});
-			
-			
-			$(document).on('change', 'tr.conditional-logic input[type="radio"]', function( e ){
-				
-				e.preventDefault();
-				
-				_this.change_toggle( $(this) );
-				
-			});
-	
-			$(document).on('change', 'select.conditional-logic-field', function( e ){
-				
-				e.preventDefault();
-				
-				_this.change_trigger( $(this) );
-				
-			});
-			
-			$(document).on('click', 'tr.conditional-logic .acf-button-add', function( e ){
 		
-				e.preventDefault();
-				
-				_this.add( $(this).closest('tr') );
-				
-			});
+		$(field).find('.conditional-logic-field').each(function(){
 			
-			$(document).on('click', 'tr.conditional-logic .acf-button-remove', function( e ){
-		
-				e.preventDefault();
-				
-				_this.remove( $(this).closest('tr') );
-				
-			});
+			var val = $(this).val(),
+				name = $(this).attr('name'),
+				choices = [];
 			
-		},
-		
-		sync : function(){
-			
-			// reference
-			var _this = this;
-			
-			
-			// reset
-			this.triggers = {
-				0 : []
-			};
-			
-			
-			// loop through fields
-			$('#acf_fields .field').each(function(){
-				
-				// vars
-				var $field	= $(this),
-					id		= $field.attr('data-id'),
-					type	= $field.attr('data-type'),
-					label	= $field.find('tr.field_label input').val(),
-					parent	= 0;
-				
-				
-				// validate
-				if( id == 'field_clone' )
-				{
-					return;
-				}
-				
-				
-				// parent
-				var $parent = $field.parent().closest('.field');
-				
-				if( $parent.exists() )
-				{
-					parent = $parent.attr('data-id');
-					
-					// add placeholder
-					if( _this.triggers[ parent ] === undefined )
-					{
-						_this.triggers[ parent ] = [];
-					}
-				}
-				
-				
-				// add this field to available triggers
-				if( type == 'select' || type == 'checkbox' || type == 'true_false' || type == 'radio' )
-				{
-					_this.triggers[ parent ].push({
-						id		: id,
-						type	: type,
-						label	: label
-					});
-				}
-				
-				
-			});
-			
-
-		},
-		
-		render : function( $field ){
-			
-			// reference
-			var _this = this;
-			
-			
-			// vars
-			var choices		= [],
-				key			= $field.attr('data-id'),
-				$ancestors	= $field.parent().parents('.field'),
-				$tr			= $field.find('> .field_form_mask > .field_form > table > tbody > tr.conditional-logic');
-				
 			
 			// populate choices
-			$.each( this.triggers[ 0 ], function(k, v){
-				
-				choices.push({
-					value : v.id,
-					label : v.label
-				});
-				
-			});
-			
-			
-			// add ancestors
-			if( $ancestors.exists() )
+			if( acf.conditional_logic.fields )
 			{
-				// add group to current options
-				$.each( choices, function(k, v){
-						
-					choices[ k ].group = acf.l10n.fields;
-					
-				});
-				
-				
-				$ancestors.each(function( k ){
-					
-					var id = $(this).attr('data-id'),
-						group = (k == 0) ? acf.l10n.sibling_fields : acf.l10n.parent_fields;
-					
-					// populate choices
-					$.each( _this.triggers[ id ], function(k, v){
-						
-						choices.push({
-							value : v.id,
-							label : v.label,
-							group : group
-						});
-						
+				for( var i = 0; i < acf.conditional_logic.fields.length; i++ )
+				{
+					choices.push({
+						value : acf.conditional_logic.fields[i].id,
+						label : acf.conditional_logic.fields[i].label
 					});
-					
-				});
+				}
 			}
 			
-			
-			// remove self
-			$.each( choices, function(k, v){
-				
-				if( v.value == key )
-				{
-					choices.splice(k, 1);
-					
-					// return false to end loop. Otherwise, the $.each function will become corrupt
-					return false;
-				}
-				
-			});
-				
 			
 			// empty?
 			if( choices.length == 0 )
 			{
 				choices.push({
 					'value' : 'null',
-					'label' : acf.l10n.no_fields
+					'label' : acf.l10n.conditional_no_fields
 				});
 			}
-			
-			
-			// create select fields
-			$tr.find('.conditional-logic-field').each(function(){
-			
-				var val = $(this).val(),
-					name = $(this).attr('name');
-				
-				
-				// create select
-				var $select = acf.helpers.create_field({
-					'type'		: 'select',
-					'classname'	: 'conditional-logic-field',
-					'name'		: name,
-					'value'		: val,
-					'choices'	: choices
-				});
-				
-				
-				// update select
-				$(this).replaceWith( $select );
-				
-				
-				// trigger change
-				$select.trigger('change');
-					
-			});
-			
-		},
-		
-		change_toggle : function( $input ){
-			
-			// vars
-			var val = $input.val(),
-				$tr = $input.closest('tr.conditional-logic');
-				
-			
-			if( val == "1" )
-			{
-				$tr.find('.contional-logic-rules-wrapper').show();
-			}
-			else
-			{
-				$tr.find('.contional-logic-rules-wrapper').hide();
-			}
-			
-		},
-		
-		change_trigger : function( $select ){
-			
-			// vars
-			var val			= $select.val(),
-				$trigger	= $('.field_key-' + val),
-				type		= $trigger.attr('data-type'),
-				$value		= $select.closest('tr').find('.conditional-logic-value'),
-				choices		= [];
-				
-			
-			// populate choices
-			if( type == "true_false" )
-			{
-				choices = [
-					{ value : 1, label : acf.l10n.checked }
-				];
-							
-			}
-			else if( type == "select" || type == "checkbox" || type == "radio" )
-			{
-				var field_choices = $trigger.find('.field_option-choices').val().split("\n");
-							
-				if( field_choices )
-				{
-					for( var i = 0; i < field_choices.length; i++ )
-					{
-						var choice = field_choices[i].split(':');
-						
-						var label = choice[0];
-						if( choice[1] )
-						{
-							label = choice[1];
-						}
-						
-						choices.push({
-							'value' : $.trim( choice[0] ),
-							'label' : $.trim( label )
-						});
-						
-					}
-				}
-				
-			}
-			
+	
 			
 			// create select
-			var $select = acf.helpers.create_field({
-				'type'		: 'select',
-				'classname'	: 'conditional-logic-value',
-				'name'		: $value.attr('name'),
-				'value'		: $value.val(),
-				'choices'	: choices
+			var select = acf.helpers.create_field({
+				'type' : 'select',
+				'classname' : 'conditional-logic-field',
+				'name' : name,
+				'value' : val,
+				'choices' : choices
 			});
 			
-			$value.replaceWith( $select );
+
+			$(this).replaceWith( select );
 			
-			$select.trigger('change');
-			
-		},
+			select.trigger('change');
+				
+		});
 		
-		add : function( $old_tr ){
-			
-			// vars
-			var $new_tr = $old_tr.clone(),
-				old_i = parseFloat( $old_tr.attr('data-i') ),
-				new_i = old_i + 1;
-			
-			
-			// update names
-			$new_tr.find('[name]').each(function(){
-				
-				$(this).attr('name', $(this).attr('name').replace('[' + old_i + ']', '[' + new_i + ']') );
-				$(this).attr('id', $(this).attr('id').replace('[' + old_i + ']', '[' + new_i + ']') );
-				
-			});
-				
-				
-			// update data-i
-			$new_tr.attr('data-i', new_i);
-			
-			
-			// add tr
-			$old_tr.after( $new_tr );
-			
-			
-			// remove disabled
-			$old_tr.closest('table').removeClass('remove-disabled');
-			
-		},
+	});
+	
+	
+	
+	/*
+	*  Toggle Conditional Logic
+	*
+	*  @description: 
+	*  @since 3.5.1
+	*  @created: 14/10/12
+	*/
+	
+	$(document).on('change', 'tr.conditional-logic input[type="radio"]', function(){
 		
-		remove : function( $tr ){
-			
-			var $table = $tr.closest('table');
+		if( $(this).val() == "1" )
+		{
+			$(this).closest('tr.conditional-logic').find('.contional-logic-rules-wrapper').show();
+		}
+		else
+		{
+			$(this).closest('tr.conditional-logic').find('.contional-logic-rules-wrapper').hide();
+		}
 		
-			// validate
-			if( $table.hasClass('remove-disabled') )
+	});
+	
+	
+	/*
+	*  Conditional logic: Change field
+	*
+	*  @description: 
+	*  @since 3.5.1
+	*  @created: 14/10/12
+	*/
+	
+	$(document).on('change', 'select.conditional-logic-field', function(){
+		
+		// vars
+		var id = $(this).val(),
+			field = $('#acf_fields .field_key-' + id),
+			type = field.attr('data-type'),
+			conditional_function = $(this).closest('tr').find('.conditional-logic-value'),
+			choices = [];
+			
+		
+		// populate choices
+		if( type == "true_false" )
+		{
+			choices = [
+				{ value : 1, label : acf.l10n.checked }
+			];
+						
+		}
+		else if( type == "select" || type == "checkbox" || type == "radio" )
+		{
+			var field_choices = field.find('.field_option-choices').val().split("\n");
+						
+			if( field_choices )
 			{
-				return false;
-			}
-			
-			
-			// remove tr
-			$tr.remove();
-			
-			
-			// add clas to table
-			if( $table.find('tr').length <= 1 )
-			{
-				$table.addClass('remove-disabled');
+				for( var i = 0; i < field_choices.length; i++ )
+				{
+					var choice = field_choices[i].split(':');
+					
+					var label = choice[0];
+					if( choice[1] )
+					{
+						label = choice[1];
+					}
+					
+					choices.push({
+						'value' : $.trim( choice[0] ),
+						'label' : $.trim( label )
+					});
+					
+				}
 			}
 			
 		}
 		
+		
+		// create select
+		var select = acf.helpers.create_field({
+			'type' : 'select',
+			'classname' : 'conditional-logic-value',
+			'name' : conditional_function.attr('name'),
+			'value' : conditional_function.val(),
+			'choices' : choices
+		});
+		
+		conditional_function.replaceWith( select );
+		
+		
+	});
+
+	
+	
+	/*
+	*  setup_conditional_fields
+	*
+	*  @description: populates the acf object with all available fields
+	*  @since 3.5.1
+	*  @created: 15/10/12
+	*/
+	
+	acf.conditional_logic.setup = function()
+	{
+		// reset
+		acf.conditional_logic.fields = [];
+		
+		
+		// loop through fields
+		$('#acf_fields > .inside > .fields > .field:not(.field_key-field_clone)').each(function(){
+			
+			var field = $(this),
+				id = field.attr('data-id'),
+				//key = field.children('.input-field_key').val(),
+				type = field.attr('data-type'),
+				label = field.find('tr.field_label input').val();
+			
+			
+			if( type == 'select' || type == 'checkbox' || type == 'true_false' || type == 'radio' )
+			{
+				acf.conditional_logic.fields.push({
+					id : id,
+					type : type,
+					label : label
+				});
+			}
+			
+			
+		});
+		
 	};
 	
 	
+	/*
+	*  Add conditional rule
+	*
+	*  @description: 
+	*  @since 3.5.1
+	*  @created: 15/10/12
+	*/
+	
+	$(document).on('click', 'tr.conditional-logic .acf-button-add', function(){
+		
+		// vars
+		var old_tr = $(this).closest('tr'),
+			new_tr = old_tr.clone(),
+			old_i = parseFloat( new_tr.attr('data-i') ),
+			new_i = old_i + 1;
+		
+		
+		// update names
+		new_tr.find('[name]').each(function(){
+			
+			$(this).attr('name', $(this).attr('name').replace('[' + old_i + ']', '[' + new_i + ']') );
+			$(this).attr('id', $(this).attr('id').replace('[' + old_i + ']', '[' + new_i + ']') );
+			
+		});
+			
+			
+		// update data-i
+		new_tr.attr('data-i', new_i);
+		
+		
+		// add tr
+		old_tr.after( new_tr );
+		
+		
+		// remove disabled
+		old_tr.closest('table').removeClass('remove-disabled');
+				
+		
+		return false;
+		
+	});
+	
+	
+	/*
+	*  Remove conditional rule
+	*
+	*  @description: 
+	*  @since 3.5.1
+	*  @created: 15/10/12
+	*/
+	
+	$(document).on('click', 'tr.conditional-logic .acf-button-remove', function(){
+		
+		var table = $(this).closest('table');
+		
+		// validate
+		if( table.hasClass('remove-disabled') )
+		{
+			return false;
+		}
+		
+		
+		// remove tr
+		$(this).closest('tr').remove();
+		
+		
+		// add clas to table
+		if( table.find('tr').length <= 1 )
+		{
+			table.addClass('remove-disabled');
+		}
+		
+		
+		return false;
+		
+	});
 	
 	
 	/*

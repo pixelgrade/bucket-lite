@@ -43,7 +43,6 @@
 				'theme-content/inc/required-plugins/required-plugins.php',
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
-				'theme-content/inc/acf-config'.EXT,
 				'theme-content/inc/theme-defaults'.EXT,
 				'theme-content/inc/thumbnails'.EXT,
 				'theme-content/inc/widgets'.EXT,

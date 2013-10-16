@@ -166,11 +166,13 @@ body.custom-fields_page_acf-settings .wp-pointer-arrow {
 	padding-left: 4px;
 }
 
-.acf-sprite-tick {
+#add-ons .add-on-active .tick {
 	width: 14px;
 	height: 14px;
+	display: block;
+	float: left;
 	margin: 4px 5px 0 0;
-	background-position: -18px -318px;
+	background: url(../images/sprite.png) -18px -318px no-repeat;
 }
 
 #add-ons .add-on-title {
@@ -363,7 +365,8 @@ only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) { 
 	
 	#icon-edit,
-	#icon-acf {
+	#icon-acf,
+	#add-ons .add-on.active .tick  {
 		background-image: url(../images/sprite@2x.png);
 		background-size: 100px 600px;
 	}
