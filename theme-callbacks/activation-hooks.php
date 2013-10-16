@@ -66,6 +66,7 @@ function wpgrade_callback_geting_active() {
 //			'yarpp_support' => true,
 //		),
 //	);
+
 //	$types_options[$theme_key]['taxonomies'] = array(
 //		'lens_portfolio_categories' => array(
 //			'hierarchical' => true,
@@ -108,7 +109,32 @@ function wpgrade_callback_geting_active() {
 //			'post_types' => array('lens_gallery')
 //		),
 //	);
+
 	$types_options[$theme_key]['metaboxes'] = array(
+		'post' => array(
+			'id' => 'post',
+			'title' => __('Settings', wpgrade::textdomain()),
+			'pages'      => array('post'), // Post type
+			'context' => 'normal',
+			'priority' => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => __('Full Width Featured Image', wpgrade::textdomain()),
+					'desc' => __('The featured image could be full width if you check this on', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'full_width_featured_image',
+					'type' => 'checkbox',
+					'std' => '0',
+				),
+				array(
+					'name' => __('Mark as Featured Post', wpgrade::textdomain()),
+					'desc' => __('Is this post more important than others?', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'featured_post',
+					'type' => 'checkbox',
+					'std' => '0',
+				),
+			)
+		),
 		'post_video_format' => array(
 			'id' => 'post_format_metabox_video',
 			'title' => __('Video Settings', wpgrade::textdomain()),
@@ -139,65 +165,65 @@ function wpgrade_callback_geting_active() {
 					'id'   =>  wpgrade::prefix() . 'main_gallery',
 					'type' => 'gallery',
 				),
-				array(
-					'name' => __('Slider transition', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'post_slider_transition',
-					'type' => 'select',
-					'options' => array(
-						array(
-							'name' => __('Slide/Move', wpgrade::textdomain()),
-							'value' => 'move'
-						),
-						array(
-							'name' => __('Fade', wpgrade::textdomain()),
-							'value' => 'fade'
-						)
-					),
-					'std' => 'move'
-				)				
+//				array(
+//					'name' => __('Slider transition', wpgrade::textdomain()),
+//					'id' => wpgrade::prefix() . 'post_slider_transition',
+//					'type' => 'select',
+//					'options' => array(
+//						array(
+//							'name' => __('Slide/Move', wpgrade::textdomain()),
+//							'value' => 'move'
+//						),
+//						array(
+//							'name' => __('Fade', wpgrade::textdomain()),
+//							'value' => 'fade'
+//						)
+//					),
+//					'std' => 'move'
+//				)
 			)
 		),
-		'post_quote_format' => array(
-			'id' => 'post_format_metabox_quote',
-			'title' =>  __('Quote Settings', wpgrade::textdomain()),
-			'pages'      => array( 'post' ), // Post type
-			'context' => 'normal',
-			'priority' => 'high',
-			'show_names' => true, // Show field names on the left
-			'fields' => array(
-				array(
-					'name' =>  __('Quote Content', wpgrade::textdomain()),
-					'desc' => __('Please type the text of your quote here.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'quote',
-					'type' => 'wysiwyg',
-					'std' => '',
-					'options' => array (
-						'textarea_rows' => 4,
-					),
-				),
-				array(
-					'name' => __('Author Name', wpgrade::textdomain()),
-					'desc' => '',
-					'id' => wpgrade::prefix() . 'quote_author',
-					'type' => 'text',
-					'std' => '',
-				),
-				array(
-					'name' => __('Author Title', wpgrade::textdomain()),
-					'desc' => '',
-					'id' => wpgrade::prefix() . 'quote_author_title',
-					'type' => 'text',
-					'std' => '',
-				),
-				array(
-					'name' => __('Author Link', wpgrade::textdomain()),
-					'desc' => __('Insert here an url if you want the author name to be linked to that address.', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'quote_author_link',
-					'type' => 'text',
-					'std' => '',
-				),
-			)
-		),
+//		'post_quote_format' => array(
+//			'id' => 'post_format_metabox_quote',
+//			'title' =>  __('Quote Settings', wpgrade::textdomain()),
+//			'pages'      => array( 'post' ), // Post type
+//			'context' => 'normal',
+//			'priority' => 'high',
+//			'show_names' => true, // Show field names on the left
+//			'fields' => array(
+//				array(
+//					'name' =>  __('Quote Content', wpgrade::textdomain()),
+//					'desc' => __('Please type the text of your quote here.', wpgrade::textdomain()),
+//					'id' => wpgrade::prefix() . 'quote',
+//					'type' => 'wysiwyg',
+//					'std' => '',
+//					'options' => array (
+//						'textarea_rows' => 4,
+//					),
+//				),
+//				array(
+//					'name' => __('Author Name', wpgrade::textdomain()),
+//					'desc' => '',
+//					'id' => wpgrade::prefix() . 'quote_author',
+//					'type' => 'text',
+//					'std' => '',
+//				),
+//				array(
+//					'name' => __('Author Title', wpgrade::textdomain()),
+//					'desc' => '',
+//					'id' => wpgrade::prefix() . 'quote_author_title',
+//					'type' => 'text',
+//					'std' => '',
+//				),
+//				array(
+//					'name' => __('Author Link', wpgrade::textdomain()),
+//					'desc' => __('Insert here an url if you want the author name to be linked to that address.', wpgrade::textdomain()),
+//					'id' => wpgrade::prefix() . 'quote_author_link',
+//					'type' => 'text',
+//					'std' => '',
+//				),
+//			)
+//		),
 		'post_audio_format' => array(
 			'id' => 'post_format_metabox_audio',
 			'title' =>  __('Audio Settings', wpgrade::textdomain()),
@@ -259,6 +285,7 @@ function wpgrade_callback_geting_active() {
 //				),
 //			)
 //		),
+
 //		'lens_portfolio_video' => array(
 //			'id' => 'portfolio_video',
 //			'title' => __('Video Settings (optional)', wpgrade::textdomain()),
@@ -290,6 +317,7 @@ function wpgrade_callback_geting_active() {
 //				),
 //			)
 //		),
+
 //		'lens_portfolio_metadata' => array(
 //			'id'         => 'portfolio_metadata',
 //			'title'      => __('Project Details', wpgrade::textdomain()),
@@ -377,6 +405,7 @@ function wpgrade_callback_geting_active() {
 //				)
 //			)
 //		),
+
 //		'lens_gallery' => array(
 //			'id'         => 'lens_gallery',
 //			'title'      => __('Gallery Detail', wpgrade::textdomain()),
@@ -485,6 +514,7 @@ function wpgrade_callback_geting_active() {
 //				)
 //			)
 //		),
+
 //        'bucket_homepage_chooser' => array(
 //			'id'         => 'bucket_homepage_chooser',
 //			'title'      => __('Choose Your Home Page', wpgrade::textdomain()),
