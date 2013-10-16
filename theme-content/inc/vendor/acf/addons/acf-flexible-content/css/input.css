@@ -1,10 +1,10 @@
 /*
- *  Flexible Content field Style
- *
- *  @description: 
- *  @since: 3.6
- *  @created: 30/01/13
- */
+*  Flexible Content field Style
+*
+*  @description: 
+*  @since: 3.6
+*  @created: 30/01/13
+*/
 
 .acf_flexible_content {
 	position: relative;
@@ -213,11 +213,11 @@
 }
 
 
-/*
- *
- *	Retina
- *	
- */
+/*--------------------------------------------------------------------------
+*
+*	Retina
+*	
+*-------------------------------------------------------------------------*/
 
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),

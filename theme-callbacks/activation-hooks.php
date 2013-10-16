@@ -133,6 +133,20 @@ function wpgrade_callback_geting_active() {
 					'type' => 'checkbox',
 					'std' => '0',
 				),
+				array(
+					'name' => __('Add to Category Slider', wpgrade::textdomain()),
+					'desc' => __('You can add this post to the category slider', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'category_slide',
+					'type' => 'checkbox',
+					'std' => '0',
+				),
+				array(
+					'name' => __('Disable Sidebar', wpgrade::textdomain()),
+					'desc' => __('You may want this post to be full width', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'disable_sidebar',
+					'type' => 'checkbox',
+					'std' => '0',
+				)
 			)
 		),
 		'post_video_format' => array(

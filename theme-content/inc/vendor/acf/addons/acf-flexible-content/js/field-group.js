@@ -1,10 +1,10 @@
 /*
- *  Flexible Content
- *
- *  @description: 
- *  @since: 3.5.8
- *  @created: 17/01/13
- */
+*  Flexible Content
+*
+*  @description: 
+*  @since: 3.5.8
+*  @created: 17/01/13
+*/
 
 (function($){
 	
@@ -12,11 +12,11 @@
 	acf.text.flexible_content_no_fields = 'Flexible Content requires at least 1 layout';
 	
 
-	/*
-	 *
-	 *	Add Layout Option
-	 *
-	 */
+	/*----------------------------------------------------------------------
+	*
+	*	Add Layout Option
+	*
+	*---------------------------------------------------------------------*/
 	
 	$('#acf_fields .acf_fc_add').live('click', function(){
 		
@@ -60,11 +60,11 @@
 	});
 	
 	
-	/*
-	 *
-	 *	Duplicate Layout
-	 *
-	 */
+	/*----------------------------------------------------------------------
+	*
+	*	Duplicate Layout
+	*
+	*---------------------------------------------------------------------*/
 	
 	$('#acf_fields .acf_fc_duplicate').live('click', function(){
 		
@@ -129,11 +129,11 @@
 	});
 	
 	
-	/*
-	 *
-	 *	Delete Layout Option
-	 *
-	 */
+	/*----------------------------------------------------------------------
+	*
+	*	Delete Layout Option
+	*
+	*---------------------------------------------------------------------*/
 	
 	$('#acf_fields .acf_fc_delete').live('click', function(){
 
@@ -153,11 +153,11 @@
 	});
 	
 	
-	/*
-	 *
-	 *	Sortable Layout Option
-	 *
-	 */
+	/*----------------------------------------------------------------------
+	*
+	*	Sortable Layout Option
+	*
+	*---------------------------------------------------------------------*/
 	
 	$('#acf_fields .acf_fc_reorder').live('mouseover', function(){
 		
@@ -184,11 +184,11 @@
 	});
 	
 	
-	/*
-	 *
-	 *	Label update name
-	 *
-	 */
+	/*----------------------------------------------------------------------
+	*
+	*	Label update name
+	*
+	*---------------------------------------------------------------------*/
 	
 	$('#acf_fields .acf_fc_label input[type="text"]').live('blur', function(){
 		
@@ -206,12 +206,12 @@
 	
 	
 	/*
-	 *  Flexible Content CHange layout display (Row | Table)
-	 *
-	 *  @description: 
-	 *  @since 3.5.2
-	 *  @created: 18/11/12
-	 */
+	*  Flexible Content CHange layout display (Row | Table)
+	*
+	*  @description: 
+	*  @since 3.5.2
+	*  @created: 18/11/12
+	*/
 	
 	$('#acf_fields .acf_fc_display select').live('change', function(){
 		
