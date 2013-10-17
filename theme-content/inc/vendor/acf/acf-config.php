@@ -1,5 +1,6 @@
 <?php
 
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -7,14 +8,15 @@ if(function_exists("register_field_group"))
 		'title' => 'Credits',
 		'fields' => array (
 			array (
-				'key' => 'field_525e953297858',
-				'label' => __('Credits'),
+				'key' => 'field_525fe9c0c3573',
+				'label' => 'Credits',
 				'name' => 'credits',
 				'type' => 'repeater',
+				'instructions' => 'Sources, Credits, Via or other useful links.',
 				'sub_fields' => array (
 					array (
-						'key' => 'field_525e954597859',
-						'label' => __('Name'),
+						'key' => 'field_525fe9e7c3574',
+						'label' => 'Name',
 						'name' => 'name',
 						'type' => 'text',
 						'column_width' => 30,
@@ -26,8 +28,8 @@ if(function_exists("register_field_group"))
 						'maxlength' => '',
 					),
 					array (
-						'key' => 'field_525e95699785a',
-						'label' => __('Label'),
+						'key' => 'field_525fe9fbc3575',
+						'label' => 'Label',
 						'name' => 'label',
 						'type' => 'text',
 						'column_width' => 30,
@@ -39,8 +41,8 @@ if(function_exists("register_field_group"))
 						'maxlength' => '',
 					),
 					array (
-						'key' => 'field_525e95789785b',
-						'label' => __('Full URL'),
+						'key' => 'field_525fea07c3576',
+						'label' => 'Full URL',
 						'name' => 'full_url',
 						'type' => 'text',
 						'column_width' => 40,
@@ -52,10 +54,10 @@ if(function_exists("register_field_group"))
 						'maxlength' => '',
 					),
 				),
-				'row_min' => 0,
+				'row_min' => 1,
 				'row_limit' => '',
 				'layout' => 'table',
-				'button_label' => 'Add Credit',
+				'button_label' => 'Add New',
 			),
 		),
 		'location' => array (
@@ -71,34 +73,35 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'default',
+			'layout' => 'no_box',
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 2,
 	));
 	register_field_group(array (
 		'id' => 'acf_post-review-score',
 		'title' => 'Post Review Score',
 		'fields' => array (
 			array (
-				'key' => 'field_525e861c1943b',
-				'label' => __('Enable Review Score'),
+				'key' => 'field_525fdc951ec8c',
+				'label' => 'Enable Review Score',
 				'name' => 'enable_review_score',
 				'type' => 'true_false',
-				'message' => '',
+				'message' => 'Enable Review Score',
 				'default_value' => 0,
 			),
 			array (
-				'key' => 'field_525e87671943c',
-				'label' => __('Score Breakdown'),
+				'key' => 'field_525fdda646878',
+				'label' => 'Score Breakdown',
 				'name' => 'score_breakdown',
 				'type' => 'repeater',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
@@ -107,25 +110,25 @@ if(function_exists("register_field_group"))
 				),
 				'sub_fields' => array (
 					array (
-						'key' => 'field_525e92860c891',
-						'label' => __('Title'),
-						'name' => 'title',
+						'key' => 'field_525fddc846879',
+						'label' => 'Label',
+						'name' => 'label',
 						'type' => 'text',
 						'column_width' => 60,
 						'default_value' => '',
-						'placeholder' => '',
+						'placeholder' => 'eg. Features',
 						'prepend' => '',
 						'append' => '',
 						'formatting' => 'html',
-						'maxlength' => '',
+						'maxlength' => -1,
 					),
 					array (
-						'key' => 'field_525e92990c892',
-						'label' => __('Score'),
+						'key' => 'field_525fddf64687a',
+						'label' => 'Score',
 						'name' => 'score',
 						'type' => 'number',
 						'column_width' => 40,
-						'default_value' => '',
+						'default_value' => 7,
 						'placeholder' => '',
 						'prepend' => '',
 						'append' => '',
@@ -134,39 +137,40 @@ if(function_exists("register_field_group"))
 						'step' => 1,
 					),
 				),
-				'row_min' => 0,
+				'row_min' => 1,
 				'row_limit' => '',
 				'layout' => 'table',
-				'button_label' => 'Add Row',
+				'button_label' => 'New Score Row',
 			),
 			array (
-				'key' => 'field_525e9393c0209',
-				'label' => __('Avarage Score Box'),
+				'key' => 'field_525fdfc461de9',
+				'label' => 'Average Score Box',
 				'name' => '',
 				'type' => 'message',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
 					),
 					'allorany' => 'all',
 				),
-				'message' => '<div class="label"><h2>Avarage Score Box</h2></div>',
+				'message' => '<strong>Average Score Box</strong>',
 			),
 			array (
-				'key' => 'field_525e8dbff6315',
-				'label' => __('Placement'),
+				'key' => 'field_525fdf4b10e33',
+				'label' => 'Placement',
 				'name' => 'placement',
 				'type' => 'select',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
@@ -183,16 +187,15 @@ if(function_exists("register_field_group"))
 				'multiple' => 0,
 			),
 			array (
-				'key' => 'field_525e8e26f6316',
-				'label' => __('Note'),
+				'key' => 'field_525fe0383d6ea',
+				'label' => 'Note',
 				'name' => 'note',
 				'type' => 'text',
-				'instructions' => __('A short note about score (optional)'),
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
@@ -200,68 +203,48 @@ if(function_exists("register_field_group"))
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => 'A short note about score (optional)',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'field_525e8e51f6317',
-				'label' => __('Enable Pros & Cons Lists'),
+				'key' => 'field_525fe095afe76',
+				'label' => 'Enable Pros & Cons Lists',
 				'name' => 'enable_pros_&_cons_lists',
 				'type' => 'true_false',
+				'instructions' => 'Display a comparison lists with Good and Bad things.',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
 					),
 					'allorany' => 'all',
 				),
-				'message' => '',
+				'message' => 'Enable Pros & Cons Lists',
 				'default_value' => 0,
 			),
 			array (
-				'key' => 'field_525e8e97f6318',
-				'label' => __('Pros'),
-				'name' => '',
-				'type' => 'tab',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_525e861c1943b',
-							'operator' => '==',
-							'value' => '1',
-						),
-						array (
-							'field' => 'field_525e8e51f6317',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
-			),
-			array (
-				'key' => 'field_525e8f26fc7d0',
-				'label' => __('Pros'),
-				'name' => 'pros',
+				'key' => 'field_525fe1051e90c',
+				'label' => 'Pros List',
+				'name' => 'pros_list',
 				'type' => 'repeater',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fe095afe76',
 							'operator' => '==',
 							'value' => '1',
 						),
 						array (
-							'field' => 'field_525e8e51f6317',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
@@ -270,9 +253,9 @@ if(function_exists("register_field_group"))
 				),
 				'sub_fields' => array (
 					array (
-						'key' => 'field_525e91cff1e76',
-						'label' => __('Pro Note'),
-						'name' => 'pro_note',
+						'key' => 'field_525fe1201e90d',
+						'label' => 'Pros Note',
+						'name' => 'pros_note',
 						'type' => 'text',
 						'column_width' => '',
 						'default_value' => '',
@@ -283,48 +266,27 @@ if(function_exists("register_field_group"))
 						'maxlength' => '',
 					),
 				),
-				'row_min' => 0,
+				'row_min' => 1,
 				'row_limit' => '',
 				'layout' => 'table',
-				'button_label' => 'Add Pro Note',
+				'button_label' => 'Add New',
 			),
 			array (
-				'key' => 'field_525e8f07fc7cf',
-				'label' => __('Cons'),
-				'name' => '',
-				'type' => 'tab',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_525e861c1943b',
-							'operator' => '==',
-							'value' => '1',
-						),
-						array (
-							'field' => 'field_525e8e51f6317',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
-			),
-			array (
-				'key' => 'field_525e90224e884',
-				'label' => __('Con'),
-				'name' => 'con',
+				'key' => 'field_525fe1a2c98d6',
+				'label' => 'Cons List',
+				'name' => 'cons_list',
 				'type' => 'repeater',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_525e861c1943b',
+							'field' => 'field_525fe095afe76',
 							'operator' => '==',
 							'value' => '1',
 						),
 						array (
-							'field' => 'field_525e8e51f6317',
+							'field' => 'field_525fdc951ec8c',
 							'operator' => '==',
 							'value' => '1',
 						),
@@ -333,9 +295,9 @@ if(function_exists("register_field_group"))
 				),
 				'sub_fields' => array (
 					array (
-						'key' => 'field_525e9174f1e75',
-						'label' => __('Con Note'),
-						'name' => 'con_note',
+						'key' => 'field_525fe1a2c98d7',
+						'label' => 'Cons Note',
+						'name' => 'cons_note',
 						'type' => 'text',
 						'column_width' => '',
 						'default_value' => '',
@@ -346,10 +308,10 @@ if(function_exists("register_field_group"))
 						'maxlength' => '',
 					),
 				),
-				'row_min' => 0,
+				'row_min' => 1,
 				'row_limit' => '',
 				'layout' => 'table',
-				'button_label' => 'Add Con Note',
+				'button_label' => 'Add New',
 			),
 		),
 		'location' => array (
@@ -369,9 +331,10 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 4,
 	));
 }
+
 
 add_action('acf/register_fields', 'wpgrade_register_acf_fields');
 

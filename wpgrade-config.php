@@ -198,7 +198,7 @@
 								'handler' => 'wpgrade_callback_enqueue_dynamic_css',
 								'priority' => 9999,
 							),
-						'rtl-support' => 'wpgrade_callback_enqueue_rtl_support'
+						'rtl-support' => 'wpgrade_callback_enqueue_rtl_support',
 					),
 
 			), # end resource
