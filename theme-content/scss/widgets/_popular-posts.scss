@@ -3,7 +3,7 @@
 \*----------------------------------------------*/
 
 .widget--popular-posts {
-    @extend %block-separator;
+    @extend %separator--section;
 }
 
 .popular-posts__time {

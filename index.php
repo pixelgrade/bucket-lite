@@ -16,24 +16,25 @@
 
     ?>
 
-        <div class="grid  soft--bottom  push--bottom">
+        <div class="featured-area">
             <?php while($myquery->have_posts()): $myquery->the_post(); ?>
-                <div class="grid__item palm-one-whole seven-twelfths">
-                        <?php
-                            if (has_post_thumbnail()):
-                                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-                                $image_ratio = $image[2] * 100/$image[1];
-                        ?>
-                            <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                                <img src="<?php echo $image[0] ?>" />
-                                <div class="article__title">
-                                    <h3 class="hN"><?php the_title(); ?></h3>
-                                </div>
-                            </a>
-                        <?php endif; ?>
+                <div class="featured-area__article  article--big">
+                    <?php
+                        if (has_post_thumbnail()):
+                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+                            $image_ratio = $image[2] * 100/$image[1];
+                    ?>
+                        <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+                            <img src="<?php echo $image[0] ?>" />
+                            <div class="article__title">
+                                <h3 class="hN"><?php the_title(); ?></h3>
+                            </div>
+                        </a>
+                    <?php endif; ?>
+                    <?php post_format_icon('post-format-icon--featured'); ?>
                 </div><!--
             <?php endwhile; wp_reset_postdata(); ?>
-         --><div class="grid__item  palm-one-whole  five-twelfths">
+         --><div class="featured-area__aside">
                 <ul class="block-list  block-list--alt">
                     <?php
                         $args = array(

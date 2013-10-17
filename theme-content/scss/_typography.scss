@@ -1,0 +1,37 @@
+/*------------------------------------*\
+               TYPOGRAPHY
+\*------------------------------------*/
+
+
+
+/*============  HEADINGS  ============*/
+
+h1, h2, h3, h4, h5, h6, hgroup {
+    @include rem(margin-top, $_2u);
+    font-family: $heading-font-family;
+    font-weight: 500;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hN {
+    font-family: $heading-font-family;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+
+
+/*=============  LINKS  =============*/
+
+a {
+    text-decoration: none;
+    color: $red;
+}

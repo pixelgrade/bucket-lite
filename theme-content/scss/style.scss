@@ -45,9 +45,9 @@ $alt-font-family     : "Open Sans", sans-serif;
 $h1-size             : 46px;
 $h2-size             : 23px; 
 $h3-size             : 19px;
-$h4-size             : 16px;
-$h5-size             : 13px; 
-$h6-size             : 12px; 
+$h4-size             : 15px;
+$h5-size             : 12px; 
+$h6-size             : 11px; 
 
 // $base-ui-color       : $light;
 $brand-round         : 0;
@@ -103,7 +103,11 @@ $_8u   : 8 * $_u; // 192px
 @import "badge";
 @import "preloader";
 @import "progressbar";
-@import "btn"; 
+@import "btn";
+@import "mixins";
+
+@import "general";
+@import "typography";
 
 // SHORTCODES
 @import "shortcodes/icon";
@@ -113,8 +117,12 @@ $_8u   : 8 * $_u; // 192px
 @import "components/footer";
 @import "components/navigation";
 @import "components/article";
-
+@import "components/featured-area";
+@import "components/author-box";
 @import "components/tweet";
+@import "components/comments";
+
+@import "components/headings";
 
 // WIDGETS
 @import "widgets/widget";

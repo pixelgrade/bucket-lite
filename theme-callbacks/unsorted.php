@@ -70,21 +70,28 @@
 	function wpgrade_comments($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment; ?>
 		<li <?php comment_class(); ?>>
-			<article id="comment-<?php comment_ID(); ?>" class="comment">
-                <header class="comment__meta comment-author vcard">
-					<time datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp"><?php comment_time(__('M j, Y \a\t H:i', wpgrade::textdomain())); ?> </a></time>
-					<?php printf(__('<cite class="comment__author-name">%s</cite>', wpgrade::textdomain()), get_comment_author_link()) ?>                    
-                </header><!-- .comment-meta -->				
-				<?php if ($comment->comment_approved == '0') : ?>
-				<div class="alert info">
-					<p><?php _e('Your comment is awaiting moderation.', wpgrade::textdomain()) ?></p>
-				</div>
-				<?php endif; ?>
-				<section class="comment__content comment">
-					<?php comment_text() ?>
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-					<?php edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','') ?>				
-				</section>
+			<article id="comment-<?php comment_ID(); ?>" class="comment-article  media">
+                <aside class="comment__avatar  media__img">
+                    <!-- custom gravatar call -->
+                    <?php $bgauthemail = get_comment_author_email(); ?>
+                    <img src="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>?s=60" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
+                </aside>
+                <div class="media__body">
+                    <header class="comment__meta comment-author vcard">
+                        <?php printf(__('<cite class="comment__author-name">%s</cite>', wpgrade::textdomain()), get_comment_author_link()) ?>
+    					<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?> </a></time>
+                    </header><!-- .comment-meta -->				
+    				<?php if ($comment->comment_approved == '0') : ?>
+    				<div class="alert info">
+    					<p><?php _e('Your comment is awaiting moderation.', wpgrade::textdomain()) ?></p>
+    				</div>
+    				<?php endif; ?>
+    				<section class="comment__content comment">
+    					<?php comment_text() ?>
+    					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+    					<?php edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','') ?>				
+    				</section>
+                </div>
 			</article>
 		<!-- </li> is added by WordPress automatically -->
 		<?php

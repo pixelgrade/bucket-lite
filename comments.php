@@ -22,67 +22,67 @@
 ?>
 
     <div id="comments" class="comments-area">
-    <h4 class="comments-area-title">
-    <?php
-        if ( have_comments() ) {
-            printf( _n( 'Comments (1)', 'Comments (%1$s)', get_comments_number(), wpgrade::textdomain() ),  number_format_i18n(get_comments_number()));
-        } else { _e('Leave a comment', wpgrade::textdomain()); }
-    ?>
-    </h4>
-
-
-    <?php // You can start editing here -- including this comment! ?>
-
-    <?php if ( have_comments() ) : ?>
-
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-        <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', wpgrade::textdomain() ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', wpgrade::textdomain() ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
-        </nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
-        <?php endif; // check for comment navigation ?>
-
-        <ol class="commentlist">
+        <h4 class="comments-area-title">
             <?php
-                /* Loop through and list the comments. Tell wp_list_comments()
-                 * to use wpgrade_comment() to format the comments.
-                 * If you want to overload this in a child theme then you can
-                 * define wpgrade_comment() and that will be used instead.
-                 * See wpgrade_comment() in inc/template-tags.php for more.
-                 */
-                wp_list_comments( array( 'callback' => 'wpgrade_comments' ) );
+                if (have_comments()):
+                    printf( _n('There is <em>1</em> comment', 'There are <em>%1$s</em> comments', get_comments_number(), wpgrade::textdomain()),  number_format_i18n(get_comments_number()));
+                endif;
             ?>
-        </ol><!-- .commentlist -->
+        </h4>
 
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-        <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', wpgrade::textdomain() ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', wpgrade::textdomain() ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
-        </nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
-        <?php endif; // check for comment navigation ?>
 
-    <?php endif; // have_comments() ?>
-    <?php
-        // If comments are closed and there are comments, let's leave a little note, shall we?
-        if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && !is_page() ) :
-    ?>
-        <p class="nocomments"><?php _e( 'Comments are closed.', wpgrade::textdomain() ); ?></p>
-    <?php endif; ?>
+        <?php // You can start editing here -- including this comment! ?>
 
-</div><!-- #comments .comments-area -->
-<hr class="separator separator--striped" />
+        <?php if ( have_comments() ) : ?>
+
+            <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+            <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
+                <h1 class="assistive-text"><?php _e( 'Comment navigation', wpgrade::textdomain() ); ?></h1>
+                <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', wpgrade::textdomain() ) ); ?></div>
+                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
+            </nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
+            <?php endif; // check for comment navigation ?>
+
+            <ol class="commentlist">
+                <?php
+                    /* Loop through and list the comments. Tell wp_list_comments()
+                     * to use wpgrade_comment() to format the comments.
+                     * If you want to overload this in a child theme then you can
+                     * define wpgrade_comment() and that will be used instead.
+                     * See wpgrade_comment() in inc/template-tags.php for more.
+                     */
+                    wp_list_comments( array( 'callback' => 'wpgrade_comments' ) );
+                ?>
+            </ol><!-- .commentlist -->
+
+            <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+            <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
+                <h1 class="assistive-text"><?php _e( 'Comment navigation', wpgrade::textdomain() ); ?></h1>
+                <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', wpgrade::textdomain() ) ); ?></div>
+                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
+            </nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
+            <?php endif; // check for comment navigation ?>
+
+        <?php endif; // have_comments() ?>
+        <?php
+            // If comments are closed and there are comments, let's leave a little note, shall we?
+            if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && !is_page() ) :
+        ?>
+            <p class="nocomments"><?php _e( 'Comments are closed.', wpgrade::textdomain() ); ?></p>
+        <?php endif; ?>
+
+    </div><!-- #comments .comments-area -->
+    <hr class="separator separator--striped" />
     <?php
     $commenter = wp_get_current_commenter();
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
 
-    if(is_user_logged_in()){
-		$current_user = wp_get_current_user();
+    if (is_user_logged_in()) {
+        $current_user = wp_get_current_user();
         $comments_args = array(
             // change the title of send button
-            'title_reply'=> __('', wpgrade::textdomain()),
+            'title_reply'=> __('Post a new comment', wpgrade::textdomain()),
             // remove "Text or HTML to be displayed after the set of comment fields"
             'comment_notes_before' => '',
             'comment_notes_after' => '',
@@ -90,24 +90,23 @@
                 'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">Name</label><input id="author" name="author" type="text" placeholder="Name..." size="30" ' .  $aria_req . ' /></p>',
                 'email' => '<p class="comment-form-email"><label for="email" class="show-on-ie8">Email</label><input id="email" name="email" size="30" type="text" placeholder="Email..." '. $aria_req .' /></p>' ) ),
             'id_submit' => 'comment-submit',
-            'label_submit' => __('Send message', wpgrade::textdomain()),
+            'label_submit' => __('Send', wpgrade::textdomain()),
             // redefine your own textarea (the comment body)
             'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
     } else {
-
         $comments_args = array(
         // change the title of send button
-        'title_reply'=> __('', wpgrade::textdomain()),
+        'title_reply'=> __('Post a new comment', wpgrade::textdomain()),
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_before' => '',
         'comment_notes_after' => '',
         'fields' => apply_filters( 'comment_form_default_fields', array(
-                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">Name</label><input id="author" name="author" type="text" placeholder="Name..." size="30" ' .  $aria_req . ' /></p>',
-                'email' => '<p class="comment-form-email"><label for="name" class="show-on-ie8">Email</label><input id="email" name="email" size="30" type="text" placeholder="Email..." '. $aria_req .' /></p>',
-                'url' => '<p class="comment-form-url"><label for="url" class="show-on-ie8">Url</label><input id="url" name="url" size="30" placeholder="Website..." type="text"></p>') ),
+                'author' => '<p class="comment-form-author"><label for="author" class="accessibility  show-on-ie8">Name</label><input id="author" name="author" type="text" placeholder="Name..." size="30" ' .  $aria_req . ' /></p><!--',
+                'email' => '--><p class="comment-form-email"><label for="name" class="accessibility  show-on-ie8">Email</label><input id="email" name="email" size="30" type="text" placeholder="Email..." '. $aria_req .' /></p><!--',
+                'url' => '--><p class="comment-form-url"><label for="url" class="accessibility  show-on-ie8">Url</label><input id="url" name="url" size="30" placeholder="Website..." type="text"></p>') ),
         'id_submit' => 'comment-submit',
-        'label_submit' => __('Send message', wpgrade::textdomain()),
+        'label_submit' => __('Send', wpgrade::textdomain()),
         // redefine your own textarea (the comment body)
-        'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
+        'comment_field' => '<p class="comment-form-comment"><label for="comment" class="accessibility  show-on-ie8">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
     }
     comment_form($comments_args); ?>

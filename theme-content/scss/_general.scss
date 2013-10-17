@@ -1,0 +1,97 @@
+/*------------------------------------*\
+              GENERAL STUFF
+\*------------------------------------*/
+
+html {
+    color: $gray;
+}
+
+.lt-ie9 .show-on-ie8 {
+    display: block !important;
+}
+
+.container {
+    @extend .cf;
+    @extend .soft--sides;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    @include rem(padding-left, $_2u);
+}
+
+.small-link {
+    @include font-size(12px);
+    text-transform: uppercase;
+    font-family: $alt-font-family;
+    color: $red;
+}
+
+
+/*==========  $SEPARATORS  ==========*/
+
+.separator {
+    border: 0;
+    height: 0;
+    background: none;
+}
+
+.separator--section, %separator--section {
+    @include rem(padding-bottom, $_u);   
+    @include rem(margin-bottom, $_u - 5px);
+    border-bottom: 0 solid $dark;
+    @include rem(border-bottom-width, 5px);
+}
+
+.separator--subsection, %separator--subsection {
+    width: 100%;
+    @include rem(height, 5px);    
+    background: url('../images/striped.png') top left repeat;
+    @include rem(margin-bottom, $_u - 5px);
+    @include rem(margin-top, $_u);
+}
+
+
+
+/*==========  $IMAGE WRAP  ==========*/
+
+.image-wrap {
+    display: block;
+    padding-top: 67%;
+    background: #ccc;
+    position: relative; 
+    overflow: hidden;
+
+    img, .wp-post-image {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 20;
+    }
+
+    .article__title {
+        position: absolute;
+        bottom: 0; width: 100%;
+        z-index: 20;
+        @include background-image(linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,.8)));
+        color: white;
+        @include rem(padding, $_2u $_u $_u);
+
+        .hN {
+            width: 60%;
+            @include font-size(26px);
+        }
+    }
+
+    &:after {
+        @extend .preloader;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%; left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+    }
+}

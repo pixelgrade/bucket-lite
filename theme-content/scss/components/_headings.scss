@@ -1,0 +1,42 @@
+/*---------------------------------*\
+               HEADING
+\*---------------------------------*/
+
+.heading {
+    @extend .cf;
+    @include rem(margin-bottom, $_u);
+
+    .hN {
+        margin-bottom: 0;
+        font-family: "Arvo", serif;
+        font-weight: normal;
+        color: white;
+        text-transform: uppercase;
+    }
+}
+
+.heading--main {
+    background-color: $dark;
+
+    .hN {
+        @include rem(padding, $_u2 $_u);
+        background-color: $red;
+        float: left;
+    }
+}
+
+.heading--sidebar {
+    background-color: $red;
+
+    .hN {
+        @include rem(padding, $_u2 $_u);
+        @extend .gamma;
+    }
+}
+
+.heading--footer {
+
+    .hN {
+        @extend .gamma;
+    }
+}

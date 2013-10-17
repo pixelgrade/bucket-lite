@@ -1,0 +1,222 @@
+/*----------------------------------------*\
+*   $CONTENTS
+\*----------------------------------------*/
+/**
+ * Comments ................ styling of the comment list
+ * Comment form ............ styling of the comment form
+ */
+
+
+
+
+
+
+/*----------------------------------------*\
+*   $COMMENTS
+\*----------------------------------------*/
+.comments-area-title{
+    @extend .hN;
+    @extend .gamma;
+    @include rem(padding-bottom, $_u);
+    border-bottom: 1px dotted $light;
+    @include rem(margin-top, $_2u !important);
+
+    em {
+        font-style: normal;
+        color: $red;
+    }
+}
+
+
+.commentlist{
+    @extend .nav;
+    list-style: none;
+    @include rem(margin-top, -$_u);
+}
+
+li.comment{
+    display: block;
+    margin-bottom: 0;
+    @include rem(padding-top, $_u);
+
+    & + & {
+        border-top: 1px dotted $light;
+    }
+
+    .children{
+        position: relative;
+        margin-left: 60px;
+        @include rem(padding-left, $_u2);
+        @include rem(margin-top, -$_u);
+               
+        &:before{
+            content: "";
+            display: block;
+            @include rem(height, $_u2);
+            @include rem(width, $_u2);
+            position: absolute;
+            margin-left: -30px;
+            left: 0;
+            @include rem(top, $_u + $_u2 + $_u4);
+            border-left: 1px solid $light;
+            border-bottom: 1px solid $light;
+        }
+    }
+}
+
+// .comment__meta
+.comment__author-name{
+    @extend .hN;
+    @extend .delta;
+    display: inline-block;
+    font-style: normal;
+}
+
+.comment-article {
+    margin-bottom: 0;
+}
+
+.comment__avatar {
+    @include rem(margin-right, $_u2);
+}
+
+.comment__time{
+    display: inline-block;
+    @include font-size(12px);
+}
+
+.comment__timestamp{
+    color: $light;
+}
+
+.comment__avatar {
+    @include rem(margin-bottom, $_u);
+}
+
+.comment__content{
+    position: relative;
+    @include rem(margin-bottom, $_u);
+
+    &:hover{
+        .comment-reply-link{
+            @include opacity(1);
+        }
+    }
+}
+
+.comment-reply-link{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include opacity(0);
+    @include transition(opacity .3s ease-in-out);
+}    
+
+.logged-in-as{
+    @extend .grid__item;
+    @extend .one-whole;
+}
+
+.comment-respond{
+    position: relative;
+}
+
+#cancel-comment-reply-link{
+    position: absolute;
+    @include rem(bottom, $_u);
+    left: 0;
+    z-index: 5;
+    text-decoration: none;
+    font-style: normal;
+}
+
+
+
+
+
+/*----------------------------------------*\
+*   $COMMENT_FORM
+\*----------------------------------------*/
+.comment-form{
+    @extend .grid;
+
+    @include placeholder() {
+        font-style: italic;
+    }
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url{
+    @extend .grid__item;
+    @extend .one-third;
+
+    .lt-ie9 & {
+        width: 30%;
+        float: none;
+        display: inline-block;
+    }
+}
+
+.comment-respond{
+
+    input:not([type]), 
+    input[type="color"], 
+    input[type="email"], 
+    input[type="number"], 
+    input[type="password"], 
+    input[type="tel"], 
+    input[type="url"], 
+    input[type="text"] {
+        width: 100%;
+        @include rem(padding, $_u2);
+        border: 1px solid #e5e9eb;
+        outline: 0;
+
+        &:focus {
+            outline: 1px solid $red;
+        }
+    }
+
+    .lt-ie9 & input {
+        width: 100%;
+        padding: $_u2 0;
+        border: 1px solid #e5e9eb;
+        outline: 0;
+
+        &:focus {
+            outline: 1px solid $red;
+        }
+    }
+}
+
+.comment-form-comment,
+.form-submit {
+    @extend .grid__item;
+    @extend .one-whole;
+
+    textarea{
+        width: 100%;
+        @include rem(padding, $_u2);
+        border: 1px solid #e5e9eb;
+
+        &:focus {
+            outline: 1px solid $red;
+        }
+    }
+}
+
+/**
+ * !Important stuff here to override wordpress styles...
+ */
+.form-submit #comment-submit {
+    @extend .btn;
+    @extend .btn--primary;
+    @extend .btn--beta;
+    text-transform: uppercase;
+    float: right;
+
+    .lt-ie9 & {
+        width: 240px;
+    }
+}

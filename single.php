@@ -56,6 +56,85 @@
                     </div>
                 </div>
 
+                <aside class="author" itemscope itemtype="http://schema.org/Person">
+                    <div class="author__avatar">
+                        <?php
+                            if (function_exists('get_avatar_url')) {
+                                echo '<img src="'. get_avatar_url(get_the_author_meta('email'), '78') . '" itemprop="image"/>';
+                            } else if (function_exists('get_avatar')) {
+                                echo get_avatar(get_the_author_meta('email'), '78');
+                            }
+                        ?>
+                    </div>
+                    <div class="author__text">
+                        <div class="author__title">
+                            <h3 class="accessibility"><?php _e('Author', wpgrade::textdomain()); ?></h3>
+                            <div class="hN">
+                                <span itemprop="name"><?php the_author_posts_link(); ?></span>
+                            </div>
+                        </div>
+                        <p class="author__bio" itemprop="description"><?php the_author_meta('description'); ?></p>
+                        <ul class="author__social-links">
+                            <?php if ( get_the_author_meta('user_tw') ): ?>
+                                <li class="author__social-links__list-item">
+                                    <a class="author__social-link" href="https://twitter.com/<?php echo get_the_author_meta('user_tw') ?>" target="_blank">Twitter</a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ( get_the_author_meta('user_fb') ): ?>
+                                <li class="author__social-links__list-item">
+                                    <a class="author__social-link" href="https://www.facebook.com/<?php echo get_the_author_meta('user_fb') ?>" target="_blank">Facebook</a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ( get_the_author_meta('google_profile') ): ?>
+                                <li class="author__social-links__list-item">
+                                    <a class="author__social-link" href="<?php echo get_the_author_meta('google_profile') ?>" target="_blank">Google</a>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </aside>
+
+                <hr class="separator  separator--subsection">
+                
+                <?php
+                    $next_post = get_next_post();
+                    $prev_post = get_previous_post();
+                    if (!empty($prev_post) || !empty($next_post)):
+                ?>
+                    <nav class="post-nav">
+                        <div class="post-nav-link  post-nav-link--prev">
+                            <?php if (!empty($prev_post)): ?>
+                                <a href="<?php echo get_permalink($prev_post->ID); ?>">
+                                    <div class="post-nav-link__label">
+                                        <?php _e("Previous Article", wpgrade::textdomain()); ?>
+                                    </div>
+                                    <div class="post-nav-link__title">
+                                        <div class="hN"><?php echo $prev_post->post_title; ?></div>
+                                    </div>
+                                </a>
+                            <?php endif; ?>
+                        </div><!-- 
+                     --><div class="divider--pointer"></div><!--
+                     --><div class="post-nav-link  post-nav-link--next">
+                            <?php if (!empty($next_post)): ?>
+                                <a href="<?php echo get_permalink($next_post->ID); ?>">
+                                    <div class="post-nav-link__label">
+                                        <?php _e("Next Article", wpgrade::textdomain()); ?>
+                                    </div>
+                                    <div class="post-nav-link__title">
+                                        <div class="hN"><?php echo $next_post->post_title; ?></div>
+                                    </div>
+                                </a>
+                            <?php endif; ?>
+                        </div> 
+                    </nav>
+                <?php endif; ?>
+                <hr class="separator  separator--section">
+                <?php
+                // If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() )
+                        comments_template();
+                ?>
             <?php endwhile; ?>
 
         </div><!--

@@ -3,10 +3,10 @@
 \*------------------------------------------------*/
 
 .widget--latest-comments {
-    @extend %block-separator;
+    @extend %separator--section;
 }
 
-.comment--list {
+.latest-comments__list {
     @extend .media;
     @include font-size(13px);
 
@@ -19,17 +19,23 @@
     }
 }
 
-.comment__avatar {
+.latest-comments__author {
+    font-family: $heading-font-family;
+    text-transform: uppercase;
+    color: $dark;
+}
+
+.latest-comments__avatar {
     @extend .media__img;
     @include rem(margin-right, $_u2);
 }
 
-.comment__body {
+.latest-comments__body {
     @extend .media__body;
     border-bottom: 1px solid #ccc;
 }
 
-.comment__title {
+.latest-comments__title {
     @extend .article__title;
     @extend .article__title--inverse;
     @include rem(padding, 0 $_u4);
@@ -39,13 +45,7 @@
     text-transform: uppercase;
 }
 
-.comment__author {
-    font-family: $heading-font-family;
-    text-transform: uppercase;
-    color: $dark;
-}
-
-.comment__content {
+.latest-comments__content {
     font-style: italic;
     @include rem(margin-top, $_u2);
     line-height: 1.4;

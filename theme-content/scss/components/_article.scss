@@ -93,7 +93,7 @@
     }
 
 .article--grid {
-    @extend %block-separator;
+    @extend %separator--section;
 
     .article__featured-image {
         margin-bottom: 0;
@@ -136,7 +136,7 @@
     }
 
 .article--slider {
-    @extend %block-separator;
+    @extend %separator--section;
 }
 
     .article--slider__title {
@@ -144,6 +144,5 @@
     }
 
 .article--single__meta {
-    @extend %block-separator;
-    @include rem(padding-bottom, $_u);
+    @extend %separator--section;
 }

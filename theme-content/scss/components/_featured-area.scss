@@ -1,0 +1,18 @@
+.featured-area {
+    @extend .grid;
+    @include rem(margin-bottom, $_u);
+    @include rem(padding-bottom, $_u);
+}
+
+.featured-area__article {
+    @extend .grid__item;
+    @extend .palm-one-whole;
+    @extend .seven-twelfths;
+    position: relative;
+}
+
+.featured-area__aside {
+    @extend .grid__item;
+    @extend .palm-one-whole;
+    @extend .five-twelfths;
+}

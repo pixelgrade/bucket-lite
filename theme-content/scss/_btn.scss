@@ -36,8 +36,8 @@
 .btn--small {
     @include font-size(11px, true, 0.75);
     padding: 0 .75em;
-    &.btn--beta { @include font-size(10px, true, 1); }
-    &.btn--alpha { @include font-size(10px, true, 1.25); }
+    &.btn--beta { @include font-size(11px, true, 1); }
+    &.btn--alpha { @include font-size(11px, true, 1.25); }
 }
 
 .btn--large {
