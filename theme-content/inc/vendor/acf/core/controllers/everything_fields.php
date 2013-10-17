@@ -73,7 +73,7 @@ class acf_everything_fields
 		
 		
 		// get field groups
-		$filter = array( 'post_type' => 'attachment' );
+		$filter = array( 'ef_media' => 'all' );
 		$metabox_ids = array();
 		$metabox_ids = apply_filters( 'acf/location/match_field_groups', $metabox_ids, $filter );
 		
@@ -318,7 +318,7 @@ if( !isset($_POST['acf_nonce']) || !wp_verify_nonce($_POST['acf_nonce'], 'input'
 		{
 			
 			$this->data['page_type'] = "media";
-			$filter['post_type'] = 'attachment';
+			$filter['ef_media'] = 'all';
 			
 			$this->data['page_action'] = "add";
 			$this->data['option_name'] = "";
@@ -433,7 +433,7 @@ $(document).ready(function(){
 				}
 				else
 				{
-					echo "$('#edittag > table.form-table:first > tbody').append( html );";
+					echo "$('#edittag > table.form-table:last > tbody').append( html );";
 				}
 			}
 			elseif($this->data['page_type'] == "media")
@@ -667,26 +667,12 @@ $(document).ready(function(){
 				{
 					continue;
 				}
-				
-				
-				// layout dictates heading
-				$title = true;
-				
-				if( $acf['options']['layout'] == 'no_box' )
-				{
-					$title = false;
-				}
-				
+
 
 				// title 
 				if( $options['page_action'] == "edit" && $options['page_type'] == 'user' )
 				{
-					if( $title )
-					{
-						echo '<h3>' .$acf['title'] . '</h3>';
-					}
-					
-					echo '<table class="form-table"><tbody>';
+					echo '<h3>' .$acf['title'] . '</h3><table class="form-table"><tbody>';
 				}
 				
 				
@@ -694,7 +680,7 @@ $(document).ready(function(){
 				if( $layout == 'tr' )
 				{
 					//nonce
-					echo '<tr style="display:none;"><td colspan="2"><input type="hidden" name="acf_nonce" value="' . wp_create_nonce( 'input' ) . '" /></td></tr>';
+					echo '<tr><td colspan="2"><input type="hidden" name="acf_nonce" value="' . wp_create_nonce( 'input' ) . '" /></td></tr>';
 				}
 				else
 				{

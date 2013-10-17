@@ -115,34 +115,34 @@ function wpgrade_callback_geting_active() {
 			'id' => 'post',
 			'title' => __('Settings', wpgrade::textdomain()),
 			'pages'      => array('post'), // Post type
-			'context' => 'normal',
+			'context' => 'side',
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
 				array(
 					'name' => __('Full Width Featured Image', wpgrade::textdomain()),
-					'desc' => __('The featured image could be full width if you check this on', wpgrade::textdomain()),
+					'desc' => __('<div class="tooltip" title="The featured image could be full width if you check this on"></div>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'full_width_featured_image',
 					'type' => 'checkbox',
 					'std' => '0',
 				),
 				array(
 					'name' => __('Mark as Featured Post', wpgrade::textdomain()),
-					'desc' => __('Is this post more important than others?', wpgrade::textdomain()),
+					'desc' => __('<div class="tooltip" title="Is this post more important than others?"></div>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'featured_post',
 					'type' => 'checkbox',
 					'std' => '0',
 				),
 				array(
 					'name' => __('Add to Category Slider', wpgrade::textdomain()),
-					'desc' => __('You can add this post to the category slider', wpgrade::textdomain()),
+					'desc' => __('<div class="tooltip" title="You can add this post to the category slider" ></div>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'category_slide',
 					'type' => 'checkbox',
 					'std' => '0',
 				),
 				array(
 					'name' => __('Disable Sidebar', wpgrade::textdomain()),
-					'desc' => __('You may want this post to be full width', wpgrade::textdomain()),
+					'desc' => __('<div class="tooltip" title="You may want this post to be full width" ></div>', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'disable_sidebar',
 					'type' => 'checkbox',
 					'std' => '0',

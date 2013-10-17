@@ -43,7 +43,6 @@
 				'theme-content/inc/required-plugins/required-plugins.php',
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
-				'theme-content/inc/acf-config'.EXT,
 				'theme-content/inc/theme-defaults'.EXT,
 				'theme-content/inc/thumbnails'.EXT,
 				'theme-content/inc/widgets'.EXT,
@@ -199,7 +198,7 @@
 								'handler' => 'wpgrade_callback_enqueue_dynamic_css',
 								'priority' => 9999,
 							),
-						'rtl-support' => 'wpgrade_callback_enqueue_rtl_support'
+						'rtl-support' => 'wpgrade_callback_enqueue_rtl_support',
 					),
 
 			), # end resource

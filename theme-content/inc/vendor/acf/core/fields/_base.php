@@ -40,6 +40,7 @@ class acf_field
 		add_filter('acf/registered_fields', array($this, 'registered_fields'), 10, 1);
 		add_filter('acf/load_field_defaults/type=' . $this->name, array($this, 'load_field_defaults'), 10, 1);
 		
+		
 		// value
 		$this->add_filter('acf/load_value/type=' . $this->name, array($this, 'load_value'), 10, 3);
 		$this->add_filter('acf/update_value/type=' . $this->name, array($this, 'update_value'), 10, 3);
@@ -179,6 +180,8 @@ class acf_field
 		if( !empty($this->l10n) )
 		{
 			$l10n[ $this->name ] = $this->l10n;
+			
+			
 		}
 		
 		return $l10n;
