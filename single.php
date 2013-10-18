@@ -24,14 +24,99 @@
 
             <?php while (have_posts()): the_post(); ?>
 
-                <h1><?php the_title(); ?></h1>
+                <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
+                <div class="article__title__meta">
+                    <?php printf(__('<div class="article__author-name">%s</div>', wpgrade::textdomain()), get_the_author_link()) ?>
+                    <time class="article__time" datetime="<?php the_time('c'); ?>"> on <?php the_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?></time>
+                </div>
                 <?php the_content(); ?>
 
+
+                <div class="grid">
+                    <div class="grid__item two-eighths">
+                        <?php
+                            if (get_field('enable_review_score')):
+                                if (get_field('score_breakdown')):
+                                    $average = 0;
+                                    $scores = 0;
+                                    while (has_sub_fields('score_breakdown')):
+                                        $average = $average + get_sub_field('score');
+                                        $scores++;
+                                    endwhile;
+                                    $average = round($average / $scores, 1); ?>
+                                    <div class="score__average-wrapper">
+                                        <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
+                                            <?php
+                                                echo $average; 
+                                                if (get_field('note')) {
+                                                    echo '<div class="score__note">'.get_field('note').'</div>';
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                <?php endif;
+                            endif;
+                        ?>
+                    </div><!--
+                 --><?php if (get_field('enable_pros_&_cons_lists')):
+                        if (get_field('pros_list')): ?><!--
+                         --><div class="score__pros">
+                                <div class="score__pros__title">
+                                    <h3 class="hN"><?php _e('Good Things', wpgrade::textdomain()); ?></h3>
+                                </div>
+                                <ul class="score__pros__list">
+                                    <?php while(has_sub_fields('pros_list')): ?>
+                                        <li class="score_pro"><?php echo get_sub_field('pros_note'); ?></li>      
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div><!--
+                        <?php endif;
+                        if (get_field('cons_list')): ?>
+                         --><div class="score__cons">
+                                <div class="score__cons__title">
+                                    <h3 class="hN"><?php _e('Bad Things', wpgrade::textdomain()); ?></h3>
+                                </div>
+                                <ul class="score__cons__list">
+                                    <?php while(has_sub_fields('cons_list')): ?>
+                                        <li class="score__con"><?php echo get_sub_field('cons_note'); ?></li>      
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+
+
+                <?php
+                    if (get_field('enable_review_score')):
+                        if (get_field('score_breakdown')): ?>
+                            <h3>The Breakdown</h3>
+                            <hr class="separator  separator--subsection">
+                            <?php while (has_sub_fields('score_breakdown')): ?>
+                                <div class="review__score">
+                                    <div class="score__label"><?php echo get_sub_field('label'); ?></div>
+                                    <span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
+                                    <div class="score__progressbar  progressbar">
+                                        <div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                            <hr class="separator  separator--subsection">
+                        <?php endif;
+                    endif;
+                ?>
+
                 <div class="article__meta  article--single__meta">
-                    <div class="btn-list">
-                        <div class="btn  btn--small  btn--secondary">Source</div>
-                        <a href="#" class="btn  btn--small  btn--primary">The Verge</a>
-                    </div>
+                    <?php
+                        if (get_field('credits')):
+                            while (has_sub_field('credits')): ?>
+                                <div class="btn-list">
+                                    <div class="btn  btn--small  btn--secondary"><?php echo get_sub_field('name'); ?></div>
+                                    <a href="<?php echo get_sub_field('full_url'); ?>" class="btn  btn--small  btn--primary"><?php echo get_sub_field('label'); ?></a>
+                                </div>
+                            <?php endwhile;
+                        endif;
+                    ?>
                     <div class="btn-list">
                         <div class="btn  btn--small  btn--secondary">Categories</div>
                         <?php

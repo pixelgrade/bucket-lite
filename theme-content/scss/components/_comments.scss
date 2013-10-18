@@ -85,10 +85,7 @@ li.comment{
 
 // .comment__meta
 .comment__author-name{
-    @extend .hN;
-    @extend .delta;
-    display: inline-block;
-    font-style: normal;
+    @extend .article__author-name;
 }
 
 .comment-article {
@@ -100,8 +97,7 @@ li.comment{
 }
 
 .comment__time{
-    display: inline-block;
-    @include font-size(12px);
+    @extend .article__time;
 }
 
 .comment__timestamp{
