@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Builder
+ * Template Name: Custom Page Composer
  */
 
 /*
