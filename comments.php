@@ -66,6 +66,8 @@
                 <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', wpgrade::textdomain() ) ); ?></div>
             </nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
             <?php endif; // check for comment navigation ?>
+            
+            <hr class="separator separator--subsection" />
 
         <?php endif; // have_comments() ?>
         <?php
@@ -73,7 +75,6 @@
             if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && !is_page() ) :
         ?>
             <p class="nocomments"><?php _e( 'Comments are closed.', wpgrade::textdomain() ); ?></p>
-            <hr class="separator separator--subsection" />
         <?php endif; ?>
 
     </div><!-- #comments .comments-area -->

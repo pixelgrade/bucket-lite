@@ -696,6 +696,47 @@
 
 
 
+
+    /* --- $VIDEOS --- */
+
+    function resizeVideos() {
+    
+        var videos = $('.video-wrap iframe, video');
+
+        videos.each(function() {
+            var video = $(this),
+                ratio = video.data('aspectRatio'),
+                w = video.css('width', '100%').width(),
+                h = w/ratio;
+            video.height(h);
+        });
+    }
+
+    function initVideos() {
+
+        var videos = $('.video-wrap iframe, video');
+
+        // Figure out and save aspect ratio for each video
+        videos.each(function() {
+            $(this).data('aspectRatio', this.width / this.height)
+                // and remove the hard coded width/height
+                .removeAttr('height')
+                .removeAttr('width');
+        });
+
+        resizeVideos();
+
+        // Firefox Opacity Video Hack
+        $('.video-wrap iframe').each(function(){
+            var url = $(this).attr("src"); console.log(url);
+            $(this).attr("src", url+"?wmode=transparent");
+        });
+    }
+
+
+
+
+
     /* --- DETECT PLATFORM --- */
 
     function platformDetect(){
@@ -890,6 +931,7 @@
 
     function loadUp(){
 
+        initVideos();
         footerWidgetsTitles();
         // if blog archive
         salvattore();
@@ -942,7 +984,9 @@
     /* ====== ON RESIZE ====== */
 
     $(window).resize(function(e){});
-    $(window).on("debouncedresize", function(e){});
+    $(window).on("debouncedresize", function(e){
+        resizeVideos();
+    });
 
 
 

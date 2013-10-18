@@ -63,5 +63,4 @@
         </div>
     <?php endif; ?>
 
-    <div class="badge  badge--article">9.5 <span class="badge__text">score</span></div>
 </div>
