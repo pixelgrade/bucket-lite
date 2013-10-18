@@ -1,8 +1,45 @@
 /*-----------------------------------------------*\
+              GENERAL STYLES
+\*-----------------------------------------------*/
+.border-separator-bottom {
+  border-bottom-color: #dfdfdf;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+}
+
+.border-separator-top {
+  border-top-color: #dfdfdf;
+  -webkit-box-shadow: 1px 0 0 #fff;
+  box-shadow: 1px 0 0 #fff;
+}
+
+ul.acf-radio-list li input, ul.checkbox_list li input {
+  margin-top:1px;
+}
+
+.acf-conditional_logic-hide {
+  display: none !important;
+}
+
+.cf {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+
+
+/*-----------------------------------------------*\
               POST REVIEW SCORE
 \*-----------------------------------------------*/
 
-#acf-enable_review_score {
+#acf_acf_post-review-score * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#acf-enable_review_score { 
   p label {
     display:none;
   }
@@ -10,4 +47,30 @@
   li label {
     font-weight:bold;
   }
+}
+
+// Score Breakdown
+#acf-score_breakdown {
+  border-bottom-color: #dfdfdf;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+}
+
+// Average Score Box
+#acf- {
+  padding-top:0;
+  padding-bottom:0;
+}
+
+#acf-note {
+  @extend .border-separator-bottom;
+}
+
+#acf-placement, #acf-note {
+  float:left;
+  width:50%;
+}
+[data-field_name="enable_pros_&_cons_lists"] {
+
+  @extend .cf;
 }
