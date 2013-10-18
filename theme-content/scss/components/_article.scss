@@ -7,6 +7,27 @@
     @include rem(font-size, 14px);
 }
 
+.article__title {
+    @include rem(margin-bottom, $_u2);
+}
+
+.article__title__meta {
+    @include rem(margin-bottom, $_u);
+}
+
+.article__author-name {
+    @extend .hN;
+    @extend .delta;
+    color: $red;
+    display: inline-block;
+    font-style: normal;
+}
+
+.article__time {
+    display: inline-block;
+    @include font-size(12px);
+}
+
     .article__featured-image {
         @include rem(margin-bottom, $_u);
         position: relative;
@@ -145,4 +166,5 @@
 
 .article--single__meta {
     @extend %separator--section;
+    @include rem(padding-top, $_u);
 }

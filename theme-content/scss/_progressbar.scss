@@ -4,15 +4,30 @@
 
 .progressbar {
     @extend .cf;
-    height: .25em;
-    margin-top: -.25em;
-    background-color: $gray;
-    @include rem(margin-right, $_u2);
+    @include rem(height, $_u2);
+    background-color: $dark;
+    position: relative;
+    // @include rem(margin-top, -8px);
+    // @include rem(margin-right, $_u2);
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 0;
+        border: 0 solid transparent;
+        @include rem(border-width, 3px $_u4);
+        border-bottom-color: white;
+        border-right-color: white;
+    }
 }
 
 .progressbar__progress {
     float: left;
-    width: 50%;
-    height: .25em;
+    // width: 50%;
+    @include rem(height, $_u2);
     background-color: $red;
 }
