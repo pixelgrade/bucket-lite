@@ -73,10 +73,10 @@
             if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && !is_page() ) :
         ?>
             <p class="nocomments"><?php _e( 'Comments are closed.', wpgrade::textdomain() ); ?></p>
+            <hr class="separator separator--subsection" />
         <?php endif; ?>
 
     </div><!-- #comments .comments-area -->
-    <hr class="separator separator--subsection" />
     <?php
     $commenter = wp_get_current_commenter();
     $req = get_option( 'require_name_email' );

@@ -4,9 +4,9 @@
 
 .badge {
     width: 2.5em;
-    @include rem(padding, 6px 0);
+    padding: .15em 0;
     font-family: $heading-font-family;
-    @include font-size(19px);
+    @include font-size(16px);
     position: relative;
     text-align: center;
     background-color: $red;
