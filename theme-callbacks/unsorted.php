@@ -80,6 +80,12 @@
                     <header class="comment__meta comment-author vcard">
                         <?php printf(__('<cite class="comment__author-name">%s</cite>', wpgrade::textdomain()), get_comment_author_link()) ?>
     					<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?> </a></time>
+                        <div class="comment__links">
+                            <?php
+                                edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','');
+                                comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));
+                            ?>
+                        </div>
                     </header><!-- .comment-meta -->				
     				<?php if ($comment->comment_approved == '0') : ?>
     				<div class="alert info">
@@ -88,8 +94,6 @@
     				<?php endif; ?>
     				<section class="comment__content comment">
     					<?php comment_text() ?>
-    					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-    					<?php edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','') ?>				
     				</section>
                 </div>
 			</article>

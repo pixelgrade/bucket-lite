@@ -9,6 +9,11 @@
     @extend .palm-one-whole;
     @extend .seven-twelfths;
     position: relative;
+
+}
+
+.article--big .article__title {
+    margin-bottom: 0;
 }
 
 .featured-area__aside {

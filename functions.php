@@ -70,3 +70,19 @@ function post_format_icon($class_name = '') {
     <?php
     endif;
 }
+
+function get_average_score() {
+
+    if (get_field('enable_review_score') && get_field('score_breakdown')):
+        $average = 0;
+        $scores = 0;
+        while (has_sub_fields('score_breakdown')):
+            $average = $average + get_sub_field('score');
+            $scores++;
+        endwhile;
+        $average = round($average / $scores, 1);
+        return $average; 
+    endif;
+
+    return false;
+}

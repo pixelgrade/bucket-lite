@@ -34,29 +34,18 @@
 
                 <div class="grid">
                     <div class="grid__item two-eighths">
-                        <?php
-                            if (get_field('enable_review_score')):
-                                if (get_field('score_breakdown')):
-                                    $average = 0;
-                                    $scores = 0;
-                                    while (has_sub_fields('score_breakdown')):
-                                        $average = $average + get_sub_field('score');
-                                        $scores++;
-                                    endwhile;
-                                    $average = round($average / $scores, 1); ?>
-                                    <div class="score__average-wrapper">
-                                        <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
-                                            <?php
-                                                echo $average; 
-                                                if (get_field('note')) {
-                                                    echo '<div class="score__note">'.get_field('note').'</div>';
-                                                }
-                                            ?>
-                                        </div>
-                                    </div>
-                                <?php endif;
-                            endif;
-                        ?>
+                        <?php if (get_field('enable_review_score') && get_field('score_breakdown')): ?>
+                            <div class="score__average-wrapper">
+                                <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
+                                    <?php
+                                        echo get_average_score(); 
+                                        if (get_field('note')) {
+                                            echo '<div class="score__note">'.get_field('note').'</div>';
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </div><!--
                  --><?php if (get_field('enable_pros_&_cons_lists')):
                         if (get_field('pros_list')): ?><!--

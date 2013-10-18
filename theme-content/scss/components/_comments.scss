@@ -90,6 +90,12 @@ li.comment{
 
 .comment-article {
     margin-bottom: 0;
+
+    &:hover {
+        .comment-edit-link {
+            opacity: 1;
+        }
+    }
 }
 
 .comment__avatar {
@@ -108,29 +114,29 @@ li.comment{
     @include rem(margin-bottom, $_u);
 }
 
-.comment__content{
+.comment__content {
     position: relative;
     @include rem(margin-bottom, $_u);
-
-    &:hover{
-        .comment-reply-link{
-            @include opacity(1);
-        }
-    }
 }
 
-.comment-reply-link{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    @include opacity(0);
-    @include transition(opacity .3s ease-in-out);
+.comment__links {
+    float: right;
+    @include font-size(12px);
     font-family: $alt-font-family;
 }    
+
+.comment-edit-link {
+    color: $light;
+    opacity: 0;
+    @include rem(margin-right, $_u2);
+    @include transition(opacity .3s ease-in-out);
+    @include transform(translateZ(0));
+}
 
 .logged-in-as{
     @extend .grid__item;
     @extend .one-whole;
+    @include rem(margin, -$_u2 0);
 }
 
 .comment-respond{
