@@ -96,6 +96,14 @@
         position: relative;
     }
 
+.article__meta-links {
+    margin-bottom: 0;
+
+    a {
+        color: $light;
+    }
+}
+
 .article--thumb {
 
     .article__meta-links {
@@ -115,6 +123,7 @@
 
 .article--grid {
     @extend %separator--section;
+    padding-bottom: 0;
 
     .article__featured-image {
         margin-bottom: 0;
@@ -140,7 +149,7 @@
     .article--grid__meta {
         border-top: 1px solid #b3b3b3;
         margin-top: -1px;
-        @include rem(padding, $_u4 $_u2 0);
+        @include rem(padding, $_u4 $_u2);
     }
 
     .article--grid__meta-links {
