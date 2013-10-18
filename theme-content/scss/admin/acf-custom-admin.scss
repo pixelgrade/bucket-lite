@@ -1,3 +1,13 @@
+/*-----------------------------------------------*\
+              POST REVIEW SCORE
+\*-----------------------------------------------*/
+
 #acf-enable_review_score {
-	background-color: red;
+  p label {
+    display:none;
+  }
+
+  li label {
+    font-weight:bold;
+  }
 }
