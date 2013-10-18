@@ -15,16 +15,31 @@
 *   $COMMENTS
 \*----------------------------------------*/
 .comments-area-title{
-    @extend .hN;
-    @extend .gamma;
-    @include rem(padding-bottom, $_u);
+    @extend .cf;
+    @include rem(margin-top, $_u + $_u2 !important);
+    @include rem(padding-bottom, $_u2);
+    @include rem(margin-bottom, $_u);
     border-bottom: 1px dotted $light;
-    @include rem(margin-top, $_2u !important);
 
-    em {
-        font-style: normal;
-        color: $red;
+    .hN {
+        @extend .gamma;
+        margin-bottom: 0;
+        float: left;
+
+        em {
+            font-style: normal;
+            color: $red;
+        }
     }
+}
+
+.comments_add-comment {
+    @extend .btn;
+    @extend .btn--small;
+    @extend .btn--primary;
+    @include rem(margin-left, $_u2);
+    margin-top: .225em;
+    float: left;
 }
 
 
@@ -32,6 +47,10 @@
     @extend .nav;
     list-style: none;
     @include rem(margin-top, -$_u);
+    @include rem(margin-bottom, -$_u);
+    margin-left: 0;
+    border-left: 0;
+    padding-left: 0;
 }
 
 li.comment{
@@ -110,6 +129,7 @@ li.comment{
     right: 0;
     @include opacity(0);
     @include transition(opacity .3s ease-in-out);
+    font-family: $alt-font-family;
 }    
 
 .logged-in-as{
@@ -217,6 +237,6 @@ li.comment{
     float: right;
 
     .lt-ie9 & {
-        width: 240px;
+        width: 100px;
     }
 }

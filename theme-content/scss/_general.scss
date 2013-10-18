@@ -6,8 +6,12 @@ html {
     color: $gray;
 }
 
+.show-on-ie8 {
+    display: none;
+}
+
 .lt-ie9 .show-on-ie8 {
-    display: block !important;
+    display: block;
 }
 
 .container {
@@ -45,11 +49,24 @@ html {
 }
 
 .separator--subsection, %separator--subsection {
+    @extend %pattern--diagonal;
     width: 100%;
     @include rem(height, 5px);    
-    background: url('../images/striped.png') top left repeat;
     @include rem(margin-bottom, $_u - 5px);
     @include rem(margin-top, $_u);
+}
+
+.divider--pointer {
+    @extend %pattern--vertical;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include rem(width, 9px);
+    @include rem(height, 10px);
+    @include rem(margin-left, $_u2 - 4px);
+    @include rem(margin-top, -4px);
+    background-color: #fff;
+    @include transform(rotate(45deg) translateZ(0));
 }
 
 

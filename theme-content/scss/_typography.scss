@@ -4,6 +4,15 @@
 
 
 
+/*=============  LINKS  ==============*/
+
+a {
+    text-decoration: none;
+    color: $red;
+}
+
+
+
 /*============  HEADINGS  ============*/
 
 h1, h2, h3, h4, h5, h6, hgroup {
@@ -29,9 +38,104 @@ h2, h3, h4, h5, h6 {
 
 
 
-/*=============  LINKS  =============*/
+/*===========  BLOCKQUOTES  ===========*/
 
-a {
-    text-decoration: none;
+blockquote {
+    position: relative;
+    @include rem(padding-left, $_4u);
+    @include rem(padding-top, $_u);
+    @include font-size(24px);
+    font-family: $heading-font-family;
+    font-style: italic;
     color: $red;
+    
+    &:before {
+        @extend %pattern--diagonal;
+        content: "";
+        @include rem(width, $_3u);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    &:after {
+        content: open-quote;
+        display: block;
+        position: absolute;
+        @include rem(left, $_u2);
+        @include rem(bottom, -$_u2);
+        @include rem(font-size, 120px);
+        font-style: normal;
+        line-height: 0;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+}
+
+
+
+/*=============  TABLES  =============*/
+
+.table--bordered{
+
+    tr {
+        border-top: 1px dotted #b2b2b2;
+    }
+
+    th,
+    td{
+        border: 0;
+
+        &:empty{
+            border:inherit;
+        }
+    }
+}
+
+.table--striped{
+
+    tbody tr:nth-of-type(odd){
+        background-color:#fbfbfb; /* Override this color in your theme stylesheet */
+    }
+}
+
+table {
+    @extend .table--bordered;
+    @extend .table--striped;
+    @extend %separator--section;
+}
+
+
+
+/*=============  LISTS  ==============*/
+
+dl {
+
+}
+
+dt {
+    font-weight: bold;
+
+    dd + & {
+        @include rem(margin-top, $_u);
+    }
+}
+
+dd {
+    margin-left: 0;
+}
+
+ol{
+    border-left: 0 solid $red;
+    @include rem(border-left-width, 5px);
+    @include rem(padding-left, $_2u - 5px);
+    margin-left: 0;
+
+    ul &, ol &, dl & {
+        @include rem(margin-left, $_2u);
+        border-left: 0;
+        padding-left: 0;
+    }
 }
