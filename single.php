@@ -29,8 +29,11 @@
                     <?php printf(__('<div class="article__author-name">%s</div>', wpgrade::textdomain()), get_the_author_link()) ?>
                     <time class="article__time" datetime="<?php the_time('c'); ?>"> on <?php the_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?></time>
                 </div>
-                <?php the_content(); ?>
+                <?php
+		        the_content();
 
+		        $args = array( 'before' => '<p>Pages: ', 'after' => '</p>', 'next_or_number' => 'next_and_number', 'previouspagelink' => 'Previous', 'nextpagelink' => 'Next' );
+		        wp_link_pages( $args ); ?>
 
                 <div class="grid">
                     <div class="grid__item two-eighths">
