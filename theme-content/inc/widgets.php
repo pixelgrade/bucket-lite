@@ -92,17 +92,17 @@ class wpgrade_latest_comments extends WP_Widget {
 			foreach ( (array)$comments as $comment) {
 
 				ob_start(); ?>
-				<article class="comment  comment--list">
-					<a class="media__img  comment__avatar" href="<?php echo get_comment_author_link($comment->comment_ID) ?>">
+				<article class="latest-comments__list">
+					<a class="media__img  latest-comments__avatar" href="<?php echo get_comment_author_link($comment->comment_ID) ?>">
 						<img class="img--center" src="<?php echo bucket::get_avatar_url($comment->comment_author_email, '48') ?>" alt="48x48">
 					</a>
-					<div class="media__body  comment__body">
+					<div class="media__body  latest-comments__body">
 						<div class="comment__meta">
-							<a class="comment__author" href="<?php echo get_comment_author_link() ?>"><?php echo $comment->comment_author; ?></a>
+							<a class="latest-comments__author" href="<?php echo get_comment_author_link() ?>"><?php echo $comment->comment_author; ?></a>
 							<span class="comment__date">on <?php echo date( 'd M' ,strtotime($comment->comment_date)); ?></span>
 						</div>
-						<a class="comment__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
-						<div class="comment__content">
+						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
+						<div class="latest-comments__content">
 							<p><?php echo $comment->comment_content; ?></p>
 						</div>
 					</div>

@@ -4,6 +4,7 @@
 
 .widget--latest-comments {
     @extend %separator--section;
+    padding-bottom: 0;
 }
 
 .latest-comments__list {
@@ -13,7 +14,7 @@
     &:last-child {
         margin-bottom: 0;
 
-        .comment__body {
+        .latest-comments__body {
             border-bottom: 0;
         }
     }
