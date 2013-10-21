@@ -6,6 +6,20 @@
     @extend .island;
     background-color: $dark;
     color: white;
+    border-left: 0;
+
+    .progressbar {
+        @include rem(height, $_u4);
+        background-color: $gray;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .progressbar__progress {
+        @include rem(height, $_u4);
+    }
 }
 
 .review {
@@ -17,4 +31,5 @@
     font-family: $heading-font-family;
     font-weight: normal;
     text-transform: uppercase;
+    color: white;
 }
