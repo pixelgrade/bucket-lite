@@ -22,7 +22,7 @@ $use-matrix          : true;
 $use-grids           : true;
 $use-options         : true;
 $use-stats           : true;
-$use-arrows          : true;
+$use-arrows          : true; 
 $use-lozenges        : true;
 
 $use-greybox         : true;
@@ -122,13 +122,14 @@ $_8u   : 8 * $_u; // 192px
 @import "components/tweet";
 @import "components/comments";
 
-@import "components/headings";
+@import "components/headings"; 
 
 // WIDGETS
 @import "widgets/widget";
 @import "widgets/reviews";
 @import "widgets/popular-posts";
 @import "widgets/latest-comments";
+@import "widgets/latest-posts";
 
 // SHAMELESS SHAME
 @import "core";

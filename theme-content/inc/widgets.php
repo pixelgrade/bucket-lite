@@ -357,39 +357,41 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 		wp_reset_postdata();
 
 		echo $before_widget;
-		if ( $title ) echo $before_title . $title . $after_title;
-		if ( $latest_posts->have_posts() ): ?>
-			<div class="latest-posts-slider wp-slider">
-				<ul class="latest-posts slides">
-					<?php while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
-						<li class="latest-posts-post slide row">
-              <div class="desk-span6">
-                <?php if ( has_post_thumbnail() ) { ?>
-                  <a href="<?php the_permalink(); ?>" class="latest-posts-thumnail-wrapper">
-                    <?php the_post_thumbnail('homepage-portfolio'); ?>
-                  </a>
-                <?php } else { ?>
-                  <a href="<?php the_permalink(); ?>" class="latest-posts-thumnail-wrapper no-image">
-                    <span><?php _e('No Image', wpgrade::textdomain()); ?></span>
-                  </a>
-                <?php } ?>
-              </div>
-              <div class="desk-span6">
-								<div class="latest-posts-date"><?php the_time('F j, Y'); ?></div>
-                <h4 class="latest-posts-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                <div class="latest-posts-excerpt">
-                  <p>
-                    <?php
-                      // $excerpt = get_the_excerpt();
-                      $excerpt = substr(get_the_excerpt(), 0, 160);
-                      echo $excerpt.'&hellip;';
-                    ?>
-                  </p>
-                  <a class="btn btn-small btn-more" href="<?php the_permalink(); ?>">Read More</a>
-              </div>
-						</li>
-					<?php endwhile; ?>
-				</ul>
+
+		if ($title) echo $before_title . $title . $after_title;
+
+		if ($latest_posts->have_posts()): ?>
+			<div class="pixslider  js-pixslider" data-autoheight data-arrows>
+				<?php while ($latest_posts->have_posts()): $latest_posts->the_post(); ?>
+                    <div class="article  article--slider">
+                        <div class="image-wrap">
+                            <?php if (has_post_thumbnail()): ?>
+                                <?php the_post_thumbnail(); ?>
+                            <?php endif; ?>
+                        </div>
+                        <div class="article__title  article--slider__title">
+                            <h3 class="hN"><?php the_title(); ?></h3>
+                        </div>
+                        <div class="article__meta  article--slider__meta">
+                            <div class="split">
+                                <div class="split__title  article__category">
+                                    <?php
+                                        $categories = get_the_category();
+                                        if ($categories) {
+                                            $category = $categories[0];
+                                            echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+                                        }
+                                    ?>
+                                </div>
+                                <ul class="nav  article__meta-links">
+                                    <li><a href="#"><i class="icon-time"></i> <?php the_time('j M') ?></a></li>
+                                    <li><a href="#"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></a></li>
+                                    <li><a href="#"><i class="icon-heart"></i> 12</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+				<?php endwhile; ?>
 			</div>
 		<?php endif;
 		echo $after_widget;
@@ -405,7 +407,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('From the Blog',wpgrade::textdomain());
+		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('Latest Posts',wpgrade::textdomain());
 		// default to 4 posts
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 4; ?>
 		<p>
