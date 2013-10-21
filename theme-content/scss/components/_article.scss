@@ -189,3 +189,69 @@
     @extend %separator--section;
     @include rem(padding-top, $_u);
 }
+
+
+.billboard {
+    position: relative;
+    @include rem(margin-bottom, $_u);
+}
+
+.article--billboard {
+    position: static;
+}
+
+.billboard__category {
+    @include rem(margin-left, -$_u);
+    @include rem(padding, $_u4 $_u);
+    float: left;
+    background: black;
+    background: rgba(black, .75);
+    font-family: $alt-font-family;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.article--billboard__header {
+    position: absolute;
+    @include rem(bottom, $_u);
+    @include rem(left, $_2u);
+    z-index: 30;
+    @include font-size(14px);
+}
+
+.article--billboard__title {
+    background: white;
+    color: $dark;
+    @include rem(margin, 0 0 0 #{-$_2u});
+    @include rem(padding, $_u2 $_u2 $_u2 $_2u);
+    clear: left;
+}
+
+.article--billboard-small {
+    @extend %separator--section;
+    padding-bottom: 0;
+    background: white;
+    @include rem(width, $_8u);
+    position: absolute;
+    z-index: 40;
+    bottom: 0;
+    @include rem(right, $_u);
+
+    .small-link {
+        display: block;
+        @include rem(margin, 0 $_u2 $_u4);
+    }
+
+    + .article--billboard-small {
+        @include rem(right, 9 * $_u + $_u2);
+    }
+}
+
+.article--billboard-small__title {
+    @include rem(margin, $_u2 $_u2 $_u);
+
+    .hN {
+        @extend .gamma;
+    }
+}
