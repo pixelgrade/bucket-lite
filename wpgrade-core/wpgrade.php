@@ -793,8 +793,23 @@ class wpgrade {
 	 */
 	static function gallery_slideshow($current_post, $template = null) {
 		if ($template === null) {
+
+		    $image_scale_mode = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_image_scale_mode', true);
 			$slider_transition = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_transition', true);
-			$template = '<div class="wp-gallery" data-royalslider data-customarrows data-slidertransition="' . $slider_transition . '">:gallery</div>';
+		    $slider_autoplay = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_autoplay', true);
+		    if($slider_autoplay)
+		        $slider_delay = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_delay', true);
+
+			$template = '<div class="wp-gallery" data-royalslider data-customarrows data-sliderpauseonhover data-slidertransition="' . $slider_transition . '" ';
+			$template .= ' data-imagescale="' . $image_scale_mode . '" ';
+			if($slider_autoplay){
+				$template .= ' data-sliderautoplay="" ';
+				$template .= ' data-sliderdelay="' . $slider_delay . '" ';
+			}
+			if($image_scale_mode != 'fill'){
+				$template .= ' data-imagealigncenter ';
+			}			
+			$template .= '>:gallery</div>';
 		}
 
 		// first check if we have a meta with a gallery
