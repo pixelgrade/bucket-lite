@@ -1476,6 +1476,13 @@ class bucket
 		return $url;
 	}
 
+	static function get_avatar_url($email, $size = 32){
+		$get_avatar = get_avatar($email, $size);
+		preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+		return $matches[1];
+
+	}
+
 	/**
 	 * Turns all of the links in a string into HTML links
 	 *
