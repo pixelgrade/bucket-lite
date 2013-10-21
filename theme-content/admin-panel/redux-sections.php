@@ -131,7 +131,7 @@
 				'type' => 'color',
 				'title' => __('Main Color', wpgrade::textdomain()),
 				'sub_desc' => __('Use the color picker to change the main color of the site to match your brand color.', wpgrade::textdomain()),
-				'std' => '#fffc00'
+				'std' => '#fb4834'
 			),
             array(
                 'id' => 'header_inverse',
