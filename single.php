@@ -133,11 +133,11 @@
                 <aside class="author" itemscope itemtype="http://schema.org/Person">
                     <div class="author__avatar">
                         <?php
-                            if (function_exists('get_avatar_url')) {
-                                echo '<img src="'. get_avatar_url(get_the_author_meta('email'), '78') . '" itemprop="image"/>';
-                            } else if (function_exists('get_avatar')) {
-                                echo get_avatar(get_the_author_meta('email'), '78');
-                            }
+//                            if (function_exists('get_avatar_url')) {
+                                echo '<img src="'. bucket::get_avatar_url(get_the_author_meta('email'), '78') . '" itemprop="image"/>';
+//                            } else if (function_exists('get_avatar')) {
+//                                echo get_avatar(get_the_author_meta('email'), '78');
+//                            }
                         ?>
                     </div>
                     <div class="author__text">
