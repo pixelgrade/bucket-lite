@@ -1,3 +1,8 @@
+img[width], img[height] {
+    max-width: 100%;
+    height: auto;
+}
+
 .block-list--alt {
     border-top-width: 0;
     margin-top: 0;
