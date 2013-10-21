@@ -37,13 +37,11 @@
             $css,
             FS_CHMOD_FILE // predefined mode settings for WP files
         );
-
         if($error == true) {
             echo 'There is been an error around';
         }
-
     }
-	add_action( 'redux-opts-saved-'. wpgrade::themename() .'_options', 'wpgrade_write_custom_css' );
+	add_action( 'redux-opts-saved-'. wpgrade::shortname() .'_options', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
