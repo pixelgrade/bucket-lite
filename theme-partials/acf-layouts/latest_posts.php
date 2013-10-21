@@ -23,7 +23,7 @@ if ($myquery->have_posts()):
         <div class="grid">
             <div class="grid__item  two-thirds  palm-one-whole">
     <?php endif; ?>
-        <div class="grid" data-columns><!--
+        <div class="grid <?php echo has_sidebar() ? '' : 'fullwidth' ?>" data-columns><!--
             <?php while($myquery->have_posts()): $myquery->the_post(); ?>
              --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
             <?php endwhile; wp_reset_postdata(); ?>

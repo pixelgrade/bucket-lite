@@ -14,7 +14,7 @@ $args = array(
 $myquery = new WP_Query( $args );
 
 if ($myquery->have_posts()): ?>
-    <div class="grid" data-columns><!--
+    <div class="grid fullwidth" data-columns><!--
         <?php while($myquery->have_posts()): $myquery->the_post(); ?>
          --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
         <?php endwhile; wp_reset_postdata(); ?>
