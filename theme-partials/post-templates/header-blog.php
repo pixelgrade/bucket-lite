@@ -11,6 +11,8 @@
     endif;
     ?>
 
-    <?php post_format_icon(); ?>
-    <div class="badge  badge--article">9.5 <span class="badge__text">score</span></div>
+    <?php post_format_icon();
+	if ( bucket::has_avarage_score() ) { ?>
+        <div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text">score</span></div>
+	<?php } ?>
 </div>

@@ -184,8 +184,9 @@ class wpgrade_latest_reviews extends WP_Widget {
 					<li class="review">
 						<article>
 							<a class="review__title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            <span class="badge  badge--review"><?php echo get_average_score(); ?></span>
-                            <div class="progressbar"><div class="progressbar__progress" style="width: <?php echo get_average_score() * 10;  ?>%;"></div></div>
+                            <?php $average_score = bucket::get_average_score(); ?>
+                            <span class="badge  badge--review"><?php echo $average_score ? $average_score : '&nbsp;' ?></span>
+							<div class="progressbar"><div class="progressbar__progress" style="width: <?php echo bucket::get_average_score() * 10;  ?>%;"></div></div>
 						</article>
 					</li>
 				<?php endwhile; ?>
