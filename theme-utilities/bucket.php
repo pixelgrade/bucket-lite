@@ -2028,7 +2028,34 @@ class bucket
 
 		return $array;
 	}
-	
+
+	static function has_avarage_score(){
+		if (get_field('enable_review_score') && get_field('score_breakdown')) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Get the score of the current post
+	 * @return bool|float
+	 */
+	static function get_average_score() {
+
+		if (get_field('enable_review_score') && get_field('score_breakdown')):
+			$average = 0;
+			$scores = 0;
+			while (has_sub_fields('score_breakdown')):
+				$average = $average + get_sub_field('score');
+				$scores++;
+			endwhile;
+			$average = round($average / $scores, 1);
+			return $average;
+		endif;
+
+		return false;
+	}
+
 	//the shit
 	static function portfolio_get_posts($number, $offset = 0) {
 		global $paged, $post;
