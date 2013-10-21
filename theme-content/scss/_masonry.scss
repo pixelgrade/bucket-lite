@@ -6,7 +6,6 @@
 [data-columns] {
     
     > div {
-        width: 50%;
         display: inline-block;
         @include rem(padding-left, $_u);
         vertical-align: top;
@@ -29,10 +28,18 @@
     [data-columns]::before {
         content: '1 .grid__item.one-whole';
     }
+
+    [data-columns].fullwidth::before {
+        content: '2 .grid__item.one-half';
+    }
 }
 
 @media screen and (min-width: 1024px) {
     [data-columns]::before {
         content: '2 .grid__item.one-half';
+    }
+
+    [data-columns].fullwidth::before {
+        content: '3 .grid__item.one-third';
     }
 }

@@ -89,9 +89,9 @@ table.acf-input-table {
 }
 
 //Override buttons and align left
-.hl > li.right {
-  float: left;
-}
+// .hl > li.right {
+//   float: left;
+// }
 
 a.acf-button, input[type="submit"].acf-button {
   @extend .btn-secondary;

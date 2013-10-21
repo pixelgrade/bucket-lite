@@ -22,7 +22,10 @@ html {
 }
 
 .sidebar {
-    @include rem(padding-left, $_2u);
+
+    @include media-query(lap-and-up) {
+        @include rem(padding-left, $_2u);
+    }
 }
 
 .small-link {

@@ -167,10 +167,22 @@
 
 .article--slider {
     @extend %separator--section;
+    padding-bottom: 0;
 }
 
     .article--slider__title {
         @extend .article__title--inverse;
+        margin-bottom: 0;
+        @include rem(padding, $_u4 $_u);
+
+        .hN {
+            @extend .epsilon;
+        }
+    }
+
+    .article--slider__meta {
+        @include rem(padding, $_u4 $_u);
+        // @include rem(margin-bottom, $_u2);
     }
 
 .article--single__meta {
