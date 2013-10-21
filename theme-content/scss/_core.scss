@@ -6,11 +6,25 @@
  * Ensure that a caption won't expand more than the content
  */
 .wp-caption {
+    @extend .cf;
+    @extend %pattern--diagonal;
+    width: auto !important;
     max-width: 100%;
+
+    img {
+        width: 100%;
+        display: block;
+    }
 }
 
 .wp-caption-text {
-    // @empty
+    float: left;
+    background: white;
+    font-family: $alt-font-family;
+    font-style: italic;
+    @include font-size(12px);
+    @include rem(padding, 0 $_u2);
+    @include rem(margin, 0 $_u2 (-$_u2));
 }
 
 .sticky {
