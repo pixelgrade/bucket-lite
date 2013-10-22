@@ -7,10 +7,21 @@
     background-color: $dark;
     color: white;
     border-left: 0;
+    list-style: none;
+
+    .badge {
+        float: right;
+        @include rem(margin-bottom, -$_u4);
+        @include font-size(19px);
+        padding: .35em 0;
+        position: relative;
+        z-index: 10;
+    }
 
     .progressbar {
         @include rem(height, $_u4);
         background-color: $gray;
+        clear: right;
 
         &:after {
             display: none;
