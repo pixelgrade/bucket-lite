@@ -26,6 +26,7 @@
 /*ul*/.site-navigation--main, .translation-bar {
     @extend .nav;
     text-transform: uppercase;
+    position: relative;
 }
 
     /*li*/.menu-item--main, .translation-item {

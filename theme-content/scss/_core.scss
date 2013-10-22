@@ -5,11 +5,31 @@
 /**
  * Ensure that a caption won't expand more than the content
  */
+
+.alignnone {
+    @include rem(margin, $_u4 0 $_u);
+}
+
+.alignleft {
+    float: left;
+    @include rem(margin, $_u4 $_u $_u 0);
+}
+
+.aligncenter {
+    @include rem(margin, $_u4 auto $_u);
+}
+
+.alignright {
+    float: right;
+    @include rem(margin, $_u4 0 $_u $_u);
+}
+
 .wp-caption {
     @extend .cf;
     @extend %pattern--diagonal;
     width: auto !important;
     max-width: 100%;
+    @include rem(margin-bottom, $_u + $_u2);
 
     img {
         width: 100%;
@@ -37,24 +57,6 @@
 
 .bypostauthor {
     // @empty
-}
-
-.alignnone {
-    @include rem(margin, $_u4 0 $_u);
-}
-
-.alignleft {
-    float: left;
-    @include rem(margin, $_u4 $_u $_u 0);
-}
-
-.aligncenter {
-    @include rem(margin, $_u4 auto $_u);
-}
-
-.alignright {
-    float: right;
-    @include rem(margin, $_u4 0 $_u $_u);
 }
 
 
