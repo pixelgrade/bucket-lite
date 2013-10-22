@@ -5,6 +5,10 @@
 .wpgrade_popular_posts {
     @extend %separator--section;
     padding-bottom: 0;
+
+    .widget__title {
+        margin-bottom: 0;
+    }
 }
 
 .popular-posts__time {
