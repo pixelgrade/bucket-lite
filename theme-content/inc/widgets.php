@@ -1102,8 +1102,9 @@ class wpgrade_popular_posts extends WP_Widget {
 
         <div class="tabs__content">
     		<?php
+            $index = 0;
     		foreach( $filter_links as $key => $val ) {
-    			echo '<div class="tabs__pane" id="'. $key .'">';
+    			echo '<div class="tabs__pane" id="'. $key .'" style="'. $index++ == 0 ? '' : 'opacity: 0' .'">';
     			echo self::showMostViewed( $number, $thumb_size, $key );
     			echo '</div>';
     		} ?>
