@@ -1,4 +1,6 @@
-<?php return array
+<?php
+
+return array
 	(
 		// setting dev mode to true allows you to view the class settings/info in
 		// the panel

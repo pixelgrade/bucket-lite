@@ -887,7 +887,7 @@ class wpgrade {
 			require self::corepath().'vendor/redux2/options/defaults'.EXT;
 		}
 		elseif ($modulename == 'redux3') {
-			require self::corepath().'vendor/redux3/options/defaults'.EXT;
+			require self::corepath().'vendor/redux3/framework'.EXT;
 		}
 		else { // unsupported module
 			die('Unsuported core module: '.$modulename);

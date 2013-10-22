@@ -1,6 +1,7 @@
 <?php
 
 	// @todo CLEANUP check if this function is actually used anywhere
+	// andrei: is just a freaking test
 	function validate_callback_function($field, $value, $existing_value) {
 		$error = false;
 		$value =  'just testing';

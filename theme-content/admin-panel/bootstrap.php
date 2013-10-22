@@ -21,21 +21,36 @@
 	# generally helpful.
 	#
 
-	wpgrade::require_coremodule('redux2');
+	wpgrade::require_coremodule('redux3');
 
 	function wpgrade_callback_redux_options_setup() {
 		$currentpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
 
-		$wpgrade_redux_coremodule = 'redux2'; # used inside configuration files
+		$wpgrade_redux_coremodule = 'redux3'; # used inside configuration files
 		$args = include $currentpath.'redux-args'.EXT;
 		$sections = include $currentpath.'redux-sections'.EXT;
 		$tabs = include $currentpath.'redux-tabs'.EXT;
 
-		$redux = new Redux_Options($sections, $args, $tabs);
+		$redux = new ReduxFramework($sections, $args, $tabs);
 		wpgrade::resolve('redux-instance', $redux);
 	}
+	add_action('after_setup_theme', 'wpgrade_callback_redux_options_setup', 1);
 
-	add_action('after_setup_theme', 'wpgrade_callback_redux_options_setup', 0);
+	/**
+	 * Enquue our custom css on admin panel
+	 */
+	function wpgrade_add_admin_custom_style() {
+		wp_register_style(
+			'redux-custom-css',
+			wpgrade::resourceuri('css/admin/admin-panel.css'),
+			array(), // Be sure to include redux-css so it's appended after the core css is applied
+			time(),
+			'all'
+		);
+	}
+	// This example assumes your opt_name is set to redux, replace with your opt_name value
+	add_action('after_setup_theme', 'wpgrade_add_admin_custom_style',0);
 
 	// register callbacks
 	require $currentpath.'callbacks'.EXT;
+
