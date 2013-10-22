@@ -253,6 +253,83 @@
 
 
 
+    /* --- ORGANIC TABS --- */
+    // https://github.com/CSS-Tricks/jQuery-Organic-Tabs
+    (function($) {
+
+        $.organicTabs = function(el, options) {
+        
+            var base = this;
+            base.$el = $(el);
+            base.$nav = base.$el.find(".nav");
+                    
+            base.init = function() {
+            
+                base.options = $.extend({},$.organicTabs.defaultOptions, options);
+
+                var $allListWrap = base.$el.find(".list-wrap");
+                
+                var curList = base.$el.find("a.current").attr("href").substring(1);
+                $allListWrap.height(base.$el.find("#"+curList).height());
+                
+                base.$nav.delegate("li > a", "click", function() {
+                
+                    // Figure out current list via CSS class
+                    var curList = base.$el.find("a.current").attr("href").substring(1),
+                    
+                    // List moving to
+                        $newList = $(this),
+                        
+                    // Figure out ID of new list
+                        listID = $newList.attr("href").substring(1);
+                                            
+                    if ((listID != curList) && ( base.$el.find(":animated").length == 0)) {
+                                                
+                        // Fade out current list
+                        base.$el.find("#"+curList).css({opacity: 0});
+
+                        setTimeout(function() {
+                            
+                            // Fade in new list on callback
+                            base.$el.find("#"+curList);
+                            base.$el.find("#"+listID).css({opacity: 1});
+                            
+                            // Adjust outer wrapper to fit new list snuggly
+                            var newHeight = base.$el.find("#"+listID).height();
+                            $allListWrap.css({height: newHeight});
+                            
+                            // Remove highlighting - Add to just-clicked tab
+                            base.$el.find(".nav li a").removeClass("current");
+                            $newList.addClass("current");
+                                
+                        }, 300);
+                        
+                    }   
+                    
+                    // Don't behave like a regular link
+                    // Stop propegation and bubbling
+                    return false;
+                });
+                
+            };
+            base.init();
+        };
+        
+        $.organicTabs.defaultOptions = {
+            "speed": 300
+        };
+        
+        $.fn.organicTabs = function(options) {
+            return this.each(function() {
+                (new $.organicTabs(this, options));
+            });
+        };
+        
+    })(jQuery);
+
+
+
+
     /* --- ROYALSLIDER --- */
 
     // jquery.royalslider v9.4.92
@@ -884,6 +961,10 @@
         });
     }
 
+    function popularPostsWidget() {
+        $('.widget--popular-posts').organicTabs();
+    }
+
 
 
 
@@ -933,6 +1014,7 @@
 
         initVideos();
         footerWidgetsTitles();
+        popularPostsWidget();
         // if blog archive
         salvattore();
         royalSliderInit();

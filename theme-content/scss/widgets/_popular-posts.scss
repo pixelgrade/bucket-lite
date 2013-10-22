@@ -4,6 +4,7 @@
 
 .widget--popular-posts {
     @extend %separator--section;
+    padding-bottom: 0;
 }
 
 .popular-posts__time {
@@ -15,14 +16,34 @@
     text-transform: uppercase;
     font-family: $heading-font-family;
     @include rem(font-size, 13px);
-    @include rem(margin-bottom, $_u2);
+    @include rem(margin-bottom, $_u);
 
     a {
         color: white;
         text-decoration: none;
 
-        &:hover {
+        &.current, &:hover {
             color: $red;
         }
+    }
+}
+
+.list-wrap {
+    position: relative;
+    @include transition(height .3s ease-in-out);
+    overflow: hidden;
+    @include rem(margin-bottom, $_u2);
+    @include rem(margin-right, -$_u);
+}
+
+.list-wrap-item {
+    position: absolute;
+    @include transition(opacity .3s ease-in-out);
+    -webkit-backface-visibility: hidden;
+    @include translate3d(0,0,0);
+    @include rem(margin-right, $_u);
+
+    &.hide {
+        opacity: 0;
     }
 }

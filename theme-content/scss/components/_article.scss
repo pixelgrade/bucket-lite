@@ -91,9 +91,9 @@
     }
 
     .article--list__link {
-        margin-bottom: .5em;
         display: block;
         position: relative;
+        @include rem(margin-bottom, $_u2);
     }
 
 .article__meta-links {
