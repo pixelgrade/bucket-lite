@@ -26,10 +26,11 @@
 /*ul*/.site-navigation--main {
     @extend .nav;
     text-transform: uppercase;
+    position: relative;
 }
 
     /*li*/.menu-item--main {
-        position: relative;
+        // position: relative;
 
         a {
             display: block;
