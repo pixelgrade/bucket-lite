@@ -1093,11 +1093,13 @@ class wpgrade_popular_posts extends WP_Widget {
 		} ?>
 
 		<ul class="tabs__nav  popular-posts__time">
-			<?php foreach( $filter_links as $key => $val ): ?>
-				<li><a href="#<?php echo $key; ?>" data-time="<?php echo $key; ?>" data-numberposts="<?php echo $number; ?>" data-thumb="<?php echo $thumb_size; ?>" data-tab="popular"><?php echo $val; ?></a></li>
+			<?php
+                $index = 0;
+                foreach( $filter_links as $key => $val ): ?>
+				<li><a class="<?php echo $index++ == 0 ? 'current' : '' ?>" href="#<?php echo $key; ?>" data-time="<?php echo $key; ?>" data-numberposts="<?php echo $number; ?>" data-thumb="<?php echo $thumb_size; ?>" data-tab="popular"><?php echo $val; ?></a></li>
 			<?php endforeach; ?>
 		</ul>
-        
+
         <div class="tabs__content">
     		<?php
     		foreach( $filter_links as $key => $val ) {
