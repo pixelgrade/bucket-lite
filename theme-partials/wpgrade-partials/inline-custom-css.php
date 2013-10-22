@@ -53,7 +53,7 @@ function hex2rgb($hex) {
 if ( !empty($main_color) ){
 $rgb = implode(",", hex2rgb($main_color)); ?>
 
-.inverse a,
+<!-- .inverse a,
 .highlighted,
 blockquote:before,
 .emphasized:before,
@@ -122,7 +122,7 @@ a.site-home-link {
 .lt-ie9 .header:before {
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFC00', endColorstr='#FF464A4D');
 }
-
+ -->
 <?php }
 
 if ( isset($fonts["body_font"]) ){

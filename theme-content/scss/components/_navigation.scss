@@ -23,25 +23,24 @@
 
 
 
-/*ul*/.site-navigation--main {
+/*ul*/.site-navigation--main, .translation-bar {
     @extend .nav;
     text-transform: uppercase;
     position: relative;
 }
 
-    /*li*/.menu-item--main {
+    /*li*/.menu-item--main, .translation-item {
         position: relative;
 
         a {
             display: block;
-            @include rem(padding, $_u2 $_u);
+            @include rem(padding, 1.2*$_u4 $_u);
         }
 
         &.current-menu-item,
         &.current-menu-ancestor,
         &.current-menu-parent,
         &:hover, &:focus, &:active {
-            
         }
         
         &:hover > .site-navigation__sub-menu {
@@ -64,4 +63,56 @@
         top: 0;
         left: 100%;
     }
-}    
+}
+
+.site-navigation--top a, .translation-bar a{
+    @include font-size(12px);
+}
+
+.site-navigation--header .menu-item--main{
+
+    &:hover, &:focus, &:active {
+        color: white;
+        background: $gray;
+        border-bottom: 0 solid $red;
+        @include rem(border-bottom-width, 5px);
+        @include rem(margin-bottom, -5px);   
+    }    
+}
+
+.site-navigation--top, .translation-bar{
+    li:last-child:after{
+        border-right: 0;
+    }
+
+    li{
+        &:after{
+            content: '';
+            border-right: 1px $light dotted;
+        }
+    }
+}
+
+.site-navigation--top > li:first-child a{
+    @include rem(margin-left, -$_u);
+}
+
+.site-navigation__sub-menu li{
+    &:after{
+        border: 0;
+    }
+    
+    a{
+        margin-left: 0 !important;
+    }
+}
+
+.translation-bar{
+    li:last-child a{
+        @include rem(margin-right, -$_u);
+    }    
+}
+
+.translation-bar-container{
+    text-align: right;
+}

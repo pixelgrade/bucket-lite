@@ -134,13 +134,28 @@
 				'std' => '#fb4834'
 			),
             array(
-                'id' => 'header_inverse',
+                'id' => 'header_type',
+                'type' => 'select',
+                'title' => __('Header type', wpgrade::textdomain()),
+                'std' => 'type1',
+                'swith' => true,
+                'options' => array('type1' => 'Type 1', 'type2' => 'Type 2', 'type3' => 'Type 3')
+            ),                        
+            array(
+                'id' => 'top_nav_inverse',
                 'type' => 'checkbox',
-                'title' => __('Inverse header contrast.', wpgrade::textdomain()),
-                'sub_desc' => __('Change the header contrast: black text, white background.', wpgrade::textdomain()),
+                'title' => __('Inverse top navigation contrast.', wpgrade::textdomain()),
+                // 'sub_desc' => __('Change the header contrast: black text, white background.', wpgrade::textdomain()),
                 'std' => '0',
                 'switch' => true,
-            ),            
+            ),
+            array(
+                'id' => 'main_nav_inverse',
+                'type' => 'checkbox',
+                'title' => __('Inverse main navigation contrast.', wpgrade::textdomain()),
+                'std' => '0',
+                'switch' => true,
+            ),                                    
 			array(
 				'id' => 'use_google_fonts',
 				'type' => 'checkbox_hide_below',
