@@ -425,32 +425,30 @@ img.rsImg{
 
 .rsBullets{
     @extend .nav;
-    display: block;
-    margin: 0;
-    float: left;
-    position: absolute;
-    @include rem(bottom, $_u2);
-    left: 0;
-    float: left;
+    @include rem(margin-left, -6px);
+    // display: block;
+    // margin: 0;
+    // float: left;
+    // position: absolute;
+    // @include rem(bottom, $_u2);
+    // left: 0;
+    // float: left;
 }
 
 .rsBullet{
     display: inline-block;
-    padding: 0.1rem;
-    margin: 0 0.3rem;
-    width: 0.3rem;
-    height: 0.3rem;
-    border-radius: 0.3rem;
+    @include rem(margin, 2px 6px);
+    @include rem(width, 6px);
+    @include rem(height, 6px);
+    border-radius: 50%;
     text-indent: -999em;
     background-color: rgb(202, 202, 202);
     cursor: pointer;
 }
 
 .rsNavSelected{
-    width: 0.4rem;
-    height: 0.4rem;
-    position: relative;
-    top: 0.05rem;
-    left: 0.05rem;
+    @include rem(width, 8px);
+    @include rem(height, 8px);
+    @include rem(margin, 0 6px);
     background-color: $red;
 }
