@@ -34,7 +34,7 @@
 
         a {
             display: block;
-            @include rem(padding, 1.2*$_u4 $_u);
+            @include rem(padding, $_u2 $_u);
         }
 
         &.current-menu-item,
@@ -71,12 +71,9 @@
 
 .site-navigation--header .menu-item--main{
 
-    &:hover, &:focus, &:active {
+    &:hover {
         color: white;
         background: $gray;
-        border-bottom: 0 solid $red;
-        @include rem(border-bottom-width, 5px);
-        @include rem(margin-bottom, -5px);   
     }    
 }
 

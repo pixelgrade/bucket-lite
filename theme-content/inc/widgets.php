@@ -1092,20 +1092,22 @@ class wpgrade_popular_posts extends WP_Widget {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
 		} ?>
 
-		<ul class="popular-posts__time">
+		<ul class="tabs__nav  popular-posts__time">
 			<?php foreach( $filter_links as $key => $val ): ?>
-				<li><a href="#" data-time="<?php echo $key; ?>" data-numberposts="<?php echo $number; ?>" data-thumb="<?php echo $thumb_size; ?>" data-tab="popular"><?php echo $val; ?></a></li>
+				<li><a href="#<?php echo $key; ?>" data-time="<?php echo $key; ?>" data-numberposts="<?php echo $number; ?>" data-thumb="<?php echo $thumb_size; ?>" data-tab="popular"><?php echo $val; ?></a></li>
 			<?php endforeach; ?>
 		</ul>
+        
+        <div class="tabs__content">
+    		<?php
+    		foreach( $filter_links as $key => $val ) {
+    			echo '<div class="tabs__pane" id="'. $key .'">';
+    			echo self::showMostViewed( $number, $thumb_size, $key );
+    			echo '</div>';
+    		} ?>
+        </div>
 
-		<?php
-		foreach( $filter_links as $key => $val ) {
-			echo '<ul class="tab-'. $key .'">';
-			echo self::showMostViewed( $number, $thumb_size, $key );
-			echo '</ul>';
-		}
-
-		echo $after_widget;
+		<?php echo $after_widget;
 
 	}
 

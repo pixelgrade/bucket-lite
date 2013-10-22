@@ -106,8 +106,8 @@
 }
 
 .site-navigation--header{
-    border-bottom: 0 solid $dark;
-    @include rem(border-bottom-width, 5px);        
+    // border-bottom: 0 solid $dark;
+    // @include rem(border-bottom-width, 5px);        
 }
 
 .site-home-link{

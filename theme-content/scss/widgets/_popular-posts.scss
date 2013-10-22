@@ -28,15 +28,16 @@
     }
 }
 
-.list-wrap {
+.tabs__content {
     position: relative;
+    min-height: 1px;
     @include transition(height .3s ease-in-out);
     overflow: hidden;
     @include rem(margin-bottom, $_u2);
     @include rem(margin-right, -$_u);
 }
 
-.list-wrap-item {
+.tabs__pane {
     position: absolute;
     @include transition(opacity .3s ease-in-out);
     -webkit-backface-visibility: hidden;
