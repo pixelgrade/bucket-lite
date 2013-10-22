@@ -9,7 +9,7 @@
 
 	<?php if ( ! empty($main_color)): ?>
 
-		.sidebar-footer-container a:hover, .team-member-position,
+/*		.sidebar-footer-container a:hover, .team-member-position,
 		.wpgrade_pagination a:hover, #comment-submit, .entry-content a,
 		.sidebar-footer_right-container .widget_wpgrade_twitter_widget .widget-tweets-tweet-content a,
 		.side-content .widget li a:hover, .author-link, .wpcf7 input[type="submit"],
@@ -128,7 +128,7 @@
 			.team-member-container:hover .team-member-name {
 				color: <?php echo $main_color; ?>;
 			}
-		}
+		}*/
 
 	<?php endif; ?>
 

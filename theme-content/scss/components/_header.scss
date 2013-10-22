@@ -5,3 +5,213 @@
 .site-header {
     @include rem(height, $_6u);
 }
+
+.site-logo--text{
+    @include rem(padding-top, $_2u);
+}
+
+
+
+
+/*----------------------------------------*\
+    $HEADER BAR(SIDEBAR)
+\*----------------------------------------*/
+.header-bar{
+        @include rem(margin-top, $_2u);
+        > li{
+            vertical-align: top;
+        }
+
+    // .form-search{
+        .search-query{
+            // rem does not work properly
+            // @include rem(height, $_2u);
+            height: 48px;
+            @include rem(padding, 0 $_u);
+            background-color: black;
+            border: 0;
+            color: $light;
+            text-transform: uppercase;
+            @include rem(letter-spacing, 2px);
+        }
+
+        .search-submit{
+            @include rem(height, $_2u);
+            @include rem(padding, $_u2);
+            vertical-align: top;
+            background: black;
+            @include font-size(0.75*$_u);
+        }
+    // }
+    
+    .social-icon-link {
+        @include rem(width, $_2u);
+        @include rem(height, $_2u);
+        @include rem(padding-top, $_u/4);
+        display: block;
+        background-color: black;
+        color: $light;
+        text-align: center;
+
+        @include font-size($_u);
+    }
+}
+
+.header-bar--top{
+    margin: 0;
+
+    .search-query{
+        height: auto;
+        line-height: 36px;
+    }
+
+    .search-submit{
+        height: auto;
+        line-height: 36px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .social-icon-link {
+        height: auto;
+        padding: 0;      
+    }
+}
+
+.header-ad{
+    @include rem(margin-top, 1.15*$_u);
+    text-align: right;
+}
+
+.header-ad-link{
+    display: block;
+}
+
+//There's a grid in top navigation.
+//Each item in the grid has a padding-left of $_u.
+//So we need to pull the nav left with $_u
+.site-navigation--top{
+    @include rem(margin-left, -$_u);
+} 
+
+.header--type3 .site-header__branding{
+    text-align: center;
+}
+
+
+//When the header hasn't got inversed color,
+//hide the striped separator
+.nav-top-separator{
+    display: none;
+}
+
+.site-navigation--header{
+    border-bottom: 0 solid $dark;
+    @include rem(border-bottom-width, 5px);        
+}
+
+.site-home-link{
+    display: block;
+    img{
+        max-height: 100%;
+    }
+} 
+
+
+
+
+
+
+/*----------------------------------------*\
+    $TOP NAV INVERSE
+\*----------------------------------------*/
+.top-nav-inverse{
+    .navigation--top{
+        background: none;
+
+        a{
+            color: black;
+            background: none;
+        }        
+    }
+
+    .site-navigation__sub-menu{
+        background: white;
+
+        li{
+            @include rem(margin-left, -$_u);
+        }
+    }
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $MAIN NAV INVERSE
+\*----------------------------------------*/
+.main-nav-inverse{
+    .navigation--main {
+        background: none;        
+    }
+
+    .nav-top-separator{
+        display: block;
+    }
+
+    .navigation--main a {
+        color: black;
+    }
+
+    .header--type1{
+        .search-query, .search-submit, .social-icon-link {
+            color: black;
+            background: none;
+        }
+
+        .header-bar > li {
+            border: 1px solid $light;
+        }
+    }
+
+    .site-navigation li:hover{
+        background: none;
+    }    
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $HEADER INVERSE
+\*----------------------------------------*/
+
+.header-inverse{ 
+    .site-navigation li:hover{
+        background: none;
+    }
+
+
+    //Type 1
+
+
+    //Type 2
+    .header--type2, .header--type3 {
+        .navigation--top{
+            background: none;
+
+            a{
+                color: black;
+            }
+        }
+
+        .social-icon-link {
+            background: none;
+        }
+    }
+}
+
+
+

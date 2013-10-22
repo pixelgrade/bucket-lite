@@ -36,7 +36,7 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'site-navigation site-navigation--main',
+                    'menu_class'      => 'site-navigation site-navigation--header site-navigation--main',
                     'menu_id'         => '',
                     'fallback_cb'     => 'wp_page_menu',
                     'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -57,7 +57,7 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'site-navigation site-navigation--main flush--bottom',
+                    'menu_class'      => 'site-navigation site-navigation--top site-navigation--main flush--bottom',
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
                     'walker'          => new WPGrade_Walker_Nav_Menu()

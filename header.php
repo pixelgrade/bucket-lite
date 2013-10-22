@@ -9,7 +9,8 @@ if(is_page() && get_page_template_slug(get_the_ID()) == 'template-journal.php') 
 $data_ajaxloading = (wpgrade::option('use_ajax_loading') == 1) ? 'data-ajaxloading' : '';
 $data_smoothscrolling = (wpgrade::option('use_smooth_scroll') == 1) ? 'data-smoothscrolling' : ''; 
 
-if(wpgrade::option('header_inverse') == 1) $class_name .= " header-inverse";
+if(wpgrade::option('top_nav_inverse') == 1) $class_name .= " top-nav-inverse";
+if(wpgrade::option('main_nav_inverse') == 1) $class_name .= " main-nav-inverse";
 
 ?>
 
@@ -20,4 +21,4 @@ if(wpgrade::option('header_inverse') == 1) $class_name .= " header-inverse";
     <div id="page">
         <div class="wrapper">
             <?php //get the main header section - logo, nav, footer
-			get_template_part('theme-partials/header/site'); ?>
+			get_template_part('theme-partials/header/site_' . wpgrade::option('header_type')); ?>
