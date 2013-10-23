@@ -47,6 +47,14 @@
 			time(),
 			'all'
 		);
+
+		wp_enqueue_script(
+			'redux-custom-js',
+			wpgrade::resourceuri('js/admin/admin-panel.js'),
+			array('jquery', 'redux-js','wp-ajax-response' ), // Be sure to include redux-css so it's appended after the core css is applied
+			time(),
+			'all'
+		);
 	}
 	// This example assumes your opt_name is set to redux, replace with your opt_name value
 	add_action('after_setup_theme', 'wpgrade_add_admin_custom_style',0);
