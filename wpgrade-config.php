@@ -102,6 +102,13 @@
 			(
                  'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'TeamMember', 'Separator', 'ProgressBar', 'Slider'
 			),
+	
+		'megamenu_layouts' => array
+			(
+                 'default' => __('Default','bucket_txtd'),
+                 'latest_posts' => __('Latest Posts','bucket_txtd'),
+                 'slider_latest_posts' => __('Slider + Latest Posts','bucket_txtd'),
+			),
 
 		'resources' => array
 			(
