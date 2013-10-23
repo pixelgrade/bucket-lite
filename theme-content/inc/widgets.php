@@ -1105,9 +1105,9 @@ class wpgrade_popular_posts extends WP_Widget {
             $index = 0;
     		foreach( $filter_links as $key => $val ) {
                 if ($index++ == 0) {
-                    $hidden = 'hide';
-                } else {
                     $hidden = '';
+                } else {
+                    $hidden = 'hide';
                 }
     			echo '<div class="tabs__pane '. $hidden .'" id="'. $key .'">';
     			echo self::showMostViewed( $number, $thumb_size, $key );
@@ -1159,17 +1159,15 @@ class wpgrade_popular_posts extends WP_Widget {
 				$postImage = wpgrade_get_the_image($imageArgs, $p['id']);
 			} ?>
 			<article class="article  article--list  media">
-				<a href="#" class="article--list__link">
+				<a href="<?php echo $p['permalink']; ?>" title="<?php echo $p['title']; ?>" class="article--list__link">
 					<?php if ( !empty( $postImage['src'] ) ){ ?>
 						<div class="media__img  push-half--right">
-							<a class="post-thumb" href="<?php echo $p['permalink']; ?>"><img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" width="<?php echo $postImage['width']; ?>" height="<?php echo $postImage['height']; ?>" /></a>
+							<img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" width="<?php echo $postImage['width']; ?>" height="<?php echo $postImage['height']; ?>" />
 						</div>
 					<?php } ?>
 					<div class="media__body">
 						<div class="article__title  article--list__title">
-							<h5 class="hN">
-								<a class="item-title" title="<?php echo $p['title']; ?>" href="<?php echo $p['permalink']; ?>"><?php echo $p['title']; ?></a>
-							</h5>
+							<h5 class="hN"><?php echo $p['title']; ?></h5>
 						</div>
 					</div>
 					<div class="badge  badge--article  badge--article--list"><?php echo $i; ?></div>
