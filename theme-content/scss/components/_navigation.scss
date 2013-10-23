@@ -58,7 +58,7 @@
     /*li*/.menu-item--main, .translation-item {
         // position: relative;
 
-        a {
+        > a {
             display: block;
             @include rem(padding, $_u2 $_u);
         }
@@ -107,7 +107,9 @@
 }
 
 .sub-menu__posts {
-    @include rem(border-bottom, $_4u solid rgba(black, .5));
+    background-color: black;
+    background-clip: padding-box;
+    @include rem(border-bottom, $_u solid rgba(black, .5));
     @include rem(padding, $_u4);
     width: 100%;
     position: absolute;
@@ -115,15 +117,41 @@
     z-index: 300;
     display: none;
 
+    .site-navigation__sub-menu {
+        position: static;
+        display: block;
+    }
+
     .grid {
-        background-color: black;
-        @include rem(margin-bottom, -$_4u);
+        @include rem(margin-bottom, -$_u);
     }
 
     .article--billboard-small {
         background-color: #262525;
+        width: auto;
         position: static;
         margin: 0;
+
+        .small-link {
+            color: $light;
+
+            &:after {
+                content: " +";
+                color: $red;
+            }
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+.grid--thin {
+    @include rem(margin-left, -$_u4);
+
+    > .grid__item {
+        @include rem(padding-left, $_u4);
     }
 }
 
