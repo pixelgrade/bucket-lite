@@ -251,9 +251,15 @@
 }
 
 .article--billboard-small__title {
-    @include rem(margin, $_u2 $_u2 $_u);
+    @include rem(height, $_3u);
+    @include rem(margin, $_u2);
+    overflow: hidden;
 
     .hN {
+        max-width: 100%;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
         @extend .gamma;
     }
 }
