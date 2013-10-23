@@ -955,8 +955,13 @@
     function footerWidgetsTitles() {
         $('.widget--footer__title .hN').each(function() {
             var $title = $(this),
-                text = $title.text();
-            text = '<em>' + text.slice(0, text.indexOf(" ")) + '</em>' + text.slice(text.indexOf(" "), text.length);
+                text = $title.text(),
+                index = text.indexOf(" ");
+            if (index != -1) {
+                text = '<em>' + text.slice(0, index) + '</em>' + text.slice(text.indexOf(" "), text.length);
+            } else {
+                text = '<em>' + text + '</em>';
+            }
             $title.html(text);
         });
     }

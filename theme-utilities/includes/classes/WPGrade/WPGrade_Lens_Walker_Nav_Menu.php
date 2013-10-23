@@ -66,6 +66,45 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 				$args['after']
 			);
 
+
+        if ($depth == 0 && $item->object == 'category') {
+
+            $cat = $item->object_id;
+            
+            $item_output .= '<ul class="sub-posts">';
+                
+                //$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
+            
+                global $post;
+                $post_args = array( 'numberposts' => 3, 'offset'=> 0, 'category' => $cat );
+                $menuposts = get_posts( $post_args );
+                
+                foreach( $menuposts as $post ) : setup_postdata( $post );
+                
+                    $post_title = get_the_title();
+                    $post_link = get_permalink();
+                    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                    
+                    if ( $post_image ){
+                        $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+                    } else {
+                        $menu_post_image = '<img src="' . get_template_directory_uri() . '/images/default-image.png" alt="' . $post_title . '" />';
+                    }
+                    
+                    $item_output .= '
+                            <li>
+                                <figure>
+                                    <a href="'  .$post_link . '">' . $menu_post_image . '</a>
+                                    <figcaption><a href="' . $post_link . '">' . $post_title . '</a></figcaption>
+                                </figure>
+                            </li>';
+                    
+                endforeach;
+                wp_reset_query();
+                
+            $item_output .= '</ul>';
+        }
+
         // build html
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
