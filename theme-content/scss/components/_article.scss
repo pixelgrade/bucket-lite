@@ -91,6 +91,7 @@
     }
 
     .article--list__link {
+        @extend .cf;
         display: block;
         position: relative;
         @include rem(margin-bottom, $_u2);
