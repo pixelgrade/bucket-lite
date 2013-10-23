@@ -10,7 +10,7 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= "<ul class=\"site-navigation__sub-menu\">";
     }
 
-    function end_lvl(&$output, $depth=0, $args=array()) {  
+    function end_lvl(&$output, $depth = 0, $args = array()) {  
         $output .= "</ul>";  
     }
 
@@ -67,11 +67,16 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 			);
 
 
+            echo '<!--';
+            print_r($item);
+            echo '-->';
+
+
         if ($depth == 0 && $item->object == 'category') {
 
             $cat = $item->object_id;
             
-            $item_output .= '<ul class="sub-posts">';
+            $item_output .= '<div class="sub-menu__posts"><div class="grid  grid--narrow">';
                 
                 //$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
             
@@ -88,21 +93,25 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
                     if ( $post_image ){
                         $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
                     } else {
-                        $menu_post_image = '<img src="' . get_template_directory_uri() . '/images/default-image.png" alt="' . $post_title . '" />';
+                        // $menu_post_image = '<div class="image-wrap"></div>';
+                        $menu_post_image = '';
                     }
                     
-                    $item_output .= '
-                            <li>
-                                <figure>
-                                    <a href="'  .$post_link . '">' . $menu_post_image . '</a>
-                                    <figcaption><a href="' . $post_link . '">' . $post_title . '</a></figcaption>
-                                </figure>
-                            </li>';
+                    $item_output .= 
+                            '<div class="grid__item  one-fifth">' .
+                                '<article class="article article--billboard-small">' .
+                                    '<div class="image-wrap">' . $menu_post_image . '</div>' .
+                                    '<h2 class="article__title article--billboard-small__title">' .
+                                        '<div class="hN">' . $post_title . '</div>' .
+                                    '</h2>' .
+                                    '<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
+                                '</article>'.
+                            '</div>';
                     
                 endforeach;
                 wp_reset_query();
                 
-            $item_output .= '</ul>';
+            $item_output .= '</div></div>';
         }
 
         // build html
