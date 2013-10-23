@@ -1,5 +1,5 @@
 <?php
-require_once ABSPATH . 'wp-admin/includes/nav-menu.php';
+require_once( ABSPATH . 'wp-admin/includes/nav-menu.php' );
 
 if ( !class_exists( "WPGrade_Bucket_Walker_Nav_Menu_Edit" ) && class_exists( 'Walker_Nav_Menu_Edit' ) ):
 
@@ -30,7 +30,7 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		$newHtml = '';
 		
 		// now let's add the megamenu layout select box but only for the first level
-		if ($depth == 0) {
+		if ($depth == 0 && $item->object == 'category') {
 		
 			// fetch previously saved meta for the post (menu_item is just a post type)
 			$current_val = esc_attr( get_post_meta( $menu_item_id, 'wpgrade_megamenu_layout', TRUE ) );

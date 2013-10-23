@@ -1,21 +1,30 @@
 <?php
-
+require_once( ABSPATH . WPINC . '/nav-menu-template.php' );
 /**
  * Create a walker which will add a class to items with submenus
  * More http://stackoverflow.com/questions/3558198/php-wordpress-add-arrows-to-parent-menus
  */
-class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
+if ( !class_exists( "WPGrade_Bucket_Walker_Nav_Menu" ) && class_exists( 'Walker_Nav_Menu' ) ):
+
+class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
     function start_lvl(&$output, $depth = 0, $args = array()) {
         $output .= "<ul class=\"site-navigation__sub-menu\">";
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
-        $output .= "</ul>";  
+        $output .= "</ul>"; 
+		
+		//close the wrapper for the megamenu
+		$output .= '</div>';
     }
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
         $id_field = $this->db_fields['id'];
+		
+		// check whether there are children for the given ID
+        $element->hasChildren = isset($children_elements[$element->$id_field]) && !empty($children_elements[$element->$id_field]);
+		
         if ( ! empty($children_elements[$element->$id_field])) {
             $element->classes[] = 'menu-item--parent';
         }
@@ -67,55 +76,70 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 			);
 
 
-            echo '<!--';
-            print_r($item);
-            echo '-->';
-
-
+//            echo '<!--';
+//            print_r($item);
+//            echo '-->';
+		
+		//the megamenu wrapper
+		$item_output .= '<div class="megamenu_wrapper">';
+		
         if ($depth == 0 && $item->object == 'category') {
-
+			
             $cat = $item->object_id;
+			
+			//lets get the meta associated with the menu item to see what layout to use
+			$menu_layout = esc_attr( get_post_meta( $item->ID, 'wpgrade_megamenu_layout', TRUE ) );
             
-            $item_output .= '<div class="sub-menu__posts"><div class="grid  grid--thin">';
-                
-                //$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
-            
-                global $post;
-                $post_args = array( 'numberposts' => 5, 'offset'=> 0, 'category' => $cat );
-                $menuposts = get_posts( $post_args );
-                
-                foreach( $menuposts as $post ) : setup_postdata( $post );
-                
-                    $post_title = get_the_title();
-                    $post_link = get_permalink();
-                    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
-                    
-                    if ( $post_image ){
-                        $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
-                    } else {
-                        // $menu_post_image = '<div class="image-wrap"></div>';
-                        $menu_post_image = '';
-                    }
-                    
-                    $item_output .= 
-                            '<div class="grid__item  one-fifth">' .
-                                '<article class="article article--billboard-small">' .
-                                    '<div class="image-wrap">' . $menu_post_image . '</div>' .
-                                    '<h2 class="article__title article--billboard-small__title">' .
-                                        '<div class="hN">' . $post_title . '</div>' .
-                                    '</h2>' .
-                                    '<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
-                                '</article>'.
-                            '</div>';
-                    
-                endforeach;
-                wp_reset_query();
-                
-            $item_output .= '</div></div>';
-        }
+			if (!empty($menu_layout) && $menu_layout == 'latest_posts') {
+				
+				$item_output .= '<div class="sub-menu__posts"><div class="grid  grid--thin">';
 
-        // build html
+				//$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
+
+				global $post;
+
+				//if the menu has children then pull fewer posts
+				if ($item->hasChildren) {
+					$post_args = array( 'numberposts' => 4, 'offset'=> 0, 'category' => $cat );
+				} else {
+					$post_args = array( 'numberposts' => 5, 'offset'=> 0, 'category' => $cat );
+				}
+				$menuposts = get_posts( $post_args );
+
+				foreach( $menuposts as $post ) : setup_postdata( $post );
+
+					$post_title = get_the_title();
+					$post_link = get_permalink();
+					$post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+
+					if ( $post_image ){
+						$menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+					} else {
+						// $menu_post_image = '<div class="image-wrap"></div>';
+						$menu_post_image = '';
+					}
+
+					$item_output .= 
+							'<div class="grid__item  one-fifth">' .
+								'<article class="article article--billboard-small">' .
+									'<div class="image-wrap">' . $menu_post_image . '</div>' .
+									'<h2 class="article__title article--billboard-small__title">' .
+										'<div class="hN">' . $post_title . '</div>' .
+									'</h2>' .
+									'<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
+								'</article>'.
+							'</div>';
+
+				endforeach;
+				wp_reset_query();
+
+				$item_output .= '</div></div>';
+			}
+        }
+		
+		// build html
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+		
     }
 
     function end_el(&$output, $item, $depth=0, $args=array()) {  
@@ -123,3 +147,5 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
 } # class
+
+endif;
