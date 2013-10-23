@@ -35,7 +35,7 @@
 			var res = null;
 			var stepNumber = 0;
 			var numberOfSteps = 10;
-console.log(me);
+
 			//this is the ajax queue
 			var qInst = $.qjax({
 				timeout: 3000,
