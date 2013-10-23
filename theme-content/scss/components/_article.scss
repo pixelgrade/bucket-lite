@@ -85,7 +85,8 @@
 
     .article--list__title {
         @extend .article__title;
-        @include rem(padding, $_u4 $_u $_u4 $_u2);
+        @include rem(padding, 3px $_u 3px $_u2);
+        @include rem(min-height, 54px);
         background-color: #f2edeb;
         color: black;
     }

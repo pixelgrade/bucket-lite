@@ -1014,7 +1014,6 @@
 
         initVideos();
         footerWidgetsTitles();
-        popularPostsWidget();
         // if blog archive
         salvattore();
         royalSliderInit();
@@ -1057,7 +1056,7 @@
     /* ====== ON WINDOW LOAD ====== */
 
     $(window).load(function(){
-        $('html').removeClass('loading');
+        popularPostsWidget();
     });
 
 
