@@ -8,19 +8,45 @@
 }
 
 .navigation--top {
-
     a {
         color: #a6a1a1;
     }
 }
 
-.navigation--main {
-
-    a {
-        color: white;
-    }
+.navigation--main a{
+    color: white;
 }
 
+@include media(to hand) {
+    .navigation{
+        background-color: transparent;
+    }
+
+    .site-navigation--header{
+
+        .menu-item{
+            border-bottom: 1px solid $light;
+
+            &.current-menu-item,
+            &.current-menu-ancestor,
+            &.current-menu-parent{
+                a{
+                    color: $red;
+                }
+            }            
+        }
+
+        .menu-link{
+            color: black;
+            @include rem(padding, $_u2 0 $_u2 $_u2);
+
+            &:hover, &:focus, &:active {
+                color: white;
+                background: $light;
+            }            
+        }
+    }
+}
 
 
 /*ul*/.site-navigation--main, .translation-bar {
@@ -48,6 +74,15 @@
         }
     }
 
+
+
+
+
+
+/*----------------------------------------*\
+    $SUBMENUS
+\*----------------------------------------*/
+
 .site-navigation__sub-menu {
     @extend .nav;
     @extend .nav--stacked;
@@ -65,18 +100,25 @@
     }
 }
 
+
+
+
+
+
 .site-navigation--top a, .translation-bar a{
     @include font-size(12px);
 }
 
 .site-navigation--header .menu-item--main{
-
     &:hover, &:focus, &:active {
         color: white;
         background: $gray;
-        border-bottom: 0 solid $red;
-        @include rem(border-bottom-width, 5px);
-        @include rem(margin-bottom, -5px);   
+
+        @include media(from hand) {
+            border-bottom: 0 solid $red;
+            @include rem(border-bottom-width, 5px);
+            @include rem(margin-bottom, -5px);   
+        }
     }    
 }
 
@@ -116,3 +158,159 @@
 .translation-bar-container{
     text-align: right;
 }
+
+
+
+
+
+/*----------------------------------------*\
+    $MOBILE NAVIGATION
+\*----------------------------------------*/
+@include media(to hand) {
+    #page{
+        overflow: hidden;
+    }
+
+    .header{
+        position: absolute;
+        width: 100%;
+    }
+
+    .site-header{
+        height: 4rem;
+    }
+
+    .navigation--top{
+        display: none;
+    }
+
+    .header-bar-container{
+        display: none;
+    }
+
+    .site-navigation--main{
+        > li{
+            display:list-item;
+
+            > a{
+                display:block;
+            }
+        }        
+    }
+
+    .site-navigation--header{
+        @include rem(margin-left, $_u);
+    }
+
+    .navigation.navigation--main{
+        left: 100%;
+        width: 75%;
+        height: 100%;
+        top: -4rem;
+        position: relative;
+    }
+
+    .container--main{
+        padding-top: 4.5rem;
+    }
+
+    .wrapper {
+        @include transition(left .25s ease-in-out);
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+
+        .navigation--is-visible & {
+            left: -75%;
+            right: 75%;
+            position: absolute;
+        }
+
+        @include media(from hand) {
+            left: 0 !important;
+            right: 0 !important;
+            position: relative;
+            @include transform(none !important);
+            @include transition(none !important);
+        }
+    }
+
+    .csstransforms3d {
+
+        .wrapper {
+            left: 0 !important;
+            right: 0 !important;
+            position: relative;
+            @include transition(transform .25s ease-in-out);
+        }
+    }
+
+    .csstransforms3d.navigation--is-visible {
+
+        .wrapper {
+            @include transform(translateX(-75%));
+        }
+    }    
+}
+
+.site-navigation__trigger {
+    display: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    @include transition(color 1s ease-in-out);
+
+    &:active, &:focus {
+        color: white;
+        @include transition(color .1s ease-in-out);
+    }
+
+    @include media(to hand) {
+        display: block;
+        @include rem(width, 3*$base-spacing-unit);
+        @include rem(height, 3*$base-spacing-unit);
+        position: absolute;
+        top: 0; right: 0;
+        @include font-size(42px);
+        text-align: center;
+        cursor: pointer;
+        color: #807f7d;
+    }
+
+    i {
+        display: block;
+        position: absolute;
+        @include rem(top, $half-spacing-unit + 2px);
+        @include rem(left, $half-spacing-unit);
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+        overflow: hidden;
+    } 
+
+    .icon-reorder {
+        @include transition(opacity .2s, transform .3s);
+    }
+
+    .icon-remove {
+        @include transition(opacity .2s, transform .4s);
+        @include transform(rotate(45deg));
+        @include opacity(0);
+    }
+}
+
+.navigation--is-visible {
+    #page{
+        overflow: visible;
+    }
+
+    .icon-remove {
+        @include transform(none);
+        @include opacity(1);
+    }
+
+    .icon-reorder {
+        @include transform(rotate(-45deg));
+        @include opacity(0);
+    }
+}
+
+
+
+

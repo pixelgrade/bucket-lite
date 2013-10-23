@@ -1,4 +1,4 @@
-<header class="header--type1">
+<header class="header header--type1">
 
     <nav class="navigation  navigation--top">
 
@@ -21,7 +21,6 @@
     </nav>
 
     <div class="container">
-
         <div class="site-header grid">
             <div class="site-header__branding grid__item one-half">
 
@@ -49,7 +48,7 @@
                 <?php endif; ?>
 
             </div><!--
-            --><div class="grid__item one-half split">
+            --><div class="header-bar-container grid__item one-half split">
                 <ul class="header-bar nav">
                     <li class="search-item"><?php get_search_form(); ?></li>
                     <li class="social-item">
@@ -72,7 +71,9 @@
             </div>
 
         </div>
-        
+
+        <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>        
+
         <hr class="nav-top-separator separator separator--striped flush--bottom" />
         <nav class="navigation  navigation--main">
 
