@@ -76,12 +76,12 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 
             $cat = $item->object_id;
             
-            $item_output .= '<div class="sub-menu__posts"><div class="grid  grid--narrow">';
+            $item_output .= '<div class="sub-menu__posts"><div class="grid  grid--thin">';
                 
                 //$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
             
                 global $post;
-                $post_args = array( 'numberposts' => 3, 'offset'=> 0, 'category' => $cat );
+                $post_args = array( 'numberposts' => 5, 'offset'=> 0, 'category' => $cat );
                 $menuposts = get_posts( $post_args );
                 
                 foreach( $menuposts as $post ) : setup_postdata( $post );
