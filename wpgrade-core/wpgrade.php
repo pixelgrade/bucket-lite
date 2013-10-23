@@ -106,6 +106,19 @@ class wpgrade {
 	}
 
 	/**
+	 * Get the image src
+	 * @return mixed
+	 */
+	static function option_image_src($option, $default = null) {
+		$image = self::$options_handler->get($option, $default);
+
+		if ( isset($image['url']) ) {
+			return $image['url'];
+		}
+		return false;
+	}
+
+	/**
 	 * @return WPGradeOptions current options handler
 	 */
 	static function options() {

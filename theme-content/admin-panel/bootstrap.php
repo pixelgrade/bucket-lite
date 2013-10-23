@@ -40,7 +40,8 @@
 	 * Enquue our custom css on admin panel
 	 */
 	function wpgrade_add_admin_custom_style() {
-		wp_register_style(
+
+		wp_enqueue_style(
 			'redux-custom-css',
 			wpgrade::resourceuri('css/admin/admin-panel.css'),
 			array(), // Be sure to include redux-css so it's appended after the core css is applied
@@ -53,11 +54,11 @@
 			wpgrade::resourceuri('js/admin/admin-panel.js'),
 			array('jquery', 'redux-js','wp-ajax-response' ), // Be sure to include redux-css so it's appended after the core css is applied
 			time(),
-			'all'
+			true
 		);
 	}
 	// This example assumes your opt_name is set to redux, replace with your opt_name value
-	add_action('after_setup_theme', 'wpgrade_add_admin_custom_style',0);
+	add_action('redux-enqueue-'. wpgrade::shortname() . '_options', 'wpgrade_add_admin_custom_style',0);
 
 	// register callbacks
 	require $currentpath.'callbacks'.EXT;

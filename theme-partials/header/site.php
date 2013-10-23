@@ -15,14 +15,14 @@
 
             <div class="site-header__branding">
 
-                <?php if (wpgrade::option('main_logo')):
+                <?php if (wpgrade::option_image_src('main_logo')):
 
                     $data_retina_logo = wpgrade::option('use_retina_logo'); ?>
 
                     <div class="site-logo  site-logo--image <?php if ($data_retina_logo) echo "site-logo--image-2x"; ?>">
                         <a class="site-home-link" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name') ?>">
-                            <?php $data_retina_logo = $data_retina_logo ? 'data-logo2x="'.wpgrade::option('retina_main_logo').'"' : ''; ?>
-                            <img src="<?php echo wpgrade::option('main_logo'); ?>" <?php echo $data_retina_logo; ?> rel="logo" alt="<?php echo get_bloginfo('name') ?>"/>
+                            <?php $data_retina_logo = $data_retina_logo ? 'data-logo2x="'.wpgrade::option_image_src('retina_main_logo').'"' : ''; ?>
+                            <img src="<?php echo wpgrade::option_image_src('main_logo'); ?>" <?php echo $data_retina_logo; ?> rel="logo" alt="<?php echo get_bloginfo('name') ?>"/>
                         </a>
                     </div>
 
