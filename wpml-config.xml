@@ -1,12 +1,4 @@
 <wpml-config>
-    <custom-types>
-        <custom-type translate="1">portfolio</custom-type>
-        <custom-type translate="1">homepage_slide</custom-type>
-        <custom-type translate="1">testimonial</custom-type>
-    </custom-types>
-    <taxonomies>
-        <taxonomy translate="1">portfolio_cat</taxonomy>
-    </taxonomies>
 	<admin-texts>
 		<key name="bucket_options">
 			<key name="footer_twitter_title" />
