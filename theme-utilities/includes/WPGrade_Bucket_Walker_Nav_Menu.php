@@ -13,10 +13,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
-        $output .= "</ul>"; 
-		
-		//close the wrapper for the megamenu
-		$output .= '</div>';
+        $output .= "</ul>";
     }
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
@@ -81,7 +78,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 //            echo '-->';
 		
 		//the megamenu wrapper
-		$item_output .= '<div class="megamenu_wrapper">';
+		if ($depth == 0) {
+			$item_output .= '<div class="megamenu_wrapper">';
+		}
 		
         if ($depth == 0 && $item->object == 'category') {
 			
@@ -92,7 +91,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             
 			if (!empty($menu_layout) && $menu_layout == 'latest_posts') {
 				
-				$item_output .= '<div class="sub-menu__posts"><div class="grid  grid--thin">';
+				$item_output .= '<div class="sub-menu__posts megamenu_extra"><div class="grid  grid--thin">';
 
 				//$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
 
@@ -142,8 +141,38 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 		
     }
 
-    function end_el(&$output, $item, $depth=0, $args=array()) {  
-        $output .= "</li>";  
+    function end_el(&$output, $item, $depth=0, $args=array()) {
+		
+		//close the wrapper for the megamenu
+		if ($depth == 0) {
+			$output .= '</div>';
+		}
+		
+        $output .= "</li>";
+		
+		//parse the HTML and find the megamenu posts and switch them with the submenus so those are first
+		if ($depth == 0) {
+			if ( ! class_exists( 'phpQuery') ) {
+				// load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
+				require_once 'phpQuery-onefile.php';
+			}
+
+			$_doc = phpQuery::newDocumentHTML( $output );
+			if ($_doc->find('.megamenu_wrapper:last')->html() != '') {
+				$menuposts = $_doc->find('.megamenu_wrapper:last .megamenu_extra')->htmlOuter();
+				
+				if (!empty($menuposts) && $_doc->find('.megamenu_wrapper:last .site-navigation__sub-menu')->length()) {
+					$_doc->find('.megamenu_wrapper:last .megamenu_extra')->remove();
+					$_doc->find('.megamenu_wrapper:last .site-navigation__sub-menu')->after($menuposts);
+				}
+			} else {
+				//the megamenu wrapper is empty
+				$_doc->find('.megamenu_wrapper:last')->remove();
+			}
+			
+			// swap the $output
+			$output = $_doc->html();
+		}
     }
 
 } # class
