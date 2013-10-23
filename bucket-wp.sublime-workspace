@@ -8,8 +8,20 @@
 				"margin-left"
 			],
 			[
+				"ma",
+				"max-height"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
 				"pad",
-				"padding-left"
+				"padding"
+			],
+			[
+				"back",
+				"background"
 			],
 			[
 				"mi",
@@ -80,10 +92,6 @@
 				"cursor"
 			],
 			[
-				"padd",
-				"padding"
-			],
-			[
 				"yar",
 				"yarpp_active"
 			],
@@ -138,10 +146,6 @@
 			[
 				"min",
 				"min-height"
-			],
-			[
-				"back",
-				"background-color"
 			],
 			[
 				"comme",
@@ -218,10 +222,6 @@
 			[
 				"border",
 				"border-radius"
-			],
-			[
-				"ma",
-				"margin-bottom"
 			],
 			[
 				"ifo",
@@ -504,18 +504,18 @@
 	"buffers":
 	[
 		{
-			"file": "header.php",
+			"file": "theme-content/scss/components/_header.scss",
 			"settings":
 			{
-				"buffer_size": 891,
+				"buffer_size": 3839,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "theme-content/scss/components/_header.scss",
+			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2470,
+				"buffer_size": 974,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "theme-partials/header/site_type1.php",
 			"settings":
 			{
-				"buffer_size": 3373,
+				"buffer_size": 3464,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,31 @@
 			"file": "theme-partials/header/site_type3.php",
 			"settings":
 			{
-				"buffer_size": 2733,
+				"buffer_size": 2833,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/scss/_general.scss",
+			"settings":
+			{
+				"buffer_size": 2297,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/vendor/inuit.css/generic/_widths.scss",
+			"settings":
+			{
+				"buffer_size": 4586,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme-content/admin-panel/redux-sections.php",
+			"settings":
+			{
+				"buffer_size": 26481,
 				"line_ending": "Windows"
 			}
 		},
@@ -555,7 +579,7 @@
 			"file": "theme-content/scss/components/_navigation.scss",
 			"settings":
 			{
-				"buffer_size": 1592,
+				"buffer_size": 2043,
 				"line_ending": "Windows"
 			}
 		},
@@ -563,7 +587,7 @@
 			"file": "theme-partials/header/site_type2.php",
 			"settings":
 			{
-				"buffer_size": 3002,
+				"buffer_size": 3098,
 				"line_ending": "Windows"
 			}
 		}
@@ -616,6 +640,11 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/header.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/shortcodes/_separators.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-partials/wpgrade-partials/inline-custom-css.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/wpgrade-core/resources/views/inline-custom-css.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/style.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/vendor/inuit.css/objects/_nav.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/admin-panel/redux-sections.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-callbacks/activation-hooks.php",
@@ -738,12 +767,7 @@
 		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/templates/post-templates/single-head-audio.php",
 		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/templates/post-templates/single-head-video.php",
 		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/404.php",
-		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/library/scss/components/_layout.scss",
-		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/template-front-page.php",
-		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/library/scss/components/_side.scss",
-		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/templates/post-templates/blog-head-audio.php",
-		"/E/uniserver/www/inuittest/css/inuit.css/generic/_push.scss",
-		"/E/uniserver/www/inuittest/css/_vars.scss"
+		"/E/uniserver/www/cityhub/wp-content/themes/cityhub/library/scss/components/_layout.scss"
 	],
 	"find":
 	{
@@ -827,6 +851,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"48px",
+			"        @",
+			"@include rem(padding, 1.2*$_u4 0);",
 			"pull",
 			"pull-left",
 			"wpgrade_top_nav",
@@ -951,10 +978,7 @@
 			"thumb_orient",
 			"portfolio",
 			"lens_gallery",
-			"Gallery Detail",
-			"'portfolio_gallery'",
-			"portfolio",
-			"lens_portfolio_categories"
+			"Gallery Detail"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -995,49 +1019,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "header.php",
-					"settings":
-					{
-						"buffer_size": 891,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								890,
-								890
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "theme-content/scss/components/_header.scss",
 					"settings":
 					{
-						"buffer_size": 2470,
+						"buffer_size": 3839,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2403,
-								2403
+								2657,
+								2657
 							]
 						],
 						"settings":
@@ -1047,7 +1045,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1451.0,
+						"translation.y": 2399.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "header.php",
+					"settings":
+					{
+						"buffer_size": 974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1083,15 +1107,15 @@
 					"file": "theme-partials/header/site_type1.php",
 					"settings":
 					{
-						"buffer_size": 3373,
+						"buffer_size": 3464,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								458,
-								458
+								3180,
+								3255
 							]
 						],
 						"settings":
@@ -1100,8 +1124,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 108.0,
-						"translation.y": 0.0,
+						"translation.x": 42.0,
+						"translation.y": 610.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1137,15 +1161,15 @@
 					"file": "theme-partials/header/site_type3.php",
 					"settings":
 					{
-						"buffer_size": 2733,
+						"buffer_size": 2833,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1222,
-								1222
+								2531,
+								2531
 							]
 						],
 						"settings":
@@ -1154,8 +1178,90 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
+						"translation.x": 72.0,
+						"translation.y": 570.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "theme-content/scss/_general.scss",
+					"settings":
+					{
+						"buffer_size": 2297,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								872,
+								795
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "theme-content/vendor/inuit.css/generic/_widths.scss",
+					"settings":
+					{
+						"buffer_size": 4586,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2206,
+								2194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 627.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "theme-content/admin-panel/redux-sections.php",
+					"settings":
+					{
+						"buffer_size": 26481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6237,
+								6237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2242.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1167,19 +1273,19 @@
 			"sheets":
 			[
 				{
-					"buffer": 6,
+					"buffer": 9,
 					"file": "theme-content/scss/components/_navigation.scss",
 					"settings":
 					{
-						"buffer_size": 1592,
+						"buffer_size": 2043,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1518,
-								1518
+								1768,
+								1736
 							]
 						],
 						"settings":
@@ -1189,25 +1295,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 587.0,
+						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 10,
 					"file": "theme-partials/header/site_type2.php",
 					"settings":
 					{
-						"buffer_size": 3002,
+						"buffer_size": 3098,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								225,
-								192
+								2616,
+								2616
 							]
 						],
 						"settings":
@@ -1216,8 +1322,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 35.0,
+						"translation.y": 337.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1253,7 +1359,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.564241046049,
 			1.0
 		],
 		"rows":
@@ -1274,16 +1380,28 @@
 		"selected_items":
 		[
 			[
+				"redu",
+				"theme-content/admin-panel/redux-sections.php"
+			],
+			[
+				"wid",
+				"theme-content/vendor/inuit.css/generic/_widths.scss"
+			],
+			[
+				"custom",
+				"theme-partials/wpgrade-partials/inline-custom-css.php"
+			],
+			[
+				"gener",
+				"theme-content/scss/_general.scss"
+			],
+			[
 				"nav",
 				"theme-content/scss/components/_navigation.scss"
 			],
 			[
 				"header",
 				"theme-content/scss/components/_header.scss"
-			],
-			[
-				"redu",
-				"theme-content/admin-panel/redux-sections.php"
 			],
 			[
 				"activ",
@@ -1340,10 +1458,6 @@
 			[
 				"rgba",
 				"theme-content/scss/_vendor/inuit/generic/_brand.scss"
-			],
-			[
-				"custom",
-				"wpgrade-core/resources/views/inline-custom-css.php"
 			],
 			[
 				"anima",
@@ -1776,14 +1890,6 @@
 			[
 				"flickr",
 				"wp-content/themes/citylife/library/scss/widgets/_flickr.scss"
-			],
-			[
-				"portf",
-				"library/scss/components/_portfolio.scss"
-			],
-			[
-				"divide",
-				"library/scss/shortcodes/_divider.scss"
 			]
 		],
 		"width": 0.0

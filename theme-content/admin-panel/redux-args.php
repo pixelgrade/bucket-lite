@@ -1,4 +1,6 @@
-<?php return array
+<?php
+
+return array
 	(
 		// setting dev mode to true allows you to view the class settings/info in
 		// the panel
@@ -39,19 +41,19 @@
 					(
 						'link' => 'http://twitter.com/pixelgrade',
 						'title' => __('Follow me on Twitter', wpgrade::textdomain()),
-						'img' => Redux_OPTIONS_URL.'img/social/Twitter.png'
+						'img' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/social/Twitter.png'
 					),
 				'linked_in' => array
 					(
 						'link' => 'http://www.linkedin.com/company/pixelgrade-media',
 						'title' => __('Find me on LinkedIn', wpgrade::textdomain()),
-						'img' => Redux_OPTIONS_URL.'img/social/LinkedIn.png'
+						'img' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/social/LinkedIn.png'
 					),
 				'facebook' => array
 					(
 						'link' => 'http://www.facebook.com/PixelGradeMedia',
 						'title' => __('Find me on LinkedIn', wpgrade::textdomain()),
-						'img' => Redux_OPTIONS_URL.'img/social/Facebook.png'
+						'img' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/social/Facebook.png'
 					),
 			),
 
@@ -71,7 +73,7 @@
 		'opt_name' => wpgrade::shortname().'_options',
 
 		// set a custom menu icon
-		'menu_icon' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'options/img/theme_options.png',
+		'menu_icon' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/theme_options.png',
 
 		// set a custom title for the options page
 		'menu_title' => __('Theme Options', wpgrade::textdomain()), # default: Options
