@@ -10,7 +10,7 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= "<ul class=\"site-navigation__sub-menu\">";
     }
 
-    function end_lvl(&$output, $depth=0, $args=array()) {  
+    function end_lvl(&$output, $depth = 0, $args = array()) {  
         $output .= "</ul>";  
     }
 
@@ -65,6 +65,54 @@ class WPGrade_Walker_Nav_Menu extends Walker_Nav_Menu {
 				$args['link_after'],
 				$args['after']
 			);
+
+
+            echo '<!--';
+            print_r($item);
+            echo '-->';
+
+
+        if ($depth == 0 && $item->object == 'category') {
+
+            $cat = $item->object_id;
+            
+            $item_output .= '<div class="sub-menu__posts"><div class="grid  grid--narrow">';
+                
+                //$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
+            
+                global $post;
+                $post_args = array( 'numberposts' => 3, 'offset'=> 0, 'category' => $cat );
+                $menuposts = get_posts( $post_args );
+                
+                foreach( $menuposts as $post ) : setup_postdata( $post );
+                
+                    $post_title = get_the_title();
+                    $post_link = get_permalink();
+                    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                    
+                    if ( $post_image ){
+                        $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+                    } else {
+                        // $menu_post_image = '<div class="image-wrap"></div>';
+                        $menu_post_image = '';
+                    }
+                    
+                    $item_output .= 
+                            '<div class="grid__item  one-fifth">' .
+                                '<article class="article article--billboard-small">' .
+                                    '<div class="image-wrap">' . $menu_post_image . '</div>' .
+                                    '<h2 class="article__title article--billboard-small__title">' .
+                                        '<div class="hN">' . $post_title . '</div>' .
+                                    '</h2>' .
+                                    '<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
+                                '</article>'.
+                            '</div>';
+                    
+                endforeach;
+                wp_reset_query();
+                
+            $item_output .= '</div></div>';
+        }
 
         // build html
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

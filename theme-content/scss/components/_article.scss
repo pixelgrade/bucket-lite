@@ -66,34 +66,36 @@
     .badge {
         background-color: #807d7c;
     }
-
-    &:hover {
-
-        .article--list__title {
-            @extend .article__title--inverse;
-        }
-
-        img {
-            @include filter(none);
-        }
-
-        .badge {
-            background-color: $red;
-        }
-    }
 }
 
     .article--list__title {
         @extend .article__title;
-        @include rem(padding, $_u4 $_u $_u4 $_u2);
+        @include rem(padding, 3px $_u 3px $_u2);
+        @include rem(min-height, 54px);
         background-color: #f2edeb;
         color: black;
     }
 
     .article--list__link {
-        margin-bottom: .5em;
+        @extend .cf;
         display: block;
         position: relative;
+        @include rem(margin-bottom, $_u2);
+
+        &:hover {
+
+            .article--list__title {
+                @extend .article__title--inverse;
+            }
+
+            img {
+                @include filter(none);
+            }
+
+            .badge {
+                background-color: $red;
+            }
+        }
     }
 
 .article__meta-links {

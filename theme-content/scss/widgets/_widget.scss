@@ -3,11 +3,19 @@
 \*---------------------------------*/
 
 .widget {
+
+    select {
+        max-width: 100%;
+    }
+}
+
+.widget--main {
+    @include rem(margin-bottom, $_u);
 }
 
 .widget--sidebar__title {
     @extend .heading;
-    @extend .heading--sidebar;
+    @extend .heading--sidebar; 
 }
 
 

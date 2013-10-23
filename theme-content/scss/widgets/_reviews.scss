@@ -38,9 +38,19 @@
 }
 
 .review__title {
-    margin-top: .3em;
+    display: inline-block;
     font-family: $heading-font-family;
     font-weight: normal;
     text-transform: uppercase;
     color: white;
+
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+
+    // ugly
+    width: 100%;
+    @include rem(margin-right, -$_u);
+    @include rem(padding-right, $_u);
 }
