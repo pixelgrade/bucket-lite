@@ -66,21 +66,6 @@
     .badge {
         background-color: #807d7c;
     }
-
-    &:hover {
-
-        .article--list__title {
-            @extend .article__title--inverse;
-        }
-
-        img {
-            @include filter(none);
-        }
-
-        .badge {
-            background-color: $red;
-        }
-    }
 }
 
     .article--list__title {
@@ -96,6 +81,21 @@
         display: block;
         position: relative;
         @include rem(margin-bottom, $_u2);
+
+        &:hover {
+
+            .article--list__title {
+                @extend .article__title--inverse;
+            }
+
+            img {
+                @include filter(none);
+            }
+
+            .badge {
+                background-color: $red;
+            }
+        }
     }
 
 .article__meta-links {
