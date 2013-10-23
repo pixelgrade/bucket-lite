@@ -47,8 +47,10 @@
     -webkit-backface-visibility: hidden;
     @include translate3d(0,0,0);
     @include rem(margin-right, $_u);
+    z-index: 20;
 
     &.hide {
         opacity: 0;
+        z-index: 10;
     }
 }
