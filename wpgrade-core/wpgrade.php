@@ -106,6 +106,19 @@ class wpgrade {
 	}
 
 	/**
+	 * Get the image src
+	 * @return mixed
+	 */
+	static function option_image_src($option, $default = null) {
+		$image = self::$options_handler->get($option, $default);
+
+		if ( isset($image['url']) ) {
+			return $image['url'];
+		}
+		return false;
+	}
+
+	/**
 	 * @return WPGradeOptions current options handler
 	 */
 	static function options() {
@@ -887,7 +900,7 @@ class wpgrade {
 			require self::corepath().'vendor/redux2/options/defaults'.EXT;
 		}
 		elseif ($modulename == 'redux3') {
-			require self::corepath().'vendor/redux3/options/defaults'.EXT;
+			require self::corepath().'vendor/redux3/framework'.EXT;
 		}
 		else { // unsupported module
 			die('Unsuported core module: '.$modulename);

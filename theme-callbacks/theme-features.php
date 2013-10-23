@@ -47,17 +47,17 @@ add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
 
 function wpgrade_add_desktop_icons(){
 
-	if ( wpgrade::option( 'favicon' ) ) {
-		echo "<link rel='icon' href=\"".wpgrade::option( 'favicon' )."\" >\n";
+	if ( wpgrade::option_image_src( 'favicon' ) ) {
+		echo "<link rel='icon' href=\"".wpgrade::option_image_src( 'favicon' )."\" >\n";
 	}
 
-	if ( wpgrade::option( 'apple_touch_icon' ) ) {
-		echo "<link rel=\"apple-touch-icon\" href=\"".wpgrade::option( 'apple_touch_icon' )."\" >\n";
+	if ( wpgrade::option_image_src( 'apple_touch_icon' ) ) {
+		echo "<link rel=\"apple-touch-icon\" href=\"".wpgrade::option_image_src( 'apple_touch_icon' )."\" >\n";
 	}
 
-	if ( wpgrade::option( 'metro_icon' ) ) {
+	if ( wpgrade::option_image_src( 'metro_icon' ) ) {
 		echo "<meta name=\"msapplication-TileColor\" content=\"#f01d4f\">\n";
-		echo "<meta name=\"msapplication-TileImage\" content=\"".wpgrade::option( 'metro_icon' )."\" >\n";
+		echo "<meta name=\"msapplication-TileImage\" content=\"".wpgrade::option_image_src( 'metro_icon' )."\" >\n";
 	}
 
 }

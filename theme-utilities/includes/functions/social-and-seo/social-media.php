@@ -40,8 +40,8 @@
 					}
 					else { // ! $files (use a default image)
 						// check if we have one uploaded in the theme options
-						if (wpgrade::option('social_share_default_image')) {
-							$socialimg = wpgrade::option('social_share_default_image');
+						if (wpgrade::option_image_src('social_share_default_image')) {
+							$socialimg = wpgrade::option_image_src('social_share_default_image');
 						}
 						else { // ! social_share_default_image (use the default thumb gif)
 							$socialimg = wpgrade::uri('/theme-utilities/assets/social-and-seo/nothumb.png');

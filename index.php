@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div id="main" class="container container--main">
 
     <div class="grid">
 

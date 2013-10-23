@@ -1035,6 +1035,20 @@
             $('html').toggleClass('navigation--is-visible');
         }); 
 
+        // $('.js-nav-trigger').on('click', function(e) {
+        //     var hh = $('.header').height(),
+        //         ch = $('.content').height(),
+        //         max = Math.max(wh,ch,hh);
+        //         console.log(max);
+        //     if ($('html').hasClass('navigation--is-visible')) {
+        //         $('#page').css({'height': ''});
+        //     } else {
+        //         $('#page').css({'height': max});
+        //     }
+
+        //     $('html').toggleClass('navigation--is-visible');
+        // }); 
+
     };
 
     function eventHandlers(){};
