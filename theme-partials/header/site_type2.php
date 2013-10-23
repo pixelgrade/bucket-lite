@@ -1,4 +1,4 @@
-<header class="header--type2">
+<header class="header header--type2">
 
     <nav class="navigation  navigation--top">
 
@@ -68,6 +68,8 @@
             </div>
 
         </div>
+
+        <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>                
         
         <hr class="nav-top-separator separator separator--striped flush--bottom" />
         <nav class="navigation  navigation--main">

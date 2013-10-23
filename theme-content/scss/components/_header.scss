@@ -105,10 +105,14 @@
     display: none;
 }
 
-.site-navigation--header{
-    border-bottom: 0 solid $dark;
-    @include rem(border-bottom-width, 5px);        
+
+@include media(from hand) {
+    .site-navigation--header{
+        border-bottom: 0 solid $dark;
+        @include rem(border-bottom-width, 5px);        
+    }    
 }
+
 
 .site-home-link{
     display: block;
@@ -156,8 +160,10 @@
         background: none;        
     }
 
-    .nav-top-separator{
-        display: block;
+    @include media(from hand) {
+        .nav-top-separator{
+            display: block;
+        }
     }
 
     .navigation--main a {
@@ -179,39 +185,5 @@
         background: none;
     }    
 }
-
-
-
-
-
-/*----------------------------------------*\
-    $HEADER INVERSE
-\*----------------------------------------*/
-
-.header-inverse{ 
-    .site-navigation li:hover{
-        background: none;
-    }
-
-
-    //Type 1
-
-
-    //Type 2
-    .header--type2, .header--type3 {
-        .navigation--top{
-            background: none;
-
-            a{
-                color: black;
-            }
-        }
-
-        .social-icon-link {
-            background: none;
-        }
-    }
-}
-
 
 

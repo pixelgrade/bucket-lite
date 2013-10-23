@@ -1092,20 +1092,30 @@ class wpgrade_popular_posts extends WP_Widget {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
 		} ?>
 
-		<ul class="popular-posts__time">
-			<?php foreach( $filter_links as $key => $val ): ?>
-				<li><a href="#" data-time="<?php echo $key; ?>" data-numberposts="<?php echo $number; ?>" data-thumb="<?php echo $thumb_size; ?>" data-tab="popular"><?php echo $val; ?></a></li>
+		<ul class="tabs__nav  popular-posts__time">
+			<?php
+                $index = 0;
+                foreach( $filter_links as $key => $val ): ?>
+				<li><a class="<?php echo $index++ == 0 ? 'current' : '' ?>" href="#<?php echo $key; ?>" data-time="<?php echo $key; ?>" data-numberposts="<?php echo $number; ?>" data-thumb="<?php echo $thumb_size; ?>" data-tab="popular"><?php echo $val; ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 
-		<?php
-		foreach( $filter_links as $key => $val ) {
-			echo '<ul class="tab-'. $key .'">';
-			echo self::showMostViewed( $number, $thumb_size, $key );
-			echo '</ul>';
-		}
+        <div class="tabs__content">
+    		<?php
+            $index = 0;
+    		foreach( $filter_links as $key => $val ) {
+                if ($index++ == 0) {
+                    $hidden = '';
+                } else {
+                    $hidden = 'hide';
+                }
+    			echo '<div class="tabs__pane '. $hidden .'" id="'. $key .'">';
+    			echo self::showMostViewed( $number, $thumb_size, $key );
+    			echo '</div>';
+    		} ?>
+        </div>
 
-		echo $after_widget;
+		<?php echo $after_widget;
 
 	}
 
@@ -1149,17 +1159,15 @@ class wpgrade_popular_posts extends WP_Widget {
 				$postImage = wpgrade_get_the_image($imageArgs, $p['id']);
 			} ?>
 			<article class="article  article--list  media">
-				<a href="#" class="article--list__link">
+				<a href="<?php echo $p['permalink']; ?>" title="<?php echo $p['title']; ?>" class="article--list__link">
 					<?php if ( !empty( $postImage['src'] ) ){ ?>
 						<div class="media__img  push-half--right">
-							<a class="post-thumb" href="<?php echo $p['permalink']; ?>"><img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" width="<?php echo $postImage['width']; ?>" height="<?php echo $postImage['height']; ?>" /></a>
+							<img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" width="<?php echo $postImage['width']; ?>" height="<?php echo $postImage['height']; ?>" />
 						</div>
 					<?php } ?>
 					<div class="media__body">
 						<div class="article__title  article--list__title">
-							<h5 class="hN">
-								<a class="item-title" title="<?php echo $p['title']; ?>" href="<?php echo $p['permalink']; ?>"><?php echo $p['title']; ?></a>
-							</h5>
+							<h5 class="hN"><?php echo $p['title']; ?></h5>
 						</div>
 					</div>
 					<div class="badge  badge--article  badge--article--list"><?php echo $i; ?></div>

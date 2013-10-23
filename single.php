@@ -20,7 +20,7 @@
             <?php get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
         </div>
 
-        <div class="grid__item  float--left  <?php echo $content_width; ?>">
+        <div class="grid__item  main  float--left  <?php echo $content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
 
