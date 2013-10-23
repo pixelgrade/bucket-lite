@@ -15,7 +15,7 @@
 
 .widget--sidebar__title {
     @extend .heading;
-    @extend .heading--sidebar; 
+    @extend .heading--sidebar;
 }
 
 
@@ -86,4 +86,8 @@
             display: none;
         }
     }
+}
+
+.widget--sidebar__title .rsswidget img {
+    display: none;
 }
