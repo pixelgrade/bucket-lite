@@ -98,7 +98,7 @@ if ($slides->have_posts()): ?>
             <div class="featured-area__article  article--big">
                 <?php
                 if (has_post_thumbnail()):
-                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
                     $image_ratio = $image[2] * 100/$image[1]; ?>
                     <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
@@ -128,7 +128,7 @@ if ($slides->have_posts()): ?>
 	                            <div class="media__img--rev  five-twelfths">
 	                                <?php
                                     if (has_post_thumbnail()):
-                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
                                         $image_ratio = $image[2] * 100/$image[1]; ?>
                                         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                                             <img src="<?php echo $image[0] ?>" />

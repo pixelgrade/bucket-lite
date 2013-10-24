@@ -43,7 +43,7 @@
             <?php 
             foreach ($attachments as $attachment):
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
-                $thumbimg = wp_get_attachment_image_src($attachment->ID, 'big');
+                $thumbimg = wp_get_attachment_image_src($attachment->ID, 'blog-big');
                 $attachment_fields = get_post_custom( $attachment->ID );
 
                 // check if this attachment has a video url

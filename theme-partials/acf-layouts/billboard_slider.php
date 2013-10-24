@@ -91,10 +91,11 @@ endswitch;
 $slides = new WP_Query( $query_args );
 $index = 0;
 $closed_group = true;
+
 if ($slides->have_posts()): ?>
 	<div class="billboard pixslider js-pixslider">
 	    <?php while($slides->have_posts()): $slides->the_post();
-
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
 			if ($index++ % 3 == 0):
                 if (!$closed_group):
                     echo '</div><div>';
@@ -104,7 +105,7 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                 <article class="article article--billboard">
                     <div class="image-wrap">
-                        <?php the_post_thumbnail(); ?>
+                        <img src="<?php echo $image[0] ?>" />
                     </div>
                     <div class="article__header article--billboard__header">
                         <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
@@ -117,7 +118,7 @@ if ($slides->have_posts()): ?>
 	        <?php else: ?>
 	            <article class="article article--billboard-small">
 	                <div class="image-wrap">
-	                    <?php the_post_thumbnail(); ?>
+	                    <img src="<?php echo $image[0] ?>" />
 	                </div>
 	                <h2 class="article__title article--billboard-small__title">
 	                    <div class="hN"><?php the_title(); ?></div>
