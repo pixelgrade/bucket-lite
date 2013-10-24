@@ -65,31 +65,99 @@
 // rename and @extend this
 
 /*ul*/.menu--list {
+    margin: 0;
+    list-style: none;
     @include rem(margin-top, -$_u2);
 
     > li {
         @include rem(padding, $_u2 0);
 
-        + li + li {
-            border-top: 1px solid #262525;
+        + li {
+            border-top: 1px solid #ddd;
             margin-top: -1px;
+
+            .site-footer & {
+                border-top-color: #262525;
+            }
+        }
+    }
+
+    &.two-cols {
+
+        > li + li {
+            border-top: 0;
+            margin-top: 0;
+        }
+
+        > li + li + li {
+            border-top: 1px solid #ddd;
+            margin-top: -1px;   
         }
     }
 }
 
-.widget_nav_menu {
+.widget_nav_menu, .widget_categories, .widget_meta {
     
     ul {
         @extend .menu--list;
         @extend .multi-list;
         @extend .two-cols;
+
+        ul {
+            display: none;
+        }
     }
+}
+
+.widget_archive, .widget_pages, .widget_recent_comments, .widget_rss, .widget_recent_posts {
 
     ul {
+        @extend .menu--list;
+
+        ul {
+            display: none;
+        }
+    }   
+}
+
+.widget--sidebar__title .rsswidget {
+
+    img {
         display: none;
     }
 }
 
-.widget--sidebar__title .rsswidget img {
-    display: none;
+.widget_rss .widget--footer__title .hN {
+    color: $red;
+}
+
+.widget {
+
+    .form-search {
+        position: relative;
+    }
+
+    .search-query {
+        width: 100%;
+        @include font-size(14px);
+        @include rem(padding, $_u4);
+        @include rem(padding-right, $_2u + $_u4);
+        border: 1px solid #ddd;
+    }
+
+    .search-submit {
+        position: absolute;
+        top: 0; right: 0;
+        border: 1px solid $dark;
+        @include font-size(14px);
+        @include rem(width, $_2u);
+        @include rem(padding, $_u4);
+        text-align: center;
+    }
+
+    select {
+        width: 100%;
+        @include rem(padding-left, $_u4);
+        @include rem(height, $_u + $_u2);
+    }
 }

@@ -45,6 +45,10 @@
     @include font-size(12px);
     @include rem(padding, 0 $_u2);
     @include rem(margin, 0 $_u2 (-$_u2));
+
+    .site-footer & {
+        background: $dark;
+    }
 }
 
 .sticky {
