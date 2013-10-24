@@ -1,6 +1,7 @@
 <?php
 
 	// @todo CLEANUP check if this function is actually used anywhere
+	// andrei: is just a freaking test
 	function validate_callback_function($field, $value, $existing_value) {
 		$error = false;
 		$value =  'just testing';
@@ -41,7 +42,7 @@
             echo 'There is been an error around';
         }
     }
-	add_action( 'redux-opts-saved-'. wpgrade::shortname() .'_options', 'wpgrade_write_custom_css' );
+	add_action( 'redux-saved-'. wpgrade::shortname() .'_options', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------

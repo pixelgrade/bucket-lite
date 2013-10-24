@@ -1,6 +1,6 @@
 <?php
 
-//define( 'ACF_LITE', true );
+define( 'ACF_LITE', true );
 include_once('theme-content/inc/vendor/acf/acf.php');
 include_once('theme-content/inc/vendor/acf/acf-config.php');
 
