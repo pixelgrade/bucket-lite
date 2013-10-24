@@ -6,17 +6,7 @@
 
 function wpgrade_custom_thumbnails (){
     // Add theme support for Featured Images
-    add_theme_support( 'post-thumbnails' );
-	
-	add_image_size('blog-big', 800);
-	add_image_size('blog-medium', 500);
-	
-    add_image_size('portfolio-big', 800, 440, true);
-    add_image_size('portfolio-medium', 600, 330, true);
-    add_image_size('portfolio-small', 400, 220, true);
-    add_image_size('portfolio-big-v', 440, 800, true);
-    add_image_size('portfolio-medium-v', 330, 600, true);
-    add_image_size('portfolio-small-v', 220, 400, true);    
+    add_theme_support( 'post-thumbnails' ); 
 }
 
 add_action( 'after_setup_theme', 'wpgrade_custom_thumbnails');

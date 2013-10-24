@@ -8,6 +8,8 @@
 }
 
 .navigation--top {
+    display: none;
+    
     a {
         color: #a6a1a1;
     }
@@ -18,7 +20,7 @@
 }
 
 @include media(to hand) {
-    .navigation{
+    .navigation {
         background-color: transparent;
     }
 
@@ -55,7 +57,7 @@
 /*ul*/.site-navigation--main, .translation-bar {
     @extend .nav;
     text-transform: uppercase;
-    position: relative;
+    // position: relative;
     
     > li > a {
         display: block;
@@ -64,7 +66,7 @@
 }
 
     /*li*/.menu-item--main, .translation-item {
-        position: relative;
+        // position: relative;
 
         > a {
            @include rem(padding-left, $_u);
@@ -175,7 +177,7 @@
 }
 
 @include media(from hand) {
-    
+
     .site-navigation--header .menu-item--main {
 
         > a {
