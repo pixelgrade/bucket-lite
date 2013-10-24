@@ -9,7 +9,7 @@ $sections[] = array(
 	'icon' => 'cogs',
 	'icon_class' => '',
 	'title' => __('General Options', wpgrade::textdomain()),
-	'desc' => sprintf(__('<p class="description">Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.</p>', wpgrade::textdomain()),wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
 			'id' => 'wpGrade_import_demodata_button',
@@ -25,16 +25,13 @@ $sections[] = array(
 						<input type="hidden" name="wpGrade_import_ajax_url" value="'.admin_url("admin-ajax.php").'" />
 
 						<a href="#" class="button button-primary" id="wpGrade_import_demodata_button">
-							Import demo data
+							'.__('Import demo data', wpgrade::textdomain()).'
 						</a>
 
 						<div class="wpGrade-loading-wrap hidden">
 							<span class="wpGrade-loading wpGrade-import-loading"></span>
 							<div class="wpGrade-import-wait">
-								Please wait a few minutes (between 2 and 5 minutes usually, but
-								depending on your hosting it can take longer) and <strong>don\'t
-								reload the page</strong>. You will be notified as soon as the
-								import has finished!
+								'.__('Please wait a few minutes (between 2 and 5 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', wpgrade::textdomain()).'
 							</div>
 						</div>
 
@@ -95,7 +92,7 @@ $sections[] = array(
 	'icon' => "quote",
 	'icon_class' => '',
 	'title' => __('Style Options', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Give some style to your website!</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
@@ -199,8 +196,8 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => 'bookmark',
 	'icon_class' => '',
-	'title' => __('Sidebar Options', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Change sidebar related options from here.</p>', wpgrade::textdomain()),
+	'title' => __('Footer Options', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'copyright_text',
@@ -220,7 +217,7 @@ $sections[] = array(
 	'icon' => "envelope",
 	'icon_class' => '',
 	'title' => __('Contact Page', wpgrade::textdomain()),
-	'desc' => __('<p class="description">General settings for the contact page template!</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('General settings for the contact page template!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'contact_gmap_link',
@@ -245,14 +242,14 @@ $sections[] = array(
 	'icon' => 'file-alt',
 	'icon_class' => '',
 	'title' => __('Blog Options', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Change blog archive and single post related options here.</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Change blog archive and single post related options here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'blog_excerpt_length',
 			'type' => 'text',
 			'title' => __('Excerpt Length', wpgrade::textdomain()),
 			'sub_desc' => __('Set here the excerpt length for the blog archive (number of words).', wpgrade::textdomain()),
-			'default' => '100',
+			'default' => '180',
 		),
 		array(
 			'id' => 'blog_single_show_share_links',
@@ -297,7 +294,7 @@ $sections[] = array(
 	'icon_class' => '',
 	'title' => __('Social and SEO Options', wpgrade::textdomain()),
 
-	'desc' => __('<p class="description">Social sharing stuff.</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Social sharing stuff.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 //        array(
 //            'id' => 'social_icons',
@@ -481,7 +478,7 @@ $sections[] = array(
 	'icon' => "cloud-download",
 	'icon_class' => '',
 	'title' => __('Theme Auto Update', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'themeforest_upgrade',

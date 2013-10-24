@@ -13,8 +13,8 @@
         <div class="colophon">
             <div class="container">
                 <div class="flexbox">
-                    <div class="flexbox__item">2013 &copy; Bucket. Handcrafted with love by PixelGrade Team</div>
-                    <div class="flexbox__item  text--right"><a href="#">Permissions &amp; Copyright</a> <a href="#">Contact The Team</a></div>
+                    <div class="flexbox__item"><?php echo wpgrade::option('copyright_text') ?></div>
+                    <div class="flexbox__item  text--right"><?php wpgrade_footer_nav() ?></div>
                 </div>
             </div>
         </div>

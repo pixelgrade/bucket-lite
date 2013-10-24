@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * The Template for displaying all single posts.
+ *
+ */
+
+get_header(); ?>
 
 <div class="container">
 
@@ -26,13 +32,13 @@
 
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <div class="article__title__meta">
-                    <?php printf(__('<div class="article__author-name">%s</div>', wpgrade::textdomain()), get_the_author_link()) ?>
+                    <?php printf('<div class="article__author-name">%s</div>', get_the_author_link()) ?>
                     <time class="article__time" datetime="<?php the_time('c'); ?>"> on <?php the_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?></time>
                 </div>
                 <?php
 		        the_content();
 
-		        $args = array( 'before' => '<p>Pages: ', 'after' => '</p>', 'next_or_number' => 'next_and_number', 'previouspagelink' => 'Previous', 'nextpagelink' => 'Next' );
+		        $args = array( 'before' => '<p>'.__('Pages:', wpgrade::textdomain()).' ', 'after' => '</p>', 'next_or_number' => 'next_and_number', 'previouspagelink' => __('Previous', wpgrade::textdomain()), 'nextpagelink' => __('Next', wpgrade::textdomain()) );
 		        wp_link_pages( $args ); ?>
 
                 <div class="grid">
@@ -78,25 +84,24 @@
                     <?php endif; ?>
                 </div>
 
-
                 <?php
-                    if (get_field('enable_review_score')):
-                        if (get_field('score_breakdown')): ?>
-                            <h3>The Breakdown</h3>
-                            <hr class="separator  separator--subsection">
-                            <?php while (has_sub_fields('score_breakdown')): ?>
-                                <div class="review__score">
-                                    <div class="score__label"><?php echo get_sub_field('label'); ?></div>
-                                    <span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
-                                    <div class="score__progressbar  progressbar">
-                                        <div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                            <hr class="separator  separator--subsection">
-                        <?php endif;
-                    endif;
-                ?>
+				if (get_field('enable_review_score')):
+					if (get_field('score_breakdown')): ?>
+						<h3>The Breakdown</h3>
+						<hr class="separator  separator--subsection">
+						<?php while (has_sub_fields('score_breakdown')): ?>
+							<div class="review__score">
+								<div class="score__label"><?php echo get_sub_field('label'); ?></div>
+								<span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
+								<div class="score__progressbar  progressbar">
+									<div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
+								</div>
+							</div>
+						<?php endwhile; ?>
+						<hr class="separator  separator--subsection">
+					<?php endif;
+				endif;
+				?>
 
                 <div class="article__meta  article--single__meta">
                     <?php
@@ -109,104 +114,77 @@
                             <?php endwhile;
                         endif;
                     ?>
+					
+					<?php 
+					$categories = get_the_category();
+                    if ($categories): ?>
                     <div class="btn-list">
-                        <div class="btn  btn--small  btn--secondary">Categories</div>
+                        <div class="btn  btn--small  btn--secondary"><?php __('Categories', wpgrade::textdomain()) ?></div>
                         <?php
-                            $categories = get_the_category();
-                            if ($categories) {
-                                foreach ($categories as $category):
-                                    echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
-                                endforeach;
-                            }
+							foreach ($categories as $category):
+								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+							endforeach;
                         ?>
                     </div>
+					<?php endif; ?>
+					
+					<?php
+					$tags = get_the_tags();
+                    if ($tags): ?>
                     <div class="btn-list">
-                        <div class="btn  btn--small  btn--secondary">Tagged</div>
+                        <div class="btn  btn--small  btn--secondary"><?php __('Tagged', wpgrade::textdomain()) ?></div>
                         <?php
-                            $tags = get_the_tags();
-                            if ($tags):
-                                foreach ($tags as $tag):
-                                    echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s"), $tag->name)) .'">'. $tag->name.'</a>';
-                                endforeach;
-                            endif;
+							foreach ($tags as $tag):
+								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s"), $tag->name)) .'">'. $tag->name.'</a>';
+							endforeach;
                         ?>
                     </div>
+					<?php endif; ?>
                 </div>
-
-                <aside class="author" itemscope itemtype="http://schema.org/Person">
-                    <div class="author__avatar">
-                        <?php
-//                            if (function_exists('get_avatar_url')) {
-                                echo '<img src="'. bucket::get_avatar_url(get_the_author_meta('email'), '78') . '" itemprop="image"/>';
-//                            } else if (function_exists('get_avatar')) {
-//                                echo get_avatar(get_the_author_meta('email'), '78');
-//                            }
-                        ?>
-                    </div>
-                    <div class="author__text">
-                        <div class="author__title">
-                            <h3 class="accessibility"><?php _e('Author', wpgrade::textdomain()); ?></h3>
-                            <div class="hN">
-                                <span itemprop="name"><?php the_author_posts_link(); ?></span>
-                            </div>
-                        </div>
-                        <p class="author__bio" itemprop="description"><?php the_author_meta('description'); ?></p>
-                        <ul class="author__social-links">
-                            <?php if ( get_the_author_meta('user_tw') ): ?>
-                                <li class="author__social-links__list-item">
-                                    <a class="author__social-link" href="https://twitter.com/<?php echo get_the_author_meta('user_tw') ?>" target="_blank">Twitter</a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if ( get_the_author_meta('user_fb') ): ?>
-                                <li class="author__social-links__list-item">
-                                    <a class="author__social-link" href="https://www.facebook.com/<?php echo get_the_author_meta('user_fb') ?>" target="_blank">Facebook</a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if ( get_the_author_meta('google_profile') ): ?>
-                                <li class="author__social-links__list-item">
-                                    <a class="author__social-link" href="<?php echo get_the_author_meta('google_profile') ?>" target="_blank">Google</a>
-                                </li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                </aside>
+				
+				<?php if ( get_the_author_meta( 'description' ) ) : ?>
+					<?php get_template_part( 'author-bio' ); ?>
+				<?php endif; ?>
 
                 <hr class="separator  separator--subsection">
                 
                 <?php
-                    $next_post = get_next_post();
-                    $prev_post = get_previous_post();
-                    if (!empty($prev_post) || !empty($next_post)):
-                ?>
-                    <nav class="post-nav">
-                        <div class="post-nav-link  post-nav-link--prev">
-                            <?php if (!empty($prev_post)): ?>
-                                <a href="<?php echo get_permalink($prev_post->ID); ?>">
-                                    <div class="post-nav-link__label">
-                                        <?php _e("Previous Article", wpgrade::textdomain()); ?>
-                                    </div>
-                                    <div class="post-nav-link__title">
-                                        <div class="hN"><?php echo $prev_post->post_title; ?></div>
-                                    </div>
-                                </a>
-                            <?php endif; ?>
-                        </div><!-- 
-                     --><div class="divider--pointer"></div><!--
-                     --><div class="post-nav-link  post-nav-link--next">
-                            <?php if (!empty($next_post)): ?>
-                                <a href="<?php echo get_permalink($next_post->ID); ?>">
-                                    <div class="post-nav-link__label">
-                                        <?php _e("Next Article", wpgrade::textdomain()); ?>
-                                    </div>
-                                    <div class="post-nav-link__title">
-                                        <div class="hN"><?php echo $next_post->post_title; ?></div>
-                                    </div>
-                                </a>
-                            <?php endif; ?>
-                        </div> 
-                    </nav>
+				$next_post = get_next_post();
+				$prev_post = get_previous_post();
+				if (!empty($prev_post) || !empty($next_post)): ?>
+				
+				<nav class="post-nav">
+					<div class="post-nav-link  post-nav-link--prev">
+						<?php if (!empty($prev_post)): ?>
+							<a href="<?php echo get_permalink($prev_post->ID); ?>">
+								<div class="post-nav-link__label">
+									<?php _e("Previous Article", wpgrade::textdomain()); ?>
+								</div>
+								<div class="post-nav-link__title">
+									<div class="hN"><?php echo $prev_post->post_title; ?></div>
+								</div>
+							</a>
+						<?php endif; ?>
+					</div><!-- 
+				 --><div class="divider--pointer"></div><!--
+				 --><div class="post-nav-link  post-nav-link--next">
+						<?php if (!empty($next_post)): ?>
+							<a href="<?php echo get_permalink($next_post->ID); ?>">
+								<div class="post-nav-link__label">
+									<?php _e("Next Article", wpgrade::textdomain()); ?>
+								</div>
+								<div class="post-nav-link__title">
+									<div class="hN"><?php echo $next_post->post_title; ?></div>
+								</div>
+							</a>
+						<?php endif; ?>
+					</div> 
+				</nav>
+				
                 <?php endif; ?>
+				
                 <hr class="separator  separator--section">
+				
                 <?php
                 // If comments are open or we have at least one comment, load up the comment template
                     if ( comments_open() || '0' != get_comments_number() )

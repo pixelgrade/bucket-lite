@@ -37,13 +37,10 @@
 			$text = strip_tags($text, $allowed_tags);
 
 			// Set custom excerpt length - number of words to be shown in excerpts
-			if (wpgrade::option('blog_excerpt_length'))
-			{
+			if (wpgrade::option('blog_excerpt_length'))	{
 				$excerpt_length = absint(wpgrade::option('blog_excerpt_length'));
-			}
-			else
-			{
-				$excerpt_length = 55;
+			} else {
+				$excerpt_length = 180;
 			}
 
 			$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
@@ -78,7 +75,7 @@
                 </aside>
                 <div class="media__body">
                     <header class="comment__meta comment-author vcard">
-                        <?php printf(__('<cite class="comment__author-name">%s</cite>', wpgrade::textdomain()), get_comment_author_link()) ?>
+                        <?php printf('<cite class="comment__author-name">%s</cite>', get_comment_author_link()) ?>
     					<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?> </a></time>
                         <div class="comment__links">
                             <?php
@@ -124,4 +121,8 @@
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
- 	
+ 	function remove_more_link_scroll( $link ) {
+		$link = preg_replace( '|#more-[0-9]+|', '', $link );
+		return $link;
+	}
+	add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
