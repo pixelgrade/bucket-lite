@@ -32,7 +32,7 @@
 
     </nav>
 
-    <div class="container">
+    <div class="container container--main-header">
 
         <div class="site-header">
             <div class="site-header__branding">
@@ -64,7 +64,7 @@
 
         </div>
         
-        <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>                
+        <a class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></a>
 
         <hr class="nav-top-separator separator separator--striped flush--bottom" />        
         <nav class="navigation  navigation--main">

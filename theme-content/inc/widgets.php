@@ -984,8 +984,6 @@ class wpgrade_popular_posts extends WP_Widget {
 
 	function __construct(){
 
-//		include_once PPTWJ_DIR . 'get-the-image.php';
-
 		/**
 		 * Check if Jetpack is connected to WordPress.com and Stats module is enabled
 		 */
@@ -1004,11 +1002,11 @@ class wpgrade_popular_posts extends WP_Widget {
 		$this->defaults = array(
 			'number' => 5,
 			'thumb_size' => 45,
-			'order' => self::$_stats_enabled ? 'pop' : 'latest',
+			'order' =>'pop',
 			'days' => '60',
 			'show_views' => '',
 			'show_date' => '',
-			'pop' => self::$_stats_enabled ? 'off' : 'on',
+			'pop' => 'on',
 			'popular_range' => 'all',
 		);
 
@@ -1033,9 +1031,7 @@ class wpgrade_popular_posts extends WP_Widget {
 	function update ( $new_instance, $old_instance ) {
 
 		$defaults = $this->defaults;
-
 		$instance = $old_instance;
-
 		$instance['title'] = esc_attr( $new_instance['title'] );
 		$instance['number'] = intval( $new_instance['number'] );
 
@@ -1062,9 +1058,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		<?php endif; ?>
 
 	<?php
-
 	} // End form()
-
 
 	function widget($args, $instance) {
 
@@ -1075,7 +1069,12 @@ class wpgrade_popular_posts extends WP_Widget {
 
 		$number = isset( $instance['number'] ) ? $instance['number'] : 5;
 
-		$filter_links = array('day' => __('Today', wpgrade::textdomain()),'week' => __('Week', wpgrade::textdomain()),'month' => __('Month', wpgrade::textdomain()), 'all' => __('All', wpgrade::textdomain()) );
+		$filter_links = array(
+			'daily' => __('Today', wpgrade::textdomain()),
+			'weekly' => __('Week', wpgrade::textdomain()),
+			'monthly' => __('Month', wpgrade::textdomain()),
+			'all' => __('All', wpgrade::textdomain())
+		);
 		$thumb_size = 72;
 		$data = array(
 			'time' => '',

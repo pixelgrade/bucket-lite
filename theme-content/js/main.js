@@ -1031,8 +1031,14 @@
 
     function eventHandlersOnce() {
 
-        $('.js-nav-trigger').on('click', function(e) {
+        var wrapperH = $('.wrapper').height();        
+
+        $('.js-nav-trigger').bind('touchstart', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
             $('html').toggleClass('navigation--is-visible');
+            $('.navigation--mobile').height($(window).height());
         }); 
 
         // $('.js-nav-trigger').on('click', function(e) {

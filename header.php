@@ -14,8 +14,12 @@ if(wpgrade::option('main_nav_inverse') == 1) $class_name .= " main-nav-inverse";
 <body <?php body_class($class_name); ?>>
     <div class="pace">
         <div class="pace-activity"></div>
-    </div>
+    </div>    
     <div id="page">
+        <nav class="navigation  navigation--mobile">
+            <h2 class="accessibility">Primary Mobile Navigation</h2>
+            <?php wpgrade_main_nav(); ?>
+        </nav>    
         <div class="wrapper">
             <?php //get the main header section - logo, nav, footer
 			get_template_part('theme-partials/header/site_' . wpgrade::option('header_type')); ?>
