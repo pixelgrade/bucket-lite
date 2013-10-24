@@ -1032,14 +1032,22 @@
     function eventHandlersOnce() {
 
         var wrapperH = $('.wrapper').height();        
+        $('.navigation--mobile').height(wrapperH);
 
         $('.js-nav-trigger').bind('touchstart', function(e) {
             e.preventDefault();
             e.stopPropagation();
 
             $('html').toggleClass('navigation--is-visible');
-            $('.navigation--mobile').height($(window).height());
-        }); 
+        });
+
+        $('.wrapper').bind('touchstart', function(e) {            
+            if ($('html').hasClass('navigation--is-visible')) {
+                e.preventDefault();
+                e.stopPropagation();
+                $('html').toggleClass('navigation--is-visible');
+            }
+        });
 
         // $('.js-nav-trigger').on('click', function(e) {
         //     var hh = $('.header').height(),
