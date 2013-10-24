@@ -7,11 +7,15 @@
  * @section_title string
  * @sidebar radio (enable / disable)
  */
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$number_of_posts = get_sub_field('number_of_posts');
 
 $args = array(
-    'posts_per_page' => get_sub_field('number_of_posts'),
+	'paged' => $paged,
+    'posts_per_page' => $number_of_posts,
 	'order' => 'DESC',
-	'orderby' => 'date'
+	'orderby' => 'date',
+	'ignore_sticky_posts' => 1
 );
 
 $latest_query = new WP_Query( $args );
@@ -42,4 +46,16 @@ if ($latest_query->have_posts()):
             </div>
         </div>
     <?php endif;
+
+	if ( get_sub_field('pagination') == 'enable' ){
+		// a basic pagination https://codex.wordpress.org/Function_Reference/paginate_links
+		$big = 999999999; // need an unlikely integer
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $latest_query->max_num_pages
+		) );
+	}
+
 endif;
