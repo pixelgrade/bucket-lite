@@ -48,19 +48,27 @@
     }
 }
 
+.site-navigation__sub-menu {
+    @extend .menu--list;
+}
 
 /*ul*/.site-navigation--main, .translation-bar {
     @extend .nav;
     text-transform: uppercase;
     position: relative;
+    
+    > li > a {
+        display: block;
+        @include rem(padding, $_u2 $_u);
+    }
 }
 
     /*li*/.menu-item--main, .translation-item {
         // position: relative;
 
         > a {
-            display: block;
-            @include rem(padding, $_u2 $_u);
+           @include rem(padding-left, $_u);
+           @include rem(padding-right, $_u);
         }
 
         &.current-menu-item,
@@ -69,8 +77,7 @@
         &:hover, &:focus, &:active {
         }
         
-        &:hover > .site-navigation__sub-menu,
-        &:hover > .sub-menu__posts {
+        &:hover > .megamenu_wrapper {
             display: block;
         }
     }
@@ -84,16 +91,32 @@
     $SUBMENUS
 \*----------------------------------------*/
 
-.site-navigation__sub-menu {
-    @extend .nav;
-    @extend .nav--stacked;
-    display: none;
+.megamenu_wrapper {
+    width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
+    display: none;
+    z-index: 300;
+    background-color: black;
+    background-clip: padding-box;
+    @include rem(border-bottom, $_u solid rgba(black, .5));
+
+    .grid {
+        @extend .cf;
+    }
+
+    .grid__item {
+        float: left;
+    }
+}
+
+.site-navigation__sub-menu {
+    @extend .nav;
+    @extend .nav--stacked;
+
     z-index: 300;
     background-color: $dark;
-    @include rem(width, 240px);
 
     .site-navigation__sub-menu {
         top: 0;
@@ -107,15 +130,8 @@
 }
 
 .sub-menu__posts {
-    background-color: black;
-    background-clip: padding-box;
-    @include rem(border-bottom, $_u solid rgba(black, .5));
     @include rem(padding, $_u4);
-    width: 100%;
-    position: absolute;
-    left: 0;
     z-index: 300;
-    display: none;
 
     .site-navigation__sub-menu {
         position: static;

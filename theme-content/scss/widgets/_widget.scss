@@ -62,29 +62,31 @@
                WIDGET NAV MENU
 \*-----------------------------------------*/
 
-
 // rename and @extend this
+
+/*ul*/.menu--list {
+    @include rem(margin-top, -$_u2);
+
+    > li {
+        @include rem(padding, $_u2 0);
+
+        + li + li {
+            border-top: 1px solid #262525;
+            margin-top: -1px;
+        }
+    }
+}
 
 .widget_nav_menu {
     
     ul {
-
+        @extend .menu--list;
         @extend .multi-list;
         @extend .two-cols;
-        @include rem(margin-top, -$_u2);
+    }
 
-        > li {
-            @include rem(padding, $_u2 0);
-
-            + li + li {
-                border-top: 1px solid #262525;
-                margin-top: -1px;
-            }
-        }
-
-        ul {
-            display: none;
-        }
+    ul {
+        display: none;
     }
 }
 

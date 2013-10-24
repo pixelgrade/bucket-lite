@@ -9,11 +9,11 @@ if ( !class_exists( "WPGrade_Bucket_Walker_Nav_Menu" ) && class_exists( 'Walker_
 class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
     function start_lvl(&$output, $depth = 0, $args = array()) {
-        $output .= "<ul class=\"site-navigation__sub-menu\">";
+        $output .= "<div class=\"grid\"><div class=\"grid__item  one-fifth  my-php-class-hook\"><ul class=\"site-navigation__sub-menu\">";
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
-        $output .= "</ul>";
+        $output .= "</ul></div></div>";
     }
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
@@ -77,7 +77,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 //            print_r($item);
 //            echo '-->';
 		
-		//the megamenu wrapper
+		// the megamenu wrapper
 		if ($depth == 0) {
 			$item_output .= '<div class="megamenu_wrapper">';
 		}
@@ -86,33 +86,33 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			
             $cat = $item->object_id;
 			
-			//lets get the meta associated with the menu item to see what layout to use
+			// lets get the meta associated with the menu item to see what layout to use
 			$menu_layout = esc_attr( get_post_meta( $item->ID, 'wpgrade_megamenu_layout', TRUE ) );
 			
 			$numberposts = 5; //we start of with 5 posts and decrease from here
 			
-			//if the menu has children then pull fewer posts
+			// if the menu has children then pull fewer posts
 			if ($item->hasChildren) {
 				$numberposts--;
 			}
             
 			if (!empty($menu_layout)) {
-				//decrease the number of post by 2 if we have a slider
+				// decrease the number of post by 2 if we have a slider
 				if ($menu_layout == 'slider_latest_posts') {
 					$numberposts -= 2;
 				}
 				
-				$item_output .= '<div class="sub-menu__posts megamenu_extra"><div class="grid  grid--thin">';
+				$item_output .= '<div class="sub-menu__posts  megamenu_extra  grid__item  four-fifths"><div class="grid  grid--thin">';
 
 				global $post;
 				
-				//hold the post slides ids so we exclude them from the rest of the posts
+				// hold the post slides ids so we exclude them from the rest of the posts
 				$slideposts_ids = array();
 				
-				//create the markup for the category posts slider
+				// create the markup for the category posts slider
 				if ($menu_layout == 'slider_latest_posts') {
 					
-					//lets grab the posts that are marked as being part of the category slider
+					// lets grab the posts that are marked as being part of the category slider
 					$post_args = array( 
 							'numberposts' => -1, 
 							'offset'=> 0, 
@@ -129,7 +129,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 					
 					$slideposts = get_posts( $post_args );
 					
-					$item_output .= '<div class="grid__item megamenu_slider two-fifth">';
+					$item_output .= '<div class="grid__item megamenu_slider two-fifths">';
 
 					foreach( $slideposts as $post ) : setup_postdata( $post );
 						//add the id to the array
@@ -157,51 +157,64 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 					endforeach;
 					
-					$item_output .= '</div>';
-					wp_reset_query();
-				}
-				
-				if ($menu_layout == 'latest_posts' || $menu_layout == 'slider_latest_posts') {
-				
-					$post_args = array( 
-							'numberposts' => $numberposts, 
-							'offset'=> 0, 
-							'category' => $cat,
-							'post_type'     => 'post',
-							'post_status'   => 'publish',
-							'post__not_in' => $slideposts_ids,
-						);
+                    $item_output .= '</div>';
+                    wp_reset_query();
+                }
+                
+                if ($menu_layout == 'latest_posts' || $menu_layout == 'slider_latest_posts') {
+                
+                    $post_args = array( 
+                            'numberposts' => $numberposts, 
+                            'offset'=> 0, 
+                            'category' => $cat,
+                            'post_type'     => 'post',
+                            'post_status'   => 'publish',
+                            'post__not_in' => $slideposts_ids,
+                        );
 
-					$menuposts = get_posts( $post_args );
+                    $menuposts = get_posts( $post_args );
 
-					foreach( $menuposts as $post ) : setup_postdata( $post );
+                    switch ($numberposts) {
+                        case 3:
+                            $classname = 'one-third';
+                            break;
+                        case 4:
+                            $classname = 'one-quarter';
+                            break;
+                        default:
+                            $classname = 'one-fifth';
+                            break;
+                    }
 
-						$post_title = get_the_title();
-						$post_link = get_permalink();
-						$post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                    foreach( $menuposts as $post ) : setup_postdata( $post );
 
-						if ( $post_image ){
-							$menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
-						} else {
-							// $menu_post_image = '<div class="image-wrap"></div>';
-							$menu_post_image = '';
-						}
+                        $post_title = get_the_title();
+                        $post_link = get_permalink();
+                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
 
-						$item_output .= 
-								'<div class="grid__item  one-fifth">' .
-									'<article class="article article--billboard-small">' .
-										'<div class="image-wrap">' . $menu_post_image . '</div>' .
-										'<h2 class="article__title article--billboard-small__title">' .
-											'<div class="hN">' . $post_title . '</div>' .
-										'</h2>' .
-										'<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
-									'</article>'.
-								'</div>';
+                        if ( $post_image ){
+                            $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+                        } else {
+                            // $menu_post_image = '<div class="image-wrap"></div>';
+                            $menu_post_image = '';
+                        }
 
-					endforeach;
-					wp_reset_query();
-				
-				}
+                        $item_output .=
+                        '<div class="grid__item  '.$classname.'">' .
+                            '<div class="article article--billboard-small">' .
+                                '<div class="image-wrap">' . $menu_post_image . '</div>' .
+                                '<h2 class="article__title article--billboard-small__title">' .
+                                    '<div class="hN">' . $post_title . '</div>' .
+                                '</h2>' .
+                                '<a class="small-link" href="' . $post_link . '">Read More</a>' .
+                            '</div>' . 
+                        '</div>';
+
+                    endforeach;
+
+                    wp_reset_query();
+                
+                }
 
 				$item_output .= '</div></div>';
 			}
@@ -234,7 +247,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 				
 				if (!empty($menuposts) && $_doc->find('.megamenu_wrapper:last .site-navigation__sub-menu')->length()) {
 					$_doc->find('.megamenu_wrapper:last .megamenu_extra')->remove();
-					$_doc->find('.megamenu_wrapper:last .site-navigation__sub-menu')->after($menuposts);
+					$_doc->find('.megamenu_wrapper:last .my-php-class-hook')->after($menuposts);
 				}
 			} else {
 				//the megamenu wrapper is empty
