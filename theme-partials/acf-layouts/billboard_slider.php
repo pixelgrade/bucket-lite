@@ -96,7 +96,8 @@ if ($slides->have_posts()): ?>
 	<div class="billboard pixslider js-pixslider">
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
-			if ($index++ % 3 == 0):
+      			if ($index++ % 3 == 0):
+                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
                 if (!$closed_group):
                     echo '</div><div>';
                 else:
@@ -115,17 +116,17 @@ if ($slides->have_posts()): ?>
                         <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
                     </div>
                 </article>
-	        <?php else: ?>
-	            <article class="article article--billboard-small">
-	                <div class="image-wrap">
-	                    <img src="<?php echo $image[0] ?>" />
-	                </div>
-	                <h2 class="article__title article--billboard-small__title">
-	                    <div class="hN"><?php the_title(); ?></div>
-	                </h2>
-	                <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> <em>+</em></a>
-	            </article>
-	        <?php endif;
+  	        <?php else: ?>
+  	            <article class="article article--billboard-small">
+  	                <div class="image-wrap">
+  	                    <img src="<?php echo $image[0] ?>" />
+  	                </div>
+  	                <h2 class="article__title article--billboard-small__title">
+  	                    <div class="hN"><?php the_title(); ?></div>
+  	                </h2>
+  	                <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> <em>+</em></a>
+  	            </article>
+  	        <?php endif;
 		endwhile;
 		wp_reset_postdata();
         if (!$closed_group):
