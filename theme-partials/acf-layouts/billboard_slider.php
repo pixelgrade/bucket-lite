@@ -6,7 +6,6 @@
  * @read_more_label string
  */
 
-
 $number_of_posts = get_sub_field('number_of_posts');
 $read_more_label = get_sub_field('read_more_label');
 if ( empty($read_more_label) ) {
@@ -133,4 +132,4 @@ if ($slides->have_posts()): ?>
             $closed_group = false;
         endif; ?>
 	</div>
-<?php endif; ?>
+<?php endif;
