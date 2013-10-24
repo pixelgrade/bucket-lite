@@ -41,7 +41,7 @@ class ReduxFramework_sortable {
                 }
             }
         }
-
+var_dump($options);
         foreach ($options as $k=>$v) {
             if (!isset($this->value[$k])) {
                 $this->value[$k] = $v;

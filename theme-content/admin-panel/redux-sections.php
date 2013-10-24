@@ -210,50 +210,6 @@ $sections[] = array(
 			'std' => 'Copyright &copy; 2013 '. wpgrade::themename() .' | All rights reserved.',
 			'rows' => 4,
 		),
-		array(
-			'id' => 'do_social_footer_menu',
-//                'type' => 'checkbox_hide_below',
-			'type' => 'switch',
-			'title' => __('Social Footer Menu', wpgrade::textdomain()),
-			'subtitle' => __('Show social icons in the footer. The links and order are taken from the Social and SEO Options tabs.', wpgrade::textdomain()),
-			'default' => '1',
-			'next_to_hide' => 2,
-		),
-		array(
-			'id' => 'social_footer_menu_title',
-			'type' => 'text',
-			'title' => __('Social Footer Menu Title', wpgrade::textdomain()),
-			'std' => 'We Are Social',
-			'subtitle' => __('', wpgrade::textdomain()),
-		),
-//            array(
-//                'id' => 'social_icons',
-//                'type' => 'text_sortable',
-//                'title' => __('Social Icons', wpgrade::textdomain()),
-//                'sub_desc' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
-//                'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
-//                'options' => array(
-//                    'flickr' => __('Flickr', wpgrade::textdomain()),
-//                    'tumblr' => __('Tumblr', wpgrade::textdomain()),
-//                    'pinterest' => __('Pinterest', wpgrade::textdomain()),
-//                    'instagram' => __('Instagram', wpgrade::textdomain()),
-//                    'behance' => __('Behance', wpgrade::textdomain()),
-//                    'fivehundredpx' => __('500px', wpgrade::textdomain()),
-//                    'deviantart' => __('DeviantART', wpgrade::textdomain()),
-//                    'dribbble' => __('Dribbble', wpgrade::textdomain()),
-//                    'twitter' => __('Twitter', wpgrade::textdomain()),
-//                    'facebook' => __('Facebook', wpgrade::textdomain()),
-//                    'gplus' => __('Google+', wpgrade::textdomain()),
-//                    'youtube' => __('Youtube', wpgrade::textdomain()),
-//                    'vimeo' => __('Vimeo', wpgrade::textdomain()),
-//                    'linkedin' => __('LinkedIn', wpgrade::textdomain()),
-//                    'skype' => __('Skype', wpgrade::textdomain()),
-//                    'soundcloud' => __('SoundCloud', wpgrade::textdomain()),
-//                    'digg' => __('Digg', wpgrade::textdomain()),
-//                    'lastfm' => __('Last.FM', wpgrade::textdomain()),
-//                    'appnet' => __('App.net', wpgrade::textdomain())
-//                )
-//            ),
 	)
 );
 
@@ -343,6 +299,87 @@ $sections[] = array(
 
 	'desc' => __('<p class="description">Social sharing stuff.</p>', wpgrade::textdomain()),
 	'fields' => array(
+//        array(
+//            'id' => 'social_icons',
+//            'type' => 'sortable',
+//            'title' => __('Social Icons', wpgrade::textdomain()),
+//            'sub_desc' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
+//            'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
+//            'options' => array(
+//                'flickr' => __('Flickr', wpgrade::textdomain()),
+//                'tumblr' => __('Tumblr', wpgrade::textdomain()),
+//                'pinterest' => __('Pinterest', wpgrade::textdomain()),
+//                'instagram' => __('Instagram', wpgrade::textdomain()),
+//                'behance' => __('Behance', wpgrade::textdomain()),
+//                'fivehundredpx' => __('500px', wpgrade::textdomain()),
+//                'deviantart' => __('DeviantART', wpgrade::textdomain()),
+//                'dribbble' => __('Dribbble', wpgrade::textdomain()),
+//                'twitter' => __('Twitter', wpgrade::textdomain()),
+//                'facebook' => __('Facebook', wpgrade::textdomain()),
+//                'gplus' => __('Google+', wpgrade::textdomain()),
+//                'youtube' => __('Youtube', wpgrade::textdomain()),
+//                'vimeo' => __('Vimeo', wpgrade::textdomain()),
+//                'linkedin' => __('LinkedIn', wpgrade::textdomain()),
+//                'skype' => __('Skype', wpgrade::textdomain()),
+//                'soundcloud' => __('SoundCloud', wpgrade::textdomain()),
+//                'digg' => __('Digg', wpgrade::textdomain()),
+//                'lastfm' => __('Last.FM', wpgrade::textdomain()),
+//                'appnet' => __('App.net', wpgrade::textdomain())
+//            )
+//        ),
+
+		array(
+			'id'=>"social_icons",
+			'type' => 'group',//doesnt need to be called for callback fields
+			'title' => __('Social Icons', wpgrade::textdomain()),
+			'subtitle' => __('Group any items together.', wpgrade::textdomain()),
+			'desc' => __('No limit as to what you can group. Just don\'t try to group a group.', wpgrade::textdomain()),
+			'groupname' => __('Social Icon', wpgrade::textdomain()), // Group name
+			'subfields' => array(
+				array(
+					'id'=>'name',
+					'type' => 'text',
+					'title' => __('Social Icon Name', wpgrade::textdomain()),
+					'subtitle'=> __('This will apear as alt text on icon', wpgrade::textdomain()),
+				),
+				array(
+					'id'=>'url',
+					'type' => 'text',
+					'title' => __('Link', wpgrade::textdomain()),
+					'subtitle' => __('Here you put your subtitle', wpgrade::textdomain()),
+				),
+				array(
+					'id' => 'image-type',
+					'type' => 'image_select',
+//					'options' => array(
+//						'type1' => array('Type 1', 'img' => 'images/align-right.png'),
+//						'type2' => array('Type 2', 'img' => 'images/align-left.png'),
+//						'type3' => array('Type 3', 'img' => 'images/align-center.png'),
+//					)
+					'title' => __('Icon Type', wpgrade::textdomain()),
+					'options' => array(
+						'image' => array( __('Image', wpgrade::textdomain() ), 'img' => 'images/align-right.png' ),
+						'font-awesome'=> array( __('Font Awesome', wpgrade::textdomain()), 'img' => 'images/align-left.png' )
+					),
+					'default' => 'image'
+				),
+				array(
+					'id'=>'image',
+					'type' => 'media',
+					'title' => __('Image', wpgrade::textdomain()),
+					'subtitle' => __('Select your themes alternative color scheme.', wpgrade::textdomain()),
+					'required' => array('image-type', '=', 'image')
+				),
+				array(
+					'id'=>'font-awesome',
+					'type' => 'text',
+					'title' => __('Icon Name', wpgrade::textdomain()),
+					'subtitle' => __('Here you can write a font-awesome name.', wpgrade::textdomain()),
+					'required' => array('image-type', '=', 'font-awesome')
+				),
+			),
+		),
+
 		array(
 			'id' => 'social_icons_target_blank',
 			'type' => 'switch',

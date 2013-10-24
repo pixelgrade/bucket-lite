@@ -13,10 +13,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
-        $output .= "</ul>"; 
-		
-		//close the wrapper for the megamenu
-		$output .= '</div>';
+        $output .= "</ul>";
     }
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
@@ -81,7 +78,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 //            echo '-->';
 		
 		//the megamenu wrapper
-		$item_output .= '<div class="megamenu_wrapper">';
+		if ($depth == 0) {
+			$item_output .= '<div class="megamenu_wrapper">';
+		}
 		
         if ($depth == 0 && $item->object == 'category') {
 			
@@ -89,49 +88,120 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			
 			//lets get the meta associated with the menu item to see what layout to use
 			$menu_layout = esc_attr( get_post_meta( $item->ID, 'wpgrade_megamenu_layout', TRUE ) );
+			
+			$numberposts = 5; //we start of with 5 posts and decrease from here
+			
+			//if the menu has children then pull fewer posts
+			if ($item->hasChildren) {
+				$numberposts--;
+			}
             
-			if (!empty($menu_layout) && $menu_layout == 'latest_posts') {
+			if (!empty($menu_layout)) {
+				//decrease the number of post by 2 if we have a slider
+				if ($menu_layout == 'slider_latest_posts') {
+					$numberposts -= 2;
+				}
 				
-				$item_output .= '<div class="sub-menu__posts"><div class="grid  grid--thin">';
-
-				//$item_output .= '<li class="first"><h3 class="entry-title">' . __( 'Latest Additions', 'themetext' ) . '</h3></li>';
+				$item_output .= '<div class="sub-menu__posts megamenu_extra"><div class="grid  grid--thin">';
 
 				global $post;
+				
+				//hold the post slides ids so we exclude them from the rest of the posts
+				$slideposts_ids = array();
+				
+				//create the markup for the category posts slider
+				if ($menu_layout == 'slider_latest_posts') {
+					
+					//lets grab the posts that are marked as being part of the category slider
+					$post_args = array( 
+							'numberposts' => -1, 
+							'offset'=> 0, 
+							'category' => $cat,
+							'post_type'     => 'post',
+							'post_status'   => 'publish',
+							'meta_query' => array(
+								array(
+									'key' => wpgrade::prefix() . 'category_slide',
+									'value' => 'on'
+								)
+							)
+						);
+					
+					$slideposts = get_posts( $post_args );
+					
+					$item_output .= '<div class="grid__item megamenu_slider two-fifth">';
 
-				//if the menu has children then pull fewer posts
-				if ($item->hasChildren) {
-					$post_args = array( 'numberposts' => 4, 'offset'=> 0, 'category' => $cat );
-				} else {
-					$post_args = array( 'numberposts' => 5, 'offset'=> 0, 'category' => $cat );
+					foreach( $slideposts as $post ) : setup_postdata( $post );
+						//add the id to the array
+						$slideposts_ids[] = $post->ID;
+						
+						$post_title = get_the_title();
+						$post_link = get_permalink();
+						$post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+
+						if ( $post_image ){
+							$menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+						} else {
+							// $menu_post_image = '<div class="image-wrap"></div>';
+							$menu_post_image = '';
+						}
+
+						$item_output .= 
+									'<article class="article slide article--billboard-small">' .
+										'<div class="image-wrap">' . $menu_post_image . '</div>' .
+										'<h2 class="article__title article--billboard-small__title">' .
+											'<div class="hN">' . $post_title . '</div>' .
+										'</h2>' .
+										'<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
+									'</article>';
+
+					endforeach;
+					
+					$item_output .= '</div>';
+					wp_reset_query();
 				}
-				$menuposts = get_posts( $post_args );
+				
+				if ($menu_layout == 'latest_posts' || $menu_layout == 'slider_latest_posts') {
+				
+					$post_args = array( 
+							'numberposts' => $numberposts, 
+							'offset'=> 0, 
+							'category' => $cat,
+							'post_type'     => 'post',
+							'post_status'   => 'publish',
+							'post__not_in' => $slideposts_ids,
+						);
 
-				foreach( $menuposts as $post ) : setup_postdata( $post );
+					$menuposts = get_posts( $post_args );
 
-					$post_title = get_the_title();
-					$post_link = get_permalink();
-					$post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+					foreach( $menuposts as $post ) : setup_postdata( $post );
 
-					if ( $post_image ){
-						$menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
-					} else {
-						// $menu_post_image = '<div class="image-wrap"></div>';
-						$menu_post_image = '';
-					}
+						$post_title = get_the_title();
+						$post_link = get_permalink();
+						$post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
 
-					$item_output .= 
-							'<div class="grid__item  one-fifth">' .
-								'<article class="article article--billboard-small">' .
-									'<div class="image-wrap">' . $menu_post_image . '</div>' .
-									'<h2 class="article__title article--billboard-small__title">' .
-										'<div class="hN">' . $post_title . '</div>' .
-									'</h2>' .
-									'<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
-								'</article>'.
-							'</div>';
+						if ( $post_image ){
+							$menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+						} else {
+							// $menu_post_image = '<div class="image-wrap"></div>';
+							$menu_post_image = '';
+						}
 
-				endforeach;
-				wp_reset_query();
+						$item_output .= 
+								'<div class="grid__item  one-fifth">' .
+									'<article class="article article--billboard-small">' .
+										'<div class="image-wrap">' . $menu_post_image . '</div>' .
+										'<h2 class="article__title article--billboard-small__title">' .
+											'<div class="hN">' . $post_title . '</div>' .
+										'</h2>' .
+										'<a class="small-link" href="' . $post_link . '">Read More <em>+</em></a>' .
+									'</article>'.
+								'</div>';
+
+					endforeach;
+					wp_reset_query();
+				
+				}
 
 				$item_output .= '</div></div>';
 			}
@@ -142,8 +212,38 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 		
     }
 
-    function end_el(&$output, $item, $depth=0, $args=array()) {  
-        $output .= "</li>";  
+    function end_el(&$output, $item, $depth=0, $args=array()) {
+		
+		//close the wrapper for the megamenu
+		if ($depth == 0) {
+			$output .= '</div>';
+		}
+		
+        $output .= "</li>";
+		
+		//parse the HTML and find the megamenu posts and switch them with the submenus so those are first
+		if ($depth == 0) {
+			if ( ! class_exists( 'phpQuery') ) {
+				// load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
+				require_once 'phpQuery-onefile.php';
+			}
+
+			$_doc = phpQuery::newDocumentHTML( $output );
+			if ($_doc->find('.megamenu_wrapper:last')->html() != '') {
+				$menuposts = $_doc->find('.megamenu_wrapper:last .megamenu_extra')->htmlOuter();
+				
+				if (!empty($menuposts) && $_doc->find('.megamenu_wrapper:last .site-navigation__sub-menu')->length()) {
+					$_doc->find('.megamenu_wrapper:last .megamenu_extra')->remove();
+					$_doc->find('.megamenu_wrapper:last .site-navigation__sub-menu')->after($menuposts);
+				}
+			} else {
+				//the megamenu wrapper is empty
+				$_doc->find('.megamenu_wrapper:last')->remove();
+			}
+			
+			// swap the $output
+			$output = $_doc->html();
+		}
     }
 
 } # class
