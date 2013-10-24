@@ -166,8 +166,8 @@
 
         @include media(from hand) {
             border-bottom: 0 solid $red;
-            @include rem(border-bottom-width, 5px);
-            @include rem(margin-bottom, -5px);   
+            // @include rem(border-bottom-width, 5px);
+            // @include rem(margin-bottom, -5px);   
         }
     }    
 }
