@@ -123,12 +123,43 @@
         }
     }
 
+
+
+
+
+/*---------------------------------*\
+            GRID POST CARDS
+\*---------------------------------*/
+
 .article--grid {
     @extend %separator--section;
     padding-bottom: 0;
 
     .article__featured-image {
         margin-bottom: 0;
+    }
+
+    .article__meta-links {
+        color: $gray;
+        @include rem(margin-left, -$_u2);
+        @include font-size(11px);
+        text-transform:uppercase;
+
+        li {
+            display: inline-block;
+            @include rem(margin-left, $_u2);
+        }
+
+        i {
+            @include font-size(14px);
+
+            // small vertical positioning fix
+            position:relative;
+            top:1px;
+            &.icon-comment {
+                top:0px;
+            }
+        }
     }
 }
 
@@ -154,18 +185,6 @@
         @include rem(padding, $_u4 $_u2);
     }
 
-    .article--grid__meta-links {
-        @include rem(margin-bottom, $_u4);
-        color: $gray;
-        @include rem(margin-left, -$_u2);
-        @include font-size(14px);
-
-        a {
-            display: inline-block;
-            color: $gray;
-            @include rem(margin-left, $_u2);
-        }
-    }
 
 .article--slider {
     @extend %separator--section;
