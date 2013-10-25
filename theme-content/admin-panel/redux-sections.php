@@ -89,7 +89,7 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "quote",
+	'icon' => "quote-right",
 	'icon_class' => '',
 	'title' => __('Style Options', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
@@ -182,20 +182,38 @@ $sections[] = array(
 		array(
 			'id' => 'inject_custom_css',
 			'type' => 'select',
-			'title' => __('How to inject the custom CSS', wpgrade::textdomain()),
-			'subtitle' => sprintf(__('By default %s saves the custom CSS in a file.<br />If for some reason you don\'t have permisions to write a file on your host you should choose the "Inline" option', wpgrade::textdomain()),wpgrade::themename()),
-			'default' => 'file',
-			'options' => array( 'file' => 'Write To File', 'inline' => 'Inline' ),
+			'title' => __('Apply Custom CSS', wpgrade::textdomain()),
+			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
+			'default' => 'inline',
+			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
 		),
 	)
 );
 
-// Sidebar Options
+// Header Options
 // ------------------------------------------------------------------------
 
 $sections[] = array(
 	'icon' => 'bookmark',
-	'icon_class' => '',
+	'title' => __('Header Options', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
+	'fields' => array(
+		array(
+			'id' => 'copyright_text',
+			'type' => 'editor',
+			'title' => __('Copyright Text', wpgrade::textdomain()),
+			'sub_desc' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
+			'std' => 'Copyright &copy; 2013 '. wpgrade::themename() .' | All rights reserved.',
+			'rows' => 4,
+		),
+	)
+);
+
+// Footer Options
+// ------------------------------------------------------------------------
+
+$sections[] = array(
+	'icon' => 'bookmark-empty',
 	'title' => __('Footer Options', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
@@ -248,8 +266,8 @@ $sections[] = array(
 			'id' => 'blog_excerpt_length',
 			'type' => 'text',
 			'title' => __('Excerpt Length', wpgrade::textdomain()),
-			'sub_desc' => __('Set here the excerpt length for the blog archive (number of words).', wpgrade::textdomain()),
-			'default' => '180',
+			'sub_desc' => __('Set the number of words for posts excerpt.', wpgrade::textdomain()),
+			'default' => '20',
 		),
 		array(
 			'id' => 'blog_single_show_share_links',

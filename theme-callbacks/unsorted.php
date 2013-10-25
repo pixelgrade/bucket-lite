@@ -76,7 +76,7 @@
                 <div class="media__body">
                     <header class="comment__meta comment-author vcard">
                         <?php printf('<cite class="comment__author-name">%s</cite>', get_comment_author_link()) ?>
-    					<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?> </a></time>
+    					          <time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?> </a></time>
                         <div class="comment__links">
                             <?php
                                 edit_comment_link(__('Edit', wpgrade::textdomain()),'  ','');
@@ -107,7 +107,6 @@
      */
     function short_text($text, $cut_length, $limit){
         $text = (strlen($text) > $limit) ? substr($text,0,$cut_length).'...' : $text;
-
         echo $text;
     }
 	

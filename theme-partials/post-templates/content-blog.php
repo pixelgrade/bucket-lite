@@ -19,7 +19,7 @@
         </a>
 
         <div class="article__content">
-            <?php the_excerpt(); ?>
+            <?php  the_excerpt(); ?>
         </div>
 
         <div class="article__meta  article--grid__meta">
