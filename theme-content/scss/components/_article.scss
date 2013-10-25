@@ -56,6 +56,11 @@
         text-align: center;
     }
 
+.article__category {
+    a:hover {
+        text-decoration:underline;
+    }
+}
 
 
 /**
@@ -100,9 +105,10 @@
  * Article Meta Links (date, comments, likes)
  * -- Blog Latest Posts, Posts Grid Cards, Hero Posts Module
  */
+
 .article__meta-links {
     margin-bottom: 0;
-    color: $gray;
+    color: $light;
     @include rem(margin-left, -$_u2);
     @include font-size(11px);
     text-transform:uppercase;
@@ -176,8 +182,9 @@
         }
     }
 
-
-
+/**
+ * [Widget] Latest Posts Slider
+ */
 .article--slider {
     @extend %separator--section;
     padding-bottom: 0;
@@ -206,12 +213,27 @@
 
 
 
+/*---------------------------------*\
+        CUSTOM PAGE BUILDER
+\*---------------------------------*/
+
+
 /**
  * Hero Posts Module
  */
+ .article--thumb .image-wrap {
+
+}
+
 .article--thumb__title {
-    @include rem(margin-bottom, $_u + $_u2);
     line-height: 1;
+
+    a {
+        color: $dark;
+        &:hover {
+            color:$accent;
+        }
+    }
 }
 
 

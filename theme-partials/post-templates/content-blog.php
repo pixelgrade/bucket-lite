@@ -34,9 +34,9 @@
                     ?>
                 </div>
                 <ul class="nav  article__meta-links">
-                    <li><a href="#"><i class="icon-time"></i> <?php the_time('j M') ?></a></li>
-                    <li><a href="#"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></a></li>
-                    <li><a href="#"><i class="icon-heart"></i> 12</a></li>
+                    <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
+                    <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
+                    <li><i class="icon-heart"></i> 12</li>
                 </ul>
             </div>
         </div>

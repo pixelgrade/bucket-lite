@@ -125,7 +125,7 @@ if ($slides->have_posts()): ?>
                     while($myquery->have_posts()): $myquery->the_post(); ?>
 	                    <li class="hard--sides">
 	                        <article class="article  article--thumb  media  flush--bottom">
-	                            <div class="media__img--rev  five-twelfths">
+	                            <div class="media__img--rev  four-twelfths">
 	                                <?php
                                     if (has_post_thumbnail()):
                                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
@@ -140,15 +140,17 @@ if ($slides->have_posts()): ?>
                                     $categories = get_the_category();
                                     if ($categories) {
                                         $category = $categories[0];
-                                        echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+                                        echo '<div class="article__category">
+                                                <a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>
+                                              </div>';
                                     } ?>
 	                                <div class="article__title  article--thumb__title">
-	                                    <h3 class="hN"><?php the_title(); ?></h3>
+	                                      <a href="<?php the_permalink(); ?>"><h3 class="hN"><?php the_title(); ?></h3></a>
 	                                </div>
 	                                <ul class="nav  article__meta-links">
-	                                    <li><a href="#"><i class="icon-time"></i> <?php the_time('j M') ?></a></li>
-	                                    <li><a href="#"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></a></li>
-	                                    <li><a href="#"><i class="icon-heart"></i> 12</a></li>
+	                                    <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
+	                                    <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
+	                                    <li><i class="icon-heart"></i> 12</li>
 	                                </ul>
 	                            </div>
 	                        </article>
