@@ -9,21 +9,7 @@
             </div><!--
             --><div class="grid__item one-half split">
                 <ul class="header-bar header-bar--top nav">
-                    <li>
-                        <a href="#" class="social-icon-link">
-                            <i class="icon-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="social-icon-link">
-                            <i class="icon-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="social-icon-link">
-                            <i class="icon-rss"></i>
-                        </a>
-                    </li>                
+                    <?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>        
                     <li><?php get_search_form(); ?></li>
                 </ul>
                  

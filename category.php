@@ -25,8 +25,8 @@ get_header(); ?>
                     <?php while (have_posts()): the_post(); ?><!--
                      --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
                  --><?php endwhile; ?>
-                    <?php wpgrade::pagination(); ?>
                 </div>
+				<?php echo wpgrade::pagination(); ?>
             <?php else: get_template_part( 'no-results', 'index' ); endif; ?>
         </div><!--
         

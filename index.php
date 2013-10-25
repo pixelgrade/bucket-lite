@@ -20,14 +20,14 @@ get_header(); ?>
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php __('Latest Articles', wpgrade::textdomain()) ?></h2>
+                    <h2 class="hN"><?php _e('Latest Articles', wpgrade::textdomain()) ?></h2>
                 </div>
                 <div class="grid" data-columns>
                     <?php while (have_posts()): the_post(); ?><!--
                      --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
                  --><?php endwhile; ?>
-                    <?php wpgrade::pagination(); ?>
                 </div>
+				<?php echo wpgrade::pagination(); ?>
             <?php else: get_template_part( 'no-results', 'index' ); endif; ?>
         </div><!--
         

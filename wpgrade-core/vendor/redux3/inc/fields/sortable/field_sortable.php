@@ -38,16 +38,20 @@ class ReduxFramework_sortable {
             foreach ($this->value as $k=>$v) {
                 if (!isset($options[$k])) {
                     unset($this->value[$k]);
-                }
+                } else {
+					//let's make sure that we don't have any default values saved
+					if ($this->value[$k] == $options[$k] && $this->field['mode'] == "text") {
+						$this->value[$k] = '';
+					}
+				}
             }
         }
-var_dump($options);
+
         foreach ($options as $k=>$v) {
             if (!isset($this->value[$k])) {
                 $this->value[$k] = $v;
             }
         }
-
 
         echo '<ul id="'.$this->field['id'].'-list" class="redux-sortable ' . $class . '">';
 
@@ -70,7 +74,7 @@ var_dump($options);
             if ( $this->field['mode'] == "checkbox") {
                 echo '<div class="checkbox-container">';
             }
-            echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" class="' . $class . '" '.$checked.'type="'.$this->field['mode'].'" id="' . $this->field['id'] . '[' . $k . ']" name="'.$name.'" value="' . esc_attr($value_display) . '" placeholder="' . $nicename . '" />';
+            echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" class="' . $class . '" '.$checked.'type="'.$this->field['mode'].'" id="' . $this->field['id'] . '[' . $k . ']" name="'.$name.'" value="' . esc_attr($value_display) . '" placeholder="' . $options[$k] . '" />';
             if ( $this->field['mode'] == "checkbox") {
                 echo '<label for="' . $this->field['id'] . '[' . $k . ']"><strong>' . $options[$k] . '</strong></label>';
 
