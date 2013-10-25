@@ -100,6 +100,7 @@
  * Article Meta Links (date, comments, likes)
  * -- Blog Latest Posts, Posts Grid Cards, Hero Posts Module
  */
+
 .article__meta-links {
     margin-bottom: 0;
     color: $gray;
@@ -176,8 +177,9 @@
         }
     }
 
-
-
+/**
+ * [Widget] Latest Posts Slider
+ */
 .article--slider {
     @extend %separator--section;
     padding-bottom: 0;
@@ -206,11 +208,19 @@
 
 
 
+/*---------------------------------*\
+        CUSTOM PAGE BUILDER
+\*---------------------------------*/
+
+
 /**
  * Hero Posts Module
  */
+ .article--thumb .image-wrap {
+    @include background-image(linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,.8)));
+ }
 .article--thumb__title {
-    @include rem(margin-bottom, $_u + $_u2);
+    // @include rem(margin-bottom, $_u + $_u2);
     line-height: 1;
 }
 

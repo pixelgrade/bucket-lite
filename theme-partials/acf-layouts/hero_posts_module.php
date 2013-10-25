@@ -125,7 +125,7 @@ if ($slides->have_posts()): ?>
                     while($myquery->have_posts()): $myquery->the_post(); ?>
 	                    <li class="hard--sides">
 	                        <article class="article  article--thumb  media  flush--bottom">
-	                            <div class="media__img--rev  five-twelfths">
+	                            <div class="media__img--rev  four-twelfths">
 	                                <?php
                                     if (has_post_thumbnail()):
                                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
