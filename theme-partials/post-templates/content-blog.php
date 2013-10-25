@@ -22,25 +22,25 @@
             <?php  the_excerpt(); ?>
         </div>
 
-        <div class="article__meta  article--grid__meta">
-            <div class="split">
-                <div class="split__title  article__category">
-                    <?php
-                        $categories = get_the_category();
-                        if ($categories) {
-                            $category = $categories[0];
-                            echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
-                        }
-                    ?>
-                </div>
-                <ul class="nav  article__meta-links">
-                    <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
-                    <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
-                    <li><i class="icon-heart"></i> 12</li>
-                </ul>
-            </div>
-        </div>
 
+    </div>
+    <div class="article__meta  article--grid__meta">
+        <div class="split">
+            <div class="split__title  article__category">
+                <?php
+                    $categories = get_the_category();
+                    if ($categories) {
+                        $category = $categories[0];
+                        echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+                    }
+                ?>
+            </div>
+            <ul class="nav  article__meta-links">
+                <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
+                <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
+                <li><i class="icon-heart"></i> 12</li>
+            </ul>
+        </div>
     </div>
 
 </article><!-- .article -->

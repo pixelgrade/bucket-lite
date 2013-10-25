@@ -69,8 +69,9 @@
  */
 
 .article--grid {
-    @extend %separator--section;
+    
     padding-bottom: 0;
+    @include rem(margin-bottom, $_u - 5px);
 
     .article__featured-image {
         margin-bottom: 0;
@@ -81,7 +82,12 @@
         @include rem(padding, 0 $_u2);
         position: relative;
         z-index: 20;
+
+        .article__content {
+             @include rem(padding, 0 $_u2);
+        }
     }
+
 
     .article--grid__title {
         @extend .article__title--inverse;
@@ -94,9 +100,18 @@
     }
 
     .article--grid__meta {
-        border-top: 1px solid #b3b3b3;
+        @extend %separator--section;
         margin-top: -1px;
-        @include rem(padding, $_u4 $_u2);
+        margin-bottom:0;
+        @include rem(padding, 0 $_u $_u4);
+
+        &:before {
+            content: " ";
+            display:block;
+            height:1px;
+            background-color: #b3b3b3;
+            @include rem(margin, 0 #{-$_u4} $_u4);
+        }
     }
 
 
@@ -310,4 +325,60 @@
         text-overflow: ellipsis;
         @extend .gamma;
     }
+}
+
+
+
+/**
+ * Posts Grid Cards ( ++styling if flexbox is supported )
+ */
+.posts-grid-cards {
+
+}
+.flexbox .posts-grid-cards {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        flex-direction: row;
+        align-items:stretch;
+        -ms-flex-align: stretch;
+
+      .grid__item {
+         
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+
+        position:relative;
+      }
+
+      article {
+          position:relative;
+
+          & > div {
+           
+          }
+          .article--grid__body {
+            padding-bottom:42px;
+          }
+          .article__meta {
+            margin-bottom:0;
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+          }
+      }
 }
