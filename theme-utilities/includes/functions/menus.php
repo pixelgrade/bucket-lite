@@ -80,15 +80,14 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-					'echo'            => false,
-                    'menu_class'      => 'site-navigation site-navigation--top site-navigation--main flush--bottom',
+                    'menu_class'      => 'site-navigation site-navigation--footer site-navigation--secondary flush--bottom',
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
 					'depth'			  => 1,
-					'items_wrap'      => '%3$s',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 //                    'walker'          => new WPGrade_Walker_Nav_Menu()
                 );
 
-            echo strip_tags(wp_nav_menu($args), '<a>' );
+            wp_nav_menu($args);
 		}
 	}
