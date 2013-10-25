@@ -8,6 +8,7 @@
  * @sidebar radio (enable / disable)
  */
 
+
 //set some variables to pass to the content-blog.php loaded below
 global $wp_query;
 $wp_query->query_vars['thumbnail_size'] = 'blog-medium';
