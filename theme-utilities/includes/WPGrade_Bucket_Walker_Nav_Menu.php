@@ -174,17 +174,24 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                     $menuposts = get_posts( $post_args );
 
-                    switch ($numberposts) {
-                        case 3:
-                            $classname = 'one-third';
-                            break;
-                        case 4:
-                            $classname = 'one-quarter';
-                            break;
-                        default:
-                            $classname = 'one-fifth';
-                            break;
+                    if ($item->hasChildren) {
+
+                        if ($menu_layout == 'latest_posts') {
+                            $posts_classname = 'one-quarter';
+                        } else {
+                            $posts_classname = 'one-half';
+                        }
+
+                    } else {
+
+                        if ($menu_layout == 'latest_posts') {
+                            $posts_classname = 'one-fifth';
+                        } else {
+                            $posts_classname = 'one-third';
+                        }
+
                     }
+
 
                     foreach( $menuposts as $post ) : setup_postdata( $post );
 
@@ -200,7 +207,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         }
 
                         $item_output .=
-                        '<div class="grid__item  '.$classname.'">' .
+                        '<div class="grid__item  '.$posts_classname.'">' .
                             '<div class="article article--billboard-small">' .
                                 '<div class="image-wrap">' . $menu_post_image . '</div>' .
                                 '<h2 class="article__title article--billboard-small__title">' .

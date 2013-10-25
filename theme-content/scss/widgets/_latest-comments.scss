@@ -51,3 +51,15 @@
     @include rem(margin-top, $_u2);
     line-height: 1.4;
 }
+
+.widget--footer {
+
+    .latest-comments__title {
+        background-color: #262525;
+        color: #e2e2e2;
+    }
+
+    .latest-comments__body {
+        border-bottom-color: #262525;
+    }
+}
