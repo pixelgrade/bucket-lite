@@ -56,6 +56,11 @@
         text-align: center;
     }
 
+.article__category {
+    a:hover {
+        text-decoration:underline;
+    }
+}
 
 
 /**
@@ -103,7 +108,7 @@
 
 .article__meta-links {
     margin-bottom: 0;
-    color: $gray;
+    color: $light;
     @include rem(margin-left, -$_u2);
     @include font-size(11px);
     text-transform:uppercase;
@@ -217,11 +222,18 @@
  * Hero Posts Module
  */
  .article--thumb .image-wrap {
-    @include background-image(linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,.8)));
- }
+
+}
+
 .article--thumb__title {
-    // @include rem(margin-bottom, $_u + $_u2);
     line-height: 1;
+
+    a {
+        color: $dark;
+        &:hover {
+            color:$accent;
+        }
+    }
 }
 
 
