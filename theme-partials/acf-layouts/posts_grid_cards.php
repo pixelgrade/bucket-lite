@@ -6,6 +6,10 @@
  * @number_of_posts number
  */
 
+//set some variables to pass to the content-blog.php loaded below
+global $wp_query;
+$wp_query->query_vars['thumbnail_size'] = 'post-medium';
+
 $number_of_posts = get_sub_field('number_of_posts');
 $read_more_label = get_sub_field('read_more_label');
 if ( empty($read_more_label) ) {

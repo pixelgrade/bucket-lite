@@ -1,7 +1,15 @@
 <div class="article__featured-image">
     <?php
     if (has_post_thumbnail()):
-        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-medium');
+		$thumbsize = 'blog-medium';
+	
+		//grab the desired thumb size from the query params if present
+		global $wp_query;
+		if (isset($wp_query->query_vars['thumbnail_size'])) {
+			$thumbsize = $wp_query->query_vars['thumbnail_size'];
+		}
+		
+        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $thumbsize);
         $image_ratio = $image[2] * 100/$image[1];
     ?>
         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
