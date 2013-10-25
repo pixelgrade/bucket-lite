@@ -239,7 +239,7 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_525fe095afe76',
 				'label' => 'Enable Pros & Cons Lists',
-				'name' => 'enable_pros_&_cons_lists',
+				'name' => 'enable_pros_cons_lists',
 				'type' => 'true_false',
 				'instructions' => 'Display a comparison lists with Good and Bad things.',
 				'conditional_logic' => array (

@@ -56,7 +56,7 @@ get_header(); ?>
                             </div>
                         <?php } ?>
                     </div><!--
-                 --><?php if (get_field('enable_pros_&_cons_lists')):
+                 --><?php if (get_field('enable_pros_cons_lists')):
                         if (get_field('pros_list')): ?><!--
                          --><div class="score__pros">
                                 <div class="score__pros__title">

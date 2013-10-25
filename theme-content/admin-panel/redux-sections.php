@@ -198,14 +198,7 @@ $sections[] = array(
 	'title' => __('Header Options', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
-		array(
-			'id' => 'copyright_text',
-			'type' => 'editor',
-			'title' => __('Copyright Text', wpgrade::textdomain()),
-			'sub_desc' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
-			'std' => 'Copyright &copy; 2013 '. wpgrade::themename() .' | All rights reserved.',
-			'rows' => 4,
-		),
+		
 	)
 );
 
@@ -223,7 +216,7 @@ $sections[] = array(
 			'title' => __('Copyright Text', wpgrade::textdomain()),
 			'sub_desc' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
 			'std' => 'Copyright &copy; 2013 '. wpgrade::themename() .' | All rights reserved.',
-			'rows' => 4,
+			'rows' => 3,
 		),
 	)
 );
