@@ -8,10 +8,6 @@
  * @sidebar radio (enable / disable)
  */
 
-//set some variables to pass to the content-blog.php loaded below
-global $wp_query;
-$wp_query->query_vars['thumbnail_size'] = 'post-medium';
-
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $number_of_posts = get_sub_field('number_of_posts');
 

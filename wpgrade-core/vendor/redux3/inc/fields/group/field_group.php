@@ -104,7 +104,7 @@ if (!class_exists('ReduxFramework_group')) {
                     if (!empty($field['subtitle']))
                         echo '<span class="description">' . $field['subtitle'] . '</span>';
                     $value = empty($this->parent->options[$field['id']][$x]) ? " " : $this->parent->options[$field['id']][$x];
-
+//					var_dump($field,$value);
                     ob_start();
                     $this->parent->_field_input($field, $value);
                     $content = ob_get_contents();
