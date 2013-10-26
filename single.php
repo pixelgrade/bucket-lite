@@ -119,7 +119,7 @@ get_header(); ?>
 					$categories = get_the_category();
                     if ($categories): ?>
                     <div class="btn-list">
-                        <div class="btn  btn--small  btn--secondary"><?php __('Categories', wpgrade::textdomain()) ?></div>
+                        <div class="btn  btn--small  btn--secondary"><?php _e('Categories', wpgrade::textdomain()) ?></div>
                         <?php
 							foreach ($categories as $category):
 								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
@@ -132,7 +132,7 @@ get_header(); ?>
 					$tags = get_the_tags();
                     if ($tags): ?>
                     <div class="btn-list">
-                        <div class="btn  btn--small  btn--secondary"><?php __('Tagged', wpgrade::textdomain()) ?></div>
+                        <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', wpgrade::textdomain()) ?></div>
                         <?php
 							foreach ($tags as $tag):
 								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s"), $tag->name)) .'">'. $tag->name.'</a>';

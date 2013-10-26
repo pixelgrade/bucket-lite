@@ -122,7 +122,7 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "quote-right",
+	'icon' => "tint",
 	'icon_class' => '',
 	'title' => __('Style Options', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
@@ -334,7 +334,7 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "facebook-sign",
+	'icon' => "facebook",
 	'icon_class' => '',
 	'title' => __('Social and SEO Options', wpgrade::textdomain()),
 
@@ -346,6 +346,7 @@ $sections[] = array(
             'title' => __('Social Icons', wpgrade::textdomain()),
             'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
             'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
+			'mode' => 'text',
             'options' => array(
                 'flickr' => __('Flickr', wpgrade::textdomain()),
                 'tumblr' => __('Tumblr', wpgrade::textdomain()),
@@ -365,7 +366,8 @@ $sections[] = array(
                 'soundcloud' => __('SoundCloud', wpgrade::textdomain()),
                 'digg' => __('Digg', wpgrade::textdomain()),
                 'lastfm' => __('Last.FM', wpgrade::textdomain()),
-                'appnet' => __('App.net', wpgrade::textdomain())
+                'appnet' => __('App.net', wpgrade::textdomain()),
+                'rss' => __('RSS Feed', wpgrade::textdomain()),
             )
         ),
 
@@ -514,7 +516,7 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "cloud-download",
+	'icon' => "gift",
 	'icon_class' => '',
 	'title' => __('Theme Auto Update', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>',

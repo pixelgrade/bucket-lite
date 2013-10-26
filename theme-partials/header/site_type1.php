@@ -49,47 +49,7 @@
             --><div class="header-bar-container grid__item one-half split">
                 <ul class="header-bar nav">
                     <li class="search-item"><?php get_search_form(); ?></li>
-					<?php 
-					$social_links = wpgrade::option('social_icons');
-//					$social_links_name = wpgrade::option('social_icons_name');
-//					$social_links_image_type = wpgrade::option('social_icons_image_type');
-//					$social_icons_font_awesome = wpgrade::option('social_icons_font_awesome');
-//					var_dump($social_links,$social_links_name,$social_links_image_type, $social_icons_font_awesome);die;
-					$target = '';
-					if ( wpgrade::option('social_icons_target_blank') ) {
-						$target = 'target="_blank"';
-					}
-					// Reset Post Data
-					wp_reset_postdata();
-
-					echo $before_widget;
-					if (count($social_links)): ?>
-					<?php if ($title): ?><h4 class="widget__title"><?php echo $title; ?></h4><?php endif; ?>
-						<ul class="site-social-links">
-							<?php foreach ($social_links as $domain => $value): if ($value): ?>
-								<li class="site-social-links__social-link">
-									<a href="<?php echo $value ?>"<?php echo $target ?>>
-										<i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
-									</a>
-								</li>
-							<?php endif; endforeach ?>
-						</ul>
-					<?php endif;?>
-                    <li class="social-item">
-                        <a href="#" class="social-icon-link">
-                            <i class="icon-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a href="#" class="social-icon-link">
-                            <i class="icon-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a href="#" class="social-icon-link">
-                            <i class="icon-rss"></i>
-                        </a>
-                    </li>                    
+					<?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>                  
                 </ul>
                  
             </div>

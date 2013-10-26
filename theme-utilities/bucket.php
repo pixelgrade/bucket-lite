@@ -2056,55 +2056,6 @@ class bucket
 		return false;
 	}
 
-	//the shit
-	static function portfolio_get_posts($number, $offset = 0) {
-		global $paged, $post;
-		$paged = 1;
-		if ( get_query_var('paged') ) $paged = get_query_var('paged');
-		if ( get_query_var('page') ) $paged = get_query_var('page');
-
-		$query_args = array(
-			'post_type'         => 'portfolio',
-			'posts_per_page'    => $number,
-			'paged'				=> $paged,
-			'orderby' => 'menu_order date',
-			'order' => 'desc',
-		);
-
-		$cat_param = get_query_var('portfolio_cat');
-		if ( is_archive() && !empty($cat_param) ) {
-			$tax_query_args = array(
-				array(
-					'taxonomy' => 'portfolio_cat',
-					'field' => 'slug',
-					'terms' => $cat_param,
-				)
-			);
-
-			$query_args['tax_query'] = $tax_query_args;
-		} else {
-			$tag_param = get_query_var('portfolio_tag');
-			if ( is_archive() && !empty($tag_param) ) {
-				$tax_query_args = array(
-					array(
-						'taxonomy' => 'portfolio_tag',
-						'field' => 'slug',
-						'terms' => $tag_param,
-					)
-				);
-
-				$query_args['tax_query'] = $tax_query_args;
-			}
-		}
-
-		if ($offset > 0) {
-			$query_args['offset'] = $offset;
-		}
-
-		return new WP_Query( $query_args );
-		
-	}
-
 	/**
 	* get youtube video ID from URL
 	*
