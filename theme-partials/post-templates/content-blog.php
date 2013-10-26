@@ -9,15 +9,6 @@
 
     <div class="article--grid__body">
 
-        <?php 
-            $has_thumb = has_post_thumbnail();
-            $flush_top = $has_thumb ? '' : 'flush--top'
-        ?>
-
-        <a href="<?php the_permalink(); ?>" class="article__title  article--grid__title <?php echo $flush_top; ?>">
-            <h3 class="hN"><?php the_title(); ?></h3>
-        </a>
-
         <div class="article__content">
             <?php  the_excerpt(); ?>
         </div>

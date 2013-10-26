@@ -93,11 +93,21 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-	<div class="billboard pixslider js-pixslider">
+	<div class="billboard pixslider js-pixslider" data-slidertransition="fade" data-arrows="true">
 	    <?php while($slides->have_posts()): $slides->the_post();
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
+            $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+            
+            if (isset($image[1]) && isset($image[2])) {
+              $image_ratio = $image[2] * 100/$image[1];
+            }
+
       			if ($index++ % 3 == 0):
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
+                if (isset($image[1]) && isset($image[2])) {
+                  $image_ratio = $image[2] * 100/$image[1];
+                }
+
                 if (!$closed_group):
                     echo '</div><div>';
                 else:
@@ -105,10 +115,10 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                 <article class="article article--billboard">
-                    <div class="image-wrap">
+                    <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
                     </div>
-                    <div class="article__header article--billboard__header">
+                    <div class="rsABlock article__header article--billboard__header">
                         <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
                         <h2 class="article__title article--billboard__title">
                             <div class="hN"><?php the_title(); ?></div>
@@ -117,8 +127,24 @@ if ($slides->have_posts()): ?>
                     </div>
                 </article>
   	        <?php else: ?>
-  	            <article class="article article--billboard-small">
-  	                <div class="image-wrap">
+  	            <article class="rsABlock  article article--billboard-small"
+                          data-move-effect="right"
+                          data-speed="400" 
+                          data-easing="easeOutCirc"
+                          
+                          <?php //Second Slide
+                          if ($index % 3 == 2) { ?>
+                          data-delay="350" 
+                          data-move-offset="170"
+                          <?php //Third Slide
+                          } else { ?>
+                          data-delay="300" 
+                          data-move-offset="100"
+                          <?php } ?>
+                          >
+  	                
+                   
+                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
   	                    <img src="<?php echo $image[0] ?>" />
   	                </div>
   	                <h2 class="article__title article--billboard-small__title">

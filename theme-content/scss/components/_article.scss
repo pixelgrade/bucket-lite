@@ -47,9 +47,37 @@
     }
 
     .article__title--inverse {
-        @include rem(padding, $_u4 $_u $_u4 $_u2);
-        background-color: $dark;
         color: white;
+
+        h3 {
+            @include rem(padding, $_u4 $_u);
+            @include rem(margin, -$_u $_u2 $_u2);
+            background-color: $dark;
+            @include transition(background-color 0.15s);
+        }
+
+        &:after {
+            background-color: $dark;
+            content:"";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:-1;
+            @include scaleX(0.89, false, true);
+            @include transition(all 0.15s);
+
+            //Fix text moving on hover
+            @include backface-visibility(hidden);
+        }
+    }
+
+    .article__title--full {
+        margin-bottom:0;
+        h3 {
+            margin:0;
+        }
     }
 
     .article__content {
@@ -74,32 +102,28 @@
     @include rem(margin-bottom, $_u - 5px);
 
     .article__featured-image {
-        margin-bottom: 0;
-        z-index: 21;
-        // @include transition(all 0.2s);
-        &:before {
-            @include transition(all 0.2s);
-            content: " ";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index:21;
-            opacity:1;
-            // background:$accent;
-
-        }
+        
     }
+}
+        
+    .article--grid__header {
 
-    //Hover Effect
-    &:hover {
-        .article__featured-image {
-            &:before {
-                // opacity:0.5; 
-                border:5px solid #fff;
+        &:hover {
+            .article--grid__thumb {
+                // @include scale(0.92);
+            }
+
+            .article--grid__title  {
+                h3 {
+                    background-color:$accent;
+                }
+                &:after {
+                    background-color:$accent;
+                    @include scaleX(1, false, true);
+                }
             }
         }
     }
-}
 
     .article--grid__body {
         @include rem(padding, 0 $_u2);
@@ -111,22 +135,31 @@
         }
     }
 
+    .article--grid__thumb {
+        margin-bottom: 0;
+        z-index: 21;
+        @include transition(all 0.25s);
+
+
+        &:before {
+            @include transition(all 0.25s);
+            content: " ";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index:21;
+            opacity:1;
+            border:0px solid #fff;
+
+        }
+    }
 
     .article--grid__title {
         @extend .article__title--inverse;
-        @include rem(padding, $_u4 $_u);
-        @include rem(margin, -$_u 0 $_u2);
-        @include transition(all 0.2s);
         z-index:22;
-      
-
         .hN {
             text-align: center;
-        }
-
-        &:hover {
-            background-color:$accent;
-        }
+        }  
     }
 
     .article--grid__meta {
@@ -237,8 +270,11 @@
 
     .article--slider__title {
         @extend .article__title--inverse;
-        margin-bottom: 0;
-        @include rem(padding, $_u4 $_u);
+        @extend .article__title--full;
+
+        h3 {
+            line-height:1.5;
+        }
 
         .hN {
             @extend .epsilon;
@@ -281,81 +317,6 @@
     }
 }
 
-
-
-/**
- * Billboard Slider Module
- */
-.billboard {
-    position: relative;
-    @include rem(margin-bottom, $_u);
-}
-
-.article--billboard {
-    position: static;
-}
-
-.billboard__category {
-    @include rem(margin-left, -$_u);
-    @include rem(padding, $_u4 $_u);
-    float: left;
-    background: black;
-    background: rgba(black, .75);
-    font-family: $alt-font-family;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-}
-
-.article--billboard__header {
-    position: absolute;
-    @include rem(bottom, $_u);
-    @include rem(left, $_2u);
-    z-index: 30;
-    @include font-size(14px);
-}
-
-.article--billboard__title {
-    background: white;
-    color: $dark;
-    @include rem(margin, 0 0 0 #{-$_2u});
-    @include rem(padding, $_u2 $_u2 $_u2 $_2u);
-    clear: left;
-}
-
-.article--billboard-small {
-    @extend %separator--section;
-    padding-bottom: 0;
-    background: white;
-    @include rem(width, $_8u);
-    position: absolute;
-    z-index: 40;
-    bottom: 0;
-    @include rem(right, $_u);
-
-    .small-link {
-        display: block;
-        @include rem(margin, 0 $_u2 $_u4);
-    }
-
-    + .article--billboard-small {
-        @include rem(right, 9 * $_u + $_u2);
-    }
-}
-
-.article--billboard-small__title {
-    @include rem(height, $_3u);
-    @include rem(margin, $_u2);
-    overflow: hidden;
-
-    .hN {
-        max-width: 100%;
-        overflow: hidden;
-        -ms-text-overflow: ellipsis;
-        text-overflow: ellipsis;
-        @extend .gamma;
-    }
-}
 
 
 
@@ -410,4 +371,87 @@
           }
       }
 
+}
+
+
+
+/**
+ * Billboard Slider Module
+ */
+.billboard {
+    position: relative;
+    @include rem(margin-bottom, $_u);
+}
+
+.article--billboard {
+    position: static;
+}
+
+.billboard__category {
+    @include rem(margin-left, -$_u);
+    @include rem(padding, $_u4 $_u);
+    float: left;
+    background: black;
+    background: rgba(black, .75);
+    font-family: $alt-font-family;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.article--billboard__header {
+    position: absolute;
+    top:auto;
+    @include rem(bottom, $_u);
+    @include rem(left, $_2u);
+    z-index: 30;
+    @include font-size(14px);
+}
+
+.article--billboard__title {
+    background: white;
+    color: $dark;
+    @include rem(margin, 0 0 0 #{-$_2u});
+    @include rem(padding, $_u2 $_u2 $_u2 $_2u);
+    clear: left;
+}
+
+//  Small Articles
+
+.article--billboard-small {
+    @extend %separator--section;
+    padding-bottom: 0;
+    background: white;
+    @include rem(width, $_8u);
+    @include rem(max-height, 280px);
+    position: absolute;
+    z-index: 40;
+    bottom: 0;
+    top:auto;
+    left:auto;
+    @include rem(right, 9 * $_u + $_u4 * 3);
+
+    .small-link {
+        display: block;
+        @include rem(margin, 0 $_u2 $_u4);
+    }
+
+    + .article--billboard-small {
+        @include rem(right, $_u);
+        
+    }
+}
+
+.article--billboard-small__title {
+    @include rem(height, $_3u);
+    @include rem(margin, $_u2);
+    overflow: hidden;
+
+    .hN {
+        max-width: 100%;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        @extend .gamma;
+    }
 }
