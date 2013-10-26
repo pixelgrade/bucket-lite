@@ -75,13 +75,36 @@
 
     .article__featured-image {
         margin-bottom: 0;
+        z-index: 21;
+        // @include transition(all 0.2s);
+        &:before {
+            @include transition(all 0.2s);
+            content: " ";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index:21;
+            opacity:1;
+            // background:$accent;
+
+        }
+    }
+
+    //Hover Effect
+    &:hover {
+        .article__featured-image {
+            &:before {
+                // opacity:0.5; 
+                border:5px solid #fff;
+            }
+        }
     }
 }
 
     .article--grid__body {
         @include rem(padding, 0 $_u2);
         position: relative;
-        z-index: 20;
+        z-index: 22;
 
         .article__content {
              @include rem(padding, 0 $_u2);
@@ -93,9 +116,16 @@
         @extend .article__title--inverse;
         @include rem(padding, $_u4 $_u);
         @include rem(margin, -$_u 0 $_u2);
+        @include transition(all 0.2s);
+        z-index:22;
+      
 
         .hN {
             text-align: center;
+        }
+
+        &:hover {
+            background-color:$accent;
         }
     }
 
@@ -332,53 +362,52 @@
 /**
  * Posts Grid Cards ( ++styling if flexbox is supported )
  */
-.posts-grid-cards {
 
-}
-.flexbox .posts-grid-cards {
-        display: -webkit-box;
-        display: -moz-box;
-        display: -webkit-flexbox;
-        display: -ms-flexbox;
-        display: -ms-flex;
-        display: -webkit-flex;
-        display: flex;
+.flexbox1 .posts-grid-cards {
 
-        -ms-flex-direction: row;
-        -webkit-flex-direction: row;
-        -moz-flex-direction: row;
-        flex-direction: row;
-        align-items:stretch;
-        -ms-flex-align: stretch;
+        @media screen and (min-width: 1023px) { 
 
-      .grid__item {
-         
-        display: -webkit-box;
-        display: -moz-box;
-        display: -webkit-flexbox;
-        display: -ms-flexbox;
-        display: -ms-flex;
-        display: -webkit-flex;
-        display: flex;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -webkit-flexbox;
+            display: -ms-flexbox;
+            display: -ms-flex;
+            display: -webkit-flex;
+            display: flex;
 
-        position:relative;
-      }
+            align-items:stretch;
+            -ms-flex-align: stretch;
 
-      article {
-          position:relative;
+          .grid__item {
+             
+            display: -webkit-box;
+            display: -moz-box;
+            display: -webkit-flexbox;
+            display: -ms-flexbox;
+            display: -ms-flex;
+            display: -webkit-flex;
+            display: flex;
 
-          & > div {
-           
+            position:relative;
           }
-          .article--grid__body {
-            padding-bottom:42px;
-          }
-          .article__meta {
-            margin-bottom:0;
-            position:absolute;
-            bottom:0;
-            left:0;
-            width:100%;
+
+          article {
+              position:relative;
+
+              & > div {
+               
+              }
+              .article--grid__body {
+                padding-bottom:42px;
+              }
+              .article__meta {
+                margin-bottom:0;
+                position:absolute;
+                bottom:0;
+                left:0;
+                width:100%;
+              }
           }
       }
+
 }
