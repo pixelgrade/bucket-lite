@@ -10,7 +10,7 @@ $number_of_posts = get_sub_field('number_of_posts');
 $more = $number_of_posts - 1;
 $read_more_label = get_sub_field('read_more_label');
 if ( empty($read_more_label) ) {
-	$read_more_label = 'Read Full Story';
+	$read_more_label = __('Read Full Story', wpgrade::textdomain());
 }
 
 $query_args = array(

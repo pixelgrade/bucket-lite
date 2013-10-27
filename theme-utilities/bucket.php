@@ -2029,7 +2029,7 @@ class bucket
 		return $array;
 	}
 
-	static function has_avarage_score(){
+	static function has_average_score(){
 		if (get_field('enable_review_score') && get_field('score_breakdown')) {
 			return true;
 		}

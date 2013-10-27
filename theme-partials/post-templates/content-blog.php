@@ -29,7 +29,11 @@
             <ul class="nav  article__meta-links">
                 <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
                 <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
-                <li><i class="icon-heart"></i> 12</li>
+				<?php  if (function_exists( 'get_pixlikes' )): ?>
+                <li><i class="icon-heart"></i>
+				<?php echo get_pixlikes(get_the_ID()); ?>
+				</li>
+				<?php endif; ?>
             </ul>
         </div>
     </div>

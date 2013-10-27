@@ -29,7 +29,7 @@
             ?>
 
             <?php post_format_icon();
-        	if ( bucket::has_avarage_score() ) { ?>
+        	if ( bucket::has_average_score() ) { ?>
                 <div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text">score</span></div>
         	<?php } ?>
         </div>

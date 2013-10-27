@@ -43,7 +43,7 @@ get_header(); ?>
 
                 <div class="grid">
                     <div class="grid__item two-eighths">
-                        <?php if ( bucket::has_avarage_score() ) { ?>
+                        <?php if ( bucket::has_average_score() ) { ?>
                             <div class="score__average-wrapper">
                                 <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
                                     <?php
