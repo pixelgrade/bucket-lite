@@ -5,7 +5,7 @@
         <div class="container grid">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
             <div class="grid__item one-half">
-                <?php wpgrade_top_nav(); ?>
+                <?php wpgrade_top_nav_left(); ?>
             </div><!--
             --><div class="grid__item one-half split">
                 <ul class="header-bar header-bar--top nav">
