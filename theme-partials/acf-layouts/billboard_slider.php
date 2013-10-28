@@ -109,7 +109,7 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-	<div class="billboard pixslider js-pixslider" data-slidertransition="move" data-arrows="true">
+	<div class="billboard pixslider js-pixslider" data-slidertransition="fade" data-arrows="true">
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
             $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
