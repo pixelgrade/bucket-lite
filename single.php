@@ -38,7 +38,7 @@ get_header(); ?>
                 <?php
 		        the_content();
 
-		        $args = array( 'before' => '<p>'.__('Pages:', wpgrade::textdomain()).' ', 'after' => '</p>', 'next_or_number' => 'next_and_number', 'previouspagelink' => __('Previous', wpgrade::textdomain()), 'nextpagelink' => __('Next', wpgrade::textdomain()) );
+		        $args = array( 'before' => '<ol class="nav pagination">', 'after' => '</ol>', 'next_or_number' => 'next_and_number', 'previouspagelink' => __('Previous', wpgrade::textdomain()), 'nextpagelink' => __('Next', wpgrade::textdomain()) );
 		        wp_link_pages( $args ); ?>
 
                 <div class="grid">

@@ -23,12 +23,59 @@
  */
 function wpgrade_callback_pagination_formatter($links, $conf) {
 	$linkcount = count($links);
-	
+
 	//don't show anything when no pagination is needed
 	if ($linkcount == 0) {
 		return '';
 	}
+	$prefix = '';
+	$suffix = '<!--';
+
+	$current = '';
+	if ( isset( $_GET['paged'] ) ) {
+		$current = $_GET['paged'];
+	}
+
+	foreach ( $links as $key => &$link ) {
+
+		if ( $key == $linkcount - 1 ) {
+			$suffix = '';
+		}
+
+		$class = 'class="';
+
+		switch ( $key ) {
+			case 0:
+				$class .= 'pagination__prev';
+				break;
+			case $current:
+				$class .= 'current';
+				break;
+			case $linkcount - 1:
+				$class .= 'pagination__next';
+				break;
+			default:
+				break;
+		}
+
+		$class .= '"';
+
+		$link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
+		$prefix = "\n-->";
+	}
 
 	return
-		'<nav class="navigation paging-navigation" role="navigation">'.implode('', $links).'</nav>';
+		'<ol class="nav pagination">'.implode('', $links).'</ol>';
 }
+
+
+/** Do the same thing on single post pagination */
+
+
+function this_function_plm($link, $i) {
+
+	$link = '<li>'. $link . '</li>';
+	return $link;
+
+}
+add_filter('wp_link_pages_link', 'this_function_plm', 10, 2);
