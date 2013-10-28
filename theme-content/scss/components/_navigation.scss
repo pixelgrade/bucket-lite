@@ -3,14 +3,15 @@
 \*------------------------------------*/
 
 .navigation {
-    @include font-size(14px);
 }
 
 .navigation--top{
+    @include font-size(12px);
     background-color: #050505;
 }
 
 .navigation--main{
+    @include font-size(14px);
     background-color: $dark;
 }
 
@@ -30,6 +31,13 @@
     position: relative;
 
     > li {
+        @include rem(border-top-width, 5px);
+        @include rem(border-bottom-width, 5px);
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+
 
         a {
             color: #a6a1a1;
@@ -40,7 +48,7 @@
         }
 
         > a {
-            @include rem(padding, $_u2 $_u);
+            @include rem(padding, $_u4 $_u);
             text-transform: uppercase;
 
             &:hover, &:focus, &:active {
@@ -66,6 +74,8 @@
         }
 
         &:hover {
+            border-bottom-color: $accent;
+            background-color: #262525;
             
             > .sub-menu,
             > .sub-menu--mega .sub-menu.grid__item {
@@ -148,6 +158,8 @@
     top: 100%;
     left: 0;
     z-index: 300;
+    //to let the red border-bottom of it's parent be visible on :hover
+    @include rem(margin-top, 5px);
 
     display: none;
 }
@@ -411,14 +423,27 @@
     > li {
 
         > a {
-
-            &, &:visited {
-                color: $gray;
-                border-right:1px dotted #fff;
-            }
+            color: #807d7c;
+            text-transform: uppercase;
 
             &:hover, &:focus, &:active {
 
+            }
+        }
+
+        + li {
+            > a {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    @include rem(top, $_u4);
+                    left: 0;
+                    @include rem(height, $_u);
+                    border-left: 1px dotted $gray;
+                }
             }
         }
 
@@ -434,4 +459,13 @@
 
         }
     }
+}
+
+.nav--top-left {
+    @include rem(margin-left, -$_u2);
+}
+
+.nav--top-right {
+    text-align: right;
+    @include rem(margin-right, -$_u2);
 }

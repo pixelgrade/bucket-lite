@@ -6,7 +6,7 @@
     @include rem(height, $_6u);
 }
 
-@include media(from lap) {
+@include media(from hand) {
     .site-logo--text{
         @include rem(padding-top, $_2u);
     }
@@ -77,6 +77,12 @@
     
     .social-icon-link {
         height: auto;
+    }
+}
+
+@include media(to hand) {
+    .header-ad{
+        display: none;
     }
 }
 
