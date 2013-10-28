@@ -342,9 +342,9 @@ $sections[] = array(
 	'fields' => array(
         array(
             'id' => 'social_icons',
-            'type' => 'sortable',
+            'type' => 'text_sortable',
             'title' => __('Social Icons', wpgrade::textdomain()),
-            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
+            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.<br /><br /><strong> You need to imput the entire URL (ie. http://twitter.com/username)</strong>', wpgrade::textdomain()),wpgrade::themename()),
             'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
 			'mode' => 'text',
             'options' => array(
