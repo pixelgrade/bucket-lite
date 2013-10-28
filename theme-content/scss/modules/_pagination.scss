@@ -1,37 +1,40 @@
 .pagination{
     border: none;
+    text-align: center;
+    @include rem(margin, $_2u 0);
 
     .pagination-item--current span{
         background-color: $accent;
         color: white;
     }
 
-    .pagination-item--previous:before{
+    .pagination-item--prev a:before,
+    .pagination-item--next a:after{
         content: '';
         display: inline-block;
         @include transform(rotate(45deg));
-        @include rem(width, 12px);
-        @include rem(height, 12px);
-        border-right-color: black;
-        border-right-style: solid;
-        border-right-width: 2px;
-        border-top-color: black;
-        border-top-style: solid;
-        border-top-width: 2px; 
-    } 
-    .pagination-item--next:after{
-        content: '';
-        display: inline-block;
-        @include transform(rotate(45deg));
-        @include rem(width, 12px);
-        @include rem(height, 12px);
-        border-right-color: black;
-        border-right-style: solid;
-        border-right-width: 2px;
-        border-top-color: black;
-        border-top-style: solid;
-        border-top-width: 2px;        
+        @include rem(width, 10px);
+        @include rem(height, 10px);
+        @include rem(margin, 0 $_u4);
     }
+
+    .pagination-item--prev a:before{
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+    } 
+
+    .pagination-item--next a:after{
+        border-right: 2px solid black;
+        border-top: 2px solid black;     
+    }
+
+    .pagination-item--next{
+        @include rem(margin-left, $_u);
+    }
+
+    .pagination-item--prev{
+        @include rem(margin-right, $_u);
+    }    
 
     li{
         a, span{
