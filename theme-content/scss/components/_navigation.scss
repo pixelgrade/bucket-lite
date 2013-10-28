@@ -7,36 +7,17 @@
     @include font-size(14px);
 }
 
-// 
-.nav--top {
-    display: none;
 
-    > li {
 
-        > a {
-
-            &, &:visited {
-                color: #a6a1a1;
-            }
-
-            &:hover, &:focus, &:active {
-
-            }
-        }
-
-        /*li*/&.current-menu-ancestor > a {
-
-        }
-        
-        /*li*/&.current-menu-parent > a {
-            
-        }
-
-        /*li*/&.current-menu-item > a {
-
-        }
+/**
+ * Top Bar Navigation - including Top Menu Left and Top Menu Right
+ */
+.navigation--top {
+    .nav {
+        margin-bottom:0;
     }
 }
+
 
 .nav--main {
     position: relative;
@@ -404,3 +385,36 @@
     }    
 }
 
+
+
+// Stuff
+.nav--top {
+    // display: none;
+
+    > li {
+
+        > a {
+
+            &, &:visited {
+                color: $gray;
+                border-right:1px dotted #fff;
+            }
+
+            &:hover, &:focus, &:active {
+
+            }
+        }
+
+        /*li*/&.current-menu-ancestor > a {
+
+        }
+        
+        /*li*/&.current-menu-parent > a {
+            
+        }
+
+        /*li*/&.current-menu-item > a {
+
+        }
+    }
+}
