@@ -16,6 +16,7 @@
 }
 
 .aligncenter {
+    display:block;
     @include rem(margin, $_u4 auto $_u);
 }
 
