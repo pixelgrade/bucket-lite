@@ -9,14 +9,14 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @package Bucket
+ * @since Bucket 1.0
  */
 
 get_header(); ?>
 
 <div id="main" class="container container--main">
-
     <div class="grid">
-
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">

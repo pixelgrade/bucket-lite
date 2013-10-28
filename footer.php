@@ -26,9 +26,7 @@
         <h2 class="accessibility">Footer</h2>
         <div class="widget-area">
             <div class="container">
-            
                 <div class="grid widget-area__first">
-                    
                     <?php if ( is_active_sidebar( 'sidebar-footer-first-1' ) ) : ?>
                         <div class="grid__item one-third  palm-one-whole">
                             <?php dynamic_sidebar( 'sidebar-footer-first-1' ); ?>
