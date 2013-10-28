@@ -73,7 +73,7 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 
 
 function this_function_plm($link, $i) {
-
+var_dump($i);
 	$link = '<li>'. $link . '</li>';
 	return $link;
 
