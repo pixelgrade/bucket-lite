@@ -1,10 +1,17 @@
 <?php
 
+$debug_mod = false;
+
+if ( isset($_GET['debug_mod']) && $_GET['debug_mod'] == "true" ) {
+	$debug_mod = (boolean) true;
+}
+
 return array
 	(
 		// setting dev mode to true allows you to view the class settings/info in
 		// the panel
-		'dev_mode' => false, # default: true
+		'dev_mode' => $debug_mod, # default: true
+		'system_info' => $debug_mod, # default: true
 
 		// set the icon for the dev mode tab
 //		'dev_mode_icon' => 'info-sign', # default: info-sign

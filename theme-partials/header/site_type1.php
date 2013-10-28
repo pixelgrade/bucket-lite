@@ -2,18 +2,14 @@
 
     <nav class="navigation  navigation--top">
 
-        <div class="container grid">
+        <div class="container">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
-            <div class="grid__item one-half">
-                <?php wpgrade_top_nav(); ?>
-            </div><!--
-            --><div class="grid__item one-half">
-                <div class="translation-bar-container">
-                    <ul class="translation-bar flush--bottom">
-                        <li class="translation-item"><a href="#" class="translation-link">ES</a></li>
-                        <li class="translation-item"><a href="#" class="translation-link">EN</a></li>
-                        <li class="translation-item"><a href="#" class="translation-link">RTL</a></li>
-                    </ul>
+            <div class="grid">
+                <div class="grid__item one-half">
+                    <?php wpgrade_top_nav_left(); ?>
+                </div><!--
+                --><div class="grid__item one-half">
+                    <?php wpgrade_top_nav_right(); ?>
                 </div>
             </div>
         </div>
