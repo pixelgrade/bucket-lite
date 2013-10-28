@@ -1,0 +1,16 @@
+.pagination{
+    border: none;
+
+    .current{
+        background-color: $accent;
+        color: white;
+    }
+
+    li{
+        a, span{
+            @include rem(padding, $_u4 $_u2);
+            color: black;
+            @include font-size(14px);
+        }
+    }
+}
