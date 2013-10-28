@@ -1,6 +1,6 @@
 .social-icon-link{
-    @include transition(all 0.15s ease-in-out);
-    
+    @include transition(all 0.15s);
+
     &:hover, &:focus, &:active {
         background-color: $accent;
         color: white;

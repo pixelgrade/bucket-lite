@@ -131,7 +131,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         
                         $post_title = get_the_title();
                         $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
                         if ( $post_image ){
                             $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
@@ -172,7 +172,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                         $post_title = get_the_title();
                         $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );
 
                         $image_ratio = 0.7; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
                         if (isset($post_image[1]) && isset($post_image[2])) {
@@ -243,6 +243,11 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             } else {
                 // the megamenu wrapper is empty
                 if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
+
+                    $_nav__item = $_doc->find('.sub-menu--mega:last')->parent();
+                    $_nav__item
+                        ->addClass('nav__item--relative');
+                    
                     $_doc->find('.sub-menu--mega:last .sub-menu')
                         ->removeClass('sub-menu')
                         ->removeClass('one-fifth')

@@ -3,8 +3,15 @@
 \*------------------------------------*/
 
 .navigation {
-    background-color: $dark;
     @include font-size(14px);
+}
+
+.navigation--top{
+    background-color: #050505;
+}
+
+.navigation--main{
+    background-color: $dark;
 }
 
 
@@ -89,6 +96,16 @@
                 color: white;
             }
         }
+    }
+}
+
+.nav__item--relative {
+    position: relative;
+
+    > .sub-menu {
+        // asa ies calculele cand imparti la 5 (are clasa one-fifth)
+        // dar are position: relative pe list item si trebuie definita latimea
+        @include rem(width, $_8u + $_u2 + $_u4);
     }
 }
 
