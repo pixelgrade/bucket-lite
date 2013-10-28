@@ -112,9 +112,9 @@ endswitch;
 $slides = new WP_Query( $query_args );
 
 if ($slides->have_posts()): ?>
-    <div class="posts-grid-cards grid fullwidth" data-columns><!--
+    <div class="posts-grid-cards grid fullwidth"><!--
         <?php while($slides->have_posts()): $slides->the_post(); ?>
-         --><?php get_template_part('theme-partials/post-templates/content-blog'); ?><!--
+         --><div class="grid__item"><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
         <?php endwhile; wp_reset_postdata(); ?>
  --></div>
 <?php endif;
