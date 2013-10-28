@@ -11,15 +11,13 @@ get_header(); ?>
     <div class="grid">
 
         <?php
+		// let's get to know this post a little better
+		$full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
+		$disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
 
-            // let's get to know this post a little better
-            $full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
-            $disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
-
-            // let's use what we know
-            $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
-            $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
-
+		// let's use what we know
+		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
+		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
         ?>
 
         <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
@@ -33,12 +31,20 @@ get_header(); ?>
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <div class="article__title__meta">
                     <?php printf('<div class="article__author-name">%s</div>', get_the_author_link()) ?>
-                    <time class="article__time" datetime="<?php the_time('c'); ?>"> on <?php the_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?></time>
+                    <time class="article__time" datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s', wpgrade::textdomain()),get_the_time(__('j F, Y \a\t H:i', wpgrade::textdomain()))); ?></time>
                 </div>
                 <?php
 		        the_content();
 
-		        $args = array( 'before' => '<p>'.__('Pages:', wpgrade::textdomain()).' ', 'after' => '</p>', 'next_or_number' => 'next_and_number', 'previouspagelink' => __('Previous', wpgrade::textdomain()), 'nextpagelink' => __('Next', wpgrade::textdomain()) );
+		        $args = array(
+			        'before' => "<ol class=\"nav pagination\"><!--",
+			        'after' => "\n--></ol>",
+//			        'link_before'      => '',
+//			        'link_after'       => '',
+			        'next_or_number' => 'next_and_number',
+			        'previouspagelink' => __('Previous', wpgrade::textdomain()),
+			        'nextpagelink' => __('Next', wpgrade::textdomain())
+		        );
 		        wp_link_pages( $args ); ?>
 
                 <div class="grid">

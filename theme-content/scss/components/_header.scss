@@ -6,9 +6,12 @@
     @include rem(height, $_6u);
 }
 
-.site-logo--text{
-    @include rem(padding-top, $_2u);
+@include media(from hand) {
+    .site-logo--text{
+        @include rem(padding-top, $_2u);
+    }
 }
+
 
 
 
@@ -28,7 +31,7 @@
             // @include rem(height, $_2u);
             height: 48px;
             @include rem(padding, 0 $_u);
-            background-color: black;
+            background-color: $dark;
             border: 0;
             color: $light;
             text-transform: uppercase;
@@ -39,7 +42,7 @@
             @include rem(height, $_2u);
             @include rem(padding, $_u2);
             vertical-align: top;
-            background: black;
+            background-color: $dark;
             @include font-size(0.75*$_u);
         }
     // }
@@ -47,13 +50,13 @@
     .social-icon-link {
         @include rem(width, $_2u);
         @include rem(height, $_2u);
-        @include rem(padding-top, $_u/4);
+        @include rem(padding, $_u/4 0);
         display: block;
-        background-color: black;
+        background-color: $dark;
         color: $light;
         text-align: center;
 
-        @include font-size($_u);
+        @include font-size(16px);
     }
 }
 
@@ -67,14 +70,19 @@
 
     .search-submit{
         height: auto;
-        line-height: 36px;
+        line-height: 34px;
         padding-top: 0;
         padding-bottom: 0;
     }
     
     .social-icon-link {
         height: auto;
-        padding: 0;      
+    }
+}
+
+@include media(to hand) {
+    .header-ad{
+        display: none;
     }
 }
 

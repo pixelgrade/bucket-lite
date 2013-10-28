@@ -339,6 +339,7 @@ img.rsImg{
     height: auto;
     overflow: hidden;
     margin: 0;
+    @include transform(translateZ(0));
 
     img {
         width: 100%;

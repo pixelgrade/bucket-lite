@@ -4,6 +4,68 @@ require_once( ABSPATH . WPINC . '/nav-menu-template.php' );
  * Create a walker which will add a class to items with submenus
  * More http://stackoverflow.com/questions/3558198/php-wordpress-add-arrows-to-parent-menus
  */
+
+if ( !class_exists( "WPGrade_Bucket_Walker_Top_Nav_Menu" ) && class_exists( 'Walker_Nav_Menu' ) ):
+
+class WPGrade_Bucket_Walker_Top_Nav_Menu extends Walker_Nav_Menu {
+    function start_lvl(&$output, $depth = 0, $args = array()) {
+        $output .= "<ul class=\"sub-menu\">";
+    }
+
+    function end_lvl(&$output, $depth = 0, $args = array()) {  
+        $output .= "</ul>";
+    }
+
+    // add main/sub classes to li's and links
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        global $wp_query;
+
+        if (!is_array($args)) {
+            $args = (array)$args;
+        }
+
+        // depth dependent classes
+        $depth_classes = array('depth-'.$depth);
+
+        $depth_class_names = esc_attr(implode(' ', $depth_classes));
+
+        // passed classes
+        $classes = empty($item->classes) ? array() : (array)$item->classes;
+        $class_names = esc_attr(implode(' ', apply_filters( 'nav_menu_css_class', array_filter($classes), $item)));
+
+        // build html
+        $output .= '<li id="nav--top__item-'.$item->ID. '" class="nav__item '.$depth_class_names.' '.$class_names.'">';
+
+        // link attributes
+        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+        $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+
+        $item_output = sprintf
+            (
+                '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+                $args['before'],
+                $attributes,
+                $args['link_before'],
+                apply_filters( 'the_title', $item->title, $item->ID ),
+                $args['link_after'],
+                $args['after']
+            );
+
+        // build html
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
+
+    function end_el(&$output, $item, $depth=0, $args=array()) {
+        $output .= "</li>";
+    }
+}
+
+endif;
+
+
 if ( !class_exists( "WPGrade_Bucket_Walker_Nav_Menu" ) && class_exists( 'Walker_Nav_Menu' ) ):
 
 class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
@@ -131,7 +193,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         
                         $post_title = get_the_title();
                         $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
                         if ( $post_image ){
                             $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
@@ -172,19 +234,24 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                         $post_title = get_the_title();
                         $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
+                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );
+
+                        $image_ratio = 0.7; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+                        if (isset($post_image[1]) && isset($post_image[2])) {
+                            $image_ratio = $post_image[2] * 100/$post_image[1];
+                        }
 
                         if ( $post_image ){
-                            $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+                            $menu_post_image = '<div class="image-wrap" style="padding-top: '.$image_ratio.'%"><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
                         } else {
-                            // $menu_post_image = '<div class="image-wrap"></div>';
+                            $menu_post_image = '<div class="image-wrap"></div>';
                             $menu_post_image = '';
                         }
 
                         $item_output .= 
                             '<div class="sub-menu__grid__item  grid__item  one-fifth">' .
                                 '<article class="article article--billboard-small">' .
-                                    '<div class="image-wrap">' . $menu_post_image . '</div>' .
+                                    $menu_post_image .
                                     '<h2 class="article__title article--billboard-small__title">' .
                                         '<div class="hN">' . $post_title . '</div>' .
                                     '</h2>' .
@@ -238,6 +305,11 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             } else {
                 // the megamenu wrapper is empty
                 if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
+
+                    $_nav__item = $_doc->find('.sub-menu--mega:last')->parent();
+                    $_nav__item
+                        ->addClass('nav__item--relative');
+                    
                     $_doc->find('.sub-menu--mega:last .sub-menu')
                         ->removeClass('sub-menu')
                         ->removeClass('one-fifth')
