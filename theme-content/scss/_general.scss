@@ -35,6 +35,14 @@ html {
     color: $red;
 }
 
+.grid--thin {
+    @include rem(margin-left, -$_u4);
+
+    > .grid__item {
+        @include rem(padding-left, $_u4);
+    }
+}
+
 
 
 

@@ -1063,6 +1063,13 @@
         //     $('html').toggleClass('navigation--is-visible');
         // }); 
 
+        $('.nav--main  .nav__item').on('hover', function() {
+            $(this).parent().find('.js-pixslider').each(function() {
+                var slider = $(this).data('royalSlider');
+                slider.updateSliderSize();
+            });
+        });
+
     };
 
     function eventHandlers(){};
