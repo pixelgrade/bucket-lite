@@ -1,28 +1,31 @@
-<header class="header header--type1">
+<header class="header header--type3">
 
     <nav class="navigation  navigation--top">
 
-        <div class="container grid">
+        <div class="container">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
-            <div class="grid__item one-half">
-                <?php wpgrade_top_nav(); ?>
-            </div><!--
-            --><div class="grid__item one-half">
-                <div class="translation-bar-container">
-                    <ul class="translation-bar flush--bottom">
-                        <li class="translation-item"><a href="#" class="translation-link">ES</a></li>
-                        <li class="translation-item"><a href="#" class="translation-link">EN</a></li>
-                        <li class="translation-item"><a href="#" class="translation-link">RTL</a></li>
+            <div class="grid">
+            
+                <div class="grid__item one-half">
+                    <?php wpgrade_top_nav_left(); ?>
+                </div><!--
+                
+                --><div class="grid__item one-half split">
+                    <ul class="header-bar header-bar--top nav">
+                        <?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>        
+                        <li><?php get_search_form(); ?></li>
                     </ul>
                 </div>
+            
             </div>
         </div>
 
     </nav>
 
-    <div class="container">
-        <div class="site-header grid">
-            <div class="site-header__branding grid__item one-half">
+    <div class="container container--main-header">
+
+        <div class="site-header">
+            <div class="site-header__branding">
 
                 <?php if (wpgrade::option_image_src('main_logo')): ?>
 
@@ -45,26 +48,20 @@
 
                 <?php endif; ?>
 
-            </div><!--
-            --><div class="header-bar-container grid__item one-half split">
-                <ul class="header-bar nav">
-                    <li class="search-item"><?php get_search_form(); ?></li>
-					<?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>                  
-                </ul>
-                 
             </div>
 
         </div>
+        
+        <a class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></a>
 
-        <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>        
-
-        <hr class="nav-top-separator separator separator--striped flush--bottom" />
+        <hr class="nav-top-separator separator separator--striped flush--bottom" />        
         <nav class="navigation  navigation--main">
 
             <h2 class="accessibility"><?php _e('Primary Navigation', wpgrade::textdomain()) ?></h2>
             <?php wpgrade_main_nav(); ?>
 
         </nav>
+
     </div>
 
 </header><!-- .header -->

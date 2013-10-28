@@ -174,17 +174,22 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         $post_link = get_permalink();
                         $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium-size" );
 
+                        $image_ratio = 0.7; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+                        if (isset($post_image[1]) && isset($post_image[2])) {
+                            $image_ratio = $post_image[2] * 100/$post_image[1];
+                        }
+
                         if ( $post_image ){
-                            $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" />';
+                            $menu_post_image = '<div class="image-wrap" style="padding-top: '.$image_ratio.'%"><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
                         } else {
-                            // $menu_post_image = '<div class="image-wrap"></div>';
+                            $menu_post_image = '<div class="image-wrap"></div>';
                             $menu_post_image = '';
                         }
 
                         $item_output .= 
                             '<div class="sub-menu__grid__item  grid__item  one-fifth">' .
                                 '<article class="article article--billboard-small">' .
-                                    '<div class="image-wrap">' . $menu_post_image . '</div>' .
+                                    $menu_post_image .
                                     '<h2 class="article__title article--billboard-small__title">' .
                                         '<div class="hN">' . $post_title . '</div>' .
                                     '</h2>' .
