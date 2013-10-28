@@ -410,17 +410,22 @@
     // display: none;
 
     > li {
+        position: relative;
 
-        > a {
+        a {
             color: #807d7c;
-            text-transform: uppercase;
 
             &:hover, &:focus, &:active {
-
+                color: white;
             }
         }
 
+        > a {
+            text-transform: uppercase;
+        }
+
         + li {
+
             > a {
                 position: relative;
 
@@ -446,6 +451,27 @@
 
         /*li*/&.current-menu-item > a {
 
+        }
+
+        .sub-menu {
+            @include rem(width, $_8u);
+            @include font-size(14px);
+            padding-top: 0;
+            border-bottom: 0;
+        }
+
+        .menu {
+            // @include rem(padding-left, $_u4);
+            // @include rem(padding-right, $_u4);
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
+
+        &:hover {
+            
+            > .sub-menu {
+                display: block;
+            }
         }
     }
 }
