@@ -4,7 +4,7 @@
 $light : #807f7e;
 $gray  : #4c4a4a;
 $dark  : #1a1717;
-$accent   : #fb4834;
+$accent: #fb4834;
 $red   : #fb4834;
 
 
@@ -117,6 +117,7 @@ $_8u   : 8 * $_u; // 192px
 @import "preloader";
 @import "progressbar";
 @import "btn";
+@import "forms";
 @import "mixins";
 
 @import "general";
