@@ -68,11 +68,13 @@ function add_next_and_number( $args ) {
 			if ( $i and $more ) {
 				$prev .= _wp_link_page( $i );
 				$prev .= $args['link_before'] . $args['previouspagelink'] . $args['link_after'] . '</a>';
+				$prev = apply_filters( 'wp_link_pages_link', $prev, 'prev' );
 			}
 			$i = $page+1;
 			if ( $i <= $numpages and $more ) {
 				$next .= _wp_link_page( $i );
 				$next .= $args['link_before'] . $args['nextpagelink'] . $args['link_after'] . '</a>';
+				$next = apply_filters( 'wp_link_pages_link', $next, 'next' );
 			}
 		}
 		$args['before'] = $args['before'] . $prev;

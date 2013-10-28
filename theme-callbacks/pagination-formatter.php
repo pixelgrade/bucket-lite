@@ -42,23 +42,22 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 			$suffix = '';
 		}
 
-		$class = 'class="';
+		$class = '';
 
 		switch ( $key ) {
 			case 0:
-				$class .= 'pagination__prev';
+				$class .= 'class="pagination__prev"';
 				break;
 			case $current:
-				$class .= 'current';
+				$class .= 'class="current"';
 				break;
 			case $linkcount - 1:
-				$class .= 'pagination__next';
+				$class .= 'class="pagination__next"';
 				break;
 			default:
 				break;
 		}
 
-		$class .= '"';
 
 		$link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
 		$prefix = "\n-->";
@@ -71,10 +70,44 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 
 /** Do the same thing on single post pagination */
 
+//function this_function_plm($link, $i) {
+////var_dump($i);
+//	$link = '<li>'. $link . '</li>';
+//	return $link;
+//
+//}
+//add_filter('wp_link_pages_link', 'this_function_pllm', 10, 2);
 
-function this_function_plm($link, $i) {
-var_dump($i);
-	$link = '<li>'. $link . '</li>';
+function this_function_plm($link, $key) {
+	$current = '';
+	if ( isset( $_GET['paged'] ) ) {
+		$current = $_GET['paged'];
+	}
+	$class = '';
+	$prefix = '-->';
+	$suffix = '<!--';
+	switch ( $key ) {
+		case 'prev':
+			$class .= 'class="pagination__prev"';
+//			$prefix = '';
+//			$suffix = '<!--';
+			break;
+		case $current:
+//			if ( $current == '1' ) {
+//				$prefix = '';
+//			}
+			$class .= 'class="current"';
+			break;
+		case 'next':
+			$class .= 'class="pagination__next"';
+//			$prefix = '-->';
+//			$suffix = '';
+			break;
+		default:
+			break;
+	}
+
+	$link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
 	return $link;
 
 }
