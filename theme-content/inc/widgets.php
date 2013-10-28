@@ -288,7 +288,7 @@ class wpgrade_social_links_widget extends WP_Widget {
 
 		echo $before_widget;
 		if (count($social_links)): ?>
-        <?php if ($title): echo $before_title . $title . $after_title; ?>
+        <?php if ($title): echo $before_title . $title . $after_title; endif; ?>
             <ul class="site-social-links">
                 <?php foreach ($social_links as $domain => $value): if ($value): ?>
                     <li class="site-social-links__social-link">
