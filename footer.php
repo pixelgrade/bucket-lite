@@ -4,26 +4,24 @@
  * @package Bucket
  * @since   Bucket 1.0
 **/
-?>
-
-<?php
-    /* The footer widget area is triggered if any of the areas
-     * have widgets. So let's check that first.
-     *
-     * If none of the sidebars have widgets, then let's bail early.
-     */
-    if (   ! is_active_sidebar( 'sidebar-footer-first-1' )
-        && ! is_active_sidebar( 'sidebar-footer-first-2' )
-        && ! is_active_sidebar( 'sidebar-footer-first-3' )
-        && ! is_active_sidebar( 'sidebar-footer-second-1' )
-        && ! is_active_sidebar( 'sidebar-footer-second-2'  )
-    )
-        return;
-    // If we get this far, we have widgets. Let do this.
-?>
-    
+?>    
     <footer class="site-footer">
-        <h2 class="accessibility">Footer</h2>
+        <h2 class="accessibility"><?php __('Footer', wpgrade::textdomain()) ?></h2>
+		
+	<?php
+	/* The footer widget area is triggered if any of the areas
+	 * have widgets. So let's check that first.
+	 *
+	 * If none of the sidebars have widgets, then let's bail early.
+	 */
+	if (   is_active_sidebar( 'sidebar-footer-first-1' )
+		|| is_active_sidebar( 'sidebar-footer-first-2' )
+		|| is_active_sidebar( 'sidebar-footer-first-3' )
+		|| is_active_sidebar( 'sidebar-footer-second-1' )
+		|| is_active_sidebar( 'sidebar-footer-second-2'  )
+	):
+	// If we get this far, we have widgets. Let do this.
+	?>
         <div class="widget-area">
             <div class="container">
                 <div class="grid widget-area__first">
@@ -59,6 +57,8 @@
                 </div>
             </div>
         </div>
+	<?php endif; ?>
+		
         <div class="colophon">
             <div class="container">
                 <div class="flexbox">
@@ -68,7 +68,6 @@
             </div>
         </div>
     </footer><!-- .site-footer -->
-
     <!-- Google Analytics tracking code -->
     <?php echo wpgrade::option( 'google_analytics' ) . "\n"; ?>
     </div>

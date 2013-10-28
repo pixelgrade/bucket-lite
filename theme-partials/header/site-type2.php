@@ -2,18 +2,18 @@
 
     <nav class="navigation  navigation--top">
 
-        <div class="container grid">
+        <div class="container">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
+			
             <div class="grid__item one-half">
                 <?php wpgrade_top_nav_left(); ?>
             </div><!--
-            --><div class="grid__item one-half split">
+         --><div class="grid__item one-half split">
                 <ul class="header-bar header-bar--top nav">
                     <?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>
                     <li><?php get_search_form(); ?></li>
                 </ul>
-                 
-            </div>
+			</div>
         </div>
 
     </nav>
