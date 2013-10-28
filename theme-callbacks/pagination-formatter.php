@@ -70,15 +70,7 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 
 /** Do the same thing on single post pagination */
 
-//function this_function_plm($link, $i) {
-////var_dump($i);
-//	$link = '<li>'. $link . '</li>';
-//	return $link;
-//
-//}
-//add_filter('wp_link_pages_link', 'this_function_pllm', 10, 2);
-
-function this_function_plm($link, $key) {
+function wpgrade_pagination_custom_markup($link, $key) {
 	$current = '';
 	if ( isset( $_GET['paged'] ) ) {
 		$current = $_GET['paged'];
@@ -89,19 +81,12 @@ function this_function_plm($link, $key) {
 	switch ( $key ) {
 		case 'prev':
 			$class .= 'class="pagination__prev"';
-//			$prefix = '';
-//			$suffix = '<!--';
 			break;
 		case $current:
-//			if ( $current == '1' ) {
-//				$prefix = '';
-//			}
 			$class .= 'class="current"';
 			break;
 		case 'next':
 			$class .= 'class="pagination__next"';
-//			$prefix = '-->';
-//			$suffix = '';
 			break;
 		default:
 			break;
@@ -111,4 +96,4 @@ function this_function_plm($link, $key) {
 	return $link;
 
 }
-add_filter('wp_link_pages_link', 'this_function_plm', 10, 2);
+add_filter('wp_link_pages_link', 'wpgrade_pagination_custom_markup', 10, 2);
