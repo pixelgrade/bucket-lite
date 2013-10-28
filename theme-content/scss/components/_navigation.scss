@@ -3,14 +3,15 @@
 \*------------------------------------*/
 
 .navigation {
-    @include font-size(14px);
 }
 
 .navigation--top{
+    @include font-size(12px);
     background-color: #050505;
 }
 
 .navigation--main{
+    @include font-size(14px);
     background-color: $dark;
 }
 
@@ -411,14 +412,27 @@
     > li {
 
         > a {
-
-            &, &:visited {
-                color: $gray;
-                border-right:1px dotted #fff;
-            }
+            color: #807d7c;
+            text-transform: uppercase;
 
             &:hover, &:focus, &:active {
 
+            }
+        }
+
+        + li {
+            > a {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    @include rem(top, $_u4);
+                    left: 0;
+                    @include rem(height, $_u);
+                    border-left: 1px dotted $gray;
+                }
             }
         }
 
@@ -434,4 +448,13 @@
 
         }
     }
+}
+
+.nav--top-left {
+    @include rem(margin-left, -$_u2);
+}
+
+.nav--top-right {
+    text-align: right;
+    @include rem(margin-right, -$_u2);
 }

@@ -67,10 +67,12 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'nav  nav--top nav--block',
+                    'menu_class'      => 'nav  nav--top  nav--top-left  nav--block',
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
                     'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'walker'          => new WPGrade_Bucket_Walker_Top_Nav_Menu()
+
                 );
 
             wp_nav_menu($args);
@@ -91,10 +93,11 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'nav  nav--top  nav--block',
+                    'menu_class'      => 'nav  nav--top  nav--top-right  nav--block',
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
                     'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'walker'          => new WPGrade_Bucket_Walker_Top_Nav_Menu()
                 );
 
             wp_nav_menu($args);
