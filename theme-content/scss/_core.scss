@@ -12,7 +12,7 @@
 
 .alignleft {
     float: left;
-    @include rem(margin, $_u4 $_u $_u 0);
+    @include rem(margin, $_u4 $_u2 $_u2 0);
 }
 
 .aligncenter {
@@ -22,7 +22,7 @@
 
 .alignright {
     float: right;
-    @include rem(margin, $_u4 0 $_u $_u);
+    @include rem(margin, $_u4 0 $_u2 $_u2);
 }
 
 .wp-caption {
