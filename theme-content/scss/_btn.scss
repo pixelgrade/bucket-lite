@@ -5,10 +5,11 @@
     letter-spacing: .0625em;
     @include font-size(12px, true, 1.083);
     padding: 0 1.5em;
-    @include transition(all .2s ease-in-out);
+    @include transition(all .15s);
 
     &:hover {
-        background-color: #262525;
+        background-color: $accent;
+        color:white;
     }
 
     &.btn--beta { @include font-size(12px, true, 1.25); }
@@ -16,16 +17,16 @@
 }
 
 .btn--primary {
-    background-color: $red;
+    background-color: $accent;
     color: white;
+
+    &:hover {
+        background:$dark;
+    }
 }
 
 .btn--secondary {
     color: white;
-
-    // &:hover {
-    //     background-color: $red;
-    // }
 }
 
 .btn--tertiary {

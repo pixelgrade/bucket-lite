@@ -21,7 +21,7 @@
     <div class="container">
 
         <div class="site-header site-header--ad grid">
-            <div class="site-header__branding grid__item three-tenths">
+            <div class="site-header__branding  grid__item  one-whole  lap-and-up-three-tenths">
 
                 <?php if (wpgrade::option_image_src('main_logo')): ?>
 
@@ -45,7 +45,7 @@
                 <?php endif; ?>
 
             </div><!--
-            --><div class="header-ad grid__item seven-tenths">
+            --><div class="header-ad  grid__item  one-whole  lap-and-up-seven-tenths">
                 <a class="header-ad-link" href="#">
                     <img src="http://placehold.it/728x90" alt="#" />
                 </a>
