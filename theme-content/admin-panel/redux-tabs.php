@@ -49,11 +49,12 @@
 			</div>
 		';
 
-    $tabs['item_info'] = array(
-		'icon' => 'info-sign',
-		'icon_class' => '',
-        'title' => __('Theme Information', wpgrade::textdomain()),
-        'content' => $item_info
-    );
-
+	if ( isset($_GET['debug_mod']) && $_GET['debug_mod'] == "true" ) {
+	    $tabs['item_info'] = array(
+			'icon' => 'info-sign',
+			'icon_class' => '',
+	        'title' => __('Theme Information', wpgrade::textdomain()),
+	        'content' => $item_info
+	    );
+	}
 	return $tabs;

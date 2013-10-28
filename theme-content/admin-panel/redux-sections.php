@@ -136,17 +136,6 @@ $sections[] = array(
 			'validate' => 'color',
 		),
 		array(
-			'id' => 'header_type',
-			'type' => 'image_select',
-			'title' => __('Header type', wpgrade::textdomain()),
-			'default' => 'type1',
-			'options' => array(
-				'type1' => array('Type 1', 'img' => 'images/align-right.png'),
-				'type2' => array('Type 2', 'img' => 'images/align-left.png'),
-				'type3' => array('Type 3', 'img' => 'images/align-center.png'),
-			)
-		),
-		array(
 			'id' => 'use_google_fonts',
 			'type' => 'switch',
 			'title' => __('Do you need custom web fonts?', wpgrade::textdomain()),
@@ -231,7 +220,17 @@ $sections[] = array(
 	'title' => __('Header Options', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
-		
+		array(
+			'id' => 'header_type',
+			'type' => 'image_select',
+			'title' => __('Header type', wpgrade::textdomain()),
+			'default' => 'type1',
+			'options' => array(
+				'type1' => array('Type 1', 'img' => 'images/align-right.png'),
+				'type2' => array('Type 2', 'img' => 'images/align-left.png'),
+				'type3' => array('Type 3', 'img' => 'images/align-center.png'),
+			)
+		),
 	)
 );
 
@@ -342,9 +341,9 @@ $sections[] = array(
 	'fields' => array(
         array(
             'id' => 'social_icons',
-            'type' => 'sortable',
+            'type' => 'text_sortable',
             'title' => __('Social Icons', wpgrade::textdomain()),
-            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
+            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.<br /><br /><strong> You need to imput the entire URL (ie. http://twitter.com/username)</strong>', wpgrade::textdomain()),wpgrade::themename()),
             'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
 			'mode' => 'text',
             'options' => array(

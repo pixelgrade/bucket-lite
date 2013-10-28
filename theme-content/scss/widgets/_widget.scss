@@ -52,6 +52,14 @@
         @extend .btn--negative;
         @include rem(font-size, 12px !important);
     }
+
+    &.widget--main {
+
+        a {
+            background-color: #eee;
+            color: #555;
+        }
+    }
 }
 
 
@@ -67,18 +75,14 @@
 /*ul*/.menu--list {
     margin: 0;
     list-style: none;
-    @include rem(margin-top, -$_u2);
+    // @include rem(margin-top, -$_u2);
 
     > li {
         @include rem(padding, $_u2 0);
 
         + li {
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #333131;
             margin-top: -1px;
-
-            .site-footer & {
-                border-top-color: #262525;
-            }
         }
     }
 
@@ -133,27 +137,27 @@
 
 .widget {
 
-    .form-search {
-        position: relative;
-    }
+    // .form-search {
+    //     position: relative;
+    // }
 
-    .search-query {
-        width: 100%;
-        @include font-size(14px);
-        @include rem(padding, $_u4);
-        @include rem(padding-right, $_2u + $_u4);
-        border: 1px solid #ddd;
-    }
+    // .search-query {
+    //     width: 100%;
+    //     @include font-size(14px);
+    //     @include rem(padding, $_u4);
+    //     @include rem(padding-right, $_2u + $_u4);
+    //     border: 1px solid #ddd;
+    // }
 
-    .search-submit {
-        position: absolute;
-        top: 0; right: 0;
-        border: 1px solid $dark;
-        @include font-size(14px);
-        @include rem(width, $_2u);
-        @include rem(padding, $_u4);
-        text-align: center;
-    }
+    // .search-submit {
+    //     position: absolute;
+    //     top: 0; right: 0;
+    //     border: 1px solid $dark;
+    //     @include font-size(14px);
+    //     @include rem(width, $_2u);
+    //     @include rem(padding, $_u4);
+    //     text-align: center;
+    // }
 
     select {
         width: 100%;

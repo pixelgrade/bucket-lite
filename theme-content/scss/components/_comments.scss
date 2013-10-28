@@ -182,34 +182,9 @@ li.comment{
 
 .comment-respond{
 
-    input:not([type]), 
-    input[type="color"], 
-    input[type="email"], 
-    input[type="number"], 
-    input[type="password"], 
-    input[type="tel"], 
-    input[type="url"], 
-    input[type="text"] {
-        width: 100%;
-        @include rem(padding, $_u2);
-        border: 1px solid #e5e9eb;
-        outline: 0;
+    
 
-        &:focus {
-            outline: 1px solid $red;
-        }
-    }
-
-    .lt-ie9 & input {
-        width: 100%;
-        padding: $_u2 0;
-        border: 1px solid #e5e9eb;
-        outline: 0;
-
-        &:focus {
-            outline: 1px solid $red;
-        }
-    }
+    
 }
 
 .comment-form-comment,
@@ -218,13 +193,13 @@ li.comment{
     @extend .one-whole;
 
     textarea{
-        width: 100%;
-        @include rem(padding, $_u2);
-        border: 1px solid #e5e9eb;
+        // width: 100%;
+        // @include rem(padding, $_u2);
+        // border: 1px solid #e5e9eb;
 
-        &:focus {
-            outline: 1px solid $red;
-        }
+        // &:focus {
+        //     outline: 1px solid $red;
+        // }
     }
 }
 

@@ -2,12 +2,13 @@
     <a href="<?php the_permalink(); ?>">
         <div class="article--grid__thumb article__featured-image">
             <?php
-			$flush_top = '';
+			$flush_top = 'flush--top';
             if (has_post_thumbnail()):
         		$thumbsize = 'blog-medium';
 
-				$has_thumb = has_post_thumbnail();
-				$flush_top = $has_thumb ? '' : 'flush--top';
+            $has_thumb = has_post_thumbnail();
+			//no need to flush if we have a thumbnail
+            $flush_top = '';
         	
         		//grab the desired thumb size from the query params if present
         		global $wp_query;

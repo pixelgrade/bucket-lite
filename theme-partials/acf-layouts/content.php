@@ -6,6 +6,6 @@
  * @content wysiwyg
  */
 
-?><div class="content">
+?><div class="content-module">
 	<?php the_sub_field("content"); ?>
 </div><?php

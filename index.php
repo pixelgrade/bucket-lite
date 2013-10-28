@@ -9,22 +9,22 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @package Bucket
+ * @since Bucket 1.0
  */
 
 get_header(); ?>
 
 <div id="main" class="container container--main">
-
     <div class="grid">
-
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
                     <h2 class="hN"><?php _e('Latest Articles', wpgrade::textdomain()) ?></h2>
                 </div>
-                <div class="grid" data-columns>
+                <div class="grid  masonry" data-columns>
                     <?php while (have_posts()): the_post(); ?><!--
-                     --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
+                     --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
 				<?php echo wpgrade::pagination(); ?>

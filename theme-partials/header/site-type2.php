@@ -2,18 +2,18 @@
 
     <nav class="navigation  navigation--top">
 
-        <div class="container grid">
+        <div class="container">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
+			
             <div class="grid__item one-half">
-                <?php wpgrade_top_nav(); ?>
+                <?php wpgrade_top_nav_left(); ?>
             </div><!--
-            --><div class="grid__item one-half split">
+         --><div class="grid__item one-half split">
                 <ul class="header-bar header-bar--top nav">
                     <?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>
                     <li><?php get_search_form(); ?></li>
                 </ul>
-                 
-            </div>
+			</div>
         </div>
 
     </nav>
@@ -21,7 +21,7 @@
     <div class="container">
 
         <div class="site-header site-header--ad grid">
-            <div class="site-header__branding grid__item three-tenths">
+            <div class="site-header__branding  grid__item  one-whole  lap-and-up-three-tenths">
 
                 <?php if (wpgrade::option_image_src('main_logo')): ?>
 
@@ -45,7 +45,7 @@
                 <?php endif; ?>
 
             </div><!--
-            --><div class="header-ad grid__item seven-tenths">
+            --><div class="header-ad  grid__item  one-whole  lap-and-up-seven-tenths">
                 <a class="header-ad-link" href="#">
                     <img src="http://placehold.it/728x90" alt="#" />
                 </a>
