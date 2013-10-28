@@ -9,7 +9,7 @@ $sections[] = array(
 	'icon' => 'cogs',
 	'icon_class' => '',
 	'title' => __('General Options', wpgrade::textdomain()),
-	'desc' => sprintf(__('<p class="description">Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.</p>', wpgrade::textdomain()),wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
 			'id' => 'wpGrade_import_demodata_button',
@@ -25,16 +25,13 @@ $sections[] = array(
 						<input type="hidden" name="wpGrade_import_ajax_url" value="'.admin_url("admin-ajax.php").'" />
 
 						<a href="#" class="button button-primary" id="wpGrade_import_demodata_button">
-							Import demo data
+							'.__('Import demo data', wpgrade::textdomain()).'
 						</a>
 
 						<div class="wpGrade-loading-wrap hidden">
 							<span class="wpGrade-loading wpGrade-import-loading"></span>
 							<div class="wpGrade-import-wait">
-								Please wait a few minutes (between 2 and 5 minutes usually, but
-								depending on your hosting it can take longer) and <strong>don\'t
-								reload the page</strong>. You will be notified as soon as the
-								import has finished!
+								'.__('Please wait a few minutes (between 2 and 5 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', wpgrade::textdomain()).'
 							</div>
 						</div>
 
@@ -75,15 +72,48 @@ $sections[] = array(
 			'id' => 'metro_icon',
 			'type' => 'media',
 			'title' => __('Metro Icon', wpgrade::textdomain()),
-			'esc' => __('You can customize the icon for the shortcuts of your website in the Metro interface. The size of this icon must be 144x144px.', wpgrade::textdomain())
+			'desc' => __('You can customize the icon for the shortcuts of your website in the Metro interface. The size of this icon must be 144x144px.', wpgrade::textdomain())
 		),
 		array(
 			'id' => 'google_analytics',
 			'type' => 'textarea',
 			'title' => __('Google Analytics', wpgrade::textdomain()),
 			'desc' => __('Paste here your Google Analytics tracking code (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
-			'desc' => __('', wpgrade::textdomain())
 		),
+//		array(
+//			'id' => 'enable_cookies_notice_bar',
+//			'type' => 'switch',
+//			'title' => __('Do you want to display a Cookies Usage Notice Bar?', wpgrade::textdomain()),
+//			'subtitle' => __('If you want to comply with the EU cookie law (e-Privacy Directive) you can display a notice bar at the bottom of your site that will inform your users about your site using cookies. It relies on the implied consent model (used in big sites like gov.uk) meaning that the bar will disappear when the user goes to a second page or hits the Button.', wpgrade::textdomain()),
+//			'default' => '0',
+//		),
+//		array(
+//			'id' => 'cookies_notice_bar_text',
+//			'type' => 'editor',
+//			'required' => array('enable_cookies_notice_bar', '=', 1),
+//			'title' => __('Notice Text', wpgrade::textdomain()),
+//			'subtitle' => __('This text will appear in the cookies notice bar, perferably on one line so keep it short.', wpgrade::textdomain()),
+//			'default' => __('Cookies help us deliver our services. By continuing to browse this site, you agree to our use of cookies.<i>(optional cookies notice bar)</i>', wpgrade::textdomain()),
+//			'rows' => 3,
+//		),
+//		array(
+//			'id' => 'cookies_notice_bar_button_text',
+//			'type' => 'text',
+//			'required' => array('enable_cookies_notice_bar', '=', 1),
+//			'title' => __('Button Text', wpgrade::textdomain()),
+//			'subtitle' => __('The text that will be displayed on the dismiss button.', wpgrade::textdomain()),
+//			'default' => __('I\'m OK', wpgrade::textdomain()),
+//		),
+//		array(
+//			'id' => 'cookies_notice_bar_more_info_html',
+//			'type' => 'editor',
+//			'required' => array('enable_cookies_notice_bar', '=', 1),
+//			'title' => __('More Info Link', wpgrade::textdomain()),
+//			'subtitle' => __('Put here a more info link in HTML format.', wpgrade::textdomain()),
+//			'default' => '',
+//			'rows' => 3,
+//		),
+		
 	)
 );
 
@@ -92,10 +122,10 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "quote",
+	'icon' => "tint",
 	'icon_class' => '',
 	'title' => __('Style Options', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Give some style to your website!</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
@@ -170,7 +200,7 @@ $sections[] = array(
 			'id' => 'custom_css',
 			'type' => 'textarea',
 			'title' => __('Custom CSS Style', wpgrade::textdomain()),
-			'sub_desc' => __('Use this area to make slight CSS changes. It will be included in the head section of the page.', wpgrade::textdomain()),
+			'subtitle' => __('Use this area to make slight CSS changes. It will be included in the head section of the page.', wpgrade::textdomain()),
 			'desc' => __('', wpgrade::textdomain()),
 			'validate' => 'html'
 		),
@@ -178,37 +208,48 @@ $sections[] = array(
 			'id' => 'custom_js',
 			'type' => 'textarea',
 			'title' => __('Custom JavaScript', wpgrade::textdomain()),
-			'sub_desc' => __('Use this area to make custom JavaScript calls.This code will be loaded in head section', wpgrade::textdomain()),
+			'subtitle' => __('Use this area to make custom JavaScript calls.This code will be loaded in head section', wpgrade::textdomain()),
 			'desc' => __('jQuery is available here as $', wpgrade::textdomain()),
 			'validate' => 'html'
 		),
 		array(
 			'id' => 'inject_custom_css',
 			'type' => 'select',
-			'title' => __('How to inject the custom CSS', wpgrade::textdomain()),
-			'subtitle' => sprintf(__('By default %s saves the custom CSS in a file.<br />If for some reason you don\'t have permisions to write a file on your host you should choose the "Inline" option', wpgrade::textdomain()),wpgrade::themename()),
-			'default' => 'file',
-			'options' => array( 'file' => 'Write To File', 'inline' => 'Inline' ),
+			'title' => __('Apply Custom CSS', wpgrade::textdomain()),
+			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
+			'default' => 'inline',
+			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
 		),
 	)
 );
 
-// Sidebar Options
+// Header Options
 // ------------------------------------------------------------------------
 
 $sections[] = array(
 	'icon' => 'bookmark',
-	'icon_class' => '',
-	'title' => __('Sidebar Options', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Change sidebar related options from here.</p>', wpgrade::textdomain()),
+	'title' => __('Header Options', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
+	'fields' => array(
+		
+	)
+);
+
+// Footer Options
+// ------------------------------------------------------------------------
+
+$sections[] = array(
+	'icon' => 'bookmark-empty',
+	'title' => __('Footer Options', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'copyright_text',
 			'type' => 'editor',
 			'title' => __('Copyright Text', wpgrade::textdomain()),
-			'sub_desc' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
-			'std' => 'Copyright &copy; 2013 '. wpgrade::themename() .' | All rights reserved.',
-			'rows' => 4,
+			'subtitle' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
+			'default' => 'Copyright &copy; 2013 '. wpgrade::themename() .' | All rights reserved.',
+			'rows' => 3,
 		),
 	)
 );
@@ -220,13 +261,13 @@ $sections[] = array(
 	'icon' => "envelope",
 	'icon_class' => '',
 	'title' => __('Contact Page', wpgrade::textdomain()),
-	'desc' => __('<p class="description">General settings for the contact page template!</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('General settings for the contact page template!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'contact_gmap_link',
 			'type' => 'text',
 			'title' => __('Google Maps Link', wpgrade::textdomain()),
-			'sub_desc' => __('Paste here the the URL that you\'ve got from Google Maps, after navigating to your location.<br />Here it is <a href="http://screenr.com/MjV7" target="_blank">a short movie</a> showing you how to get the URL', wpgrade::textdomain()),
+			'subtitle' => __('Paste here the the URL that you\'ve got from Google Maps, after navigating to your location.<br />Here it is <a href="http://screenr.com/MjV7" target="_blank">a short movie</a> showing you how to get the URL', wpgrade::textdomain()),
 		),
 		array(
 			'id' => 'contact_gmap_custom_style',
@@ -245,20 +286,20 @@ $sections[] = array(
 	'icon' => 'file-alt',
 	'icon_class' => '',
 	'title' => __('Blog Options', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Change blog archive and single post related options here.</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Change blog archive and single post related options here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'blog_excerpt_length',
 			'type' => 'text',
 			'title' => __('Excerpt Length', wpgrade::textdomain()),
-			'sub_desc' => __('Set here the excerpt length for the blog archive (number of words).', wpgrade::textdomain()),
-			'default' => '100',
+			'subtitle' => __('Set the number of words for posts excerpt.', wpgrade::textdomain()),
+			'default' => '20',
 		),
 		array(
 			'id' => 'blog_single_show_share_links',
 			'type' => 'switch',
 			'title' => __('Show Share Links', wpgrade::textdomain()),
-			'sub_desc' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
+			'subtitle' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
 			'default' => '1',
 		),
 		array(
@@ -293,92 +334,89 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "facebook-sign",
+	'icon' => "facebook",
 	'icon_class' => '',
 	'title' => __('Social and SEO Options', wpgrade::textdomain()),
 
-	'desc' => __('<p class="description">Social sharing stuff.</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Social sharing stuff.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
-//        array(
-//            'id' => 'social_icons',
-//            'type' => 'sortable',
-//            'title' => __('Social Icons', wpgrade::textdomain()),
-//            'sub_desc' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
-//            'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
-//            'options' => array(
-//                'flickr' => __('Flickr', wpgrade::textdomain()),
-//                'tumblr' => __('Tumblr', wpgrade::textdomain()),
-//                'pinterest' => __('Pinterest', wpgrade::textdomain()),
-//                'instagram' => __('Instagram', wpgrade::textdomain()),
-//                'behance' => __('Behance', wpgrade::textdomain()),
-//                'fivehundredpx' => __('500px', wpgrade::textdomain()),
-//                'deviantart' => __('DeviantART', wpgrade::textdomain()),
-//                'dribbble' => __('Dribbble', wpgrade::textdomain()),
-//                'twitter' => __('Twitter', wpgrade::textdomain()),
-//                'facebook' => __('Facebook', wpgrade::textdomain()),
-//                'gplus' => __('Google+', wpgrade::textdomain()),
-//                'youtube' => __('Youtube', wpgrade::textdomain()),
-//                'vimeo' => __('Vimeo', wpgrade::textdomain()),
-//                'linkedin' => __('LinkedIn', wpgrade::textdomain()),
-//                'skype' => __('Skype', wpgrade::textdomain()),
-//                'soundcloud' => __('SoundCloud', wpgrade::textdomain()),
-//                'digg' => __('Digg', wpgrade::textdomain()),
-//                'lastfm' => __('Last.FM', wpgrade::textdomain()),
-//                'appnet' => __('App.net', wpgrade::textdomain())
-//            )
-//        ),
+        array(
+            'id' => 'social_icons',
+            'type' => 'sortable',
+            'title' => __('Social Icons', wpgrade::textdomain()),
+            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.', wpgrade::textdomain()),wpgrade::themename()),
+            'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
+			'mode' => 'text',
+            'options' => array(
+                'flickr' => __('Flickr', wpgrade::textdomain()),
+                'tumblr' => __('Tumblr', wpgrade::textdomain()),
+                'pinterest' => __('Pinterest', wpgrade::textdomain()),
+                'instagram' => __('Instagram', wpgrade::textdomain()),
+                'behance' => __('Behance', wpgrade::textdomain()),
+                'fivehundredpx' => __('500px', wpgrade::textdomain()),
+                'deviantart' => __('DeviantART', wpgrade::textdomain()),
+                'dribbble' => __('Dribbble', wpgrade::textdomain()),
+                'twitter' => __('Twitter', wpgrade::textdomain()),
+                'facebook' => __('Facebook', wpgrade::textdomain()),
+                'gplus' => __('Google+', wpgrade::textdomain()),
+                'youtube' => __('Youtube', wpgrade::textdomain()),
+                'vimeo' => __('Vimeo', wpgrade::textdomain()),
+                'linkedin' => __('LinkedIn', wpgrade::textdomain()),
+                'skype' => __('Skype', wpgrade::textdomain()),
+                'soundcloud' => __('SoundCloud', wpgrade::textdomain()),
+                'digg' => __('Digg', wpgrade::textdomain()),
+                'lastfm' => __('Last.FM', wpgrade::textdomain()),
+                'appnet' => __('App.net', wpgrade::textdomain()),
+                'rss' => __('RSS Feed', wpgrade::textdomain()),
+            )
+        ),
 
-		array(
-			'id'=>"social_icons",
-			'type' => 'group',//doesnt need to be called for callback fields
-			'title' => __('Social Icons', wpgrade::textdomain()),
-			'subtitle' => __('Group any items together.', wpgrade::textdomain()),
-			'desc' => __('No limit as to what you can group. Just don\'t try to group a group.', wpgrade::textdomain()),
-			'groupname' => __('Social Icon', wpgrade::textdomain()), // Group name
-			'subfields' => array(
-				array(
-					'id'=>'name',
-					'type' => 'text',
-					'title' => __('Social Icon Name', wpgrade::textdomain()),
-					'subtitle'=> __('This will apear as alt text on icon', wpgrade::textdomain()),
-				),
-				array(
-					'id'=>'url',
-					'type' => 'text',
-					'title' => __('Link', wpgrade::textdomain()),
-					'subtitle' => __('Here you put your subtitle', wpgrade::textdomain()),
-				),
-				array(
-					'id' => 'image-type',
-					'type' => 'image_select',
+//		array(
+//			'id'=>"social_icons",
+//			'type' => 'group',//doesnt need to be called for callback fields
+//			'title' => __('Social Icons', wpgrade::textdomain()),
+//			'subtitle' => __('Group any items together.', wpgrade::textdomain()),
+//			'desc' => __('No limit as to what you can group. Just don\'t try to group a group.', wpgrade::textdomain()),
+//			'groupname' => __('Social Icon', wpgrade::textdomain()), // Group name
+//			'subfields' => array(
+//				array(
+//					'id'=>'social_icons_name',
+//					'type' => 'text',
+//					'title' => __('Social Icon Name', wpgrade::textdomain()),
+//					'subtitle'=> __('This will apear as alt text on icon', wpgrade::textdomain()),
+//				),
+//				array(
+//					'id'=>'social_icons_url',
+//					'type' => 'text',
+//					'title' => __('Link', wpgrade::textdomain()),
+//					'subtitle' => __('Here you put your subtitle', wpgrade::textdomain()),
+//				),
+//				array(
+//					'id' => 'social_icons_image_type',
+//					'type' => 'image_select',
+//					'title' => __('Icon Type', wpgrade::textdomain()),
 //					'options' => array(
-//						'type1' => array('Type 1', 'img' => 'images/align-right.png'),
-//						'type2' => array('Type 2', 'img' => 'images/align-left.png'),
-//						'type3' => array('Type 3', 'img' => 'images/align-center.png'),
-//					)
-					'title' => __('Icon Type', wpgrade::textdomain()),
-					'options' => array(
-						'image' => array( __('Image', wpgrade::textdomain() ), 'img' => 'images/align-right.png' ),
-						'font-awesome'=> array( __('Font Awesome', wpgrade::textdomain()), 'img' => 'images/align-left.png' )
-					),
-					'default' => 'image'
-				),
-				array(
-					'id'=>'image',
-					'type' => 'media',
-					'title' => __('Image', wpgrade::textdomain()),
-					'subtitle' => __('Select your themes alternative color scheme.', wpgrade::textdomain()),
-					'required' => array('image-type', '=', 'image')
-				),
-				array(
-					'id'=>'font-awesome',
-					'type' => 'text',
-					'title' => __('Icon Name', wpgrade::textdomain()),
-					'subtitle' => __('Here you can write a font-awesome name.', wpgrade::textdomain()),
-					'required' => array('image-type', '=', 'font-awesome')
-				),
-			),
-		),
+//						'image' => array( __('Image', wpgrade::textdomain() ), 'img' => 'images/align-right.png' ),
+//						'font-awesome'=> array( __('Font Awesome', wpgrade::textdomain()), 'img' => 'images/align-left.png' )
+//					),
+//					'default' => 'image',
+//				),
+//				array(
+//					'id'=>'social_icons_image',
+//					'type' => 'media',
+//					'title' => __('Image', wpgrade::textdomain()),
+//					'subtitle' => __('Upload the image.', wpgrade::textdomain()),
+//					'required' => array('social_icons_image_type', '=', 'image'),
+//				),
+//				array(
+//					'id'=>'social_icons_font_awesome',
+//					'type' => 'text',
+//					'title' => __('Icon Name', wpgrade::textdomain()),
+//					'subtitle' => __('Here you can write a font-awesome class name (e.g. fa-facebook).', wpgrade::textdomain()),
+//					'required' => array('social_icons_image_type', '=', 'font-awesome'),
+//				),
+//			),
+//		),
 
 		array(
 			'id' => 'social_icons_target_blank',
@@ -398,28 +436,28 @@ $sections[] = array(
 			'id' => 'facebook_id_app',
 			'type' => 'text',
 			'title' => __('Facebook Application ID', wpgrade::textdomain()),
-			'sub_desc' => __('Enter the Facebook Application ID of the Fan Page which is associated with this website. You can create one <a href="https://developers.facebook.com/apps">here</a>.', wpgrade::textdomain()),
+			'subtitle' => __('Enter the Facebook Application ID of the Fan Page which is associated with this website. You can create one <a href="https://developers.facebook.com/apps">here</a>.', wpgrade::textdomain()),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'facebook_admin_id',
 			'type' => 'text',
 			'title' => __('Facebook Admin ID', wpgrade::textdomain()),
-			'sub_desc' => __('The id of the user that has administrative privileges to your Facebook App so you can access the <a href="https://www.facebook.com/insights/">Facebook Insights</a>.', wpgrade::textdomain()),
+			'subtitle' => __('The id of the user that has administrative privileges to your Facebook App so you can access the <a href="https://www.facebook.com/insights/">Facebook Insights</a>.', wpgrade::textdomain()),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'google_page_url',
 			'type' => 'text',
 			'title' => __('Google+ Publisher', wpgrade::textdomain()),
-			'sub_desc' => __('Enter your Google Plus page ID (example: https://plus.google.com/<b>105345678532237339285</b>) here if you have set up a "Google+ Page".', wpgrade::textdomain()),
+			'subtitle' => __('Enter your Google Plus page ID (example: https://plus.google.com/<b>105345678532237339285</b>) here if you have set up a "Google+ Page".', wpgrade::textdomain()),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'twitter_card_site',
 			'type' => 'text',
 			'title' => __('Twitter Site Username', wpgrade::textdomain()),
-			'sub_desc' => __('The Twitter username of the entire site. The username for the author will be taken from the author\'s profile (skip the @)', wpgrade::textdomain()),
+			'subtitle' => __('The Twitter username of the entire site. The username for the author will be taken from the author\'s profile (skip the @)', wpgrade::textdomain()),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
@@ -432,7 +470,7 @@ $sections[] = array(
 			'id' => 'use_twitter_widget',
 			'type' => 'switch',
 			'title' => __('Use Twitter Widget', wpgrade::textdomain()),
-			'sub_desc' => __('Just a widget to show your latest tweets (Twitter API v1.1 compatible). You can add it in your blog or footer sidebars.<div class="description">', wpgrade::textdomain()),
+			'subtitle' => __('Just a widget to show your latest tweets (Twitter API v1.1 compatible). You can add it in your blog or footer sidebars.<div class="description">', wpgrade::textdomain()),
 			'default' => '1',
 		),
 		array(
@@ -478,37 +516,37 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "cloud-download",
+	'icon' => "gift",
 	'icon_class' => '',
 	'title' => __('Theme Auto Update', wpgrade::textdomain()),
-	'desc' => __('<p class="description">Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!</p>', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'themeforest_upgrade',
 			'type' => 'switch',
 			'title' => __('Use Auto Update', wpgrade::textdomain()),
-			'sub_desc' => __('Activate this to enter the info needed for the theme auto update to work.', wpgrade::textdomain()),
+			'subtitle' => __('Activate this to enter the info needed for the theme auto update to work.', wpgrade::textdomain()),
 			'default' => '1',
 		),
 		array(
 			'id' => 'marketplace_username',
 			'type' => 'text',
 			'title' => __('ThemeForest Username', wpgrade::textdomain()),
-			'sub_desc' => __('Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade).', wpgrade::textdomain()),
+			'subtitle' => __('Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade).', wpgrade::textdomain()),
 			'required' => array('themeforest_upgrade', '=', 1)
 		),
 		array(
 			'id' => 'marketplace_api_key',
 			'type' => 'text',
 			'title' => __('ThemeForest Secret API Key', wpgrade::textdomain()),
-			'sub_desc' => __('Enter here the secret api key you\'ve created on ThemeForest. You can create a new one in the Settings > API Keys section of your profile.', wpgrade::textdomain()),
+			'subtitle' => __('Enter here the secret api key you\'ve created on ThemeForest. You can create a new one in the Settings > API Keys section of your profile.', wpgrade::textdomain()),
 			'required' => array('themeforest_upgrade', '=', 1)
 		),
 		array(
 			'id' => 'themeforest_upgrade_backup',
 			'type' => 'switch',
 			'title' => __('Backup Theme Before Upgrade?', wpgrade::textdomain()),
-			'sub_desc' => __('Check this if you want us to automatically save your theme as a ZIP archive before an upgrade. The directory those backups get saved to is <code>wp-content/envato-backups</code>. However, if you\'re experiencing problems while attempting to upgrade, it\'s likely to be a permissions issue and you may want to manually backup your theme before upgrading. Alternatively, if you don\'t want to backup your theme you can uncheck this.', wpgrade::textdomain()),
+			'subtitle' => __('Check this if you want us to automatically save your theme as a ZIP archive before an upgrade. The directory those backups get saved to is <code>wp-content/envato-backups</code>. However, if you\'re experiencing problems while attempting to upgrade, it\'s likely to be a permissions issue and you may want to manually backup your theme before upgrading. Alternatively, if you don\'t want to backup your theme you can uncheck this.', wpgrade::textdomain()),
 			'default' => '0',
 			'required' => array('themeforest_upgrade', '=', 1)
 		),

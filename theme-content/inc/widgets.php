@@ -550,8 +550,17 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 				<?php while ($latest_posts->have_posts()): $latest_posts->the_post(); ?>
                     <div class="article  article--slider">
                         <div class="image-wrap">
+                        <?php 
+                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium');
+
+						        		$image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+						        		if (isset($image[1]) && isset($image[2])) {
+						        			$image_ratio = $image[2] * 100/$image[1];
+						        		}
+						            ?>
+						            
                             <?php if (has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail(); ?>
+                                <img src="<?php echo $image[0] ?>" />
                             <?php endif; ?>
                         </div>
                         <div class="article__title  article--slider__title">
@@ -569,9 +578,9 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                                     ?>
                                 </div>
                                 <ul class="nav  article__meta-links">
-                                    <li><a href="#"><i class="icon-time"></i> <?php the_time('j M') ?></a></li>
-                                    <li><a href="#"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></a></li>
-                                    <li><a href="#"><i class="icon-heart"></i> 12</a></li>
+                                    <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
+                                    <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
+                                    <li><i class="icon-heart"></i> 12</li>
                                 </ul>
                             </div>
                         </div>

@@ -17,7 +17,7 @@ if(wpgrade::option('main_nav_inverse') == 1) $class_name .= " main-nav-inverse";
     </div>    
     <div id="page">
         <nav class="navigation  navigation--mobile">
-            <h2 class="accessibility">Primary Mobile Navigation</h2>
+            <h2 class="accessibility"><?php _e('Primary Mobile Navigation', wpgrade::textdomain()) ?></h2>
             <?php wpgrade_main_nav(); ?>
         </nav>    
         <div class="wrapper">

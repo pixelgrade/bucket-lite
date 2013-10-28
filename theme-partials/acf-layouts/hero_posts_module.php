@@ -10,7 +10,7 @@ $number_of_posts = get_sub_field('number_of_posts');
 $more = $number_of_posts - 1;
 $read_more_label = get_sub_field('read_more_label');
 if ( empty($read_more_label) ) {
-	$read_more_label = 'Read Full Story';
+	$read_more_label = __('Read Full Story', wpgrade::textdomain());
 }
 
 $query_args = array(
@@ -33,49 +33,64 @@ switch ( $posts_source ) :
 			)
 		);
 		break;
+	
 	case 'latest' :
 		/** Return the latest posts only */
 		$query_args['order'] = 'DESC';
 		$query_args['orderby'] = 'date';
 		break;
+	
 	case 'latest_by_cat' :
 		/** Return posts from selected categories */
 		$categories = get_sub_field('posts_source_category');
-		$query_args['tax_query'] = array(
-			array(
-				'taxonomy' => 'category',
-				'terms' => $categories,
-				'operator' => 'IN'
-			)
-		);
+		$catarr = array();
+		foreach ($categories as $key => $value) {
+			$catarr[] = (int) $value;
+		}
+		
+		$query_args['category__in'] = $catarr;
+		break;
+		
 	case 'latest_by_format' :
 		/** Return posts with the selected post format */
 		$formats = get_sub_field('posts_source_post_formats');
 		$terms = array();
-		foreach ( $formats as $key => &$format) {
-			if ( $format =='post' ) { // dosen't work yet
-				$query_args['tax_query']['relation'] = 'OR';
-				$query_args['tax_query'][2] = array(
-					'taxonomy' => 'post_format',
-					'field' => 'slug',
-					'terms' => 'impossible-post-format',
-					'operator' => 'NOT IN'
-				);
-				continue;
-			}
-
-			$format = 'post-format-' . $format;
-			$terms[] = $format;
+		if (!isset($query_args['tax_query'])) {
+			$query_args['tax_query'] = array();
 		}
-
+		foreach ( $formats as $key => &$format) {
+			if ($format == 'standard') {
+				//if we need to include the standard post formats
+				//then we need to include the posts that don't have a post format set
+				$all_post_formats = get_theme_support('post-formats');
+				if (!empty($all_post_formats[0]) && count($all_post_formats[0])) {
+					$allterms = array();
+					foreach ($all_post_formats[0] as $format2) {
+						$allterms[] = 'post-format-'.$format2;
+					}
+					
+					$query_args['tax_query']['relation'] = 'AND';
+					$query_args['tax_query'][] = array(
+						'taxonomy' => 'post_format',
+						'terms' => $allterms,
+						'field' => 'slug',
+						'operator' => 'NOT IN'
+					);
+				}
+			} else {
+				$terms[] = 'post-format-' . $format;
+			}
+		}
+		
 		if ( !empty($terms) ) {
-			$query_args['tax_query'][1] = array(
+			$query_args['tax_query'][] = array(
 				'taxonomy' => 'post_format',
 				'field' => 'slug',
 				'terms' => $terms,
 				'operator' => 'IN'
 			);
 		}
+		break;
 
 	case 'latest_by_reviews':
 		$query_args['meta_query'] = array(
@@ -86,6 +101,7 @@ switch ( $posts_source ) :
 				'compare' => '='
 			)
 		);
+		break;
 	default : ;
 endswitch;
 
@@ -98,7 +114,7 @@ if ($slides->have_posts()): ?>
             <div class="featured-area__article  article--big">
                 <?php
                 if (has_post_thumbnail()):
-                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
                     $image_ratio = $image[2] * 100/$image[1]; ?>
                     <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
@@ -125,10 +141,10 @@ if ($slides->have_posts()): ?>
                     while($myquery->have_posts()): $myquery->the_post(); ?>
 	                    <li class="hard--sides">
 	                        <article class="article  article--thumb  media  flush--bottom">
-	                            <div class="media__img--rev  five-twelfths">
+	                            <div class="media__img--rev  four-twelfths">
 	                                <?php
                                     if (has_post_thumbnail()):
-                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+                                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
                                         $image_ratio = $image[2] * 100/$image[1]; ?>
                                         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                                             <img src="<?php echo $image[0] ?>" />
@@ -140,15 +156,17 @@ if ($slides->have_posts()): ?>
                                     $categories = get_the_category();
                                     if ($categories) {
                                         $category = $categories[0];
-                                        echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+                                        echo '<div class="article__category">
+                                                <a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>
+                                              </div>';
                                     } ?>
 	                                <div class="article__title  article--thumb__title">
-	                                    <h3 class="hN"><?php the_title(); ?></h3>
+	                                      <a href="<?php the_permalink(); ?>"><h3 class="hN"><?php the_title(); ?></h3></a>
 	                                </div>
 	                                <ul class="nav  article__meta-links">
-	                                    <li><a href="#"><i class="icon-time"></i> <?php the_time('j M') ?></a></li>
-	                                    <li><a href="#"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></a></li>
-	                                    <li><a href="#"><i class="icon-heart"></i> 12</a></li>
+	                                    <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
+	                                    <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
+	                                    <li><i class="icon-heart"></i> 12</li>
 	                                </ul>
 	                            </div>
 	                        </article>

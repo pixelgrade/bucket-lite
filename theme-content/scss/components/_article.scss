@@ -47,15 +47,177 @@
     }
 
     .article__title--inverse {
-        @include rem(padding, $_u4 $_u $_u4 $_u2);
-        background-color: $dark;
         color: white;
+
+        h3 {
+            @include rem(padding, $_u4 $_u);
+            @include rem(margin, -$_u $_u2 $_u2);
+            background-color: $dark;
+            @include transition(background-color 0.15s);
+        }
+
+        &:after {
+            background-color: $dark;
+            content:"";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:-1;
+            @include scaleX(0.89, false, true);
+            @include transition(all 0.15s);
+
+            //Fix text moving on hover
+            @include backface-visibility(hidden);
+        }
+    }
+
+    .article__title--full {
+        margin-bottom:0;
+        h3 {
+            margin:0;
+        }
     }
 
     .article__content {
         text-align: center;
     }
 
+.article__category {
+    a:hover {
+        text-decoration:underline;
+    }
+}
+
+
+/**
+ * Article Grid
+ * -- Blog Latest Posts, Posts Grid Cards
+ */
+
+.article--grid {
+    
+    padding-bottom: 0;
+    @include rem(margin-bottom, $_u - 5px);
+
+    .article__featured-image {
+        
+    }
+}
+        
+    .article--grid__header {
+
+        &:hover {
+            .article--grid__thumb {
+                // @include scale(0.92);
+            }
+
+            .article--grid__title  {
+                h3 {
+                    background-color:$accent;
+                }
+                &:after {
+                    background-color:$accent;
+                    @include scaleX(1, false, true);
+                }
+            }
+        }
+    }
+
+    .article--grid__body {
+        @include rem(padding, 0 $_u2);
+        position: relative;
+        z-index: 22;
+
+        .article__content {
+             @include rem(padding, 0 $_u2);
+        }
+    }
+
+    .article--grid__thumb {
+        margin-bottom: 0;
+        z-index: 21;
+        @include transition(all 0.25s);
+
+
+        &:before {
+            @include transition(all 0.25s);
+            content: " ";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index:21;
+            opacity:1;
+            border:0px solid #fff;
+
+        }
+    }
+
+    .article--grid__title {
+        @extend .article__title--inverse;
+        z-index:22;
+        .hN {
+            text-align: center;
+        }  
+    }
+
+    .article--grid__meta {
+        @extend %separator--section;
+        margin-top: -1px;
+        margin-bottom:0;
+        @include rem(padding, 0 $_u $_u4);
+
+        &:before {
+            content: " ";
+            display:block;
+            height:1px;
+            background-color: #b3b3b3;
+            @include rem(margin, 0 #{-$_u4} $_u4);
+        }
+    }
+
+
+
+/**
+ * Article Meta Links (date, comments, likes)
+ * -- Blog Latest Posts, Posts Grid Cards, Hero Posts Module
+ */
+
+.article__meta-links {
+    margin-bottom: 0;
+    color: $light;
+    @include rem(margin-left, -$_u2);
+    @include font-size(11px);
+    text-transform:uppercase;
+
+    li {
+        display: inline-block;
+        @include rem(margin-left, $_u2);
+    }
+
+    a {
+        color:$light;
+    }
+
+    i {
+        @include font-size(14px);
+
+        // small vertical positioning fix
+        position:relative;
+        top:1px;
+        &.icon-comment {
+            top:0px;
+        }
+    }
+}
+
+
+
+/**
+ * Article List
+ * -- Popular Posts Widget
+ */
 .article--list {
     margin-bottom: 0;
 
@@ -98,75 +260,9 @@
         }
     }
 
-.article__meta-links {
-    margin-bottom: 0;
-
-    a {
-        color: $light;
-    }
-}
-
-.article--thumb {
-
-    .article__meta-links {
-        position: absolute;
-        bottom: 0; left: 0;
-    }
-}
-
-    .article--thumb__title {
-        @include rem(margin-bottom, $_u + $_u2);
-        line-height: 1;
-
-        .hN {
-            font-weight: 500;
-        }
-    }
-
-.article--grid {
-    @extend %separator--section;
-    padding-bottom: 0;
-
-    .article__featured-image {
-        margin-bottom: 0;
-    }
-}
-
-    .article--grid__body {
-        @include rem(padding, 0 $_u2);
-        position: relative;
-        z-index: 20;
-    }
-
-    .article--grid__title {
-        @extend .article__title--inverse;
-        @include rem(padding, $_u4 $_u);
-        @include rem(margin, -$_u 0 $_u2);
-
-        .hN {
-            text-align: center;
-        }
-    }
-
-    .article--grid__meta {
-        border-top: 1px solid #b3b3b3;
-        margin-top: -1px;
-        @include rem(padding, $_u4 $_u2);
-    }
-
-    .article--grid__meta-links {
-        @include rem(margin-bottom, $_u4);
-        color: $gray;
-        @include rem(margin-left, -$_u2);
-        @include font-size(14px);
-
-        a {
-            display: inline-block;
-            color: $gray;
-            @include rem(margin-left, $_u2);
-        }
-    }
-
+/**
+ * [Widget] Latest Posts Slider
+ */
 .article--slider {
     @extend %separator--section;
     padding-bottom: 0;
@@ -174,8 +270,11 @@
 
     .article--slider__title {
         @extend .article__title--inverse;
-        margin-bottom: 0;
-        @include rem(padding, $_u4 $_u);
+        @extend .article__title--full;
+
+        h3 {
+            line-height:1.5;
+        }
 
         .hN {
             @extend .epsilon;
@@ -193,13 +292,103 @@
 }
 
 
+
+
+/*---------------------------------*\
+        CUSTOM PAGE BUILDER
+\*---------------------------------*/
+
+
+/**
+ * Hero Posts Module
+ */
+ .article--thumb .image-wrap {
+
+}
+
+.article--thumb__title {
+    line-height: 1;
+
+    a {
+        color: $dark;
+        &:hover {
+            color:$accent;
+        }
+    }
+}
+
+
+
+
+/**
+ * Posts Grid Cards ( ++styling if flexbox is supported )
+ */
+
+.flexbox .posts-grid-cards {
+
+        @media screen and (min-width: 1023px) { 
+
+            display: -webkit-box;
+            display: -moz-box;
+            display: -webkit-flexbox;
+            display: -ms-flexbox;
+            display: -ms-flex;
+            display: -webkit-flex;
+            display: flex;
+
+            align-items:stretch;
+            -ms-flex-align: stretch;
+
+          .grid__item {
+             
+            display: -webkit-box;
+            display: -moz-box;
+            display: -webkit-flexbox;
+            display: -ms-flexbox;
+            display: -ms-flex;
+            display: -webkit-flex;
+            display: flex;
+
+            position:relative;
+          }
+
+          article {
+              position:relative;
+
+              & > div {
+               
+              }
+              .article--grid__body {
+                padding-bottom:42px;
+              }
+              .article__meta {
+                margin-bottom:0;
+                position:absolute;
+                bottom:0;
+                left:0;
+                width:100%;
+              }
+          }
+      }
+
+}
+
+
+
+/**
+ * Billboard Slider Module
+ */
 .billboard {
     position: relative;
     @include rem(margin-bottom, $_u);
 }
 
 .article--billboard {
-    position: static;
+    position: absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    border-bottom:#{$_2u - 5px} solid #fff; 
 }
 
 .billboard__category {
@@ -216,6 +405,7 @@
 
 .article--billboard__header {
     position: absolute;
+    top:auto;
     @include rem(bottom, $_u);
     @include rem(left, $_2u);
     z-index: 30;
@@ -230,15 +420,20 @@
     clear: left;
 }
 
+//  Small Articles
+
 .article--billboard-small {
     @extend %separator--section;
     padding-bottom: 0;
     background: white;
     @include rem(width, $_8u);
+    @include rem(max-height, 280px);
     position: absolute;
     z-index: 40;
     bottom: 0;
-    @include rem(right, $_u);
+    top:auto;
+    left:auto;
+    @include rem(right, 9 * $_u + $_u4 * 3);
 
     .small-link {
         display: block;
@@ -246,7 +441,8 @@
     }
 
     + .article--billboard-small {
-        @include rem(right, 9 * $_u + $_u2);
+        @include rem(right, $_u);
+        
     }
 }
 

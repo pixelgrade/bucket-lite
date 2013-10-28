@@ -13,6 +13,7 @@
 					// main nav in header
                     'main_menu' => __('Header Menu', wpgrade::textdomain()),
 					'top_menu' => __('Top Menu', wpgrade::textdomain()),
+					'footer_menu' => __('Footer Menu', wpgrade::textdomain()),
 				)
 			);
 
@@ -62,6 +63,28 @@
                     'menu_class'      => 'nav  nav--top',
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
+//                    'walker'          => new WPGrade_Walker_Nav_Menu()
+                );
+
+            wp_nav_menu($args);
+		}
+	}
+	
+	function wpgrade_footer_nav() {
+        $theme_locations = get_nav_menu_locations();
+
+        if (isset($theme_locations["footer_menu"]) && ($theme_locations["footer_menu"] != 0)) {
+            $args = array
+                (
+                    'theme_location'  => 'footer_menu',
+                    'menu'            => '',
+                    'container'       => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'site-navigation site-navigation--footer site-navigation--secondary flush--bottom',
+                    'fallback_cb'     => 'wp_page_menu',
+                    'menu_id'         => '',
+					'depth'			  => 1,
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 //                    'walker'          => new WPGrade_Walker_Nav_Menu()
                 );
 

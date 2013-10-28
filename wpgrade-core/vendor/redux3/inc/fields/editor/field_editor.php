@@ -64,10 +64,17 @@ if( !class_exists( 'ReduxFramework_editor' ) ) {
     	
             $settings = array(
                 'textarea_name' => $this->args['opt_name'] . '[' . $this->field['id'] . ']', 
-                'editor_class'  => $this->field['class']
+                'editor_class'  => $this->field['class'],
+				'wpautop' => (isset($this->field['autop'])) ? $this->field['autop'] : true,
             );
+			
+			if (isset($this->field['height'])) {
+				$settings['editor_height'] = $this->field['height'];
+			} elseif (isset($this->field['rows'])) {
+				$settings['textarea_rows'] = $this->field['rows'];
+			}
 
-            wp_editor( $this->value, 'redux-editor', $settings );
+            wp_editor( $this->value, $this->field['id'], $settings );
 
         }
 

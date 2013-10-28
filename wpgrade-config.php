@@ -224,8 +224,8 @@
 				'prev_next' => true,
 
 				// pagination text
-				'prev_text' => __('Newer posts', 'bucket_txtd'),
-				'next_text' => __('Older posts', 'bucket_txtd'),
+				'prev_text' => __('Prev', 'bucket_txtd'),
+				'next_text' => __('Next', 'bucket_txtd'),
 
 				// are the terms used for paging relative to the sort order?
 				// ie. older/newer instead of sorting agnostic previous/next
@@ -262,12 +262,12 @@
 		'pagination-targets' => array
 			(
 				// the following is an example
-				'gallery' => array
-					(
-						'formatter' => null,
-						'prev_text' => __('Prev Images', 'bucket_txtd'),
-						'next_text' => __('Next Images', 'bucket_txtd'),
-					)
+//				'gallery' => array
+//					(
+//						'formatter' => null,
+//						'prev_text' => __('Prev Images', 'bucket_txtd'),
+//						'next_text' => __('Next Images', 'bucket_txtd'),
+//					)
 			),
 
 	); # end theme configuration

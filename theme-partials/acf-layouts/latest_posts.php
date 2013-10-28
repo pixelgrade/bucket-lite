@@ -7,12 +7,18 @@
  * @section_title string
  * @sidebar radio (enable / disable)
  */
+
+
+//set some variables to pass to the content-blog.php loaded below
+global $wp_query;
+$wp_query->query_vars['thumbnail_size'] = 'blog-medium';
+
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $number_of_posts = get_sub_field('number_of_posts');
 
 $args = array(
 	'paged' => $paged,
-    'posts_per_page' => $number_of_posts,
+  'posts_per_page' => $number_of_posts,
 	'order' => 'DESC',
 	'orderby' => 'date',
 	'ignore_sticky_posts' => 1
