@@ -6,31 +6,23 @@
         color: white;
     }
 
-    .pagination-item--previous:before{
-        content: '';
-        display: inline-block;
-        @include transform(rotate(45deg));
-        @include rem(width, 12px);
-        @include rem(height, 12px);
-        border-right-color: black;
-        border-right-style: solid;
-        border-right-width: 2px;
-        border-top-color: black;
-        border-top-style: solid;
-        border-top-width: 2px; 
-    } 
+    .pagination-item--previous:before,
     .pagination-item--next:after{
         content: '';
         display: inline-block;
         @include transform(rotate(45deg));
         @include rem(width, 12px);
         @include rem(height, 12px);
-        border-right-color: black;
-        border-right-style: solid;
-        border-right-width: 2px;
-        border-top-color: black;
-        border-top-style: solid;
-        border-top-width: 2px;        
+    }
+
+    .pagination-item--previous:before{
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+    } 
+
+    .pagination-item--next:after{
+        border-right: 2px solid black;
+        border-top: 2px solid black;     
     }
 
     li{
