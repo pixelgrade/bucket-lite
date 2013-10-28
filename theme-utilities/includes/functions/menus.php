@@ -20,7 +20,7 @@
 		add_theme_support('menus');
 
 		foreach (wpgrade::option('nav_menus') as $key => $value) {
-			register_nav_menu($key, wpgrade::themename().' '.$value);
+			register_nav_menu($key, $value);
 		}
 	}
 
