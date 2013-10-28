@@ -3,8 +3,15 @@
 \*------------------------------------*/
 
 .navigation {
-    background-color: $dark;
     @include font-size(14px);
+}
+
+.navigation--top{
+    background-color: #050505;
+}
+
+.navigation--main{
+    background-color: $dark;
 }
 
 
