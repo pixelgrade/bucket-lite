@@ -31,10 +31,11 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$prefix = '';
 	$suffix = '<!--';
 
-	$current = '';
-	if ( isset( $_REQUEST['paged'] ) ) {
-		$current = $_REQUEST['paged'];
-	}
+//	$current = '';
+	$current = (get_query_var('paged')) ? get_query_var('paged') : '';
+//	if ( isset( $_REQUEST['paged'] ) ) {
+//		$current = $_REQUEST['paged'];
+//	}
 
 	foreach ( $links as $key => &$link ) {
 
@@ -71,10 +72,7 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 /** Do the same thing on single post pagination */
 
 function wpgrade_pagination_custom_markup($link, $key) {
-	$current = '';
-	if ( isset( $_GET['paged'] ) ) {
-		$current = $_GET['paged'];
-	}
+	$current = (get_query_var('paged')) ? get_query_var('paged') : '';
 	$class = '';
 	$prefix = '-->';
 	$suffix = '<!--';
