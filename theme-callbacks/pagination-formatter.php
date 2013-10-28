@@ -32,8 +32,8 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$suffix = '<!--';
 
 	$current = '';
-	if ( isset( $_GET['paged'] ) ) {
-		$current = $_GET['paged'];
+	if ( isset( $_REQUEST['paged'] ) ) {
+		$current = $_REQUEST['paged'];
 	}
 
 	foreach ( $links as $key => &$link ) {
@@ -43,16 +43,16 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 		}
 
 		$class = '';
-
+		
 		switch ( $key ) {
-			case 0:
-				$class .= 'class="pagination__prev"';
-				break;
 			case $current:
-				$class .= 'class="current"';
+				$class .= 'class="pagination-item pagination-item--current"';
+				break;
+			case 0:
+				$class .= 'class="pagination-item pagination-item--prev"';
 				break;
 			case $linkcount - 1:
-				$class .= 'class="pagination__next"';
+				$class .= 'class="pagination-item pagination-item--next"';
 				break;
 			default:
 				break;
@@ -79,14 +79,14 @@ function wpgrade_pagination_custom_markup($link, $key) {
 	$prefix = '-->';
 	$suffix = '<!--';
 	switch ( $key ) {
-		case 'prev':
-			$class .= 'class="pagination__prev"';
-			break;
 		case $current:
-			$class .= 'class="current"';
+				$class .= 'class="pagination-item pagination-item--current"';
+			break;
+		case 'prev':
+				$class .= 'class="pagination-item pagination-item--prev"';
 			break;
 		case 'next':
-			$class .= 'class="pagination__next"';
+				$class .= 'class="pagination-item pagination-item--next"';
 			break;
 		default:
 			break;
