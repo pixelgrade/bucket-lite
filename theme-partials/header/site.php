@@ -1,6 +1,6 @@
 <header>
 
-    <nav class="navigation  navigation--top">
+    <nav class="site-navigation  site-navigation--top">
 
         <div class="container">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
@@ -36,7 +36,7 @@
 
         </div>
 
-        <nav class="navigation  navigation--main">
+        <nav class="site-navigation  site-navigation--main">
 
             <h2 class="accessibility"><?php _e('Primary Navigation', wpgrade::textdomain()) ?></h2>
             <?php wpgrade_main_nav(); ?>
