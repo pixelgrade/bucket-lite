@@ -262,3 +262,9 @@ img[width], img[height] {
     width: auto !important;
     display: inline-block;
 }
+
+@include media(to lap) {
+    .content--404{
+        @include rem(margin-bottom, $_2u);
+    }
+}
