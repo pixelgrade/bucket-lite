@@ -2141,6 +2141,21 @@ class bucket
 		}
 		return $first_img;
 	}
+	
+	/**
+	* Returns the URL from the post.
+	*
+	*
+	* Falls back to the post permalink if no URL is found in the post.
+	*
+	* @return string The Link format URL.
+	*/
+   static function get_content_link_url() {
+	   $content = get_the_content();
+	   $has_url = get_url_in_content( $content );
+
+	   return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+   }
 
 }
 

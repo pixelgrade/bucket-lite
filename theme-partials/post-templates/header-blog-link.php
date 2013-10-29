@@ -1,5 +1,5 @@
 <div class="article--grid__header">
-    <a href="<?php the_permalink(); ?>">
+    <a href="<?php echo esc_url( bucket::get_content_link_url() ); ?>">
         <div class="article--grid__thumb article__featured-image">
 
             <?php
