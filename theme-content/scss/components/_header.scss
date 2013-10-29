@@ -6,12 +6,31 @@
     @include rem(height, $_6u);
 }
 
+
+
+
+
+/*----------------------------------------*\
+    $TITLE/LOGO
+\*----------------------------------------*/
 @include media(from hand) {
-    .site-logo--text{
-        @include rem(padding-top, $_2u);
+    .site-home-title{
+        @include rem(height, $_6u);    
+        display: table;
+        margin-bottom: 0;
+    }
+
+    .site-home-link{
+        display: table-cell;
+        vertical-align: middle;
     }
 }
 
+.site-home-link{
+    img{
+        max-height: 100%;
+    }    
+}
 
 
 
@@ -100,25 +119,22 @@
     @include rem(margin-left, -$_u);
 } 
 
-.header--type3 .site-header__branding{
-    text-align: center;
+.header--type3{
+    .site-home-title{
+        width: 100%;
+    }
+
+    .site-home-link{
+        text-align: center;
+    }
 }
 
-
-//When the header hasn't got inversed color,
+//When the header hasn't got inverse color,
 //hide the striped separator
 .nav-top-separator{
+    margin: 0;
     display: none;
 }
-
-
-.site-home-link{
-    display: block;
-    img{
-        max-height: 100%;
-    }
-} 
-
 
 
 
@@ -196,6 +212,7 @@
         //will not stretch to 100% of the menu
         //border-bottom-color: $dark;
 
+        border-top-width: 0;
         background: transparent;
 
         a{
@@ -212,7 +229,7 @@
 
         .article--billboard-small {
             background-color: white;
-            
+
             .hN{
                 color: black;
             }
@@ -222,15 +239,17 @@
     .header--type1 {
         .search-query, .search-submit, .social-icon-link {
             color: black;
-            background: none;
+            background-color: transparent;
         }
+
+
 
         .search-submit {
             border: none;
         }
 
         .header-bar > li {
-            border: 1px solid $light;
+            border: 1px solid #dedede;
         }
     }
 }
