@@ -2,13 +2,12 @@
     <a href="<?php the_permalink(); ?>">
         <div class="article--grid__thumb article__featured-image">
             <?php
-			$flush_top = 'flush--top';
-            if (has_post_thumbnail()):
+			$flush_top = '';
+            if (has_post_thumbnail()) {
         		$thumbsize = 'blog-medium';
 
-            $has_thumb = has_post_thumbnail();
-			//no need to flush if we have a thumbnail
-            $flush_top = '';
+				$has_thumb = has_post_thumbnail();
+				$flush_top = $has_thumb ? '' : 'flush--top';
         	
         		//grab the desired thumb size from the query params if present
         		global $wp_query;
@@ -22,14 +21,17 @@
         		if (isset($image[1]) && isset($image[2])) {
         			$image_ratio = $image[2] * 100/$image[1];
         		}
+			} else {
+				//we need to search for an image in the content
+				//like it should be
+				$image = array();
+				$image_ratio = 0.7;
+				$image[0] = bucket::get_post_format_first_image_src();
+			}
             ?>
-                <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                    <img src="<?php echo $image[0] ?>" />
-                </div>
-            <?php
-            endif;
-            ?>
-
+			<div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+				<img src="<?php echo $image[0] ?>" />
+			</div>
             <?php post_format_icon();
         	if ( bucket::has_average_score() ) { ?>
                 <div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text">score</span></div>
