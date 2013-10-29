@@ -147,7 +147,7 @@ class wpgrade_latest_comments extends WP_Widget {
 						</div>
 						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
 						<div class="latest-comments__content">
-							<p><?php echo $comment->comment_content; ?></p>
+							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25); ?> [...] </p>
 						</div>
 					</div>
 				</article>
