@@ -10,7 +10,7 @@
     @include transition(all 0.15s);
 
     &:hover, &:focus, &:active {
-        background-color: $accent;
-        color: white;
+        background-color: $accent !important;
+        color: white !important;
     }
 }
