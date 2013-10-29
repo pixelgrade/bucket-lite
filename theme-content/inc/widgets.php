@@ -1313,5 +1313,3 @@ add_action('widgets_init', create_function('', 'return register_widget("wpgrade_
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_latest_comments");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_latest_reviews");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_popular_posts");'));
-
-
