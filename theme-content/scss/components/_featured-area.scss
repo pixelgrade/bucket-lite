@@ -7,7 +7,7 @@
     @extend .palm-one-whole;
     @extend .seven-twelfths;
     position: relative;
-    @include rem(margin-bottom, $_u);
+    @include rem(margin-bottom, $_u + $_u2);
 }
 
 .article--big .article__title {

@@ -2086,7 +2086,7 @@ class bucket
 	}
 
 	/**
-	 * Checks if a psot type object needs password aproval
+	 * Checks if a post type object needs password aproval
 	 *
 	 * @return if the form was submited it returns an array with the success status and a message
 	 */
@@ -2120,6 +2120,20 @@ class bucket
 		}
 
 		return $private_post;
+	}
+	
+	static function get_post_format_first_image_src(){
+		global $post;
+		$first_img = '';
+		ob_start();
+		ob_end_clean();
+		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		$first_img = $matches[1][0];
+
+		if(empty($first_img)){ //Defines a default image
+		  $first_img = wpgrade::uri("/theme-content/img/default.jpg");
+		}
+		return $first_img;
 	}
 
 }

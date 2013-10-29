@@ -9,11 +9,11 @@ if ( !class_exists( "WPGrade_Bucket_Walker_Top_Nav_Menu" ) && class_exists( 'Wal
 
 class WPGrade_Bucket_Walker_Top_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = array()) {
-        $output .= "<ul class=\"sub-menu\">";
+        $output .= "<div class=\"sub-menu\"><ul class=\"nav nav--stacked menu\">";
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
-        $output .= "</ul>";
+        $output .= "</ul></div>";
     }
 
     // add main/sub classes to li's and links
