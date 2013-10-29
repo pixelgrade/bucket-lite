@@ -6,10 +6,10 @@ $sections = array();
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'cogs',
+	'icon' => 'database-1',
 	'icon_class' => '',
-	'title' => __('General Options', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'title' => __('General', wpgrade::textdomain()),
+	'desc' => sprintf('<p class="description">'.__('General settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
 			'id' => 'wpGrade_import_demodata_button',
@@ -42,13 +42,13 @@ $sections[] = array(
 			'id' => 'main_logo',
 			'type' => 'media',
 			'title' => __('Main Logo', wpgrade::textdomain()),
-			'desc' => __('Upload here your logo image (we recommend a height of 80-100px).If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', wpgrade::textdomain()),
+			'subtitle' => __('Upload here your logo image (we recommend a height of 80-100px).If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', wpgrade::textdomain()),
 		),
 		array(
 			'id' => 'use_retina_logo',
 			'type' => 'switch',
 			'title' => __('Retina 2x Logo', wpgrade::textdomain()),
-			'desc' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', wpgrade::textdomain()),
+			'subtitle' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', wpgrade::textdomain()),
 		),
 		array(
 			'id' => 'retina_main_logo',
@@ -122,9 +122,9 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "tint",
+	'icon' => "params",
 	'icon_class' => '',
-	'title' => __('Style Options', wpgrade::textdomain()),
+	'title' => __('Style', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -216,8 +216,8 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'bookmark',
-	'title' => __('Header Options', wpgrade::textdomain()),
+	'icon' => 'note-1',
+	'title' => __('Header', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -250,8 +250,8 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'bookmark-empty',
-	'title' => __('Footer Options', wpgrade::textdomain()),
+	'icon' => 'doc-1',
+	'title' => __('Footer', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -263,6 +263,10 @@ $sections[] = array(
 			'rows' => 3,
 		),
 	)
+);
+
+$sections[] = array(
+    'type' => 'divide',
 );
 
 // Contact Page

@@ -427,5 +427,19 @@
 		};
 	})(jQuery);
 
+
+
+	$('#redux-container').parent().addClass('redux-bai');
+
+	function fixDiv() {
+      if ($(window).scrollTop() > 20) 
+        $('#redux-container').addClass('fixed-header');
+      else
+        $('#redux-container').removeClass('fixed-header');
+    }
+    $(window).scroll(fixDiv);
+    fixDiv();
+
+
 	//End helpers and beautiful things-----------------------------------------
 })(jQuery);

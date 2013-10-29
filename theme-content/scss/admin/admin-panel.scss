@@ -1,3 +1,394 @@
+/*-----------------------------------------------*\
+              THEME OPTIONS STYLING
+\*-----------------------------------------------*/
+
+@import "compass";
+$content-bg  : #fcfcfc;
+$sidebar-bg  : #f7f7f7;
+$border-color: #dfdfdf;
+$dark        : #464646;
+$light       : #777777;
+$lighter     : #999999;
+
+$content-width : 800px;
+$sidebar-width : 250px;
+
+$_u 	   : 24px;
+$_u2       : $_u/2;
+$_u4       : $_u/4;
+$_2u       : $_u*2;
+$_15u       : $_u+$_u/3;
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
+$body-font: 'PT Sans', sans-serif;
+$heading-font: 'Open Sans', sans-serif;
+
+/*-----------------------------------------------*\
+              GENERAL + OVERWRITES
+\*-----------------------------------------------*/
+
+#redux-container {
+	font-family: $body-font;
+	margin-left:-20px;
+	margin-right:-15px;
+	margin-top: 0 !important;
+	background:url('../../images/admin/bg_pattern.png');
+	border:none;
+	@include border-radius(0);
+	@include box-shadow(none);
+
+	* {
+		@include box-sizing(border-box);
+	}
+
+	form {
+				
+	}
+
+	h1, h2, h3, h4, h5, h6 { 
+		font-family:$heading-font;
+		color:$dark;
+		font-weight: normal;
+	}
+
+	h3 {
+		font-size: 30px;
+		margin-bottom:$_2u;
+		font-weight: 300;
+		line-height: 1;
+		border-bottom: 0;
+	}
+
+	.redux-group-tab > h3 {
+		position: fixed;
+		background: #fcfcfc;
+		z-index: 99;
+		width: 798px;
+		top: 21px;
+		line-height: 130px;
+		padding-left: 48px;
+		left: 396px;
+
+		&:after {
+			content: "";
+			height: 10px;
+			width: 798px;
+			display: block;
+			margin-left: -48px;
+		}
+	}
+
+	h4 {
+		font-size: 17px;
+		text-transform:uppercase;
+		margin-bottom:$_u4;
+		margin-top:$_2u;
+	}
+
+	// Fixed Header on Scroll
+	&.fixed-header {
+		.redux-group-tab > h3 {
+			background: transparent url("../../images/admin/fixed-bottom-shadow.png") bottom left repeat-x;
+		}
+
+	}
+}
+
+#redux-main {
+	padding: 130px $_2u $_u4+$_2u;
+	margin-left:$sidebar-width;
+	max-width: $content-width;
+	background: $content-bg;
+	border-left:1px solid $border-color;
+	border-right:1px solid $border-color;
+}
+
+// 'Theme Options' title + description
+#redux-intro-text {
+	height: 6 * $_u;
+	width:$sidebar-width;
+	background:transparent;
+	border:none;
+	
+	color:$dark;
+
+	padding-left: $_u;
+
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:10;
+
+	p {
+		font-family:$body-font;
+		font-weight:normal;
+		font-size:12px;
+	}
+}
+
+#redux-sticky {
+	#info_bar {
+		padding:0;
+		background:none;
+		border:none;
+		@include box-shadow(none);
+		z-index:999;
+
+		.redux-action_bar {
+			position: fixed;
+			left: 1013px;
+			top: 68px;
+			z-index:999;
+
+			#redux_save {
+				font-size:14px;
+				padding:8px $_u;
+				height:auto;
+				text-shadow: 0 -1px 0 #000;
+				border-color: $dark;
+				background-color: #2e2e2e; 
+				@include border-radius(25px);
+				@include background-image(linear-gradient(left top, #3b3b3b, #212121)); 
+				@include box-shadow(rgba(255,255,255,0.3) 0 1px 0 inset,rgba(0,0,0,0.1) 0 0 0 1px, rgba(0,0,0,0.15) 0 1px 0 0);
+
+				&:hover {
+					@include background-image(linear-gradient(left top, #484848,#2e2e2e)); 
+				}
+			}
+
+			input:not(.button-primary) {
+				display:none;
+			}
+		}
+
+		#expand_options {
+			display:none;
+		}
+	}
+}
+
+#redux-header, #redux-footer-sticky {
+	display:none;
+}
+
+.redux-group-tab .redux-section-desc {
+
+	margin-bottom:$_u;
+
+	p.description {
+		font-style:normal;
+		font-size:inherit;
+		color:$dark;
+		line-height:1.5;
+	}
+}
+
+
+
+
+
+
+/*-----------------------------------------------*\
+              MENU
+\*-----------------------------------------------*/
+#redux-sidebar {
+	background: $sidebar-bg;
+	padding-top: 6 * $_u;
+	width: $sidebar-width;
+	height:100%;
+	position:absolute;
+
+	#redux-group-menu  {
+		li {
+			a {
+				font-weight:normal;
+				font-size:14px;
+				color:$dark;
+
+				padding: $_u2 $_u;
+				margin-right:0;
+				border-width: 1px 0 1px 0;
+				border-top-color:$sidebar-bg;
+				border-bottom-color:$sidebar-bg;
+				background:transparent;
+			}
+
+			i {
+				font-size: 15px;
+				margin-right: 5px;
+				text-align: left;
+			}
+
+			a:hover, &.active a:hover {
+				width:auto;
+				color:$dark;
+				background:transparent;
+			}
+
+			&.active a {
+				color:$dark;
+				width: auto;
+				margin-right: 0;
+				border-top-color:$border-color;
+				border-bottom-color:$border-color;
+				background: $content-bg !important;
+			}
+		}
+	}
+}
+
+
+
+
+/*-----------------------------------------------*\
+              CONTENT
+\*-----------------------------------------------*/
+
+
+
+
+
+/*-----------------------------------------------*\
+              COMPONENTS
+\*-----------------------------------------------*/
+
+
+/*
+* Forms
+*/
+#redux-main {
+	input, select, textarea {
+		background-color:#fff !important;
+		border:1px solid $border-color;
+		@include border-radius(0);
+
+		&:hover {
+			border-color:darken($border-color, 7%);
+		}
+
+		&:focus {
+			border-color:darken($border-color, 20%);
+		}
+	}
+}
+
+
+
+
+
+/*-----------------------------------------------*\
+              FONTS
+\*-----------------------------------------------*/
+@font-face {
+  font-family: 'linecons';
+  src: url('../../fonts/linecons/linecons.eot?98525679');
+  src: url('../../fonts/linecons/linecons.eot?98525679#iefix') format('embedded-opentype'),
+       url('../../fonts/linecons/linecons.woff?98525679') format('woff'),
+       url('../../fonts/linecons/linecons.ttf?98525679') format('truetype'),
+       url('../../fonts/linecons/linecons.svg?98525679#linecons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'linecons';
+    src: url('../../fonts/linecons/linecons.svg?98525679#linecons') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "linecons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-music-1:before { content: '\e800'; } /* '' */
+.icon-wallet:before { content: '\e82f'; } /* '' */
+.icon-mail-1:before { content: '\e802'; } /* '' */
+.icon-heart-1:before { content: '\e803'; } /* '' */
+.icon-star-1:before { content: '\e804'; } /* '' */
+.icon-user-1:before { content: '\e805'; } /* '' */
+.icon-videocam:before { content: '\e806'; } /* '' */
+.icon-camera-1:before { content: '\e807'; } /* '' */
+.icon-photo:before { content: '\e808'; } /* '' */
+.icon-attach-1:before { content: '\e809'; } /* '' */
+.icon-lock-1:before { content: '\e80a'; } /* '' */
+.icon-eye-1:before { content: '\e80b'; } /* '' */
+.icon-tag-1:before { content: '\e80c'; } /* '' */
+.icon-thumbs-up-1:before { content: '\e80d'; } /* '' */
+.icon-pencil-1:before { content: '\e80e'; } /* '' */
+.icon-comment-1:before { content: '\e80f'; } /* '' */
+.icon-location-1:before { content: '\e810'; } /* '' */
+.icon-cup-1:before { content: '\e811'; } /* '' */
+.icon-trash-1:before { content: '\e812'; } /* '' */
+.icon-doc-1:before { content: '\e813'; } /* '' */
+.icon-note-1:before { content: '\e814'; } /* '' */
+.icon-cog-1:before { content: '\e815'; } /* '' */
+.icon-params:before { content: '\e816'; } /* '' */
+.icon-calendar-1:before { content: '\e817'; } /* '' */
+.icon-search-1:before { content: '\e801'; } /* '' */
+.icon-clock-1:before { content: '\e819'; } /* '' */
+.icon-lightbulb:before { content: '\e81a'; } /* '' */
+.icon-tv:before { content: '\e81b'; } /* '' */
+.icon-desktop:before { content: '\e81c'; } /* '' */
+.icon-mobile-1:before { content: '\e81d'; } /* '' */
+.icon-cd-1:before { content: '\e81e'; } /* '' */
+.icon-inbox-1:before { content: '\e81f'; } /* '' */
+.icon-globe-1:before { content: '\e820'; } /* '' */
+.icon-cloud-1:before { content: '\e821'; } /* '' */
+.icon-paper-plane-1:before { content: '\e822'; } /* '' */
+.icon-fire:before { content: '\e823'; } /* '' */
+.icon-graduation-cap-1:before { content: '\e824'; } /* '' */
+.icon-megaphone-1:before { content: '\e825'; } /* '' */
+.icon-database-1:before { content: '\e826'; } /* '' */
+.icon-key-1:before { content: '\e827'; } /* '' */
+.icon-beaker:before { content: '\e828'; } /* '' */
+.icon-truck:before { content: '\e829'; } /* '' */
+.icon-money:before { content: '\e82a'; } /* '' */
+.icon-food:before { content: '\e82b'; } /* '' */
+.icon-shop:before { content: '\e82c'; } /* '' */
+.icon-diamond:before { content: '\e82d'; } /* '' */
+.icon-t-shirt:before { content: '\e82e'; } /* '' */
+.icon-sound-1:before { content: '\e818'; } /* '' */
+
+
+
+
+
+
+
+
+
 /*
  *
  * Don't forget to set $args['admin_stylesheet'] to 'custom' in options.php!
@@ -220,11 +611,6 @@ div.pixelgrade_logo {
 	border-bottom: 16px solid #bae8f9;
 	border-left: 14px solid transparent;
 	content: '';
-}
-#redux-sidebar i {
-	font-size: 14px;
-	margin-right: 5px;
-	text-align: left;
 }
 
 .redux-group-tab .form-table td:hover .reset_google_font {
