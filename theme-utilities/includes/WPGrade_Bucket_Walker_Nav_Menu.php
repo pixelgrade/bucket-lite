@@ -183,37 +183,51 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         );
                     
                     $slideposts = get_posts( $post_args );
+
                     
                     $item_output .= '<div class="sub-menu__grid__item  grid__item  two-fifths">';
+
+                    if (count($slideposts)):
+                    
                     $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoheight>';
 
-                    foreach( $slideposts as $post ) : setup_postdata( $post );
-                        //add the id to the array
-                        $slideposts_ids[] = $post->ID;
-                        
-                        $post_title = get_the_title();
-                        $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
+                        foreach( $slideposts as $post ) : setup_postdata( $post );
+                            //add the id to the array
+                            $slideposts_ids[] = $post->ID;
+                            
+                            $post_title = get_the_title();
+                            $post_link = get_permalink();
+                            $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
-                        if ( $post_image ){
-                            $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
-                        } else {
-                            // $menu_post_image = '<div class="image-wrap"></div>';
-                            $menu_post_image = '';
-                        }
+                            if ( $post_image ){
+                                $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
+                            } else {
+                                // $menu_post_image = '<div class="image-wrap"></div>';
+                                $menu_post_image = '';
+                            }
 
-                        $item_output .=
-                            '<article class="featured-area__article  article--big">' .
-                                '<a href="' . $post_link . '" class="image-wrap">' .
-                                    $menu_post_image .
-                                    '<div class="article__title">' .
-                                        '<h3 class="hN">' . $post_title . '</h3>' .
-                                    '</div>' .
-                                '</a>' .
-                            '</article>';
-                    endforeach;
+                            $item_output .=
+                                '<article class="featured-area__article  article--big">' .
+                                    '<a href="' . $post_link . '" class="image-wrap">' .
+                                        $menu_post_image .
+                                        '<div class="article__title">' .
+                                            '<h3 class="hN">' . $post_title . '</h3>' .
+                                        '</div>' .
+                                    '</a>' .
+                                '</article>';
+                        endforeach;
                     
-                    $item_output .= '</div></div>';
+                    $item_output .= '</div>';
+
+                    else:
+
+                        $item_output .= '<div class="no-slides-message">';
+                        $item_output .= __('No featured posts in this category' , wpgrade::textdomain());
+                        $item_output .= '</div>';
+
+                    endif;
+
+                    $item_output .= '</div>';
                     wp_reset_query();
                 }
                 
