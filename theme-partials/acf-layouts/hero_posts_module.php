@@ -14,7 +14,8 @@ if ( empty($read_more_label) ) {
 }
 
 $query_args = array(
-	'posts_per_page' => $number_of_posts,
+	'posts_per_page' => 1,
+	'ignore_sticky_posts' => true,
 );
 
 $posts_source = get_sub_field('posts_source');
@@ -125,6 +126,12 @@ if ($slides->have_posts()): ?>
                             <h3 class="hN"><?php the_title(); ?></h3>
                         </div>
                     </a>
+	            <?php else: ?>
+	                <a href="<?php the_permalink(); ?>" class="image-wrap no-image" >
+		                <div class="article__title">
+			                <h3 class="hN"><?php the_title(); ?></h3>
+		                </div>
+	                </a>
                 <?php endif;
 	            post_format_icon('post-format-icon--featured'); ?>
             </div><!--
@@ -132,15 +139,10 @@ if ($slides->have_posts()): ?>
      --><div class="featured-area__aside">
             <ul class="block-list  block-list--alt">
                 <?php
-                $args = array(
-                    'posts_per_page' => $more,
-                    // 'post__not_in' => get_option('sticky_posts'),
-                    'ignore_sticky_posts' => true,
-                    'offset' => 1
-                );
-
+	            $query_args['posts_per_page'] = $more;
+	            $query_args['offset'] = 1;
                 if ($more > 0):
-                    $myquery = new WP_Query( $args );
+                    $myquery = new WP_Query( $query_args );
                     while($myquery->have_posts()): $myquery->the_post(); ?>
 	                    <li class="hard--sides">
 	                        <article class="article  article--thumb  media  flush--bottom">
