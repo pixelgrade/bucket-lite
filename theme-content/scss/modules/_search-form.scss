@@ -13,7 +13,7 @@
 .search-submit {
     position: absolute;
     top: 0; right: 0;
-    border: 1px solid $dark;
+    // border: 1px solid $dark;
     @include font-size(14px);
     @include rem(width, $_2u);
     @include rem(padding, $_u4);

@@ -1,8 +1,16 @@
 .social-icon-link{
+    @include rem(width, $_2u);
+    @include rem(height, $_2u);
+    @include rem(padding, $_u/4 0);
+    display: block;
+    background-color: $dark;
+    color: $light;
+    text-align: center;
+
     @include transition(all 0.15s);
 
     &:hover, &:focus, &:active {
-        background-color: $accent;
-        color: white;
+        background-color: $accent !important;
+        color: white !important;
     }
 }
