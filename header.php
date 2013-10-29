@@ -6,8 +6,8 @@ if(is_page() && get_page_template_slug(get_the_ID()) == 'template-journal.php') 
 	$class_name .= ' blog';
 }
 
-if(wpgrade::option('top_nav_inverse') == 1) $class_name .= " top-nav-inverse";
-if(wpgrade::option('main_nav_inverse') == 1) $class_name .= " main-nav-inverse";
+if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
+if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
 
 ?>
 
