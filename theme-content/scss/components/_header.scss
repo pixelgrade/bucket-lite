@@ -20,44 +20,42 @@
     $HEADER BAR(SIDEBAR)
 \*----------------------------------------*/
 .header-bar{
-        @include rem(margin-top, $_2u);
-        > li{
-            vertical-align: top;
-        }
-
-    // .form-search{
-        .search-query{
-            // rem does not work properly
-            // @include rem(height, $_2u);
-            height: 48px;
-            @include rem(padding, 0 $_u);
-            background-color: $dark;
-            border: 0;
-            color: $light;
-            text-transform: uppercase;
-            @include rem(letter-spacing, 2px);
-        }
-
-        .search-submit{
-            @include rem(height, $_2u);
-            @include rem(padding, $_u2);
-            vertical-align: top;
-            background-color: $dark;
-            @include font-size(0.75*$_u);
-        }
-    // }
-    
-    .social-icon-link {
-        @include rem(width, $_2u);
-        @include rem(height, $_2u);
-        @include rem(padding, $_u/4 0);
-        display: block;
-        background-color: $dark;
-        color: $light;
-        text-align: center;
-
-        @include font-size(16px);
+    @include rem(margin-top, $_2u);
+    > li{
+        vertical-align: top;
     }
+
+    .search-query{
+        // rem does not work properly
+        // @include rem(height, $_2u);
+        height: 48px;
+        @include rem(padding, 0 $_u);
+        background-color: $dark;
+        border: 0;
+        color: $light;
+        text-transform: uppercase;
+        @include rem(letter-spacing, 2px);
+    }
+
+    .search-submit{
+        @include rem(height, $_2u);
+        @include rem(padding, $_u2);
+        vertical-align: top;
+        background-color: $dark;
+        @include font-size(0.75*$_u);
+    }
+}
+
+
+.social-icon-link{
+    .header--type1 &{
+        @include font-size(24px);
+    }
+
+    .header--type2 &,
+    .header--type3 &{
+        @include font-size(16px);
+    }    
 }
 
 .header-bar--top{
@@ -129,7 +127,7 @@
 /*----------------------------------------*\
     $TOP NAV INVERSE
 \*----------------------------------------*/
-.top-nav-inverse{
+.nav-inverse-top{
     .navigation--top{
         background: none;
 
@@ -146,6 +144,10 @@
             @include rem(margin-left, -$_u);
         }
     }
+
+    .sub-menu, .sub-menu--mega{
+        background-color: white;        
+    }
 }
 
 
@@ -155,9 +157,16 @@
 /*----------------------------------------*\
     $MAIN NAV INVERSE
 \*----------------------------------------*/
-.main-nav-inverse{
+.nav-inverse-main{
     .navigation--main {
         background: none;        
+
+        .sub-menu, .sub-menu--mega{
+            .menu{
+                background-color: white;
+                border: 1px solid black;
+            }
+        }        
     }
 
     @include media(from hand) {
@@ -166,24 +175,64 @@
         }
     }
 
-    .navigation--main a {
+    .navigation--main li {
         color: black;
     }
 
-    .header--type1{
+    //It's either this or the one below.
+    //This option will work only if the menu
+    //has one one line.
+    .nav--main{
+        border-bottom: 5px solid $dark;
+
+        >li{
+            margin-bottom: -5px;
+        }
+    }
+
+    .nav--main > li{
+        //This is the one below.
+        //This works with multi-line menu but
+        //will not stretch to 100% of the menu
+        //border-bottom-color: $dark;
+
+        background: transparent;
+
+        a{
+            color: black;
+        }     
+
+        &:hover{
+            background: transparent;
+
+            > a{
+               color: black;
+            }
+        }
+
+        .article--billboard-small {
+            background-color: white;
+            
+            .hN{
+                color: black;
+            }
+        }
+    }
+
+    .header--type1 {
         .search-query, .search-submit, .social-icon-link {
             color: black;
             background: none;
+        }
+
+        .search-submit {
+            border: none;
         }
 
         .header-bar > li {
             border: 1px solid $light;
         }
     }
-
-    .site-navigation li:hover{
-        background: none;
-    }    
 }
 
 
