@@ -75,14 +75,23 @@
 /*ul*/.menu--list {
     margin: 0;
     list-style: none;
-    // @include rem(margin-top, -$_u2);
+    @include rem(margin-top, -$_u4);
 
     > li {
-        @include rem(padding, $_u2 0);
+        
+        a {
+            display: block;
+            @include rem(padding, $_u4 0);
+        }
 
         + li {
             border-top: 1px solid #333131;
             margin-top: -1px;
+
+
+            .site__footer & {
+                border-top-color: #262525;
+            }
         }
     }
 
@@ -96,6 +105,10 @@
         > li + li + li {
             border-top: 1px solid #ddd;
             margin-top: -1px;   
+
+            .site__footer & {
+                border-top-color: #262525;
+            }
         }
     }
 }

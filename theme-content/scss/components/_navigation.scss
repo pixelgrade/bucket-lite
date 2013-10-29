@@ -124,7 +124,7 @@
     $SUBMENUS
 \*----------------------------------------*/
 
-.menu {
+.nav--sub-menu {
     background-color: #262525;
     margin-bottom: 0;
 
@@ -187,7 +187,7 @@
         }
     }
 
-    .menu {
+    .nav--sub-menu {
         @include rem(border-bottom, 5px solid #1a1717);
         @include rem(margin-bottom, -$_u);
     }
@@ -479,7 +479,7 @@
             margin-top: 0;
         }
 
-        .menu > li > a {
+        .nav--sub-menu > li > a {
             @include rem(padding-left, 11px);
             @include rem(padding-right, 11px);
         }

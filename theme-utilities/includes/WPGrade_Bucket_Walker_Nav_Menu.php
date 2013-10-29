@@ -9,7 +9,7 @@ if ( !class_exists( "WPGrade_Bucket_Walker_Top_Nav_Menu" ) && class_exists( 'Wal
 
 class WPGrade_Bucket_Walker_Top_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = array()) {
-        $output .= "<div class=\"sub-menu\"><ul class=\"nav nav--stacked menu\">";
+        $output .= "<div class=\"sub-menu\"><ul class=\"nav nav--stacked nav--sub-menu\">";
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
@@ -183,37 +183,51 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         );
                     
                     $slideposts = get_posts( $post_args );
+
                     
                     $item_output .= '<div class="sub-menu__grid__item  grid__item  two-fifths">';
+
+                    if (count($slideposts)):
+                    
                     $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoheight>';
 
-                    foreach( $slideposts as $post ) : setup_postdata( $post );
-                        //add the id to the array
-                        $slideposts_ids[] = $post->ID;
-                        
-                        $post_title = get_the_title();
-                        $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
+                        foreach( $slideposts as $post ) : setup_postdata( $post );
+                            //add the id to the array
+                            $slideposts_ids[] = $post->ID;
+                            
+                            $post_title = get_the_title();
+                            $post_link = get_permalink();
+                            $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
-                        if ( $post_image ){
-                            $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
-                        } else {
-                            // $menu_post_image = '<div class="image-wrap"></div>';
-                            $menu_post_image = '';
-                        }
+                            if ( $post_image ){
+                                $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
+                            } else {
+                                // $menu_post_image = '<div class="image-wrap"></div>';
+                                $menu_post_image = '';
+                            }
 
-                        $item_output .=
-                            '<article class="featured-area__article  article--big">' .
-                                '<a href="' . $post_link . '" class="image-wrap">' .
-                                    $menu_post_image .
-                                    '<div class="article__title">' .
-                                        '<h3 class="hN">' . $post_title . '</h3>' .
-                                    '</div>' .
-                                '</a>' .
-                            '</article>';
-                    endforeach;
+                            $item_output .=
+                                '<article class="featured-area__article  article--big">' .
+                                    '<a href="' . $post_link . '" class="image-wrap">' .
+                                        $menu_post_image .
+                                        '<div class="article__title">' .
+                                            '<h3 class="hN">' . $post_title . '</h3>' .
+                                        '</div>' .
+                                    '</a>' .
+                                '</article>';
+                        endforeach;
                     
-                    $item_output .= '</div></div>';
+                    $item_output .= '</div>';
+
+                    else:
+
+                        $item_output .= '<div class="no-slides-message">';
+                        $item_output .= __('No featured posts in this category' , wpgrade::textdomain());
+                        $item_output .= '</div>';
+
+                    endif;
+
+                    $item_output .= '</div>';
                     wp_reset_query();
                 }
                 
@@ -297,7 +311,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $_doc->find('.sub-menu--mega:last .sub-menu')
                         ->removeClass('sub-menu')
                         ->removeClass('one-fifth')
-                        ->addClass('nav nav--stacked menu')
+                        ->addClass('nav nav--stacked nav--sub-menu')
                         ->prependTo('.sub-menu--mega:last > .grid')
                         ->wrap('<div class="sub-menu__grid__item  grid__item  one-fifth"></div>');
                 }
@@ -313,7 +327,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $_doc->find('.sub-menu--mega:last .sub-menu')
                         ->removeClass('sub-menu')
                         ->removeClass('one-fifth')
-                        ->addClass('nav nav--stacked menu')
+                        ->addClass('nav nav--stacked nav--sub-menu')
                         ->insertBefore('.sub-menu--mega:last')
                         ->wrap('<div class="sub-menu  one-fifth"></div>');
                 }

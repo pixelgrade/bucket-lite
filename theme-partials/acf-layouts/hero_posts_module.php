@@ -14,7 +14,8 @@ if ( empty($read_more_label) ) {
 }
 
 $query_args = array(
-	'posts_per_page' => $number_of_posts,
+	'posts_per_page' => 1,
+	'ignore_sticky_posts' => true,
 );
 
 $posts_source = get_sub_field('posts_source');
@@ -54,42 +55,45 @@ switch ( $posts_source ) :
 	case 'latest_by_format' :
 		/** Return posts with the selected post format */
 		$formats = get_sub_field('posts_source_post_formats');
-		$terms = array();
-		if (!isset($query_args['tax_query'])) {
-			$query_args['tax_query'] = array();
-		}
-		foreach ( $formats as $key => &$format) {
-			if ($format == 'standard') {
-				//if we need to include the standard post formats
-				//then we need to include the posts that don't have a post format set
-				$all_post_formats = get_theme_support('post-formats');
-				if (!empty($all_post_formats[0]) && count($all_post_formats[0])) {
-					$allterms = array();
-					foreach ($all_post_formats[0] as $format2) {
-						$allterms[] = 'post-format-'.$format2;
-					}
-					
-					$query_args['tax_query']['relation'] = 'AND';
-					$query_args['tax_query'][] = array(
-						'taxonomy' => 'post_format',
-						'terms' => $allterms,
-						'field' => 'slug',
-						'operator' => 'NOT IN'
-					);
-				}
-			} else {
-				$terms[] = 'post-format-' . $format;
+
+		if ( !empty($formats) ) {
+			$terms = array();
+			if (!isset($query_args['tax_query'])) {
+				$query_args['tax_query'] = array();
 			}
-		}
-		
-		if ( !empty($terms) ) {
-			$query_args['tax_query'][] = array(
-				'taxonomy' => 'post_format',
-				'field' => 'slug',
-				'terms' => $terms,
-				'operator' => 'IN'
-			);
-		}
+			foreach ( $formats as $key => &$format) {
+				if ($format == 'standard') {
+					//if we need to include the standard post formats
+					//then we need to include the posts that don't have a post format set
+					$all_post_formats = get_theme_support('post-formats');
+					if (!empty($all_post_formats[0]) && count($all_post_formats[0])) {
+						$allterms = array();
+						foreach ($all_post_formats[0] as $format2) {
+							$allterms[] = 'post-format-'.$format2;
+						}
+
+						$query_args['tax_query']['relation'] = 'AND';
+						$query_args['tax_query'][] = array(
+							'taxonomy' => 'post_format',
+							'terms' => $allterms,
+							'field' => 'slug',
+							'operator' => 'NOT IN'
+						);
+					}
+				} else {
+					$terms[] = 'post-format-' . $format;
+				}
+			}/** end foreach( $formats ) */
+
+			if ( !empty($terms) ) {
+				$query_args['tax_query'][] = array(
+					'taxonomy' => 'post_format',
+					'field' => 'slug',
+					'terms' => $terms,
+					'operator' => 'IN'
+				);
+			}
+		} /** endif !empty( $formats ) */
 		break;
 
 	case 'latest_by_reviews':
@@ -109,9 +113,9 @@ $slides = new WP_Query( $query_args );
 
 if ($slides->have_posts()): ?>
 
-    <div class="featured-area">
+    <div class="featured-area"><!--
         <?php while($slides->have_posts()): $slides->the_post(); ?>
-            <div class="featured-area__article  article--big">
+            --><div class="featured-area__article  article--big">
                 <?php
                 if (has_post_thumbnail()):
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
@@ -122,6 +126,12 @@ if ($slides->have_posts()): ?>
                             <h3 class="hN"><?php the_title(); ?></h3>
                         </div>
                     </a>
+	            <?php else: ?>
+	                <a href="<?php the_permalink(); ?>" class="image-wrap no-image" >
+		                <div class="article__title">
+			                <h3 class="hN"><?php the_title(); ?></h3>
+		                </div>
+	                </a>
                 <?php endif;
 	            post_format_icon('post-format-icon--featured'); ?>
             </div><!--
@@ -129,15 +139,10 @@ if ($slides->have_posts()): ?>
      --><div class="featured-area__aside">
             <ul class="block-list  block-list--alt">
                 <?php
-                $args = array(
-                    'posts_per_page' => $more,
-                    // 'post__not_in' => get_option('sticky_posts'),
-                    'ignore_sticky_posts' => true,
-                    'offset' => 1
-                );
-
+	            $query_args['posts_per_page'] = $more;
+	            $query_args['offset'] = 1;
                 if ($more > 0):
-                    $myquery = new WP_Query( $args );
+                    $myquery = new WP_Query( $query_args );
                     while($myquery->have_posts()): $myquery->the_post(); ?>
 	                    <li class="hard--sides">
 	                        <article class="article  article--thumb  media  flush--bottom">
