@@ -49,16 +49,11 @@
     .article__title--inverse {
         color: white;
         background-color: $dark;
-
-        .hN {
-            @include rem(padding, $_u4 $_u);
-            @include rem(margin, -$_u $_u2 $_u2);
-            @include transition(background-color 0.15s);
-        }        
     }
 
     .article__title--full {
         margin-bottom:0;
+
         h3 {
             margin:0;
         }
@@ -94,7 +89,7 @@
     .article--grid__header {
 
         &:hover {
-            
+
             .article--grid__title  {
 
                 h3 {
@@ -145,6 +140,9 @@
 
         .hN {
             text-align: center;
+            @include rem(padding, $_u4 $_u);
+            @include rem(margin, -$_u $_u2 $_u2);
+            @include transition(background-color 0.15s);
         }  
 
         &:after {
