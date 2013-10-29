@@ -354,6 +354,7 @@
 
           article {
               position:relative;
+              @include rem(margin-bottom, $_u + $_u4);
 
               & > div {
                
@@ -380,7 +381,7 @@
  */
 .billboard {
     position: relative;
-    @include rem(margin-bottom, $_u);
+    @include rem(margin-bottom, $_u4);
 }
 
 .article--billboard {
@@ -458,4 +459,14 @@
         text-overflow: ellipsis;
         @extend .gamma;
     }
+}
+
+
+
+
+/**
+ * Content Module
+ */
+.content-module {
+    @include rem(margin-bottom, $_u + $_u4);    
 }
