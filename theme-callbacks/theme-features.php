@@ -43,7 +43,6 @@ function wpgrade_prepare_password_for_custom_post_types(){
 
 add_action('wp', 'wpgrade_prepare_password_for_custom_post_types');
 
-
 // Add "Next page" button to TinyMCE
 function add_next_page_button( $mce_buttons ) {
 	$pos = array_search( 'wp_more', $mce_buttons, true );
@@ -83,3 +82,4 @@ function add_next_and_number( $args ) {
 	return $args;
 }
 add_filter( 'wp_link_pages_args', 'add_next_and_number' );
+

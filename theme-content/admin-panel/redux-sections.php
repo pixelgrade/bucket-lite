@@ -226,11 +226,23 @@ $sections[] = array(
 			'title' => __('Header type', wpgrade::textdomain()),
 			'default' => 'type1',
 			'options' => array(
-				'type1' => array('Type 1', 'img' => 'images/align-right.png'),
-				'type2' => array('Type 2', 'img' => 'images/align-left.png'),
-				'type3' => array('Type 3', 'img' => 'images/align-center.png'),
+				'type1' => array('Type 1', 'img' => wpgrade::resourceuri('images/header-type1.png')),
+				'type2' => array('Type 2', 'img' => wpgrade::resourceuri('images/header-type2.png')),
+				'type3' => array('Type 3', 'img' => wpgrade::resourceuri('images/header-type3.png')),
 			)
 		),
+		array(
+			'id' => 'nav_inverse_top',
+			'type' => 'switch',
+			'title' => __('Header top navigation inverse contrast', wpgrade::textdomain()),
+			'default' => '0'
+		),
+		array(
+			'id' => 'nav_inverse_main',
+			'type' => 'switch',
+			'title' => __('Header main navigation inverse contrast', wpgrade::textdomain()),
+			'default' => '0'
+		)
 	)
 );
 

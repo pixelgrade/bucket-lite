@@ -45,23 +45,20 @@ if ($latest_query->have_posts()):
              --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
             <?php endwhile; wp_reset_postdata(); ?>
      --></div>
-    <?php if ( $has_sidebar ): ?>
+    <?php
+
+
+
+	if ( get_sub_field('pagination') == 'enable' ){
+		echo wpgrade::pagination($latest_query);
+	}
+
+	if ( $has_sidebar ): ?>
             </div><!--
          --><div class="grid__item  one-third  palm-one-whole  sidebar">
                 <?php get_sidebar(); ?>
             </div>
         </div>
     <?php endif;
-
-	if ( get_sub_field('pagination') == 'enable' ){
-		// a basic pagination https://codex.wordpress.org/Function_Reference/paginate_links
-		$big = 999999999; // need an unlikely integer
-		echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $latest_query->max_num_pages
-		) );
-	}
 
 endif;

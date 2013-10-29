@@ -11,3 +11,6 @@ theme-content/css/*
 .DS_Store
 nbproject
 .sass-cache
+bucket.sublime-workspace
+bucket-wp.sublime-project
+bucket-wp.sublime-workspace

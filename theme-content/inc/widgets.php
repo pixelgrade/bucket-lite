@@ -137,17 +137,17 @@ class wpgrade_latest_comments extends WP_Widget {
 
 				ob_start(); ?>
 				<article class="latest-comments__list">
-					<a class="media__img  latest-comments__avatar" href="<?php echo get_comment_author_link($comment->comment_ID) ?>">
+					<a class="media__img  latest-comments__avatar" href="<?php echo get_comment_author_url($comment->comment_ID) ?>">
 						<img class="img--center" src="<?php echo bucket::get_avatar_url($comment->comment_author_email, '48') ?>" alt="48x48">
 					</a>
 					<div class="media__body  latest-comments__body">
 						<div class="comment__meta">
-							<a class="latest-comments__author" href="<?php echo get_comment_author_link() ?>"><?php echo $comment->comment_author; ?></a>
+							<a class="latest-comments__author" href="<?php echo get_comment_author_url() ?>"><?php echo $comment->comment_author; ?></a>
 							<span class="comment__date">on <?php echo date( 'd M' ,strtotime($comment->comment_date)); ?></span>
 						</div>
 						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
 						<div class="latest-comments__content">
-							<p><?php echo $comment->comment_content; ?></p>
+							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25); ?> [...] </p>
 						</div>
 					</div>
 				</article>
@@ -289,15 +289,13 @@ class wpgrade_social_links_widget extends WP_Widget {
 		echo $before_widget;
 		if (count($social_links)): ?>
         <?php if ($title): echo $before_title . $title . $after_title; endif; ?>
-            <ul class="site-social-links">
+            <div class="btn-list">
                 <?php foreach ($social_links as $domain => $value): if ($value): ?>
-                    <li class="site-social-links__social-link">
-                        <a href="<?php echo $value ?>"<?php echo $target ?>>
-                            <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
-                        </a>
-                    </li>
+                    <a href="<?php echo $value ?>"<?php echo $target ?>>
+                        <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?> square medium"></i>
+                    </a>
                 <?php endif; endforeach ?>
-            </ul>
+            </div>
         <?php endif;
 		echo $after_widget;
 	}

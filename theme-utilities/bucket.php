@@ -115,6 +115,12 @@ class bucket
 		}
 	}
 
+	/** Limit words for a string */
+
+	static function limit_words($string, $word_limit) {
+		$words = explode(" ",$string);
+		return implode(" ",array_splice($words,0,$word_limit));
+	}
 
 	/**
 	 * Access an array index, retrieving the value stored there if it

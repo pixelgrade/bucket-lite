@@ -54,7 +54,7 @@
         
         <a class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></a>
 
-        <hr class="nav-top-separator separator separator--striped flush--bottom" />        
+        <hr class="nav-top-separator separator separator--subsection flush--bottom" />
         <nav class="navigation  navigation--main">
 
             <h2 class="accessibility"><?php _e('Primary Navigation', wpgrade::textdomain()) ?></h2>

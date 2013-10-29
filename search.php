@@ -19,8 +19,8 @@ get_header(); ?>
                      --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
-				<?php echo wpgrade::pagination(); ?>
-            <?php else: get_template_part( 'no-results', 'index' ); endif; ?>
+				<?php echo wpgrade::pagination();
+	        else: get_template_part( 'no-results', 'index' ); endif; ?>
         </div><!--
         
      --><div class="grid__item  one-third  palm-one-whole  sidebar">

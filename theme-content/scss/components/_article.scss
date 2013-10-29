@@ -48,33 +48,12 @@
 
     .article__title--inverse {
         color: white;
-
-        h3 {
-            @include rem(padding, $_u4 $_u);
-            @include rem(margin, -$_u $_u2 $_u2);
-            background-color: $dark;
-            @include transition(background-color 0.15s);
-        }
-
-        &:after {
-            background-color: $dark;
-            content:"";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index:-1;
-            @include scaleX(0.89, false, true);
-            @include transition(all 0.15s);
-
-            //Fix text moving on hover
-            @include backface-visibility(hidden);
-        }
+        background-color: $dark;
     }
 
     .article__title--full {
         margin-bottom:0;
+
         h3 {
             margin:0;
         }
@@ -97,9 +76,10 @@
  */
 
 .article--grid {
+    width: 100%;
     
     padding-bottom: 0;
-    @include rem(margin-bottom, $_u - 5px);
+    @include rem(margin-bottom, $_u + $_u2 - 5px);
 
     .article__featured-image {
         
@@ -109,14 +89,13 @@
     .article--grid__header {
 
         &:hover {
-            .article--grid__thumb {
-                // @include scale(0.92);
-            }
 
             .article--grid__title  {
+
                 h3 {
                     background-color:$accent;
                 }
+
                 &:after {
                     background-color:$accent;
                     @include scaleX(1, false, true);
@@ -156,10 +135,31 @@
 
     .article--grid__title {
         @extend .article__title--inverse;
+        background-color: transparent;
         z-index:22;
+
         .hN {
             text-align: center;
+            @include rem(padding, $_u4 $_u);
+            @include rem(margin, -$_u $_u2 $_u2);
+            @include transition(background-color 0.15s);
         }  
+
+        &:after {
+            background-color: $dark;
+            content:"";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:-1;
+            @include scaleX(0.89, false, true);
+            @include transition(all 0.15s);
+
+            //Fix text moving on hover
+            @include backface-visibility(hidden);
+        }
     }
 
     .article--grid__meta {
@@ -308,6 +308,8 @@
 
 .article--thumb__title {
     line-height: 1;
+    @include rem(height, $_2u);
+    overflow: hidden;
 
     a {
         color: $dark;
@@ -326,7 +328,37 @@
 
 .flexbox .posts-grid-cards {
 
-        @media screen and (min-width: 1023px) { 
+    @include media-query(lap-and-up) { 
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-box-align: stretch;
+        -moz-box-align: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+
+        .grid__item {
 
             display: -webkit-box;
             display: -moz-box;
@@ -335,43 +367,33 @@
             display: -ms-flex;
             display: -webkit-flex;
             display: flex;
-            
-            align-items:stretch;
-            -ms-flex-align: stretch;
 
-          .grid__item {
-             
-            display: -webkit-box;
-            display: -moz-box;
-            display: -webkit-flexbox;
-            display: -ms-flexbox;
-            display: -ms-flex;
-            display: -webkit-flex;
-            display: flex;
+            -webkit-box-flex: 33.333%;
+            -moz-box-flex: 33.333%;
+            -webkit-flex: 33.333% 1 auto;
+            -ms-flex: 33.333% 1 auto;
+            flex: 33.333% 1 auto;
 
+            position: relative;
+        }
+
+        article {
             position:relative;
-          }
+            @include rem(margin-bottom, $_u + $_u4);
 
-          article {
-              position:relative;
-              @include rem(margin-bottom, $_u + $_u4);
-
-              & > div {
-               
-              }
-              .article--grid__body {
+            .article--grid__body {
                 padding-bottom:42px;
-              }
-              .article__meta {
+            }
+
+            .article__meta {
                 margin-bottom:0;
                 position:absolute;
                 bottom:0;
                 left:0;
                 width:100%;
-              }
-          }
-      }
-
+            }
+        }
+    }
 }
 
 
@@ -469,4 +491,27 @@
  */
 .content-module {
     @include rem(margin-bottom, $_u + $_u4);    
+}
+
+/**
+ * Password protected article
+ */
+
+.post-password-submit{
+    @include rem(padding, $_u2);
+    margin-top: 1px;
+    line-height: normal;
+    font-size: 100%;
+}
+
+@include media(to hand) {
+    .post-password-submit{
+        width: 100%;
+        @include rem(margin-top, $_u);
+    }
+}
+
+.wrong-password-message{
+    color: $accent;
+    font-weight: bold;
 }
