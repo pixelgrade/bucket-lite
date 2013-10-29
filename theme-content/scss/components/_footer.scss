@@ -2,8 +2,7 @@
                FOOTER
 \*--------------------------------*/
 
-.site-footer {
-    @include rem(padding-top, $_u + $_u2);
+.site__footer {
     background: $dark;
     @include rem(font-size, 14px);
     color: #a6a1a1;
@@ -13,7 +12,11 @@
     }
 }
 
-.colophon {
+.footer__sidebar {
+    @include rem(padding-top, $_u + $_u2);
+}
+
+.footer__copyright {
     background: black;
     @include rem(padding, $_u2 0);
 }

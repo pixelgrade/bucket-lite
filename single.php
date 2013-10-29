@@ -148,9 +148,7 @@ get_header(); ?>
 					<?php endif; ?>
                 </div>
 				
-				<?php if ( get_the_author_meta( 'description' ) ) : ?>
-					<?php get_template_part( 'author-bio' ); ?>
-				<?php endif; ?>
+				<?php get_template_part( 'author-bio' ); ?>
 
                 <hr class="separator  separator--subsection">
                 

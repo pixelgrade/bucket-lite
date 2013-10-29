@@ -268,3 +268,10 @@ img[width], img[height] {
         @include rem(margin-bottom, $_2u);
     }
 }
+
+.no-slides-message {
+    text-align: center;
+    color: #bbb;
+    @include rem(margin-top, $_u);
+    @include font-size(16px);
+}
