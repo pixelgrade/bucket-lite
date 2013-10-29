@@ -18,21 +18,24 @@ get_header(); ?>
 		// let's use what we know
 		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
 		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
-        ?>
-
-        <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
-            <?php get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
-        </div>
+        
+        get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 
         <div class="grid__item  main  float--left  <?php echo $content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
 
-                <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
+                <?php if (get_the_title()): ?>
+                    <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
+                <?php else: ?>
+                    <h1 class="article__title  article__title--single"><?php _e('Untitled', wpgrade::textdomain()); ?></h1>
+                <?php endif; ?>
+
                 <div class="article__title__meta">
                     <?php printf('<div class="article__author-name">%s</div>', get_the_author_link()) ?>
                     <time class="article__time" datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s', wpgrade::textdomain()),get_the_time(__('j F, Y \a\t H:i', wpgrade::textdomain()))); ?></time>
                 </div>
+
                 <?php
 		        the_content();
 
