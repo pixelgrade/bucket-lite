@@ -48,29 +48,13 @@
 
     .article__title--inverse {
         color: white;
+        background-color: $dark;
 
-        h3 {
+        .hN {
             @include rem(padding, $_u4 $_u);
             @include rem(margin, -$_u $_u2 $_u2);
-            background-color: $dark;
             @include transition(background-color 0.15s);
-        }
-
-        &:after {
-            background-color: $dark;
-            content:"";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index:-1;
-            @include scaleX(0.89, false, true);
-            @include transition(all 0.15s);
-
-            //Fix text moving on hover
-            @include backface-visibility(hidden);
-        }
+        }        
     }
 
     .article__title--full {
@@ -110,14 +94,13 @@
     .article--grid__header {
 
         &:hover {
-            .article--grid__thumb {
-                // @include scale(0.92);
-            }
-
+            
             .article--grid__title  {
+
                 h3 {
                     background-color:$accent;
                 }
+
                 &:after {
                     background-color:$accent;
                     @include scaleX(1, false, true);
@@ -157,10 +140,28 @@
 
     .article--grid__title {
         @extend .article__title--inverse;
+        background-color: transparent;
         z-index:22;
+
         .hN {
             text-align: center;
         }  
+
+        &:after {
+            background-color: $dark;
+            content:"";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:-1;
+            @include scaleX(0.89, false, true);
+            @include transition(all 0.15s);
+
+            //Fix text moving on hover
+            @include backface-visibility(hidden);
+        }
     }
 
     .article--grid__meta {
