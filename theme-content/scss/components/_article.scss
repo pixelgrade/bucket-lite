@@ -308,6 +308,8 @@
 
 .article--thumb__title {
     line-height: 1;
+    @include rem(height, $_2u);
+    overflow: hidden;
 
     a {
         color: $dark;
