@@ -41,22 +41,13 @@
         // i just cannot get rid of that whitespace
         float: left;
 
-
         a {
             color: #a6a1a1;
-
-            &:hover, &:focus, &:active {
-                color: white;
-            }
         }
 
         > a {
             @include rem(padding, $_u4 $_u);
             text-transform: uppercase;
-
-            &:hover, &:focus, &:active {
-
-            }
         }
 
         /*li*/&.current-menu-ancestor > a {
@@ -97,6 +88,7 @@
     }
 
     li {
+        @include transition(all .05s linear);
 
         &:hover {
             border-bottom-color: $accent;
@@ -154,7 +146,6 @@
     @extend .nav--stacked;
     @include rem(padding, 5px);
 
-    margin-top: 0;
     padding-top: 0;
     border-bottom: 0;
 
@@ -163,7 +154,7 @@
     white-space: normal;
 
     position: absolute;
-    top: 100%;
+    // top: 100%;
     left: 0;
     z-index: 300;
 
@@ -182,7 +173,7 @@
     @extend .sub-menu;
     @include rem(padding-top, 5px);
     @include rem(border-bottom, $_u solid rgba(black, .5));
-    margin-top: 0;
+    // margin-top: 0;
     width: 100%;
 
     .featured-area__article {
@@ -333,7 +324,6 @@
     }
 }
 
-
 .navigation--mobile{
     // height: 900px;
     width: 75%;
@@ -345,16 +335,13 @@
     -webkit-transition: visibility 0s linear .2s;
 
     background-color: $dark;
+    padding-top: 2rem;
 
-    .site-navigation--header{
-        @include rem(margin-right, $_u);
+    > ul li{
+        width: 100%;
 
-        .menu-link{
-            color: white;
-        }
-
-        > .menu-item{
-            border-bottom: 1px solid $light;
+        a{
+            color: white !important;
         }
     }
 }
@@ -450,10 +437,6 @@
 
         a {
             color: #807d7c;
-
-            &:hover, &:focus, &:active {
-                color: white;
-            }
         }
 
         > a {
@@ -505,7 +488,6 @@
     li {
 
         &:hover {
-
             > a {
                 color: white;
             }

@@ -231,6 +231,18 @@ $sections[] = array(
 				'type3' => array('Type 3', 'img' => 'images/align-center.png'),
 			)
 		),
+		array(
+			'id' => 'nav_inverse_top',
+			'type' => 'switch',
+			'title' => __('Header top navigation inverse contrast', wpgrade::textdomain()),
+			'default' => '0'
+		),
+		array(
+			'id' => 'nav_inverse_main',
+			'type' => 'switch',
+			'title' => __('Header main navigation inverse contrast', wpgrade::textdomain()),
+			'default' => '0'
+		)
 	)
 );
 

@@ -99,7 +99,7 @@
 .article--grid {
     
     padding-bottom: 0;
-    @include rem(margin-bottom, $_u - 5px);
+    @include rem(margin-bottom, $_u + $_u2 - 5px);
 
     .article__featured-image {
         
