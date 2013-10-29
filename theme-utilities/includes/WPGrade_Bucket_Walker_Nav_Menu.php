@@ -9,7 +9,7 @@ if ( !class_exists( "WPGrade_Bucket_Walker_Top_Nav_Menu" ) && class_exists( 'Wal
 
 class WPGrade_Bucket_Walker_Top_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = array()) {
-        $output .= "<div class=\"sub-menu\"><ul class=\"nav nav--stacked menu\">";
+        $output .= "<div class=\"sub-menu\"><ul class=\"nav nav--stacked nav--sub-menu\">";
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {  
@@ -311,7 +311,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $_doc->find('.sub-menu--mega:last .sub-menu')
                         ->removeClass('sub-menu')
                         ->removeClass('one-fifth')
-                        ->addClass('nav nav--stacked menu')
+                        ->addClass('nav nav--stacked nav--sub-menu')
                         ->prependTo('.sub-menu--mega:last > .grid')
                         ->wrap('<div class="sub-menu__grid__item  grid__item  one-fifth"></div>');
                 }
@@ -327,7 +327,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $_doc->find('.sub-menu--mega:last .sub-menu')
                         ->removeClass('sub-menu')
                         ->removeClass('one-fifth')
-                        ->addClass('nav nav--stacked menu')
+                        ->addClass('nav nav--stacked nav--sub-menu')
                         ->insertBefore('.sub-menu--mega:last')
                         ->wrap('<div class="sub-menu  one-fifth"></div>');
                 }
