@@ -319,17 +319,10 @@
     -webkit-transition: visibility 0s linear .2s;
 
     background-color: $dark;
+    padding-top: 4rem;
 
-    .site-navigation--header{
-        @include rem(margin-right, $_u);
-
-        .menu-link{
-            color: white;
-        }
-
-        > .menu-item{
-            border-bottom: 1px solid $light;
-        }
+    ul {
+        @extend .nav--stacked;
     }
 }
 
