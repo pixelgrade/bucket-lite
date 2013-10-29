@@ -470,3 +470,26 @@
 .content-module {
     @include rem(margin-bottom, $_u + $_u4);    
 }
+
+/**
+ * Password protected article
+ */
+
+.post-password-submit{
+    @include rem(padding, $_u2);
+    margin-top: 1px;
+    line-height: normal;
+    font-size: 100%;
+}
+
+@include media(to hand) {
+    .post-password-submit{
+        width: 100%;
+        @include rem(margin-top, $_u);
+    }
+}
+
+.wrong-password-message{
+    color: $accent;
+    font-weight: bold;
+}

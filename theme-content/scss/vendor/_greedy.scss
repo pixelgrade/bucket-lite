@@ -184,6 +184,7 @@ $classT: (); // type
 
   .span-#{$i} {
     width: percentage($i/$greedy-columns);
+    @extend .column;
   }
 
   @include newClass(col-#{$i}, $i / $greedy-columns);
