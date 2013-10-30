@@ -229,7 +229,8 @@ $sections[] = array(
 		array(
 			'id' => 'header_type',
 			'type' => 'image_select',
-			'title' => __('Header type', wpgrade::textdomain()),
+			'title' => __('Header Type', wpgrade::textdomain()),
+			'subtitle' => __('Choose the layout for the header area.', wpgrade::textdomain()),
 			'default' => 'type1',
 			'options' => array(
 				'type1' => array('Type 1', 'img' => wpgrade::resourceuri('images/header-type1.png')),
@@ -240,15 +241,31 @@ $sections[] = array(
 		array(
 			'id' => 'nav_inverse_top',
 			'type' => 'switch',
-			'title' => __('Header top navigation inverse contrast', wpgrade::textdomain()),
+			'title' => __('Header Top Nav Inverse', wpgrade::textdomain()),
+			'subtitle' => __('Inverse the contrast of the header top navigation bar (black text on white background).', wpgrade::textdomain()),
 			'default' => '0'
 		),
 		array(
 			'id' => 'nav_inverse_main',
 			'type' => 'switch',
-			'title' => __('Header main navigation inverse contrast', wpgrade::textdomain()),
+			'title' => __('Header Main Nav Inverse', wpgrade::textdomain()),
+			'subtitle' => __('Inverse the contrast of the main navigation bar including sub-menus and mega-menus (black text on white background).', wpgrade::textdomain()),
 			'default' => '0'
-		)
+		),
+		array(
+			'id' => 'nav_show_header_social_icons',
+			'type' => 'switch',
+			'title' =>  __('Show Header Social Icons', wpgrade::textdomain()),
+			'subtitle' => __('Display social icons list in the header (their position varies with the Header Type).', wpgrade::textdomain()),
+			'default' => '1'
+		),
+		array(
+			'id' => 'nav_show_header_search',
+			'type' => 'switch',
+			'title' =>  __('Show Header Search Form', wpgrade::textdomain()),
+			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', wpgrade::textdomain()),
+			'default' => '1'
+		),
 	)
 );
 
@@ -315,6 +332,13 @@ $sections[] = array(
 			'title' => __('Excerpt Length', wpgrade::textdomain()),
 			'subtitle' => __('Set the number of words for posts excerpt.', wpgrade::textdomain()),
 			'default' => '20',
+		),
+		array(
+			'id' => 'blog_excerpt_more_text',
+			'type' => 'text',
+			'title' => __('Excerpt More', wpgrade::textdomain()),
+			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', wpgrade::textdomain()),
+			'default' => '[...]',
 		),
 		array(
 			'id' => 'blog_single_show_share_links',

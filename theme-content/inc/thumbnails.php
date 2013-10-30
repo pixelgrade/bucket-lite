@@ -48,7 +48,7 @@ add_action( 'after_setup_theme', 'wpgrade_custom_thumbnails');
  * @param bool $use_as_background Optional, default is false. Whether use the image as background on a div.
  * @return bool $force Force the function to return an image from theme options or from theme.
  */
-
+//this function is no longer used
 function wpgrade_get_thumbnail( $size = 'full', $class = '', $use_as_background = false, $force = false ){
 
     global $post;

@@ -8,8 +8,8 @@ function wpgrade_register_sidebars() {
 
     register_sidebar( array(
         'id'            => 'sidebar',
-        'name'          => __( 'Main Right Sidebar', 'bucket_txtd' ),
-        'description'   => __( 'Main Sidebar', 'bucket_txtd' ),
+        'name'          => __( 'Main Right Sidebar', wpgrade::textdomain() ),
+        'description'   => __( 'Main Sidebar', wpgrade::textdomain() ),
         'before_title'  => '<div class="widget__title  widget--sidebar__title"><h2 class="hN">',
         'after_title'   => '</h2></div>',
         'before_widget' => '<div id="%1$s" class="widget  widget--main %2$s">',
@@ -19,8 +19,8 @@ function wpgrade_register_sidebars() {
 
     register_sidebar( array(
         'id'            => 'sidebar-footer-first-1',
-        'name'          => __( 'Footer | First Row [1]', 'bucket_txtd' ),
-        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket_txtd' ),
+        'name'          => __( 'Footer | First Row [1]', wpgrade::textdomain() ),
+        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', wpgrade::textdomain() ),
         'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
         'after_title'   => '</h3></div>',
         'before_widget' => '<div id="%1$s" class="%2$s  widget  widget-area__first  widget--footer">',
@@ -30,8 +30,8 @@ function wpgrade_register_sidebars() {
 
     register_sidebar( array(
         'id'            => 'sidebar-footer-first-2',
-        'name'          => __( 'Footer | First Row [2]', 'bucket_txtd' ),
-        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket_txtd' ),
+        'name'          => __( 'Footer | First Row [2]', wpgrade::textdomain() ),
+        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', wpgrade::textdomain() ),
         'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
         'after_title'   => '</h3></div>',
         'before_widget' => '<div id="%1$s" class="%2$s  widget  widget-area__first  widget--footer">',
@@ -41,8 +41,8 @@ function wpgrade_register_sidebars() {
 
     register_sidebar( array(
         'id'            => 'sidebar-footer-first-3',
-        'name'          => __( 'Footer | First Row [3]', 'bucket_txtd' ),
-        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket_txtd' ),
+        'name'          => __( 'Footer | First Row [3]', wpgrade::textdomain() ),
+        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', wpgrade::textdomain() ),
         'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
         'after_title'   => '</h3></div>',
         'before_widget' => '<div id="%1$s" class="%2$s  widget  widget-area__first  widget--footer">',
@@ -52,8 +52,8 @@ function wpgrade_register_sidebars() {
 
     register_sidebar( array(
         'id'            => 'sidebar-footer-second-1',
-        'name'          => __( 'Footer | Second Row [1]', 'bucket_txtd' ),
-        'description'   => __( 'Widgets in this area will have 2/3rd the width of the footer.', 'bucket_txtd' ),
+        'name'          => __( 'Footer | Second Row [1]', wpgrade::textdomain() ),
+        'description'   => __( 'Widgets in this area will have 2/3rd the width of the footer.', wpgrade::textdomain() ),
         'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
         'after_title'   => '</h3></div>',
         'before_widget' => '<div id="%1$s" class="widget  widget-area__second  widget--footer %2$s">',
@@ -63,8 +63,8 @@ function wpgrade_register_sidebars() {
 
     register_sidebar( array(
         'id'            => 'sidebar-footer-second-2',
-        'name'          => __( 'Footer | Second Row [2]', 'bucket_txtd' ),
-        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket_txtd' ),
+        'name'          => __( 'Footer | Second Row [2]', wpgrade::textdomain() ),
+        'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', wpgrade::textdomain() ),
         'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
         'after_title'   => '</h3></div>',
         'before_widget' => '<div id="%1$s" class="widget  widget-area__second  widget--footer %2$s">',
@@ -86,8 +86,8 @@ add_action('widgets_init', 'wpgrade_register_sidebars');
 class wpgrade_latest_comments extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget--latest-comments', 'description' => __( 'The latest comments' ) );
-		parent::__construct('recent-comments', __('Bucket Latest Comments'), $widget_ops);
+		$widget_ops = array('classname' => 'widget--latest-comments', 'description' => __( 'The latest comments', wpgrade::textdomain() ) );
+		parent::__construct('recent-comments', wpgrade::themename().' '.__('Latest Comments', wpgrade::textdomain()), $widget_ops);
 		$this->alt_option_name = 'widget_recent_comments';
 
 		add_action( 'comment_post', array($this, 'flush_widget_cache') );
@@ -117,7 +117,7 @@ class wpgrade_latest_comments extends WP_Widget {
 		extract($args, EXTR_SKIP);
 		$output = '';
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments', wpgrade::textdomain() );
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
 		if ( ! $number )
@@ -178,10 +178,10 @@ class wpgrade_latest_comments extends WP_Widget {
 	function form( $instance ) {
 		$title  = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5; ?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', wpgrade::textdomain() ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:', wpgrade::textdomain() ); ?></label>
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 	<?php
 	}
@@ -194,7 +194,7 @@ class wpgrade_latest_reviews extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_latest_reviews', __( wpgrade::themename() .' Latest Reviews', wpgrade::textdomain() ), array('description' => __( "Display the latest posts with reviews", wpgrade::textdomain() )) );
+		parent::__construct( 'wpgrade_latest_reviews', wpgrade::themename() .' '.__('Latest Reviews', wpgrade::textdomain() ), array('description' => __( "Display the latest posts with reviews", wpgrade::textdomain() )) );
 	}
 
 	function widget($args, $instance) {
@@ -258,7 +258,7 @@ class wpgrade_latest_reviews extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', wpgrade::textdomain()); ?>:</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of reviews to show:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of reviews to show:',wpgrade::textdomain() ); ?></label>
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 
 	<?php }
@@ -271,7 +271,7 @@ class wpgrade_social_links_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_social_links', __( wpgrade::themename() .' Social Links', wpgrade::textdomain() ), array('description' => __( "Display the social links defined in the theme's options", wpgrade::textdomain() )) );
+		parent::__construct( 'wpgrade_social_links', wpgrade::themename().' '.__('Social Links', wpgrade::textdomain() ), array('description' => __( "Display the social links defined in the theme's options", wpgrade::textdomain() )) );
 	}
 
 	function widget($args, $instance) {
@@ -320,7 +320,7 @@ class wpgrade_dribbble_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_dribbble_widget', __( wpgrade::themename() .' Dribbble Widget',wpgrade::textdomain()), array('description' => __('Display Dribbble images in your sidebar or footer', wpgrade::textdomain())) );
+		parent::__construct( 'wpgrade_dribbble_widget', wpgrade::themename().' '.__('Dribbble Widget',wpgrade::textdomain()), array('description' => __('Display Dribbble images in your sidebar or footer', wpgrade::textdomain())) );
 	}
 
 	function widget($args, $instance) {
@@ -390,76 +390,11 @@ class wpgrade_dribbble_widget extends WP_Widget {
 	}
 }
 
-class wpgrade_instagram_widget extends WP_Widget {
-
-	public function __construct()
-	{
-		parent::__construct( 'wpgrade_instagram_widget', __( wpgrade::themename() .' Instagram Widget',wpgrade::textdomain()), array('description' => __('Display Instagram images in your sidebar or footer', wpgrade::textdomain())) );
-	}
-
-	function widget($args, $instance) {
-		extract( $args );
-		$title 		= apply_filters('widget_title', $instance['title']);
-		$username 	= $instance['username'];
-
-		wp_register_script( 'instagram_photostream', WPGRADE_SCRIPT_URL."instagram_photostream_widget.js", array('jquery'), wpgrade::themeversion(), true );
-        wp_enqueue_script( 'instagram_photostream' );
-
-		echo $before_widget;
-		if ( $title ) echo $before_title . $title . $after_title;
-
-		//limit the number of images
-		$count = isset( $args['count'] ) ? absint( $args['count'] ) : 8;
-
-		$unique_id =  $username . $count ;
-		$unique_id = preg_replace("/[^A-Za-z0-9]/", '', $unique_id);
-		$html = '<ul id="' . $unique_id  .'" class="wpgrade-instagram-items"></ul>';
-		$html .= '<script type="text/javascript"> jQuery(document).ready(function($){ ';
-		$html .= '$("#' . $unique_id .'").instagram_photostream({user: "' . $username . '", limit:' . $count . '});';
-		$html .= '});</script>';
-		echo $html;
-
-		echo $after_widget;
-	}
-
-	/**
-	 * Validate and update widget options.
-	 */
-	function update($new_instance, $old_instance) {
-		$instance = $old_instance;
-		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['username'] = strip_tags($new_instance['username']);
-		$instance['count'] = absint( $new_instance['count'] );
-		return $instance;
-	}
-
-	function form($instance) {
-		$title = isset( $instance['title'] ) ? $instance['title'] : __('Instagram shots',wpgrade::textdomain());
-		$username = isset ($instance['username']) ? esc_attr($instance['username']) : '';
-		//default to 8 images
-		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 8;
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', wpgrade::textdomain()); ?>:</label>
-			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id('username'); ?>"><?php _e('Instagram username', wpgrade::textdomain()); ?>:</label>
-			<input id="<?php echo $this->get_field_id('username'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('username'); ?>" value="<?php echo $username; ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of images',wpgrade::textdomain()); ?>:</label><br />
-			<input type="number" min="1" max="20" value="<?php echo esc_attr( $count ); ?>" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" />
-		</p>
-		<?php
-	}
-}
-
 class wpgrade_contact_widget extends WP_Widget {
 
     public function __construct()
     {
-        parent::__construct( 'wpgrade_contact_widget', __( wpgrade::themename() .' Contact Widget',wpgrade::textdomain()), array('description' => __('Display your contact information', wpgrade::textdomain())) );
+        parent::__construct( 'wpgrade_contact_widget', wpgrade::themename().' '.__('Contact Widget',wpgrade::textdomain()), array('description' => __('Display your contact information', wpgrade::textdomain())) );
     }
 
     function widget($args, $instance) {
@@ -567,7 +502,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_posts_slider_widget', __(wpgrade::themename().' Latest Posts Slider',wpgrade::textdomain()), array('description' => __('Display the latest blog posts in your sidebar or footer', wpgrade::textdomain())) );
+		parent::__construct( 'wpgrade_posts_slider_widget', wpgrade::themename().' '.__('Latest Posts Slider',wpgrade::textdomain()), array('description' => __('Display the latest blog posts in your sidebar or footer', wpgrade::textdomain())) );
 	}
 
 	function widget($args, $instance) {
@@ -669,7 +604,7 @@ class wpgrade_flickr_widget extends WP_Widget
 {
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_flickr_widget', __( wpgrade::themename() .' Flickr Widget',wpgrade::textdomain()), array('description' => __('Display Flickr images in your sidebar or footer (maximum 20 but we recommend less).',wpgrade::textdomain()),) );
+		parent::__construct( 'wpgrade_flickr_widget', wpgrade::themename().' '.__('Flickr Widget',wpgrade::textdomain()), array('description' => __('Display Flickr images in your sidebar or footer (maximum 20 but we recommend less).',wpgrade::textdomain()),) );
 	}
 
 	/**
@@ -757,7 +692,7 @@ class wpgrade_flickr_widget extends WP_Widget
 
 		if ( ! $photos )
 		{
-			return new WP_Error( 'error', 'Something went wrong.' );
+			return new WP_Error( 'error', __('Something went wrong.', wpgrade::textdomain()) );
 		}
 
 		$photos = array_slice( $photos, 0, $count );
@@ -895,7 +830,7 @@ class wpgrade_twitter_widget extends WP_Widget {
     public function __construct()
     {
 
-        parent::__construct( 'wpgrade_twitter_widget', __( wpgrade::themename() . ' Twitter Widget',wpgrade::textdomain()), array('description' => __('Display Latest Tweets', wpgrade::textdomain())) );
+        parent::__construct( 'wpgrade_twitter_widget', wpgrade::themename().' '.__('Twitter Widget',wpgrade::textdomain()), array('description' => __('Display Latest Tweets', wpgrade::textdomain())) );
     }
 
     function widget($args, $instance) {
@@ -1075,7 +1010,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		);
 
 		/* Create the widget. */
-		parent::__construct( 'wpgrade_popular_posts', __( wpgrade::themename() . ' Popular Posts', wpgrade::textdomain() ), $widget_ops, $control_ops );
+		parent::__construct( 'wpgrade_popular_posts', wpgrade::themename().' '.__('Popular Posts', wpgrade::textdomain() ), $widget_ops, $control_ops );
 
 	}
 
@@ -1371,7 +1306,6 @@ function gbs_relative_time( $timestamp ){
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_social_links_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_contact_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_dribbble_widget");'));
-//add_action('widgets_init', create_function('', 'return register_widget("wpgrade_instagram_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_contact_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_posts_slider_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_flickr_widget");'));
@@ -1379,5 +1313,3 @@ add_action('widgets_init', create_function('', 'return register_widget("wpgrade_
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_latest_comments");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_latest_reviews");'));
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_popular_posts");'));
-
-

@@ -18,10 +18,10 @@ $number_of_posts = get_sub_field('number_of_posts');
 
 $args = array(
 	'paged' => $paged,
-  'posts_per_page' => $number_of_posts,
+	'posts_per_page' => $number_of_posts,
 	'order' => 'DESC',
 	'orderby' => 'date',
-	'ignore_sticky_posts' => 1
+	'ignore_sticky_posts' => true,
 );
 
 $latest_query = new WP_Query( $args );
