@@ -119,6 +119,14 @@
 		}
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+	
+	/**
+	* Replace the [...] wordpress puts in when using the the_excerpt() method.
+	*/
+   function new_excerpt_more($excerpt) {
+	   return wpgrade::option('blog_excerpt_more_text');
+   }
+   add_filter('excerpt_more', 'new_excerpt_more');
 
  	function remove_more_link_scroll( $link ) {
 		$link = preg_replace( '|#more-[0-9]+|', '', $link );
