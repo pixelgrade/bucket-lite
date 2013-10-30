@@ -5,25 +5,50 @@
 
 .pixcode--icon {
     display: inline-block;
-    line-height: 1;
-
-    &.small { @include rem(font-size, 14px); }
-    &.medium { @include rem(font-size, 24px); }
-    &.big { @include rem(font-size, 40px); }
+    text-align: center;
+    @include rem(font-size, 21px);
 
     &.square,
     &.circle {
         @extend .btn;
         @extend .btn--negative;
-        text-align: center;
-        line-height: 2em;
         padding: 0;
-        width: 2em;
-        height: 2em;
+        
+        @include rem(font-size, 21px);
+        width: (48/21) + em;
+        height: (48/21) + em;
+        line-height: (48/21) + em;
     }
 
     &.circle {
         @include border-radius(999px);
+    }
+
+    &.small {
+        @include rem(font-size, 18px);
+
+        &.circle, &.square {
+            width: (36/18) + em;
+            height: (36/18) + em;
+            line-height: (36/18) + em;
+        }
+    }
+
+    &.medium {
+        @include rem(font-size, 24px);
+
+        &.circle, &.square {
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+        }
+    }
+
+    &.big {
+        @include rem(font-size, 36px);
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
     }
 }
 
@@ -47,7 +72,7 @@
         color: $red;
   
         &.circle, &.square {
-            background-color: $dark;
+            background-color: $red;
         }
     }
 }
