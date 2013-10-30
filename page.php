@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container container--main">
 
     <div class="grid">
 
@@ -21,7 +21,7 @@ get_header(); ?>
 
 		// let's use what we know
 		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
-		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
+		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-and-up-one-whole';
         ?>
 
         <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">

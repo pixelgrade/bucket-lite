@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container container--main">
 
     <div class="grid">
 
@@ -16,8 +16,8 @@ get_header(); ?>
 		$disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
 
 		// let's use what we know
-		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
-		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
+		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
         
         get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 

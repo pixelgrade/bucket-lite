@@ -256,7 +256,7 @@
 /*----------------------------------------*\
     $MOBILE NAVIGATION
 \*----------------------------------------*/
-@include media(to hand) {
+@include media-query(portable) {
     #page{
         overflow: hidden;
     }
@@ -314,14 +314,14 @@
         }
     }
 
-    @include media(to hand) {
-        display: block;
-        position: static;
-        background-color: transparent;
-        @include rem(padding-left, $_u);
-        margin-right: 0;
-        width: 100%;
-    }
+    // @include media(to hand) {
+    //     display: block;
+    //     position: static;
+    //     background-color: transparent;
+    //     @include rem(padding-left, $_u);
+    //     margin-right: 0;
+    //     width: 100%;
+    // }
 }
 
 .navigation--mobile{
@@ -368,7 +368,7 @@
         @include transition(color .1s ease-in-out);
     }
 
-    @include media(to hand) {
+    @include media-query(palm) {
         display: block;
         @include rem(width, 3*$base-spacing-unit);
         @include rem(height, 3*$base-spacing-unit);
