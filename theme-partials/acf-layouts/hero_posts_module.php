@@ -14,7 +14,7 @@ if ( empty($read_more_label) ) {
 }
 
 $query_args = array(
-	'posts_per_page' => 1,
+	'posts_per_page' => $number_of_posts,
 	'ignore_sticky_posts' => true,
 );
 
@@ -126,7 +126,7 @@ if ($slides->have_posts()): ?>
                             <h3 class="hN"><?php the_title(); ?></h3>
                         </div>
                     </a>
-	            <?php else: ?>
+	            <?php else : ?>
 	                <a href="<?php the_permalink(); ?>" class="image-wrap no-image" >
 		                <div class="article__title">
 			                <h3 class="hN"><?php the_title(); ?></h3>

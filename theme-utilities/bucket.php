@@ -115,6 +115,12 @@ class bucket
 		}
 	}
 
+	/** Limit words for a string */
+
+	static function limit_words($string, $word_limit) {
+		$words = explode(" ",$string);
+		return implode(" ",array_splice($words,0,$word_limit));
+	}
 
 	/**
 	 * Access an array index, retrieving the value stored there if it
@@ -2135,6 +2141,21 @@ class bucket
 		}
 		return $first_img;
 	}
+	
+	/**
+	* Returns the URL from the post.
+	*
+	*
+	* Falls back to the post permalink if no URL is found in the post.
+	*
+	* @return string The Link format URL.
+	*/
+   static function get_content_link_url() {
+	   $content = get_the_content();
+	   $has_url = get_url_in_content( $content );
+
+	   return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+   }
 
 }
 
