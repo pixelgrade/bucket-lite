@@ -14,6 +14,7 @@ if ( empty($read_more_label) ) {
 
 $query_args = array(
 	'posts_per_page' => $number_of_posts,
+	'ignore_sticky_posts' => true,
 );
 
 $posts_source = get_sub_field('posts_source');
