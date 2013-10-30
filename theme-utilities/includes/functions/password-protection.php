@@ -7,10 +7,16 @@ function wpgrade_callback_the_password_form($form){
 	$post = get_post( $post );
 	$label = 'pwbox-' . ( empty($post->ID) ? rand() : $post->ID );
 	$form = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-	<p>' . __("This post is password protected. To view it please enter your password below:") . '</p>
-	<p><label for="' . $label . '">' . __("Password:") . ' <input name="post_password" id="' . $label . '" type="password" size="20" /></label> <input type="submit" name="Access" value="' . esc_attr__("Access") . '" /></p>
-</form>
-	';
+		<p>' . __("This post is password protected. To view it please enter your password below:") . '</p>
+		<div class="row">
+			<div class="span-12  hand-span-10">
+				<input name="post_password" id="' . $label . '" type="password" size="20" placeholder="'. __("Password") . '"/>
+			</div>
+			<div class="span-12  hand-span-2">
+				<input type="submit" name="Access" value="' . esc_attr__("Access") . '" class="btn post-password-submit"/>
+			</div>
+		</div>
+	</form>';
 
 	// on form submit put a wrong passwordp msg.
 	if ( get_permalink() != wp_get_referer() ) {

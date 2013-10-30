@@ -428,9 +428,12 @@
 	})(jQuery);
 
 
+	//Admin Panel Styling
+	if($('#redux-container').length) {
+		$('body').addClass('redux-page');
+	}
 
-	$('#redux-container').parent().addClass('redux-bai');
-
+	//Fixed Title + Save button
 	function fixDiv() {
       if ($(window).scrollTop() > 20) 
         $('#redux-container').addClass('fixed-header');
@@ -439,6 +442,12 @@
     }
     $(window).scroll(fixDiv);
     fixDiv();
+
+    //Min-height of the container
+    $('#redux-main') .css({'min-height': (($(window).height()))+'px'});
+    $(window).resize(function(){
+        $('#redux-main') .css({'min-height': (($(window).height()))+'px'});
+    });
 
 
 	//End helpers and beautiful things-----------------------------------------

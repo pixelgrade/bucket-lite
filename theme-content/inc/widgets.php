@@ -147,7 +147,7 @@ class wpgrade_latest_comments extends WP_Widget {
 						</div>
 						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
 						<div class="latest-comments__content">
-							<p><?php echo $comment->comment_content; ?></p>
+							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25); ?> [...] </p>
 						</div>
 					</div>
 				</article>
@@ -289,15 +289,13 @@ class wpgrade_social_links_widget extends WP_Widget {
 		echo $before_widget;
 		if (count($social_links)): ?>
         <?php if ($title): echo $before_title . $title . $after_title; endif; ?>
-            <ul class="site-social-links">
+            <div class="btn-list">
                 <?php foreach ($social_links as $domain => $value): if ($value): ?>
-                    <li class="site-social-links__social-link">
-                        <a href="<?php echo $value ?>"<?php echo $target ?>>
-                            <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?>"></i>
-                        </a>
-                    </li>
+                    <a href="<?php echo $value ?>"<?php echo $target ?>>
+                        <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?> square medium"></i>
+                    </a>
                 <?php endif; endforeach ?>
-            </ul>
+            </div>
         <?php endif;
 		echo $after_widget;
 	}
