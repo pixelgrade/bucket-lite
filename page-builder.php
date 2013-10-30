@@ -8,7 +8,7 @@
 */
 
 get_header();?>
-<div class="container">
+<div class="container container--main">
 
 	<?php while(has_sub_field("blocks")):
 

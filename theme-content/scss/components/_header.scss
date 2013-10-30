@@ -13,7 +13,7 @@
 /*----------------------------------------*\
     $TITLE/LOGO
 \*----------------------------------------*/
-@include media(from hand) {
+@include media-query(lap-and-up) {
     .site-home-title{
         @include rem(height, $_6u);    
         display: table;
@@ -97,7 +97,7 @@
     }
 }
 
-@include media(to hand) {
+@include media-query(lap-and-up) {
     .header-ad{
         display: none;
     }
@@ -185,7 +185,7 @@
         }        
     }
 
-    @include media(from hand) {
+    @include media-query(lap-and-up) {
         .nav-top-separator{
             display: block;
         }
