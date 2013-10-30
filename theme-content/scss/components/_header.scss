@@ -44,20 +44,24 @@
         vertical-align: top;
     }
 
+    .form-search{
+        @include rem(width, 9*$_u);        
+    }
+
     .search-query{
         // rem does not work properly
         // @include rem(height, $_2u);
-        height: 48px;
-        @include rem(padding, 0 $_u);
+        height: 49px;
+        @include rem(padding, 6px $_u2);
         background-color: $dark;
         border: 0;
-        color: $light;
+        color: white;
         text-transform: uppercase;
         @include rem(letter-spacing, 2px);
     }
 
     .search-submit{
-        @include rem(height, $_2u);
+        height: 49px;
         @include rem(padding, $_u2);
         vertical-align: top;
         background-color: $dark;
@@ -81,19 +85,24 @@
     margin: 0;
 
     .search-query{
-        height: auto;
-        line-height: 36px;
+        @include rem(height, 35px);
+        line-height: 1.2;
+        padding-right: 0 !important;
     }
 
     .search-submit{
-        height: auto;
-        line-height: 34px;
+        @include rem(height, 35px);
         padding-top: 0;
         padding-bottom: 0;
+
+        i{
+            @include font-size(15px);
+        }
     }
     
     .social-icon-link {
-        height: auto;
+        @include rem(height, 36px);
+        @include rem(width, 36px);
     }
 }
 
@@ -242,14 +251,24 @@
             background-color: transparent;
         }
 
-
-
-        .search-submit {
-            border: none;
+        .search-query{
+            border-left: 1px solid #dedede;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
         }
+
+        .search-submit{
+            border-right: 1px solid #dedede;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;        
+        }        
 
         .header-bar > li {
             border: 1px solid #dedede;
+
+            &.search-item{
+                border: none;
+            }
         }
     }
 }

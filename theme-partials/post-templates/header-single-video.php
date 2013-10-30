@@ -1,4 +1,4 @@
-<div class="article__featured-image  flush--bottom">
+<div class="article__featured-image  grid__item one-whole flush--bottom">
     
     <?php
         $video_embed = get_post_meta($post->ID, wpgrade::prefix().'video_embed', true);
