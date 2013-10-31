@@ -135,14 +135,12 @@ if ($slides->have_posts()): ?>
                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
                     </div>
-                    <div class="one-half">
-                        <div class="rsABlock  article__header  article--billboard__header">
-                            <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
-                            <h2 class="article__title article--billboard__title">
-                                <div class="hN"><?php the_title(); ?></div>
-                            </h2>
-                            <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
-                        </div>
+                    <div class="rsABlock  article__header  article--billboard__header  one-half">
+                        <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
+                        <h2 class="article__title article--billboard__title">
+                            <div class="hN"><?php the_title(); ?></div>
+                        </h2>
+                        <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
                     </div>
                 </article>
   	        <?php else: ?>
