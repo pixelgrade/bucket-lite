@@ -119,6 +119,7 @@ $heading-font: 'Open Sans', sans-serif;
 	color:$dark;
 
 	padding-left: $_u;
+	padding-top: 0;
 
 	position:absolute;
 	left:0;
@@ -472,7 +473,7 @@ $heading-font: 'Open Sans', sans-serif;
 			  position:absolute;
 			  right:0;
 			  top:-41px;
-			  z-index: 86;
+			  z-index: 1;
 		}
 
 		.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {
