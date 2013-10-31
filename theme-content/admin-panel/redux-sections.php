@@ -282,31 +282,6 @@ $sections[] = array(
 	)
 );
 
-// Contact Page
-// ------------------------------------------------------------------------
-
-$sections[] = array(
-	'icon' => "envelope",
-	'icon_class' => '',
-	'title' => __('Contact Page', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('General settings for the contact page template!', wpgrade::textdomain()).'</p>',
-	'fields' => array(
-		array(
-			'id' => 'contact_gmap_link',
-			'type' => 'text',
-			'title' => __('Google Maps Link', wpgrade::textdomain()),
-			'subtitle' => __('Paste here the the URL that you\'ve got from Google Maps, after navigating to your location.<br />Here it is <a href="http://screenr.com/MjV7" target="_blank">a short movie</a> showing you how to get the URL', wpgrade::textdomain()),
-		),
-		array(
-			'id' => 'contact_gmap_custom_style',
-			'type' => 'switch',
-			'title' => __('Custom Styling for Map?', wpgrade::textdomain()),
-			'subtitle' => __('Allow us to change the map colors to better match your website.', wpgrade::textdomain()),
-			'default' => '1',
-		)
-	)
-);
-
 // Blog Options
 // ------------------------------------------------------------------------
 
