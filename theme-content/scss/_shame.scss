@@ -125,14 +125,10 @@ img[width], img[height] {
 
 
 .post-nav {
-    @extend .grid;
     position: relative;
 }
 
 .post-nav-link {
-    @extend .grid__item;
-    @extend .one-half;
-    position: relative;
     @include rem(padding-right, $_u);
     @include rem(padding-left, $_2u);
 
@@ -263,7 +259,7 @@ img[width], img[height] {
     display: inline-block;
 }
 
-@include media(to lap) {
+@include media-query(palm) {
     .content--404{
         @include rem(margin-bottom, $_2u);
     }

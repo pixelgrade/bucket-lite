@@ -275,8 +275,8 @@ get_header(); ?>
 				$prev_post = get_previous_post();
 				if (!empty($prev_post) || !empty($next_post)): ?>
 				
-				<nav class="post-nav">
-					<div class="post-nav-link  post-nav-link--prev">
+				<nav class="post-nav  grid">
+					<div class="post-nav-link  post-nav-link--prev  grd__item  one-half">
 						<?php if (!empty($prev_post)): ?>
 							<a href="<?php echo get_permalink($prev_post->ID); ?>">
 								<div class="post-nav-link__label">
@@ -289,7 +289,7 @@ get_header(); ?>
 						<?php endif; ?>
 					</div><!-- 
 				 --><div class="divider--pointer"></div><!--
-				 --><div class="post-nav-link  post-nav-link--next">
+				 --><div class="post-nav-link  post-nav-link--next  grd__item  one-half">
 						<?php if (!empty($next_post)): ?>
 							<a href="<?php echo get_permalink($next_post->ID); ?>">
 								<div class="post-nav-link__label">
