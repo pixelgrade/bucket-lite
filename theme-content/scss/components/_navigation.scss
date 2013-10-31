@@ -2,9 +2,6 @@
                NAVIGATION
 \*------------------------------------*/
 
-.navigation {
-}
-
 .navigation--top{
     @include font-size(12px);
     background-color: #050505;
@@ -288,7 +285,7 @@
 /*----------------------------------------*\
     $MOBILE NAVIGATION
 \*----------------------------------------*/
-@include media-query(portable) {
+@include media-query(palm) {
     #page{
         overflow: hidden;
     }
@@ -296,10 +293,7 @@
     .header{
         position: absolute;
         width: 100%;
-    }
-
-    .site-header{
-        height: 4rem;
+        @include rem(height, 3*$_u);
     }
 
     .navigation--top{
@@ -327,10 +321,6 @@
     .site-navigation--header{
         @include rem(margin-left, $_u);
     }
-
-    .container--main{
-        padding-top: 4.5rem;
-    }   
 
     
     .container--main-header{

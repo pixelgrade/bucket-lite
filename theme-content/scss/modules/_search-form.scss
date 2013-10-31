@@ -27,7 +27,7 @@
     text-align: center;
 }
 
-@include media(from lap) {
+@include media-query(lap-and-up) {
     .search-form--404{
         width: 50%;
     }

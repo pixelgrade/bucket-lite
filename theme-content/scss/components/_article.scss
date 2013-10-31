@@ -69,7 +69,7 @@
     }
 }
 
-@include media(to hand) {
+@include media-query(palm) {
     .container--single{
         padding-top: 4rem;
     }
@@ -509,7 +509,7 @@
     font-size: 100%;
 }
 
-@include media(to hand) {
+@include media-query(palm) {
     .post-password-submit{
         width: 100%;
         @include rem(margin-top, $_u);

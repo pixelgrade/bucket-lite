@@ -263,7 +263,7 @@ img[width], img[height] {
     display: inline-block;
 }
 
-@include media(to lap) {
+@include media-query(palm) {
     .content--404{
         @include rem(margin-bottom, $_2u);
     }
