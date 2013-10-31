@@ -172,6 +172,7 @@
 						array
 							(
 								'ajaxurl' => admin_url('admin-ajax.php'),
+								'sharrre_urlCurl' => wpgrade::resourceuri('js/sharrre.php'),
 								'objectl10n' => array
 									(
 										'tPrev' => __('Previous (Left arrow key)', 'bucket_txtd'),
