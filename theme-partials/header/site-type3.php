@@ -12,7 +12,7 @@
                 
                 --><div class="grid__item one-half">
 					<?php wpgrade_top_nav_right(); ?>
-                    <ul class="header-bar header-bar--top nav">
+                    <ul class="header-bar header-bar--top nav flush--bottom">
                         <?php if (wpgrade::option('nav_show_header_social_icons')) {
 							get_template_part('theme-partials/wpgrade-partials/social-icons-list');
 						} ?>
@@ -29,13 +29,13 @@
 
     <div class="container container--main-header">
 
-        <div class="site-header">
-            <div class="site-header__branding">
+        <div class="site-header flexbox">
+            <div class="site-header__branding  flexbox__item  one-whole">
 
                 <?php if (wpgrade::option_image_src('main_logo')): ?>
 
                     <div class="site-logo  site-logo--image <?php if (wpgrade::option('use_retina_logo')) echo "site-logo--image-2x"; ?>">
-                        <h1 class="site-home-title">
+                        <h1 class="site-home-title  flush--bottom">
                             <a class="site-home-link" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name') ?>">
                                 <?php $data_retina_logo = wpgrade::option('use_retina_logo') ? 'data-logo2x="'.wpgrade::option_image_src('retina_main_logo').'"' : ''; ?>
                                 <img src="<?php echo wpgrade::option_image_src('main_logo'); ?>" <?php echo $data_retina_logo; ?> rel="logo" alt="<?php echo get_bloginfo('name') ?>"/>
@@ -46,7 +46,7 @@
                 <?php else: ?>
 
                     <div class="site-logo  site-logo--text">
-                        <h1 class="site-home-title">
+                        <h1 class="site-home-title  flush--bottom">
                             <a class="site-home-link" href="<?php echo home_url() ?>"><?php echo get_bloginfo('name') ?></a>
                         </h1>
                     </div>
