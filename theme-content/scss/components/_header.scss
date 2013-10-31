@@ -2,12 +2,23 @@
                HEADER
 \*--------------------------------*/
 
+@include media-query(palm) {
+    .site-header{
+        @include rem(height, 3* $_u);
+    }
+}
+@include media-query(lap-and-up) {
+    .site-header{
+        @include rem(height, 6 * $_u);
+    }
+}
+
 //The header had position: absolute
 //and it is followerd by .container--main.
 //The padding prevents them from overlapping
 @include media-query(palm) {
     .container--main{
-        @include rem(padding-top, 3*$_u);
+        @include rem(padding-top, 4*$_u);
     }
 }
 
@@ -43,8 +54,9 @@
     .search-query{
         // rem does not work properly
         // @include rem(height, $_2u);
-        height: 49px;
-        @include rem(padding, 6px $_u2);
+        height: 36px;
+        right: 36px;
+        @include rem(padding, 6px 0 6px $_u2);
         background-color: $dark;
         border: 0;
         color: white;
@@ -53,11 +65,13 @@
     }
 
     .search-submit{
-        height: 49px;
-        @include rem(padding, $_u2);
+        height: 36px;
+        width: 36px;
         vertical-align: top;
         background-color: $dark;
         @include font-size(0.75*$_u);
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -98,6 +112,11 @@
     }
 }
 
+.header-ad-link{
+    display: block;
+    text-align: right;
+}
+
 @include media-query(palm) {
     .header-ad{
         display: none;
@@ -112,13 +131,13 @@
     @include rem(margin-left, -$_u);
 } 
 
-.header--type3{
-    .site-home-title{
-        width: 100%;
-    }
 
-    .site-home-link{
-        text-align: center;
+@include media-query(lap-and-up) {
+    .header--type3{
+        .site-home-title{
+            width: 100%;
+            text-align: center;
+        }
     }
 }
 
@@ -131,194 +150,197 @@
 
 
 
+//Only on bigger screens the inverse styles 
+//will be visible
+@include media-query(lap-and-up) {
+    
+    /*----------------------------------------*\
+        $TOP NAV INVERSE
+    \*----------------------------------------*/
+    .nav-inverse-top{
 
-
-/*----------------------------------------*\
-    $TOP NAV INVERSE
-\*----------------------------------------*/
-.nav-inverse-top{
-
-    .navigation--top{
-        background: none;
-
-        a {
-            color: #888;
-        }
-    }
-
-    .nav--top {
-
-        li {
-            background-color: white;
+        .navigation--top{
+            background: none;
 
             a {
-                border-top-color: #eee;
                 color: #888;
-            }
-
-            &:hover {
-                > a{
-                    color: black;
-                }
             }
         }
 
-        .sub-menu {
-            background: #ddd;
-        }
-    }
-}
+        .nav--top {
 
-
-
-
-
-/*----------------------------------------*\
-    $MAIN NAV INVERSE
-\*----------------------------------------*/
-.nav-inverse-main {
-
-    .navigation--main {
-        background: white;      
-
-        a {
-            color: #888;
-        }     
-    }
-
-    .nav--main {
-        @include rem(border-bottom, 5px solid $dark);
-
-        li {
-            background-color: white;
-
-            a {
-                border-top-color: #eee;
-                color: #888;
-            }
-
-            &:hover {
-                > a{
-                    color: black;
-                }
-            }
-
-            .article--billboard-small {
+            li {
                 background-color: white;
-                border-bottom-color: #ccc;
 
-                .hN {
-                    color: black;
+                a {
+                    border-top-color: #eee;
+                    color: #888;
+                }
+
+                &:hover {
+                    > a{
+                        color: black;
+                    }
                 }
             }
-        }
-
-        > li {
-            background-color: transparent;
-            @include rem(padding-bottom, 5px);
-            @include rem(margin-bottom, -5px);
-
-            &:hover {
-                background-color: transparent;
-
-                > a {
-                    color: black;
-                }
-            }
-        }
-
-        .sub-menu {
-            background-color: #ccc;
-            padding-top: 0;
-            margin-top: 0;
 
             .sub-menu {
-                @include rem(margin-top, -5px);
+                background: #ddd;
+            }
+        }
+    }
+
+
+
+
+
+    /*----------------------------------------*\
+        $MAIN NAV INVERSE
+    \*----------------------------------------*/
+    .nav-inverse-main {
+
+        .navigation--main {
+            background: white;      
+
+            a {
+                color: #888;
+            }     
+        }
+
+        .nav--main {
+            @include rem(border-bottom, 5px solid $dark);
+
+            li {
+                background-color: white;
+
+                a {
+                    border-top-color: #eee;
+                    color: #888;
+                }
+
+                &:hover {
+                    > a{
+                        color: black;
+                    }
+                }
+
+                .article--billboard-small {
+                    background-color: white;
+                    border-bottom-color: #ccc;
+
+                    .hN {
+                        color: black;
+                    }
+                }
+            }
+
+            > li {
+                background-color: transparent;
+                @include rem(padding-bottom, 5px);
+                @include rem(margin-bottom, -5px);
+
+                &:hover {
+                    background-color: transparent;
+
+                    > a {
+                        color: black;
+                    }
+                }
+            }
+
+            .sub-menu {
+                background-color: #ccc;
+                padding-top: 0;
+                margin-top: 0;
+
+                .sub-menu {
+                    @include rem(margin-top, -5px);
+                    @include rem(padding-top, 5px);
+                }
+            }
+
+            .nav--sub-menu {
+                @include rem(margin-top, 5px);
                 @include rem(padding-top, 5px);
+                border-bottom: 0;
+            }
+
+            .sub-menu--mega {
+                @include rem(margin-top, 5px);
+                @include rem(padding-top, 5px);
+                border-bottom-color: rgba(white, .4);
+
+                // .sub-menu {
+                //     margin-top: 0;
+                //     padding-top: 0;
+                // }
             }
         }
 
-        .nav--sub-menu {
-            @include rem(margin-top, 5px);
-            @include rem(padding-top, 5px);
-            border-bottom: 0;
+        .sub-menu__grid__item {
+            background-color: white;
         }
 
-        .sub-menu--mega {
-            @include rem(margin-top, 5px);
-            @include rem(padding-top, 5px);
-            border-bottom-color: rgba(white, .4);
-
-            // .sub-menu {
-            //     margin-top: 0;
-            //     padding-top: 0;
-            // }
-        }
-    }
-
-    .sub-menu__grid__item {
-        background-color: white;
-    }
-
-    @include media-query(lap-and-up) {
-        .nav-top-separator{
-            display: block;
-        }
-    }
-
-    // .nav--main > li{
-    //     //This is the one below.
-    //     //This works with multi-line menu but
-    //     //will not stretch to 100% of the menu
-    //     //border-bottom-color: $dark;
-
-    //     border-top-width: 0;
-    //     background: transparent;
-
-    //     a{
-    //         color: black;
-    //     }     
-
-    //     &:hover{
-    //         background: transparent;
-
-    //         > a{
-    //            color: black;
-    //         }
-    //     }
-
-    //     .article--billboard-small {
-    //         background-color: white;
-
-    //         .hN{
-    //             color: black;
-    //         }
-    //     }
-    // }
-
-    .header--type1 {
-        .search-query, .search-submit, .social-icon-link {
-            color: black;
-            background-color: transparent;
+        @include media-query(lap-and-up) {
+            .nav-top-separator{
+                display: block;
+            }
         }
 
-        .search-query{
-            border-left: 1px solid #dedede;
-            border-top: 1px solid #dedede;
-            border-bottom: 1px solid #dedede;
-        }
+        // .nav--main > li{
+        //     //This is the one below.
+        //     //This works with multi-line menu but
+        //     //will not stretch to 100% of the menu
+        //     //border-bottom-color: $dark;
 
-        .search-submit{
-            border-right: 1px solid #dedede;
-            border-top: 1px solid #dedede;
-            border-bottom: 1px solid #dedede;        
-        }        
+        //     border-top-width: 0;
+        //     background: transparent;
 
-        .header-bar > li {
-            border: 1px solid #dedede;
+        //     a{
+        //         color: black;
+        //     }     
 
-            &.search-item{
-                border: none;
+        //     &:hover{
+        //         background: transparent;
+
+        //         > a{
+        //            color: black;
+        //         }
+        //     }
+
+        //     .article--billboard-small {
+        //         background-color: white;
+
+        //         .hN{
+        //             color: black;
+        //         }
+        //     }
+        // }
+
+        .header--type1 {
+            .search-query, .search-submit, .social-icon-link {
+                color: black;
+                background-color: transparent;
+            }
+
+            .search-query{
+                border-left: 1px solid #dedede;
+                border-top: 1px solid #dedede;
+                border-bottom: 1px solid #dedede;
+            }
+
+            .search-submit{
+                border-right: 1px solid #dedede;
+                border-top: 1px solid #dedede;
+                border-bottom: 1px solid #dedede;        
+            }        
+
+            .header-bar > li {
+                border: 1px solid #dedede;
+
+                &.search-item{
+                    border: none;
+                }
             }
         }
     }

@@ -23,7 +23,7 @@
                 <?php if (wpgrade::option_image_src('main_logo')): ?>
 
                     <div class="site-logo  site-logo--image <?php if (wpgrade::option('use_retina_logo')) echo "site-logo--image-2x"; ?>">
-                        <h1 class="site-home-title">
+                        <h1 class="site-home-title flush--bottom">
                             <a class="site-home-link" href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name') ?>">
                                 <?php $data_retina_logo = wpgrade::option('use_retina_logo') ? 'data-logo2x="'.wpgrade::option_image_src('retina_main_logo').'"' : ''; ?>
                                 <img src="<?php echo wpgrade::option_image_src('main_logo'); ?>" <?php echo $data_retina_logo; ?> rel="logo" alt="<?php echo get_bloginfo('name') ?>"/>
@@ -34,7 +34,7 @@
                 <?php else: ?>
 
                     <div class="site-logo  site-logo--text">
-                        <h1 class="site-home-title">
+                        <h1 class="site-home-title flush--bottom">
                             <a class="site-home-link" href="<?php echo home_url() ?>"><?php echo get_bloginfo('name') ?></a>
                         </h1>
                     </div>
@@ -43,7 +43,7 @@
 
             </div><!--
             --><div class="header-bar-container flexbox__item one-half split">
-                <ul class="header-bar nav">
+                <ul class="header-bar nav flush--bottom">
 					<?php if (wpgrade::option('nav_show_header_search')): ?>
                     <li class="search-item"><?php get_search_form(); ?></li>
 					<?php endif; ?>
