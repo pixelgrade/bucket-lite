@@ -44,8 +44,12 @@
             </div><!--
             --><div class="header-bar-container grid__item one-half split">
                 <ul class="header-bar nav">
+					<?php if (wpgrade::option('nav_show_header_search')): ?>
                     <li class="search-item"><?php get_search_form(); ?></li>
-					<?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>                  
+					<?php endif; ?>
+					<?php if (wpgrade::option('nav_show_header_social_icons')) {
+						get_template_part('theme-partials/wpgrade-partials/social-icons-list');
+					} ?>
                 </ul>
                  
             </div>

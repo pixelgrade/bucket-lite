@@ -69,6 +69,11 @@
     }
 }
 
+@include media(to hand) {
+    .container--single{
+        padding-top: 4rem;
+    }
+}
 
 /**
  * Article Grid
