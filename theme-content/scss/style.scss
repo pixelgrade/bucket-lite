@@ -140,11 +140,6 @@ $_8u   : 8 * $_u; // 192px
 @import "components/comments";
 @import "components/headings"; 
 
-//MODULES
-@import "modules/search-form";
-@import "modules/social-links";
-@import "modules/pagination";
-
 
 // WIDGETS
 @import "widgets/widget";
@@ -163,6 +158,11 @@ $_8u   : 8 * $_u; // 192px
 
 //PAGES
 @import "single";
+
+//MODULES
+@import "modules/search-form";
+@import "modules/social-links";
+@import "modules/pagination";
 
 // SHAMELESS SHAME
 @import "shame";
