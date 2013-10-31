@@ -550,22 +550,22 @@
                                                 
                         // Fade out current list
                         base.$el.find("#"+curList).css({opacity: 0});
+                        
+                        // Adjust outer wrapper to fit new list snuggly
+                        var newHeight = base.$el.find("#"+listID).height();
+                        $allListWrap.css({height: newHeight});
 
+                        // Fade in new list on callback
                         setTimeout(function() {
                             
-                            // Fade in new list on callback
                             base.$el.find("#"+curList);
                             base.$el.find("#"+listID).css({opacity: 1});
-                            
-                            // Adjust outer wrapper to fit new list snuggly
-                            var newHeight = base.$el.find("#"+listID).height();
-                            $allListWrap.css({height: newHeight});
                             
                             // Remove highlighting - Add to just-clicked tab
                             base.$el.find(".tabs__nav li a").removeClass("current");
                             $newList.addClass("current");
                                 
-                        }, 300);
+                        }, 100);
                         
                     }   
                     
@@ -967,7 +967,7 @@
     }
 
     function popularPostsWidget() {
-        $('.wpgrade_popular_posts').organicTabs();
+        $('.wpgrade_popular_posts, .pixcode--tabs').organicTabs();
     }
 
 

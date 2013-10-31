@@ -126,8 +126,10 @@ $_8u   : 8 * $_u; // 192px
 @import "typography";
 
 // SHORTCODES
+@import "shortcodes/grid";
 @import "shortcodes/icon";
 @import "shortcodes/separators";
+@import "shortcodes/tabs";
 
 // COMPONENTS
 @import "components/header";

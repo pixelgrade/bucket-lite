@@ -20,9 +20,16 @@ h1, h2, h3, h4, h5, h6, hgroup {
     font-family: $heading-font-family;
     font-weight: 500;
 
-    &:first-child {
-        margin-top: 0;
-    }
+    // Commented out
+    // Bad spacing inside row shortcode
+
+    // &:first-child {
+    //     margin-top: 0;
+    // }
+}
+
+.article__title, .widget__title .hN {
+    margin-top: 0;
 }
 
 h2, h3, h4, h5, h6 {
