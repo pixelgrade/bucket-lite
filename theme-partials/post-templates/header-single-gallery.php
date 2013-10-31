@@ -25,9 +25,17 @@
         $slider_delay = get_post_meta(get_the_ID(), wpgrade::prefix().'gallery_slider_delay', true);
     }
 
+    // let's get to know this post a little better
+    $full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
+    $disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
+
+    // let's use what we know
+    $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
+    $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
+
 ?>
 
-<div class="article__featured-image  flush--bottom">
+<div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
 
     <?php if ($attachments): ?>
         <div class="pixslider js-pixslider" 
@@ -51,11 +59,11 @@
 
                 //  if there is a video let royal slider know about it
                 if ( !empty($video_url) ) { ?>
-                    <div class="gallery-item video">
+                    <div class="gallery__item video">
                         <img src="<?php echo $thumbimg[0]; ?>" class="rsImg" data-rsVideo="<?php echo $video_url; ?>" />
                     </div>
                 <?php } else { ?>
-                    <div class="gallery-item" itemscope itemtype="http://schema.org/ImageObject" >
+                    <div class="gallery__item" itemscope itemtype="http://schema.org/ImageObject" >
                         <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" itemprop="contentURL" />
                     </div>
                 <?php }

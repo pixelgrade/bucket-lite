@@ -44,20 +44,24 @@
         vertical-align: top;
     }
 
+    .form-search{
+        @include rem(width, 9*$_u);        
+    }
+
     .search-query{
         // rem does not work properly
         // @include rem(height, $_2u);
-        height: 48px;
-        @include rem(padding, 0 $_u);
+        height: 49px;
+        @include rem(padding, 6px $_u2);
         background-color: $dark;
         border: 0;
-        color: $light;
+        color: white;
         text-transform: uppercase;
         @include rem(letter-spacing, 2px);
     }
 
     .search-submit{
-        @include rem(height, $_2u);
+        height: 49px;
         @include rem(padding, $_u2);
         vertical-align: top;
         background-color: $dark;
@@ -81,19 +85,24 @@
     margin: 0;
 
     .search-query{
-        height: auto;
-        line-height: 36px;
+        @include rem(height, 35px);
+        line-height: 1.2;
+        padding-right: 0 !important;
     }
 
     .search-submit{
-        height: auto;
-        line-height: 34px;
+        @include rem(height, 35px);
         padding-top: 0;
         padding-bottom: 0;
+
+        i{
+            @include font-size(15px);
+        }
     }
     
     .social-icon-link {
-        height: auto;
+        @include rem(height, 36px);
+        @include rem(width, 36px);
     }
 }
 
@@ -144,25 +153,35 @@
     $TOP NAV INVERSE
 \*----------------------------------------*/
 .nav-inverse-top{
+
     .navigation--top{
         background: none;
 
         a {
-            color: black;
-            background: none;
-        }        
-    }
-
-    .site-navigation__sub-menu{
-        background: white;
-
-        li{
-            @include rem(margin-left, -$_u);
+            color: #888;
         }
     }
 
-    .sub-menu, .sub-menu--mega{
-        background-color: white;        
+    .nav--top {
+
+        li {
+            background-color: white;
+
+            a {
+                border-top-color: #eee;
+                color: #888;
+            }
+
+            &:hover {
+                > a{
+                    color: black;
+                }
+            }
+        }
+
+        .sub-menu {
+            background: #ddd;
+        }
     }
 }
 
@@ -173,16 +192,88 @@
 /*----------------------------------------*\
     $MAIN NAV INVERSE
 \*----------------------------------------*/
-.nav-inverse-main{
-    .navigation--main {
-        background: none;        
+.nav-inverse-main {
 
-        .sub-menu, .sub-menu--mega{
-            .menu{
-                background-color: white;
-                border: 1px solid black;
+    .navigation--main {
+        background: white;      
+
+        a {
+            color: #888;
+        }     
+    }
+
+    .nav--main {
+        @include rem(border-bottom, 5px solid $dark);
+
+        li {
+            background-color: white;
+
+            a {
+                border-top-color: #eee;
+                color: #888;
             }
-        }        
+
+            &:hover {
+                > a{
+                    color: black;
+                }
+            }
+
+            .article--billboard-small {
+                background-color: white;
+                border-bottom-color: #ccc;
+
+                .hN {
+                    color: black;
+                }
+            }
+        }
+
+        > li {
+            background-color: transparent;
+            @include rem(padding-bottom, 5px);
+            @include rem(margin-bottom, -5px);
+
+            &:hover {
+                background-color: transparent;
+
+                > a {
+                    color: black;
+                }
+            }
+        }
+
+        .sub-menu {
+            background-color: #ccc;
+            padding-top: 0;
+            margin-top: 0;
+
+            .sub-menu {
+                @include rem(margin-top, -5px);
+                @include rem(padding-top, 5px);
+            }
+        }
+
+        .nav--sub-menu {
+            @include rem(margin-top, 5px);
+            @include rem(padding-top, 5px);
+            border-bottom: 0;
+        }
+
+        .sub-menu--mega {
+            @include rem(margin-top, 5px);
+            @include rem(padding-top, 5px);
+            border-bottom-color: rgba(white, .4);
+
+            // .sub-menu {
+            //     margin-top: 0;
+            //     padding-top: 0;
+            // }
+        }
+    }
+
+    .sub-menu__grid__item {
+        background-color: white;
     }
 
     @include media-query(lap-and-up) {
@@ -191,50 +282,35 @@
         }
     }
 
-    .navigation--main li {
-        color: black;
-    }
+    // .nav--main > li{
+    //     //This is the one below.
+    //     //This works with multi-line menu but
+    //     //will not stretch to 100% of the menu
+    //     //border-bottom-color: $dark;
 
-    //It's either this or the one below.
-    //This option will work only if the menu
-    //has one one line.
-    .nav--main{
-        border-bottom: 5px solid $dark;
+    //     border-top-width: 0;
+    //     background: transparent;
 
-        >li{
-            margin-bottom: -5px;
-        }
-    }
+    //     a{
+    //         color: black;
+    //     }     
 
-    .nav--main > li{
-        //This is the one below.
-        //This works with multi-line menu but
-        //will not stretch to 100% of the menu
-        //border-bottom-color: $dark;
+    //     &:hover{
+    //         background: transparent;
 
-        border-top-width: 0;
-        background: transparent;
+    //         > a{
+    //            color: black;
+    //         }
+    //     }
 
-        a{
-            color: black;
-        }     
+    //     .article--billboard-small {
+    //         background-color: white;
 
-        &:hover{
-            background: transparent;
-
-            > a{
-               color: black;
-            }
-        }
-
-        .article--billboard-small {
-            background-color: white;
-
-            .hN{
-                color: black;
-            }
-        }
-    }
+    //         .hN{
+    //             color: black;
+    //         }
+    //     }
+    // }
 
     .header--type1 {
         .search-query, .search-submit, .social-icon-link {
@@ -242,14 +318,24 @@
             background-color: transparent;
         }
 
-
-
-        .search-submit {
-            border: none;
+        .search-query{
+            border-left: 1px solid #dedede;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
         }
+
+        .search-submit{
+            border-right: 1px solid #dedede;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;        
+        }        
 
         .header-bar > li {
             border: 1px solid #dedede;
+
+            &.search-item{
+                border: none;
+            }
         }
     }
 }

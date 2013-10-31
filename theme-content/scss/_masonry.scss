@@ -35,7 +35,7 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 768px) {
+@media screen and (min-width: 600px) and (max-width: 899px) {
     [data-columns] {
 
         &::before {
@@ -46,7 +46,7 @@
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1023px) {
+@media screen and (min-width: 900px) and (max-width: 1023px) {
     [data-columns] {
 
         &::before {

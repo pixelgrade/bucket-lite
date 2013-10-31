@@ -14,7 +14,7 @@ if ( empty($read_more_label) ) {
 }
 
 $query_args = array(
-	'posts_per_page' => $number_of_posts,
+	'posts_per_page' => 1,
 	'ignore_sticky_posts' => true,
 );
 

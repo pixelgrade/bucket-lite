@@ -46,6 +46,7 @@
     @include font-size(12px);
     @include rem(padding, 0 $_u2);
     @include rem(margin, 0 $_u2 (-$_u2));
+    text-align: left;
 
     .site-footer & {
         background: $dark;
@@ -103,3 +104,27 @@
 .pb2  { @include rem(padding-bottom, 2rem !important); }
 .pb3  { @include rem(padding-bottom, 3rem !important); }
 .pb4  { @include rem(padding-bottom, 4rem !important); }
+
+// wordpress gallery
+.gallery {
+    @include rem(margin-left, -$_u4 !important);
+
+    .gallery-item {
+        @include rem(margin, 0 0 $_u2 0);
+        @include rem(padding-left, $_u4);
+    }
+
+    .gallery-icon {
+
+        img {
+            width: 100%;
+            border: 0 !important;
+        }
+    }
+
+    .gallery-caption {
+        padding: 0;
+        margin: 0;
+        line-height: 1.5;
+    }
+}
