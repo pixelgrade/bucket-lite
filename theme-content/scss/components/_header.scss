@@ -2,8 +2,13 @@
                HEADER
 \*--------------------------------*/
 
-.site-header {
-    @include rem(height, $_6u);
+//The header had position: absolute
+//and it is followerd by .container--main.
+//The padding prevents them from overlapping
+@include media-query(palm) {
+    .container--main{
+        @include rem(padding-top, 3*$_u);
+    }
 }
 
 
@@ -13,18 +18,6 @@
 /*----------------------------------------*\
     $TITLE/LOGO
 \*----------------------------------------*/
-@include media-query(lap-and-up) {
-    .site-home-title{
-        @include rem(height, $_6u);    
-        display: table;
-        margin-bottom: 0;
-    }
-
-    .site-home-link{
-        display: table-cell;
-        vertical-align: middle;
-    }
-}
 
 .site-home-link{
     img{
@@ -39,7 +32,6 @@
     $HEADER BAR(SIDEBAR)
 \*----------------------------------------*/
 .header-bar{
-    @include rem(margin-top, $_2u);
     > li{
         vertical-align: top;
     }
@@ -106,20 +98,12 @@
     }
 }
 
-@include media-query(lap-and-up) {
+@include media-query(palm) {
     .header-ad{
         display: none;
     }
 }
 
-.header-ad{
-    @include rem(margin-top, 1.15*$_u);
-    text-align: right;
-}
-
-.header-ad-link{
-    display: block;
-}
 
 //There's a grid in top navigation.
 //Each item in the grid has a padding-left of $_u.
