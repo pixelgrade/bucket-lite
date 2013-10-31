@@ -12,17 +12,16 @@ $fonts = array();
 if (wpgrade::option('use_google_fonts')) {
 	$fonts_array = array
 	(
-		'google_main_font',
+		'google_titles_font',
 		'google_second_font',
-		'google_menu_font',
+		'google_nav_font',
 		'google_body_font'
 	);
 
 	foreach ($fonts_array as $font) {
-		$clean_font = wpgrade::css_friendly_font($font);
-		if ( ! empty($clean_font)) {
-			$key = str_replace('google_', '', $font);
-			$fonts[$key] = $clean_font;
+		$the_font = wpgrade::get_the_typo($font);
+		if ( isset($the_font['font-family'] ) && ! empty($the_font['font-family'])) {
+			$fonts[$font] = $the_font;
 		}
 	}
 }
@@ -53,8 +52,32 @@ function hex2rgb($hex) {
 if ( !empty($main_color) ){
 $rgb = implode(",", hex2rgb($main_color)); ?>
 
-<?php } ?>
+<?php }
 
-<?php if (wpgrade::option('custom_css')):
-	echo wpgrade::option('custom_css');
+if ( isset($fonts['google_titles_font']) ) {?>
+	/* Select classes here */
+	.site-home-link, .heading .hN, .article--grid__title .hN, .article--grid__title .article__author-name, .article--grid__title .comment__author-name, .article--grid__title .widget_calendar caption, .widget_calendar .article--grid__title caption, .article--grid__title .score__average-wrapper, .article--grid__title .score__label {
+		<?php wpgrade::display_font_params($fonts['google_titles_font']); ?>
+	}
+
+<?php }
+
+if ( isset($fonts['google_nav_font']) ) {?>
+	/* Select classes here */
+	.nav--top>li>a, .nav--main>li>a {
+		<?php wpgrade::display_font_params($fonts['google_nav_font']); ?>
+	}
+
+<?php }
+
+if ( isset($fonts['google_body_font']) ) {?>
+	/* Select classes here */
+	.article, .latest-comments__list {
+		<?php wpgrade::display_font_params($fonts['google_body_font']); ?>
+	}
+
+<?php }
+
+if (wpgrade::option('custom_css')):
+	echo "\n" . wpgrade::option('custom_css') . "\n";
 endif; ?>
