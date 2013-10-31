@@ -5,11 +5,11 @@
 			$flush_top = 'push--top';
             if (has_post_thumbnail()) {
         		$thumbsize = 'blog-medium';
-
 				$flush_top = 'flush--top';
-        	
-        		//grab the desired thumb size from the query params if present
+
+        		// grab the desired thumb size from the query params if present
         		global $wp_query;
+
         		if (isset($wp_query->query_vars['thumbnail_size'])) {
         			$thumbsize = $wp_query->query_vars['thumbnail_size'];
         		}
@@ -20,22 +20,24 @@
         		if (isset($image[1]) && isset($image[2])) {
         			$image_ratio = $image[2] * 100/$image[1];
         		}
+
 			} else {
-				//we need to search for an image in the content
-				//like it should be
+				// we need to search for an image in the content
+				// like it should be
 				$flush_top = 'flush--top';
 				$image = array();
-				$image_ratio = 0.7;
-				$image[0] = bucket::get_post_format_first_image_src();
-			}
+                $image[0] = bucket::get_post_format_first_image_src();
+            }
+
+            if ($image[0] != ''): 
             ?>
-			<div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-				<img src="<?php echo $image[0] ?>" />
-			</div>
+			<img src="<?php echo $image[0] ?>" />
             <?php post_format_icon();
         	if ( bucket::has_average_score() ) { ?>
                 <div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', wpgrade::textdomain()) ?></span></div>
-        	<?php } ?>
+        	<?php }
+            endif;
+            ?>
         </div>
         
         <div class="article__title  article--grid__title <?php echo $flush_top; ?>">

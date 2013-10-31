@@ -5,20 +5,22 @@
         <div class="container">
             <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
 			
-            <div class="grid__item one-half">
-                <?php wpgrade_top_nav_left(); ?>
-            </div><!--
-         --><div class="grid__item one-half">
-				<?php wpgrade_top_nav_right(); ?>
-                <ul class="header-bar header-bar--top nav">
-                    <?php if (wpgrade::option('nav_show_header_social_icons')) {
-						get_template_part('theme-partials/wpgrade-partials/social-icons-list');
-					} ?>
-					<?php if (wpgrade::option('nav_show_header_search')): ?>
-                    <li><?php get_search_form(); ?></li>
-					<?php endif; ?>
-                </ul>
-			</div>
+            <div class="grid">
+                <div class="grid__item one-half">
+                    <?php wpgrade_top_nav_left(); ?>
+                </div><!--
+             --><div class="grid__item one-half text--right">
+                    <ul class="header-bar header-bar--top nav">
+				        <li><?php wpgrade_top_nav_right(); ?></li>
+                        <?php if (wpgrade::option('nav_show_header_social_icons')) { ?>
+                            <li><?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?></li>
+                        <?php }
+                        if (wpgrade::option('nav_show_header_search')): ?>
+                            <li><?php get_search_form(); ?></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </nav>
