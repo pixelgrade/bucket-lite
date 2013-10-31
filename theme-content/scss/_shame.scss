@@ -125,14 +125,10 @@ img[width], img[height] {
 
 
 .post-nav {
-    @extend .grid;
     position: relative;
 }
 
 .post-nav-link {
-    @extend .grid__item;
-    @extend .one-half;
-    position: relative;
     @include rem(padding-right, $_u);
     @include rem(padding-left, $_2u);
 

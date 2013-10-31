@@ -449,6 +449,9 @@
         $('#redux-main') .css({'min-height': (($(window).height()))+'px'});
     });
 
+    //Remove last divider from the menu
+	$('#redux-sidebar #redux-group-menu li:last-child').remove();    
+
 
 	//End helpers and beautiful things-----------------------------------------
 })(jQuery);
