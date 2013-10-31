@@ -6,11 +6,54 @@ $sections = array();
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'cogs',
+	'icon' => 'database-1',
 	'icon_class' => '',
-	'title' => __('General Options', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'title' => __('General', wpgrade::textdomain()),
+	'desc' => sprintf('<p class="description">'.__('General settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
+		
+		array(
+			'id' => 'main_logo',
+			'type' => 'media',
+			'title' => __('Main Logo', wpgrade::textdomain()),
+			'subtitle' => __('If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', wpgrade::textdomain()),
+		),
+		array(
+			'id' => 'use_retina_logo',
+			'type' => 'switch',
+			'title' => __('Retina 2x Logo', wpgrade::textdomain()),
+			'subtitle' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', wpgrade::textdomain()),
+		),
+		array(
+			'id' => 'retina_main_logo',
+			'type' => 'media',
+			'title' => __('Retina 2x Logo Image', wpgrade::textdomain()),
+			'required' => array('use_retina_logo', '=', 1)
+		),
+		array(
+			'id' => 'favicon',
+			'type' => 'media',
+			'title' => __('Favicon', wpgrade::textdomain()),
+			'subtitle' => __('Upload a 16px x 16px image that will be used as a favicon.', wpgrade::textdomain()),
+		),
+		array(
+			'id' => 'apple_touch_icon',
+			'type' => 'media',
+			'title' => __('Apple Touch Icon', wpgrade::textdomain()),
+			'subtitle' => __('You can customize the icon for the Apple touch shortcut to your website. The size of this icon must be 77x77px.', wpgrade::textdomain())
+		),
+		array(
+			'id' => 'metro_icon',
+			'type' => 'media',
+			'title' => __('Metro Icon', wpgrade::textdomain()),
+			'subtitle' => __('The size of this icon must be 144x144px.', wpgrade::textdomain())
+		),
+		array(
+			'id' => 'google_analytics',
+			'type' => 'textarea',
+			'title' => __('Google Analytics', wpgrade::textdomain()),
+			'subtitle' => __('Paste here your Google Analytics tracking code (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
+		),
 		array(
 			'id' => 'wpGrade_import_demodata_button',
 			'type' => 'info',
@@ -37,48 +80,6 @@ $sections[] = array(
 
 						<div class="wpGrade-import-results hidden"></div>
 					',
-		),
-		array(
-			'id' => 'main_logo',
-			'type' => 'media',
-			'title' => __('Main Logo', wpgrade::textdomain()),
-			'desc' => __('Upload here your logo image (we recommend a height of 80-100px).If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', wpgrade::textdomain()),
-		),
-		array(
-			'id' => 'use_retina_logo',
-			'type' => 'switch',
-			'title' => __('Retina 2x Logo', wpgrade::textdomain()),
-			'desc' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', wpgrade::textdomain()),
-		),
-		array(
-			'id' => 'retina_main_logo',
-			'type' => 'media',
-			'title' => __('Retina 2x Logo Image', wpgrade::textdomain()),
-			'required' => array('use_retina_logo', '=', 1)
-		),
-		array(
-			'id' => 'favicon',
-			'type' => 'media',
-			'title' => __('Favicon', wpgrade::textdomain()),
-			'desc' => __('Upload a 16px x 16px image that will be used as a favicon.', wpgrade::textdomain()),
-		),
-		array(
-			'id' => 'apple_touch_icon',
-			'type' => 'media',
-			'title' => __('Apple Touch Icon', wpgrade::textdomain()),
-			'desc' => __('You can customize the icon for the Apple touch shortcut to your website. The size of this icon must be 77x77px.', wpgrade::textdomain())
-		),
-		array(
-			'id' => 'metro_icon',
-			'type' => 'media',
-			'title' => __('Metro Icon', wpgrade::textdomain()),
-			'desc' => __('You can customize the icon for the shortcuts of your website in the Metro interface. The size of this icon must be 144x144px.', wpgrade::textdomain())
-		),
-		array(
-			'id' => 'google_analytics',
-			'type' => 'textarea',
-			'title' => __('Google Analytics', wpgrade::textdomain()),
-			'desc' => __('Paste here your Google Analytics tracking code (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
 		),
 //		array(
 //			'id' => 'enable_cookies_notice_bar',
@@ -122,10 +123,10 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "tint",
+	'icon' => "params",
 	'icon_class' => '',
-	'title' => __('Style Options', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
+	'title' => __('Style', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Style settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
@@ -135,6 +136,11 @@ $sections[] = array(
 			'default' => '#fffc00',
 			'validate' => 'color',
 		),
+		array(
+			'id'=>'21',
+			'desc'=> __('<h3>Typography</h3>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
 		array(
 			'id' => 'use_google_fonts',
 			'type' => 'switch',
@@ -188,7 +194,7 @@ $sections[] = array(
 		array(
 			'id' => 'custom_css',
 			'type' => 'textarea',
-			'title' => __('Custom CSS Style', wpgrade::textdomain()),
+			'title' => __('Custom CSS', wpgrade::textdomain()),
 			'subtitle' => __('Use this area to make slight CSS changes. It will be included in the head section of the page.', wpgrade::textdomain()),
 			'desc' => __('', wpgrade::textdomain()),
 			'validate' => 'html'
@@ -216,8 +222,8 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'bookmark',
-	'title' => __('Header Options', wpgrade::textdomain()),
+	'icon' => 'note-1',
+	'title' => __('Header', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -267,8 +273,8 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'bookmark-empty',
-	'title' => __('Footer Options', wpgrade::textdomain()),
+	'icon' => 'doc-1',
+	'title' => __('Footer', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -280,6 +286,10 @@ $sections[] = array(
 			'rows' => 3,
 		),
 	)
+);
+
+$sections[] = array(
+    'type' => 'divide',
 );
 
 // Contact Page

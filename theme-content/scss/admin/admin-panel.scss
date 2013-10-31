@@ -1,24 +1,632 @@
+/*-----------------------------------------------*\
+              THEME OPTIONS STYLING
+\*-----------------------------------------------*/
+
+@import url('../../../wpgrade-core/vendor/redux3/assets/css/style.css');
+@import "compass";
+$content-bg  : #fcfcfc;
+$sidebar-bg  : #f7f7f7;
+$border-color: #dfdfdf;
+$dark        : #464646;
+$light       : #777777;
+$lighter     : #999999;
+$accent      : #07d3f8;
+
+$content-width : 800px;
+$sidebar-width : 250px;
+
+$_u 	   : 24px;
+$_u2       : $_u/2;
+$_u4       : $_u/4;
+$_2u       : $_u*2;
+$_15u       : $_u+$_u/2;
+
+$normal    : 14px;
+$big       : 14px;
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
+$body-font: 'PT Sans', sans-serif;
+$heading-font: 'Open Sans', sans-serif;
+
+/*-----------------------------------------------*\
+              GENERAL + OVERWRITES
+\*-----------------------------------------------*/
+
+#redux-container {
+	font-family: $body-font;
+	margin-left:-20px;
+	margin-right:-15px;
+	margin-top: 0 !important;
+	background:url('../../images/admin/bg_pattern.png');
+	border:none;
+	@include border-radius(0);
+	@include box-shadow(none);
+
+	* {
+		@include box-sizing(border-box);
+	}
+
+	form {
+				
+	}
+
+	h1, h2, h3, h4, h5, h6 { 
+		font-family:$heading-font;
+		color:$dark;
+		font-weight: normal;
+	}
+
+	h3 {
+		font-size: 30px;
+		margin-bottom:$_2u;
+		font-weight: 300;
+		line-height: 1;
+		border-bottom: 0;
+	}
+
+	.redux-group-tab > h3 {
+		position: fixed;
+		background: #fcfcfc;
+		z-index: 99;
+		width: 798px;
+		top: 21px;
+		line-height: 130px;
+		padding-left: 48px;
+		left: 396px;
+
+		&:after {
+			content: "";
+			height: 10px;
+			width: 798px;
+			display: block;
+			margin-left: -48px;
+		}
+	}
+
+	h4 {
+		font-size: 17px;
+		text-transform:uppercase;
+		margin-bottom:$_u4;
+		margin-top:$_2u;
+	}
+
+	// Fixed Header on Scroll
+	&.fixed-header {
+		.redux-group-tab > h3 {
+			background: transparent url("../../images/admin/fixed-bottom-shadow.png") bottom left repeat-x;
+		}
+
+	}
+}
+
+#redux-main {
+	padding: 130px $_2u $_u4+$_2u;
+	margin-left:$sidebar-width;
+	max-width: $content-width;
+	background: $content-bg;
+	border-left:1px solid $border-color;
+	border-right:1px solid $border-color;
+}
+
+// 'Theme Options' title + description
+#redux-intro-text {
+	height: 6 * $_u;
+	width:$sidebar-width;
+	background:transparent;
+	border:none;
+	
+	color:$dark;
+
+	padding-left: $_u;
+
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:10;
+
+	p {
+		font-family:$body-font;
+		font-weight:normal;
+		font-size:12px;
+	}
+}
+
+#redux-sticky {
+	#info_bar {
+		padding:0;
+		background:none;
+		border:none;
+		@include box-shadow(none);
+		z-index:999;
+
+		.redux-action_bar {
+			position: fixed;
+			left: 1013px;
+			top: 68px;
+			z-index:999;
+
+			#redux_save {
+				font-size:14px;
+				padding:8px $_u;
+				height:auto;
+				text-shadow: 0 -1px 0 #000;
+				border-color: $dark;
+				background-color: #2e2e2e; 
+				@include border-radius(25px);
+				@include background-image(linear-gradient(left top, #3b3b3b, #212121)); 
+				@include box-shadow(rgba(255,255,255,0.3) 0 1px 0 inset,rgba(0,0,0,0.1) 0 0 0 1px, rgba(0,0,0,0.15) 0 1px 0 0);
+
+				&:hover {
+					@include background-image(linear-gradient(left top, #484848,#2e2e2e)); 
+				}
+			}
+
+			input:not(.button-primary) {
+				display:none;
+			}
+		}
+
+		#expand_options {
+			display:none;
+		}
+	}
+}
+
+#redux-header, #redux-footer-sticky {
+	display:none;
+}
+
+.redux-group-tab .redux-section-desc {
+
+	margin-bottom:$_u;
+
+	p.description {
+		font-style:normal;
+		font-size:inherit;
+		color:$dark;
+		line-height:1.5;
+	}
+}
+
+/*body*/.redux-page {
+	#wpbody-content {
+		padding-bottom:0;
+	}
+	#wpfooter {
+		display:none;
+	}
+}
+
+
+
+
+/*-----------------------------------------------*\
+              MENU
+\*-----------------------------------------------*/
+#redux-sidebar {
+	background: $sidebar-bg;
+	padding-top: 6 * $_u;
+	width: $sidebar-width;
+	height:100%;
+	position:absolute;
+
+	#redux-group-menu  {
+		li {
+			a {
+				font-weight:normal;
+				font-size:14px;
+				color:$dark;
+
+				padding: $_u2 $_u;
+				margin-right:0;
+				border-width: 1px 0 1px 0;
+				border-top-color:$sidebar-bg;
+				border-bottom-color:$sidebar-bg;
+				background:transparent;
+			}
+
+			i {
+				font-size: 15px;
+				margin-right: 5px;
+				text-align: left;
+			}
+
+			a:hover, &.active a:hover {
+				width:auto;
+				color:$dark;
+				background:transparent;
+			}
+
+			&.active a {
+				color:$dark;
+				width: auto;
+				margin-right: 0;
+				border-top-color:$border-color;
+				border-bottom-color:$border-color;
+				background: $content-bg !important;
+			}
+		}
+	}
+}
+
+
+
+
+/*-----------------------------------------------*\
+              CONTENT
+\*-----------------------------------------------*/
+#redux-container {
+	.redux-group-tab .form-table {
+		tr {
+			border:none;
+		}
+	}
+	th {
+		font-size:14px;
+		margin-top:$_15u;
+
+		.description {
+			font-size:12px;
+			color:$light;
+			margin-top:0;
+			margin-bottom:$_u4;
+		}
+	}
+}
+
+//Change the layout to stacked
+#redux-container tr {
+	th, td {
+		display:block;
+		width:100%;
+		padding:0;
+	}
+}
+
+
+
+/*-----------------------------------------------*\
+              COMPONENTS
+\*-----------------------------------------------*/
+
+
+/*
+* Forms
+*/
+#redux-container {
+	input, select, textarea {
+		background-color:#fff !important;
+		border:1px solid $border-color;
+		@include border-radius(0);
+		margin-top:0;
+		margin-bottom:0;
+
+		&:hover {
+			border-color:darken($border-color, 7%);
+		}
+
+		&:focus {
+			border-color:darken($border-color, 20%);
+		}
+	}
+
+	textarea {
+		margin:0;
+		padding:0;
+	}
+
+	//Checkbox
+	input.checkbox {
+		border:1px solid $border-color !important;
+		position:relative;
+		width:$_u;
+		height:$_u;
+		cursor:pointer;
+		margin-top:-3px;
+		margin-right: 6px !important;
+
+		&:before {
+			width:$_u;
+			height:$_u;
+			background:#fff;
+			border:1px solid $border-color;
+			content: " ";
+			display:block;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+
+		&:after {
+			opacity: 0;
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 6px;
+			background: transparent;
+			top: 7px;
+			left: 7px;
+			border: 3px solid $accent;
+			border-top: none;
+			border-right: none;
+			-webkit-transform: rotate(-45deg);
+		}
+
+		&:hover {
+			&:before {
+				border-color:darken($border-color, 7%);
+			}
+		}
+
+		&:checked {
+			&:after {
+				opacity:1;
+			}
+		}
+	}
+
+	.form-table td {
+		font-size:14px;
+		margin-bottom:0;
+	}
+
+	/*
+	* Color Picker
+	*/
+	.wp-picker-container {
+		&, & * {
+			@include box-sizing(content-box !important);
+		}
+	}
+
+	.wp-color-result {
+		border:1px solid $border-color;
+		@include border-radius(0);
+		height:$_15u;
+		line-height:$_15u;
+		padding-left:3*$_u;
+		@include box-shadow(0 0 0 2px #fff inset);
+
+		&:after {
+			font-size:14px;
+			padding:0 $_u;
+			@include background-image(none);
+			background-image: none;
+			background: #fff;
+			height: 100%;
+			border: none;
+			line-height:$_15u;
+		}
+
+		&:hover, &.wp-picker-open {
+			// border:none;
+			@include box-shadow(0 0 0 2px #fff inset);
+
+			&:after {
+				border:none;
+			}
+		}
+	}
+
+	.wp-picker-holder {
+		position:absolute;
+		z-index:99;
+	}
+
+	#redux-main .wp-picker-container {
+
+		input.wp-color-picker, input.wp-picker-default {
+			width: 60px;
+			height: $_15u;
+			padding: 0 $_u2;
+		}
+
+		.iris-picker {
+			border:0px solid $border-color;
+			@include border-radius(0);
+			@include box-shadow(0 21px 64px 0px rgba(0,0,0,0.3));
+		}
+		.iris-picker .iris-slider-offset {
+			top:12px;
+			bottom: 0;
+		}
+
+	}
+
+	.color-transparency-check {
+		margin-top: -20px;
+		display: inline-block;
+		margin-left: 24px;
+	}
+
+	/*
+	* Info
+	*/
+	.redux-info-field {
+		background:transparent;
+		border:none;
+		color:$dark;
+		padding:0;
+		margin-bottom: -58px;
+		margin-top: -22px;
+
+		h3 {
+			padding:0;
+			margin:0;
+			font-size:24px;
+		}
+	}
+
+
+	/*
+	* Typography
+	*/
+
+	p.help, p.description, span.description, .form-wrap p {
+		font-family:$body-font;
+	}
+
+	.description h3 {
+		font-size: 24px;
+	}
+}
+
+
+
+/*-----------------------------------------------*\
+              SHAME
+\*-----------------------------------------------*/
+
+//When Update Bar is present (eg. WordPress 3.7.1 is available! Please update now.)
+.update-nag + .clear + .wrap #redux-container {
+	.redux-group-tab>h3 {
+		top: 58px;
+	}
+	#redux-sticky #info_bar .redux-action_bar {
+		top:105px;
+	}
+}
+
+
+#redux-save-warn, #redux-save {
+	// position: absolute;
+	// width: 100%;
+	// padding: 5px 0;
+	// margin: 0;
+	// top: 45px;
+	// left: 0;
+	// text-indent: 15px;
+	display:none !important;
+}
+
+
+
+/*-----------------------------------------------*\
+              FONTS
+\*-----------------------------------------------*/
+@font-face {
+  font-family: 'linecons';
+  src: url('../../fonts/linecons/linecons.eot?98525679');
+  src: url('../../fonts/linecons/linecons.eot?98525679#iefix') format('embedded-opentype'),
+       url('../../fonts/linecons/linecons.woff?98525679') format('woff'),
+       url('../../fonts/linecons/linecons.ttf?98525679') format('truetype'),
+       url('../../fonts/linecons/linecons.svg?98525679#linecons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'linecons';
+    src: url('../../fonts/linecons/linecons.svg?98525679#linecons') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "linecons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-music-1:before { content: '\e800'; } /* '' */
+.icon-wallet:before { content: '\e82f'; } /* '' */
+.icon-mail-1:before { content: '\e802'; } /* '' */
+.icon-heart-1:before { content: '\e803'; } /* '' */
+.icon-star-1:before { content: '\e804'; } /* '' */
+.icon-user-1:before { content: '\e805'; } /* '' */
+.icon-videocam:before { content: '\e806'; } /* '' */
+.icon-camera-1:before { content: '\e807'; } /* '' */
+.icon-photo:before { content: '\e808'; } /* '' */
+.icon-attach-1:before { content: '\e809'; } /* '' */
+.icon-lock-1:before { content: '\e80a'; } /* '' */
+.icon-eye-1:before { content: '\e80b'; } /* '' */
+.icon-tag-1:before { content: '\e80c'; } /* '' */
+.icon-thumbs-up-1:before { content: '\e80d'; } /* '' */
+.icon-pencil-1:before { content: '\e80e'; } /* '' */
+.icon-comment-1:before { content: '\e80f'; } /* '' */
+.icon-location-1:before { content: '\e810'; } /* '' */
+.icon-cup-1:before { content: '\e811'; } /* '' */
+.icon-trash-1:before { content: '\e812'; } /* '' */
+.icon-doc-1:before { content: '\e813'; } /* '' */
+.icon-note-1:before { content: '\e814'; } /* '' */
+.icon-cog-1:before { content: '\e815'; } /* '' */
+.icon-params:before { content: '\e816'; } /* '' */
+.icon-calendar-1:before { content: '\e817'; } /* '' */
+.icon-search-1:before { content: '\e801'; } /* '' */
+.icon-clock-1:before { content: '\e819'; } /* '' */
+.icon-lightbulb:before { content: '\e81a'; } /* '' */
+.icon-tv:before { content: '\e81b'; } /* '' */
+.icon-desktop:before { content: '\e81c'; } /* '' */
+.icon-mobile-1:before { content: '\e81d'; } /* '' */
+.icon-cd-1:before { content: '\e81e'; } /* '' */
+.icon-inbox-1:before { content: '\e81f'; } /* '' */
+.icon-globe-1:before { content: '\e820'; } /* '' */
+.icon-cloud-1:before { content: '\e821'; } /* '' */
+.icon-paper-plane-1:before { content: '\e822'; } /* '' */
+.icon-fire:before { content: '\e823'; } /* '' */
+.icon-graduation-cap-1:before { content: '\e824'; } /* '' */
+.icon-megaphone-1:before { content: '\e825'; } /* '' */
+.icon-database-1:before { content: '\e826'; } /* '' */
+.icon-key-1:before { content: '\e827'; } /* '' */
+.icon-beaker:before { content: '\e828'; } /* '' */
+.icon-truck:before { content: '\e829'; } /* '' */
+.icon-money:before { content: '\e82a'; } /* '' */
+.icon-food:before { content: '\e82b'; } /* '' */
+.icon-shop:before { content: '\e82c'; } /* '' */
+.icon-diamond:before { content: '\e82d'; } /* '' */
+.icon-t-shirt:before { content: '\e82e'; } /* '' */
+.icon-sound-1:before { content: '\e818'; } /* '' */
+
+
+
+
+
+
+
+
+
 /*
  *
  * Don't forget to set $args['admin_stylesheet'] to 'custom' in options.php!
  *
  */
 
-@import url('../../../wpgrade-core/vendor/redux3/assets/css/style.css');
+
 
 #redux-form-wrapper {
 	position: relative;
 }
 
-#redux-save-warn, #redux-save {
-	position: absolute;
-	width: 100%;
-	padding: 5px 0;
-	margin: 0;
-	top: 45px;
-	left: 0;
-	text-indent: 15px;
-}
+
 #redux-header {
 	position: relative;
 	overflow: hidden;
@@ -85,65 +693,65 @@
 	height:250px;
 }
 
-#redux-header .button-primary {
-	padding: 10px 30px;
-	height: auto;
-	margin: 50px;
-	font-size: 14px;
-	position :relative;
-	z-index: 10;
+// #redux-header .button-primary {
+// 	padding: 10px 30px;
+// 	height: auto;
+// 	margin: 50px;
+// 	font-size: 14px;
+// 	position :relative;
+// 	z-index: 10;
 
-	background-color: #0698ce;
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#19b5ef),to(#0698ce));
-	background-image: -webkit-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: -moz-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: -ms-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: -o-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: linear-gradient(to bottom,#19b5ef,#0698ce);
-	border: 1px solid #0698ce;
+// 	background-color: #0698ce;
+// 	background-image: -webkit-gradient(linear,left top,left bottom,from(#19b5ef),to(#0698ce));
+// 	background-image: -webkit-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: -moz-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: -ms-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: -o-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: linear-gradient(to bottom,#19b5ef,#0698ce);
+// 	border: 1px solid #0698ce;
 
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
-	color: #ffffff;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+// 	-webkit-border-radius: 4px;
+// 	-moz-border-radius: 4px;
+// 	border-radius: 4px;
+// 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
+// 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
+// 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
+// 	color: #ffffff;
+// 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 
-}
-.wp-core-ui #redux-footer {
-	padding: 30px;
-}
+// }
+// .wp-core-ui #redux-footer {
+// 	padding: 30px;
+// }
 
-.wp-core-ui #redux-footer .button-primary {
-	margin:0px 0 0 20px;
-}
+// .wp-core-ui #redux-footer .button-primary {
+// 	margin:0px 0 0 20px;
+// }
 
-.wp-core-ui #redux-header  .button-primary:hover {
-	background-color: #1dbaf4;
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#1dbaf4),to(#19b5ef));
-	background-image: -webkit-linear-gradient(top,#1dbaf4,#19b5ef);
-	background-image: -moz-linear-gradient(top,#1dbaf4,#19b5ef);
-	background-image: -ms-linear-gradient(top,#1dbaf4,#19b5ef);
-	background-image: -o-linear-gradient(top,#1dbaf4,#19b5ef);
-	background-image: linear-gradient(to bottom,#1dbaf4,#19b5ef);
-	border: 1px solid #1dbaf4;
+// .wp-core-ui #redux-header  .button-primary:hover {
+// 	background-color: #1dbaf4;
+// 	background-image: -webkit-gradient(linear,left top,left bottom,from(#1dbaf4),to(#19b5ef));
+// 	background-image: -webkit-linear-gradient(top,#1dbaf4,#19b5ef);
+// 	background-image: -moz-linear-gradient(top,#1dbaf4,#19b5ef);
+// 	background-image: -ms-linear-gradient(top,#1dbaf4,#19b5ef);
+// 	background-image: -o-linear-gradient(top,#1dbaf4,#19b5ef);
+// 	background-image: linear-gradient(to bottom,#1dbaf4,#19b5ef);
+// 	border: 1px solid #1dbaf4;
 
-}
+// }
 
-div.pixelgrade_logo {
-	position: absolute;
-	top:0;
-	left: 0;
-	z-index: 9;
-	background-repeat: no-repeat;
-	height: 100%;
-	width: 635px;
-	float: left;
-	background-image: url('../img/pixelgrade_logo.png');
-}
+// div.pixelgrade_logo {
+// 	position: absolute;
+// 	top:0;
+// 	left: 0;
+// 	z-index: 9;
+// 	background-repeat: no-repeat;
+// 	height: 100%;
+// 	width: 635px;
+// 	float: left;
+// 	background-image: url('../img/pixelgrade_logo.png');
+// }
 
 #redux-form-wrapper .switch_wrap input[type="checkbox"]:checked + .switch {
 	background-color: #19b5ef;
@@ -153,104 +761,101 @@ div.pixelgrade_logo {
 	padding-top:  145px;
 }
 
-#redux-save-warn, #redux-save {
-	position:relative;
-	width:100%;
-	text-indent:0;
-	top:0;
-	left:0;
-	padding:0 50px;
-	text-align:right;
-	color:#fff;
-	text-shadow: none;
-	display:block;
-	max-height:0;
-	opacity:0;
+// #redux-save-warn, #redux-save {
+// 	position:relative;
+// 	width:100%;
+// 	text-indent:0;
+// 	top:0;
+// 	left:0;
+// 	padding:0 50px;
+// 	text-align:right;
+// 	color:#fff;
+// 	text-shadow: none;
+// 	display:block;
+// 	max-height:0;
+// 	opacity:0;
 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+// 	-webkit-box-sizing: border-box;
+// 	-moz-box-sizing: border-box;
+// 	box-sizing: border-box;
 
-	background-color: #0698ce;
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#19b5ef),to(#0698ce));
-	background-image: -webkit-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: -moz-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: -ms-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: -o-linear-gradient(top,#19b5ef,#0698ce);
-	background-image: linear-gradient(to bottom,#19b5ef,#0698ce);
-	border: 0px solid #0698ce;
+// 	background-color: #0698ce;
+// 	background-image: -webkit-gradient(linear,left top,left bottom,from(#19b5ef),to(#0698ce));
+// 	background-image: -webkit-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: -moz-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: -ms-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: -o-linear-gradient(top,#19b5ef,#0698ce);
+// 	background-image: linear-gradient(to bottom,#19b5ef,#0698ce);
+// 	border: 0px solid #0698ce;
 
-	-webkit-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	transition: all 0.4s;
+// 	-webkit-transition: all 0.4s;
+// 	-moz-transition: all 0.4s;
+// 	-o-transition: all 0.4s;
+// 	transition: all 0.4s;
 
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+// 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+// 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+// 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 
-}
+// }
 
-#redux-save-warn.active, #redux-save.active {
-	max-height: 100%;
-	padding: 7px 50px;
-	opacity: 1;
-	border-width: 1px;
-	position: absolute;
-	top: 113px;z-index: 99;
-}
+// #redux-save-warn.active, #redux-save.active {
+// 	max-height: 100%;
+// 	padding: 7px 50px;
+// 	opacity: 1;
+// 	border-width: 1px;
+// 	position: absolute;
+// 	top: 113px;z-index: 99;
+// }
 
-#redux-save-warn:after, #redux-save:after {
-	position: absolute;
-	top: -14px;
-	right: 112px;
-	display: inline-block;
-	border-right: 13px solid transparent;
-	border-bottom: 15px solid #19b4ee;
-	border-left: 13px solid transparent;
-	content: '';
-}
+// #redux-save-warn:after, #redux-save:after {
+// 	position: absolute;
+// 	top: -14px;
+// 	right: 112px;
+// 	display: inline-block;
+// 	border-right: 13px solid transparent;
+// 	border-bottom: 15px solid #19b4ee;
+// 	border-left: 13px solid transparent;
+// 	content: '';
+// }
 
-#redux-save-warn:before, #redux-save:before {
-	position: absolute;
-	top: -16px;
-	right: 111px;
-	display: inline-block;
-	border-right: 14px solid transparent;
-	border-bottom: 16px solid #bae8f9;
-	border-left: 14px solid transparent;
-	content: '';
-}
-#redux-sidebar i {
-	font-size: 14px;
-	margin-right: 5px;
-	text-align: left;
-}
+// #redux-save-warn:before, #redux-save:before {
+// 	position: absolute;
+// 	top: -16px;
+// 	right: 111px;
+// 	display: inline-block;
+// 	border-right: 14px solid transparent;
+// 	border-bottom: 16px solid #bae8f9;
+// 	border-left: 14px solid transparent;
+// 	content: '';
+// }
 
-.redux-group-tab .form-table td:hover .reset_google_font {
-	display: inline-block;
-}
+// .redux-group-tab .form-table td:hover .reset_google_font {
+// 	display: inline-block;
+// }
 
-.reset_google_font {
-	cursor: pointer;
-	margin-left: 7px;
-	display: none;
-}
+// .reset_google_font {
+// 	cursor: pointer;
+// 	margin-left: 7px;
+// 	display: none;
+// }
 
-.reset_google_font i {
-	font-size: 21px;
-	color: #c1272d;
-	font-weight: normal;
-}
+// .reset_google_font i {
+// 	// font-size: 21px;
+// 	color: #c1272d;
+// 	font-weight: normal;
+// }
 
-.wpGrade-loading {
-	content: '';
-	display: block;
-	margin: 10px 0;
-	width: 100px;
-	height: 9px;
-	background: url("../img/loader2.gif") top center no-repeat;
-}
+// .wpGrade-loading {
+// 	content: '';
+// 	display: block;
+// 	margin: 10px 0;
+// 	width: 100px;
+// 	height: 9px;
+// 	background: url("../img/loader2.gif") top center no-repeat;
+// }
+
+
 
 /*popups used for notifying the user of certain action results*/
 
@@ -263,7 +868,7 @@ div.pixelgrade_logo {
 	z-index: 10000;
 	color: #FFF;
 	overflow: hidden;
-	font-size: 12px;
+	// font-size: 12px;
 	line-height: 18px;
 }
 
