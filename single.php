@@ -138,12 +138,7 @@ get_header(); ?>
 			        }
 		        </style>
 
-	            <div id="share-box">
-		            <div id="twitter" data-url="<?php the_permalink() ?>" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="Tweet">t</div>
-		            <div id="facebook" data-url="<?php the_permalink() ?>" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="Like">f</div>
-		            <div id="googleplus" data-url="<?php the_permalink() ?>" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="+1">g</div>
-	            </div>
-
+				<?php get_template_part('theme-partials/post-templates/share-box'); ?>
                 <?php if (get_the_title()): ?>
                     <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <?php else: ?>
