@@ -14,7 +14,7 @@
     @include rem(right, $_2u);
     outline: none !important;
     line-height: 1.2;
-    padding: 8px $_u2 !important;
+    padding: 8px $_u2;
 }
 
 .search-submit {
