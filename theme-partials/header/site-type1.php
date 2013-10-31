@@ -17,8 +17,8 @@
     </nav>
 
     <div class="container">
-        <div class="site-header grid">
-            <div class="site-header__branding grid__item one-half">
+        <div class="site-header flexbox">
+            <div class="site-header__branding flexbox__item one-half">
 
                 <?php if (wpgrade::option_image_src('main_logo')): ?>
 
@@ -42,7 +42,7 @@
                 <?php endif; ?>
 
             </div><!--
-            --><div class="header-bar-container grid__item one-half split">
+            --><div class="header-bar-container flexbox__item one-half split">
                 <ul class="header-bar nav">
 					<?php if (wpgrade::option('nav_show_header_search')): ?>
                     <li class="search-item"><?php get_search_form(); ?></li>
