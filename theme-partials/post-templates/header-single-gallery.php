@@ -27,7 +27,7 @@
 
 ?>
 
-<div class="article__featured-image  flush--bottom">
+<div class="grid__item  float--left  one-whole  article__featured-image">
 
     <?php if ($attachments): ?>
         <div class="pixslider js-pixslider" 
