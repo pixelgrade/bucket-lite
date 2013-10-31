@@ -131,11 +131,11 @@ if ($slides->have_posts()): ?>
                     echo '<div>';
                     $closed_group = false;
                 endif; ?>
-                <article class="article article--billboard">
+                <article class="article  article--billboard">
                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
                     </div>
-                    <div class="rsABlock article__header article--billboard__header">
+                    <div class="rsABlock  article__header  article--billboard__header  one-half">
                         <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
                         <h2 class="article__title article--billboard__title">
                             <div class="hN"><?php the_title(); ?></div>
