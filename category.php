@@ -16,17 +16,17 @@ get_header(); ?>
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
                     <h2 class="hN"><?php printf( __( 'Category Archives: %s', wpgrade::textdomain() ), single_cat_title( '', false ) ); ?></h2>
-					
-					<?php if ( category_description() ) : // Show an optional category description ?>
-					<div class="archive-meta"><?php echo category_description(); ?></div>
-					<?php endif; ?>
                 </div>
-                <div class="grid" data-columns>
+				
+				<?php if ( category_description() ) : // Show an optional category description ?>
+				    <div class="archive-meta"><?php echo category_description(); ?></div>
+				<?php endif; ?>
+                <div class="grid  masonry" data-columns>
                     <?php while (have_posts()): the_post(); ?><!--
-                     --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
+                     --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
-				<?php echo wpgrade::pagination();
+                <?php echo wpgrade::pagination();
 	        else: get_template_part( 'no-results', 'index' ); endif; ?>
         </div><!--
         

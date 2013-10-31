@@ -6,49 +6,23 @@ $sections = array();
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'cogs',
+	'icon' => 'database-1',
 	'icon_class' => '',
-	'title' => __('General Options', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('Welcome to the %s options panel! You can switch between option groups by using the left-hand tabs.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'title' => __('General', wpgrade::textdomain()),
+	'desc' => sprintf('<p class="description">'.__('General settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
-		array(
-			'id' => 'wpGrade_import_demodata_button',
-			'type' => 'info',
-//			'raw_html'=>true,
-//			'subtitle' => __('Import Demo Data', wpgrade::textdomain()),
-			'title' => __('Here you can import the demo data and get on your way of setting up the site like the theme demo.', wpgrade::textdomain()),
-			'desc' =>
-			'
-				<input type="hidden" name="wpGrade-nonce-import-posts-pages" value="'.wp_create_nonce ('wpGrade_nonce_import_demo_posts_pages').'" />
-						<input type="hidden" name="wpGrade-nonce-import-theme-options" value="'.wp_create_nonce ('wpGrade_nonce_import_demo_theme_options').'" />
-						<input type="hidden" name="wpGrade-nonce-import-widgets" value="'.wp_create_nonce ('wpGrade_nonce_import_demo_widgets').'" />
-						<input type="hidden" name="wpGrade_import_ajax_url" value="'.admin_url("admin-ajax.php").'" />
-
-						<a href="#" class="button button-primary" id="wpGrade_import_demodata_button">
-							'.__('Import demo data', wpgrade::textdomain()).'
-						</a>
-
-						<div class="wpGrade-loading-wrap hidden">
-							<span class="wpGrade-loading wpGrade-import-loading"></span>
-							<div class="wpGrade-import-wait">
-								'.__('Please wait a few minutes (between 2 and 5 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', wpgrade::textdomain()).'
-							</div>
-						</div>
-
-						<div class="wpGrade-import-results hidden"></div>
-					',
-		),
+		
 		array(
 			'id' => 'main_logo',
 			'type' => 'media',
 			'title' => __('Main Logo', wpgrade::textdomain()),
-			'desc' => __('Upload here your logo image (we recommend a height of 80-100px).If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', wpgrade::textdomain()),
+			'subtitle' => __('If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', wpgrade::textdomain()),
 		),
 		array(
 			'id' => 'use_retina_logo',
 			'type' => 'switch',
 			'title' => __('Retina 2x Logo', wpgrade::textdomain()),
-			'desc' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', wpgrade::textdomain()),
+			'subtitle' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', wpgrade::textdomain()),
 		),
 		array(
 			'id' => 'retina_main_logo',
@@ -60,59 +34,20 @@ $sections[] = array(
 			'id' => 'favicon',
 			'type' => 'media',
 			'title' => __('Favicon', wpgrade::textdomain()),
-			'desc' => __('Upload a 16px x 16px image that will be used as a favicon.', wpgrade::textdomain()),
+			'subtitle' => __('Upload a 16px x 16px image that will be used as a favicon.', wpgrade::textdomain()),
 		),
 		array(
 			'id' => 'apple_touch_icon',
 			'type' => 'media',
 			'title' => __('Apple Touch Icon', wpgrade::textdomain()),
-			'desc' => __('You can customize the icon for the Apple touch shortcut to your website. The size of this icon must be 77x77px.', wpgrade::textdomain())
+			'subtitle' => __('You can customize the icon for the Apple touch shortcut to your website. The size of this icon must be 77x77px.', wpgrade::textdomain())
 		),
 		array(
 			'id' => 'metro_icon',
 			'type' => 'media',
 			'title' => __('Metro Icon', wpgrade::textdomain()),
-			'desc' => __('You can customize the icon for the shortcuts of your website in the Metro interface. The size of this icon must be 144x144px.', wpgrade::textdomain())
+			'subtitle' => __('The size of this icon must be 144x144px.', wpgrade::textdomain())
 		),
-		array(
-			'id' => 'google_analytics',
-			'type' => 'textarea',
-			'title' => __('Google Analytics', wpgrade::textdomain()),
-			'desc' => __('Paste here your Google Analytics tracking code (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
-		),
-//		array(
-//			'id' => 'enable_cookies_notice_bar',
-//			'type' => 'switch',
-//			'title' => __('Do you want to display a Cookies Usage Notice Bar?', wpgrade::textdomain()),
-//			'subtitle' => __('If you want to comply with the EU cookie law (e-Privacy Directive) you can display a notice bar at the bottom of your site that will inform your users about your site using cookies. It relies on the implied consent model (used in big sites like gov.uk) meaning that the bar will disappear when the user goes to a second page or hits the Button.', wpgrade::textdomain()),
-//			'default' => '0',
-//		),
-//		array(
-//			'id' => 'cookies_notice_bar_text',
-//			'type' => 'editor',
-//			'required' => array('enable_cookies_notice_bar', '=', 1),
-//			'title' => __('Notice Text', wpgrade::textdomain()),
-//			'subtitle' => __('This text will appear in the cookies notice bar, perferably on one line so keep it short.', wpgrade::textdomain()),
-//			'default' => __('Cookies help us deliver our services. By continuing to browse this site, you agree to our use of cookies.<i>(optional cookies notice bar)</i>', wpgrade::textdomain()),
-//			'rows' => 3,
-//		),
-//		array(
-//			'id' => 'cookies_notice_bar_button_text',
-//			'type' => 'text',
-//			'required' => array('enable_cookies_notice_bar', '=', 1),
-//			'title' => __('Button Text', wpgrade::textdomain()),
-//			'subtitle' => __('The text that will be displayed on the dismiss button.', wpgrade::textdomain()),
-//			'default' => __('I\'m OK', wpgrade::textdomain()),
-//		),
-//		array(
-//			'id' => 'cookies_notice_bar_more_info_html',
-//			'type' => 'editor',
-//			'required' => array('enable_cookies_notice_bar', '=', 1),
-//			'title' => __('More Info Link', wpgrade::textdomain()),
-//			'subtitle' => __('Put here a more info link in HTML format.', wpgrade::textdomain()),
-//			'default' => '',
-//			'rows' => 3,
-//		),
 		
 	)
 );
@@ -122,10 +57,10 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "tint",
+	'icon' => "params",
 	'icon_class' => '',
-	'title' => __('Style Options', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Give some style to your website!', wpgrade::textdomain()).'</p>',
+	'title' => __('Style', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('Style settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. Change fonts, colors and sizes.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
@@ -135,6 +70,13 @@ $sections[] = array(
 			'default' => '#fffc00',
 			'validate' => 'color',
 		),
+
+
+		array(
+			'id'=>'typography-21',
+			'desc'=> __('<h3>Typography</h3>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
 		array(
 			'id' => 'use_google_fonts',
 			'type' => 'switch',
@@ -142,72 +84,97 @@ $sections[] = array(
 			'subtitle' => __('Tap into the massive <a href="http://www.google.com/fonts/">Google Fonts</a> collection (with Live preview).', wpgrade::textdomain()),
 			'default' => '0',
 		),
+		// Headings Font
 		array(
-			'id'=>'google_main_font',
+			'id' => 'google_titles_font',
 			'type' => 'typography',
+			'color' => false,
+			'font-size'=>false,
+            'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
-			'title' => __('Main Font', wpgrade::textdomain()),
-//				'compiler'=>true,
-			'subtitle'=> __('Select a font for the main titles.', wpgrade::textdomain()),
-//				'default'=> array(
-//					'color'=>"#333",
-//					'style'=>'700',
-//					'family'=>'Courier, monospace',
-//					'size'=> 33,
-//					'height'=>'40'
-//				),
+			'title' => __('Headings Font', wpgrade::textdomain()),
+			'subtitle' => 'Font for titles and headings.',
 		),
+		// Navigation Font
 		array(
-			'id' => 'google_body_font',
+			'id' => 'google_nav_font',
 			'type' => 'typography',
+			'color' => false,
+			'font-size'=>false,
+            'line-height'=>false,
+			'required' => array('use_google_fonts', '=', 1),
+			'title' => __('Navigation Font', wpgrade::textdomain()),
+			'subtitle' => 'Font for navigation menu.',
+		),
+		// Body Font
+		array(
+			'id'=>'google_body_font',
+			'type' => 'typography',
+			'color' => false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Body Font', wpgrade::textdomain()),
-			'subtitle' => 'Select a font for content and other general areas',
-			'default'=> array(
-//					'color'=>"#333",
-//					'style'=>'700',
-//					'family'=>'Courier, monospace',
-//					'size'=> 33,
-//					'height'=>'40'
-			),
+			'subtitle'=> __('Font for content text and widget text.', wpgrade::textdomain()),
+		),
+	)
+);
+
+// Article Options
+// ------------------------------------------------------------------------
+
+$sections[] = array(
+	'icon' => 'pencil-1',
+	'title' => __('Article', wpgrade::textdomain()),
+	'desc' => sprintf('<p class="description">'.__('General settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'fields' => array(
+		array(
+			'id' => 'blog_single_show_share_links',
+			'type' => 'switch',
+			'title' => __('Show Share Links', wpgrade::textdomain()),
+			'subtitle' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
+			'default' => '1',
 		),
 		array(
-			'id' => 'google_menu_font',
-			'type' => 'typography',
-			'required' => array('use_google_fonts', '=', 1),
-			'title' => __('Menu Font', wpgrade::textdomain()),
-			'subtitle' => 'Select a font for menu',
-			'default'=> array(
-//					'color'=>"#333",
-//					'style'=>'700',
-//					'family'=>'Courier, monospace',
-//					'size'=> 33,
-//					'height'=>'40'
-			),
+			'id' => 'blog_single_share_links_twitter',
+			'type' => 'switch',
+			'title' => __('Twitter Share Link', wpgrade::textdomain()),
+			'subtitle' => '',
+			'default' => '1',
+			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
-			'id' => 'custom_css',
-			'type' => 'textarea',
-			'title' => __('Custom CSS Style', wpgrade::textdomain()),
-			'subtitle' => __('Use this area to make slight CSS changes. It will be included in the head section of the page.', wpgrade::textdomain()),
-			'desc' => __('', wpgrade::textdomain()),
-			'validate' => 'html'
+			'id' => 'blog_single_share_links_facebook',
+			'type' => 'switch',
+			'title' => __('Facebook Share Link', wpgrade::textdomain()),
+			'subtitle' => '',
+			'default' => '1',
+			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
-			'id' => 'custom_js',
-			'type' => 'textarea',
-			'title' => __('Custom JavaScript', wpgrade::textdomain()),
-			'subtitle' => __('Use this area to make custom JavaScript calls.This code will be loaded in head section', wpgrade::textdomain()),
-			'desc' => __('jQuery is available here as $', wpgrade::textdomain()),
-			'validate' => 'html'
+			'id' => 'blog_single_share_links_googleplus',
+			'type' => 'switch',
+			'title' => __('Google+ Share Link', wpgrade::textdomain()),
+			'subtitle' => '',
+			'default' => '1',
+			'required' => array('blog_single_show_share_links', '=', 1)
+		),
+				array(
+			'id'=>'article-21',
+			'desc'=> __('<h3>Blog Archive</h3>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
+		array(
+			'id' => 'blog_excerpt_length',
+			'type' => 'text',
+			'title' => __('Excerpt Length', wpgrade::textdomain()),
+			'subtitle' => __('Set the number of words for posts excerpt.', wpgrade::textdomain()),
+			'default' => '20',
 		),
 		array(
-			'id' => 'inject_custom_css',
-			'type' => 'select',
-			'title' => __('Apply Custom CSS', wpgrade::textdomain()),
-			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
-			'default' => 'inline',
-			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
+			'id' => 'blog_excerpt_more_text',
+			'type' => 'text',
+			'title' => __('Excerpt "More" Text', wpgrade::textdomain()),
+			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', wpgrade::textdomain()),
+			'default' => '..',
 		),
 	)
 );
@@ -216,8 +183,8 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'bookmark',
-	'title' => __('Header Options', wpgrade::textdomain()),
+	'icon' => 'note-1',
+	'title' => __('Header', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -267,8 +234,8 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => 'bookmark-empty',
-	'title' => __('Footer Options', wpgrade::textdomain()),
+	'icon' => 'tag-1',
+	'title' => __('Footer', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
@@ -282,61 +249,8 @@ $sections[] = array(
 	)
 );
 
-// Blog Options
-// ------------------------------------------------------------------------
-
 $sections[] = array(
-	'icon' => 'file-alt',
-	'icon_class' => '',
-	'title' => __('Blog Options', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Change blog archive and single post related options here.', wpgrade::textdomain()).'</p>',
-	'fields' => array(
-		array(
-			'id' => 'blog_excerpt_length',
-			'type' => 'text',
-			'title' => __('Excerpt Length', wpgrade::textdomain()),
-			'subtitle' => __('Set the number of words for posts excerpt.', wpgrade::textdomain()),
-			'default' => '20',
-		),
-		array(
-			'id' => 'blog_excerpt_more_text',
-			'type' => 'text',
-			'title' => __('Excerpt More', wpgrade::textdomain()),
-			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', wpgrade::textdomain()),
-			'default' => '[...]',
-		),
-		array(
-			'id' => 'blog_single_show_share_links',
-			'type' => 'switch',
-			'title' => __('Show Share Links', wpgrade::textdomain()),
-			'subtitle' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
-			'default' => '1',
-		),
-		array(
-			'id' => 'blog_single_share_links_twitter',
-			'type' => 'switch',
-			'title' => __('Twitter Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
-			'default' => '1',
-			'required' => array('blog_single_show_share_links', '=', 1)
-		),
-		array(
-			'id' => 'blog_single_share_links_facebook',
-			'type' => 'switch',
-			'title' => __('Facebook Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
-			'default' => '1',
-			'required' => array('blog_single_show_share_links', '=', 1)
-		),
-		array(
-			'id' => 'blog_single_share_links_googleplus',
-			'type' => 'switch',
-			'title' => __('Google+ Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
-			'default' => '1',
-			'required' => array('blog_single_show_share_links', '=', 1)
-		),
-	)
+    'type' => 'divide',
 );
 
 
@@ -344,9 +258,9 @@ $sections[] = array(
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "facebook",
+	'icon' => "thumbs-up-1",
 	'icon_class' => '',
-	'title' => __('Social and SEO Options', wpgrade::textdomain()),
+	'title' => __('Social and SEO', wpgrade::textdomain()),
 
 	'desc' => '<p class="description">'.__('Social sharing stuff.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
@@ -521,16 +435,62 @@ $sections[] = array(
 	)
 );
 
-
-// Theme Auto Update
+// Custom Code
 // ------------------------------------------------------------------------
 
 $sections[] = array(
-	'icon' => "gift",
+	'icon' => "database-1",
 	'icon_class' => '',
-	'title' => __('Theme Auto Update', wpgrade::textdomain()),
+	'title' => __('Custom Code', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('You can change the site style and behaviour by adding custom scripts to all pages within your site using the custom code areas below.', wpgrade::textdomain()).'</p>',
+	'fields' => array(
+		array(
+			'id' => 'custom_css',
+			'type' => 'textarea',
+			'title' => __('Custom CSS', wpgrade::textdomain()),
+			'subtitle' => __('Enter your custom CSS code. It will be included in the head section of the page.', wpgrade::textdomain()),
+			'desc' => __('', wpgrade::textdomain()),
+			'validate' => 'html'
+		),
+		array(
+			'id' => 'inject_custom_css',
+			'type' => 'select',
+			'title' => __('Apply Custom CSS', wpgrade::textdomain()),
+			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
+			'default' => 'inline',
+			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
+		),
+		array(
+			'id' => 'custom_js',
+			'type' => 'textarea',
+			'title' => __('Custom JavaScript (header)', wpgrade::textdomain()),
+			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', wpgrade::textdomain()),
+			'validate' => 'html'
+		),
+		array(
+			'id' => 'custom_js_footer',
+			'type' => 'textarea',
+			'title' => __('Custom JavaScript (footer)', wpgrade::textdomain()),
+			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
+		),
+	)
+);
+
+// Utilities - Theme Auto Update + Import Demo Data
+// ------------------------------------------------------------------------
+
+$sections[] = array(
+	'icon' => "truck",
+	'icon_class' => '',
+	'title' => __('Utilities', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>',
 	'fields' => array(
+		array(
+			'id'=>'typography-21',
+			'desc'=> __('<h3>Theme Auto Update</h3>
+				<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
 		array(
 			'id' => 'themeforest_upgrade',
 			'type' => 'switch',
@@ -560,6 +520,50 @@ $sections[] = array(
 			'default' => '0',
 			'required' => array('themeforest_upgrade', '=', 1)
 		),
+		array(
+			'id'=>'typography-21',
+			'desc'=> __('<h3>Import Demo Data</h3>
+				<p class="description">'.__('Here you can import the demo data and get on your way of setting up the site like the theme demo.', wpgrade::textdomain()).'</p>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
+		array(
+			'id' => 'wpGrade_import_demodata_button',
+			'type' => 'info',
+			'desc' =>
+			'
+				<input type="hidden" name="wpGrade-nonce-import-posts-pages" value="'.wp_create_nonce ('wpGrade_nonce_import_demo_posts_pages').'" />
+						<input type="hidden" name="wpGrade-nonce-import-theme-options" value="'.wp_create_nonce ('wpGrade_nonce_import_demo_theme_options').'" />
+						<input type="hidden" name="wpGrade-nonce-import-widgets" value="'.wp_create_nonce ('wpGrade_nonce_import_demo_widgets').'" />
+						<input type="hidden" name="wpGrade_import_ajax_url" value="'.admin_url("admin-ajax.php").'" />
+
+						<a href="#" class="button button-primary" id="wpGrade_import_demodata_button">
+							'.__('Import demo data', wpgrade::textdomain()).'
+						</a>
+
+						<div class="wpGrade-loading-wrap hidden">
+							<span class="wpGrade-loading wpGrade-import-loading"></span>
+							<div class="wpGrade-import-wait">
+								'.__('Please wait a few minutes (between 2 and 5 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', wpgrade::textdomain()).'
+							</div>
+						</div>
+
+						<div class="wpGrade-import-results hidden"></div>
+					',
+		),
+	)
+);
+
+
+// Help and Support
+// ------------------------------------------------------------------------
+
+$sections[] = array(
+	'icon' => "cd-1",
+	'icon_class' => '',
+	'title' => __('Help and Support', wpgrade::textdomain()),
+	'desc' => '<p class="description">'.__('If you had anything less than a great experience with this theme please contact us now. You can also find answers in our community site, or official articles and tutorials in our knowledge base.', wpgrade::textdomain()).'</p>',
+	'fields' => array(
+		
 	)
 );
 

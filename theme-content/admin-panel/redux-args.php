@@ -33,7 +33,7 @@ return array
 		'admin_stylesheet' => 'custom', # default: 'standard'
 
 		// add HTML before the form
-//		'intro_text' => __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', wpgrade::textdomain()),
+		'intro_text' => __('<h4>Theme Options</h4><p>This allows you to adjust the overall settings for your website.</p>', wpgrade::textdomain()),
 
 		// add content after the form
 //		'footer_text' => __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', wpgrade::textdomain()),
@@ -65,7 +65,7 @@ return array
 			),
 
 		// enable the import/export feature
-//		'show_import_export' => false, # default: true
+		'show_import_export' => false, # default: true
 
 		// Set the icon for the import/export tab.
 		// If 'icon_type' => 'image', this should be the path to the icon.
@@ -137,7 +137,7 @@ return array
 //			),
 
 		// Set the help sidebar for the options page.
-//		'help_sidebar' => __('<p>This is the sidebar content, HTML is allowed.</p>', wpgrade::textdomain()),
+		// 'help_sidebar' => __('<p>This is the sidebar content, HTML is allowed.</p>', wpgrade::textdomain()),
 
 
 	); # config
