@@ -36,7 +36,7 @@ $use-media           : true;
 $use-split           : true; 
 
 $responsive          : true;
-$lap-start           : 769px;
+$lap-start           : 900px;
 $desk-start          : 1024px; 
 $desk-wide-start     : 1366px; 
 
@@ -70,7 +70,6 @@ $EntypoPath: "../fonts/entypo2";
 
 @import "../vendor/font-awesome/scss/font-awesome";
 @import "vendor/entypo";
-
 
 
 

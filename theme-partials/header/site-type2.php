@@ -10,15 +10,15 @@
                     <?php wpgrade_top_nav_left(); ?>
                 </div><!--
              --><div class="grid__item one-half text--right">
-                    <ul class="header-bar header-bar--top nav">
-				        <li><?php wpgrade_top_nav_right(); ?></li>
+                    <ul class="header-bar header-bar--top nav"><!--
+				     --><li><?php wpgrade_top_nav_right(); ?></li><!--
                         <?php if (wpgrade::option('nav_show_header_social_icons')) { ?>
-                            <li><?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?></li>
+                     --><li><?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?></li><!--
                         <?php }
                         if (wpgrade::option('nav_show_header_search')): ?>
-                            <li><?php get_search_form(); ?></li>
+                     --><li><?php get_search_form(); ?></li><!--
                         <?php endif; ?>
-                    </ul>
+                 --></ul>
                 </div>
             </div>
         </div>
