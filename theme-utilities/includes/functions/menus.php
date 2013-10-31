@@ -83,8 +83,10 @@
     /*
      * Function for displaying The Top Left Menu 
      */
-    function wpgrade_top_nav_left() {
+    function wpgrade_top_nav_left($menu_classes = 'nav--top  nav--top-left  nav--block', $mobile = false) {
         $theme_locations = get_nav_menu_locations();
+        $wrap = '';
+        if($mobile) $wrap = '<hr class="separator  separator--mobile-nav" />';
 
         if (isset($theme_locations["top_menu_left"]) && ($theme_locations["top_menu_left"] != 0)) {
             $args = array
@@ -93,10 +95,10 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'nav  nav--top  nav--top-left  nav--block',
+                    'menu_class'      => 'nav  ' . $menu_classes,
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
-                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'items_wrap'      => $wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     'walker'          => new WPGrade_Bucket_Walker_Top_Nav_Menu()
 
                 );
@@ -109,8 +111,10 @@
 	/*
      * Function for displaying The Top Right Menu 
      */
-    function wpgrade_top_nav_right() {
+    function wpgrade_top_nav_right($menu_classes = 'nav--top  nav--top-right  nav--block', $mobile = false) {
         $theme_locations = get_nav_menu_locations();
+        $wrap = '';
+        if($mobile) $wrap = '<hr class="separator  separator--mobile-nav" />';
 
         if (isset($theme_locations["top_menu_right"]) && ($theme_locations["top_menu_right"] != 0)) {
             $args = array
@@ -119,10 +123,10 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'nav  nav--top  nav--top-right  nav--block',
+                    'menu_class'      => 'nav  ' . $menu_classes,
                     'fallback_cb'     => 'wp_page_menu',
                     'menu_id'         => '',
-                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'items_wrap'      => $wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     'walker'          => new WPGrade_Bucket_Walker_Top_Nav_Menu()
                 );
 
