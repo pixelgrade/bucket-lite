@@ -23,6 +23,7 @@
 
     .hN {
         @extend .gamma;
+        margin-top: 0;
         margin-bottom: 0;
         float: left;
 
@@ -137,6 +138,10 @@ li.comment{
     @extend .grid__item;
     @extend .one-whole;
     @include rem(margin, -$_u2 0);
+}
+
+.comment-reply-title {
+    margin-top: 0;
 }
 
 .comment-respond{

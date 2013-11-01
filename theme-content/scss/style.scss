@@ -126,8 +126,10 @@ $_8u   : 8 * $_u; // 192px
 @import "typography";
 
 // SHORTCODES
+@import "shortcodes/grid";
 @import "shortcodes/icon";
 @import "shortcodes/separators";
+@import "shortcodes/tabs";
 
 // COMPONENTS
 @import "components/header";
@@ -139,11 +141,6 @@ $_8u   : 8 * $_u; // 192px
 @import "components/tweet";
 @import "components/comments";
 @import "components/headings"; 
-
-//MODULES
-@import "modules/search-form";
-@import "modules/social-links";
-@import "modules/pagination";
 
 
 // WIDGETS
@@ -163,6 +160,11 @@ $_8u   : 8 * $_u; // 192px
 
 //PAGES
 @import "single";
+
+//MODULES
+@import "modules/search-form";
+@import "modules/social-links";
+@import "modules/pagination";
 
 // SHAMELESS SHAME
 @import "shame";

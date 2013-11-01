@@ -7,17 +7,30 @@
     display: inline-block;
     text-align: center;
     @include rem(font-size, 21px);
+    color: $dark;
 
     &.square,
     &.circle {
-        @extend .btn;
-        @extend .btn--negative;
+        // @extend .btn;
+        // @extend .btn--negative;
+        display: inline-block;
+        background-color: $dark;
+        color: $light;
         padding: 0;
         
-        @include rem(font-size, 21px);
-        width: (48/21) + em;
-        height: (48/21) + em;
-        line-height: (48/21) + em;
+        @include rem(font-size, 18px);
+        width: (48/18) + em;
+        height: (48/18) + em;
+        line-height: (48/18) + em;
+
+        &:hover {
+            background-color: $red;
+            color: white;
+        }
+
+        .site__footer & {
+            background-color: #262525;
+        }
     }
 
     &.circle {
@@ -25,30 +38,33 @@
     }
 
     &.small {
-        @include rem(font-size, 18px);
+        @include rem(font-size, 16px);
 
         &.circle, &.square {
-            width: (36/18) + em;
-            height: (36/18) + em;
-            line-height: (36/18) + em;
+            width: (36/16) + em;
+            height: (36/16) + em;
+            line-height: (36/16) + em;
         }
     }
 
     &.medium {
-        @include rem(font-size, 24px);
+        @include rem(font-size, 21px);
 
         &.circle, &.square {
-            width: 2em;
-            height: 2em;
-            line-height: 2em;
+            width: (48/21) + em;
+            height: (48/21) + em;
+            line-height: (48/21) + em;
         }
     }
 
     &.big {
         @include rem(font-size, 36px);
-        width: 2em;
-        height: 2em;
-        line-height: 2em;
+
+        &.circle, &.square {
+            width: (72/36) + em;
+            height: (72/36) + em;
+            line-height: (72/36) + em;
+        }
     }
 }
 
