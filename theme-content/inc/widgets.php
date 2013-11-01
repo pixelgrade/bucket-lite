@@ -1134,8 +1134,7 @@ class wpgrade_popular_posts extends WP_Widget {
 
 			if ($size <> 0){
 				$imageArgs = array(
-					'width' => 72,
-					'height' => 54,
+					'size' => 'post-tiny',
 					'image_class' => 'thumbnail',
 					'format' => 'array',
 					'default_image' => 'http://placehold.it/72x54'
