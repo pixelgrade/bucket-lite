@@ -663,7 +663,93 @@ class wpgrade {
 
 	/**
 	 * @param string font
+	 * @return array values for the font
+	 */
+	static function get_the_typo($font) {
+		if (  self::option($font) ) {
+			return self::option($font);
+		}
+		return false;
+	}
+
+	/**
+	 * @param string font
 	 * @return string css value for the font
+	 */
+	static function get_font_name($font) {
+
+		if (  self::option($font) ) {
+			$thefont = self::option($font);
+
+			if ( isset( $thefont['font-family'] )) {
+				return $thefont['font-family'];
+			}
+		}
+		return '';
+	}
+
+	/**
+	 * @param string font
+	 * @return string css value for a google font
+	 */
+	static function get_google_font_name($font) {
+
+		if (  self::option($font) ) {
+			$thefont = self::option($font);
+
+			if ( $thefont['google'] == 'true' ){
+				if ( isset( $thefont['font-family'] )) {
+
+					if ( isset( $thefont['subsets'] )) {
+						return $thefont['font-family'] . '::' . $thefont['subsets'];
+					} else {
+						return $thefont['font-family'];
+					}
+				}
+			}
+		}
+		return '';
+	}
+
+	static function display_font_params( $font_args = array() ){
+
+		if ( empty($font_args) ) return;
+
+		if( isset($font_args['font-family']) && !empty($font_args['font-family'])) {
+			echo 'font-family: '. $font_args['font-family'] . ";\n\t";
+		}
+
+		if( isset($font_args['font-weight']) && !empty($font_args['font-weight'])) {
+			echo 'font-weight: '. $font_args['font-weight'] . ";\n\t";
+		}
+
+		if( isset($font_args['font-size']) && !empty($font_args['font-size'])) {
+			echo 'font-size: '. $font_args['font-size'] . ";\n\t";
+		}
+
+		if( isset($font_args['font-style']) && !empty($font_args['font-style'])) {
+			echo 'font-style: '. $font_args['font-style'] . ";\n\t";
+		}
+
+		if( isset($font_args['line-height']) && !empty($font_args['line-height'])) {
+			echo 'line-height: '. $font_args['line-height'] . ";\n\t";
+		}
+
+		if( isset($font_args['color']) && !empty($font_args['color'])) {
+			echo 'color: '. $font_args['color'] . ";\n\t";
+		}
+
+//		foreach ( $font_args as $key => $arg ) {
+//
+//
+//
+//		}
+	}
+
+	/**
+	 * @param string font
+	 * @return string css value for the font
+	 * @depricated since 3.2.1
 	 */
 	static function css_friendly_font($font) {
 		$thefont = explode(":", str_replace("+", " ", self::option($font)));
