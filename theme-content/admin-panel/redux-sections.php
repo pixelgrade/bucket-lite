@@ -200,6 +200,14 @@ $sections[] = array(
 			)
 		),
 		array(
+			'id' => 'header_728_90_ad',
+			'type' => 'textarea',
+			'title' => __('Header Ad Code', wpgrade::textdomain()),
+			'subtitle' => __('Paste here the code for the header ad (optimally 720x90px). We will also parse any shortcodes present.', wpgrade::textdomain()),
+			'required' => array('header_type', '=', 'type2'),
+			'default' => '<a class="header-ad-link" href="#"><img src="http://placehold.it/728x90" alt="#" /></a>',
+		),
+		array(
 			'id' => 'nav_inverse_top',
 			'type' => 'switch',
 			'title' => __('Header Top Nav Inverse', wpgrade::textdomain()),

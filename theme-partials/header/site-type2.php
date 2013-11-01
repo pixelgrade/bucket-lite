@@ -52,12 +52,11 @@
                 <?php endif; ?>
 
             </div><!--
-            --><div class="header-ad  flexbox__item  one-whole  lap-and-up-seven-tenths">
-                <a class="header-ad-link" href="#">
-                    <img src="http://placehold.it/728x90" alt="#" />
-                </a>
+            --><?php if (wpgrade::option('header_728_90_ad')): ?>
+			<div class="header-ad  flexbox__item  one-whole  lap-and-up-seven-tenths">
+                <?php echo do_shortcode(wpgrade::option('header_728_90_ad')); ?>
             </div>
-
+			<?php endif; ?>
         </div>
 
         <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>                
