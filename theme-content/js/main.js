@@ -517,6 +517,7 @@
 
 
     /* --- ORGANIC TABS --- */
+    // --- MODIFIED
     // https://github.com/CSS-Tricks/jQuery-Organic-Tabs
     (function($) {
 
@@ -549,7 +550,7 @@
                     if ((listID != curList) && ( base.$el.find(":animated").length == 0)) {
                                                 
                         // Fade out current list
-                        base.$el.find("#"+curList).css({opacity: 0});
+                        base.$el.find("#"+curList).css({"opacity": 0, "z-index": 10});
                         
                         // Adjust outer wrapper to fit new list snuggly
                         var newHeight = base.$el.find("#"+listID).height();
@@ -559,13 +560,13 @@
                         setTimeout(function() {
                             
                             base.$el.find("#"+curList);
-                            base.$el.find("#"+listID).css({opacity: 1});
+                            base.$el.find("#"+listID).css({"opacity": 1, "z-index": 20});
                             
                             // Remove highlighting - Add to just-clicked tab
                             base.$el.find(".tabs__nav li a").removeClass("current");
                             $newList.addClass("current");
                                 
-                        }, 100);
+                        }, 250);
                         
                     }   
                     
@@ -1530,7 +1531,7 @@
             var slidesNumber = royalSlider.numSlides;
 
             // move arrows outside rsOverflow
-            $('.rsArrow').appendTo($slider);
+            $slider.find('.rsArrow').appendTo($slider);
 
         });
     };
@@ -1606,7 +1607,6 @@
 		    $('#share-box .share-item__value').each(function(i,e){
 			    var value = parseInt($(this).text());
 			    if ( !isNaN(value) ) {
-				    console.log(total_shares);
 				    total_shares = total_shares + value;
 			    }
 		    });

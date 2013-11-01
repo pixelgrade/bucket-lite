@@ -59,7 +59,7 @@
     .nav--main {
         li {
             @include transition(all .05s linear);
-            background-color: #262525;
+            // background-color: #262525;
 
             &:hover {
                 border-bottom-color: $accent;
@@ -559,8 +559,4 @@
     .sub-menu {
         text-align: left;
     }
-}
-
-.header-bar--top {
-    @include rem(margin-right, -$_u2);
 }
