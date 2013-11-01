@@ -1606,7 +1606,6 @@
 		    $('#share-box .share-item__value').each(function(i,e){
 			    var value = parseInt($(this).text());
 			    if ( !isNaN(value) ) {
-				    console.log(total_shares);
 				    total_shares = total_shares + value;
 			    }
 		    });
