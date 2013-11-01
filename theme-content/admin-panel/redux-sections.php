@@ -99,7 +99,7 @@ $sections[] = array(
 		array(
 			'id' => 'google_nav_font',
 			'type' => 'typography',
-			'color' => false,
+//			'color' => false,
 			'font-size'=>false,
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),

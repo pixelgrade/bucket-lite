@@ -9,7 +9,7 @@
 
 .navigation--main{
     @include font-size(14px);
-    background-color: $dark;
+    background-color: #262525;
 }
 
 .navigation--mobile{
@@ -173,6 +173,10 @@
         left: 100%;
         @include rem(margin-top, -5px);
     }
+}
+
+.menu-item--parent > .nav--sub-menu{
+    margin-top: 5px;
 }
 
 /*div*/.sub-menu--mega {
@@ -555,8 +559,4 @@
     .sub-menu {
         text-align: left;
     }
-}
-
-.header-bar--top {
-    @include rem(margin-right, -$_u2);
 }
