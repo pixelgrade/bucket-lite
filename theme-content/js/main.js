@@ -1531,7 +1531,7 @@
             var slidesNumber = royalSlider.numSlides;
 
             // move arrows outside rsOverflow
-            $('.rsArrow').appendTo($slider);
+            $slider.find('.rsArrow').appendTo($slider);
 
         });
     };
