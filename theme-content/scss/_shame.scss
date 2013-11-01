@@ -271,3 +271,10 @@ img[width], img[height] {
     @include rem(margin-top, $_u);
     @include font-size(16px);
 }
+
+/**
+ * Arrows need to be offset so .pixslider must have overflow visible
+ */
+.single-format-gallery .article__featured-image .pixslider{
+    overflow: visible;
+}
