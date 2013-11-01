@@ -14,21 +14,20 @@ get_header(); ?>
 
     <div class="grid">
 
-        <?php
-		// let's get to know this post a little better
-		$full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
-		$disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
+        <?php 
 
-		// let's use what we know
-		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
-		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-and-up-one-whole';
+        // let's get to know this post a little better
+        $full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
+        $disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
+
+        // let's use what we know
+        $the_content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+        $featured_image_width = ($full_width_featured_image == 'on' || $disable_sidebar == 'on') ? 'one-whole' : 'two-thirds  palm-and-up-one-whole';
         ?>
 
-        <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
-            <?php get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
-        </div>
+        <?php get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 
-        <div class="grid__item  main  float--left  <?php echo $content_width; ?>">
+        <div class="grid__item  main  float--left  <?php echo $the_content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
 
@@ -50,6 +49,7 @@ get_header(); ?>
                     if ( comments_open() || '0' != get_comments_number() )
                         comments_template();
                 ?>
+                
             <?php endwhile; ?>
 
         </div><!--
