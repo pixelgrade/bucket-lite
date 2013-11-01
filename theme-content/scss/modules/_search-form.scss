@@ -20,6 +20,7 @@
 .search-submit {
     position: absolute;
     top: 0; right: 0;
+    height: 44px;
     // border: 1px solid $dark;
     @include font-size(14px);
     @include rem(width, $_2u);
