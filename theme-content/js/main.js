@@ -946,7 +946,7 @@
             var slidesNumber = royalSlider.numSlides;
 
             // move arrows outside rsOverflow
-            // $('.rsArrow').insertAfter($slider);
+            $('.rsArrow').appendTo($slider);
 
         });
     };
