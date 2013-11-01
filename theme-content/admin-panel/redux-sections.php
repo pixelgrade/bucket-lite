@@ -201,11 +201,13 @@ $sections[] = array(
 		),
 		array(
 			'id' => 'header_728_90_ad',
-			'type' => 'textarea',
+			'type' => 'ace_editor',
 			'title' => __('Header Ad Code', wpgrade::textdomain()),
 			'subtitle' => __('Paste here the code for the header ad (optimally 720x90px). We will also parse any shortcodes present.', wpgrade::textdomain()),
-			'required' => array('header_type', '=', 'type2'),
+			'required' => array('header_type', '', 'type2'),
 			'default' => '<a class="header-ad-link" href="#"><img src="http://placehold.it/728x90" alt="#" /></a>',
+			'mode' => 'html',
+			'theme' => 'chrome',
 		),
 		array(
 			'id' => 'nav_inverse_top',
@@ -454,10 +456,12 @@ $sections[] = array(
 	'fields' => array(
 		array(
 			'id' => 'custom_css',
-			'type' => 'textarea',
+			'type' => 'ace_editor',
 			'title' => __('Custom CSS', wpgrade::textdomain()),
 			'subtitle' => __('Enter your custom CSS code. It will be included in the head section of the page.', wpgrade::textdomain()),
 			'desc' => __('', wpgrade::textdomain()),
+			'mode' => 'css',
+			'theme' => 'chrome',
 			'validate' => 'html'
 		),
 		array(
@@ -470,16 +474,19 @@ $sections[] = array(
 		),
 		array(
 			'id' => 'custom_js',
-			'type' => 'textarea',
+			'type' => 'ace_editor',
 			'title' => __('Custom JavaScript (header)', wpgrade::textdomain()),
 			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', wpgrade::textdomain()),
-			'validate' => 'html'
+			'mode' => 'javascript',
+			'theme' => 'chrome'
 		),
 		array(
 			'id' => 'custom_js_footer',
-			'type' => 'textarea',
+			'type' => 'ace_editor',
 			'title' => __('Custom JavaScript (footer)', wpgrade::textdomain()),
 			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
+			'mode' => 'javascript',
+			'theme' => 'chrome'
 		),
 	)
 );
