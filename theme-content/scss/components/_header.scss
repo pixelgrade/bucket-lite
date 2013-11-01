@@ -54,8 +54,8 @@
     .search-query{
         // rem does not work properly
         // @include rem(height, $_2u);
-        height: 36px;
-        right: 36px;
+        height: 37px;
+        right: 37px;
         @include rem(padding, 6px 0 6px $_u2);
         background-color: $dark;
         border: 0;
@@ -65,8 +65,8 @@
     }
 
     .search-submit{
-        height: 36px;
-        width: 36px;
+        height: 37px;
+        width: 37px;
         vertical-align: top;
         background-color: $dark;
         @include font-size(0.75*$_u);
@@ -77,9 +77,6 @@
 
 
 .social-icon-link{
-    .header--type1 &{
-        @include font-size(24px);
-    }
 
     .header--type2 &,
     .header--type3 &{
@@ -188,6 +185,14 @@
                 background: #ddd;
             }
         }
+
+        .social-icon-link{
+            background: none;
+
+            a{
+                background: none;
+            }
+        }           
     }
 
 
@@ -333,6 +338,11 @@
                 border-right: 1px solid #dedede;
                 border-top: 1px solid #dedede;
                 border-bottom: 1px solid #dedede;        
+            }
+
+            .header-bar .square{
+                background: none;
+                color: $light;
             }        
 
             .header-bar > li {
