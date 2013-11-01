@@ -541,7 +541,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                             <?php endif; ?>
                         </div>
                         <div class="article__title  article--slider__title">
-                            <h3 class="hN"><?php the_title(); ?></h3>
+                            <h3 class="hN"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         </div>
                         <div class="article__meta  article--slider__meta">
                             <div class="split">

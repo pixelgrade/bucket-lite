@@ -277,8 +277,14 @@
         @extend .article__title--inverse;
         @extend .article__title--full;
 
+        @include rem(padding-left, $_u2);
+
         h3 {
             line-height:1.5;
+
+            a{
+                color: white;
+            }
         }
 
         .hN {

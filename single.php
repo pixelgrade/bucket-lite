@@ -107,7 +107,7 @@ get_header(); ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        </div><!--
                     <?php endif; ?>
                 --></div>
 
