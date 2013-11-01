@@ -560,7 +560,3 @@
         text-align: left;
     }
 }
-
-.header-bar--top {
-    @include rem(margin-right, -$_u2);
-}
