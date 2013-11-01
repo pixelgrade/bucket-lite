@@ -549,7 +549,7 @@
                     if ((listID != curList) && ( base.$el.find(":animated").length == 0)) {
                                                 
                         // Fade out current list
-                        base.$el.find("#"+curList).css({"opacity": 0, "z-index": 20});
+                        base.$el.find("#"+curList).css({"opacity": 0, "z-index": 10});
                         
                         // Adjust outer wrapper to fit new list snuggly
                         var newHeight = base.$el.find("#"+listID).height();
