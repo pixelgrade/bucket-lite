@@ -9,8 +9,8 @@
         content: " - ";
     }
 
-    .rsBullets {
-        @include rem(margin-top, $_u2);
+    .tweet__block {
+        @include rem(margin-bottom, $_u);
     }
 
     &.widget--footer {

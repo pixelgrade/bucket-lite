@@ -231,12 +231,6 @@ img[width], img[height] {
     }
 }
 
-.score__pros,
-.score__cons {
-    @extend .grid__item;
-    @extend .three-eighths;
-}
-
 .score__pros__title,
 .score__cons__title {
     color: $red;
@@ -244,6 +238,7 @@ img[width], img[height] {
     @include rem(margin-bottom, $_u2);
 
     .hN {
+        margin-top: 0;
         @include rem(margin-bottom, $_u2);
     }
 }
