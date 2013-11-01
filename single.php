@@ -64,7 +64,7 @@ get_header(); ?>
 		        );
 		        wp_link_pages( $args ); ?>
 
-                <div class="grid">
+                <div class="grid"><!--
                     <?php if ( bucket::has_average_score() && get_field('placement') == ('after') ) { ?>
                      --><div class="grid__item  three-eighths  lap-and-up-two-eighths">
                             <div class="score__average-wrapper">
@@ -109,7 +109,7 @@ get_header(); ?>
                             </div>
                         </div>
                     <?php endif; ?>
-                </div>
+                --></div>
 
                 <?php
 				if (get_field('enable_review_score')):
