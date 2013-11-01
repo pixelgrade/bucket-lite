@@ -446,6 +446,10 @@
     @include rem(margin, 0 0 0 #{-$_2u});
     @include rem(padding, $_u2 $_u2 $_u2 $_2u);
     clear: left;
+
+    a{
+        color: $dark;
+    }    
 }
 
 //  Small Articles
@@ -479,6 +483,10 @@
     @include rem(margin, $_u2);
     overflow: hidden;
 
+    a{
+        color: $dark;
+    }       
+
     .hN {
         max-width: 100%;
         overflow: hidden;
@@ -487,6 +495,7 @@
         @extend .gamma;
     }
 }
+
 
 
 

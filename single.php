@@ -35,6 +35,21 @@ get_header(); ?>
                     <time class="article__time" datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s', wpgrade::textdomain()),get_the_time(__('j F, Y \a\t H:i', wpgrade::textdomain()))); ?></time>
                 </div>
 
+                <?php if ( bucket::has_average_score() && get_field('placement') == ('before') ) { ?>
+                    <div class="three-eighths  lap-and-up-two-eighths">
+                        <div class="score__average-wrapper">
+                            <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
+                                <?php
+                                    echo bucket::get_average_score();
+                                    if (get_field('note')) {
+                                        echo '<div class="score__note">'.get_field('note').'</div>';
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+
                 <?php
 		        the_content();
 
@@ -50,8 +65,8 @@ get_header(); ?>
 		        wp_link_pages( $args ); ?>
 
                 <div class="grid">
-                    <div class="grid__item two-eighths">
-                        <?php if ( bucket::has_average_score() ) { ?>
+                    <?php if ( bucket::has_average_score() && get_field('placement') == ('after') ) { ?>
+                     --><div class="grid__item  three-eighths  lap-and-up-two-eighths">
                             <div class="score__average-wrapper">
                                 <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
                                     <?php
@@ -62,33 +77,37 @@ get_header(); ?>
                                     ?>
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div><!--
-                 --><?php if (get_field('enable_pros_cons_lists')):
-                        if (get_field('pros_list')): ?><!--
-                         --><div class="score__pros">
-                                <div class="score__pros__title">
-                                    <h3 class="hN"><?php _e('Good Things', wpgrade::textdomain()); ?></h3>
-                                </div>
-                                <ul class="score__pros__list">
-                                    <?php while(has_sub_fields('pros_list')): ?>
-                                        <li class="score_pro"><?php echo get_sub_field('pros_note'); ?></li>      
-                                    <?php endwhile; ?>
-                                </ul>
-                            </div><!--
-                        <?php endif;
-                        if (get_field('cons_list')): ?>
-                         --><div class="score__cons">
-                                <div class="score__cons__title">
-                                    <h3 class="hN"><?php _e('Bad Things', wpgrade::textdomain()); ?></h3>
-                                </div>
-                                <ul class="score__cons__list">
-                                    <?php while(has_sub_fields('cons_list')): ?>
-                                        <li class="score__con"><?php echo get_sub_field('cons_note'); ?></li>      
-                                    <?php endwhile; ?>
-                                </ul>
+                        </div><!--
+                    <?php }
+                    if (get_field('enable_pros_cons_lists')): ?>
+                     --><div class="grid__item  five-eighths  lap-and-up-six-eighths">
+                            <div class="grid">
+                                <?php if (get_field('pros_list')): ?><!--
+                                 --><div class="score__pros  grid__item  lap-and-up-one-half">
+                                        <div class="score__pros__title">
+                                            <h3 class="hN"><?php _e('Good Things', wpgrade::textdomain()); ?></h3>
+                                        </div>
+                                        <ul class="score__pros__list">
+                                            <?php while(has_sub_fields('pros_list')): ?>
+                                                <li class="score_pro"><?php echo get_sub_field('pros_note'); ?></li>      
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    </div><!--
+                                <?php endif;
+                                if (get_field('cons_list')): ?>
+                                 --><div class="score__cons  grid__item  lap-and-up-one-half">
+                                        <div class="score__cons__title">
+                                            <h3 class="hN"><?php _e('Bad Things', wpgrade::textdomain()); ?></h3>
+                                        </div>
+                                        <ul class="score__cons__list">
+                                            <?php while(has_sub_fields('cons_list')): ?>
+                                                <li class="score__con"><?php echo get_sub_field('cons_note'); ?></li>      
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                        <?php endif; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
 
