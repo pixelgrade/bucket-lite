@@ -130,6 +130,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $defaults['default_show']		= false; // If true, it shows the default value
             $defaults['default_mark']		= ''; // What to print by the field's title if the value shown is default
 
+	        $defaults['wpml_separate_options'] = false;
 	    	// Set values
             $this->args = wp_parse_args( $args, $defaults );
 
@@ -152,6 +153,22 @@ if( !class_exists( 'ReduxFramework' ) ) {
 		    $this->sections = apply_filters('redux-sections',$sections);
 
 			$this->extra_tabs = $extra_tabs;
+
+//			var_dump( $this->options['wpml_separate_options'] );
+
+	        // making theme options wpml ready
+//	        if( defined( 'ICL_LANGUAGE_CODE' ) ) { // do this only on admin side when wpml is activated
+//		        if ( ICL_LANGUAGE_CODE != 'en' ) { // not necessary for en
+//			        $temp_opt_name  = $this->args['opt_name'] . '_' . ICL_LANGUAGE_CODE;
+//
+//			        if ( !get_option($temp_opt_name) ) { // if there are no options for this languages we take the en ones
+//				        $tem_val = get_option($this->args['opt_name']);
+//				        add_option( $temp_opt_name, $tem_val);
+//			        }
+//			        $this->args['opt_name'] = $temp_opt_name;
+//			        $this->args['is_wpml_version'] = true;
+//		        }
+//	        }
 
             // Options page
             add_action( 'admin_menu', array( &$this, '_internationalization' ) );
