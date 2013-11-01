@@ -66,6 +66,8 @@ if( !class_exists( 'ReduxFramework_editor' ) ) {
                 'textarea_name' => $this->args['opt_name'] . '[' . $this->field['id'] . ']', 
                 'editor_class'  => $this->field['class'],
 				'wpautop' => (isset($this->field['autop'])) ? $this->field['autop'] : true,
+                'textarea_rows' => 8,
+                'teeny' => true,
             );
 			
 			if (isset($this->field['height'])) {
