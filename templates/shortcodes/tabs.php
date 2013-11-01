@@ -23,7 +23,7 @@
         <?php
         if (!empty($contents) && isset($contents[1])) {
             foreach ($contents[1] as $key => $value) { ?>
-                <div class="tabs__pane <?php if ($key != 0) { echo 'hide'; } ?>" id="<?php echo $ui_tabs_keys[$key]; ?>">
+                <div class="tabs__pane <?php //if ($key != 0) { echo 'hide'; } ?>" id="<?php echo $ui_tabs_keys[$key]; ?>">
                     <?php echo $this->get_clean_content($value) ?>
                 </div>
             <?php }
