@@ -59,7 +59,7 @@
     .nav--main {
         li {
             @include transition(all .05s linear);
-            background-color: #262525;
+            // background-color: #262525;
 
             &:hover {
                 border-bottom-color: $accent;

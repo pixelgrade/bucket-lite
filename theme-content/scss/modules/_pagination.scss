@@ -2,14 +2,16 @@
     border: none;
     text-align: center;
     @include rem(margin, $_2u 0);
+    padding-left: 0;
 
-    .pagination-item--current span{
+    .pagination-item--current span {
         background-color: $accent;
         color: white;
         display: inline-block;
     }
 
     .pagination-item--prev, .pagination-item--next {
+
         a {
             &:before, &:after{
                 display: inline-block;
@@ -50,9 +52,10 @@
         }
     } 
 
-    li{
+    li {
         @include rem(margin-right, 2px);
-        a, span{
+
+        &:empty, a, span {
             @include rem(padding, $_u4 $_u2);
             color: black;
             @include font-size(16px);

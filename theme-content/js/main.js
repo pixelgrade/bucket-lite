@@ -517,6 +517,7 @@
 
 
     /* --- ORGANIC TABS --- */
+    // --- MODIFIED
     // https://github.com/CSS-Tricks/jQuery-Organic-Tabs
     (function($) {
 
@@ -565,7 +566,7 @@
                             base.$el.find(".tabs__nav li a").removeClass("current");
                             $newList.addClass("current");
                                 
-                        }, 100);
+                        }, 250);
                         
                     }   
                     
