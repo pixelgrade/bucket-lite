@@ -549,7 +549,7 @@
                     if ((listID != curList) && ( base.$el.find(":animated").length == 0)) {
                                                 
                         // Fade out current list
-                        base.$el.find("#"+curList).css({opacity: 0});
+                        base.$el.find("#"+curList).css({"opacity": 0, "z-index": 20});
                         
                         // Adjust outer wrapper to fit new list snuggly
                         var newHeight = base.$el.find("#"+listID).height();
@@ -559,7 +559,7 @@
                         setTimeout(function() {
                             
                             base.$el.find("#"+curList);
-                            base.$el.find("#"+listID).css({opacity: 1});
+                            base.$el.find("#"+listID).css({"opacity": 1, "z-index": 20});
                             
                             // Remove highlighting - Add to just-clicked tab
                             base.$el.find(".tabs__nav li a").removeClass("current");
