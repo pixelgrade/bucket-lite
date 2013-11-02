@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LENS - An Enjoyable Photography WordPress Theme\n"
 "POT-Creation-Date: 2013-11-01 17:11+0200\n"
-"PO-Revision-Date: 2013-11-01 17:21+0200\n"
+"PO-Revision-Date: 2013-11-02 19:35+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade & Central studio <contact@pixelgrade.com>\n"
 "Language: Italian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_xn;_ex;_nx_noop:1,2;"
 "translate_nooped_plural;_n:1,2;_nx:1,2\n"
 "X-Poedit-Basepath: .\n"
@@ -29,8 +29,8 @@ msgid ""
 "or maybe do a search?"
 msgstr ""
 "Questo può essere a causa di un errore di digitazione dell'URL, rinvio "
-"difettoso o out-of-date lista dei motori di ricerca. <br /> Si dovrebbe "
-"provare la <a href=\"%s\"> homepage </a> al posto o magari fare un ricerca?"
+"difettoso o out-of-date lista dei motori di ricerca.<br />Si dovrebbe "
+"provare la <a href=\"%s\"> homepage</a> al posto o magari fare un ricerca?"
 
 #: ../archive.php:28
 #, php-format
@@ -85,12 +85,12 @@ msgstr[1] "Ci sono <em>%1$s</em> commenti"
 #: ../comments.php:31
 #, fuzzy
 msgid "There are no comments"
-msgstr "Lascia un commento"
+msgstr "Non ci sono commenti"
 
 #: ../comments.php:35
 #, fuzzy
 msgid "Add yours"
-msgstr "Aggiungi altro"
+msgstr "Aggiungi il tuo"
 
 #: ../comments.php:44 ../comments.php:64
 msgid "Comment navigation"
@@ -111,7 +111,7 @@ msgstr "I commenti sono chiusi."
 #: ../comments.php:90 ../comments.php:104
 #, fuzzy
 msgid "Post a new comment"
-msgstr "Lascia un commento"
+msgstr "Invia un nuovo commento"
 
 #: ../comments.php:98 ../comments.php:113
 msgid "Send"
@@ -123,12 +123,12 @@ msgstr "Messaggio"
 
 #: ../footer.php:10 ../theme-content/admin-panel/redux-sections.php:246
 msgid "Footer"
-msgstr "Piè di pagina"
+msgstr "Footer"
 
 #: ../header.php:20
 #, fuzzy
 msgid "Primary Mobile Navigation"
-msgstr "Messaggio di navigazione"
+msgstr "Primary Mobile Navigation"
 
 #: ../index.php:23 ../theme-content/inc/vendor/acf/acf-config.php:641
 #: ../theme-content/inc/vendor/acf/acf-config.php:642
@@ -140,7 +140,7 @@ msgstr "Ultimi articoli"
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Pronto a pubblicare il tuo primo post? <A href=\" %1$s \"> Inizia qui </a>."
+"Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia qui</a>."
 
 #: ../no-results.php:7
 msgid ""
@@ -161,7 +161,7 @@ msgstr ""
 #: ../page.php:37 ../single.php:35 ../theme-callbacks/unsorted.php:79
 #, fuzzy
 msgid "j F, Y \\a\\t H:i"
-msgstr "M j, Y \\a\\t H:i"
+msgstr "j F, Y \\a\\t H:i"
 
 #: ../page.php:42
 msgid "Pages:"
@@ -183,7 +183,7 @@ msgstr "Risultati della ricerca per: %s"
 #: ../single.php:30
 #, fuzzy
 msgid "Untitled"
-msgstr "Titolo"
+msgstr "Senza titolo"
 
 #: ../single.php:35
 #, php-format
@@ -192,16 +192,16 @@ msgstr "su %s"
 
 #: ../single.php:71
 msgid "Good Things"
-msgstr "Good Things"
+msgstr "Cose buone"
 
 #: ../single.php:83
 msgid "Bad Things"
-msgstr "Bad Things"
+msgstr "Cose cattive"
 
 #: ../single.php:128
 #, fuzzy
 msgid "Categories"
-msgstr "Categorie Galleria"
+msgstr "Categorie"
 
 #: ../single.php:131 ../theme-content/inc/widgets.php:553
 #: ../theme-partials/acf-layouts/hero_posts_module.php:165
@@ -222,7 +222,7 @@ msgstr "Visualizza tutti gli articoli di %s"
 #: ../single.php:163
 #, fuzzy
 msgid "Previous Article"
-msgstr "Post precedente"
+msgstr "Articolo precedente"
 
 #: ../single.php:176
 msgid "Next Article"
@@ -236,7 +236,7 @@ msgstr "Tag Archives: %s"
 #: ../wpgrade-config.php:108 ../wpgrade-core/vendor/redux3/framework.php:1110
 #, fuzzy
 msgid "Default"
-msgstr "Per impostazione predefinita "
+msgstr "Predefinito"
 
 #: ../wpgrade-config.php:109 ../theme-content/inc/widgets.php:581
 #: ../theme-content/inc/vendor/acf/acf-config.php:387
@@ -244,12 +244,12 @@ msgstr "Per impostazione predefinita "
 #: ../theme-content/inc/vendor/acf/acf-config.php:543
 #, fuzzy
 msgid "Latest Posts"
-msgstr " Slider Ultimi Post"
+msgstr "Ultimi articoli"
 
 #: ../wpgrade-config.php:110
 #, fuzzy
 msgid "Slider + Latest Posts"
-msgstr " Slider Ultimi Post"
+msgstr "Slider + Ultimi articoli"
 
 #: ../wpgrade-config.php:178
 msgid "Previous (Left arrow key)"
@@ -271,12 +271,12 @@ msgstr "Precedente"
 #: ../theme-callbacks/activation-hooks.php:19
 #, fuzzy
 msgid "Settings"
-msgstr "Impostazioni del video"
+msgstr "Impostazioni"
 
 #: ../theme-callbacks/activation-hooks.php:26
 #, fuzzy
 msgid "Full Width Featured Image"
-msgstr "Slider A Larghezza Piena"
+msgstr "Full Width Featured Image"
 
 #: ../theme-callbacks/activation-hooks.php:27
 msgid "The featured image could be full width if you check this on"
@@ -287,7 +287,7 @@ msgstr ""
 #: ../theme-callbacks/activation-hooks.php:33
 #, fuzzy
 msgid "Mark as Featured Post"
-msgstr "Distaccato"
+msgstr "Mark as Featured Post"
 
 #: ../theme-callbacks/activation-hooks.php:34
 msgid "Is this post more important than others?"
@@ -296,7 +296,7 @@ msgstr "È questo il messaggio più importante di altre?"
 #: ../theme-callbacks/activation-hooks.php:40
 #, fuzzy
 msgid "Add to Category Slider"
-msgstr "Aggiungere Una Nuova Categoria Di Portfolio"
+msgstr "Aggiungi allo slider categoria"
 
 #: ../theme-callbacks/activation-hooks.php:41
 msgid "You can add this post to the category slider"
@@ -307,7 +307,7 @@ msgstr ""
 #: ../theme-callbacks/activation-hooks.php:47
 #, fuzzy
 msgid "Disable Sidebar"
-msgstr "Disabilitato"
+msgstr "Disabilitare barra laterale"
 
 #: ../theme-callbacks/activation-hooks.php:48
 msgid "You may want this post to be full width"
@@ -404,8 +404,8 @@ msgid ""
 "<h4>Theme Options</h4><p>This allows you to adjust the overall settings for "
 "your website.</p>"
 msgstr ""
-"<h4> Opzioni tema </ h4> <p> Questo consente di regolare le impostazioni "
-"generali per il vostro sito web. </ p>"
+"<h4>Opzioni tema</h4> <p>Questo consente di regolare le impostazioni "
+"generali per il vostro sito web.</p>"
 
 #: ../theme-content/admin-panel/redux-args.php:50
 msgid "Follow me on Twitter"
@@ -431,7 +431,7 @@ msgstr "Opzioni"
 #: ../theme-content/admin-panel/redux-sections.php:11
 #, fuzzy
 msgid "General"
-msgstr "Opzioni Generali"
+msgstr "Generali"
 
 #: ../theme-content/admin-panel/redux-sections.php:12
 #: ../theme-content/admin-panel/redux-sections.php:127
@@ -454,9 +454,8 @@ msgid ""
 "If there is no image uploaded, plain text will be used instead (generated "
 "from the site's name)."
 msgstr ""
-"Carica qui la tua immagine del logo (si consiglia un'altezza di 80-100px). "
-"Se non vi è alcuna immagine caricata, verrà utilizzato il testo (generato "
-"dal nome del sito)."
+"Se non vi è alcuna immagine caricata, testo verrà utilizzato (generato dal "
+"nome del sito)."
 
 #: ../theme-content/admin-panel/redux-sections.php:24
 msgid "Retina 2x Logo"
@@ -532,7 +531,7 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:77
 msgid "<h3>Typography</h3>"
-msgstr "<h3> Tipografia </ h3>"
+msgstr "<h3>Tipografia</h3>"
 
 #: ../theme-content/admin-panel/redux-sections.php:83
 msgid "Do you need custom web fonts?"
@@ -544,21 +543,21 @@ msgid ""
 "a> collection (with Live preview)."
 msgstr ""
 "Sfruttare l'enorme collezione di <a href=\"http://www.google.com/fonts/"
-"\">Google Fonts</ a> (con anteprima in diretta)."
+"\">Google Fonts</a> (con anteprima in diretta)."
 
 #: ../theme-content/admin-panel/redux-sections.php:95
 #, fuzzy
 msgid "Headings Font"
-msgstr "Font Principale"
+msgstr "Font di titoli"
 
 #: ../theme-content/admin-panel/redux-sections.php:106
 #, fuzzy
 msgid "Navigation Font"
-msgstr "Menu di navigazione"
+msgstr "Font di navigazione"
 
 #: ../theme-content/admin-panel/redux-sections.php:115
 msgid "Body Font"
-msgstr "Font Body"
+msgstr "Font di corpo"
 
 #: ../theme-content/admin-panel/redux-sections.php:116
 msgid "Font for content text and widget text."
@@ -567,7 +566,7 @@ msgstr "Font per il testo contenuto e widget di testo."
 #: ../theme-content/admin-panel/redux-sections.php:126
 #, fuzzy
 msgid "Article"
-msgstr "Post precedente"
+msgstr "Articolo"
 
 #: ../theme-content/admin-panel/redux-sections.php:132
 msgid "Show Share Links"
@@ -591,7 +590,7 @@ msgstr "Condividi Link su Google+ "
 
 #: ../theme-content/admin-panel/redux-sections.php:162
 msgid "<h3>Blog Archive</h3>"
-msgstr "<h3> Blog Archive </ h3>"
+msgstr "<h3>Blog Archive</h3>"
 
 #: ../theme-content/admin-panel/redux-sections.php:168
 msgid "Excerpt Length"
@@ -604,7 +603,7 @@ msgstr "Impostare il numero di parole per i posti estratto."
 #: ../theme-content/admin-panel/redux-sections.php:175
 #, fuzzy
 msgid "Excerpt \"More\" Text"
-msgstr "Estratto Lunghezza"
+msgstr "Estratto \"Altro\" testo"
 
 #: ../theme-content/admin-panel/redux-sections.php:176
 msgid ""
@@ -617,20 +616,18 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-sections.php:187
 #, fuzzy
 msgid "Header"
-msgstr "Menu Header"
+msgstr "Header"
 
 #: ../theme-content/admin-panel/redux-sections.php:188
 #: ../theme-content/admin-panel/redux-sections.php:247
 #, fuzzy
 msgid "Change footer related options from here."
-msgstr ""
-"<p class=\"description\"> Cambia le opzioni relative alla sidebar da qui. </"
-"p>"
+msgstr "Modifica footer opzioni correlate da qui."
 
 #: ../theme-content/admin-panel/redux-sections.php:193
 #, fuzzy
 msgid "Header Type"
-msgstr "Menu Header"
+msgstr "Tipo di intestazione"
 
 #: ../theme-content/admin-panel/redux-sections.php:194
 msgid "Choose the layout for the header area."
@@ -639,7 +636,7 @@ msgstr "Scegli il layout per l'area di intestazione."
 #: ../theme-content/admin-panel/redux-sections.php:205
 #, fuzzy
 msgid "Header Ad Code"
-msgstr "Header Sidebar"
+msgstr "Header Ad Code"
 
 #: ../theme-content/admin-panel/redux-sections.php:206
 msgid ""
@@ -659,11 +656,12 @@ msgid ""
 "Inverse the contrast of the header top navigation bar (black text on white "
 "background)."
 msgstr ""
-"Modificare il contrasto della sidecar sinistra: testo nero, sfondo bianco."
+"Inverso il contrasto della testata barra di navigazione superiore (testo "
+"nero su sfondo bianco)."
 
 #: ../theme-content/admin-panel/redux-sections.php:220
 msgid "Header Main Nav Inverse"
-msgstr "Intestazione principale Nav Inverse"
+msgstr "Header Main Nav Inverse"
 
 #: ../theme-content/admin-panel/redux-sections.php:221
 msgid ""
@@ -676,7 +674,7 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-sections.php:227
 #, fuzzy
 msgid "Show Header Social Icons"
-msgstr "Icone Social"
+msgstr "Mostra intestazione Social Icons"
 
 #: ../theme-content/admin-panel/redux-sections.php:228
 msgid ""
@@ -714,12 +712,12 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-sections.php:271
 #, fuzzy
 msgid "Social and SEO"
-msgstr "Social e Opzioni SEO"
+msgstr "Social e SEO"
 
 #: ../theme-content/admin-panel/redux-sections.php:273
 #, fuzzy
 msgid "Social sharing stuff."
-msgstr "<p class=\"description\">Cose Social sharing.</p>"
+msgstr "Roba di Social sharing."
 
 #: ../theme-content/admin-panel/redux-sections.php:278
 msgid "Social Icons"
@@ -845,7 +843,7 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:370
 msgid "Facebook Application ID"
-msgstr "ID Applicazione Facebook"
+msgstr "Facebook Application ID"
 
 #: ../theme-content/admin-panel/redux-sections.php:371
 msgid ""
@@ -873,7 +871,7 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:384
 msgid "Google+ Publisher"
-msgstr "Editore Google+"
+msgstr "Google+ Publisher"
 
 #: ../theme-content/admin-panel/redux-sections.php:385
 msgid ""
@@ -885,7 +883,7 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:391
 msgid "Twitter Site Username"
-msgstr "Nome Utente Sito Twitter"
+msgstr "Twitter Site Username"
 
 #: ../theme-content/admin-panel/redux-sections.php:392
 msgid ""
@@ -960,7 +958,7 @@ msgstr "Oauth Access Token Secret"
 #: ../theme-content/admin-panel/redux-sections.php:452
 #, fuzzy
 msgid "Custom Code"
-msgstr "Stile CSS Personalizzato"
+msgstr "Custom Code"
 
 #: ../theme-content/admin-panel/redux-sections.php:453
 msgid ""
@@ -988,17 +986,17 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-sections.php:466
 #, fuzzy
 msgid "Apply Custom CSS"
-msgstr "Stile CSS Personalizzato"
+msgstr "Applicare CSS personalizzato"
 
 #: ../theme-content/admin-panel/redux-sections.php:467
 #, fuzzy
 msgid "Select how to insert the custom CSS into your site."
-msgstr "Come iniettare il CSS personalizzato"
+msgstr "Selezionare come inserire il CSS personalizzato nel tuo sito."
 
 #: ../theme-content/admin-panel/redux-sections.php:474
 #, fuzzy
 msgid "Custom JavaScript (header)"
-msgstr " JavaScript Personalizzato"
+msgstr " JavaScript Personalizzato (header)"
 
 #: ../theme-content/admin-panel/redux-sections.php:475
 #, fuzzy
@@ -1012,7 +1010,7 @@ msgstr ""
 #: ../theme-content/admin-panel/redux-sections.php:481
 #, fuzzy
 msgid "Custom JavaScript (footer)"
-msgstr " JavaScript Personalizzato"
+msgstr " JavaScript Personalizzato (footer)"
 
 #: ../theme-content/admin-panel/redux-sections.php:482
 #, fuzzy
@@ -1035,16 +1033,16 @@ msgid ""
 "Let us notify you when new versions of this theme are live on ThemeForest! "
 "Update with just one button click. Forget about manual updates!"
 msgstr ""
-"<p class=\"description\"> Ti informeremo quando le nuove versioni di questo "
-"tema sono disponibili su ThemeForest! Aggiornare con un solo clic del "
-"pulsante. Dimenticate gli aggiornamenti manuali!</p>"
+"Ti informeremo quando le nuove versioni di questo tema sono in diretta su "
+"ThemeForest! Aggiornare con un solo clic del pulsante. Dimenticate gli "
+"aggiornamenti manuali!"
 
 #: ../theme-content/admin-panel/redux-sections.php:498
 msgid ""
 "<h3>Theme Auto Update</h3>\n"
 "\t\t\t\t<p class=\"description\">"
 msgstr ""
-"<h3>Tema Auto Update</h3>\n"
+"<h3>Theme Auto Update</h3>\n"
 "\t\t\t\t<p class=\"description\">"
 
 #: ../theme-content/admin-panel/redux-sections.php:505
@@ -1060,7 +1058,7 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:512
 msgid "ThemeForest Username"
-msgstr "Nome utente ThemeForest"
+msgstr "ThemeForest Username"
 
 #: ../theme-content/admin-panel/redux-sections.php:513
 msgid ""
@@ -1115,7 +1113,7 @@ msgid ""
 "<h3>Import Demo Data</h3>\n"
 "\t\t\t\t<p class=\"description\">"
 msgstr ""
-"<h3>Importa dati demo</h3>\n"
+"<h3>Import Demo Data</h3>\n"
 "\t\t\t\t<p class=\"description\">"
 
 #: ../theme-content/admin-panel/redux-sections.php:548
@@ -1130,8 +1128,8 @@ msgid ""
 "You will be notified as soon as the import has finished!"
 msgstr ""
 "Attendere qualche minuto per favore (tra 2 e 5 minuti di solito, ma a "
-"seconda di hosting si può richiedere più tempo) e <strong> non ricaricare la "
-"pagina </ strong>. Sarete avvisati non appena l'importazione è terminata!"
+"seconda di hosting si può richiedere più tempo) e <strong>non ricaricare la "
+"pagina</strong>. Sarete avvisati non appena l'importazione è terminata!"
 
 #: ../theme-content/admin-panel/redux-sections.php:571
 msgid "Help and Support"
@@ -1149,7 +1147,7 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-tabs.php:29
 msgid "<strong>Theme URL:</strong> "
-msgstr "<strong> URL Tema: </strong> "
+msgstr "<strong> URL Tema: </strong>"
 
 #: ../theme-content/admin-panel/redux-tabs.php:34
 msgid "<strong>Author:</strong> "
@@ -1173,7 +1171,7 @@ msgstr "Pingback:"
 
 #: ../theme-content/inc/template-tags.php:26
 msgid "(Edit)"
-msgstr "(Edit)"
+msgstr "(Modifica)"
 
 #: ../theme-content/inc/template-tags.php:36
 #, php-format
@@ -1183,11 +1181,11 @@ msgstr "%s"
 #: ../theme-content/inc/widgets.php:11
 #, fuzzy
 msgid "Main Right Sidebar"
-msgstr "Principale Sidebar"
+msgstr "Principale barra laterale destra"
 
 #: ../theme-content/inc/widgets.php:12
 msgid "Main Sidebar"
-msgstr "Principale Sidebar"
+msgstr "Principale barra laterale"
 
 #: ../theme-content/inc/widgets.php:22
 msgid "Footer | First Row [1]"
@@ -1208,7 +1206,7 @@ msgstr "Footer | prima riga [3]"
 
 #: ../theme-content/inc/widgets.php:55
 msgid "Footer | Second Row [1]"
-msgstr "Piè di pagina | Seconda fila [1]"
+msgstr "Footer | Seconda fila [1]"
 
 #: ../theme-content/inc/widgets.php:56
 msgid "Widgets in this area will have 2/3rd the width of the footer."
@@ -1216,22 +1214,22 @@ msgstr "Widget in questo settore hanno 2/3RD la larghezza del piè di pagina."
 
 #: ../theme-content/inc/widgets.php:66
 msgid "Footer | Second Row [2]"
-msgstr "Piè di pagina | Seconda fila [2]"
+msgstr "Footer | Seconda fila [2]"
 
 #: ../theme-content/inc/widgets.php:89
 #, fuzzy
 msgid "The latest comments"
-msgstr "Lascia un commento"
+msgstr "Gli ultimi commenti"
 
 #: ../theme-content/inc/widgets.php:90
 #, fuzzy
 msgid "Latest Comments"
-msgstr "Lascia un commento"
+msgstr "Ultimi commenti"
 
 #: ../theme-content/inc/widgets.php:120
 #, fuzzy
 msgid "Recent Comments"
-msgstr "Raccomandato"
+msgstr "Commenti recenti"
 
 #: ../theme-content/inc/widgets.php:181 ../theme-content/inc/widgets.php:586
 #: ../theme-content/inc/widgets.php:1033
@@ -1241,7 +1239,7 @@ msgstr "Titolo:"
 #: ../theme-content/inc/widgets.php:184
 #, fuzzy
 msgid "Number of comments to show:"
-msgstr "Numero di post:"
+msgstr "Numero di commenti da mostrare:"
 
 #: ../theme-content/inc/widgets.php:197 ../theme-content/inc/widgets.php:254
 msgid "Latest Reviews"
@@ -1264,12 +1262,12 @@ msgstr "Titolo"
 #: ../theme-content/inc/widgets.php:261
 #, fuzzy
 msgid "Number of reviews to show:"
-msgstr "Numero di post:"
+msgstr "Numero delle recensioni per mostrare:"
 
 #: ../theme-content/inc/widgets.php:274
 #, fuzzy
 msgid "Social Links"
-msgstr "Link Social"
+msgstr "Social Links"
 
 #: ../theme-content/inc/widgets.php:274
 msgid "Display the social links defined in the theme's options"
@@ -1282,7 +1280,7 @@ msgstr "Siamo Social"
 #: ../theme-content/inc/widgets.php:323
 #, fuzzy
 msgid "Dribbble Widget"
-msgstr " Dribbble Widget"
+msgstr "Dribbble Widget"
 
 #: ../theme-content/inc/widgets.php:323
 msgid "Display Dribbble images in your sidebar or footer"
@@ -1290,11 +1288,11 @@ msgstr "Visualizzare le immagini Dribbble nella tua sidebar o piè di pagina"
 
 #: ../theme-content/inc/widgets.php:372
 msgid "Dribbble shots"
-msgstr "Scatti Dribbble"
+msgstr "Dribbble shots"
 
 #: ../theme-content/inc/widgets.php:382
 msgid "Dribbble username"
-msgstr "Dribbble nome utente"
+msgstr "Dribbble username"
 
 #: ../theme-content/inc/widgets.php:386 ../theme-content/inc/widgets.php:820
 msgid "Number of images"
@@ -1303,7 +1301,7 @@ msgstr "Numero di immagini"
 #: ../theme-content/inc/widgets.php:397
 #, fuzzy
 msgid "Contact Widget"
-msgstr " Widget Contatto"
+msgstr "Contact Widget"
 
 #: ../theme-content/inc/widgets.php:397
 msgid "Display your contact information"
@@ -1335,20 +1333,20 @@ msgstr "Collegamento"
 #: ../theme-content/inc/widgets.php:505
 #, fuzzy
 msgid "Latest Posts Slider"
-msgstr " Slider Ultimi Post"
+msgstr "Slider Ultimi articoli"
 
 #: ../theme-content/inc/widgets.php:505
 msgid "Display the latest blog posts in your sidebar or footer"
-msgstr "Mostra gli ultimi post del blog nella tua sidecar o piè di pagina"
+msgstr "Mostra gli ultimi post del blog nella tua sidecar o footer"
 
 #: ../theme-content/inc/widgets.php:592 ../theme-content/inc/widgets.php:1037
 msgid "Number of posts:"
-msgstr "Numero di post:"
+msgstr "Numero di articoli:"
 
 #: ../theme-content/inc/widgets.php:607
 #, fuzzy
 msgid "Flickr Widget"
-msgstr " Flickr Widget"
+msgstr "Flickr Widget"
 
 #: ../theme-content/inc/widgets.php:607
 msgid ""
@@ -1373,12 +1371,12 @@ msgstr "Nome utente o RSS url"
 
 #: ../theme-content/inc/widgets.php:816
 msgid "Tags"
-msgstr "Tag"
+msgstr "Tags"
 
 #: ../theme-content/inc/widgets.php:833
 #, fuzzy
 msgid "Twitter Widget"
-msgstr " Twitter Widget"
+msgstr "Twitter Widget"
 
 #: ../theme-content/inc/widgets.php:833
 msgid "Display Latest Tweets"
@@ -1390,7 +1388,7 @@ msgstr "Tweets"
 
 #: ../theme-content/inc/widgets.php:912
 msgid "Twitter username"
-msgstr "Twitter nome utente"
+msgstr "Twitter username"
 
 #: ../theme-content/inc/widgets.php:916
 msgid "Number of tweets"
@@ -1410,7 +1408,7 @@ msgstr ""
 
 #: ../theme-content/inc/widgets.php:1013
 msgid "Popular Posts"
-msgstr "Post più popolari"
+msgstr "Articoli più popolari"
 
 #: ../theme-content/inc/widgets.php:1043
 msgid ""
@@ -1419,7 +1417,7 @@ msgid ""
 "connected. It also requires the Jetpack Stats module to be enabled."
 msgstr ""
 "Popolare scheda Messaggi richiede il <a href=\"http://wordpress.org/extend/"
-"plugins/jetpack/\" target=\"_blank\"> Jetpack plug </ a> per essere attivato "
+"plugins/jetpack/\" target=\"_blank\">Jetpack plugin</a> per essere attivato "
 "e connesso. Si richiede anche il modulo Jetpack Stats sia abilitato."
 
 #: ../theme-content/inc/widgets.php:1059
@@ -1443,8 +1441,8 @@ msgid ""
 "<a href=\"http://wordpress.org/extend/plugins/jetpack/\" target=\"_blank"
 "\">Jetpack plugin</a> with Stats module needs to be enabled."
 msgstr ""
-"se si href=\"http://wordpress.org/extend/plugins/jetpack/\" target=\"_blank"
-"\"> Jetpack plug </ a> con il modulo Statistiche è necessario attivare."
+"<a href=\"http://wordpress.org/extend/plugins/jetpack/\" target=\"_blank"
+"\">Jetpack plugin</a> con il modulo Statistiche è necessario attivare."
 
 #: ../theme-content/inc/widgets.php:1123
 msgid "Sorry. No data yet."
