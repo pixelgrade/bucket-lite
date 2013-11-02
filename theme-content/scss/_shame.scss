@@ -125,14 +125,10 @@ img[width], img[height] {
 
 
 .post-nav {
-    @extend .grid;
     position: relative;
 }
 
 .post-nav-link {
-    @extend .grid__item;
-    @extend .one-half;
-    position: relative;
     @include rem(padding-right, $_u);
     @include rem(padding-left, $_2u);
 
@@ -235,12 +231,6 @@ img[width], img[height] {
     }
 }
 
-.score__pros,
-.score__cons {
-    @extend .grid__item;
-    @extend .three-eighths;
-}
-
 .score__pros__title,
 .score__cons__title {
     color: $red;
@@ -248,6 +238,7 @@ img[width], img[height] {
     @include rem(margin-bottom, $_u2);
 
     .hN {
+        margin-top: 0;
         @include rem(margin-bottom, $_u2);
     }
 }
@@ -263,7 +254,7 @@ img[width], img[height] {
     display: inline-block;
 }
 
-@include media(to lap) {
+@include media-query(palm) {
     .content--404{
         @include rem(margin-bottom, $_2u);
     }
@@ -274,4 +265,11 @@ img[width], img[height] {
     color: #bbb;
     @include rem(margin-top, $_u);
     @include font-size(16px);
+}
+
+/**
+ * Arrows need to be offset so .pixslider must have overflow visible
+ */
+.pixslider{
+    overflow: visible;
 }

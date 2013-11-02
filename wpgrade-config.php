@@ -100,7 +100,7 @@
 
 		'shortcodes' => array
 			(
-                 'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'TeamMember', 'Separator', 'ProgressBar', 'Slider'
+                 'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'Separator', 'Slider'
 			),
 	
 		'megamenu_layouts' => array
@@ -172,6 +172,7 @@
 						array
 							(
 								'ajaxurl' => admin_url('admin-ajax.php'),
+								'sharrre_urlCurl' => get_template_directory_uri().'/theme-content/js/sharrre.php',
 								'objectl10n' => array
 									(
 										'tPrev' => __('Previous (Left arrow key)', 'bucket_txtd'),

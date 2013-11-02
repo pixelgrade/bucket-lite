@@ -117,9 +117,16 @@ class bucket
 
 	/** Limit words for a string */
 
-	static function limit_words($string, $word_limit) {
+	static function limit_words($string, $word_limit, $more_text = ' [&hellip;]') {
 		$words = explode(" ",$string);
-		return implode(" ",array_splice($words,0,$word_limit));
+		$output = implode(" ",array_splice($words,0,$word_limit));
+		
+		//check fi we actually cut something
+		if (count($words) > $word_limit) {
+			$output .= $more_text;
+		}
+		
+		return $output;
 	}
 
 	/**

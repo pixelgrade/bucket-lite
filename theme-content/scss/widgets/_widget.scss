@@ -66,6 +66,24 @@
 
 
 
+/*----------------------------------------*\
+    $SEARCH
+\*----------------------------------------*/
+.widget_search{
+    .form-search{
+        width: 100%;
+        @include rem(height, 36px);
+    }
+
+    .search-query{
+ 
+    }
+}
+
+
+
+
+
 /*-----------------------------------------*\
                WIDGET NAV MENU
 \*-----------------------------------------*/
@@ -149,28 +167,6 @@
 }
 
 .widget {
-
-    // .form-search {
-    //     position: relative;
-    // }
-
-    // .search-query {
-    //     width: 100%;
-    //     @include font-size(14px);
-    //     @include rem(padding, $_u4);
-    //     @include rem(padding-right, $_2u + $_u4);
-    //     border: 1px solid #ddd;
-    // }
-
-    // .search-submit {
-    //     position: absolute;
-    //     top: 0; right: 0;
-    //     border: 1px solid $dark;
-    //     @include font-size(14px);
-    //     @include rem(width, $_2u);
-    //     @include rem(padding, $_u4);
-    //     text-align: center;
-    // }
 
     select {
         width: 100%;

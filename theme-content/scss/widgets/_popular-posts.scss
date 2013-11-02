@@ -9,48 +9,13 @@
     .widget__title {
         margin-bottom: 0;
     }
+
+    .tabs__content {
+        @include rem(margin-bottom, $_u2);
+        @include rem(margin-right, -$_u);
+    }
 }
 
 .popular-posts__time {
-    @extend .nav;
-    @extend .nav--fit;
-    @include rem(padding, $_u4 $_u);
-    color: white;
-    background: $dark;
-    text-transform: uppercase;
-    font-family: $heading-font-family;
-    @include rem(font-size, 13px);
-    @include rem(margin-bottom, $_u);
-
-    a {
-        color: white;
-        text-decoration: none;
-
-        &.current, &:hover {
-            color: $red;
-        }
-    }
-}
-
-.tabs__content {
-    position: relative;
-    min-height: 1px;
-    @include transition(height .3s ease-in-out);
-    overflow: hidden;
-    @include rem(margin-bottom, $_u2);
-    @include rem(margin-right, -$_u);
-}
-
-.tabs__pane {
-    position: absolute;
-    @include transition(opacity .3s ease-in-out);
-    -webkit-backface-visibility: hidden;
-    @include translate3d(0,0,0);
-    @include rem(margin-right, $_u);
-    z-index: 20;
-
-    &.hide {
-        opacity: 0;
-        z-index: 10;
-    }
+    @extend .tabs__nav;
 }

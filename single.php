@@ -24,7 +24,6 @@ get_header(); ?>
         <div class="grid__item  main  float--left  <?php echo $content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
-
                 <?php if (get_the_title()): ?>
                     <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <?php else: ?>
@@ -35,6 +34,21 @@ get_header(); ?>
                     <?php printf('<div class="article__author-name">%s</div>', get_the_author_link()) ?>
                     <time class="article__time" datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s', wpgrade::textdomain()),get_the_time(__('j F, Y \a\t H:i', wpgrade::textdomain()))); ?></time>
                 </div>
+
+                <?php if ( bucket::has_average_score() && get_field('placement') == ('before') ) { ?>
+                    <div class="three-eighths  lap-and-up-two-eighths">
+                        <div class="score__average-wrapper">
+                            <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
+                                <?php
+                                    echo bucket::get_average_score();
+                                    if (get_field('note')) {
+                                        echo '<div class="score__note">'.get_field('note').'</div>';
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
 
                 <?php
 		        the_content();
@@ -50,9 +64,9 @@ get_header(); ?>
 		        );
 		        wp_link_pages( $args ); ?>
 
-                <div class="grid">
-                    <div class="grid__item two-eighths">
-                        <?php if ( bucket::has_average_score() ) { ?>
+                <div class="grid"><!--
+                    <?php if ( bucket::has_average_score() && get_field('placement') == ('after') ) { ?>
+                     --><div class="grid__item  three-eighths  lap-and-up-two-eighths">
                             <div class="score__average-wrapper">
                                 <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
                                     <?php
@@ -63,35 +77,39 @@ get_header(); ?>
                                     ?>
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div><!--
-                 --><?php if (get_field('enable_pros_cons_lists')):
-                        if (get_field('pros_list')): ?><!--
-                         --><div class="score__pros">
-                                <div class="score__pros__title">
-                                    <h3 class="hN"><?php _e('Good Things', wpgrade::textdomain()); ?></h3>
-                                </div>
-                                <ul class="score__pros__list">
-                                    <?php while(has_sub_fields('pros_list')): ?>
-                                        <li class="score_pro"><?php echo get_sub_field('pros_note'); ?></li>      
-                                    <?php endwhile; ?>
-                                </ul>
-                            </div><!--
-                        <?php endif;
-                        if (get_field('cons_list')): ?>
-                         --><div class="score__cons">
-                                <div class="score__cons__title">
-                                    <h3 class="hN"><?php _e('Bad Things', wpgrade::textdomain()); ?></h3>
-                                </div>
-                                <ul class="score__cons__list">
-                                    <?php while(has_sub_fields('cons_list')): ?>
-                                        <li class="score__con"><?php echo get_sub_field('cons_note'); ?></li>      
-                                    <?php endwhile; ?>
-                                </ul>
+                        </div><!--
+                    <?php }
+                    if (get_field('enable_pros_cons_lists')): ?>
+                     --><div class="grid__item  five-eighths  lap-and-up-six-eighths">
+                            <div class="grid">
+                                <?php if (get_field('pros_list')): ?><!--
+                                 --><div class="score__pros  grid__item  lap-and-up-one-half">
+                                        <div class="score__pros__title">
+                                            <h3 class="hN"><?php _e('Good Things', wpgrade::textdomain()); ?></h3>
+                                        </div>
+                                        <ul class="score__pros__list">
+                                            <?php while(has_sub_fields('pros_list')): ?>
+                                                <li class="score_pro"><?php echo get_sub_field('pros_note'); ?></li>      
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    </div><!--
+                                <?php endif;
+                                if (get_field('cons_list')): ?>
+                                 --><div class="score__cons  grid__item  lap-and-up-one-half">
+                                        <div class="score__cons__title">
+                                            <h3 class="hN"><?php _e('Bad Things', wpgrade::textdomain()); ?></h3>
+                                        </div>
+                                        <ul class="score__cons__list">
+                                            <?php while(has_sub_fields('cons_list')): ?>
+                                                <li class="score__con"><?php echo get_sub_field('cons_note'); ?></li>      
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                        <?php endif; ?>
+                        </div><!--
                     <?php endif; ?>
-                </div>
+                --></div>
 
                 <?php
 				if (get_field('enable_review_score')):
@@ -109,20 +127,18 @@ get_header(); ?>
 						<?php endwhile; ?>
 						<hr class="separator  separator--subsection">
 					<?php endif;
-				endif;
-				?>
+				endif; ?>
 
                 <div class="article__meta  article--single__meta">
                     <?php
-                        if (get_field('credits')):
-                            while (has_sub_field('credits')): ?>
-                                <div class="btn-list">
-                                    <div class="btn  btn--small  btn--secondary"><?php echo get_sub_field('name'); ?></div>
-                                    <a href="<?php echo get_sub_field('full_url'); ?>" class="btn  btn--small  btn--primary"><?php echo get_sub_field('label'); ?></a>
-                                </div>
-                            <?php endwhile;
-                        endif;
-                    ?>
+                    if (get_field('credits')):
+                        while (has_sub_field('credits')): ?>
+                            <div class="btn-list">
+                                <div class="btn  btn--small  btn--secondary"><?php echo get_sub_field('name'); ?></div>
+                                <a href="<?php echo get_sub_field('full_url'); ?>" class="btn  btn--small  btn--primary"><?php echo get_sub_field('label'); ?></a>
+                            </div>
+                        <?php endwhile;
+                    endif; ?>
 					
 					<?php 
 					$categories = get_the_category();
@@ -130,14 +146,12 @@ get_header(); ?>
                     <div class="btn-list">
                         <div class="btn  btn--small  btn--secondary"><?php _e('Categories', wpgrade::textdomain()) ?></div>
                         <?php
-							foreach ($categories as $category):
-								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
-							endforeach;
-                        ?>
+						foreach ($categories as $category):
+							echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+						endforeach; ?>
                     </div>
-					<?php endif; ?>
-					
-					<?php
+					<?php endif;
+
 					$tags = get_the_tags();
                     if ($tags): ?>
                     <div class="btn-list">
@@ -150,7 +164,7 @@ get_header(); ?>
                     </div>
 					<?php endif; ?>
                 </div>
-				
+				<?php get_template_part('theme-partials/post-templates/share-box'); ?>
 				<?php get_template_part( 'author-bio' ); ?>
 
                 <hr class="separator  separator--subsection">
@@ -160,8 +174,8 @@ get_header(); ?>
 				$prev_post = get_previous_post();
 				if (!empty($prev_post) || !empty($next_post)): ?>
 				
-				<nav class="post-nav">
-					<div class="post-nav-link  post-nav-link--prev">
+				<nav class="post-nav  grid">
+					<div class="post-nav-link  post-nav-link--prev  grid__item  one-half">
 						<?php if (!empty($prev_post)): ?>
 							<a href="<?php echo get_permalink($prev_post->ID); ?>">
 								<div class="post-nav-link__label">
@@ -174,7 +188,7 @@ get_header(); ?>
 						<?php endif; ?>
 					</div><!-- 
 				 --><div class="divider--pointer"></div><!--
-				 --><div class="post-nav-link  post-nav-link--next">
+				 --><div class="post-nav-link  post-nav-link--next  grid__item  one-half">
 						<?php if (!empty($next_post)): ?>
 							<a href="<?php echo get_permalink($next_post->ID); ?>">
 								<div class="post-nav-link__label">
@@ -194,11 +208,10 @@ get_header(); ?>
 				
                 <?php
                 // If comments are open or we have at least one comment, load up the comment template
-                    if ( comments_open() || '0' != get_comments_number() )
-                        comments_template();
-                ?>
-            <?php endwhile; ?>
+                if ( comments_open() || '0' != get_comments_number() )
+                    comments_template();
 
+	        endwhile; ?>
         </div><!--
         
         <?php if ($disable_sidebar != 'on'): ?>

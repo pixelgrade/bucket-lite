@@ -65,7 +65,7 @@ return array
 			),
 
 		// enable the import/export feature
-//		'show_import_export' => false, # default: true
+		'show_import_export' => false, # default: true
 
 		// Set the icon for the import/export tab.
 		// If 'icon_type' => 'image', this should be the path to the icon.
@@ -90,6 +90,14 @@ return array
 
 		// Set a custom page slug for options page (wp-admin/themes.php?page=***).
 		'page_slug' => wpgrade::shortname().'_options', # default: redux_options
+
+		/**
+		 * You can choose to have separate options for each language.
+		 * for example for english you can chose a background color and for french another
+		 * Note: Keep in mind that this option will create a total separate set of options for each language.
+		 *       This means that if you change an option on english it will not be changed for other languages.
+		 */
+		'wpml_separate_options' => true, // default: false
 
 		// set a custom page capability
 //		'page_cap' => 'manage_options', # default: manage_options

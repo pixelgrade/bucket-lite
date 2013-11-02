@@ -36,7 +36,7 @@ $use-media           : true;
 $use-split           : true; 
 
 $responsive          : true;
-$lap-start           : 769px;
+$lap-start           : 900px;
 $desk-start          : 1024px; 
 $desk-wide-start     : 1366px; 
 
@@ -74,14 +74,13 @@ $EntypoPath: "../fonts/entypo2";
 
 
 
-
 /*------------------------------------*\
     $GREEDY
 \*------------------------------------*/
 
-$greedy-breakpoints : 600px small 900px hand 1200px lap 1880px desk;
-$greedy-columns     : 12;
-$greedy-gutter      : $base-spacing-unit;
+// $greedy-breakpoints : 600px small 900px hand 1200px lap 1880px desk;
+// $greedy-columns     : 12;
+// $greedy-gutter      : $base-spacing-unit;
 
 
 
@@ -112,7 +111,7 @@ $_8u   : 8 * $_u; // 192px
 
 // VENDOR
 @import "vendor/royalslider";
-@import "vendor/greedy";
+// @import "vendor/greedy";
 
 // UTILITIES
 @import "easings";
@@ -127,8 +126,10 @@ $_8u   : 8 * $_u; // 192px
 @import "typography";
 
 // SHORTCODES
+@import "shortcodes/grid";
 @import "shortcodes/icon";
 @import "shortcodes/separators";
+@import "shortcodes/tabs";
 
 // COMPONENTS
 @import "components/header";
@@ -140,11 +141,6 @@ $_8u   : 8 * $_u; // 192px
 @import "components/tweet";
 @import "components/comments";
 @import "components/headings"; 
-
-//MODULES
-@import "modules/search-form";
-@import "modules/social-links";
-@import "modules/pagination";
 
 
 // WIDGETS
@@ -164,6 +160,12 @@ $_8u   : 8 * $_u; // 192px
 
 //PAGES
 @import "single";
+
+//MODULES
+@import "modules/search-form";
+@import "modules/social-links";
+@import "modules/pagination";
+@import "modules/slider-arrows";
 
 // SHAMELESS SHAME
 @import "shame";

@@ -2,8 +2,24 @@
                HEADER
 \*--------------------------------*/
 
-.site-header {
-    @include rem(height, $_6u);
+@include media-query(palm) {
+    .site-header{
+        @include rem(height, 3* $_u);
+    }
+}
+@include media-query(lap-and-up) {
+    .site-header{
+        @include rem(height, 6 * $_u);
+    }
+}
+
+//The header had position: absolute
+//and it is followerd by .container--main.
+//The padding prevents them from overlapping
+@include media-query(palm) {
+    .container--main{
+        @include rem(padding-top, 4*$_u);
+    }
 }
 
 
@@ -13,18 +29,6 @@
 /*----------------------------------------*\
     $TITLE/LOGO
 \*----------------------------------------*/
-@include media-query(lap-and-up) {
-    .site-home-title{
-        @include rem(height, $_6u);    
-        display: table;
-        margin-bottom: 0;
-    }
-
-    .site-home-link{
-        display: table-cell;
-        vertical-align: middle;
-    }
-}
 
 .site-home-link{
     img{
@@ -39,37 +43,40 @@
     $HEADER BAR(SIDEBAR)
 \*----------------------------------------*/
 .header-bar{
-    @include rem(margin-top, $_2u);
     > li{
         vertical-align: top;
+    }
+
+    .form-search{
+        @include rem(width, 9*$_u);        
     }
 
     .search-query{
         // rem does not work properly
         // @include rem(height, $_2u);
-        height: 48px;
-        @include rem(padding, 0 $_u);
+        height: 37px;
+        right: 37px;
+        @include rem(padding, 6px 0 6px $_u2);
         background-color: $dark;
         border: 0;
-        color: $light;
+        color: white;
         text-transform: uppercase;
         @include rem(letter-spacing, 2px);
     }
 
     .search-submit{
-        @include rem(height, $_2u);
-        @include rem(padding, $_u2);
+        height: 37px;
+        width: 37px;
         vertical-align: top;
         background-color: $dark;
         @include font-size(0.75*$_u);
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
 
 .social-icon-link{
-    .header--type1 &{
-        @include font-size(24px);
-    }
 
     .header--type2 &,
     .header--type3 &{
@@ -81,36 +88,38 @@
     margin: 0;
 
     .search-query{
-        height: auto;
-        line-height: 36px;
+        @include rem(height, 36px);
+        line-height: 1.2;
+        padding-right: 0 !important;
     }
 
     .search-submit{
-        height: auto;
-        line-height: 34px;
+        @include rem(height, 36px);
         padding-top: 0;
         padding-bottom: 0;
+
+        i{
+            @include font-size(15px);
+        }
     }
     
     .social-icon-link {
-        height: auto;
+        @include rem(height, 36px);
+        @include rem(width, 36px);
     }
 }
 
-@include media-query(lap-and-up) {
+.header-ad-link{
+    display: block;
+    text-align: right;
+}
+
+@include media-query(palm) {
     .header-ad{
         display: none;
     }
 }
 
-.header-ad{
-    @include rem(margin-top, 1.15*$_u);
-    text-align: right;
-}
-
-.header-ad-link{
-    display: block;
-}
 
 //There's a grid in top navigation.
 //Each item in the grid has a padding-left of $_u.
@@ -119,13 +128,13 @@
     @include rem(margin-left, -$_u);
 } 
 
-.header--type3{
-    .site-home-title{
-        width: 100%;
-    }
 
-    .site-home-link{
-        text-align: center;
+@include media-query(lap-and-up) {
+    .header--type3{
+        .site-home-title{
+            width: 100%;
+            text-align: center;
+        }
     }
 }
 
@@ -138,118 +147,211 @@
 
 
 
+//Only on bigger screens the inverse styles 
+//will be visible
+@include media-query(lap-and-up) {
+    
+    /*----------------------------------------*\
+        $TOP NAV INVERSE
+    \*----------------------------------------*/
+    .nav-inverse-top{
 
-
-/*----------------------------------------*\
-    $TOP NAV INVERSE
-\*----------------------------------------*/
-.nav-inverse-top{
-    .navigation--top{
-        background: none;
-
-        a {
-            color: black;
+        .navigation--top{
             background: none;
-        }        
-    }
 
-    .site-navigation__sub-menu{
-        background: white;
-
-        li{
-            @include rem(margin-left, -$_u);
+            a {
+                color: #888;
+            }
         }
-    }
 
-    .sub-menu, .sub-menu--mega{
-        background-color: white;        
-    }
-}
+        .nav--top {
 
-
-
-
-
-/*----------------------------------------*\
-    $MAIN NAV INVERSE
-\*----------------------------------------*/
-.nav-inverse-main{
-    .navigation--main {
-        background: none;        
-
-        .sub-menu, .sub-menu--mega{
-            .menu{
+            li {
                 background-color: white;
-                border: 1px solid black;
+
+                a {
+                    border-top-color: #eee;
+                    color: #888;
+                }
+
+                &:hover {
+                    > a{
+                        color: black;
+                    }
+                }
             }
-        }        
-    }
 
-    @include media-query(lap-and-up) {
-        .nav-top-separator{
-            display: block;
-        }
-    }
-
-    .navigation--main li {
-        color: black;
-    }
-
-    //It's either this or the one below.
-    //This option will work only if the menu
-    //has one one line.
-    .nav--main{
-        border-bottom: 5px solid $dark;
-
-        >li{
-            margin-bottom: -5px;
-        }
-    }
-
-    .nav--main > li{
-        //This is the one below.
-        //This works with multi-line menu but
-        //will not stretch to 100% of the menu
-        //border-bottom-color: $dark;
-
-        border-top-width: 0;
-        background: transparent;
-
-        a{
-            color: black;
-        }     
-
-        &:hover{
-            background: transparent;
-
-            > a{
-               color: black;
+            .sub-menu {
+                background: #ddd;
             }
         }
 
-        .article--billboard-small {
+        .social-icon-link{
+            background: none;
+
+            .square{
+                background: none;
+            }
+        }           
+    }
+
+
+
+
+
+    /*----------------------------------------*\
+        $MAIN NAV INVERSE
+    \*----------------------------------------*/
+    .nav-inverse-main {
+
+        .navigation--main {
+            background: white;      
+
+            a {
+                color: #888;
+            }     
+        }
+
+        .nav--main {
+            @include rem(border-bottom, 5px solid $dark);
+
+            li {
+                background-color: white;
+
+                a {
+                    border-top-color: #eee;
+                    color: #888;
+                }
+
+                &:hover {
+                    > a{
+                        color: black;
+                    }
+                }
+
+                .article--billboard-small {
+                    background-color: white;
+                    border-bottom-color: #ccc;
+
+                    .hN {
+                        color: black;
+                    }
+                }
+            }
+
+            > li {
+                background-color: transparent;
+                @include rem(padding-bottom, 5px);
+                @include rem(margin-bottom, -5px);
+
+                &:hover {
+                    background-color: transparent;
+
+                    > a {
+                        color: black;
+                    }
+                }
+            }
+
+            .sub-menu {
+                background-color: #ccc;
+                padding-top: 0;
+                margin-top: 0;
+
+                .sub-menu {
+                    @include rem(margin-top, -5px);
+                    @include rem(padding-top, 5px);
+                }
+            }
+
+            .nav--sub-menu {
+                @include rem(margin-top, 5px);
+                @include rem(padding-top, 5px);
+                border-bottom: 0;
+            }
+
+            .sub-menu--mega {
+                @include rem(margin-top, 5px);
+                @include rem(padding-top, 5px);
+                border-bottom-color: rgba(white, .4);
+
+                // .sub-menu {
+                //     margin-top: 0;
+                //     padding-top: 0;
+                // }
+            }
+        }
+
+        .sub-menu__grid__item {
             background-color: white;
+        }
 
-            .hN{
-                color: black;
+        @include media-query(lap-and-up) {
+            .nav-top-separator{
+                display: block;
             }
         }
-    }
 
-    .header--type1 {
-        .search-query, .search-submit, .social-icon-link {
-            color: black;
-            background-color: transparent;
-        }
+        // .nav--main > li{
+        //     //This is the one below.
+        //     //This works with multi-line menu but
+        //     //will not stretch to 100% of the menu
+        //     //border-bottom-color: $dark;
 
+        //     border-top-width: 0;
+        //     background: transparent;
 
+        //     a{
+        //         color: black;
+        //     }     
 
-        .search-submit {
-            border: none;
-        }
+        //     &:hover{
+        //         background: transparent;
 
-        .header-bar > li {
-            border: 1px solid #dedede;
+        //         > a{
+        //            color: black;
+        //         }
+        //     }
+
+        //     .article--billboard-small {
+        //         background-color: white;
+
+        //         .hN{
+        //             color: black;
+        //         }
+        //     }
+        // }
+
+        .header--type1 {
+            .search-query, .search-submit, .social-icon-link {
+                color: black;
+                background-color: transparent;
+            }
+
+            .search-query{
+                border-left: 1px solid #dedede;
+                border-top: 1px solid #dedede;
+                border-bottom: 1px solid #dedede;
+            }
+
+            .search-submit{
+                border-right: 1px solid #dedede;
+                border-top: 1px solid #dedede;
+                border-bottom: 1px solid #dedede;        
+            }
+
+            .header-bar .square{
+                background: none;
+                color: $light;
+            }        
+
+            .header-bar > li {
+                border: 1px solid #dedede;
+
+                &.search-item{
+                    border: none;
+                }
+            }
         }
     }
 }

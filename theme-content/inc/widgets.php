@@ -147,7 +147,7 @@ class wpgrade_latest_comments extends WP_Widget {
 						</div>
 						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
 						<div class="latest-comments__content">
-							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25); ?> [...] </p>
+							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25, ' [&hellip;]'); ?></p>
 						</div>
 					</div>
 				</article>
@@ -541,7 +541,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                             <?php endif; ?>
                         </div>
                         <div class="article__title  article--slider__title">
-                            <h3 class="hN"><?php the_title(); ?></h3>
+                            <h3 class="hN"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         </div>
                         <div class="article__meta  article--slider__meta">
                             <div class="split">
@@ -1134,8 +1134,7 @@ class wpgrade_popular_posts extends WP_Widget {
 
 			if ($size <> 0){
 				$imageArgs = array(
-					'width' => $size,
-					'height' => $size,
+					'size' => 'post-tiny',
 					'image_class' => 'thumbnail',
 					'format' => 'array',
 					'default_image' => 'http://placehold.it/72x54'

@@ -2,47 +2,71 @@
     border: none;
     text-align: center;
     @include rem(margin, $_2u 0);
+    padding-left: 0;
 
-    .pagination-item--current span{
+    .pagination-item--current span {
         background-color: $accent;
         color: white;
-    }
-
-    .pagination-item--prev a:before,
-    .pagination-item--next a:after{
-        content: '';
         display: inline-block;
-        @include transform(rotate(45deg));
-        @include rem(width, 10px);
-        @include rem(height, 10px);
-        @include rem(margin, 0 $_u4);
     }
 
-    .pagination-item--prev a:before{
-        border-left: 2px solid black;
-        border-bottom: 2px solid black;
+    .pagination-item--prev, .pagination-item--next {
+
+        a {
+            &:before, &:after{
+                display: inline-block;
+                @include transform(rotate(45deg));
+                @include rem(width, 10px);
+                @include rem(height, 10px);
+                @include rem(margin, 0 $_u4);
+                border-color: $dark;
+                border-width: 2px;
+                @include transition(all .15s linear);
+            }
+
+            &:hover {
+                &:before, &:after{
+                    border-color: white;
+                }              
+            }            
+        }        
+    }
+
+    .pagination-item--prev {
+        @include rem(margin-right, $_u);
+        
+        a:before {
+            content: '';
+            border-left-style: solid;
+            border-bottom-style: solid;
+        } 
+    }
+
+    .pagination-item--next {        
+        @include rem(margin-left, $_u);
+
+        a:after {
+            content: '';
+            border-right-style: solid;
+            border-top-style: solid;                 
+        }
     } 
 
-    .pagination-item--next a:after{
-        border-right: 2px solid black;
-        border-top: 2px solid black;     
-    }
+    li {
+        @include rem(margin-right, 2px);
 
-    .pagination-item--next{
-        @include rem(margin-left, $_u);
-    }
-
-    .pagination-item--prev{
-        @include rem(margin-right, $_u);
-    }    
-
-    li{
-        a, span{
+        a, span {
             @include rem(padding, $_u4 $_u2);
             color: black;
             @include font-size(16px);
             font-family: "Arvo";
             text-transform: uppercase;
+            @include transition(all .15s linear);
+
+            &:hover{
+                background-color: $accent;
+                color: white;                
+            }
         }
     }
 }
