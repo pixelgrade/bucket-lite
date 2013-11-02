@@ -138,7 +138,7 @@ $sections[] = array(
 		),
 		array(
 			'id'=>'21',
-			'desc'=> __('<h3>Typography</h3>', wpgrade::textdomain()),
+			'desc'=> '<h3>'.__('Typography', wpgrade::textdomain()).'</h3>',
 			'type' => 'info'
 		), 
 		array(

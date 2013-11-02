@@ -1040,7 +1040,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		</p>
 
 		<?php if( !self::$_stats_enabled ) : ?>
-			<div class="pptwj-require-error" style="background: #FFEBE8; border: 1px solid #c00; color: #333; margin: 1em 0; padding: 3px 5px; "><?php _e('Popular Posts tab requires the <a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> to be activated and connected. It also requires the Jetpack Stats module to be enabled.', 'pptwj' ); ?></div>
+			<div class="pptwj-require-error" style="background: #FFEBE8; border: 1px solid #c00; color: #333; margin: 1em 0; padding: 3px 5px; "><?php _e('Popular Posts tab requires the <a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> to be activated and connected. It also requires the Jetpack Stats module to be enabled.', wpgrade::textdomain() ); ?></div>
 		<?php endif; ?>
 
 	<?php
@@ -1120,7 +1120,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		ob_start();
 
 		if( !$popular ):
-			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', 'pptwj') : __('Sorry. No data yet.', 'pptwj');
+			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', wpgrade::textdomain()) : __('Sorry. No data yet.', wpgrade::textdomain());
 			?>
 			<li><?php echo $message; ?></li>
 			<?php
