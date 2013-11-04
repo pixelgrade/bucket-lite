@@ -72,13 +72,15 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 /** Do the same thing on single post pagination */
 
 function wpgrade_pagination_custom_markup($link, $key) {
-	$current = (get_query_var('paged')) ? get_query_var('paged') : '';
+	global $wp_query;
+	$current = (get_query_var('page')) ? get_query_var('page') : '1';
 	$class = '';
 	$prefix = '-->';
 	$suffix = '<!--';
 	switch ( $key ) {
 		case $current:
 				$class .= 'class="pagination-item pagination-item--current"';
+				$link = '<span>' . $link . '</span>';
 			break;
 		case 'prev':
 				$class .= 'class="pagination-item pagination-item--prev"';
