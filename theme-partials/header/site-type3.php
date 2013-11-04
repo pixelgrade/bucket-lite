@@ -34,7 +34,7 @@
 
         </div>
         
-        <span class="site-navigation__trigger js-nav-trigger"><i class="icon-reorder"></i><i class="icon-remove"></i></span>
+        <div class="site-navigation__trigger js-nav-trigger"><span class="nav-icon"></span></div>                
 
         <hr class="nav-top-separator separator separator--subsection flush--bottom" />
 		
