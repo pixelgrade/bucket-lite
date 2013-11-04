@@ -64,8 +64,9 @@ $brand-round         : 0;
              ICON FONTS CONFIGURATION
                     AND IMPORT
 \*-----------------------------------------------*/
-
-$FontAwesomePath: "../vendor/font-awesome/fonts";
+$fa-css-prefix: icon;
+$fa-font-path: "../vendor/font-awesome/fonts";
+$FontAwesomePath: "../vendor/font-awesome/font";
 $EntypoPath: "../fonts/entypo2";
 
 @import "../vendor/font-awesome/scss/font-awesome";
