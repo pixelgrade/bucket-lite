@@ -1454,6 +1454,11 @@
 
         $('.js-pixslider').each(function(){
 
+            if(touch && $(this).hasClass('billboard') && $(window).width() < 900){
+              $(this).removeClass('pixslider');
+              return;
+            }
+
             var $slider = $(this),
                 rs_arrows = typeof $slider.data('arrows') !== "undefined",
                 rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
@@ -1664,8 +1669,11 @@
 
         initVideos();
         footerWidgetsTitles();
+
         // if blog archive
-        salvattore();
+        if ($('.masonry').length && !lteie9 && !is_android)
+            salvattore();
+
         royalSliderInit();
     }
 

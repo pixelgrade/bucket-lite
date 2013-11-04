@@ -529,7 +529,6 @@ $transition_speed: 0.4s;
             visibility: visible;
             z-index: 1;
             @include transition(z-index $transition_speed linear);
-            overflow-y: scroll;        
         }   
     }
 }
