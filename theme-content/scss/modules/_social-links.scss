@@ -13,6 +13,7 @@ $icon-size: 32px;
 .share-item {
     text-align:center;
     margin-left:$_u2;
+    cursor:pointer;
 }
     .share-item__icon {
         i.pixcode--icon.circle {
@@ -21,7 +22,6 @@ $icon-size: 32px;
             width: $icon-size;
             height: $icon-size;
             @include box-shadow(0 1px 1px 0 rgba(0,0,0,0.5) inset, 0 1px 0px 0 rgba(255,255,255,0.8));
-            @include transition(all 0.2s);
             background-color:$gray;
 
             &:before {

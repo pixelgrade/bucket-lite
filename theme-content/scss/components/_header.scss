@@ -5,6 +5,7 @@
 @include media-query(palm) {
     .site-header{
         @include rem(height, 3* $_u);
+        width:50%;
     }
 }
 @include media-query(lap-and-up) {
@@ -30,8 +31,10 @@
     $TITLE/LOGO
 \*----------------------------------------*/
 
-.site-home-link{
-    img{
+.site-logo {
+    width:100%;
+    img {
+        display:block;
         max-height: 100%;
     }    
 }
