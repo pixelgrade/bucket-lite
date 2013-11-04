@@ -24,15 +24,42 @@ class ReduxFramework_text_sortable {
     function render() {
         $class = (isset($this->field['class'])) ? $this->field['class'] : '';
         $options = $this->field['options'];
-
         echo '<ul class="text_sortable ' . $class . '">';
+
+	        if ( !empty($this->field['checkboxes']) ) {
+				echo '<li class="head">';
+		            echo '<span class="spacer" style="display: inline-block; width: 415px;">&nbsp;</span>';
+
+		            foreach ( $this->field['checkboxes'] as $key => $name ) {
+			            echo '<span class="checkbox_header '.$key.'"><b>'.$name.'</b></span>';
+		            }
+
+		        echo '</li>';
+	        }
+
             if (isset($this->value) && is_array($this->value)) {
                 foreach ($this->value as $k => $nicename) {
-                    $value_display = !empty($this->value[$k]) ? $this->value[$k] : '';
-					if (!empty($value_display)) {
+                    $field = !empty($this->value[$k]) ? $this->value[$k] : '';
+
+					if (!empty($field)) {
+
+						$value_display = '';
+
+						if ( isset($field['value']) && !empty($field['value']) ) {
+							$value_display = $field['value'];
+						}
+
 						echo '<li>';
 						echo '<label for="' . $this->field['id'] . '[' . $k . ']"><strong>' . $options[$k] . ':</strong></label>';
-						echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" type="text" id="' . $this->field['id'] . '[' . $k . ']" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . ']" value="' . esc_attr($value_display) . '" />';
+						echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" type="text" id="' . $this->field['id'] . '[' . $k . ']" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . '][value]" value="' . esc_attr($value_display) . '" />';
+
+						if ( isset($this->field['checkboxes'] ) && !empty($this->field['checkboxes']) ){
+							foreach ( $this->field['checkboxes'] as $key => $name ) {
+								$checked = !empty($this->value[$k]['checkboxes'][$key]) ? 'value="' . $this->value[$k]['checkboxes'][$key] . '" checked="checked"' : '';
+								echo '<input type="checkbox" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . '][checkboxes]['.$key.']" '. $checked .' style="width:60px" />';
+							}
+						}
+
 						echo '<span class="compact drag"><i class="icon-move icon-large"></i></span>';
 						echo '</li>';
 						//remove this entry from options
@@ -49,7 +76,10 @@ class ReduxFramework_text_sortable {
 						$value_display = isset($this->value[$k]) ? $this->value[$k] : '';
 						echo '<li>';
 						echo '<label for="' . $this->field['id'] . '[' . $k . ']"><strong>' . $nicename . ':</strong></label>';
-						echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" type="text" id="' . $this->field['id'] . '[' . $k . ']" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . ']" value="' . esc_attr($value_display) . '" />';
+						echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" type="text" id="' . $this->field['id'] . '[' . $k . ']" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . '][value]" />';
+						foreach ( $this->field['checkboxes'] as $key => $name ) {
+							echo '<input type="checkbox" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . '][checkboxes]['.$key.']" style="width:60px" />';
+						}
 						echo '<span class="drag"><i class="icon-move icon-large"></i></span>';
 						echo '</li>';
 					}
@@ -59,8 +89,11 @@ class ReduxFramework_text_sortable {
                     $value_display = isset($this->value[$k]) ? $this->value[$k] : '';
                     echo '<li>';
                     echo '<label for="' . $this->field['id'] . '[' . $k . ']"><strong>' . $nicename . ':</strong></label>';
-                    echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" type="text" id="' . $this->field['id'] . '[' . $k . ']" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . ']" value="' . esc_attr($value_display) . '" />';
-                    echo '<span class="drag"><i class="icon-move icon-large"></i></span>';
+                    echo '<input rel="'.$this->field['id'].'-'.$k.'-hidden" type="text" id="' . $this->field['id'] . '[' . $k . '][value]" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . '][value]" value="' . esc_attr($value_display) . '" />';
+	                foreach ( $this->field['checkboxes'] as $key => $name ) {
+		                echo '<input type="checkbox" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $k . '][checkboxes]['.$key.']" style="width:60px" />';
+	                }
+	                echo '<span class="drag"><i class="icon-move icon-large"></i></span>';
                     echo '</li>';
                 }
             }
@@ -70,15 +103,15 @@ class ReduxFramework_text_sortable {
     function enqueue() {
         wp_enqueue_script(
             'redux-field-text-sortable-js',
-            REDUX_URL . 'inc/fields/text_sortable/field_text_sortable.js',
+	        ReduxFramework::$_url . 'inc/fields/text_sortable/field_text_sortable.js',
             array('jquery'),
             time(),
             true
         );
 		
 		wp_enqueue_style(
-			'redux-field-text-sortable-css', 
-			REDUX_URL.'inc/fields/text_sortable/field_text_sortable.css', 
+			'redux-field-text-sortable-css',
+			ReduxFramework::$_url . 'inc/fields/text_sortable/field_text_sortable.css',
 			time(),
 			true
 		);	

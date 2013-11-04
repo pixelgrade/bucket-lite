@@ -287,10 +287,11 @@ class wpgrade_social_links_widget extends WP_Widget {
 		wp_reset_postdata();
 
 		echo $before_widget;
-		if (count($social_links)): ?>
+		if (!empty($social_links)): ?>
         <?php if ($title): echo $before_title . $title . $after_title; endif; ?>
             <div class="btn-list">
-                <?php foreach ($social_links as $domain => $value): if ($value): ?>
+                <?php foreach ($social_links as $domain => $icon):
+		            if (isset($icon['value'] ) && isset($icon['checkboxes']['widget'] ) ): $value = $icon['value']; ?>
                     <a href="<?php echo $value ?>"<?php echo $target ?>>
                         <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?> square medium"></i>
                     </a>
@@ -550,7 +551,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                                         $categories = get_the_category();
                                         if ($categories) {
                                             $category = $categories[0];
-                                            echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+                                            echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
                                         }
                                     ?>
                                 </div>
