@@ -135,25 +135,25 @@ $sections[] = array(
 		),
 		array(
 			'id' => 'blog_single_share_links_twitter',
-			'type' => 'switch',
+			'type' => 'checkbox',
 			'title' => __('Twitter Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
+			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
 			'id' => 'blog_single_share_links_facebook',
-			'type' => 'switch',
+			'type' => 'checkbox',
 			'title' => __('Facebook Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
+			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
 			'id' => 'blog_single_share_links_googleplus',
-			'type' => 'switch',
+			'type' => 'checkbox',
 			'title' => __('Google+ Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
+			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
@@ -471,6 +471,10 @@ $sections[] = array(
 			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
 			'default' => 'inline',
 			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
+			'select2' => array( // here you can provide params for the select2 jquery call
+			    'minimumResultsForSearch' => -1, // this way the search box will be disabled
+				'allowClear' => false // don't allow a empty select
+			)
 		),
 		array(
 			'id' => 'custom_js',
