@@ -110,7 +110,7 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-	<div class="billboard pixslider js-pixslider" data-slidertransition="fade" data-arrows="true">
+	<div class="billboard pixslider js-pixslider arrows--outside" data-slidertransition="fade" data-arrows="true">
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
             $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
@@ -138,7 +138,7 @@ if ($slides->have_posts()): ?>
                     <div class="rsABlock  article__header  article--billboard__header  one-half">
                         <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
                         <h2 class="article__title article--billboard__title">
-                            <div class="hN"><?php the_title(); ?></div>
+                            <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
                         </h2>
                         <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
                     </div>
@@ -162,10 +162,10 @@ if ($slides->have_posts()): ?>
   	                
                    
                      <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-  	                    <img src="<?php echo $image[0] ?>" />
+  	                    <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0] ?>" /></a>
   	                </div>
   	                <h2 class="article__title article--billboard-small__title">
-  	                    <div class="hN"><?php the_title(); ?></div>
+  	                    <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
   	                </h2>
   	                <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> <em>+</em></a>
   	            </article>

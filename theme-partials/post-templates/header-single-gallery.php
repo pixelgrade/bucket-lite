@@ -33,12 +33,16 @@
     $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
     $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
 
+    $arrows_class= '';
+
+    if($full_width_featured_image == 'on' || $disable_sidebar == 'on') $arrows_class = '  arrows--outside';
+
 ?>
 
 <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
 
     <?php if ($attachments): ?>
-        <div class="pixslider js-pixslider" 
+        <div class="pixslider js-pixslider<?php echo $arrows_class; ?>" 
             data-arrows
             data-fullscreen  
             data-imagealigncenter  

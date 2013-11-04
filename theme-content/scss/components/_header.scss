@@ -88,13 +88,13 @@
     margin: 0;
 
     .search-query{
-        @include rem(height, 35px);
+        @include rem(height, 36px);
         line-height: 1.2;
         padding-right: 0 !important;
     }
 
     .search-submit{
-        @include rem(height, 35px);
+        @include rem(height, 36px);
         padding-top: 0;
         padding-bottom: 0;
 
@@ -189,7 +189,7 @@
         .social-icon-link{
             background: none;
 
-            a{
+            .square{
                 background: none;
             }
         }           

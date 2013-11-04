@@ -102,7 +102,15 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option($option, $default = null) {
-		return self::$options_handler->get($option, $default);
+//		echo '<pre>';
+//		var_dump($option);
+//		echo '<pre>';
+
+		if ( isset( $_GET[$option]) && !empty($option) ) {
+			return $_GET[$option];
+		} else {
+			return self::$options_handler->get($option, $default);
+		}
 	}
 
 	/**

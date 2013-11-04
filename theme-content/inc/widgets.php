@@ -147,7 +147,7 @@ class wpgrade_latest_comments extends WP_Widget {
 						</div>
 						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
 						<div class="latest-comments__content">
-							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25); ?> [...] </p>
+							<p><?php echo bucket::limit_words(get_comment_text($comment->comment_ID), 25, ' [&hellip;]'); ?></p>
 						</div>
 					</div>
 				</article>
@@ -541,7 +541,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                             <?php endif; ?>
                         </div>
                         <div class="article__title  article--slider__title">
-                            <h3 class="hN"><?php the_title(); ?></h3>
+                            <h3 class="hN"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         </div>
                         <div class="article__meta  article--slider__meta">
                             <div class="split">
@@ -1040,7 +1040,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		</p>
 
 		<?php if( !self::$_stats_enabled ) : ?>
-			<div class="pptwj-require-error" style="background: #FFEBE8; border: 1px solid #c00; color: #333; margin: 1em 0; padding: 3px 5px; "><?php _e('Popular Posts tab requires the <a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> to be activated and connected. It also requires the Jetpack Stats module to be enabled.', 'pptwj' ); ?></div>
+			<div class="pptwj-require-error" style="background: #FFEBE8; border: 1px solid #c00; color: #333; margin: 1em 0; padding: 3px 5px; "><?php _e('Popular Posts tab requires the <a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> to be activated and connected. It also requires the Jetpack Stats module to be enabled.', wpgrade::textdomain() ); ?></div>
 		<?php endif; ?>
 
 	<?php
@@ -1120,7 +1120,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		ob_start();
 
 		if( !$popular ):
-			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', 'pptwj') : __('Sorry. No data yet.', 'pptwj');
+			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', wpgrade::textdomain()) : __('Sorry. No data yet.', wpgrade::textdomain());
 			?>
 			<li><?php echo $message; ?></li>
 			<?php
