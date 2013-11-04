@@ -45,6 +45,7 @@ get_header(); ?>
 							 _e('Audio Archives', wpgrade::textdomain());
 						elseif ($var == 'post-format-chat') : 
 							 _e('Chat Archives', wpgrade::textdomain());
+						endif;
  
 						if ( is_day() ) :
 							printf( __( 'Daily Archives: %s', wpgrade::textdomain() ), get_the_date() );
