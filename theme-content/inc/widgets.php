@@ -287,10 +287,11 @@ class wpgrade_social_links_widget extends WP_Widget {
 		wp_reset_postdata();
 
 		echo $before_widget;
-		if (count($social_links)): ?>
+		if (!empty($social_links)): ?>
         <?php if ($title): echo $before_title . $title . $after_title; endif; ?>
             <div class="btn-list">
-                <?php foreach ($social_links as $domain => $value): if ($value): ?>
+                <?php foreach ($social_links as $domain => $icon):
+		            if (isset($icon['value'] ) && isset($icon['checkboxes']['widget'] ) ): $value = $icon['value']; ?>
                     <a href="<?php echo $value ?>"<?php echo $target ?>>
                         <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?> square medium"></i>
                     </a>

@@ -280,7 +280,10 @@ $sections[] = array(
             'title' => __('Social Icons', wpgrade::textdomain()),
             'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.<br /><br /><strong> You need to imput the entire URL (ie. http://twitter.com/username)</strong>', wpgrade::textdomain()),wpgrade::themename()),
             'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
-			'mode' => 'text',
+			'checkboxes' => array(
+				'widget'=> __('Widget', wpgrade::textdomain()),
+				'header'=> __('Header', wpgrade::textdomain())
+			),
             'options' => array(
                 'flickr' => __('Flickr', wpgrade::textdomain()),
                 'tumblr' => __('Tumblr', wpgrade::textdomain()),

@@ -355,7 +355,7 @@
 \*----------------------------------------*/
 
 $header_height: 3*$_u;
-$header_background: pink;
+$header_background: white;
 $transition_speed: 0.4s;
 
 
@@ -379,12 +379,8 @@ $transition_speed: 0.4s;
         @include rem(height, $header_height);
     }
 
-
-
-    .site-header__branding {
-        width:100%;
-        height:100%;
-
+    .site-header {
+        float:left;
     }
 
     #page{
@@ -416,7 +412,7 @@ $transition_speed: 0.4s;
         visibility: hidden;
         z-index: -1;
 
-        @include transition(visibility $transition_speed linear);
+        @include transition(visibility 0 linear $transition_speed);
 
         > ul > li{
             &:last-child{
@@ -460,8 +456,9 @@ $transition_speed: 0.4s;
     */
     .site-navigation__trigger {
         display: block;
-        @include rem(width, 3*$base-spacing-unit);
-        @include rem(height, 3*$base-spacing-unit);
+        @include rem(width, 95px);
+        @include rem(height, $header_height);
+        padding:$half-spacing-unit $base-spacing-unit;
         position: absolute;
         top: 0; right: 0;
         z-index:10;
@@ -473,7 +470,6 @@ $transition_speed: 0.4s;
         @include transition(color $transition_speed ease-in-out);
 
         &:active, &:focus {
-            // color: white;
             @include transition(color $transition_speed ease-in-out);
         }
 
@@ -483,16 +479,42 @@ $transition_speed: 0.4s;
             @include rem(top, $half-spacing-unit + 2px);
             @include rem(left, $half-spacing-unit);
             overflow: hidden;
-        } 
-
-        .icon-reorder {
-            @include transition(opacity $transition_speed, transform .3s);
         }
 
-        .icon-remove {
-            @include transition(opacity $transition_speed, transform .4s);
-            @include transform(rotate(45deg));
-            @include opacity(0);
+
+        // Icon Styling
+        & {
+          @include transition(all $transition_speed);
+          cursor: pointer;
+          user-select: none;
+          opacity: .8;
+        }
+
+        .nav-icon {
+          position: relative;
+          top:20px;
+          display:block;
+          width: 100%;
+          height: 6px;
+          background: $gray;
+          border-radius: 2.5rem;
+          @include transition(all $transition_speed);
+          
+          &:after, &:before {
+            display: block;
+            content: "";
+            height: 6px;
+            width: 100%;
+            background: $gray;
+            position: absolute;
+            z-index: -1;
+            border-radius: 1rem;
+            @include transition(all $transition_speed);
+          }
+
+          &:after { top: -$half-spacing-unit; }
+          &:before { top: $half-spacing-unit; }
+
         }
     }
 
@@ -528,7 +550,20 @@ $transition_speed: 0.4s;
             height: 100%;
             visibility: visible;
             z-index: 1;
-            @include transition(z-index $transition_speed linear);
-        }   
+            @include transition(z-index 0 linear $transition_speed);
+            overflow-y: scroll;        
+        }
+
+        // Trigger icon animations 
+        .nav-icon {
+            background: transparent;
+            top:20px !important;
+
+         
+
+            &:before { @include rotate(-45deg); top: 0 !important; }  
+            &:after { @include rotate(45deg); top: 0 !important; }  
+        }
+   
     }
 }
