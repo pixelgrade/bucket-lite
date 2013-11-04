@@ -93,7 +93,7 @@ $sections[] = array(
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Headings Font', wpgrade::textdomain()),
-			'subtitle' => 'Font for titles and headings.',
+			'subtitle' => __('Font for titles and headings.', wpgrade::textdomain()),
 		),
 		// Navigation Font
 		array(
@@ -104,7 +104,7 @@ $sections[] = array(
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Navigation Font', wpgrade::textdomain()),
-			'subtitle' => 'Font for navigation menu.',
+			'subtitle' => __('Font for navigation menu.', wpgrade::textdomain()),
 		),
 		// Body Font
 		array(
