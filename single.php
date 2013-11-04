@@ -107,9 +107,9 @@ get_header(); ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        </div><!--
                     <?php endif; ?>
-                </div>
+                --></div>
 
                 <?php
 				if (get_field('enable_review_score')):
