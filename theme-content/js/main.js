@@ -1633,6 +1633,7 @@
             $('html').addClass('no-android-browser');
         }    
 
+        /* Retina Logo */
         var is_retina = (window.retina || window.devicePixelRatio > 1);
 
         if (is_retina && $('.site-logo--image-2x').length) {
@@ -1710,7 +1711,7 @@
 
 
 
-    /* ====== ON DOCU READY ====== */
+    /* ====== ON DOCUMENT READY ====== */
 
     $(function(){
 
