@@ -89,6 +89,7 @@
         if($mobile) $wrap = '<hr class="separator  separator--mobile-nav" />';
 
         if (isset($theme_locations["top_menu_left"]) && ($theme_locations["top_menu_left"] != 0)) {
+			require_once(wpgrade::themefilepath('theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php'));
             $args = array
                 (
                     'theme_location'  => 'top_menu_left',
@@ -117,6 +118,7 @@
         if($mobile) $wrap = '<hr class="separator  separator--mobile-nav" />';
 
         if (isset($theme_locations["top_menu_right"]) && ($theme_locations["top_menu_right"] != 0)) {
+			require_once(wpgrade::themefilepath('theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php'));
             $args = array
                 (
                     'theme_location'  => 'top_menu_right',
