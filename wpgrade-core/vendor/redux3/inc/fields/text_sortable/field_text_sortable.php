@@ -70,15 +70,15 @@ class ReduxFramework_text_sortable {
     function enqueue() {
         wp_enqueue_script(
             'redux-field-text-sortable-js',
-            REDUX_URL . 'inc/fields/text_sortable/field_text_sortable.js',
+	        ReduxFramework::$_url . 'inc/fields/text_sortable/field_text_sortable.js',
             array('jquery'),
             time(),
             true
         );
 		
 		wp_enqueue_style(
-			'redux-field-text-sortable-css', 
-			REDUX_URL.'inc/fields/text_sortable/field_text_sortable.css', 
+			'redux-field-text-sortable-css',
+			ReduxFramework::$_url . 'inc/fields/text_sortable/field_text_sortable.css',
 			time(),
 			true
 		);	

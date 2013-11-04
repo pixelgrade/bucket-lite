@@ -162,7 +162,7 @@ if ($slides->have_posts()): ?>
                                     if ($categories) {
                                         $category = $categories[0];
                                         echo '<div class="article__category">
-                                                <a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>
+                                                <a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>
                                               </div>';
                                     } ?>
 	                                <div class="article__title  article--thumb__title">
