@@ -24,6 +24,28 @@ get_header(); ?>
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
                     <h2 class="hN"><?php
+
+						$var = get_query_var('post_format');
+						// POST FORMATS
+						if ($var == 'post-format-aside') :
+							 _e('Aside Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-image') : 
+							 _e('Image Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-link') : 
+							 _e('Link Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-quote') : 
+							 _e('Quote Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-status') : 
+							 _e('Status Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-gallery') : 
+							 _e('Gallery Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-video') : 
+							 _e('Video Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-audio') : 
+							 _e('Audio Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-chat') : 
+							 _e('Chat Archives', wpgrade::textdomain());
+ 
 						if ( is_day() ) :
 							printf( __( 'Daily Archives: %s', wpgrade::textdomain() ), get_the_date() );
 						elseif ( is_month() ) :
