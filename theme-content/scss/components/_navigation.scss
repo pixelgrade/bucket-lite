@@ -8,7 +8,7 @@
 }
 
 .navigation--main{
-    @include font-size(14px);
+    @include font-size(13px);
     background-color: #262525;
 }
 
@@ -25,8 +25,6 @@
 
 // Stuff
 .nav--top {
-    // display: none;
-
     li {
         background-color: #262525;
     }
@@ -127,83 +125,16 @@
             @include rem(padding, $_u4 $_u);
             text-transform: uppercase;
         }
+
+        &.current-menu-item {
+            background-color:rgba(255,255,255,0.05);
+        }
     }
 }
 
 .nav__item--relative {
     position: relative;
 }
-
-
-/**
- * Hover effects
- * And other stuff for bigger screens
- */
-@include media-query(lap-and-up) {
-    .nav--main {
-        li {
-            @include transition(all .05s linear);
-            // background-color: #262525;
-
-            &:hover {
-                border-bottom-color: $accent;
-
-                > a {
-                    color: white;
-                }
-
-                @include media-query(lap-and-up) {
-                    > .sub-menu {
-                        display: inline-block;
-                    }
-                }
-            }
-        }
-
-        > li {
-            @include rem(border-top-width, 5px);
-            @include rem(border-bottom-width, 5px);
-        
-            &:hover {
-                background-color: #262525;
-            }
-
-            a {
-                color: #a6a1a1;
-            }
-
-            > a {
-                @include rem(padding, $_u4 $_u);
-                text-transform: uppercase;
-            }
-        }
-
-        .article--billboard-small {
-            background-color: #262525;
-            width: auto;
-            position: static;
-            margin: 0;
-
-            .small-link {
-                color: $light;
-
-                &:after {
-                    content: " +";
-                    color: $red;
-                }
-
-                &:hover {
-                    color: white;
-                }
-            }
-
-            .hN {
-                color: white;
-            }
-        }        
-    }
-}
-
 
 /*----------------------------------------*\
     $SUBMENUS
@@ -263,11 +194,14 @@
     margin-top: 5px;
 }
 
+/*
+* Mega Menus
+*/
+
 /*div*/.sub-menu--mega {
     @extend .sub-menu;
     border: 0;
     @include rem(border-bottom, $_u solid rgba(black, .5));
-    // margin-top: 0;
     width: 100%;
 
     .featured-area__article {
@@ -345,6 +279,90 @@
             @include rem(min-height, $_3u);
         }
     }
+
+
+/**
+ * MegaMenu Hover Effects
+ * And other stuff for bigger screens
+ */
+
+ $menu_transition_speed: 0.15s;
+@include media-query(lap-and-up) {
+    .nav--main {
+        li {
+            @include transition(all 0.15s linear);
+
+            > .sub-menu {
+                display:inline-block;
+                opacity:0;
+                @include transition(all $menu_transition_speed ease-in);
+                @include translate3d(0, 0px, 0);
+            }
+
+            &:hover {
+                border-bottom-color: $accent; 
+                background-color:rgba(255,255,255,0.05);
+
+                > a {
+                    color: white;
+                }  
+            }
+
+            &.hidden > .sub-menu {
+                display:none;
+            }
+
+            &.open {
+                @include media-query(lap-and-up) {
+                    > .sub-menu {
+                        opacity:1;
+                        display: inline-block;
+                         @include translate3d(0, 0, 0);
+                         @include transition(all $menu_transition_speed ease-out 0);
+                    }
+                }
+            }
+        }
+
+        > li {
+            @include rem(border-top-width, 5px);
+            @include rem(border-bottom-width, 5px);
+
+            a {
+                color: #a6a1a1;
+            }
+
+            > a {
+                @include rem(padding, $_u4 $_u);
+                text-transform: uppercase;
+            }
+        }
+
+        .article--billboard-small {
+            background-color: #262525;
+            width: auto;
+            position: static;
+            margin: 0;
+
+            .small-link {
+                color: $light;
+
+                &:after {
+                    content: " +";
+                    color: $red;
+                }
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .hN {
+                color: white;
+            }
+        }        
+    }
+}
 
 
 
@@ -558,8 +576,6 @@ $transition_speed: 0.4s;
         .nav-icon {
             background: transparent;
             top:20px !important;
-
-         
 
             &:before { @include rotate(-45deg); top: 0 !important; }  
             &:after { @include rotate(45deg); top: 0 !important; }  

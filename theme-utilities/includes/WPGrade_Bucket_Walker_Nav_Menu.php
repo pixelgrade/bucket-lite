@@ -109,7 +109,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
         $class_names = esc_attr(implode(' ', apply_filters( 'nav_menu_css_class', array_filter($classes), $item)));
 
         // build html
-        $output .= '<li id="nav--top__item-'.$item->ID. '" class="nav__item '.$depth_class_names.' '.$class_names.'">';
+        $output .= '<li id="nav--top__item-'.$item->ID. '" class="nav__item '.$depth_class_names.' '.$class_names.' hidden">';
 
         // link attributes
         $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
