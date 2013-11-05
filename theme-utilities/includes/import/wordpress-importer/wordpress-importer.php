@@ -26,7 +26,7 @@ if ( ! class_exists( 'WP_Importer' ) ) {
 }
 
 // include WXR file parsers
-require dirname( __FILE__ ) . '/parsers.php';
+require dirname(__FILE__) . '/parsers.php';
 
 /**
  * WordPress Importer class for managing the import process of a WXR file

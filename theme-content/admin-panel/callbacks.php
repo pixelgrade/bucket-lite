@@ -82,7 +82,7 @@
 						)
 				);
 
-			require_once wpgrade::themefilepath('theme-content/inc/import/import-demo-posts-pages'.EXT);
+			require_once wpgrade::themefilepath('theme-utilities/includes/import/import-demo-posts-pages'.EXT);
 
 			$response = new WP_Ajax_Response($response);
 			$response->send();
@@ -111,7 +111,7 @@
 			if (function_exists('check_ajax_referer')) {
 				check_ajax_referer('wpGrade_nonce_import_demo_theme_options');
 			}
-			require_once wpgrade::themefilepath('theme-content/inc/import/import-demo-theme-options'.EXT);
+			require_once wpgrade::themefilepath('theme-utilities/includes/import/import-demo-theme-options'.EXT);
 
 			$response = new WP_Ajax_Response($response);
 			$response->send();
@@ -140,7 +140,7 @@
 				check_ajax_referer('wpGrade_nonce_import_demo_widgets');
 			}
 
-			require_once wpgrade::themefilepath('theme-content/inc/import/import-demo-widgets'.EXT);
+			require_once wpgrade::themefilepath('theme-utilities/includes/import/import-demo-widgets'.EXT);
 
 			$response = new WP_Ajax_Response( $response );
 			$response->send();
