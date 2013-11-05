@@ -326,7 +326,7 @@
         // }
 
         .header--type1 {
-            .search-query, .search-submit, .social-icon-link {
+            .search-query, .search-submit, .pixcode--icon.small.square {
                 color: black;
                 background-color: transparent;
             }
@@ -335,17 +335,27 @@
                 border-left: 1px solid #dedede;
                 border-top: 1px solid #dedede;
                 border-bottom: 1px solid #dedede;
+
+                height: 50px;
             }
 
             .search-submit{
                 border-right: 1px solid #dedede;
                 border-top: 1px solid #dedede;
                 border-bottom: 1px solid #dedede;        
+
+                height: 50px;
             }
 
             .header-bar .square{
+                height: 48px;
+                width: 48px;
+                font-size: 18px;
+                line-height: 50px;
+                
                 background: none;
                 color: $light;
+
             }        
 
             .header-bar > li {

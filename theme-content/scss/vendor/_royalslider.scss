@@ -361,27 +361,35 @@ img.rsImg{
 \*----------------------------------------*/ 
 
 .rsArrow{
-    @include rem(width, $_u2);       
-    @include rem(height, $_u2);       
-    @include rem(margin, $_u2 $_u 0 $_u); 
+    // @include rem(margin, $_u2 $_u 0 $_u); 
     display: block;
     color: white;
-    border-bottom: 2px solid $dark;
     position: absolute;
     top: 50%;
-    @include rem(margin-top, -$_u);
+
+    .rsArrowIcn{
+        border-bottom: 2px solid $dark;
+        @include rem(width, $_u2);       
+        @include rem(height, $_u2);       
+    }
 }
 
-.rsArrowLeft{
+.rsArrowLeft {
     left: 0;
-    border-left: 2px solid $dark;
-    @include rotate(45deg);
+
+    .rsArrowIcn{
+        border-left: 2px solid $dark;
+        @include rotate(45deg);
+    }
 }
 
 .rsArrowRight{
     right: 0;
-    border-right: 2px solid $dark;
-    @include rotate(-45deg);
+
+    .rsArrowIcn{
+        border-right: 2px solid $dark;
+        @include rotate(-45deg);
+    }
 }
 
 .full-width-slider{

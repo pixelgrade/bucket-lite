@@ -126,25 +126,25 @@ if ($slides->have_posts()): ?>
                 }
 
                 if (!$closed_group):
-                    echo '--></div><div class="billboard--article-group  grid"><!--';
+                    echo '--></div><div class="billboard--article-group"><!--';
                 else:
-                    echo '<div class="billboard--article-group  grid"><!--';
+                    echo '<div class="billboard--article-group"><!--';
                     $closed_group = false;
                 endif; ?>
-                --><article class="article  article--billboard  grid__item  one-whole">
+                --><article class="article  article--billboard">
                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
                     </div>
-                    <div class="rsABlock  article__header  article--billboard__header  lap-and-up-one-half">
+                    <div class="rsABlock  article__header  article--billboard__header">
                         <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
                         <h2 class="article__title article--billboard__title">
-                            <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
+                            <div class="hN"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                         </h2>
                         <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
                     </div>
                 </article><!--
   	        <?php else: ?>
-  	            --><article class="rsABlock  article article--billboard-small  grid__item  one-half"
+  	            --><article class="rsABlock  article article--billboard-small"
                           data-move-effect="right"
                           data-speed="400" 
                           data-easing="easeOutCirc"
@@ -162,7 +162,7 @@ if ($slides->have_posts()): ?>
   	                
                    
                      <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-  	                    <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0] ?>" /></a>
+  	                    <img src="<?php echo $image[0] ?>" />
   	                </div>
   	                <h2 class="article__title article--billboard-small__title">
   	                    <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
