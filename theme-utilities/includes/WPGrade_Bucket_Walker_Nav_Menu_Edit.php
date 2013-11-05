@@ -15,7 +15,8 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 			// load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
 			require_once 'phpQuery-onefile.php';
 		}
-		
+		// enable debugging messages
+		phpQuery::$debug = 0;
 		$_doc = phpQuery::newDocumentHTML( $output );
 		$_li = phpQuery::pq( 'li.menu-item:last' ); // ":last" is important, because $output will contain all the menu elements before current element
 		

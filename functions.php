@@ -42,7 +42,7 @@ if ( ! isset($content_width)) {
 
 function post_format_icon($class_name = '') {
     $post_format = get_post_format();
-    
+
     if ($post_format):
         $icon_class = "";
         switch ($post_format) {

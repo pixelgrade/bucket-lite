@@ -17,8 +17,8 @@ get_header(); ?>
         <?php 
 
         // let's get to know this post a little better
-        $full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
-        $disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
+        $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
+        $disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
 
         // let's use what we know
         $the_content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';

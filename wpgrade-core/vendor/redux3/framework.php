@@ -16,7 +16,7 @@
  *
  * @package     ReduxFramework
  * @author      ReduxFramework Team
- * @version     3.0.6
+ * @version     3.0.7
  */
 
 // Exit if accessed directly
@@ -34,7 +34,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
      */
     class ReduxFramework {
 
-        public static $_version = '3.0.6';
+        public static $_version = '3.0.7';
         public static $_dir; 
         public static $_url;        
         public static $_properties;
@@ -279,7 +279,6 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $defaults['default_show']		= false; // If true, it shows the default value
             $defaults['default_mark']		= ''; // What to print by the field's title if the value shown is default
 
-	        $defaults['wpml_separate_options'] = false;
 	    	// Set values
             $this->args = wp_parse_args( $args, $defaults );
 
@@ -303,25 +302,6 @@ if( !class_exists( 'ReduxFramework' ) ) {
 
 			$this->extra_tabs = $extra_tabs;
 
-//			var_dump( $this->options['wpml_separate_options'] );
-
-	        // making theme options wpml ready
-//	        if( defined( 'ICL_LANGUAGE_CODE' ) ) { // do this only on admin side when wpml is activated
-//		        if ( ICL_LANGUAGE_CODE != 'en' ) { // not necessary for en
-//			        $temp_opt_name  = $this->args['opt_name'] . '_' . ICL_LANGUAGE_CODE;
-//
-//			        if ( !get_option($temp_opt_name) ) { // if there are no options for this languages we take the en ones
-//				        $tem_val = get_option($this->args['opt_name']);
-//				        add_option( $temp_opt_name, $tem_val);
-//			        }
-//			        $this->args['opt_name'] = $temp_opt_name;
-//			        $this->args['is_wpml_version'] = true;
-//		        }
-//	        }
-
-            // Options page
-            add_action( 'admin_menu', array( &$this, '_internationalization' ) );
-
             // Set option with defaults
             add_action( 'init', array( &$this, '_set_default_options' ) );
 
@@ -336,6 +316,9 @@ if( !class_exists( 'ReduxFramework' ) ) {
 
             // Any dynamic CSS output, let's run
             add_action( 'wp_head', array( &$this, '_enqueue_output' ), 100 );
+
+            // Add tracking. PLEASE leave this in tact! It helps us gain needed statistics of uses. Opt-in of course.
+//            add_action( 'init', array( &$this, '_tracking' ), 3 );
 
             // Hook into the WP feeds for downloading exported settings
             add_action( 'do_feed_reduxopts-' . $this->args['opt_name'], array( &$this, '_download_options' ), 1, 1 );
@@ -361,6 +344,11 @@ if( !class_exists( 'ReduxFramework' ) ) {
 
         public function get_instance() {
         	return $this->instance;
+        }
+
+        public function _tracking() {
+            include_once( dirname( __FILE__ ) . '/inc/tracking.php' );
+            $redux_tracking = new Redux_Tracking($this);
         }
 
         /**

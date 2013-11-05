@@ -93,7 +93,7 @@ $sections[] = array(
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Headings Font', wpgrade::textdomain()),
-			'subtitle' => 'Font for titles and headings.',
+			'subtitle' => __('Font for titles and headings.', wpgrade::textdomain()),
 		),
 		// Navigation Font
 		array(
@@ -104,7 +104,7 @@ $sections[] = array(
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Navigation Font', wpgrade::textdomain()),
-			'subtitle' => 'Font for navigation menu.',
+			'subtitle' => __('Font for navigation menu.', wpgrade::textdomain()),
 		),
 		// Body Font
 		array(
@@ -204,7 +204,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Header Ad Code', wpgrade::textdomain()),
 			'subtitle' => __('Paste here the code for the header ad (optimally 720x90px). We will also parse any shortcodes present.', wpgrade::textdomain()),
-			'required' => array('header_type', 'equals', 'type2'),
+			'required' => array('header_type', '', 'type2'),
 			'default' => '<a class="header-ad-link" href="#"><img src="http://placehold.it/728x90" alt="#" /></a>',
 			'mode' => 'html',
 			'theme' => 'chrome',

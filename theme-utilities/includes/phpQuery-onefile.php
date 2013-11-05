@@ -12,7 +12,8 @@
  * @package phpQuery
  */
 ///////////// TOCKA EDIT: see end of file
-
+//libxml_use_internal_errors(true);
+//libxml_clear_errors();
 // class names for instanceof
 // TODO move them as class constants into phpQuery
 define('DOMDOCUMENT', 'DOMDocument');
@@ -515,7 +516,7 @@ class DOMDocumentWrapper {
 			.($xhtml ? '/' : '')
 			.'>';
 		if (strpos($html, '<head') === false) {
-			if (strpos($hltml, '<html') === false) {
+			if (strpos($html, '<html') === false) {
 				return $meta.$html;
 			} else {
 				return preg_replace(
