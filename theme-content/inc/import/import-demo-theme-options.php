@@ -35,7 +35,6 @@ if($wpGrade_importerError !== false) {
 	if ( class_exists( 'WPGrade_WP_Import' )) {
 		include_once('wordpress-importer/wpgrade-import-class.php');
 	}
-	
 	if(!is_file($import_filepath.'.php')) {
 		$response['id'] = new WP_Error('import_theme_options_nofile',
 		'The PHP file containing the theme options data could not be found or could not be read in <pre>'.wpgrade::themefilepath('theme-content/inc/import/demo-data') .'</pre><br/> You might want to try to set the file permission to 777.<br/>If this doesn\'t work please use the Theme Options Import/Export and import the .txt file provided in the archive you\'ve received on purchase manually.');

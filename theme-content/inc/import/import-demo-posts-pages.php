@@ -35,7 +35,6 @@ if($wpGrade_importerError !== false) {
 	if ( class_exists( 'WPGrade_WP_Import' )) {
 		include_once('wordpress-importer/wpgrade-import-class.php');
 	}
-	
 	if(!is_file($import_filepath.'.xml')) {
 		$response['id'] = new WP_Error('import_posts_pages_nofile',
 		'The XML file containing the demo data could not be found or could not be read in <pre>'. wpgrade::themefilepath('theme-content/inc/import/demo-data') .'</pre><br/> You might want to try to set the file permission to 777.<br/>If this doesn\'t work please use the <a href="'.admin_url( 'import.php' ).'">WordPress default import</a> and import the .XML file provided in the archive you\'ve received on purchase manually.');
@@ -48,7 +47,6 @@ if($wpGrade_importerError !== false) {
 		if ($response['supplemental']['stepNumber'] == $response['supplemental']['numberOfSteps']) {
 			$wp_import->set_menus();
 		}
-		
 		$response['data'] = ob_get_contents();
 		ob_end_clean();
 	}
