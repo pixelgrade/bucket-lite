@@ -68,5 +68,10 @@
                 color: white;                
             }
         }
+
+        .page-numbers.dots:hover{
+            background: white;
+            color: $dark;
+        }
     }
 }

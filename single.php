@@ -174,9 +174,9 @@ get_header(); ?>
 				$prev_post = get_previous_post();
 				if (!empty($prev_post) || !empty($next_post)): ?>
 				
-				<nav class="post-nav  grid">
-					<div class="post-nav-link  post-nav-link--prev  grid__item  one-half">
-						<?php if (!empty($prev_post)): ?>
+				<nav class="post-nav  grid"><!--
+					<?php if (!empty($prev_post)): ?>
+                    --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
 							<a href="<?php echo get_permalink($prev_post->ID); ?>">
 								<div class="post-nav-link__label">
 									<?php _e("Previous Article", wpgrade::textdomain()); ?>
@@ -185,11 +185,11 @@ get_header(); ?>
 									<div class="hN"><?php echo $prev_post->post_title; ?></div>
 								</div>
 							</a>
-						<?php endif; ?>
-					</div><!-- 
-				 --><div class="divider--pointer"></div><!--
-				 --><div class="post-nav-link  post-nav-link--next  grid__item  one-half">
-						<?php if (!empty($next_post)): ?>
+                    </div><!-- 
+					<?php endif; ?>
+                 --><div class="divider--pointer"></div><!--
+					<?php if (!empty($next_post)): ?>
+                 --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
 							<a href="<?php echo get_permalink($next_post->ID); ?>">
 								<div class="post-nav-link__label">
 									<?php _e("Next Article", wpgrade::textdomain()); ?>
@@ -198,9 +198,9 @@ get_header(); ?>
 									<div class="hN"><?php echo $next_post->post_title; ?></div>
 								</div>
 							</a>
-						<?php endif; ?>
-					</div> 
-				</nav>
+                    </div><!--
+					<?php endif; ?>
+				--></nav>
 				
                 <?php endif; ?>
 				
