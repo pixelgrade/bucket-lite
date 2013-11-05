@@ -529,17 +529,20 @@ class wpgrade_posts_slider_widget extends WP_Widget {
                     <div class="article  article--slider">
                         <div class="image-wrap">
                         <?php 
-                        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium');
+                            if(has_post_thumbnail()) :                        
+                                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium');
 
-						        		$image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-						        		if (isset($image[1]) && isset($image[2])) {
-						        			$image_ratio = $image[2] * 100/$image[1];
-						        		}
-						            ?>
-						            
-                            <?php if (has_post_thumbnail()): ?>
+        						        		$image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+        						        		if (isset($image[1]) && isset($image[2])) {
+        						        			$image_ratio = $image[2] * 100/$image[1];
+        						        		}
+        						            ?>
                                 <img src="<?php echo $image[0] ?>" />
-                            <?php endif; ?>
+                            <?php else : ?>
+                            <div class="post-format-icon  post-format-icon__icon">
+                                <i class="icon-camera"></i>
+                            </div>
+                            <?php endif; ?>                          
                         </div>
                         <div class="article__title  article--slider__title">
                             <h3 class="hN"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

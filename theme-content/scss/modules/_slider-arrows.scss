@@ -1,27 +1,26 @@
 .rsArrow .rsArrowIcn{
     @include rem(height, 36px);
     @include rem(width, 36px);
-
+    @include rem(margin, 0 20px);
     border-color: white;
 }
 
-@include media-query(lap-and-up) {
-    .arrows--outside .rsArrow{
-        border-color: black;
+// @include media-query(lap-and-up) {
+//     .arrows--outside .rsArrow{
 
-        &.rsArrowLeft{
-            // @include rem(margin-left, -3 * $_u);
-            left: -3%;
-            padding-right: 3%;
-        }
+//         .rsArrowIcn{    
+//             border-color: black;
+//         }
 
-        &.rsArrowRight{
-            // @include rem(margin-right, -3 * $_u);
-            right: -3%;
-            padding-left: 3%;
-        }    
-    }    
-}
+//         &.rsArrowLeft{
+//             @include rem(left, -50px);
+//         }
+
+//         &.rsArrowRight{
+//             @include rem(right, -50px);
+//         }    
+//     }    
+// }
 
 @include media-query(desk-wide) {
 
@@ -35,13 +34,11 @@
         &.rsArrowLeft{
             // @include rem(margin-left, -6 * $_u);
             left: -12%;
-            padding-right: 12%;
         }
 
         &.rsArrowRight{
             // @include rem(margin-right, -6 * $_u);
             right: -12%;
-            padding-left: 12%;
         }    
     }
 }

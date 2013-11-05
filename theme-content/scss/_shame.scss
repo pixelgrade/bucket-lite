@@ -279,11 +279,18 @@ img[width], img[height] {
  */
 .rsArrow{
     z-index: 10;
-    top: 0;
-    height: 100%;
 
-    .rsArrowIcn{
-        top: 50%;
-        position: relative;
+    // To ensure a larger clickable area
+    // for the arrows
+    @include media-query(lap-and-up) {
+        .arrows--outside &{
+            top: 0;
+            height: 80%;
+
+            .rsArrowIcn{
+                top: 50%;
+                position: relative;
+            }
+        }
     }
 }
