@@ -139,10 +139,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             $item_output .= '<div class="sub-menu--mega"><div class="sub-menu__grid  grid  grid--thin">';
         }
         
-        if ($depth == 0 && $item->object == 'category') {
-            
-            $cat = $item->object_id;
-            
+        if ($depth == 0 && ($item->object == 'category' || $item->object == 'post_format')) {
             //lets get the meta associated with the menu item to see what layout to use
             $menu_layout = esc_attr( get_post_meta( $item->ID, 'wpgrade_megamenu_layout', TRUE ) );
             
@@ -154,6 +151,32 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             }
             
             if (!empty($menu_layout)) {
+				 $post_args = array( 
+							'numberposts' => -1,
+							'offset'=> 0,
+							'post_type'     => 'post',
+							'post_status'   => 'publish',
+                        );
+				 
+				if ($item->object == 'category') {
+					
+					$post_args['category'] = $item->object_id;
+					
+				} elseif ($item->object == 'post_format') {
+					
+					//first get the post format information
+					$menu_item_post_format = get_term( $item->object_id, 'post_format' );
+					
+					$post_args['tax_query'] =
+						array(
+							array(
+								'taxonomy' => 'post_format',
+								'field' => 'slug',
+								'terms' => array($menu_item_post_format->slug),
+							  )
+						);
+				}
+				
                 //decrease the number of post by 2 if we have a slider
                 if ($menu_layout == 'slider_latest_posts') {
                     $numberposts -= 2;
@@ -168,19 +191,13 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                 if ($menu_layout == 'slider_latest_posts') {
                     
                     //lets grab the posts that are marked as being part of the category slider
-                    $post_args = array( 
-                            'numberposts' => -1, 
-                            'offset'=> 0, 
-                            'category' => $cat,
-                            'post_type'     => 'post',
-                            'post_status'   => 'publish',
-                            'meta_query' => array(
-                                array(
-                                    'key' => wpgrade::prefix() . 'category_slide',
-                                    'value' => 'on'
-                                )
-                            )
-                        );
+                    $post_args['meta_query'] = 
+						array(
+							array(
+								'key' => wpgrade::prefix() . 'category_slide',
+								'value' => 'on'
+							)
+						);
                     
                     $slideposts = get_posts( $post_args );
 
@@ -229,18 +246,15 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                     $item_output .= '</div>';
                     wp_reset_query();
+					
+					//a bit of clean up
+					unset($post_args['meta_query']);
                 }
                 
                 if ($menu_layout == 'latest_posts' || $menu_layout == 'slider_latest_posts') {
                 
-                    $post_args = array( 
-                            'numberposts' => $numberposts, 
-                            'offset'=> 0, 
-                            'category' => $cat,
-                            'post_type'     => 'post',
-                            'post_status'   => 'publish',
-                            'post__not_in' => $slideposts_ids,
-                        );
+                    $post_args['numberposts'] = $numberposts;  
+                    $post_args['post__not_in'] = $slideposts_ids;
 
                     $menuposts = get_posts( $post_args );
 
@@ -304,7 +318,8 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                 // load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
                 require_once 'phpQuery-onefile.php';
             }
-
+			// enable debugging messages
+			phpQuery::$debug = 0;
             $_doc = phpQuery::newDocumentHTML( $output );
             if ($_doc->find('.sub-menu--mega:last > .grid')->html() != '') {
                 

@@ -12,8 +12,8 @@ get_header(); ?>
 
         <?php
 		// let's get to know this post a little better
-		$full_width_featured_image = get_post_meta(get_the_ID(), '_bucket_full_width_featured_image', true);
-		$disable_sidebar = get_post_meta(get_the_ID(), '_bucket_disable_sidebar', true);
+		$full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
+		$disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
 
 		// let's use what we know
 		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
@@ -147,7 +147,7 @@ get_header(); ?>
                         <div class="btn  btn--small  btn--secondary"><?php _e('Categories', wpgrade::textdomain()) ?></div>
                         <?php
 						foreach ($categories as $category):
-							echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s"), $category->name)) .'">'. $category->cat_name.'</a>';
+							echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
 						endforeach; ?>
                     </div>
 					<?php endif;
@@ -158,7 +158,7 @@ get_header(); ?>
                         <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', wpgrade::textdomain()) ?></div>
                         <?php
 							foreach ($tags as $tag):
-								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s"), $tag->name)) .'">'. $tag->name.'</a>';
+								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", wpgrade::textdomain()), $tag->name)) .'">'. $tag->name.'</a>';
 							endforeach;
                         ?>
                     </div>

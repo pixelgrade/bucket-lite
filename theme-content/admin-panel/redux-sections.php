@@ -93,7 +93,7 @@ $sections[] = array(
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Headings Font', wpgrade::textdomain()),
-			'subtitle' => 'Font for titles and headings.',
+			'subtitle' => __('Font for titles and headings.', wpgrade::textdomain()),
 		),
 		// Navigation Font
 		array(
@@ -104,7 +104,7 @@ $sections[] = array(
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Navigation Font', wpgrade::textdomain()),
-			'subtitle' => 'Font for navigation menu.',
+			'subtitle' => __('Font for navigation menu.', wpgrade::textdomain()),
 		),
 		// Body Font
 		array(
@@ -135,25 +135,25 @@ $sections[] = array(
 		),
 		array(
 			'id' => 'blog_single_share_links_twitter',
-			'type' => 'switch',
+			'type' => 'checkbox',
 			'title' => __('Twitter Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
+			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
 			'id' => 'blog_single_share_links_facebook',
-			'type' => 'switch',
+			'type' => 'checkbox',
 			'title' => __('Facebook Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
+			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
 			'id' => 'blog_single_share_links_googleplus',
-			'type' => 'switch',
+			'type' => 'checkbox',
 			'title' => __('Google+ Share Link', wpgrade::textdomain()),
-			'subtitle' => '',
+			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
@@ -280,7 +280,10 @@ $sections[] = array(
             'title' => __('Social Icons', wpgrade::textdomain()),
             'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.<br /><br /><strong> You need to imput the entire URL (ie. http://twitter.com/username)</strong>', wpgrade::textdomain()),wpgrade::themename()),
             'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', wpgrade::textdomain()),
-			'mode' => 'text',
+			'checkboxes' => array(
+				'widget'=> __('Widget', wpgrade::textdomain()),
+				'header'=> __('Header', wpgrade::textdomain())
+			),
             'options' => array(
                 'flickr' => __('Flickr', wpgrade::textdomain()),
                 'tumblr' => __('Tumblr', wpgrade::textdomain()),
@@ -471,6 +474,10 @@ $sections[] = array(
 			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
 			'default' => 'inline',
 			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
+			'select2' => array( // here you can provide params for the select2 jquery call
+			    'minimumResultsForSearch' => -1, // this way the search box will be disabled
+				'allowClear' => false // don't allow a empty select
+			)
 		),
 		array(
 			'id' => 'custom_js',

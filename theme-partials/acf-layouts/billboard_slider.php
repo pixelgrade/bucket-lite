@@ -126,25 +126,25 @@ if ($slides->have_posts()): ?>
                 }
 
                 if (!$closed_group):
-                    echo '</div><div>';
+                    echo '--></div><div class="billboard--article-group  grid"><!--';
                 else:
-                    echo '<div>';
+                    echo '<div class="billboard--article-group  grid"><!--';
                     $closed_group = false;
                 endif; ?>
-                <article class="article  article--billboard">
+                --><article class="article  article--billboard  grid__item  one-whole">
                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
                     </div>
-                    <div class="rsABlock  article__header  article--billboard__header  one-half">
+                    <div class="rsABlock  article__header  article--billboard__header  lap-and-up-one-half">
                         <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
                         <h2 class="article__title article--billboard__title">
                             <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
                         </h2>
                         <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
                     </div>
-                </article>
+                </article><!--
   	        <?php else: ?>
-  	            <article class="rsABlock  article article--billboard-small"
+  	            --><article class="rsABlock  article article--billboard-small  grid__item  one-half"
                           data-move-effect="right"
                           data-speed="400" 
                           data-easing="easeOutCirc"
@@ -168,12 +168,12 @@ if ($slides->have_posts()): ?>
   	                    <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
   	                </h2>
   	                <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> <em>+</em></a>
-  	            </article>
+  	            </article><!--
   	        <?php endif;
 		endwhile;
 		wp_reset_postdata();
         if (!$closed_group):
-            echo '</div>';
+            echo '--></div>';
             $closed_group = false;
         endif; ?>
 	</div>

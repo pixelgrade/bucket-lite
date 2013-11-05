@@ -58,7 +58,7 @@
 		}
 		elseif (($wp_query->is_single || $wp_query->is_page) && $haspost) {
 			$post = $wp_query->posts[0];
-			$link = get_permalink($post->ID);
+			$link = get_permalink(wpgrade::lang_post_id($post->ID));
 		}
 		elseif ($wp_query->is_author && $haspost) {
 			$author = get_userdata(get_query_var('author'));

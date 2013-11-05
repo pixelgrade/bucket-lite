@@ -51,7 +51,7 @@ add_action( 'after_setup_theme', 'wpgrade_custom_thumbnails');
 function wpgrade_get_thumbnail( $size = 'full', $class = '', $use_as_background = false, $force = false ){
 
     global $post;
-    $post_id = $post->ID;
+    $post_id = wpgrade::lang_post_id($post->ID);
 
     $default_img = wpgrade::option("default_thumbnail_".$size);
     $src = '';
