@@ -92,12 +92,12 @@
             'comment_notes_before' => '',
             'comment_notes_after' => '',
             'fields' => apply_filters( 'comment_form_default_fields', array(
-                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">Name</label><input id="author" name="author" type="text" placeholder="Name..." size="30" ' .  $aria_req . ' /></p>',
-                'email' => '<p class="comment-form-email"><label for="email" class="show-on-ie8">Email</label><input id="email" name="email" size="30" type="text" placeholder="Email..." '. $aria_req .' /></p>' ) ),
+                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">'.__('Name', wpgrade::textdomain()).'</label><input id="author" name="author" type="text" placeholder="'.__('Name', wpgrade::textdomain()).'..." size="30" ' .  $aria_req . ' /></p>',
+                'email' => '<p class="comment-form-email"><label for="email" class="show-on-ie8">'.__('Email', wpgrade::textdomain()).'</label><input id="email" name="email" size="30" type="text" placeholder="'.__('Email', wpgrade::textdomain()).'..." '. $aria_req .' /></p>' ) ),
             'id_submit' => 'comment-submit',
             'label_submit' => __('Send', wpgrade::textdomain()),
             // redefine your own textarea (the comment body)
-            'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
+            'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">'.__('Comment', wpgrade::textdomain()).'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
     } else {
         $comments_args = array(
         // change the title of send button
@@ -106,12 +106,18 @@
         'comment_notes_before' => '',
         'comment_notes_after' => '',
         'fields' => apply_filters( 'comment_form_default_fields', array(
-                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">Name</label><input id="author" name="author" type="text" placeholder="Name..." size="30" ' .  $aria_req . ' /></p><!--',
-                'email' => '--><p class="comment-form-email"><label for="name" class="show-on-ie8">Email</label><input id="email" name="email" size="30" type="text" placeholder="Email..." '. $aria_req .' /></p><!--',
-                'url' => '--><p class="comment-form-url"><label for="url" class="show-on-ie8">Url</label><input id="url" name="url" size="30" placeholder="Website..." type="text"></p>') ),
+                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">'.__('Name', wpgrade::textdomain()).'</label><input id="author" name="author" type="text" placeholder="'.__('Name', wpgrade::textdomain()).'..." size="30" ' .  $aria_req . ' /></p><!--',
+                'email' => '--><p class="comment-form-email"><label for="name" class="show-on-ie8">'.__('Email', wpgrade::textdomain()).'</label><input id="email" name="email" size="30" type="text" placeholder="'.__('Email', wpgrade::textdomain()).'..." '. $aria_req .' /></p><!--',
+                'url' => '--><p class="comment-form-url"><label for="url" class="show-on-ie8">'.__('Url', wpgrade::textdomain()).'</label><input id="url" name="url" size="30" placeholder="'.__('Website', wpgrade::textdomain()).'..." type="text"></p>') ),
         'id_submit' => 'comment-submit',
         'label_submit' => __('Send', wpgrade::textdomain()),
         // redefine your own textarea (the comment body)
-        'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
+        'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">'.__('Comment', wpgrade::textdomain()).'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
     }
+	
+	//if we have no comments than we don't a second title, one is enough
+	if ( !have_comments() ){
+		$comments_args['title_reply'] = '';
+	}
+	
     comment_form($comments_args); ?>

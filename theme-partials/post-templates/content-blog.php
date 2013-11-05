@@ -4,16 +4,11 @@
  */
 ?>
 <article <?php post_class('article  article--grid'); ?>>
-
 	<?php get_template_part('theme-partials/post-templates/header-blog', get_post_format()); ?>
-
     <div class="article--grid__body">
-
         <div class="article__content">
             <?php  the_excerpt(); ?>
         </div>
-
-
     </div>
     <div class="article__meta  article--grid__meta">
         <div class="split">
