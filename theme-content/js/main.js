@@ -1432,6 +1432,29 @@
 
     /* --- ROYALSLIDER --- */
 
+    // var $sliderBillboardOriginal = $(".billboard.js-pixslider").html();
+    // // $(window).bind('orientationchange', function(e) {
+    // $(window).resize(function(e)  { 
+
+    //     console.log('resize');
+
+    //     var $sliderBillboard = $(".billboard.js-pixslider");
+
+    //     var sliderData = $sliderBillboard.data('royalSlider');
+
+    //     sliderData.destroy();
+
+    //     $sliderBillboard.html($sliderBillboardOriginal);
+        
+    //     sliderMarkupProcess($sliderBillboard);
+
+    //     $(".billboard.js-pixslider").royalSlider({
+    //         autoHeight: true,
+    //         autoScaleSlider: false,
+    //         loop: true             
+    //     });
+    // });
+
     function royalSliderInit() {
 
         // Helper function
@@ -1454,10 +1477,8 @@
 
         $('.js-pixslider').each(function(){
 
-            if(touch && $(this).hasClass('billboard') && $(window).width() < 900){
-              $(this).removeClass('pixslider');
-              return;
-            }
+            if($(this).hasClass('billboard'))
+                sliderMarkupProcess($(this));
 
             var $slider = $(this),
                 rs_arrows = typeof $slider.data('arrows') !== "undefined",
@@ -1540,6 +1561,32 @@
 
         });
     };
+
+    function sliderMarkupProcess($slider){
+        console.log('process');
+
+        if($(window).width() < 900){
+            console.log('<900');
+
+            var $parent = $slider;
+            $slider.removeClass('pixslider');
+            $slider.data('autoheight', 'true');
+
+            $slider.find('.billboard--article-group').each(function(){
+                $(this).find('.rsABlock').removeClass('rsABlock').removeData();
+                $(this).children().appendTo($parent);
+                $(this).remove();
+            });
+        }
+        // } else {
+
+        //     console.log('>=900');
+        //     $slider.removeData('autoheight');
+        //     $slider.removeClass('rsAutoHeight');
+
+        //     if(!$slider.hasClass('pixslider')) $slider.addClass('pixslider');
+        // }
+    }
 
 
     function footerWidgetsTitles() {
