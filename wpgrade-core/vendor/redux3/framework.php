@@ -318,7 +318,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             add_action( 'wp_head', array( &$this, '_enqueue_output' ), 100 );
 
             // Add tracking. PLEASE leave this in tact! It helps us gain needed statistics of uses. Opt-in of course.
-            add_action( 'init', array( &$this, '_tracking' ), 3 );            
+//            add_action( 'init', array( &$this, '_tracking' ), 3 );
 
             // Hook into the WP feeds for downloading exported settings
             add_action( 'do_feed_reduxopts-' . $this->args['opt_name'], array( &$this, '_download_options' ), 1, 1 );
