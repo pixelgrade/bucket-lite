@@ -234,25 +234,32 @@
     }
 }
 
+    .flexbox{
+        .sub-menu__grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            // justify-content: space-between;
+            align-content: stretch;
+            align-items: stretch;
+        }
+
+        .sub-menu__grid__item{
+            flex: 0 1 auto;
+            align-self: auto;            
+        }
+    }
+
     .sub-menu__grid {
         @extend .cf;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        // justify-content: space-between;
-        align-content: stretch;
-        align-items: stretch;
     }
+
 
     .sub-menu__grid__item {
         @include rem(margin-bottom, -$_u);
         @include rem(min-height, $_2u);
         background-color: #262525;
         float: left;
-
-        flex: 0 1 auto;
-        align-self: auto;
 
         position: relative;
         background-clip: content-box;
@@ -585,4 +592,12 @@ $transition_speed: 0.4s;
         }
    
     }
+}
+
+// Flexbox does not work in IE8
+.lt-ie9{
+    .sub-menu__grid {
+        width: 1050px;
+        background-color: #eee;
+    }        
 }
