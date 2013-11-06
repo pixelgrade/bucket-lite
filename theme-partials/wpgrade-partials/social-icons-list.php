@@ -11,7 +11,7 @@ if (!empty($social_links)):
 		if (isset($icon['value'] ) && isset($icon['checkboxes']['header'] ) ): $value = $icon['value']; ?>
 		    <li>
 		        <a class="social-icon-link" href="<?php echo $value ?>" <?php echo $target ?>>
-		            <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?> square small"></i>
+		            <i class="pixcode  pixcode--icon  icon-e-<?php echo $domain; ?> square"></i>
 		        </a>
 		    </li>
 		<?php endif;

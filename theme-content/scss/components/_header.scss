@@ -50,31 +50,39 @@
         vertical-align: top;
     }
 
+    .form-search, .search-query, 
+    .search-submit, .pixcode--icon{
+        height: 50px;
+    }
+
     .form-search{
-        @include rem(width, 9*$_u);        
+        @include rem(width, 9*$_u);   
+        background-color: $dark;
     }
 
     .search-query{
-        // rem does not work properly
-        // @include rem(height, $_2u);
-        height: 37px;
-        right: 37px;
+        right: 50px;
         @include rem(padding, 6px 0 6px $_u2);
-        background-color: $dark;
         border: 0;
         color: white;
+        background: #1a1717;
         text-transform: uppercase;
         @include rem(letter-spacing, 2px);
     }
 
     .search-submit{
-        height: 37px;
-        width: 37px;
+        width: 50px;
         vertical-align: top;
-        background-color: $dark;
+        background: #1a1717;
         @include font-size(0.75*$_u);
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .pixcode--icon{
+        width: 50px;
+        font-size: 22px;
+        line-height: 50px;
     }
 }
 
@@ -90,14 +98,17 @@
 .header-bar--top{
     margin: 0;
 
+    .form-search, .search-query, 
+    .search-submit, .pixcode--icon{
+        height: 36px;
+    }    
+
     .search-query{
-        @include rem(height, 36px);
         line-height: 1.2;
         padding-right: 0 !important;
     }
 
     .search-submit{
-        @include rem(height, 36px);
         padding-top: 0;
         padding-bottom: 0;
 
@@ -106,9 +117,10 @@
         }
     }
     
-    .social-icon-link {
-        @include rem(height, 36px);
-        @include rem(width, 36px);
+    .pixcode--icon {
+        width: 36px;
+        font-size: 16px;
+        line-height: 36px;        
     }
 }
 
@@ -153,20 +165,29 @@
 //Only on bigger screens the inverse styles 
 //will be visible
 @include media-query(lap-and-up) {
-    
     /*----------------------------------------*\
-        $TOP NAV INVERSE
+        $NAV TOP INVERSE
     \*----------------------------------------*/
     .nav-inverse-top{
 
+        // Invserse navigation bar and the social icons    
         .navigation--top{
             background: none;
 
             a {
                 color: #888;
             }
+
+            .social-icon-link{
+                background: none;
+            }
+
+            .pixcode--icon{
+                background: none;
+            }            
         }
 
+        // Inverse top menus and their submenus
         .nav--top {
 
             li {
@@ -188,22 +209,14 @@
                 background: #ddd;
             }
         }
-
-        .social-icon-link{
-            background: none;
-
-            .square{
-                background: none;
-            }
-        }           
     }
 
-
-
-
-
+    
+    
+    
+    
     /*----------------------------------------*\
-        $MAIN NAV INVERSE
+            $NAV MAIN INVERSE
     \*----------------------------------------*/
     .nav-inverse-main {
 
@@ -215,6 +228,7 @@
             }     
         }
 
+        // Inverse navigation, menus, mega-menus
         .nav--main {
             @include rem(border-bottom, 5px solid $dark);
 
@@ -240,7 +254,8 @@
                         color: black;
                     }
                 }
-            }
+
+            } // li
 
             > li {
                 background-color: transparent;
@@ -277,13 +292,8 @@
                 @include rem(margin-top, 5px);
                 @include rem(padding-top, 5px);
                 border-bottom-color: rgba(white, .4);
-
-                // .sub-menu {
-                //     margin-top: 0;
-                //     padding-top: 0;
-                // }
             }
-        }
+        } // .nav--main
 
         .sub-menu__grid__item {
             background-color: white;
@@ -295,78 +305,31 @@
             }
         }
 
-        // .nav--main > li{
-        //     //This is the one below.
-        //     //This works with multi-line menu but
-        //     //will not stretch to 100% of the menu
-        //     //border-bottom-color: $dark;
+        // Inverse search from(inputs) and social icons
+        .site-header{
 
-        //     border-top-width: 0;
-        //     background: transparent;
+            .form-search, .social-icon-link{
+                border: 1px solid #dedede;
+                background: none;
+            }
 
-        //     a{
-        //         color: black;
-        //     }     
-
-        //     &:hover{
-        //         background: transparent;
-
-        //         > a{
-        //            color: black;
-        //         }
-        //     }
-
-        //     .article--billboard-small {
-        //         background-color: white;
-
-        //         .hN{
-        //             color: black;
-        //         }
-        //     }
-        // }
-
-        .header--type1 {
-            .search-query, .search-submit, .pixcode--icon.small.square {
-                color: black;
-                background-color: transparent;
+            .search-query, .search-submit{
+                background: none;
             }
 
             .search-query{
-                border-left: 1px solid #dedede;
-                border-top: 1px solid #dedede;
-                border-bottom: 1px solid #dedede;
-
-                height: 50px;
+                color: $dark;
             }
 
-            .search-submit{
-                border-right: 1px solid #dedede;
-                border-top: 1px solid #dedede;
-                border-bottom: 1px solid #dedede;        
-
-                height: 50px;
-            }
-
-            .header-bar .square{
+            .pixcode--icon{
                 height: 48px;
                 width: 48px;
-                font-size: 18px;
-                line-height: 50px;
-                
                 background: none;
-                color: $light;
+            }             
+        } // .site-header
 
-            }        
+    } // .nav-inverse-main
 
-            .header-bar > li {
-                border: 1px solid #dedede;
-
-                &.search-item{
-                    border: none;
-                }
-            }
-        }
-    }
-}
+} // media-query(lap-and-up)
 
 
