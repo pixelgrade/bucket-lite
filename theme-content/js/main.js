@@ -1496,8 +1496,8 @@
                 rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
                 rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
                 rs_autoScaleSlider = false,
-                rs_autoScaleSliderWidth = typeof $slider.data('autoScaleSliderWidth') !== "undefined",
-                rs_autoScaleSliderHeight = typeof $slider.data('autoScaleSliderHeight') !== "undefined",
+                rs_autoScaleSliderWidth = $slider.data('autoscalesliderwidth'),
+                rs_autoScaleSliderHeight = $slider.data('autoscalesliderheight'),
                 rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
                 rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
                 rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined";
@@ -1509,7 +1509,7 @@
                 rs_drag = true;
 
             if(rs_autoheight) { rs_autoScaleSlider = false } else { rs_autoScaleSlider = true }
-              
+
             if ($children.length == 1){
                 rs_arrows = false;
                 rs_bullets = 'none';
