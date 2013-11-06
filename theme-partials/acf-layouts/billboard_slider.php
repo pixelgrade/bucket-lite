@@ -162,7 +162,7 @@ if ($slides->have_posts()): ?>
   	                
                    
                      <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-  	                    <img src="<?php echo $image[0] ?>" />
+  	                    <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0] ?>" /></a>
   	                </div>
   	                <h2 class="article__title article--billboard-small__title">
   	                    <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
