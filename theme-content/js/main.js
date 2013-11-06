@@ -1686,8 +1686,6 @@
         setTimeout(function(){
           self.addClass('hidden');
         }, 150);
-
-          
       }
     }
 
