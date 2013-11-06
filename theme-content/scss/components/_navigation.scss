@@ -299,14 +299,16 @@
                 @include translate3d(0, 0px, 0);
             }
 
-            &:hover {
+            &:hover, &.current-menu-item {
                 border-bottom-color: $accent; 
                 background-color:rgba(255,255,255,0.05);
+            }
 
+            &:hover{
                 > a {
                     color: white;
-                }  
-            }
+                }                  
+            }            
 
             &.hidden > .sub-menu {
                 display:none;
