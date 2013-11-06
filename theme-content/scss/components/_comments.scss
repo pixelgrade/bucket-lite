@@ -193,7 +193,8 @@ li.comment{
 }
 
 .comment-form-comment,
-.form-submit {
+.form-submit,
+.comment-subscription-form {
     @extend .grid__item;
     @extend .one-whole;
 

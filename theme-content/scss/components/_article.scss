@@ -402,6 +402,7 @@
                 bottom:0;
                 left:0;
                 width:100%;
+                z-index: 25;
             }
         }
     }
@@ -415,11 +416,23 @@
 .billboard {
     position: relative;
     @include rem(margin-bottom, $_u4);
+    // @include opacity(0);
+    @include transition(oapcity .5s linear);
+}
+
+.billboard.visible, .lt-ie9 .billboard{
+    @include opacity(1);
 }
 
 .article--billboard {
     position: static;
     border-bottom:#{$_2u - 5px} solid #fff; 
+    width: 100%;
+}
+
+.billboard--article-group{
+    height: 625px;
+    display: block;
 }
 
 .billboard__category {
@@ -518,6 +531,7 @@
         @include rem(bottom, $_u);
         @include rem(left, $_2u);
         z-index: 30;
+        width: 40%;
     }    
 
     .article--billboard-small {

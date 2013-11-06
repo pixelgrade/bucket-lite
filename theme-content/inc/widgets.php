@@ -419,21 +419,23 @@ class wpgrade_contact_widget extends WP_Widget {
         );
 
         if (count($contactinfo) > 0) {
-            echo '<ul class="widget-contact-details">';
+            echo '<ul class="widget-contact-details nav">';
             foreach ($contactinfo as $info => $value) {
+                if($value != ''){
                 echo '<li class="widget-contact-detail">';
                     switch ($info) {
                         case 'email':
-                            echo '<span class="widget-contact-value"><a href="mailto:'. $value .'">'. $value .'</a></span>';
+                            echo '<span class="widget-contact-value widget-contact__email"><a href="mailto:'. $value .'">'. $value .'</a></span>';
                             break;
                         case 'social':
-                            echo '<span class="widget-contact-value"><a href="'.$value['link'].'" target="_blank">'. $value['name'] .'</a></span>';
+                            echo '<span class="widget-contact-value widget-contact__social"><a href="'.$value['link'].'" target="_blank">'. $value['name'] .'<br/> - <small>' . $value['label'] . '</small></a></span>';
                             break;
                         default:
                             echo '<span class="widget-contact-value">'. $value .'</span>';
                             break;
                     }
                 echo '</li>';
+                }
             }
             echo '</ul>';
         } else {

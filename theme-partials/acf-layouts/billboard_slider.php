@@ -110,7 +110,7 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-	<div class="billboard pixslider js-pixslider arrows--outside" data-slidertransition="fade" data-arrows="true">
+	<div class="billboard pixslider js-pixslider arrows--outside" data-slidertransition="fade" data-arrows="true" data-autoheight>
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
             $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
@@ -135,13 +135,15 @@ if ($slides->have_posts()): ?>
                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" />
                     </div>
-                    <div class="rsABlock  article__header  article--billboard__header">
-                        <div class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></div>
-                        <h2 class="article__title article--billboard__title">
-                            <div class="hN"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                        </h2>
-                        <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> &raquo;</a>
-                    </div>
+                    <a href="<?php the_permalink(); ?>">
+                        <span class="rsABlock  article__header  article--billboard__header">
+                            <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
+                            <h2 class="article__title article--billboard__title">
+                                <span class="hN"><?php the_title(); ?></span>
+                            </h2>
+                            <span class="small-link"><?php echo $read_more_label; ?> &raquo;</span>
+                        </span>
+                    </a>
                 </article><!--
   	        <?php else: ?>
   	            --><article class="rsABlock  article article--billboard-small"
@@ -160,14 +162,15 @@ if ($slides->have_posts()): ?>
                           <?php } ?>
                           >
   	                
-                   
-                     <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-  	                    <img src="<?php echo $image[0] ?>" />
-  	                </div>
-  	                <h2 class="article__title article--billboard-small__title">
-  	                    <a href="<?php the_permalink(); ?>"><div class="hN"><?php the_title(); ?></div></a>
-  	                </h2>
-  	                <a class="small-link" href="<?php the_permalink(); ?>"><?php echo $read_more_label; ?> <em>+</em></a>
+                    <a href="<?php the_permalink(); ?>">
+                        <span class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+      	                    <img src="<?php echo $image[0] ?>" />
+      	                </span>
+      	                <h2 class="article__title article--billboard-small__title">
+      	                    <span class="hN"><?php the_title(); ?></span>
+      	                </h2>
+      	                <span class="small-link"><?php echo $read_more_label; ?> <em>+</em></span>
+                    </a>
   	            </article><!--
   	        <?php endif;
 		endwhile;

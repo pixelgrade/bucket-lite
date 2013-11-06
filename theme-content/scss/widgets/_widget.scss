@@ -171,6 +171,63 @@
     select {
         width: 100%;
         @include rem(padding-left, $_u4);
-        @include rem(height, $_u + $_u2);
+        // ??? @include rem(height, $_u + $_u2);
     }
 }
+
+
+
+
+
+.widget_image img.alignnone{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.widget_wpgrade_posts_slider_widget{
+    .article--slider{
+        margin-bottom: 0;
+    }
+
+    .rsArrow{
+        top: 85px;
+
+        .rsArrowIcn{
+            height: 28px;
+            width: 28px;
+        }
+    }
+}
+
+/**
+ * Maybe it's good, maybe it's not...
+ */
+
+.widget_categories, .widget_recent_comments{
+    ul > li a{
+        display: inline-block !important;
+    }
+}
+
+.recentcomments{
+    @include rem(padding, $_u2 0);
+}
+
+@include media-query(palm) {
+    .widget_recent_entries, .widget_recent_comments, .widget_rss, .widget_categories
+    { 
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+.widget_rss li > cite:before{
+    content: '-';
+    margin-right: 5px;
+}
+
+.rss-date{
+    font-style: italic;
+}
+

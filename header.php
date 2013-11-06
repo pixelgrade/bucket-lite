@@ -7,9 +7,7 @@ if(is_page() && get_page_template_slug(wpgrade::lang_original_post_id(get_the_ID
 }
 
 if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
-if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
-
-?>
+if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main"; ?>
 
 <body <?php body_class($class_name); ?>>
     <div class="pace">

@@ -30,6 +30,9 @@
 /*----------------------------------------*\
     $TITLE/LOGO
 \*----------------------------------------*/
+.site-home-title{
+    display: inline;
+}
 
 .site-logo {
     width:100%;
@@ -318,6 +321,10 @@
             }
 
             .search-query{
+                color: $dark;
+            }
+
+            .search-submit:hover{
                 color: $dark;
             }
 

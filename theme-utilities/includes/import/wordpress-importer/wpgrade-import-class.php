@@ -406,15 +406,29 @@ class wpGrade_import extends WPGrade_WP_Import
 	function import_theme_options($option_file)
 	{
 		if($option_file) @include_once($option_file);
-		
+
 		if(!isset($theme_options) ) { return false; }
 
-		$theme_options = json_decode(trim(base64_decode(chunk_split($theme_options), true),'###'));
-
-		if(is_array($theme_options) && isset($theme_options['redux-opts-backup']) && $theme_options['redux-opts-backup'] == '1') {
-            update_option(wpgrade::shortname()."_options", $theme_options);
+		if ( !empty( $theme_options ) ) {
+			$imported_options = json_decode( htmlspecialchars_decode( base64_decode( $theme_options )), true );
+			echo 'Success: ';
+			var_export(update_option(wpgrade::shortname()."_options", $imported_options));
 		}
-		
+
+//		if( !empty( $imported_options ) && is_array( $imported_options ) && isset( $imported_options['redux-backup'] ) && $imported_options['redux-backup'] == '1' ) {
+//
+//			$imported_options['REDUX_imported'] = 1;
+//			foreach($imported_options as $key => $value) {
+//				$plugin_options[$key] = $value;
+//			}
+//			update_option(wpgrade::shortname()."_options", $plugin_options);
+//		}
+
+		// Remove the import/export tab cookie.
+		if( $_COOKIE['redux_current_tab'] == 'import_export_default' ) {
+			setcookie( 'redux_current_tab', '', 1, '/' );
+		}
+
 		//Ensure the $wp_rewrite global is loaded
 		global $wp_rewrite;
 		//Call flush_rules() as a method of the $wp_rewrite object
@@ -442,6 +456,7 @@ class wpGrade_import extends WPGrade_WP_Import
 				if(is_object($wpGrade_menu) && in_array($wpGrade_menu->name, $menu_conf))
 				{
 					$key = array_search($wpGrade_menu->name, $menu_conf);
+
 					if($key !== false)
 					{
 						//if we have found a menu with the correct menu name apply the id to the menu location
