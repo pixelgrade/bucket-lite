@@ -38,8 +38,6 @@
 			(
 				// main theme class
 				'theme-utilities/bucket'.EXT,
-				// importer
-//				'theme-content/inc/import/wordpress-importer/wordpress-importer'.EXT,
 				'theme-content/inc/required-plugins/required-plugins.php',
 				// widgets & template tags
 				'theme-content/inc/template-tags'.EXT,
@@ -110,6 +108,9 @@
                  'slider_latest_posts' => __('Slider + Latest Posts','bucket_txtd'),
 			),
 
+		// importer
+		// decide which menus should be imported
+		'import_nav_menu' => array('Header Menu', 'Top Menu Left', 'Top Menu Right', 'Footer Menu'),
 		'resources' => array
 			(
 				// script declarations; scripts must be enqueue'ed to appear

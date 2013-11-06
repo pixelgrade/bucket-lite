@@ -22,11 +22,11 @@ class wpGrade_import extends WPGrade_WP_Import
 			// Use a static front page
 			update_option( 'show_on_front', 'page' );
 			$home = get_page_by_title( 'Home' );
-			update_option( 'page_on_front', $home->ID );
+			if ( !empty($home) ) update_option( 'page_on_front', $home->ID );
 
 			// Set the blog page
 			$blog   = get_page_by_title( 'Journal' );
-			update_option( 'page_for_posts', $blog->ID );
+			if ( !empty($blog) ) update_option( 'page_for_posts', $blog->ID );
 		}
 		
 		//Ensure the $wp_rewrite global is loaded
@@ -430,9 +430,9 @@ class wpGrade_import extends WPGrade_WP_Import
 		
 		//get all created menus
 		$wpGrade_menus = wp_get_nav_menus();
-		
+
 		//get the configuration
-		$menu_conf = wpgrade::option('nav_menus');
+		$menu_conf = wpgrade::confoption('import_nav_menu');
 		
 		if(!empty($wpGrade_menus) && !empty($menu_conf))
 		{
