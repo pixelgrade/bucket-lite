@@ -409,7 +409,7 @@ class wpGrade_import extends WPGrade_WP_Import
 		
 		if(!isset($theme_options) ) { return false; }
 
-		$theme_options = unserialize(trim(base64_decode(chunk_split($theme_options), true),'###'));
+		$theme_options = json_decode(trim(base64_decode(chunk_split($theme_options), true),'###'));
 
 		if(is_array($theme_options) && isset($theme_options['redux-opts-backup']) && $theme_options['redux-opts-backup'] == '1') {
             update_option(wpgrade::shortname()."_options", $theme_options);

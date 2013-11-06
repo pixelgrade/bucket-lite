@@ -1078,7 +1078,7 @@ class wpgrade {
 		}
 
 		if(function_exists('icl_object_id')) {
-			return icl_object_id($id, $post_type,true, get_short_defaultwp_language());
+			return icl_object_id($id, $post_type,true, self::get_short_defaultwp_language());
 		} else {
 			return $id;
 		}

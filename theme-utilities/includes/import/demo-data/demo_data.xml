@@ -143,20 +143,20 @@
             </wp:postmeta>
         </item>
         <item>
-            <title>charlotte-agell</title>
-            <link>http://pixelgrade.com/demos/bucket/?attachment_id=13</link>
-            <pubDate>Mon, 21 Oct 2013 08:08:26 +0000</pubDate>
+            <title>allie-bates</title>
+            <link>http://pixelgrade.com/demos/bucket/?attachment_id=14</link>
+            <pubDate>Mon, 21 Oct 2013 08:13:22 +0000</pubDate>
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png</guid>
             <description></description>
             <content:encoded><![CDATA[]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-            <wp:post_id>13</wp:post_id>
-            <wp:post_date>2013-10-21 08:08:26</wp:post_date>
-            <wp:post_date_gmt>2013-10-21 08:08:26</wp:post_date_gmt>
+            <wp:post_id>14</wp:post_id>
+            <wp:post_date>2013-10-21 08:13:22</wp:post_date>
+            <wp:post_date_gmt>2013-10-21 08:13:22</wp:post_date_gmt>
             <wp:comment_status>open</wp:comment_status>
             <wp:ping_status>open</wp:ping_status>
-            <wp:post_name>charlotte-agell</wp:post_name>
+            <wp:post_name>allie-bates</wp:post_name>
             <wp:status>inherit</wp:status>
             <wp:post_parent>0</wp:post_parent>
             <wp:menu_order>0</wp:menu_order>
@@ -170,11 +170,11 @@
             </wp:postmeta>
             <wp:postmeta>
                 <wp:meta_key>_wp_attachment_metadata</wp:meta_key>
-                <wp:meta_value><![CDATA[a:5:{s:5:"width";i:250;s:6:"height";i:250;s:4:"file";s:27:"2013/10/image1";s:5:"sizes";a:3:{s:9:"thumbnail";a:4:{s:4:"file";s:27:"charlotte-agell-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:10:"post-small";a:4:{s:4:"file";s:27:"charlotte-agell-200x155.jpg";s:5:"width";i:200;s:6:"height";i:155;s:9:"mime-type";s:10:"image/jpeg";}s:9:"post-tiny";a:4:{s:4:"file";s:25:"charlotte-agell-72x54.jpg";s:5:"width";i:72;s:6:"height";i:54;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}]]></wp:meta_value>
+                <wp:meta_value><![CDATA[a:5:{s:5:"width";i:250;s:6:"height";i:250;s:4:"file";s:23:"2013/10/image1";s:5:"sizes";a:3:{s:9:"thumbnail";a:4:{s:4:"file";s:23:"allie-bates-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:10:"post-small";a:4:{s:4:"file";s:23:"allie-bates-200x155.jpg";s:5:"width";i:200;s:6:"height";i:155;s:9:"mime-type";s:10:"image/jpeg";}s:9:"post-tiny";a:4:{s:4:"file";s:21:"allie-bates-72x54.jpg";s:5:"width";i:72;s:6:"height";i:54;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}]]></wp:meta_value>
             </wp:postmeta>
             <wp:postmeta>
                 <wp:meta_key>_wp_attachment_wp_user_avatar</wp:meta_key>
-                <wp:meta_value><![CDATA[4]]></wp:meta_value>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
             </wp:postmeta>
         </item>
         <item>
@@ -1998,7 +1998,7 @@
             </wp:postmeta>
             <wp:postmeta>
                 <wp:meta_key>blocks_3_content</wp:meta_key>
-                <wp:meta_value><![CDATA[<img class="aligncenter size-full wp-image-116" alt="ad-728x90" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="728" height="90" />]]></wp:meta_value>
+                <wp:meta_value><![CDATA[<img class="aligncenter size-full wp-image-116" alt="ad-728x90" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="728" height="90" />]]></wp:meta_value>
             </wp:postmeta>
             <wp:postmeta>
                 <wp:meta_key>_blocks_3_content</wp:meta_key>
@@ -2127,7 +2127,7 @@
 Single line blockquote:
 <blockquote>Stay hungry. Stay foolish.</blockquote>
 Multi line blockquote with a cite reference:
-<blockquote>People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things. <cite>Steve Jobs – Apple Worldwide Developers’ Conference, 1997</cite></blockquote>
+<blockquote>People think focus means saying yes to the thing youâ€™ve got to focus on. But thatâ€™s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. Iâ€™m actually as proud of the things we havenâ€™t done as the things I have done. Innovation is saying no to 1,000 things. <cite>Steve Jobs â€“ Apple Worldwide Developersâ€™ Conference, 1997</cite></blockquote>
 <h2>Tables</h2>
 <table>
 <tbody>
@@ -2139,7 +2139,7 @@ Multi line blockquote with a cite reference:
 <tr class="odd">
 <td><a href="http://john.do/">John Saddington</a></td>
 <td>$1</td>
-<td>Because that’s all Steve Job’ needed for a salary.</td>
+<td>Because thatâ€™s all Steve Jobâ€™ needed for a salary.</td>
 </tr>
 <tr class="even">
 <td><a href="http://tommcfarlin.com/">Tom McFarlin</a></td>
@@ -2154,12 +2154,12 @@ Multi line blockquote with a cite reference:
 <tr class="even">
 <td><a href="http://chrisam.es/">Chris Ames</a></td>
 <td>$100B</td>
-<td>With hair like that?! Enough said…</td>
+<td>With hair like that?! Enough saidâ€¦</td>
 </tr>
 </tbody>
 </table>
 <h2>Definition Lists</h2>
-<dl><dt>Definition List Title</dt><dd>Definition list division.</dd><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I’ll let Bill O’Reilly will <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
+<dl><dt>Definition List Title</dt><dd>Definition list division.</dd><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher â€œBig Blackâ€ Boykins, â€œDo Workâ€ works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>Iâ€™ll let Bill Oâ€™Reilly will <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
 <h2>Unordered Lists (Nested)</h2>
 <ul>
 	<li>List item one
@@ -2217,11 +2217,11 @@ This is an example of a <a title="Apple" href="http://apple.com">link</a>.
 
 <strong>Abbreviation Tag</strong>
 
-The abbreviation <abbr title="Seriously">srsly</abbr> stands for “seriously”.
+The abbreviation <abbr title="Seriously">srsly</abbr> stands for â€œseriouslyâ€.
 
 <strong>Acronym Tag</strong>
 
-The acronym <acronym title="For The Win">ftw</acronym> stands for “for the win”.
+The acronym <acronym title="For The Win">ftw</acronym> stands for â€œfor the winâ€.
 
 <strong>Big Tag</strong>
 
@@ -2229,7 +2229,7 @@ These tests are a <big>big</big> deal, but this tag is no longer supported in HT
 
 <strong>Cite Tag</strong>
 
-“Code is poetry.” –<cite>Automattic</cite>
+â€œCode is poetry.â€ â€“<cite>Automattic</cite>
 
 <strong>Code Tag</strong>
 
@@ -2262,7 +2262,7 @@ This tag styles large blocks of code.
 }</pre>
 <strong>Quote Tag</strong>
 
-<q>Developers, developers, developers…</q> –Steve Ballmer
+<q>Developers, developers, developersâ€¦</q> â€“Steve Ballmer
 
 <strong>Strong Tag</strong>
 
@@ -2270,11 +2270,11 @@ This tag shows <strong>bold<strong> text.</strong></strong>
 
 <strong>Subscript Tag</strong>
 
-Getting our science styling on with H<sub>2</sub>O, which should push the “2″ down.
+Getting our science styling on with H<sub>2</sub>O, which should push the â€œ2â€³ down.
 
 <strong>Superscript Tag</strong>
 
-Still sticking with science and Isaac Newton’s E = MC<sup>2</sup>, which should lift the 2 up.
+Still sticking with science and Isaac Newtonâ€™s E = MC<sup>2</sup>, which should lift the 2 up.
 
 <strong>Teletype Tag</strong>
 
@@ -2565,7 +2565,7 @@ If you believe that your work has been copied in a way that constitutes copyrigh
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?page_id=218</guid>
             <description></description>
-            <content:encoded><![CDATA[Here is where the beauty lies. We’ve taken that extra-mile and crafted an advanced but simple to use<strong> shortcodes plugin</strong> that will allow you to give structure and bling to your pages and posts. To ensure ease of use, everything is visual, nicely packed in a modal window accessible from the Wordpress editor. <strong>Look for that funky P button. </strong>More about shortcodes in <a href="http://help.pixelgrade.com/support/solutions/articles/140272-plugins-pixcodes-shortcodes-" target="_blank">documentation</a>.
+            <content:encoded><![CDATA[Here is where the beauty lies. Weâ€™ve taken that extra-mile and crafted an advanced but simple to use<strong>Â shortcodes plugin</strong>Â that will allow you to give structure and bling to your pages and posts. To ensure ease of use, everything is visual, nicely packed in a modal window accessible from the Wordpress editor.Â <strong>Look for that funky P button.Â </strong>More about shortcodes inÂ <a href="http://help.pixelgrade.com/support/solutions/articles/140272-plugins-pixcodes-shortcodes-" target="_blank">documentation</a>.
 <h2>Buttons</h2>
 [button link="#"]Default[/button]
 [button link="#" size="small"]Small[/button]
@@ -2589,51 +2589,51 @@ If you believe that your work has been copied in a way that constitutes copyrigh
 </tr>
 <tr>
 <th>Circles</th>
-<td><a href="#">[icon type="circle" size="small" name="picture"]</a></td>
-<td><a href="#">[icon type="circle" size="medium" name="camera"]</a></td>
-<td><a href="#">[icon type="circle" size="big" name="tag"]</a></td>
+<td><a href="#">[icon type="circle"Â size="small"Â name="picture"]</a></td>
+<td><a href="#">[icon type="circle"Â size="medium"Â name="camera"]</a></td>
+<td><a href="#">[icon type="circle"Â size="big"Â name="tag"]</a></td>
 </tr>
 <tr>
 <th>Square</th>
-<td><a href="#">[icon type="square" size="small" name="picture"]</a></td>
-<td><a href="#">[icon type="square" size="medium" name="camera"]</a></td>
-<td><a href="#">[icon type="square" size="big" name="tag"]</a></td>
+<td><a href="#">[icon type="square"Â size="small"Â name="picture"]</a></td>
+<td><a href="#">[icon type="square"Â size="medium"Â name="camera"]</a></td>
+<td><a href="#">[icon type="square"Â size="big"Â name="tag"]</a></td>
 </tr>
 </tbody>
 </table>
 <h2>Quote</h2>
 [quote author="Albert not Einstein " link="Theoretical Physicist"]
 
-Adenosine is kind of like your brain’s battery status monitor.
+Adenosine is kind of like your brainâ€™s battery status monitor.
 
 [/quote]
 <h2>Tabs</h2>
 [tabs]
 [tab title="About"]
 
-Using our exclusive shortcodes plugin you will find that using them has never been easier. LENS let’s your works shine and play in the eyes of your visitors.
+Using our exclusive shortcodes plugin you will find that using them has never been easier. LENS letâ€™s your works shine and play in the eyes of your visitors.
 
 This is a very visual theme, merging pictures and text seamlessly, featuring a grid based, patchwork portfolio section and page that tempts your visitors.
 
 [/tab]
 [tab title="Pricing"]
 
-Because beautiful imagery and carefully written content need to shine on any device, <strong>LENS is a fully responsive, Retina-ready WordPress theme</strong>, with adaptive images that will look great down to the phone in your pocket. It takes advantage of large screens with<strong> full width sections</strong> (like the grid based portfolio) but it scales beautifully on any device.
+Because beautiful imagery and carefully written content need to shine on any device,Â <strong>LENS is a fully responsive, Retina-ready WordPress theme</strong>, with adaptive images that will look great down to the phone in your pocket. It takes advantage of large screens with<strong>Â full width sections</strong>Â (like the grid based portfolio) but it scales beautifully on any device.
 
 [/tab]
 
 [tab title="Support"]
 
-We strive to provide awesome support to all of our customers. If you need support please use our <strong>dedicated support forum.</strong>
+We strive to provide awesome support to all of our customers. If you need support please use ourÂ <strong>dedicated support forum.</strong>
 
-We’ve chosen to have a dedicated support forum so you can easily track your tickets, receive notifications when someones answer and make things easier for both of us. You will also be able to review other information that was requested and given to other buyers.
+Weâ€™ve chosen to have a dedicated support forum so you can easily track your tickets, receive notifications when someones answer and make things easier for both of us. You will also be able to review other information that was requested and given to other buyers.
 
 [/tab]
 [/tabs]
 <h2>Slider</h2>
-Use the <strong>Slider shortcode</strong> to slide any type of content: images, blocks of text, testimonials etc.
+Use theÂ <strong>Slider shortcode</strong>Â to slide any type of content: images, blocks of text, testimonials etc.
 
-[slider navigation_style="arrows"]
+[sliderÂ navigation_style="arrows"]
 
 [slide]
 [quote author="Victoria Squire" author_title="Happy Customer"]
@@ -3411,13 +3411,13 @@ As a new WordPress user, you should go to <a href="http://pixelgrade.com/demos/b
             <dc:creator><![CDATA[kevin.monaghan]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=41</guid>
             <description></description>
-            <content:encoded><![CDATA[A <strong>paginated</strong> review video post format which includes a <strong>table</strong> specifications. This is a big week for Apple; it has two new phones hitting store shelves, and a brand new operating system that becomes available Sept. 18 for compatible devices. The new mobile operating system is a big visual change, and is likely to feel somewhat disorienting to users upgrading from iOS 6, but in most important ways, it’s not that dissimilar from what you’re used to, and many of the changes are definitely for the best.
+            <content:encoded><![CDATA[A <strong>paginated</strong> review video post format which includes a <strong>table</strong> specifications. This is a big week for Apple; it has two new phones hitting store shelves, and a brand new operating system that becomes available Sept. 18 for compatible devices. The new mobile operating system is a big visual change, and is likely to feel somewhat disorienting to users upgrading from iOS 6, but in most important ways, itâ€™s not that dissimilar from what youâ€™re used to, and many of the changes are definitely for the best.
 
-Apple has entered the spec wars. The iPhone 5S isn’t just supposed to be “the most amazing iPhone yet.” It’s not “the thinnest and lightest iPhone ever.” No, Apple says the 5S is “the most forward-thinking iPhone yet” and “the best smartphone in the world.”
-<blockquote>Like its predecessor, the iPhone 5s is one of the best handsets you can buy. But more importantly, it’s laying the groundwork for the smartphones of tomorrow.</blockquote>
-Along with the A7, the 5s also includes a new separate helper chip, the M7 coprocessor. It’s designed to efficiently monitor data gathered from the phone’s accelerometer, compass, and gyroscope without bogging down the CPU and draining the device’s battery. Argus and Strava Run were among the first apps updated to take advantage of this feature.
+Apple has entered the spec wars. The iPhone 5S isnâ€™t just supposed to be â€œthe most amazing iPhone yet.â€ Itâ€™s not â€œthe thinnest and lightest iPhone ever.â€ No, Apple says the 5S is â€œthe most forward-thinking iPhone yetâ€ and â€œthe best smartphone in the world.â€
+<blockquote>Like its predecessor, the iPhone 5s is one of the best handsets you can buy. But more importantly, itâ€™s laying the groundwork for the smartphones of tomorrow.</blockquote>
+Along with the A7, the 5s also includes a new separate helper chip, the M7 coprocessor. Itâ€™s designed to efficiently monitor data gathered from the phoneâ€™s accelerometer, compass, and gyroscope without bogging down the CPU and draining the deviceâ€™s battery. Argus and Strava Run were among the first apps updated to take advantage of this feature.
 <h3>The touch, the feel</h3>
-Using Apple’s Touch ID fingerprint security system feels very much like being in a secret agent movie: you pull the phone out of your pocket, touch the ringed home button (which is now much more tactile, directing your finger to exactly the right spot), and presto — you’re in.
+Using Appleâ€™s Touch ID fingerprint security system feels very much like being in a secret agent movie: you pull the phone out of your pocket, touch the ringed home button (which is now much more tactile, directing your finger to exactly the right spot), and presto â€” youâ€™re in.
 
 [hr style="striped"]
 <h3>Specifications Overview</h3>
@@ -3463,19 +3463,19 @@ Using Apple’s Touch ID fingerprint security system feels very much like being 
 </table>
 The Up's vibrating motor is used for two different alarm features, both of which I've come to love. When you're sleeping at night, you can set your alarm, and the Up will rouse you up to 30 minutes before that time based on when you're in lighter sleep and will wake up feeling better.
 <h3>Future-proofing the smartphone</h3>
-Apple’s spent more time talking about the 5S’s specs than I’ve ever seen the company do in the past, but the improvements are hard to evaluate. In benchmarks, the new A7 processor is spectacular — the top of its class in nearly every way.
+Appleâ€™s spent more time talking about the 5Sâ€™s specs than Iâ€™ve ever seen the company do in the past, but the improvements are hard to evaluate. In benchmarks, the new A7 processor is spectacular â€” the top of its class in nearly every way.
 
 <!--nextpage-->
 
-Yes, fingerprint sensors are <a href="http://www.wired.com/business/2013/09/iphone-fingerprint-ends-pin/">nothing new</a> — I had one on a Toshiba Satellite X205 purchased back in 2007 — but the implementation on the 5s feels like the technology is finally taking a step into the future. And it’s not the only thing in the phone that feels that way.
+Yes, fingerprint sensors areÂ <a href="http://www.wired.com/business/2013/09/iphone-fingerprint-ends-pin/">nothing new</a>Â â€” I had one on a Toshiba Satellite X205 purchased back in 2007 â€” but the implementation on the 5s feels like the technology is finally taking a step into the future. And itâ€™s not the only thing in the phone that feels that way.
 
-But first, the present. The iPhone 5s looks almost exactly like the now discontinued <a href="http://www.wired.com/reviews/2013/09/iphone5s/%E2%80%9Dhttp://www.wired.com/reviews/2012/09/apple-iphone-5/%E2%80%9D">iPhone 5</a>. It has the same 4-inch Retina display and brushed aluminum backside, and the same chamfered bezel that gives the otherwise rounded rectangular device a gem-like appearance. Unless the gold version is in your hand, the metal-ringed home button and an elongated dual LED flash on the rear are really the only subtle physical differentiators from its predecessor.
+But first, the present. The iPhone 5s looks almost exactly like the now discontinuedÂ <a href="http://www.wired.com/reviews/2013/09/iphone5s/%E2%80%9Dhttp://www.wired.com/reviews/2012/09/apple-iphone-5/%E2%80%9D">iPhone 5</a>. It has the same 4-inch Retina display and brushed aluminum backside, and the same chamfered bezel that gives the otherwise rounded rectangular device a gem-like appearance. Unless the gold version is in your hand, the metal-ringed home button and an elongated dual LED flash on the rear are really the only subtle physical differentiators from its predecessor.
 <blockquote>The 64-bit A7 processor inside makes every action on the device blazingly fast. Every tap, swipe, and animation in iOS 7 just feels amazingly snappy.</blockquote>
-For some, the 5s’ 4-inch display which will seem conspicuously small compared to most flagship Android handsets, and shared design with the iPhone 5 will be considered negatives. But for my hand size and smartphone needs, 4-inches is more than enough for videos and gaming, while still being comfortably pocketable.
+For some, the 5sâ€™ 4-inch display which will seem conspicuously small compared to most flagship Android handsets, and shared design with the iPhone 5 will be considered negatives. But for my hand size and smartphone needs, 4-inches is more than enough for videos and gaming, while still being comfortably pocketable.
 <h3>Improved camera hardware and software</h3>
 The Apple iPhone 5s kept the camera resolution at 8MP for a third generation in a row but make no mistake, it's not the same camera. The sensor has been changed with a 15% bigger unit, which should improve low-light performance. The lens has a wider aperture too - it has gone from F/2.4 to F/2.2, which should allow 25% more light in, another thing to help low-light performance. And daylight performance of the iPhone 5 was already pretty great.
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="alignnone size-full wp-image-45" alt="MG_7440edit" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1000" height="627" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-45" alt="MG_7440edit" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1000" height="627" /></a>
 
 &nbsp;
 
@@ -3483,13 +3483,13 @@ Time to go over the image quality, we'll also bring in some iPhone 5 photos to s
 
 <!--nextpage-->
 
-The rear-facing camera comes with some fun new photo features too, most notably a burst and slow-motion video modes. The former, something we’ve seen in Android devices for years and in standalone apps like Camera+, snaps 10 stills per second — making it ideal for action shots. The photos are aggregated in a folder inside your camera roll, with the “best” shots determined by iOS 7 and denoted by a dot underneath.
+The rear-facing camera comes with some fun new photo features too, most notably a burst and slow-motion video modes. The former, something weâ€™ve seen in Android devices for years and in standalone apps like Camera+, snaps 10 stills per second â€” making it ideal for action shots. The photos are aggregated in a folder inside your camera roll, with the â€œbestâ€ shots determined by iOS 7 and denoted by a dot underneath.
 
 You can choose to save these, or any image taken in the cluster of burst shots, as an individual photo in your Photo Stream or Camera Roll.
 <blockquote>The iPhone 6 is the next one we will be looking at to hopefully stir things up. In a good way or bad? In Apple's own way.</blockquote>
 Like its predecessor, the iPhone 5s is one of the best handsets you can buy. But more importantly (and unlike much of its competition), the handset is laying the groundwork for the smartphones of tomorrow. The 64-bit A7 chip and M7 coprocessor together mark a profound jump in device performance and efficiency.
 <h3>Final Words</h3>
-This all but guarantees new and exciting software innovation. Touch ID, despite being hacked within a matter of days, streamlines your iOS experience and holds a lot of promise for future applications. The most disappointing thing about the iPhone 5s is that the features I’m most excited about aren’t available yet.
+This all but guarantees new and exciting software innovation. Touch ID, despite being hacked within a matter of days, streamlines your iOS experience and holds a lot of promise for future applications. The most disappointing thing about the iPhone 5s is that the features Iâ€™m most excited about arenâ€™t available yet.
 
 Blazing fast A7 processor. Call quality is excellent, especially using FaceTime Audio. Touch ID feels like the future, and works flawlessly. Vastly improved camera, particularly the slo-mo feature, is enough to warrant an upgrade.]]></content:encoded>
             <excerpt:encoded><![CDATA[A paginated review video post format which includes a table specifications. This is a big week for Apple; it has two new phones hitting store shelves, and a brand new operating system.]]></excerpt:encoded>
@@ -3617,15 +3617,15 @@ Blazing fast A7 processor. Call quality is excellent, especially using FaceTime 
             <description></description>
             <content:encoded><![CDATA[Full width featured post generally considered the most beautiful post in the Caribbean, Cartagena in Colombia grew unimaginably wealthy as the port through which the looted gold of the new world sailed eastwards to Imperial Spain.
 
-Turns out we have, with the likes of Sir Francis Drake (one man’s privateer is another man’s pirate) plundering the city as far back as 1586. In subsequent years, particularly those of the late 20th Century, Colombia was famous for other exports: mountains of pure cocaine, left-wing guerrilla ideology and "magic realism" from the pen of Gabriel Garcia Marquez.
+Turns out we have, with the likes of Sir Francis Drake (one manâ€™s privateer is another manâ€™s pirate) plundering the city as far back as 1586. In subsequent years, particularly those of the late 20th Century, Colombia was famous for other exports: mountains of pure cocaine, left-wing guerrilla ideology and "magic realism" from the pen of Gabriel Garcia Marquez.
 <blockquote>Remember at all times that while you are seeing the world, the world will see you.</blockquote>
-These childhood friends have overcome some serious setbacks — guitarist and vocalist Adam Haworth Stephens was in not one but two road accidents last year — so this new album’s a bit of a boon. With buddy Tyson Vogel, he certainly sounds glad to be alive on a boisterous folk-rock album that shows two mild-looking men can, like The Black Keys, make a hell of a noise.
+These childhood friends have overcome some serious setbacks â€” guitarist and vocalist Adam Haworth Stephens was in not one but two road accidents last year â€” so this new albumâ€™s a bit of a boon. With buddy Tyson Vogel, he certainly sounds glad to be alive on a boisterous folk-rock album that shows two mild-looking men can, like The Black Keys, make a hell of a noise.
 
-[caption id="attachment_60" align="alignnone" width="1080"]<img class="size-full wp-image-60" alt="The Bloom and The Blight" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1080" height="596" /> Two Gallants[/caption]
+[caption id="attachment_60" align="alignnone" width="1080"]<img class="size-full wp-image-60" alt="The Bloom and The Blight" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1080" height="596" /> Two Gallants[/caption]
 <h3>Why now?</h3>
-July sees concerts on the beaches and events in the bullring and yet more excuses to party thanks to the Summer Festival. Alternatively, the literary/arty Hay Festival Cartagena de Indias rolls into town each January. Wales or Colombia, Wales or <strong>Colombia</strong>?  The sound smacks of the KoL’s brand of macho melancholy, while Brown’s voice lends a rockabilly twang.
+July sees concerts on the beaches and events in the bullring and yet more excuses to party thanks to the Summer Festival. Alternatively, the literary/arty Hay Festival Cartagena de Indias rolls into town each January. Wales or Colombia, Wales or <strong>Colombia</strong>?Â Â The sound smacks of the KoLâ€™s brand of macho melancholy, while Brownâ€™s voice lends a rockabilly twang.
 
-For all her extraordinary talent and <strong>work ethic,</strong> Bly’s appearance was decidedly unremarkable — a fact that shouldn’t matter, but one that would be repeatedly remarked upon by her critics and commentators, something we’ve made sad little progress on in discussing women’s professional, intellectual, and creative merit more than a century later.]]></content:encoded>
+For all her extraordinary talent and <strong>work ethic,</strong> Blyâ€™s appearance was decidedly unremarkable â€” a fact that shouldnâ€™t matter, but one that would be repeatedly remarked upon by her critics and commentators, something weâ€™ve made sad little progress on in discussing womenâ€™s professional, intellectual, and creative merit more than a century later.]]></content:encoded>
             <excerpt:encoded><![CDATA[Full width featured post generally considered the most beautiful post in the Caribbean, Cartagena in Colombia grew unimaginably wealthy.]]></excerpt:encoded>
             <wp:post_id>56</wp:post_id>
             <wp:post_date>2013-10-19 13:01:21</wp:post_date>
@@ -3717,19 +3717,19 @@ For all her extraordinary talent and <strong>work ethic,</strong> Bly’s appear
             <dc:creator><![CDATA[judith.drake]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=65</guid>
             <description></description>
-            <content:encoded><![CDATA[Full width gallery post without sidebar. The other, more subdued Delevingne is most certainly a Woman We Love. None of the fireworks, all of the heat. No wonder the fashion industry has been so dismayed by news that Poppy Delevingne has left these shores and headed Stateside to take up residence in Fergie's New York pad
+            <content:encoded><![CDATA[Full width gallery post without sidebar. The other, more subdued Delevingne is most certainly a Woman We Love. None of the fireworks, all of the heat.Â No wonder the fashion industry has been so dismayed by news that Poppy Delevingne has left these shores and headed Stateside to take up residence in Fergie's New York pad
 
 Besides being known for his work for the Storm modeling agency, it is followed by fashion blogs and lifestyle, as it has a very distinctive style, blending both the natural beauty of your garment over the season IN .
 <blockquote>Selected for the 1932 campaign, where Chanel celebrates the 80th anniversary of its online Bijoux.</blockquote>
-Educated at the liberal £26,000-a-year Bedales School in Hampshire, she was talent-spotted by Storm model agency founder Sarah Doukas (who also 'discovered' Kate Moss at the age of 14), whose daughter was in the same class as Poppy's sister. Poppy did her first magazine shoots at 16, then, after A-levels and a gap year spent travelling, found herself the toast of the town.
+Educated at the liberal Â£26,000-a-year Bedales School in Hampshire, she was talent-spotted by Storm model agency founder Sarah Doukas (who also 'discovered' Kate Moss at the age of 14), whose daughter was in the same class as Poppy's sister.Â Poppy did her first magazine shoots at 16, then, after A-levels and a gap year spent travelling, found herself the toast of the town.
 
 [caption id="attachment_68" align="alignnone" width="1075"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-68" alt="delevingne-photoshoot-4" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1075" height="548" /></a> Poppy Delevingne: Fashion's it girl[/caption]
 
-The other, more subdued Delevingne is most certainly a Woman We Love. None of the fireworks, all of the heat. No wonder the fashion industry has been so dismayed by news that Poppy Delevingne has left these shores and headed Stateside to take up residence in Fergie's New York pad.
+The other, more subdued Delevingne is most certainly a Woman We Love. None of the fireworks, all of the heat.Â No wonder the fashion industry has been so dismayed by news that Poppy Delevingne has left these shores and headed Stateside to take up residence in Fergie's New York pad.
 <h3><span style="font-size: 1.17em;">Fashion's It Girl</span></h3>
 Nowadays Pandora works in the private-shopping department of London retail emporium Selfridges. The fashion plate still has her wardrobe from the '70s and '80s, though it's been kept under lock and key from her daughters since she noticed a few things missing.
 <blockquote>This fun-loving British transplant is blooming on Manhattan's party circuit.</blockquote>
-Still, it's clear where Delevingne inherited her nonchalant sense of style — the one that enables her to throw a leather bomber over a sundress for a polo match at Governors Island or swan without a second thought into a charity gala in a Chanel jumpsuit. Her style has also been influenced by a couple of years in New York. She's updated her English-magpie ways, now cleverly mixing quirky bits and bobs with sleeker hard-edged pieces.]]></content:encoded>
+Still, it's clear where Delevingne inherited her nonchalant sense of style â€” the one that enables her to throw a leather bomber over a sundress for a polo match at Governors Island or swan without a second thought into a charity gala in a Chanel jumpsuit. Her style has also been influenced by a couple of years in New York. She's updated her English-magpie ways, now cleverly mixing quirky bits and bobs with sleeker hard-edged pieces.]]></content:encoded>
             <excerpt:encoded><![CDATA[Full width gallery post without sidebar. The other, more subdued Delevingne is most certainly a Woman We Love. ]]></excerpt:encoded>
             <wp:post_id>65</wp:post_id>
             <wp:post_date>2013-10-18 13:33:04</wp:post_date>
@@ -3829,17 +3829,17 @@ Still, it's clear where Delevingne inherited her nonchalant sense of style — t
             <dc:creator><![CDATA[collin.molina]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=80</guid>
             <description></description>
-            <content:encoded><![CDATA[<span><span>With </span></span><span><span>a unique combination of </span></span><span><span>technologies from </span></span><span><span>traditional crafts </span></span><span><span>and sstyle </span></span><span><span>Princess, </span></span><span><span>the new </span></span><span><span>98 </span></span><span><span>Motor Yacht </span></span><span><span>is a </span></span><span><span>yacht for </span></span><span><span>long range </span></span><span><span>which requires his presence </span></span><span><span>. </span></span>His main deck includes a gantry front axle and a seating area , an alternative space for entertaining docked to the rear . For sports water, there is a swim platform electrohydraulic for the launch and recovery of a jet-ski, or simply for use as a swimming or dip.
-<blockquote><span><span>Its interior </span></span><span><span>is beautifully furnished </span></span><span><span>and finished </span></span><span><span>to the highest standard </span></span><span><span>. </span></span><span><span>Panoramic windows </span></span><span><span>provide light and a wonderful panoramic setting. </span></span></blockquote>
-<span><span>The large garage </span></span><span><span>can accommodate </span></span><span><span>a jet ski </span></span><span><span>, which </span></span><span><span>can be lifted </span></span><span><span>using </span></span><span><span>the crane</span></span><span> <a href="#">flybridge </a></span><span><span>. </span></span><span><span>The flybridge </span></span><span><span>can be specified with </span></span><span><span>a hardtop </span></span><span><span>with optional </span></span><span><span>integrated roof opening </span></span><span><span>that allows </span></span><span><span>the crane </span></span><span><span>to be </span></span><span><span>row </span></span><span><span>, freeing </span></span><span><span>the aft deck </span></span><span><span>space as </span></span><span><span>additional </span></span><span><span>furniture for </span></span><span><span>freestanding. </span></span>
+            <content:encoded><![CDATA[<span><span>WithÂ </span></span><span><span>a unique combination ofÂ </span></span><span><span>technologies fromÂ </span></span><span><span>traditional craftsÂ </span></span><span><span>and sstyleÂ </span></span><span><span>Princess,Â </span></span><span><span>the newÂ </span></span><span><span>98Â </span></span><span><span>Motor YachtÂ </span></span><span><span>is aÂ </span></span><span><span>yacht forÂ </span></span><span><span>long rangeÂ </span></span><span><span>which requires his presenceÂ </span></span><span><span>.Â </span></span>HisÂ main deckÂ includesÂ a gantryÂ front axleÂ and a seating areaÂ ,Â an alternative spaceÂ for entertainingÂ dockedÂ toÂ the rearÂ .Â For sportsÂ water, there isÂ aÂ swim platformÂ electrohydraulicÂ for theÂ launch and recoveryÂ of aÂ jet-ski,Â or simplyÂ for use as aÂ swimmingÂ orÂ dip.
+<blockquote><span><span>Its interiorÂ </span></span><span><span>is beautifully furnishedÂ </span></span><span><span>and finishedÂ </span></span><span><span>to the highest standardÂ </span></span><span><span>.Â </span></span><span><span>Panoramic windowsÂ </span></span><span><span>provide light and a wonderful panoramic setting.Â </span></span></blockquote>
+<span><span>The large garageÂ </span></span><span><span>can accommodateÂ </span></span><span><span>a jet skiÂ </span></span><span><span>, whichÂ </span></span><span><span>can be liftedÂ </span></span><span><span>usingÂ </span></span><span><span>the crane</span></span><span>Â <a href="#">flybridgeÂ </a></span><span><span>.Â </span></span><span><span>The flybridgeÂ </span></span><span><span>can be specified withÂ </span></span><span><span>a hardtopÂ </span></span><span><span>with optionalÂ </span></span><span><span>integrated roof openingÂ </span></span><span><span>that allowsÂ </span></span><span><span>the craneÂ </span></span><span><span>to beÂ </span></span><span><span>rowÂ </span></span><span><span>, freeingÂ </span></span><span><span>the aft deckÂ </span></span><span><span>space asÂ </span></span><span><span>additionalÂ </span></span><span><span>furniture forÂ </span></span><span><span>freestanding.Â </span></span>
 <h3>Distinctive Lines</h3>
-<span>The Princess 60 is a vessel that provides pleasure to the helmsman whose sleek lines hide a large amount of housing. </span><span>It has three cabins with <strong>ensuite bathroom,</strong> a main deck and many wide open spaces to enjoy relaxation, conversation between friends or pleasure of the walk.</span>
+<span>The Princess 60 is a vessel that provides pleasure to the helmsman whose sleek lines hide a large amount of housing.Â </span><span>It has three cabins with <strong>ensuite bathroom,</strong> a main deck and many wide open spaces to enjoy relaxation, conversation between friends or pleasure of the walk.</span>
 
 <a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-82" alt="silent-amiral-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1050" height="739" /></a>
 
-The main living area is beautifully designed and decorated, bright and airy thanks to large windows wrap through which the sun penetrates freely. The layout of the <a href="#">U-shaped sofa</a>, coffee table and sofa opposite was chosen to invite the convivial meetings, a separate dining area is housed elsewhere.
+The main living area is beautifully designed and decorated, bright and airy thanks to large windows wrap through which the sun penetrates freely.Â The layout of the <a href="#">U-shaped sofa</a>, coffee table and sofa opposite was chosen to invite the convivial meetings, a separate dining area is housed elsewhere.
 <ol>
-	<li> Two sun beds are provided in addition to the<strong> spacious deck</strong></li>
+	<li>Â Two sun beds are provided in addition to the<strong> spacious deck</strong></li>
 	<li>The aft cabin option, also with ensuite bathroom, has two berths for crew or visiting guests.</li>
 	<li>Yacht designed and built with extreme attention</li>
 </ol>
@@ -3979,15 +3979,15 @@ On the same deck there is the fully equipped kitchen, fridge / freezer and a lar
 
 The Vespa GTS 300 Super is not just a scooter.It is the top manufacturer of Italian tradition, the successor to the glorious GS and sellers at the big scooters in Germany.No wonder real hot scooter Vespa or Lambretta times now.The first brand is rather forgotten and the second still successful.
 <blockquote>But with the new 300 Sport is respectively sportiness in the foreground, and less racing.</blockquote>
-So it first went on the famous Milan ring road towards Linate. On cue, all went - we were now only 18 because the colleagues Ehn and Farkas are demolished because of a (almost) red light - the heads of a. High-speed test. To have, as always, the lightweight overweight chosen for themselves.
+So it first went on the famous Milan ring road towards Linate.Â On cue, all went - we were now only 18 because the colleagues Ehn and Farkas are demolished because of a (almost) red light - the heads of a.Â High-speed test.Â To have, as always, the lightweight overweight chosen for themselves.
 <h3>The Ancestral Scooter Territory</h3>
-Thither namely asked us Piaggio for the first test drive with the GTS 300 Super. Super alone was the sight of twenty Vespas outside the hotel, aligned neatly, one black and one white. The Super's only in these two colors.Since then even the layman knows that there is no 250.But it is also identified on the lateral cooling slots in the rear panel, just like at times the air cooling. Also, there is the racy red spring on the front suspension.
+Thither namely asked us Piaggio for the first test drive with the GTS 300 Super.Â Super alone was the sight of twenty Vespas outside the hotel, aligned neatly, one black and one white.Â The Super's only in these two colors.Since then even the layman knows that there is no 250.But it is also identified on the lateral cooling slots in the rear panel, just like at times the air cooling.Â Also, there is the racy red spring on the front suspension.
 
 <a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-92" alt="vespa-gts-review-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1600" height="801" /></a>
 
-Finally, because of the increasing afternoon traffic density were the photographers soon more cars and buses and trams, now and again passers-by, as we Scooteristi front of the camera (s). While it all looked in awe at the Vespa horde but not realized that they cause picture interference. So it first went on the famous Milan ring road towards Linate. On cue, all went - we were now only 18 because the colleagues Ehn and Farkas are demolished because of a (almost) red light - the heads of a. High-speed test. To have, as always, the lightweight overweight chosen for themselves.
+Finally, because of the increasing afternoon traffic density were the photographers soon more cars and buses and trams, now and again passers-by, as we Scooteristi front of the camera (s).Â While it all looked in awe at the Vespa horde but not realized that they cause picture interference.Â So it first went on the famous Milan ring road towards Linate.Â On cue, all went - we were now only 18 because the colleagues Ehn and Farkas are demolished because of a (almost) red light - the heads of a.Â High-speed test.Â To have, as always, the lightweight overweight chosen for themselves.
 <h3>Conclusion</h3>
-Even with the Super-Vespa is no room under the seat for a full face helmet. Will not you walk around with his hat in his hand in town and country, you have to take a jet helmet. There's quite dashing goods, but that is not cheap, as the Vespa itself 5,000 Euronen are not little. But you get something real, which, if it is not too often ghaut to the Earth ', his money is worth.]]></content:encoded>
+Even with the Super-Vespa is no room under the seat for a full face helmet.Â Will not you walk around with his hat in his hand in town and country, you have to take a jet helmet.Â There's quite dashing goods, but that is not cheap, as the Vespa itself 5,000 Euronen are not little.Â But you get something real, which, if it is not too often ghaut to the Earth ', his money is worth.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>91</wp:post_id>
             <wp:post_date>2013-10-14 11:28:53</wp:post_date>
@@ -4182,39 +4182,39 @@ Even with the Super-Vespa is no room under the seat for a full face helmet. Wil
             <dc:creator><![CDATA[jane.cortez]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=105</guid>
             <description></description>
-            <content:encoded><![CDATA[few simple powered speakers for the PC has been around for a tenner.You do not have to spend much more to give his ears to hear something. But who wants to treat his ears something, you have something to fall deeper into their pockets: From about 80 Euros you get even speaker structure, the "sound of something" that produce audible bass and which still makes listening to music for several hours of fun.
+            <content:encoded><![CDATA[few simple powered speakers for the PC has been around for a tenner.You do not have to spend much more to give his ears to hear something.Â But who wants to treat his ears something, you have something to fall deeper into their pockets: From about 80 Euros you get even speaker structure, the "sound of something" that produce audible bass and which still makes listening to music for several hours of fun.
 
-But what gets who spends a multiple thereof, are PC speaker is on the desk, which cost 400, 500 or even<strong> 800 euro</strong>s? You pay all the money only an expensive name and chic design? Or is the difference really audible?
+But what gets who spends a multiple thereof, are PC speaker is on the desk, which cost 400, 500 or even<strong> 800 euro</strong>s?Â You pay all the money only an expensive name and chic design?Â Or is the difference really audible?
 <blockquote>Even turned up they still sound clear and round, without distorting the complex construction pays off.</blockquote>
-Since the first would be the Bose Computer Music Monitor, which acts initially tiny. Ridiculous <strong>12.5 centimeters</strong>, each of the two boxes high, 6.5 inches wide. That for as little speaker after all supposed to pay about 400 euros, makes me skeptical. Good sound volume needs that everyone knows. And volume have these mini things that fit loosely in my hand, so just do not. As there should arise a useful sound?
+Since the first would be the Bose Computer Music Monitor, which acts initially tiny.Â Ridiculous <strong>12.5 centimeters</strong>, each of the two boxes high, 6.5 inches wide.Â That for as little speaker after all supposed to pay about 400 euros, makes me skeptical.Â Good sound volume needs that everyone knows.Â And volume have these mini things that fit loosely in my hand, so just do not.Â As there should arise a useful sound?
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="alignnone size-full wp-image-107" alt="bower-speakers-review1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1000" height="667" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-107" alt="bower-speakers-review1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1000" height="667" /></a>
 <h3>Sound in stealth mode</h3>
-This is not only the unusual design, that on closer examination can not guess where under the black fabric covering the speakers are hidden.That they are there, however, is perfectly audible in operation. Powerful bass are accompanied here by crisp highs. On the treble B &amp; W is proud anyway. The tweeter is a special construction in which a resonance tube is connected directly to the sound generator. The result should be a particularly good separation of high and low frequencies.
+This is not only the unusual design, that on closer examination can not guess where under the black fabric covering the speakers are hidden.That they are there, however, is perfectly audible in operation.Â Powerful bass are accompanied here by crisp highs.Â On the treble B &amp; W is proud anyway.Â The tweeter is a special construction in which a resonance tube is connected directly to the sound generator.Â The result should be a particularly good separation of high and low frequencies.
 
 Not so good playing the <a href="#">MM-21 </a>in the central region on the other hand, the person something sounds too washed out.
 
 <!--nextpage-->
 
-This B &amp; W was the only one in the test field to the option to plugs the computer does not have an analog audio cable, but digitally via <strong>USB</strong> to the boxes. A good idea. Not only because each computer user has meanwhile a few USB cables lying around too much. But mainly because noise is thereby effectively excluded.
+This B &amp; W was the only one in the test field to the option to plugs the computer does not have an analog audio cable, but digitally via <strong>USB</strong> to the boxes.Â A good idea.Â Not only because each computer user has meanwhile a few USB cables lying around too much.Â But mainly because noise is thereby effectively excluded.
 
 Overall, the B &amp; W speakers sound a bit fatter, a little stronger but also less transparent than the music monitor speakers from Bose.
 <blockquote>An eye-catcher are the GLA-55 so all, but they sound good?</blockquote>
-On my desk, the crystal boxes shine though with a lot of presence and shine with enormous clarity in mids and highs, falling in the bass range, clear off. There is nothing I fear and am already preparing for a slating. But when I build the speakers for direct comparison to the hearing test on the living room floor, the acoustics sun seems to be working.
+On my desk, the crystal boxes shine though with a lot of presence and shine with enormous clarity in mids and highs, falling in the bass range, clear off.Â There is nothing I fear and am already preparing for a slating.Â But when I build the speakers for direct comparison to the hearing test on the living room floor, the acoustics sun seems to be working.
 <h3>Such bass extension in a matching design</h3>
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-108" alt="bower-speakers-review2" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1000" height="667" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="alignnone size-full wp-image-108" alt="bower-speakers-review2" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1000" height="667" /></a>
 
-The controller is sunk deep in the body, with only a slim screwdriver and a lot of feeling reached. Did you get adjusted his desire level, you should not change this.
+The controller is sunk deep in the body, with only a slim screwdriver and a lot of feeling reached.Â Did you get adjusted his desire level, you should not change this.
 <h3>Kling expensive not so better?</h3>
-A general answer to this question and I will not presume. In the ranks of the three hearing test loaded stainless powered speakers but I can answer the question with "Yes".
+A general answer to this question and I will not presume.Â In the ranks of the three hearing test loaded stainless powered speakers but I can answer the question with "Yes".
 
 <!--nextpage-->
 
-A general answer to this question and I will not presume. In the ranks of the three hearing test loaded stainless powered speakers but I can answer the question with "Yes". In direct switch between the three noble stereo pair, the difference could be heard loud and clear, almost as if someone pull on the way from the <a href="#">Bose </a>B &amp; W to Harman Kardon, a set of curtains.
+A general answer to this question and I will not presume.Â In the ranks of the three hearing test loaded stainless powered speakers but I can answer the question with "Yes".Â In direct switch between the three noble stereo pair, the difference could be heard loud and clear, almost as if someone pull on the way from the <a href="#">Bose </a>B &amp; W to Harman Kardon, a set of curtains.
 
-The B &amp; W MM-1 to outdo the other hand, with a little more rounded bass and softer overall sound. Just as with Bose also its strength clearly lies in the sound of a computer user who placed the boxes next to his screen. Your USB port eliminates the user from the - not always designed to Hi-Fi - sound card in the PC independently.
+The B &amp; W MM-1 to outdo the other hand, with a little more rounded bass and softer overall sound.Â Just as with Bose also its strength clearly lies in the sound of a computer user who placed the boxes next to his screen.Â Your USB port eliminates the user from the - not always designed to Hi-Fi - sound card in the PC independently.
 <h3>Conclusion</h3>
-The hit but the Gla-55 from<strong> Harman Kardon</strong>. Whether you like it or not the crystal design: The sound that produce extremely eye-catching plastic form, is simply good - if they are set up correctly. The price that the manufacturer requires it, but it has to be. With <strong>799 euros</strong>, the transparent boxes are in the price list - but this award requires fortunately hardly a dealer really, they are usually offered at lower rates.Nevertheless, they are still pretty expensive - but you can hear that.]]></content:encoded>
+The hit but the Gla-55 from<strong> Harman Kardon</strong>.Â Whether you like it or not the crystal design: The sound that produce extremely eye-catching plastic form, is simply good - if they are set up correctly.Â The price that the manufacturer requires it, but it has to be.Â With <strong>799 euros</strong>, the transparent boxes are in the price list - but this award requires fortunately hardly a dealer really, they are usually offered at lower rates.Nevertheless, they are still pretty expensive - but you can hear that.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>105</wp:post_id>
             <wp:post_date>2013-10-15 13:24:29</wp:post_date>
@@ -4467,17 +4467,17 @@ The hit but the Gla-55 from<strong> Harman Kardon</strong>. Whether you like it
             <description></description>
             <content:encoded><![CDATA[The Lamborghini Aventador LP 700-4 defines the sport auto Supertest towards an extrovert appearance and delivers what it promises optical.The sporting facilities are at its best, as it would naturally.
 
-It's like always and not everywhere the large, lofty promises, which gives a relationship maintenance and substance. It is the small, endearing details that make up the key to lasting success.
+It's like always and not everywhere the large, lofty promises, which gives a relationship maintenance and substance.Â It is the small, endearing details that make up the key to lasting success.
 <blockquote>But even if you're Batman himself, you'll have a hard time getting your hands on one of these mean machines.</blockquote>
-And yet there are so lovable alien form like this, which will make your day - and far on this side of each border region. To awaken the bull named 700-4 Lamborghini Aventador LP from St. Agatha to life, the driver is initially stopped to open a small red flap on the center tunnel.
+And yet there are so lovable alien form like this, which will make your day - and far on this side of each border region.Â To awaken the bull named 700-4 Lamborghini Aventador LP from St. Agatha to life, the driver is initially stopped to open a small red flap on the center tunnel.
 
 [caption id="attachment_120" align="alignnone" width="1024"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-120" alt="lamborghini-aventador2" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1024" height="678" /></a> Convinced sculpture of extreme dynamics[/caption]
 
 But quite as explosive and difficult to follow the following on the press of a button dramaturgy is then but fortunately not represent the red fuse cover is just a metaphor - not an obstacle.
 <h3>700 hp and top-class racing technology</h3>
-This does not mean that the new, re-named after a brave Spanish bull from the Spanish Corrida <a href="http://www.sportauto.de/markenbaum/lamborghini-990923.html">Lamborghini</a> would not do justice to his job on the whole. But let's be honest: It will not be easy in everyday life, even beginning to discover the 700 hp driven and experienced made ​​of exceptionally high caliber racing technology sports talents. Thus love but could cool quickly if not for anything else, which can fuel the passion in less exciting times.
+This does not mean that the new, re-named after a brave Spanish bull from the Spanish CorridaÂ <a href="http://www.sportauto.de/markenbaum/lamborghini-990923.html">Lamborghini</a>Â would not do justice to his job on the whole.Â But let's be honest: It will not be easy in everyday life, even beginning to discover the 700 hp driven and experienced made â€‹â€‹of exceptionally high caliber racing technology sports talents.Â Thus love but could cool quickly if not for anything else, which can fuel the passion in less exciting times.
 
-Whether the investment - in this case just under 330,000 euros - can be recorded as a worthwhile contribution to improving the quality of life, thus also depends on <a href="http://www.sportauto.de/markenbaum/lamborghini-aventador-3786208.html">Lamborghini Aventador</a> LP 700-4 from factors other than the ability to retrieve shoulder to shoulder with him the state of maximum efficiency . Including those in this Lambo is reached only at 350 km / h.
+Whether the investment - in this case just under 330,000 euros - can be recorded as a worthwhile contribution to improving the quality of life, thus also depends onÂ <a href="http://www.sportauto.de/markenbaum/lamborghini-aventador-3786208.html">Lamborghini Aventador</a>Â LP 700-4 from factors other than the ability to retrieve shoulder to shoulder with him the state of maximum efficiency .Â Including those in this Lambo is reached only at 350 km / h.
 <h3>Everything has its price</h3>
 When looking into the technology and equipped with all the luxury features pulpit of the Lamborghini Aventador LP 700-4, to be thermodynamically and aerodynamically necessary accessory around it and on the Aggregate collection, the Lamborghini Aventador LP 700-4 to achieve its ambitious required goals, one comes to the conclusion that the extra kilos are not entirely in vain incurred.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -4681,21 +4681,21 @@ When looking into the technology and equipped with all the luxury features pulpi
             <dc:creator><![CDATA[jeff.bridges]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=122</guid>
             <description></description>
-            <content:encoded><![CDATA[Since construction began over 125 years ago, the Sagrada Família has stood in various stages of incompletion. But, according to <em><a href="http://www.guardian.co.uk/world/2011/sep/22/sagrada-familia-final-completion-date" target="_self">The Guardian</a></em>, Gaudí's sprawling basilica has finally received an "official" completion date--sometime between 2026 and 2028. That timetable is scheduled around the centenary of the architect's death, in 1926, when he was struck by a moving tram.
+            <content:encoded><![CDATA[Since construction began over 125 years ago, the Sagrada FamÃ­lia has stood in various stages of incompletion. But, according toÂ <em><a href="http://www.guardian.co.uk/world/2011/sep/22/sagrada-familia-final-completion-date" target="_self">The Guardian</a></em>, GaudÃ­'s sprawling basilica has finally received an "official" completion date--sometime between 2026 and 2028. That timetable is scheduled around the centenary of the architect's death, in 1926, when he was struck by a moving tram.
 
-At the time of his death, Gaudí had been living in the church crypt, amid a menagerie of large-scale models and plaster mock-ups.
+At the time of his death, GaudÃ­ had been living in the church crypt, amid a menagerie of large-scale models and plaster mock-ups.
 <blockquote>Over the ensuing 85 years, the construction site has experienced numerous setbacks</blockquote>
-Barcelona's world famous Sagrada Família will finally be finished by 2026, the architect in charge has vowed... nearly 150 years after work began. That will make it ready in time for the centenary of the death of architect Antoni Gaudí, who famously joked that his client, God, was in no hurry to see it finished.
+Barcelona's world famous Sagrada FamÃ­lia will finally be finished by 2026, the architect in charge has vowed... nearly 150 years after work began.Â That will make it ready in time for the centenary of the death of architect Antoni GaudÃ­, who famously joked that his client, God, was in no hurry to see it finished.
 
-[caption id="attachment_124" align="alignnone" width="900"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="size-full wp-image-124" alt="sagrada-familia-completed-nave" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="900" height="598" /></a> Sagrada Familia Finished Nave[/caption]
+[caption id="attachment_124" align="alignnone" width="900"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-124" alt="sagrada-familia-completed-nave" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="900" height="598" /></a> Sagrada Familia Finished Nave[/caption]
 
-La Sagrada Família attracts around 3million visitors a year, whose entrance fees pay for most of the €25million a year cost of continuing its construction, with gifts from private donors making up the rest.
+La Sagrada FamÃ­lia attracts around 3million visitors a year, whose entrance fees pay for most of the â‚¬25million a year cost of continuing its construction, with gifts from private donors making up the rest.
 
-Barcelona's world famous Sagrada Família will finally be finished by 2026, the architect in charge has vowed... nearly 150 years after work began. That will make it ready in time for the centenary of the death of architect Antoni Gaudí, who famously joked that his client, God, was in no hurry to see it finished.
+Barcelona's world famous Sagrada FamÃ­lia will finally be finished by 2026, the architect in charge has vowed... nearly 150 years after work began.Â That will make it ready in time for the centenary of the death of architect Antoni GaudÃ­, who famously joked that his client, God, was in no hurry to see it finished.
 <h3>How Sagrada Familia Will Look In 2026</h3>
-Construction began in 1882, with Gaudí's involvement commencing the following year when he took over the project and radically transformed it's design with his distinctive Gothic and curvilinear Art Nouveau style. Problems have long dogged work on Barcelona's second cathedral, with Gaudí neck-deep in the project when he was killed in 1926 when he was run over by a tram.
+Construction began in 1882, with GaudÃ­'s involvement commencing the following year when he took over the project and radically transformed it's design with his distinctive Gothic and curvilinear Art Nouveau style.Â Problems have long dogged work on Barcelona's second cathedral, with GaudÃ­ neck-deep in the project when he was killed in 1926 when he was run over by a tram.
 
-This video shows what the culmination of the work being funded mainly through public donations, including the massive, yet-to-be-finished 564-foo tower at its center. But a lot can happen between now and 2026—so we'll believe it when we see it.]]></content:encoded>
+This video shows what the culmination of the work being funded mainly through public donations, including the massive, yet-to-be-finished 564-foo tower at its center. But a lot can happen between now and 2026â€”so we'll believe it when we see it.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>122</wp:post_id>
             <wp:post_date>2013-10-13 14:11:54</wp:post_date>
@@ -4798,19 +4798,19 @@ This video shows what the culmination of the work being funded mainly through pu
             <dc:creator><![CDATA[jeff.bridges]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=128</guid>
             <description></description>
-            <content:encoded><![CDATA[How does it feel to jump from 21,800 metres? Ask Felix Baumgartner. This comes against Red Bull, as the company sold in 2011 while 11.4 percent more doses, but still of the 4.25 billion euro annual turnover more than half (2.3 billion) in Austria is generated. Outside the country, the Group still has plenty of room for improvement.
+            <content:encoded><![CDATA[How does it feel to jump from 21,800 metres? Ask Felix Baumgartner.Â This comes against Red Bull, as the company sold in 2011 while 11.4 percent more doses, but still of the 4.25 billion euro annual turnover more than half (2.3 billion) in Austria is generated.Â Outside the country, the Group still has plenty of room for improvement.
 
-The Austrians broke through the first man to break the sound barrier in free fall. Although the project initially was under an unlucky star, <strong>Baumgartner</strong> likewise made exactly a year ago after several attempts in the desert of New Mexico in Roswell.
+The Austrians broke through the first man to break the sound barrier in free fall.Â Although the project initially was under an unlucky star, <strong>Baumgartner</strong> likewise made exactly a year ago after several attempts in the desert of New Mexico in Roswell.
 <blockquote>I wanted to open the parachute after descending for a while but I noticed that I was still at an altitude of 50,000 feet.</blockquote>
-Red Bull moves in dimensions that are usually only achieved the Olympic Games or World Cup Soccer Championships. The 50 million euro (15 million euro amount to the expenses for the team 35 million those for the equipment), which can cost the life dream of<strong> Felix Baumgartner</strong> Salzburg, are a trifle compared to the advertising value that is generated by the media attention .
+Red Bull moves in dimensions that are usually only achieved the Olympic Games or World Cup Soccer Championships.Â The 50 million euro (15 million euro amount to the expenses for the team 35 million those for the equipment), which can cost the life dream of<strong> Felix Baumgartner</strong> Salzburg, are a trifle compared to the advertising value that is generated by the media attention .
 <h3>Passion is priceless</h3>
-May say that Felix Baumgartner, adventure and passion have no price in the face of these numbers is not surprising. Red Bull looks for his exceptional athlete and that he has refused to rise when the slogan "Welcome to my world - the world of Red Bull" recite. We will see in Fuschl far behind when Baumgartner was at least the attention of the world on the sweet juice from the silver-blue box.
+May say that Felix Baumgartner, adventure and passion have no price in the face of these numbers is not surprising.Â Red Bull looks for his exceptional athlete and that he has refused to rise when the slogan "Welcome to my world - the world of Red Bull" recite.Â We will see in Fuschl far behind when Baumgartner was at least the attention of the world on the sweet juice from the silver-blue box.
 
 <a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="alignnone size-full wp-image-130" alt="mission-redbull-stratos-2" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1652" height="1000" /></a>
 
-Was calculated switched to 1.8 billion TV sets and a billion connections to the live broadcast on the Internet. Last comparisons were drawn to the New Year's Concert of the Philharmonic, which acts as a provincial event over the Stratos project. The advertising value of the New Year's Concert is estimated at a range of 150 million to 450 million euros households. Extrapolated to the Stratos would be more than eight billion euros.
+Was calculated switched to 1.8 billion TV sets and a billion connections to the live broadcast on the Internet.Â Last comparisons were drawn to the New Year's Concert of the Philharmonic, which acts as a provincial event over the Stratos project.Â The advertising value of the New Year's Concert is estimated at a range of 150 million to 450 million euros households.Â Extrapolated to the Stratos would be more than eight billion euros.
 <h3>Three world records</h3>
-The Fédération Aéronautique Internationale, which cares for the recording of data records in the aviation world, recognized with the jump to three world records.Baumgartner reached the maximum speed of Mach 1.25 or exactly 1357.6 hours kilometers, the highest jump at 38969.40 meters and the longest free fall, with a length of 36402.6 meters. Only a teddy bear outplayed in August with a "Spung" 39 kilometers from the record of Baumgartner.
+The FÃ©dÃ©ration AÃ©ronautique Internationale, which cares for the recording of data records in the aviation world, recognized with the jump to three world records.Baumgartner reached the maximum speed of Mach 1.25 or exactly 1357.6 hours kilometers, the highest jump at 38969.40 meters and the longest free fall, with a length of 36402.6 meters.Â OnlyÂ a teddy bearÂ outplayed in August with a "Spung" 39 kilometers from the record of Baumgartner.
 
 After the Stratos project, the now 44-year-old Baumgartner announced plans to return to professional sports and the back to build up as a rescue helicopter pilot a new foothold.]]></content:encoded>
             <excerpt:encoded><![CDATA[How does it feel to jump from 21,800 metres? Ask Felix Baumgartner.]]></excerpt:encoded>
@@ -4909,21 +4909,21 @@ After the Stratos project, the now 44-year-old Baumgartner announced plans to re
             <dc:creator><![CDATA[george.olaru]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=134</guid>
             <description></description>
-            <content:encoded><![CDATA[He is the rockers among mobile musicians: the <a href="http://www.marshallheadphones.com/" target="_blank">Marshall Hanwell</a> , a speaker in the style of famous guitar amplifiers, which is also known by the great stages of the world.
+            <content:encoded><![CDATA[He is the rockers among mobile musicians: theÂ <a href="http://www.marshallheadphones.com/" target="_blank">Marshall Hanwell</a>Â , a speaker in the style of famous guitar amplifiers, which is also known by the great stages of the world.
 
-Smart phones, MP3 players, etc. are very down to earth connected only by jacks. No Bluetooth, no docking, no frills.The plugging the supplied cable with its gold-plated connectors into a headphone jack as well as very reminiscent of connecting an electric guitar.
+Smart phones, MP3 players, etc. are very down to earth connected only by jacks.Â No Bluetooth, no docking, no frills.The plugging the supplied cable with its gold-plated connectors into a headphone jack as well as very reminiscent of connecting an electric guitar.
 <blockquote>The speaker's sound is rich, clean, and endowed with Marshall's characteristic electronic crunch.</blockquote>
-The controls are reduced to the bare minimum. Only a toggle switch for dressing and stable knobs for volume and tone - and which is sensational: Extremely clean highs, powerful bass, even if you turn right! And with its 100 watts of Hanwell is extremely loud. Since it is better to invite the neighbors equal to the party.
+The controls are reduced to the bare minimum.Â Only a toggle switch for dressing and stable knobs for volume and tone - and which is sensational: Extremely clean highs, powerful bass, even if you turn right!Â And with its 100 watts of Hanwell is extremely loud.Â Since it is better to invite the neighbors equal to the party.
 <h3>No frills</h3>
-<b>Stanmore</b> , the new speaker system, the manufacturer will fit perfectly into the<b>Marshall family</b> one. The vinyl casing, gold trim, Mashall logo and classic Boxenbespannstoff represent the typical vintage look: The ingredients from the Stanmore already a <b>rock'n'roll classics</b> to make. Whether on tour or in everyday life, powerful sound and compatibility make the Stanmore into an optimal, so the manufacture.
+<b>Stanmore</b>Â , the new speaker system, the manufacturer will fit perfectly into the<b>Marshall family</b>Â one.Â The vinyl casing, gold trim, Mashall logo and classic Boxenbespannstoff represent the typical vintage look: The ingredients from the Stanmore already aÂ <b>rock'n'roll classics</b>Â to make.Â Whether on tour or in everyday life, powerful sound and compatibility make the Stanmore into an optimal, so the manufacture.
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-136" alt="marshall-speaker-2" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1160" height="590" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="alignnone size-full wp-image-136" alt="marshall-speaker-2" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1160" height="590" /></a>
 
-The three typical, Marshall-style controls for volume, bass, treble and a switch to flip on and off the Stan Mores, located on the top of the unit. Through the included 3.5mm spiral cable, which has the appearance of a typical guitar cable, virtually any music source to the powered speakers can be connected.
+The three typical, Marshall-style controls for volume, bass, treble and a switch to flip on and off the Stan Mores, located on the top of the unit.Â Through the included 3.5mm spiral cable, which has the appearance of a typical guitar cable, virtually any music source to the powered speakers can be connected.
 <h3>CLASSIC MARSHALL DESIGN DETAILS</h3>
 The Stanmore features a classic Marshall design, with a vintage-looking front fret, gold-coloured metal details, and that iconic script logo. So it will never look out of place amid the rest of your Marshall collection.
 
-Can be beyond even <b>via Bluetooth</b> with <b>aptX technology</b> or the two other connections ( <b>RCA input / optical input</b> ) connect directly to their sources.Thanks to the high quality components Stanmore intended to provide a detailed sound across the entire frequency range without sacrificing quality. The sound is punchy, without losing detail, and very clear and powerful to penetrate the entire spectrum from Stanmore.]]></content:encoded>
+Can be beyond evenÂ <b>via Bluetooth</b>Â withÂ <b>aptX technology</b>Â or the two other connections (Â <b>RCA input / optical input</b>Â ) connect directly to their sources.Thanks to the high quality components Stanmore intended to provide a detailed sound across the entire frequency range without sacrificing quality.Â The sound is punchy, without losing detail, and very clear and powerful to penetrate the entire spectrum from Stanmore.]]></content:encoded>
             <excerpt:encoded><![CDATA[He is the rockers among mobile musicians: the Marshall Hanwell , a speaker in the style of famous guitar amplifiers, which is also known by the great stages of the world.]]></excerpt:encoded>
             <wp:post_id>134</wp:post_id>
             <wp:post_date>2013-10-17 08:38:44</wp:post_date>
@@ -5025,12 +5025,12 @@ Can be beyond even <b>via Bluetooth</b> with <b>aptX technology</b> or the t
             <content:encoded><![CDATA[The Old Head Golf Links is one of the most remarkable developments ever conceived in the history of golf; an <strong>Atlantic</strong> promontory that will never be rivalled in terms of drama and beauty.
 
 It rises hundreds of feet high above dramatic cliffs, surrounded by the ocean on all sides and commanding the most spectacular views from virtually every part.
-<blockquote>Is it a true links? Is it a great test of golf? No matter the question, the answer is the same: Find a way to get to this clifftop layout  unabashedly set on a headland jutting into the Celtic Sea.</blockquote>
+<blockquote>Is it a true links? Is it a great test of golf? No matter the question,Â the answer is the same: Find a way to get to this clifftop layout Â unabashedly set on a headland jutting into the Celtic Sea.</blockquote>
 The Old Head of Kinsale is a national monument and an ancient royal site, fortified by a castle at the narrowest part of the promontory, with history traceable back to several centuries before Christ. It is a place of special historical, archaeological and scientific interest.
 <h3>Glory Game</h3>
 The Erainn Celtic people, the first Irish settlers, fortified the peninsula by building a fort, the remains of which can still be seen today, along with the castles and signal tower on The Old Head itself. The new lighthouse was built on the site in 1853, carrying on the ancient tradition of "<strong>Navigational Fires</strong>" situated on the promontory.
 <h3>Nature Conservation</h3>
-The Old Head was included in the "Inventory of Outstanding <strong>Landscapes</strong> in Ireland" as being ‘a narrow coastal headland with spectacular cliffs of geological interest’. The landscape development program at The Old Head is designed to enhance, complement and harmonise the newly planted areas with the existing vegetation. It consists primarily of native maritime species, coupled with a refined selection of seaside plants from the flora of all five continents.]]></content:encoded>
+The Old Head was included in the "Inventory of Outstanding <strong>Landscapes</strong> in Ireland" as being â€˜a narrow coastal headland with spectacular cliffs of geological interestâ€™. The landscape development program at The Old Head is designed to enhance, complement and harmonise the newly planted areas with the existing vegetation. It consists primarily of native maritime species, coupled with a refined selection of seaside plants from the flora of all five continents.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>142</wp:post_id>
             <wp:post_date>2013-10-13 07:56:08</wp:post_date>
@@ -5126,11 +5126,11 @@ The Old Head was included in the "Inventory of Outstanding <strong>Landscapes</s
             <dc:creator><![CDATA[jane.cortez]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=145</guid>
             <description></description>
-            <content:encoded><![CDATA[Two-time Oscar winner Ron Howard takes the daunting task of covering the nearly decade-long rival between British Formula 1 racer James Hunt (Chris Hemsworth) and Austria’s Niki Lauda’s (Daniel Brühl) race to become world champions. From tracks in Italy to Japan, press rooms to extravagant parties, Hunt and Lauda risked death, fortune and fame in the 1970s and became international sensations in the process. With an undeniably effective immediacy, “Rush” is a solid, but rather cold, biopic about two equally detached personalities.
-<blockquote><i>Rush </i>has flown under the radar, delivering a visually exciting first preview seemingly out of nowhere.</blockquote>
+            <content:encoded><![CDATA[Two-time Oscar winner Ron Howard takes the daunting task of covering the nearly decade-long rival between British Formula 1 racer James Hunt (Chris Hemsworth) and Austriaâ€™s Niki Laudaâ€™s (Daniel BrÃ¼hl) race to become world champions. From tracks in Italy to Japan, press rooms to extravagant parties, Hunt and Lauda risked death, fortune and fame in the 1970s and became international sensations in the process. With an undeniably effective immediacy, â€œRushâ€ is a solid, but rather cold, biopic about two equally detached personalities.
+<blockquote><i>RushÂ </i>has flown under the radar, delivering a visually exciting first preview seemingly out of nowhere.</blockquote>
 Composer Hans Zimmer expectedly delivers a rousing singular theme that plays double-duty with solo cello highlighting the insular determination of both drivers before chug-a-lugging into full-on pounding race mode competing with squealing tires and booming PA announcements.
 
-“Rush” is not the epic drama is could have been, but it is certainly watchable and mostly enjoyable, but like an impeccably crafted Formula 1 race car, is fast, glistening with style but ultimately just a cold piece of polished metal.]]></content:encoded>
+â€œRushâ€ is not the epic drama is could have been, but it is certainly watchable and mostly enjoyable, but like an impeccably crafted Formula 1 race car, is fast, glistening with style but ultimately just a cold piece of polished metal.]]></content:encoded>
             <excerpt:encoded><![CDATA[Rush has flown under the radar, delivering a visually exciting first preview seemingly out of nowhere. ]]></excerpt:encoded>
             <wp:post_id>145</wp:post_id>
             <wp:post_date>2013-10-16 13:08:48</wp:post_date>
@@ -5235,26 +5235,26 @@ Composer Hans Zimmer expectedly delivers a rousing singular theme that plays dou
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=151</guid>
             <description></description>
-            <content:encoded><![CDATA[The end of the world is near! Especially if you’re into pop culture. A parade of apocalypses is storming theaters this year in an effort to turn the end of humanity into the beginning of lucrative franchises.
+            <content:encoded><![CDATA[The end of the world is near! Especially if youâ€™re into pop culture.Â A parade of apocalypses is storming theaters this year in an effort to turn the end of humanity into the beginning of lucrative franchises.
 
 A pandemic has decimated humanity. The world is struggling to survive. And at the centre of this are <strong>Ellie</strong>, a teenage girl, and Joel, the hardened survivor hired to smuggle her out of the quarantine zone and across America. As they travel, you'll encounter a stunningly-realised America that has been reclaimed by nature, and take the characters on an emotional journey as long and fraught as their cross-country trek.
 <blockquote>The broad strokes are spectacular, but the finer details impress the most, the environment telling its own stories as Joel and Ellie explore</blockquote>
 But while moviegoers can spend their last days with good-looking celebs, gamers will be spending theirs with one of the best-looking video games ever created.
 <h3 id="review-subtitle">SURVIVAL OF THE FITTEST</h3>
-Developed by Uncharted developer Naughty Dog, post-apocalyptic survival game The Last of Us (due out June 14) has been on “must-watch” lists since its tremendous debut at the 2011 Spike Video Game Awards. Already the winner of numerous pre-release honors from countless outlets (us included), the PlayStation 3 exclusive is about as hyped as games come. Should we really be this excited about our final days?
+Developed by Uncharted developer Naughty Dog, post-apocalyptic survival game The Last of Us (due out June 14) has been on â€œmust-watchâ€ lists since its tremendous debut at the 2011 Spike Video Game Awards. Already the winner of numerous pre-release honors from countless outlets (us included), the PlayStation 3 exclusive is about as hyped as games come. Should we really be this excited about our final days?
 
-According to critics, absolutely. With over two dozen perfect scores and an overall <a href="http://www.metacritic.com/game/playstation-3/the-last-of-us/critic-reviews" target="_blank" data-rapid_p="11">95 current rating on Metacritic</a>, it’s already among the best-reviewed games in the PS3’s seven-year history and a shoo-in for Game of the Year contention.
+According to critics, absolutely. With over two dozen perfect scores and an overallÂ <a href="http://www.metacritic.com/game/playstation-3/the-last-of-us/critic-reviews" target="_blank" data-rapid_p="11">95 current rating on Metacritic</a>, itâ€™s already among the best-reviewed games in the PS3â€™s seven-year history and a shoo-in for Game of the Year contention.
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="alignnone size-full wp-image-153" alt="the-last-of-us-game" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1100" height="532" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="alignnone size-full wp-image-153" alt="the-last-of-us-game" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1100" height="532" /></a>
 
-That’s to be expected, to a degree; Naughty Dog has already earned a reputation for delivering jaw-dropping graphics. But <strong>The Last of Us</strong> sets a new bar.
+Thatâ€™s to be expected, to a degree; Naughty Dog has already earned a reputation for delivering jaw-dropping graphics. But <strong>The Last of Us</strong> sets a new bar.
 
-The Last of Us seamlessly intertwines satisfying, choice-based gameplay with a stellar narrative. It never slows down, it never lets up, and frankly, it never disappoints. It’s PlayStation 3’s best exclusive, and the entire experience, from start to finish, is remarkable. I lost myself in Naughty Dog’s vision of a pandemic-ridden United States, in the characters that populate this unfortunate wasteland, and in their individual stories. The 17 hours I spent playing through the campaign are among the most memorable I’ve ever spent with a game.
+The Last of Us seamlessly intertwines satisfying, choice-based gameplay with a stellar narrative. It never slows down, it never lets up, and frankly, it never disappoints. Itâ€™s PlayStation 3â€™s best exclusive, and the entire experience, from start to finish, is remarkable. I lost myself in Naughty Dogâ€™s vision of a pandemic-ridden United States, in the characters that populate this unfortunate wasteland, and in their individual stories. The 17 hours I spent playing through the campaign are among the most memorable Iâ€™ve ever spent with a game.
 <h3>The collapse of society</h3>
 Joel and Ellie develop a sort of dysfunctional father-daughter relationship as their collective experiences bind them, and rooting for Ellie in particular is commonplace in The Last of Us. Her success means the player is successful, and her hardened exterior is the perfect complement to her complete ignorance of the world before it was destroyed.
 
-Ellie was born after the collapse, and as such, she’s full of questions and wonder, often communicated through the many contextual conversations she and Joel share. She’ll pick through records at a music store, become fascinated with wildlife she’s never seen before, and ask a million questions about the past. You watch her learn, grow, and gain meaning. It’s impossible not to become attached to her.]]></content:encoded>
-            <excerpt:encoded><![CDATA[The end of the world is near! Especially if you’re into pop culture.]]></excerpt:encoded>
+Ellie was born after the collapse, and as such, sheâ€™s full of questions and wonder, often communicated through the many contextual conversations she and Joel share. Sheâ€™ll pick through records at a music store, become fascinated with wildlife sheâ€™s never seen before, and ask a million questions about the past. You watch her learn, grow, and gain meaning. Itâ€™s impossible not to become attached to her.]]></content:encoded>
+            <excerpt:encoded><![CDATA[The end of the world is near! Especially if youâ€™re into pop culture.]]></excerpt:encoded>
             <wp:post_id>151</wp:post_id>
             <wp:post_date>2013-10-09 14:56:00</wp:post_date>
             <wp:post_date_gmt>2013-10-09 14:56:00</wp:post_date_gmt>
@@ -5434,23 +5434,23 @@ Ellie was born after the collapse, and as such, she’s full of questions and wo
             </wp:postmeta>
         </item>
         <item>
-            <title>Zedd’s Music Moment Of Clarity</title>
+            <title>Zeddâ€™s Music Moment Of Clarity</title>
             <link>http://pixelgrade.com/demos/bucket/?p=182</link>
             <pubDate>Sat, 12 Oct 2013 12:36:17 +0000</pubDate>
             <dc:creator><![CDATA[jane.cortez]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=182</guid>
             <description></description>
-            <content:encoded><![CDATA[This <strong>audio post</strong> is probably just amazing. All the white-hot techno DJs and producers, few are more molten right now than Anton Zaslavski, better known as <b>Zedd</b>. Zedd’s single “Clarity” (featuring London-based female vocalist Foxes).
+            <content:encoded><![CDATA[This <strong>audio post</strong> is probably just amazing. All the white-hot techno DJs and producers, few are more molten right now than Anton Zaslavski, better known asÂ <b>Zedd</b>. Zeddâ€™s single â€œClarityâ€ (featuring London-based female vocalist Foxes).
 
-When we entered The Fox, which is the unofficial sister-venue of SF's The Warfield in look, decor, and size, <strong>Oliver </strong>was on, pounding the crowd with their heaviest brand of "Oliver" house music--edgy and powerful, but still very composed and endlessly sexy.
+When we entered The Fox, which is the unofficial sister-venue of SF's The Warfield in look, decor, and size,Â <strong>OliverÂ </strong>was on, pounding the crowd with their heaviest brand of "Oliver" house music--edgy and powerful, but still very composed and endlessly sexy.
 <h4>What is creativity really?</h4>
-From a scientific perspective, creativity is your ability to think of something original from connections made between pre-existing ideas in your brain. These connections are controlled by neurotransmitters like adenosine, which alerts your brain when you’re running out of energy and reacts.
+From a scientific perspective, creativity is your ability to think of something original from connections made between pre-existing ideas in your brain. These connections are controlled by neurotransmitters like adenosine, which alerts your brain when youâ€™re running out of energy and reacts.
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-183 alignnone" alt="zedd-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1000" height="667" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="size-full wp-image-183 alignnone" alt="zedd-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1000" height="667" /></a>
 
-This got me wondering about coffee and beer and which one would actually help me be more creative and get work done. Hopefully, this will help you decide when it’s best to have that triple shot espresso or ice cold brew.
+This got me wondering about coffee and beer and which one would actually help me be more creative and get work done. Hopefully, this will help you decide when itâ€™s best to have that triple shot espresso or ice cold brew.
 
-From a scientific perspective, creativity is your ability to think of something original from connections made between pre-existing ideas in your brain. These connections are controlled by neurotransmitters like adenosine, which alerts your brain when you’re running out of energy and reacts.]]></content:encoded>
+From a scientific perspective, creativity is your ability to think of something original from connections made between pre-existing ideas in your brain. These connections are controlled by neurotransmitters like adenosine, which alerts your brain when youâ€™re running out of energy and reacts.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>182</wp:post_id>
             <wp:post_date>2013-10-12 12:36:17</wp:post_date>
@@ -5553,17 +5553,17 @@ From a scientific perspective, creativity is your ability to think of something 
             <dc:creator><![CDATA[allie.bates]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=199</guid>
             <description></description>
-            <content:encoded><![CDATA[When you work in a traditional office and have a question, instant gratification is hard to resist. It’s so easy. Just stumble over to a co-worker’s desk, make sure they stop whatever it was they were doing, <a href="#">blather </a>on until the lights of recognition come on in their eyes, then await the answer.
+            <content:encoded><![CDATA[When you work in a traditional office and have a question, instant gratification is hard to resist. Itâ€™s so easy. Just stumble over to a co-workerâ€™s desk, make sure they stop whatever it was they were doing,Â <a href="#">blatherÂ </a>on until the lights of recognition come on in their eyes, then await the answer.
 
-Unless your query concerns inflammable materials currently engulfed in said flames you’ve likely wasted their time – in fact, you may have even wasted your own. One of my favorite side-effects of working remotely is the way slow-time communication forces you to stop and think before you speak. When I have a question for one of our programmers, for example, here’s a bit of what goes through my head:
+Unless your query concerns inflammable materials currently engulfed in said flames youâ€™ve likely wasted their time â€“ in fact, you may have even wasted your own. One of my favorite side-effects of working remotely is the way slow-time communication forces you to stop and think before you speak. When I have a question for one of our programmers, for example, hereâ€™s a bit of what goes through my head:
 <blockquote>The basic idea is this: you try to minimize the things that are bad, and maximize those that are good.</blockquote>
-It’s usually at this point that I either figure out the answer for myself or come up with a new way of considering the problem, never having to even ask the original question. I didn’t bother my co-worker, I didn’t look like an idiot trying to articulate the question on-the-fly, and most importantly I figured out the answer!
+Itâ€™s usually at this point that I either figure out the answer for myself or come up with a new way of considering the problem, never having to even ask the original question. I didnâ€™t bother my co-worker, I didnâ€™t look like an idiot trying to articulate the question on-the-fly, and most importantly I figured out the answer!
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="aligncenter size-full wp-image-202" alt="embracing-slow-time-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1050" height="591" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="aligncenter size-full wp-image-202" alt="embracing-slow-time-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1050" height="591" /></a>
 
-People who struggle to work remotely often bemoan the lack of in-person collaboration jumping from this tool to that tech in an effort to recreate the magic that only happens when we’re all in the same room. There are definitely advantages to face time, but too often it seems like facial expressions and waving arms are substituted for clear thought and courtesy.
+People who struggle to work remotely often bemoan the lack of in-person collaboration jumping from this tool to that tech in an effort to recreate the magic that only happens when weâ€™re all in the same room. There are definitely advantages to face time, but too often it seems like facial expressions and waving arms are substituted for clear thought and courtesy.
 
-The next time you have a question for a coworker, try writing it out as if they were 1000 miles and 3 time zones away – even if they’re sitting right next to you. You might surprise yourself with the answer.]]></content:encoded>
+The next time you have a question for a coworker, try writing it out as if they were 1000 miles and 3 time zones away â€“ even if theyâ€™re sitting right next to you. You might surprise yourself with the answer.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>199</wp:post_id>
             <wp:post_date>2013-10-12 17:03:11</wp:post_date>
@@ -5661,23 +5661,23 @@ The next time you have a question for a coworker, try writing it out as if they 
             <dc:creator><![CDATA[justin.rockwell]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=206</guid>
             <description></description>
-            <content:encoded><![CDATA[Goodwood Festival of Speed and Revival founder Lord March is today able to announce the provisional dates for next year’s two leading sell-out Goodwood motoring events. It should be noted that at this stage the 2014 Festival of Speed and Goodwood Revival dates are provisional and remain subject to change, pending ratification by the FIA of the 2014 Formula 1 calendar in December.
+            <content:encoded><![CDATA[Goodwood Festival of Speed and Revival founder Lord March is today able to announce the provisional dates for next yearâ€™s two leading sell-out Goodwood motoring events. It should be noted that at this stage the 2014 Festival of Speed and Goodwood Revival dates are provisional and remain subject to change, pending ratification by the FIA of the 2014 Formula 1 calendar in December.
 
-The 911 has been at the very heart of the Porsche brand for the past five decades.  Few other sports cars in the world can look back on such a long tradition and continuity as the Porsche 911. It has been inspiring car enthusiasts the world over since its debut as the model 901 at the IAA International Automotive Show at Frankfurt in September 1963.
-<blockquote>Goodwood honoured the 50th anniversary of one of the world’s most versatile and popular sports cars – the Porsche 911 – at the Festival of Speed 2013.</blockquote>
-Today the truly versatile 911 is considered by its many devoted fans to be the quintessential sports car, and the central point of reference for all other Porsche series, as each of the marque’s other models carry a piece of the 911’s philosophy.
+The 911 has been at the very heart of the Porsche brand for the past five decades.Â  Few other sports cars in the world can look back on such a long tradition and continuity as the Porsche 911. It has been inspiring car enthusiasts the world over since its debut as the model 901 at the IAA International Automotive Show at Frankfurt in September 1963.
+<blockquote>Goodwood honoured the 50th anniversary of one of the worldâ€™s most versatile and popular sports cars â€“ the Porsche 911 â€“ at the Festival of Speed 2013.</blockquote>
+Today the truly versatile 911 is considered by its many devoted fans to be the quintessential sports car, and the central point of reference for all other Porsche series, as each of the marqueâ€™s other models carry a piece of the 911â€™s philosophy.
 <h3>The Track Action</h3>
-As well as wheel-to-wheel racing, the Members’ Meeting will also feature thrilling, high-speed track action from more modern eras of Formula 1, Le Mans and beyond – sights and sounds that have never been seen before at Goodwood Motor Circuit. The inaugural event in 2014 will celebrate the flame-spitting Formula 1 cars
+As well as wheel-to-wheel racing, the Membersâ€™ Meeting will also feature thrilling, high-speed track action from more modern eras of Formula 1, Le Mans and beyond â€“ sights and sounds that have never been seen before at Goodwood Motor Circuit. The inaugural event in 2014 will celebrate the flame-spitting Formula 1 cars
 
-<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="aligncenter size-full wp-image-207" alt="goodwood-festival-of-speed-featured" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1200" height="688" /></a>
+<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="aligncenter size-full wp-image-207" alt="goodwood-festival-of-speed-featured" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1200" height="688" /></a>
 
-The three typical, Marshall-style controls for volume, bass, treble and a switch to flip on and off the Stan Mores, located on the top of the unit. Through the included 3.5mm spiral cable, which has the appearance of a typical guitar cable, virtually any music source to the powered speakers can be connected.
+The three typical, Marshall-style controls for volume, bass, treble and a switch to flip on and off the Stan Mores, located on the top of the unit.Â Through the included 3.5mm spiral cable, which has the appearance of a typical guitar cable, virtually any music source to the powered speakers can be connected.
 <h3>50 Years of Porsche</h3>
-The main ‘Central Feature’ marked this prestigious milestone with a one-off 911-inspired sculpture displayed prominently outside Goodwood House. A dedicated class of road and racing 911s, covering all seven generations of the iconic sports car, took to the Goodwood Hillclimb twice each day over this Summer weekend for a special parade.
+The main â€˜Central Featureâ€™ marked this prestigious milestone with a one-off 911-inspired sculpture displayed prominently outside Goodwood House. A dedicated class of road and racing 911s, covering all seven generations of the iconic sports car, took to the Goodwood Hillclimb twice each day over this Summer weekend for a special parade.
 
-Can be beyond even <b>via Bluetooth</b> with <b>aptX technology</b> or the two other connections ( <b>RCA input / optical input</b> ) connect directly to their sources.Thanks to the high quality components Stanmore intended to provide a detailed sound across the entire frequency range without sacrificing quality. The sound is punchy, without losing detail, and very clear and powerful to penetrate the entire spectrum from Stanmore.
+Can be beyond evenÂ <b>via Bluetooth</b>Â withÂ <b>aptX technology</b>Â or the two other connections (Â <b>RCA input / optical input</b>Â ) connect directly to their sources.Thanks to the high quality components Stanmore intended to provide a detailed sound across the entire frequency range without sacrificing quality.Â The sound is punchy, without losing detail, and very clear and powerful to penetrate the entire spectrum from Stanmore.
 
-The main ‘Central Feature’ marked this prestigious milestone with a one-off 911-inspired sculpture displayed prominently outside Goodwood House. A dedicated class of road and racing 911s, covering all seven generations of the iconic sports car, took to the Goodwood Hillclimb twice each day over this Summer weekend for a special parade.
+The main â€˜Central Featureâ€™ marked this prestigious milestone with a one-off 911-inspired sculpture displayed prominently outside Goodwood House. A dedicated class of road and racing 911s, covering all seven generations of the iconic sports car, took to the Goodwood Hillclimb twice each day over this Summer weekend for a special parade.
 
 &nbsp;]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -5887,7 +5887,7 @@ The main ‘Central Feature’ marked this prestigious milestone with a one-off 
             <dc:creator><![CDATA[charlotte.agell]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=224</guid>
             <description></description>
-            <content:encoded><![CDATA[Gif animations included in this post. Add photoreal images, abstract designs, and animation to your long exposure photos and timelapse. Light painting is a fairly simple to do. The first step is to make sure you have the right equipment. Almost every <strong>DSLR</strong>, and most point-and-shoots, have a long exposure mode.
+            <content:encoded><![CDATA[Gif animations included in this post. Add photoreal images, abstract designs, and animation to your long exposure photos and timelapse.Â Light painting is a fairly simple to do. The first step is to make sure you have the right equipment. Almost every <strong>DSLR</strong>, and most point-and-shoots, have a long exposure mode.
 <blockquote>Pixelstick began as a proof of concept using an arduino and some off the shelf LED strips. We got results, but weren't happy with the resolution of nor with the durability and usability of the actual device.</blockquote>
 It's as simple as choosing the length of the exposure (from a few seconds to a few hours) and moving a light source within the frame. The process itself is fun and the excitement of seeing what you captured immediately can be extremely rewarding.
 <h3>The fine detail</h3>
@@ -5897,14 +5897,14 @@ Pixelstick reads images created in Photoshop (or the image editor of your choice
 <h3>The Tale of pixelstick</h3>
 Pixelstick began as a proof of concept using an arduino and some off the shelf <strong>LED strips</strong>. We got results, but weren't happy with the resolution of nor with the durability and usability of the actual device. We moved quickly into custom LED circuit boards, a more powerful ARM microcontroller and a sturdier design made of lightweight aluminum rather than plastic tubing. With the ability to control the density of the <strong>LED</strong> count while at the same time refining the custom aluminum extrusion, the current version of pixelstick began to take shape.
 
-[caption id="attachment_226" align="aligncenter" width="800"]<img class=" wp-image-226" alt="light-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="800" height="451" /> Animation to your long exposure photos and timelapse.[/caption]
+[caption id="attachment_226" align="aligncenter" width="800"]<img class=" wp-image-226" alt="light-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="800" height="451" /> Animation to your long exposure photos and timelapse.[/caption]
 
 Each iteration performed better and was tweaked as we logged more hours with the pixelstick.
 
 <b>The full package contains:</b>
 <ul>
 	<li>LED PCBs (198 LEDs total)</li>
-	<li>Two 3’ aluminum extrusion with connecting bracket &amp; diffusion lens</li>
+	<li>Two 3â€™ aluminum extrusion with connecting bracket &amp; diffusion lens</li>
 	<li>Handle with foam grip and rotating sleeve</li>
 	<li>Controller box with connecting cables and clips</li>
 	<li>Battery holder (AA Batteries not included)</li>
@@ -6007,17 +6007,17 @@ Each iteration performed better and was tweaked as we logged more hours with the
             <dc:creator><![CDATA[george.olaru]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=236</guid>
             <description></description>
-            <content:encoded><![CDATA[Despite some rough patches in the script, Alfonso Cuaron's film is a visual wonder. This movie rips a ground from under our feet, in "<strong>Gravity</strong>" shine <strong>George Clooney</strong> and <strong>Sandra Bullock</strong> as astronauts mainly fighting for survival in space. A simple story is captivating with magnificent pictures, 3-D sound effects for new and classic movie.
+            <content:encoded><![CDATA[Despite some rough patches in the script, Alfonso Cuaron's film is a visual wonder.Â This movie rips a ground from under our feet, in "<strong>Gravity</strong>" shine <strong>George Clooney</strong> and <strong>Sandra Bullock</strong> as astronauts mainly fighting for survival in space.Â A simple story is captivating with magnificent pictures, 3-D sound effects for new and classic movie.
 <blockquote>Early in the film, when Matt asks Ryan what she likes best about their space walk, she replies, "the silence." The Cuarons would have been wise to supply a bit more of it.</blockquote>
-When was it last at the end of the credits so quiet in the cinema? Only the breathing sounds of the side people are heard, then breaks from somewhere a soft "wow" the spell. It is as if the audience has to make sure only gently 90 minutes from the brilliant "<strong>Gravity</strong>", to be truly arrived on the ground.
+When was it last at the end of the credits so quiet in the cinema?Â Only the breathing sounds of the side people are heard, then breaks from somewhere a soft "wow" the spell.Â It is as if the audience has to make sure only gently 90 minutes from the brilliant "<strong>Gravity</strong>", to be truly arrived on the ground.
 
 [caption id="attachment_238" align="aligncenter" width="850"]<img class="size-full wp-image-238 " alt="gravity-movie-sandra" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="850" height="355" /> Sandra Bullock in 'Gravity'[/caption]
 
-No sooner is the fatal message arrived, hurtling approach a huge swarm and debris hitting the shuttle. Stone and Kowalsky, connected by a lifeline to survive the collision and find themselves floating in space again.
+No sooner is the fatal message arrived, hurtling approach a huge swarm and debris hitting the shuttle.Â Stone and Kowalsky, connected by a lifeline to survive the collision and find themselves floating in space again.
 <h3>The uncertainty of the universe</h3>
 But this cold, clear moment where everything speaks of self-sacrifice, giving way to rote acquired automatisms, courageous ignorance about probabilities and defiant pragmatism: They like the last two people up here to be, but in leaving their train passing ruins of the civil space waiting might yet a return flight ticket.
 
-Against time and any chance to go to Stone and Kowalsky on their very own<em> Space Odyssey</em>. A laborious and dangerous progress that holds Cuarón in beguiling, extremely long takes. In them catch the captivating beauty and existential horror of the cosmos, are not considered in the underground certainties.]]></content:encoded>
+Against time and any chance to go to Stone and Kowalsky on their very own<em> Space Odyssey</em>.Â A laborious and dangerous progress that holds CuarÃ³n in beguiling, extremely long takes.Â In them catch the captivating beauty and existential horror of the cosmos, are not considered in the underground certainties.]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>236</wp:post_id>
             <wp:post_date>2013-10-15 21:17:59</wp:post_date>
@@ -6348,7 +6348,7 @@ Who studied German literature, German literature is, who is studying medicine, i
 <h3>About Typography. Everybody Can Feel It</h3>
 Tiny women carry amazingly large bags, twice their eighty-pound weight. Some of the women carry babies in slings around front. A good adult picker can harvest over two hundred pounds of cherries and earn $8 a day, more than twice the Guatemalan minimum daily wage.
 
-[caption id="attachment_26" align="alignnone" width="691"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-26" alt="good-design-is-invisible-map" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="691" height="462" /></a> Web Trend Map 4 www.informationarchitects.jp/wtm4/[/caption]
+[caption id="attachment_26" align="alignnone" width="691"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="size-full wp-image-26" alt="good-design-is-invisible-map" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="691" height="462" /></a> Web Trend Map 4 www.informationarchitects.jp/wtm4/[/caption]
 
 Who studied German literature, German literature is, who is studying medicine, is doctor who studies physics is physics, but who studied philosophy, this will by no philosopher. But I would say that the study of philosophy according to specialization may be an ideal preparation for the Informationsachitekten. For philosophy teaches one to work on and to the order of the terms.
 <h3>Online news magazines is often accused them all look similar. What do you think of this criticism?</h3>
@@ -6466,7 +6466,7 @@ The allegation that approach visually newspaper websites is absurd. If one keeps
                 <wp:comment_author_IP>86.124.174.206</wp:comment_author_IP>
                 <wp:comment_date>2013-10-22 09:14:31</wp:comment_date>
                 <wp:comment_date_gmt>2013-10-22 09:14:31</wp:comment_date_gmt>
-                <wp:comment_content><![CDATA[Thanks, Vlad! It took a while to come to these conclusions, but it definitely feels right now that we’re in it. Glad you agree!]]></wp:comment_content>
+                <wp:comment_content><![CDATA[Thanks, Vlad! It took a while to come to these conclusions, but it definitely feels right now that weâ€™re in it. Glad you agree!]]></wp:comment_content>
                 <wp:comment_approved>trash</wp:comment_approved>
                 <wp:comment_type></wp:comment_type>
                 <wp:comment_parent>0</wp:comment_parent>
@@ -6488,7 +6488,7 @@ The allegation that approach visually newspaper websites is absurd. If one keeps
                 <wp:comment_author_IP>86.124.174.206</wp:comment_author_IP>
                 <wp:comment_date>2013-10-22 09:17:15</wp:comment_date>
                 <wp:comment_date_gmt>2013-10-22 09:17:15</wp:comment_date_gmt>
-                <wp:comment_content><![CDATA[Thanks, Vlad! It took a while to come to these conclusions, but it definitely feels right now that we’re in it. Glad you agree!]]></wp:comment_content>
+                <wp:comment_content><![CDATA[Thanks, Vlad! It took a while to come to these conclusions, but it definitely feels right now that weâ€™re in it. Glad you agree!]]></wp:comment_content>
                 <wp:comment_approved>1</wp:comment_approved>
                 <wp:comment_type></wp:comment_type>
                 <wp:comment_parent>2</wp:comment_parent>
@@ -6502,9 +6502,9 @@ The allegation that approach visually newspaper websites is absurd. If one keeps
                 <wp:comment_author_IP>86.124.174.206</wp:comment_author_IP>
                 <wp:comment_date>2013-10-22 09:18:18</wp:comment_date>
                 <wp:comment_date_gmt>2013-10-22 09:18:18</wp:comment_date_gmt>
-                <wp:comment_content><![CDATA[Enlightening post. One of the realities we’re finding with so many different desktop display settings out there is that some of what we used to be able to address with static comps is being further fleshed out in development we’ve handed the site over to the client for QA. 
+                <wp:comment_content><![CDATA[Enlightening post. One of the realities weâ€™re finding with so many different desktop display settings out there is that some of what we used to be able to address with static comps is being further fleshed out in development weâ€™ve handed the site over to the client for QA. 
 
-On responsive, that’s been the expectation we set from the get go – show some <strong>wireframes</strong>, do a design comp, know that there will be at least a couple revision rounds once the template is built. I love the idea of doing a lo-fi static mock up. That would make the process clearer for the client and smoother for us all.]]></wp:comment_content>
+On responsive, thatâ€™s been the expectation we set from the get go â€“ show some <strong>wireframes</strong>, do a design comp, know that there will be at least a couple revision rounds once the template is built. I love the idea of doing a lo-fi static mock up. That would make the process clearer for the client and smoother for us all.]]></wp:comment_content>
                 <wp:comment_approved>1</wp:comment_approved>
                 <wp:comment_type></wp:comment_type>
                 <wp:comment_parent>0</wp:comment_parent>
@@ -6546,7 +6546,7 @@ On responsive, that’s been the expectation we set from the get go – show som
                 <wp:comment_author_IP>86.124.174.206</wp:comment_author_IP>
                 <wp:comment_date>2013-10-22 09:22:42</wp:comment_date>
                 <wp:comment_date_gmt>2013-10-22 09:22:42</wp:comment_date_gmt>
-                <wp:comment_content><![CDATA[That’s pretty neat, Laurentiu! In my experience, though, nothing beats a real device in their hands. If nothing else, every client should have a <a href="http://pixelgrade.com/demos/bucket/?p=41" rel="nofollow">smart phone</a> in their pocket. Just make sure you’ve spent time with device testing before you go that route! :)]]></wp:comment_content>
+                <wp:comment_content><![CDATA[Thatâ€™s pretty neat, Laurentiu! In my experience, though, nothing beats a real device in their hands. If nothing else, every client should have a <a href="http://pixelgrade.com/demos/bucket/?p=41" rel="nofollow">smart phone</a> in their pocket. Just make sure youâ€™ve spent time with device testing before you go that route! :)]]></wp:comment_content>
                 <wp:comment_approved>1</wp:comment_approved>
                 <wp:comment_type></wp:comment_type>
                 <wp:comment_parent>7</wp:comment_parent>
@@ -6560,7 +6560,7 @@ On responsive, that’s been the expectation we set from the get go – show som
             <dc:creator><![CDATA[allie.bates]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=31</guid>
             <description></description>
-            <content:encoded><![CDATA[A <strong>review</strong> gallery post with full width featured image enabled. Anyone who bought one of Jawbone's much-hyped Up fitness bands last year found themselves an unwitting participant in a beta test. The brand-new platform promised to get you up and exercising, help you sleep and eat better, and make you more stylish to boot — and we liked it. But there were some missing features, and some overly simple software for the device.
+            <content:encoded><![CDATA[A <strong>review</strong> gallery post with full width featured image enabled. Anyone who bought one of Jawbone's much-hyped Up fitness bands last year found themselves an unwitting participant in a beta test. The brand-new platform promised to get you up and exercising, help you sleep and eat better, and make you more stylish to boot â€” and we liked it. But there were some missing features, and some overly simple software for the device.
 
 And then the Up started breaking. Weeks and months after being purchased, our review unit and many others simply stopped taking charges or turning on. Jawbone acknowledged the fault, offered its buyers a no-questions-asked refund (even if you just didn't like the thing, you could return it), and went back to the drawing board.
 <blockquote>Are you dealing in calories and carbohydrates, or points and badges?</blockquote>
@@ -6568,12 +6568,12 @@ I wear my watch almost everywhere, but I take it off when I sit at my laptop. It
 <h3>Tracking your life</h3>
 The Up tracks three things: activity, sleeping, and eating. The first is simple, requiring only that you wear the bracelet. Its engine turns the motion of your wrist into calories burned, steps walked, and active versus inactive time.
 
-[caption id="attachment_36" align="alignnone" width="1000"]<img class="size-full wp-image-36" alt="jawbone-up-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1000" height="668" /> UP by Jawbone http://jawbone.com/up[/caption]
+[caption id="attachment_36" align="alignnone" width="1000"]<img class="size-full wp-image-36" alt="jawbone-up-1" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="1000" height="668" /> UP by Jawbone http://jawbone.com/up[/caption]
 
 The Up's vibrating motor is used for two different alarm features, both of which I've come to love. When you're sleeping at night, you can set your alarm, and the Up will rouse you up to 30 minutes before that time based on when you're in lighter sleep and will wake up feeling better.
 <h3>Wrap-up</h3>
 I've now lived with both the $99.99 Jawbone Up and $99.95 Fitbit Ultra fitness devices so you're probably wondering which I would recommend? So am I, honestly.]]></content:encoded>
-            <excerpt:encoded><![CDATA[A review gallery post with full width featured image enabled. Anyone who bought one of Jawbone’s much-hyped Up fitness band.]]></excerpt:encoded>
+            <excerpt:encoded><![CDATA[A review gallery post with full width featured image enabled. Anyone who bought one of Jawboneâ€™s much-hyped Up fitness band.]]></excerpt:encoded>
             <wp:post_id>31</wp:post_id>
             <wp:post_date>2013-10-21 11:01:00</wp:post_date>
             <wp:post_date_gmt>2013-10-21 11:01:00</wp:post_date_gmt>
@@ -6881,13 +6881,13 @@ I've now lived with both the $99.99 Jawbone Up and $99.95 Fitbit Ultra fitness d
             <description></description>
             <content:encoded><![CDATA[A fighting bull stands alone surrounded by a crowd of runners on the second day of the San Fermin Running Of The Bulls festival in Pamplona, Spain (photo by Pablo Blazquez Dominguez). Four people have been injured so far in the nine day festival that takes over the whole town.
 
-The idea for the event came to Rob Dickens and his business partner as they were looking for ways to expand their 20-employee Boston business beyond its <a href="http://www.ruggedmaniac.com/home.html">Rugged Maniac</a> obstacle course, a five-kilometer run-slide-climb-slip-stumble-swim trek that has expanded to 20 markets nationwide.
+The idea for the event came to Rob Dickens and his business partner as they were looking for ways to expand their 20-employee Boston business beyond itsÂ <a href="http://www.ruggedmaniac.com/home.html">Rugged Maniac</a>Â obstacle course, a five-kilometer run-slide-climb-slip-stumble-swim trek that has expanded to 20 markets nationwide.
 <blockquote>We wanted to do something unique that nobody else was doing</blockquote>
 Since records began in 1924, 13 people have been killed during Pamplona's bull run. Many of those who run are full of bravado (and/or drink), and have little idea of what they're doing.
 <h3>The Running of the Bulls</h3>
-El Encierro, the running of the bulls from their corrals to the bullring for the afternoon bullfight, takes place in Pamplona, every morning during Sanfermines. Six bulls are let loose from the Coralillos de Santo Domingo to charge across the square of the same name (a good vantage point).
+El Encierro,Â the running of the bulls from their corrals to the bullring for the afternoon bullfight, takes place in Pamplona, every morning during Sanfermines. Six bulls are let loose from the Coralillos de Santo Domingo to charge across the square of the same name (a good vantage point).
 
-[caption id="attachment_88" align="alignnone" width="991"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png"><img class="size-full wp-image-88" alt="People on balconies watch runners Pedro Armestre/AFP" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image1.png" width="991" height="654" /></a> People on balconies watch runners - Pedro Armestre/AFP[/caption]
+[caption id="attachment_88" align="alignnone" width="991"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-88" alt="People on balconies watch runners Pedro Armestre/AFP" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="991" height="654" /></a> People on balconies watch runners - Pedro Armestre/AFP[/caption]
 
 Every year, the Festival of San Fermin, including the "Running of the Bulls", attracts thousands of visitors to Pamplona, Spain. Lasting nine days, the festival kicks off with massive crowds at the Chupinazo in Pamplona town square, followed by a carnival, fireworks, the running of the bulls, and many bullfights. Held since 1591, San Fermin remains a popular, if also dangerous and controversial, event -- dozens of people were injured this year.
 <h3>The Big Picture</h3>
@@ -6897,7 +6897,7 @@ A fighting bull stands alone surrounded by a crowd of runners on the second day 
 	<li>They can become isolated from the herd and are then always dangerous.</li>
 	<li>A very treacherous stretch comes towards the end, where Calle de la Estafeta slopes down into the final turn to Plaza de Toros.</li>
 </ol>
-The 2006 event passed without serious injury to any of the runners, but with even greater demands on the authorities, including 145 fire alarm call outs and four stray cats collected; no stray bulls reported. For dedicated Encierro news check out <a href="http://www.sanfermin.com">www.sanfermin.com</a>]]></content:encoded>
+The 2006 event passed without serious injury to any of the runners, but with even greater demands on the authorities, including 145 fire alarm call outs and four stray cats collected; no stray bulls reported. For dedicatedÂ EncierroÂ news check out <a href="http://www.sanfermin.com">www.sanfermin.com</a>]]></content:encoded>
             <excerpt:encoded><![CDATA[]]></excerpt:encoded>
             <wp:post_id>86</wp:post_id>
             <wp:post_date>2013-10-21 15:57:49</wp:post_date>
@@ -6990,16 +6990,16 @@ The 2006 event passed without serious injury to any of the runners, but with eve
             <dc:creator><![CDATA[judith.drake]]></dc:creator>
             <guid isPermaLink="false">http://pixelgrade.com/demos/bucket/?p=98</guid>
             <description></description>
-            <content:encoded><![CDATA[The new Leica M is the most innovative and versatile M, which has spawned the modern M system. It combines decades of experience with the rangefinder system with cutting-edge digital technology: It has a newly developed, high-resolution CMOS full frame sensor that achieves together with its high-performance processor and the legendary M lenses outstanding image results. With live view, video and new additional focusing methods, it is the M, for all who want to give up anything that modern camera technology offers.
+            <content:encoded><![CDATA[The new Leica M is the most innovative and versatile M, which has spawned the modern M system.Â It combines decades of experience with the rangefinder system with cutting-edge digital technology: It has a newly developed, high-resolution CMOS full frame sensor that achieves together with its high-performance processor and the legendary M lenses outstanding image results.Â With live view, video and new additional focusing methods, it is the M, for all who want to give up anything that modern camera technology offers.
 
 With live view, video and new additional focusing methods, it is the M, for all who want to give up anything that modern camera technology offers.
 <blockquote>It has a newly developed, high-resolution CMOS full frame sensor that achieves together with its high-performance processor and the legendary M lenses outstanding image results.</blockquote>
 <h3>Splash-proof camera housing</h3>
-Based on the experience of our engineers in the construction of the new Leica M camera bodies is uncompromisingly designed for maximum stability and strength. Your deck and its floor covers are milled from blocks of brass. Your all-metal housing is closed and consists of a high-strength magnesium alloy.
+Based on the experience of our engineers in the construction of the new Leica M camera bodies is uncompromisingly designed for maximum stability and strength.Â Your deck and its floor covers are milled from blocks of brass.Â Your all-metal housing is closed and consists of a high-strength magnesium alloy.
 
 [caption id="attachment_102" align="alignnone" width="1024"]<a href="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png"><img class="size-full wp-image-102" alt="leica-m-review4" src="http://pixelgrade.com/demos/bucket/wp-content/uploads/2013/11/placeholder_image2.png" width="1024" height="683" /></a> Splash-proof camera body - htt://leica-camera.com[/caption]
 <h3>All new features of the Leica M at a glance</h3>
-Together with the new sensor, the Leica Maestro processor ensures that the vision of the Leica M sets new standards in terms of speed. At top speed he prepares for the coming from the sensor image data and generates image files.Even complex calculations he performs at extremely high speed. Thanks to the energy-saving processor and the electronic image sensor convinced the new lithium-ion battery (1800 mAh) Leica M with a particularly long term.
+Together with the new sensor, the Leica Maestro processor ensures that the vision of the Leica M sets new standards in terms of speed.Â At top speed he prepares for the coming from the sensor image data and generates image files.Even complex calculations he performs at extremely high speed.Â Thanks to the energy-saving processor and the electronic image sensor convinced the new lithium-ion battery (1800 mAh) Leica M with a particularly long term.
 <ol>
 	<li>Maximum picture quality through newly developed LEICA MAX CMOS sensor</li>
 	<li>New applications with electronic viewfinder and Live View</li>
@@ -7007,7 +7007,7 @@ Together with the new sensor, the Leica Maestro processor ensures that the visio
 	<li>Fully digital format for Leica R lenses, the Leica R Adapter M</li>
 	<li>Extended sensitivity range up to ISO 6400</li>
 </ol>
-As we increasingly move past the point of sufficiency, manufacturers will continue to try filling ever-smaller niches. It becomes more about something you like/ want to use more than something you need. Is there room for one in your arsenal? Only you can answer that.]]></content:encoded>
+As we increasingly move past the point of sufficiency, manufacturers will continue to try filling ever-smaller niches. It becomes more about something you like/ want to useÂ more than something you need. Is there room for one in your arsenal? Only you can answer that.]]></content:encoded>
             <excerpt:encoded><![CDATA[The new Leica M is the most innovative and versatile M, which has spawned the modern M system. It combines decades of experience]]></excerpt:encoded>
             <wp:post_id>98</wp:post_id>
             <wp:post_date>2013-10-22 11:56:22</wp:post_date>
