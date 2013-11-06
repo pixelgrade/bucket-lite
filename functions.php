@@ -1,8 +1,8 @@
 <?php
 
 define( 'ACF_LITE', true );
-include_once('theme-content/inc/vendor/acf/acf.php');
-include_once('theme-content/inc/vendor/acf/acf-config.php');
+include_once('theme-utilities/includes/acf/acf.php');
+include_once('theme-utilities/includes/acf/acf-config.php');
 
 // ensure EXT is defined
 if ( ! defined('EXT')) {

@@ -38,12 +38,12 @@
 			(
 				// main theme class
 				'theme-utilities/bucket'.EXT,
-				'theme-content/inc/required-plugins/required-plugins.php',
+				'theme-utilities/includes/required-plugins/required-plugins.php',
 				// widgets & template tags
-				'theme-content/inc/template-tags'.EXT,
-				'theme-content/inc/theme-defaults'.EXT,
-				'theme-content/inc/thumbnails'.EXT,
-				'theme-content/inc/widgets'.EXT,
+//				'theme-content/inc/template-tags'.EXT,
+//				'theme-content/inc/theme-defaults'.EXT,
+//				'theme-content/inc/thumbnails'.EXT,
+//				'theme-content/inc/widgets'.EXT,
 			),
 
 		// the path where overwrites on the core partials are stored, any files

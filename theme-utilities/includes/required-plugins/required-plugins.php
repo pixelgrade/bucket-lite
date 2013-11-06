@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'wpgrade_register_required_plugins', 999 );
 
 function wpgrade_register_required_plugins() {

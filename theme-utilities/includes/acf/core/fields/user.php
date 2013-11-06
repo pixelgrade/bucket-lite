@@ -123,7 +123,7 @@ class acf_field_user extends acf_field
 		if( ! function_exists( 'get_editable_roles' ) )
 		{ 
 			// if using front-end forms then we need to add this core file
-			require_once( ABSPATH . '/wp-admin/includes/user.php' ); 
+			require_once(ABSPATH . '/wp-admin/includes/user.php');
 		}
 	}
 	
