@@ -278,14 +278,16 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                         $item_output .= 
                             '<div class="sub-menu__grid__item  grid__item  one-fifth">' .
+								'<a class="small-link" href="' . $post_link . '">' .
                                 '<article class="article article--billboard-small">' .
                                     $menu_post_image .
                                     '<h2 class="article__title article--billboard-small__title">' .
-                                        '<div class="hN">' . $post_title . '</div>' .
+                                        '<span class="hN">' . $post_title . '</span>' .
                                     '</h2>' .
                                     // get_the_excerpt() . 
-                                    '<a class="small-link" href="' . $post_link . '">Read More</a>' .
+                                    '<span class="small-link">'.__('Read More', wpgrade::textdomain()).'</span>' .
                                 '</article>'.
+								'</a>'.
                             '</div>';
 
                     endforeach;

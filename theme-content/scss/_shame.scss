@@ -222,6 +222,12 @@ img[width], img[height] {
     overflow: visible;
 }
 
+@include media-query(lap-and-up) {
+    .billboard{
+        height: 625px !important;
+    }
+}
+
 /**
  * On fade transition the arrows disappear
  */
