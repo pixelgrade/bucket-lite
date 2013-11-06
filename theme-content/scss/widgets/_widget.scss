@@ -171,6 +171,52 @@
     select {
         width: 100%;
         @include rem(padding-left, $_u4);
-        @include rem(height, $_u + $_u2);
+        // ??? @include rem(height, $_u + $_u2);
     }
 }
+
+
+
+
+
+/**
+ * Maybe it's good, maybe it's not...
+ */
+
+.widget_categories, .widget_recent_comments{
+    ul > li a{
+        display: inline-block !important;
+    }
+}
+
+.recentcomments{
+    @include rem(padding, $_u2 0);
+}
+
+@include media-query(palm) {
+    .widget_recent_entries, .widget_recent_comments, .widget_rss, .widget_categories
+    { 
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+@include media-query(lap-and-up) {
+    .widget_recent_entries, .widget_recent_comments, .widget_rss
+    { 
+        a{
+            font-weight: bold;
+        }
+    }
+}
+
+.widget_rss li > cite:before{
+    content: '-';
+    margin-right: 5px;
+}
+
+.rss-date{
+    font-style: italic;
+}
+
