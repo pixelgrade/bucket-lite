@@ -1491,9 +1491,13 @@
                 sliderMarkupProcess($(this));
 
             var $slider = $(this),
+                $children = $(this).children(),
                 rs_arrows = typeof $slider.data('arrows') !== "undefined",
                 rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
                 rs_autoheight = typeof $slider.data('autoheight') !== "undefined",
+                rs_autoScaleSlider = false,
+                rs_autoScaleSliderWidth = typeof $slider.data('autoScaleSliderWidth') !== "undefined",
+                rs_autoScaleSliderHeight = typeof $slider.data('autoScaleSliderHeight') !== "undefined",
                 rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
                 rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
                 rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined";
@@ -1504,9 +1508,8 @@
                 rs_delay = typeof $slider.data('sliderdelay') !== "undefined" && $slider.data('sliderdelay') != '' ? $slider.data('sliderdelay') : '1000';
                 rs_drag = true;
 
-
-            var $children = $(this).children();
-
+            if(rs_autoheight) { rs_autoScaleSlider = false } else { rs_autoScaleSlider = true }
+              
             if ($children.length == 1){
                 rs_arrows = false;
                 rs_bullets = 'none';
@@ -1519,49 +1522,75 @@
             // make sure default arrows won't appear if customArrows is set
             if (rs_customArrows) arrows = false;
 
-            if (rs_autoheight) {
-                $slider.royalSlider({
-                    autoHeight: true,
-                    autoScaleSlider: false,
-                    loop: true,
-                    imageScaleMode: rs_imageScale,
-                    imageAlignCenter: rs_imageAlignCenter,
-                    slidesSpacing: rs_slidesSpacing,
-                    arrowsNav: rs_arrows,
-                    controlNavigation: rs_bullets,
-                    keyboardNavEnabled: rs_keyboardNav,
-                    arrowsNavAutoHide: false,
-                    sliderDrag: rs_drag,
-                    transitionType: rs_transition,
-                    autoPlay: {
-                        enabled: rs_autoPlay,
-                        stopAtAction: false,
-                        pauseOnHover: true,
-                        delay: rs_delay                    
-                    }                            
-                });
-            } else {
-                $slider.royalSlider({
-                    autoScaleSlider: true,
-                    autoHeight: false,
-                    loop: true,
-                    imageScaleMode: rs_imageScale,
-                    imageAlignCenter: rs_imageAlignCenter,
-                    slidesSpacing: rs_slidesSpacing,
-                    arrowsNav: rs_arrows,
-                    controlNavigation: rs_bullets,
-                    keyboardNavEnabled: rs_keyboardNav,
-                    arrowsNavAutoHide: false,
-                    sliderDrag: rs_drag,
-                    transitionType: rs_transition,
-                    autoPlay: {
-                        enabled: rs_autoPlay,
-                        stopAtAction: false,
-                        pauseOnHover: true,
-                        delay: rs_delay                    
-                    }            
-                });     
-            }
+            $slider.royalSlider({
+                autoHeight: rs_autoheight,
+                autoScaleSlider: rs_autoScaleSlider,
+                loop: true,
+                autoScaleSliderWidth: rs_autoScaleSliderWidth,
+                autoScaleSliderHeight: rs_autoScaleSliderHeight,
+                imageScaleMode: rs_imageScale,
+                imageAlignCenter: rs_imageAlignCenter,
+                slidesSpacing: rs_slidesSpacing,
+                arrowsNav: rs_arrows,
+                controlNavigation: rs_bullets,
+                keyboardNavEnabled: rs_keyboardNav,
+                arrowsNavAutoHide: false,
+                sliderDrag: rs_drag,
+                transitionType: rs_transition,
+                autoPlay: {
+                    enabled: rs_autoPlay,
+                    stopAtAction: false,
+                    pauseOnHover: true,
+                    delay: rs_delay                    
+                }            
+            });
+
+            // if (rs_autoheight) {
+            //     $slider.royalSlider({
+            //         autoHeight: true,
+            //         autoScaleSlider: false,
+            //         loop: true,
+            //         imageScaleMode: rs_imageScale,
+            //         imageAlignCenter: rs_imageAlignCenter,
+            //         slidesSpacing: rs_slidesSpacing,
+            //         arrowsNav: rs_arrows,
+            //         controlNavigation: rs_bullets,
+            //         keyboardNavEnabled: rs_keyboardNav,
+            //         arrowsNavAutoHide: false,
+            //         sliderDrag: rs_drag,
+            //         transitionType: rs_transition,
+            //         addActiveClass: true,
+            //         autoPlay: {
+            //             enabled: rs_autoPlay,
+            //             stopAtAction: false,
+            //             pauseOnHover: true,
+            //             delay: rs_delay                    
+            //         }                            
+            //     });
+            // } else {
+            //     $slider.royalSlider({
+            //         autoScaleSlider: true,
+            //         autoHeight: false,
+            //         loop: true,
+            //         autoScaleSliderWidth: rs_autoScaleSliderWidth,
+            //         autoScaleSliderHeight: rs_autoScaleSliderHeight,
+            //         imageScaleMode: rs_imageScale,
+            //         imageAlignCenter: rs_imageAlignCenter,
+            //         slidesSpacing: rs_slidesSpacing,
+            //         arrowsNav: rs_arrows,
+            //         controlNavigation: rs_bullets,
+            //         keyboardNavEnabled: rs_keyboardNav,
+            //         arrowsNavAutoHide: false,
+            //         sliderDrag: rs_drag,
+            //         transitionType: rs_transition,
+            //         autoPlay: {
+            //             enabled: rs_autoPlay,
+            //             stopAtAction: false,
+            //             pauseOnHover: true,
+            //             delay: rs_delay                    
+            //         }            
+            //     });     
+            // }
 
             var royalSlider = $slider.data('royalSlider');
             var slidesNumber = royalSlider.numSlides;

@@ -9,7 +9,7 @@ function wpgrade_custom_thumbnails (){
     // Add theme support for Featured Images
     add_theme_support( 'post-thumbnails' );
 	
-	// add_image_size('slider-big', 1050, 600, true);
+	add_image_size('slider-big', 1050, 600, true);
 
     // Hero Post, Category Slider, Mega Menu Slider 
     add_image_size('post-big', 700, 450, true);

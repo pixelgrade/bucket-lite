@@ -110,7 +110,13 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-	<div class="billboard pixslider js-pixslider arrows--outside" data-slidertransition="fade" data-arrows="true" data-autoheight>
+	<div class="billboard pixslider js-pixslider arrows--outside" 
+				data-imagescale="fill" 
+				data-slidertransition="fade" 
+				data-arrows="true"
+				data-autoScaleSliderWidth="1050"
+				data-autoScaleSliderHeight="625" 
+				>
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
             $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
@@ -120,7 +126,7 @@ if ($slides->have_posts()): ?>
             }
 
       			if ($index++ % 3 == 0):
-                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
+                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
                 if (isset($image[1]) && isset($image[2])) {
                   $image_ratio = $image[2] * 100/$image[1];
                 }
@@ -132,8 +138,8 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                 --><article class="article  article--billboard">
-                    <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                        <img src="<?php echo $image[0] ?>" />
+                    <div class="image-wrap1" style="padding-top1: <?php echo $image_ratio; ?>%">
+                        <img class="rsImg" src="<?php echo $image[0] ?>" />
                     </div>
                     <a href="<?php the_permalink(); ?>">
                         <span class="rsABlock  article__header  article--billboard__header">
@@ -164,7 +170,7 @@ if ($slides->have_posts()): ?>
   	                
                     <a href="<?php the_permalink(); ?>">
                         <span class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-      	                    <img src="<?php echo $image[0] ?>" />
+      	                    <img class="rsImg" src="<?php echo $image[0] ?>" />
       	                </span>
       	                <h2 class="article__title article--billboard-small__title">
       	                    <span class="hN"><?php the_title(); ?></span>
