@@ -402,6 +402,7 @@
                 bottom:0;
                 left:0;
                 width:100%;
+                z-index: 25;
             }
         }
     }
@@ -420,6 +421,7 @@
 .article--billboard {
     position: static;
     border-bottom:#{$_2u - 5px} solid #fff; 
+    width: 100%;
 }
 
 .billboard__category {
@@ -518,6 +520,7 @@
         @include rem(bottom, $_u);
         @include rem(left, $_2u);
         z-index: 30;
+        width: 40%;
     }    
 
     .article--billboard-small {
