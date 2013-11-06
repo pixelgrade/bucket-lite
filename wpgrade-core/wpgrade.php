@@ -102,10 +102,6 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option($option, $default = null) {
-//		echo '<pre>';
-//		var_dump($option);
-//		echo '<pre>';
-
 		if ( isset( $_GET[$option]) && !empty($option) ) {
 			return $_GET[$option];
 		} else {
