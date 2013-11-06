@@ -224,13 +224,6 @@ $sections[] = array(
 			'default' => '0'
 		),
 		array(
-			'id' => 'nav_show_header_social_icons',
-			'type' => 'switch',
-			'title' =>  __('Show Header Social Icons', wpgrade::textdomain()),
-			'subtitle' => __('Display social icons list in the header (their position varies with the Header Type).', wpgrade::textdomain()),
-			'default' => '1'
-		),
-		array(
 			'id' => 'nav_show_header_search',
 			'type' => 'switch',
 			'title' =>  __('Show Header Search Form', wpgrade::textdomain()),

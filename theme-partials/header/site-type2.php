@@ -12,9 +12,8 @@
              --><div class="grid__item one-half text--right">
                     <ul class="header-bar header-bar--top nav flush--bottom"><!--
 				     --><li><?php wpgrade_top_nav_right(); ?></li><!--
-                        <?php if (wpgrade::option('nav_show_header_social_icons')) { ?>
                      --><li><?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?></li><!--
-                        <?php }
+                        <?php
                         if (wpgrade::option('nav_show_header_search')): ?>
                      --><li><?php get_search_form(); ?></li><!--
                         <?php endif; ?>

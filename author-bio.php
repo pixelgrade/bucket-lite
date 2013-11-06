@@ -7,13 +7,7 @@
 
 <aside class="author" itemscope itemtype="http://schema.org/Person">
 	<div class="author__avatar">
-		<?php
-//                            if (function_exists('get_avatar_url')) {
-				echo '<img src="'. bucket::get_avatar_url(get_the_author_meta('email'), '78') . '" itemprop="image"/>';
-//                            } else if (function_exists('get_avatar')) {
-//                                echo get_avatar(get_the_author_meta('email'), '78');
-//                            }
-		?>
+		<?php echo '<img src="'. bucket::get_avatar_url(get_the_author_meta('email'), '78') . '" itemprop="image"/>'; ?>
 	</div>
 	<div class="author__text">
 		<div class="author__title">
@@ -24,6 +18,11 @@
 		</div>
 		<p class="author__bio" itemprop="description"><?php the_author_meta('description'); ?></p>
 		<ul class="author__social-links">
+			<?php if ( get_the_author_meta('url') ): ?>
+				<li class="author__social-links__list-item">
+					<a class="author__social-link" href="<?php echo get_the_author_meta('url') ?>" target="_blank"><?php _e('Website', wpgrade::textdomain()); ?></a>
+				</li>
+			<?php endif; ?>
 			<?php if ( get_the_author_meta('user_tw') ): ?>
 				<li class="author__social-links__list-item">
 					<a class="author__social-link" href="https://twitter.com/<?php echo get_the_author_meta('user_tw') ?>" target="_blank">Twitter</a>
@@ -36,7 +35,7 @@
 			<?php endif; ?>
 			<?php if ( get_the_author_meta('google_profile') ): ?>
 				<li class="author__social-links__list-item">
-					<a class="author__social-link" href="<?php echo get_the_author_meta('google_profile') ?>" target="_blank">Google</a>
+					<a class="author__social-link" href="<?php echo get_the_author_meta('google_profile') ?>" target="_blank">Google+</a>
 				</li>
 			<?php endif; ?>
 		</ul>
