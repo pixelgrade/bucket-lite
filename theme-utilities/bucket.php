@@ -1414,8 +1414,13 @@ class bucket
 
 	static function get_avatar_url($email, $size = 32){
 		$get_avatar = get_avatar($email, $size);
-		preg_match("/src='(.*?)'/i", $get_avatar, $matches);
-		return $matches[1];
+		
+		preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $get_avatar, $matches);
+		if (isset($matches[1])) {
+			return $matches[1];
+		} else {
+			return '';
+		}
 
 	}
 

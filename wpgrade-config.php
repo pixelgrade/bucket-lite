@@ -110,7 +110,7 @@
 
 		// importer
 		// decide which menus should be imported
-		'import_nav_menu' => array('Header Menu', 'Top Menu Left', 'Top Menu Right', 'Footer Menu'),
+		'import_nav_menu' => array('main_menu' => 'Header Menu', 'top_menu_left' => 'Top Menu Left', 'top_menu_right' => 'Top Menu Right', 'footer_menu' => 'Footer Menu'),
 		'resources' => array
 			(
 				// script declarations; scripts must be enqueue'ed to appear

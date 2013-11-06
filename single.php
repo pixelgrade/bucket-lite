@@ -31,7 +31,8 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <div class="article__title__meta">
-                    <?php printf('<div class="article__author-name">%s</div>', get_the_author_link()) ?>
+                    <?php $author_display_name = get_the_author_meta( 'display_name' );
+					printf('<div class="article__author-name">%s</div>', '<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" title="'.sprintf(__('Posts by %s', wpgrade::textdomain()), $author_display_name).'">'.$author_display_name.'</a>') ?>
                     <time class="article__time" datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s', wpgrade::textdomain()),get_the_time(__('j F, Y \a\t H:i', wpgrade::textdomain()))); ?></time>
                 </div>
 
@@ -114,7 +115,7 @@ get_header(); ?>
                 <?php
 				if (get_field('enable_review_score')):
 					if (get_field('score_breakdown')): ?>
-						<h3>The Breakdown</h3>
+						<h3><?php _e('The Breakdown', wpgrade::textdomain()); ?></h3>
 						<hr class="separator  separator--subsection">
 						<?php while (has_sub_fields('score_breakdown')): ?>
 							<div class="review__score">
