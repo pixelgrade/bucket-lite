@@ -5,6 +5,12 @@
     border-color: white;
 }
 
+@include media-query(palm) {
+    .rsArrow{
+        top: 30%;
+    }
+}
+
 // @include media-query(lap-and-up) {
 //     .arrows--outside .rsArrow{
 

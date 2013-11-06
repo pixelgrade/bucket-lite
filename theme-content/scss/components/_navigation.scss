@@ -401,16 +401,19 @@ $transition_speed: 0.4s;
     */
 
     .navigation--mobile{
-        background-color: $dark;
-        @include rem(padding-right, $_u);
-        @include rem(padding-left, $_u2);
-
         width: 75%;
         position: absolute;
         top: 0;
         right: 0;
         visibility: hidden;
         z-index: -1;
+        overflow-y: scroll;
+        @include rem(padding-right, $_u);
+        @include rem(padding-left, $_u2);
+        height: 100%;
+
+        background-color: $dark;
+
 
         @include transition(visibility 0 linear $transition_speed);
 
@@ -547,11 +550,9 @@ $transition_speed: 0.4s;
         }
 
         .navigation--mobile{
-            height: 100%;
             visibility: visible;
             z-index: 1;
             @include transition(z-index 0 linear $transition_speed);
-            overflow-y: scroll;        
         }
 
         // Trigger icon animations 
