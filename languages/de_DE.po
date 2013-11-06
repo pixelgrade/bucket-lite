@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2013-11-06 21:00+0200\n"
-"PO-Revision-Date: 2013-11-06 21:07+0200\n"
+"POT-Creation-Date: 2013-11-06 21:53+0200\n"
+"PO-Revision-Date: 2013-11-06 21:58+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: German\n"
@@ -496,15 +496,12 @@ msgid "General"
 msgstr "Allgemeine"
 
 #: ../theme-content/admin-panel/redux-sections.php:12
-#: ../theme-content/admin-panel/redux-sections.php:127
 msgid ""
-"General settings contains toggles for various site preferences, including "
-"page title formats, third-party tracking services, control commenting "
-"settings, and posting defaults. "
+"General options are for setting elements that have a site-wide effect, like "
+"logo, icons for Apple, Metro, Favicon, etc. "
 msgstr ""
-"Allgemeine Einstellungen enthält schaltet Website für verschiedene "
-"Vorlieben, einschließlich Seitentitel Formate, Drittanbieter-Tracking-"
-"Dienste, Steuerung kommentieren Einstellungen und Entsendung Standardwerte. "
+"Allgemeine Optionen sind für die Elemente, die eine standortweite, wie Logo, "
+"Symbole für Apple, Metro, Favicon usw. auswirken festlegen. "
 
 #: ../theme-content/admin-panel/redux-sections.php:18
 msgid "Main Logo"
@@ -570,14 +567,15 @@ msgstr "Stil"
 
 #: ../theme-content/admin-panel/redux-sections.php:63
 msgid ""
-"Style settings contains toggles for various site preferences, including page "
-"title formats, third-party tracking services, control commenting settings, "
-"and posting defaults. Change fonts, colors and sizes."
+"The style options control the general styling of the site, like accent color "
+"and Google Web Fonts. You can choose custom fonts for various typography "
+"elements with font weight, char set, size and/or height. You also have a "
+"live preview for them."
 msgstr ""
-"Style-Einstellungen enthält schaltet Website für verschiedene Vorlieben, "
-"einschließlich Seitentitel Formate, Drittanbieter-Tracking-Dienste, "
-"Steuerung kommentieren Einstellungen und Entsendung Standardwerte. Ändern "
-"Sie Schriftarten, Farben und Größen."
+"Die Stiloptionen steuern die allgemeine Gestaltung des Standortes, wie "
+"Akzentfarbe und Google Web Fonts. Sie können benutzerdefinierte Schriftarten "
+"für verschiedene Typografie-Elemente mit Schriftschnitt, Zeichensatz, Größe "
+"bzw. Höhe. Sie haben auch eine live-Vorschau für sie."
 
 #: ../theme-content/admin-panel/redux-sections.php:68
 msgid "Main Color"
@@ -640,6 +638,16 @@ msgstr "Font für Text und Inhalt Widget Text."
 msgid "Article"
 msgstr "Artikel"
 
+#: ../theme-content/admin-panel/redux-sections.php:127
+msgid ""
+"Article options control the various aspects related to displaying posts both "
+"in archives and single articles. You can control things like excerpt length "
+"and social sharing."
+msgstr ""
+"Artikeloptionen steuern die verschiedenen Aspekte der Anzeige stellen sowohl "
+"in Archiven und einzelne Artikel. Sie können steuern, Dinge wie Auszug Länge "
+"und sozialen Austausch."
+
 #: ../theme-content/admin-panel/redux-sections.php:132
 msgid "Show Share Links"
 msgstr "Zeigen Teilen Verbindungen"
@@ -692,10 +700,15 @@ msgid "Header"
 msgstr "Header"
 
 #: ../theme-content/admin-panel/redux-sections.php:188
-#: ../theme-content/admin-panel/redux-sections.php:242
-#, fuzzy
-msgid "Change footer related options from here."
-msgstr "Ändern footer bezogene Optionen von hier."
+msgid ""
+"Header options allow you to control both the visual and functional aspect of "
+"the site header. You can choose various layouts, show or hide elements, and "
+"change the color scheme (light or dark)."
+msgstr ""
+"Header-Optionen können Sie sowohl die visuelle und funktionale Aspekt der "
+"Website-Header zu steuern. Sie können wählen Sie verschiedene Layouts, "
+"anzeigen oder Ausblenden von Elementen und Ändern des Farbschemas (hell oder "
+"dunkel)."
 
 #: ../theme-content/admin-panel/redux-sections.php:193
 #, fuzzy
@@ -756,6 +769,11 @@ msgstr ""
 "Zeigen Sie das Suchformular in der Kopfzeile (seine Position je nach der "
 "Header-Type)."
 
+#: ../theme-content/admin-panel/redux-sections.php:242
+#, fuzzy
+msgid "Change footer related options from here."
+msgstr "Ändern footer bezogene Optionen von hier."
+
 #: ../theme-content/admin-panel/redux-sections.php:247
 msgid "Copyright Text"
 msgstr "Copyright Text"
@@ -775,9 +793,15 @@ msgid "Social and SEO"
 msgstr "Sozial-und SEO"
 
 #: ../theme-content/admin-panel/redux-sections.php:268
-#, fuzzy
-msgid "Social sharing stuff."
-msgstr "Social Sharing Zeug."
+msgid ""
+"Social and SEO options allow you to input your social links and choose where "
+"to display them. Then you can set the social SEO related info added in the "
+"meta tags or used in various widgets."
+msgstr ""
+"Sozial- und SEO-Optionen können Sie zur Eingabe Ihrer sozialen Links und "
+"wählen, wo sie angezeigt werden. Setzen Sie über die sozialen SEO Verwandte "
+"Informationen in den Metatags hinzugefügt oder in verschiedenen Widgets "
+"verwendet."
 
 #: ../theme-content/admin-panel/redux-sections.php:273
 msgid "Social Icons"
@@ -1100,6 +1124,13 @@ msgid "Utilities"
 msgstr "Nützliches"
 
 #: ../theme-content/admin-panel/redux-sections.php:501
+msgid ""
+"Utilities help you keep up-to-date with new versions of the theme. Also you "
+"can import the demo data from here."
+msgstr ""
+"Dienstprogramme helfen Ihnen mit neuen Versionen des Themas aktuell zu "
+"halten. Auch können Sie von hier die Demo-Daten importieren."
+
 #: ../theme-content/admin-panel/redux-sections.php:506
 #, fuzzy
 msgid ""
@@ -3213,6 +3244,30 @@ msgid ""
 msgstr ""
 "Sie müssen eine durch Komma getrennte Liste von numerischen Werten für diese "
 "Option."
+
+#~ msgid ""
+#~ "General settings contains toggles for various site preferences, including "
+#~ "page title formats, third-party tracking services, control commenting "
+#~ "settings, and posting defaults. "
+#~ msgstr ""
+#~ "Allgemeine Einstellungen enthält schaltet Website für verschiedene "
+#~ "Vorlieben, einschließlich Seitentitel Formate, Drittanbieter-Tracking-"
+#~ "Dienste, Steuerung kommentieren Einstellungen und Entsendung "
+#~ "Standardwerte. "
+
+#~ msgid ""
+#~ "Style settings contains toggles for various site preferences, including "
+#~ "page title formats, third-party tracking services, control commenting "
+#~ "settings, and posting defaults. Change fonts, colors and sizes."
+#~ msgstr ""
+#~ "Style-Einstellungen enthält schaltet Website für verschiedene Vorlieben, "
+#~ "einschließlich Seitentitel Formate, Drittanbieter-Tracking-Dienste, "
+#~ "Steuerung kommentieren Einstellungen und Entsendung Standardwerte. Ändern "
+#~ "Sie Schriftarten, Farben und Größen."
+
+#, fuzzy
+#~ msgid "Social sharing stuff."
+#~ msgstr "Social Sharing Zeug."
 
 #, fuzzy
 #~ msgid "Show Header Social Icons"

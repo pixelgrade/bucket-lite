@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2013-11-06 20:59+0200\n"
-"PO-Revision-Date: 2013-11-06 20:59+0200\n"
+"POT-Creation-Date: 2013-11-06 21:53+0200\n"
+"PO-Revision-Date: 2013-11-06 21:53+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: English\n"
@@ -462,11 +462,9 @@ msgid "General"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:12
-#: ../theme-content/admin-panel/redux-sections.php:127
 msgid ""
-"General settings contains toggles for various site preferences, including "
-"page title formats, third-party tracking services, control commenting "
-"settings, and posting defaults. "
+"General options are for setting elements that have a site-wide effect, like "
+"logo, icons for Apple, Metro, Favicon, etc. "
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:18
@@ -526,9 +524,10 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:63
 msgid ""
-"Style settings contains toggles for various site preferences, including page "
-"title formats, third-party tracking services, control commenting settings, "
-"and posting defaults. Change fonts, colors and sizes."
+"The style options control the general styling of the site, like accent color "
+"and Google Web Fonts. You can choose custom fonts for various typography "
+"elements with font weight, char set, size and/or height. You also have a "
+"live preview for them."
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:68
@@ -583,6 +582,13 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
+#: ../theme-content/admin-panel/redux-sections.php:127
+msgid ""
+"Article options control the various aspects related to displaying posts both "
+"in archives and single articles. You can control things like excerpt length "
+"and social sharing."
+msgstr ""
+
 #: ../theme-content/admin-panel/redux-sections.php:132
 msgid "Show Share Links"
 msgstr ""
@@ -631,8 +637,10 @@ msgid "Header"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:188
-#: ../theme-content/admin-panel/redux-sections.php:242
-msgid "Change footer related options from here."
+msgid ""
+"Header options allow you to control both the visual and functional aspect of "
+"the site header. You can choose various layouts, show or hide elements, and "
+"change the color scheme (light or dark)."
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:193
@@ -683,6 +691,10 @@ msgid ""
 "Header Type)."
 msgstr ""
 
+#: ../theme-content/admin-panel/redux-sections.php:242
+msgid "Change footer related options from here."
+msgstr ""
+
 #: ../theme-content/admin-panel/redux-sections.php:247
 msgid "Copyright Text"
 msgstr ""
@@ -699,7 +711,10 @@ msgid "Social and SEO"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:268
-msgid "Social sharing stuff."
+msgid ""
+"Social and SEO options allow you to input your social links and choose where "
+"to display them. Then you can set the social SEO related info added in the "
+"meta tags or used in various widgets."
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:273
@@ -968,6 +983,11 @@ msgid "Utilities"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:501
+msgid ""
+"Utilities help you keep up-to-date with new versions of the theme. Also you "
+"can import the demo data from here."
+msgstr ""
+
 #: ../theme-content/admin-panel/redux-sections.php:506
 msgid ""
 "Let us notify you when new versions of this theme are live on ThemeForest! "

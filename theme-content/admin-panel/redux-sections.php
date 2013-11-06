@@ -9,7 +9,7 @@ $sections[] = array(
 	'icon' => 'database-1',
 	'icon_class' => '',
 	'title' => __('General', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('General settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('General options are for setting elements that have a site-wide effect, like logo, icons for Apple, Metro, Favicon, etc. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		
 		array(
@@ -60,7 +60,7 @@ $sections[] = array(
 	'icon' => "params",
 	'icon_class' => '',
 	'title' => __('Style', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Style settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. Change fonts, colors and sizes.', wpgrade::textdomain()).'</p>',
+	'desc' => '<p class="description">'.__('The style options control the general styling of the site, like accent color and Google Web Fonts. You can choose custom fonts for various typography elements with font weight, char set, size and/or height. You also have a live preview for them.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
@@ -124,7 +124,7 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => 'pencil-1',
 	'title' => __('Article', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('General settings contains toggles for various site preferences, including page title formats, third-party tracking services, control commenting settings, and posting defaults. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('Article options control the various aspects related to displaying posts both in archives and single articles. You can control things like excerpt length and social sharing.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
 			'id' => 'blog_single_show_share_links',
@@ -185,7 +185,7 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => 'note-1',
 	'title' => __('Header', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
+	'desc' => '<p class="description">'.__('Header options allow you to control both the visual and functional aspect of the site header. You can choose various layouts, show or hide elements, and change the color scheme (light or dark).', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'header_type',
@@ -265,7 +265,7 @@ $sections[] = array(
 	'icon_class' => '',
 	'title' => __('Social and SEO', wpgrade::textdomain()),
 
-	'desc' => '<p class="description">'.__('Social sharing stuff.', wpgrade::textdomain()).'</p>',
+	'desc' => '<p class="description">'.__('Social and SEO options allow you to input your social links and choose where to display them. Then you can set the social SEO related info added in the meta tags or used in various widgets.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
         array(
             'id' => 'social_icons',
@@ -498,7 +498,7 @@ $sections[] = array(
 	'icon' => "truck",
 	'icon_class' => '',
 	'title' => __('Utilities', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>',
+	'desc' => '<p class="description">'.__('Utilities help you keep up-to-date with new versions of the theme. Also you can import the demo data from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id'=>'typography-21',
