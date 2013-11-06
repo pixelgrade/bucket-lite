@@ -416,7 +416,7 @@
 .billboard {
     position: relative;
     @include rem(margin-bottom, $_u4);
-    @include opacity(0);
+    // @include opacity(0);
     @include transition(oapcity .5s linear);
 }
 
@@ -428,6 +428,11 @@
     position: static;
     border-bottom:#{$_2u - 5px} solid #fff; 
     width: 100%;
+}
+
+.billboard--article-group{
+    height: 625px;
+    display: block;
 }
 
 .billboard__category {
