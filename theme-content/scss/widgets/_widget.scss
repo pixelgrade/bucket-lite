@@ -179,6 +179,26 @@
 
 
 
+.widget_image img.alignnone{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.widget_wpgrade_posts_slider_widget{
+    .article--slider{
+        margin-bottom: 0;
+    }
+
+    .rsArrow{
+        top: 85px;
+
+        .rsArrowIcn{
+            height: 28px;
+            width: 28px;
+        }
+    }
+}
+
 /**
  * Maybe it's good, maybe it's not...
  */
@@ -198,15 +218,6 @@
     { 
         a{
             text-decoration: underline;
-        }
-    }
-}
-
-@include media-query(lap-and-up) {
-    .widget_recent_entries, .widget_recent_comments, .widget_rss
-    { 
-        a{
-            font-weight: bold;
         }
     }
 }

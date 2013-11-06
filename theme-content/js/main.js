@@ -1569,6 +1569,9 @@
             // move arrows outside rsOverflow
             $slider.find('.rsArrow').appendTo($slider);
 
+            if($(this).hasClass('billboard'))
+              $(this).addClass('visible');
+
         });
     };
 
