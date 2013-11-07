@@ -16,7 +16,7 @@
  *
  * @package     ReduxFramework
  * @author      ReduxFramework Team
- * @version     3.0.7
+ * @version     3.0.8
  */
 
 // Exit if accessed directly
@@ -34,7 +34,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
      */
     class ReduxFramework {
 
-        public static $_version = '3.0.7';
+        public static $_version = '3.0.8';
         public static $_dir; 
         public static $_url;        
         public static $_properties;
@@ -48,14 +48,14 @@ if( !class_exists( 'ReduxFramework' ) ) {
             // Fix for when Wordpress is not in the wp-content directory
             if (strpos($fslashed_dir,$fslashed_abs) === false) {
                 $parts = explode('/', $fslashed_abs);
-                $test = str_replace('/'.max($parts), '', $fslashed_abs);
+                $test = str_replace('/'.$parts[count($parts)-2], '', $fslashed_abs);
                 if (strpos($fslashed_dir,$test) !== false) {
                     $fslashed_abs = $test;
                 }
             }
 
             self::$_dir = $fslashed_dir;
-            self::$_url = site_url( str_replace( $fslashed_abs, '', $fslashed_dir ) );
+            self::$_url = home_url( str_replace( $fslashed_abs, '', $fslashed_dir ) );
 
 /**
         Still need to port these.
@@ -475,6 +475,8 @@ if( !class_exists( 'ReduxFramework' ) ) {
 			$data = "";
 			if ( !empty($type) ) {
 
+                $data = apply_filters( 'redux/options/'.$this->args['opt_name'].'/wordpress_data/'.$type.'/', $data );
+
 				/**
 					Use data from Wordpress to populate options array
 				**/
@@ -505,7 +507,19 @@ if( !class_exists( 'ReduxFramework' ) ) {
 								$data[$page->ID] = $page->post_title;
 							}//foreach
 						}//if
-					} else if ($type == "posts" || $type == "post") {
+                    } else if ($type == "terms" || $type == "term") {
+                        $taxonomies = $args['taxonomies'];
+                        unset($args['taxonomies']);
+                        if (empty($args)) {
+                            $args = array();
+                        }
+                        $terms = get_terms($taxonomies, $args); // this will get nothing
+                        if (!empty($terms)) {       
+                            foreach ( $terms as $term ) {
+                                $data[$term->term_id] = $term->name;
+                            }//foreach
+                        } // If
+                    } else if ($type == "posts" || $type == "post") {
 						$posts = get_posts($args); 
 						if (!empty($posts)) {
 							foreach ( $posts as $post ) {
@@ -922,6 +936,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 
     	    wp_enqueue_script('jquery');
 	        wp_enqueue_script('jquery-ui-core');
+            wp_enqueue_script('jquery-ui-sortable');
             add_thickbox();
 
             wp_register_style(

@@ -27,12 +27,12 @@ class ReduxFramework_border extends ReduxFramework{
 	 * @since ReduxFramework 1.0.0
 	*/
 	function render(){
-
+		print_r($this->value);
 		// No errors please
 		$defaults = array(
 			'top'				=> true,
 			'bottom'			=> true,
-			'all'				=> false,
+			'all'				=> true,
             'style'             => true,
             'color'             => true,
 			'left'				=> true,
@@ -45,6 +45,8 @@ class ReduxFramework_border extends ReduxFramework{
 			'right'=>'',
 			'bottom'=>'',
 			'left'=>'',
+			'color'=>'',
+			'style'=>'',
 		);
 
 		$this->value = wp_parse_args( $this->value, $defaults );
@@ -57,6 +59,16 @@ class ReduxFramework_border extends ReduxFramework{
             'color' => isset( $this->value['border-color'] ) ? $this->value['border-color'] : $this->value['color'],
             'style' => isset( $this->value['border-style'] ) ? $this->value['border-style'] : $this->value['style']
 		);
+
+		if ( ( isset( $this->value['width'] ) || isset( $this->value['border-width'] ) ) ) {
+			if ( isset( $this->value['border-width'] ) && !empty( $this->value['border-width'] ) ) {
+				$this->value['width'] = $this->value['border-width'];
+			}
+			$value['top'] = $this->value['width'];
+			$value['right'] = $this->value['width'];
+			$value['bottom'] = $this->value['width'];
+			$value['left'] = $this->value['width'];
+		}
 
 		$this->value = $value;
 
@@ -135,7 +147,9 @@ class ReduxFramework_border extends ReduxFramework{
             **/
 
             if ( $this->field['color'] != false ):
-                echo '<input name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][border-color]" id="' . $this->field['id'] . '-border" class="redux-border-color redux-color redux-color-init ' . $this->field['class'] . '"  type="text" value="' . $value['color'] . '"  data-default-color="' . $this->field['border-color'] . '" data-id="'.$this->field['id'].'" />';
+            	$default = isset( $this->field['border-color'] ) ? $this->field['border-color'] : "";
+            	$default = ( empty( $default ) && isset( $this->field['color'] ) ) ? $this->field['color'] : "";
+                echo '<input name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][border-color]" id="' . $this->field['id'] . '-border" class="redux-border-color redux-color redux-color-init ' . $this->field['class'] . '"  type="text" value="' . $value['color'] . '"  data-default-color="' . $default . '" data-id="'.$this->field['id'].'" />';
             endif;
 
 
@@ -184,8 +198,6 @@ class ReduxFramework_border extends ReduxFramework{
             'color' => !empty( $this->value['border-color'] ) ? $this->value['border-color'] : 'inherit',
             'style' => !empty( $this->value['border-style'] ) ? $this->value['border-style'] : 'inherit'
         );
-
-        print_r($value);
     	
 		//absolute, padding, margin
         $keys = implode(",", $this->field['output']);
