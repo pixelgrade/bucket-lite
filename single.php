@@ -21,7 +21,7 @@ get_header(); ?>
         
         get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 
-        <div class="grid__item  main  float--left  <?php echo $content_width; ?>">
+        <article class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
                 <?php if (get_the_title()): ?>
@@ -213,7 +213,7 @@ get_header(); ?>
                     comments_template();
 
 	        endwhile; ?>
-        </div><!--
+        </article><!--
         
         <?php if ($disable_sidebar != 'on'): ?>
          --><div class="grid__item  one-third  palm-one-whole  sidebar">
