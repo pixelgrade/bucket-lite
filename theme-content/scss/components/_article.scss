@@ -75,6 +75,11 @@
     }
 }
 
+.article__title{
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
 /**
  * Article Grid
  * -- Blog Latest Posts, Posts Grid Cards
