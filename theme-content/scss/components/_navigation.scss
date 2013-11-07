@@ -561,7 +561,7 @@ $transition_speed: 0.4s;
         position: relative; 
         z-index: 1;
         @include transform(translateZ(0));
-        @include transition(transform $transition_speed ease-in-out);
+        @include transition(all $transition_speed ease-in-out);
     }
 
 

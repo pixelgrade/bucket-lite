@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import "compass";
 
+/*-----------------------------------------------*\
+                    STYLE GUIDE
+\*-----------------------------------------------*/
 
 $light  : #807f7e;
 $gray   : #4c4a4a;
@@ -10,11 +13,12 @@ $red    : #fb4834;
 
 
 
+
+
 /*-----------------------------------------------*\
               INUIT.CSS CONFIGURATION
                     AND IMPORT
 \*-----------------------------------------------*/
-
 
 $global-border-box   : true;
 
@@ -52,7 +56,6 @@ $h4-size             : 15px;
 $h5-size             : 12px; 
 $h6-size             : 11px; 
 
-// $base-ui-color       : $light;
 $brand-round         : 0;
 
 @import "../vendor/inuit.css/inuit"; 
@@ -64,25 +67,13 @@ $brand-round         : 0;
              ICON FONTS CONFIGURATION
                     AND IMPORT
 \*-----------------------------------------------*/
+// Font Awesome 4.0.3
 $fa-css-prefix: icon;
-$fa-font-path: "../vendor/font-awesome/fonts";
-/*$FontAwesomePath: "../vendor/font-awesome/font";*/
+$fa-font-path: "../fonts/font-awesome";
+// Entyo 2.0
 $EntypoPath: "../fonts/entypo2";
 
-@import "../vendor/font-awesome/scss/font-awesome";
-@import "vendor/entypo";
-
-
-
-
-/*------------------------------------*\
-    $GREEDY
-\*------------------------------------*/
-
-// $greedy-breakpoints : 600px small 900px hand 1200px lap 1880px desk;
-// $greedy-columns     : 12;
-// $greedy-gutter      : $base-spacing-unit;
-
+@import "icon-fonts/_icon-fonts"; 
 
 
 
@@ -112,7 +103,6 @@ $_8u   : 8 * $_u; // 192px
 
 // VENDOR
 @import "vendor/royalslider";
-// @import "vendor/greedy";
 
 // UTILITIES
 @import "easings";

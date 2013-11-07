@@ -9,7 +9,7 @@ $sections[] = array(
 	'icon' => 'database-1',
 	'icon_class' => '',
 	'title' => __('General', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('General options are for setting elements that have a site-wide effect, like logo, icons for Apple, Metro, Favicon, etc. ', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('Genheral settings contains elements that have a site-wide effect like defining your site branding (including logo and other icons).', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		
 		array(
@@ -99,7 +99,7 @@ $sections[] = array(
 		array(
 			'id' => 'google_nav_font',
 			'type' => 'typography',
-//			'color' => false,
+			'color' => false,
 			'font-size'=>false,
             'line-height'=>false,
 			'required' => array('use_google_fonts', '=', 1),
@@ -239,7 +239,7 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => 'tag-1',
 	'title' => __('Footer', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('Change footer related options from here.', wpgrade::textdomain()).'</p>',
+	'desc' => '<p class="description">'.__('Footer related options including Copyright Text. Other footer elements including widgets and menus can be set from Appearance - Widgets/Menus admin page. ', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
 			'id' => 'copyright_text',
@@ -576,7 +576,31 @@ $sections[] = array(
 	'icon' => "cd-1",
 	'icon_class' => '',
 	'title' => __('Help and Support', wpgrade::textdomain()),
-	'desc' => '<p class="description">'.__('If you had anything less than a great experience with this theme please contact us now. You can also find answers in our community site, or official articles and tutorials in our knowledge base.', wpgrade::textdomain()).'</p>',
+	'desc' => '<p class="description">'.__('If you had anything less than a great experience with this theme please contact us now. You can also find answers in our community site, or official articles and tutorials in our knowledge base.', wpgrade::textdomain()).'</p>
+		<ul class="help-and-support">
+			<li>
+				<a href="http://bit.ly/19G56H1">
+					<span class="community-img"></span>
+					<h4>Community Answers</h4>
+					<span class="description">Get Help from other people that are using this theme.</span>
+				</a>
+			</li>
+			<li>
+				<a href="http://bit.ly/19G5cyl">
+					<span class="knowledge-img"></span>
+					<h4>Knowledge Base</h4>
+					<span class="description">Getting started guides and useful articles to better help you with this theme.</span>
+				</a>
+			</li>
+			<li>
+				<a href="http://bit.ly/new-ticket">
+					<span class="community-img"></span>
+					<h4>Submit a Ticket</h4>
+					<span class="description">File a ticket for a personal response from our support team.</span>
+				</a>
+			</li>
+		</ul>
+	',
 	'fields' => array(
 		
 	)
