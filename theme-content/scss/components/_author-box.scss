@@ -6,9 +6,29 @@
     @extend .media;
 }
 
+
 .author__avatar {
     @extend .media__img;
     @include rem(margin-top, $_u4);
+
+    img{
+        max-width: 80px;
+    }
+}
+@include media-query(palm) {
+    .author__avatar {
+        float: none;
+        margin-right: 0;
+        
+        img{
+            margin: 0 auto;
+        }
+    }
+
+    .author__title {
+        text-align: center;
+        @include rem(margin, $_u2 0);
+    }
 }
 
 .author__text {
@@ -17,6 +37,7 @@
 
 .author__title {
     @include font-size(15px);
+    @include rem(margin-bottom, 3px);
 
     a {
         color: $dark;
@@ -24,7 +45,9 @@
 }
 
 .author__bio {
-    @include rem(margin-bottom, $_u4);
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.4;
 }
 
 .author__social-links {
