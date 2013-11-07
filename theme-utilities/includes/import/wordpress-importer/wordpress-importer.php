@@ -798,6 +798,7 @@ class WPGrade_WP_Import extends WP_Importer {
 		foreach ( $item['postmeta'] as $meta )
 			$$meta['key'] = $meta['value'];
 
+
 		if ( 'taxonomy' == $_menu_item_type && isset( $this->processed_terms[intval($_menu_item_object_id)] ) ) {
 			$_menu_item_object_id = $this->processed_terms[intval($_menu_item_object_id)];
 		} else if ( 'post_type' == $_menu_item_type && isset( $this->processed_posts[intval($_menu_item_object_id)] ) ) {
@@ -837,8 +838,15 @@ class WPGrade_WP_Import extends WP_Importer {
 		);
 
 		$id = wp_update_nav_menu_item( $menu_id, 0, $args );
-		if ( $id && ! is_wp_error( $id ) )
+		if ( $id && ! is_wp_error( $id ) ){
+
+			if ( isset( $wpgrade_megamenu_layout ) ) {
+				$args['wpgrade_megamenu_layout'] = $wpgrade_megamenu_layout;
+				update_post_meta( $id, 'wpgrade_megamenu_layout', $args['wpgrade_megamenu_layout'] );
+			}
+
 			$this->processed_menu_items[intval($item['post_id'])] = (int) $id;
+		}
 	}
 
 	/**

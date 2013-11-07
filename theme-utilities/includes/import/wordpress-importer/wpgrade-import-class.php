@@ -384,12 +384,12 @@ class wpGrade_import extends WPGrade_WP_Import
 //				do_action( 'wp_import_post_exists', $post );
 //				continue;
 //			}
-//
-//			if ( isset( $this->processed_posts[$post['post_id']] ) && ! empty( $post['post_id'] ) )
-//				continue;
-//
-//			if ( $post['status'] == 'auto-draft' )
-//				continue;
+
+			if ( isset( $this->processed_posts[$post['post_id']] ) && ! empty( $post['post_id'] ) )
+				continue;
+
+			if ( $post['status'] == 'auto-draft' )
+				continue;
 
 			if ( 'nav_menu_item' == $post['post_type'] ) {
 				$this->process_menu_item( $post );

@@ -109,7 +109,6 @@
 			),
 
 		// importer
-
 		'import_homepage_name' => 'Home',
 		'import_blogpage_name' => false,
 
