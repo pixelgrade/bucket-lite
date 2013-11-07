@@ -109,6 +109,10 @@
 			),
 
 		// importer
+
+		'import_homepage_name' => 'Home',
+		'import_blogpage_name' => false,
+
 		// decide which menus should be imported
 		'import_nav_menu' => array('main_menu' => 'Header Menu', 'top_menu_left' => 'Top Menu Left', 'top_menu_right' => 'Top Menu Right', 'footer_menu' => 'Footer Menu'),
 		'resources' => array

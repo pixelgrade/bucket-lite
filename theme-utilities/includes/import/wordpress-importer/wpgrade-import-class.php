@@ -20,13 +20,17 @@ class wpGrade_import extends WPGrade_WP_Import
 		if ($stepNumber == $numberOfSteps) {
 			//set the front and blog page
 			// Use a static front page
-			update_option( 'show_on_front', 'page' );
-			$home = get_page_by_title( 'Home' );
-			if ( !empty($home) ) update_option( 'page_on_front', $home->ID );
+			if ( wpgrade::confoption('import_homepage_name') ) {
+				update_option( 'show_on_front', 'page' );
+				$home = get_page_by_title( wpgrade::confoption('import_homepage_name') );
+				if ( !empty($home) ) update_option( 'page_on_front', $home->ID );
+			}
 
 			// Set the blog page
-			$blog   = get_page_by_title( 'Journal' );
-			if ( !empty($blog) ) update_option( 'page_for_posts', $blog->ID );
+			if ( wpgrade::confoption('import_blogpage_name') ) {
+				$blog = get_page_by_title( wpgrade::confoption('import_blogpage_name') );
+				if ( !empty($blog) ) update_option( 'page_for_posts', $blog->ID );
+			}
 		}
 		
 		//Ensure the $wp_rewrite global is loaded
