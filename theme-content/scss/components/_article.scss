@@ -532,10 +532,7 @@
 .article--billboard-small__title {
     @include rem(margin, $_u2);
     overflow: hidden;
-
-    a{
-        color: $dark;
-    }       
+    color: $dark;
 
     .hN {
         max-width: 100%;
