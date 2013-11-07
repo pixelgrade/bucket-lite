@@ -417,9 +417,15 @@
     position: relative;
     @include rem(margin-bottom, $_u4);
     // @include opacity(0);
-    @include transition(oapcity .5s linear);
+    @include transition(opacity .5s linear);
+    display: block;
 
-     .rsSlide {
+    &:before {
+        @extend .preloader;
+        @extend .preloader-dark;
+        @extend .image-wrap:after;
+    }
+    .rsSlide {
         height:100%;
     }
 
