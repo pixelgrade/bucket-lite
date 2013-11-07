@@ -74,7 +74,6 @@ function wpgrade_register_sidebars() {
 }
 add_action('widgets_init', 'wpgrade_register_sidebars');
 
-
 /*
  * Display the tag cloud
  */

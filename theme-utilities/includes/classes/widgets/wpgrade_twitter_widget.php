@@ -171,7 +171,6 @@ class wpgrade_twitter_widget extends WP_Widget {
 
 		return $r;
 	}
-
 }
 
 add_action('widgets_init', create_function('', 'return register_widget("wpgrade_twitter_widget");'));
