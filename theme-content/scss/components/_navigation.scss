@@ -242,6 +242,7 @@
             // justify-content: space-between;
             align-content: stretch;
             align-items: stretch;
+            min-height: 300px;
         }
 
         .sub-menu__grid__item{
@@ -320,7 +321,7 @@
             &.hidden > .sub-menu {
                 display:none;
             }
-
+            
             &.open {
                 @include media-query(lap-and-up) {
                     > .sub-menu {

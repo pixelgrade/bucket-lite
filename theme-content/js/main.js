@@ -1743,7 +1743,7 @@
 
     // Mega-Menu Hover with delay
     function megaMenusHover() {
-      $('.nav--main li').hoverIntent({
+      $('.nav--main > li').hoverIntent({
         interval: 100,
         timeout: 300,
         over: showMegaMenu,
@@ -1754,7 +1754,7 @@
         var self = $(this);
         self.removeClass('hidden');
         setTimeout(function(){
-          self.addClass('open')
+          self.addClass('open');
         }, 50);
       }
       function hideMegaMenu() {

@@ -51,7 +51,7 @@
             <?php if ($slider_autoplay) {
                 echo 'data-sliderautoplay="" ';
                 echo 'data-sliderdelay='. $slider_delay;
-            } ?> />
+            } ?> >
             <?php 
             foreach ($attachments as $attachment):
                 $class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
