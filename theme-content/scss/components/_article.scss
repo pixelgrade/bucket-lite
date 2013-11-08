@@ -694,9 +694,10 @@
     }
 
     .article__content {
-        text-align:left;
         background:white;
+        text-align:left;
         height:135px;
+        overflow:hidden;
         @include transition(height 0.4s bezier(easeOutBack))
     }
 
@@ -757,15 +758,15 @@
             .article__thumb {
                  @include translateY(-$_u);
             }
+            .article__title {
+                
+            }
             .article__content {
                 height:195px;
             }
             .article__description {
                 opacity:1;
                 @include translateY(0);
-            }
-            .article__title {
-                
             }
             .small-link {
 

@@ -180,8 +180,7 @@ if ($slides->have_posts()): ?>
 		  	                	<?php  echo substr(get_the_excerpt(), 0, 75).'..'; ?>
 		  	               	</span>
 		  	                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
-      	                </div>
-      	                
+      	                </div> 
                     </a>
   	            </article>
   	        <?php endif;

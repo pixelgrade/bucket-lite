@@ -370,21 +370,42 @@ $menu_transition_speed: 0.15s;
             position: static;
             margin: 0;
 
-            .small-link {
-                color: $light;
-
-                &:after {
-                    content: " +";
-                    color: $red;
-                }
-
-                &:hover {
-                    color: white;
-                }
+            .article__thumb {
+                @include translateY(0);
             }
 
-            .hN {
-                color: white;
+            .article__title {
+                color:white;       
+            }
+
+            .article__content {
+                background:$dark;
+            }
+
+            .article__description {
+                color:white;
+            }
+
+            .small-link {
+                
+            }
+
+            &:hover {
+                .article__thumb {
+                     @include translateY(0);
+                }
+                .article__title {
+                    
+                }
+                .article__content {
+
+                }
+                .article__description {
+
+                }
+                .small-link {
+
+                }
             }
         }        
     }
