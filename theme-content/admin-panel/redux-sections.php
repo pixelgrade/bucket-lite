@@ -9,7 +9,7 @@ $sections[] = array(
 	'icon' => 'database-1',
 	'icon_class' => '',
 	'title' => __('General', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('Genheral settings contains elements that have a site-wide effect like defining your site branding (including logo and other icons).', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('General settings contains options that have a site-wide effect like defining your site branding (including logo and other icons).', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		
 		array(
@@ -204,7 +204,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Header Ad Code', wpgrade::textdomain()),
 			'subtitle' => __('Paste here the code for the header ad (optimally 720x90px). We will also parse any shortcodes present.', wpgrade::textdomain()),
-//			'required' => array('header_type', '', 'type2'),
+			'required' => array('header_type', 'equals', 'type2'),
 			'default' => '<a class="header-ad-link" href="#"><img src="http://placehold.it/728x90" alt="#" /></a>',
 			'mode' => 'html',
 			'theme' => 'chrome',

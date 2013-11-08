@@ -1016,15 +1016,14 @@ class wpgrade {
 	// ------------------------------------------------------------------------
 	
 	static function lang_post_id($id) {
-		global $post;
-		// make this work for any post type
-		if ( isset($post->post_type) ) {
-			$post_type = $post->post_type;
-		} else {
-			$post_type = 'post';
-		}
-
 		if(function_exists('icl_object_id')) {
+			global $post;
+			// make this work for any post type
+			if ( isset($post->post_type) ) {
+				$post_type = $post->post_type;
+			} else {
+				$post_type = 'post';
+			}
 			return icl_object_id($id, $post_type,true);
 		} else {
 			return $id;
@@ -1064,16 +1063,15 @@ class wpgrade {
 	}
 
 	static function lang_original_post_id($id){
-		global $post;
-
-		// make this work with custom post types
-		if ( isset($post->post_type) ) {
-			$post_type = $post->post_type;
-		} else {
-			$post_type = 'post';
-		}
-
 		if(function_exists('icl_object_id')) {
+			global $post;
+
+			// make this work with custom post types
+			if ( isset($post->post_type) ) {
+				$post_type = $post->post_type;
+			} else {
+				$post_type = 'post';
+			}
 			return icl_object_id($id, $post_type,true, self::get_short_defaultwp_language());
 		} else {
 			return $id;
@@ -1088,7 +1086,6 @@ class wpgrade {
 			return substr(get_bloginfo ( 'language' ), 0, 2);
 		}
 	}
-
 
 	// Unit Test Helpers
 	// ------------------------------------------------------------------------

@@ -33,7 +33,7 @@ return array
 		'admin_stylesheet' => 'custom', # default: 'standard'
 
 		// add HTML before the form
-		'intro_text' => __('<h4>Theme Options</h4><p>This allows you to adjust the overall settings for your website.</p>', wpgrade::textdomain()),
+		'intro_text' => __('<h4>Theme Options</h4><p>These allow you to adjust the overall settings for your website.</p>', wpgrade::textdomain()),
 
 		// add content after the form
 //		'footer_text' => __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', wpgrade::textdomain()),

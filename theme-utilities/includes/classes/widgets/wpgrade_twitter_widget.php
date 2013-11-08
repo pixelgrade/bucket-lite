@@ -28,7 +28,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 		$config['screenname'] = $instance['username'];
 		if ( isset($config['cache_expire']) && $config['cache_expire'] < 1) $config['cache_expire'] = 3600;
 //		$config['directory'] = plugin_dir_path(__FILE__) . 'vendor/twitter-api/cache';
-		$config['directory'] = wpgrade::themefilepath('theme-utilities/includes/vendor/twitter-api/cache.tweetchache');
+		$config['directory'] = wpgrade::themefilepath('theme-utilities/includes/vendor/twitter-api/cache');
 
 		$twitter = new StormTwitter($config);
 		$results = $twitter->getTweets($count, $username);
