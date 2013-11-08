@@ -9,7 +9,7 @@ $sections[] = array(
 	'icon' => 'database-1',
 	'icon_class' => '',
 	'title' => __('General', wpgrade::textdomain()),
-	'desc' => sprintf('<p class="description">'.__('Genheral settings contains elements that have a site-wide effect like defining your site branding (including logo and other icons).', wpgrade::textdomain()).'</p>',wpgrade::themename()),
+	'desc' => sprintf('<p class="description">'.__('General settings contains options that have a site-wide effect like defining your site branding (including logo and other icons).', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		
 		array(
