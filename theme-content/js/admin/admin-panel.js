@@ -182,7 +182,7 @@
 							resultcontainer.append('<i style="color:red">The importing of the theme options has failed</i><br />');
 						}
 					});
-			};
+			}
 
 			function ajax_import_widgets() {
 				//make the call for importing the widgets and the menus
@@ -217,7 +217,7 @@
 							resultcontainer.append('<i style="color:red">The setting up of the demo widgets failed</i><br />');
 						}
 					});
-			};
+			}
 
 			//show the loader and some messages
 			//show loader
@@ -460,7 +460,7 @@
 
 	$(document).ready(function () {
      $('.redux-page .settings-error').parent().hide();
-	})(jQuery);
+	});
 
 	//End helpers and beautiful things-----------------------------------------
 })(jQuery);

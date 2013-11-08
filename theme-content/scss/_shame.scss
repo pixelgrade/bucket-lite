@@ -221,24 +221,3 @@ img[width], img[height] {
 .pixslider{
     overflow: visible;
 }
-
-/**
- * On fade transition the arrows disappear
- */
-.rsArrow{
-    z-index: 10;
-
-    // To ensure a larger clickable area
-    // for the arrows
-    @include media-query(lap-and-up) {
-        .arrows--outside &{
-            top: 0;
-            height: 80%;
-
-            .rsArrowIcn{
-                top: 50%;
-                position: relative;
-            }
-        }
-    }
-}

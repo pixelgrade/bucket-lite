@@ -49,8 +49,10 @@ switch ( $posts_source ) :
 		/** Return posts from selected categories */
 		$categories = get_sub_field('posts_source_category');
 		$catarr = array();
-		foreach ($categories as $key => $value) {
-			$catarr[] = (int) $value;
+		if(!empty($categories)) {
+			foreach ($categories as $key => $value) {
+				$catarr[] = (int) $value;
+			}
 		}
 		
 		$query_args['category__in'] = $catarr;

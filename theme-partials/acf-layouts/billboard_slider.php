@@ -110,16 +110,12 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-				<!-- data-imagescale="fill" 
-				data-slidertransition="fade" 
-				data-arrows="true"
-				data-autoScaleSliderWidth="1050"
-				data-autoScaleSliderHeight="625"  -->
 	<div class="billboard pixslider js-pixslider arrows--outside" 
-	data-arrows="true"
-	data-autoScaleSliderWidth="1050"
-	data-autoScaleSliderHeight="625" 
-				>
+			data-arrows="true"
+			data-autoScaleSliderWidth="1050"
+			data-autoScaleSliderHeight="625"
+			data-slidertransition="fade"
+			>
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
             $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
@@ -142,11 +138,11 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                 <article class="article  article--billboard">
-                    <div class="image-wrap1" style="padding-top1: <?php echo $image_ratio; ?>%">
-                        <img class="rsImg1" src="<?php echo $image[0] ?>" />
+                    <div>
+                        <img src="<?php echo $image[0] ?>" />
                     </div>
                     <a href="<?php the_permalink(); ?>">
-                        <span class="rsABlock1  article__header  article--billboard__header">
+                        <span class="article__header  article--billboard__header">
                             <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
                             <h2 class="article__title article--billboard__title">
                                 <span class="hN"><?php the_title(); ?></span>
@@ -173,9 +169,9 @@ if ($slides->have_posts()): ?>
                           >
   	                
                     <a href="<?php the_permalink(); ?>">
-                        <span class="image-wrap1" style="padding-top1: <?php echo $image_ratio; ?>%">
-      	                    <img class="rsImg1" src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" />
-      	                </span>
+                        <div>
+      	                    <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" />
+      	                </div>
       	                <h2 class="article__title article--billboard-small__title">
       	                    <span class="hN"><?php the_title(); ?></span>
       	                </h2>

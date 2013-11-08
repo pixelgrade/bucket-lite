@@ -5,21 +5,21 @@
 	 * This works on 3.1+
 	 */
 	function wpgrade_register_custom_menus() {
-		wpgrade::options()->set
-			(
-				'nav_menus',
-				array
-				(
-                    'main_menu' => __('Header Menu', wpgrade::textdomain()),
-					'top_menu_left' => __('Top Menu Left', wpgrade::textdomain()),
-                    'top_menu_right' => __('Top Menu Right', wpgrade::textdomain()),
-					'footer_menu' => __('Footer Menu', wpgrade::textdomain()),
-				)
-			);
+//		wpgrade::options()->set
+//			(
+//				'nav_menus',
+//				array
+//				(
+//                    'main_menu' => __('Header Menu', wpgrade::textdomain()),
+//					'top_menu_left' => __('Top Menu Left', wpgrade::textdomain()),
+//                    'top_menu_right' => __('Top Menu Right', wpgrade::textdomain()),
+//					'footer_menu' => __('Footer Menu', wpgrade::textdomain()),
+//				)
+//			);
 
 		add_theme_support('menus');
-
-		foreach (wpgrade::option('nav_menus') as $key => $value) {
+		$menus = wpgrade::confoption('import_nav_menu');
+		foreach ($menus as $key => $value) {
 			register_nav_menu($key, $value);
 		}
 	}
