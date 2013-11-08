@@ -18,7 +18,7 @@ function wpgrade_custom_thumbnails (){
     add_image_size('post-medium', 335, 256, true);
 
     // Hero Posts Small, Mega Menu Posts, Latest Posts Widget 
-    add_image_size('post-small', 204, 158, true);
+    add_image_size('post-small', 203, 157, true);
     add_image_size('post-tiny', 72, 54, true);
 
 

@@ -169,13 +169,17 @@ if ($slides->have_posts()): ?>
                           >
   	                
                     <a href="<?php the_permalink(); ?>">
-                        <div>
+                        <div class="article__thumb">
       	                    <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" />
       	                </div>
-      	                <h2 class="article__title article--billboard-small__title">
-      	                    <span class="hN"><?php the_title(); ?></span>
-      	                </h2>
-      	                <span class="small-link"><?php echo $read_more_label; ?> <em>+</em></span>
+      	                <div class="article__content">
+      	                	<h2 class="article__title article--billboard-small__title">
+	      	                    <span class="hN"><?php the_title(); ?></span>
+		  	                </h2>
+		  	                <span class="article__description">A fighting bull stands alone surrounded by a crowd of runners on the second day..</span>
+		  	                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
+      	                </div>
+      	                
                     </a>
   	            </article>
   	        <?php endif;
