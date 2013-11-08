@@ -206,7 +206,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                     if (count($slideposts)):
                     
-                    $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-imagealigncenter>';
+                    $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="410" data-autoScaleSliderHeight="293">';
 
                         foreach( $slideposts as $post ) : setup_postdata( $post );
                             //add the id to the array

@@ -110,15 +110,19 @@ $index = 0;
 $closed_group = true;
 
 if ($slides->have_posts()): ?>
-	<div class="billboard pixslider js-pixslider arrows--outside" 
-				data-imagescale="fill" 
+				<!-- data-imagescale="fill" 
 				data-slidertransition="fade" 
 				data-arrows="true"
 				data-autoScaleSliderWidth="1050"
-				data-autoScaleSliderHeight="625" 
+				data-autoScaleSliderHeight="625"  -->
+	<div class="billboard pixslider js-pixslider arrows--outside" 
+	data-arrows="true"
+	data-autoScaleSliderWidth="1050"
+	data-autoScaleSliderHeight="625" 
 				>
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
+            $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
             $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
             
             if (isset($image[1]) && isset($image[2])) {
@@ -126,23 +130,23 @@ if ($slides->have_posts()): ?>
             }
 
       			if ($index++ % 3 == 0):
-                $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
+                $image = $image_big;
                 if (isset($image[1]) && isset($image[2])) {
                   $image_ratio = $image[2] * 100/$image[1];
                 }
 
                 if (!$closed_group):
-                    echo '--></div><div class="billboard--article-group"><!--';
+                    echo '</div><div class="billboard--article-group">';
                 else:
-                    echo '<div class="billboard--article-group"><!--';
+                    echo '<div class="billboard--article-group">';
                     $closed_group = false;
                 endif; ?>
-                --><article class="article  article--billboard">
+                <article class="article  article--billboard">
                     <div class="image-wrap1" style="padding-top1: <?php echo $image_ratio; ?>%">
-                        <img class="rsImg" src="<?php echo $image[0] ?>" />
+                        <img class="rsImg1" src="<?php echo $image[0] ?>" />
                     </div>
                     <a href="<?php the_permalink(); ?>">
-                        <span class="rsABlock  article__header  article--billboard__header">
+                        <span class="rsABlock1  article__header  article--billboard__header">
                             <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
                             <h2 class="article__title article--billboard__title">
                                 <span class="hN"><?php the_title(); ?></span>
@@ -150,9 +154,9 @@ if ($slides->have_posts()): ?>
                             <span class="small-link"><?php echo $read_more_label; ?> &raquo;</span>
                         </span>
                     </a>
-                </article><!--
+                </article>
   	        <?php else: ?>
-  	            --><article class="rsABlock  article article--billboard-small"
+  	            <article class="rsABlock  article article--billboard-small"
                           data-move-effect="right"
                           data-speed="400" 
                           data-easing="easeOutCirc"
@@ -169,20 +173,20 @@ if ($slides->have_posts()): ?>
                           >
   	                
                     <a href="<?php the_permalink(); ?>">
-                        <span class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-      	                    <img class="rsImg" src="<?php echo $image[0] ?>" />
+                        <span class="image-wrap1" style="padding-top1: <?php echo $image_ratio; ?>%">
+      	                    <img class="rsImg1" src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" />
       	                </span>
       	                <h2 class="article__title article--billboard-small__title">
       	                    <span class="hN"><?php the_title(); ?></span>
       	                </h2>
       	                <span class="small-link"><?php echo $read_more_label; ?> <em>+</em></span>
                     </a>
-  	            </article><!--
+  	            </article>
   	        <?php endif;
 		endwhile;
 		wp_reset_postdata();
         if (!$closed_group):
-            echo '--></div>';
+            echo '</div>';
             $closed_group = false;
         endif; ?>
 	</div>
