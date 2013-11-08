@@ -176,7 +176,9 @@ if ($slides->have_posts()): ?>
       	                	<h2 class="article__title article--billboard-small__title">
 	      	                    <span class="hN"><?php the_title(); ?></span>
 		  	                </h2>
-		  	                <span class="article__description">A fighting bull stands alone surrounded by a crowd of runners on the second day..</span>
+		  	                <span class="article__description">
+		  	                	<?php  echo substr(get_the_excerpt(), 0, 75).'..'; ?>
+		  	               	</span>
 		  	                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
       	                </div>
       	                

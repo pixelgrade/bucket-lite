@@ -655,7 +655,7 @@
 
 
 /*
-*  Small Articles
+*  Small Post Cards
 */
 
 .article--billboard-small {
@@ -673,6 +673,7 @@
         line-height:1;
         color:$light;
         em {
+            @include transition(all 0.3s);
             color:$accent;
             margin-left: 6px;
             font-size: 16px;
@@ -765,6 +766,9 @@
             }
             .article__title {
                 
+            }
+            .small-link {
+
             }
         }
     } 
