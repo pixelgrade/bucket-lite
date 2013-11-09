@@ -206,7 +206,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                     if (count($slideposts)):
                     
-                    $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-imagealigncenter>';
+                    $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="410" data-autoScaleSliderHeight="280">';
 
                         foreach( $slideposts as $post ) : setup_postdata( $post );
                             //add the id to the array
@@ -214,7 +214,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                             
                             $post_title = get_the_title();
                             $post_link = get_permalink();
-                            $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
+                            $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-big" );
 
                             if ( $post_image ){
                                 $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
@@ -270,28 +270,35 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         }
 
                         if ( $post_image ){
-                            $menu_post_image = '<div class="image-wrap" style="padding-top: '.$image_ratio.'%"><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
+                            $menu_post_image = '<div class="article__thumb" style="padding-top1: '.$image_ratio.'%"><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
                         } else {
-                            $menu_post_image = '<div class="image-wrap"></div>';
+                            $menu_post_image = '<div class="article__thumb"></div>';
                             $menu_post_image = '';
                         }
 
                         $item_output .= 
                             '<div class="sub-menu__grid__item  grid__item  one-fifth">' .
-								'<a class="small-link" href="' . $post_link . '">' .
-                                '<article class="article article--billboard-small">' .
-                                    $menu_post_image .
-                                    '<h2 class="article__title article--billboard-small__title">' .
-                                        '<span class="hN">' . $post_title . '</span>' .
-                                    '</h2>' .
-                                    // get_the_excerpt() . 
-                                    '<span class="small-link">'.__('Read More', wpgrade::textdomain()).'</span>' .
-                                '</article>'.
-								'</a>'.
+                                    '<article class="article article--billboard-small">' .
+                                        '<a href="' . $post_link . '">' .
+                                            $menu_post_image .
+                                            '<div class="article__content">
+                                                <h2 class="article__title article--billboard-small__title">' .
+                                                    '<span class="hN">' . $post_title . '</span>' .
+                                                '</h2>
+                                                <div class="article__description">'.
+                                                    substr(get_the_excerpt(), 0, 75). 
+                                                '</div>
+                                                <span class="small-link">'.__('Read More', wpgrade::textdomain()).'<em>+</em></span>
+                                            </div>
+                                        </a>'.
+                                    '</article>'.
                             '</div>';
 
                     endforeach;
                     wp_reset_query();
+
+
+
                 
                 }
             }
