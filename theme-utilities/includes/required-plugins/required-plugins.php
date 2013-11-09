@@ -25,7 +25,7 @@ function wpgrade_register_required_plugins() {
 		array(
 			'name'     				=> 'PixTypes',
 			'slug'     				=> 'pixtypes',
-			'source'   				=> get_template_directory() . '/theme-content/inc/required-plugins/plugins/pixtypes.zip',
+			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixtypes.zip',
 			'required' 				=> true,
 			'version' 				=> '1.1.5',
 			'force_activation' 		=> false,
@@ -35,7 +35,7 @@ function wpgrade_register_required_plugins() {
 		array(
 			'name'     				=> 'PixCodes',
 			'slug'     				=> 'pixcodes',
-			'source'   				=> get_template_directory() . '/theme-content/inc/required-plugins/plugins/pixcodes.zip',
+			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixcodes.zip',
 			'required' 				=> true,
 			'version' 				=> '2.0.3',
 			'force_activation' 		=> false,
@@ -45,7 +45,7 @@ function wpgrade_register_required_plugins() {
 		array(
 			'name'     				=> 'PixLikes',
 			'slug'     				=> 'pixlikes',
-			'source'   				=> get_template_directory() . '/theme-content/inc/required-plugins/plugins/pixlikes.zip',
+			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixlikes.zip',
 			'required' 				=> false,
 			'version' 				=> '1.0.3',
 			'force_activation' 		=> false,

@@ -48,8 +48,8 @@ if ($latest_query->have_posts()):
     <?php
 
 
-
-	if ( get_sub_field('pagination') == 'enable' ){
+	// pagination is not made to work on homepage http://codex.wordpress.org/Creating_a_Static_Front_Page#Pagination
+	if ( get_sub_field('pagination') == 'enable' && !is_front_page() ){
 		echo wpgrade::pagination($latest_query);
 	}
 
