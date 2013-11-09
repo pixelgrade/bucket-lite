@@ -445,9 +445,20 @@
     fixDiv();
 
     //Min-height of the container
-    $('#redux-main') .css({'min-height': (($(window).height()))+'px'});
+
+	var ensure_height_of_container = function(){
+
+		var min_height = $(window).height() -62;
+
+		console.log(min_height);
+
+		$('#redux-main') .css({'min-height': min_height +'px'});
+	}
+
+	ensure_height_of_container();
     $(window).resize(function(){
-        $('#redux-main') .css({'min-height': (($(window).height()))+'px'});
+        //$('#redux-main') .css({'min-height': (($(window).height()))+'px'});
+	    ensure_height_of_container();
     });
 
     //Remove WP update notices (eg. This theme requires the following..)

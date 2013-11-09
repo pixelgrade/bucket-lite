@@ -369,8 +369,8 @@ $heading-font: 'Open Sans', sans-serif;
 			content: " ";
 			display:block;
 			position:absolute;
-			top:0;
-			left:0;
+			top:-2px;
+			left:17px;
 		}
 
 		&:after {
@@ -380,8 +380,8 @@ $heading-font: 'Open Sans', sans-serif;
 			width: 10px;
 			height: 6px;
 			background: transparent;
-			top: 7px;
-			left: 7px;
+			top: 5px;
+			left: 24px;
 			border: 3px solid $accent;
 			border-top: none;
 			border-right: none;
@@ -421,23 +421,6 @@ $heading-font: 'Open Sans', sans-serif;
 			left:0;
 		}
 	}
-
-	//Checkbox - Social Icons Sortable
-	input[type='checkbox'].social-input-checkbox{
-		width: 30px !important;
-		margin: 4px 30px !important;
-		vertical-align: top !important;
-	}
-
-	.checkbox_header{
-		width: 90px !important;
-		// margin: 0 30px !important;
-		text-align: center;
-		display: inline-block;
-	}
-
-
-
 
 	.form-table td {
 		font-size:14px;
@@ -616,6 +599,9 @@ $heading-font: 'Open Sans', sans-serif;
 	*/
 
 	.redux-container-ace_editor .ace-wrapper {
+		z-index: 0;
+		position: relative;
+
 		.ace-editor-area {
 			border:1px solid $border-color;
 			@include border-radius(0);
@@ -812,6 +798,17 @@ $heading-font: 'Open Sans', sans-serif;
 			position:relative;
 			left:-45px;
 			padding-left:45px;
+
+			input[type="checkbox"] {
+				min-width: 60px !important;
+				vertical-align: top !important;
+			}
+
+			.checkbox_header{
+				min-width: 60px;
+				text-align: center;
+				display: inline-block;
+			}
 
 			&:hover {
 				.drag {
