@@ -369,8 +369,8 @@ $heading-font: 'Open Sans', sans-serif;
 			content: " ";
 			display:block;
 			position:absolute;
-			top:-2px;
-			left:17px;
+			top: 0;
+			left: 0;
 		}
 
 		&:after {
@@ -380,8 +380,8 @@ $heading-font: 'Open Sans', sans-serif;
 			width: 10px;
 			height: 6px;
 			background: transparent;
-			top: 5px;
-			left: 24px;
+			top: 7px;
+			left: 7px;
 			border: 3px solid $accent;
 			border-top: none;
 			border-right: none;
@@ -420,6 +420,13 @@ $heading-font: 'Open Sans', sans-serif;
 			top:-3px;
 			left:0;
 		}
+	}
+
+	//Checkbox - Social Icons Sortable
+	input[type='checkbox'].social-input-checkbox{
+		width: 30px !important;
+		margin: 4px 30px !important;
+		vertical-align: top !important;
 	}
 
 	.form-table td {
@@ -524,7 +531,7 @@ $heading-font: 'Open Sans', sans-serif;
 			  position:absolute;
 			  right:0;
 			  top:-41px;
-			  z-index: 1;
+			  z-index: 0;
 		}
 
 		.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {
@@ -800,12 +807,13 @@ $heading-font: 'Open Sans', sans-serif;
 			padding-left:45px;
 
 			input[type="checkbox"] {
-				min-width: 60px !important;
+				width: 30px !important;
+				margin: 4px 30px !important;
 				vertical-align: top !important;
 			}
 
 			.checkbox_header{
-				min-width: 60px;
+				min-width: 80px;
 				text-align: center;
 				display: inline-block;
 			}

@@ -563,8 +563,18 @@ $sections[] = array(
 						</div>
 
 						<div class="wpGrade-import-results hidden"></div>
+						<div class="hr"/><div class="inner"><span>&nbsp;</span></div></div>
 					',
 		),
+
+		array(
+			'id' => 'theme_options_import',
+			'type' => 'import'
+		),
+		array(
+			'id' => 'theme_options_export',
+			'type' => 'export'
+		)
 	)
 );
 
