@@ -40,21 +40,27 @@ if( !class_exists( 'ReduxFramework' ) ) {
         public static $_properties;
 
         static function init() {
-            // Windows-proof constants: replace backward by forward slashes
-            // Thanks to: @peterbouwmeester
-            $fslashed_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-            $fslashed_abs = trailingslashit( str_replace( '\\', '/', ABSPATH ) );
-            // Fix for when Wordpress is not in the wp-content directory
-            if (strpos($fslashed_dir,$fslashed_abs) === false) {
-                $parts = explode('/', $fslashed_abs);
-                $test = str_replace('/'.$parts[count($parts)-2], '', $fslashed_abs);
-                if (strpos($fslashed_dir,$test) !== false) {
-                    $fslashed_abs = $test;
-                }
-            }
 
-            self::$_dir = $fslashed_dir;
-            self::$_url = home_url( str_replace( $fslashed_abs, '', $fslashed_dir ) );
+			// Windows-proof constants: replace backward by forward slashes. Thanks to: @peterbouwmeester
+			self::$_dir     = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
+			$wp_content_dir = trailingslashit( str_replace( '\\', '/', WP_CONTENT_DIR ) );
+			$relative_url   = str_replace( $wp_content_dir, '', self::$_dir );
+			self::$_url     = trailingslashit( WP_CONTENT_URL ) . $relative_url;
+
+			/** @todo OLD VERSION - remove after testing */
+//            $fslashed_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
+//            $fslashed_abs = trailingslashit( str_replace( '\\', '/', ABSPATH ) );
+//            // Fix for when Wordpress is not in the wp-content directory
+//            if (strpos($fslashed_dir,$fslashed_abs) === false) {
+//                $parts = explode('/', $fslashed_abs);
+//                $test = str_replace('/'.$parts[count($parts)-2], '', $fslashed_abs);
+//                if (strpos($fslashed_dir,$test) !== false) {
+//                    $fslashed_abs = $test;
+//                }
+//            }
+//
+//            self::$_dir = $fslashed_dir;
+//            self::$_url = site_url( str_replace( $fslashed_abs, '', $fslashed_dir ) );
 
 /**
         Still need to port these.
@@ -299,11 +305,14 @@ if( !class_exists( 'ReduxFramework' ) ) {
             // Options page
             add_action( 'admin_menu', array( &$this, '_options_page' ) );
 
+            // Register extensions
+            add_action( 'init', array( &$this, '_register_extensions' ) );
+
             // Register setting
             add_action( 'admin_init', array( &$this, '_register_setting' ) );
 
 			// Register extensions
-            add_action( 'init', array( &$this, '_register_extensions' ), 2 );
+            add_action( 'init', array( &$this, '_register_extensions' ) );
 
             // Any dynamic CSS output, let's run
             add_action( 'wp_head', array( &$this, '_enqueue_output' ), 100 );
@@ -904,7 +913,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 						if( isset( $field['type'] ) ) {
                             $field_class = 'ReduxFramework_' . $field['type'];
                             if( !class_exists( $field_class ) ) {
-                                $class_file = apply_filters( 'redux-typeclass-load', self::$_dir . 'inc/fields/' . $field['type'] . '/field_' . $field['type'] . '.php', $field_class );
+                                $class_file = apply_filters( 'redux/field/class/'.$field['type'], self::$_dir . 'inc/fields/' . $field['type'] . '/field_' . $field['type'] . '.php', $field );
                                 if( $class_file ) {
                                     /** @noinspection PhpIncludeInspection */
                                     require_once( $class_file );
@@ -1104,8 +1113,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                             $field_class = 'ReduxFramework_' . $field['type'];
 
                             if( !class_exists( $field_class ) ) {
-                                $class_file = apply_filters( 'redux-typeclass-load', self::$_dir . 'inc/fields/' . $field['type'] . '/field_' . $field['type'] . '.php', $field_class );
-
+                                $class_file = apply_filters( 'redux/field/class/'.$field['type'], self::$_dir . 'inc/fields/' . $field['type'] . '/field_' . $field['type'] . '.php', $field );
                                 if( $class_file ) {
                                     /** @noinspection PhpIncludeInspection */
                                     require_once( $class_file );
@@ -1987,8 +1995,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 $field_class = 'ReduxFramework_' . $field['type'];
 
                 if( !class_exists( $field_class ) ) {
-                    $class_file = apply_filters( 'redux-typeclass-load', self::$_dir . 'inc/fields/' . $field['type'] . '/field_' . $field['type'] . '.php', $field_class );
-
+                    $class_file = apply_filters( 'redux/field/class/'.$field['type'], self::$_dir . 'inc/fields/' . $field['type'] . '/field_' . $field['type'] . '.php', $field );
                     if( $class_file ) {
                         /** @noinspection PhpIncludeInspection */
                         require_once($class_file);
