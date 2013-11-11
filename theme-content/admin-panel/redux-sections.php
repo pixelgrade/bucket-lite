@@ -67,7 +67,7 @@ $sections[] = array(
 			'type' => 'color',
 			'title' => __('Main Color', wpgrade::textdomain()),
 			'subtitle' => __('Use the color picker to change the main color of the site to match your brand color.', wpgrade::textdomain()),
-			'default' => '#fffc00',
+			'default' => '#fb4834',
 			'validate' => 'color',
 		),
 
@@ -567,14 +567,23 @@ $sections[] = array(
 					',
 		),
 
-		// array(
-		// 	'id' => 'theme_options_import',
-		// 	'type' => 'import'
-		// ),
-		// array(
-		// 	'id' => 'theme_options_export',
-		// 	'type' => 'export'
-		// )
+		array(
+			'id' => 'admin_panel_options',
+			'type' => 'switch',
+			'title' => __('Admin Panel Options', wpgrade::textdomain()),
+			'subtitle' => __('Here you can copy/download your current admin option settings. Keep this safe as you can use it as a backup should anything go wrong, or you can use it to restore your settings on this site (or any other site).', wpgrade::textdomain()),
+		),
+
+		array(
+			'id' => 'theme_options_import',
+			'type' => 'import',
+			'required' => array('admin_panel_options', '=', 1)
+		),
+		array(
+			'id' => 'theme_options_export',
+			'type' => 'export',
+			'required' => array('admin_panel_options', '=', 1)
+		)
 	)
 );
 

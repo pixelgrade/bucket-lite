@@ -83,3 +83,45 @@ function add_next_and_number( $args ) {
 }
 add_filter( 'wp_link_pages_args', 'add_next_and_number' );
 
+
+function wpgrade_register_attachments(){
+
+	// add video support for attachments
+	if ( !function_exists( 'add_video_url_field_to_attachments' ) ) {
+		function add_video_url_field_to_attachments($form_fields, $post){
+			if ( !isset($form_fields["video_url"]) ) {
+				$form_fields["video_url"] = array(
+					"label" => __("Video URL", 'pixtypes_txtd'),
+					"input" => "text", // this is default if "input" is omitted
+					"value" => esc_url( get_post_meta($post->ID, "_video_url", true) ),
+					"helps" => __("<p>Here you can link a video</p><small>Only youtube or vimeo!</small>", 'pixtypes_txtd'),
+				);
+			}
+			return $form_fields;
+		}
+		add_filter("attachment_fields_to_edit", "add_video_url_field_to_attachments", 99999, 2);
+	}
+
+	/**
+	 * Save custom media metadata fields
+	 *
+	 * Be sure to validate your data before saving it
+	 * http://codex.wordpress.org/Data_Validation
+	 *
+	 * @param $post The $post data for the attachment
+	 * @param $attachment The $attachment part of the form $_POST ($_POST[attachments][postID])
+	 * @return $post
+	 */
+
+	if ( !function_exists( 'add_image_attachment_fields_to_save' ) ) {
+		add_filter("attachment_fields_to_save", "add_image_attachment_fields_to_save", 9999 , 2);
+		function add_image_attachment_fields_to_save( $post, $attachment ) {
+			if ( isset( $attachment['video_url'] ) )
+				update_post_meta( $post['ID'], '_video_url', esc_url($attachment['video_url']) );
+
+			return $post;
+		}
+	}
+}
+
+add_action('init', 'wpgrade_register_attachments');
