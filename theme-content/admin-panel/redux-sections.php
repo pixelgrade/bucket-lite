@@ -568,12 +568,21 @@ $sections[] = array(
 		),
 
 		array(
+			'id' => 'admin_panel_options',
+			'type' => 'switch',
+			'title' => __('Admin Panel Options', wpgrade::textdomain()),
+			'subtitle' => __('Here you can copy/download your current admin option settings. Keep this safe as you can use it as a backup should anything go wrong, or you can use it to restore your settings on this site (or any other site).', wpgrade::textdomain()),
+		),
+
+		array(
 			'id' => 'theme_options_import',
-			'type' => 'import'
+			'type' => 'import',
+			'required' => array('admin_panel_options', '=', 1)
 		),
 		array(
 			'id' => 'theme_options_export',
-			'type' => 'export'
+			'type' => 'export',
+			'required' => array('admin_panel_options', '=', 1)
 		)
 	)
 );
