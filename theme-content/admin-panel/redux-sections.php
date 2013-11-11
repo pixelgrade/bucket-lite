@@ -558,23 +558,23 @@ $sections[] = array(
 						<div class="wpGrade-loading-wrap hidden">
 							<span class="wpGrade-loading wpGrade-import-loading"></span>
 							<div class="wpGrade-import-wait">
-								'.__('Please wait a few minutes (between 2 and 5 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', wpgrade::textdomain()).'
+								'.__('Please wait a few minutes (between 1 and 3 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', wpgrade::textdomain()).'
 							</div>
 						</div>
 
 						<div class="wpGrade-import-results hidden"></div>
-						<div class="hr"/><div class="inner"><span>&nbsp;</span></div></div>
+						<div class="hr"><div class="inner"><span>&nbsp;</span></div></div>
 					',
 		),
 
-		array(
-			'id' => 'theme_options_import',
-			'type' => 'import'
-		),
-		array(
-			'id' => 'theme_options_export',
-			'type' => 'export'
-		)
+		// array(
+		// 	'id' => 'theme_options_import',
+		// 	'type' => 'import'
+		// ),
+		// array(
+		// 	'id' => 'theme_options_export',
+		// 	'type' => 'export'
+		// )
 	)
 );
 

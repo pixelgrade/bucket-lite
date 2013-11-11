@@ -313,12 +313,36 @@ $heading-font: 'Open Sans', sans-serif;
 			}
 		}
 	}
+
+	/* 
+	* Button Primary
+	*/ 
+	.button-primary {
+		font-size:14px;
+		padding:8px $_u;
+		height:auto;
+		text-shadow: 0 -1px 0 #000;
+		border-color: $dark;
+		background-color: #2e2e2e; 
+		@include border-radius(25px);
+		@include background-image(linear-gradient(left top, #3b3b3b, #212121)); 
+		@include box-shadow(rgba(255,255,255,0.3) 0 1px 0 inset,rgba(0,0,0,0.1) 0 0 0 1px, rgba(0,0,0,0.15) 0 1px 0 0);
+
+		&:hover {
+			@include background-image(linear-gradient(left top, #484848,#2e2e2e)); 
+		}
+	}
+
+	#wpGrade_import_demodata_button {
+		margin-top:-20px;
+	}
 }
 
 
 /*-----------------------------------------------*\
               COMPONENTS
 \*-----------------------------------------------*/
+
 
 
 /*
@@ -425,7 +449,7 @@ $heading-font: 'Open Sans', sans-serif;
 	//Checkbox - Social Icons Sortable
 	input[type='checkbox'].social-input-checkbox{
 		width: 30px !important;
-		margin: 4px 30px !important;
+		margin: 4px 14px 4px 39px !important;
 		vertical-align: top !important;
 	}
 
@@ -873,7 +897,25 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 
+/*
+* Import Demo data
+*/
+#wpGrade_import_demodata_button {
+	background:transparent;
+	border:none;
+}
+.wpGrade-import-wait {
 
+}
+
+.wpGrade-import-results {
+	&, i {
+		color:$light !important;
+		line-height:1.5;
+		font-style:normal;
+		font-size:$normal;
+	}
+}
 /*-----------------------------------------------*\
               SHAME
 \*-----------------------------------------------*/
