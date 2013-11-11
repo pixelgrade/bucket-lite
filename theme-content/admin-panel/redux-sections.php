@@ -567,14 +567,14 @@ $sections[] = array(
 					',
 		),
 
-		// array(
-		// 	'id' => 'theme_options_import',
-		// 	'type' => 'import'
-		// ),
-		// array(
-		// 	'id' => 'theme_options_export',
-		// 	'type' => 'export'
-		// )
+		array(
+			'id' => 'theme_options_import',
+			'type' => 'import'
+		),
+		array(
+			'id' => 'theme_options_export',
+			'type' => 'export'
+		)
 	)
 );
 
