@@ -67,7 +67,7 @@ $sections[] = array(
 			'type' => 'color',
 			'title' => __('Main Color', wpgrade::textdomain()),
 			'subtitle' => __('Use the color picker to change the main color of the site to match your brand color.', wpgrade::textdomain()),
-			'default' => '#fffc00',
+			'default' => '#fb4834',
 			'validate' => 'color',
 		),
 
