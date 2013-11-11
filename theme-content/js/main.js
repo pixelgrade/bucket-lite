@@ -1225,36 +1225,6 @@
 
       this.init();
     };
- 
-    /* MAGNIFIC POPUP INIT */
-
-    function magnificPopupInit(){
-
-      $('.js-post-gallery').each(function() { // the containers for all your galleries should have the class gallery
-          $(this).magnificPopup({
-              delegate: 'a[href$=".jpg"], a[href$=".png"], a[href$=".gif"]', // the container for each your gallery items
-              type: 'image',
-              removalDelay: 500,
-              mainClass: 'mfp-fade',
-              image: {
-                  titleSrc: function (item){
-                      var output = '';
-                      if ( typeof item.el.attr('data-title') !== "undefined" && item.el.attr('data-title') !== "") {
-                        output = item.el.attr('data-title');
-                      }
-                      if ( typeof item.el.attr('data-alt') !== "undefined" && item.el.attr('data-alt') !== "") {
-                        output += '<small>'+item.el.attr('data-alt')+'</small>';
-                      }
-                      return output;
-                  }
-              },
-              gallery:{
-                  enabled:true,
-                  navigateByImgClick: true,
-              }
-          });
-      });      
-    }
       
 
     /* Initialization method
@@ -1485,6 +1455,36 @@
     };
   })(jQuery, window, document);
 
+    /* MAGNIFIC POPUP INIT */
+
+    function magnificPopupInit(){
+
+      $('.js-post-gallery').each(function() { // the containers for all your galleries should have the class gallery
+          $(this).magnificPopup({
+              delegate: 'a[href$=".jpg"], a[href$=".png"], a[href$=".gif"]', // the container for each your gallery items
+              type: 'image',
+              removalDelay: 500,
+              mainClass: 'mfp-fade',
+              image: {
+                  titleSrc: function (item){
+                      var output = '';
+                      if ( typeof item.el.attr('data-title') !== "undefined" && item.el.attr('data-title') !== "") {
+                        output = item.el.attr('data-title');
+                      }
+                      if ( typeof item.el.attr('data-alt') !== "undefined" && item.el.attr('data-alt') !== "") {
+                        output += '<small>'+item.el.attr('data-alt')+'</small>';
+                      }
+                      return output;
+                  }
+              },
+              gallery:{
+                  enabled:true,
+                  navigateByImgClick: true,
+              }
+          });
+      });      
+    }
+
     /* --- $ROYALSLIDER --- */
     var $original_billboard_slider;
 
@@ -1492,6 +1492,7 @@
     * Slider Initialization
     */
     function sliderInit($slider){
+
           var $children = $(this).children(),
               rs_arrows = typeof $slider.data('arrows') !== "undefined",
               rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
@@ -1552,6 +1553,21 @@
 
           // move arrows outside rsOverflow
           $slider.find('.rsArrow').appendTo($slider);
+
+          royalSlider.ev.on('rsVideoPlay', function() {
+
+              // if($('.single-gallery-fullscreen').length) {
+              //     $('html').toggleClass('video-active');
+              // }
+
+              var $frameHolder = $('.rsVideoFrameHolder');
+              var top = Math.abs(parseInt($frameHolder.siblings('.rsMainSlideImage').css('margin-top'), 10));
+
+                  $frameHolder
+                      .height(royalSlider.height)
+                      .css('top', top + 'px');
+
+          });
     }
 
 
@@ -1606,6 +1622,7 @@
           $slider.addClass('js-pixslider-mobile');
 
           $slider.addClass('rsAutoHeight');
+
           sliderInit($slider);
     }
 

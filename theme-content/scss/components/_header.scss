@@ -253,8 +253,10 @@
                     background-color: white;
                     border-bottom-color: #ccc;
 
-                    .hN {
-                        color: black;
+                    @include media-query(palm) {
+                        .hN {
+                            color: black;
+                        }
                     }
                 }
 

@@ -97,22 +97,69 @@ function wpgrade_callback_geting_active() {
 					'id'   =>  wpgrade::prefix() . 'main_gallery',
 					'type' => 'gallery',
 				),
-//				array(
-//					'name' => __('Slider transition', wpgrade::textdomain()),
-//					'id' => wpgrade::prefix() . 'post_slider_transition',
-//					'type' => 'select',
-//					'options' => array(
-//						array(
-//							'name' => __('Slide/Move', wpgrade::textdomain()),
-//							'value' => 'move'
-//						),
-//						array(
-//							'name' => __('Fade', wpgrade::textdomain()),
-//							'value' => 'fade'
-//						)
-//					),
-//					'std' => 'move'
-//				)
+				array(
+					'name' => __('Image Scaling', wpgrade::textdomain()),
+					'desc' => __('<p class="cmb_metabox_description"><strong>Fill</strong> scales image to completely fill slider container (recommended for landscape images)</p>
+<p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
+<p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less than size of image.</p>
+<p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'post_image_scale_mode',
+					'type' => 'select',
+					'show_on'    => array( 'key' => 'select_value', 'value' => array( 'project_template' => 'fullwidth', 'project_template' => 'sidebar' ), ),
+					'options' => array(
+                        array(
+                            'name' => __('Fit', wpgrade::textdomain()),
+                            'value' => 'fit'
+                        ),
+                        array(
+                            'name' => __('Fill', wpgrade::textdomain()),
+                            'value' => 'fill'
+                        ),
+                        array(
+                            'name' => __('Fit if Smaller', wpgrade::textdomain()),
+                            'value' => 'fit-if-smaller'
+                        )
+					),
+					'std' => 'fill'					
+				),
+				array(
+					'name' => __('Slider transition', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'post_slider_transition',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => __('Slide/Move', wpgrade::textdomain()),
+							'value' => 'move'
+						),
+						array(
+							'name' => __('Fade', wpgrade::textdomain()),
+							'value' => 'fade'
+						)
+					),
+					'std' => 'move'
+				),
+				array(
+					'name' => __('Slider autoplay', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'post_slider_autoplay',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => __('Enabled', wpgrade::textdomain()),
+							'value' => true
+						),
+						array(
+							'name' => __('Disabled', wpgrade::textdomain()),
+							'value' => false
+						)
+					),
+					'std' => false
+				),
+				array(
+					'name' => __('Autoplay delay between slides (in milliseconds)', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'post_slider_delay',
+					'type' => 'text_small',
+					'std' => '1000'
+				)	
 			)
 		),
 //		'post_quote_format' => array(

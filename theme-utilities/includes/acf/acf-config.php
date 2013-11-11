@@ -452,7 +452,7 @@ if(function_exists("register_field_group"))
 								'append' => '',
 								'formatting' => 'html',
 								'maxlength' => '',
-							),
+							)
 						),
 					),
 					array (
