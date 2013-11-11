@@ -67,7 +67,8 @@ a, blockquote, .small-link, .tabs__nav a.current,
 .article--billboard-small .author__social-link em,
 .small-link, .post-nav-link__label, .author__social-link,
 .article--thumb__title a:hover, 
-.widget_wpgrade_twitter_widget .widget--footer__title h3:before {
+.widget_wpgrade_twitter_widget .widget--footer__title h3:before,
+a:hover > .pixcode--icon {
     color: <?php echo $main_color; ?>;
 }
 
