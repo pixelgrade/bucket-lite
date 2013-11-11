@@ -33,16 +33,6 @@ function wpgrade_register_required_plugins() {
 			'external_url' 			=> '',
 		),
 		array(
-			'name'     				=> 'PixCodes',
-			'slug'     				=> 'pixcodes',
-			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixcodes.zip',
-			'required' 				=> true,
-			'version' 				=> '2.0.3',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-		array(
 			'name'     				=> 'PixLikes',
 			'slug'     				=> 'pixlikes',
 			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixlikes.zip',
@@ -53,14 +43,18 @@ function wpgrade_register_required_plugins() {
 			'external_url' 			=> '',
 		),
 		array(
-			'name' 		=> 'Contact Form 7',
-			'slug' 		=> 'contact-form-7',
-			'required' 	=> false,
-			'version' 	=> ''
+			'name'     				=> 'PixCodes',
+			'slug'     				=> 'pixcodes',
+			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixcodes.zip',
+			'required' 				=> false,
+			'version' 				=> '2.0.3',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
 		),
 		array(
-			'name' 		=> 'Simple Page Ordering',
-			'slug' 		=> 'simple-page-ordering',
+			'name' 		=> 'Contact Form 7',
+			'slug' 		=> 'contact-form-7',
 			'required' 	=> false,
 			'version' 	=> ''
 		),

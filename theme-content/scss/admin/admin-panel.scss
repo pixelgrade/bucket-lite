@@ -313,12 +313,36 @@ $heading-font: 'Open Sans', sans-serif;
 			}
 		}
 	}
+
+	/* 
+	* Button Primary
+	*/ 
+	.button-primary {
+		font-size:14px;
+		padding:8px $_u;
+		height:auto;
+		text-shadow: 0 -1px 0 #000;
+		border-color: $dark;
+		background-color: #2e2e2e; 
+		@include border-radius(25px);
+		@include background-image(linear-gradient(left top, #3b3b3b, #212121)); 
+		@include box-shadow(rgba(255,255,255,0.3) 0 1px 0 inset,rgba(0,0,0,0.1) 0 0 0 1px, rgba(0,0,0,0.15) 0 1px 0 0);
+
+		&:hover {
+			@include background-image(linear-gradient(left top, #484848,#2e2e2e)); 
+		}
+	}
+
+	#wpGrade_import_demodata_button {
+		margin-top:-20px;
+	}
 }
 
 
 /*-----------------------------------------------*\
               COMPONENTS
 \*-----------------------------------------------*/
+
 
 
 /*
@@ -369,8 +393,8 @@ $heading-font: 'Open Sans', sans-serif;
 			content: " ";
 			display:block;
 			position:absolute;
-			top:0;
-			left:0;
+			top: 0;
+			left: 0;
 		}
 
 		&:after {
@@ -425,19 +449,9 @@ $heading-font: 'Open Sans', sans-serif;
 	//Checkbox - Social Icons Sortable
 	input[type='checkbox'].social-input-checkbox{
 		width: 30px !important;
-		margin: 4px 30px !important;
+		margin: 4px 14px 4px 39px !important;
 		vertical-align: top !important;
 	}
-
-	.checkbox_header{
-		width: 90px !important;
-		// margin: 0 30px !important;
-		text-align: center;
-		display: inline-block;
-	}
-
-
-
 
 	.form-table td {
 		font-size:14px;
@@ -541,7 +555,7 @@ $heading-font: 'Open Sans', sans-serif;
 			  position:absolute;
 			  right:0;
 			  top:-41px;
-			  z-index: 1;
+			  z-index: 0;
 		}
 
 		.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {
@@ -616,6 +630,9 @@ $heading-font: 'Open Sans', sans-serif;
 	*/
 
 	.redux-container-ace_editor .ace-wrapper {
+		z-index: 0;
+		position: relative;
+
 		.ace-editor-area {
 			border:1px solid $border-color;
 			@include border-radius(0);
@@ -813,6 +830,18 @@ $heading-font: 'Open Sans', sans-serif;
 			left:-45px;
 			padding-left:45px;
 
+			input[type="checkbox"] {
+				width: 30px !important;
+				margin: 4px 30px !important;
+				vertical-align: top !important;
+			}
+
+			.checkbox_header{
+				min-width: 80px;
+				text-align: center;
+				display: inline-block;
+			}
+
 			&:hover {
 				.drag {
 					opacity:1;
@@ -868,7 +897,25 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 
+/*
+* Import Demo data
+*/
+#wpGrade_import_demodata_button {
+	background:transparent;
+	border:none;
+}
+.wpGrade-import-wait {
 
+}
+
+.wpGrade-import-results {
+	&, i {
+		color:$light !important;
+		line-height:1.5;
+		font-style:normal;
+		font-size:$normal;
+	}
+}
 /*-----------------------------------------------*\
               SHAME
 \*-----------------------------------------------*/
