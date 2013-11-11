@@ -147,7 +147,7 @@ if ($slides->have_posts()): ?>
                             <h2 class="article__title article--billboard__title">
                                 <span class="hN"><?php the_title(); ?></span>
                             </h2>
-                            <span class="small-link"><?php echo $read_more_label; ?> &raquo;</span>
+                            <span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
                         </span>
                     </a>
                 </article>
