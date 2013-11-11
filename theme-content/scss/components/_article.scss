@@ -431,12 +431,12 @@
         @extend .image-wrap:after;
     }
     .rsSlide {
-        // height:100%;
+        
     }
 
     @include media-query(lap-and-up) {
         & {
-            // height: 625px;
+            height: 625px;
         }
     }
 }
