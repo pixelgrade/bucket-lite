@@ -437,7 +437,7 @@
     @include media-query(lap-and-up) {
         &.pixslider {
             height: 625px;
-            overflow:hidden;
+            // overflow:hidden;
         }
     }
 }
