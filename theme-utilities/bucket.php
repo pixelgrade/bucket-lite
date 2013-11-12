@@ -2591,3 +2591,6 @@ class wpGrade_Get_The_Image{
 
 }//wpGrade_Get_The_Image class
 
+function custom_warning_handler($errno, $errstr) {
+// do something - nothing right now
+}
