@@ -139,7 +139,7 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                 <article class="article  article--billboard">
                     <div>
-                        <img src="<?php echo $image[0] ?>" />
+                        <div class="rsImg"><?php echo $image[0] ?></div>
                     </div>
                     <a href="<?php the_permalink(); ?>">
                         <span class="article__header  article--billboard__header">

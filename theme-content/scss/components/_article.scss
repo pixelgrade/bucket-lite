@@ -440,7 +440,10 @@
     @include media-query(lap-and-up) {
         &.pixslider {
             height: 625px;
-            // overflow:hidden;
+            img {
+                width:100% !important;
+                height:auto !important;
+            }
         }
 
         .billboard--article-group {
