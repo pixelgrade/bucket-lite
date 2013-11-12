@@ -18,7 +18,7 @@
 .article__author-name {
     @extend .hN;
     @extend .delta;
-    color: $red;
+    color: $accent;
     display: inline-block;
     font-style: normal;
 }
@@ -435,8 +435,9 @@
     }
 
     @include media-query(lap-and-up) {
-        & {
+        &.pixslider {
             height: 625px;
+            overflow:hidden;
         }
     }
 }
