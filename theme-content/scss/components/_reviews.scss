@@ -20,20 +20,13 @@
 }
 
 .score__average {
-    // margin: 0 auto;
-    // position: absolute;
-    // top: 0; left: 0; bottom: 0; right: 0;
     width: 100%;
     @include rem(font-size, 72px);
-    
-    // @include rem(height, 72px);
-    // vertical-align: middle;
     text-align: center;
 }
 
 .average--with-note {
 
-    // @include rem(height, 108px);
 }
 
 .score__note {
@@ -45,11 +38,8 @@
     @include font-size(14px, false, 1.2);
     line-height:1.2;
     letter-spacing:1px;
-    // @include rem(height, $_u);
     @include rem(margin, $_u2 $_u2 0 $_u2);
     @include rem(padding-top, $_u2);
-    // overflow: hidden;
-    // white-space: nowrap;
     border-top: 1px dotted white;
 }
 
