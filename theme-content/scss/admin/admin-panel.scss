@@ -900,12 +900,15 @@ $heading-font: 'Open Sans', sans-serif;
 /*
 * Import Demo data
 */
-#wpGrade_import_demodata_button {
-	background:transparent;
+#wpGrade_import_demodata_button.redux-info-field {
+	background:transparent !important;
 	border:none;
 }
 .wpGrade-import-wait {
-
+	font-family: "PT Sans",sans-serif;
+	font-size: 13px;
+	color: #464646 !important;
+	font-style: normal;
 }
 
 .wpGrade-import-results {

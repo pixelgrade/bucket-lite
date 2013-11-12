@@ -21,6 +21,10 @@
     > div {
         @extend .masonry__item;
     }
+
+    &.fullwidth > div {
+        width:33.33%;
+    }
 }
 
 

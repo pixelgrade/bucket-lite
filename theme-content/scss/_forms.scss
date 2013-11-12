@@ -189,7 +189,7 @@ input[type="color"],
 /*------------------------------------*\
     DARK STATE (Footer)
 \*------------------------------------*/
-.site-footer {
+.site__footer {
     input, select, textarea {
         background:#262525;
         border:none;
@@ -199,15 +199,17 @@ input[type="color"],
       }
     }
 
-
-
     .form-group {
       .btn {
         line-height:1;
         height: 42px;
         padding:0 1em;
+        i {
+          color:$light;
+        }
       }
     }
+
 }
 
 

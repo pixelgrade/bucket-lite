@@ -431,12 +431,12 @@
         @extend .image-wrap:after;
     }
     .rsSlide {
-        // height:100%;
+        
     }
 
     @include media-query(lap-and-up) {
         & {
-            // height: 625px;
+            height: 625px;
         }
     }
 }
@@ -578,6 +578,7 @@
                     }
                 }
                 .article__title {
+
                     .hN {
                         color:white;
                         @include translate3d(30px 0 0); 
@@ -708,9 +709,9 @@
         @include transition(height 0.4s bezier(easeOutBack))
     }
 
-    // .article__title {
-    //     @include rem(height, $_2u);
-    // }
+    .article__title {
+        @include rem(height, $_2u);
+    }
 
     .article__description {
         color:$light;
