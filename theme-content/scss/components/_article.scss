@@ -11,6 +11,12 @@
     @include rem(margin-bottom, $_u2);
 }
 
+@include media-query(palm) {
+    .article__title--single{
+        @include font-size(32px);
+    }
+}
+
 .article__title__meta {
     @include rem(margin-bottom, $_u);
 }
