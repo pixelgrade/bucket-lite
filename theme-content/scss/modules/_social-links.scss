@@ -9,6 +9,12 @@ $icon-size: 32px;
     ul {
         text-align:center;
     }
+    
+    @include media-query(palm) { 
+        .share-total{
+            display: block;
+        }   
+    }
 }
 .share-item {
     text-align:center;
@@ -40,10 +46,18 @@ $icon-size: 32px;
         @include font-size(12px);
     }
 
-.share-total {
-    border-left:1px solid $dark;
-    padding-left:$_u;
-    margin-left:$_u;
+@include media-query(palm) {
+    .share-total, .share-item:first-child {
+        margin-left: 0;
+    }
+}
+
+@include media-query(lap-and-up) {
+    .share-total {
+        border-left:1px solid $dark;
+        padding-left:$_u;
+        margin-left:$_u;
+    }
 }
     .share-total__value {
         @include font-size(32px);
