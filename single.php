@@ -117,7 +117,8 @@ get_header(); ?>
 
                 <?php
 				if (get_field('enable_review_score')):
-					if (get_field('score_breakdown')): ?>
+					//don't show the breakdown if there is only one - it means the guy just wanted the average score
+					if (get_field('score_breakdown') && count(get_field('score_breakdown')) > 1 ): ?>
 						<h3><?php _e('The Breakdown', wpgrade::textdomain()); ?></h3>
 						<hr class="separator  separator--subsection">
 						<?php while (has_sub_fields('score_breakdown')): ?>
