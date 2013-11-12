@@ -318,7 +318,7 @@
 /**
  * Hero Posts Module
  */
- .article--thumb .image-wrap {
+.article--thumb .image-wrap {
 
 }
 
@@ -333,6 +333,10 @@
             color:$accent;
         }
     }
+}
+
+.image-wrap .article__title .hN {
+    width:80%;
 }
 
 
@@ -421,7 +425,6 @@
 .billboard {
     position: relative;
     @include rem(margin-bottom, $_u4);
-    // @include opacity(0);
     @include transition(opacity .5s linear);
     display: block;
 
@@ -749,6 +752,7 @@
 
         .article__thumb {
             position:relative;
+            @include translateZ(0);
             @include translateY(-8px);
             @include transition(all 0.4s bezier(easeOutBack))
         }
@@ -762,6 +766,7 @@
         .article__description {
             display:block;
             opacity:0;
+            @include translateZ(0);
             @include translateY(30px);
             @include transition(all 0.4s bezier(easeOutBack) 0.07s)
         }
