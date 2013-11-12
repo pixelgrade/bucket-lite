@@ -333,7 +333,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			// enable debugging messages
 			phpQuery::$debug = 0;
             $_doc = phpQuery::newDocumentHTML( $output );
-			var_dump($_doc->html());
+//			var_dump($_doc->html());
             if ($_doc->find('.sub-menu--mega:last > .grid')->html() != '') {
                 
                 if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
