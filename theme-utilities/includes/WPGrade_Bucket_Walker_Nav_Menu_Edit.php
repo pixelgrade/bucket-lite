@@ -11,9 +11,11 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		// append next menu element to $output
 		parent::start_el($output, $item, $depth, $args);
 		
+		set_error_handler("custom_warning_handler", E_WARNING);
+		
 		if ( ! class_exists( 'phpQuery') ) {
 			// load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
-			require_once 'phpQuery-onefile.php';
+			require_once 'vendor/phpQuery.php';
 		}
 		// enable debugging messages
 		phpQuery::$debug = 0;
@@ -57,6 +59,8 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		
 		// swap the $output
 		$output = $_doc->html();
+		
+		restore_error_handler();
 		
 	}
 
