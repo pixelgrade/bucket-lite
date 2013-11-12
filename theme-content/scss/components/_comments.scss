@@ -26,6 +26,11 @@
         margin-top: 0;
         margin-bottom: 0;
         float: left;
+        @include rem(margin-right, $_u2);
+
+        @include media-query(palm) {
+            @include font-size(16px);
+        }
 
         em {
             font-style: normal;
@@ -38,7 +43,6 @@
     @extend .btn;
     @extend .btn--small;
     @extend .btn--primary;
-    @include rem(margin-left, $_u2);
     margin-top: .225em;
     float: left;
 }

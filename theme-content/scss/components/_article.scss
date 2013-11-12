@@ -11,6 +11,12 @@
     @include rem(margin-bottom, $_u2);
 }
 
+@include media-query(palm) {
+    .article__title--single{
+        @include font-size(32px);
+    }
+}
+
 .article__title__meta {
     @include rem(margin-bottom, $_u);
 }
@@ -18,7 +24,7 @@
 .article__author-name {
     @extend .hN;
     @extend .delta;
-    color: $red;
+    color: $accent;
     display: inline-block;
     font-style: normal;
 }
@@ -435,8 +441,17 @@
     }
 
     @include media-query(lap-and-up) {
-        & {
+        &.pixslider {
             height: 625px;
+            // overflow:hidden;
+        }
+
+        .billboard--article-group {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
         }
     }
 }
