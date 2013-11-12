@@ -25,7 +25,7 @@
                 <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
                 <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
 				<?php  if (function_exists( 'get_pixlikes' )): ?>
-                <li><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
+                <li><i class="icon-heart"></i> <?php if ( function_exists('get_pixlikes') ) {echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID()));} ?></li>
 				<?php endif; ?>
             </ul>
         </div>
