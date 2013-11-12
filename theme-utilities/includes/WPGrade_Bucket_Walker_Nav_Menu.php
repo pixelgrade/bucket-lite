@@ -323,13 +323,17 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
         
         // parse the HTML and find the megamenu posts and switch them with the submenus so those are first
         if ($depth == 0) {
+			
+			set_error_handler("custom_warning_handler", E_WARNING);
+			
             if ( ! class_exists( 'phpQuery') ) {
                 // load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
-                require_once 'phpQuery-onefile.php';
+                require_once 'vendor/phpQuery.php';
             }
 			// enable debugging messages
 			phpQuery::$debug = 0;
             $_doc = phpQuery::newDocumentHTML( $output );
+			var_dump($_doc->html());
             if ($_doc->find('.sub-menu--mega:last > .grid')->html() != '') {
                 
                 if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
@@ -361,6 +365,8 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             
             // swap the $output
             $output = $_doc->html();
+			
+			restore_error_handler();
         }
     }
 
