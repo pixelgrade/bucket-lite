@@ -231,3 +231,8 @@
     font-style: italic;
 }
 
+.widget--footer.widget_text .wp-caption-text {
+    background-color: $dark;
+    color:$light;
+}
+

@@ -31,11 +31,6 @@
     width: auto !important;
     max-width: 100%;
     @include rem(margin-bottom, $_u + $_u2);
-
-    img {
-        width: 100%;
-        display: block;
-    }
 }
 
 .wp-caption-text {
