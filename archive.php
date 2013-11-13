@@ -18,35 +18,35 @@ get_header(); ?>
 
 <div id="main" class="container container--main">
 
-    <div class="grid">
+	<div class="grid">
 
-        <div class="grid__item  two-thirds  palm-one-whole">
-            <?php if (have_posts()): ?>
-                <div class="heading  heading--main">
-                    <h2 class="hN"><?php
+		<div class="grid__item  two-thirds  palm-one-whole">
+			<?php if (have_posts()): ?>
+				<div class="heading  heading--main">
+					<h2 class="hN"><?php
 
 						$var = get_query_var('post_format');
 						// POST FORMATS
 						if ($var == 'post-format-aside') :
-							 _e('Aside Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-image') : 
-							 _e('Image Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-link') : 
-							 _e('Link Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-quote') : 
-							 _e('Quote Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-status') : 
-							 _e('Status Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-gallery') : 
-							 _e('Gallery Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-video') : 
-							 _e('Video Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-audio') : 
-							 _e('Audio Archives', wpgrade::textdomain());
-						elseif ($var == 'post-format-chat') : 
-							 _e('Chat Archives', wpgrade::textdomain());
+							_e('Aside Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-image') :
+							_e('Image Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-link') :
+							_e('Link Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-quote') :
+							_e('Quote Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-status') :
+							_e('Status Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-gallery') :
+							_e('Gallery Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-video') :
+							_e('Video Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-audio') :
+							_e('Audio Archives', wpgrade::textdomain());
+						elseif ($var == 'post-format-chat') :
+							_e('Chat Archives', wpgrade::textdomain());
 						endif;
- 
+
 						if ( is_day() ) :
 							printf( __( 'Daily Archives: %s', wpgrade::textdomain() ), get_the_date() );
 						elseif ( is_month() ) :
@@ -57,30 +57,28 @@ get_header(); ?>
 							_e( 'Archives', wpgrade::textdomain() );
 						endif;
 					?></h2>
-                </div>
-                
-                
-                <?php if(wpgrade::option('nav_inverse_top') == 'masonry') { ?>
-                	<div class="grid  masonry" data-columns>
-                <?php } else { ?>
-                <div class="grid  classic">
-                <?php } ?>
-                
-                    <?php while (have_posts()): the_post(); ?><!--
-                        --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
-                 --><?php endwhile; ?>
-                </div>
-                
-                
-				<?php echo wpgrade::pagination();
-	        else: get_template_part( 'no-results', 'index' ); endif; ?>
-        </div><!--
-        
-     --><div class="grid__item  one-third  palm-one-whole  sidebar">
-            <?php get_sidebar(); ?>
-        </div>
+				</div>
 
-    </div>
-</div>
-    
+				<?php if(wpgrade::option('blog_layout') == 'masonry') {
+					$grid_class= 'class="grid  masonry" data-columns';
+				} else {
+					$grid_class = 'class="classic"';
+				} ?>
+
+				<div <?php echo $grid_class;?>>
+					<?php while (have_posts()): the_post(); ?><!--
+		                --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
+		         --><?php endwhile; ?>
+				</div>
+				<?php echo wpgrade::pagination();
+				else: get_template_part( 'no-results', 'index' ); endif; ?>
+			</div><!--
+
+     --><div class="grid__item  one-third  palm-one-whole  sidebar">
+				<?php get_sidebar(); ?>
+		</div>
+
+		</div>
+	</div>
+
 <?php get_footer(); ?>
