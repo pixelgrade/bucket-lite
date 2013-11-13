@@ -127,17 +127,6 @@ $sections[] = array(
 	'desc' => sprintf('<p class="description">'.__('Article options control the various aspects related to displaying posts both in archives and single articles. You can control things like excerpt length and social sharing.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
-			'id' => 'blog_layout',
-			'type' => 'image_select',
-			'title' => __('Blog Layout', wpgrade::textdomain()),
-			'subtitle' => __('Choose the layout for blog areas(blog, archives, search results etc.).', wpgrade::textdomain()),
-			'default' => 'masonry',
-			'options' => array(
-				'masonry' => array('Masonry', 'img' => wpgrade::resourceuri('images/header-type1.png')),
-				'classic' => array('Classic', 'img' => wpgrade::resourceuri('images/header-type2.png')),
-			)
-		),
-		array(
 			'id' => 'blog_single_show_share_links',
 			'type' => 'switch',
 			'title' => __('Show Share Links', wpgrade::textdomain()),
@@ -173,6 +162,17 @@ $sections[] = array(
 			'desc'=> __('<h3>Blog Archive</h3>', wpgrade::textdomain()),
 			'type' => 'info'
 		), 
+		array(
+			'id' => 'blog_layout',
+			'type' => 'image_select',
+			'title' => __('Blog Posts Layout', wpgrade::textdomain()),
+			'subtitle' => __('Choose the layout for blog areas (eg. blog archive page, categories, search results).', wpgrade::textdomain()),
+			'default' => 'masonry',
+			'options' => array(
+				'masonry' => array('Masonry', 'img' => wpgrade::resourceuri('images/blog-masonry.png')),
+				'classic' => array('Classic', 'img' => wpgrade::resourceuri('images/blog-classic.png')),
+			)
+		),
 		array(
 			'id' => 'blog_excerpt_length',
 			'type' => 'text',

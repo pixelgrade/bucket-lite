@@ -427,7 +427,6 @@
 .billboard {
     position: relative;
     @include rem(margin-bottom, $_u4);
-    // @include opacity(0);
     @include transition(opacity .5s linear);
     display: block;
     height: 367px;
@@ -489,7 +488,7 @@
 
 .article--billboard {
     // position: static;
-    border-bottom:#{$_2u - 5px} solid #fff; 
+    
     width: 100%;
 
     & > a {
@@ -497,6 +496,7 @@
     }
 
     @include media-query(lap-and-up) {
+        border-bottom:#{$_2u - 5px} solid #fff; 
         &:after {
             content:"";
             width:100%;
@@ -561,7 +561,7 @@
     color: $dark;
     @include rem(margin, 0 0 0 #{-$_2u});
     @include rem(padding, 9px $_u2 9px $_2u);
-    @include font-size(25px);
+    @include font-size(19px);
     line-height:1.2;
     clear: left;
 
@@ -599,7 +599,7 @@
                     }
                 }
                 .article__title {
-
+                    @include font-size(25px);
                     .hN {
                         color:white;
                         @include translate3d(30px 0 0); 
@@ -823,8 +823,11 @@
     }
 
     @include media-query(palm) {
+        @include rem(padding, 9px 0);
+        margin-bottom:0;
+
         .hN {
-            @include font-size(25px);
+            @include font-size(19px);
         }
     }
 }
@@ -841,6 +844,8 @@
 .content-module {
     @include rem(margin-bottom, $_u + $_u4);    
 }
+
+
 
 /**
  * Password protected article
