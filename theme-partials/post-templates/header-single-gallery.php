@@ -64,11 +64,11 @@
                 //  if there is a video let royal slider know about it
                 if ( !empty($video_url) ) { ?>
                     <div class="gallery__item video">
-                        <img src="<?php echo $thumbimg[0]; ?>" class="rsImg" data-rsVideo="<?php echo $video_url; ?>" />
+                        <img src="<?php echo $thumbimg[0]; ?>" class="rsImg  invisible" data-rsVideo="<?php echo $video_url; ?>" />
                     </div>
                 <?php } else { ?>
                     <div class="gallery__item" itemscope itemtype="http://schema.org/ImageObject" >
-                        <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big rsImg" alt="" itemprop="contentURL" />
+                        <img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big  rsImg  invisible" alt="" itemprop="contentURL" />
                     </div>
                 <?php }
             endforeach; ?>

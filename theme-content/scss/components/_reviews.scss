@@ -3,12 +3,17 @@
 \*---------------------------------*/
 
 .score-box {
-        @include rem(max-width, 145px);
-        margin:0 auto 24px;
+    @include rem(max-width, 145px);
+    margin:0 auto 24px;
 
-        @include media-query(lap-and-up) {
-            margin:0;
-        }
+    @include media-query(lap-and-up) {
+        margin:0;
+    }
+
+    .center-score &{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .score__average-wrapper {
@@ -44,6 +49,14 @@
     border-top: 1px dotted white;
 }
 
+.score-box--after-text{
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    @include font-size(32px);
+    font-family: "Arvo", serif;
+}
+
 .review__score {
     position: relative;
 }
@@ -60,8 +73,8 @@
 .score__badge {
     width: 1.75em;
     position: absolute;
-    @include rem(bottom, 6px);
-    right: 0;
+    @include rem(bottom, 7px);
+    right: -1px;
     z-index: 20;
 
     &:after {

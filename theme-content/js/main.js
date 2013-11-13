@@ -1493,6 +1493,8 @@
     */
     function sliderInit($slider){
 
+          $slider.find('img').removeClass('invisible');
+
           var $children = $(this).children(),
               rs_arrows = typeof $slider.data('arrows') !== "undefined",
               rs_bullets = typeof $slider.data('bullets') !== "undefined" ? "bullets" : "none",
