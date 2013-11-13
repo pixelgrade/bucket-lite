@@ -151,8 +151,9 @@ $_8u   : 8 * $_u; // 192px
 
 //HELPERS
 @import "core";
-@import "masonry";
 @import "images";
+@import "post-masonry";
+@import "post-classic";
 
 //PAGES
 @import "single";

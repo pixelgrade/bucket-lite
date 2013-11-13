@@ -1,0 +1,60 @@
+/*---------------------------------*\
+         CLASSIC POST LAYOUT
+\*---------------------------------*/
+
+.classic {
+	& > div {
+		width:100%;
+		text-align:left;
+		@include rem(margin-bottom, 5px);
+
+		&:last-child hr {
+			display:none;
+		}
+	}
+
+	.media__img--rev { 
+		float:left;
+		margin-left:0;
+	}
+
+	.media__body {
+
+	}
+		.article__title{
+			height:auto;
+			line-height:1.2;
+			width:100%;
+			position:relative;
+		}
+		.article--grid__body {
+			padding:0;
+		}
+			.article__content {
+				padding:0;
+				text-align:left;
+			}
+		.article__category {
+				a {
+					margin-right:6px;
+
+					&:hover:after {
+						text-decoration:none;
+					}
+					&:after {
+						content:"|";
+						color:$dark;
+						position:relative;
+						top:-1px;
+						margin-left:6px;
+					}
+					&:last-child {
+						&:after {
+							content:"";
+						}
+					}
+				}
+		}
+		.article__meta-links {
+		}
+}

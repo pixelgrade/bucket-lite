@@ -21,9 +21,15 @@ get_header(); ?>
 				<?php if ( category_description() ) : // Show an optional category description ?>
 				    <div class="archive-meta"><?php echo category_description(); ?></div>
 				<?php endif; ?>
-                <div class="grid  masonry" data-columns>
+                
+                <?php if(wpgrade::option('blog_layout') == 'masonry') { ?>
+                    <div class="grid  masonry" data-columns>
+                <?php } else { ?>
+                <div class="classic">
+                <?php } ?>
+                
                     <?php while (have_posts()): the_post(); ?><!--
-                        --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
+                        --><div class="<?php echo wpgrade::option('blog_layout')?>__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
                 <?php echo wpgrade::pagination();

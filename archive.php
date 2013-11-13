@@ -58,11 +58,20 @@ get_header(); ?>
 						endif;
 					?></h2>
                 </div>
-                <div class="grid  masonry" data-columns>
+                
+                
+                <?php if(wpgrade::option('nav_inverse_top') == 'masonry') { ?>
+                	<div class="grid  masonry" data-columns>
+                <?php } else { ?>
+                <div class="grid  classic">
+                <?php } ?>
+                
                     <?php while (have_posts()): the_post(); ?><!--
                         --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
+                
+                
 				<?php echo wpgrade::pagination();
 	        else: get_template_part( 'no-results', 'index' ); endif; ?>
         </div><!--
