@@ -13,7 +13,15 @@
 global $wp_query;
 $wp_query->query_vars['thumbnail_size'] = 'blog-medium';
 
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$paged = (get_query_var('paged')) ? get_query_var('paged') : '';
+if( empty($paged)){
+	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+}
+
+if( empty($paged)){
+	$paged = 1;
+}
+
 $number_of_posts = get_sub_field('number_of_posts');
 
 $args = array(
@@ -51,9 +59,9 @@ if ($latest_query->have_posts()):
 
 
 	// pagination is not made to work on homepage http://codex.wordpress.org/Creating_a_Static_Front_Page#Pagination
-	if ( get_sub_field('pagination') == 'enable' && !is_front_page() ){
+//	if ( get_sub_field('pagination') == 'enable' && !is_front_page() ){
 		echo wpgrade::pagination($latest_query);
-	}
+//	}
 
 	if ( $has_sidebar ): ?>
             </div><!--

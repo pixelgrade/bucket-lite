@@ -31,20 +31,17 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$prefix = '';
 	$suffix = '<!--';
 
-//	$current = '';
 	$current = (get_query_var('paged')) ? get_query_var('paged') : '';
-//	if ( isset( $_REQUEST['paged'] ) ) {
-//		$current = $_REQUEST['paged'];
-//	}
+	if( empty($current)){
+		$current = (get_query_var('page')) ? get_query_var('page') : '';
+	}
 
 	foreach ( $links as $key => &$link ) {
 
 		if ( $key == $linkcount - 1 ) {
 			$suffix = '';
 		}
-
 		$class = '';
-		
 		switch ( $key ) {
 			case $current:
 				$class .= 'class="pagination-item pagination-item--current"';
@@ -54,6 +51,11 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 				break;
 			case $linkcount - 1:
 				$class .= 'class="pagination-item pagination-item--next"';
+				break;
+			case 1:
+				if ( is_front_page() && $current != '') {
+					$link = "<a class='page-numbers' href='" . home_url() ."'>1</a>";
+				}
 				break;
 			default:
 				break;

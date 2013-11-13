@@ -66,11 +66,15 @@ get_header(); ?>
 		        wp_link_pages( $args ); ?>
 
                 <div class="grid"><!--
-                    <?php if ( bucket::has_average_score() && get_field('placement') == ('after') ) { ?>
-                     --><div class="grid__item lap-and-up-two-eighths">
-                     <div class="score-box score-box--after">
+                    <?php if ( bucket::has_average_score() && get_field('placement') == ('after') ) :
+                    if(!get_field('enable_pros_cons_lists')) : ?>
+                    --><div class="grid__item center-score">
+                    <?php else: ?>
+                    --><div class="grid__item lap-and-up-two-eighths">
+                    <?php endif; ?>   
+                    <div class="score-box score-box--after">
                         <div class="score__average-wrapper">
-                            <div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
+                            <div class="score__average  <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
                                 <?php
                                     echo '<div class="score__note">'.bucket::get_average_score().'</div>';
                                     if (get_field('note')) {
@@ -81,8 +85,8 @@ get_header(); ?>
                         </div>
                     </div>
                             
-                        </div><!--
-                    <?php }
+                    </div><!--
+                    <?php endif;
                     if (get_field('enable_pros_cons_lists')): ?>
                      --><div class="grid__item lap-and-up-six-eighths">
                             <div class="grid">
