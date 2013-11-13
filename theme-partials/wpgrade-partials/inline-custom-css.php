@@ -152,9 +152,7 @@ if ( isset($fonts['google_body_font']) ) {
     if(isset($fonts['google_body_font']['font-size'])) {
         $font_size = $fonts['google_body_font']['font-size'];
         unset($fonts['google_body_font']['font-size']);
-    }
-
-    ?>
+    } ?>
 	/* Select classes here */
 	html, .wp-caption-text, .small-link, 
     .post-nav-link__label, .author__social-link,
@@ -168,7 +166,6 @@ if ( isset($fonts['google_body_font']) ) {
     .footer__widget-area  {
         font-size: <?php echo $font_size ?>;
     }
-       
 
 <?php }
 

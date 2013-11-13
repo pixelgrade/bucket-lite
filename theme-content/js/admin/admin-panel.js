@@ -59,8 +59,8 @@
 							setTimeout(function() {
 								$('body').wpGrade_popup({
 									title: 'Phew...that was a hard one!',
-									text: 'The demo data was imported without a glitch! Awesome! <br/><br/>Remember to update the passwords and roles of imported users. <br/>Also don\'t forget to change the email address in the Contact Form 7 form. <br/><br/><i>We will now reload the page so you can see the brand new data!</i>',
-									time_to_show:12000
+									text: 'The demo data was imported without a glitch! Awesome! <br/><br/>Remember to update the passwords and roles of imported users. <br/><br/><i>We will now reload the page so you can see the brand new data!</i>',
+									time_to_show:9000
 								}, function() {
 									window.location.hash = "#wpwrap";
 									window.location.reload(true);
