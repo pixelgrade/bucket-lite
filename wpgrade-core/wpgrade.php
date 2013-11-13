@@ -114,10 +114,14 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option_image_src($option, $default = null) {
-		$image = self::$options_handler->get($option, $default);
+		if ( isset( $_GET[$option]) && !empty($option) ) {
+			return $_GET[$option];
+		} else {
+			$image = self::$options_handler->get($option, $default);
 
-		if ( isset($image['url']) ) {
-			return $image['url'];
+			if ( isset($image['url']) ) {
+				return $image['url'];
+			}
 		}
 		return false;
 	}

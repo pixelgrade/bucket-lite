@@ -430,6 +430,7 @@
     // @include opacity(0);
     @include transition(opacity .5s linear);
     display: block;
+    height: 367px;
 
     &:before {
         @extend .preloader;
@@ -724,10 +725,6 @@
         @include transition(height 0.4s bezier(easeOutBack))
     }
 
-    .article__title {
-        @include rem(height, $_2u);
-    }
-
     .article__description {
         color:$light;
         font-size:13px;
@@ -736,6 +733,7 @@
         display:none;
         
     }
+
     .small-link {
         display:none;
     }
@@ -758,6 +756,11 @@
             @include translateY(-8px);
             @include transition(all 0.4s bezier(easeOutBack))
         }
+
+        .article__title {
+            @include rem(height, $_2u);
+        }        
+
         .article__content {
             @include rem(padding, $_u2);
             height:135px;
@@ -765,12 +768,14 @@
             bottom:0;
             left:0;
         }
+
         .article__description {
             display:block;
             opacity:0;
             @include translateY(30px);
             @include transition(all 0.4s bezier(easeOutBack) 0.07s)
         }
+
         .small-link {
             display:block;
             position:absolute;

@@ -81,9 +81,6 @@
 
     </footer><!-- .site__footer -->
 
-    <!-- Google Analytics tracking code -->
-    <?php echo wpgrade::option( 'google_analytics' ) . "\n"; ?>
-
     </div>
 <?php wp_footer(); ?>
 </body>

@@ -834,7 +834,7 @@
 
     function resizeVideos() {
     
-        var videos = $('.video-wrap iframe, video');
+        var videos = $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"], video');
 
         videos.each(function() {
             var video = $(this),
@@ -847,7 +847,7 @@
 
     function initVideos() {
 
-        var videos = $('.video-wrap iframe, video');
+        var videos = $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"], video');
 
         // Figure out and save aspect ratio for each video
         videos.each(function() {
@@ -860,8 +860,8 @@
         resizeVideos();
 
         // Firefox Opacity Video Hack
-        $('.video-wrap iframe').each(function(){
-            var url = $(this).attr("src"); console.log(url);
+        $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function(){
+            var url = $(this).attr("src");
             $(this).attr("src", url+"?wmode=transparent");
         });
     }
@@ -1461,7 +1461,7 @@
 
       $('.js-post-gallery').each(function() { // the containers for all your galleries should have the class gallery
           $(this).magnificPopup({
-              delegate: 'a[href$=".jpg"], a[href$=".png"], a[href$=".gif"]', // the container for each your gallery items
+              delegate: 'a[href$=".jpg"], a[href$=".jpeg"], a[href$=".png"], a[href$=".gif"]', // the container for each your gallery items
               type: 'image',
               removalDelay: 500,
               mainClass: 'mfp-fade',
@@ -1949,7 +1949,6 @@
 
     /* ====== ON RESIZE ====== */
 
-    //$(window).resize(function(e){});
     $(window).on("debouncedresize", function(e){
         resizeVideos();
         slider_billboard();

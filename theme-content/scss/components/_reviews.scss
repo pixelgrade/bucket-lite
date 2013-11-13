@@ -1,0 +1,115 @@
+/*---------------------------------*\
+               REVIEWS
+\*---------------------------------*/
+
+.score-box {
+        @include rem(max-width, 145px);
+        margin:0 auto 24px;
+
+        @include media-query(lap-and-up) {
+            margin:0;
+        }
+}
+
+.score__average-wrapper {
+    @extend .hN;
+    position: relative;
+    background-color: $accent;
+    color: white;
+    @include rem(padding, $_u2 0);
+}
+
+.score__average {
+    width: 100%;
+    @include rem(font-size, 72px);
+    text-align: center;
+}
+
+.score__note {
+    line-height: 1;
+    @include rem(padding, $_u 0);
+}   
+
+.average--with-desc .score__note{
+    padding: 0;
+}
+
+.score__desc {
+    font-family:$base-font-family;
+    @include font-size(14px, false, 1.2);
+    line-height:1.2;
+    letter-spacing:1px;
+    @include rem(margin, $_u2 $_u2 0 $_u2);
+    @include rem(padding-top, $_u2);
+    border-top: 1px dotted white;
+}
+
+.review__score {
+    position: relative;
+}
+
+.score__label {
+    @extend .hN;
+    @extend .delta;
+}
+
+.score__progressbar {
+    @include rem(margin-bottom, $_u);
+}
+
+.score__badge {
+    width: 1.75em;
+    position: absolute;
+    @include rem(bottom, 6px);
+    right: 0;
+    z-index: 20;
+
+    &:after {
+        display: none;
+    }
+}
+
+.score__pros__title,
+.score__cons__title {
+    color: $red;
+    border-bottom: 1px dotted #b2b2b2;
+    @include rem(margin-bottom, $_u4);
+
+    .hN {
+        @include font-size(15px, false);
+        line-height:1;
+        margin-top: 0;
+        @include rem(margin-bottom, $_u2); 
+    }
+}
+
+.score__pros__list,
+.score__cons__list {
+    list-style-position: inside;
+    margin-left: 0; 
+    @include font-size(14px);
+
+
+    li {
+        margin-bottom:3px;
+    }
+
+
+    @include media-query(lap-and-up) {
+        margin-bottom:0;
+    }
+}
+
+
+// Positioning
+.score-box--before {
+    @include rem(width, 145px);
+    float:left;
+    @include rem(margin-top, $_u2);
+    @include rem(margin-right, $_u);
+    @include rem(margin-bottom, $_u);
+}
+
+.score-box--after {
+
+}
