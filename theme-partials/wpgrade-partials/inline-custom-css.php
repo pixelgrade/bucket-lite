@@ -109,7 +109,31 @@ ol {
 
 if ( isset($fonts['google_titles_font']) ) {?>
 	/* Select classes here */
-	.site-home-link, .heading .hN, .article--grid__title .hN, .article--grid__title .article__author-name, .article--grid__title .comment__author-name, .article--grid__title .widget_calendar caption, .widget_calendar .article--grid__title caption, .article--grid__title .score__average-wrapper, .article--grid__title .score__label {
+    .badge, h1, h2, h3, h4, h5, h6, hgroup,
+    .hN, .article__author-name, .comment__author-name, 
+    .score__average-wrapper, .score__label, 
+    .widget_calendar caption, blockquote,
+    .tabs__nav, .popular-posts__time,
+    .heading .hN, .widget--sidebar__title .hN, 
+    .widget--footer__title .hN, .heading .article__author-name, 
+    .widget--sidebar__title .article__author-name, 
+    .widget--footer__title .article__author-name, 
+    .heading .comment__author-name, 
+    .widget--sidebar__title .comment__author-name, 
+    .widget--footer__title .comment__author-name, 
+    .heading .score__average-wrapper, 
+    .widget--sidebar__title .score__average-wrapper, 
+    .widget--footer__title .score__average-wrapper, 
+    .heading .score__label, .widget--sidebar__title .score__label, 
+    .widget--footer__title .score__label, .heading .widget_calendar caption, 
+    .widget_calendar .heading caption, 
+    .widget--sidebar__title .widget_calendar caption, 
+    .widget_calendar .widget--sidebar__title caption, 
+    .widget--footer__title .widget_calendar caption, 
+    .widget_calendar .widget--footer__title caption,
+    .score-box--after-text, .latest-comments__author,
+    .review__title, .share-total__value, .pagination li a, .pagination li span
+      {
 		<?php wpgrade::display_font_params($fonts['google_titles_font']); ?>
 	}
 
@@ -117,7 +141,7 @@ if ( isset($fonts['google_titles_font']) ) {?>
 
 if ( isset($fonts['google_nav_font']) ) {?>
 	/* Select classes here */
-	.nav--top>li>a, .nav--main>li>a {
+    nav {
 		<?php wpgrade::display_font_params($fonts['google_nav_font']); ?>
 	}
 
@@ -125,7 +149,9 @@ if ( isset($fonts['google_nav_font']) ) {?>
 
 if ( isset($fonts['google_body_font']) ) {?>
 	/* Select classes here */
-	.article, .latest-comments__list {
+	html, .wp-caption-text, .small-link, 
+    .post-nav-link__label, .author__social-link,
+    .comment__links, .score__desc  {
 		<?php wpgrade::display_font_params($fonts['google_body_font']); ?>
 	}
 
