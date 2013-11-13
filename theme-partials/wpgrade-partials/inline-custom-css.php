@@ -147,13 +147,28 @@ if ( isset($fonts['google_nav_font']) ) {?>
 
 <?php }
 
-if ( isset($fonts['google_body_font']) ) {?>
+if ( isset($fonts['google_body_font']) ) {
+
+    if(isset($fonts['google_body_font']['font-size'])) {
+        $font_size = $fonts['google_body_font']['font-size'];
+        unset($fonts['google_body_font']['font-size']);
+    }
+
+    ?>
 	/* Select classes here */
 	html, .wp-caption-text, .small-link, 
     .post-nav-link__label, .author__social-link,
     .comment__links, .score__desc  {
 		<?php wpgrade::display_font_params($fonts['google_body_font']); ?>
 	}
+ 
+    /* Size Classes */
+    .article, .single .main, .page .main, 
+    .comment__content,
+    .footer__widget-area  {
+        font-size: <?php echo $font_size ?>;
+    }
+       
 
 <?php }
 
