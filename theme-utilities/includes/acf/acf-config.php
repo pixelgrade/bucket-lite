@@ -619,6 +619,21 @@ if(function_exists("register_field_group"))
 							),
 							array (
 								'key' => 'field_526115b90664b',
+								'label' => __('Posts Format', 'bucket_txtd'),
+								'name' => 'posts_format',
+								'type' => 'radio',
+								'column_width' => '',
+								'choices' => array (
+									'masonry' => __('Masonry', 'bucket_txtd'),
+									'clasic' => __('Classic', 'bucket_txtd'),
+								),
+								'other_choice' => 0,
+								'save_other_choice' => 0,
+								'default_value' => 'masonry',
+								'layout' => 'horizontal',
+							),
+							array (
+								'key' => 'field_526115b90664c',
 								'label' => __('Pagination', 'bucket_txtd'),
 								'name' => 'pagination',
 								'type' => 'radio',
@@ -633,7 +648,7 @@ if(function_exists("register_field_group"))
 								'layout' => 'horizontal',
 							),
 							array (
-								'key' => 'field_526115fb0664c',
+								'key' => 'field_526115fb0664d',
 								'label' => __('Section Title', 'bucket_txtd'),
 								'name' => 'section_title',
 								'type' => 'text',
@@ -646,7 +661,7 @@ if(function_exists("register_field_group"))
 								'maxlength' => '',
 							),
 							array (
-								'key' => 'field_5261161a0664d',
+								'key' => 'field_5261161a0664e',
 								'label' => __('Sidebar', 'bucket_txtd'),
 								'name' => 'sidebar',
 								'type' => 'radio',
