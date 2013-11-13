@@ -324,7 +324,7 @@
 /**
  * Hero Posts Module
  */
-.article--thumb .image-wrap {
+ .article--thumb .image-wrap {
 
 }
 
@@ -339,10 +339,6 @@
             color:$accent;
         }
     }
-}
-
-.image-wrap .article__title .hN {
-    width:80%;
 }
 
 
@@ -431,6 +427,7 @@
 .billboard {
     position: relative;
     @include rem(margin-bottom, $_u4);
+    // @include opacity(0);
     @include transition(opacity .5s linear);
     display: block;
 
@@ -446,10 +443,7 @@
     @include media-query(lap-and-up) {
         &.pixslider {
             height: 625px;
-            img {
-                width:100% !important;
-                height:auto !important;
-            }
+            // overflow:hidden;
         }
 
         .billboard--article-group {
@@ -730,10 +724,6 @@
         @include transition(height 0.4s bezier(easeOutBack))
     }
 
-    .article__title {
-        @include rem(height, $_2u);
-    }
-
     .article__description {
         color:$light;
         font-size:13px;
@@ -742,6 +732,7 @@
         display:none;
         
     }
+    
     .small-link {
         display:none;
     }
@@ -761,10 +752,14 @@
 
         .article__thumb {
             position:relative;
-            @include translateZ(0);
             @include translateY(-8px);
             @include transition(all 0.4s bezier(easeOutBack))
         }
+
+        .article__title {
+            @include rem(height, $_2u);
+        }        
+
         .article__content {
             @include rem(padding, $_u2);
             height:135px;
@@ -772,13 +767,14 @@
             bottom:0;
             left:0;
         }
+
         .article__description {
             display:block;
             opacity:0;
-            @include translateZ(0);
             @include translateY(30px);
             @include transition(all 0.4s bezier(easeOutBack) 0.07s)
         }
+
         .small-link {
             display:block;
             position:absolute;
