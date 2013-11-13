@@ -479,6 +479,21 @@ if(function_exists("register_field_group"))
 								'multiple' => 0,
 							),
 							array (
+								'key' => 'field_526115b90fc99',
+								'label' => __('Posts Format', 'bucket_txtd'),
+								'name' => 'posts_format',
+								'type' => 'radio',
+								'column_width' => '',
+								'choices' => array (
+									'masonry' => __('Masonry', 'bucket_txtd'),
+									'classic' => __('Classic', 'bucket_txtd'),
+								),
+								'other_choice' => 0,
+								'save_other_choice' => 0,
+								'default_value' => 'masonry',
+								'layout' => 'horizontal',
+							),
+							array (
 								'key' => 'field_52613ee739972',
 								'label' => __('Category', 'bucket_txtd'),
 								'name' => 'posts_source_category',
@@ -625,7 +640,7 @@ if(function_exists("register_field_group"))
 								'column_width' => '',
 								'choices' => array (
 									'masonry' => __('Masonry', 'bucket_txtd'),
-									'clasic' => __('Classic', 'bucket_txtd'),
+									'classic' => __('Classic', 'bucket_txtd'),
 								),
 								'other_choice' => 0,
 								'save_other_choice' => 0,

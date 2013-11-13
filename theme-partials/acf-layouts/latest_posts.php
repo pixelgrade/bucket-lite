@@ -32,6 +32,8 @@ if ( get_sub_field('sidebar') == 'enable' ) {
 	$has_sidebar = false;
 }
 
+$blog_layout = get_sub_field('posts_format');
+
 if ($latest_query->have_posts()):
     if ( $has_sidebar ): ?>
         <div class="grid">
@@ -40,9 +42,9 @@ if ($latest_query->have_posts()):
 		<div class="heading  heading--main">
 			<h2 class="hN"><?php the_sub_field('section_title'); ?></h2>
 		</div>
-        <div class="masonry  grid <?php echo $has_sidebar ? '' : 'fullwidth' ?>" data-columns><!--
-            <?php while($latest_query->have_posts()): $latest_query->the_post(); ?>
-             --><div><?php get_template_part('theme-partials/post-templates/content-blog'); ?></div><!--
+        <div class="grid <?php echo $blog_layout; echo $has_sidebar ? '' : 'fullwidth' . ''; ?>" data-columns><!--
+            <?php while($latest_query->have_posts()): $latest_query->the_post();  ?>
+                --><div><?php get_template_part('theme-partials/post-templates/content-'. $blog_layout); ?></div><!--
             <?php endwhile; wp_reset_postdata(); ?>
      --></div>
     <?php
