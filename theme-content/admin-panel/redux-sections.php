@@ -123,9 +123,20 @@ $sections[] = array(
 
 $sections[] = array(
 	'icon' => 'pencil-1',
-	'title' => __('Article', wpgrade::textdomain()),
+	'title' => __('Articles', wpgrade::textdomain()),
 	'desc' => sprintf('<p class="description">'.__('Article options control the various aspects related to displaying posts both in archives and single articles. You can control things like excerpt length and social sharing.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
+		array(
+			'id' => 'blog_layout',
+			'type' => 'image_select',
+			'title' => __('Blog Layout', wpgrade::textdomain()),
+			'subtitle' => __('Choose the layout for blog areas(blog, archives, search results etc.).', wpgrade::textdomain()),
+			'default' => 'masonry',
+			'options' => array(
+				'masonry' => array('Masonry', 'img' => wpgrade::resourceuri('images/header-type1.png')),
+				'classic' => array('Classic', 'img' => wpgrade::resourceuri('images/header-type2.png')),
+			)
+		),
 		array(
 			'id' => 'blog_single_show_share_links',
 			'type' => 'switch',
