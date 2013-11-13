@@ -39,7 +39,7 @@ get_header(); ?>
                 <?php if ( bucket::has_average_score() && get_field('placement') == ('before') ) { ?>
                     <div class="score-box score-box--before">
                         <div class="score__average-wrapper">
-                            <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
+                            <div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
                                 <?php
                                     echo '<div class="score__note">'.bucket::get_average_score().'</div>';
                                     if (get_field('note')) {
@@ -70,7 +70,7 @@ get_header(); ?>
                      --><div class="grid__item lap-and-up-two-eighths">
                      <div class="score-box score-box--after">
                         <div class="score__average-wrapper">
-                            <div class="score__average <?php echo get_field('note') ? 'average--with-note' : '' ?>">
+                            <div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
                                 <?php
                                     echo '<div class="score__note">'.bucket::get_average_score().'</div>';
                                     if (get_field('note')) {

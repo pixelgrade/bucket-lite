@@ -25,13 +25,14 @@
     text-align: center;
 }
 
-.average--with-note {
-
-}
-
 .score__note {
     line-height: 1;
+    @include rem(padding, $_u 0);
 }   
+
+.average--with-desc .score__note{
+    padding: 0;
+}
 
 .score__desc {
     font-family:$base-font-family;

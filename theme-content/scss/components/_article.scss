@@ -430,6 +430,7 @@
     // @include opacity(0);
     @include transition(opacity .5s linear);
     display: block;
+    height: 367px;
 
     &:before {
         @extend .preloader;
@@ -732,7 +733,7 @@
         display:none;
         
     }
-    
+
     .small-link {
         display:none;
     }
