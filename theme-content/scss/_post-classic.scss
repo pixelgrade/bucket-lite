@@ -6,7 +6,11 @@
 	& > div {
 		width:100%;
 		text-align:left;
-		@include rem(margin-bottom, $_u);
+		@include rem(margin-bottom, 5px);
+
+		&:last-child hr {
+			display:none;
+		}
 	}
 
 	.media__img--rev { 
