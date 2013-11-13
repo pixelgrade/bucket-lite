@@ -43,9 +43,9 @@ if ( get_sub_field('sidebar') == 'enable' ) {
 $blog_layout = get_sub_field('posts_format');
 
 if ( $blog_layout == 'masonry' ) {
-	$grid_class = 'class="grid masonry' . ($has_sidebar ? '' : 'fullwidth') . '" data-columns';
+	$grid_class = 'class="grid masonry ' . ($has_sidebar ? '' : 'fullwidth') . '" data-columns';
 } else {
-	$grid_class = 'class=""';
+	$grid_class = 'class="classic"';
 }
 
 if ($latest_query->have_posts()):
@@ -58,7 +58,7 @@ if ($latest_query->have_posts()):
 		<div class="heading  heading--main">
 			<h2 class="hN"><?php the_sub_field('section_title'); ?></h2>
 		</div>
-        <div class="<?php echo $grid_class ?>"><!--
+        <div <?php echo $grid_class ?>><!--
             <?php while($latest_query->have_posts()): $latest_query->the_post();  ?>
                 --><div><?php get_template_part('theme-partials/post-templates/content-'. $blog_layout); ?></div><!--
             <?php endwhile; wp_reset_postdata(); ?>
