@@ -42,7 +42,15 @@ if ( get_sub_field('sidebar') == 'enable' ) {
 
 $blog_layout = get_sub_field('posts_format');
 
+if ( $blog_layout == 'masonry' ) {
+	$grid_class = 'class="grid masonry' . ($has_sidebar ? '' : 'fullwidth') . '" data-columns';
+} else {
+	$grid_class = 'class=""';
+}
+
 if ($latest_query->have_posts()):
+
+
     if ( $has_sidebar ): ?>
         <div class="grid">
             <div class="grid__item  two-thirds  palm-one-whole">
@@ -50,18 +58,16 @@ if ($latest_query->have_posts()):
 		<div class="heading  heading--main">
 			<h2 class="hN"><?php the_sub_field('section_title'); ?></h2>
 		</div>
-        <div class="grid <?php echo $blog_layout; echo $has_sidebar ? '' : 'fullwidth' . ''; ?>" data-columns><!--
+        <div class="<?php echo $grid_class ?>"><!--
             <?php while($latest_query->have_posts()): $latest_query->the_post();  ?>
                 --><div><?php get_template_part('theme-partials/post-templates/content-'. $blog_layout); ?></div><!--
             <?php endwhile; wp_reset_postdata(); ?>
      --></div>
     <?php
 
-
-	// pagination is not made to work on homepage http://codex.wordpress.org/Creating_a_Static_Front_Page#Pagination
-//	if ( get_sub_field('pagination') == 'enable' && !is_front_page() ){
+	if ( get_sub_field('pagination') == 'enable' ){
 		echo wpgrade::pagination($latest_query);
-//	}
+	}
 
 	if ( $has_sidebar ): ?>
             </div><!--
