@@ -12,7 +12,7 @@
 
     .tabs__content {
         @include rem(margin-bottom, $_u2);
-        @include rem(margin-right, -$_u);
+        // @include rem(margin-right, -$_u);
     }
 }
 
