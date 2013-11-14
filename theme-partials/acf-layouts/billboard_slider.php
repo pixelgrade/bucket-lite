@@ -105,6 +105,11 @@ switch ( $posts_source ) :
 	default : ;
 endswitch;
 
+$slider_transition = get_sub_field('billboard_slider_transition');
+$slider_autoplay = get_sub_field('billboard_slider_autoplay');
+if($slider_autoplay)
+    $slider_delay = get_sub_field('billboard_slider_autoplay_delay');
+
 $slides = new WP_Query( $query_args );
 $index = 0;
 $closed_group = true;
@@ -114,7 +119,11 @@ if ($slides->have_posts()): ?>
 			data-arrows="true"
 			data-autoScaleSliderWidth="1050"
 			data-autoScaleSliderHeight="625"
-			data-slidertransition="fade"
+            data-slidertransition="<?php echo $slider_transition; ?>"
+            <?php if ($slider_autoplay) {
+                echo 'data-sliderautoplay="" ';
+                echo 'data-sliderdelay='. $slider_delay;
+            } ?>
 			>
 	    <?php while($slides->have_posts()): $slides->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
