@@ -591,6 +591,11 @@
         padding-left: 0 !important;
 
         & > a {
+           
+             .article__title {
+                @include font-size(25px);
+            }
+
             &:hover {
                 .billboard__category {
                     color:$dark; 
@@ -599,7 +604,6 @@
                     }
                 }
                 .article__title {
-                    @include font-size(25px);
                     .hN {
                         color:white;
                         @include translate3d(30px 0 0); 
