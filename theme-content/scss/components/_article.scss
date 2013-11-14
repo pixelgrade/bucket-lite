@@ -13,7 +13,7 @@
 
 @include media-query(palm) {
     .article__title--single{
-        @include font-size(32px);
+        @include font-size(25px);
     }
 }
 
@@ -325,7 +325,14 @@
 /**
  * Hero Posts Module
  */
- .article--thumb .image-wrap {
+.featured-area__article.article--big .article__title .hN {
+    @include media-query(palm) {
+        font-size:19px;
+        width:100%;
+    }
+} 
+
+.article--thumb .image-wrap {
 
 }
 
