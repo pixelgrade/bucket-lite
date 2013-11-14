@@ -14,7 +14,7 @@
 
     <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-            <img src="<?php echo $image[0] ?>" />
+            <img src="<?php echo $image[0] ?>" alt="<?php echo $image[0] ?>" />
         </a>
     </div>
 
