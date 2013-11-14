@@ -73,8 +73,6 @@ a:hover > .pixcode--icon {
 }
 
 .heading--main .hN, .widget--sidebar__title, 
-.article--grid__header:hover .article--grid__title h3, 
-.article--grid__header:hover .article--grid__title:after, 
 .pagination .pagination-item--current span,
 .pagination li a:hover, .pagination li span:hover, 
 .rsNavSelected, .badge, .progressbar__progress,
@@ -97,7 +95,9 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
     }
     .article--billboard > a:hover .article__title:before, 
     .article--billboard > a:hover .article--list__title:before, 
-    .article--billboard > a:hover .latest-comments__title:before{
+    .article--billboard > a:hover .latest-comments__title:before,
+    .article--grid__header:hover .article--grid__title h3, 
+    .article--grid__header:hover .article--grid__title:after {
         background-color: <?php echo $main_color; ?>;
     }
 }

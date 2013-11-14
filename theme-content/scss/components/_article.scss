@@ -101,20 +101,22 @@
         
     }
 }
-        
-    .article--grid__header {
 
-        &:hover {
+    @include media-query(lap-and-up) {
+        .article--grid__header {
 
-            .article--grid__title  {
+            &:hover {
 
-                h3 {
-                    background-color:$accent;
-                }
+                .article--grid__title  {
 
-                &:after {
-                    background-color:$accent;
-                    @include scaleX(1, false, true);
+                    h3 {
+                        background-color:$accent;
+                    }
+
+                    &:after {
+                        background-color:$accent;
+                        @include scaleX(1, false, true);
+                    }
                 }
             }
         }
@@ -172,7 +174,6 @@
             z-index:-1;
             @include scaleX(0.89, false, true);
             @include transition(all 0.15s);
-
             //Fix text moving on hover
             @include backface-visibility(hidden);
         }
