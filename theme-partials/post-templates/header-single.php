@@ -1,16 +1,15 @@
 <?php
-    if (has_post_thumbnail()):
-        $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
-        $image_ratio = $image[2] * 100/$image[1];
+if (has_post_thumbnail()):
+	$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
+	$image_ratio = $image[2] * 100/$image[1];
 
-    // let's get to know this post a little better
-    $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
-    $disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
+// let's get to know this post a little better
+$full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
+$disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
 
-    // let's use what we know
-    $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
-    $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole';
-?>
+// let's use what we know
+$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
+$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole'; ?>
 
     <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">

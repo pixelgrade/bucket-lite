@@ -134,6 +134,21 @@ $sections[] = array(
 			'default' => '1',
 		),
 		array(
+			'id' => 'title_position',
+			'type' => 'select',
+			'title' => __('Title Position', wpgrade::textdomain()),
+			'subtitle' => __('Choose where to display the article title and meta tags.', wpgrade::textdomain()),
+			'options' => array(
+				'above' => 'Above the Featured Image',
+				'below' => 'Below the Featured Image'
+			),
+			'default' => 'below',
+			'select2' => array( // here you can provide params for the select2 jquery call
+				'minimumResultsForSearch' => -1, // this way the search box will be disabled
+				'allowClear' => false // don't allow a empty select
+			)
+		),
+		array(
 			'id' => 'blog_single_share_links_twitter',
 			'type' => 'checkbox',
 			'title' => __('Twitter Share Link', wpgrade::textdomain()),
