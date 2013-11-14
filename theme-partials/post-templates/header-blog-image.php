@@ -15,6 +15,7 @@
         		}
         		
 				$image = wp_get_attachment_image_src(get_post_thumbnail_id(), $thumbsize);
+                var_dump($image); 
 
         		$image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
         		if (isset($image[1]) && isset($image[2])) {
@@ -31,7 +32,7 @@
 
             if ($image[0] != ''): 
             ?>
-			<img src="<?php echo $image[0] ?>" />
+			<img src="<?php echo $image[0]; ?>" src="<?php the_title(); ?>" />
             <?php post_format_icon();
         	if ( bucket::has_average_score() ) { ?>
                 <div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', wpgrade::textdomain()) ?></span></div>

@@ -142,13 +142,13 @@ if ($slides->have_posts()): ?>
                         <div class="rsImg"><?php echo $image[0] ?></div>
                     </div>
                     <a href="<?php the_permalink(); ?>">
-                        <span class="article__header  article--billboard__header">
+                        <div class="article__header  article--billboard__header">
                             <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
                             <h2 class="article__title article--billboard__title">
                                 <span class="hN"><?php the_title(); ?></span>
                             </h2>
                             <span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
-                        </span>
+                        </div>
                     </a>
                 </article>
   	        <?php else: ?>
@@ -170,7 +170,7 @@ if ($slides->have_posts()): ?>
   	                
                     <a href="<?php the_permalink(); ?>">
                         <div class="article__thumb">
-      	                    <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" />
+      	                    <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" alt="<?php the_title(); ?>" />
       	                </div>
       	                <div class="article__content">
       	                	<h2 class="article__title article--billboard-small__title">
