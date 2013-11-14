@@ -163,7 +163,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		if( !$popular ):
 			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', wpgrade::textdomain()) : __('Sorry. No data yet.', wpgrade::textdomain());
 			?>
-			<li><?php echo $message; ?></li>
+			<span><?php echo $message; ?></span>
 			<?php
 			$contents = ob_get_contents();
 			ob_end_clean();

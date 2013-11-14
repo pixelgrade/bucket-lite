@@ -22,13 +22,7 @@
                 <?php get_template_part('theme-partials/header/site-header__branding'); ?>
             </div><!--
             --><div class="header-bar-container flexbox__item one-half split">
-                <ul class="header-bar nav flush--bottom">
-					<?php if (wpgrade::option('nav_show_header_search')): ?>
-                    <li class="search-item"><?php get_search_form(); ?></li>
-					<?php endif; ?>
-					<?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>
-                </ul>
-                 
+<!--  -->
             </div>
 
         </div>

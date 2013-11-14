@@ -4,7 +4,8 @@
  * @package Bucket
  * @since   Bucket 1.0
 **/
-?>    
+?>   
+    </div><!-- .wrapper --> 
     <footer class="site__footer">
         
         <h2 class="accessibility"><?php __('Footer', wpgrade::textdomain()) ?></h2>
@@ -80,8 +81,8 @@
         </div>
 
     </footer><!-- .site__footer -->
-
-    </div>
+    
+    </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>
 </html>

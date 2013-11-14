@@ -72,13 +72,13 @@ get_header(); ?>
 				</div>
 				<?php echo wpgrade::pagination();
 				else: get_template_part( 'no-results', 'index' ); endif; ?>
-			</div><!--
+		</div><!--
 
      --><div class="grid__item  one-third  palm-one-whole  sidebar">
 				<?php get_sidebar(); ?>
 		</div>
 
-		</div>
 	</div>
+</div>
 
 <?php get_footer(); ?>
