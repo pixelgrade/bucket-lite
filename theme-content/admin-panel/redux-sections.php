@@ -127,16 +127,9 @@ $sections[] = array(
 	'desc' => sprintf('<p class="description">'.__('Article options control the various aspects related to displaying posts both in archives and single articles. You can control things like excerpt length and social sharing.', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
-			'id' => 'blog_single_show_share_links',
-			'type' => 'switch',
-			'title' => __('Show Share Links', wpgrade::textdomain()),
-			'subtitle' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
-			'default' => '1',
-		),
-		array(
 			'id' => 'title_position',
 			'type' => 'select',
-			'title' => __('Title Position', wpgrade::textdomain()),
+			'title' => __('Single Post Title Position', wpgrade::textdomain()),
 			'subtitle' => __('Choose where to display the article title and meta tags.', wpgrade::textdomain()),
 			'options' => array(
 				'above' => 'Above the Featured Image',
@@ -147,6 +140,13 @@ $sections[] = array(
 				'minimumResultsForSearch' => -1, // this way the search box will be disabled
 				'allowClear' => false // don't allow a empty select
 			)
+		),
+		array(
+			'id' => 'blog_single_show_share_links',
+			'type' => 'switch',
+			'title' => __('Show Share Links', wpgrade::textdomain()),
+			'subtitle' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
+			'default' => '1',
 		),
 		array(
 			'id' => 'blog_single_share_links_twitter',

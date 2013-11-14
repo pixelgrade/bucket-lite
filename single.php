@@ -20,7 +20,9 @@ get_header(); ?>
 		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
 
 		if ( wpgrade::option('title_position', 'below') == 'above' ) {
-			get_template_part('theme-partials/post-templates/single-title');
+            echo '<div class="article_title--before grid__item  float--left '.$featured_image_width.'">';
+			    get_template_part('theme-partials/post-templates/single-title');
+            echo '</div>';
 		}
 
 		get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
@@ -52,8 +54,6 @@ get_header(); ?>
 		        $args = array(
 			        'before' => "<ol class=\"nav pagination\"><!--",
 			        'after' => "\n--></ol>",
-//			        'link_before'      => '',
-//			        'link_after'       => '',
 			        'next_or_number' => 'next_and_number',
 			        'previouspagelink' => __('Previous', wpgrade::textdomain()),
 			        'nextpagelink' => __('Next', wpgrade::textdomain())
