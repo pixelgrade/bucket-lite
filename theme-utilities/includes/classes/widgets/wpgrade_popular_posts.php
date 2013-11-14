@@ -187,7 +187,8 @@ class wpgrade_popular_posts extends WP_Widget {
 				<a href="<?php echo $p['permalink']; ?>" title="<?php echo $p['title']; ?>" class="article--list__link">
 					<?php if ( !empty( $postImage['src'] ) ){ ?>
 						<div class="media__img  push-half--right">
-							<img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" width="<?php if(!empty($postImage['width'])) echo $postImage['width']; ?>" height="<?php if(!empty($postImage['height'])) echo $postImage['height']; ?>" />
+							<img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" />							
+							<!--img src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" width="<?php if(!empty($postImage['width'])) echo $postImage['width']; ?>" height="<?php if(!empty($postImage['height'])) echo $postImage['height']; ?>" /-->
 						</div>
 					<?php } ?>
 					<div class="media__body">
