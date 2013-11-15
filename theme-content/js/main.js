@@ -1936,6 +1936,9 @@
         /* --- CONDITIONAL LOADING --- */
         loadUp();
 
+        setTimeout(function(){
+          $('html').addClass('document-ready');
+        }, 300);
     });
 
 
