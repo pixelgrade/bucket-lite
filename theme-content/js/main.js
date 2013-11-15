@@ -1544,7 +1544,7 @@
               transitionType: rs_transition,
               autoPlay: {
                   enabled: rs_autoPlay,
-                  stopAtAction: false,
+                  stopAtAction: true,
                   pauseOnHover: true,
                   delay: rs_delay                    
               }            
