@@ -130,36 +130,36 @@ if ($slides->have_posts()): ?>
             $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
             $image_ratio = 0.7; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
             
-            if (isset($image[1]) && isset($image[2])) {
+            if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
               $image_ratio = $image[2] * 100/$image[1];
             }
 
-      			if ($index++ % 3 == 0):
-                $image = $image_big;
-                if (isset($image[1]) && isset($image[2])) {
-                  $image_ratio = $image[2] * 100/$image[1];
-                }
+			if ($index++ % 3 == 0):
+			$image = $image_big;
+			if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+			  $image_ratio = $image[2] * 100/$image[1];
+			}
 
-                if (!$closed_group):
-                    echo '</div><div class="billboard--article-group">';
-                else:
-                    echo '<div class="billboard--article-group">';
-                    $closed_group = false;
-                endif; ?>
-                <article class="article  article--billboard">
-                    <div>
-                        <div class="rsImg"><?php echo $image[0] ?></div>
-                    </div>
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="article__header  article--billboard__header">
-                            <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
-                            <h2 class="article__title article--billboard__title">
-                                <span class="hN"><?php the_title(); ?></span>
-                            </h2>
-                            <span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
-                        </div>
-                    </a>
-                </article>
+			if (!$closed_group):
+				echo '</div><div class="billboard--article-group">';
+			else:
+				echo '<div class="billboard--article-group">';
+				$closed_group = false;
+			endif; ?>
+				<article class="article  article--billboard">
+					<div>
+						<div class="rsImg"><?php echo $image[0] ?></div>
+					</div>
+					<a href="<?php the_permalink(); ?>">
+						<div class="article__header  article--billboard__header">
+							<span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
+							<h2 class="article__title article--billboard__title">
+								<span class="hN"><?php the_title(); ?></span>
+							</h2>
+							<span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
+						</div>
+					</a>
+				</article>
   	        <?php else: ?>
   	            <article class="rsABlock  article article--billboard-small"
                           data-move-effect="right"
