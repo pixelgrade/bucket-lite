@@ -175,9 +175,13 @@ if ($slides->have_posts()): ?>
 	                                      <a href="<?php the_permalink(); ?>"><h3 class="hN"><?php the_title(); ?></h3></a>
 	                                </div>
 	                                <ul class="nav  article__meta-links">
-	                                    <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
-	                                    <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
-	                                    <li><i class="icon-heart"></i> <?php if ( function_exists('get_pixlikes') ) {echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID()));} ?></li>
+	                                    <li class="xpost_date"><i class="icon-time"></i> <?php the_time('j M') ?></li>
+										<?php if ( comments_open() ): ?>
+	                                    <li class="xpost_comments"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
+										<?php endif; ?>
+										<?php if ( wpgrade::option('blog_single_show_share_links') && function_exists('get_pixlikes')) : ?>
+	                                    <li class="xpost_likes"><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
+										<?php endif; ?>
 	                                </ul>
 	                            </div>
 	                        </article>
