@@ -1,8 +1,8 @@
 <?php
 if (get_the_title()): ?>
-	<h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
+	<h1 class="article__title  article__title--single" itemtype="name"><?php the_title(); ?></h1>
 <?php else: ?>
-	<h1 class="article__title  article__title--single"><?php _e('Untitled', wpgrade::textdomain()); ?></h1>
+	<h1 class="article__title  article__title--single" itemtype="name"><?php _e('Untitled', wpgrade::textdomain()); ?></h1>
 <?php endif; ?>
 
 <div class="article__title__meta">
