@@ -11,7 +11,9 @@ get_header(); ?>
 <div id="main" class="container container--main">
 
     <div class="grid">
-
+		
+		<?php get_template_part('theme-partials/post-templates/header-category'); ?>
+		
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
