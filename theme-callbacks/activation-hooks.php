@@ -103,7 +103,7 @@ function wpgrade_callback_geting_active() {
 <p class="cmb_metabox_description"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>
 <p class="cmb_metabox_description"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less than size of image.</p>
 <p class="cmb_metabox_description"><a target="_blank" href="http://bit.ly/slider-image-scaling">Visual explanation</a></p>', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'post_sldier_image_scale',
+					'id' => wpgrade::prefix() . 'post_slider_image_scale',
 					'type' => 'select',
 					'show_on'    => array( 'key' => 'select_value', 'value' => array( 'project_template' => 'fullwidth', 'project_template' => 'sidebar' ), ),
 					'options' => array(

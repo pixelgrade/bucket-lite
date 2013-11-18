@@ -463,20 +463,18 @@
           // move arrows outside rsOverflow
           $slider.find('.rsArrow').appendTo($slider);
 
-          // royalSlider.ev.on('rsVideoPlay', function() {
+          if(rs_imageScale == 'fill'){
+              royalSlider.ev.on('rsVideoPlay', function() {
 
-          //     // if($('.single-gallery-fullscreen').length) {
-          //     //     $('html').toggleClass('video-active');
-          //     // }
+                  var $frameHolder = $('.rsVideoFrameHolder');
+                  var top = Math.abs(parseInt($frameHolder.siblings('.rsMainSlideImage').css('margin-top'), 10));
 
-          //     var $frameHolder = $('.rsVideoFrameHolder');
-          //     var top = Math.abs(parseInt($frameHolder.siblings('.rsMainSlideImage').css('margin-top'), 10));
+                  $frameHolder
+                      .height(royalSlider.height)
+                      .css('top', top + 'px');
 
-          //         $frameHolder
-          //             .height(royalSlider.height)
-          //             .css('top', top + 'px');
-
-          // });
+              });
+          }
     }
 
 
