@@ -23,10 +23,13 @@
             </div>
             <ul class="nav  article__meta-links">
                 <li><i class="icon-time"></i> <?php the_time('j M') ?></li>
+				<?php if (wpgrade::option('blog_archive_show_comments')): ?>
                 <li><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
-				<?php  if (function_exists( 'get_pixlikes' )): ?>
-                <li><i class="icon-heart"></i> <?php if ( function_exists('get_pixlikes') ) {echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID()));} ?></li>
-				<?php endif; ?>
+				<?php endif;
+				if (wpgrade::option('blog_archive_show_likes')):
+				if (function_exists( 'get_pixlikes' )): ?>
+                <li><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
+				<?php endif;endif; ?>
             </ul>
         </div>
     </div>
