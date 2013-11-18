@@ -356,7 +356,7 @@
  * Posts Grid Cards ( ++styling if flexbox is supported )
  */
 
-.flexbox .posts-grid-cards {
+.flexbox .posts-grid-cards, .flexboxlegacy .posts-grid-cards {
 
     @include media-query(lap-and-up) { 
         display: -webkit-box;
