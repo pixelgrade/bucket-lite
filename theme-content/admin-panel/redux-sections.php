@@ -202,6 +202,13 @@ $sections[] = array(
 			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', wpgrade::textdomain()),
 			'default' => '..',
 		),
+		array(
+			'id' => 'blog_archive_show_cat_billboard',
+			'type' => 'checkbox',
+			'title' => __('Show Billboard Slider on Category Pages?', wpgrade::textdomain()),
+			'desc' => __('Check this if you want to display at the top of your category and tag archives a slider with the featured posts from that category or tag.', wpgrade::textdomain()),
+			'default' => '1',
+		),
 	)
 );
 
