@@ -42,8 +42,7 @@ if ($attachments): ?>
 	<div class="pixslider js-pixslider<?php echo $arrows_class; ?>"
 		data-arrows
 		data-fullscreen
-		data-imagealigncenter
-		data-imagescale="<?php echo $image_scale_mode; ?>"
+		data-autoheight
 		data-slidertransition="<?php echo $slider_transition; ?>"
 		<?php if ($slider_autoplay) {
 			echo 'data-sliderautoplay="" ';
