@@ -155,7 +155,7 @@
         @extend .article__title--inverse;
         background-color: transparent;
         z-index:22;
-
+        
         .hN {
             text-align: center;
             @include rem(padding, $_u4 $_u);
