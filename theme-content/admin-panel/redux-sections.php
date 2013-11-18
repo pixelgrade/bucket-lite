@@ -202,20 +202,6 @@ $sections[] = array(
 			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', wpgrade::textdomain()),
 			'default' => '..',
 		),
-		array(
-			'id' => 'blog_archive_show_comments',
-			'type' => 'checkbox',
-			'title' => __('Show Comments Number?', wpgrade::textdomain()),
-			'desc' => __('Check this to show the comments number in archives.', wpgrade::textdomain()),
-			'default' => '1',
-		),
-		array(
-			'id' => 'blog_archive_show_likes',
-			'type' => 'checkbox',
-			'title' => __('Show Likes Number?', wpgrade::textdomain()),
-			'desc' => __('Check this to show the likes number in archives.', wpgrade::textdomain()),
-			'default' => '1',
-		),
 	)
 );
 
