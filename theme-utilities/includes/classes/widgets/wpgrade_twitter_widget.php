@@ -37,7 +37,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 		$slide_count = 1;
 		$tweets_nr = count($results);
 		if ( $results ){
-			echo '<div class="wp-slider widget-content"><ul class="widget-tweets__list pixslider js-pixslider" data-bullets data-slidesspacing="24" data-autoheight><li class="widget-tweets__tweet">';
+			echo '<div class="wp-slider widget-content"><ul class="widget-tweets__list pixslider js-pixslider nav cf" data-bullets data-slidesspacing="24" data-autoheight><li class="widget-tweets__tweet">';
 			foreach ($results as $key => $result) { ?>
 				<div class="tweet__block">
 				<div class="tweet__content"><?php echo $this->get_parsed_tweet($result); ?></div>

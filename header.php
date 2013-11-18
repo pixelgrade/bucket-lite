@@ -8,9 +8,9 @@ if(is_page() && get_page_template_slug(wpgrade::lang_original_post_id(get_the_ID
 
 $schema_org = '';
 if (is_single()) {
-	$schema_org = 'itemscope itemtype="http://schema.org/Article"';
+	$schema_org .= 'itemscope itemtype="http://schema.org/Article"';
 } else {
-	$schema_org = 'itemscope itemtype="http://schema.org/WebPage"';
+	$schema_org .= 'itemscope itemtype="http://schema.org/WebPage"';
 }
 
 if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";

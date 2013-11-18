@@ -91,16 +91,23 @@ img[width], img[height] {
 }
 
 .post-format-icon--featured {
-    @include rem(width, 150px);
-    @include rem(height, 150px);
-    @include rem(margin-top, -75px);
-    @include rem(margin-left, -75px);
-    @include rem(font-size, 58px);
+    width:80px;
+    height:80px;
+    margin-top:-70px;
+    margin-left:-40px;
+    @include rem(font-size, 30px);
     line-height: 2.4;
-    // line-height: 2.55;
 
-    .icon-camera { @include rem(margin-left, 4px); }
-    .icon-play { @include rem(margin-left, 14px); }
+    @include media-query(lap-and-up) {
+        @include rem(width, 150px);
+        @include rem(height, 150px);
+        @include rem(margin-top, -75px);
+        @include rem(margin-left, -75px);
+        @include rem(font-size, 58px);
+
+        .icon-camera { @include rem(margin-left, 4px); }
+        .icon-play { @include rem(margin-left, 14px); }
+    }
 }
 
 .post-format-icon__background {
