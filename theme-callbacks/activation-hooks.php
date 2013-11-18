@@ -125,7 +125,7 @@ function wpgrade_callback_geting_active() {
 
 				array(
 					'name' => __('Slider height', wpgrade::textdomain()),
-					'desc' => __('Enter a slider height here. If left blank, it will default to 525px', wpgrade::textdomain()),
+					'desc' => __('Enter a slider height here(only digits, without \'px\'). If left blank, it will default to 525px', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'post_slider_height',
 					'type' => 'text_small',
 					'std' => '',

@@ -25,6 +25,7 @@ if ($slider_autoplay) {
 	$slider_delay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_delay', true);
 }
 $slider_height = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_height', true);
+if($slider_height == '') $slider_height = '525';
 
 // let's get to know this post a little better
 $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
