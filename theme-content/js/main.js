@@ -1544,7 +1544,7 @@
               transitionType: rs_transition,
               autoPlay: {
                   enabled: rs_autoPlay,
-                  stopAtAction: false,
+                  stopAtAction: true,
                   pauseOnHover: true,
                   delay: rs_delay                    
               }            
@@ -1936,6 +1936,9 @@
         /* --- CONDITIONAL LOADING --- */
         loadUp();
 
+        setTimeout(function(){
+          $('html').addClass('document-ready');
+        }, 300);
     });
 
 

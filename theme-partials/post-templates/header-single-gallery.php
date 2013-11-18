@@ -18,12 +18,14 @@ if ( !empty($gallery_ids) ) {
 	$attachments = array();
 }
 
-$image_scale_mode = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_image_scale_mode', true);
+$image_scale_mode = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_image_scale', true);
 $slider_transition = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_transition', true);
 $slider_autoplay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_autoplay', true);
 if ($slider_autoplay) {
 	$slider_delay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_delay', true);
 }
+$slider_height = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_height', true);
+if($slider_height == '') $slider_height = '525';
 
 // let's get to know this post a little better
 $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
@@ -43,6 +45,8 @@ if ($attachments): ?>
 		data-arrows
 		data-fullscreen
 		data-imagealigncenter
+		data-autoscalesliderwidth="1050"
+		data-autoscalesliderheight="<?php echo $slider_height; ?>"
 		data-imagescale="<?php echo $image_scale_mode; ?>"
 		data-slidertransition="<?php echo $slider_transition; ?>"
 		<?php if ($slider_autoplay) {

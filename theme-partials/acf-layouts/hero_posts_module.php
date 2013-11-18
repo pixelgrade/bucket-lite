@@ -119,7 +119,10 @@ if ($slides->have_posts()): ?>
                 <?php
                 if (has_post_thumbnail()):
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
-                    $image_ratio = $image[2] * 100/$image[1]; ?>
+					$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+					if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+						$image_ratio = $image[2] * 100/$image[1]; 
+					} ?>
                     <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                         <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                         <div class="article__title">
@@ -150,7 +153,10 @@ if ($slides->have_posts()): ?>
 	                                <?php
                                     if (has_post_thumbnail()):
                                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
-                                        $image_ratio = $image[2] * 100/$image[1]; ?>
+										$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+										if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+											$image_ratio = $image[2] * 100/$image[1];
+										} ?>
                                         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
                                             <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                                         </a>
