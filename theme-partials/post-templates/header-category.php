@@ -18,10 +18,10 @@ $post_args['meta_query'] =
 
 $slideposts = get_posts( $post_args );
 
-$slider_transition = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_transition', true);
-$slider_autoplay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_autoplay', true);
+$slider_transition = wpgrade::option('blog_cat_slider_transition');
+$slider_autoplay = wpgrade::option('blog_cat_slider_autoplay');
 if ($slider_autoplay) {
-	$slider_delay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_delay', true);
+	$slider_delay = wpgrade::option('blog_cat_slider_delay');
 }
 
 $slider_height = '400';

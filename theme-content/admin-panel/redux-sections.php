@@ -236,7 +236,7 @@ $sections[] = array(
 			'type' => 'text',
 			'title' => __('Autoplay delay between slides (in milliseconds)', wpgrade::textdomain()),
 			'default' => '1000',
-			'required' => array('blog_archive_show_cat_billboard', '=', 1)
+			'required' => array('blog_cat_slider_autoplay', '=', 1)
 		)	
 	)
 );
