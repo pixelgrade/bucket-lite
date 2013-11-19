@@ -70,17 +70,20 @@ class wpgrade_flickr_widget extends WP_Widget
 		$tags = isset( $args['tags'] ) ? $args['tags'] : '';
 		$count = isset( $args['count'] ) ? absint( $args['count'] ) : 8;
 		$query = array('tagmode' => 'any','tags' => $tags);
-
+		
 		// If username is actually an RSS feed
 		if ( preg_match( '#^https?://api\.flickr\.com/services/feeds/photos_public\.gne#', $username ) )
 		{
 			$url = parse_url( $username );
 			$url_query = array();
-			// wp_parse_str( $url['query'], $url_query );
+			wp_parse_str( $url['query'], $url_query );
 			$query = array_merge( $query, $url_query );
 		}
-		else
-		{
+		elseif (strpos($username, '@N')) {
+			//we are dealing with a user id
+			$user_id = $username;
+			$query['id'] = $user_id;
+		} else {
 			$user = $this->request( 'flickr.people.findByUsername', array( 'username' => $username ) );
 			if ( is_wp_error( $user ) )
 			{
