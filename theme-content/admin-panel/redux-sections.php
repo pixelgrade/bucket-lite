@@ -204,11 +204,40 @@ $sections[] = array(
 		),
 		array(
 			'id' => 'blog_archive_show_cat_billboard',
-			'type' => 'checkbox',
-			'title' => __('Show Billboard Slider on Category Pages?', wpgrade::textdomain()),
-			'desc' => __('Check this if you want to display at the top of your category and tag archives a slider with the featured posts from that category or tag.', wpgrade::textdomain()),
+			'type' => 'switch',
+			'title' => __('Show Slider On Category Pages?', wpgrade::textdomain()),
+			'subtitle' => __('Check this if you want to display at the top of your category archives a slider with the posts marked as making part of the category slider.', wpgrade::textdomain()),
 			'default' => '1',
 		),
+		array(
+			'id' => 'blog_cat_slider_transition',
+			'type' => 'select',
+			'title' => __('Slider transition', wpgrade::textdomain()),
+			'options' => array(
+					'move' => __('Slide/Move', wpgrade::textdomain()),
+					'fade' => __('Fade', wpgrade::textdomain()),
+			),
+			'default' => 'move',
+			'select2' => array( // here you can provide params for the select2 jquery call
+			    'minimumResultsForSearch' => -1, // this way the search box will be disabled
+				'allowClear' => false // don't allow a empty select
+			),
+			'required' => array('blog_archive_show_cat_billboard', '=', 1)
+		),
+		array(
+			'id' => 'blog_cat_slider_autoplay',
+			'type' => 'switch',
+			'title' => __('Slider autoplay', wpgrade::textdomain()),
+			'default' => '0',
+			'required' => array('blog_archive_show_cat_billboard', '=', 1)
+		),
+		array(
+			'id' => 'blog_cat_slider_delay',
+			'type' => 'text',
+			'title' => __('Autoplay delay between slides (in milliseconds)', wpgrade::textdomain()),
+			'default' => '1000',
+			'required' => array('blog_archive_show_cat_billboard', '=', 1)
+		)	
 	)
 );
 

@@ -6,7 +6,7 @@
     @extend .cf;
     @include rem(margin-bottom, $_u);
 
-    .hN {
+    .hN, .archive__side-title {
         margin-bottom: 0;
         font-family: "Arvo", serif;
         font-weight: normal;
@@ -27,6 +27,11 @@
         background-color: $red;
         float: left;
     }
+	
+	.archive__side-title {
+		@include rem(padding, $_u2 $_u);
+        float: left;
+	}
 }
 
 .heading--sidebar {
