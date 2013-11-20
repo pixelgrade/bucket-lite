@@ -13,30 +13,28 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		
 		set_error_handler("custom_warning_handler", E_WARNING);
 		
-		if ( ! class_exists( 'phpQuery') ) {
-			// load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
-			require_once 'vendor/phpQuery.php';
-		}
-		// enable debugging messages
-		phpQuery::$debug = 0;
-		$_doc = phpQuery::newDocumentHTML( $output );
-		$_li = phpQuery::pq( 'li.menu-item:last' ); // ":last" is important, because $output will contain all the menu elements before current element
-		
-		// if the last <li>'s id attribute doesn't match $item->ID something is very wrong, don't do anything
-		// just a safety, should never happen...
-		$menu_item_id = str_replace( 'menu-item-', '', $_li->attr( 'id' ) );
-		if( $menu_item_id != $item->ID ) {
-			return;
-		}
-		
-		//somewhere to save the new HTML code
-		$newHtml = '';
-		
 		// now let's add the megamenu layout select box but only for the first level
 		if ($depth == 0 && ($item->object == 'category' || $item->object == 'post_format')) {
+			
+			//load up the library
+			require_once 'vendor/simplehtmldom/simple_html_dom.php';
+
+			// Create DOM from string
+			$_doc = str_get_html($output);
+			$_li = $_doc->find( '.menu-item-depth-0',-1); // "-1" aka the last element is important, because $output will contain all the menu elements before current element
 		
+			// if the last <li>'s id attribute doesn't match $item->ID something is very wrong, don't do anything
+			// just a safety, should never happen...
+			$menu_item_id = str_replace( 'menu-item-', '', $_li->getAttribute( 'id' ) );
+			if( $menu_item_id != $item->ID ) {
+				return;
+			}
+
+			//somewhere to save the new HTML code
+			$newHtml = '';
+			
 			// fetch previously saved meta for the post (menu_item is just a post type)
-			$current_val = esc_attr( get_post_meta( $menu_item_id, 'wpgrade_megamenu_layout', TRUE ) );
+			$current_val = esc_attr( get_post_meta( $item->ID, 'wpgrade_megamenu_layout', TRUE ) );
 
 			//let's make the HTML
 			//go through the options values and titles
@@ -52,13 +50,15 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 				$newHtml .= '</select></label></p>';
 			}
 
-			// by means of phpQuery magic, inject a new input field
-			$_li->find( '.menu-item-actions' )
-				->before( $newHtml );
+			// inject the new input field
+			$whereto = $_li->find( '.menu-item-actions',0);
+			//add it before
+			$whereto->outertext = $newHtml.$whereto->outertext;
+			
+			// swap the $output
+			$output = $_doc->outertext;
+			unset($_doc);
 		}
-		
-		// swap the $output
-		$output = $_doc->html();
 		
 		restore_error_handler();
 		
