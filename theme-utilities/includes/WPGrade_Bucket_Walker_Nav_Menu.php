@@ -264,13 +264,13 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         $post_link = get_permalink();
                         $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );
 
-                        $image_ratio = 70; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-                        if (isset($post_image[1]) && isset($post_image[2]) && $post_image[1] > 0) {
-                            $image_ratio = $post_image[2] * 100/$post_image[1];
-                        }
+//                        $image_ratio = 70; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+//                        if (isset($post_image[1]) && isset($post_image[2]) && $post_image[1] > 0) {
+//                            $image_ratio = $post_image[2] * 100/$post_image[1];
+//                        }
 
                         if ( $post_image ){
-                            $menu_post_image = '<div class="article__thumb" style="padding-top1: '.$image_ratio.'%"><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
+                            $menu_post_image = '<div class="article__thumb" style=""><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
                         } else {
                             $menu_post_image = '<div class="article__thumb"></div>';
                             $menu_post_image = '';
@@ -326,45 +326,59 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			
 			set_error_handler("custom_warning_handler", E_WARNING);
 			
-            if ( ! class_exists( 'phpQuery') ) {
-                // load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
-                require_once 'vendor/phpQuery.php';
-            }
-			// enable debugging messages
-			phpQuery::$debug = 0;
-            $_doc = phpQuery::newDocumentHTML( $output );
-//			var_dump($_doc->html());
-            if ($_doc->find('.sub-menu--mega:last > .grid')->html() != '') {
-                
-                if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
-                    $_doc->find('.sub-menu--mega:last')->children('.sub-menu')
-                        ->removeClass('sub-menu')
-                        ->removeClass('one-fifth')
-                        ->addClass('nav nav--stacked nav--sub-menu sub-menu')
-                        ->prependTo('.sub-menu--mega:last > .grid')
-                        ->wrap('<div class="sub-menu__grid__item  grid__item  one-fifth"></div>');
+			//load up the library
+            require_once 'vendor/simplehtmldom/simple_html_dom.php';
+			
+			// Create DOM from string
+			$_doc = str_get_html($output);
+
+			$zagrid = $_doc->find('.sub-menu--mega',-1)->find('.grid',0);
+			if (!empty($zagrid) && !empty($zagrid->innertext)) {
+                $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
+                if (!empty($submenu)) {
+					//cleanup
+					$submenu->removeClass('sub-menu');
+					$submenu->removeClass('one-fifth');
+					//add classes
+					$submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
+					//wrap it
+					$submenu->outertext = '<div class="sub-menu__grid__item  grid__item  one-fifth">'.$submenu->outertext.'</div>';
+					//prepend it
+					$zagrid->innertext = $submenu->outertext.$zagrid->innertext;
+					//empty it
+					$submenu->outertext = '';
                 }
 
             } else {
                 // the megamenu wrapper is empty
-                if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
+                $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
+                if (!empty($submenu) && !empty($submenu->innertext)) {
 
-                    $_nav__item = $_doc->find('.sub-menu--mega:last')->parent();
-                    $_nav__item
-                        ->addClass('nav__item--relative');
+                    $_nav__item = $_doc->find('.sub-menu--mega',-1)->parent();
+                    $_nav__item->addClass('nav__item--relative');
                     
-                    $_doc->find('.sub-menu--mega:last')->children('.sub-menu')
-                        ->removeClass('sub-menu')
-                        ->removeClass('one-fifth')
-                        ->addClass('nav nav--stacked nav--sub-menu sub-menu')
-                        ->insertBefore('.sub-menu--mega:last');
+					$whereto = $_doc->find('.sub-menu--mega',-1);
+					//cleanup
+					$submenu->removeClass('sub-menu');
+					$submenu->removeClass('one-fifth');
+					//add classes
+					$submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
+					//insert it
+					$whereto->outertext = $submenu->outertext.$whereto->outertext;
+					//empty it
+					$submenu->outertext = '';
                 }
-
-                $_doc->find('.sub-menu--mega:last')->remove();
+				
+				//empty it
+				$_doc->find('.sub-menu--mega',-1)->outertext = '';
             }
-            
-            // swap the $output
-            $output = $_doc->html();
+			
+			// swap the $output
+			$output = $_doc->outertext;
+			
+			//cleanup
+			$_doc->__destruct();
+			unset($_doc);
 			
 			restore_error_handler();
         }

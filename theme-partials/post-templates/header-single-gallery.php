@@ -27,9 +27,11 @@ if ($slider_autoplay) {
 $slider_height = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_height', true);
 if($slider_height == '') $slider_height = '525';
 
+$slider_visiblenearby = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix() . 'post_slider_visiblenearby', true);
+
 // let's get to know this post a little better
-$full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
-$disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
+$full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix() . 'full_width_featured_image', true);
+$disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix() . 'disable_sidebar', true);
 
 // let's use what we know
 $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
@@ -52,7 +54,11 @@ if ($attachments): ?>
 		<?php if ($slider_autoplay) {
 			echo 'data-sliderautoplay="" ';
 			echo 'data-sliderdelay='. $slider_delay;
-		} ?> >
+		} 
+		
+		if ($slider_visiblenearby) {
+			echo 'data-visiblenearby="" ';
+		}?> >
 		<?php
 		foreach ($attachments as $attachment):
 			$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );

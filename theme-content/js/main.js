@@ -411,8 +411,9 @@
               rs_autoScaleSliderHeight = $slider.data('autoscalesliderheight'),
               rs_customArrows = typeof $slider.data('customarrows') !== "undefined",
               rs_slidesSpacing = typeof $slider.data('slidesspacing') !== "undefined" ? parseInt($slider.data('slidesspacing')) : 0,
-              rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined";
-              rs_imageScale  = $slider.data('imagescale');
+              rs_keyboardNav  = typeof $slider.data('fullscreen') !== "undefined",
+              rs_imageScale  = $slider.data('imagescale'),
+			  rs_visibleNearby = typeof $slider.data('visiblenearby') !== "undefined" ? true : false,
               rs_imageAlignCenter  = typeof $slider.data('imagealigncenter') !== "undefined",
               rs_transition = typeof $slider.data('slidertransition') !== "undefined" && $slider.data('slidertransition') != '' ? $slider.data('slidertransition') : 'move',
               rs_autoPlay = typeof $slider.data('sliderautoplay') !== "undefined" ? true : false,
@@ -433,29 +434,44 @@
           
           // make sure default arrows won't appear if customArrows is set
           if (rs_customArrows) arrows = false;
-
-          $slider.royalSlider({
-              autoHeight: rs_autoheight,
-              autoScaleSlider: rs_autoScaleSlider,
-              loop: true,
-              autoScaleSliderWidth: rs_autoScaleSliderWidth,
-              autoScaleSliderHeight: rs_autoScaleSliderHeight,
-              imageScaleMode: rs_imageScale,
-              imageAlignCenter: rs_imageAlignCenter,
-              slidesSpacing: rs_slidesSpacing,
-              arrowsNav: rs_arrows,
-              controlNavigation: rs_bullets,
-              keyboardNavEnabled: rs_keyboardNav,
-              arrowsNavAutoHide: false,
-              sliderDrag: rs_drag,
-              transitionType: rs_transition,
-              autoPlay: {
-                  enabled: rs_autoPlay,
-                  stopAtAction: true,
-                  pauseOnHover: true,
-                  delay: rs_delay                    
-              }            
-          });
+		  
+		  //the main params for Royal Slider
+			var royalSliderParams = {
+				autoHeight: rs_autoheight,
+				autoScaleSlider: rs_autoScaleSlider,
+				loop: true,
+				autoScaleSliderWidth: rs_autoScaleSliderWidth,
+				autoScaleSliderHeight: rs_autoScaleSliderHeight,
+				imageScaleMode: rs_imageScale,
+				imageAlignCenter: rs_imageAlignCenter,
+				slidesSpacing: rs_slidesSpacing,
+				arrowsNav: rs_arrows,
+				controlNavigation: rs_bullets,
+				keyboardNavEnabled: rs_keyboardNav,
+				arrowsNavAutoHide: false,
+				sliderDrag: rs_drag,
+				transitionType: rs_transition,
+				autoPlay: {
+					enabled: rs_autoPlay,
+					stopAtAction: true,
+					pauseOnHover: true,
+					delay: rs_delay                    
+				}            
+			};
+			
+			if (rs_visibleNearby) {
+				royalSliderParams['visibleNearby'] = {
+					enabled: true,
+	//				centerArea: 0.7,
+	//				center: true,
+					breakpoint: 650,
+					breakpointCenterArea: 0.64,
+					navigateByCenterClick: false
+				}
+			}
+			
+			//lets fire it up
+          $slider.royalSlider(royalSliderParams);
 
           var royalSlider = $slider.data('royalSlider');
           var slidesNumber = royalSlider.numSlides;
