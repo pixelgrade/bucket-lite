@@ -329,7 +329,7 @@
 
     function resizeVideos() {
     
-        var videos = $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"], video');
+        var videos = $('iframe[src*="youtube.com"], iframe[src*="youtube-nocookie.com"], iframe[src*="vimeo.com"], video');
 
         videos.each(function() {
             var video = $(this),
