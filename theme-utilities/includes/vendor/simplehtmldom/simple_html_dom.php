@@ -143,10 +143,10 @@ class simple_html_dom_node
     // clean up memory due to php5 circular references memory leak...
     function clear()
     {
-        $this->dom = null;
-        $this->nodes = null;
-        $this->parent = null;
-        $this->children = null;
+        unset($this->dom);
+        unset($this->nodes);
+        unset($this->parent);
+        unset($this->children);
     }
 
     // dump node's tree
