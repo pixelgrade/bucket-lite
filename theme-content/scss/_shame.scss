@@ -152,3 +152,39 @@ img[width], img[height] {
 .pixslider{
     overflow: visible;
 }
+
+.category__featured-posts {
+	@include rem(margin-bottom, $_u);
+	position: relative;
+
+	img {
+		display: block;
+	}
+	
+	.featured-area__article {
+        padding-left: 0;
+        margin-bottom: 0;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display:block;
+
+        .image-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display:block;
+            padding:0;
+
+            img {
+                max-width: none;
+                position:relative;
+            }
+
+            .article__title .hN {
+                width:100%;
+                @include font-size(23px);
+            }
+        }
+    }
+}
