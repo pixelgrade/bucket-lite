@@ -332,7 +332,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			// Create DOM from string
 			$_doc = str_get_html($output);
 
-			$zagrid = $_doc->find('.sub-menu--mega',-1)->find('.grid',0);
+			$zagrid = $_doc->find('.sub-menu--mega',-1)->find('.sub-menu__grid',0);
 			if (!empty($zagrid) && !empty($zagrid->innertext)) {
                 $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
                 if (!empty($submenu)) {
@@ -351,26 +351,27 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
             } else {
                 // the megamenu wrapper is empty
-                $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
+				$whereto = $_doc->find('.sub-menu--mega',-1);
+                $submenu = $whereto->find('.sub-menu', 0);
                 if (!empty($submenu) && !empty($submenu->innertext)) {
 
-                    $_nav__item = $_doc->find('.sub-menu--mega',-1)->parent();
+                    $_nav__item = $whereto->parent();
                     $_nav__item->addClass('nav__item--relative');
-                    
-					$whereto = $_doc->find('.sub-menu--mega',-1);
+					
 					//cleanup
 					$submenu->removeClass('sub-menu');
 					$submenu->removeClass('one-fifth');
 					//add classes
 					$submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
 					//insert it
-					$whereto->outertext = $submenu->outertext.$whereto->outertext;
+					$whereto->outertext = $submenu->outertext;
+					
 					//empty it
 					$submenu->outertext = '';
-                }
-				
-				//empty it
-				$_doc->find('.sub-menu--mega',-1)->outertext = '';
+                } else {
+					//just delete it
+					$whereto->outertext = '';
+				}
             }
 			
 			// swap the $output
