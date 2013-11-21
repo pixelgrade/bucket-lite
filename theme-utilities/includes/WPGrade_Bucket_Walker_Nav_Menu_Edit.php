@@ -55,14 +55,10 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 			//add it before
 			$whereto->outertext = $newHtml.$whereto->outertext;
 			
-			//cleanup
-			$_li->__destruct();
-			unset($_li);
-			$whereto->__destruct();
-			unset($whereto);
-			
 			// swap the $output
 			$output = $_doc->outertext;
+			
+			//cleanup
 			$_doc->__destruct();
 			unset($_doc);
 		}

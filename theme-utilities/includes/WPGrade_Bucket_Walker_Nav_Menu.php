@@ -94,7 +94,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
     // add main/sub classes to li's and links
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
         global $wp_query;
-		
+
         if (!is_array($args)) {
             $args = (array)$args;
         }
@@ -323,6 +323,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
         
         // parse the HTML and find the megamenu posts and switch them with the submenus so those are first
         if ($depth == 0) {
+			
 			set_error_handler("custom_warning_handler", E_WARNING);
 			
 			//load up the library
@@ -331,9 +332,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			// Create DOM from string
 			$_doc = str_get_html($output);
 
-			$zagrid = $_doc->find('div.sub-menu__grid',-1);
+			$zagrid = $_doc->find('.sub-menu--mega',-1)->find('.grid',0);
 			if (!empty($zagrid) && !empty($zagrid->innertext)) {
-                $submenu = $_doc->find('ul.sub-menu', -1);
+                $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
                 if (!empty($submenu)) {
 					//cleanup
 					$submenu->removeClass('sub-menu');
@@ -346,20 +347,17 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 					$zagrid->innertext = $submenu->outertext.$zagrid->innertext;
 					//empty it
 					$submenu->outertext = '';
-					$zagrid->__destruct();
-					unset($zagrid);
-					$submenu->__destruct();
-					unset($submenu);
                 }
 
             } else {
                 // the megamenu wrapper is empty
-                $submenu = $_doc->find('ul.sub-menu', -1);
+                $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
                 if (!empty($submenu) && !empty($submenu->innertext)) {
-					$whereto = $_doc->find('div.sub-menu--mega',-1);
-                   
-                    $whereto->parent()->addClass('nav__item--relative');
+
+                    $_nav__item = $_doc->find('.sub-menu--mega',-1)->parent();
+                    $_nav__item->addClass('nav__item--relative');
                     
+					$whereto = $_doc->find('.sub-menu--mega',-1);
 					//cleanup
 					$submenu->removeClass('sub-menu');
 					$submenu->removeClass('one-fifth');
@@ -369,19 +367,17 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 					$whereto->outertext = $submenu->outertext.$whereto->outertext;
 					//empty it
 					$submenu->outertext = '';
-					$whereto->__destruct();
-					unset($whereto);
-					$submenu->__destruct();
-					unset($submenu);
                 }
 				
 				//empty it
-				$_doc->find('div.sub-menu--mega',-1)->outertext = '';
+				$_doc->find('.sub-menu--mega',-1)->outertext = '';
             }
 			
 			// swap the $output
 			$output = $_doc->outertext;
-			$doc->__destruct();
+			
+			//cleanup
+			$_doc->__destruct();
 			unset($_doc);
 			
 			restore_error_handler();
