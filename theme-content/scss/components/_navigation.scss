@@ -181,6 +181,13 @@
                 margin-top: -1px;
             }
         }
+
+        &.menu-item-has-children:hover {
+            > .sub-menu {
+                display:block;
+                opacity:1;
+            }
+        }
     }
 
     .sub-menu {
