@@ -172,7 +172,15 @@ $sections[] = array(
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
-				array(
+		array(
+			'id' => 'blog_single_share_links_pinterest',
+			'type' => 'checkbox',
+			'title' => __('Pinterest Share Link', wpgrade::textdomain()),
+			'desc' => '',
+			'default' => '1',
+			'required' => array('blog_single_show_share_links', '=', 1)
+		),
+		array(
 			'id'=>'article-21',
 			'desc'=> __('<h3>Blog Archive</h3>', wpgrade::textdomain()),
 			'type' => 'info'

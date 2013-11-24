@@ -15,6 +15,9 @@ if ( wpgrade::option('blog_single_show_share_links')) : ?>
 			if ( wpgrade::option('blog_single_share_links_googleplus')) {?>
 				<li id="gplus" class="share-item" data-url="<?php the_permalink() ?>" data-text="<?php the_excerpt_rss() ?>" data-title="+1"></li>
 			<?php } ?>
+			<?php if ( wpgrade::option('blog_single_share_links_pinterest')) {?>
+				<li id="pinterest" class="share-item" data-url="<?php the_permalink() ?>" data-text="<?php the_excerpt_rss() ?>" data-title="PinIt"></li>
+			<?php } ?>
 			<li class="share-item share-total">
 				<div class="share-total__value">0</div>
 				<div class="share-total__title"><?php _e('Shares', wpgrade::textdomain()); ?></div>

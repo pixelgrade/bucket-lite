@@ -675,16 +675,28 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
           }
         });
         $('#gplus').sharrre({
-          share: {
-            googlePlus: true
-          },
-          template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-gplus  circle  small"></i></div><div class="share-item__value">{total}</div>',
-          enableHover: false,
-          enableTracking: false,
-          click: function(api, options){
-            api.simulateClick();
-            api.openPopup('googlePlus');
-          }
+			share: {
+				googlePlus: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-gplus  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('googlePlus');
+			}
+        });
+		$('#pinterest').sharrre({
+			share: {
+				pinterest: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-pinterest  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('pinterest');
+			}
         });
     }
 
