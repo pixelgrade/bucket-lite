@@ -7,7 +7,7 @@ if ( wpgrade::option('blog_single_show_share_links')) : ?>
 				display_pixlikes();
 			}
 			if ( wpgrade::option('blog_single_share_links_twitter')) { ?>
-				<li id="twitter" class="share-item" data-url="<?php the_permalink() ?>" data-text="<?php the_excerpt_rss() ?>" data-title="Tweet"></li>
+			<li id="twitter" class="share-item" data-url="<?php the_permalink() ?>" data-text="<?php echo get_the_title(); ?>" data-title="Tweet" <?php if (wpgrade::option('twitter_card_site')) echo 'data-via="'.wpgrade::option('twitter_card_site').'"' ?>></li>
 			<?php }
 			if ( wpgrade::option('blog_single_share_links_facebook')) { ?>
 				<li id="facebook" class="share-item" data-url="<?php the_permalink() ?>" data-text="<?php the_excerpt_rss() ?>" data-title="Like"></li>
