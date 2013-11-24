@@ -133,3 +133,65 @@
 		return $link;
 	}
 	add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
+
+	
+/** Add New Field To Category **/
+function extra_category_fields( $tag ) {
+	if (isset($tag->term_id)) {
+		$t_id = $tag->term_id;
+		$cat_meta = get_option( "category_$t_id" );
+	} else {
+		$cat_meta = array();
+	}
+?>
+<tr class="form-field">
+    <th scope="row" valign="top"><label for="meta-color"><?php _e('Category Custom Accent Color', wpgrade::textdomain()); ?></label></th>
+    <td>
+        <div id="colorpicker">
+            <input type="text" name="cat_meta[cat_custom_accent]" class="colorpicker" size="3" style="width:20%;" value="<?php echo (isset($cat_meta['cat_custom_accent'])) ? $cat_meta['cat_custom_accent'] : wpgrade::option('main_color'); ?>" />
+        </div>
+            <br />
+			<span class="description"><?php _e('Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code).', wpgrade::textdomain()); ?></span>
+            <br />
+        </td>
+</tr>
+<?php
+}
+add_action ( 'category_add_form_fields', 'extra_category_fields');
+add_action('category_edit_form_fields','extra_category_fields');
+
+/** Save Category Meta **/
+function save_extra_category_fields( $term_id ) {
+
+    if ( isset( $_POST['cat_meta'] ) ) {
+        $t_id = $term_id;
+        $cat_meta = get_option( "category_$t_id");
+        $cat_keys = array_keys($_POST['cat_meta']);
+            foreach ($cat_keys as $key){
+            if (isset($_POST['cat_meta'][$key])){
+                $cat_meta[$key] = $_POST['cat_meta'][$key];
+            }
+        }
+        //save the option array
+        update_option( "category_$t_id", $cat_meta );
+    }
+}
+add_action ( 'edited_category', 'save_extra_category_fields');
+
+function get_category_color($cat_id) {
+    $cat_data = get_option("category_$cat_id");
+	
+	if (!empty($cat_data['cat_custom_accent']) && ($cat_data['cat_custom_accent'] != wpgrade::option('main_color'))) {
+		return $cat_data['cat_custom_accent'];
+	} else {
+		return false;
+	}
+}
+
+
+/** Enqueue Color Picker **/
+function colorpicker_enqueue() {
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'colorpicker-js', get_stylesheet_directory_uri() . '/theme-content/js/admin/color-picker.js', array( 'wp-color-picker' ) );
+}
+add_action( 'admin_enqueue_scripts', 'colorpicker_enqueue' );

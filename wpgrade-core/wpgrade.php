@@ -132,6 +132,13 @@ class wpgrade {
 	static function options() {
 		return self::$options_handler;
 	}
+	
+	/**
+	 * @return mixed
+	 */
+	static function option_set($option, $value) {
+		return self::$options_handler->set($option, $value);
+	}
 
 
 	// Resolvers
