@@ -125,12 +125,28 @@ function wpgrade_callback_geting_active() {
 
 				array(
 					'name' => __('Slider height', wpgrade::textdomain()),
-					'desc' => __('Enter a slider height here(only digits, without \'px\'). If left blank, it will default to 525px', wpgrade::textdomain()),
+					'desc' => __('Enter a slider height here (only digits, without \'px\'). If left blank, it will default to 525px', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'post_slider_height',
 					'type' => 'text_small',
 					'std' => '',
 				),				
-
+				array(
+					'name' => __('Show Nearby Images', wpgrade::textdomain()),
+					'desc' => __('Enable this if you want to avoid having empty space on the sides of the image when using mostly portrait images.', wpgrade::textdomain()),
+					'id' => wpgrade::prefix() . 'post_slider_visiblenearby',
+					'type' => 'select',
+					'options' => array(
+						array(
+							'name' => __('Enabled', wpgrade::textdomain()),
+							'value' => true
+						),
+						array(
+							'name' => __('Disabled', wpgrade::textdomain()),
+							'value' => false
+						)
+					),
+					'std' => false
+				),
 				array(
 					'name' => __('Slider transition', wpgrade::textdomain()),
 					'id' => wpgrade::prefix() . 'post_slider_transition',
