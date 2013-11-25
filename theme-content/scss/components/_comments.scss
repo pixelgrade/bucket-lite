@@ -58,7 +58,7 @@
     padding-left: 0;
 }
 
-li.comment{
+li.comment, li.pingback{
     display: block;
     margin-bottom: 0;
     @include rem(padding-top, $_u);
