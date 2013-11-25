@@ -8,6 +8,22 @@ function wpgrade_callback_custom_theme_features() {
 	add_editor_style(get_template_directory_uri().'/theme-content/css/style.css');
 }
 
+
+function wpgrade_custom_backgrounds_suport(){
+
+	$background_args = array(
+		'default-color'          => '#fff',
+		'default-image'          => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-background', $background_args );
+}
+
+// Hook into the 'after_setup_theme' action
+add_action( 'after_setup_theme', 'wpgrade_custom_backgrounds_suport' );
+
 function wpgrade_callback_sort_query_by_post_in( $sortby, $thequery ) {
 	if ( !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
 		$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
