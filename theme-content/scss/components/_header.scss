@@ -7,10 +7,48 @@
         @include rem(height, 3* $_u);
         width:50%;
     }
+
+
+    .header--type2 .site-header {
+         width:100%;
+
+         & > div {
+            display:table-row;
+        }
+
+        .site-header__branding {
+           
+        }
+            .site-logo {
+                width:75%;
+                margin:18px 0;
+                height:$_u2+$_u;
+                display:block;
+            }
+        .header-ad {
+            float:left;
+            width:100%;
+            margin-top:$_u4;
+            margin-bottom:$_u2;
+        }
+    }
+    
 }
 @include media-query(lap-and-up) {
     .site-header{
         @include rem(height, 6 * $_u);
+    }
+}
+
+
+.header-ad-link{
+    display: block;
+    text-align: right;
+}
+
+@include media-query(palm) {
+    .header-ad{
+        // display: none;
     }
 }
 
@@ -19,7 +57,7 @@
 //The padding prevents them from overlapping
 @include media-query(palm) {
     .container--main{
-        @include rem(padding-top, 4*$_u);
+        // @include rem(padding-top, 4*$_u);
     }
 }
 
@@ -127,16 +165,6 @@
     }
 }
 
-.header-ad-link{
-    display: block;
-    text-align: right;
-}
-
-@include media-query(palm) {
-    .header-ad{
-        display: none;
-    }
-}
 
 
 //There's a grid in top navigation.
