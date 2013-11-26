@@ -1,4 +1,28 @@
 <?php
+/**
+ * Redux Framework is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * Redux Framework is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Redux Framework. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @package     Redux_Field
+ * @subpackage  Border
+ * @version     3.0.0
+ */
+
+// Exit if accessed directly
+if( !defined( 'ABSPATH' ) ) exit;
+
+// Don't duplicate me!
+if( class_exists( 'ReduxFramework_ace_editor' ) ) return;
 class ReduxFramework_border extends ReduxFramework{	
 	
 	/**
@@ -10,7 +34,7 @@ class ReduxFramework_border extends ReduxFramework{
 	*/
 	function __construct($field = array(), $value ='', $parent){
 		
-		parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
+		parent::__construct($parent->sections, $parent->args);
 		$this->field = $field;
 		$this->value = $value;
 		//$this->render();
@@ -52,10 +76,10 @@ class ReduxFramework_border extends ReduxFramework{
 		$this->value = wp_parse_args( $this->value, $defaults );
 
 		$value = array(
-			'top' => isset( $this->value['border-top'] ) ? filter_var($this->value['border-top'], FILTER_SANITIZE_NUMBER_INT) : filter_var($this->value['top'], FILTER_SANITIZE_NUMBER_INT),
-			'right' => isset( $this->value['border-right'] ) ? filter_var($this->value['border-right'], FILTER_SANITIZE_NUMBER_INT) : filter_var($this->value['right'], FILTER_SANITIZE_NUMBER_INT),
-			'bottom' => isset( $this->value['border-bottom'] ) ? filter_var($this->value['border-bottom'], FILTER_SANITIZE_NUMBER_INT) : filter_var($this->value['bottom'], FILTER_SANITIZE_NUMBER_INT),
-			'left' => isset( $this->value['border-left'] ) ? filter_var($this->value['border-left'], FILTER_SANITIZE_NUMBER_INT) : filter_var($this->value['left'], FILTER_SANITIZE_NUMBER_INT),
+			'top' => isset( $this->value['border-top'] ) ? filter_var($this->value['border-top'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) : filter_var($this->value['top'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+			'right' => isset( $this->value['border-right'] ) ? filter_var($this->value['border-right'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) : filter_var($this->value['right'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+			'bottom' => isset( $this->value['border-bottom'] ) ? filter_var($this->value['border-bottom'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) : filter_var($this->value['bottom'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+			'left' => isset( $this->value['border-left'] ) ? filter_var($this->value['border-left'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) : filter_var($this->value['left'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
             'color' => isset( $this->value['border-color'] ) ? $this->value['border-color'] : $this->value['color'],
             'style' => isset( $this->value['border-style'] ) ? $this->value['border-style'] : $this->value['style']
 		);
@@ -84,7 +108,7 @@ class ReduxFramework_border extends ReduxFramework{
 		echo '<input type="hidden" class="field-units" value="px">';
 
 		if ( isset( $this->field['all'] ) && $this->field['all'] == true ) {
-			echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="icon-fullscreen icon-large"></i></span><input type="text" class="redux-border-all redux-border-input mini'.$this->field['class'].'" placeholder="'.__('All','redux-framework').'" rel="'.$this->field['id'].'-all" value="'.$this->value['top'].'"></div>';
+			echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-fullscreen icon-large"></i></span><input type="text" class="redux-border-all redux-border-input mini'.$this->field['class'].'" placeholder="'.__('All','redux-framework').'" rel="'.$this->field['id'].'-all" value="'.$this->value['top'].'"></div>';
 		}
 
 		echo '<input type="hidden" class="redux-border-value" id="'.$this->field['id'].'-top" name="'.$this->args['opt_name'].'['.$this->field['id'].'][border-top]" value="' . ( $this->value['top'] ? $this->value['top'] . 'px' : '' ) . '">';
@@ -97,28 +121,28 @@ class ReduxFramework_border extends ReduxFramework{
 			Top
 			**/
 			if ($this->field['top'] === true):
-				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="icon-arrow-up icon-large"></i></span><input type="text" class="redux-border-top redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Top','redux-framework').'" rel="'.$this->field['id'].'-top" value="'.$this->value['top'].'"></div>';
+				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-up icon-large"></i></span><input type="text" class="redux-border-top redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Top','redux-framework').'" rel="'.$this->field['id'].'-top" value="'.$this->value['top'].'"></div>';
 		  	endif;
 
 			/**
 			Right
 			**/
 			if ($this->field['right'] === true):
-				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="icon-arrow-right icon-large"></i></span><input type="text" class="redux-border-right redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Right','redux-framework').'" rel="'.$this->field['id'].'-right" value="'.$this->value['right'].'"></div>';
+				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-right icon-large"></i></span><input type="text" class="redux-border-right redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Right','redux-framework').'" rel="'.$this->field['id'].'-right" value="'.$this->value['right'].'"></div>';
 		  	endif;
 
 			/**
 			Bottom
 			**/
 			if ($this->field['bottom'] === true):
-				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="icon-arrow-down icon-large"></i></span><input type="text" class="redux-border-bottom redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Bottom','redux-framework').'" rel="'.$this->field['id'].'-bottom" value="'.$this->value['bottom'].'"></div>';
+				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-down icon-large"></i></span><input type="text" class="redux-border-bottom redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Bottom','redux-framework').'" rel="'.$this->field['id'].'-bottom" value="'.$this->value['bottom'].'"></div>';
 		  	endif;
 
 			/**
 			Left
 			**/
 			if ($this->field['left'] === true):
-				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="icon-arrow-left icon-large"></i></span><input type="text" class="redux-border-left redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Left','redux-framework').'" rel="'.$this->field['id'].'-left" value="'.$this->value['left'].'"></div>';
+				echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-left icon-large"></i></span><input type="text" class="redux-border-left redux-border-input mini'.$this->field['class'].'" placeholder="'.__('Left','redux-framework').'" rel="'.$this->field['id'].'-left" value="'.$this->value['left'].'"></div>';
 		  	endif;		
 
 		endif;
