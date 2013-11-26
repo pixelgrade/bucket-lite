@@ -8,7 +8,7 @@
 
 .masonry__item {
     display: inline-block;
-    @include rem(padding-left, $_u);
+    padding-left: $_u;
     vertical-align: top;
 }
 
