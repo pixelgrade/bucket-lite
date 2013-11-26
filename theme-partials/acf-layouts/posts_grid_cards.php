@@ -120,10 +120,10 @@ if ($slides->have_posts()): ?>
         	<?php while($slides->have_posts()): $slides->the_post(); 
         		//When there are more than 3 posts split them into groups of 3
 				if($index++ % 3 == 0) { ?>
-	 --></div>
+	 	--></div>
 		<div class="posts-grid-cards grid fullwidth"><!--
 				<?php } ?>
-     	 --><div class="grid__item lap-and-up-one-third"><?php get_template_part('theme-partials/post-templates/content-masonry'); ?></div><!--
+     		--><div class="grid__item lap-and-up-one-third"><?php get_template_part('theme-partials/post-templates/content-masonry'); ?></div><!--
         	<?php endwhile; wp_reset_postdata(); ?>
- 	 --></div>
+ 	 	--></div>
 <?php endif;

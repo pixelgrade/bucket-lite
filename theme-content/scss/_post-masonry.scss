@@ -26,9 +26,11 @@
         @extend .masonry__item;
     }
 
-    &.fullwidth > div {
-        width:33.33%;
-    }
+    // @media screen and (min-width: 1023px) {
+    //     &.fullwidth > div {
+    //         width:33.33%;
+    //     }
+    // }
 }
 
 
@@ -70,7 +72,7 @@
             content: '2 .grid__item.one-half  .masonry__item-wrapper';
         }
         
-        .masonry__item { width: 50%; }
+        & > div, .masonry__item { width: 50%; }
     }
 }
 
@@ -90,6 +92,6 @@
             content: '3 .grid__item.one-third  .masonry__item-wrapper';
         }
 
-        .masonry__item { width: 33.33%; }
+        & > div, .masonry__item { width: 33.33%; }
     }
 }
