@@ -181,6 +181,13 @@ $sections[] = array(
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
+			'id' => 'blog_single_show_author_box',
+			'type' => 'switch',
+			'title' => __('Show Author Info Box', wpgrade::textdomain()),
+			'subtitle' => __('Do you want to show author info box with avatar and description bellow the post?', wpgrade::textdomain()),
+			'default' => '1',
+		),
+		array(
 			'id'=>'article-21',
 			'desc'=> __('<h3>Blog Archive</h3>', wpgrade::textdomain()),
 			'type' => 'info'

@@ -169,9 +169,7 @@ get_header(); ?>
 					<?php endif; ?>
                 </div>
 				<?php get_template_part('theme-partials/post-templates/share-box'); ?>
-				<?php get_template_part( 'author-bio' ); ?>
-
-                <hr class="separator  separator--subsection">
+				<?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' ); ?>
                 
                 <?php
 				$next_post = get_next_post();
