@@ -193,6 +193,7 @@ $sections[] = array(
 			'default' => 'masonry',
 			'options' => array(
 				'masonry' => array('Masonry', 'img' => wpgrade::resourceuri('images/blog-masonry.png')),
+				'grid' => array('Grid', 'img' => wpgrade::resourceuri('images/blog-grid.png')),
 				'classic' => array('Classic', 'img' => wpgrade::resourceuri('images/blog-classic.png')),
 			)
 		),

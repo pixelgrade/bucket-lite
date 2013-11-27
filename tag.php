@@ -26,13 +26,15 @@ get_header(); ?>
 
 	            if(wpgrade::option('blog_layout') == 'masonry') {
 		            $grid_class= 'class="grid  masonry" data-columns';
+	            } elseif(wpgrade::option('blog_layout') == 'grid') {
+		            $grid_class= 'class="grid" data-columns';
 	            } else {
 		            $grid_class = 'class="classic"';
 	            } ?>
 
 	            <div <?php echo $grid_class;?>>
                     <?php while (have_posts()): the_post(); ?><!--
-                        --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
+                        --><div class="<?php echo wpgrade::option('blog_layout')?>__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
                 <?php echo wpgrade::pagination();
