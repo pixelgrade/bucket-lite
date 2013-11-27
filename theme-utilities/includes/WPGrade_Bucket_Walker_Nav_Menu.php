@@ -327,7 +327,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			set_error_handler("custom_warning_handler", E_WARNING);
 			
 			//load up the library
-            require_once 'vendor/simplehtmldom/simple_html_dom.php';
+			if(!function_exists('file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
 			
 			// Create DOM from string
 			$_doc = str_get_html($output);
