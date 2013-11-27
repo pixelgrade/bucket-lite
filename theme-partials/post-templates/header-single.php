@@ -15,9 +15,9 @@ $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds';
 $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'two-thirds  palm-one-whole'; ?>
 
     <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
-        <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+        <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
             <img src="<?php echo $image[0] ?>" alt="<?php echo $image[0] ?>" />
-        </a>
+        </div>
     </div>
 
 <?php endif; ?>

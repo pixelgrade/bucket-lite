@@ -74,8 +74,8 @@
         <div class="footer__copyright">
             <div class="container">
                 <div class="flexbox">
-                    <div class="flexbox__item"><?php echo wpgrade::option('copyright_text') ?></div>
-                    <div class="flexbox__item  text--right"><?php wpgrade_footer_nav() ?></div>
+                    <div class="footer-copyright flexbox__item"><?php echo wpgrade::option('copyright_text') ?></div>
+                    <div class="footer-menu flexbox__item "><?php wpgrade_footer_nav() ?></div>
                 </div>
             </div>
         </div>

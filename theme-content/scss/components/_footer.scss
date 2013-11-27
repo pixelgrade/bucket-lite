@@ -23,4 +23,17 @@
 .footer__copyright {
     background: black;
     @include rem(padding, $_u2 0);
+
+    @include media-query(palm) {
+        & div div > div {
+            text-align:center;
+            float:left;
+            width:100%;
+        }
+    }
+    @include media-query(lap-and-up) {
+        .footer-menu {
+            text-align:right;
+        }
+    }
 }

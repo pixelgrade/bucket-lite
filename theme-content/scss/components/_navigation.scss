@@ -446,9 +446,9 @@ $transition_speed: 0.4s;
 
     .header{
         background: $header_background;
-        position: absolute;
+        // position: absolute;
         width: 100%;
-        @include rem(height, $header_height);
+        // @include rem(height, $header_height);
     }
 
     .site-header {
