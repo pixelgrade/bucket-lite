@@ -61,8 +61,6 @@ get_header(); ?>
 
 				<?php if(wpgrade::option('blog_layout') == 'masonry') {
 					$grid_class= 'class="grid  masonry" data-columns';
-				} elseif(wpgrade::option('blog_layout') == 'grid') {
-					$grid_class= 'class="grid" data-columns';
 				} else {
 					$grid_class = 'class="classic"';
 				} ?>
