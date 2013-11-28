@@ -97,7 +97,7 @@
             'id_submit' => 'comment-submit',
             'label_submit' => __('Send', wpgrade::textdomain()),
             // redefine your own textarea (the comment body)
-            'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">'.__('Comment', wpgrade::textdomain()).'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
+            'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">'.__('Comment', wpgrade::textdomain()).'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __( 'Message', wpgrade::textdomain() ) . '"></textarea></p>');
     } else {
         $comments_args = array(
         // change the title of send button
@@ -112,7 +112,7 @@
         'id_submit' => 'comment-submit',
         'label_submit' => __('Send', wpgrade::textdomain()),
         // redefine your own textarea (the comment body)
-        'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">'.__('Comment', wpgrade::textdomain()).'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Message', 'noun', wpgrade::textdomain() ) . '"></textarea></p>');
+        'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">'.__('Comment', wpgrade::textdomain()).'</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __( 'Message', wpgrade::textdomain() ) . '"></textarea></p>');
     }
 	
 	//if we have no comments than we don't a second title, one is enough

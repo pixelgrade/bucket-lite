@@ -1,11 +1,16 @@
 <?php
 // vim: foldmethod=marker
 
+if (!class_exists('OAuthException')):
 /* Generic exception class
  */
 class OAuthException extends Exception {
   // pass
 }
+
+endif;
+
+if (!class_exists('OAuthConsumer')):
 
 class OAuthConsumer {
   public $key;
@@ -21,6 +26,10 @@ class OAuthConsumer {
     return "OAuthConsumer[key=$this->key,secret=$this->secret]";
   }
 }
+
+endif;
+
+if (!class_exists('OAuthToken')):
 
 class OAuthToken {
   // access tokens and request tokens
@@ -51,6 +60,10 @@ class OAuthToken {
     return $this->to_string();
   }
 }
+
+endif;
+
+if (!class_exists('OAuthSignatureMethod')):
 
 /**
  * A class for implementing a Signature Method
@@ -89,6 +102,10 @@ abstract class OAuthSignatureMethod {
   }
 }
 
+endif;
+
+if (!class_exists('OAuthSignatureMethod_HMAC_SHA1')):
+
 /**
  * The HMAC-SHA1 signature method uses the HMAC-SHA1 signature algorithm as defined in [RFC2104] 
  * where the Signature Base String is the text and the key is the concatenated values (each first 
@@ -116,6 +133,10 @@ class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
     return base64_encode(hash_hmac('sha1', $base_string, $key, true));
   }
 }
+
+endif;
+
+if (!class_exists('OAuthSignatureMethod_PLAINTEXT')):
 
 /**
  * The PLAINTEXT method does not provide any security protection and SHOULD only be used 
@@ -149,6 +170,10 @@ class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
     return $key;
   }
 }
+
+endif;
+
+if (!class_exists('OAuthSignatureMethod_RSA_SHA1')):
 
 /**
  * The RSA-SHA1 signature method uses the RSASSA-PKCS1-v1_5 signature algorithm as defined in 
@@ -216,6 +241,10 @@ abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
     return $ok == 1;
   }
 }
+
+endif;
+
+if (!class_exists('OAuthRequest')):
 
 class OAuthRequest {
   private $parameters;
@@ -478,6 +507,10 @@ class OAuthRequest {
   }
 }
 
+endif;
+
+if (!class_exists('OAuthServer')):
+
 class OAuthServer {
   protected $timestamp_threshold = 300; // in seconds, five minutes
   protected $version = '1.0';             // hi blaine
@@ -689,6 +722,10 @@ class OAuthServer {
 
 }
 
+endif;
+
+if (!class_exists('OAuthDataStore')):
+
 class OAuthDataStore {
   function lookup_consumer($consumer_key) {
     // implement me
@@ -714,6 +751,10 @@ class OAuthDataStore {
   }
 
 }
+
+endif;
+
+if (!class_exists('OAuthUtil')):
 
 class OAuthUtil {
   public static function urlencode_rfc3986($input) {
@@ -871,4 +912,5 @@ class OAuthUtil {
   }
 }
 
+endif;
 ?>
