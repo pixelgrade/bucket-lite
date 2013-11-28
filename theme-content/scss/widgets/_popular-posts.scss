@@ -13,7 +13,12 @@
     .tabs__content {
         @include rem(margin-bottom, $_u2);
         // @include rem(margin-right, -$_u);
+
+		.article--list img {
+			max-width: 74px;
+		}
     }
+
 }
 
 .popular-posts__time {
