@@ -667,7 +667,22 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
         $('.wpgrade_popular_posts, .pixcode--tabs').organicTabs();
     }
 
+	//scan through the post meta tags and try to find the post image
+	function getArticleImage() { 
+		var metas = document.getElementsByTagName('meta'); 
 
+		for (i=0; i<metas.length; i++) { 
+		   if (metas[i].getAttribute("property") == "og:image") { 
+			  return metas[i].getAttribute("content"); 
+		   } else if (metas[i].getAttribute("property") == "image") { 
+			  return metas[i].getAttribute("content");  
+		   } else if (metas[i].getAttribute("property") == "twitter:image:src") { 
+			  return metas[i].getAttribute("content");  
+		   }
+		}
+
+		return "";
+	}
 
     function shareBox() {
 		//get the via username for twitter share
@@ -722,6 +737,12 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			click: function(api, options){
 				api.simulateClick();
 				api.openPopup('pinterest');
+			},
+			buttons: {
+				pinterest: {
+					media: getArticleImage(),
+					description: $('#pinterest').data('text')
+				} 
 			}
         });
     }
