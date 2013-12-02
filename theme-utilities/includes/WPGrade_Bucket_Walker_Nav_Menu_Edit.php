@@ -17,7 +17,7 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		if ($depth == 0 && ($item->object == 'category' || $item->object == 'post_format')) {
 			
 			//load up the library
-			require_once 'vendor/simplehtmldom/simple_html_dom.php';
+			if(!function_exists('file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
 
 			// Create DOM from string
 			$_doc = str_get_html($output);

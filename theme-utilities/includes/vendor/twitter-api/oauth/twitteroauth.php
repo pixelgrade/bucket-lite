@@ -6,14 +6,12 @@
  * The first PHP Library to support OAuth for Twitter's REST API.
  */
 
-//check first if OAuth is not already loaded as a php extension
-if (!class_exists('OAuthException') && !class_exists('OAuthConsumer')) {
 
 /* Load OAuth lib. You can find it at http://oauth.net */
 require_once('OAuth.php');
 
-}
 
+if (!class_exists('TwitterOAuth')):
 /**
  * Twitter OAuth class
  */
@@ -248,3 +246,5 @@ class TwitterOAuth {
     return strlen($header);
   }
 }
+
+endif;

@@ -195,3 +195,8 @@ function colorpicker_enqueue() {
     wp_enqueue_script( 'colorpicker-js', get_stylesheet_directory_uri() . '/theme-content/js/admin/color-picker.js', array( 'wp-color-picker' ) );
 }
 add_action( 'admin_enqueue_scripts', 'colorpicker_enqueue' );
+
+//fix the canonical url of YOAST because on the front page it ignores the pagination
+add_filter( 'wpseo_canonical', 'wpgrade_get_current_canonical_url' );
+//fix the canonical url of AIOSEOP because on the front page it breaks the pagination
+add_filter( 'aioseop_canonical_url', 'wpgrade_get_current_canonical_url' );
