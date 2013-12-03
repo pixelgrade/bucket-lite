@@ -17,6 +17,7 @@
  * @subpackage  Field_Editor
  * @author      Daniel J Griffiths (Ghost1227)
  * @author      Dovy Paukstys
+ * @author      Kevin Provance (kprovance)
  * @version     3.0.0
  */
 
@@ -45,10 +46,10 @@ if( !class_exists( 'ReduxFramework_editor' ) ) {
         public function __construct( $field = array(), $value ='', $parent ) {
         
             parent::__construct( $parent->sections, $parent->args );
-
+            $this->parent = $parent;
             $this->field = $field;
             $this->value = $value;
-        
+           
         }
 
         /**
@@ -61,12 +62,13 @@ if( !class_exists( 'ReduxFramework_editor' ) ) {
          * @return      void
          */
         public function render() {
-    	
-            $settings = array(
+
+            // Setup up default editor_options
+            $defaults = array(
                 'textarea_name' => $this->args['opt_name'] . '[' . $this->field['id'] . ']', 
                 'editor_class'  => $this->field['class'],
 				'wpautop' => (isset($this->field['autop'])) ? $this->field['autop'] : true,
-                'textarea_rows' => 8,
+                'textarea_rows' => 8, //Wordpress default
                 'teeny' => true,
             );
 			
@@ -76,10 +78,14 @@ if( !class_exists( 'ReduxFramework_editor' ) ) {
 				$settings['textarea_rows'] = $this->field['rows'];
 			}
 
-            wp_editor( $this->value, $this->field['id'], $settings );
+			if ( isset($this->field['editor_options']) ) {
+				$this->field['editor_options'] = wp_parse_args( $this->field['editor_options'], $defaults );
+			} else {
+				$this->field['editor_options'] = wp_parse_args( array(), $defaults );
+			}
 
+            wp_editor( $this->value, $this->field['id'], $this->field['editor_options'] );
         }
-
 
         /**
          * Enqueue Function.

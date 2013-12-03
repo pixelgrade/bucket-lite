@@ -225,7 +225,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 		 * @return \ReduxFramework
 		 */
         public function __construct( $sections = array(), $args = array(), $extra_tabs = array() ) {
-
+            global $wp_version;
             // Create defaults array
             $defaults = array();
 
@@ -242,9 +242,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $defaults['google_api_key']     = ''; // Must be defined to add google fonts to the typography module
             $defaults['last_tab']           = '0';
             $defaults['menu_icon']          = self::$_url . 'assets/img/menu_icon.png';
-            if (defined('MP6')) {
-            	$defaults['menu_icon'] 		= '';
-            }
+            $defaults['menu_icon'] 		= '';
             $defaults['menu_title']         = __( 'Options', 'redux-framework' );
             $defaults['page_icon']          = 'icon-themes';
             $defaults['page_title']         = __( 'Options', 'redux-framework' );
@@ -1341,7 +1339,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 							$runUpdate = true;
 						}						
 
-						if ( $this->args['default_show'] === true && isset( $field['default'] ) && isset($this->options[$field['id']]) && $this->options[$field['id']] != $field['default'] && $field['type'] !== "info" && $field['type'] !== "group" ) {
+						if ( $this->args['default_show'] === true && isset( $field['default'] ) && isset($this->options[$field['id']]) && $this->options[$field['id']] != $field['default'] && $field['type'] !== "info" && $field['type'] !== "group" && $field['type'] !== "editor" && $field['type'] !== "ace_editor" ) {
 							$default_output = "";
 						    if (!is_array($field['default'])) {
 								if ( !empty( $field['options'][$field['default']] ) ) {
