@@ -45,6 +45,8 @@ $is_review = bucket::has_average_score();
 								if (get_field('note')) {
 									echo '<div class="score__desc">'.get_field('note').'</div>';
 								} ?>
+								<meta itemprop="worst" content = "1">
+								<meta itemprop="best" content = "10">
                             </div>
                         </div>
                     </div>
