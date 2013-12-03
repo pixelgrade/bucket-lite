@@ -9,10 +9,9 @@ class ReduxFramework_raw {
      * @since ReduxFramework 3.0.4
     */
     function __construct($field = array(), $value ='', $parent) {
-        $this->parent = $parent;
         $this->field = $field;
-	$this->value = $value;
-	$this->args = $parent->args;
+		$this->value = $value;
+		$this->args = $parent->args;
     }
 
     /**
@@ -29,9 +28,6 @@ class ReduxFramework_raw {
 
         if ( !empty( $this->field['include'] ) && file_exists( $this->field['include'] ) ) {
             include( $this->field['include'] );
-        }
-        if ( !empty( $this->field['content'] ) && isset( $this->field['content'] ) ) {
-            echo $this->field['content'];
         }
 
         do_action('redux-field-raw-'.$this->parent->args['opt_name'].'-'.$this->field['id']);

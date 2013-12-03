@@ -21,7 +21,7 @@ function redux_add_file(event, selector) {
 	frame = wp.media({
 		multiple: false,
 		library: {
-			//type: 'image' //Only allow images
+			type: 'image' //Only allow images
 		},
 		// Set the title of the modal.
 		title: jQueryel.data('choose'),
@@ -42,19 +42,18 @@ function redux_add_file(event, selector) {
 		// Grab the selected attachment.
 		var attachment = frame.state().get('selection').first();
 		frame.close();
-		if (typeof reduxMedia[jQuery(selector).attr('data-id')] !== 'undefined' && attachment.attributes.type !== reduxMedia[jQuery(selector).attr('data-id')]) {
+		if (attachment.attributes.type !== "image") {
 			return;
 		}
 
-		selector.find('.upload').val(attachment.attributes.url);
+		selector.find('.upload').val(attachment.attributes.url).trigger('check_dependencies',selector.find('.upload'));
 		selector.find('.upload-id').val(attachment.attributes.id);
 		selector.find('.upload-height').val(attachment.attributes.height);
 		selector.find('.upload-width').val(attachment.attributes.width);
-		redux_change( jQuery(selector).find( '.upload-id' ) );
 		var thumbSrc = attachment.attributes.url;
-		if (typeof attachment.attributes.sizes !== 'undefined' && typeof attachment.attributes.sizes.thumbnail !== 'undefined') {
+		if (typeof attachment.attributes.sizes.thumbnail.url !== 'undefined') {
 			thumbSrc = attachment.attributes.sizes.thumbnail.url;
-		} else if ( typeof attachment.attributes.sizes !== 'undefined' ) {
+		} else {
 			var height = attachment.attributes.height;
 			for (var key in attachment.attributes.sizes) {
 				var object = attachment.attributes.sizes[key];
@@ -63,11 +62,9 @@ function redux_add_file(event, selector) {
 					thumbSrc = object.url;
 				}
 			}
-		} else {
-			thumbSrc = attachment.attributes.icon;
 		}
 		selector.find('.upload-thumbnail').val(thumbSrc);
-		if ( !selector.find('.upload').hasClass('noPreview') ) {
+		if ( attachment.attributes.type === 'image' && !selector.find('.upload').hasClass('noPreview') ) {
 			selector.find('.screenshot').empty().hide().append('<img class="redux-option-image" src="' + thumbSrc + '">').slideDown('fast');
 		}
 		//selector.find('.media_upload_button').unbind();
@@ -87,12 +84,13 @@ function redux_remove_file(selector) {
 	if (!selector.find('.remove-image').addClass('hide')) {
 		return;
 	}
+
+	redux_change(jQuery('#'+selector.attr('rel')));
 	selector.find('.remove-image').addClass('hide');//hide "Remove" button
-	selector.find('.upload').val('');
+	selector.find('.upload').val('').trigger('check_dependencies',selector.find('.upload'));
 	selector.find('.upload-id').val('');
 	selector.find('.upload-height').val('');
 	selector.find('.upload-width').val('');
-	redux_change( jQuery(selector).find( '.upload-id' ) );
 	selector.find('.redux-background-properties').hide();
 	var screenshot = selector.find('.screenshot');
 	
@@ -126,12 +124,14 @@ function redux_remove_file(selector) {
     $.redux.media = function(){
 		// Remove the image button
 		$('.remove-image, .remove-file').unbind('click').on('click', function() {
-			redux_remove_file( $(this).parents('fieldset.redux-field:first') );
+			redux_remove_file( $(this).closest('fieldset') );
+			redux_change($(this).closest('fieldset:first').find('.upload'));
 		});
 
 		// Upload media button
 		$('.media_upload_button').unbind().on('click', function( event ) {
-			redux_add_file( event, $(this).parents('fieldset.redux-field:first') );
+			redux_add_file(event, $(this).closest('fieldset'));
+			redux_change($(this).closest('fieldset:first').find('.upload'));
 		});
     };
 

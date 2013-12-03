@@ -10,7 +10,7 @@ class ReduxFramework_select extends ReduxFramework{
 	*/
 	function __construct($field = array(), $value ='', $parent){
 		
-		parent::__construct($parent->sections, $parent->args);
+		parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
 		$this->field = $field;
 		$this->value = $value;
 		//$this->render();
@@ -47,7 +47,11 @@ class ReduxFramework_select extends ReduxFramework{
 		}//if
 
 		if (!empty($this->field['options'])) {
-			$multi = (isset($this->field['multi']) && $this->field['multi']) ? ' multiple="multiple"' : "";
+			if (isset($this->field['multi']) && $this->field['multi']) {
+				$multi = ' multiple="multiple"';
+			} else {
+				$multi = "";
+			}
 			
 			if (!empty($this->field['width'])) {
 				$width = ' style="'.$this->field['width'].'"';

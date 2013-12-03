@@ -1,4 +1,4 @@
-/* global confirm, redux_opts, redux_change */
+/* global confirm, redux_opts */
 
 jQuery(document).ready(function() {
 
@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 		var id = jQuery(this).closest('label').attr('for');
 		jQuery(this).parents("fieldset:first").find('.redux-image-select-selected').removeClass('redux-image-select-selected');
 		jQuery(this).closest('label').find('input[type="radio"]').prop('checked');
-		if (jQuery(this).closest('label').hasClass('redux-image-select-preset-' + id)) { // If they clicked on a preset, import!
+		if (jQuery(this).closest('label').hasClass('redux-image-select-presets')) { // If they clicked on a preset, import!
 			e.preventDefault();
 			var presets = jQuery(this).closest('label').find('input');
 			var data = presets.data('presets');
@@ -35,7 +35,7 @@ jQuery(document).ready(function() {
 		title : function(){
 			return "<img src='" + jQuery(this).attr('rel') + "' style='max-width:150px;' alt='' />";
 		},
-		opacity: 1
+		opacity: 1,
 	});
 	/*var xOffset = 10; // these 2 variable determine the popup's distance from the cursor
 	var yOffset = 30;
