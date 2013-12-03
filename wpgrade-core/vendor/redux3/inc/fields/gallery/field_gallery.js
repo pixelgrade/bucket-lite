@@ -62,7 +62,6 @@
                         return e.id;
                     });
                     current_gallery.find('.gallery_values').val(ids.join(','));
-                    redux_change( current_gallery.find( '.gallery_values' ) );
     
                 });
 

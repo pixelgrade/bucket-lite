@@ -67,6 +67,8 @@ return array
 		// enable the import/export feature
 		'show_import_export' => $debug_mod, # default: true
 
+		'customizer' => false,
+
 		// Set the icon for the import/export tab.
 		// If 'icon_type' => 'image', this should be the path to the icon.
 		// If 'icon_type' => 'iconfont', this should be the icon name.

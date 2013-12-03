@@ -10,7 +10,7 @@ class ReduxFramework_typography extends ReduxFramework{
      */
     function __construct($field = array(), $value ='', $parent){
 
-        parent::__construct($parent->sections, $parent->args);
+        parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
         $this->field = $field;
         $this->value = $value;
         $this->parent = $parent;
@@ -148,7 +148,7 @@ class ReduxFramework_typography extends ReduxFramework{
                   if( !file_exists( ReduxFramework::$_dir.'inc/fields/typography/googlefonts.html' ) ) {
                       $this->getGoogleFonts($wp_filesystem);
                   }
-                  
+                  echo "DOVYHERE";
                   if( file_exists( ReduxFramework::$_dir.'inc/fields/typography/googlefonts.html' )) {
                     echo $wp_filesystem->get_contents( ReduxFramework::$_dir.'inc/fields/typography/googlefonts.html' );
                   }

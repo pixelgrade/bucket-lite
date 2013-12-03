@@ -46,7 +46,7 @@ if (!class_exists('ReduxFramework_group')) {
          */
         public function __construct($field = array(), $value = '', $parent) {
 
-            parent::__construct($parent->sections, $parent->args);
+            parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
 
             $this->field = $field;
             $this->value = $value;

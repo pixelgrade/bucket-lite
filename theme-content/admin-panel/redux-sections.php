@@ -48,7 +48,13 @@ $sections[] = array(
 			'title' => __('Metro Icon', wpgrade::textdomain()),
 			'subtitle' => __('The size of this icon must be 144x144px.', wpgrade::textdomain())
 		),
-		
+		array(
+			'id' => 'enable_acf_ui',
+			'type' => 'switch',
+			'title' => __('Enable Advanced Custom Fields Settings', wpgrade::textdomain()),
+			'subtitle' => __(' Advanced Custom Fields plugin is already included in Bucket, instead of installing it again you can enable it from here.', wpgrade::textdomain()),
+			'default' => '0'
+		),
 	)
 );
 

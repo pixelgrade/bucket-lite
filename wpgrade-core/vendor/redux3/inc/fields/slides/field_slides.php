@@ -47,7 +47,7 @@ if (!class_exists('ReduxFramework_slides')) {
         public function __construct($field = array(), $value = '', $parent)
         {
 
-            parent::__construct($parent->sections, $parent->args);
+            parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
 
             $this->field = $field;
             $this->value = $value;
@@ -98,7 +98,7 @@ if (!class_exists('ReduxFramework_slides')) {
                         $slide['height'] = $img[2];
                     }
 
-                    echo '<div class="redux-slides-accordion-group"><fieldset class="redux-field"><h3><span class="redux-slides-header">' . $slide['title'] . '</span></h3><div>';
+                    echo '<div class="redux-slides-accordion-group"><fieldset><h3><span class="redux-slides-header">' . $slide['title'] . '</span></h3><div>';
 
                     $hide = '';
                     if ( empty( $slide['url'] ) ) {
@@ -124,13 +124,13 @@ if (!class_exists('ReduxFramework_slides')) {
                     echo '</div>' . "\n";
 
                     echo '<ul id="' . $this->field['id'] . '-ul" class="redux-multi-text">';
-                    echo '<li><input type="text" id="' . $this->field['id'] . '-title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][title]" value="' . esc_attr($slide['title']) . '" placeholder="'.__('Title', 'redux-framework').'" class="full-text slide-title" /></li>';
+                    echo '<li><input type="text" id="' . $this->field['id'] . '-title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][title]" value="' . esc_attr($slide['title']) . '" class="full-text slide-title" /></li>';
                     echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.__('Description', 'redux-framework').'" class="large-text" rows="6">' . esc_attr($slide['description']) . '</textarea></li>';
-                    echo '<li><input type="text" id="' . $this->field['id'] . '-url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" value="' . esc_attr($slide['url']) . '" class="full-text" placeholder="'.__('URL', 'redux-framework').'" /></li>';
+                    echo '<li><input type="text" id="' . $this->field['id'] . '-url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" value="' . esc_attr($slide['url']) . '" class="full-text" /></li>';
                     echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $slide['sort'] . '" />';
                     echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="' . $slide['attachment_id'] . '" />';
                     echo '<input type="hidden" class="upload-thumbnail" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][thumb]" id="' . $this->field['id'] . '-thumb_url_' . $x . '" value="' . $slide['thumb'] . '" readonly="readonly" />';
-                    echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][image]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="' . $slide['image'] . '" readonly="readonly" />';
+                    echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="' . $slide['url'] . '" readonly="readonly" />';
                     echo '<input type="hidden" class="upload-height" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][height]" id="' . $this->field['id'] . '-image_height_' . $x . '" value="' . $slide['height'] . '" />';
                     echo '<input type="hidden" class="upload-width" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][width]" id="' . $this->field['id'] . '-image_width_' . $x . '" value="' . $slide['width'] . '" /></li>';
                     echo '<li><a href="javascript:void(0);" class="button deletion redux-slides-remove">' . __('Delete Slide', 'redux-framework') . '</a></li>';
@@ -141,7 +141,7 @@ if (!class_exists('ReduxFramework_slides')) {
             }
 
             if ($x == 0) {
-                echo '<div class="redux-slides-accordion-group"><fieldset class="redux-field"><h3><span class="redux-slides-header">New Slide</span></h3><div>';
+                echo '<div class="redux-slides-accordion-group"><fieldset><h3><span class="redux-slides-header">New Slide</span></h3><div>';
 
                 $hide = ' hide';
 

@@ -114,14 +114,10 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option_image_src($option, $default = null) {
-		if ( isset( $_GET[$option]) && !empty($option) ) {
-			return $_GET[$option];
-		} else {
-			$image = self::$options_handler->get($option, $default);
+		$image = self::$options_handler->get($option, $default);
 
-			if ( isset($image['url']) ) {
-				return $image['url'];
-			}
+		if ( isset($image['url']) ) {
+			return $image['url'];
 		}
 		return false;
 	}
@@ -131,13 +127,6 @@ class wpgrade {
 	 */
 	static function options() {
 		return self::$options_handler;
-	}
-	
-	/**
-	 * @return mixed
-	 */
-	static function option_set($option, $value) {
-		return self::$options_handler->set($option, $value);
 	}
 
 

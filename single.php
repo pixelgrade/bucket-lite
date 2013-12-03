@@ -4,9 +4,11 @@
  *
  */
 
-get_header(); ?>
+get_header(); 
+$is_review = bucket::has_average_score(); 
+?>
 
-<div class="container container--main">
+<div class="container container--main" <?php echo $is_review ? 'itemscope itemtype="http://data-vocabulary.org/Review"' : ''; ?>>
 
     <div class="grid">
 
@@ -34,15 +36,17 @@ get_header(); ?>
 					get_template_part('theme-partials/post-templates/single-title');
 				}
 
-				if ( bucket::has_average_score() && get_field('placement') == ('before') ) { ?>
+				if ( $is_review && get_field('placement') == ('before') ) { ?>
 					<div class="score-box score-box--before">
 						<div class="score__average-wrapper">
-							<div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+							<div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
 								<?php
-								echo '<div class="score__note" itemprop="ratingValue">'.bucket::get_average_score().'</div>';
+								echo '<div class="score__note" itemprop="rating" >'.bucket::get_average_score().'</div>';
 								if (get_field('note')) {
 									echo '<div class="score__desc">'.get_field('note').'</div>';
 								} ?>
+								<meta itemprop="worst" content = "1">
+								<meta itemprop="best" content = "10">
                             </div>
                         </div>
                     </div>
@@ -61,7 +65,7 @@ get_header(); ?>
 		        wp_link_pages( $args ); ?>
 
                 <div class="grid"><!--
-                    <?php if ( bucket::has_average_score() && get_field('placement') == ('after') ) :
+                    <?php if ( $is_review && get_field('placement') == ('after') ) :
                     if(!get_field('enable_pros_cons_lists')) : ?>
                     --><div class="grid__item center-score">
                     <?php else: ?>
@@ -69,9 +73,9 @@ get_header(); ?>
                     <?php endif; ?>   
                     <div class="score-box score-box--after">
                         <div class="score__average-wrapper">
-                            <div class="score__average  <?php echo get_field('note') ? 'average--with-desc' : '' ?>" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                            <div class="score__average  <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
                                 <?php
-                                    echo '<div class="score__note" itemprop="ratingValue">'.bucket::get_average_score().'</div>';
+                                    echo '<div class="score__note" itemprop="rating">'.bucket::get_average_score().'</div>';
                                     if (get_field('note')) {
                                         echo '<div class="score__desc">'.get_field('note').'</div>';
                                     }
@@ -121,9 +125,9 @@ get_header(); ?>
 						<h3><?php _e('The Breakdown', wpgrade::textdomain()); ?></h3>
 						<hr class="separator  separator--subsection">
 						<?php while (has_sub_fields('score_breakdown')): ?>
-							<div class="review__score" itemprop="review" itemscope itemtype="http://schema.org/Review">
+							<div class="review__score">
 								<div class="score__label"><?php echo get_sub_field('label'); ?></div>
-								<span class="score__badge  badge" itemprop="reviewRating"><?php echo get_sub_field('score'); ?></span>
+								<span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
 								<div class="score__progressbar  progressbar">
 									<div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
 								</div>

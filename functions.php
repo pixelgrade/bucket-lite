@@ -1,9 +1,5 @@
 <?php
 
-define( 'ACF_LITE', true );
-include_once('theme-utilities/includes/acf/acf.php');
-include_once('theme-utilities/includes/acf/acf-config.php');
-
 // ensure EXT is defined
 if ( ! defined('EXT')) {
 	define('EXT', '.php');
@@ -32,6 +28,19 @@ require_once 'wpgrade-core/bootstrap'.EXT;
 # Please perform any initialization via options in wpgrade-config and
 # calls in wpgrade-core/bootstrap. Required for testing.
 #
+
+// ACF Initialisation
+
+if ( wpgrade::option('enable_acf_ui', '0') ) {
+	define( 'ACF_LITE', true );
+}
+
+if ( in_array( 'advanced-custom-fields/acf.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	add_action('admin_notices', 'wpgrade_warrning_about_acf');
+} else {
+	include_once('theme-utilities/includes/acf/acf.php');
+	include_once('theme-utilities/includes/acf/acf-config.php');
+}
 
 /**
  * http://codex.wordpress.org/Content_Width
