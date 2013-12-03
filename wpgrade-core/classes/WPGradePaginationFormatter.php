@@ -49,7 +49,11 @@ class WPGradePaginationFormatter {
 		}
 		else { // no pager configuration entry
 			// fallback to listing pagination
-			$this->pager = 'paged';
+			if ( is_front_page() ){
+				$this->pager = 'page';
+			} else {
+				$this->pager = 'paged';
+			}
 		}
 
 		$this->conf = wpgrade::merge($config_defaults, $conf);

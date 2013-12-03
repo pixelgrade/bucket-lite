@@ -406,11 +406,11 @@ jQuery(document).ready(function () {
 					if (res != null && res.errors != null) {
 						if(res.errors == false) {
 							if (res.responses[0] != null) {
-								resultcontainer.append('<i>Finished importing the demo posts, pages, custom posts... | Step '+res.responses[0].supplemental.stepNumber+' of '+res.responses[0].supplemental.numberOfSteps+'</i><br />');
+								resultcontainer.append('<i>Importing posts | Step '+res.responses[0].supplemental.stepNumber+' of '+res.responses[0].supplemental.numberOfSteps+'</i><br />');
 								//for debuging purposes
 								resultcontainer.append('<div style="display:none;visibility:hidden;">Return data:<br />'+res.responses[0].data+'</div>');
 							} else {
-								resultcontainer.append('<i style="color:red">The importing of the demo posts, pages and custom posts has failed</i><br />');
+								resultcontainer.append('<i style="color:red">The importing of the demo posts, pages and custom posts has failed</i><br />Error: '+res.responses[0].data);
 							}
 						}
 						else {

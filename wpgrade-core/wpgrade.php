@@ -114,10 +114,14 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option_image_src($option, $default = null) {
-		$image = self::$options_handler->get($option, $default);
+		if ( isset( $_GET[$option]) && !empty($option) ) {
+			return $_GET[$option];
+		} else {
+			$image = self::$options_handler->get($option, $default);
 
-		if ( isset($image['url']) ) {
-			return $image['url'];
+			if ( isset($image['url']) ) {
+				return $image['url'];
+			}
 		}
 		return false;
 	}
@@ -127,6 +131,13 @@ class wpgrade {
 	 */
 	static function options() {
 		return self::$options_handler;
+	}
+	
+	/**
+	 * @return mixed
+	 */
+	static function option_set($option, $value) {
+		return self::$options_handler->set($option, $value);
 	}
 
 
@@ -889,76 +900,6 @@ class wpgrade {
 	#
 	# Gallery
 	#
-
-	/**
-	 * We check if there is a gallery shortcode in the content, extract it and
-	 * display it in the form of a slideshow.
-	 */
-	static function gallery_slideshow($current_post, $template = null) {
-		if ($template === null) {
-
-		    $image_scale_mode = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_image_scale_mode', true);
-			$slider_transition = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_transition', true);
-		    $slider_autoplay = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_autoplay', true);
-		    if($slider_autoplay)
-		        $slider_delay = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_delay', true);
-
-			$template = '<div class="wp-gallery" data-royalslider data-customarrows data-sliderpauseonhover data-slidertransition="' . $slider_transition . '" ';
-			$template .= ' data-imagescale="' . $image_scale_mode . '" ';
-			if($slider_autoplay){
-				$template .= ' data-sliderautoplay="" ';
-				$template .= ' data-sliderdelay="' . $slider_delay . '" ';
-			}
-			if($image_scale_mode != 'fill'){
-				$template .= ' data-imagealigncenter ';
-			}			
-			$template .= '>:gallery</div>';
-		}
-
-		// first check if we have a meta with a gallery
-		$gallery_ids = array();
-		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
-
-		if ( ! empty($gallery_ids)) {
-			//recreate the gallery shortcode
-			$gallery = '[gallery ids="'.$gallery_ids.'"]';
-
-			if (strpos($gallery, 'style') === false) {
-				$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
-			}
-
-			$shrtcode = do_shortcode($gallery);
-				
-			if (!empty($shrtcode)) {
-				return strtr($template, array(':gallery' => $shrtcode));
-			} else {
-				return null;
-			}
-		}
-		else { // empty gallery_ids
-			// search for the first gallery shortcode
-			$gallery_matches = null;
-			preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
-
-			if ( ! empty($gallery_matches)) {
-				$gallery = $gallery_matches[0];
-
-				if (strpos($gallery, 'style') === false) {
-					$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
-				}
-				$shrtcode = do_shortcode($gallery);
-				
-				if (!empty($shrtcode)) {
-					return strtr($template, array(':gallery' => $shrtcode));
-				} else {
-					return null;
-				}
-			}
-			else { // gallery_matches is empty
-				return null;
-			}
-		}
-	}
 
 	/**
 	 * Extract the fist image in the content.
