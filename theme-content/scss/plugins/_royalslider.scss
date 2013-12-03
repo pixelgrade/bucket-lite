@@ -459,5 +459,5 @@ img.rsImg{
     @include rem(width, 8px);
     @include rem(height, 8px);
     @include rem(margin, 0 6px);
-    background-color: $red;
+    background-color: $accent;
 }

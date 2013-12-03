@@ -28,7 +28,7 @@
     @extend .heading--footer;
 
     em {
-        color: $red;
+        color: $accent;
         font-style: normal;
     }
 }
@@ -163,7 +163,7 @@
 }
 
 .widget_rss .widget--footer__title .hN {
-    color: $red;
+    color: $accent;
 }
 
 .widget {

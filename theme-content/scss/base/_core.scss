@@ -60,6 +60,13 @@
     width: auto;
 }
 
+.small-link {
+    @include font-size(12px);
+    text-transform: uppercase;
+    font-family: $alt-font-family;
+    color: $accent;
+}
+
 
 
 // margin helpers

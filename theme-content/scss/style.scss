@@ -1,168 +1,53 @@
 @charset "UTF-8";
 @import "compass";
 
-/*-----------------------------------------------*\
-                    STYLE GUIDE
-\*-----------------------------------------------*/
-
-$light  : #807f7e;
-$gray   : #4c4a4a;
-$dark   : #1a1717;
-$accent : #fb4834;
-$red    : #fb4834;
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ * Here we the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
 
 
 
-
-
-/*-----------------------------------------------*\
-              INUIT.CSS CONFIGURATION
-                    AND IMPORT
-\*-----------------------------------------------*/
-
-$global-border-box   : true;
-
-$use-block-list      : true;
-$use-beautons        : true;
-$use-rem             : true;
-$use-matrix          : true;
-$use-grids           : true;
-$use-options         : true;
-$use-stats           : true;
-$use-arrows          : true; 
-$use-lozenges        : true;
-
-$use-greybox         : true;
-$use-island          : true; 
-$use-flexbox         : true;
-$use-debug           : true;
-$use-media           : true; 
-$use-split           : true; 
-
-$responsive          : true;
-$lap-start           : 900px;
-$desk-start          : 1024px; 
-$desk-wide-start     : 1366px; 
-
-$base-font-size      : 14px;
-$base-font-family    : "PT Sans", sans-serif;
-$heading-font-family : "Arvo", serif;
-$alt-font-family     : "Open Sans", sans-serif;
-
-$h1-size             : 46px;
-$h2-size             : 23px; 
-$h3-size             : 19px;
-$h4-size             : 15px;
-$h5-size             : 12px; 
-$h6-size             : 11px; 
-
-$brand-round         : 0;
-
-@import "../vendor/inuit.css/inuit"; 
+/*------------------------------------*\
+    $SETUP
+\*------------------------------------*/
+@import "vars";
+@import "_vendor/inuit.css/inuit";
 
 
 
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
 
-/*-----------------------------------------------*\
-             ICON FONTS CONFIGURATION
-                    AND IMPORT
-\*-----------------------------------------------*/
-// Font Awesome 4.0.3
-$fa-css-prefix: icon;
-$fa-font-path: "../fonts/font-awesome";
-// Entyo 2.0
-$EntypoPath: "../fonts/entypo2";
+// TOOLS
+@import "tools/__tools"; 
 
-@import "icon-fonts/_icon-fonts"; 
+// PLUGINS
+@import "plugins/__plugins";
 
+// BASE
+@import "base/__base";
 
+// OBJECTS
+@import "objects/__objects";
 
-
-/*-----------------------------------------------*\
-               SHORT-NAMED VARIABLES
-\*-----------------------------------------------*/
-
-$_u    : $base-spacing-unit; // 24px
-$_u4   : $_u / 4; // 6px
-$_u2   : $_u / 2; // 12px
-$_2u   : 2 * $_u; // 48px
-$_3u   : 3 * $_u; // 72px
-$_4u   : 4 * $_u; // 96px  
-$_5u   : 5 * $_u; // 120px
-$_6u   : 6 * $_u; // 144px
-$_7u   : 7 * $_u; // 168px 
-$_8u   : 8 * $_u; // 192px
- 
-
-
-
-
-/*-----------------------------------------------*\
-              IMPORT THEME COMPONENTS
-\*-----------------------------------------------*/
-
-// VENDOR
-@import "vendor/royalslider";
-@import "vendor/magnific-popup/main";
-@import "vendor/magnific-popup/settings";
-
-// UTILITIES
-@import "easings";
-@import "badge";
-@import "preloader";
-@import "progressbar";
-@import "btn";
-@import "forms";
-@import "mixins";
-
-@import "general";
-@import "typography";
-
-// SHORTCODES
-@import "shortcodes/grid";
-@import "shortcodes/icon";
-@import "shortcodes/separators";
-@import "shortcodes/tabs";
-
-// COMPONENTS
-@import "components/header";
-@import "components/footer";
-@import "components/navigation";
-@import "components/article";
-@import "components/featured-area";
-@import "components/author-box";
-@import "components/tweet";
-@import "components/comments";
-@import "components/headings";
-@import "components/reviews";  
-
+// LAYOUT
+@import "layout/__layout";
 
 // WIDGETS
-@import "widgets/widget";
+@import "widgets/__widgets";
 
-@import "widgets/calendar";
-@import "widgets/latest-comments";
-@import "widgets/latest-posts";
-@import "widgets/popular-posts";
-@import "widgets/reviews";
-@import "widgets/twitter";
-@import "widgets/flickr";
-@import "widgets/dribbble";
+// SHORTCODES
+@import "shortcodes/__shortcodes";
 
-//HELPERS
-@import "core";
-@import "images";
-@import "post-masonry";
-@import "post-classic";
-
-//PAGES
-@import "single";
-
-//MODULES
-@import "modules/search-form";
-@import "modules/social-links";
-@import "modules/pagination";
-@import "modules/slider-arrows";
+// PAGES
+@import "pages/__pages";
 
 // SHAMELESS SHAME
 @import "shame";
+
+

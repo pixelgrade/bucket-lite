@@ -24,7 +24,7 @@
         line-height: (48/18) + em;
 
         &:hover {
-            background-color: $red;
+            background-color: $accent;
             color: white;
         }
 
@@ -85,10 +85,10 @@
     a:hover > & {
         text-decoration: none;
         border: none;
-        color: $red;
+        color: $accent;
   
         &.circle, &.square {
-            background-color: $red;
+            background-color: $accent;
         }
     }
 }

@@ -8,7 +8,7 @@
 
 a {
     text-decoration: none;
-    color: $red;
+    color: $accent;
 }
 
 
@@ -45,6 +45,57 @@ h2, h3, h4, h5, h6 {
 
 
 
+
+.heading {
+    @extend .cf;
+    @include rem(margin-bottom, $_u);
+
+    .hN, .archive__side-title {
+        margin-bottom: 0;
+        font-family: "Arvo", serif;
+        font-weight: normal;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: white;
+    }
+}
+
+.heading--main {
+    background-color: $dark;
+
+    .hN {
+        @include rem(padding, $_u2 $_u);
+        background-color: $accent;
+        float: left;
+    }
+    
+    .archive__side-title {
+        @include rem(padding, $_u2 $_u);
+        float: left;
+    }
+}
+
+.heading--sidebar {
+    background-color: $accent;
+
+    .hN {
+        @include rem(padding, $_u2 $_u);
+        @extend .gamma;
+    }
+}
+
+.heading--footer {
+
+    .hN {
+        @extend .gamma;
+    }
+}
+
+
+
 /*===========  BLOCKQUOTES  ===========*/
 
 blockquote {
@@ -54,7 +105,7 @@ blockquote {
     @include font-size(24px);
     font-family: $heading-font-family;
     font-style: italic;
-    color: $red;
+    color: $accent;
     
     &:before {
         @extend %pattern--diagonal;
@@ -143,7 +194,7 @@ dd {
 }
 
 ol{
-    border-left: 0 solid $red;
+    border-left: 0 solid $accent;
     @include rem(border-left-width, 5px);
     @include rem(padding-left, $_2u - 5px);
     margin-left: 0;
