@@ -115,7 +115,7 @@
 
 
 // Positioning
-.score-box--before {
+.score-box--inside {
     @include rem(width, 145px);
     float:left;
     @include rem(margin-top, $_u2);

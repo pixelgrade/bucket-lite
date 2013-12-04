@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
 "POT-Creation-Date: 2013-11-30 22:08+0200\n"
-"PO-Revision-Date: 2013-11-30 22:09+0200\n"
+"PO-Revision-Date: 2013-12-04 16:40+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
-"Language: German\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_nx:1,2;_n:1,2;_nx_noop:1,2;_ex\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -231,7 +231,7 @@ msgstr "Suchergebnisse für: %s"
 
 #: ../searchform.php:2
 msgid "Search..."
-msgstr ""
+msgstr "Suchen..."
 
 #: ../single.php:91
 msgid "Good Things"
@@ -428,15 +428,16 @@ msgstr ""
 "lassen."
 
 #: ../theme-callbacks/activation-hooks.php:134
-#, fuzzy
 msgid "Show Nearby Images"
-msgstr "Weiter Bildern"
+msgstr "Weitere Bilder anzeigen"
 
 #: ../theme-callbacks/activation-hooks.php:135
 msgid ""
 "Enable this if you want to avoid having empty space on the sides of the "
 "image when using mostly portrait images."
 msgstr ""
+"Aktiviere diese Funktion, wenn Du leeren Platz an den Seiten, wie bei vielen "
+"Portrait Bildern, verhindern willst."
 
 #: ../theme-callbacks/activation-hooks.php:140
 #: ../theme-callbacks/activation-hooks.php:172
@@ -544,7 +545,7 @@ msgstr "Dein Kommenat wird nun moderiert."
 
 #: ../theme-callbacks/unsorted.php:148
 msgid "Category Custom Accent Color"
-msgstr ""
+msgstr "Kategeoriefarbe"
 
 #: ../theme-callbacks/unsorted.php:154
 msgid ""
@@ -553,6 +554,10 @@ msgid ""
 "category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this "
 "to work (Theme Options > Custom Code)."
 msgstr ""
+"Setze eine eigene Farbe für deine Kategorien. Diese Farbe ersetzt die "
+"Hauptfarbe (Akzentfarbe) des Themes für alle Seiten dieser Kategorie. "
+"<b>Hinweis:</p> Custom CSS muss <b>inline</b> angewendet werden, damit diese "
+"Funktion funktioniert (Theme Einstellungen > Eigener Code)."
 
 #: ../theme-content/admin-panel/redux-args.php:36
 msgid ""
@@ -756,20 +761,20 @@ msgid "Google+ Share Link"
 msgstr "Google+ Teilen Link"
 
 #: ../theme-content/admin-panel/redux-sections.php:178
-#, fuzzy
 msgid "Pinterest Share Link"
-msgstr "Twitter Teilen Link"
+msgstr "Pinterest Share Link"
 
 #: ../theme-content/admin-panel/redux-sections.php:186
 msgid "Show Author Info Box"
-msgstr ""
+msgstr "Autorenbox zeigen"
 
 #: ../theme-content/admin-panel/redux-sections.php:187
-#, fuzzy
 msgid ""
 "Do you want to show author info box with avatar and description bellow the "
 "post?"
-msgstr "Möchten Sie die Aktie Links unten die Projekte zeigen?"
+msgstr ""
+"Möchtest Du die Autorenbox mit Avatar und Beschreibung unter deinem Beitrag "
+"anzeigen?"
 
 #: ../theme-content/admin-panel/redux-sections.php:192
 msgid "<h3>Blog Archive</h3>"
@@ -1427,9 +1432,8 @@ msgid "score"
 msgstr "Wertung"
 
 #: ../theme-partials/post-templates/share-box.php:23
-#, fuzzy
 msgid "Shares"
-msgstr "Teilen"
+msgstr "x geteilt"
 
 #: ../theme-partials/post-templates/single-title.php:5
 msgid "Untitled"
@@ -1446,9 +1450,8 @@ msgid "on %s"
 msgstr "am %s"
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:242
-#, fuzzy
 msgid "No posts added to the category slider in this category"
-msgstr "Keine brandneuen Beiträge in dieser Kategorie"
+msgstr "Zu diesem Slider wurden noch keine Beiträge hinzugefügt."
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu_Edit.php:43
 msgid "Select MegaMenu Layout:"
@@ -2824,12 +2827,10 @@ msgid "Working..."
 msgstr "Arbeite..."
 
 #: ../wpgrade-core/vendor/redux3/framework.php:1735
-#, fuzzy
 msgid "Settings Imported!"
 msgstr "Einstellungen importiert!"
 
 #: ../wpgrade-core/vendor/redux3/framework.php:1737
-#, fuzzy
 msgid "Settings Saved!"
 msgstr "Einstellungen gespeichert!"
 
@@ -2930,24 +2931,20 @@ msgid "Show Object in Javascript Console Object"
 msgstr "Zeige das Objekt in Javascript Konsolenobjekt"
 
 #: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:312
-#, fuzzy
 msgid "Are you sure? Resetting will lose all custom values."
 msgstr "Bist Du sicher? Du wirst alle ungespeicherten Einstellungen verlieren."
 
 #: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:342
-#, fuzzy
 msgid "You have changes that are not saved.  Would you like to save them now?"
 msgstr ""
 "Du hast einige deiner Änderungen noch nicht gespeichert. Willst Du sie jetzt "
 "sichern?"
 
 #: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:343
-#, fuzzy
 msgid "Are you sure?  Resetting will lose all custom values."
 msgstr "Bist Du sicher? Du wirst alle ungespeicherten Einstellungen verlieren."
 
 #: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:344
-#, fuzzy
 msgid ""
 "Your current options will be replaced with the values of this preset.  Would "
 "you like to proceed?"
@@ -2964,20 +2961,17 @@ msgstr "Gültig"
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/extension_edd.php:138
 #: ../wpgrade-core/vendor/redux3/extensions/edd/edd_license/field_edd_license.php:110
-#, fuzzy
 msgid "Not Activated"
-msgstr "Aktivieren"
+msgstr "Nicht aktiviert"
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/extension_edd.php:141
 #: ../wpgrade-core/vendor/redux3/extensions/edd/edd_license/field_edd_license.php:114
-#, fuzzy
 msgid "Deactivated"
-msgstr "Aktivieren"
+msgstr "Deaktivieren"
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/extension_edd.php:147
-#, fuzzy
 msgid "Not Valid"
-msgstr "Gültig"
+msgstr "Ungültig"
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/module.php:11
 msgid "Licencing"
@@ -3014,19 +3008,16 @@ msgstr ""
 "'Abbrechen' um abzubrechen oder 'Ok' zum aktualisieren."
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/edd_license/field_edd_license.php:123
-#, fuzzy
 msgid "License Status"
-msgstr "Status"
+msgstr "Lizenzstatus"
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/edd_license/field_edd_license.php:132
-#, fuzzy
 msgid "Verify License"
-msgstr "Lizenz deaktivieren"
+msgstr "Lizenz überprüfen"
 
 #: ../wpgrade-core/vendor/redux3/extensions/edd/edd_license/field_edd_license.php:137
-#, fuzzy
 msgid "Activate License"
-msgstr "Lizenz deaktivieren"
+msgstr "Lizenz aktivieren"
 
 #: ../wpgrade-core/vendor/redux3/inc/tracking.php:59
 msgid "Help improve Our Panel"
