@@ -325,6 +325,20 @@ $sections[] = array(
 	'desc' => '<p class="description">'.__('Footer related options including Copyright Text. Other footer elements including widgets and menus can be set from Appearance - Widgets/Menus admin page. ', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
+			'id' => 'posts_stats',
+			'type' => 'switch',
+			'title' => __('Posts Stats', wpgrade::textdomain()),
+			'subtitle' => __('Display a monthly based vertical bar graph for posts.', wpgrade::textdomain()),
+			'default' => '1',
+		),
+		array(
+			'id' => 'back_to_top',
+			'type' => 'switch',
+			'title' => __('Back to Top Link', wpgrade::textdomain()),
+			'subtitle' => __('Add a link that helps users jump to the top of the page (instead of pressing "Home" key).', wpgrade::textdomain()),
+			'default' => '1',
+		),
+		array(
 			'id' => 'copyright_text',
 			'type' => 'editor',
 			'title' => __('Copyright Text', wpgrade::textdomain()),
