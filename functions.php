@@ -83,3 +83,32 @@ function post_format_icon($class_name = '') {
     <?php
     endif;
 }
+
+
+/**
+ * [average_score_shortcode]
+ * @param  [array] $atts
+ * @return [string]       
+ */
+function average_score_shortcode($atts){
+    extract( shortcode_atts( array(
+        'score_note' => '0',
+        'score_desc' => ''
+    ), $atts ) );
+
+    $return_string = '';
+    $return_string .= '<div class="score-box  score-box--inside">'.
+                        '<div class="score__average-wrapper">'.
+                            '<div class="score__average average--with-desc">'.
+                            '<div class="score__note" itemprop="rating">' . $score_note . '</div>'.
+                            '<div class="score__desc">' . $score_desc . '</div>'.
+                            '<meta itemprop="worst" content="1">'.
+                            '<meta itemprop="best" content="10">'.
+                            '</div>'.
+                        '</div>'.
+                    '</div>';
+
+    return $return_string;
+}
+
+add_shortcode('average_score', 'average_score_shortcode');
