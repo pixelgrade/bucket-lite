@@ -23,7 +23,7 @@
 
 	wpgrade::require_coremodule('redux3');
 
-	function wpgrade_callback_redux_options_setup() {
+//	function wpgrade_callback_redux_options_setup() {
 		$currentpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
 
 		$wpgrade_redux_coremodule = 'redux3'; # used inside configuration files
@@ -33,8 +33,8 @@
 
 		$redux = new ReduxFramework($sections, $args, $tabs);
 		wpgrade::resolve('redux-instance', $redux);
-	}
-	add_action('after_setup_theme', 'wpgrade_callback_redux_options_setup', 1);
+//	}
+//	add_action('after_setup_theme', 'wpgrade_callback_redux_options_setup', 1);
 
 	/**
 	 * Enquue our custom css on admin panel

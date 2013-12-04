@@ -37,7 +37,7 @@ $is_review = bucket::has_average_score();
 				}
 
 				if ( $is_review && get_field('placement') == ('before') ) { ?>
-					<div class="score-box score-box--before">
+					<div class="score-box score-box--inside">
 						<div class="score__average-wrapper">
 							<div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
 								<?php

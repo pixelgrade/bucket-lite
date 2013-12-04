@@ -29,18 +29,12 @@ require_once 'wpgrade-core/bootstrap'.EXT;
 # calls in wpgrade-core/bootstrap. Required for testing.
 #
 
-// ACF Initialisation
-
-if ( wpgrade::option('enable_acf_ui', '0') ) {
-	define( 'ACF_LITE', true );
-}
-
-if ( in_array( 'advanced-custom-fields/acf.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	add_action('admin_notices', 'wpgrade_warrning_about_acf');
-} else {
-	include_once('theme-utilities/includes/acf/acf.php');
-	include_once('theme-utilities/includes/acf/acf-config.php');
-}
+//if ( in_array( 'advanced-custom-fields/acf.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+//	add_action('admin_notices', 'wpgrade_warrning_about_acf');
+//} else {
+//	include_once('theme-utilities/includes/acf/acf.php');
+//	include_once('theme-utilities/includes/acf/acf-config.php');
+//}
 
 /**
  * http://codex.wordpress.org/Content_Width
@@ -83,3 +77,32 @@ function post_format_icon($class_name = '') {
     <?php
     endif;
 }
+
+
+/**
+ * [average_score_shortcode]
+ * @param  [array] $atts
+ * @return [string]       
+ */
+function average_score_shortcode($atts){
+    extract( shortcode_atts( array(
+        'score_note' => '0',
+        'score_desc' => ''
+    ), $atts ) );
+
+    $return_string = '';
+    $return_string .= '<div class="score-box  score-box--inside">'.
+                        '<div class="score__average-wrapper">'.
+                            '<div class="score__average average--with-desc">'.
+                            '<div class="score__note" itemprop="rating">' . $score_note . '</div>'.
+                            '<div class="score__desc">' . $score_desc . '</div>'.
+                            '<meta itemprop="worst" content="1">'.
+                            '<meta itemprop="best" content="10">'.
+                            '</div>'.
+                        '</div>'.
+                    '</div>';
+
+    return $return_string;
+}
+
+add_shortcode('average_score', 'average_score_shortcode');

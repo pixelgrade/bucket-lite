@@ -1,7 +1,7 @@
 <?php
 
 /*
- * The social icons widget
+ * The latest reviews widget
  */
 class wpgrade_latest_reviews extends WP_Widget {
 
@@ -18,6 +18,12 @@ class wpgrade_latest_reviews extends WP_Widget {
 		$query_args = array(
 			'posts_per_page' => $number,
 			'meta_query' => array(
+				'relation' => 'OR',
+				array(
+				 'key' => 'enable_review_score',
+				 'compare' => 'EXISTS', // works!
+				 'value' => '' // This is ignored, but is necessary...
+				),
 				array(
 					'key' => 'enable_review_score',
 					'value' => '1',
