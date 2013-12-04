@@ -545,35 +545,40 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
     * ORIGINAL to MOBILE 
     */
     function sliderMarkupMobile($slider){
-          var $parent = $slider;
+        var $parent = $slider;
 
-          // Change markup to default
-          $slider.replaceWith($original_billboard_slider);
-          $slider = $('.billboard.js-pixslider');
+        // Change markup to default
+        $slider.replaceWith($original_billboard_slider);
+        $slider = $('.billboard.js-pixslider');
 
-          // Change parameters
-          $slider.attr('data-autoheight', true);
-          $slider.attr('data-imagescale', 'none');
+        // Change parameters
+        $slider.attr('data-autoheight', true);
+        $slider.attr('data-imagescale', 'none');
 
-          $slider.find('.billboard--article-group').each(function(){
-              var slide = $(this),
-                  slide_thumb = slide.find('.article--billboard-small img')
-                  slide_thumb_big_src = slide_thumb.attr('data-src-big');
+        $slider.find('.billboard--article-group').each(function(){
+            var $slide = $(this),
+            $slide_thumb = $slide.find('.article--billboard-small img');
 
-              // Change thumbnail for small articles
-              slide_thumb.attr('src', slide_thumb_big_src);
-              $(this).children('.article').removeClass('rsABlock');
+            // For each slide thumb(because there are two)
+            // we set the new image source
+            $slide_thumb.each(function(){
+                slide_thumb_big_src = $(this).attr('data-src-big');
+                $(this).attr('src', slide_thumb_big_src);
+            });
 
-              $(this).before($(this).html())
-                     .remove();
-          });
+            // Change thumbnail for small articles
+            $(this).children('.article').removeClass('rsABlock');
 
-          // Mark as mobile
-          $slider.addClass('js-pixslider-mobile');
+            $(this).before($(this).html())
+             .remove();
+        });
 
-          $slider.addClass('rsAutoHeight');
+        // Mark as mobile
+        $slider.addClass('js-pixslider-mobile');
 
-          sliderInit($slider);
+        $slider.addClass('rsAutoHeight');
+
+        sliderInit($slider);
     }
 
 

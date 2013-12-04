@@ -40,6 +40,13 @@
     }
 }
 
+// In Firefox / Opera, the logo was not shrinking 
+// on mobile devices because the .site-header has .flexbox class. 
+// This was added to fix that. 
+// http://stackoverflow.com/questions/2923710/why-do-firefox-and-opera-ignore-max-width-inside-of-display-table-cell
+.site-header{
+    table-layout: fixed;
+}
 
 .header-ad-link{
     display: block;
@@ -74,6 +81,12 @@
 
 .site-logo {
     width:100%;
+
+    // Fixed heigth because on retinas 
+    // the logo was getting huge
+    height: 50px;
+    display: inline-block;
+
     img {
         display:block;
         max-height: 100%;
