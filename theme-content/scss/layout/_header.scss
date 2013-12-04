@@ -53,20 +53,20 @@
     text-align: right;
 }
 
-@include media-query(palm) {
-    .header-ad{
-        // display: none;
-    }
-}
+// @include media-query(palm) {
+//     .header-ad{
+//         // display: none;
+//     }
+// }
 
 //The header had position: absolute
 //and it is followerd by .container--main.
 //The padding prevents them from overlapping
-@include media-query(palm) {
-    .container--main{
-        // @include rem(padding-top, 4*$_u);
-    }
-}
+// @include media-query(palm) {
+//     .container--main{
+//         // @include rem(padding-top, 4*$_u);
+//     }
+// }
 
 
 
@@ -84,14 +84,18 @@
 
     // Fixed heigth because on retinas 
     // the logo was getting huge
-    height: 50px;
-    display: inline-block;
+    
+    @include media-query(palm) {
+        height: 50px;
+        display: inline-block;
+    }
 
     img {
         display:block;
         max-height: 100%;
     }    
 }
+
 
 
 

@@ -105,10 +105,14 @@ switch ( $posts_source ) :
 	default : ;
 endswitch;
 
+$big_articles_only = get_sub_field('billboard_only_big_articles');
+
 $slider_transition = get_sub_field('billboard_slider_transition');
 $slider_autoplay = get_sub_field('billboard_slider_autoplay');
 if($slider_autoplay)
     $slider_delay = get_sub_field('billboard_slider_autoplay_delay');
+
+$slider_height = get_sub_field('billboard_slider_height');
 
 $slides = new WP_Query( $query_args );
 $index = 0;
@@ -118,7 +122,7 @@ if ($slides->have_posts()): ?>
 	<div class="billboard pixslider js-pixslider arrows--outside" 
 			data-arrows="true"
 			data-autoScaleSliderWidth="1050"
-			data-autoScaleSliderHeight="625"
+			data-autoScaleSliderHeight="<?php echo $slider_height; ?>"
             data-slidertransition="<?php echo $slider_transition; ?>"
             <?php if ($slider_autoplay) {
                 echo 'data-sliderautoplay="" ';
@@ -134,65 +138,95 @@ if ($slides->have_posts()): ?>
               $image_ratio = $image[2] * 100/$image[1];
             }
 
-			if ($index++ % 3 == 0):
-			$image = $image_big;
-			if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-			  $image_ratio = $image[2] * 100/$image[1];
-			}
+            if($big_articles_only) :
+                $image = $image_big;
+                if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+                  $image_ratio = $image[2] * 100/$image[1];
+                }
 
-			if (!$closed_group):
-				echo '</div><div class="billboard--article-group">';
-			else:
-				echo '<div class="billboard--article-group">';
-				$closed_group = false;
-			endif; ?>
-				<article class="article  article--billboard">
-					<div>
-						<div class="rsImg"><?php echo $image[0] ?></div>
-					</div>
-					<a href="<?php the_permalink(); ?>">
-						<div class="article__header  article--billboard__header">
-							<span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
-							<h2 class="article__title article--billboard__title">
-								<span class="hN"><?php the_title(); ?></span>
-							</h2>
-							<span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
-						</div>
-					</a>
-				</article>
-  	        <?php else: ?>
-  	            <article class="rsABlock  article article--billboard-small"
-                          data-move-effect="right"
-                          data-speed="400" 
-                          data-easing="easeOutCirc"
-                          
-                          <?php //Second Slide
-                          if ($index % 3 == 2) { ?>
-                          data-delay="350" 
-                          data-move-offset="170"
-                          <?php //Third Slide
-                          } else { ?>
-                          data-delay="300" 
-                          data-move-offset="100"
-                          <?php } ?>
-                          >
-  	                
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="article__thumb">
-      	                    <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" alt="<?php the_title(); ?>" />
-      	                </div>
-      	                <div class="article__content">
-      	                	<h2 class="article__title article--billboard-small__title">
-	      	                    <span class="hN"><?php the_title(); ?></span>
-		  	                </h2>
-		  	                <span class="article__description">
-		  	                	<?php  echo substr(get_the_excerpt(), 0, 75).'..'; ?>
-		  	               	</span>
-		  	                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
-      	                </div> 
-                    </a>
-  	            </article>
-  	        <?php endif;
+                if (!$closed_group):
+                    echo '</div><div class="billboard--article-group">';
+                else:
+                    echo '<div class="billboard--article-group">';
+                    $closed_group = false;
+                endif; ?>
+                    <article class="article  article--billboard  article--billboard-big">
+                        <div>
+                            <div class="rsImg"><?php echo $image[0] ?></div>
+                        </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="article__header  article--billboard__header">
+                                <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
+                                <h2 class="article__title article--billboard__title">
+                                    <span class="hN"><?php the_title(); ?></span>
+                                </h2>
+                                <span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
+                            </div>
+                        </a>
+                    </article>
+
+            <?php else :
+
+                if ($index++ % 3 == 0):
+                $image = $image_big;
+                if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+                  $image_ratio = $image[2] * 100/$image[1];
+                }
+
+                if (!$closed_group):
+                    echo '</div><div class="billboard--article-group">';
+                else:
+                    echo '<div class="billboard--article-group">';
+                    $closed_group = false;
+                endif; ?>
+                    <article class="article  article--billboard">
+                        <div>
+                            <div class="rsImg"><?php echo $image[0] ?></div>
+                        </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="article__header  article--billboard__header">
+                                <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
+                                <h2 class="article__title article--billboard__title">
+                                    <span class="hN"><?php the_title(); ?></span>
+                                </h2>
+                                <span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
+                            </div>
+                        </a>
+                    </article>
+                <?php else: /* for this: if ($index++ % 3 == 0): */?>
+                    <article class="rsABlock  article article--billboard-small"
+                              data-move-effect="right"
+                              data-speed="400" 
+                              data-easing="easeOutCirc"
+                              
+                              <?php //Second Slide
+                              if ($index % 3 == 2) { ?>
+                              data-delay="350" 
+                              data-move-offset="170"
+                              <?php //Third Slide
+                              } else { ?>
+                              data-delay="300" 
+                              data-move-offset="100"
+                              <?php } ?>
+                              >
+                        
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="article__thumb">
+                                <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="article__content">
+                                <h2 class="article__title article--billboard-small__title">
+                                    <span class="hN"><?php the_title(); ?></span>
+                                </h2>
+                                <span class="article__description">
+                                    <?php  echo substr(get_the_excerpt(), 0, 75).'..'; ?>
+                                </span>
+                                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
+                            </div> 
+                        </a>
+                    </article>
+                <?php endif; /* if ($index++ % 3 == 0): */
+            endif;
 		endwhile;
 		wp_reset_postdata();
         if (!$closed_group):

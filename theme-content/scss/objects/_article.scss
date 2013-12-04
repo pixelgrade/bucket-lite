@@ -532,6 +532,12 @@
     }        
 }
 
+.article--billboard-big{
+    &:before, &:after{
+        content: none;
+    }
+}
+
 .billboard--article-group{
     // height: 625px;
     display: block;
