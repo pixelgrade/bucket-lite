@@ -18,6 +18,10 @@
 
 .footer__sidebar {
     @include rem(padding-top, $_u + $_u2);
+
+    .container {
+        position:relative;
+    }
 }
 
 .footer__copyright {
