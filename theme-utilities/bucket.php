@@ -53,6 +53,118 @@ class bucket
 	}
 
 	/**
+	 * This is a modified version of wp_get_archives() function
+	 * also it includes the query for month post count from wp_count_posts()
+	 *
+	 * @param string $type Optional. Post type to retrieve count
+	 * @param string $perm Optional. 'readable' or empty.
+	 * @return object Number of posts for each month
+	 */
+	static function wpgrade_count_posts( $type = 'post', $perm = '' ) {
+		global $wpdb, $wp_locale;
+		$args = '';
+		$defaults = array(
+			'type' => 'monthly', 'limit' => '',
+			'format' => 'html', 'before' => '',
+			'after' => '', 'show_post_count' => false,
+			'echo' => 1, 'order' => 'DESC',
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+		$join = apply_filters( 'getarchives_join', '', $r );
+
+		$user = wp_get_current_user();
+
+		$cache_key = 'posts-' . $type;
+
+		$query = "SELECT post_status, COUNT( * ) AS num_posts FROM {$wpdb->posts} WHERE post_type = %s";
+		if ( 'readable' == $perm && is_user_logged_in() ) {
+			$post_type_object = get_post_type_object($type);
+			if ( !current_user_can( $post_type_object->cap->read_private_posts ) ) {
+				$cache_key .= '_' . $perm . '_' . $user->ID;
+				$query .= " AND (post_status != 'private' OR ( post_author = '$user->ID' AND post_status = 'private' ))";
+			}
+		}
+		$query .= ' GROUP BY post_status';
+
+		$counts = wp_cache_get( $cache_key, 'counts' );
+		if ( false === $counts ) {
+			$results = (array) $wpdb->get_results( $wpdb->prepare( $query, $type ), ARRAY_A );
+			$counts = array_fill_keys( get_post_stati(), 0 );
+
+			foreach ( $results as $row )
+				$counts[ $row['post_status'] ] = $row['num_posts'];
+
+			$counts = (object) $counts;
+			wp_cache_set( $cache_key, $counts, 'counts' );
+		}
+
+		$query = "
+			SELECT YEAR(post_date) AS `year`,
+				MONTH(post_date) AS `month`,
+				count(ID) as posts
+			FROM $wpdb->posts
+			     $join
+			 WHERE post_type = 'post'
+			   AND post_status = 'publish'
+			   AND UNIX_TIMESTAMP(post_date) >= UNIX_TIMESTAMP('".\date('Y-m-d', strtotime('-1 year'))."')
+
+			 GROUP BY YEAR(post_date), MONTH(post_date)
+			 ORDER BY post_date $order";
+
+		$results = $wpdb->get_results( $query );
+
+		$months_posts = array();
+		// create a ref array with the month number as key
+		$result_refs = array();
+		foreach ($results as &$val) {
+			$result_refs[$val->month] = $val;
+		}
+
+		$default_moths = self::get_latest_twelve_monts();
+
+		// loop into all months, check for values and assign names
+		foreach ( $default_moths as $key ) {
+			if (isset($result_refs[$key])) {
+				$result = $result_refs[$key];
+				$months_posts[$result->month]['url'] = get_month_link( $result->year, $result->month );
+				$months_posts[$result->month]['count'] = $result->posts;
+				$months_posts[$result->month]['month'] = $wp_locale->get_month_abbrev($wp_locale->get_month($key));
+			}
+			else { // not in result
+				$months_posts[$key] = array(
+					'count' => 0,
+					'month' => $wp_locale->get_month_abbrev( $wp_locale->get_month($key) )
+				);
+			}
+		}
+		return array_reverse( $months_posts );
+	}
+
+	static function get_latest_twelve_monts( $start_month = '' ){
+
+		if (!empty($start_month)) {
+			$month = $start_month;
+		} else {
+			$month = (int) date('m');
+		}
+
+		$return = array();
+		$count = 1;
+		while ( $count <= 12  ) {
+			if ( $month < 1 ) {
+				$month = 12;
+			}
+			$return[$month] = $month;
+			$month--;
+			$count++;
+		}
+
+		return $return;
+	}
+
+	/**
 	 * Access an array index, retrieving the value stored there if it
 	 * exists or a default if it does not. This function allows you to
 	 * concisely access an index which may or may not exist without
@@ -2659,7 +2771,6 @@ class wpGrade_Get_The_Image{
 			}
 		}
 	}
-
 
 }//wpGrade_Get_The_Image class
 

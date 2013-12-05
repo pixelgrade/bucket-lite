@@ -1,7 +1,8 @@
 <?php
 
 // ACF Initialisation
-if ( wpgrade::option('enable_acf_ui', '0') ) {
+
+if ( !wpgrade::option('enable_acf_ui', '0') ) {
 	define( 'ACF_LITE', true );
 }
 
@@ -472,6 +473,21 @@ if(function_exists("register_field_group")){
 								'message' => __('', wpgrade::textdomain()),
 								'default_value' => 0,
 							),												
+							array (
+								'key' => 'field_5260ff377fc29',
+								'label' => __('Slider height (px)', wpgrade::textdomain()),
+								'name' => 'billboard_slider_height',
+								'type' => 'number',
+								'column_width' => '',
+								'default_value' => '625',
+								'placeholder' => '',
+								'prepend' => '',
+								'append' => '',
+								'min' => '300',
+								'max' => '625',
+								'step' => 1,
+								'instructions' =>'Minimum 300, maximum 625.',
+							),														
 							array (
 								'key' => 'field_5260ff377fc30',
 								'label' => __('Slider transition', wpgrade::textdomain()),
