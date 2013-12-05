@@ -97,6 +97,11 @@
                 </li>
  <?php */ ?>
             </ul>
+            
+            <?php if (wpgrade::option('posts_stats')): ?>
+            <div class="back-to-top"><a href="#">Back to Top</a></div>
+            <?php endif; ?>
+            
         </div>
     </div>
     <?php }
@@ -126,10 +131,6 @@
             <div class="footer__sidebar">
 
                 <div class="container">
-
-                    <?php if (wpgrade::option('posts_stats')): ?>
-                    <div class="back-to-top"><a href="#">Back to Top</a></div>
-                    <?php endif; ?>
                     
                     <div class="footer__widget-area  grid"><!--
                         <?php if ( is_active_sidebar( 'sidebar-footer-first-1' ) ) : ?>

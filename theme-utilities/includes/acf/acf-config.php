@@ -472,7 +472,7 @@ if(function_exists("register_field_group")){
 								'instructions' =>'Display only big articles in the billboard slider, one article per slide. The default is one big article and two smaller ones per slide.',
 								'message' => __('', wpgrade::textdomain()),
 								'default_value' => 0,
-							),
+							),												
 							array (
 								'key' => 'field_5260ff377fc29',
 								'label' => __('Slider height (px)', wpgrade::textdomain()),
@@ -484,9 +484,9 @@ if(function_exists("register_field_group")){
 								'prepend' => '',
 								'append' => '',
 								'min' => '300',
-								'max' => '',
+								'max' => '625',
 								'step' => 1,
-								'instructions' =>'A minimum of 300 is suggested.',
+								'instructions' =>'Minimum 300, maximum 625.',
 							),														
 							array (
 								'key' => 'field_5260ff377fc30',
