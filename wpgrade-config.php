@@ -8,7 +8,7 @@
 		'name'       => 'Bucket',
 		'shortname'  => 'bucket',
 		'prefix'     => '_bucket_',
-//		'textdomain' => 'bucket_txtd',
+		'textdomain' => 'bucket_txtd',
 
 		'language-path' => 'languages',
 
@@ -39,6 +39,8 @@
 				// main theme class
 				'theme-utilities/bucket'.EXT,
 				'theme-utilities/includes/required-plugins/required-plugins.php',
+//				'theme-utilities/includes/acf/acf.php',
+				'theme-utilities/includes/acf/acf-config.php',
 				// widgets & template tags
 //				'theme-content/inc/template-tags'.EXT,
 //				'theme-content/inc/theme-defaults'.EXT,

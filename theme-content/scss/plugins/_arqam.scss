@@ -1,0 +1,111 @@
+/*---------------------------------*\
+         ARQAM SOCIAL PLUGIN
+\*---------------------------------*/
+/**
+ * Arqam
+ * Plugin URI: http://codecanyon.net/user/mo3aser/portfolio?ref=mo3aser
+ * Description: WordPress Social Counter Plugin
+ */
+
+.arqam_counter-widget {
+}
+
+.arqam-widget-counter {
+	@extend %separator--section;
+	// padding-bottom:0;
+	// border-bottom-width: 5px !important;
+
+	li {
+		float: left;
+		width: 33%;
+		border:0;
+
+		a {
+			padding-bottom:0;
+			opacity:1;
+		}
+
+		i {
+			margin-top:0;
+			opacity:0.8;
+		}
+
+		span {
+			color:$dark;
+			margin-top:0 !important;
+			margin-bottom:0;
+			@extend h2;
+		}
+
+		small {
+			font-size:12px;
+		}
+
+
+		a:hover {
+			i {
+				opacity:1;
+			}
+		}
+	}
+
+	&.arq-outer-frame {
+		@include box-shadow(none);
+		border-left:0;
+		border-right:0;
+		border-top:0;
+		border-bottom: 5px solid $dark;
+	}
+
+
+	&.arq-col1 {
+		padding:12px;
+
+		span, small {
+			line-height:35px;
+		}
+	}
+}
+
+/**
+ * Dark Skin
+ */
+ .arqam-widget-counter.arq-outer-frame.arq-dark {
+ 	@include box-shadow(none);
+ 	background:$dark;
+ 	padding-top:12px;
+ 	padding-bottom:18px;
+
+ 	&.arq-col1 {
+ 		padding-bottom:12px;
+ 	}
+ 	
+ 	li a i, span {
+ 		color: #fff;
+ 		opacity:1;
+ 	}
+ }
+
+ /**
+  * Flat Skin
+  */
+  .arqam-widget-counter.arq-flat {
+
+  	padding-bottom:0;
+
+  	span {
+  		color:#fff;
+  	}
+
+  	li a {
+  		padding-bottom:6px;
+  	}
+
+  	&.arq-col3 li {
+  		width:33.33%;
+  	}
+  	&.arq-col2 li {
+  		width:50%;
+		margin: 0 !important;
+	}
+  }

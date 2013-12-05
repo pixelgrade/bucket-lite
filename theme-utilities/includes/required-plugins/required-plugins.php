@@ -52,6 +52,16 @@ function wpgrade_register_required_plugins() {
 			'force_deactivation' 	=> false,
 			'external_url' 			=> '',
 		),
+		array(
+			'name'     				=> 'Arqam - Social Counter Plugin',
+			'slug'     				=> 'arqam',
+			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/arqam.zip',
+			'required' 				=> false,
+			'version' 				=> '1.2.0',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
+		),
 //		array(
 //			'name' 		=> 'Contact Form 7',
 //			'slug' 		=> 'contact-form-7',

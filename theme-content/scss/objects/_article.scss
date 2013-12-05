@@ -289,12 +289,12 @@
         @extend .article__title--inverse;
         @extend .article__title--full;
 
-        @include rem(padding-left, $_u2);
+        @include rem(padding, $_u4 $_u);
 
         h3 {
             line-height:1.5;
 
-            a{
+            a {
                 color: white;
             }
         }

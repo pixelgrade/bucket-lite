@@ -6,6 +6,93 @@
 **/
 ?>   
     </div><!-- .wrapper --> 
+    
+    <?php if (wpgrade::option('posts_stats')): ?>
+    <div class="site__stats">
+        <div class="container">
+            <ul class="stat-group nav nav--banner">
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:10%">1</dd>
+                        <dt class="stat__title">Nov</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:100%">10</dd>
+                        <dt class="stat__title">Dec</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:60%">6</dd>
+                        <dt class="stat__title">Jan</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:30%">3</dd>
+                        <dt class="stat__title">Feb</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:10%">1</dd>
+                        <dt class="stat__title">Nov</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:100%">10</dd>
+                        <dt class="stat__title">Dec</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:60%">6</dd>
+                        <dt class="stat__title">Jan</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:30%">3</dd>
+                        <dt class="stat__title">Feb</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:10%">1</dd>
+                        <dt class="stat__title">Nov</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:100%">10</dd>
+                        <dt class="stat__title">Dec</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:60%">6</dd>
+                        <dt class="stat__title">Jan</dt>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="stat">
+                        <dd class="stat__value" style="height:30%">3</dd>
+                        <dt class="stat__title">Feb</dt>
+                    </a>
+                </li>
+            </ul>
+            
+            <?php if (wpgrade::option('posts_stats')): ?>
+            <div class="back-to-top"><a href="#">Back to Top</a></div>
+            <?php endif; ?>
+            
+        </div>
+    </div>
+    <?php endif; ?>
+    
     <footer class="site__footer">
         
         <h2 class="accessibility"><?php __('Footer', wpgrade::textdomain()) ?></h2>
@@ -30,7 +117,7 @@
             <div class="footer__sidebar">
 
                 <div class="container">
-
+                    
                     <div class="footer__widget-area  grid"><!--
                         <?php if ( is_active_sidebar( 'sidebar-footer-first-1' ) ) : ?>
                          --><div class="grid__item one-third  palm-one-whole">
