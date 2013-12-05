@@ -82,18 +82,29 @@
 .site-logo {
     width:100%;
 
-    // Fixed heigth because on retinas 
-    // the logo was getting huge
-    
-    @include media-query(palm) {
-        height: 50px;
-        display: inline-block;
-    }
 
     img {
         display:block;
         max-height: 100%;
     }    
+}
+
+.site-logo--text{
+    display: block;
+
+    @include media-query(lap-and-up) {
+        text-align: center;
+    }
+}
+
+.site-logo--image{
+    // Fixed heigth because on retinas 
+    // the logo was getting huge
+    display: inline-block;
+
+    @include media-query(palm) {
+        height: 50px;
+    }
 }
 
 

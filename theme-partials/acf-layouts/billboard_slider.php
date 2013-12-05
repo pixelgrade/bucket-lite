@@ -112,8 +112,6 @@ $slider_autoplay = get_sub_field('billboard_slider_autoplay');
 if($slider_autoplay)
     $slider_delay = get_sub_field('billboard_slider_autoplay_delay');
 
-$slider_height = get_sub_field('billboard_slider_height');
-
 $slides = new WP_Query( $query_args );
 $index = 0;
 $closed_group = true;
@@ -122,7 +120,7 @@ if ($slides->have_posts()): ?>
 	<div class="billboard pixslider js-pixslider arrows--outside" 
 			data-arrows="true"
 			data-autoScaleSliderWidth="1050"
-			data-autoScaleSliderHeight="<?php echo $slider_height; ?>"
+			data-autoScaleSliderHeight="625"
             data-slidertransition="<?php echo $slider_transition; ?>"
             <?php if ($slider_autoplay) {
                 echo 'data-sliderautoplay="" ';
