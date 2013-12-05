@@ -3,7 +3,7 @@
 \*---------------------------------*/
 .back-to-top {
 	position:absolute;
-	top:-66px;
+	bottom:0;
 	right:0;
 
 	a {
@@ -11,7 +11,7 @@
 		font-size:12px;
 		line-height:2.5;
 		text-transform:uppercase;
-		padding-right:16px; 
+		padding-right:19px; 
 
 		position:relative;
 
@@ -19,13 +19,18 @@
 			content: "";
 			position: absolute;
 			top: 6px;
-			right:0;
+			right:3px;
 			width: 7px;
 			height: 7px;
 			border: 0 solid $light;
 			border-top-width: 2px;
 			border-right-width: 0.14286rem;
 			@include rotate(-45deg);
+		}
+
+
+		&:hover {
+			color:$accent; 
 		}
 	}
 }
