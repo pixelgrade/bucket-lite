@@ -38,7 +38,7 @@ include_once('acf.php');
  *  The register_field_group function accepts 1 array which holds the relevant data to register a field group
  *  You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
  */
-
+function acf_load_fields() {
 if(function_exists("register_field_group")){
 	register_field_group(array (
 		'id' => 'acf_credits',
@@ -838,6 +838,8 @@ if(function_exists("register_field_group")){
 	));
 }
 
+}
+add_action('init', 'acf_load_fields');
 add_action('acf/register_fields', 'wpgrade_register_acf_fields');
 
 function wpgrade_register_acf_fields() {

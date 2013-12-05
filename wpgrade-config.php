@@ -8,7 +8,7 @@
 		'name'       => 'Bucket',
 		'shortname'  => 'bucket',
 		'prefix'     => '_bucket_',
-//		'textdomain' => 'bucket_txtd',
+		'textdomain' => 'bucket_txtd',
 
 		'language-path' => 'languages',
 
