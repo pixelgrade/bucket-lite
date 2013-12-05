@@ -86,7 +86,7 @@
             </ul>
             
             <?php if (wpgrade::option('posts_stats')): ?>
-            <div class="back-to-top"><a href="#">Back to Top</a></div>
+            <div class="back-to-top"><a href="#page">Back to Top</a></div>
             <?php endif; ?>
             
         </div>

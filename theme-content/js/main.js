@@ -339,6 +339,29 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 
 
+
+    /* --- $SMOOTH PAGE SCROLL --- */
+    /*
+     * Performs a smooth page scroll to an anchor on the same page.
+     * http://css-tricks.com/snippets/jquery/smooth-scrolling/
+     */
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 700);
+            return false;
+          }
+        }
+      });
+    });
+
+
+
     /* ====== INTERNAL FUNCTIONS ====== */
 
     /* --- DETECT VIEWPORT SIZE --- */
@@ -688,6 +711,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 		return "";
 	}
+
+
 
     function shareBox() {
 		//get the via username for twitter share

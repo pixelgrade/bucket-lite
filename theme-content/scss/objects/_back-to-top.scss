@@ -2,35 +2,51 @@
  		  BACK TO TOP LINK
 \*---------------------------------*/
 .back-to-top {
-	position:absolute;
-	bottom:0;
-	right:0;
+
+	position:relative;
 
 	a {
-		color:$light !important;
 		font-size:12px;
 		line-height:2.5;
 		text-transform:uppercase;
 		padding-right:19px; 
-
+		display:block;
 		position:relative;
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 6px;
-			right:3px;
-			width: 7px;
-			height: 7px;
-			border: 0 solid $light;
-			border-top-width: 2px;
-			border-right-width: 0.14286rem;
-			@include rotate(-45deg);
-		}
-
-
-		&:hover {
-			color:$accent; 
-		}
 	}
+
+
+	@include media-query(lap-and-up) {
+		position:absolute;
+		bottom:0;
+		right:0;
+
+		a {
+
+			&:after, &:before {
+				content: "";
+				position: absolute;
+				top: 43%;
+				right:3px;
+				width: 7px;
+				height: 7px;
+				border: 0 solid $light;
+				border-top-width: 2px;
+				border-right-width: 0.14286rem;
+				@include rotate(-45deg);
+
+				@include transition(all 0.15s);
+			}
+
+
+			&:hover {
+
+				&:before {
+					top:10px;
+				}
+				&:after {
+					top:15px;
+				}
+			}
+		}
+	} 
 }
