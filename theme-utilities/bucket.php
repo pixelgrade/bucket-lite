@@ -153,13 +153,10 @@ class bucket
 		$return = array();
 		$count = 1;
 		while ( $count <= 12  ) {
-
 			if ( $month < 1 ) {
 				$month = 12;
 			}
-
 			$return[$month] = $month;
-
 			$month--;
 			$count++;
 		}
