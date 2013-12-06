@@ -124,6 +124,8 @@ class bucket
 
 		$default_moths = self::get_latest_twelve_monts();
 
+		$max_posts_nr = 0;
+
 		// loop into all months, check for values and assign names
 		foreach ( $default_moths as $key ) {
 			if (isset($result_refs[$key])) {
@@ -131,6 +133,8 @@ class bucket
 				$months_posts[$result->month]['url'] = get_month_link( $result->year, $result->month );
 				$months_posts[$result->month]['count'] = $result->posts;
 				$months_posts[$result->month]['month'] = $wp_locale->get_month_abbrev($wp_locale->get_month($key));
+
+				if ( $result->posts > $max_posts_nr ) $max_posts_nr = $result->posts;
 			}
 			else { // not in result
 				$months_posts[$key] = array(
@@ -139,7 +143,7 @@ class bucket
 				);
 			}
 		}
-		return array_reverse( $months_posts );
+		return array('max_posts_nr' => $max_posts_nr, 'months' => $months_posts );
 	}
 
 	static function get_latest_twelve_monts( $start_month = '' ){

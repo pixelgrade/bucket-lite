@@ -8,11 +8,13 @@
     </div><!-- .wrapper --> 
     
     <?php if (wpgrade::option('posts_stats')):
-//echo '<pre>';
-//		var_dump( bucket::wpgrade_count_posts() );echo '</pre>';
 
-		$months = bucket::wpgrade_count_posts();
-		if ( !empty($months) ) { ?>
+	$months = bucket::wpgrade_count_posts();
+
+	$max_posts_nr = $months['max_posts_nr'];
+	$months = $months['months'];
+
+	if ( !empty($months) ) { ?>
     <div class="site__stats">
         <div class="container">
             <ul class="stat-group nav nav--banner">
@@ -22,86 +24,18 @@
 							<a href="<?php echo $month['url'] ;?>" class="stat">
 						<?php } else { ?>
 							<a href="#" class="stat disable">
-						<?php } ?>
-							<dd class="stat__value" style="height:10%"><?php echo $month['count']; ?></dd>
+						<?php }
+						$percent = ($month['count'] * 100) / $max_posts_nr; ?>
+							<dd class="stat__value" style="height:<?php echo $percent ?>%"><?php echo $month['count']; ?></dd>
 							<dt class="stat__title"><?php echo $month['month']; ?></dt>
 						</a>
 					</li>
-				<?php }
-				 /* ?>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:100%">10</dd>
-                        <dt class="stat__title">Dec</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:60%">6</dd>
-                        <dt class="stat__title">Jan</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:30%">3</dd>
-                        <dt class="stat__title">Feb</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:10%">1</dd>
-                        <dt class="stat__title">Nov</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:100%">10</dd>
-                        <dt class="stat__title">Dec</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:60%">6</dd>
-                        <dt class="stat__title">Jan</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:30%">3</dd>
-                        <dt class="stat__title">Feb</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:10%">1</dd>
-                        <dt class="stat__title">Nov</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:100%">10</dd>
-                        <dt class="stat__title">Dec</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:60%">6</dd>
-                        <dt class="stat__title">Jan</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:30%">3</dd>
-                        <dt class="stat__title">Feb</dt>
-                    </a>
-                </li>
- <?php */ ?>
+				<?php } ?>
             </ul>
             
             <?php if (wpgrade::option('posts_stats')): ?>
             <div class="back-to-top"><a href="#">Back to Top</a></div>
             <?php endif; ?>
-            
         </div>
     </div>
     <?php }
