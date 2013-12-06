@@ -18,6 +18,8 @@
 
 	}
 
+
+
 /**
  * Footer Posts stats
  */
@@ -25,14 +27,23 @@
 	
 	text-align:center;
 	position:relative;
-	bottom:-7px;
 
-	a {
+	a, & {
 		color:$light;
+	}
+
+	.container {
+		position:relative;
+		min-height:30px;
 	}
 
 	.stat-group {
 		margin-bottom:0;
+		margin-left:0;
+	}
+
+	li {
+		vertical-align:bottom;
 	}
 
 	.stat {
@@ -41,6 +52,8 @@
 		height:2*$_2u;
 		width:$_2u;
 		position:relative;
+
+		
 	}
 
 	.stat__value, .stat__title {
@@ -92,15 +105,6 @@
 		}
 	}
 
-	.stat:hover {
-		.stat__value, .stat__title {
-			color:#fff;
-			&:after {
-				max-height:100%;
-			}
-		}
-	}
-
 	&:after {
 		background:#f2f2f2;
 		content:"";
@@ -109,8 +113,17 @@
 		height:5px;
 
 		position:absolute;
-		bottom:36px;
+		bottom:30px;
 		z-index:-1;
 	}
 
+
+	.stat:hover {
+		.stat__value, .stat__title {
+			color:#fff;
+			&:after {
+				max-height:100%;
+			}
+		}
+	}
 }
