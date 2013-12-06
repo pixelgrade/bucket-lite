@@ -840,7 +840,8 @@ if(function_exists("register_field_group")){
 }
 
 }
-add_action('init', 'acf_load_fields');
+
+add_action('after_setup_theme', 'acf_load_fields', 0);
 add_action('acf/register_fields', 'wpgrade_register_acf_fields');
 
 function wpgrade_register_acf_fields() {
