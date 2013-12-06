@@ -563,7 +563,7 @@ $sections[] = array(
 			'title' => __('Apply Custom CSS', wpgrade::textdomain()),
 			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
 			'default' => 'inline',
-			'options' => array( 'inline' => 'Inline <em>(recommended)</em>', 'file' => 'Write To File (might require file permissions)'),
+			'options' => array( 'inline' => __('Inline <em>(recommended)</em>', wpgrade::textdomain()), 'file' => __('Write To File (might require file permissions)', wpgrade::textdomain())),
 			'select2' => array( // here you can provide params for the select2 jquery call
 			    'minimumResultsForSearch' => -1, // this way the search box will be disabled
 				'allowClear' => false // don't allow a empty select

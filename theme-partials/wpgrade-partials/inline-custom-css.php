@@ -93,7 +93,9 @@ a, blockquote, .small-link, .tabs__nav a.current,
 .small-link, .post-nav-link__label, .author__social-link,
 .article--thumb__title a:hover, 
 .widget_wpgrade_twitter_widget .widget--footer__title h3:before,
-a:hover > .pixcode--icon {
+a:hover > .pixcode--icon,
+.score__pros__title, .score__cons__title,
+.comments-area-title .hN em {
     color: <?php echo $main_color; ?>;
 }
 
@@ -106,17 +108,22 @@ a:hover > .pixcode--icon {
 .widget_tag_cloud a:hover, .btn--primary,
 .comments_add-comment, .form-submit #comment-submit,
 a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
-.article--list__link:hover .badge, .score__average-wrapper {
+.article--list__link:hover .badge, .score__average-wrapper,
+.site__stats .stat__value:after, .site__stats .stat__title:after {
     background-color: <?php echo $main_color; ?>;
 }
 
-.social-icon-link:hover .square, .social-icon-link:focus .square, .social-icon-link:active .square {
+.social-icon-link:hover .square, .social-icon-link:focus .square, .social-icon-link:active .square,
+.site__stats .stat__value:after, .site__stats .stat__title:after {
     background-color: <?php echo $main_color; ?> !important;
 }
 
 @media only screen and (min-width: 900px){
     .nav--main li:hover, .nav--main li.current-menu-item {
         border-bottom-color: <?php echo $main_color; ?>;     
+    }
+    .back-to-top a:hover:after, .back-to-top a:hover:before {
+        border-color: <?php echo $main_color; ?>; 
     }
     .article--billboard > a:hover .article__title:before, 
     .article--billboard > a:hover .article--list__title:before, 
