@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2013-12-06 14:11+0200\n"
-"PO-Revision-Date: 2013-12-06 14:11+0200\n"
+"POT-Creation-Date: 2013-12-06 15:45+0200\n"
+"PO-Revision-Date: 2013-12-06 15:45+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: Portuguese\n"
@@ -225,21 +225,22 @@ msgstr ""
 "Parece que não consegue encontrar o que você está procurando. Talvez "
 "procurando pode ajudar."
 
-#: ../page.php:37 ../theme-callbacks/unsorted.php:79
+#: ../page-no-sidebar.php:43 ../page.php:37 ../theme-callbacks/unsorted.php:79
 #: ../theme-partials/post-templates/single-title.php:14
 #, fuzzy
 msgid "j F, Y \\a\\t H:i"
 msgstr "j F, Y \\a\\t H:i"
 
-#: ../page.php:42
+#: ../page-no-sidebar.php:48 ../page.php:42
 msgid "Pages:"
 msgstr "Páginas:"
 
-#: ../page.php:42 ../single.php:62
+#: ../page-no-sidebar.php:48 ../page.php:42 ../single.php:62
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../page.php:42 ../single.php:63 ../wpgrade-config.php:235
+#: ../page-no-sidebar.php:48 ../page.php:42 ../single.php:63
+#: ../wpgrade-config.php:235
 msgid "Next"
 msgstr "Próximo"
 
@@ -1292,6 +1293,14 @@ msgstr "Aplicar personalizado CSS"
 msgid "Select how to insert the custom CSS into your site."
 msgstr "Escolha como inserir o CSS personalizado em seu site."
 
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Inline <em>(recommended)</em>"
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Write To File (might require file permissions)"
+msgstr ""
+
 #: ../theme-content/admin-panel/redux-sections.php:575
 #, fuzzy
 msgid "Custom JavaScript (header)"
@@ -1571,6 +1580,11 @@ msgstr "Todos os artigos de %s"
 #, php-format
 msgid "on %s"
 msgstr "em %s"
+
+#: ../theme-utilities/bucket.php:2225
+#, fuzzy, php-format
+msgid " | Page %s"
+msgstr "Página %s"
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:242
 #, fuzzy
@@ -4764,9 +4778,6 @@ msgstr ""
 
 #~ msgid "on"
 #~ msgstr "em"
-
-#~ msgid "Page %s"
-#~ msgstr "Página %s"
 
 #~ msgid "Main Widget Area"
 #~ msgstr "Área Widget principal"

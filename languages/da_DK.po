@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bucket v1.0.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-06 14:12+0200\n"
-"PO-Revision-Date: 2013-12-06 14:12+0200\n"
+"POT-Creation-Date: 2013-12-06 15:43+0200\n"
+"PO-Revision-Date: 2013-12-06 15:43+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -254,24 +254,24 @@ msgstr ""
 "der måske kan hjælpe. "
 
 # @ acf
-#: page.php:37 theme-callbacks/unsorted.php:79
+#: page-no-sidebar.php:43 page.php:37 theme-callbacks/unsorted.php:79
 #: theme-partials/post-templates/single-title.php:14
 msgid "j F, Y \\a\\t H:i"
 msgstr "j F, Y \\k\\l H:i"
 
 # @ acf
-#: page.php:42
+#: page-no-sidebar.php:48 page.php:42
 msgid "Pages:"
 msgstr "Sider:"
 
 # @ acf
-#: page.php:42 single.php:62
+#: page-no-sidebar.php:48 page.php:42 single.php:62
 msgid "Previous"
 msgstr "Tidligere"
 
 # @ acf
 # @ bucket_txtd
-#: page.php:42 single.php:63 wpgrade-config.php:235
+#: page-no-sidebar.php:48 page.php:42 single.php:63 wpgrade-config.php:235
 msgid "Next"
 msgstr "Næste"
 
@@ -1377,6 +1377,14 @@ msgstr ""
 msgid "Select how to insert the custom CSS into your site."
 msgstr ""
 
+#: theme-content/admin-panel/redux-sections.php:566
+msgid "Inline <em>(recommended)</em>"
+msgstr ""
+
+#: theme-content/admin-panel/redux-sections.php:566
+msgid "Write To File (might require file permissions)"
+msgstr ""
+
 # @ acf
 #: theme-content/admin-panel/redux-sections.php:575
 msgid "Custom JavaScript (header)"
@@ -1640,6 +1648,12 @@ msgstr "Skrevet af %s"
 #, php-format
 msgid "on %s"
 msgstr "den %s"
+
+# @ acf
+#: theme-utilities/bucket.php:2225
+#, fuzzy, php-format
+msgid " | Page %s"
+msgstr "Sider:"
 
 # @ acf
 #: theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:242
