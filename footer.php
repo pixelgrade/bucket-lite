@@ -7,7 +7,7 @@
 ?>   
     </div><!-- .wrapper --> 
     
-    <?php if (wpgrade::option('posts_stats')):
+    <?php if (wpgrade::option('posts_stats') || wpgrade::option('back_to_top')):
 
 	$months = bucket::wpgrade_count_posts();
 
@@ -17,23 +17,32 @@
 	if ( !empty($months) ) { ?>
     <div class="site__stats">
         <div class="container">
+        
+            <?php if (wpgrade::option('posts_stats')): ?>
             <ul class="stat-group nav nav--banner">
 				<?php foreach($months as $key => $month ) { ?>
 					<li>
 						<?php if ( isset($month['url'])) { ?>
 							<a href="<?php echo $month['url'] ;?>" class="stat">
 						<?php } else { ?>
-							<a href="#" class="stat disable">
+							<div class="stat disable">
 						<?php }
 						$percent = ($month['count'] * 100) / $max_posts_nr; ?>
 							<dd class="stat__value" style="height:<?php echo $percent ?>%"><?php echo $month['count']; ?></dd>
 							<dt class="stat__title"><?php echo $month['month']; ?></dt>
-						</a>
+						
+                        <?php if ( isset($month['url'])) { ?>
+                            </a>
+                        <?php } else { ?>
+                            </div>
+                        <?php } ?>
+                                          
 					</li>
 				<?php } ?>
             </ul>
-            
-            <?php if (wpgrade::option('posts_stats')): ?>
+            <?php endif; 
+
+                  if (wpgrade::option('back_to_top')): ?>
             <div class="back-to-top"><a href="#page">Back to Top</a></div>
             <?php endif; ?>
         </div>

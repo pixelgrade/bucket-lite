@@ -18,7 +18,7 @@
 	@include media-query(lap-and-up) {
 		position:absolute;
 		bottom:0;
-		right:0;
+		right:$_u;
 
 		a {
 
@@ -40,6 +40,9 @@
 
 			&:hover {
 
+				&:after, &:before {
+					border-color:$accent;
+				}
 				&:before {
 					top:10px;
 				}

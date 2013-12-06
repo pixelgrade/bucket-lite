@@ -28,12 +28,13 @@
 	text-align:center;
 	position:relative;
 
-	a {
+	a, & {
 		color:$light;
 	}
 
 	.container {
 		position:relative;
+		min-height:30px;
 	}
 
 	.stat-group {
