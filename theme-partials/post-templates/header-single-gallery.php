@@ -72,12 +72,20 @@ if ($attachments): ?>
 			if ( !empty($video_url) ) { ?>
 				<div class="gallery__item video">
 					<img src="<?php echo $thumbimg[0]; ?>" class="rsImg  invisible" data-rsVideo="<?php echo $video_url; ?>" />
-					<span class="gallery__item__caption  rsCaption"><?php echo $attachment->post_excerpt; ?></span>
+					<span class="wp-caption  gallery__item__caption  rsCaption">
+						<span class="wp-caption-text">
+							<?php echo $attachment->post_excerpt; ?>
+						</span>
+					</span>
 				</div>
 			<?php } else { ?>
 				<div class="gallery__item" itemscope itemtype="http://schema.org/ImageObject" >
 					<img src="<?php echo $thumbimg[0]; ?>" class="attachment-blog-big  rsImg  invisible" alt="" itemprop="contentURL" />
-					<span class="gallery__item__caption  rsCaption"><?php echo $attachment->post_excerpt; ?></span>
+					<span class="wp-caption  gallery__item__caption  rsCaption">
+						<span class="wp-caption-text">
+							<?php echo $attachment->post_excerpt; ?>
+						</span>
+					</span>
 				</div>
 			<?php }
 		endforeach; ?>

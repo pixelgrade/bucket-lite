@@ -966,18 +966,10 @@
     $ARTICLE GALLERY SLIDER
 \*----------------------------------------*/
 .gallery__item__caption{
-    // position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: $_u2;
 
-    // @include background-image(linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,.7) 50%, rgba(0,0,0,.9)));    
-    color: black;
-    text-align: center;
-    font-family: $alt-font-family;
-    font-style: italic;
-    @include font-size(12px);    
+    @extend .wp-caption;
+    display: block;
+
 }
 
 .gallery__item img.invisible{
