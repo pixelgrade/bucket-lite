@@ -18,7 +18,6 @@ if ( ! defined('EXT')) {
 $formats = array('video', 'audio', 'gallery', 'image', 'link');
 add_theme_support('post-formats', $formats);
 
-
 // Initialize system core
 // ----------------------
 
