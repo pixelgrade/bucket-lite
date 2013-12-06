@@ -108,7 +108,8 @@ a:hover > .pixcode--icon,
 .widget_tag_cloud a:hover, .btn--primary,
 .comments_add-comment, .form-submit #comment-submit,
 a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
-.article--list__link:hover .badge, .score__average-wrapper {
+.article--list__link:hover .badge, .score__average-wrapper,
+.site__stats .stat__value:after, .site__stats .stat__title:after {
     background-color: <?php echo $main_color; ?>;
 }
 
