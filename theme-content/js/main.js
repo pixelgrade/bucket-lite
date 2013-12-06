@@ -700,6 +700,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-twitter  circle  small"></i></div><div class="share-item__value">{total}</div>',
 			enableHover: false,
 			enableTracking: false,
+	        shorterTotal: false,
 			click: function(api, options){
 				api.simulateClick();
 				api.openPopup('twitter');
@@ -715,6 +716,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
           template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-facebook  circle  small"></i></div><div class="share-item__value">{total}</div>',
           enableHover: false,
           enableTracking: false,
+          shorterTotal: false,
           click: function(api, options){
             api.simulateClick();
             api.openPopup('facebook');
@@ -727,6 +729,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-gplus  circle  small"></i></div><div class="share-item__value">{total}</div>',
 			enableHover: false,
 			enableTracking: false,
+	        shorterTotal: false,
 			click: function(api, options){
 				api.simulateClick();
 				api.openPopup('googlePlus');
@@ -739,6 +742,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-pinterest  circle  small"></i></div><div class="share-item__value">{total}</div>',
 			enableHover: false,
 			enableTracking: false,
+			shorterTotal: false,
 			click: function(api, options){
 				api.simulateClick();
 				api.openPopup('pinterest');
@@ -751,23 +755,37 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			}
         });
     }
+	
+	// Calculate total shares
+	var renders = 0;
 
-      // Calculate total shares
-      var renders = 0;
-      $(document).on('share-box-rendered', function(){
-        renders++;
-        if ( renders == 3 ) {
-            var total_shares = 0;
-            $('#share-box .share-item__value').each(function(i,e){
-              var value = parseInt($(this).text());
-              if ( !isNaN(value) ) {
-                total_shares = total_shares + value;
-              }
-            });
-            $('.share-total__value').html(total_shares);
-        }
-      });
+	$(document).on('share-box-rendered', function(){
+		renders++;
 
+		if ( renders == 4 ) {
+		    var total_shares = 0;
+		    $('#share-box .share-item__value').each(function(i,e){
+
+		      var value = parseInt($(this).text());
+		      if ( !isNaN(value) ) {
+		        total_shares = total_shares + value;
+		      }
+		      $(this).text(wpgrade_shorterTotal(value));
+		    });
+		    $('.share-total__value').html(wpgrade_shorterTotal(total_shares));
+		}
+	});
+
+	/* format total numbers like 1.2k or 5M
+	 ================================================== */
+	var wpgrade_shorterTotal = function (num) {
+		if (num >= 1e6){
+			num = (num / 1e6).toFixed(2) + "M"
+		} else if (num >= 1e3){
+			num = (num / 1e3).toFixed(1) + "k"
+		}
+		return num;
+	};
 
     // Mega-Menu Hover with delay
     function megaMenusHover() {
@@ -840,7 +858,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
         eventHandlers();
 
         /* SHARE BOX BUTTONS (single only) */
-        if($('body.single').length) { shareBox(); }
+//        if($('body.single').length) { setTimeout(function(){shareBox();},500); }
+	    if($('body.single').length) { shareBox(); }
     };
 
 
