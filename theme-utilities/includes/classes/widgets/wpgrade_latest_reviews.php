@@ -11,6 +11,8 @@ class wpgrade_latest_reviews extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
+		global $post;
+		
 		extract( $args );
 		$title = apply_filters('widget_title', $instance['title']);
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
@@ -18,12 +20,6 @@ class wpgrade_latest_reviews extends WP_Widget {
 		$query_args = array(
 			'posts_per_page' => $number,
 			'meta_query' => array(
-				'relation' => 'OR',
-				array(
-				 'key' => 'enable_review_score',
-				 'compare' => 'EXISTS', // works!
-				 'value' => '' // This is ignored, but is necessary...
-				),
 				array(
 					'key' => 'enable_review_score',
 					'value' => '1',
@@ -32,17 +28,17 @@ class wpgrade_latest_reviews extends WP_Widget {
 			)
 		);
 
-		$reviews_query = new WP_Query($query_args);
+		$reviews_posts = get_posts($query_args);
 
 		echo $before_widget;
-		if ($reviews_query->have_posts()): ?>
+		if (count($reviews_posts)): ?>
 			<?php if ($title): ?>
 				<div class="widget__title  widget--sidebar__title  flush--bottom">
 					<h2 class="hN"><?php echo $title; ?></h2>
 				</div>
 			<?php endif; ?>
 			<ol class="reviews">
-				<?php while ( $reviews_query->have_posts() ) : $reviews_query->the_post(); ?>
+				<?php foreach ( $reviews_posts as $post ) : setup_postdata( $post ); ?>
 					<li class="review">
 						<article>
 							<a class="review__title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -51,7 +47,7 @@ class wpgrade_latest_reviews extends WP_Widget {
 							<div class="progressbar"><div class="progressbar__progress" style="width: <?php echo bucket::get_average_score() * 10;  ?>%;"></div></div>
 						</article>
 					</li>
-				<?php endwhile; ?>
+				<?php endforeach; ?>
 			</ol>
 		<?php endif;
 
