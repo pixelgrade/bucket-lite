@@ -15,7 +15,7 @@ get_header(); ?>
 				<h2 class="hN"><?php _e( 'Oops! That page can&rsquo;t be found.', wpgrade::textdomain() ); ?></h2>
 			</div>
 			<p><?php printf( __( 'This may be because of a mistyped URL, faulty referral or out-of-date search engine listing.<br />You should try the <a href="%s">homepage</a> instead or maybe do a search?', wpgrade::textdomain() ), home_url()); ?></p>
-			<div class="search-form search-form--404">
+			<div class="search-form  search-form--404">
 				<?php get_search_form(); ?>
 			</div>
         </div><!--

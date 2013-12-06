@@ -31,5 +31,6 @@
 @include media-query(lap-and-up) {
     .search-form--404{
         width: 50%;
+        margin-bottom: 200px;
     }
 }
