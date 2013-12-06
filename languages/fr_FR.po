@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2013-12-06 14:11+0200\n"
-"PO-Revision-Date: 2013-12-06 14:12+0200\n"
+"POT-Creation-Date: 2013-12-06 15:44+0200\n"
+"PO-Revision-Date: 2013-12-06 15:44+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: French\n"
@@ -222,22 +222,23 @@ msgstr ""
 "Il semble que nous ne pouvons pas trouver ce que vous cherchez. Peut-être "
 "que la recherche peut aider."
 
-#: ../page.php:37 ../theme-callbacks/unsorted.php:79
+#: ../page-no-sidebar.php:43 ../page.php:37 ../theme-callbacks/unsorted.php:79
 #: ../theme-partials/post-templates/single-title.php:14
 #, fuzzy
 msgid "j F, Y \\a\\t H:i"
 msgstr "j F, Y \\a\\t H:i"
 
-#: ../page.php:42
+#: ../page-no-sidebar.php:48 ../page.php:42
 #, fuzzy
 msgid "Pages:"
 msgstr "Pages:"
 
-#: ../page.php:42 ../single.php:62
+#: ../page-no-sidebar.php:48 ../page.php:42 ../single.php:62
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../page.php:42 ../single.php:63 ../wpgrade-config.php:235
+#: ../page-no-sidebar.php:48 ../page.php:42 ../single.php:63
+#: ../wpgrade-config.php:235
 msgid "Next"
 msgstr "Suivant"
 
@@ -1296,6 +1297,14 @@ msgstr "Appliquer CSS personnalisé"
 msgid "Select how to insert the custom CSS into your site."
 msgstr "Choisissez comment insérer le CSS personnalisé dans votre site."
 
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Inline <em>(recommended)</em>"
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:566
+msgid "Write To File (might require file permissions)"
+msgstr ""
+
 #: ../theme-content/admin-panel/redux-sections.php:575
 #, fuzzy
 msgid "Custom JavaScript (header)"
@@ -1574,6 +1583,11 @@ msgstr "Tous les messages de: %s"
 #, php-format
 msgid "on %s"
 msgstr "sur %s"
+
+#: ../theme-utilities/bucket.php:2225
+#, fuzzy, php-format
+msgid " | Page %s"
+msgstr "Pages:"
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:242
 #, fuzzy

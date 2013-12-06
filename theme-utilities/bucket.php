@@ -2207,7 +2207,24 @@ class bucket
 
 	   return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
    }
+   
+   /**
+	* Echos the page title
+	*/
+   static function the_document_title() {
+	
+		global $page, $paged;
 
+		wp_title( '|', true, 'right' );
+
+		// Some blog name
+		bloginfo('name');
+
+		// Add the page number if necessary
+		if ( $paged >= 2 || $page >= 2 )
+			echo sprintf( __( ' | Page %s', wpgrade::textdomain() ), max( $paged, $page ) );
+
+	}
 }
 
 /**
