@@ -7,91 +7,39 @@
 ?>   
     </div><!-- .wrapper --> 
     
-    <?php if (wpgrade::option('posts_stats')): ?>
+    <?php if (wpgrade::option('posts_stats')):
+
+	$months = bucket::wpgrade_count_posts();
+
+	$max_posts_nr = $months['max_posts_nr'];
+	$months = $months['months'];
+
+	if ( !empty($months) ) { ?>
     <div class="site__stats">
         <div class="container">
             <ul class="stat-group nav nav--banner">
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:10%">1</dd>
-                        <dt class="stat__title">Nov</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:100%">10</dd>
-                        <dt class="stat__title">Dec</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:60%">6</dd>
-                        <dt class="stat__title">Jan</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:30%">3</dd>
-                        <dt class="stat__title">Feb</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:10%">1</dd>
-                        <dt class="stat__title">Nov</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:100%">10</dd>
-                        <dt class="stat__title">Dec</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:60%">6</dd>
-                        <dt class="stat__title">Jan</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:30%">3</dd>
-                        <dt class="stat__title">Feb</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:10%">1</dd>
-                        <dt class="stat__title">Nov</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:100%">10</dd>
-                        <dt class="stat__title">Dec</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:60%">6</dd>
-                        <dt class="stat__title">Jan</dt>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="stat">
-                        <dd class="stat__value" style="height:30%">3</dd>
-                        <dt class="stat__title">Feb</dt>
-                    </a>
-                </li>
+				<?php foreach($months as $key => $month ) { ?>
+					<li>
+						<?php if ( isset($month['url'])) { ?>
+							<a href="<?php echo $month['url'] ;?>" class="stat">
+						<?php } else { ?>
+							<a href="#" class="stat disable">
+						<?php }
+						$percent = ($month['count'] * 100) / $max_posts_nr; ?>
+							<dd class="stat__value" style="height:<?php echo $percent ?>%"><?php echo $month['count']; ?></dd>
+							<dt class="stat__title"><?php echo $month['month']; ?></dt>
+						</a>
+					</li>
+				<?php } ?>
             </ul>
             
             <?php if (wpgrade::option('posts_stats')): ?>
             <div class="back-to-top"><a href="#">Back to Top</a></div>
             <?php endif; ?>
-            
         </div>
     </div>
-    <?php endif; ?>
+    <?php }
+	endif; ?>
     
     <footer class="site__footer">
         

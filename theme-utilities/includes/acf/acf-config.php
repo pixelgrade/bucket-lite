@@ -1,7 +1,8 @@
 <?php
 
 // ACF Initialisation
-if ( wpgrade::option('enable_acf_ui', '0') ) {
+
+if ( !wpgrade::option('enable_acf_ui', '0') ) {
 	define( 'ACF_LITE', true );
 }
 
