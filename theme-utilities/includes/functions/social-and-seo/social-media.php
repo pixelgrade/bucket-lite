@@ -56,6 +56,13 @@
 			return '';
 		}
 	}
+	
+	/**
+	 * General SEO
+	 */
+	function wpgrade_callback_general_seo() {
+		include wpgrade::themefilepath('theme-utilities/assets/social-and-seo/general-seo'.EXT);
+	}
 
 	/**
 	 * Facebook share correct image fix (thanks to yoast).
@@ -79,6 +86,7 @@
 	}
 
 	function load_social_share() {
+		add_action('wp_head', 'wpgrade_callback_general_seo');
 		if (wpgrade::option('prepare_for_social_share')) {
 			add_action('wp_head', 'wpgrade_callback_facebook_opengraph');
 			add_action('wp_head', 'wpgrade_callback_google_metas');
