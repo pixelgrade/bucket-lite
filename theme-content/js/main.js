@@ -755,7 +755,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			}
         });
     }
-	
+
 	// Calculate total shares
 	var renders = 0;
 
