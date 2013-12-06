@@ -94,7 +94,8 @@ a, blockquote, .small-link, .tabs__nav a.current,
 .article--thumb__title a:hover, 
 .widget_wpgrade_twitter_widget .widget--footer__title h3:before,
 a:hover > .pixcode--icon,
-.score__pros__title, .score__cons__title {
+.score__pros__title, .score__cons__title,
+.comments-area-title .hN em {
     color: <?php echo $main_color; ?>;
 }
 
