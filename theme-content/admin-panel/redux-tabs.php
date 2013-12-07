@@ -9,7 +9,7 @@
 	$author_uri = $theme_data->get('AuthorURI');
 	$version = $theme_data->get('Version');
 	$tags = $theme_data->get('Tags');
-
+	
 	if ($author_uri) {
 		$author_title = '<a href="'.$author_uri.'" target="_blank">'.$author . '</a>';
 	}
@@ -19,6 +19,8 @@
 
 	if ( !empty($tags) ) { // yes, tags could miss sometimes
 		$tags = implode(', ', $tags);
+	} else {
+		$tags = "";
 	}
 
     $item_info =
