@@ -26,6 +26,7 @@ if ($slider_autoplay) {
 }
 $slider_height = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_height', true);
 if($slider_height == '') $slider_height = '525';
+$slider_captions = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_show_captions', true);
 
 $slider_visiblenearby = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix() . 'post_slider_visiblenearby', true);
 
@@ -58,7 +59,12 @@ if ($attachments): ?>
 		
 		if ($slider_visiblenearby) {
 			echo 'data-visiblenearby="" ';
-		}?> >
+		}
+		
+		if ($slider_captions) {
+			echo 'data-showcaptions="" ';
+		}
+		?> >
 		<?php
 		foreach ($attachments as $attachment):
 			$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );

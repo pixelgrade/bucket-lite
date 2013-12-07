@@ -467,8 +467,9 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
               rs_imageAlignCenter  = typeof $slider.data('imagealigncenter') !== "undefined",
               rs_transition = typeof $slider.data('slidertransition') !== "undefined" && $slider.data('slidertransition') != '' ? $slider.data('slidertransition') : 'move',
               rs_autoPlay = typeof $slider.data('sliderautoplay') !== "undefined" ? true : false,
-              rs_delay = typeof $slider.data('sliderdelay') !== "undefined" && $slider.data('sliderdelay') != '' ? $slider.data('sliderdelay') : '1000';
-              rs_drag = true;
+              rs_delay = typeof $slider.data('sliderdelay') !== "undefined" && $slider.data('sliderdelay') != '' ? $slider.data('sliderdelay') : '1000',
+              rs_drag = true,
+			  rs_globalCaption = typeof $slider.data('showcaptions') !== "undefined" ? true : false;
 
           if(rs_autoheight) { rs_autoScaleSlider = false } else { rs_autoScaleSlider = true }
 
@@ -507,7 +508,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 					pauseOnHover: true,
 					delay: rs_delay                    
 				},
-                globalCaption:true            
+                globalCaption:rs_globalCaption           
 			};
 			
 			if (rs_visibleNearby) {
