@@ -177,7 +177,7 @@
                     $newList.addClass("current");
                 }, 250);
             }
-            return false;
+            //return false;
         });
     };
     base.init();
