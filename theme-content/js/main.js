@@ -136,7 +136,7 @@
               div = null;
               return contents;
         })(this[0]));
-    }
+    };
 
 
 
