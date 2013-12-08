@@ -136,7 +136,7 @@
               div = null;
               return contents;
         })(this[0]));
-    }
+    };
 
 
 
@@ -144,8 +144,51 @@
 
     // --- MODIFIED
     // https://github.com/CSS-Tricks/jQuery-Organic-Tabs
-    $.organicTabs=function(el,options){var base=this;base.$el=$(el);base.$nav=base.$el.find(".tabs__nav");base.init=function(){base.options=$.extend({},$.organicTabs.defaultOptions,options);var $allListWrap=base.$el.find(".tabs__content");var curList=base.$el.find("a.current").attr("href").substring(1);$allListWrap.height(base.$el.find("#"+curList).height());base.$nav.delegate("li > a","click",function(){var curList=base.$el.find("a.current").attr("href").substring(1),$newList=$(this),listID=$newList.attr("href").substring(1);if((listID!=curList)&&(base.$el.find(":animated").length==0)){base.$el.find("#"+curList).css({opacity:0,"z-index":10});var newHeight=base.$el.find("#"+listID).height();$allListWrap.css({height:newHeight});setTimeout(function(){base.$el.find("#"+curList);base.$el.find("#"+listID).css({opacity:1,"z-index":20});base.$el.find(".tabs__nav li a").removeClass("current");$newList.addClass("current");},250);}return false;});};base.init();};$.organicTabs.defaultOptions={speed:300};$.fn.organicTabs=function(options){return this.each(function(){(new $.organicTabs(this,options));});};
-
+    $.organicTabs = function (el, options) {
+    var base = this;
+    base.$el = $(el);
+    base.$nav = base.$el.find(".tabs__nav");
+    base.init = function () {
+        base.options = $.extend({}, $.organicTabs.defaultOptions, options);
+        var $allListWrap = base.$el.find(".tabs__content"),
+			curList = base.$el.find("a.current").attr("href").substring(1);
+        $allListWrap.height(base.$el.find("#" + curList).height());
+        base.$nav.on("click", "li > a", function() {
+            var curList = base.$el.find("a.current").attr("href").substring(1),
+                $newList = $(this),
+                listID = $newList.attr("href").substring(1);
+            if ((listID != curList) && (base.$el.find(":animated").length == 0)) {
+                base.$el.find("#" + curList).css({
+                    opacity: 0,
+                    "z-index": 10
+                });
+                var newHeight = base.$el.find("#" + listID).height();
+                $allListWrap.css({
+                    height: newHeight
+                });
+                setTimeout(function () {
+                    base.$el.find("#" + curList);
+                    base.$el.find("#" + listID).css({
+                        opacity: 1,
+                        "z-index": 20
+                    });
+                    base.$el.find(".tabs__nav li a").removeClass("current");
+                    $newList.addClass("current");
+                }, 250);
+            }
+            return false;
+        });
+    };
+    base.init();
+};
+$.organicTabs.defaultOptions = {
+    speed: 300
+};
+$.fn.organicTabs = function (options) {
+    return this.each(function () {
+        (new $.organicTabs(this, options));
+    });
+};
     
     /* --- FASTCLICK --- */
 
@@ -467,8 +510,9 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
               rs_imageAlignCenter  = typeof $slider.data('imagealigncenter') !== "undefined",
               rs_transition = typeof $slider.data('slidertransition') !== "undefined" && $slider.data('slidertransition') != '' ? $slider.data('slidertransition') : 'move',
               rs_autoPlay = typeof $slider.data('sliderautoplay') !== "undefined" ? true : false,
-              rs_delay = typeof $slider.data('sliderdelay') !== "undefined" && $slider.data('sliderdelay') != '' ? $slider.data('sliderdelay') : '1000';
-              rs_drag = true;
+              rs_delay = typeof $slider.data('sliderdelay') !== "undefined" && $slider.data('sliderdelay') != '' ? $slider.data('sliderdelay') : '1000',
+              rs_drag = true,
+			  rs_globalCaption = typeof $slider.data('showcaptions') !== "undefined" ? true : false;
 
           if(rs_autoheight) { rs_autoScaleSlider = false } else { rs_autoScaleSlider = true }
 
@@ -507,7 +551,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 					pauseOnHover: true,
 					delay: rs_delay                    
 				},
-                globalCaption:true            
+                globalCaption:rs_globalCaption           
 			};
 			
 			if (rs_visibleNearby) {
@@ -1019,5 +1063,6 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
     
 
 })(jQuery, window);
+
 
 
