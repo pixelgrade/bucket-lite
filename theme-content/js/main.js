@@ -153,7 +153,7 @@
         var $allListWrap = base.$el.find(".tabs__content"),
 			curList = base.$el.find("a.current").attr("href").substring(1);
         $allListWrap.height(base.$el.find("#" + curList).height());
-        base.$nav.on("click", "li > a", function() {
+        base.$nav.find("li > a").click(function() {
             var curList = base.$el.find("a.current").attr("href").substring(1),
                 $newList = $(this),
                 listID = $newList.attr("href").substring(1);
