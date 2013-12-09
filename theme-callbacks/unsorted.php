@@ -202,8 +202,8 @@ add_filter( 'wpseo_canonical', 'wpgrade_get_current_canonical_url' );
 add_filter( 'aioseop_canonical_url', 'wpgrade_get_current_canonical_url' );
 
 /**
- * Filter the page title.
- *
+ * Filter the page title so that plugins can unhook this
+ * 
  */
 function wpgrade_wp_title( $title, $sep ) {
 	
@@ -222,8 +222,23 @@ function wpgrade_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentythirteen' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', wpgrade::textdomain() ), max( $paged, $page ) );
 
 	return $title;
 }
 add_filter( 'wp_title', 'wpgrade_wp_title', 10, 2 );
+
+
+function wpgrade_fix_yoast_page_number( $title ) {
+	
+	global $paged, $page, $sep;
+
+	if ( is_home() || is_front_page() ) {
+		// Add a page number if necessary.
+		if ( $paged >= 2 || $page >= 2 )
+			$title = "$title $sep " . sprintf( __( 'Page %s', wpgrade::textdomain() ), max( $paged, $page ) );
+	}
+	return $title;
+}
+//filter the YOAST title so we can correct the page number missing on frontpage
+add_filter('wpseo_title', 'wpgrade_fix_yoast_page_number');
