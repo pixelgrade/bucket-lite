@@ -436,7 +436,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
               },
               gallery:{
                   enabled:true,
-                  navigateByImgClick: true,
+                  navigateByImgClick: true
               }
           });
       });      
