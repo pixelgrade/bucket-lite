@@ -843,12 +843,13 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
         }).each(function() { shareTypes++; });
     }
 
-	// Calculate total shares
+	// Calculate total shares rendered
 	var renders = 0;
 
 	$(document).on('share-box-rendered', function(){
 		renders++;
 
+		//if all have been rendered it's time to do the total
 		if ( renders == shareTypes ) {
 		    var total_shares = 0;
 		    $('#share-box .share-item__value').each(function(i,e){
