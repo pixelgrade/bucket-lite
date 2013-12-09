@@ -770,7 +770,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		return "";
 	}
 
-
+	// Calculate total shares
+	var shareTypes = 0;
 
     function shareBox() {
 		//get the via username for twitter share
@@ -791,7 +792,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			buttons: {
 				twitter: {via: twitterVia}
 			}
-        });
+        }).each(function() { shareTypes++; });
+		
         $('#facebook').sharrre({
           share: {
             facebook: true
@@ -804,7 +806,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
             api.simulateClick();
             api.openPopup('facebook');
           }
-        });
+        }).each(function() { shareTypes++; });
+		
         $('#gplus').sharrre({
 			share: {
 				googlePlus: true
@@ -817,7 +820,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				api.simulateClick();
 				api.openPopup('googlePlus');
 			}
-        });
+        }).each(function() { shareTypes++; });
+		
 		$('#pinterest').sharrre({
 			share: {
 				pinterest: true
@@ -836,7 +840,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 					description: $('#pinterest').data('text')
 				} 
 			}
-        });
+        }).each(function() { shareTypes++; });
     }
 
 	// Calculate total shares
@@ -845,7 +849,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	$(document).on('share-box-rendered', function(){
 		renders++;
 
-		if ( renders == 4 ) {
+		if ( renders == shareTypes ) {
 		    var total_shares = 0;
 		    $('#share-box .share-item__value').each(function(i,e){
 
