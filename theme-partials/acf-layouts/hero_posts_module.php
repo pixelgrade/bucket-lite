@@ -148,7 +148,15 @@ if ($slides->have_posts()): ?>
             <ul class="block-list  block-list--alt">
                 <?php
 	            $query_args['posts_per_page'] = $more;
-	            $query_args['offset'] = 1;
+
+				$offset = get_sub_field('offset');
+
+				if ( is_numeric($offset) && $offset > 0 ) {
+					$query_args['offset'] = $offset + 1;
+				} else {
+					$query_args['offset'] = 1;
+				}
+
                 if ($more > 0):
                     $myquery = new WP_Query( $query_args );
                     while($myquery->have_posts()): $myquery->the_post(); ?>
