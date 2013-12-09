@@ -200,3 +200,45 @@ add_action( 'admin_enqueue_scripts', 'colorpicker_enqueue' );
 add_filter( 'wpseo_canonical', 'wpgrade_get_current_canonical_url' );
 //fix the canonical url of AIOSEOP because on the front page it breaks the pagination
 add_filter( 'aioseop_canonical_url', 'wpgrade_get_current_canonical_url' );
+
+/**
+ * Filter the page title so that plugins can unhook this
+ * 
+ */
+function wpgrade_wp_title( $title, $sep ) {
+	
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', wpgrade::textdomain() ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'wpgrade_wp_title', 10, 2 );
+
+
+function wpgrade_fix_yoast_page_number( $title ) {
+	
+	global $paged, $page, $sep;
+
+	if ( is_home() || is_front_page() ) {
+		// Add a page number if necessary.
+		if ( $paged >= 2 || $page >= 2 )
+			$title = "$title $sep " . sprintf( __( 'Page %s', wpgrade::textdomain() ), max( $paged, $page ) );
+	}
+	return $title;
+}
+//filter the YOAST title so we can correct the page number missing on frontpage
+add_filter('wpseo_title', 'wpgrade_fix_yoast_page_number');
