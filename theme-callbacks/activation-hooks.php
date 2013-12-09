@@ -185,22 +185,6 @@ function wpgrade_callback_geting_active() {
 					'type' => 'text_small',
 					'std' => '1000'
 				),
-				array(
-					'name' => __('Show Captions', wpgrade::textdomain()),
-					'id' => wpgrade::prefix() . 'post_slider_show_captions',
-					'type' => 'select',
-					'options' => array(
-						array(
-							'name' => __('Enabled', wpgrade::textdomain()),
-							'value' => true
-						),
-						array(
-							'name' => __('Disabled', wpgrade::textdomain()),
-							'value' => false
-						)
-					),
-					'std' => false
-				),
 			)
 		),
 //		'post_quote_format' => array(
