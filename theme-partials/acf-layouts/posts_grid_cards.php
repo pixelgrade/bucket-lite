@@ -25,6 +25,12 @@ $query_args = array(
 $posts_source = get_sub_field('posts_source');
 
 
+$offset = get_sub_field('offset');
+
+if ( is_numeric($offset) && $offset > 0 ) {
+	$query_args['offset'] = $offset;
+}
+
 switch ( $posts_source ) :
 
 	case 'featured' :

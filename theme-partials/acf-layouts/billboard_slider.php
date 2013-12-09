@@ -17,8 +17,13 @@ $query_args = array(
 	'ignore_sticky_posts' => true,
 );
 
-$posts_source = get_sub_field('posts_source');
+$offset = get_sub_field('offset');
 
+if ( is_numeric($offset) && $offset > 0 ) {
+	$query_args['offset'] = $offset;
+}
+
+$posts_source = get_sub_field('posts_source');
 
 switch ( $posts_source ) :
 
