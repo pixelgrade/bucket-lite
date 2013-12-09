@@ -184,7 +184,7 @@ function wpgrade_callback_geting_active() {
 					'id' => wpgrade::prefix() . 'post_slider_delay',
 					'type' => 'text_small',
 					'std' => '1000'
-				)	
+				),
 			)
 		),
 //		'post_quote_format' => array(
