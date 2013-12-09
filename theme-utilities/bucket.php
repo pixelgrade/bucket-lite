@@ -2215,7 +2215,7 @@ class bucket
 	
 		global $page, $paged;
 
-		wp_title( '|', true, 'right' );
+		wp_title( '| ', true, 'right' );
 
 		// Some blog name
 		bloginfo('name');
