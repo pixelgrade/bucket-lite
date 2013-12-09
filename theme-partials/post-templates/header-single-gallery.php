@@ -54,11 +54,11 @@ if ($attachments): ?>
 		data-slidertransition="<?php echo $slider_transition; ?>"
 		<?php if ($slider_autoplay) {
 			echo 'data-sliderautoplay="" ';
-			echo 'data-sliderdelay='. $slider_delay;
+			echo 'data-sliderdelay="'. $slider_delay.'" ';
 		} 
 		
 		if ($slider_visiblenearby) {
-			echo 'data-visiblenearby="" ';
+			echo ' data-visiblenearby="" ';
 		}
 		
 		if ($slider_captions) {
