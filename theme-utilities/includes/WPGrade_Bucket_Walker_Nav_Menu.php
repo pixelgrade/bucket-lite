@@ -322,12 +322,12 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
         if ($depth == 0) {
 			
 			set_error_handler("custom_warning_handler", E_WARNING);
-			
+
 			//load up the library
-			if(!function_exists('file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
+			if(!function_exists('wpgrade_file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
 			
 			// Create DOM from string
-			$_doc = str_get_html($output);
+			$_doc = wpgrade_str_get_html($output);
 
 			$zagrid = $_doc->find('.sub-menu--mega',-1)->find('.sub-menu__grid',0);
 			if (!empty($zagrid) && !empty($zagrid->innertext)) {

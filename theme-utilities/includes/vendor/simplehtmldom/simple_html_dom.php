@@ -42,35 +42,40 @@
  * All of the Defines for the classes below.
  * @author S.C. Chen <me578022@gmail.com>
  */
-define('HDOM_TYPE_ELEMENT', 1);
-define('HDOM_TYPE_COMMENT', 2);
-define('HDOM_TYPE_TEXT',    3);
-define('HDOM_TYPE_ENDTAG',  4);
-define('HDOM_TYPE_ROOT',    5);
-define('HDOM_TYPE_UNKNOWN', 6);
-define('HDOM_QUOTE_DOUBLE', 0);
-define('HDOM_QUOTE_SINGLE', 1);
-define('HDOM_QUOTE_NO',     3);
-define('HDOM_INFO_BEGIN',   0);
-define('HDOM_INFO_END',     1);
-define('HDOM_INFO_QUOTE',   2);
-define('HDOM_INFO_SPACE',   3);
-define('HDOM_INFO_TEXT',    4);
-define('HDOM_INFO_INNER',   5);
-define('HDOM_INFO_OUTER',   6);
-define('HDOM_INFO_ENDSPACE',7);
-define('DEFAULT_TARGET_CHARSET', 'UTF-8');
-define('DEFAULT_BR_TEXT', "\r\n");
-define('DEFAULT_SPAN_TEXT', " ");
-define('MAX_FILE_SIZE', 600000);
+if ( !defined('HDOM_TYPE_ELEMENT' ) ) {
+
+	define('HDOM_TYPE_ELEMENT', 1);
+	define('HDOM_TYPE_COMMENT', 2);
+	define('HDOM_TYPE_TEXT',    3);
+	define('HDOM_TYPE_ENDTAG',  4);
+	define('HDOM_TYPE_ROOT',    5);
+	define('HDOM_TYPE_UNKNOWN', 6);
+	define('HDOM_QUOTE_DOUBLE', 0);
+	define('HDOM_QUOTE_SINGLE', 1);
+	define('HDOM_QUOTE_NO',     3);
+	define('HDOM_INFO_BEGIN',   0);
+	define('HDOM_INFO_END',     1);
+	define('HDOM_INFO_QUOTE',   2);
+	define('HDOM_INFO_SPACE',   3);
+	define('HDOM_INFO_TEXT',    4);
+	define('HDOM_INFO_INNER',   5);
+	define('HDOM_INFO_OUTER',   6);
+	define('HDOM_INFO_ENDSPACE',7);
+	define('DEFAULT_TARGET_CHARSET', 'UTF-8');
+	define('DEFAULT_BR_TEXT', "\r\n");
+	define('DEFAULT_SPAN_TEXT', " ");
+	define('MAX_FILE_SIZE', 600000);
+
+}
+
 // helper functions
 // -----------------------------------------------------------------------------
 // get html dom from file
 // $maxlen is defined in the code as PHP_STREAM_COPY_ALL which is defined as -1.
-function file_get_html($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+function wpgrade_file_get_html($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
 {
     // We DO force the tags to be terminated.
-    $dom = new simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
+    $dom = new wpgrade_simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
     // For sourceforge users: uncomment the next line and comment the retreive_url_contents line 2 lines down if it is not already done.
     $contents = file_get_contents($url, $use_include_path, $context, $offset);
     // Paperg - use our own mechanism for getting the contents as we want to control the timeout.
@@ -85,9 +90,9 @@ function file_get_html($url, $use_include_path = false, $context=null, $offset =
 }
 
 // get html dom from string
-function str_get_html($str, $lowercase=true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+function wpgrade_str_get_html($str, $lowercase=true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
 {
-    $dom = new simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
+    $dom = new wpgrade_simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
     if (empty($str) || strlen($str) > MAX_FILE_SIZE)
     {
         $dom->clear();
@@ -98,12 +103,12 @@ function str_get_html($str, $lowercase=true, $forceTagsClosed=true, $target_char
 }
 
 // dump html dom tree
-function dump_html_tree($node, $show_attr=true, $deep=0)
+function wpgrade_dump_html_tree($node, $show_attr=true, $deep=0)
 {
     $node->dump($node);
 }
 
-if (!class_exists('simple_html_dom_node')) {
+if (!class_exists('wpgrade_simple_html_dom_node')) {
 /**
  * simple html dom node
  * PaperG - added ability for "find" routine to lowercase the value of the selector.
@@ -111,7 +116,7 @@ if (!class_exists('simple_html_dom_node')) {
  *
  * @package PlaceLocalInclude
  */
-class simple_html_dom_node
+class wpgrade_simple_html_dom_node
 {
     public $nodetype = HDOM_TYPE_TEXT;
     public $tag = 'text';
@@ -982,7 +987,7 @@ class simple_html_dom_node
 
 } //end class_exists
 
-if (!class_exists('simple_html_dom')) {
+if (!class_exists('wpgrade_simple_html_dom')) {
 
 /**
  * simple html dom parser
@@ -992,7 +997,7 @@ if (!class_exists('simple_html_dom')) {
  *
  * @package PlaceLocalInclude
  */
-class simple_html_dom
+class wpgrade_simple_html_dom
 {
     public $root = null;
     public $nodes = array();
@@ -1181,7 +1186,7 @@ class simple_html_dom
         $this->lowercase = $lowercase;
         $this->default_br_text = $defaultBRText;
         $this->default_span_text = $defaultSpanText;
-        $this->root = new simple_html_dom_node($this);
+        $this->root = new wpgrade_simple_html_dom_node($this);
         $this->root->tag = 'root';
         $this->root->_[HDOM_INFO_BEGIN] = -1;
         $this->root->nodetype = HDOM_TYPE_ROOT;
@@ -1198,7 +1203,7 @@ class simple_html_dom
         }
 
         // text
-        $node = new simple_html_dom_node($this);
+        $node = new wpgrade_simple_html_dom_node($this);
         ++$this->cursor;
         $node->_[HDOM_INFO_TEXT] = $s;
         $this->link_nodes($node, false);
@@ -1353,7 +1358,7 @@ class simple_html_dom
             return true;
         }
 
-        $node = new simple_html_dom_node($this);
+        $node = new wpgrade_simple_html_dom_node($this);
         $node->_[HDOM_INFO_BEGIN] = $this->cursor;
         ++$this->cursor;
         $tag = $this->copy_until($this->token_slash);
@@ -1554,7 +1559,7 @@ class simple_html_dom
     // as a text node
     protected function as_text_node($tag)
     {
-        $node = new simple_html_dom_node($this);
+        $node = new wpgrade_simple_html_dom_node($this);
         ++$this->cursor;
         $node->_[HDOM_INFO_TEXT] = '</' . $tag . '>';
         $this->link_nodes($node, false);
