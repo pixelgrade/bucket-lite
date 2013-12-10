@@ -188,11 +188,10 @@ function get_category_color($cat_id) {
 	}
 }
 
-
 /** Enqueue Color Picker **/
 function colorpicker_enqueue() {
     wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'colorpicker-js', get_stylesheet_directory_uri() . '/theme-content/js/admin/color-picker.js', array( 'wp-color-picker' ) );
+    wp_enqueue_script( 'colorpicker-js', wpgrade::resourceuri('js/admin/color-picker.js'), array( 'wp-color-picker' ) );
 }
 add_action( 'admin_enqueue_scripts', 'colorpicker_enqueue' );
 
