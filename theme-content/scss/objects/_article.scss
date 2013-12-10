@@ -899,11 +899,13 @@
     position: relative;
 }
 
-.post-nav-link {
-    text-align: center;
+@include media-query(palm) {
+    .post-nav-link {
+        text-align: center;
 
-    &:first-child{
-        @include rem(margin-bottom, $_u);
+        &:first-child{
+            @include rem(margin-bottom, $_u);
+        }
     }
 }
 
@@ -911,6 +913,7 @@
     .post-nav-link {
         @include rem(padding-right, $_u);
         @include rem(padding-left, $_2u);
+        position: relative;
 
         &:after {
             content: "";

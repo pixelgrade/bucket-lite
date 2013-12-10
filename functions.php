@@ -81,7 +81,11 @@ function post_format_icon($class_name = '') {
 /**
  * [average_score_shortcode]
  * @param  [array] $atts
- * @return [string]       
+ * @return [string]
+ *
+ * usage:
+ * [average_score score_note="7" score_desc="the quick brown fox"]
+ * 
  */
 function average_score_shortcode($atts){
     extract( shortcode_atts( array(
