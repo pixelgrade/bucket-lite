@@ -17,10 +17,10 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		if ($depth == 0 && ($item->object == 'category' || $item->object == 'post_format')) {
 			
 			//load up the library
-			if(!function_exists('file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
+			if(!function_exists('wpgrade_file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
 
 			// Create DOM from string
-			$_doc = str_get_html($output);
+			$_doc = wpgrade_str_get_html($output);
 			$_li = $_doc->find( '.menu-item-depth-0',-1); // "-1" aka the last element is important, because $output will contain all the menu elements before current element
 		
 			// if the last <li>'s id attribute doesn't match $item->ID something is very wrong, don't do anything
