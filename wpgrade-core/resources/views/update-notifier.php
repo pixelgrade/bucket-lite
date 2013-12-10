@@ -2,7 +2,7 @@
 	// get the latest remote XML file on our server
 	$xml = wpgrade_update_notifier_latest_theme_version(wpgrade::update_notifier_cacheinterval());
 	// read theme current version from the style.css
-	$theme_data = wp_get_theme();
+	$theme_data = wpgrade::themedata();
 	$options_url = admin_url('index.php?page='.wpgrade::update_notifier_pagename().'&wpgrade_update=true');
 
 	// compute envatoDetails
