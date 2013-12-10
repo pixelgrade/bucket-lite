@@ -100,7 +100,7 @@
 
 	'shortcodes' => array
 	(
-		'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'Separator', 'Slider', 'AvarageScore'
+		'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'Separator', 'Slider', 'AverageScore'
 	),
 
 	'megamenu_layouts' => array
