@@ -192,9 +192,13 @@ $is_review = bucket::has_average_score();
 								</div>
 							</a>
                     </div><!-- 
-					<?php endif; ?>
+					<?php endif;
+                    
+                    if(!empty($prev_post) && !empty($next_post)) : ?>
                  --><div class="divider--pointer"></div><!--
-					<?php if (!empty($next_post)): ?>
+                    <?php endif; 
+
+                    if (!empty($next_post)): ?>
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
 							<a href="<?php echo get_permalink($next_post->ID); ?>">
 								<div class="post-nav-link__label">
