@@ -43,69 +43,69 @@ if ( ! isset($content_width)) {
 }
 
 function post_format_icon($class_name = '') {
-    $post_format = get_post_format();
+	$post_format = get_post_format();
 
-    if ($post_format):
-        $icon_class = "";
-        switch ($post_format) {
-            case "video":
-                $icon_class = "icon-play";
-                break;
-            case "audio":
-                $icon_class = "icon-music";
-                break;
-            case "image":
-            case "gallery":
-                $icon_class = "icon-camera";
-                break;
-            case "quote":
-                $icon_class = "icon-quotes";
-                break;
-            case "link":
-                $icon_class = "icon-link";
-                break;
-            default:
-                break;
-        }
-    /* ?>
-    <div class="post-format-icon <?php echo $class_name; ?> post-format-icon__background"></div>
-    <div class="post-format-icon <?php echo $class_name; ?> post-format-icon__border"></div><?php */ ?>
-    <div class="post-format-icon <?php echo $class_name; ?> post-format-icon__icon">
-        <i class="<?php echo $icon_class; ?>"></i>
-    </div>
-    <?php
-    endif;
+	if ($post_format):
+		$icon_class = "";
+		switch ($post_format) {
+			case "video":
+				$icon_class = "icon-play";
+				break;
+			case "audio":
+				$icon_class = "icon-music";
+				break;
+			case "image":
+			case "gallery":
+				$icon_class = "icon-camera";
+				break;
+			case "quote":
+				$icon_class = "icon-quotes";
+				break;
+			case "link":
+				$icon_class = "icon-link";
+				break;
+			default:
+				break;
+		}
+		/* ?>
+		<div class="post-format-icon <?php echo $class_name; ?> post-format-icon__background"></div>
+		<div class="post-format-icon <?php echo $class_name; ?> post-format-icon__border"></div><?php */ ?>
+		<div class="post-format-icon <?php echo $class_name; ?> post-format-icon__icon">
+			<i class="<?php echo $icon_class; ?>"></i>
+		</div>
+	<?php
+	endif;
 }
 
-
-/**
- * [average_score_shortcode]
- * @param  [array] $atts
- * @return [string]
- *
- * usage:
- * [average_score score_note="7" score_desc="the quick brown fox"]
- * 
- */
-function average_score_shortcode($atts){
-    extract( shortcode_atts( array(
-        'score_note' => '0',
-        'score_desc' => ''
-    ), $atts ) );
-
-    $return_string = '';
-    $return_string .= '<div class="score-box  score-box--inside">'.
-                        '<div class="score__average-wrapper">'.
-                            '<div class="score__average average--with-desc">'.
-                            '<div class="score__note" itemprop="rating">' . $score_note . '</div>'.
-                            '<div class="score__desc">' . $score_desc . '</div>'.
-                            '<meta itemprop="worst" content="1">'.
-                            '<meta itemprop="best" content="10">'.
-                            '</div>'.
-                        '</div>'.
-                    '</div>';
-
-    return $return_string;
-}
-
-add_shortcode('average_score', 'average_score_shortcode');
+///**
+// * [average_score_shortcode]
+// * @param  [array] $atts
+// * @return [string]
+// *
+// * usage:
+// * [average_score score_note="7" score_desc="the quick brown fox"]
+// *
+// */
+//function average_score_shortcode($atts){
+//
+//	extract( shortcode_atts( array(
+//		'score_note' => '0',
+//		'score_desc' => ''
+//	), $atts ) );
+//
+//	$return_string = '';
+//	$return_string .= '<div class="score-box  score-box--inside">'.
+//		'<div class="score__average-wrapper">'.
+//		'<div class="score__average average--with-desc">'.
+//		'<div class="score__note" itemprop="rating">' . $score_note . '</div>'.
+//		'<div class="score__desc">' . $score_desc . '</div>'.
+//		'<meta itemprop="worst" content="1">'.
+//		'<meta itemprop="best" content="10">'.
+//		'</div>'.
+//		'</div>'.
+//		'</div>';
+//
+//	return $return_string;
+//}
+//
+//add_shortcode('average_score', 'average_score_shortcode');
