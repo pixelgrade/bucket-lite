@@ -163,9 +163,15 @@
         margin: 0 -1%;
 
         .product.type-product{
-            width: 23%;
             margin: 1%;
             clear: none;
+            width: 100%;
+        }
+
+        @include media-query(lap-and-up) {
+            .product.type-product{
+                width: 23%;
+            }
         }
     }
 }

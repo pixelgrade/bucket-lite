@@ -2,3 +2,15 @@
     padding-bottom: 0;
     @include border-radius(0);
 }
+
+.woocommerce-page form p.form-row-wide{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cart-form, .shop_table{
+    td .amount{
+        color: black;
+        @include font-size(22px);
+    }
+}

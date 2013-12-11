@@ -12,9 +12,9 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $woocommerce, $wp_query;
+return;
 
 if ( ! woocommerce_products_will_display() )
-	return;
 ?>
 <p class="woocommerce-result-count">
 	<?php
