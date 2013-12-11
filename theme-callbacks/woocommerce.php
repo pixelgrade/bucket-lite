@@ -259,3 +259,14 @@ function woopix_update_cart() {
 	echo json_encode($result);
 	die();
 }
+
+
+add_filter('term_links-product_cat', 'wpgrade_filter_product_categories', 10, 1);
+
+function wpgrade_filter_product_categories($term_links){
+
+	var_dump($term_links);
+
+	return $term_links;
+
+}
