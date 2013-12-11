@@ -19,23 +19,25 @@ $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
 
-	<div class="woocommerce-tabs">
-		<ul class="tabs">
+	<div class="pix-woocommerce-tabs">
+		<ul class="pix-accordion  nav  nav--stacked">
 			<?php foreach ( $tabs as $key => $tab ) : ?>
 
-				<li class="<?php echo $key ?>_tab">
-					<a href="#tab-<?php echo $key ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', $tab['title'], $key ) ?></a>
+				<li class="panel  panel--<?php echo $key ?>">
+					<a class="panel__title" href="#"><h3 class="hN  push-half--top  push-half--bottom"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', $tab['title'], $key ) ?></h3></a>
+					<div class="panel__entry-content" id="tab-<?php echo $key ?>">
+						<?php 
+
+							call_user_func( $tab['callback'], $key, $tab );
+							var_dump($tab['callback']);
+
+						?>
+					</div>
 				</li>
 
 			<?php endforeach; ?>
 		</ul>
-		<?php foreach ( $tabs as $key => $tab ) : ?>
-
-			<div class="panel entry-content" id="tab-<?php echo $key ?>">
-				<?php call_user_func( $tab['callback'], $key, $tab ) ?>
-			</div>
-
-		<?php endforeach; ?>
+		<hr class="separator  separator--section  hard--bottom" />
 	</div>
 
 <?php endif; ?>

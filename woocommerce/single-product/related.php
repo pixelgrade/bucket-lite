@@ -8,6 +8,11 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
+</div><!-- .product-info -->
+<?php 
+//the above tag closes the grid__item that contains
+//the product summary and the reviews, descristion, etc.
 
 global $product, $woocommerce_loop;
 
@@ -31,7 +36,7 @@ $woocommerce_loop['columns'] 	= $columns;
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="related products">
+	<div class="grid__item  one-whole  related products">
 
 		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 
