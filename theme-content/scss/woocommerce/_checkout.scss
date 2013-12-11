@@ -1,0 +1,7 @@
+.woocommerce #payment, .woocommerce-page #payment{
+    @include border-radius(0);
+
+    label{
+        display: inline-block;
+    }
+}
