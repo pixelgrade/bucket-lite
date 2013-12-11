@@ -38,10 +38,6 @@ get_header(); ?>
             <?php while (have_posts()): the_post(); ?>
 
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
-                <div class="article__title__meta">
-                    <?php printf('<div class="article__author-name">%s</div>', get_the_author_link()) ?>
-                    <time class="article__time" datetime="<?php the_time('c'); ?>"> on <?php the_time(__('j F, Y \a\t H:i', wpgrade::textdomain())); ?></time>
-                </div>
                 <?php
 		        the_content();
 

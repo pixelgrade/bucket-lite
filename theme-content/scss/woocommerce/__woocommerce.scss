@@ -1,2 +1,22 @@
 @import "shop";
 @import "single";
+@import "cart";
+
+.woocommerce{
+    .woocommerce-message, .woocommerce-error, .woocommerce-info{
+        text-shadow: none;
+        background: none;
+        border: 1px solid #c7c0c7;
+        padding: $_u;
+        @include box-shadow(none);
+        @include border-radius(0);
+
+        &:before{
+            content: none;
+        }
+
+        p{
+            margin: 0;
+        }
+    }
+}

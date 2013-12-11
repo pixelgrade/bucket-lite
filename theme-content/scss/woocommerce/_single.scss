@@ -11,6 +11,11 @@
     margin-top: 0;
 }
 
+
+.single-product-container{
+    position: relative;
+}
+
 .single-product {
     .entry-summary{
         .amount{
@@ -142,12 +147,25 @@
 
 //single badge
 .badge--product.badge--product-single{
-    left: -12px;
+    left: 12px;
     right: auto;
 
     &:after{
         left: 0;
         border-left: 12px solid transparent;
         border-right: 0;
+    }
+}
+
+//related products
+.related.products{
+    .products{
+        margin: 0 -1%;
+
+        .product.type-product{
+            width: 23%;
+            margin: 1%;
+            clear: none;
+        }
     }
 }

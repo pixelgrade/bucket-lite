@@ -1,0 +1,4 @@
+.woocommerce table.shop_table{
+    padding-bottom: 0;
+    @include border-radius(0);
+}
