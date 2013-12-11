@@ -42,7 +42,7 @@ foreach ( $product->get_children() as $child_id ) {
 
 						<?php elseif ( ! $quantites_required ) : ?>
 
-							<a href="<?php echo esc_url( $child_product['product']->add_to_cart_url() ); ?>" rel="nofollow" class="single_add_to_cart_button button alt"><?php echo apply_filters( 'single_add_to_cart_text', __( 'Add to cart', 'woocommerce' ), $child_product['product']->product_type ); ?></a>
+							<a href="<?php echo esc_url( $child_product['product']->add_to_cart_url() ); ?>" rel="nofollow" class="btn  btn--big  btn--add-to-cart   push--top"><?php echo apply_filters( 'single_add_to_cart_text', __( 'Add to cart', 'woocommerce' ), $child_product['product']->product_type ); ?></a>
 
 						<?php else : ?>
 
@@ -74,7 +74,7 @@ foreach ( $product->get_children() as $child_id ) {
 
 		<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
-		<button type="submit" class="single_add_to_cart_button button alt"><?php echo apply_filters('single_add_to_cart_text', __( 'Add to cart', 'woocommerce' ), $product->product_type); ?></button>
+		<button type="submit" class="btn  btn--big  btn--add-to-cart   push--top"><?php echo apply_filters('single_add_to_cart_text', __( 'Add to cart', 'woocommerce' ), $product->product_type); ?></button>
 
 		<?php do_action('woocommerce_after_add_to_cart_button'); ?>
 

@@ -13,7 +13,7 @@ function wpgrade_callback_load_woocommerce_assets(){
 
 	if ( !wpgrade::option('enable_woocommerce_support', '0') ) return;
 	wp_enqueue_style('wpgrade-woocommerce', get_template_directory_uri() . '/theme-content/css/woocommerce.css', array(), wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/css/woocommerce.css')) );
-	wp_enqueue_script('wpgrade-woocommerce', get_template_directory_uri() . '/theme-content/js/woocommerce.js', array('jquery', 'jquery-cookie', 'chosen'), wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/js/woocommerce.js')), true );
+	wp_enqueue_script('wpgrade-woocommerce', get_template_directory_uri() . '/theme-content/js/woocommerce.js', array('jquery'), wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/js/woocommerce.js')), true );
 
 
 //	global $woocommerce;
@@ -59,7 +59,7 @@ function wpgrade_add_to_cart_button( $message )
 }
 
 function custom_woo_before_shop_link() {
-	add_filter('woocommerce_loop_add_to_cart_link', 'custom_woo_loop_add_to_cart_link', 10, 3);
+	// add_filter('woocommerce_loop_add_to_cart_link', 'custom_woo_loop_add_to_cart_link', 10, 3);
 	add_action('woocommerce_after_shop_loop', 'custom_woo_after_shop_loop');
 }
 add_action('woocommerce_before_shop_loop', 'custom_woo_before_shop_link');
@@ -105,25 +105,6 @@ function custom_woo_loop_add_to_cart_link($button, $product, $link) {
 /**
  * WooCommerce Loop Product Thumbs
  **/
-
- if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
-	 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-	 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-	 function woocommerce_template_loop_product_thumbnail() {
-
-		 global $post;
-
-		 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
-		 $image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-		 if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-			 $image_ratio = $image[2] * 100/$image[1];
-		 }
-
-		 echo '<div class="product__image-wrapper" style="padding-top: '. $image_ratio .'%;"><a href="' . get_permalink($post->ID) . '">';
-			 echo woocommerce_get_product_thumbnail('blog-big');
-		 echo '</a></div>';
-	 }
- }
 
 
 /**

@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 do_action( 'woocommerce_before_single_product' );
 ?>
 
-<div itemscope itemtype="http://schema.org/Product" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div itemscope itemtype="http://schema.org/Product" id="product-<?php the_ID(); ?>" class="grid <?php get_post_class(); ?>">
 
 	<?php
 		/**
@@ -32,8 +32,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
-
-	<div class="summary entry-summary">
+	--><div class="grid__item  one-whole  lap-and-up-one-half  product-info">
+	<div class="summary  entry-summary">
 
 		<?php
 			/**
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
-
+		<hr class="separator  separator--striped" />
 	</div><!-- .summary -->
 
 	<?php
@@ -60,6 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
+	</div>
 
 </div><!-- #product-<?php the_ID(); ?> -->
 

@@ -10,15 +10,14 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $product;
-?>
 
-<?php if ( ! $product->is_in_stock() ) : ?>
+return; 
+
+if ( ! $product->is_in_stock() ) : ?>
 
 	<a href="<?php echo apply_filters( 'out_of_stock_add_to_cart_url', get_permalink( $product->id ) ); ?>" class="btn  btn--medium"><?php echo apply_filters( 'out_of_stock_add_to_cart_text', __( 'Read More', 'woocommerce' ) ); ?></a>
 
-<?php else : ?>
-
-	<?php
+<?php else :
 		$link = array(
 			'url'   => '',
 			'label' => '',

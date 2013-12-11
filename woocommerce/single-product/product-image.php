@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $post, $woocommerce, $product;
 
 ?>
-<div class="images">
+<div class="grid__item  one-whole  lap-and-up-one-half  images">
 
 	<?php
 		if ( has_post_thumbnail() ) {
@@ -41,4 +41,4 @@ global $post, $woocommerce, $product;
 
 	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
 
-</div>
+</div><!--
