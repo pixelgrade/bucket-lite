@@ -22,7 +22,6 @@ global $post, $product;
 	<?php
 		$size = sizeof( get_the_terms( $post->ID, 'product_cat' ) );
 		echo $product->get_categories( ', ', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Category:</div>', '<div class="btn  btn--small  btn--secondary">Categories:</div>', $size, 'woocommerce' ) . ' ', '.</div>' );
-		var_dump($product);
 	?>
 
 	<?php

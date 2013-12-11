@@ -19,7 +19,7 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 
 <form class="shipping_calculator" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
 
-	<h2><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?> <span>&darr;</span></a></h2>
+	<h2><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a></h2>
 
 	<section class="shipping-calculator-form">
 
@@ -82,7 +82,7 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 
 		<?php endif; ?>
 
-		<p><button type="submit" name="calc_shipping" value="1" class="button"><?php _e( 'Update Totals', 'woocommerce' ); ?></button></p>
+		<p><button type="submit" name="calc_shipping" value="1" class="btn  btm--medium"><?php _e( 'Update Totals', 'woocommerce' ); ?></button></p>
 
 		<?php $woocommerce->nonce_field('cart') ?>
 	</section>
