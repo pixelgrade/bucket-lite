@@ -108,7 +108,7 @@ class bucket
 			     $join
 			 WHERE post_type = 'post'
 			   AND post_status = 'publish'
-			   AND UNIX_TIMESTAMP(post_date) >= UNIX_TIMESTAMP('".\date('Y-m-d', strtotime('-1 year'))."')
+			   AND UNIX_TIMESTAMP(post_date) >= UNIX_TIMESTAMP('".\date('Y-m-01', strtotime('-11 months'))."')
 
 			 GROUP BY YEAR(post_date), MONTH(post_date)
 			 ORDER BY post_date $order";
@@ -122,12 +122,12 @@ class bucket
 			$result_refs[$val->month] = $val;
 		}
 
-		$default_moths = self::get_latest_twelve_monts();
+		$default_months = self::get_latest_twelve_monts();
 
 		$max_posts_nr = 0;
 
 		// loop into all months, check for values and assign names
-		foreach ( $default_moths as $key ) {
+		foreach ( $default_months as $key ) {
 			if (isset($result_refs[$key])) {
 				$result = $result_refs[$key];
 				$months_posts[$result->month]['url'] = get_month_link( $result->year, $result->month );
