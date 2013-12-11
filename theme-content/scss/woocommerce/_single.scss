@@ -33,13 +33,16 @@
             display: inline;
             vertical-align: top;
             height: 36px;
+            font-family: $base-font-family;
         }
 
         .minus, .plus{
             position: static;
             width: 36px;
+
             background: #f4f4f4;
             border: 0;
+            @include font-size(20px);
             @include box-shadow(none);
         }
 
@@ -58,6 +61,7 @@
             border-right: 1px solid #c7c0c7;
             border-top: 0;
             border-bottom: 0;
+            outline: none;
         }
     }
 
@@ -87,9 +91,11 @@
 
 .panel__entry-content{
     display: none;
+    padding-top: $_u;
 
     border-top: 1px dotted $dark;
     border-bottom: 1px dotted $dark;
+
 
     h2{
         margin-top: $_u;
@@ -102,4 +108,46 @@
 
 .panel:last-child .panel__entry-content{
     border-bottom: 0;
+}
+
+.shop_attributes{
+    border: 0 !important;
+    
+    tr,td,th{
+        border: 0 !important;
+    }
+}
+
+//comments
+.woocommerce #reviews #comments ol.commentlist li img.avatar, 
+.woocommerce-page #reviews #comments ol.commentlist li img.avatar{
+    position: static;
+    float: none;
+    width: auto;
+    height: auto;
+
+    padding: 0;
+    border: none;
+
+}
+
+//thumbnail img
+.woocommerce-main-image{
+    margin-bottom: $_u2;
+
+    img{
+        display: block;
+    }
+}
+
+//single badge
+.badge--product.badge--product-single{
+    left: -12px;
+    right: auto;
+
+    &:after{
+        left: 0;
+        border-left: 12px solid transparent;
+        border-right: 0;
+    }
 }

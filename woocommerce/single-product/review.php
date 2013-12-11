@@ -15,11 +15,12 @@ global $post;
 $rating = esc_attr( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating', true ) );
 ?>
 <li itemprop="reviews" itemscope itemtype="http://schema.org/Review" <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
+	<article id="comment-<?php comment_ID(); ?>" class="comment-article  media">
+		<aside class="comment__avatar  media__img">
+			<?php echo get_avatar( $GLOBALS['comment'], $size='60' ); ?>
+		</aside>
 
-		<?php echo get_avatar( $GLOBALS['comment'], $size='60' ); ?>
-
-		<div class="comment-text">
+		<div class="media__body">
 
 			<?php if ( get_option('woocommerce_enable_review_rating') == 'yes' ) : ?>
 
@@ -28,23 +29,21 @@ $rating = esc_attr( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating',
 				</div>
 
 			<?php endif; ?>
-
+			
+			<header class="comment__meta comment-author">
+				<?php printf('<cite class="comment__author-name">%s</cite>', comment_author() ); ?>
+				<time class="comment__time" datetime="<?php echo get_comment_date('c'); ?>"><?php echo get_comment_date(__( get_option('date_format'), 'woocommerce' )); ?></time>
+			</header>
 			<?php if ($GLOBALS['comment']->comment_approved == '0') : ?>
-				<p class="meta"><em><?php _e( 'Your comment is awaiting approval', 'woocommerce' ); ?></em></p>
-			<?php else : ?>
-				<p class="meta">
-					<strong itemprop="author"><?php comment_author(); ?></strong> <?php
-
-						if ( get_option('woocommerce_review_rating_verification_label') == 'yes' )
-							if ( woocommerce_customer_bought_product( $GLOBALS['comment']->comment_author_email, $GLOBALS['comment']->user_id, $post->ID ) )
-								echo '<em class="verified">(' . __( 'verified owner', 'woocommerce' ) . ')</em> ';
-
-					?>&ndash; <time itemprop="datePublished" datetime="<?php echo get_comment_date('c'); ?>"><?php echo get_comment_date(__( get_option('date_format'), 'woocommerce' )); ?></time>:
-				</p>
+				<div class="alert info">
+					<p><?php _e('Your comment is awaiting moderation.', wpgrade::textdomain()) ?></p>
+				</div>
 			<?php endif; ?>
+			<section class="comment__content comment">
+				<?php comment_text() ?>
+			</section>
 
-				<div itemprop="description" class="description"><?php comment_text(); ?></div>
-				<div class="clear"></div>
-			</div>
+
+		</div>
 		<div class="clear"></div>
-	</div>
+	</article>
