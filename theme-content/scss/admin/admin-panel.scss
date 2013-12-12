@@ -208,8 +208,16 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 /*body*/.redux-page {
+
+	&.branch-3-7 {
+		#wpcontent {
+			margin-left: 145px;
+			padding-left: 20px;
+		}
+	}
+
 	#wpcontent {
-		margin-left: 145px;
+		margin-left: 160px;
 		padding-left: 20px;
 		background: $sidebar-bg;
 	}
