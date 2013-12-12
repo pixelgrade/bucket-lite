@@ -1,4 +1,4 @@
-<?php
+<?php defined('ABSPATH') or die;
 	/* @var string $main_color */
 	/* @var array  $fonts */
 	/* @var string $port_color */

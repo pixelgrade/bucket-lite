@@ -1,3 +1,4 @@
+<?php defined('ABSPATH') or die; ?>
 <video <?php echo ! empty($video_poster) ? 'poster="'.$video_poster.'"' : ''; ?> width="100%" height="auto" controls="controls" preload="none">
 	<?php if ($video_m4v != ''): ?>
 		<!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
