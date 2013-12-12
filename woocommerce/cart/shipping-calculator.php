@@ -16,10 +16,11 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 ?>
 
 <?php do_action( 'woocommerce_before_shipping_calculator' ); ?>
-
+<div class="grid">
+<div class="grid__item  one-whole  lap-and-up-one-half  float--right">
 <form class="shipping_calculator" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
 
-	<a href="#" class="shipping-calculator-button  btn  btn--medium  push--top  push--bottom"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a>
+	<a href="#" class="shipping-calculator-button  btn  btn--medium  push--bottom"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a>
 
 	<section class="shipping-calculator-form">
 
@@ -87,5 +88,7 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 		<?php $woocommerce->nonce_field('cart') ?>
 	</section>
 </form>
+</div>
+</div>
 
 <?php do_action( 'woocommerce_after_shipping_calculator' ); ?>

@@ -5,3 +5,22 @@
         display: inline-block;
     }
 }
+
+.woocommerce form.checkout_coupon{
+    @include border-radius(0);
+
+    #coupon_code{
+        height: 28px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.woocommerce #payment div.payment_box, .woocommerce-page #payment div.payment_box{
+    background: none;
+    @include box-shadow(none);
+
+    &:after{
+        content: none;
+    }
+}

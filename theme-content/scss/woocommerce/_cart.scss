@@ -1,6 +1,14 @@
 .woocommerce table.shop_table{
     padding-bottom: 0;
+    border: 0;
+    border-bottom: 5px solid black;
+    border-collapse: collapse;
     @include border-radius(0);
+
+    td{
+        border-top: 0;
+    }
+
 }
 
 .woocommerce-page form p.form-row-wide{
@@ -8,9 +16,48 @@
     padding-right: 0;
 }
 
-.cart-form, .shop_table{
+.cart-form, .shop_table, .cart_totals-table {
     td .amount{
         color: black;
         @include font-size(22px);
     }
+}
+
+.cart_totals-table td{
+    @include media-query(lap-and-up) {
+        padding-left: 0;
+    }
+}
+
+td.product-quantity .quantity{
+    margin-left: 0;
+}
+
+.coupon label{
+    display: inline-block;
+}
+
+.cart_totals table{
+    padding-bottom: 0;
+}
+
+.woocommerce-page .cart-collaterals form.shipping_calculator{
+    float: none;
+    clear: none;
+    width: auto;
+}
+
+.woocommerce-page .shop_table.cart .quantity{
+    input.qty, .minus, .plus{
+        @include border-radius(0);
+    }  
+
+    .minus, .plus{
+        background: none;
+        box-shadow: none;
+    }
+} 
+
+.woocommerce-page .woocommerce + .separator{
+    display: none;
 }
