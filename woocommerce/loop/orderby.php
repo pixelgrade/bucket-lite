@@ -15,7 +15,7 @@ if ( 1 == $wp_query->found_posts || ! woocommerce_products_will_display() )
 	return;
 ?>
 <form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby">
+	<select name="orderby" class="woocommerce-orderby">
 		<?php
 			$catalog_orderby = apply_filters( 'woocommerce_catalog_orderby', array(
 				'menu_order' => __( 'Default sorting', 'woocommerce' ),

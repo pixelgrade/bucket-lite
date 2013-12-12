@@ -92,6 +92,10 @@
 
 .panel__title{
     color: black;
+    em{
+        font-style: normal;
+        color: $accent;
+    }
 }
 
 .panel__title--h3{
@@ -100,11 +104,13 @@
     &:after{
         content: "";
         position: absolute;
-        right: 0;
-        height: 15px;
-        width: 15px;
-        border-top: 2px solid black;
+        right: 15px;
+        top: 7px;
+        height: 7px;
+        width: 7px;
+        border-bottom: 2px solid black;
         border-right: 2px solid black;
+        @include rotate(45deg);
     }
 }
 
@@ -188,5 +194,10 @@
             }
         }
     }
+}
+
+.single-product-container p.out-of-stock{
+    @include font-size(22px);
+    font-weight: bold;
 }
 

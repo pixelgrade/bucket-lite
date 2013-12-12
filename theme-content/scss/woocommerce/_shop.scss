@@ -105,3 +105,14 @@
         display: inline-block; 
     }
 }
+
+.woocommerce-ordering .woocommerce-orderby{
+    height: 50px;
+    color: #807d7c;
+    @include font-size(12px);
+    text-transform: uppercase;
+
+    option{
+        padding: $_u2 0;
+    }
+}

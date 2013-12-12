@@ -734,7 +734,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 
     function footerWidgetsTitles() {
-        $('.widget--footer__title .hN').each(function() {
+        $('.widget--footer__title .hN, .panel__title  .hN').each(function() {
             var $title = $(this),
                 text = $title.text(),
                 index = text.indexOf(" ");
