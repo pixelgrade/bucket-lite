@@ -607,7 +607,7 @@ $heading-font: 'Open Sans', sans-serif;
 		.cb-enable, .cb-disable {
 			width:50%;
 			height:100%;
-			
+			margin:0 !important;
 			@include background-image(linear-gradient(#fff, #fff)); 
 		}
 
