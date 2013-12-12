@@ -98,4 +98,10 @@
 .nav-woocommerce-pagination ul{
     @extend .nav;
     @extend .pagination;
+
+    span.current{
+        background-color: #fb4834;
+        color: white;
+        display: inline-block; 
+    }
 }

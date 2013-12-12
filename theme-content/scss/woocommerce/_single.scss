@@ -94,6 +94,20 @@
     color: black;
 }
 
+.panel__title--h3{
+    position: relative;
+
+    &:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 15px;
+        width: 15px;
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+    }
+}
+
 .panel__entry-content{
     display: none;
     padding-top: $_u;
@@ -175,3 +189,4 @@
         }
     }
 }
+

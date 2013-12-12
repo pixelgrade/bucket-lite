@@ -19,7 +19,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 	<?php if ( ! $woocommerce->shipping->enabled || $available_methods || ! $woocommerce->customer->get_shipping_country() || ! $woocommerce->customer->has_calculated_shipping() ) : ?>
 
-		<table cellspacing="0">
+		<table cellspacing="0"  class="cart_totals-table">
 			<tbody>
 
 				<tr class="cart-subtotal">
