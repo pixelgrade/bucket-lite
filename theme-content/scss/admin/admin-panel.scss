@@ -852,6 +852,7 @@ $heading-font: 'Open Sans', sans-serif;
 	*/
 	i.icon-move:before {
 		font-family: 'Elusive-Icons' !important;
+		content:"\e67f";
 	}
 	.text_sortable {
 		li {
@@ -880,8 +881,8 @@ $heading-font: 'Open Sans', sans-serif;
 
 		.drag {
 			position:absolute;
-			top:0;
-			left:0px;
+			top: -2px;
+			left: 12px;
 			margin:0 !important;
 			opacity:0;
 			@include transition(all 0.15s);
