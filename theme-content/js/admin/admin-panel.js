@@ -265,13 +265,10 @@
 		});
 	};
 
-	/*!           __
-	 ____ _    / /___ __  __
-	 / __ `/_  / / __ `/ |/_/
-	 / /_/ / /_/ / /_/ />  <
-	 \__, /\____/\__,_/_/|_|
-	 /_/  jQuery plugin v1.5.2 - https://github.com/PortableSheep/qJax
-	 Copyright 2011-2013, Michael Gunderson - Dual licensed under the MIT or GPL Version 2 licenses.
+
+	/*
+	 * jQuery plugin v1.5.2 - https://github.com/PortableSheep/qJax
+	 * Copyright 2011-2013, Michael Gunderson - Dual licensed under the MIT or GPL Version 2 licenses.
 	 */
 	(function($){
 		$.qjax = function(o) {
@@ -288,12 +285,7 @@
 						type: 'GET'
 					}
 				}, o), _queue = [], _currentReq = null, _timeoutRef = null, _this = this, _started = false,
-			/*      ____      __                        __   ______                 __  _
-			 /  _/___  / /____  _________  ____ _/ /  / ____/_  ______  _____/ /_(_)___  ____  _____
-			 / // __ \/ __/ _ \/ ___/ __ \/ __ `/ /  / /_  / / / / __ \/ ___/ __/ / __ \/ __ \/ ___/
-			 _/ // / / / /_/  __/ /  / / / / /_/ / /  / __/ / /_/ / / / / /__/ /_/ / /_/ / / / (__  )
-			 /___/_/ /_/\__/\___/_/  /_/ /_/\__,_/_/  /_/    \__,_/_/ /_/\___/\__/_/\____/_/ /_/____/
-			 */
+
 				TriggerStartEvent = function() {
 					if (!_started) {
 						_started = true;
@@ -351,13 +343,6 @@
 					}
 				};
 
-			/*     ____                           ____  __      _           __
-			 / __ \__  _____  __  _____     / __ \/ /_    (_)__  _____/ /_
-			 / / / / / / / _ \/ / / / _ \   / / / / __ \  / / _ \/ ___/ __/
-			 / /_/ / /_/ /  __/ /_/ /  __/  / /_/ / /_/ / / /  __/ /__/ /_
-			 \___\_\__,_/\___/\__,_/\___/   \____/_.___/_/ /\___/\___/\__/
-			 /___/
-			 */
 			var QueueObject = function(options, complete, context) {
 				this.options = options;
 				this.complete = complete;
@@ -383,12 +368,6 @@
 				return this._promise('fail', handler);
 			};
 
-			/*      ____        __    ___         ______                 __  _
-			 / __ \__  __/ /_  / (_)____   / ____/_  ______  _____/ /_(_)___  ____  _____
-			 / /_/ / / / / __ \/ / / ___/  / /_  / / / / __ \/ ___/ __/ / __ \/ __ \/ ___/
-			 / ____/ /_/ / /_/ / / / /__   / __/ / /_/ / / / / /__/ /_/ / /_/ / / / (__  )
-			 /_/    \__,_/_.___/_/_/\___/  /_/    \__,_/_/ /_/\___/\__/_/\____/_/ /_/____/
-			 */
 			this.Clear = function() {
 				_queue = [];
 			};
@@ -429,20 +408,6 @@
 	})(jQuery);
 
 
-	//Admin Panel Styling
-	if($('#redux-container').length) {
-		$('body').addClass('redux-page');
-	}
-
-	//Fixed Title + Save button
-	function fixDiv() {
-      if ($(window).scrollTop() > 20) 
-        $('#redux-container').addClass('fixed-header');
-      else
-        $('#redux-container').removeClass('fixed-header');
-    }
-    $(window).scroll(fixDiv);
-    fixDiv();
 
     //Min-height of the container
 
@@ -462,7 +427,7 @@
     });
 
     //Remove WP update notices (eg. This theme requires the following..)
-    $('.redux-page .settings-error').hide();
+    // $('.redux-page .settings-error').hide();
     
 
     //Remove last divider from the menu
@@ -470,8 +435,69 @@
 
 
 	$(document).ready(function () {
-     $('.redux-page .settings-error').parent().hide();
+     // $('.redux-page .settings-error').parent().hide();
 	});
 
 	//End helpers and beautiful things-----------------------------------------
 })(jQuery);
+
+
+
+
+
+
+(function($, window, undefined) {
+
+    /* ====== PLUGINS & EXTENSIONS ====== */
+
+
+    /* --- $STICKY UP --- */
+     
+
+
+
+    /* ====== INTERNAL FUNCTIONS ====== */
+
+    //Fixed Title + Save button
+	var redux_container = $('#redux-container'),
+		redux_container_position = redux_container.position();
+	function fixDiv() {
+      	if ($(window).scrollTop() > redux_container_position.top) 
+        	$('#redux-container').addClass('fixed-header');
+      	else
+        	$('#redux-container').removeClass('fixed-header');
+    }
+    
+
+
+
+
+    /* ====== ON DOCUMENT READY ====== */
+
+    $(function(){
+        //Admin Panel Styling
+		if($('#redux-container').length) {
+			$('body').addClass('redux-page');
+			fixDiv();	
+		}
+    });
+
+
+
+    /* ====== ON WINDOW LOAD ====== */
+
+    $(window).load(function(){
+
+    });
+
+
+
+    /* ====== ON SCROLL ======  */
+    $(window).scroll(function(e){
+    	fixDiv();	
+    });
+    
+})(jQuery, window);
+
+
+
