@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2013-12-06 15:44+0200\n"
-"PO-Revision-Date: 2013-12-06 15:44+0200\n"
+"POT-Creation-Date: 2013-12-13 11:56+0200\n"
+"PO-Revision-Date: 2013-12-13 11:56+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: French\n"
@@ -117,7 +117,7 @@ msgstr "Site Web"
 msgid "All posts by %s"
 msgstr "Tous les messages de: %s"
 
-#: ../category.php:18 ../theme-content/admin-panel/redux-sections.php:132
+#: ../category.php:18 ../theme-content/admin-panel/redux-sections.php:156
 #, fuzzy
 msgid "Articles"
 msgstr "Article"
@@ -162,10 +162,13 @@ msgstr "Laisser un commentaire"
 
 #: ../comments.php:95 ../comments.php:109
 #: ../theme-utilities/includes/acf/acf-config.php:57
+#: ../woocommerce/single-product-reviews.php:85
 msgid "Name"
 msgstr "Nom"
 
 #: ../comments.php:96 ../comments.php:110
+#: ../woocommerce/single-product-reviews.php:87
+#: ../woocommerce/myaccount/form-login.php:78
 msgid "Email"
 msgstr "Messagerie"
 
@@ -186,7 +189,7 @@ msgstr "Message"
 msgid "Url"
 msgstr "URL"
 
-#: ../footer.php:55 ../theme-content/admin-panel/redux-sections.php:324
+#: ../footer.php:55 ../theme-content/admin-panel/redux-sections.php:348
 msgid "Footer"
 msgstr "Footer"
 
@@ -194,8 +197,8 @@ msgstr "Footer"
 msgid "Primary Mobile Navigation"
 msgstr "Primary Navigation mobile"
 
-#: ../index.php:23 ../theme-utilities/includes/acf/acf-config.php:728
-#: ../theme-utilities/includes/acf/acf-config.php:729
+#: ../index.php:23 ../theme-utilities/includes/acf/acf-config.php:773
+#: ../theme-utilities/includes/acf/acf-config.php:774
 msgid "Latest Articles"
 msgstr "Derniers articles"
 
@@ -222,23 +225,17 @@ msgstr ""
 "Il semble que nous ne pouvons pas trouver ce que vous cherchez. Peut-être "
 "que la recherche peut aider."
 
-#: ../page-no-sidebar.php:43 ../page.php:37 ../theme-callbacks/unsorted.php:79
-#: ../theme-partials/post-templates/single-title.php:14
-#, fuzzy
-msgid "j F, Y \\a\\t H:i"
-msgstr "j F, Y \\a\\t H:i"
-
-#: ../page-no-sidebar.php:48 ../page.php:42
+#: ../page-no-sidebar.php:44 ../page.php:38
 #, fuzzy
 msgid "Pages:"
 msgstr "Pages:"
 
-#: ../page-no-sidebar.php:48 ../page.php:42 ../single.php:62
+#: ../page-no-sidebar.php:44 ../page.php:38 ../single.php:62
 msgid "Previous"
 msgstr "Précédent"
 
-#: ../page-no-sidebar.php:48 ../page.php:42 ../single.php:63
-#: ../wpgrade-config.php:235
+#: ../page-no-sidebar.php:44 ../page.php:38 ../single.php:63
+#: ../wpgrade-config.php:234
 msgid "Next"
 msgstr "Suivant"
 
@@ -269,7 +266,7 @@ msgstr "Score Breakdown"
 msgid "Categories"
 msgstr "Catégories"
 
-#: ../single.php:158 ../theme-partials/acf-layouts/hero_posts_module.php:171
+#: ../single.php:158 ../theme-partials/acf-layouts/hero_posts_module.php:184
 #: ../theme-partials/post-templates/content-classic.php:26
 #: ../theme-partials/post-templates/content-masonry.php:20
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:60
@@ -291,7 +288,7 @@ msgstr "Voir tous les articles par: %s"
 msgid "Previous Article"
 msgstr "Article précédent"
 
-#: ../single.php:201
+#: ../single.php:205
 msgid "Next Article"
 msgstr "Article suivant"
 
@@ -307,8 +304,8 @@ msgstr "Par défaut"
 
 #: ../wpgrade-config.php:109
 #: ../theme-utilities/includes/acf/acf-config.php:398
-#: ../theme-utilities/includes/acf/acf-config.php:544
-#: ../theme-utilities/includes/acf/acf-config.php:615
+#: ../theme-utilities/includes/acf/acf-config.php:559
+#: ../theme-utilities/includes/acf/acf-config.php:645
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:92
 #, fuzzy
 msgid "Latest Posts"
@@ -319,19 +316,19 @@ msgstr "Derniers articles"
 msgid "Slider + Latest Posts"
 msgstr "Slider + Derniers articles"
 
-#: ../wpgrade-config.php:184
+#: ../wpgrade-config.php:183
 msgid "Previous (Left arrow key)"
 msgstr "Précédente (Flèche gauche)"
 
-#: ../wpgrade-config.php:185
+#: ../wpgrade-config.php:184
 msgid "Next (Right arrow key)"
 msgstr "Suivant (flèche droite)"
 
-#: ../wpgrade-config.php:186
+#: ../wpgrade-config.php:185
 msgid "of"
 msgstr "de"
 
-#: ../wpgrade-config.php:234
+#: ../wpgrade-config.php:233
 #, fuzzy
 msgid "Prev"
 msgstr "Précédent"
@@ -489,29 +486,29 @@ msgid "Disabled"
 msgstr "Désactivé"
 
 #: ../theme-callbacks/activation-hooks.php:151
-#: ../theme-content/admin-panel/redux-sections.php:236
-#: ../theme-utilities/includes/acf/acf-config.php:493
+#: ../theme-content/admin-panel/redux-sections.php:260
+#: ../theme-utilities/includes/acf/acf-config.php:508
 msgid "Slider transition"
 msgstr "Transition Slider"
 
 #: ../theme-callbacks/activation-hooks.php:156
-#: ../theme-content/admin-panel/redux-sections.php:238
+#: ../theme-content/admin-panel/redux-sections.php:262
 msgid "Slide/Move"
 msgstr "Glisser/Déplacer"
 
 #: ../theme-callbacks/activation-hooks.php:160
-#: ../theme-content/admin-panel/redux-sections.php:239
-#: ../theme-utilities/includes/acf/acf-config.php:499
+#: ../theme-content/admin-panel/redux-sections.php:263
+#: ../theme-utilities/includes/acf/acf-config.php:514
 msgid "Fade"
 msgstr "Fade"
 
 #: ../theme-callbacks/activation-hooks.php:167
-#: ../theme-content/admin-panel/redux-sections.php:251
+#: ../theme-content/admin-panel/redux-sections.php:275
 msgid "Slider autoplay"
 msgstr "Slider autoplay"
 
 #: ../theme-callbacks/activation-hooks.php:183
-#: ../theme-content/admin-panel/redux-sections.php:258
+#: ../theme-content/admin-panel/redux-sections.php:282
 msgid "Autoplay delay between slides (in milliseconds)"
 msgstr "Autoplay délai entre les diapositives (en millisecondes)"
 
@@ -574,11 +571,19 @@ msgstr "Vidéo"
 msgid "<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>"
 msgstr ""
 
+#: ../theme-callbacks/unsorted.php:79
+#: ../theme-partials/post-templates/single-title.php:14
+#, fuzzy
+msgid "j F, Y \\a\\t H:i"
+msgstr "j F, Y \\a\\t H:i"
+
 #: ../theme-callbacks/unsorted.php:82
+#: ../woocommerce/myaccount/my-address.php:45
 msgid "Edit"
 msgstr "Éditer"
 
 #: ../theme-callbacks/unsorted.php:89
+#: ../woocommerce/single-product/review.php:39
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
@@ -592,6 +597,36 @@ msgid ""
 "accent color with this one in the category archives and posts in that "
 "category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this "
 "to work (Theme Options > Custom Code)."
+msgstr ""
+
+#: ../theme-callbacks/unsorted.php:224 ../theme-callbacks/unsorted.php:238
+#, fuzzy, php-format
+msgid "Page %s"
+msgstr "Pages:"
+
+#: ../theme-callbacks/woocommerce.php:42
+msgid "View your shopping cart"
+msgstr ""
+
+#: ../theme-callbacks/woocommerce.php:43
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../theme-callbacks/woocommerce.php:181 ../woocommerce/cart/cart.php:70
+msgid "Available on backorder"
+msgstr ""
+
+#: ../theme-callbacks/woocommerce.php:196 ../woocommerce/cart/cart.php:94
+#: ../woocommerce/checkout/form-pay.php:20
+#: ../woocommerce/single-product/add-to-cart/quantity.php:12
+msgid "Qty"
+msgstr ""
+
+#: ../theme-callbacks/woocommerce.php:213 ../woocommerce/cart/cart.php:111
+msgid "Remove this item"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-args.php:36
@@ -783,7 +818,23 @@ msgstr "Font du corps"
 msgid "Font for content text and widget text."
 msgstr "Font pour le texte de contenu et un widget texte."
 
-#: ../theme-content/admin-panel/redux-sections.php:133
+#: ../theme-content/admin-panel/redux-sections.php:137
+msgid "WooCommerce"
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:138
+msgid "WooCommerce options!"
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:143
+msgid "Enable WooCommerce Support"
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:144
+msgid "Turn this off to avoid loading the WooCommerce assets (CSS and JS)."
+msgstr ""
+
+#: ../theme-content/admin-panel/redux-sections.php:157
 msgid ""
 "Article options control the various aspects related to displaying posts both "
 "in archives and single articles. You can control things like excerpt length "
@@ -793,78 +844,78 @@ msgstr ""
 "aussi bien dans les archives et les articles particuliers. Vous pouvez "
 "contrôler les choses comme la longueur de l'extrait et le partage social."
 
-#: ../theme-content/admin-panel/redux-sections.php:138
+#: ../theme-content/admin-panel/redux-sections.php:162
 msgid "Single Post Title Position"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:139
+#: ../theme-content/admin-panel/redux-sections.php:163
 msgid "Choose where to display the article title and meta tags."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:153
+#: ../theme-content/admin-panel/redux-sections.php:177
 msgid "Show Share Links"
 msgstr "Afficher les liens d'actions sociales"
 
-#: ../theme-content/admin-panel/redux-sections.php:154
+#: ../theme-content/admin-panel/redux-sections.php:178
 msgid "Do you want to show the share links bellow the article?"
 msgstr "Voulez-vous montrer les liens d'actions soufflet cet article?"
 
-#: ../theme-content/admin-panel/redux-sections.php:160
+#: ../theme-content/admin-panel/redux-sections.php:184
 msgid "Twitter Share Link"
 msgstr "Twitter Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:168
+#: ../theme-content/admin-panel/redux-sections.php:192
 msgid "Facebook Share Link"
 msgstr "Facebook Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:176
+#: ../theme-content/admin-panel/redux-sections.php:200
 msgid "Google+ Share Link"
 msgstr "Google+ Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:184
+#: ../theme-content/admin-panel/redux-sections.php:208
 #, fuzzy
 msgid "Pinterest Share Link"
 msgstr "Twitter Share Link"
 
-#: ../theme-content/admin-panel/redux-sections.php:192
+#: ../theme-content/admin-panel/redux-sections.php:216
 msgid "Show Author Info Box"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:193
+#: ../theme-content/admin-panel/redux-sections.php:217
 #, fuzzy
 msgid ""
 "Do you want to show author info box with avatar and description bellow the "
 "post?"
 msgstr "Voulez-vous montrer les liens d'actions dessous, les projets?"
 
-#: ../theme-content/admin-panel/redux-sections.php:198
+#: ../theme-content/admin-panel/redux-sections.php:222
 msgid "<h3>Blog Archive</h3>"
 msgstr "<h3>Blog Archive</h3>"
 
-#: ../theme-content/admin-panel/redux-sections.php:204
+#: ../theme-content/admin-panel/redux-sections.php:228
 msgid "Blog Posts Layout"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:205
+#: ../theme-content/admin-panel/redux-sections.php:229
 msgid ""
 "Choose the layout for blog areas (eg. blog archive page, categories, search "
 "results)."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:215
+#: ../theme-content/admin-panel/redux-sections.php:239
 msgid "Excerpt Length"
 msgstr "Extrait longueur"
 
-#: ../theme-content/admin-panel/redux-sections.php:216
+#: ../theme-content/admin-panel/redux-sections.php:240
 msgid "Set the number of words for posts excerpt."
 msgstr "Définissez le nombre de mots pour les postes extrait."
 
-#: ../theme-content/admin-panel/redux-sections.php:222
+#: ../theme-content/admin-panel/redux-sections.php:246
 #, fuzzy
 msgid "Excerpt \"More\" Text"
 msgstr "Extrait \"Plus\" text"
 
-#: ../theme-content/admin-panel/redux-sections.php:223
+#: ../theme-content/admin-panel/redux-sections.php:247
 msgid ""
 "Change the default [...] with something else (leave empty if you want to "
 "remove it)."
@@ -872,24 +923,24 @@ msgstr ""
 "Changer la valeur par défaut [...] avec autre chose (laisser vide si vous "
 "voulez l'enlever)."
 
-#: ../theme-content/admin-panel/redux-sections.php:229
+#: ../theme-content/admin-panel/redux-sections.php:253
 #, fuzzy
 msgid "Show Slider On Category Pages?"
 msgstr "Le nouveau nom de la catégorie de la galerie"
 
-#: ../theme-content/admin-panel/redux-sections.php:230
+#: ../theme-content/admin-panel/redux-sections.php:254
 msgid ""
 "Check this if you want to display at the top of your category archives a "
 "slider with the posts marked as making part of the category slider."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:270
-#: ../theme-content/admin-panel/redux-sections.php:375
+#: ../theme-content/admin-panel/redux-sections.php:294
+#: ../theme-content/admin-panel/redux-sections.php:399
 #, fuzzy
 msgid "Header"
 msgstr "Header"
 
-#: ../theme-content/admin-panel/redux-sections.php:271
+#: ../theme-content/admin-panel/redux-sections.php:295
 msgid ""
 "Header options allow you to control both the visual and functional aspect of "
 "the site header. You can choose various layouts, show or hide elements, and "
@@ -900,21 +951,21 @@ msgstr ""
 "page, afficher ou cacher des éléments et modifier le jeu de couleurs (clair "
 "ou foncé)."
 
-#: ../theme-content/admin-panel/redux-sections.php:276
+#: ../theme-content/admin-panel/redux-sections.php:300
 #, fuzzy
 msgid "Header Type"
 msgstr "Header Type"
 
-#: ../theme-content/admin-panel/redux-sections.php:277
+#: ../theme-content/admin-panel/redux-sections.php:301
 msgid "Choose the layout for the header area."
 msgstr "Choisir la disposition de la zone d'en-tête."
 
-#: ../theme-content/admin-panel/redux-sections.php:288
+#: ../theme-content/admin-panel/redux-sections.php:312
 #, fuzzy
 msgid "Header Ad Code"
 msgstr "Header Ad Code"
 
-#: ../theme-content/admin-panel/redux-sections.php:289
+#: ../theme-content/admin-panel/redux-sections.php:313
 msgid ""
 "Paste here the code for the header ad (optimally 720x90px). We will also "
 "parse any shortcodes present."
@@ -922,11 +973,11 @@ msgstr ""
 "Coller ici le code de l'en-tête annonce (de façon optimale 720x90px). Nous "
 "allons également analyser tout shortcodes présent."
 
-#: ../theme-content/admin-panel/redux-sections.php:298
+#: ../theme-content/admin-panel/redux-sections.php:322
 msgid "Header Top Nav Inverse"
 msgstr "Header Top Nav Inverse"
 
-#: ../theme-content/admin-panel/redux-sections.php:299
+#: ../theme-content/admin-panel/redux-sections.php:323
 #, fuzzy
 msgid ""
 "Inverse the contrast of the header top navigation bar (black text on white "
@@ -935,11 +986,11 @@ msgstr ""
 "Inverse le contraste de l'en-tête barre de navigation supérieure (texte noir "
 "sur fond blanc)."
 
-#: ../theme-content/admin-panel/redux-sections.php:305
+#: ../theme-content/admin-panel/redux-sections.php:329
 msgid "Header Main Nav Inverse"
 msgstr "Header Main Nav Inverse"
 
-#: ../theme-content/admin-panel/redux-sections.php:306
+#: ../theme-content/admin-panel/redux-sections.php:330
 msgid ""
 "Inverse the contrast of the main navigation bar including sub-menus and mega-"
 "menus (black text on white background)."
@@ -947,11 +998,11 @@ msgstr ""
 "Inverse le contraste de la barre de navigation principale, y compris les "
 "sous-menus et des méga-menus (texte noir sur fond blanc)."
 
-#: ../theme-content/admin-panel/redux-sections.php:312
+#: ../theme-content/admin-panel/redux-sections.php:336
 msgid "Show Header Search Form"
 msgstr "Afficher le formulaire de recherche d'en-tête"
 
-#: ../theme-content/admin-panel/redux-sections.php:313
+#: ../theme-content/admin-panel/redux-sections.php:337
 msgid ""
 "Display the search form in the header (it's position may vary depending the "
 "Header Type)."
@@ -959,38 +1010,38 @@ msgstr ""
 "Afficher le formulaire de recherche dans l'en-tête (c'est l'emplacement peut "
 "varier en fonction du type d'en-tête)."
 
-#: ../theme-content/admin-panel/redux-sections.php:325
+#: ../theme-content/admin-panel/redux-sections.php:349
 msgid ""
 "Footer related options including Copyright Text. Other footer elements "
 "including widgets and menus can be set from Appearance - Widgets/Menus admin "
 "page. "
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:330
+#: ../theme-content/admin-panel/redux-sections.php:354
 #, fuzzy
 msgid "Posts Stats"
 msgstr "Poster formats"
 
-#: ../theme-content/admin-panel/redux-sections.php:331
+#: ../theme-content/admin-panel/redux-sections.php:355
 msgid "Display a monthly based vertical bar graph for posts."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:337
+#: ../theme-content/admin-panel/redux-sections.php:361
 #, fuzzy
 msgid "Back to Top Link"
 msgstr "Retour en haut"
 
-#: ../theme-content/admin-panel/redux-sections.php:338
+#: ../theme-content/admin-panel/redux-sections.php:362
 msgid ""
 "Add a link that helps users jump to the top of the page (instead of pressing "
 "\"Home\" key)."
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:344
+#: ../theme-content/admin-panel/redux-sections.php:368
 msgid "Copyright Text"
 msgstr "Texte de copyright"
 
-#: ../theme-content/admin-panel/redux-sections.php:345
+#: ../theme-content/admin-panel/redux-sections.php:369
 #, php-format
 msgid ""
 "Text that will appear in footer left area (eg. Copyright 2013 %s | All "
@@ -999,12 +1050,12 @@ msgstr ""
 "Texte qui apparaîtra dans la zone pied gauche (par exemple, Copyright 2013 "
 "%s | All Rights Reserved)."
 
-#: ../theme-content/admin-panel/redux-sections.php:363
+#: ../theme-content/admin-panel/redux-sections.php:387
 #, fuzzy
 msgid "Social and SEO"
 msgstr "Social et SEO"
 
-#: ../theme-content/admin-panel/redux-sections.php:365
+#: ../theme-content/admin-panel/redux-sections.php:389
 msgid ""
 "Social and SEO options allow you to input your social links and choose where "
 "to display them. Then you can set the social SEO related info added in the "
@@ -1015,11 +1066,11 @@ msgstr ""
 "social SEO associés info ajoutée dans les balises meta ou utilisée dans "
 "différents widgets."
 
-#: ../theme-content/admin-panel/redux-sections.php:370
+#: ../theme-content/admin-panel/redux-sections.php:394
 msgid "Social Icons"
 msgstr "Icônes sociaux"
 
-#: ../theme-content/admin-panel/redux-sections.php:371
+#: ../theme-content/admin-panel/redux-sections.php:395
 #, fuzzy, php-format
 msgid ""
 "Define and reorder your social links.<br /><b>Note:</b> These will be "
@@ -1032,111 +1083,111 @@ msgstr ""
 "les mettre n'importe où sur votre site. Seulement ceux qui sont remplis "
 "apparaît."
 
-#: ../theme-content/admin-panel/redux-sections.php:372
+#: ../theme-content/admin-panel/redux-sections.php:396
 msgid ""
 "Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>."
 msgstr ""
 "Icônes fournies par <strong> FontAwesome </strong> et <strong> Entypo </"
 "strong>."
 
-#: ../theme-content/admin-panel/redux-sections.php:374
+#: ../theme-content/admin-panel/redux-sections.php:398
 #, fuzzy
 msgid "Widget"
 msgstr "Flickr Widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:378
+#: ../theme-content/admin-panel/redux-sections.php:402
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../theme-content/admin-panel/redux-sections.php:379
+#: ../theme-content/admin-panel/redux-sections.php:403
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../theme-content/admin-panel/redux-sections.php:380
+#: ../theme-content/admin-panel/redux-sections.php:404
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../theme-content/admin-panel/redux-sections.php:381
+#: ../theme-content/admin-panel/redux-sections.php:405
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../theme-content/admin-panel/redux-sections.php:382
+#: ../theme-content/admin-panel/redux-sections.php:406
 msgid "Behance"
 msgstr "Behance"
 
-#: ../theme-content/admin-panel/redux-sections.php:383
+#: ../theme-content/admin-panel/redux-sections.php:407
 msgid "500px"
 msgstr "500px"
 
-#: ../theme-content/admin-panel/redux-sections.php:384
+#: ../theme-content/admin-panel/redux-sections.php:408
 msgid "DeviantART"
 msgstr "DeviantART"
 
-#: ../theme-content/admin-panel/redux-sections.php:385
+#: ../theme-content/admin-panel/redux-sections.php:409
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../theme-content/admin-panel/redux-sections.php:386
+#: ../theme-content/admin-panel/redux-sections.php:410
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../theme-content/admin-panel/redux-sections.php:387
+#: ../theme-content/admin-panel/redux-sections.php:411
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../theme-content/admin-panel/redux-sections.php:388
+#: ../theme-content/admin-panel/redux-sections.php:412
 msgid "Google+"
 msgstr "Google+"
 
-#: ../theme-content/admin-panel/redux-sections.php:389
+#: ../theme-content/admin-panel/redux-sections.php:413
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../theme-content/admin-panel/redux-sections.php:390
+#: ../theme-content/admin-panel/redux-sections.php:414
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../theme-content/admin-panel/redux-sections.php:391
+#: ../theme-content/admin-panel/redux-sections.php:415
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../theme-content/admin-panel/redux-sections.php:392
+#: ../theme-content/admin-panel/redux-sections.php:416
 msgid "Skype"
 msgstr "Skype"
 
-#: ../theme-content/admin-panel/redux-sections.php:393
+#: ../theme-content/admin-panel/redux-sections.php:417
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../theme-content/admin-panel/redux-sections.php:394
+#: ../theme-content/admin-panel/redux-sections.php:418
 msgid "Digg"
 msgstr "Digg"
 
-#: ../theme-content/admin-panel/redux-sections.php:395
+#: ../theme-content/admin-panel/redux-sections.php:419
 msgid "Last.FM"
 msgstr "Last.FM"
 
-#: ../theme-content/admin-panel/redux-sections.php:396
+#: ../theme-content/admin-panel/redux-sections.php:420
 msgid "App.net"
 msgstr "App.net"
 
-#: ../theme-content/admin-panel/redux-sections.php:397
+#: ../theme-content/admin-panel/redux-sections.php:421
 msgid "RSS Feed"
 msgstr "Flux RSS"
 
-#: ../theme-content/admin-panel/redux-sections.php:451
+#: ../theme-content/admin-panel/redux-sections.php:475
 msgid "Open social icons links in new a window?"
 msgstr "Ouvrez les liens icônes sociaux dans la nouvelle fenêtre?"
 
-#: ../theme-content/admin-panel/redux-sections.php:452
+#: ../theme-content/admin-panel/redux-sections.php:476
 msgid "Do you want to open social links in a new window ?"
 msgstr "Voulez-vous ouvrir les liens sociaux dans une nouvelle fenêtre?"
 
-#: ../theme-content/admin-panel/redux-sections.php:458
+#: ../theme-content/admin-panel/redux-sections.php:482
 msgid "Add Social Meta Tags"
 msgstr "Ajouter étiquettes de méta sociaux"
 
-#: ../theme-content/admin-panel/redux-sections.php:459
+#: ../theme-content/admin-panel/redux-sections.php:483
 msgid ""
 "Let us properly prepare your theme for the social sharing and discovery by "
 "adding the needed metatags in the <head> section."
@@ -1144,11 +1195,11 @@ msgstr ""
 "Préparons-nous correctement votre thème pour le partage social et de "
 "découverte en ajoutant les metatags nécessaires dans la section <head>."
 
-#: ../theme-content/admin-panel/redux-sections.php:465
+#: ../theme-content/admin-panel/redux-sections.php:489
 msgid "Facebook Application ID"
 msgstr "Facebook Application ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:466
+#: ../theme-content/admin-panel/redux-sections.php:490
 msgid ""
 "Enter the Facebook Application ID of the Fan Page which is associated with "
 "this website. You can create one <a href=\"https://developers.facebook.com/"
@@ -1158,11 +1209,11 @@ msgstr ""
 "site. Vous pouvez créer un <a href=\"https://developers.facebook.com/apps\"> "
 "ici </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:472
+#: ../theme-content/admin-panel/redux-sections.php:496
 msgid "Facebook Admin ID"
 msgstr "Facebook Admin ID"
 
-#: ../theme-content/admin-panel/redux-sections.php:473
+#: ../theme-content/admin-panel/redux-sections.php:497
 msgid ""
 "The id of the user that has administrative privileges to your Facebook App "
 "so you can access the <a href=\"https://www.facebook.com/insights/"
@@ -1172,11 +1223,11 @@ msgstr ""
 "votre appli Facebook pour que vous puissiez accéder à la <a href=\"https://"
 "www.facebook.com/insights/\"> Facebook Insights </a>."
 
-#: ../theme-content/admin-panel/redux-sections.php:479
+#: ../theme-content/admin-panel/redux-sections.php:503
 msgid "Google+ Publisher"
 msgstr "Google+ Publisher"
 
-#: ../theme-content/admin-panel/redux-sections.php:480
+#: ../theme-content/admin-panel/redux-sections.php:504
 msgid ""
 "Enter your Google Plus page ID (example: https://plus.google.com/"
 "<b>105345678532237339285</b>) here if you have set up a \"Google+ Page\"."
@@ -1185,11 +1236,11 @@ msgstr ""
 "com/105345678532237339285) ici si vous avez mis en place un \"page Google+ "
 "\"."
 
-#: ../theme-content/admin-panel/redux-sections.php:486
+#: ../theme-content/admin-panel/redux-sections.php:510
 msgid "Twitter Site Username"
 msgstr "Twitter Site Username"
 
-#: ../theme-content/admin-panel/redux-sections.php:487
+#: ../theme-content/admin-panel/redux-sections.php:511
 msgid ""
 "The Twitter username of the entire site. The username for the author will be "
 "taken from the author's profile (skip the @)"
@@ -1197,11 +1248,11 @@ msgstr ""
 "Le nom d'utilisateur Twitter de l'ensemble du site. Le nom de l'auteur sera "
 "prélevé sur le profil de l'auteur (sauter le signe @)"
 
-#: ../theme-content/admin-panel/redux-sections.php:493
+#: ../theme-content/admin-panel/redux-sections.php:517
 msgid "Default Social Share Image"
 msgstr "L'image de l'action sociale par défaut"
 
-#: ../theme-content/admin-panel/redux-sections.php:494
+#: ../theme-content/admin-panel/redux-sections.php:518
 msgid ""
 "If an image is uploaded, this will be used for content sharing if you don't "
 "upload a custom image with your content (at least 200px wide recommended)."
@@ -1210,11 +1261,11 @@ msgstr ""
 "vous ne téléchargez une image personnalisée avec votre contenu (au moins "
 "200px de large recommandée)."
 
-#: ../theme-content/admin-panel/redux-sections.php:499
+#: ../theme-content/admin-panel/redux-sections.php:523
 msgid "Use Twitter Widget"
 msgstr "Utilisez Twitter Widget"
 
-#: ../theme-content/admin-panel/redux-sections.php:500
+#: ../theme-content/admin-panel/redux-sections.php:524
 msgid ""
 "Just a widget to show your latest tweets (Twitter API v1.1 compatible). You "
 "can add it in your blog or footer sidebars.<div class=\"description\">"
@@ -1223,11 +1274,11 @@ msgstr ""
 "compatible). Vous pouvez ajouter dans votre blog ou encadrés bas de page. "
 "<div class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:506
+#: ../theme-content/admin-panel/redux-sections.php:530
 msgid "Important Note : "
 msgstr "Remarque importante: "
 
-#: ../theme-content/admin-panel/redux-sections.php:507
+#: ../theme-content/admin-panel/redux-sections.php:531
 #, fuzzy
 msgid ""
 "<div>In order to use the Twitter widget you will need to create a Twitter "
@@ -1243,28 +1294,28 @@ msgstr ""
 "Twitter a fait à son API (v1.1). S'il vous plaît noter que ces valeurs par "
 "défaut sont utilisés sur le "
 
-#: ../theme-content/admin-panel/redux-sections.php:513
+#: ../theme-content/admin-panel/redux-sections.php:537
 msgid "Consumer Key"
 msgstr "Consumer Key"
 
-#: ../theme-content/admin-panel/redux-sections.php:520
+#: ../theme-content/admin-panel/redux-sections.php:544
 msgid "Consumer Secret"
 msgstr "Consumer Secret"
 
-#: ../theme-content/admin-panel/redux-sections.php:527
+#: ../theme-content/admin-panel/redux-sections.php:551
 msgid "Oauth Access Token"
 msgstr "Oauth Access Token"
 
-#: ../theme-content/admin-panel/redux-sections.php:534
+#: ../theme-content/admin-panel/redux-sections.php:558
 msgid "Oauth Access Token Secret"
 msgstr "Oauth Access Token Secret"
 
-#: ../theme-content/admin-panel/redux-sections.php:547
+#: ../theme-content/admin-panel/redux-sections.php:571
 #, fuzzy
 msgid "Custom Code"
 msgstr "Custom Code"
 
-#: ../theme-content/admin-panel/redux-sections.php:548
+#: ../theme-content/admin-panel/redux-sections.php:572
 msgid ""
 "You can change the site style and behaviour by adding custom scripts to all "
 "pages within your site using the custom code areas below."
@@ -1273,12 +1324,12 @@ msgstr ""
 "personnalisés pour toutes les pages de votre site en utilisant les zones de "
 "code personnalisé ci-dessous."
 
-#: ../theme-content/admin-panel/redux-sections.php:553
+#: ../theme-content/admin-panel/redux-sections.php:577
 #, fuzzy
 msgid "Custom CSS"
 msgstr "Custom CSS"
 
-#: ../theme-content/admin-panel/redux-sections.php:554
+#: ../theme-content/admin-panel/redux-sections.php:578
 #, fuzzy
 msgid ""
 "Enter your custom CSS code. It will be included in the head section of the "
@@ -1287,30 +1338,30 @@ msgstr ""
 "Utilisez cette zone pour apporter de légères modifications de style CSS. Il "
 "sera inclus dans la section head de la page."
 
-#: ../theme-content/admin-panel/redux-sections.php:563
+#: ../theme-content/admin-panel/redux-sections.php:587
 #, fuzzy
 msgid "Apply Custom CSS"
 msgstr "Appliquer CSS personnalisé"
 
-#: ../theme-content/admin-panel/redux-sections.php:564
+#: ../theme-content/admin-panel/redux-sections.php:588
 #, fuzzy
 msgid "Select how to insert the custom CSS into your site."
 msgstr "Choisissez comment insérer le CSS personnalisé dans votre site."
 
-#: ../theme-content/admin-panel/redux-sections.php:566
+#: ../theme-content/admin-panel/redux-sections.php:590
 msgid "Inline <em>(recommended)</em>"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:566
+#: ../theme-content/admin-panel/redux-sections.php:590
 msgid "Write To File (might require file permissions)"
 msgstr ""
 
-#: ../theme-content/admin-panel/redux-sections.php:575
+#: ../theme-content/admin-panel/redux-sections.php:599
 #, fuzzy
 msgid "Custom JavaScript (header)"
 msgstr "Custom JavaScript (header)"
 
-#: ../theme-content/admin-panel/redux-sections.php:576
+#: ../theme-content/admin-panel/redux-sections.php:600
 #, fuzzy
 msgid ""
 "Enter your custom Javascript code. This code will be loaded in the head "
@@ -1319,12 +1370,12 @@ msgstr ""
 "Utilisez cette zone pour faire la coutume du code JavaScript calls.This sera "
 "chargé dans la section de tête"
 
-#: ../theme-content/admin-panel/redux-sections.php:583
+#: ../theme-content/admin-panel/redux-sections.php:607
 #, fuzzy
 msgid "Custom JavaScript (footer)"
 msgstr "Custom JavaScript (footer)"
 
-#: ../theme-content/admin-panel/redux-sections.php:584
+#: ../theme-content/admin-panel/redux-sections.php:608
 #, fuzzy
 msgid ""
 "This javascript code will be loaded in the footer. You can paste here your "
@@ -1334,11 +1385,11 @@ msgstr ""
 "Collez ici votre code de suivi Analytics Google (ou tout ce qui importe le "
 "code de suivi) et nous le mettrons sur chaque page."
 
-#: ../theme-content/admin-panel/redux-sections.php:597
+#: ../theme-content/admin-panel/redux-sections.php:621
 msgid "Utilities"
 msgstr "Utilitaires"
 
-#: ../theme-content/admin-panel/redux-sections.php:598
+#: ../theme-content/admin-panel/redux-sections.php:622
 msgid ""
 "Utilities help you keep up-to-date with new versions of the theme. Also you "
 "can import the demo data from here."
@@ -1346,7 +1397,7 @@ msgstr ""
 "Utilitaires permettent de maintenir à jour avec les nouvelles versions du "
 "thème. Aussi, vous pouvez importer les données de démonstration d'ici."
 
-#: ../theme-content/admin-panel/redux-sections.php:603
+#: ../theme-content/admin-panel/redux-sections.php:627
 #, fuzzy
 msgid ""
 "Let us notify you when new versions of this theme are live on ThemeForest! "
@@ -1356,7 +1407,7 @@ msgstr ""
 "versions de ce thème sont en direct sur ThemeForest! Mise à jour avec un "
 "seul clic de bouton. Oubliez les mises à jour manuelles!</p>"
 
-#: ../theme-content/admin-panel/redux-sections.php:602
+#: ../theme-content/admin-panel/redux-sections.php:626
 msgid ""
 "<h3>Theme Auto Update</h3>\n"
 "\t\t\t\t<p class=\"description\">"
@@ -1364,33 +1415,33 @@ msgstr ""
 "<h3>Theme Auto Update</h3>\n"
 "\t\t\t\t<p class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:609
+#: ../theme-content/admin-panel/redux-sections.php:633
 msgid "Use Auto Update"
 msgstr "Utilisez upgrade automatique"
 
-#: ../theme-content/admin-panel/redux-sections.php:610
+#: ../theme-content/admin-panel/redux-sections.php:634
 msgid ""
 "Activate this to enter the info needed for the theme auto update to work."
 msgstr ""
 "Activez cette option pour entrer les informations nécessaires pour le thème "
 "de mise à jour automatique de travailler."
 
-#: ../theme-content/admin-panel/redux-sections.php:616
+#: ../theme-content/admin-panel/redux-sections.php:640
 msgid "ThemeForest Username"
 msgstr "ThemeForest Username"
 
-#: ../theme-content/admin-panel/redux-sections.php:617
+#: ../theme-content/admin-panel/redux-sections.php:641
 msgid ""
 "Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade)."
 msgstr ""
 "Entrez ici votre ThemeForest utilisateur du compte (ou Envato) (c. "
 "pixelgrade)."
 
-#: ../theme-content/admin-panel/redux-sections.php:623
+#: ../theme-content/admin-panel/redux-sections.php:647
 msgid "ThemeForest Secret API Key"
 msgstr "ThemeForest Secret API Key"
 
-#: ../theme-content/admin-panel/redux-sections.php:624
+#: ../theme-content/admin-panel/redux-sections.php:648
 msgid ""
 "Enter here the secret api key you've created on ThemeForest. You can create "
 "a new one in the Settings > API Keys section of your profile."
@@ -1398,11 +1449,11 @@ msgstr ""
 "Saisissez ici la clé API secret que vous avez créé sur ThemeForest. Vous "
 "pouvez créer un nouveau dans le Paramètres> API section Clés de votre profil."
 
-#: ../theme-content/admin-panel/redux-sections.php:630
+#: ../theme-content/admin-panel/redux-sections.php:654
 msgid "Backup Theme Before Upgrade?"
 msgstr "Sauvegarde thème avant de mettre à niveau?"
 
-#: ../theme-content/admin-panel/redux-sections.php:631
+#: ../theme-content/admin-panel/redux-sections.php:655
 msgid ""
 "Check this if you want us to automatically save your theme as a ZIP archive "
 "before an upgrade. The directory those backups get saved to is <code>wp-"
@@ -1420,7 +1471,7 @@ msgstr ""
 "Alternativement, si vous ne voulez pas sauvegarder votre thème, vous pouvez "
 "décocher cette."
 
-#: ../theme-content/admin-panel/redux-sections.php:638
+#: ../theme-content/admin-panel/redux-sections.php:662
 msgid ""
 "Here you can import the demo data and get on your way of setting up the site "
 "like the theme demo."
@@ -1428,7 +1479,7 @@ msgstr ""
 "Ici vous pouvez importer les données de démonstration et d'obtenir sur votre "
 "chemin de la création du site comme la démo de thème."
 
-#: ../theme-content/admin-panel/redux-sections.php:637
+#: ../theme-content/admin-panel/redux-sections.php:661
 msgid ""
 "<h3>Import Demo Data</h3>\n"
 "\t\t\t\t<p class=\"description\">"
@@ -1436,12 +1487,12 @@ msgstr ""
 "<h3>Import Demo Data</h3>\n"
 "\t\t\t\t<p class=\"description\">"
 
-#: ../theme-content/admin-panel/redux-sections.php:652
+#: ../theme-content/admin-panel/redux-sections.php:676
 #, fuzzy
 msgid "Import demo data"
 msgstr "Importer des données démo"
 
-#: ../theme-content/admin-panel/redux-sections.php:658
+#: ../theme-content/admin-panel/redux-sections.php:682
 #, fuzzy
 msgid ""
 "Please wait a few minutes (between 1 and 3 minutes usually, but depending on "
@@ -1453,12 +1504,12 @@ msgstr ""
 "<strong>ne pas recharger la page</strong>. Vous serez informé dès que "
 "l'importation est terminée!"
 
-#: ../theme-content/admin-panel/redux-sections.php:670
+#: ../theme-content/admin-panel/redux-sections.php:694
 #, fuzzy
 msgid "Admin Panel Options"
 msgstr "Radio option Image"
 
-#: ../theme-content/admin-panel/redux-sections.php:671
+#: ../theme-content/admin-panel/redux-sections.php:695
 #, fuzzy
 msgid ""
 "Here you can copy/download your current admin option settings. Keep this "
@@ -1470,11 +1521,11 @@ msgstr ""
 "problème, ou vous pouvez l'utiliser pour restaurer vos paramètres sur ce "
 "site (ou tout autre site)."
 
-#: ../theme-content/admin-panel/redux-sections.php:694
+#: ../theme-content/admin-panel/redux-sections.php:718
 msgid "Help and Support"
 msgstr "Aide et support"
 
-#: ../theme-content/admin-panel/redux-sections.php:695
+#: ../theme-content/admin-panel/redux-sections.php:719
 msgid ""
 "If you had anything less than a great experience with this theme please "
 "contact us now. You can also find answers in our community site, or official "
@@ -1485,27 +1536,27 @@ msgstr ""
 "dans notre site communautaire, ou des articles officiels et des tutoriels "
 "dans notre base de connaissances."
 
-#: ../theme-content/admin-panel/redux-tabs.php:29
+#: ../theme-content/admin-panel/redux-tabs.php:31
 #: ../wpgrade-core/vendor/redux3/options.php:777
 msgid "<strong>Theme URL:</strong> "
 msgstr "<strong>Thème URL:</strong> "
 
-#: ../theme-content/admin-panel/redux-tabs.php:34
+#: ../theme-content/admin-panel/redux-tabs.php:36
 #: ../wpgrade-core/vendor/redux3/options.php:778
 msgid "<strong>Author:</strong> "
 msgstr "<strong>Auteur:</strong> "
 
-#: ../theme-content/admin-panel/redux-tabs.php:38
+#: ../theme-content/admin-panel/redux-tabs.php:40
 #: ../wpgrade-core/vendor/redux3/options.php:779
 msgid "<strong>Version:</strong> "
 msgstr "<strong>Version:</strong> "
 
-#: ../theme-content/admin-panel/redux-tabs.php:46
+#: ../theme-content/admin-panel/redux-tabs.php:48
 #: ../wpgrade-core/vendor/redux3/options.php:781
 msgid "<strong>Tags:</strong> "
 msgstr "<strong>Tags:</strong> "
 
-#: ../theme-content/admin-panel/redux-tabs.php:56
+#: ../theme-content/admin-panel/redux-tabs.php:58
 #: ../wpgrade-core/vendor/redux3/options.php:787
 msgid "Theme Information"
 msgstr "Theme Information"
@@ -1529,17 +1580,20 @@ msgstr "Mot de passe.."
 #: ../theme-partials/acf-layouts/billboard_slider.php:12
 #: ../theme-partials/acf-layouts/hero_posts_module.php:13
 #: ../theme-partials/acf-layouts/posts_grid_cards.php:17
-#: ../theme-utilities/includes/acf/acf-config.php:461
+#: ../theme-utilities/includes/acf/acf-config.php:476
 msgid "Read Full Story"
 msgstr "Lire l'article complet"
 
-#: ../theme-partials/acf-layouts/billboard_slider.php:159
-#: ../theme-partials/acf-layouts/billboard_slider.php:188
+#: ../theme-partials/acf-layouts/billboard_slider.php:164
+#: ../theme-partials/acf-layouts/billboard_slider.php:193
 msgid "Featured"
 msgstr "Sélection"
 
-#: ../theme-partials/acf-layouts/billboard_slider.php:224
+#: ../theme-partials/acf-layouts/billboard_slider.php:229
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:291
+#: ../woocommerce/loop/add-to-cart.php:18
+#: ../woocommerce/loop/add-to-cart.php:40
+#: ../woocommerce/loop/add-to-cart.php:49
 #, fuzzy
 msgid "Read More"
 msgstr "Lire la suite"
@@ -1583,11 +1637,6 @@ msgstr "Tous les messages de: %s"
 #, php-format
 msgid "on %s"
 msgstr "sur %s"
-
-#: ../theme-utilities/bucket.php:2225
-#, fuzzy, php-format
-msgid " | Page %s"
-msgstr "Pages:"
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:242
 #, fuzzy
@@ -1718,54 +1767,54 @@ msgid "Billboard Slider"
 msgstr "Full Width Slider"
 
 #: ../theme-utilities/includes/acf/acf-config.php:391
-#: ../theme-utilities/includes/acf/acf-config.php:537
-#: ../theme-utilities/includes/acf/acf-config.php:608
+#: ../theme-utilities/includes/acf/acf-config.php:552
+#: ../theme-utilities/includes/acf/acf-config.php:638
 #, fuzzy
 msgid "Posts Source"
 msgstr "Source"
 
 #: ../theme-utilities/includes/acf/acf-config.php:394
-#: ../theme-utilities/includes/acf/acf-config.php:540
+#: ../theme-utilities/includes/acf/acf-config.php:555
 #, fuzzy
 msgid "Select what type of posts to be displayed."
 msgstr "Pas d'infos de contact à afficher"
 
 #: ../theme-utilities/includes/acf/acf-config.php:397
-#: ../theme-utilities/includes/acf/acf-config.php:543
-#: ../theme-utilities/includes/acf/acf-config.php:614
+#: ../theme-utilities/includes/acf/acf-config.php:558
+#: ../theme-utilities/includes/acf/acf-config.php:644
 msgid "Featured Posts"
 msgstr "Postes en vedette"
 
 #: ../theme-utilities/includes/acf/acf-config.php:399
-#: ../theme-utilities/includes/acf/acf-config.php:545
-#: ../theme-utilities/includes/acf/acf-config.php:616
+#: ../theme-utilities/includes/acf/acf-config.php:560
+#: ../theme-utilities/includes/acf/acf-config.php:646
 #, fuzzy
 msgid "Latest Posts From a Category"
 msgstr "Parent de la catégorie de portefeuille"
 
 #: ../theme-utilities/includes/acf/acf-config.php:400
-#: ../theme-utilities/includes/acf/acf-config.php:546
-#: ../theme-utilities/includes/acf/acf-config.php:617
+#: ../theme-utilities/includes/acf/acf-config.php:561
+#: ../theme-utilities/includes/acf/acf-config.php:647
 msgid "Latest Posts By Post Format"
 msgstr "Derniers messages de Message Format"
 
 #: ../theme-utilities/includes/acf/acf-config.php:401
-#: ../theme-utilities/includes/acf/acf-config.php:547
-#: ../theme-utilities/includes/acf/acf-config.php:618
+#: ../theme-utilities/includes/acf/acf-config.php:562
+#: ../theme-utilities/includes/acf/acf-config.php:648
 #, fuzzy
 msgid "Latest Posts With Reviews"
 msgstr " Derniers articles curseur"
 
 #: ../theme-utilities/includes/acf/acf-config.php:409
-#: ../theme-utilities/includes/acf/acf-config.php:555
-#: ../theme-utilities/includes/acf/acf-config.php:626
+#: ../theme-utilities/includes/acf/acf-config.php:570
+#: ../theme-utilities/includes/acf/acf-config.php:656
 #, fuzzy
 msgid "Category"
 msgstr "La catégorie de la galerie"
 
 #: ../theme-utilities/includes/acf/acf-config.php:412
-#: ../theme-utilities/includes/acf/acf-config.php:558
-#: ../theme-utilities/includes/acf/acf-config.php:629
+#: ../theme-utilities/includes/acf/acf-config.php:573
+#: ../theme-utilities/includes/acf/acf-config.php:659
 msgid ""
 "Hold down Command key (or CTRL on Windows) to select multiple categories."
 msgstr ""
@@ -1773,14 +1822,14 @@ msgstr ""
 "sélectionner plusieurs catégories."
 
 #: ../theme-utilities/includes/acf/acf-config.php:423
-#: ../theme-utilities/includes/acf/acf-config.php:569
-#: ../theme-utilities/includes/acf/acf-config.php:640
+#: ../theme-utilities/includes/acf/acf-config.php:584
+#: ../theme-utilities/includes/acf/acf-config.php:670
 msgid "Post Formats"
 msgstr "Poster formats"
 
 #: ../theme-utilities/includes/acf/acf-config.php:426
-#: ../theme-utilities/includes/acf/acf-config.php:572
-#: ../theme-utilities/includes/acf/acf-config.php:643
+#: ../theme-utilities/includes/acf/acf-config.php:587
+#: ../theme-utilities/includes/acf/acf-config.php:673
 msgid ""
 "Hold down Command key (or CTRL on Windows) to select multiple post formats."
 msgstr ""
@@ -1788,33 +1837,33 @@ msgstr ""
 "sélectionner plusieurs formats de poste."
 
 #: ../theme-utilities/includes/acf/acf-config.php:429
-#: ../theme-utilities/includes/acf/acf-config.php:575
-#: ../theme-utilities/includes/acf/acf-config.php:646
+#: ../theme-utilities/includes/acf/acf-config.php:590
+#: ../theme-utilities/includes/acf/acf-config.php:676
 msgid "Standard"
 msgstr "Norme"
 
 #: ../theme-utilities/includes/acf/acf-config.php:430
-#: ../theme-utilities/includes/acf/acf-config.php:576
-#: ../theme-utilities/includes/acf/acf-config.php:647
+#: ../theme-utilities/includes/acf/acf-config.php:591
+#: ../theme-utilities/includes/acf/acf-config.php:677
 msgid "Gallery"
 msgstr "Galerie"
 
 #: ../theme-utilities/includes/acf/acf-config.php:431
-#: ../theme-utilities/includes/acf/acf-config.php:577
-#: ../theme-utilities/includes/acf/acf-config.php:648
+#: ../theme-utilities/includes/acf/acf-config.php:592
+#: ../theme-utilities/includes/acf/acf-config.php:678
 msgid "Video"
 msgstr "Vidéo"
 
 #: ../theme-utilities/includes/acf/acf-config.php:432
-#: ../theme-utilities/includes/acf/acf-config.php:578
-#: ../theme-utilities/includes/acf/acf-config.php:649
+#: ../theme-utilities/includes/acf/acf-config.php:593
+#: ../theme-utilities/includes/acf/acf-config.php:679
 msgid "Audio"
 msgstr "Audio"
 
 #: ../theme-utilities/includes/acf/acf-config.php:440
-#: ../theme-utilities/includes/acf/acf-config.php:586
-#: ../theme-utilities/includes/acf/acf-config.php:657
-#: ../theme-utilities/includes/acf/acf-config.php:679
+#: ../theme-utilities/includes/acf/acf-config.php:601
+#: ../theme-utilities/includes/acf/acf-config.php:687
+#: ../theme-utilities/includes/acf/acf-config.php:724
 #, fuzzy
 msgid "Number of Posts"
 msgstr "Nombre d'articles:"
@@ -1828,111 +1877,124 @@ msgstr ""
 "de type de messages \"-1\")"
 
 #: ../theme-utilities/includes/acf/acf-config.php:455
+#: ../theme-utilities/includes/acf/acf-config.php:616
+#: ../theme-utilities/includes/acf/acf-config.php:702
+msgid "Offset"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf-config.php:458
+#: ../theme-utilities/includes/acf/acf-config.php:619
+#: ../theme-utilities/includes/acf/acf-config.php:705
+#, fuzzy
+msgid "Number of post to pass over"
+msgstr "Nombre d'articles:"
+
+#: ../theme-utilities/includes/acf/acf-config.php:470
 #, fuzzy
 msgid "Read More Label"
 msgstr "En savoir plus sur"
 
-#: ../theme-utilities/includes/acf/acf-config.php:458
+#: ../theme-utilities/includes/acf/acf-config.php:473
 msgid "Main Slider Read More Link Text"
 msgstr "Curseur principal Lire la suite Link Text"
 
-#: ../theme-utilities/includes/acf/acf-config.php:469
+#: ../theme-utilities/includes/acf/acf-config.php:484
 msgid "Only big articles"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:478
+#: ../theme-utilities/includes/acf/acf-config.php:493
 #, fuzzy
 msgid "Slider height (px)"
 msgstr "Sidebar à droite"
 
-#: ../theme-utilities/includes/acf/acf-config.php:496
+#: ../theme-utilities/includes/acf/acf-config.php:511
 msgid "Select the transition between slides."
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:500
+#: ../theme-utilities/includes/acf/acf-config.php:515
 #, fuzzy
 msgid "Slide"
 msgstr "Ajouter un nouveau"
 
-#: ../theme-utilities/includes/acf/acf-config.php:508
+#: ../theme-utilities/includes/acf/acf-config.php:523
 #, fuzzy
 msgid "Slider auto play"
 msgstr "Slider autoplay"
 
-#: ../theme-utilities/includes/acf/acf-config.php:516
+#: ../theme-utilities/includes/acf/acf-config.php:531
 #, fuzzy
 msgid "Delay between slides on autoplay in miliseconds"
 msgstr "Autoplay délai entre les diapositives (en millisecondes)"
 
-#: ../theme-utilities/includes/acf/acf-config.php:531
+#: ../theme-utilities/includes/acf/acf-config.php:546
 msgid "Posts Grid Cards"
 msgstr "Messages Cards Grid"
 
-#: ../theme-utilities/includes/acf/acf-config.php:589
-#: ../theme-utilities/includes/acf/acf-config.php:611
-#: ../theme-utilities/includes/acf/acf-config.php:660
-#: ../theme-utilities/includes/acf/acf-config.php:682
+#: ../theme-utilities/includes/acf/acf-config.php:604
+#: ../theme-utilities/includes/acf/acf-config.php:641
+#: ../theme-utilities/includes/acf/acf-config.php:690
+#: ../theme-utilities/includes/acf/acf-config.php:727
 msgid "Set the maximum number of posts to be displayed."
 msgstr "Définissez le nombre maximum de messages à afficher."
 
-#: ../theme-utilities/includes/acf/acf-config.php:602
+#: ../theme-utilities/includes/acf/acf-config.php:632
 msgid "Hero Posts Module"
 msgstr "Messages Module Hero"
 
-#: ../theme-utilities/includes/acf/acf-config.php:694
+#: ../theme-utilities/includes/acf/acf-config.php:739
 #, fuzzy
 msgid "Posts Format"
 msgstr "Poster formats"
 
-#: ../theme-utilities/includes/acf/acf-config.php:699
+#: ../theme-utilities/includes/acf/acf-config.php:744
 msgid "Masonry"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:700
+#: ../theme-utilities/includes/acf/acf-config.php:745
 msgid "Classic"
 msgstr "Classic"
 
-#: ../theme-utilities/includes/acf/acf-config.php:709
+#: ../theme-utilities/includes/acf/acf-config.php:754
 msgid "Pagination"
 msgstr "Pagination"
 
-#: ../theme-utilities/includes/acf/acf-config.php:714
-#: ../theme-utilities/includes/acf/acf-config.php:742
+#: ../theme-utilities/includes/acf/acf-config.php:759
+#: ../theme-utilities/includes/acf/acf-config.php:787
 #, fuzzy
 msgid "Enable"
 msgstr "Activé"
 
-#: ../theme-utilities/includes/acf/acf-config.php:715
-#: ../theme-utilities/includes/acf/acf-config.php:743
+#: ../theme-utilities/includes/acf/acf-config.php:760
+#: ../theme-utilities/includes/acf/acf-config.php:788
 #, fuzzy
 msgid "Disable"
 msgstr "Désactivé"
 
-#: ../theme-utilities/includes/acf/acf-config.php:724
+#: ../theme-utilities/includes/acf/acf-config.php:769
 #, fuzzy
 msgid "Section Title"
 msgstr "Auteur titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:737
+#: ../theme-utilities/includes/acf/acf-config.php:782
 #, fuzzy
 msgid "Sidebar"
 msgstr "Barre latérale du Blog"
 
-#: ../theme-utilities/includes/acf/acf-config.php:753
+#: ../theme-utilities/includes/acf/acf-config.php:798
 msgid "Text/Image Block"
 msgstr "Texte / image Bloquer"
 
-#: ../theme-utilities/includes/acf/acf-config.php:759
+#: ../theme-utilities/includes/acf/acf-config.php:804
 #, fuzzy
 msgid "Editor"
 msgstr "Modifier"
 
-#: ../theme-utilities/includes/acf/acf-config.php:770
+#: ../theme-utilities/includes/acf/acf-config.php:815
 msgid "Heading title"
 msgstr "Intitulé titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:776
-#: ../theme-utilities/includes/acf/acf-config.php:781
+#: ../theme-utilities/includes/acf/acf-config.php:821
+#: ../theme-utilities/includes/acf/acf-config.php:826
 #: ../theme-utilities/includes/classes/widgets/wpgrade_dribbble_widget.php:62
 #: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:214
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_reviews.php:72
@@ -1943,21 +2005,21 @@ msgstr "Intitulé titre"
 msgid "Title"
 msgstr "Titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:789
+#: ../theme-utilities/includes/acf/acf-config.php:834
 #, fuzzy
 msgid "Heading link(optional)"
 msgstr "Intitulé titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:794
+#: ../theme-utilities/includes/acf/acf-config.php:839
 msgid "#"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:802
+#: ../theme-utilities/includes/acf/acf-config.php:847
 #, fuzzy
 msgid "Open link in new tab"
 msgstr "Liens s'ouvrent dans une nouvelle fenêtre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:810
+#: ../theme-utilities/includes/acf/acf-config.php:855
 msgid "Add Block"
 msgstr "Ajouter un bloc"
 
@@ -2027,6 +2089,10 @@ msgstr "Derniers commentaires"
 #, fuzzy
 msgid "Recent Comments"
 msgstr "Commentaires récents"
+
+#: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:66
+msgid "on"
+msgstr ""
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:101
 #: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:74
@@ -2215,6 +2281,9 @@ msgstr ""
 "passe ci-dessous:"
 
 #: ../theme-utilities/includes/functions/password-protection.php:14
+#: ../woocommerce/myaccount/form-login.php:33
+#: ../woocommerce/myaccount/form-login.php:85
+#: ../woocommerce/shop/form-login.php:24
 #: ../wpgrade-core/vendor/redux3/inc/fields/password/field_password.php:52
 #, fuzzy
 msgid "Password"
@@ -2769,6 +2838,7 @@ msgid "Type"
 msgstr "Catégorie"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:1366
+#: ../woocommerce/myaccount/my-orders.php:34
 msgid "Status"
 msgstr "Statut"
 
@@ -2893,28 +2963,1104 @@ msgstr "Quelque chose n'allait pas avec l'API de plugin."
 msgid "All plugins installed and activated successfully. %s"
 msgstr "Tous les plugins sont installés et activés avec succès. %s"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
+#: ../woocommerce/loop-shop.php:40
+#: ../woocommerce/loop/no-products-found.php:14
+msgid "No products found which match your selection."
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:28
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:28
+#: ../woocommerce/single-product/review.php:28
+msgid "out of 5"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:30
+#, fuzzy, php-format
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] "Poster Score des commentaires"
+msgstr[1] "Poster Score des commentaires"
+
+#: ../woocommerce/single-product-reviews.php:36
+#: ../woocommerce/single-product-reviews.php:42
+#, fuzzy
+msgid "Reviews"
+msgstr "Dernières critiques"
+
+#: ../woocommerce/single-product-reviews.php:58
+#, fuzzy
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&laquo;</span> Messages anciens"
+
+#: ../woocommerce/single-product-reviews.php:59
+#, fuzzy
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nouveaux messages <span class=\"meta-nav\">&raquo;</span>"
+
+#: ../woocommerce/single-product-reviews.php:65
+#, fuzzy
+msgid "Add a review"
+msgstr "Ajouter un nouveau"
+
+#: ../woocommerce/single-product-reviews.php:69
+msgid "Be the first to review"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:71
+msgid ""
+"There are no reviews yet, would you like to <a href=\"#review_form\" class="
+"\"inline show_review_form\">submit yours</a>?"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:90
+msgid "Submit Review"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:97
+msgid "Rating"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:98
+msgid "Rate&hellip;"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:99
+msgid "Perfect"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:100
+msgid "Good"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:101
+msgid "Average"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:102
+#, fuzzy
+msgid "Not that bad"
+msgstr "Activer"
+
+#: ../woocommerce/single-product-reviews.php:103
+msgid "Very Poor"
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:108
+msgid "Your Review"
+msgstr ""
+
+#: ../woocommerce/cart/cart-empty.php:14
+msgid "Your cart is currently empty."
+msgstr ""
+
+#: ../woocommerce/cart/cart-empty.php:18
+msgid "Return To Shop"
+msgstr ""
+
+#: ../woocommerce/cart/cart.php:28 ../woocommerce/checkout/form-pay.php:19
+#: ../woocommerce/checkout/review-order.php:21
+#: ../woocommerce/emails/admin-new-order.php:22
+#: ../woocommerce/emails/customer-completed-order.php:23
+#: ../woocommerce/emails/customer-invoice.php:27
+#: ../woocommerce/emails/customer-note.php:27
+#: ../woocommerce/emails/customer-processing-order.php:23
+#: ../woocommerce/order/order-details.php:20
+msgid "Product"
+msgstr ""
+
+#: ../woocommerce/cart/cart.php:29
+#: ../woocommerce/emails/admin-new-order.php:24
+#: ../woocommerce/emails/customer-completed-order.php:25
+#: ../woocommerce/emails/customer-invoice.php:29
+#: ../woocommerce/emails/customer-note.php:29
+#: ../woocommerce/emails/customer-processing-order.php:25
+msgid "Price"
+msgstr ""
+
+#: ../woocommerce/cart/cart.php:30
+#: ../woocommerce/emails/admin-new-order.php:23
+#: ../woocommerce/emails/customer-completed-order.php:24
+#: ../woocommerce/emails/customer-invoice.php:28
+#: ../woocommerce/emails/customer-note.php:28
+#: ../woocommerce/emails/customer-processing-order.php:24
+msgid "Quantity"
+msgstr ""
+
+#: ../woocommerce/cart/cart.php:31 ../woocommerce/checkout/review-order.php:22
+#: ../woocommerce/myaccount/my-orders.php:35
+#: ../woocommerce/order/order-details.php:21
+msgid "Total"
+msgstr ""
+
+#: ../woocommerce/cart/cart.php:129
+#, fuzzy
+msgid "Checkout"
+msgstr "Option de case à cocher"
+
+#: ../woocommerce/cart/cart.php:130
+msgid "Update Cart"
+msgstr ""
+
+#: ../woocommerce/cart/cross-sells.php:38
+msgid "You may be interested in&hellip;"
+msgstr ""
+
+#: ../woocommerce/cart/mini-cart.php:55
+msgid "No products in the cart."
+msgstr ""
+
+#: ../woocommerce/cart/mini-cart.php:63
+msgid "Subtotal"
+msgstr ""
+
+#: ../woocommerce/cart/mini-cart.php:68
+#, fuzzy
+msgid "View Cart &rarr;"
+msgstr "Commentaires plus récents &rarr;"
+
+#: ../woocommerce/cart/mini-cart.php:69
+msgid "Checkout &rarr;"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-calculator.php:23
+msgid "Calculate Shipping"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-calculator.php:29
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-calculator.php:46
+#: ../woocommerce/cart/shipping-calculator.php:52
+#: ../woocommerce/cart/shipping-calculator.php:64
+msgid "State / county"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-calculator.php:53
+#, fuzzy
+msgid "Select a state&hellip;"
+msgstr "Sélectionnez une galerie"
+
+#: ../woocommerce/cart/shipping-calculator.php:73
+msgid "City"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-calculator.php:81
+msgid "Postcode / Zip"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-calculator.php:86
+msgid "Update Totals"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-methods.php:32
+msgid "Free"
+msgstr ""
+
+#: ../woocommerce/cart/shipping-methods.php:68
+msgid "Please fill in your details to see available shipping methods."
+msgstr ""
+
+#: ../woocommerce/cart/shipping-methods.php:76
+#: ../woocommerce/cart/totals.php:145
+#, php-format
+msgid ""
+"Sorry, it seems that there are no available shipping methods for your "
+"location (%s)."
+msgstr ""
+
+#: ../woocommerce/cart/shipping-methods.php:76
+#: ../woocommerce/cart/totals.php:145
+msgid ""
+"If you require assistance or wish to make alternate arrangements please "
+"contact us."
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:26
+#: ../woocommerce/checkout/review-order.php:27
+msgid "Cart Subtotal"
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:33
+#: ../woocommerce/checkout/review-order.php:34
+msgid "Cart Discount"
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:33 ../woocommerce/cart/totals.php:81
+#, fuzzy
+msgid "[Remove]"
+msgstr "Supprimer"
+
+#: ../woocommerce/cart/totals.php:44
+#: ../woocommerce/checkout/review-order.php:45
+msgid "Shipping"
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:81
+#: ../woocommerce/checkout/review-order.php:82
+msgid "Order Discount"
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:90
+#: ../woocommerce/checkout/review-order.php:91
+#, fuzzy
+msgid "Order Total"
+msgstr "Articles plus anciens"
+
+#: ../woocommerce/cart/totals.php:103
+#: ../woocommerce/checkout/review-order.php:104
+#, php-format
+msgid "(Includes %s)"
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:119
+#, php-format
+msgid " (taxes estimated for %s)"
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:121
+#, php-format
+msgid ""
+"Note: Shipping and taxes are estimated%s and will be updated during checkout "
+"based on your billing and shipping information."
+msgstr ""
+
+#: ../woocommerce/cart/totals.php:133
+msgid ""
+"No shipping methods were found; please recalculate your shipping and enter "
+"your state/county and zip/postcode to ensure there are no other available "
+"methods for your location."
+msgstr ""
+
+#: ../woocommerce/checkout/cart-errors.php:16
+msgid ""
+"There are some issues with the items in your cart (shown above). Please go "
+"back to the cart page and resolve these issues before checking out."
+msgstr ""
+
+#: ../woocommerce/checkout/cart-errors.php:20
+msgid "&larr; Return To Cart"
+msgstr ""
+
+#: ../woocommerce/checkout/form-billing.php:17
+msgid "Billing &amp; Shipping"
+msgstr ""
+
+#: ../woocommerce/checkout/form-billing.php:21
+#: ../woocommerce/myaccount/form-edit-address.php:27
+#: ../woocommerce/myaccount/my-address.php:19
+#: ../woocommerce/myaccount/my-address.php:25
+#: ../woocommerce/order/order-details.php:115
+msgid "Billing Address"
+msgstr ""
+
+#: ../woocommerce/checkout/form-billing.php:42
+msgid "Create an account?"
+msgstr ""
+
+#: ../woocommerce/checkout/form-billing.php:51
+msgid ""
+"Create an account by entering the information below. If you are a returning "
+"customer please login at the top of the page."
+msgstr ""
+
+#: ../woocommerce/checkout/form-checkout.php:20
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: ../woocommerce/checkout/form-checkout.php:51
+msgid "Your order"
+msgstr ""
+
+#: ../woocommerce/checkout/form-coupon.php:17
+#, fuzzy
+msgid "Have a coupon?"
+msgstr "Amusez-vous bien!"
+
+#: ../woocommerce/checkout/form-coupon.php:20
+msgid "Click here to enter your code"
+msgstr ""
+
+#: ../woocommerce/checkout/form-coupon.php:25
+msgid "Coupon code"
+msgstr ""
+
+#: ../woocommerce/checkout/form-coupon.php:29
+#, fuzzy
+msgid "Apply Coupon"
+msgstr "Appliquer CSS personnalisé"
+
+#: ../woocommerce/checkout/form-login.php:14
+msgid "Returning customer?"
+msgstr ""
+
+#: ../woocommerce/checkout/form-login.php:17
+msgid "Click here to login"
+msgstr ""
+
+#: ../woocommerce/checkout/form-login.php:22
+msgid ""
+"If you have shopped with us before, please enter your details in the boxes "
+"below. If you are a new customer please proceed to the Billing &amp; "
+"Shipping section."
+msgstr ""
+
+#: ../woocommerce/checkout/form-pay.php:21
+msgid "Totals"
+msgstr ""
+
+#: ../woocommerce/checkout/form-pay.php:78
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+
+#: ../woocommerce/checkout/form-pay.php:87
+msgid "Pay for order"
+msgstr ""
+
+#: ../woocommerce/checkout/form-shipping.php:32
+msgid "Ship to billing address?"
+msgstr ""
+
+#: ../woocommerce/checkout/form-shipping.php:35
+#: ../woocommerce/myaccount/form-edit-address.php:27
+#: ../woocommerce/myaccount/my-address.php:20
+#: ../woocommerce/order/order-details.php:130
+msgid "Shipping Address"
+msgstr ""
+
+#: ../woocommerce/checkout/form-shipping.php:59
+#: ../woocommerce/single-product/tabs/additional-information.php:14
+#, fuzzy
+msgid "Additional Information"
+msgstr "Informations additionnelles"
+
+#: ../woocommerce/checkout/review-order.php:174
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:176
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:185
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your "
+"order. You may be charged more than the amount stated above if you fail to "
+"do so."
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:185
+msgid "Update totals"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:192
+#, fuzzy
+msgid "Place order"
+msgstr "Placement"
+
+#: ../woocommerce/checkout/review-order.php:199
+msgid "I have read and accept the"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:199
+msgid "terms &amp; conditions"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:18
+msgid ""
+"Unfortunately your order cannot be processed as the originating bank/"
+"merchant has declined your transaction."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:22
+msgid "Please attempt your purchase again or go to your account page."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:24
+#, fuzzy
+msgid "Please attempt your purchase again."
+msgstr "S'il vous plaît entrer de nouveau votre mot de passe:"
+
+#: ../woocommerce/checkout/thankyou.php:28
+#: ../woocommerce/myaccount/my-orders.php:71
+msgid "Pay"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:30
+msgid "My Account"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:36
+#: ../woocommerce/checkout/thankyou.php:67
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:40
+#: ../woocommerce/emails/customer-completed-order.php:18
+#: ../woocommerce/emails/customer-invoice.php:22
+#: ../woocommerce/emails/customer-note.php:22
+#: ../woocommerce/emails/customer-processing-order.php:18
+msgid "Order:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:44
+msgid "Date:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:48
+msgid "Total:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:53
+msgid "Payment method:"
+msgstr ""
+
+#: ../woocommerce/emails/admin-new-order.php:13
+#: ../woocommerce/emails/plain/admin-new-order.php:13
+#, php-format
+msgid "You have received an order from %s. Their order is as follows:"
+msgstr ""
+
+#: ../woocommerce/emails/admin-new-order.php:17
+#, fuzzy, php-format
+msgid "Order: %s"
+msgstr "Taille de la bordure"
+
+#: ../woocommerce/emails/admin-new-order.php:50
+#: ../woocommerce/emails/customer-completed-order.php:51
+#: ../woocommerce/emails/customer-note.php:55
+#: ../woocommerce/emails/customer-processing-order.php:51
+#: ../woocommerce/emails/plain/admin-new-order.php:38
+#: ../woocommerce/order/order-details.php:97
+#, fuzzy
+msgid "Customer details"
+msgstr "Champs personnalisés"
+
+#: ../woocommerce/emails/admin-new-order.php:53
+#: ../woocommerce/emails/customer-completed-order.php:54
+#: ../woocommerce/emails/customer-note.php:58
+#: ../woocommerce/emails/customer-processing-order.php:54
+#: ../woocommerce/emails/plain/admin-new-order.php:41
+#: ../woocommerce/emails/plain/customer-completed-order.php:41
+#: ../woocommerce/emails/plain/customer-note.php:49
+#: ../woocommerce/emails/plain/customer-processing-order.php:41
+#: ../woocommerce/order/order-details.php:101
+#, fuzzy
+msgid "Email:"
+msgstr "Messagerie"
+
+#: ../woocommerce/emails/admin-new-order.php:56
+#: ../woocommerce/emails/customer-completed-order.php:57
+#: ../woocommerce/emails/customer-note.php:61
+#: ../woocommerce/emails/customer-processing-order.php:57
+#: ../woocommerce/emails/plain/admin-new-order.php:44
+#: ../woocommerce/emails/plain/customer-completed-order.php:44
+#: ../woocommerce/emails/plain/customer-note.php:52
+#: ../woocommerce/emails/plain/customer-processing-order.php:44
+msgid "Tel:"
+msgstr ""
+
+#: ../woocommerce/emails/customer-completed-order.php:14
+#: ../woocommerce/emails/plain/customer-completed-order.php:13
+#, php-format
+msgid ""
+"Hi there. Your recent order on %s has been completed. Your order details are "
+"shown below for your reference:"
+msgstr ""
+
+#: ../woocommerce/emails/customer-invoice.php:16
+#: ../woocommerce/emails/plain/customer-invoice.php:14
+#, php-format
+msgid ""
+"An order has been created for you on %s. To pay for this order please use "
+"the following link: %s"
+msgstr ""
+
+#: ../woocommerce/emails/customer-invoice.php:16
+msgid "pay"
+msgstr ""
+
+#: ../woocommerce/emails/customer-new-account.php:14
+#: ../woocommerce/emails/plain/customer-new-account.php:13
+#, php-format
+msgid ""
+"Thanks for creating an account on %s. Your username is <strong>%s</strong>."
+msgstr ""
+
+#: ../woocommerce/emails/customer-new-account.php:16
+#: ../woocommerce/emails/plain/customer-new-account.php:15
+#, php-format
+msgid "You can access your account area here: %s."
+msgstr ""
+
+#: ../woocommerce/emails/customer-note.php:14
+#: ../woocommerce/emails/plain/customer-note.php:13
+msgid "Hello, a note has just been added to your order:"
+msgstr ""
+
+#: ../woocommerce/emails/customer-note.php:18
+#: ../woocommerce/emails/plain/customer-note.php:21
+msgid "For your reference, your order details are shown below."
+msgstr ""
+
+#: ../woocommerce/emails/customer-processing-order.php:14
+#: ../woocommerce/emails/plain/customer-processing-order.php:13
+msgid ""
+"Your order has been received and is now being processed. Your order details "
+"are shown below for your reference:"
+msgstr ""
+
+#: ../woocommerce/emails/customer-reset-password.php:14
+#: ../woocommerce/emails/plain/customer-reset-password.php:13
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: ../woocommerce/emails/customer-reset-password.php:15
+#: ../woocommerce/emails/plain/customer-reset-password.php:15
+#, fuzzy, php-format
+msgid "Username: %s"
+msgstr "Nom d'utilisateur"
+
+#: ../woocommerce/emails/customer-reset-password.php:16
+#: ../woocommerce/emails/plain/customer-reset-password.php:16
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: ../woocommerce/emails/customer-reset-password.php:17
+#: ../woocommerce/emails/plain/customer-reset-password.php:17
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: ../woocommerce/emails/customer-reset-password.php:20
+#, fuzzy
+msgid "Click here to reset your password"
+msgstr "S'il vous plaît entrer de nouveau votre mot de passe:"
+
+#: ../woocommerce/emails/email-addresses.php:18
+#: ../woocommerce/emails/plain/email-addresses.php:12
+msgid "Billing address"
+msgstr ""
+
+#: ../woocommerce/emails/email-addresses.php:28
+#: ../woocommerce/emails/plain/email-addresses.php:17
+msgid "Shipping address"
+msgstr ""
+
+#: ../woocommerce/emails/email-order-items.php:34
+msgid "This product is no longer available"
+msgstr ""
+
+#: ../woocommerce/emails/email-order-items.php:76
+#, fuzzy, php-format
+msgid "Download %d:"
+msgstr "Télécharger sauvegarde"
+
+#: ../woocommerce/emails/email-order-items.php:78
+#, fuzzy
+msgid "Download:"
+msgstr "Télécharger sauvegarde"
+
+#: ../woocommerce/emails/plain/admin-new-order.php:19
+#: ../woocommerce/emails/plain/customer-completed-order.php:19
+#: ../woocommerce/emails/plain/customer-invoice.php:20
+#: ../woocommerce/emails/plain/customer-note.php:27
+#: ../woocommerce/emails/plain/customer-processing-order.php:19
+#, php-format
+msgid "Order number: %s"
+msgstr ""
+
+#: ../woocommerce/emails/plain/admin-new-order.php:20
+#: ../woocommerce/emails/plain/customer-completed-order.php:20
+#: ../woocommerce/emails/plain/customer-invoice.php:21
+#: ../woocommerce/emails/plain/customer-note.php:28
+#: ../woocommerce/emails/plain/customer-processing-order.php:20
+#, php-format
+msgid "Order date: %s"
+msgstr ""
+
+#: ../woocommerce/emails/plain/admin-new-order.php:20
+msgid "jS F Y"
+msgstr ""
+
+#: ../woocommerce/emails/plain/customer-completed-order.php:38
+#: ../woocommerce/emails/plain/customer-note.php:46
+#: ../woocommerce/emails/plain/customer-processing-order.php:38
+#, fuzzy
+msgid "Your details"
+msgstr "Voir les détails"
+
+#: ../woocommerce/emails/plain/email-order-items.php:28
+#, php-format
+msgid "Quantity: %s"
+msgstr ""
+
+#: ../woocommerce/emails/plain/email-order-items.php:31
+#, php-format
+msgid "Cost: %s"
+msgstr ""
+
+#: ../woocommerce/loop/add-to-cart.php:32
+#, fuzzy
+msgid "Select options"
+msgstr "Sélect option"
+
+#: ../woocommerce/loop/add-to-cart.php:36
+#, fuzzy
+msgid "View options"
+msgstr "Options du thème"
+
+#: ../woocommerce/loop/add-to-cart.php:45
+#: ../woocommerce/single-product/add-to-cart/grouped.php:45
+#: ../woocommerce/single-product/add-to-cart/grouped.php:77
+#: ../woocommerce/single-product/add-to-cart/simple.php:44
+#: ../woocommerce/single-product/add-to-cart/variable.php:84
+#, fuzzy
+msgid "Add to cart"
+msgstr "Ajouter plus"
+
+#: ../woocommerce/loop/orderby.php:21
+#, fuzzy
+msgid "Default sorting"
+msgstr "Par défaut"
+
+#: ../woocommerce/loop/orderby.php:22
+msgid "Sort by popularity"
+msgstr ""
+
+#: ../woocommerce/loop/orderby.php:23
+msgid "Sort by average rating"
+msgstr ""
+
+#: ../woocommerce/loop/orderby.php:24
+msgid "Sort by newness"
+msgstr ""
+
+#: ../woocommerce/loop/orderby.php:25
+msgid "Sort by price: low to high"
+msgstr ""
+
+#: ../woocommerce/loop/orderby.php:26
+msgid "Sort by price: high to low"
+msgstr ""
+
+#: ../woocommerce/loop/result-count.php:28
+msgid "Showing the single result"
+msgstr ""
+
+#: ../woocommerce/loop/result-count.php:30
+#, php-format
+msgid "Showing all %d results"
+msgstr ""
+
+#: ../woocommerce/loop/result-count.php:32
+#, php-format
+msgid "Showing %1$d–%2$d of %3$d results"
+msgstr ""
+
+#: ../woocommerce/loop/sale-flash.php:16
+#: ../woocommerce/single-product/sale-flash.php:16
+msgid "Sale"
+msgstr ""
+
+#: ../woocommerce/loop/sale-flash.php:20
+msgid "Sold out"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-change-password.php:20
+#: ../woocommerce/myaccount/form-lost-password.php:31
+#, fuzzy
+msgid "New password"
+msgstr "Mot de passe"
+
+#: ../woocommerce/myaccount/form-change-password.php:24
+#: ../woocommerce/myaccount/form-lost-password.php:35
+msgid "Re-enter new password"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-change-password.php:29
+#: ../woocommerce/myaccount/form-lost-password.php:45
+msgid "Save"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-edit-address.php:43
+msgid "Save Address"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:26
+#: ../woocommerce/myaccount/form-login.php:40
+#: ../woocommerce/shop/form-login.php:31
+msgid "Login"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:29
+#: ../woocommerce/myaccount/form-lost-password.php:24
+#: ../woocommerce/shop/form-login.php:20
+#, fuzzy
+msgid "Username or email"
+msgstr "Nom d'utilisateur ou URL du flux RSS"
+
+#: ../woocommerce/myaccount/form-login.php:50
+#: ../woocommerce/shop/form-login.php:33
+#, fuzzy
+msgid "Lost Password?"
+msgstr "Mot de passe"
+
+#: ../woocommerce/myaccount/form-login.php:60
+#: ../woocommerce/myaccount/form-login.php:101
+msgid "Register"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:66
+#: ../wpgrade-core/vendor/redux3/inc/fields/password/field_password.php:53
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: ../woocommerce/myaccount/form-login.php:89
+#, fuzzy
+msgid "Re-enter password"
+msgstr "S'il vous plaît entrer de nouveau votre mot de passe:"
+
+#: ../woocommerce/myaccount/form-lost-password.php:22
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+
+#: ../woocommerce/myaccount/form-lost-password.php:28
+msgid "Enter a new password below."
+msgstr ""
+
+#: ../woocommerce/myaccount/form-lost-password.php:45
+#, fuzzy
+msgid "Reset Password"
+msgstr "Mot de passe"
+
+#: ../woocommerce/myaccount/my-account.php:19
+#, php-format
+msgid ""
+"Hello, <strong>%s</strong>. From your account dashboard you can view your "
+"recent orders, manage your shipping and billing addresses and <a href=\"%s"
+"\">change your password</a>."
+msgstr ""
+
+#: ../woocommerce/myaccount/my-address.php:17
+msgid "My Addresses"
+msgstr ""
+
+#: ../woocommerce/myaccount/my-address.php:23
+msgid "My Address"
+msgstr ""
+
+#: ../woocommerce/myaccount/my-address.php:35
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+
+#: ../woocommerce/myaccount/my-address.php:64
+msgid "You have not set up this type of address yet."
+msgstr ""
+
+#: ../woocommerce/myaccount/my-downloads.php:18
+msgid "Available downloads"
+msgstr ""
+
+#: ../woocommerce/myaccount/my-downloads.php:27
+#, php-format
+msgid "%s download remaining"
+msgid_plural "%s downloads remaining"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../woocommerce/myaccount/my-orders.php:26
+#, fuzzy
+msgid "Recent Orders"
+msgstr "Commentaires récents"
+
+#: ../woocommerce/myaccount/my-orders.php:32
+msgid "Order"
+msgstr ""
+
+#: ../woocommerce/myaccount/my-orders.php:33
+msgid "Date"
+msgstr ""
+
+#: ../woocommerce/myaccount/my-orders.php:62
+#, php-format
+msgid "%s for %s item"
+msgid_plural "%s for %s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../woocommerce/myaccount/my-orders.php:77
+#, fuzzy
+msgid "Cancel"
+msgstr "Behance"
+
+#: ../woocommerce/myaccount/my-orders.php:82
+#, fuzzy
+msgid "View"
+msgstr "Voir toutes"
+
+#: ../woocommerce/order/form-tracking.php:17
+msgid ""
+"To track your order please enter your Order ID in the box below and press "
+"return. This was given to you on your receipt and in the confirmation email "
+"you should have received."
+msgstr ""
+
+#: ../woocommerce/order/form-tracking.php:19
+msgid "Order ID"
+msgstr ""
+
+#: ../woocommerce/order/form-tracking.php:19
+msgid "Found in your order confirmation email."
+msgstr ""
+
+#: ../woocommerce/order/form-tracking.php:20
+msgid "Billing Email"
+msgstr ""
+
+#: ../woocommerce/order/form-tracking.php:20
+msgid "Email you used during checkout."
+msgstr ""
+
+#: ../woocommerce/order/form-tracking.php:23
+msgid "Track"
+msgstr ""
+
+#: ../woocommerce/order/order-details.php:16
+#, fuzzy
+msgid "Order Details"
+msgstr "Masquer les détails"
+
+#: ../woocommerce/order/order-details.php:64
+#, fuzzy, php-format
+msgid "Download file%s"
+msgstr "Télécharger sauvegarde"
+
+#: ../woocommerce/order/order-details.php:90
+msgid "Order Again"
+msgstr ""
+
+#: ../woocommerce/order/order-details.php:102
+msgid "Telephone:"
+msgstr ""
+
+#: ../woocommerce/order/order-details.php:119
+#: ../woocommerce/order/order-details.php:134
+msgid "N/A"
+msgstr ""
+
+#: ../woocommerce/order/tracking.php:18
+#, php-format
+msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
+msgstr ""
+
+#: ../woocommerce/order/tracking.php:18
+msgid "ago"
+msgstr ""
+
+#: ../woocommerce/order/tracking.php:20
+msgid "and was completed"
+msgstr ""
+
+#: ../woocommerce/order/tracking.php:20
+msgid " ago"
+msgstr ""
+
+#: ../woocommerce/order/tracking.php:31
+#, fuzzy
+msgid "Order Updates"
+msgstr "Articles plus anciens"
+
+#: ../woocommerce/order/tracking.php:37
+msgid "l jS \\o\\f F Y, h:ia"
+msgstr ""
+
+#: ../woocommerce/shop/breadcrumb.php:64
+msgid "Products tagged &ldquo;"
+msgstr ""
+
+#: ../woocommerce/shop/breadcrumb.php:92
+#: ../woocommerce/shop/breadcrumb.php:191
+#, fuzzy
+msgid "Search results for &ldquo;"
+msgstr "Résultats de la recherche pour: %s"
+
+#: ../woocommerce/shop/breadcrumb.php:149
+msgid "Error 404"
+msgstr ""
+
+#: ../woocommerce/shop/breadcrumb.php:195
+msgid "Posts tagged &ldquo;"
+msgstr ""
+
+#: ../woocommerce/shop/breadcrumb.php:200
+#, fuzzy
+msgid "Author:"
+msgstr "Auteur"
+
+#: ../woocommerce/shop/breadcrumb.php:205
+#, fuzzy
+msgid "Page"
+msgstr "Pages:"
+
+#: ../woocommerce/single-product/meta.php:19
+msgid "SKU:"
+msgstr ""
+
+#: ../woocommerce/single-product/meta.php:24
+msgid "<div class=\"btn  btn--small  btn--secondary\">Category</div>"
+msgid_plural "<div class=\"btn  btn--small  btn--secondary\">Categories</div>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../woocommerce/single-product/meta.php:29
+msgid "<div class=\"btn  btn--small  btn--secondary\">Tag:</div>"
+msgid_plural "<div class=\"btn  btn--small  btn--secondary\">Tags:</div>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../woocommerce/single-product/product-attributes.php:28
+#, fuzzy
+msgid "Weight"
+msgstr "hauteur"
+
+#: ../woocommerce/single-product/product-attributes.php:37
+msgid "Dimensions"
+msgstr ""
+
+#: ../woocommerce/single-product/related.php:41
+#, fuzzy
+msgid "Related Products"
+msgstr "Les projets connexes"
+
+#: ../woocommerce/single-product/review.php:27
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: ../woocommerce/single-product/up-sells.php:40
+msgid "You may also like&hellip;"
+msgstr ""
+
+#: ../woocommerce/single-product/add-to-cart/variable.php:24
+#, fuzzy
+msgid "Choose an option"
+msgstr "Option de dégradé de couleur"
+
+#: ../woocommerce/single-product/add-to-cart/variable.php:75
+#, fuzzy
+msgid "Clear selection"
+msgstr "Cats Choisissez l'option"
+
+#: ../woocommerce/single-product/tabs/description.php:14
+#, fuzzy
+msgid "Product Description"
+msgstr "Option de date"
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
 msgid "If you want, you can download the automatic theme backup."
 msgstr ""
 "Si vous le souhaitez, vous pouvez télécharger la sauvegarde automatique "
 "thème."
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:88
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:89
 msgid "Download Backup"
 msgstr "Télécharger sauvegarde"
 
-#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:106
-msgid ""
-"Error: The theme was not updated, because the automatic backup is activated, "
-"but for some reason (probably due to file permissions) it failed. We "
-"recommend you disable the automatic backup and backup your theme manually "
-"before upgrade."
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:94
+msgid "Upgrade Process Failed"
 msgstr ""
-"Erreur: Le thème n'a pas été mis à jour, parce que la sauvegarde automatique "
-"est activée, mais pour une raison quelconque (probablement dû à déposer "
-"autorisations) il a échoué. Nous vous recommandons de désactiver la "
-"sauvegarde automatique et de sauvegarder votre thème manuellement avant mise "
-"à niveau."
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:95
+msgid "The process has encountered the following errors:"
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:106
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:140
+msgid ""
+"Upgrade handler failed to initialize self-diagnostics. (please contact "
+"support)"
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:128
+msgid "Upgrade Backup Process Failed"
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:129
+msgid "The backup process has encountered the following errors:"
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:147
+msgid ""
+"You may bypass the backup system by turning off automatic backups in your <a "
+"href=\":theme_options_url\">utilities section of theme options</a>."
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:148
+msgid ""
+"Should you choose to disable automatic backups you are <b>strongly "
+"encouraged to perform a manual backup</b>."
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:149
+msgid ""
+"Skipping the backup process entirely will result, upon a failed upgrade "
+"attempt, in the loss of any modifications you have made to the theme."
+msgstr ""
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:151
+#, fuzzy
+msgid "Tip"
+msgstr "Vers:"
+
+#: ../wpgrade-core/callbacks/upgrade-notifier/callbacks.php:151
+msgid ""
+"Modifying a theme via a child theme is the best way to easily deal with "
+"theme upgrade issues."
+msgstr ""
+
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:81
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:166
+msgid ""
+"The theme <b>:theme_name</b> is not installed.<br><i>If you are certain the "
+"theme it is installed, please contact support.</i>"
+msgstr ""
+
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:96
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:183
+msgid "Failed to retrieve theme list via Envato API."
+msgstr ""
+
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:106
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:195
+msgid "There is no update available for the theme <b>:theme_name</b>"
+msgstr ""
+
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:113
+msgid "Failed to find the theme <b>:theme_name</b>"
+msgstr ""
+
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:177
+msgid "TeamForest/Envato API error."
+msgstr ""
+
+#: ../wpgrade-core/classes/WPGradeAjaxUpgrader.php:203
+msgid ""
+"Failed to find <b>:theme_name</b> in your list of purchased themes. (please "
+"contact support)"
+msgstr ""
 
 #: ../wpgrade-core/classes/WPGradePaginationFormatter.php:138
 msgid "&laquo; Previous"
@@ -2958,22 +4104,6 @@ msgstr "L'API \"set\" est un paramètre obligatoire."
 #: ../wpgrade-core/vendor/envato-wtl/class-envato-protected-api.php:167
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "Le marché Envato \"item ID\" est un paramètre obligatoire."
-
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:309
-msgid "Downloading upgrade package from the Envato API&#8230;"
-msgstr "Télécharger le pack de mise à jour de l'API Envato ..."
-
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:320
-msgid "Downloading install package from the Envato API&#8230;"
-msgstr "Téléchargement package d'installation de l'API Envato ..."
-
-#: ../wpgrade-core/vendor/envato-wtl/class-envato-wordpress-theme-upgrader.php:413
-msgid ""
-"This .htaccess file ensures that other people cannot download your backup "
-"files."
-msgstr ""
-"Ce fichier .htaccess assure que d'autres personnes ne peuvent pas "
-"télécharger vos fichiers de sauvegarde."
 
 #: ../wpgrade-core/vendor/redux3/framework.php:260
 msgid "Options panel created using"
@@ -3967,10 +5097,6 @@ msgstr "Supprimer"
 msgid "Add More"
 msgstr "Ajouter plus"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/password/field_password.php:53
-msgid "Username"
-msgstr "Nom d'utilisateur"
-
 #: ../wpgrade-core/vendor/redux3/inc/fields/select/field_select.php:63
 #, fuzzy
 msgid "Select an item"
@@ -4190,6 +5316,31 @@ msgstr ""
 "Vous devez fournir une liste séparé par des virgules de valeurs numériques "
 "pour cette option."
 
+#~ msgid ""
+#~ "Error: The theme was not updated, because the automatic backup is "
+#~ "activated, but for some reason (probably due to file permissions) it "
+#~ "failed. We recommend you disable the automatic backup and backup your "
+#~ "theme manually before upgrade."
+#~ msgstr ""
+#~ "Erreur: Le thème n'a pas été mis à jour, parce que la sauvegarde "
+#~ "automatique est activée, mais pour une raison quelconque (probablement dû "
+#~ "à déposer autorisations) il a échoué. Nous vous recommandons de "
+#~ "désactiver la sauvegarde automatique et de sauvegarder votre thème "
+#~ "manuellement avant mise à niveau."
+
+#~ msgid "Downloading upgrade package from the Envato API&#8230;"
+#~ msgstr "Télécharger le pack de mise à jour de l'API Envato ..."
+
+#~ msgid "Downloading install package from the Envato API&#8230;"
+#~ msgstr "Téléchargement package d'installation de l'API Envato ..."
+
+#~ msgid ""
+#~ "This .htaccess file ensures that other people cannot download your backup "
+#~ "files."
+#~ msgstr ""
+#~ "Ce fichier .htaccess assure que d'autres personnes ne peuvent pas "
+#~ "télécharger vos fichiers de sauvegarde."
+
 #~ msgid "Category Archives: %s"
 #~ msgstr "Archives de catégorie: %s"
 
@@ -4285,9 +5436,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Afficher la liste des icônes social dans l'en-tête (leur position varie "
 #~ "selon le type d'en-tête)."
-
-#~ msgid "Border size"
-#~ msgstr "Taille de la bordure"
 
 #, fuzzy
 #~ msgid ""
@@ -4388,9 +5536,6 @@ msgstr ""
 
 #~ msgid "Newer posts"
 #~ msgstr "Articles les plus récents"
-
-#~ msgid "Older posts"
-#~ msgstr "Articles plus anciens"
 
 #~ msgid "Prev Images"
 #~ msgstr "Images précédentes"
@@ -4718,12 +5863,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Réglez ici la longueur d'extrait de l'archive blogue (nombre de mots)."
 
-#~ msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
-#~ msgstr "<span class=\"meta-nav\">&laquo;</span> Messages anciens"
-
-#~ msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
-#~ msgstr "Nouveaux messages <span class=\"meta-nav\">&raquo;</span>"
-
 #~ msgid ""
 #~ "<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date"
 #~ "\" datetime=\"%3$s\" pubdate>%4$s</time></a>"
@@ -4755,9 +5894,6 @@ msgstr ""
 #~ msgid "Client"
 #~ msgstr "Client"
 
-#~ msgid "Related projects"
-#~ msgstr "Les projets connexes"
-
 #~ msgid "All projects"
 #~ msgstr "Tous les projets"
 
@@ -4766,9 +5902,6 @@ msgstr ""
 
 #~ msgid "Filter"
 #~ msgstr "Filtrez"
-
-#~ msgid "View All"
-#~ msgstr "Voir toutes"
 
 #~ msgid "Next post"
 #~ msgstr "Post suivant"
