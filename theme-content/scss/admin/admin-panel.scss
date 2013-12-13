@@ -95,15 +95,24 @@ $heading-font: 'Open Sans', sans-serif;
 	&.fixed-header {
 		.redux-group-tab > h3 {
 			position:fixed;
-			left:397px; // Wordpress + Redux Sidebar Width
+			left:414px; // Wordpress + Redux Sidebar Width
 			top:28px; //Admin Bar Height
 			background: transparent url("../../images/admin/fixed-bottom-shadow.png") bottom left repeat-x;
 		}
 		#redux-sticky #info_bar .redux-action_bar {
 			position: fixed;
-			left: 1022px;
+			left: 1040px;
 			right:auto;
 			top: 69px;
+		}
+
+		.branch-3-7 & {
+			.redux-group-tab > h3 {
+				left:397px;
+			}
+			#redux-sticky #info_bar .redux-action_bar {
+				left: 1022px;
+			}
 		}
 
 	}
@@ -411,7 +420,7 @@ $heading-font: 'Open Sans', sans-serif;
 
 	//Checkbox
 	input[type='checkbox'] {
-		border:1px solid $border-color !important;
+		border:0px solid $border-color !important;
 		position:relative;
 		width:$_u;
 		height:$_u;
@@ -422,6 +431,7 @@ $heading-font: 'Open Sans', sans-serif;
 		&:before {
 			width:$_u;
 			height:$_u;
+			margin:0;
 			background:#fff;
 			border:1px solid $border-color;
 			content: " ";
@@ -437,6 +447,7 @@ $heading-font: 'Open Sans', sans-serif;
 			position: absolute;
 			width: 10px;
 			height: 6px;
+			margin:0;
 			background: transparent;
 			top: 7px;
 			left: 7px;
@@ -456,6 +467,10 @@ $heading-font: 'Open Sans', sans-serif;
 			&:after {
 				opacity:1;
 			}
+		}
+
+		.branch-3-7 & {
+
 		}
 	}
 
@@ -819,7 +834,7 @@ $heading-font: 'Open Sans', sans-serif;
 	*/
 	.redux-container-editor  {
  		&, & * {
-			@include box-sizing(content-box !important);
+			@include box-sizing(content-box);
 		}
 
 		.mceLayout td, .mceLayout tr {
@@ -831,6 +846,14 @@ $heading-font: 'Open Sans', sans-serif;
 		}
 		.mceLayout tr {
 			display:table-row;
+		}
+
+		.wp-switch-editor {
+			top:3px;
+		}
+
+		textarea {
+			@include box-sizing(border-box);
 		}
 	}
 
