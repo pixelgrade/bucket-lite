@@ -26,7 +26,7 @@ $info_message = apply_filters('woocommerce_checkout_coupon_message', __( 'Have a
 	</p>
 
 	<p class="form-row form-row-last">
-		<input type="submit" class="btn  btn--medium" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+		<input type="submit" class="btn  " name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
 	</p>
 
 	<div class="clear"></div>

@@ -961,12 +961,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
         initVideos();
         footerWidgetsTitles();
     
-    //Set textareas to autosize
-    if($("textarea").length) { $("textarea").autosize(); }
-
-		
-    		//Set textareas to autosize
-    		if($("textarea").length) { $("textarea").autosize(); }
+		//Set textareas to autosize
+		if($("textarea").length) { $("textarea").autosize(); }
 
         // if blog archive
         if ($('.masonry').length && !lteie9 && !is_android)

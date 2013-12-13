@@ -5,15 +5,47 @@
 		[
 			[
 				"mar",
-				"margin"
+				"margin-bottom"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"acc",
+				"accent"
 			],
 			[
 				"font",
-				"font-family"
+				"font-size"
+			],
+			[
+				"n",
+				"none"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"borde",
+				"border-top"
 			],
 			[
 				"bor",
-				"border-bottom"
+				"border-radius"
+			],
+			[
+				"bac",
+				"background"
 			],
 			[
 				"tra",
@@ -28,28 +60,12 @@
 				"z-index"
 			],
 			[
-				"pa",
-				"padding-top"
-			],
-			[
-				"pad",
-				"padding-right"
-			],
-			[
 				"marg",
 				"margin-bottom"
 			],
 			[
 				"tex",
 				"text-transform"
-			],
-			[
-				"border",
-				"border-radius"
-			],
-			[
-				"bac",
-				"background-color"
 			],
 			[
 				"re",
@@ -488,10 +504,6 @@
 				"directionNav"
 			],
 			[
-				"acc",
-				"accentColor"
-			],
-			[
 				"rgb",
 				"rgba()"
 			],
@@ -502,28 +514,96 @@
 			[
 				"sear",
 				"searchField"
-			],
-			[
-				"padding",
-				"padding-top"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"fon-t",
-				"font-weight"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "content-single-product.php",
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_checkout.scss",
 			"settings":
 			{
-				"buffer_size": 1868,
+				"buffer_size": 481,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cart/shipping-calculator.php",
+			"settings":
+			{
+				"buffer_size": 3696,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cart/cart.php",
+			"settings":
+			{
+				"buffer_size": 6239,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/footer.php",
+			"settings":
+			{
+				"buffer_size": 4825,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/objects/_stats.scss",
+			"settings":
+			{
+				"buffer_size": 1499,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "checkout/form-coupon.php",
+			"settings":
+			{
+				"buffer_size": 989,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cart/totals.php",
+			"settings":
+			{
+				"buffer_size": 5740,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "single-product/tabs/tabs.php",
+			"settings":
+			{
+				"buffer_size": 1121,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "checkout/review-order.php",
+			"settings":
+			{
+				"buffer_size": 8125,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_shop.scss",
+			"settings":
+			{
+				"buffer_size": 2125,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/woocommerce.js",
+			"settings":
+			{
+				"buffer_size": 465,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,41 +611,15 @@
 			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
 			"settings":
 			{
-				"buffer_size": 2810,
+				"buffer_size": 4646,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/__woocommerce.scss",
+			"file": "single-product-reviews.php",
 			"settings":
 			{
-				"buffer_size": 402,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 93 files for \"sidebar\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\archive-product.php:\n   82  	<?php\n   83  		/**\n   84: 		 * woocommerce_sidebar hook\n   85  		 *\n   86: 		 * @hooked woocommerce_get_sidebar - 10\n   87  		 */\n   88  		\n   89: 		//do_action('woocommerce_sidebar');\n   90  	?>\n   91  \n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\shop\\sidebar.php:\n    1  <?php\n    2  /**\n    3:  * Sidebar\n    4   *\n    5   * @author 		WooThemes\n    .\n   10  if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly\n   11  \n   12: get_sidebar('shop'); ?>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product.php:\n   41  	<?php\n   42  		/**\n   43: 		 * woocommerce_sidebar hook\n   44  		 *\n   45: 		 * @hooked woocommerce_get_sidebar - 10\n   46  		 */\n   47: 		//do_action('woocommerce_sidebar');\n   48  	?>\n   49  \n\n8 matches across 3 files\n",
-			"settings":
-			{
-				"buffer_size": 917,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "shop/sidebar.php",
-			"settings":
-			{
-				"buffer_size": 201,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "cart/cart-empty.php",
-			"settings":
-			{
-				"buffer_size": 460,
+				"buffer_size": 4550,
 				"line_ending": "Windows"
 			}
 		}
@@ -618,6 +672,37 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product-reviews.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/bucket-woocommerce.sublime-workspace",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/loop/add-to-cart.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/product-image.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/meta.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/add-to-cart/external.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/loop/orderby.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-callbacks/woocommerce.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/css/woocommerce.css",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/objects/_beautons.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_cart.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/main.js",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/add-to-cart/simple.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_shop.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/woocommerce.js",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/_vendor/inuit.css/objects/_stats.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/objects/_stats.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/shop/sidebar.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/__woocommerce.scss",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/checkout/review-order.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/loop/result-count.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/up-sells.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/tabs/tabs.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/content-single-product.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/cart/shipping-calculator.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/page.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/page-no-sidebar.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/cart/cart-empty.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/__cart.scss",
 		"/E/uniserver/www/prism/wp-content/themes/lens/woocommerce/shop/messages.php",
 		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/js/main.js",
 		"/E/uniserver/www/prism/wp-content/themes/lens/woocommerce/loop/no-products-found.php",
@@ -689,7 +774,6 @@
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/css/custom.css",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/_progressbar.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/components/_reviews.scss",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/main.js",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/vendor/inuit.css/base/_headings.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/style.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/vendor/_royalslider.scss",
@@ -715,47 +799,19 @@
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-callbacks/pagination-formatter.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/vendor/inuit.css/generic/_mixins.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/modules/_search-form.scss",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/wpgrade-core/vendor/redux2/options/fields/cats_select/field_cats_select.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/templates/shortcodes/tabs.php",
-		"/E/uniserver/www/bucket/wp-content/plugins/pixcodes/shortcodes/templates/tabs.php",
-		"/E/uniserver/www/bucket/wp-content/plugins/pixcodes/shortcodes/templates/tab.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-partials/post-templates/header-single-video.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-partials/post-templates/header-single-audio.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/_easings.scss",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/inc/vendor/twitter-api/cache.tweetcache",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/vendor/_greedy.scss",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/screenshot.png",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/pxg.json",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/bucket-wp.sublime-workspace",
-		"/E/uniserver/www/bucket-html/bucket-html.sublime-project",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/components/_header.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/components/_navigation.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/header/site.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/header.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/style.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/shortcodes/_testimonials.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/pages/_post.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/base/_typography.scss",
-		"/E/uniserver/www/fuse/wp-content/plugins/pixelgrade-shortcodes/shortcodes/WpGradeShortcode_Tabs.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/inc/widgets.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/widgets/_search.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-partials/password-request-form.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/shortcodes/_separator.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-utilities/includes/functions/password-protection.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-callbacks/content-filters.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/wpgrade-config.php",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/plugins/_royalslider.scss",
-		"/E/uniserver/www/prism/wp-content/themes/lens/theme-content/scss/modules/_gallery-control.scss"
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/wpgrade-core/vendor/redux2/options/fields/cats_select/field_cats_select.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
-		"height": 104.0,
+		"height": 103.0,
 		"where_history":
 		[
+			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce",
+			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket",
 			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce",
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens",
 			"E:\\uniserver\\www\\prism\\wp-content\\themes\\lens\\woocommerce",
@@ -848,6 +904,60 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$title_reply",
+			"echo",
+			"type-product",
+			"btn--medium",
+			"button",
+			"Submit Rev",
+			"submit rev",
+			"add your review",
+			"your ",
+			"add",
+			"rating",
+			"commentform",
+			"\"respond\"",
+			"id=\"respond\"",
+			"commentform",
+			"button",
+			"submit review",
+			"grid__item  one-whole  lap-and-up-one-half  images",
+			"Category:",
+			"woocommerce-orderby",
+			"class=\"cart\"",
+			"form-cart",
+			"cart form-cart",
+			"class=\"orderby\"",
+			",.",
+			"panel--description",
+			"panel  panel--description",
+			"Apply Coupon",
+			"float",
+			"page-numbers",
+			"class=\"shipping_calculator\"",
+			"shipping-calculator-button  btn  btn--medium  push--top  push--bottom",
+			"shipping_calculator",
+			"separator  separator--section",
+			"</div",
+			"cart-buttons",
+			"YOU MAY ALSO LIKE",
+			"woocommerce-result-count",
+			"Place order",
+			"</strong>",
+			"<strong>",
+			"strong",
+			"<strong>",
+			"shipping-calculator-button",
+			"<div",
+			"<table",
+			"table",
+			"woocommerce",
+			"\"woocommerce\"",
+			"cart-form",
+			"name=\"proceed\"",
+			"CART TOTALS",
+			"Update Totals",
+			"shipping-calculator-button",
 			"sidebar",
 			"pixcode--icon  icon-info  square  small",
 			"wpgrade::option('show_title_caption_popup')",
@@ -921,61 +1031,7 @@
 			"#f",
 			"icon-shopping-cart",
 			".woocommerce-error",
-			"Sorry, we do not have enough",
-			"woocommerce-",
-			"read more",
-			"read ",
-			"stock",
-			"out-of-stock",
-			"stock out-of-stock",
-			"grid__item",
-			"pix-cart",
-			"was successfully added",
-			"my_filer_function(",
-			"btn btn-medium",
-			"woocommerce-message  flexbox",
-			"flexbox",
-			"fastclick:",
-			"fastClick.attach(",
-			"init() {",
-			"init()",
-			"li.comment",
-			"padding-top",
-			"paddind-top",
-			"paddint-top",
-			"slider_image",
-			"post_slider_image_scale",
-			"rs_",
-			"!important",
-			"widget-tweets__list",
-			"'type",
-			".preloader",
-			"loadUp",
-			".preloader",
-			".article--grid__header",
-			"article--grid__title",
-			"article--grid__header",
-			"read_more_label",
-			"fc28",
-			"article  article--thumb",
-			"<img",
-			"featured-area__article  article--big",
-			"article--list",
-			"<img",
-			"itemtype=\"http://schema.org/Person\"",
-			"header-bar-container flexbox__item one-half split",
-			"article--slider",
-			"<li",
-			"header-bar-container flexbox__item one-half split",
-			"id=\"",
-			"<a",
-			"showMostViewed(",
-			"tabs__pane",
-			"latest-comments__list",
-			"article--billboard__header",
-			"img",
-			"open sans",
-			" sans"
+			"Sorry, we do not have enough"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -983,6 +1039,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"$_u",
 			"http://192.168.1.104/bucket-test",
 			"http://localhost/bucket-test",
@@ -1019,22 +1076,49 @@
 	"groups":
 	[
 		{
+			"selected": 11,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "content-single-product.php",
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_checkout.scss",
 					"settings":
 					{
-						"buffer_size": 1868,
+						"buffer_size": 481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								643,
-								643
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "cart/shipping-calculator.php",
+					"settings":
+					{
+						"buffer_size": 3696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3147,
+								3147
 							]
 						],
 						"settings":
@@ -1049,125 +1133,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
-					"settings":
-					{
-						"buffer_size": 2810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								487,
-								494
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2381.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 2,
-					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/__woocommerce.scss",
+					"file": "cart/cart.php",
 					"settings":
 					{
-						"buffer_size": 402,
+						"buffer_size": 6239,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								200,
-								200
+								981,
+								981
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"settings":
-					{
-						"buffer_size": 917,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										167,
-										174
-									],
-									[
-										228,
-										235
-									],
-									[
-										298,
-										305
-									],
-									[
-										442,
-										449
-									],
-									[
-										587,
-										594
-									],
-									[
-										740,
-										747
-									],
-									[
-										801,
-										808
-									],
-									[
-										861,
-										868
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								593,
-								593
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1177,19 +1160,74 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "shop/sidebar.php",
+					"buffer": 3,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/footer.php",
 					"settings":
 					{
-						"buffer_size": 201,
+						"buffer_size": 4825,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								406,
+								406
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/objects/_stats.scss",
+					"settings":
+					{
+						"buffer_size": 1499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								406,
+								406
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 396.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "checkout/form-coupon.php",
+					"settings":
+					{
+						"buffer_size": 989,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
 							]
 						],
 						"settings":
@@ -1203,27 +1241,191 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "cart/cart-empty.php",
+					"buffer": 6,
+					"file": "cart/totals.php",
 					"settings":
 					{
-						"buffer_size": 460,
+						"buffer_size": 5740,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								307,
-								307
+								678,
+								678
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "single-product/tabs/tabs.php",
+					"settings":
+					{
+						"buffer_size": 1121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								635,
+								635
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 47.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "checkout/review-order.php",
+					"settings":
+					{
+						"buffer_size": 8125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_shop.scss",
+					"settings":
+					{
+						"buffer_size": 2125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2079,
+								2079
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1854.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/woocommerce.js",
+					"settings":
+					{
+						"buffer_size": 465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
+					"settings":
+					{
+						"buffer_size": 4646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4644,
+								4644
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4928.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "single-product-reviews.php",
+					"settings":
+					{
+						"buffer_size": 4550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1253,
+								1265
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 990.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1273,15 +1475,43 @@
 		"selected_items":
 		[
 			[
+				"single",
+				"theme-content/scss/woocommerce/_single.scss"
+			],
+			[
+				"woocomm",
+				"theme-content/js/woocommerce.js"
+			],
+			[
+				"single.sc",
+				"theme-content/scss/woocommerce/_single.scss"
+			],
+			[
+				"beau",
+				"theme-content/scss/objects/_beautons.scss"
+			],
+			[
+				"main",
+				"theme-content/js/main.js"
+			],
+			[
+				"woocommer",
+				"theme-content/js/woocommerce.js"
+			],
+			[
+				"stat",
+				"theme-content/scss/objects/_stats.scss"
+			],
+			[
+				"stats",
+				"theme-content/scss/_vendor/inuit.css/objects/_stats.scss"
+			],
+			[
 				"separa",
 				"theme-content/scss/shortcodes/_separator.scss"
 			],
 			[
 				"man",
-				"theme-content/js/main.js"
-			],
-			[
-				"main",
 				"theme-content/js/main.js"
 			],
 			[
@@ -1347,10 +1577,6 @@
 			[
 				"progres",
 				"bucket/theme-content/scss/_progressbar.scss"
-			],
-			[
-				"single",
-				"bucket/single.php"
 			],
 			[
 				"review",
@@ -1759,30 +1985,6 @@
 			[
 				"grd",
 				"theme-content/scss/_vendor/inuit/objects/_grids.scss"
-			],
-			[
-				"grid",
-				"theme-content/scss/_vendor/inuit/objects/_grids.scss"
-			],
-			[
-				"layo",
-				"theme-content/scss/base/_layout.scss"
-			],
-			[
-				"gallery-item",
-				"theme-content/scss/modules/_gallery-item.scss"
-			],
-			[
-				"lens.ph",
-				"theme-utilities/lens.php"
-			],
-			[
-				"thumn",
-				"theme-content/inc/thumbnails.php"
-			],
-			[
-				"post.sc",
-				"theme-content/scss/pages/_post.scss"
 			]
 		],
 		"width": 0.0
@@ -1794,7 +1996,7 @@
 		[
 			[
 				"",
-				"/E/uniserver/www/bucket/wp-content/themes/bucket/bucket-wp.sublime-project"
+				"/E/uniserver/www/prism/wp-content/themes/lens/lens-wp.sublime-project"
 			],
 			[
 				"senna",

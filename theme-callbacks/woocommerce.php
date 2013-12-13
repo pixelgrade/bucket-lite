@@ -53,7 +53,7 @@ function wpgrade_add_to_cart_button( $message )
 {
 	// Here you should modify $message as you want, and then return it.
 	$newButtonString = 'View cart';
-	$replaceString = '<p><a$1class="btn btn--medium">' . $newButtonString .'</a>';
+	$replaceString = '<p><a$1class="btn ">' . $newButtonString .'</a>';
 	$message = preg_replace('#<a(.*?)class="button">(.*?)</a>#', $replaceString, $message);
 	return $message.'</p>';
 }
@@ -224,7 +224,7 @@ function woopix_update_cart() {
 				<?php if ( $woocommerce->cart->coupons_enabled() ) { ?>
 					<div class="coupon"  style="display:none;">
 
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="btn btn--medium" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="btn " name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
 
 						<?php do_action('woocommerce_cart_coupon'); ?>
 
@@ -232,7 +232,7 @@ function woopix_update_cart() {
 				<?php } ?>
 
 				<?php if ( !wpgrade::option('use_ajax_loading') ) { ?>
-					<input type="submit" class="btn btn--medium" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+					<input type="submit" class="btn " name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
 				<?php } ?>
 
 				<?php do_action('woocommerce_proceed_to_checkout'); ?>

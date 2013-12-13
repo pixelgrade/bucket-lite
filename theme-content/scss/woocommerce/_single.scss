@@ -111,6 +111,10 @@
         border-bottom: 2px solid black;
         border-right: 2px solid black;
         @include rotate(45deg);
+
+        .panel-active &{
+            @include rotate(-135deg);            
+        }
     }
 }
 
@@ -118,20 +122,20 @@
     display: none;
     padding-top: $_u;
 
-    border-top: 1px dotted $dark;
-    border-bottom: 1px dotted $dark;
-
-
     h2{
         margin-top: $_u;
     }
+}
+
+.panel{
+    border-bottom: 1px dotted $dark;
 }
 
 .panel:first-child .panel__entry-content{
     display: block;
 }
 
-.panel:last-child .panel__entry-content{
+.panel:last-child{
     border-bottom: 0;
 }
 
@@ -143,7 +147,7 @@
     }
 }
 
-//comments
+//comments / reviews
 .woocommerce #reviews #comments ol.commentlist li img.avatar, 
 .woocommerce-page #reviews #comments ol.commentlist li img.avatar{
     position: static;
@@ -153,7 +157,11 @@
 
     padding: 0;
     border: none;
+}
 
+.reviews-title{
+    border-bottom: 1px black dotted;
+    padding-bottom: 5px; 
 }
 
 //thumbnail img
@@ -177,27 +185,80 @@
     }
 }
 
-//related products
-.related.products{
-    .products{
-        margin: 0 -1%;
-
-        .product.type-product{
-            margin: 1%;
-            clear: none;
-            width: 100%;
-        }
-
-        @include media-query(lap-and-up) {
-            .product.type-product{
-                width: 23%;
-            }
-        }
-    }
-}
-
-.single-product-container p.out-of-stock{
+.single-product-container p.stock {
     @include font-size(22px);
     font-weight: bold;
 }
 
+.woocommerce .star-rating span:before, 
+.woocommerce-page .star-rating span:before{
+    color: $accent;
+}
+
+div.pp_woocommerce .pp_close,
+div.pp_woocommerce a.pp_expand, 
+div.pp_woocommerce a.pp_contract{
+    border: 0;
+    background: transparent;
+    top: 10px;
+    @include box-shadow(none);
+}
+
+div.pp_woocommerce .pp_close{
+    right: 10px;
+}
+
+div.pp_woocommerce a.pp_expand, 
+div.pp_woocommerce a.pp_contract{
+    left: 10px;
+}
+
+
+//reviews
+#reviews{
+    #reply-title{
+        margin-bottom: $_u2;
+    }
+
+    #commentform{
+        label{
+            display: inline-block;
+        }
+    }
+
+}
+.woocommerce-page #review_form #respond p.stars{
+    display: inline-block;
+    margin-top: 3px;
+}
+
+#reviews #commentform label{
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+#woo-review-submit{
+    @extend .btn;
+    border: 0;
+    float: right;
+}
+
+.woocommerce p.stars span, .woocommerce-page p.stars span{
+    background: url(../images/star.png) repeat-x left 0;
+}
+
+.woocommerce p.stars span a:hover, 
+.woocommerce p.stars span a:focus, 
+.woocommerce-page p.stars span a:hover, 
+.woocommerce-page p.stars span a:focus{
+    background: url(../images/star.png) repeat-x left -16px;
+}
+
+.woocommerce p.stars span a.active, 
+.woocommerce-page p.stars span a.active{
+    background: url(../images/star.png) repeat-x left -16px;
+}
+
+.woocommerce #review_form #respond textarea, .woocommerce-page #review_form #respond textarea{
+    resize: vertical !important;
+}

@@ -126,8 +126,8 @@ $woocommerce->show_messages();
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>
 		--><div class="grid__item  one-whole  lap-and-up-one-half  float--right">
 		<?php woocommerce_cart_totals(); ?>				
-			<input type="submit" class="checkout-button btn  btn--medium  btn--primary  float--right" name="proceed" value="<?php _e( 'Checkout', 'woocommerce' ); ?>" />
-			<input type="submit" class="btn  btn--medium  float--right  push-half--right " name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> 
+			<input type="submit" class="checkout-button btn    btn--primary  float--right" name="proceed" value="<?php _e( 'Checkout', 'woocommerce' ); ?>" />
+			<input type="submit" class="btn    float--right  push-half--right " name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> 
 			<?php do_action('woocommerce_proceed_to_checkout'); ?>
 			<?php $woocommerce->nonce_field('cart') ?>
 		</div><!-- .grid -->

@@ -20,7 +20,7 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 <div class="grid__item  one-whole  lap-and-up-one-half  float--right">
 <form class="shipping_calculator" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
 
-	<a href="#" class="shipping-calculator-button  btn  btn--medium  push--bottom"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a>
+	<a href="#" class="shipping-calculator-button  btn    push--bottom"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?></a>
 
 	<section class="shipping-calculator-form">
 
