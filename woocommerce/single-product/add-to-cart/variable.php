@@ -64,15 +64,16 @@ global $woocommerce, $product, $post;
 								}
 							}
 						?>
-					</select> <?php
-						if ( sizeof($attributes) == $loop )
-							echo '<a class="reset_variations" href="#reset">' . __( 'Clear selection', 'woocommerce' ) . '</a>';
-					?></td>
-				</tr>
+					</select> 
+				</td>
+				</tr>		
 	        <?php endforeach;?>
 		</tbody>
 	</table>
-
+	<?php
+	if ( sizeof($attributes) == $loop )
+		echo '<div><a class="reset_variations  btn  btn--medium  float--right" href="#reset">' . __( 'Clear selection', 'woocommerce' ) . '</a></div>';
+	?>			
 	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 	<div class="single_variation_wrap" style="display:none;">
