@@ -32,6 +32,18 @@ $args = array(
 	'ignore_sticky_posts' => true,
 );
 
+/** Return posts from selected categories */
+$categories = get_sub_field('posts_source_category');
+
+if (!empty($categories)) {
+	$catarr = array();
+	foreach ($categories as $key => $value) {
+		$catarr[] = (int) $value;
+	}
+
+	$args['category__in'] = $catarr;
+}
+
 $latest_query = new WP_Query( $args );
 
 if ( get_sub_field('sidebar') == 'enable' ) {
