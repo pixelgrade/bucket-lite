@@ -23,14 +23,14 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<tbody>
 
 				<tr class="cart-subtotal">
-					<th><?php _e( 'Cart Subtotal', 'woocommerce' ); ?></th>
+					<th><?php _e( 'Cart Subtotal', wpgrade::textdomain() ); ?></th>
 					<td><?php echo $woocommerce->cart->get_cart_subtotal(); ?></td>
 				</tr>
 
 				<?php if ( $woocommerce->cart->get_discounts_before_tax() ) : ?>
 
 					<tr class="discount">
-						<th><?php _e( 'Cart Discount', 'woocommerce' ); ?> <a href="<?php echo add_query_arg( 'remove_discounts', '1', $woocommerce->cart->get_cart_url() ) ?>"><?php _e( '[Remove]', 'woocommerce' ); ?></a></th>
+						<th><?php _e( 'Cart Discount', wpgrade::textdomain() ); ?> <a href="<?php echo add_query_arg( 'remove_discounts', '1', $woocommerce->cart->get_cart_url() ) ?>"><?php _e( '[Remove]', wpgrade::textdomain() ); ?></a></th>
 						<td>-<?php echo $woocommerce->cart->get_discounts_before_tax(); ?></td>
 					</tr>
 
@@ -41,7 +41,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 					<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
 					<tr class="shipping">
-						<th><?php _e( 'Shipping', 'woocommerce' ); ?></th>
+						<th><?php _e( 'Shipping', wpgrade::textdomain() ); ?></th>
 						<td><?php woocommerce_get_template( 'cart/shipping-methods.php', array( 'available_methods' => $available_methods ) ); ?></td>
 					</tr>
 
@@ -78,7 +78,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 				<?php if ( $woocommerce->cart->get_discounts_after_tax() ) : ?>
 
 					<tr class="discount">
-						<th><?php _e( 'Order Discount', 'woocommerce' ); ?> <a href="<?php echo add_query_arg( 'remove_discounts', '2', $woocommerce->cart->get_cart_url() ) ?>"><?php _e( '[Remove]', 'woocommerce' ); ?></a></th>
+						<th><?php _e( 'Order Discount', wpgrade::textdomain() ); ?> <a href="<?php echo add_query_arg( 'remove_discounts', '2', $woocommerce->cart->get_cart_url() ) ?>"><?php _e( '[Remove]', wpgrade::textdomain() ); ?></a></th>
 						<td>-<?php echo $woocommerce->cart->get_discounts_after_tax(); ?></td>
 					</tr>
 
@@ -87,7 +87,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 				<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 				<tr class="total">
-					<th><?php _e( 'Order Total', 'woocommerce' ); ?></th>
+					<th><?php _e( 'Order Total', wpgrade::textdomain() ); ?></th>
 					<td>
 						<?php echo $woocommerce->cart->get_total(); ?>
 						<?php
@@ -100,7 +100,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 								}
 
 								if ( ! empty( $tax_string_array ) ) {
-									echo '<small class="includes_tax">' . sprintf( __( '(Includes %s)', 'woocommerce' ), implode( ', ', $tax_string_array ) ) . '</small>';
+									echo '<small class="includes_tax">' . sprintf( __( '(Includes %s)', wpgrade::textdomain() ), implode( ', ', $tax_string_array ) ) . '</small>';
 								}
 							}
 						?>
@@ -116,9 +116,9 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 			<p><small><?php
 
-				$estimated_text = ( $woocommerce->customer->is_customer_outside_base() && ! $woocommerce->customer->has_calculated_shipping() ) ? sprintf( ' ' . __( ' (taxes estimated for %s)', 'woocommerce' ), $woocommerce->countries->estimated_for_prefix() . __( $woocommerce->countries->countries[ $woocommerce->countries->get_base_country() ], 'woocommerce' ) ) : '';
+				$estimated_text = ( $woocommerce->customer->is_customer_outside_base() && ! $woocommerce->customer->has_calculated_shipping() ) ? sprintf( ' ' . __( ' (taxes estimated for %s)', wpgrade::textdomain() ), $woocommerce->countries->estimated_for_prefix() . __( $woocommerce->countries->countries[ $woocommerce->countries->get_base_country() ], wpgrade::textdomain() ) ) : '';
 
-				printf( __( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'woocommerce' ), $estimated_text );
+				printf( __( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', wpgrade::textdomain() ), $estimated_text );
 
 			?></small></p>
 
@@ -130,7 +130,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 			<div class="woocommerce-info">
 
-				<p><?php _e( 'No shipping methods were found; please recalculate your shipping and enter your state/county and zip/postcode to ensure there are no other available methods for your location.', 'woocommerce' ); ?></p>
+				<p><?php _e( 'No shipping methods were found; please recalculate your shipping and enter your state/county and zip/postcode to ensure there are no other available methods for your location.', wpgrade::textdomain() ); ?></p>
 
 			</div>
 
@@ -142,7 +142,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 				echo apply_filters( 'woocommerce_cart_no_shipping_available_html',
 					'<div class="woocommerce-error"><p>' .
-					sprintf( __( 'Sorry, it seems that there are no available shipping methods for your location (%s).', 'woocommerce' ) . ' ' . __( 'If you require assistance or wish to make alternate arrangements please contact us.', 'woocommerce' ), $customer_location ) .
+					sprintf( __( 'Sorry, it seems that there are no available shipping methods for your location (%s).', wpgrade::textdomain() ) . ' ' . __( 'If you require assistance or wish to make alternate arrangements please contact us.', wpgrade::textdomain() ), $customer_location ) .
 					'</p></div>'
 				);
 

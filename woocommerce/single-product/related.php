@@ -38,7 +38,7 @@ if ( $products->have_posts() ) : ?>
 
 	<div class="grid__item  one-whole  related products">
 
-		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+		<h2><?php _e( 'Related Products', wpgrade::textdomain() ); ?></h2>
 
 		<?php woocommerce_product_loop_start(); ?>
 

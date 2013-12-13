@@ -37,7 +37,7 @@ _deprecated_file( basename(__FILE__), '1.6', '', 'Use your own loop code, as wel
 
 	<?php if ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
-		<p><?php _e( 'No products found which match your selection.', 'woocommerce' ); ?></p>
+		<p><?php _e( 'No products found which match your selection.', wpgrade::textdomain() ); ?></p>
 
 	<?php endif; ?>
 
