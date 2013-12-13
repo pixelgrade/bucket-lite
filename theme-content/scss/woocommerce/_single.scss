@@ -18,11 +18,12 @@
 
 .single-product {
     .entry-summary{
-        .amount{
+        @include font-size(16px);
+        .price{
             @include font-size(34px);
         }
 
-        del .amount{
+        del .price{
             @include font-size(30px);
         }
     }
@@ -120,7 +121,7 @@
 
 .panel__entry-content{
     display: none;
-    padding-top: $_u;
+    padding-top: $_u2;
 
     h2{
         margin-top: $_u;
@@ -159,9 +160,24 @@
     border: none;
 }
 
+.woocommerce-page #reviews #comments ol.commentlist li {
+    border-bottom:1px dotted $lighter;
+
+    .comment-article {
+        margin-bottom:0;
+    }
+
+    .star-rating {
+        float: none;
+        display: inline-block;
+    }
+}
+
 .reviews-title{
-    border-bottom: 1px black dotted;
-    padding-bottom: 5px; 
+    border-bottom: 1px dotted $lighter;
+    padding-bottom: $_u2;
+    margin-bottom: $_u;
+    margin-top: -$_u2;
 }
 
 //thumbnail img

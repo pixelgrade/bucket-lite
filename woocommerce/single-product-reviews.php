@@ -26,8 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			echo '<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">';
 
 			echo '<div class="star-rating" title="'.sprintf(__( 'Rated %s out of 5', wpgrade::textdomain() ), $average ).'"><span style="width:'.( ( $average / 5 ) * 100 ) . '%"><strong itemprop="ratingValue" class="rating">'.$average.'</strong> '.__( 'out of 5', wpgrade::textdomain() ).'</span></div>';
-
-			echo '<h2  class="reviews-title">'.sprintf( _n('%s review for %s', '%s reviews for %s', $count, wpgrade::textdomain()), '<span itemprop="ratingCount" class="count">'.$count.'</span>', wptexturize($post->post_title) ).'</h2>';
+			echo '<div  class="reviews-title">'.sprintf( _n('%s review for %s', '%s reviews for %s', $count,  wpgrade::textdomain()), '<span itemprop="ratingCount" class="count">'.$count.'</span>', wptexturize($post->post_title) ).'</div>';
 
 			echo '</div>';
 
