@@ -14,7 +14,16 @@ if (is_single()) {
 }
 
 if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
-if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main"; ?>
+if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
+
+// woocommerce hotfix
+// prevent class product to overwrite our css but keep javascript dependencies
+if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	if (is_product())
+		$class_name .= " product";
+}
+
+?>
 
 <body <?php body_class($class_name); ?> <?php echo $schema_org ?> >
     <div class="pace">
