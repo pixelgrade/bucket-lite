@@ -455,21 +455,15 @@ class WPGradeAjaxUpgrader {
 		// Unzip & remove temporary file
 		// -----------------------------
 
-//		$status = $this->fs_connect();
-
-//		if ( ! $status) {
-//			return false;
-//		}
-
 		if ( ! $this->unzip($localfile, $copy_theme)) {
 			# error message already set by unzip_file
-			unlink($localfile);
+			@unlink($localfile);
 			return false;
 		}
 
 		if ( ! file_exists($copy_theme)) {
 			array_push($this->errors, 'PHP failed to extract updated theme files. (process aborded before theme loss)');
-			unlink($localfile);
+			@unlink($localfile);
 			return false;
 		}
 
@@ -488,20 +482,20 @@ class WPGradeAjaxUpgrader {
 			if ( ! file_exists("$copy_theme/style.css")) {
 				array_push($this->errors, 'PHP improperly extracted update files. (process aborded before theme loss)');
 				$this->rmdir($copy_theme);
-				unlink($localfile);
+				@unlink($localfile);
 				return false;
 			}
 		}
 
 		// unzip succesful
 		// package file no longer needed
-		unlink($localfile);
+		@unlink($localfile);
 
 		// Theme Swap
 		// ----------
 
-		rename($current_theme, $older_theme);
-		rename($copy_theme, $current_theme);
+		@rename($current_theme, $older_theme);
+		@rename($copy_theme, $current_theme);
 		$this->rmdir($older_theme);
 
 		if ( ! file_exists($current_theme) || ! file_exists("$current_theme/style.css")) {
@@ -580,12 +574,12 @@ class WPGradeAjaxUpgrader {
 				$this->rmdir("$dir/$file");
 			}
 			else { // file
-				unlink("$dir/$file");
+				@unlink("$dir/$file");
 			}
 		}
 
 		// remove the directory now that it's empty
-		rmdir($dir);
+		@rmdir($dir);
 	}
 
 

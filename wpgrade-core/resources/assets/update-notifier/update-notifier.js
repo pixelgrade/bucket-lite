@@ -189,11 +189,9 @@
 			var fin = function () {
 				program['status'] = 'finished';
 				setTimeout(function () {
-					$upgrade_app
-						.fadeOut('fast', function () {
-							$upgrade_app.html($upgrade_successful.html())
-								.fadeIn('slow');
-						});
+					$('a.avgrund-close').trigger('click');
+					var wp_body = $('#wpbody-content');
+					wp_body.html($upgrade_successful.html());
 				}, USER_RECOGNITION_DELAY);
 			};
 

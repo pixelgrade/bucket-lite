@@ -3,6 +3,8 @@
 	// using jsend format: http://labs.omniti.com/labs/jsend
 	function wpgrade_ajax_upgradestep_check_marketplace_data() {
 
+		set_time_limit(300); // 5min time limit
+
 		// Default Data Structure
 		// ----------------------
 
@@ -77,6 +79,8 @@
 	// using jsend format: http://labs.omniti.com/labs/jsend
 	function wpgrade_ajax_upgradestep_search_for_update() {
 
+		set_time_limit(300); // 5min time limit
+
 		// Default Data Structure
 		// ----------------------
 
@@ -142,6 +146,8 @@
 	// using jsend format: http://labs.omniti.com/labs/jsend
 	function wpgrade_ajax_upgradestep_backup_theme() {
 
+		set_time_limit(300); // 5min time limit
+
 		// Default Data Structure
 		// ----------------------
 
@@ -160,38 +166,44 @@
 		// Create Backup
 		// -------------
 
-		$theme_data = wp_get_theme();
+		if (wpgrade::option('themeforest_upgrade_backup')) {
+			$theme_data = wp_get_theme();
 
-		// Ensure the name of the template.
-		// Only the template needs to be updated.
-		if (is_child_theme()) {
-			$template = wp_get_theme($theme_data->template);
-			$theme_name = $template->Name;
-		}
-		else { // ! is_child_theme
-			$theme_name = $theme_data->Name;
-		}
-
-		$upgrader = new WPGradeAjaxUpgrader();
-
-		try {
-			if ($upgrader->backup_theme($theme_name)) {
-				$response['data'] = array('state' => 'available', 'html' => null);
+			// Ensure the name of the template.
+			// Only the template needs to be updated.
+			if (is_child_theme()) {
+				$template = wp_get_theme($theme_data->template);
+				$theme_name = $template->Name;
 			}
-			else { // failed to backup file
+			else { // ! is_child_theme
+				$theme_name = $theme_data->Name;
+			}
+
+			$upgrader = new WPGradeAjaxUpgrader();
+
+			try {
+				if ($upgrader->backup_theme($theme_name)) {
+					$response['data'] = array('state' => 'available', 'html' => null);
+				}
+				else { // failed to backup file
+					$response['data'] = array
+						(
+							'state' => 'error',
+							'html' => wpgrade::coreview('upgrader/error-while-creating-backup'.EXT, array('error_messages' => $upgrader->errors())),
+						);
+				}
+			}
+			catch (Exception $e) {
 				$response['data'] = array
 					(
 						'state' => 'error',
-						'html' => wpgrade::coreview('upgrader/error-while-creating-backup'.EXT, array('error_messages' => $upgrader->errors())),
+						'html' => wpgrade::coreview('upgrader/internal-backup-error'.EXT),
 					);
 			}
 		}
-		catch (Exception $e) {
-			$response['data'] = array
-				(
-					'state' => 'error',
-					'html' => wpgrade::coreview('upgrader/internal-backup-error'.EXT),
-				);
+		else { // skip backup
+			$response['data']['state'] = 'available';
+			$response['data']['html'] = 'Backup disabled in options.';
 		}
 
 		echo json_encode($response);
@@ -200,6 +212,8 @@
 
 	// using jsend format: http://labs.omniti.com/labs/jsend
 	function wpgrade_ajax_upgradestep_analyze_download_options() {
+
+		set_time_limit(300); // 5min time limit
 
 		// @todo replace hardcoded path with tempfile
 		$uploads = wp_upload_dir();
@@ -287,6 +301,8 @@
 
 	// using jsend format: http://labs.omniti.com/labs/jsend
 	function wpgrade_ajax_upgradestep_download_package() {
+
+		set_time_limit(300); // 5min time limit
 
 		// @todo replace hardcoded path with tempfile
 		$uploads = wp_upload_dir();
@@ -386,6 +402,8 @@
 
 	// using jsend format: http://labs.omniti.com/labs/jsend
 	function wpgrade_ajax_upgradestep_install_package() {
+
+		set_time_limit(300); // 5min time limit
 
 		// @todo replace hardcoded path with tempfile
 		$uploads = wp_upload_dir();

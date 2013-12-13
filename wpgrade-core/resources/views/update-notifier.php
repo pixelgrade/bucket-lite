@@ -69,11 +69,7 @@
 
 				<div class="auto-updater-steps upgrade-app-template">
 
-					<div class="bubblingG">
-						<span id="bubblingG_1"></span>
-						<span id="bubblingG_2"></span>
-						<span id="bubblingG_3"></span>
-					</div>
+					<h3>Upgrade in progress...</h3>
 
 					<ol class="upgrade-steps">
 						<li class="done">Initializing Update System</li>
