@@ -490,6 +490,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					$data = get_site_transient( 'update_plugins' );
 					if ( ! is_object($data) )
 						$data = new stdClass;
+					if ( ! is_object($data->response[$plugin['slug']]))
+						$data->response[$plugin['slug']] = new stdClass;
+					
 					$data->response[$plugin['slug']]->package = $source;
 					$data->response[$plugin['slug']]->version  = $plugin['version'];
 
