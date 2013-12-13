@@ -1,6 +1,4 @@
-<?php
-	/* @var $theme */
-?>
+<?php defined('ABSPATH') or die; ?>
 
 <?php if (!empty($audio_poster)):?>
 	<img class="audio-poster-image" src="<?php echo $audio_poster ?>" />

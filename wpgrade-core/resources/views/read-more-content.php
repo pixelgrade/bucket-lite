@@ -1,4 +1,4 @@
-<?php
+<?php defined('ABSPATH') or die;
 	/* @var stdClass $post */
 	/* @var mixed    $more_link */
 	/* @var mixed    $more_link_text */

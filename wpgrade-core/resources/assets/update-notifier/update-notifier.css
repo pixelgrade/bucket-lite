@@ -60,6 +60,257 @@ h3 {
     padding-top: 20px;
 }
 
-#confirm-update{
+#confirm-update {
 	display: none;
+}
+
+/* Style for avguard popups, including manual and automatic instructions
+ * ----------------------------------------------------------------------------
+ * @srcspider
+ */
+
+/*html {
+	background-color: #000;
+}
+
+body {
+	background-color: #fff;
+}*/
+
+#automatic-instructions {
+	display: none;
+}
+
+#upgrade-instructions-style {
+	position: relative;
+	width: 600px;
+	height: 310px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	overflow-y: scroll;
+}
+
+#upgrade-instructions-style.automatic-update {
+	overflow-y: hidden;
+}
+
+#upgrade-instructions-style .confirm-upgrade,
+#upgrade-instructions-style .cancel-upgrade {
+	border: 0;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px;
+	margin: 15px 0 0 15px;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 300;
+	cursor: pointer;
+}
+
+#upgrade-instructions-style .confirm-upgrade {
+	width: 250px;
+	background: #F5A88E;
+	color: #FFF;
+}
+
+#upgrade-instructions-style .cancel-upgrade {
+	width: 110px;
+	background: #F5A88E;
+	color: #FFF;
+}
+
+#upgrade-instructions-style .confirm-upgrade:hover,
+#upgrade-instructions-style .cancel-upgrade:hover {
+	background: #ED5E2F;
+	color: #FFF;
+}
+
+.note_box {
+	padding: 5px 10px;
+}
+
+.syspath-help {
+	font-family: monospace;
+	font-style: italic;
+}
+
+.upgrade-app-template {
+	display: none;
+}
+
+.upgrade-steps {
+	font-size: 125%;
+	width: 450px;
+	float: left;
+}
+
+.upgrade-steps .current {
+	font-weight: bold;
+}
+
+.upgrade-steps .done {
+	color: black;
+}
+
+.upgrade-steps .pending {
+	color: #999;
+}
+
+.wpg-download-progress {
+	display: none;
+	font-weight: normal;
+	font-size: 85%;
+	font-family: monospace;
+}
+
+/* Popup close button antline fix
+ * ----------------------------------------------------------------------------
+ * @srcspider
+ */
+
+a.avgrund-close {
+	outline: 0;
+}
+
+/* Loading Animation for Upgrade
+ * ----------------------------------------------------------------------------
+ * @srcspider
+ */
+
+.bubblingG {
+	text-align: center;
+	width:150px;
+	height:94px;
+}
+
+.bubblingG span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 19px;
+	height: 19px;
+	margin: 47px auto;
+	background: #000000;
+	-moz-border-radius: 94px;
+	-moz-animation: bubblingG 1.3s infinite alternate;
+	-webkit-border-radius: 94px;
+	-webkit-animation: bubblingG 1.3s infinite alternate;
+	-ms-border-radius: 94px;
+	-ms-animation: bubblingG 1.3s infinite alternate;
+	-o-border-radius: 94px;
+	-o-animation: bubblingG 1.3s infinite alternate;
+	border-radius: 94px;
+	animation: bubblingG 1.3s infinite alternate;
+}
+
+#bubblingG_1 {
+	-moz-animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+	-ms-animation-delay: 0s;
+	-o-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+#bubblingG_2 {
+	-moz-animation-delay: 0.39s;
+	-webkit-animation-delay: 0.39s;
+	-ms-animation-delay: 0.39s;
+	-o-animation-delay: 0.39s;
+	animation-delay: 0.39s;
+}
+
+#bubblingG_3 {
+	-moz-animation-delay: 0.78s;
+	-webkit-animation-delay: 0.78s;
+	-ms-animation-delay: 0.78s;
+	-o-animation-delay: 0.78s;
+	animation-delay: 0.78s;
+}
+
+@-moz-keyframes bubblingG {
+	0% {
+		width: 19px;
+		height: 19px;
+		background-color:#000000;
+		-moz-transform: translateY(0);
+	}
+	100% {
+		width: 45px;
+		height: 45px;
+		background-color:#FFFFFF;
+		-moz-transform: translateY(-39px);
+	}
+}
+
+@-webkit-keyframes bubblingG {
+	0% {
+		width: 19px;
+		height: 19px;
+		background-color:#000000;
+		-webkit-transform: translateY(0);
+	}
+
+	100% {
+		width: 45px;
+		height: 45px;
+		background-color:#FFFFFF;
+		-webkit-transform: translateY(-39px);
+	}
+}
+
+@-ms-keyframes bubblingG {
+	0% {
+		width: 19px;
+		height: 19px;
+		background-color:#000000;
+		-ms-transform: translateY(0);
+	}
+
+	100% {
+		width: 45px;
+		height: 45px;
+		background-color:#FFFFFF;
+		-ms-transform: translateY(-39px);
+	}
+}
+
+@-o-keyframes bubblingG {
+	0% {
+		width: 19px;
+		height: 19px;
+		background-color:#000000;
+		-o-transform: translateY(0);
+	}
+
+	100% {
+		width: 45px;
+		height: 45px;
+		background-color:#FFFFFF;
+		-o-transform: translateY(-39px);
+	}
+}
+
+@keyframes bubblingG {
+	0% {
+		width: 19px;
+		height: 19px;
+		background-color:#000000;
+		transform: translateY(0);
+	}
+	100% {
+		width: 45px;
+		height: 45px;
+		background-color:#FFFFFF;
+		transform: translateY(-39px);
+	}
+}
+
+/* Hotfix: Upgrade Admin Screen Broken Layout
+ * ----------------------------------------------------------------------------
+ * @srcspider
+ */
+
+.instructions-chagelog-seperator {
+	clear: both;
+	visibility: hidden;
+	padding-top: 40px;
 }

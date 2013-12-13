@@ -86,11 +86,17 @@
 	// Upgrade Notifier
 	// ----------------
 
+	add_action('wp_ajax_wpgrade_upgradestep_check_marketplace_data', 'wpgrade_ajax_upgradestep_check_marketplace_data');
+	add_action('wp_ajax_wpgrade_upgradestep_search_for_update', 'wpgrade_ajax_upgradestep_search_for_update');
+	add_action('wp_ajax_wpgrade_upgradestep_backup_theme', 'wpgrade_ajax_upgradestep_backup_theme');
+	add_action('wp_ajax_wpgrade_upgradestep_analyze_download_options', 'wpgrade_ajax_upgradestep_analyze_download_options');
+	add_action('wp_ajax_wpgrade_upgradestep_download_package', 'wpgrade_ajax_upgradestep_download_package');
+	add_action('wp_ajax_wpgrade_upgradestep_install_package', 'wpgrade_ajax_upgradestep_install_package');
+
 	if (is_admin() && basename($_SERVER["PHP_SELF"]) != 'update-core.php') {
 	   add_action('admin_enqueue_scripts', 'wpgrade_callback_update_notifier_admin_initialization');
 	   add_action('admin_menu', 'wpgrade_callback_update_notifier_menu');
 	   add_action('admin_bar_menu', 'wpgrade_callback_update_notifier_bar_menu', 1000);
-	   add_action('admin_init', 'wpgrade_callback_update_notifier_handler');
 	   add_action('admin_notices', 'wpgrade_callback_update_notifier_update_notice');
 	}
 

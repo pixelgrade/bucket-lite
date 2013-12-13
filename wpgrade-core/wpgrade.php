@@ -85,8 +85,8 @@ class wpgrade {
 		return is_ssl() ? 'https' : 'http';
 	}
 
-	// Options
-	// ------------------------------------------------------------------------
+
+//// Options ///////////////////////////////////////////////////////////////////
 
 	/** @var WPGradeOptions */
 	protected static $options_handler = null;
@@ -99,50 +99,103 @@ class wpgrade {
 	}
 
 	/**
-	 * @return mixed
-	 */
-	static function option($option, $default = null) {
-		if ( isset( $_GET[$option]) && !empty($option) ) {
-			return $_GET[$option];
-		} else {
-			return self::$options_handler->get($option, $default);
-		}
-	}
-
-	/**
-	 * Get the image src
-	 * @return mixed
-	 */
-	static function option_image_src($option, $default = null) {
-		if ( isset( $_GET[$option]) && !empty($option) ) {
-			return $_GET[$option];
-		} else {
-			$image = self::$options_handler->get($option, $default);
-
-			if ( isset($image['url']) ) {
-				return $image['url'];
-			}
-		}
-		return false;
-	}
-
-	/**
 	 * @return WPGradeOptions current options handler
 	 */
 	static function options() {
 		return self::$options_handler;
 	}
-	
+
 	/**
 	 * @return mixed
 	 */
+	static function option($option, $default = null) {
+		if (isset($_GET[$option]) && ! empty($option)) {
+			return $_GET[$option];
+		}
+		else {
+			return static::options()->get($option, $default);
+		}
+	}
+
+	/**
+	 * Get the image src attribute.
+	 *
+	 * Target should be a valid option accessible via WPGradeOptions interface.
+	 *
+	 * @return string|false
+	 */
+	static function image_src($target) {
+		if (isset($_GET[$target]) && ! empty($target) ) {
+			return $_GET[$target];
+		}
+		else { // empty target, or no query
+			$image = static::options()->get($target, array());
+			if (isset($image['url'])) {
+				return $image['url'];
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Get the image src
+	 *
+	 * [!!] Methods that retrieve a specific type of data and for which the
+	 * $default would only cause an error (especially when set to null), should
+	 * just be presented as an independent method even if they use the options
+	 * interface under the hood. Presented it as part of the options interface
+	 * will only cause confusion, unreadability and propagate nonsense.
+	 *
+	 * [!!] please replace instances of this method with wpgrade::image_src
+	 *
+	 * @deprecated
+	 * @return mixed
+	 */
+	static function option_image_src($option, $default = null) {
+		if (isset($_GET[$option]) && ! empty($option) ) {
+			return $_GET[$option];
+		}
+		else {
+			$image = static::options()->get($option, $default);
+
+			if (isset($image['url'])) {
+				return $image['url'];
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Shorthand.
+	 *
+	 * Please try using wpgrade::options()->set instead, it's clearer.
+	 *
+	 * @return WPGradeOptions
+	 */
+	static function setoption($option, $value) {
+		return static::options()->set($option, $value);
+	}
+
+	/**
+	 * [!!] The method wording makes no sense in English. It's not retrieving a
+	 * set of items. Please replace instances of this method with either,
+	 *
+	 *		wpgrade::options()->set
+	 *
+	 * or
+	 *
+	 *		wpgrade::setoption
+	 *
+	 * @deprecated
+	 */
 	static function option_set($option, $value) {
-		return self::$options_handler->set($option, $value);
+		return static::setoptions($option, $value);
 	}
 
 
-	// Resolvers
-	// ------------------------------------------------------------------------
+//// Resolvers /////////////////////////////////////////////////////////////////
 
 	/** @var array */
 	protected static $resolvers = array();
@@ -180,8 +233,7 @@ class wpgrade {
 	}
 
 
-	// Wordpress Defferred Helpers
-	// ------------------------------------------------------------------------
+//// Wordpress Defferred Helpers ///////////////////////////////////////////////
 
 	/**
 	 * Filter content based on settings in wpgrade-config.php
@@ -272,6 +324,18 @@ class wpgrade {
 		} else { // local file not available
 			return self::corepath().'resources/views/'.$file;
 		}
+	}
+
+	/**
+	 * This method uses wpgrade::corepartial to determine the path.
+	 *
+	 * @return string contents of partial at the computed path
+	 */
+	static function coreview($file, $__include_parameters = array()) {
+		extract($__include_parameters);
+		ob_start();
+		include wpgrade::corepartial($file);
+		return ob_get_clean();
 	}
 
 	/**
@@ -408,8 +472,7 @@ class wpgrade {
 	}
 
 
-	// Helpers
-	// ------------------------------------------------------------------------
+//// Helpers ///////////////////////////////////////////////////////////////////
 
 	/**
 	 * Hirarchical array merge. Will always return an array.
@@ -753,12 +816,6 @@ class wpgrade {
 		if( isset($font_args['color']) && !empty($font_args['color'])) {
 			echo 'color: '. $font_args['color'] . ";\n\t";
 		}
-
-//		foreach ( $font_args as $key => $arg ) {
-//
-//
-//
-//		}
 	}
 
 	/**
@@ -838,8 +895,7 @@ class wpgrade {
 	}
 
 
-	// Media Handlers & Helpers
-	// ------------------------------------------------------------------------
+//// Media Handlers & Helpers //////////////////////////////////////////////////
 
 	#
 	# Audio
@@ -919,8 +975,7 @@ class wpgrade {
 	}
 
 
-	// Internal Bootstrapping Helpers
-	// ------------------------------------------------------------------------
+//// Internal Bootstrapping Helpers ////////////////////////////////////////////
 
 	/**
 	 * Loads in core dependency.
@@ -952,10 +1007,10 @@ class wpgrade {
 			die('Unsuported core module: '.$modulename);
 		}
 	}
-	
-	// WPML Related Functions
-	// ------------------------------------------------------------------------
-	
+
+
+//// WPML Related Functions ////////////////////////////////////////////////////
+
 	static function lang_post_id($id) {
 		if(function_exists('icl_object_id')) {
 			global $post;
@@ -1028,8 +1083,8 @@ class wpgrade {
 		}
 	}
 
-	// Unit Test Helpers
-	// ------------------------------------------------------------------------
+
+//// Unit Test Helpers /////////////////////////////////////////////////////////
 
 	/**
 	 * This method is mainly used in testing.
