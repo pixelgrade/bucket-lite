@@ -5,11 +5,15 @@
 		[
 			[
 				"mar",
-				"margin-bottom"
+				"margin-right"
+			],
+			[
+				"bor",
+				"border"
 			],
 			[
 				"pad",
-				"padding-bottom"
+				"padding-right"
 			],
 			[
 				"pa",
@@ -38,10 +42,6 @@
 			[
 				"borde",
 				"border-top"
-			],
-			[
-				"bor",
-				"border-radius"
 			],
 			[
 				"bac",
@@ -595,7 +595,7 @@
 			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_shop.scss",
 			"settings":
 			{
-				"buffer_size": 2125,
+				"buffer_size": 2539,
 				"line_ending": "Windows"
 			}
 		},
@@ -603,7 +603,7 @@
 			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/woocommerce.js",
 			"settings":
 			{
-				"buffer_size": 465,
+				"buffer_size": 534,
 				"line_ending": "Windows"
 			}
 		},
@@ -611,7 +611,7 @@
 			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
 			"settings":
 			{
-				"buffer_size": 4646,
+				"buffer_size": 4798,
 				"line_ending": "Windows"
 			}
 		},
@@ -619,7 +619,49 @@
 			"file": "single-product-reviews.php",
 			"settings":
 			{
-				"buffer_size": 4550,
+				"buffer_size": 4584,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/main.js",
+			"settings":
+			{
+				"buffer_size": 151135,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 95 files for \"grid__item  one-whole  lap-and-up-one-half  soft-half--right  images\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product\\product-image.php:\n   13  \n   14  ?>\n   15: <div class=\"grid__item  one-whole  lap-and-up-one-half  soft-half--right  images\">\n   16  \n   17  	<?php\n\n1 match in 1 file\n\n\nSearching 95 files for \".single-product-container p.out-of-stock\"\n\n0 matches across 0 files\n\n\nSearching 95 files for \"p.out-of-stock\"\n\n0 matches across 0 files\n\n\nSearching 1264 files for \"p.out-of-stock\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\theme-content\\css\\woocommerce.css:\n  956  }\n  957  \n  958: .single-product-container p.out-of-stock {\n  959    font-size: 22px;\n  960    font-size: 1.57143rem;\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\theme-content\\scss\\woocommerce\\_single.scss:\n  201  }\n  202  \n  203: .single-product-container p.out-of-stock{\n  204      @include font-size(22px);\n  205      font-weight: bold;\n\n2 matches across 2 files\n\n\nSearching 95 files for \"\"Shop\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\bucket-woocommerce.sublime-workspace:\n 1524  			],\n 1525  			[\n 1526: 				\"shop.scss\",\n 1527  				\"theme-content/scss/woocommerce/_shop.scss\"\n 1528  			],\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\cart\\cart.php:\n   22  		<?php do_action( 'woocommerce_before_cart_table' ); ?>\n   23  		<div class=\"grid__item  one-whole\">\n   24: 		<table class=\"shop_table cart\" cellspacing=\"0\">\n   25  			<thead>\n   26  				<tr>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\checkout\\form-pay.php:\n   14  <form id=\"order_review\" method=\"post\">\n   15  \n   16: 	<table class=\"shop_table\">\n   17  		<thead>\n   18  			<tr>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\checkout\\review-order.php:\n   16  <div id=\"order_review\">\n   17  \n   18: 	<table class=\"shop_table\">\n   19  		<thead>\n   20  			<tr>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\myaccount\\my-orders.php:\n   26  	<h2><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', __( 'Recent Orders', 'woocommerce' ) ); ?></h2>\n   27  \n   28: 	<table class=\"shop_table my_account_orders\">\n   29  \n   30  		<thead>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\order\\order-details.php:\n   15  ?>\n   16  <h2><?php _e( 'Order Details', 'woocommerce' ); ?></h2>\n   17: <table class=\"shop_table order_details\">\n   18  	<thead>\n   19  		<tr>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product\\product-attributes.php:\n   19  if ( empty( $attributes ) && ( ! $product->enable_dimensions_display() || ( ! $product->has_dimensions() && ! $product->has_weight() ) ) ) return;\n   20  ?>\n   21: <table class=\"shop_attributes\">\n   22  \n   23  	<?php if ( $product->enable_dimensions_display() ) : ?>\n\n7 matches across 7 files\n\n\nSearching 95 files for \"'Shop'\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\archive-product.php:\n   12  if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly\n   13  \n   14: get_header('shop'); ?>\n   15  \n   16  	<?php\n   ..\n   90  	?>\n   91  \n   92: <?php get_footer('shop'); ?>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\cart\\cart-empty.php:\n   16  <?php do_action('woocommerce_cart_is_empty'); ?>\n   17  \n   18: <p><a class=\"btn  btn--large\" href=\"<?php echo get_permalink(woocommerce_get_page_id('shop')); ?>\"><?php _e( 'Return To Shop', 'woocommerce' ) ?></a></p>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\shop\\breadcrumb.php:\n   15  $prepend      = '';\n   16  $permalinks   = get_option( 'woocommerce_permalinks' );\n   17: $shop_page_id = woocommerce_get_page_id( 'shop' );\n   18  $shop_page    = get_post( $shop_page_id );\n   19  \n   ..\n   23  }\n   24  \n   25: if ( ( ! is_home() && ! is_front_page() && ! ( is_post_type_archive() && get_option( 'page_on_front' ) == woocommerce_get_page_id( 'shop' ) ) ) || is_paged() ) {\n   26  \n   27  	echo $wrap_before;\n   ..\n   81  	} elseif ( is_post_type_archive('product') && get_option('page_on_front') !== $shop_page_id ) {\n   82  \n   83: 		$_name = woocommerce_get_page_id( 'shop' ) ? get_the_title( woocommerce_get_page_id( 'shop' ) ) : '';\n   84  \n   85  		if ( ! $_name ) {\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\shop\\sidebar.php:\n   10  if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly\n   11  \n   12: // get_sidebar('shop'); ?>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product.php:\n   12  if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly\n   13  \n   14: get_header('shop'); ?>\n   15  \n   16  	<?php\n   ..\n   48  	?>\n   49  \n   50: <?php get_footer('shop'); ?>\n\n10 matches across 5 files\n\n\nSearching 95 files for \"woocommerce-ordering\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\loop\\orderby.php:\n   15  	return;\n   16  ?>\n   17: <form class=\"woocommerce-ordering\" method=\"get\">\n   18  	<select name=\"orderby\" class=\"orderby\">\n   19  		<?php\n\n1 match in 1 file\n\n\nSearching 95 files for \"itemprop=\"ratingCount\"\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product-reviews.php:\n   28  			echo '<div class=\"star-rating\" title=\"'.sprintf(__( 'Rated %s out of 5', 'woocommerce' ), $average ).'\"><span style=\"width:'.( ( $average / 5 ) * 100 ) . '%\"><strong itemprop=\"ratingValue\" class=\"rating\">'.$average.'</strong> '.__( 'out of 5', 'woocommerce' ).'</span></div>';\n   29  \n   30: 			echo '<h2>'.sprintf( _n('%s review for %s', '%s reviews for %s', $count, 'woocommerce'), '<span itemprop=\"ratingCount\" class=\"count\">'.$count.'</span>', wptexturize($post->post_title) ).'</h2>';\n   31  \n   32  			echo '</div>';\n\n1 match in 1 file\n\n\nSearching 95 files for \"reset_variations\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product\\add-to-cart\\variable.php:\n   67  					</select> <?php\n   68  						if ( sizeof($attributes) == $loop )\n   69: 							echo '<a class=\"reset_variations\" href=\"#reset\">' . __( 'Clear selection', 'woocommerce' ) . '</a>';\n   70  					?></td>\n   71  				</tr>\n\n1 match in 1 file\n\n\nSearching 95 files for \"itemprop=\"price\"\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product\\price.php:\n   14  <div itemprop=\"offers\" itemscope itemtype=\"http://schema.org/Offer\">\n   15  \n   16: 	<p itemprop=\"price\" class=\"price\"><?php echo $product->get_price_html(); ?></p>\n   17  \n   18  	<meta itemprop=\"priceCurrency\" content=\"<?php echo get_woocommerce_currency(); ?>\" />\n\n1 match in 1 file\n\n\nSearching 95 files for \"class=\"from\"\"\n\n0 matches across 0 files\n\n\nSearching 95 files for \"\"from\"\"\n\n0 matches across 0 files\n\n\nSearching 95 files for \"from\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\cart\\cart.php:\n  106  								</td>\n  107  \n  108: 								<!-- Remove from cart link -->\n  109  								<td class=\"product-remove\">\n  110  									<?php\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\emails\\admin-new-order.php:\n   11  <?php do_action( 'woocommerce_email_header', $email_heading ); ?>\n   12  \n   13: <p><?php printf( __( 'You have received an order from %s. Their order is as follows:', 'woocommerce' ), $order->billing_first_name . ' ' . $order->billing_last_name ); ?></p>\n   14  \n   15  <?php do_action( 'woocommerce_email_before_order_table', $order, true ); ?>\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\emails\\email-order-items.php:\n   15  \n   16  	// Get/prep product data\n   17: 	$_product = $order->get_product_from_item( $item );\n   18  	$item_meta = new WC_Order_Item_Meta( $item['item_meta'] );\n   19  \n   20: 	// Handle products that was removed from store\n   21  	if ( ! is_object( $_product ) ) :\n   22  		?>\n   ..\n   71  						echo '<br/><small>';\n   72  \n   73: 						$filename = woocommerce_get_filename_from_url( $file_url );\n   74  \n   75  						if ( count( $download_file_urls ) > 1 ) {\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\emails\\plain\\admin-new-order.php:\n   11  echo $email_heading . \"\\n\\n\";\n   12  \n   13: echo sprintf( __( 'You have received an order from %s. Their order is as follows:', 'woocommerce' ), $order->billing_first_name . ' ' . $order->billing_last_name ) . \"\\n\\n\";\n   14  \n   15  echo \"****************************************************\\n\\n\";\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\emails\\plain\\email-order-items.php:\n   15  \n   16  	// Get/prep product data\n   17: 	$_product 	= $order->get_product_from_item( $item );\n   18  	$item_meta 	= new WC_Order_Item_Meta( $item['item_meta'] );\n   19  \n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\myaccount\\my-account.php:\n   17  	<?php\n   18  	printf(\n   19: 		__( 'Hello, <strong>%s</strong>. From your account dashboard you can view your recent orders, manage your shipping and billing addresses and <a href=\"%s\">change your password</a>.', 'woocommerce' ),\n   20  		$current_user->display_name,\n   21  		get_permalink( woocommerce_get_page_id( 'change_password' ) )\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\order\\order-details.php:\n   60  					foreach ( $download_file_urls as $file_url => $download_file_url ) {\n   61  \n   62: 						$filename = woocommerce_get_filename_from_url( $file_url );\n   63  \n   64  						$links[] = '<small><a href=\"' . $download_file_url . '\">' . sprintf( __( 'Download file%s', 'woocommerce' ), ( count( $download_file_urls ) > 1 ? ' ' . ( $i + 1 ) . ': ' : ': ' ) ) . $filename . '</a></small>';\n\n9 matches across 7 files\n\n\nSearching 95 files for \"itemprop=\"price\"\"\n\nE:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce\\single-product\\price.php:\n   14  <div itemprop=\"offers\" itemscope itemtype=\"http://schema.org/Offer\">\n   15  \n   16: 	<p itemprop=\"price\" class=\"price\"><?php echo $product->get_price_html(); ?></p>\n   17  \n   18  	<meta itemprop=\"priceCurrency\" content=\"<?php echo get_woocommerce_currency(); ?>\" />\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 10001,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "single-product/price.php",
+			"settings":
+			{
+				"buffer_size": 682,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "single-product/add-to-cart/variable.php",
+			"settings":
+			{
+				"buffer_size": 3832,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce.scss",
+			"settings":
+			{
+				"buffer_size": 401,
 				"line_ending": "Windows"
 			}
 		}
@@ -672,15 +714,17 @@
 	},
 	"file_history":
 	[
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/loop/orderby.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/product-image.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/archive-product.php",
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/_vendor/inuit.css/generic/_helper.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product-reviews.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/bucket-woocommerce.sublime-workspace",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/loop/add-to-cart.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/product-image.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/meta.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce.scss",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/single-product/add-to-cart/external.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/woocommerce/loop/orderby.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-callbacks/woocommerce.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/css/woocommerce.css",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/objects/_beautons.scss",
@@ -797,9 +841,7 @@
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-partials/header/site-type3.php",
 		"/E/uniserver/www/bucket/wp-content/plugins/pixcodes/shortcodes/WpGradeShortcode_Tabs.php",
 		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-callbacks/pagination-formatter.php",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/vendor/inuit.css/generic/_mixins.scss",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/modules/_search-form.scss",
-		"/E/uniserver/www/bucket/wp-content/themes/bucket/wpgrade-core/vendor/redux2/options/fields/cats_select/field_cats_select.php"
+		"/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/vendor/inuit.css/generic/_mixins.scss"
 	],
 	"find":
 	{
@@ -810,6 +852,8 @@
 		"height": 103.0,
 		"where_history":
 		[
+			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce",
+			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket",
 			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce",
 			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket",
 			"E:\\uniserver\\www\\bucket\\wp-content\\themes\\bucket\\woocommerce",
@@ -904,6 +948,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"itemprop=\"price\"",
+			"from",
+			"\"from\"",
+			"class=\"from\"",
+			"itemprop=\"price\"",
+			"reset_variations",
+			"itemprop=\"ratingCount\"",
+			"order",
+			"woocommerce-ordering",
+			"'Shop'",
+			"\"Shop",
+			"p.out-of-stock",
+			".single-product-container p.out-of-stock",
+			"grid__item  one-whole  lap-and-up-one-half  soft-half--right  images",
+			"magnificPopupInit(",
+			"comment-form-rating",
 			"$title_reply",
 			"echo",
 			"type-product",
@@ -1015,23 +1075,7 @@
 			"mosaic__filter",
 			"mosaic__filter-item",
 			"mosaic-filter--active",
-			".mosaic__filter",
-			"button-sale--single",
-			"widget_shopping_cart_content",
-			"pix-cart",
-			"stock",
-			"Out of stock",
-			"Filled under:",
-			"Filled under",
-			"Filled under:",
-			"Filled under",
-			"Filled",
-			"Filled under:",
-			"Out of stock",
-			"#f",
-			"icon-shopping-cart",
-			".woocommerce-error",
-			"Sorry, we do not have enough"
+			".mosaic__filter"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1097,7 +1141,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1326,15 +1372,15 @@
 					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_shop.scss",
 					"settings":
 					{
-						"buffer_size": 2125,
+						"buffer_size": 2539,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2079,
-								2079
+								341,
+								341
 							]
 						],
 						"settings":
@@ -1344,7 +1390,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1854.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1354,15 +1400,15 @@
 					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/woocommerce.js",
 					"settings":
 					{
-						"buffer_size": 465,
+						"buffer_size": 534,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								187,
-								187
+								307,
+								307
 							]
 						],
 						"settings":
@@ -1380,15 +1426,15 @@
 					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce/_single.scss",
 					"settings":
 					{
-						"buffer_size": 4646,
+						"buffer_size": 4798,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4644,
-								4644
+								3718,
+								3718
 							]
 						],
 						"settings":
@@ -1398,7 +1444,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4928.0,
+						"translation.y": 4116.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1408,15 +1454,15 @@
 					"file": "single-product-reviews.php",
 					"settings":
 					{
-						"buffer_size": 4550,
+						"buffer_size": 4584,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1253,
-								1265
+								2812,
+								2812
 							]
 						],
 						"settings":
@@ -1425,7 +1471,290 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/js/main.js",
+					"settings":
+					{
+						"buffer_size": 151135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133064,
+								133079
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9888.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"settings":
+					{
+						"buffer_size": 10001,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										227,
+										295
+									],
+									[
+										680,
+										694
+									],
+									[
+										900,
+										914
+									],
+									[
+										1178,
+										1183
+									],
+									[
+										1467,
+										1472
+									],
+									[
+										1696,
+										1701
+									],
+									[
+										1891,
+										1896
+									],
+									[
+										2181,
+										2186
+									],
+									[
+										2418,
+										2423
+									],
+									[
+										2761,
+										2766
+									],
+									[
+										3093,
+										3099
+									],
+									[
+										3176,
+										3182
+									],
+									[
+										3427,
+										3433
+									],
+									[
+										3717,
+										3723
+									],
+									[
+										3946,
+										3952
+									],
+									[
+										4173,
+										4179
+									],
+									[
+										4224,
+										4230
+									],
+									[
+										4458,
+										4464
+									],
+									[
+										4650,
+										4656
+									],
+									[
+										4733,
+										4739
+									],
+									[
+										4946,
+										4966
+									],
+									[
+										5605,
+										5627
+									],
+									[
+										6010,
+										6026
+									],
+									[
+										6378,
+										6394
+									],
+									[
+										6867,
+										6871
+									],
+									[
+										7178,
+										7182
+									],
+									[
+										7568,
+										7572
+									],
+									[
+										7707,
+										7711
+									],
+									[
+										7870,
+										7874
+									],
+									[
+										8150,
+										8154
+									],
+									[
+										8538,
+										8542
+									],
+									[
+										8794,
+										8798
+									],
+									[
+										9295,
+										9299
+									],
+									[
+										9803,
+										9819
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								9811,
+								9811
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 14,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5962.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "single-product/price.php",
+					"settings":
+					{
+						"buffer_size": 682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "single-product/add-to-cart/variable.php",
+					"settings":
+					{
+						"buffer_size": 3832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2983,
+								2983
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 117.0,
+						"translation.y": 842.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/E/uniserver/www/bucket/wp-content/themes/bucket/theme-content/scss/woocommerce.scss",
+					"settings":
+					{
+						"buffer_size": 401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1475,24 +1804,36 @@
 		"selected_items":
 		[
 			[
+				"single.sc",
+				"theme-content/scss/woocommerce/_single.scss"
+			],
+			[
+				"helpers",
+				"theme-content/scss/_vendor/inuit.css/generic/_helper.scss"
+			],
+			[
+				"hel",
+				"theme-content/scss/_vendor/inuit.css/generic/_helper.scss"
+			],
+			[
 				"single",
 				"theme-content/scss/woocommerce/_single.scss"
+			],
+			[
+				"wooco",
+				"theme-content/js/woocommerce.js"
+			],
+			[
+				"main",
+				"theme-content/js/main.js"
 			],
 			[
 				"woocomm",
 				"theme-content/js/woocommerce.js"
 			],
 			[
-				"single.sc",
-				"theme-content/scss/woocommerce/_single.scss"
-			],
-			[
 				"beau",
 				"theme-content/scss/objects/_beautons.scss"
-			],
-			[
-				"main",
-				"theme-content/js/main.js"
 			],
 			[
 				"woocommer",
@@ -1973,18 +2314,6 @@
 			[
 				"galler-con",
 				"theme-content/scss/modules/_gallery-control.scss"
-			],
-			[
-				"wpcf",
-				"theme-content/scss/plugins/_wpcf7.scss"
-			],
-			[
-				"arch",
-				"theme-partials/portfolio-archive-loop.php"
-			],
-			[
-				"grd",
-				"theme-content/scss/_vendor/inuit/objects/_grids.scss"
 			]
 		],
 		"width": 0.0
