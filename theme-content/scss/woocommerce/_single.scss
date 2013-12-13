@@ -201,7 +201,7 @@
     }
 }
 
-.single-product-container p.stock {
+.single-product-container p.out-of-stock {
     @include font-size(22px);
     font-weight: bold;
 }
@@ -229,6 +229,16 @@ div.pp_woocommerce a.pp_contract{
     left: 10px;
 }
 
+td.label{
+    display: table-cell;
+}
+
+.price-section{
+    span{
+        vertical-align: top;
+        margin-right: $_u2;
+    }
+}
 
 //reviews
 #reviews{
