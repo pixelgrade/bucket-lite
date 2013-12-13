@@ -13,12 +13,12 @@ global $woocommerce;
 
 $order = new WC_Order( $order_id );
 ?>
-<h2><?php _e( 'Order Details', 'woocommerce' ); ?></h2>
+<h2><?php _e( 'Order Details', wpgrade::textdomain() ); ?></h2>
 <table class="shop_table order_details">
 	<thead>
 		<tr>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
+			<th class="product-name"><?php _e( 'Product', wpgrade::textdomain() ); ?></th>
+			<th class="product-total"><?php _e( 'Total', wpgrade::textdomain() ); ?></th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -61,7 +61,7 @@ $order = new WC_Order( $order_id );
 
 						$filename = woocommerce_get_filename_from_url( $file_url );
 
-						$links[] = '<small><a href="' . $download_file_url . '">' . sprintf( __( 'Download file%s', 'woocommerce' ), ( count( $download_file_urls ) > 1 ? ' ' . ( $i + 1 ) . ': ' : ': ' ) ) . $filename . '</a></small>';
+						$links[] = '<small><a href="' . $download_file_url . '">' . sprintf( __( 'Download file%s', wpgrade::textdomain() ), ( count( $download_file_urls ) > 1 ? ' ' . ( $i + 1 ) . ': ' : ': ' ) ) . $filename . '</a></small>';
 
 						$i++;
 					}
@@ -87,19 +87,19 @@ $order = new WC_Order( $order_id );
 
 <?php if ( get_option('woocommerce_allow_customers_to_reorder') == 'yes' && $order->status=='completed' ) : ?>
 	<p class="order-again">
-		<a href="<?php echo esc_url( $woocommerce->nonce_url( 'order_again', add_query_arg( 'order_again', $order->id, add_query_arg( 'order', $order->id, get_permalink( woocommerce_get_page_id( 'view_order' ) ) ) ) ) ); ?>" class="button"><?php _e( 'Order Again', 'woocommerce' ); ?></a>
+		<a href="<?php echo esc_url( $woocommerce->nonce_url( 'order_again', add_query_arg( 'order_again', $order->id, add_query_arg( 'order', $order->id, get_permalink( woocommerce_get_page_id( 'view_order' ) ) ) ) ) ); ?>" class="button"><?php _e( 'Order Again', wpgrade::textdomain() ); ?></a>
 	</p>
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 
 <header>
-	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
+	<h2><?php _e( 'Customer details', wpgrade::textdomain() ); ?></h2>
 </header>
 <dl class="customer_details">
 <?php
-	if ($order->billing_email) echo '<dt>'.__( 'Email:', 'woocommerce' ).'</dt><dd>'.$order->billing_email.'</dd>';
-	if ($order->billing_phone) echo '<dt>'.__( 'Telephone:', 'woocommerce' ).'</dt><dd>'.$order->billing_phone.'</dd>';
+	if ($order->billing_email) echo '<dt>'.__( 'Email:', wpgrade::textdomain() ).'</dt><dd>'.$order->billing_email.'</dd>';
+	if ($order->billing_phone) echo '<dt>'.__( 'Telephone:', wpgrade::textdomain() ).'</dt><dd>'.$order->billing_phone.'</dd>';
 ?>
 </dl>
 
@@ -112,11 +112,11 @@ $order = new WC_Order( $order_id );
 <?php endif; ?>
 
 		<header class="title">
-			<h3><?php _e( 'Billing Address', 'woocommerce' ); ?></h3>
+			<h3><?php _e( 'Billing Address', wpgrade::textdomain() ); ?></h3>
 		</header>
 		<address><p>
 			<?php
-				if (!$order->get_formatted_billing_address()) _e( 'N/A', 'woocommerce' ); else echo $order->get_formatted_billing_address();
+				if (!$order->get_formatted_billing_address()) _e( 'N/A', wpgrade::textdomain() ); else echo $order->get_formatted_billing_address();
 			?>
 		</p></address>
 
@@ -127,11 +127,11 @@ $order = new WC_Order( $order_id );
 	<div class="col-2">
 
 		<header class="title">
-			<h3><?php _e( 'Shipping Address', 'woocommerce' ); ?></h3>
+			<h3><?php _e( 'Shipping Address', wpgrade::textdomain() ); ?></h3>
 		</header>
 		<address><p>
 			<?php
-				if (!$order->get_formatted_shipping_address()) _e( 'N/A', 'woocommerce' ); else echo $order->get_formatted_shipping_address();
+				if (!$order->get_formatted_shipping_address()) _e( 'N/A', wpgrade::textdomain() ); else echo $order->get_formatted_shipping_address();
 			?>
 		</p></address>
 

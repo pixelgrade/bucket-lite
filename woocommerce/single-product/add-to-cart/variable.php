@@ -21,7 +21,7 @@ global $woocommerce, $product, $post;
 				<tr>
 					<td class="label"><label for="<?php echo sanitize_title($name); ?>"><?php echo $woocommerce->attribute_label( $name ); ?></label></td>
 					<td class="value"><select id="<?php echo esc_attr( sanitize_title($name) ); ?>" name="attribute_<?php echo sanitize_title($name); ?>">
-						<option value=""><?php echo __( 'Choose an option', 'woocommerce' ) ?>&hellip;</option>
+						<option value=""><?php echo __( 'Choose an option', wpgrade::textdomain() ) ?>&hellip;</option>
 						<?php
 							if ( is_array( $options ) ) {
 
@@ -64,23 +64,24 @@ global $woocommerce, $product, $post;
 								}
 							}
 						?>
-					</select> <?php
-						if ( sizeof($attributes) == $loop )
-							echo '<a class="reset_variations" href="#reset">' . __( 'Clear selection', 'woocommerce' ) . '</a>';
-					?></td>
-				</tr>
+					</select> 
+				</td>
+				</tr>		
 	        <?php endforeach;?>
 		</tbody>
 	</table>
-
+	<?php
+	if ( sizeof($attributes) == $loop )
+		echo '<div><a class="reset_variations  btn  btn--medium  float--right" href="#reset">' . __( 'Clear selection', wpgrade::textdomain() ) . '</a></div>';
+	?>			
 	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 	<div class="single_variation_wrap" style="display:none;">
-		<div class="single_variation"></div>
+		<div class="single_variation  push-half--bottom"></div>
 		<div class="variations_button">
 			<input type="hidden" name="variation_id" value="" />
 			<?php woocommerce_quantity_input(); ?>
-			<button type="submit" class="btn  btn--big  btn--add-to-cart  push--top  push--bottom"><?php echo apply_filters('single_add_to_cart_text', __( 'Add to cart', 'woocommerce' ), $product->product_type); ?></button>
+			<button type="submit" class="btn  btn--big  btn--add-to-cart  push--top  push--bottom"><?php echo apply_filters('single_add_to_cart_text', __( 'Add to cart', wpgrade::textdomain() ), $product->product_type); ?></button>
 		</div>
 	</div>
 	<div>

@@ -11,14 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 echo $email_heading . "\n\n";
 
 if ( $order->status == 'pending' )
-	echo sprintf( __( 'An order has been created for you on %s. To pay for this order please use the following link: %s', 'woocommerce' ), get_bloginfo( 'name' ), $order->get_checkout_payment_url() ) . "\n\n";
+	echo sprintf( __( 'An order has been created for you on %s. To pay for this order please use the following link: %s', wpgrade::textdomain() ), get_bloginfo( 'name' ), $order->get_checkout_payment_url() ) . "\n\n";
 
 echo "****************************************************\n\n";
 
 do_action( 'woocommerce_email_before_order_table', $order, false );
 
-echo sprintf( __( 'Order number: %s', 'woocommerce'), $order->get_order_number() ) . "\n";
-echo sprintf( __( 'Order date: %s', 'woocommerce'), date_i18n( woocommerce_date_format(), strtotime( $order->order_date ) ) ) . "\n";
+echo sprintf( __( 'Order number: %s', wpgrade::textdomain()), $order->get_order_number() ) . "\n";
+echo sprintf( __( 'Order date: %s', wpgrade::textdomain()), date_i18n( woocommerce_date_format(), strtotime( $order->order_date ) ) ) . "\n";
 
 do_action( 'woocommerce_email_order_meta', $order, false, true );
 

@@ -29,7 +29,7 @@ if ( $available_methods ) {
 				}
 			}
 		} elseif ( $method->id !== 'free_shipping' ) {
-			$method->full_label .= ' (' . __( 'Free', 'woocommerce' ) . ')';
+			$method->full_label .= ' (' . __( 'Free', wpgrade::textdomain() ) . ')';
 		}
 		$method->full_label = apply_filters( 'woocommerce_cart_shipping_method_full_label', $method->full_label, $method );
 	}
@@ -65,7 +65,7 @@ if ( $available_methods ) {
 
 	if ( ! $woocommerce->customer->get_shipping_country() || ! $woocommerce->customer->get_shipping_state() || ! $woocommerce->customer->get_shipping_postcode() ) {
 
-		echo '<p>' . __( 'Please fill in your details to see available shipping methods.', 'woocommerce' ) . '</p>';
+		echo '<p>' . __( 'Please fill in your details to see available shipping methods.', wpgrade::textdomain() ) . '</p>';
 
 	} else {
 
@@ -73,7 +73,7 @@ if ( $available_methods ) {
 
 		echo apply_filters( 'woocommerce_no_shipping_available_html',
 			'<p>' .
-			sprintf( __( 'Sorry, it seems that there are no available shipping methods for your location (%s).', 'woocommerce' ) . ' ' . __( 'If you require assistance or wish to make alternate arrangements please contact us.', 'woocommerce' ), $customer_location ) .
+			sprintf( __( 'Sorry, it seems that there are no available shipping methods for your location (%s).', wpgrade::textdomain() ) . ' ' . __( 'If you require assistance or wish to make alternate arrangements please contact us.', wpgrade::textdomain() ), $customer_location ) .
 			'</p>'
 		);
 

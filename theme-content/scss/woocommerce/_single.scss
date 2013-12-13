@@ -185,7 +185,7 @@
     }
 }
 
-.single-product-container p.stock {
+.single-product-container p.out-of-stock {
     @include font-size(22px);
     font-weight: bold;
 }
@@ -213,6 +213,23 @@ div.pp_woocommerce a.pp_contract{
     left: 10px;
 }
 
+td.label{
+    display: table-cell;
+}
+
+span.from{
+    vertical-align: top;
+    margin-right: $_u2;
+}
+
+.woocommerce ul.products li.product .price .from, 
+.woocommerce-page ul.products li.product .price .from{
+    margin: 0 5px 0 0;
+}
+
+.woocommerce ins{
+    border: 0;
+}
 
 //reviews
 #reviews{
@@ -227,6 +244,13 @@ div.pp_woocommerce a.pp_contract{
     }
 
 }
+
+.variations{
+    select{
+        padding: $_u4;
+    }
+}
+
 .woocommerce-page #review_form #respond p.stars{
     display: inline-block;
     margin-top: 3px;
