@@ -25,10 +25,10 @@ foreach ( $items as $item ) :
 	echo $item_meta->meta ? "\n" . nl2br( $item_meta->display( true, true ) ) : '';
 
 	// Quantity
-	echo "\n" . sprintf( __( 'Quantity: %s', 'woocommerce' ), $item['qty'] );
+	echo "\n" . sprintf( __( 'Quantity: %s', wpgrade::textdomain() ), $item['qty'] );
 
 	// Cost
-	echo "\n" . sprintf( __( 'Cost: %s', 'woocommerce' ), $order->get_formatted_line_subtotal( $item ) );
+	echo "\n" . sprintf( __( 'Cost: %s', wpgrade::textdomain() ), $order->get_formatted_line_subtotal( $item ) );
 
 	// Download URLs
 	if ( $show_download_links && $_product->exists() && $_product->is_downloadable() )

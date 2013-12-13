@@ -25,10 +25,10 @@ $woocommerce->show_messages();
 			<thead>
 				<tr>
 					<th class="product-thumbnail">&nbsp;</th>
-					<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-					<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-					<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-					<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
+					<th class="product-name"><?php _e( 'Product', wpgrade::textdomain() ); ?></th>
+					<th class="product-price"><?php _e( 'Price', wpgrade::textdomain() ); ?></th>
+					<th class="product-quantity"><?php _e( 'Quantity', wpgrade::textdomain() ); ?></th>
+					<th class="product-subtotal"><?php _e( 'Total', wpgrade::textdomain() ); ?></th>
 					<th class="product-remove">&nbsp;</th>
 				</tr>
 			</thead>
@@ -67,7 +67,7 @@ $woocommerce->show_messages();
 
 		                   				// Backorder notification
 		                   				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) )
-		                   					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
+		                   					echo '<p class="backorder_notification">' . __( 'Available on backorder', wpgrade::textdomain() ) . '</p>';
 									?>
 								</td>
 
@@ -91,7 +91,7 @@ $woocommerce->show_messages();
 											$min 	= apply_filters( 'woocommerce_quantity_input_min', '', $_product );
 											$max 	= apply_filters( 'woocommerce_quantity_input_max', $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(), $_product );
 
-											$product_quantity = sprintf( '<div class="quantity"><input type="number" name="cart[%s][qty]" step="%s" min="%s" max="%s" value="%s" size="4" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $step, $min, $max, esc_attr( $values['quantity'] ) );
+											$product_quantity = sprintf( '<div class="quantity"><input type="number" name="cart[%s][qty]" step="%s" min="%s" max="%s" value="%s" size="4" title="' . _x( 'Qty', 'Product quantity input tooltip', wpgrade::textdomain() ) . '" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $step, $min, $max, esc_attr( $values['quantity'] ) );
 										}
 
 										echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
@@ -108,7 +108,7 @@ $woocommerce->show_messages();
 								<!-- Remove from cart link -->
 								<td class="product-remove">
 									<?php
-										echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
+										echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', wpgrade::textdomain() ) ), $cart_item_key );
 									?>
 								</td>								
 							</tr>
@@ -126,8 +126,8 @@ $woocommerce->show_messages();
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>
 		--><div class="grid__item  one-whole  lap-and-up-one-half  float--right">
 		<?php woocommerce_cart_totals(); ?>				
-			<input type="submit" class="checkout-button btn    btn--primary  float--right" name="proceed" value="<?php _e( 'Checkout', 'woocommerce' ); ?>" />
-			<input type="submit" class="btn    float--right  push-half--right " name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> 
+			<input type="submit" class="checkout-button btn    btn--primary  float--right" name="proceed" value="<?php _e( 'Checkout', wpgrade::textdomain() ); ?>" />
+			<input type="submit" class="btn    float--right  push-half--right " name="update_cart" value="<?php _e( 'Update Cart', wpgrade::textdomain() ); ?>" /> 
 			<?php do_action('woocommerce_proceed_to_checkout'); ?>
 			<?php $woocommerce->nonce_field('cart') ?>
 		</div><!-- .grid -->

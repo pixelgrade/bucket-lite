@@ -11,18 +11,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <?php do_action('woocommerce_email_header', $email_heading); ?>
 
-<p><?php printf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
+<p><?php printf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:", wpgrade::textdomain() ), get_option( 'blogname' ) ); ?></p>
 
 <?php do_action('woocommerce_email_before_order_table', $order, false); ?>
 
-<h2><?php echo __( 'Order:', 'woocommerce' ) . ' ' . $order->get_order_number(); ?></h2>
+<h2><?php echo __( 'Order:', wpgrade::textdomain() ) . ' ' . $order->get_order_number(); ?></h2>
 
 <table cellspacing="0" cellpadding="6" style="width: 100%; border: 1px solid #eee;" border="1" bordercolor="#eee">
 	<thead>
 		<tr>
-			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Price', 'woocommerce' ); ?></th>
+			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Product', wpgrade::textdomain() ); ?></th>
+			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Quantity', wpgrade::textdomain() ); ?></th>
+			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Price', wpgrade::textdomain() ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -48,13 +48,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <?php do_action( 'woocommerce_email_order_meta', $order, false ); ?>
 
-<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
+<h2><?php _e( 'Customer details', wpgrade::textdomain() ); ?></h2>
 
 <?php if ($order->billing_email) : ?>
-	<p><strong><?php _e( 'Email:', 'woocommerce' ); ?></strong> <?php echo $order->billing_email; ?></p>
+	<p><strong><?php _e( 'Email:', wpgrade::textdomain() ); ?></strong> <?php echo $order->billing_email; ?></p>
 <?php endif; ?>
 <?php if ($order->billing_phone) : ?>
-	<p><strong><?php _e( 'Tel:', 'woocommerce' ); ?></strong> <?php echo $order->billing_phone; ?></p>
+	<p><strong><?php _e( 'Tel:', wpgrade::textdomain() ); ?></strong> <?php echo $order->billing_phone; ?></p>
 <?php endif; ?>
 
 <?php woocommerce_get_template('emails/email-addresses.php', array( 'order' => $order )); ?>

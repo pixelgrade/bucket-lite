@@ -19,20 +19,20 @@ global $woocommerce, $post;
 
 	<?php	if( 'lost_password' == $args['form'] ) : ?>
 
-    <p><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce' ) ); ?></p>
+    <p><?php echo apply_filters( 'woocommerce_lost_password_message', __( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', wpgrade::textdomain() ) ); ?></p>
 
-    <p class="form-row form-row-first"><label for="user_login"><?php _e( 'Username or email', 'woocommerce' ); ?></label> <input class="input-text" type="text" name="user_login" id="user_login" /></p>
+    <p class="form-row form-row-first"><label for="user_login"><?php _e( 'Username or email', wpgrade::textdomain() ); ?></label> <input class="input-text" type="text" name="user_login" id="user_login" /></p>
 
 	<?php else : ?>
 
-    <p><?php echo apply_filters( 'woocommerce_reset_password_message', __( 'Enter a new password below.', 'woocommerce') ); ?></p>
+    <p><?php echo apply_filters( 'woocommerce_reset_password_message', __( 'Enter a new password below.', wpgrade::textdomain()) ); ?></p>
 
     <p class="form-row form-row-first">
-        <label for="password_1"><?php _e( 'New password', 'woocommerce' ); ?> <span class="required">*</span></label>
+        <label for="password_1"><?php _e( 'New password', wpgrade::textdomain() ); ?> <span class="required">*</span></label>
         <input type="password" class="input-text" name="password_1" id="password_1" />
     </p>
     <p class="form-row form-row-last">
-        <label for="password_2"><?php _e( 'Re-enter new password', 'woocommerce' ); ?> <span class="required">*</span></label>
+        <label for="password_2"><?php _e( 'Re-enter new password', wpgrade::textdomain() ); ?> <span class="required">*</span></label>
         <input type="password" class="input-text" name="password_2" id="password_2" />
     </p>
 
@@ -42,7 +42,7 @@ global $woocommerce, $post;
 
     <div class="clear"></div>
 
-    <p class="form-row"><input type="submit" class="button" name="reset" value="<?php echo 'lost_password' == $args['form'] ? __( 'Reset Password', 'woocommerce' ) : __( 'Save', 'woocommerce' ); ?>" /></p>
+    <p class="form-row"><input type="submit" class="button" name="reset" value="<?php echo 'lost_password' == $args['form'] ? __( 'Reset Password', wpgrade::textdomain() ) : __( 'Save', wpgrade::textdomain() ); ?>" /></p>
 	<?php $woocommerce->nonce_field( $args['form'] ); ?>
 
 </form>

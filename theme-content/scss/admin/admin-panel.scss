@@ -35,7 +35,7 @@ $heading-font: 'Open Sans', sans-serif;
 
 #redux-container  {
 	font-family: $body-font;
-	margin-left:-20px;
+	margin-left:-19px;
 	margin-right:-15px;
 	margin-top: 0 !important;
 	background:url('../../images/admin/bg_pattern.png');
@@ -66,14 +66,14 @@ $heading-font: 'Open Sans', sans-serif;
 	}
 
 	.redux-group-tab > h3 {
-		position: fixed;
+		position: absolute;
 		background: #fcfcfc;
 		z-index: 1;
 		width: 798px;
-		top: 21px;
+		top: 0;
 		line-height: 130px;
 		padding-left: 48px;
-		left: 396px;
+		left: 0;
 
 		&:after {
 			content: "";
@@ -94,19 +94,30 @@ $heading-font: 'Open Sans', sans-serif;
 	// Fixed Header on Scroll
 	&.fixed-header {
 		.redux-group-tab > h3 {
+			position:fixed;
+			left:397px; // Wordpress + Redux Sidebar Width
+			top:28px; //Admin Bar Height
 			background: transparent url("../../images/admin/fixed-bottom-shadow.png") bottom left repeat-x;
+		}
+		#redux-sticky #info_bar .redux-action_bar {
+			position: fixed;
+			left: 1022px;
+			right:auto;
+			top: 69px;
 		}
 
 	}
 }
 
 #redux-main {
-	padding: 130px $_2u $_u4+$_2u;
+	padding: 140px $_2u $_u4+$_2u;
 	margin-left:$sidebar-width;
 	max-width: $content-width;
 	background: $content-bg;
 	border-left:1px solid $border-color;
 	border-right:1px solid $border-color;
+	border-top:1px solid $border-color;
+	position:relative;
 }
 
 // 'Theme Options' title + description
@@ -115,6 +126,7 @@ $heading-font: 'Open Sans', sans-serif;
 	width:$sidebar-width;
 	background:transparent;
 	border:none;
+	@include box-shadow(none);
 	
 	color:$dark;
 
@@ -134,18 +146,22 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 #redux-sticky {
+	position:relative;
+	max-width:1050px;
 	#info_bar {
 		padding:0;
 		background:none;
 		border:none;
 		@include box-shadow(none);
 		z-index:2;
-		position:relative;
+		position: absolute;
+		right: 0;
+		top: 0;
 
 		.redux-action_bar {
-			position: fixed;
-			left: 1013px;
-			top: 68px;
+			position: relative;
+			right: 36px;
+			top: 42px;
 			z-index:999;
 
 			#redux_save {
@@ -192,8 +208,26 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 /*body*/.redux-page {
+
+	&.branch-3-7 {
+		#wpcontent {
+			margin-left: 145px;
+			padding-left: 20px;
+		}
+	}
+
+	#wpcontent {
+		margin-left: 160px;
+		padding-left: 20px;
+		background: $sidebar-bg;
+	}
 	#wpbody-content {
+		background: $sidebar-bg;
 		padding-bottom:0;
+
+		& > .wrap {
+			margin-top:-8px;
+		}
 	}
 	#wpfooter {
 		display:none;
@@ -573,7 +607,7 @@ $heading-font: 'Open Sans', sans-serif;
 		.cb-enable, .cb-disable {
 			width:50%;
 			height:100%;
-			
+			margin:0 !important;
 			@include background-image(linear-gradient(#fff, #fff)); 
 		}
 
@@ -826,6 +860,7 @@ $heading-font: 'Open Sans', sans-serif;
 	*/
 	i.icon-move:before {
 		font-family: 'Elusive-Icons' !important;
+		content:"\e67f";
 	}
 	.text_sortable {
 		li {
@@ -854,8 +889,8 @@ $heading-font: 'Open Sans', sans-serif;
 
 		.drag {
 			position:absolute;
-			top:0;
-			left:0px;
+			top: -2px;
+			left: 12px;
 			margin:0 !important;
 			opacity:0;
 			@include transition(all 0.15s);

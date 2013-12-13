@@ -18,20 +18,20 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 	<table class="shop_table">
 		<thead>
 			<tr>
-				<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-				<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
+				<th class="product-name"><?php _e( 'Product', wpgrade::textdomain() ); ?></th>
+				<th class="product-total"><?php _e( 'Total', wpgrade::textdomain() ); ?></th>
 			</tr>
 		</thead>
 		<tfoot>
 			<tr class="cart-subtotal">
-				<th><?php _e( 'Cart Subtotal', 'woocommerce' ); ?></th>
+				<th><?php _e( 'Cart Subtotal', wpgrade::textdomain() ); ?></th>
 				<td><?php echo $woocommerce->cart->get_cart_subtotal(); ?></td>
 			</tr>
 
 			<?php if ( $woocommerce->cart->get_discounts_before_tax() ) : ?>
 
 			<tr class="discount">
-				<th><?php _e( 'Cart Discount', 'woocommerce' ); ?></th>
+				<th><?php _e( 'Cart Discount', wpgrade::textdomain() ); ?></th>
 				<td>-<?php echo $woocommerce->cart->get_discounts_before_tax(); ?></td>
 			</tr>
 
@@ -42,7 +42,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 				<?php do_action('woocommerce_review_order_before_shipping'); ?>
 
 				<tr class="shipping">
-					<th><?php _e( 'Shipping', 'woocommerce' ); ?></th>
+					<th><?php _e( 'Shipping', wpgrade::textdomain() ); ?></th>
 					<td><?php woocommerce_get_template( 'cart/shipping-methods.php', array( 'available_methods' => $available_methods ) ); ?></td>
 				</tr>
 
@@ -79,7 +79,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<?php if ( $woocommerce->cart->get_discounts_after_tax() ) : ?>
 
 			<tr class="discount">
-				<th><?php _e( 'Order Discount', 'woocommerce' ); ?></th>
+				<th><?php _e( 'Order Discount', wpgrade::textdomain() ); ?></th>
 				<td>-<?php echo $woocommerce->cart->get_discounts_after_tax(); ?></td>
 			</tr>
 
@@ -88,7 +88,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
 			<tr class="total">
-				<th><strong><?php _e( 'Order Total', 'woocommerce' ); ?></strong></th>
+				<th><strong><?php _e( 'Order Total', wpgrade::textdomain() ); ?></strong></th>
 				<td>
 					<strong><?php echo $woocommerce->cart->get_total(); ?></strong>
 					<?php
@@ -101,7 +101,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 							}
 
 							if ( ! empty( $tax_string_array ) ) {
-								?><small class="includes_tax"><?php printf( __( '(Includes %s)', 'woocommerce' ), implode( ', ', $tax_string_array ) ); ?></small><?php
+								?><small class="includes_tax"><?php printf( __( '(Includes %s)', wpgrade::textdomain() ), implode( ', ', $tax_string_array ) ); ?></small><?php
 							}
 						}
 					?>
@@ -171,9 +171,9 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 				} else {
 
 					if ( ! $woocommerce->customer->get_country() )
-						echo '<p>' . __( 'Please fill in your details above to see available payment methods.', 'woocommerce' ) . '</p>';
+						echo '<p>' . __( 'Please fill in your details above to see available payment methods.', wpgrade::textdomain() ) . '</p>';
 					else
-						echo '<p>' . __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) . '</p>';
+						echo '<p>' . __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', wpgrade::textdomain() ) . '</p>';
 
 				}
 			?>
@@ -182,21 +182,21 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 		<div class="form-row place-order">
 
-			<noscript><?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?><br/><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php _e( 'Update totals', 'woocommerce' ); ?>" /></noscript>
+			<noscript><?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', wpgrade::textdomain() ); ?><br/><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php _e( 'Update totals', wpgrade::textdomain() ); ?>" /></noscript>
 
 			<?php $woocommerce->nonce_field('process_checkout')?>
 
 			<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 
 			<?php
-			$order_button_text = apply_filters('woocommerce_order_button_text', __( 'Place order', 'woocommerce' ));
+			$order_button_text = apply_filters('woocommerce_order_button_text', __( 'Place order', wpgrade::textdomain() ));
 
 			echo apply_filters('woocommerce_order_button_html', '<input type="submit" class="btn  " name="woocommerce_checkout_place_order" id="place_order" value="' . $order_button_text . '" />' );
 			?>
 
 			<?php if (woocommerce_get_page_id('terms')>0) : ?>
 			<p class="form-row terms">
-				<label for="terms" class="checkbox"><?php _e( 'I have read and accept the', 'woocommerce' ); ?> <a href="<?php echo esc_url( get_permalink(woocommerce_get_page_id('terms')) ); ?>" target="_blank"><?php _e( 'terms &amp; conditions', 'woocommerce' ); ?></a></label>
+				<label for="terms" class="checkbox"><?php _e( 'I have read and accept the', wpgrade::textdomain() ); ?> <a href="<?php echo esc_url( get_permalink(woocommerce_get_page_id('terms')) ); ?>" target="_blank"><?php _e( 'terms &amp; conditions', wpgrade::textdomain() ); ?></a></label>
 				<input type="checkbox" class="input-checkbox" name="terms" <?php checked( isset( $_POST['terms'] ), true ); ?> id="terms" />
 			</p>
 			<?php endif; ?>
