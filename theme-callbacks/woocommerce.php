@@ -18,8 +18,8 @@ function wpgrade_callback_load_woocommerce_assets(){
 
 //	global $woocommerce;
 //	$woocommerce_params = array(
-//		'l10n_item_label' => __('Item2 ', 'woocommerce'),
-//		'l10n_remove_msg' => __(' 2has been removed!', 'woocommerce'),
+//		'l10n_item_label' => __('Item2 ', wpgrade::textdomain()),
+//		'l10n_remove_msg' => __(' 2has been removed!', wpgrade::textdomain()),
 //	);
 
 //	$woocommerce_params = apply_filters( 'woocommerce_params', $woocommerce_params );
@@ -178,7 +178,7 @@ function woopix_update_cart() {
 
 						// Backorder notification
 						if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) )
-							echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
+							echo '<p class="backorder_notification">' . __( 'Available on backorder', wpgrade::textdomain() ) . '</p>';
 						?>
 					</td>
 
@@ -193,7 +193,7 @@ function woopix_update_cart() {
 							$min 	= apply_filters( 'woocommerce_quantity_input_min', '', $_product );
 							$max 	= apply_filters( 'woocommerce_quantity_input_max', $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(), $_product );
 
-							$product_quantity = sprintf( '<div class="pix-quantity"><input type="text" name="cart[%s][qty]" step="%s" min="%s" max="%s" value="%s" size="4" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="input-text qty text" maxlength="12" data-item_key="%s" /></div>', $cart_item_key, $step, $min, $max, esc_attr( $values['quantity'] ), $cart_item_key );
+							$product_quantity = sprintf( '<div class="pix-quantity"><input type="text" name="cart[%s][qty]" step="%s" min="%s" max="%s" value="%s" size="4" title="' . _x( 'Qty', 'Product quantity input tooltip', wpgrade::textdomain() ) . '" class="input-text qty text" maxlength="12" data-item_key="%s" /></div>', $cart_item_key, $step, $min, $max, esc_attr( $values['quantity'] ), $cart_item_key );
 						}
 
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
@@ -210,7 +210,7 @@ function woopix_update_cart() {
 					<!-- Remove from cart link -->
 					<td class="product-remove">
 						<?php
-						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove no_djax" title="%s" data-item_key="%s", data-remove_nonce="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ), $cart_item_key, wp_create_nonce("woo_remove_".$cart_item_key) ), $cart_item_key );
+						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove no_djax" title="%s" data-item_key="%s", data-remove_nonce="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', wpgrade::textdomain() ), $cart_item_key, wp_create_nonce("woo_remove_".$cart_item_key) ), $cart_item_key );
 						?>
 					</td>
 				</tr>
@@ -224,7 +224,7 @@ function woopix_update_cart() {
 				<?php if ( $woocommerce->cart->coupons_enabled() ) { ?>
 					<div class="coupon"  style="display:none;">
 
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="btn " name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+						<label for="coupon_code"><?php _e( 'Coupon', wpgrade::textdomain() ); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="btn " name="apply_coupon" value="<?php _e( 'Apply Coupon', wpgrade::textdomain() ); ?>" />
 
 						<?php do_action('woocommerce_cart_coupon'); ?>
 
@@ -232,7 +232,7 @@ function woopix_update_cart() {
 				<?php } ?>
 
 				<?php if ( !wpgrade::option('use_ajax_loading') ) { ?>
-					<input type="submit" class="btn " name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+					<input type="submit" class="btn " name="update_cart" value="<?php _e( 'Update Cart', wpgrade::textdomain() ); ?>" />
 				<?php } ?>
 
 				<?php do_action('woocommerce_proceed_to_checkout'); ?>

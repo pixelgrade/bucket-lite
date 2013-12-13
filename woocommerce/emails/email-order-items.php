@@ -31,7 +31,7 @@ foreach ( $items as $item ) :
 				echo 	apply_filters( 'woocommerce_order_product_title', $item['name'], $_product );
 
 				// Product not available anymore message
-				echo '<br/><small>(' . __( 'This product is no longer available', 'woocommerce' ) . ')</small>';
+				echo '<br/><small>(' . __( 'This product is no longer available', wpgrade::textdomain() ) . ')</small>';
 
 				// Variation
 				echo 	($item_meta->meta) ? '<br/><small>' . nl2br( $item_meta->display( true, true ) ) . '</small>' : '';
@@ -73,9 +73,9 @@ foreach ( $items as $item ) :
 						$filename = woocommerce_get_filename_from_url( $file_url );
 
 						if ( count( $download_file_urls ) > 1 ) {
-							echo sprintf( __('Download %d:', 'woocommerce' ), $i + 1 );
+							echo sprintf( __('Download %d:', wpgrade::textdomain() ), $i + 1 );
 						} elseif ( $i == 0 )
-							echo __( 'Download:', 'woocommerce' );
+							echo __( 'Download:', wpgrade::textdomain() );
 
 						echo ' <a href="' . $download_file_url . '" target="_blank">' . $filename . '</a></small>';
 
