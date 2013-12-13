@@ -77,7 +77,7 @@ global $woocommerce, $product, $post;
 	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 	<div class="single_variation_wrap" style="display:none;">
-		<div class="single_variation"></div>
+		<div class="single_variation  push-half--bottom"></div>
 		<div class="variations_button">
 			<input type="hidden" name="variation_id" value="" />
 			<?php woocommerce_quantity_input(); ?>
