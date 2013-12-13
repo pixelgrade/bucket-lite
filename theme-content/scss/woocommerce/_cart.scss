@@ -1,3 +1,7 @@
+.woocommerce {
+    margin-bottom:36px;
+}
+
 .woocommerce table.shop_table{
     padding-bottom: 0;
     border: 0;
@@ -41,11 +45,24 @@ td.product-quantity .quantity{
     padding-bottom: 0;
 }
 
-.woocommerce-page .cart-collaterals form.shipping_calculator{
-    float: none;
-    clear: none;
-    width: auto;
+//Shipping Calculator
+.woocommerce-page {
+    .cart-collaterals form.shipping_calculator{
+        float: left;
+        clear: none;
+        width: 100%;
+    }
+
+    .shipping-calculator-form {
+        width:100%;
+    }
+
+    .shipping-calculator-button {
+        float:left;
+        margin-top:-47px;
+    }
 }
+
 
 .woocommerce-page .shop_table.cart .quantity{
     input.qty, .minus, .plus{
