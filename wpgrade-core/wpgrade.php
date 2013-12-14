@@ -113,7 +113,7 @@ class wpgrade {
 			return $_GET[$option];
 		}
 		else {
-			return static::options()->get($option, $default);
+			return self::options()->get($option, $default);
 		}
 	}
 
@@ -129,7 +129,7 @@ class wpgrade {
 			return $_GET[$target];
 		}
 		else { // empty target, or no query
-			$image = static::options()->get($target, array());
+			$image = self::options()->get($target, array());
 			if (isset($image['url'])) {
 				return $image['url'];
 			}
@@ -157,7 +157,7 @@ class wpgrade {
 			return $_GET[$option];
 		}
 		else {
-			$image = static::options()->get($option, $default);
+			$image = self::options()->get($option, $default);
 
 			if (isset($image['url'])) {
 				return $image['url'];
@@ -175,7 +175,7 @@ class wpgrade {
 	 * @return WPGradeOptions
 	 */
 	static function setoption($option, $value) {
-		return static::options()->set($option, $value);
+		return self::options()->set($option, $value);
 	}
 
 	/**
@@ -191,7 +191,7 @@ class wpgrade {
 	 * @deprecated
 	 */
 	static function option_set($option, $value) {
-		return static::setoptions($option, $value);
+		return self::setoptions($option, $value);
 	}
 
 
