@@ -92,8 +92,10 @@
 .site-logo--text{
     display: block;
 
-    @include media-query(lap-and-up) {
-        text-align: center;
+    .header--type3 &{
+        @include media-query(lap-and-up) {
+            text-align: center;
+        }
     }
 }
 
