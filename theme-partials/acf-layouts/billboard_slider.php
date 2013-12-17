@@ -157,7 +157,7 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                     <article class="article  article--billboard  article--billboard-big">
                         <div>
-                            <div class="rsImg"><?php echo $image[0] ?></div>
+                            <div class="rsImg"><?php echo $image[0]; ?></div>
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -186,7 +186,7 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                     <article class="article  article--billboard">
                         <div>
-                            <div class="rsImg"><?php echo $image[0] ?></div>
+                            <div class="rsImg"><?php echo $image[0]; ?></div>
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -217,7 +217,7 @@ if ($slides->have_posts()): ?>
                         
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-                                <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" alt="<?php the_title(); ?>" />
+                                <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0]; ?>" alt="<?php the_title(); ?>" />
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">

@@ -555,7 +555,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 					pauseOnHover: true,
 					delay: rs_delay                    
 				},
-                globalCaption:rs_globalCaption           
+                globalCaption:rs_globalCaption,
+                numImagesToPreload: 1           
 			};
 			
 			if (rs_visibleNearby) {
