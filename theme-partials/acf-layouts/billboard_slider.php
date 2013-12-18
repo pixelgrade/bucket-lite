@@ -135,18 +135,21 @@ if ($slides->have_posts()): ?>
             } ?>
 			>
 	    <?php while($slides->have_posts()): $slides->the_post();
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
+
+            $image_small = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-small' );           
+            $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-medium' );                    
             $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
+
             $image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
             
-            if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-              $image_ratio = $image[2] * 100/$image[1];
+            if (isset($image_small[1]) && isset($image_small[2]) && $image_small[1] > 0) {
+              $image_ratio = $image_small[2] * 100/$image_small[1];
             }
 
             if($big_articles_only) :
-                $image = $image_big;
-                if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-                  $image_ratio = $image[2] * 100/$image[1];
+                
+                if (isset($image_big[1]) && isset($image_big[2]) && $image_big[1] > 0) {
+                  $image_ratio = $image_big[2] * 100/$image_big[1];
                 }
 
                 if (!$closed_group):
@@ -157,7 +160,11 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                     <article class="article  article--billboard  article--billboard-big">
                         <div>
-                            <div class="rsImg"><?php echo $image[0]; ?></div>
+                            <img class="riloadr_slider" 
+                                data-src-big="<?php echo $image_big[0]; ?>"
+                                data-src-medium="<?php echo $image_medium[0]; ?>"
+                                data-src-small="<?php echo $image_small[0]; ?>"
+                            alt="img" />
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -173,9 +180,9 @@ if ($slides->have_posts()): ?>
             <?php else :
 
                 if ($index++ % 3 == 0):
-                $image = $image_big;
-                if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-                  $image_ratio = $image[2] * 100/$image[1];
+                
+                if (isset($image_big[1]) && isset($image_big[2]) && $image_big[1] > 0) {
+                  $image_ratio = $image_big[2] * 100/$image_big[1];
                 }
 
                 if (!$closed_group):
@@ -186,7 +193,11 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                     <article class="article  article--billboard">
                         <div>
-                            <div class="rsImg"><?php echo $image[0]; ?></div>
+                            <img class="riloadr_slider" 
+                                data-src-big="<?php echo $image_big[0]; ?>"
+                                data-src-medium="<?php echo $image_medium[0]; ?>"
+                                data-src-small="<?php echo $image_small[0]; ?>"
+                            alt="img" />
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -217,7 +228,7 @@ if ($slides->have_posts()): ?>
                         
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-                                <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0]; ?>" alt="<?php the_title(); ?>" />
+                                <img src="<?php echo $image_small[0] ?>" data-src-big="<?php echo $image_small[0]; ?>" alt="<?php the_title(); ?>" />
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">
