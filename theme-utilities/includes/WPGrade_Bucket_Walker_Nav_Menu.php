@@ -217,8 +217,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                             $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-big" );
 
                             if ( $post_image ){
-                                // $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
-                                $menu_post_image = '';
+                                $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
                             } else {
                                 // $menu_post_image = '<div class="image-wrap"></div>';
                                 $menu_post_image = '';
@@ -271,8 +270,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 //                        }
 
                         if ( $post_image ){
-                            // $menu_post_image = '<div class="article__thumb" style=""><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
-                            $menu_post_image = '';
+                            $menu_post_image = '<div class="article__thumb" style=""><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
                         } else {
                             $menu_post_image = '<div class="article__thumb"></div>';
                             $menu_post_image = '';
