@@ -29,7 +29,6 @@
                     <?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>
                 </ul>
             </div>
-
         </div>
         
         <div class="site-navigation__trigger js-nav-trigger"><span class="nav-icon"></span></div>                
