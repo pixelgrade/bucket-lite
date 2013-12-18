@@ -581,6 +581,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			
 			//lets fire it up
 			$slider.royalSlider(royalSliderParams);
+            $slider.addClass('slider--loaded');
 
 			var royalSlider = $slider.data('royalSlider');
 			var slidesNumber = royalSlider.numSlides;
@@ -1075,7 +1076,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
         resizeVideos();
         slider_billboard();
         riloadrSlider.riload();
-        
+
     });
 
 

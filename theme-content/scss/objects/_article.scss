@@ -471,6 +471,7 @@
 
 
 .billboard--article-group {
+    display: none;
     position: relative;
     top:0;
     left:0;
@@ -487,6 +488,10 @@
 
     &:first-child {
         z-index:100;
+    }
+
+    .slider--loaded &{
+        display: block;
     }
 }
 
