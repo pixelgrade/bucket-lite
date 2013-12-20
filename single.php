@@ -181,7 +181,7 @@ $is_review = bucket::has_average_score();
 				if (!empty($prev_post) || !empty($next_post)): ?>
 				
 				<nav class="post-nav  grid"><!--
-					<?php if (!empty($prev_post)): ?>
+					<?php if (!empty($prev_post) && !empty($next_post)): ?>
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
 							<a href="<?php echo get_permalink($prev_post->ID); ?>">
 								<div class="post-nav-link__label">
@@ -198,7 +198,7 @@ $is_review = bucket::has_average_score();
                  --><div class="divider--pointer"></div><!--
                     <?php endif; 
 
-                    if (!empty($next_post)): ?>
+                    if (!empty($next_post) && !empty($prev_post)): ?>
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
 							<a href="<?php echo get_permalink($next_post->ID); ?>">
 								<div class="post-nav-link__label">
@@ -209,6 +209,20 @@ $is_review = bucket::has_average_score();
 								</div>
 							</a>
                     </div><!--
+                    <?php elseif (!empty($next_post) && empty($prev_post)): ?>
+                    --><div class="post-nav-link  post-nav-link--blank  grid__item  one-whole  lap-and-up-one-half">
+                        &nbsp;
+                    </div><!--                     
+                 --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
+                            <a href="<?php echo get_permalink($next_post->ID); ?>">
+                                <div class="post-nav-link__label">
+                                    <?php _e("Next Article", wpgrade::textdomain()); ?>
+                                </div>
+                                <div class="post-nav-link__title">
+                                    <div class="hN"><?php echo $next_post->post_title; ?></div>
+                                </div>
+                            </a>
+                    </div><!--                    
 					<?php endif; ?>
 				--></nav>
 				
