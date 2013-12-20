@@ -471,6 +471,7 @@
 
 
 .billboard--article-group {
+    display: none;
     position: relative;
     top:0;
     left:0;
@@ -487,6 +488,10 @@
 
     &:first-child {
         z-index:100;
+    }
+
+    .slider--loaded &{
+        display: block;
     }
 }
 
@@ -536,11 +541,6 @@
     &:before, &:after{
         content: none;
     }
-}
-
-.billboard--article-group{
-    // height: 625px;
-    display: block;
 }
 
 .article--billboard__header {
@@ -945,7 +945,13 @@
             @include rem(border-right-width, 2px);
             @include transform(translateZ(0) rotate(-45deg));
         }
-    }    
+    }  
+
+    .post-nav-link--blank{
+        &:after{
+            content: none;
+        }
+    }  
 }
 
 .post-nav-link__label {
