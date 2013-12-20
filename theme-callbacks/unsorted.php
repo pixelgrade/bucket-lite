@@ -98,17 +98,29 @@ function wpgrade_comments($comment, $args, $depth) {
 <?php
 } // don't remove this bracket!
 
-/**
- * Cutting the titles and adding '...' after
- * @param  [string] $text       [description]
- * @param  [int] $cut_length [description]
- * @param  [int] $limit      [description]
- * @return [type]             [description]
- */
-function short_text($text, $cut_length, $limit){
-	$text = (strlen($text) > $limit) ? substr($text,0,$cut_length).'...' : $text;
-	echo $text;
-}
+	//in case the mb_ PHP extension is not activated
+	if (!function_exists('mb_substr')) {
+		function mb_substr($string, $offset, $length)
+		{
+		  $arr = preg_split("//u", $string);
+		  $slice = array_slice($arr, $offset + 1, $length);
+		  return implode("", $slice);
+		}
+	}
+
+    /**
+     * Cutting the titles and adding '...' after
+     * @param  [string] $text       [description]
+     * @param  [int] $cut_length [description]
+     * @param  [int] $limit      [description]
+     * @return [type]             [description]
+     */
+    function short_text($text, $cut_length, $limit){
+		$char_count = function_exists('mb_strlen') ? mb_strlen($text) : strlen($text);
+        $text = ( $char_count > $limit ) ? mb_substr($text,0,$cut_length).'...' : $text;
+
+        echo $text;
+    }
 
 function custom_excerpt_length( $length ) {
 	// Set custom excerpt length - number of words to be shown in excerpts
