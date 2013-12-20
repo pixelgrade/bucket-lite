@@ -37,20 +37,8 @@
         <nav class="navigation  navigation--main">
 
             <h2 class="accessibility"><?php _e('Primary Navigation', wpgrade::textdomain()) ?></h2>
-            <?php 
-                wpgrade_main_nav();
-                // if ( function_exists('is_mobile') ){
-                //     if(!is_mobile()){
-                //         echo '<script> alert("we have function and is desktop"); </script>';
-                //         wpgrade_main_nav(); 
-                //     } else {
-                //         echo '<script> alert("we have function and is mobile"); </script>';
-                //     }
-                // } else {    
-                //     echo '<script> alert("no function"); </script>';
-                //     wpgrade_main_nav(); 
-                // }
-            ?>
+            <?php wpgrade_main_nav(); ?>
+
         </nav>
     </div>
 
