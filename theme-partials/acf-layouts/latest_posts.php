@@ -32,6 +32,12 @@ $args = array(
 	'ignore_sticky_posts' => true,
 );
 
+$offset = get_sub_field('offset');
+
+if ( is_numeric($offset) && $offset > 0 ) {
+	$args['offset'] = $offset;
+}
+
 /** Return posts from selected categories */
 $categories = get_sub_field('posts_source_category');
 
