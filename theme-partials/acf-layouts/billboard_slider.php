@@ -136,21 +136,18 @@ if ($slides->have_posts()): ?>
 			>
 	    <?php while($slides->have_posts()): $slides->the_post();
 
-            $image_small = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-small' );           
-            $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-medium' );                    
-            $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
-            $image_big_post = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
 
             $image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
             
-            if (isset($image_small[1]) && isset($image_small[2]) && $image_small[1] > 0) {
-              $image_ratio = $image_small[2] * 100/$image_small[1];
+            if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+              $image_ratio = $image[2] * 100/$image[1];
             }
 
             if($big_articles_only) :
                 
-                if (isset($image_big[1]) && isset($image_big[2]) && $image_big[1] > 0) {
-                  $image_ratio = $image_big[2] * 100/$image_big[1];
+                if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+                  $image_ratio = $image[2] * 100/$image[1];
                 }
 
                 if (!$closed_group):
@@ -160,12 +157,12 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                     <article class="article  article--billboard  article--billboard-big">
-                        <div>
-                            <img class="riloadr_slider" 
-                                data-src-big="<?php echo $image_big[0]; ?>"
-                                data-src-medium="<?php echo $image_medium[0]; ?>"
-                                data-src-small="<?php echo $image_small[0]; ?>"
-                            alt="img" />
+                        <div class="rsImg">
+                            <?php echo $image[0]; ?>
+                            <!-- <img 
+                                src="<?php echo $image[0]; ?>"
+                                data-big="<?php echo $image[0]; ?>"
+                            alt="img" /> -->
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -182,8 +179,8 @@ if ($slides->have_posts()): ?>
 
                 if ($index++ % 3 == 0):
                 
-                if (isset($image_big[1]) && isset($image_big[2]) && $image_big[1] > 0) {
-                  $image_ratio = $image_big[2] * 100/$image_big[1];
+                if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+                  $image_ratio = $image[2] * 100/$image[1];
                 }
 
                 if (!$closed_group):
@@ -193,13 +190,11 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                     <article class="article  article--billboard">
+
                         <div>
-                            <img class="riloadr_slider" 
-                                data-src-small="<?php echo $image_small[0]; ?>"
-                                data-src-medium="<?php echo $image_medium[0]; ?>"
-                                data-src-big="<?php echo $image_big[0]; ?>"
-                            alt="img" />
+                            <div class="rsImg"><?php echo $image[0] ?></div>
                         </div>
+
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
                                 <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
@@ -226,14 +221,10 @@ if ($slides->have_posts()): ?>
                               data-move-offset="100"
                               <?php } ?>
                               >
-                        
+                        <?php $image_post = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium'); ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-                                <img class="riloadr_blog"
-                                    data-src-small="<?php echo $image_small[0]; ?>"                                     
-                                    data-src-medium="<?php echo $image_medium[0]; ?>"
-                                    data-src-big="<?php echo $image_big_post[0]; ?>" 
-                                    alt="<?php the_title(); ?>" />
+                                <div class="rsImg"><?php echo $image_post[0]; ?></div>
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">

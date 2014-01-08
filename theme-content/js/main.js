@@ -408,15 +408,6 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		});
     });
 
-    var riloadrSlider = new Riloadr({
-        name : 'riloadr_slider',
-        breakpoints: [
-            {name: 'small'  /*post-small */    , maxWidth: 300},
-            {name: 'medium' /*post-medium */   , maxWidth: 700},
-            {name: 'big'    /*slider-big    */ , minWidth: 701}
-        ]
-    });
-
     /* ====== INTERNAL FUNCTIONS ====== */
 
     /* --- DETECT VIEWPORT SIZE --- */
@@ -936,28 +927,10 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
             $('html').addClass('no-android-browser');
         }
 
-        var riloadrSingle = new Riloadr({
-            name : 'riloadr_single',
+        var riloadrImages = new Riloadr({
+            name : 'lazy',
             breakpoints: [
-                {name: 'medium' /*post-medium */ , maxWidth: 700},
-                {name: 'big'    /*post-big    */ , minWidth: 701}
-            ]
-        });
-
-        var riloadrBlog = new Riloadr({
-            name : 'riloadr_blog',
-            breakpoints: [
-                {name: 'medium' /*blog-medium */ , maxWidth: 700},
-                {name: 'big'    /*blog-big    */ , minWidth: 701, fallback: 'medium'}
-            ]         
-        });
-
-        var riloadrFeatured = new Riloadr({
-            name : 'riloadr_featured',
-            breakpoints: [
-                {name: 'small'  /*post-small */    , maxWidth: 300},
-                {name: 'medium' /*post-medium */   , maxWidth: 700},
-                {name: 'big'    /*slider-big    */ , minWidth: 701}
+                {name: 'whatever' /*post-medium */ , minWidth: 1}
             ]
         });
 

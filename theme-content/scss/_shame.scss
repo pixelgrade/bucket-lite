@@ -253,8 +253,8 @@ html {
     img, .wp-post-image {
         position: absolute;
         top: 0; left: 0;
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         z-index: 20;
     }
 
