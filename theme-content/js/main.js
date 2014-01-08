@@ -458,11 +458,19 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
     }
 
 
-    var riloadrSlider = new Riloadr({
-        name : 'riloadr-slider',
+    var riloadrSliderSmall = new Riloadr({
+        name : 'riloadr-slider-small',
         breakpoints: [
             {name: 'small' /*post-medium */ , minWidth: 901},
             {name: 'big'   /*post-medium */ , maxWidth: 900}
+        ]
+    });
+
+    var riloadrSliderSmall = new Riloadr({
+        name : 'riloadr-slider-big',
+        breakpoints: [
+            {name: 'small' /*post-medium */ , maxWidth: 900},
+            {name: 'big'   /*post-medium */ , minWidth: 901}
         ]
     });
 
