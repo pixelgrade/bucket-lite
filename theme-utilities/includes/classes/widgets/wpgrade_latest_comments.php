@@ -58,7 +58,7 @@ class wpgrade_latest_comments extends WP_Widget {
 				ob_start(); ?>
 				<article class="latest-comments__list">
 					<a class="media__img  latest-comments__avatar" href="<?php echo get_comment_author_url($comment->comment_ID) ?>">
-						<img class="img--center" src="<?php echo bucket::get_avatar_url($comment->comment_author_email, '48') ?>" alt="48x48">
+						<img class="img--center  lazy" data-src="<?php echo bucket::get_avatar_url($comment->comment_author_email, '48') ?>" alt="48x48">
 					</a>
 					<div class="media__body  latest-comments__body">
 						<div class="comment__meta">

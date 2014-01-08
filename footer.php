@@ -28,7 +28,7 @@
 							<div class="stat disable">
 						<?php }
 						$percent = ($month['count'] * 100) / $max_posts_nr; ?>
-							<dd class="stat__value" style="height:<?php echo $percent ?>%;"><?php echo $month['count']; ?></dd>
+							<dd class="stat__value" style="height:<?php if($percent > 0) echo $percent . "%"; else echo "32px" ?>"><?php echo $month['count']; ?></dd>
 							<dt class="stat__title"><?php echo $month['month']; ?></dt>
 						
                         <?php if ( isset($month['url'])) { ?>
