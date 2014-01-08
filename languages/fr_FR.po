@@ -2,18 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
 "POT-Creation-Date: 2013-12-13 11:56+0200\n"
-"PO-Revision-Date: 2013-12-13 11:56+0200\n"
+"PO-Revision-Date: 2014-01-08 16:56+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
-"Language: French\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n_noop:1,2;_nx:1,2;_n:1,2;_nx_noop:1,2;_ex\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:15
@@ -32,47 +32,38 @@ msgstr ""
 "le <a href=\"%s\"> page d'accueil</a> à la place ou bien faire un rechercher?"
 
 #: ../archive.php:31
-#, fuzzy
 msgid "Aside Archives"
 msgstr "Côté Archives"
 
 #: ../archive.php:33
-#, fuzzy
 msgid "Image Archives"
 msgstr "Archives d'images"
 
 #: ../archive.php:35
-#, fuzzy
 msgid "Link Archives"
 msgstr "Lien Archives"
 
 #: ../archive.php:37
-#, fuzzy
 msgid "Quote Archives"
 msgstr "Archives de la citation"
 
 #: ../archive.php:39
-#, fuzzy
 msgid "Status Archives"
 msgstr "Archives de l'État"
 
 #: ../archive.php:41
-#, fuzzy
 msgid "Gallery Archives"
 msgstr "Archives de la Galerie"
 
 #: ../archive.php:43
-#, fuzzy
 msgid "Video Archives"
 msgstr "Archives vidéo"
 
 #: ../archive.php:45
-#, fuzzy
 msgid "Audio Archives"
 msgstr "Archives audio"
 
 #: ../archive.php:47
-#, fuzzy
 msgid "Chat Archives"
 msgstr "Archives du chat"
 
@@ -104,7 +95,6 @@ msgid "Archives"
 msgstr "Archives"
 
 #: ../author-bio.php:14
-#, fuzzy
 msgid "Author"
 msgstr "Auteur"
 
@@ -118,7 +108,6 @@ msgid "All posts by %s"
 msgstr "Tous les messages de: %s"
 
 #: ../category.php:18 ../theme-content/admin-panel/redux-sections.php:156
-#, fuzzy
 msgid "Articles"
 msgstr "Article"
 
@@ -130,12 +119,10 @@ msgstr[0] "Il est <em>1</em> commentaire"
 msgstr[1] "Il ya <em>%1$s</em> commentaires"
 
 #: ../comments.php:31
-#, fuzzy
 msgid "There are no comments"
 msgstr "Il n'y a aucun commentaire"
 
 #: ../comments.php:35
-#, fuzzy
 msgid "Add yours"
 msgstr "Ajoutez le vôtre"
 
@@ -156,7 +143,6 @@ msgid "Comments are closed."
 msgstr "Les commentaires sont clos."
 
 #: ../comments.php:90 ../comments.php:104
-#, fuzzy
 msgid "Post a new comment"
 msgstr "Laisser un commentaire"
 
@@ -177,9 +163,8 @@ msgid "Send"
 msgstr "Envoyer"
 
 #: ../comments.php:100 ../comments.php:115
-#, fuzzy
 msgid "Comment"
-msgstr "Commentaires (1)"
+msgstr "Commentaire"
 
 #: ../comments.php:100 ../comments.php:115
 msgid "Message"
@@ -257,12 +242,10 @@ msgid "Bad Things"
 msgstr "Les mauvaises choses"
 
 #: ../single.php:125
-#, fuzzy
 msgid "The Breakdown"
 msgstr "Score Breakdown"
 
 #: ../single.php:155
-#, fuzzy
 msgid "Categories"
 msgstr "Catégories"
 
@@ -270,7 +253,7 @@ msgstr "Catégories"
 #: ../theme-partials/post-templates/content-classic.php:26
 #: ../theme-partials/post-templates/content-masonry.php:20
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:60
-#, fuzzy, php-format
+#, php-format
 msgid "View all posts in %s"
 msgstr "Voir tous les articles par: %s"
 
@@ -279,12 +262,11 @@ msgid "Tagged"
 msgstr "Tagué"
 
 #: ../single.php:169
-#, fuzzy, php-format
+#, php-format
 msgid "View all posts tagged %s"
-msgstr "Voir tous les articles par: %s"
+msgstr "Voir tous les articles étiqueté avec %s"
 
 #: ../single.php:188
-#, fuzzy
 msgid "Previous Article"
 msgstr "Article précédent"
 
@@ -298,7 +280,6 @@ msgid "Tag Archives: %s"
 msgstr "Archives du tags : %s"
 
 #: ../wpgrade-config.php:108 ../wpgrade-core/vendor/redux3/framework.php:1371
-#, fuzzy
 msgid "Default"
 msgstr "Par défaut"
 
@@ -307,12 +288,10 @@ msgstr "Par défaut"
 #: ../theme-utilities/includes/acf/acf-config.php:559
 #: ../theme-utilities/includes/acf/acf-config.php:645
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:92
-#, fuzzy
 msgid "Latest Posts"
 msgstr "Derniers articles"
 
 #: ../wpgrade-config.php:110
-#, fuzzy
 msgid "Slider + Latest Posts"
 msgstr "Slider + Derniers articles"
 
@@ -329,14 +308,12 @@ msgid "of"
 msgstr "de"
 
 #: ../wpgrade-config.php:233
-#, fuzzy
 msgid "Prev"
 msgstr "Précédent"
 
 #: ../theme-callbacks/acf-custom-resources.php:20
-#, fuzzy
 msgid "This theme requires it's own version of Advanced Custom Fields."
-msgstr "Ce thème nécessite le plugin suivant: %1$s ."
+msgstr "Ce thème nécessite sa propre version du Advanced Custom Fields."
 
 #: ../theme-callbacks/acf-custom-resources.php:22
 msgid ""
@@ -345,12 +322,10 @@ msgid ""
 msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:34
-#, fuzzy
 msgid "Settings"
 msgstr "Paramètres"
 
 #: ../theme-callbacks/activation-hooks.php:41
-#, fuzzy
 msgid "Full Width Featured Image"
 msgstr "Full Width Featured Image"
 
@@ -367,7 +342,6 @@ msgid "Is this post more important than others?"
 msgstr "Est-ce après plus importants que d'autres?"
 
 #: ../theme-callbacks/activation-hooks.php:55
-#, fuzzy
 msgid "Add to Category Slider"
 msgstr "Ajouter à la catégorie slider"
 
@@ -376,7 +350,6 @@ msgid "You can add this post to the category slider"
 msgstr "Vous pouvez ajouter ce poste à la catégorie slider"
 
 #: ../theme-callbacks/activation-hooks.php:62
-#, fuzzy
 msgid "Disable Sidebar"
 msgstr "Désactivé sidebar"
 
@@ -452,9 +425,8 @@ msgid "Fit if Smaller"
 msgstr "Fit si petit"
 
 #: ../theme-callbacks/activation-hooks.php:127
-#, fuzzy
 msgid "Slider height"
-msgstr "Sidebar à droite"
+msgstr "Hauteur Slider"
 
 #: ../theme-callbacks/activation-hooks.php:128
 msgid ""
@@ -463,9 +435,8 @@ msgid ""
 msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:134
-#, fuzzy
 msgid "Show Nearby Images"
-msgstr "Images suivantes"
+msgstr "Montrer des images à proximité"
 
 #: ../theme-callbacks/activation-hooks.php:135
 msgid ""
@@ -475,13 +446,11 @@ msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:140
 #: ../theme-callbacks/activation-hooks.php:172
-#, fuzzy
 msgid "Enabled"
 msgstr "Activé"
 
 #: ../theme-callbacks/activation-hooks.php:144
 #: ../theme-callbacks/activation-hooks.php:176
-#, fuzzy
 msgid "Disabled"
 msgstr "Désactivé"
 
@@ -563,9 +532,8 @@ msgstr ""
 "vous avez téléchargé ou choisi une image de la médiathèque."
 
 #: ../theme-callbacks/theme-features.php:110
-#, fuzzy
 msgid "Video URL"
-msgstr "Vidéo"
+msgstr "Vidéo URL"
 
 #: ../theme-callbacks/theme-features.php:113
 msgid "<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>"
@@ -573,9 +541,8 @@ msgstr ""
 
 #: ../theme-callbacks/unsorted.php:79
 #: ../theme-partials/post-templates/single-title.php:14
-#, fuzzy
 msgid "j F, Y \\a\\t H:i"
-msgstr "j F, Y \\a\\t H:i"
+msgstr "j F Y \\a\\t H:i"
 
 #: ../theme-callbacks/unsorted.php:82
 #: ../woocommerce/myaccount/my-address.php:45
@@ -600,9 +567,9 @@ msgid ""
 msgstr ""
 
 #: ../theme-callbacks/unsorted.php:224 ../theme-callbacks/unsorted.php:238
-#, fuzzy, php-format
+#, php-format
 msgid "Page %s"
-msgstr "Pages:"
+msgstr "Page %s"
 
 #: ../theme-callbacks/woocommerce.php:42
 msgid "View your shopping cart"
@@ -630,7 +597,6 @@ msgid "Remove this item"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-args.php:36
-#, fuzzy
 msgid ""
 "<h4>Theme Options</h4><p>These allow you to adjust the overall settings for "
 "your website.</p>"
@@ -666,7 +632,6 @@ msgid "Options"
 msgstr "Options"
 
 #: ../theme-content/admin-panel/redux-sections.php:11
-#, fuzzy
 msgid "General"
 msgstr "Générale"
 
@@ -681,14 +646,12 @@ msgid "Main Logo"
 msgstr "Logo principal"
 
 #: ../theme-content/admin-panel/redux-sections.php:19
-#, fuzzy
 msgid ""
 "If there is no image uploaded, plain text will be used instead (generated "
 "from the site's name)."
 msgstr ""
-"Téléchargez ici l'image de votre logo (nous recommandons une hauteur de "
-"80-100px). S'il n'y a aucune image téléchargée, texte sera utilisé à la "
-"place (généré à partir du nom du site)."
+"Si aucune image n'est téléchargé, texte brut sera utilisé à la place (généré "
+"à partir du nom du site)."
 
 #: ../theme-content/admin-panel/redux-sections.php:24
 msgid "Retina 2x Logo"
@@ -775,9 +738,8 @@ msgstr ""
 "pour correspondre à la couleur de votre marque."
 
 #: ../theme-content/admin-panel/redux-sections.php:83
-#, fuzzy
 msgid "Typography"
-msgstr "<h3>Typographie</h3>"
+msgstr "Typographie"
 
 #: ../theme-content/admin-panel/redux-sections.php:89
 msgid "Do you need custom web fonts?"
@@ -792,7 +754,6 @@ msgstr ""
 "a> collection (avec prévisualisation en direct)."
 
 #: ../theme-content/admin-panel/redux-sections.php:101
-#, fuzzy
 msgid "Headings Font"
 msgstr "Font du titres"
 
@@ -801,14 +762,12 @@ msgid "Font for titles and headings."
 msgstr "Font pour les titres et intertitres."
 
 #: ../theme-content/admin-panel/redux-sections.php:112
-#, fuzzy
 msgid "Navigation Font"
 msgstr "Font du navigation"
 
 #: ../theme-content/admin-panel/redux-sections.php:113
-#, fuzzy
 msgid "Font for navigation menu."
-msgstr "Commenter navigation"
+msgstr "Font pour menu de navigation."
 
 #: ../theme-content/admin-panel/redux-sections.php:121
 msgid "Body Font"
@@ -873,20 +832,20 @@ msgid "Google+ Share Link"
 msgstr "Google+ Share Link"
 
 #: ../theme-content/admin-panel/redux-sections.php:208
-#, fuzzy
 msgid "Pinterest Share Link"
-msgstr "Twitter Share Link"
+msgstr "Pinterest Share Link"
 
 #: ../theme-content/admin-panel/redux-sections.php:216
 msgid "Show Author Info Box"
 msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:217
-#, fuzzy
 msgid ""
 "Do you want to show author info box with avatar and description bellow the "
 "post?"
-msgstr "Voulez-vous montrer les liens d'actions dessous, les projets?"
+msgstr ""
+"Voulez-vous montrer auteur boîte d'information avec avatar et la description "
+"ci-dessous l'article?"
 
 #: ../theme-content/admin-panel/redux-sections.php:222
 msgid "<h3>Blog Archive</h3>"
@@ -911,7 +870,6 @@ msgid "Set the number of words for posts excerpt."
 msgstr "Définissez le nombre de mots pour les postes extrait."
 
 #: ../theme-content/admin-panel/redux-sections.php:246
-#, fuzzy
 msgid "Excerpt \"More\" Text"
 msgstr "Extrait \"Plus\" text"
 
@@ -924,9 +882,8 @@ msgstr ""
 "voulez l'enlever)."
 
 #: ../theme-content/admin-panel/redux-sections.php:253
-#, fuzzy
 msgid "Show Slider On Category Pages?"
-msgstr "Le nouveau nom de la catégorie de la galerie"
+msgstr "Afficher le slider sur les pages de catégories?"
 
 #: ../theme-content/admin-panel/redux-sections.php:254
 msgid ""
@@ -936,7 +893,6 @@ msgstr ""
 
 #: ../theme-content/admin-panel/redux-sections.php:294
 #: ../theme-content/admin-panel/redux-sections.php:399
-#, fuzzy
 msgid "Header"
 msgstr "Header"
 
@@ -952,7 +908,6 @@ msgstr ""
 "ou foncé)."
 
 #: ../theme-content/admin-panel/redux-sections.php:300
-#, fuzzy
 msgid "Header Type"
 msgstr "Header Type"
 
@@ -1619,19 +1574,17 @@ msgid "score"
 msgstr "Score"
 
 #: ../theme-partials/post-templates/share-box.php:23
-#, fuzzy
 msgid "Shares"
 msgstr "Partager"
 
 #: ../theme-partials/post-templates/single-title.php:8
-#, fuzzy
 msgid "Untitled"
 msgstr "Sans titre"
 
 #: ../theme-partials/post-templates/single-title.php:13
-#, fuzzy, php-format
+#, php-format
 msgid "Posts by %s"
-msgstr "Tous les messages de: %s"
+msgstr "Tous les articles de: %s"
 
 #: ../theme-partials/post-templates/single-title.php:14
 #, php-format
@@ -1639,9 +1592,8 @@ msgid "on %s"
 msgstr "sur %s"
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:242
-#, fuzzy
 msgid "No posts added to the category slider in this category"
-msgstr "Pas de messages en vedette dans cette catégorie"
+msgstr "Aucun articles ajoutés à la catégorie curseur dans cette catégorie"
 
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu_Edit.php:43
 msgid "Select MegaMenu Layout:"
@@ -1661,9 +1613,8 @@ msgid "Label"
 msgstr "Etiquette"
 
 #: ../theme-utilities/includes/acf/acf-config.php:83
-#, fuzzy
 msgid "Full URL"
-msgstr "URL du fichier MP3"
+msgstr "Full URL"
 
 #: ../theme-utilities/includes/acf/acf-config.php:98
 #: ../theme-utilities/includes/acf/acf-config.php:310
@@ -1706,14 +1657,12 @@ msgid "Placement"
 msgstr "Placement"
 
 #: ../theme-utilities/includes/acf/acf-config.php:219
-#, fuzzy
 msgid "Before Content"
-msgstr "Contenu de la citation"
+msgstr "Avant contenu"
 
 #: ../theme-utilities/includes/acf/acf-config.php:220
-#, fuzzy
 msgid "After Content"
-msgstr "Contenu de la citation"
+msgstr "Après contenu"
 
 #: ../theme-utilities/includes/acf/acf-config.php:221
 msgid "Using Shortcode"
@@ -1762,16 +1711,14 @@ msgid "Blocks"
 msgstr "Blocks"
 
 #: ../theme-utilities/includes/acf/acf-config.php:385
-#, fuzzy
 msgid "Billboard Slider"
-msgstr "Full Width Slider"
+msgstr "Billboard Slider"
 
 #: ../theme-utilities/includes/acf/acf-config.php:391
 #: ../theme-utilities/includes/acf/acf-config.php:552
 #: ../theme-utilities/includes/acf/acf-config.php:638
-#, fuzzy
 msgid "Posts Source"
-msgstr "Source"
+msgstr "Posts Source"
 
 #: ../theme-utilities/includes/acf/acf-config.php:394
 #: ../theme-utilities/includes/acf/acf-config.php:555
@@ -1801,16 +1748,14 @@ msgstr "Derniers messages de Message Format"
 #: ../theme-utilities/includes/acf/acf-config.php:401
 #: ../theme-utilities/includes/acf/acf-config.php:562
 #: ../theme-utilities/includes/acf/acf-config.php:648
-#, fuzzy
 msgid "Latest Posts With Reviews"
-msgstr " Derniers articles curseur"
+msgstr "Derniers articles avec des critiques"
 
 #: ../theme-utilities/includes/acf/acf-config.php:409
 #: ../theme-utilities/includes/acf/acf-config.php:570
 #: ../theme-utilities/includes/acf/acf-config.php:656
-#, fuzzy
 msgid "Category"
-msgstr "La catégorie de la galerie"
+msgstr "Catégorie"
 
 #: ../theme-utilities/includes/acf/acf-config.php:412
 #: ../theme-utilities/includes/acf/acf-config.php:573
@@ -1864,9 +1809,8 @@ msgstr "Audio"
 #: ../theme-utilities/includes/acf/acf-config.php:601
 #: ../theme-utilities/includes/acf/acf-config.php:687
 #: ../theme-utilities/includes/acf/acf-config.php:724
-#, fuzzy
 msgid "Number of Posts"
-msgstr "Nombre d'articles:"
+msgstr "Nombre d'articles"
 
 #: ../theme-utilities/includes/acf/acf-config.php:443
 msgid ""
@@ -1885,14 +1829,12 @@ msgstr ""
 #: ../theme-utilities/includes/acf/acf-config.php:458
 #: ../theme-utilities/includes/acf/acf-config.php:619
 #: ../theme-utilities/includes/acf/acf-config.php:705
-#, fuzzy
 msgid "Number of post to pass over"
-msgstr "Nombre d'articles:"
+msgstr "Nombre d'articles à passer au-dessus"
 
 #: ../theme-utilities/includes/acf/acf-config.php:470
-#, fuzzy
 msgid "Read More Label"
-msgstr "En savoir plus sur"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:473
 msgid "Main Slider Read More Link Text"
@@ -1903,23 +1845,20 @@ msgid "Only big articles"
 msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:493
-#, fuzzy
 msgid "Slider height (px)"
-msgstr "Sidebar à droite"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:511
 msgid "Select the transition between slides."
 msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:515
-#, fuzzy
 msgid "Slide"
-msgstr "Ajouter un nouveau"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:523
-#, fuzzy
 msgid "Slider auto play"
-msgstr "Slider autoplay"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:531
 #, fuzzy
@@ -1942,9 +1881,8 @@ msgid "Hero Posts Module"
 msgstr "Messages Module Hero"
 
 #: ../theme-utilities/includes/acf/acf-config.php:739
-#, fuzzy
 msgid "Posts Format"
-msgstr "Poster formats"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:744
 msgid "Masonry"
@@ -1960,34 +1898,29 @@ msgstr "Pagination"
 
 #: ../theme-utilities/includes/acf/acf-config.php:759
 #: ../theme-utilities/includes/acf/acf-config.php:787
-#, fuzzy
 msgid "Enable"
 msgstr "Activé"
 
 #: ../theme-utilities/includes/acf/acf-config.php:760
 #: ../theme-utilities/includes/acf/acf-config.php:788
-#, fuzzy
 msgid "Disable"
 msgstr "Désactivé"
 
 #: ../theme-utilities/includes/acf/acf-config.php:769
-#, fuzzy
 msgid "Section Title"
-msgstr "Auteur titre"
+msgstr "Titre de la section"
 
 #: ../theme-utilities/includes/acf/acf-config.php:782
-#, fuzzy
 msgid "Sidebar"
-msgstr "Barre latérale du Blog"
+msgstr "Barre latérale"
 
 #: ../theme-utilities/includes/acf/acf-config.php:798
 msgid "Text/Image Block"
 msgstr "Texte / image Bloquer"
 
 #: ../theme-utilities/includes/acf/acf-config.php:804
-#, fuzzy
 msgid "Editor"
-msgstr "Modifier"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:815
 msgid "Heading title"
@@ -2006,16 +1939,14 @@ msgid "Title"
 msgstr "Titre"
 
 #: ../theme-utilities/includes/acf/acf-config.php:834
-#, fuzzy
 msgid "Heading link(optional)"
-msgstr "Intitulé titre"
+msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:839
 msgid "#"
 msgstr ""
 
 #: ../theme-utilities/includes/acf/acf-config.php:847
-#, fuzzy
 msgid "Open link in new tab"
 msgstr "Liens s'ouvrent dans une nouvelle fenêtre"
 
@@ -2024,9 +1955,8 @@ msgid "Add Block"
 msgstr "Ajouter un bloc"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_dribbble_widget.php:7
-#, fuzzy
 msgid "Dribbble Widget"
-msgstr "Dribbble Widget"
+msgstr ""
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_dribbble_widget.php:7
 msgid "Display Dribbble images in your sidebar or footer"
@@ -2046,9 +1976,8 @@ msgid "Number of images"
 msgstr "Nombre d'images"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:10
-#, fuzzy
 msgid "Flickr Widget"
-msgstr "Flickr Widget"
+msgstr ""
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:10
 msgid ""
@@ -2076,17 +2005,14 @@ msgid "Tags"
 msgstr "Tags"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:9
-#, fuzzy
 msgid "The latest comments"
 msgstr "Les derniers commentaires"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:10
-#, fuzzy
 msgid "Latest Comments"
 msgstr "Derniers commentaires"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:40
-#, fuzzy
 msgid "Recent Comments"
 msgstr "Commentaires récents"
 
@@ -2101,7 +2027,6 @@ msgid "Title:"
 msgstr "Titre:"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:104
-#, fuzzy
 msgid "Number of comments to show:"
 msgstr "Nombre de commentaires pour afficher:"
 
@@ -2111,13 +2036,10 @@ msgid "Latest Reviews"
 msgstr "Dernières critiques"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_reviews.php:10
-#, fuzzy
 msgid "Display the latest posts with reviews"
-msgstr ""
-"Afficher les derniers messages de blog dans votre barre latérale ou le pied"
+msgstr "Afficher les derniers articles avec des critiques"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_reviews.php:75
-#, fuzzy
 msgid "Number of reviews to show:"
 msgstr "Nombre de critiques pour afficher:"
 
@@ -2180,7 +2102,6 @@ msgid "Sorry. No data yet."
 msgstr "Désolé. Aucune donnée pour le moment."
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:9
-#, fuzzy
 msgid "Latest Posts Slider"
 msgstr "Derniers articles slider"
 
@@ -2190,7 +2111,6 @@ msgstr ""
 "Afficher les derniers messages de blog dans votre barre latérale ou le pied"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_social_links_widget.php:9
-#, fuzzy
 msgid "Social Links"
 msgstr "Liens sociaux"
 
@@ -2203,9 +2123,8 @@ msgid "We Are Social"
 msgstr "Nous sommes sociaux"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:8
-#, fuzzy
 msgid "Twitter Widget"
-msgstr "Twitter Widget"
+msgstr ""
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:8
 msgid "Display Latest Tweets"
@@ -2285,7 +2204,6 @@ msgstr ""
 #: ../woocommerce/myaccount/form-login.php:85
 #: ../woocommerce/shop/form-login.php:24
 #: ../wpgrade-core/vendor/redux3/inc/fields/password/field_password.php:52
-#, fuzzy
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -2294,12 +2212,10 @@ msgid "Sorry, your password didn’t match"
 msgstr "Désolé, votre mot de passe ne correspond pas"
 
 #: ../theme-utilities/includes/functions/widgets-areas.php:10
-#, fuzzy
 msgid "Main Right Sidebar"
 msgstr "Principal barre latérale à droite"
 
 #: ../theme-utilities/includes/functions/widgets-areas.php:11
-#, fuzzy
 msgid "Main Sidebar"
 msgstr "Principal barre latérale"
 
@@ -2979,32 +2895,28 @@ msgid "out of 5"
 msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:30
-#, fuzzy, php-format
+#, php-format
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
-msgstr[0] "Poster Score des commentaires"
-msgstr[1] "Poster Score des commentaires"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../woocommerce/single-product-reviews.php:36
 #: ../woocommerce/single-product-reviews.php:42
-#, fuzzy
 msgid "Reviews"
-msgstr "Dernières critiques"
+msgstr "Critiques"
 
 #: ../woocommerce/single-product-reviews.php:58
-#, fuzzy
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&laquo;</span> Messages anciens"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:59
-#, fuzzy
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nouveaux messages <span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:65
-#, fuzzy
 msgid "Add a review"
-msgstr "Ajouter un nouveau"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:69
 msgid "Be the first to review"
@@ -3041,9 +2953,8 @@ msgid "Average"
 msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:102
-#, fuzzy
 msgid "Not that bad"
-msgstr "Activer"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:103
 msgid "Very Poor"
@@ -3097,9 +3008,8 @@ msgid "Total"
 msgstr ""
 
 #: ../woocommerce/cart/cart.php:129
-#, fuzzy
 msgid "Checkout"
-msgstr "Option de case à cocher"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:130
 msgid "Update Cart"
@@ -3118,9 +3028,8 @@ msgid "Subtotal"
 msgstr ""
 
 #: ../woocommerce/cart/mini-cart.php:68
-#, fuzzy
 msgid "View Cart &rarr;"
-msgstr "Commentaires plus récents &rarr;"
+msgstr ""
 
 #: ../woocommerce/cart/mini-cart.php:69
 msgid "Checkout &rarr;"
@@ -3141,9 +3050,8 @@ msgid "State / county"
 msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:53
-#, fuzzy
 msgid "Select a state&hellip;"
-msgstr "Sélectionnez une galerie"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:73
 msgid "City"
@@ -3191,9 +3099,8 @@ msgid "Cart Discount"
 msgstr ""
 
 #: ../woocommerce/cart/totals.php:33 ../woocommerce/cart/totals.php:81
-#, fuzzy
 msgid "[Remove]"
-msgstr "Supprimer"
+msgstr ""
 
 #: ../woocommerce/cart/totals.php:44
 #: ../woocommerce/checkout/review-order.php:45
@@ -3207,9 +3114,8 @@ msgstr ""
 
 #: ../woocommerce/cart/totals.php:90
 #: ../woocommerce/checkout/review-order.php:91
-#, fuzzy
 msgid "Order Total"
-msgstr "Articles plus anciens"
+msgstr ""
 
 #: ../woocommerce/cart/totals.php:103
 #: ../woocommerce/checkout/review-order.php:104
@@ -3277,9 +3183,8 @@ msgid "Your order"
 msgstr ""
 
 #: ../woocommerce/checkout/form-coupon.php:17
-#, fuzzy
 msgid "Have a coupon?"
-msgstr "Amusez-vous bien!"
+msgstr ""
 
 #: ../woocommerce/checkout/form-coupon.php:20
 msgid "Click here to enter your code"
@@ -3290,9 +3195,8 @@ msgid "Coupon code"
 msgstr ""
 
 #: ../woocommerce/checkout/form-coupon.php:29
-#, fuzzy
 msgid "Apply Coupon"
-msgstr "Appliquer CSS personnalisé"
+msgstr ""
 
 #: ../woocommerce/checkout/form-login.php:14
 msgid "Returning customer?"
@@ -3337,9 +3241,8 @@ msgstr ""
 
 #: ../woocommerce/checkout/form-shipping.php:59
 #: ../woocommerce/single-product/tabs/additional-information.php:14
-#, fuzzy
 msgid "Additional Information"
-msgstr "Informations additionnelles"
+msgstr ""
 
 #: ../woocommerce/checkout/review-order.php:174
 msgid "Please fill in your details above to see available payment methods."
@@ -3365,9 +3268,8 @@ msgid "Update totals"
 msgstr ""
 
 #: ../woocommerce/checkout/review-order.php:192
-#, fuzzy
 msgid "Place order"
-msgstr "Placement"
+msgstr ""
 
 #: ../woocommerce/checkout/review-order.php:199
 msgid "I have read and accept the"
@@ -3388,9 +3290,8 @@ msgid "Please attempt your purchase again or go to your account page."
 msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:24
-#, fuzzy
 msgid "Please attempt your purchase again."
-msgstr "S'il vous plaît entrer de nouveau votre mot de passe:"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:28
 #: ../woocommerce/myaccount/my-orders.php:71
@@ -3433,9 +3334,9 @@ msgid "You have received an order from %s. Their order is as follows:"
 msgstr ""
 
 #: ../woocommerce/emails/admin-new-order.php:17
-#, fuzzy, php-format
+#, php-format
 msgid "Order: %s"
-msgstr "Taille de la bordure"
+msgstr ""
 
 #: ../woocommerce/emails/admin-new-order.php:50
 #: ../woocommerce/emails/customer-completed-order.php:51
@@ -3443,9 +3344,8 @@ msgstr "Taille de la bordure"
 #: ../woocommerce/emails/customer-processing-order.php:51
 #: ../woocommerce/emails/plain/admin-new-order.php:38
 #: ../woocommerce/order/order-details.php:97
-#, fuzzy
 msgid "Customer details"
-msgstr "Champs personnalisés"
+msgstr ""
 
 #: ../woocommerce/emails/admin-new-order.php:53
 #: ../woocommerce/emails/customer-completed-order.php:54
@@ -3456,9 +3356,8 @@ msgstr "Champs personnalisés"
 #: ../woocommerce/emails/plain/customer-note.php:49
 #: ../woocommerce/emails/plain/customer-processing-order.php:41
 #: ../woocommerce/order/order-details.php:101
-#, fuzzy
 msgid "Email:"
-msgstr "Messagerie"
+msgstr ""
 
 #: ../woocommerce/emails/admin-new-order.php:56
 #: ../woocommerce/emails/customer-completed-order.php:57
@@ -3528,9 +3427,9 @@ msgstr ""
 
 #: ../woocommerce/emails/customer-reset-password.php:15
 #: ../woocommerce/emails/plain/customer-reset-password.php:15
-#, fuzzy, php-format
+#, php-format
 msgid "Username: %s"
-msgstr "Nom d'utilisateur"
+msgstr "Nom d'utilisateur: %s"
 
 #: ../woocommerce/emails/customer-reset-password.php:16
 #: ../woocommerce/emails/plain/customer-reset-password.php:16
@@ -3543,9 +3442,8 @@ msgid "To reset your password, visit the following address:"
 msgstr ""
 
 #: ../woocommerce/emails/customer-reset-password.php:20
-#, fuzzy
 msgid "Click here to reset your password"
-msgstr "S'il vous plaît entrer de nouveau votre mot de passe:"
+msgstr ""
 
 #: ../woocommerce/emails/email-addresses.php:18
 #: ../woocommerce/emails/plain/email-addresses.php:12
@@ -3562,14 +3460,13 @@ msgid "This product is no longer available"
 msgstr ""
 
 #: ../woocommerce/emails/email-order-items.php:76
-#, fuzzy, php-format
+#, php-format
 msgid "Download %d:"
-msgstr "Télécharger sauvegarde"
+msgstr ""
 
 #: ../woocommerce/emails/email-order-items.php:78
-#, fuzzy
 msgid "Download:"
-msgstr "Télécharger sauvegarde"
+msgstr ""
 
 #: ../woocommerce/emails/plain/admin-new-order.php:19
 #: ../woocommerce/emails/plain/customer-completed-order.php:19
@@ -3596,9 +3493,8 @@ msgstr ""
 #: ../woocommerce/emails/plain/customer-completed-order.php:38
 #: ../woocommerce/emails/plain/customer-note.php:46
 #: ../woocommerce/emails/plain/customer-processing-order.php:38
-#, fuzzy
 msgid "Your details"
-msgstr "Voir les détails"
+msgstr ""
 
 #: ../woocommerce/emails/plain/email-order-items.php:28
 #, php-format
@@ -3611,23 +3507,20 @@ msgid "Cost: %s"
 msgstr ""
 
 #: ../woocommerce/loop/add-to-cart.php:32
-#, fuzzy
 msgid "Select options"
-msgstr "Sélect option"
+msgstr ""
 
 #: ../woocommerce/loop/add-to-cart.php:36
-#, fuzzy
 msgid "View options"
-msgstr "Options du thème"
+msgstr ""
 
 #: ../woocommerce/loop/add-to-cart.php:45
 #: ../woocommerce/single-product/add-to-cart/grouped.php:45
 #: ../woocommerce/single-product/add-to-cart/grouped.php:77
 #: ../woocommerce/single-product/add-to-cart/simple.php:44
 #: ../woocommerce/single-product/add-to-cart/variable.php:84
-#, fuzzy
 msgid "Add to cart"
-msgstr "Ajouter plus"
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:21
 #, fuzzy
