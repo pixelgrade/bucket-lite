@@ -32,6 +32,9 @@ if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerc
     <div id="page">
         <nav class="navigation  navigation--mobile">
             <h2 class="accessibility"><?php _e('Primary Mobile Navigation', wpgrade::textdomain()) ?></h2>
+            <div class="search-form  push-half--top  push--bottom  soft--bottom">
+                <?php get_search_form(); ?>
+            </div>            
             <?php 
                 wpgrade_main_nav_mobile();
                 wpgrade_top_nav_left('nav--stacked', true);
