@@ -458,6 +458,14 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
     }
 
 
+    var riloadrSlider = new Riloadr({
+        name : 'riloadr-slider',
+        breakpoints: [
+            {name: 'small' /*post-medium */ , minWidth: 901},
+            {name: 'big'   /*post-medium */ , maxWidth: 900}
+        ]
+    });
+
     /* MAGNIFIC POPUP INIT */
 
     function magnificPopupInit(){
@@ -1065,7 +1073,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
     $(window).on("debouncedresize", function(e){
         resizeVideos();
         slider_billboard();
-        riloadrSlider.riload();
+        // riloadrSlider.riload();
     });
 
 
