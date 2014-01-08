@@ -158,11 +158,12 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                     <article class="article  article--billboard  article--billboard-big">
-                        <div>
-                            <img class="riloadr-slider-big"
-                                data-src-big="<?php echo $image[0]; ?>"
-                                data-src-small="<?php echo $image_small[0]; ?>"
-                            alt="img" />
+                        <div class="rsImg">
+                            <?php echo $image[0]; ?>
+                            <!-- <img 
+                                src="<?php echo $image[0]; ?>"
+                                data-big="<?php echo $image[0]; ?>"
+                            alt="img" /> -->
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -192,10 +193,7 @@ if ($slides->have_posts()): ?>
                     <article class="article  article--billboard">
 
                         <div>
-                            <img class="riloadr-slider-big"
-                                data-src-big="<?php echo $image[0]; ?>"
-                                data-src-small="<?php echo $image_small[0]; ?>"
-                            alt="img" />
+                            <div class="rsImg"><?php echo $image[0]; ?></div>
                         </div>
 
                         <a href="<?php the_permalink(); ?>">
@@ -230,8 +228,7 @@ if ($slides->have_posts()): ?>
                         ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-                                <!-- <div class="rsImg"><?php echo $image_post[0]; ?></div> -->
-                                <img class="riloadr-slider-small" data-src-big="<?php echo $image_post_big[0]; ?>" data-src-small="<?php echo $image_post_small[0]; ?>" alt="img" />
+                                <img class="riloadr-slider" data-src-big="<?php echo $image_post_big[0]; ?>" data-src-small="<?php echo $image_post_small[0]; ?>" alt="img" />
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">
