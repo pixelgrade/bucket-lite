@@ -221,7 +221,7 @@ if ($slides->have_posts()): ?>
                               data-move-offset="100"
                               <?php } ?>
                               >
-                        <?php $image_post = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium'); ?>
+                        <?php $image_post = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small'); ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
                                 <div class="rsImg"><?php echo $image_post[0]; ?></div>

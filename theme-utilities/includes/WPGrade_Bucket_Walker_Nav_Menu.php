@@ -263,7 +263,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         $post_title = get_the_title();
                         $post_link = get_permalink();
                         
-                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );                        
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );                        
 
 //                        $image_ratio = 70; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
 //                        if (isset($post_image[1]) && isset($post_image[2]) && $post_image[1] > 0) {
