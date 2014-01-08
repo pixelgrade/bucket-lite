@@ -214,10 +214,11 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                             
                             $post_title = get_the_title();
                             $post_link = get_permalink();
-                            $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-big" );
+                            $image_big = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-big" );
+                            $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
-                            if ( $post_image ){
-                                $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
+                            if ( $image_big || $image_medium ){
+                                $menu_post_image = '<img class="riloadr_blog" data-src-big="' . $image_big[0] . '" data-src-medium="' . $image_medium[0] . '" alt="' . $post_title . '" width="' . $image_big[1]. '" height="' . $image_big[2]. '" class="rsImg"/>';
                             } else {
                                 // $menu_post_image = '<div class="image-wrap"></div>';
                                 $menu_post_image = '';
@@ -262,15 +263,16 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                         $post_title = get_the_title();
                         $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );
+                        
+                        $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );                        
 
 //                        $image_ratio = 70; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
 //                        if (isset($post_image[1]) && isset($post_image[2]) && $post_image[1] > 0) {
 //                            $image_ratio = $post_image[2] * 100/$post_image[1];
 //                        }
 
-                        if ( $post_image ){
-                            $menu_post_image = '<div class="article__thumb" style=""><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
+                        if ( $image_medium ){
+                            $menu_post_image = '<div class="article__thumb" style=""><img class="riloadr_blog" data-src-medium="' . $image_medium[0] . '" alt="' . $post_title . '" width="' . $image_medium[1]. '" height="' . $image_medium[2]. '" /></div>';
                         } else {
                             $menu_post_image = '<div class="article__thumb"></div>';
                             $menu_post_image = '';

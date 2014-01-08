@@ -22,14 +22,20 @@
         		
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $thumbsize);
 
+                $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog-medium' );                    
+                $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
+
         		$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-        		if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-        			$image_ratio = $image[2] * 100/$image[1];
+        		if (isset($image_big[1]) && isset($image_big[2]) && $image_big[1] > 0) {
+        			$image_ratio = $image_big[2] * 100/$image_big[1];
         		}
             ?>
 
                 <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                    <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+                    <img class="riloadr_blog" 
+                        data-src-big="<?php echo $image_big[0]; ?>"
+                        data-src-medium="<?php echo $image_medium[0]; ?>"
+                        alt="<?php the_title(); ?>" />
                 </div>
                 <?php post_format_icon();
             	if ( bucket::has_average_score() ) { ?>

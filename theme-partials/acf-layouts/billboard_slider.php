@@ -139,6 +139,7 @@ if ($slides->have_posts()): ?>
             $image_small = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-small' );           
             $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-medium' );                    
             $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
+            $image_big_post = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
 
             $image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
             
@@ -160,15 +161,11 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                     <article class="article  article--billboard  article--billboard-big">
                         <div>
-<<<<<<< HEAD
                             <img class="riloadr_slider" 
                                 data-src-big="<?php echo $image_big[0]; ?>"
                                 data-src-medium="<?php echo $image_medium[0]; ?>"
                                 data-src-small="<?php echo $image_small[0]; ?>"
                             alt="img" />
-=======
-                            <div class="rsImg"><?php echo $image[0] ?></div>
->>>>>>> 4227af3f42264bf59e6b7a08beb9dc1e7ebf3c80
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -197,15 +194,11 @@ if ($slides->have_posts()): ?>
                 endif; ?>
                     <article class="article  article--billboard">
                         <div>
-<<<<<<< HEAD
                             <img class="riloadr_slider" 
-                                data-src-big="<?php echo $image_big[0]; ?>"
-                                data-src-medium="<?php echo $image_medium[0]; ?>"
                                 data-src-small="<?php echo $image_small[0]; ?>"
+                                data-src-medium="<?php echo $image_medium[0]; ?>"
+                                data-src-big="<?php echo $image_big[0]; ?>"
                             alt="img" />
-=======
-                            <div class="rsImg"><?php echo $image[0] ?></div>
->>>>>>> 4227af3f42264bf59e6b7a08beb9dc1e7ebf3c80
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -236,11 +229,11 @@ if ($slides->have_posts()): ?>
                         
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-<<<<<<< HEAD
-                                <img src="<?php echo $image_small[0] ?>" data-src-big="<?php echo $image_small[0]; ?>" alt="<?php the_title(); ?>" />
-=======
-                                <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" alt="<?php the_title(); ?>" />
->>>>>>> 4227af3f42264bf59e6b7a08beb9dc1e7ebf3c80
+                                <img class="riloadr_blog"
+                                    data-src-small="<?php echo $image_small[0]; ?>"                                     
+                                    data-src-medium="<?php echo $image_medium[0]; ?>"
+                                    data-src-big="<?php echo $image_big_post[0]; ?>" 
+                                    alt="<?php the_title(); ?>" />
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">

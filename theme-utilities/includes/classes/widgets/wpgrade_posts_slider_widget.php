@@ -33,14 +33,20 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 						<div class="image-wrap">
 							<?php
 							if(has_post_thumbnail()) :
-								$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium');
+					            $image_small = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-small' );           
+					            $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-medium' );                    
+					            $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');							
 
 								$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-								if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-									$image_ratio = $image[2] * 100/$image[1];
+								if (isset($image_big[1]) && isset($image_big[2]) && $image_big[1] > 0) {
+									$image_ratio = $image_big[2] * 100/$image_big[1];
 								}
 								?>
-								<img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+	                            <img class="riloadr_slider" 
+	                                data-src-big="<?php echo $image_big[0]; ?>"
+	                                data-src-medium="<?php echo $image_medium[0]; ?>"
+	                                data-src-small="<?php echo $image_small[0]; ?>"
+	                            alt="<?php the_title(); ?>" />
 							<?php else : ?>
 								<div class="post-format-icon  post-format-icon__icon">
 									<i class="icon-camera"></i>
