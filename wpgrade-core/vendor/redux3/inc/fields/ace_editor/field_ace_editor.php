@@ -96,8 +96,8 @@ class ReduxFramework_ace_editor {
             );
             wp_enqueue_script(
                 'redux-field-ace-editor-js', 
-                ReduxFramework::$_url . 'inc/fields/ace_editor/field_ace_editor.js', 
-                array( 'jquery', 'ace-editor' ),
+                ReduxFramework::$_url . 'inc/fields/ace_editor/field_ace_editor.js',
+                array( 'jquery', 'ace-editor-js' ),
                 time(),
                 true
             );

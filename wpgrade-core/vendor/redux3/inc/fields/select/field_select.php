@@ -17,38 +17,6 @@ class ReduxFramework_select extends ReduxFramework{
 		
             
     }
-	
-
-
-	/**
-	 * Field Render Function.
-	 *
-	 * Takes the vars and outputs the HTML for the field in the settings
-	 *
-	 * @since ReduxFramework 1.0.0
-	*/
-//	function render(){
-//
-//		$sortable = (isset($this->field['sortable']) && $this->field['sortable']) ? ' select2-sortable"' : "";
-//		if (!empty($sortable)) { // Dummy proofing  :P
-//			$this->field['multi'] = true;
-//		}
-//
-//        if( !empty( $this->field['data'] ) && empty( $this->field['options'] ) ) {
-//			if (empty($this->field['args'])) {
-//				$this->field['args'] = array();
-//			}
-//			if ($this->field['data'] == "elusive-icons" || $this->field['data'] == "elusive-icon" || $this->field['data'] == "elusive" ) {
-//       			$icons_file = ReduxFramework::$_dir.'inc/fields/select/elusive-icons.php';
-//       			$icons_file = apply_filters('redux-font-icons-file',$icons_file);
-//       			if(file_exists($icons_file))
-//       				require_once $icons_file;
-//			}
-//        	$this->field['options'] = $parent->get_wordpress_data($this->field['data'], $this->field['args']);
-//        }
-//
-//	}//function
-	
 
 
 	/**
@@ -59,6 +27,24 @@ class ReduxFramework_select extends ReduxFramework{
 	 * @since ReduxFramework 1.0.0
 	*/
 	function render(){
+
+		$sortable = (isset($this->field['sortable']) && $this->field['sortable']) ? ' select2-sortable"' : "";
+		if (!empty($sortable)) { // Dummy proofing  :P
+			$this->field['multi'] = true;
+		}
+
+        if( !empty( $this->field['data'] ) && empty( $this->field['options'] ) ) {
+			if (empty($this->field['args'])) {
+				$this->field['args'] = array();
+			}
+			if ($this->field['data'] == "elusive-icons" || $this->field['data'] == "elusive-icon" || $this->field['data'] == "elusive" ) {
+       			$icons_file = ReduxFramework::$_dir.'inc/fields/select/elusive-icons.php';
+       			$icons_file = apply_filters('redux-font-icons-file',$icons_file);
+       			if(file_exists($icons_file))
+       				require_once $icons_file;
+			}        	
+        	$this->field['options'] = $this->get_wordpress_data($this->field['data'], $this->field['args']);
+        }
 
 		if ( !empty($this->field['data']) && ( $this->field['data'] == "elusive-icons" || $this->field['data'] == "elusive-icon" || $this->field['data'] == "elusive" ) ) {
        		$this->field['class'] = " font-icons";

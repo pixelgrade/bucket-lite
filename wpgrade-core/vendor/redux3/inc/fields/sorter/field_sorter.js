@@ -14,8 +14,35 @@ jQuery(function() {
             items: 'li',
             placeholder: "placeholder",
             connectWith: '.sortlist_' + id,
-            opacity: 0.6,
-            update: function() {
+            opacity: 0.8,
+			stop: function(event, ui) {
+				var sorter = redux.sorter[jQuery(this).attr('data-id')];
+				var id = jQuery(this).find('h3').text();
+				if ( sorter && sorter[id] ) {
+					if(jQuery(this).children('li').length >= sorter[id]) {
+						jQuery(this).addClass('filled');
+						if (jQuery(this).children('li').length > sorter[id]) {
+							jQuery(ui.sender).sortable('cancel');	
+						}
+					} else {
+						jQuery(this).removeClass('filled');
+					}
+				}
+			},
+            update: function(event, ui) {
+
+				var sorter = redux.sorter[jQuery(this).attr('data-id')];
+				var id = jQuery(this).find('h3').text();
+				if ( sorter && sorter[id] ) {
+					if(jQuery(this).children('li').length >= sorter[id]) {
+						jQuery(this).addClass('filled');
+						if (jQuery(this).children('li').length > sorter[id]) {
+							jQuery(ui.sender).sortable('cancel');	
+						}
+					} else {
+						jQuery(this).removeClass('filled');
+					}
+				}
                 jQuery(this).find('.position').each(function() {
                     var listID = jQuery(this).parent().attr('id');
                     var parentID = jQuery(this).parent().parent().attr('id');
