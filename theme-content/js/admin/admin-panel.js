@@ -414,9 +414,6 @@
 	var ensure_height_of_container = function(){
 
 		var min_height = $(window).height() -62;
-
-		console.log(min_height);
-
 		$('#redux-main') .css({'min-height': min_height +'px'});
 	}
 

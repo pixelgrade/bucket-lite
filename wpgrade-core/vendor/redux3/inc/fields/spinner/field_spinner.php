@@ -9,9 +9,10 @@ class ReduxFramework_spinner extends ReduxFramework {
      *
      * @since ReduxFramework 3.0.0
      */
-    function __construct($field = array(), $value = '', $parent) {
-
-        parent::__construct($parent->sections, $parent->args);
+    function __construct( $field = array(), $value ='', $parent ) {
+    
+        //parent::__construct( $parent->sections, $parent->args );
+        $this->parent = $parent;
         $this->field = $field;
         $this->value = $value;
         //$this->render();
@@ -27,6 +28,26 @@ class ReduxFramework_spinner extends ReduxFramework {
      * @since ReduxFramework 3.0.0
      */
     function render() {
+
+        // Don't allow input edit if there's a step
+        $readonly = "";
+        if (isset($this->field['edit']) && $this->field['edit'] == false) {
+            $readonly = ' readonly="readonly"';
+        }
+
+        echo '<input type="text" name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . ']" id="' . $this->field['id'] . '" value="' . $this->value . '" class="mini spinner-input' . $this->field['class'] . '"' . $readonly . '/>';
+        echo '<div id="' . $this->field['id'] . '-spinner" class="redux_spinner" rel="' . $this->field['id'] . '"></div>';
+
+    }//function
+
+    /**
+     * 
+     * Clean the field data to the fields defaults given the parameters.
+     * 
+     * @since Redux_Framework 3.1.1
+     * 
+     */
+    function clean() {
 
         if (empty($this->field['min'])) {
             $this->field['min'] = 0;

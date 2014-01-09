@@ -8,9 +8,10 @@ class ReduxFramework_slider extends ReduxFramework{
 	 *
 	 * @since ReduxFramework 0.0.4
 	*/
-	function __construct($field = array(), $value ='', $parent){
-		
-		parent::__construct($parent->sections, $parent->args);
+	function __construct( $field = array(), $value ='', $parent ) {
+    
+		//parent::__construct( $parent->sections, $parent->args );
+		$this->parent = $parent;
 		$this->field = $field;
 		$this->value = $value;
 		//$this->render();
@@ -113,13 +114,20 @@ class ReduxFramework_slider extends ReduxFramework{
 	*/
 	function enqueue(){
 
-		wp_enqueue_script(
-			'redux-typewatch-js', 
-			ReduxFramework::$_url.'assets/js/vendor/jquery.typewatch.min.js', 
-			array('jquery'),
-			time(),
-			true
-		);			
+        wp_enqueue_script(
+            'redux-field-media-js',
+            ReduxFramework::$_url . 'inc/fields/media/field_media.js',
+            array( 'jquery', 'wp-color-picker' ),
+            time(),
+            true
+        );
+
+        wp_enqueue_style(
+            'redux-field-media-css',
+            ReduxFramework::$_url . 'inc/fields/media/field_media.css',
+            time(),
+            true
+        );
 
 		wp_enqueue_script(
 			'redux-field-slider-js', 
@@ -135,6 +143,56 @@ class ReduxFramework_slider extends ReduxFramework{
 			time(),
 			true
 		);		
+
+	}//function
+
+
+	/**
+	 * 
+	 * Functions to pass data from the PHP to the JS at render time.
+	 * 
+	 * @return array Params to be saved as a javascript object accessable to the UI.
+	 * 
+	 * @since  Redux_Framework 3.1.1
+	 * 
+	 */
+	function localize() {
+
+		$params = array(
+			'id' => '',
+			'min' => '',
+			'max' => '',
+			'step' => '',
+			'val' => null,
+			'default' => '',
+		);
+
+		$params = wp_parse_args( $this->field, $params );
+		$params['val'] = $this->value;
+
+		return $params;
+
+	}
+
+
+	/**
+	 * Field Render Function.
+	 *
+	 * Takes the vars and outputs the HTML for the field in the settings
+	 *
+	 * @since ReduxFramework 0.0.4
+	*/
+	function render(){
+
+		// Don't allow input edit if there's a step
+		$readonly = "";
+		
+		if ( isset($this->field['edit']) && $this->field['edit'] == false ) {
+			$readonly = ' readonly="readonly"';
+		}
+		
+		echo '<input type="text" name="'.$this->parent->args['opt_name'].'['.$this->field['id'].']" id="' . $this->field['id'] . '" value="'. $this->value .'" class="mini slider-input'.$this->field['class'].'"'.$readonly.'/>';
+		echo '<div id="'.$this->field['id'].'-slider" class="redux_slider" rel="'.$this->field['id'].'"></div>';
 
 	}//function
 
