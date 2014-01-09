@@ -95,7 +95,8 @@ a, blockquote, .small-link, .tabs__nav a.current,
 .widget_wpgrade_twitter_widget .widget--footer__title h3:before,
 a:hover > .pixcode--icon,
 .score__pros__title, .score__cons__title,
-.comments-area-title .hN em {
+.comments-area-title .hN em,
+.comment__author-name {
     color: <?php echo $main_color; ?>;
 }
 
@@ -142,7 +143,7 @@ ol {
 if ( isset($fonts['google_titles_font']) ) {?>
 	/* Select classes here */
     .badge, h1, h2, h3, h4, h5, h6, hgroup,
-    .hN, .article__author-name, .comment__author-name, 
+    .hN, .article__author-name, .comment__author-name,
     .score__average-wrapper, .score__label, 
     .widget_calendar caption, blockquote,
     .tabs__nav, .popular-posts__time,
