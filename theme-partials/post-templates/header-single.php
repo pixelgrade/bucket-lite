@@ -3,6 +3,7 @@ if (has_post_thumbnail()):
     // $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog-big' );
     // 
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog-big' );
+    $image_medium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog-medium' );
 
 	// $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
 	$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
@@ -22,7 +23,7 @@ $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar =
 
     <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
         <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-            <img class="lazy" data-src="<?php echo $image[0]; ?>" alt="<?php echo $image[0]; ?>" />
+            <img class="riloadr-single" data-src-big="<?php echo $image[0]; ?>" data-src-small="<?php echo $image_medium[0]; ?>" alt="<?php echo $image[0]; ?>" />
         </div>
     </div>
 
