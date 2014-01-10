@@ -40,8 +40,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 									$image_ratio = $image[2] * 100/$image[1];
 								}
 								?>
-								<!-- <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" /> -->
-								<div class="rsImg"><?php echo $image[0]; ?></div>
+								<img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
 							<?php else : ?>
 								<div class="post-format-icon  post-format-icon__icon">
 									<i class="icon-camera"></i>
