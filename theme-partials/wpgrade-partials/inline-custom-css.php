@@ -96,7 +96,9 @@ a, blockquote, .small-link, .tabs__nav a.current,
 a:hover > .pixcode--icon,
 .score__pros__title, .score__cons__title,
 .comments-area-title .hN em,
-.comment__author-name {
+.comment__author-name, .woocommerce .amount,
+.panel__title em, .woocommerce .star-rating span:before, 
+.woocommerce-page .star-rating span:before {
     color: <?php echo $main_color; ?>;
 }
 
@@ -110,7 +112,8 @@ a:hover > .pixcode--icon,
 .comments_add-comment, .form-submit #comment-submit,
 a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
 .article--list__link:hover .badge, .score__average-wrapper,
-.site__stats .stat__value:after, .site__stats .stat__title:after {
+.site__stats .stat__value:after, .site__stats .stat__title:after,
+.btn--add-to-cart {
     background-color: <?php echo $main_color; ?>;
 }
 
@@ -133,6 +136,10 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
     .article--grid__header:hover .article--grid__title:after {
         background-color: <?php echo $main_color; ?>;
     }
+}
+
+.woocommerce ul.products li.product a:hover img{
+    border-bottom: 5px solid <?php echo $main_color; ?>;
 }
 
 ol {
