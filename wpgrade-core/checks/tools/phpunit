@@ -1,0 +1,5 @@
+#!/bin/sh
+echo
+echo " Running phpunit "
+echo " --------------- "
+phpunit --bootstrap tests/bootstrap.php --coverage-html checks/reports/code-coverage tests

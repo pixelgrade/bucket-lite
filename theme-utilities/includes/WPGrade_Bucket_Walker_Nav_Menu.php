@@ -159,14 +159,14 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         );
 				 
 				if ($item->object == 'category') {
-					
+
 					$post_args['category'] = $item->object_id;
-					
+
 				} elseif ($item->object == 'post_format') {
-					
+
 					//first get the post format information
 					$menu_item_post_format = get_term( $item->object_id, 'post_format' );
-					
+
 					$post_args['tax_query'] =
 						array(
 							array(
@@ -191,24 +191,25 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                 if ($menu_layout == 'slider_latest_posts') {
                     
                     //lets grab the posts that are marked as being part of the category slider
-                    $post_args['meta_query'] = 
+                    $post_args['meta_query'] =
 						array(
 							array(
 								'key' => wpgrade::prefix() . 'category_slide',
 								'value' => 'on'
 							)
 						);
-                    
-                    $slideposts = get_posts( $post_args );
 
-                    
+                    $slideposts = new WP_Query( $post_args );
+
+
                     $item_output .= '<div class="sub-menu__grid__item  grid__item  two-fifths">';
 
                     if (count($slideposts)):
                     
                     $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="410" data-autoScaleSliderHeight="280">';
 
-                        foreach( $slideposts as $post ) : setup_postdata( $post );
+                        while ( $slideposts->have_posts())  : $slideposts->the_post();
+
                             //add the id to the array
                             $slideposts_ids[] = $post->ID;
                             
@@ -232,7 +233,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                                         '</div>' .
                                     '</a>' .
                                 '</article>';
-                        endforeach;
+                        endwhile;
                     
                     $item_output .= '</div>';
 
@@ -256,9 +257,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $post_args['numberposts'] = $numberposts;  
                     $post_args['post__not_in'] = $slideposts_ids;
 
-                    $menuposts = get_posts( $post_args );
+                    $menuposts = new WP_Query( $post_args );
 
-                    foreach( $menuposts as $post ) : setup_postdata( $post );
+					while ( $menuposts->have_posts())  : $menuposts->the_post();
 
                         $post_title = get_the_title();
                         $post_link = get_permalink();
@@ -294,7 +295,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                                     '</article>'.
                             '</div>';
 
-                    endforeach;
+                    endwhile;
                     wp_reset_query();
                 
                 }

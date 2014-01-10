@@ -32,22 +32,7 @@
 	# the higher the priority
 
 	$classpath = $basepath.'classes'.DIRECTORY_SEPARATOR;
-//	$files = wpgrade::find_files($classpath);
-//
-//	// ensure base classes are loaded first
-//	sort($files, SORT_ASC);
-//
-//	foreach ($files as $file) {
-//		if (strpos($file, EXT) !== false) {
-//			require $file;
-//		}
-//	}
-
 	wpgrade::require_all($classpath);
-
-
-
-
 
 	// Setup Option Drivers
 	// --------------------
