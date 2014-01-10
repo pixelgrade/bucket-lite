@@ -32,7 +32,7 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$suffix = '<!--';
 
 	$current = (get_query_var('paged')) ? get_query_var('paged') : '';
-	if( empty($current)){
+	if(empty($current)){
 		$current = (get_query_var('page')) ? get_query_var('page') : '';
 	}
 
@@ -44,6 +44,7 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 		$class = '';
 		switch ( $key ) {
 			case $current:
+
 				$class .= 'class="pagination-item pagination-item--current"';
 				break;
 			case 0:

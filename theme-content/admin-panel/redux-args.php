@@ -13,12 +13,6 @@ return array
 		'dev_mode' => $debug_mod, # default: true
 		'system_info' => $debug_mod, # default: true
 
-		// set the icon for the dev mode tab
-//		'dev_mode_icon' => 'info-sign', # default: info-sign
-
-		// set the class for the dev mode tab icon
-//		'dev_mode_icon_class' => '', # default: null
-
 		// if you want to use Google Webfonts, you MUST define the api key
 		'google_api_key' => 'AIzaSyB7Yj842mK5ogSiDa3eRrZUIPTzgiGopls',
 

@@ -28,7 +28,7 @@ $sections[] = array(
 			'id' => 'retina_main_logo',
 			'type' => 'media',
 			'title' => __('Retina 2x Logo Image', wpgrade::textdomain()),
-			'required' => array('use_retina_logo', '=', 1)
+			'required' => array('use_retina_logo', 'equals', 1)
 		),
 		array(
 			'id' => 'favicon',
