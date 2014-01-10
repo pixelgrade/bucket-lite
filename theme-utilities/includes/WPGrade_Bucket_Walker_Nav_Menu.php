@@ -199,7 +199,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 							)
 						);
 
-                    $slideposts = get_posts( $post_args );
+                    $slideposts = new WP_Query( $post_args );
 
 
                     $item_output .= '<div class="sub-menu__grid__item  grid__item  two-fifths">';
@@ -208,7 +208,8 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     
                     $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="410" data-autoScaleSliderHeight="280">';
 
-                        foreach( $slideposts as $post ) : setup_postdata( $post );
+                        while ( $slideposts->have_posts())  : $slideposts->the_post();
+
                             //add the id to the array
                             $slideposts_ids[] = $post->ID;
                             
@@ -232,7 +233,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                                         '</div>' .
                                     '</a>' .
                                 '</article>';
-                        endforeach;
+                        endwhile;
                     
                     $item_output .= '</div>';
 
@@ -256,9 +257,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $post_args['numberposts'] = $numberposts;  
                     $post_args['post__not_in'] = $slideposts_ids;
 
-                    $menuposts = get_posts( $post_args );
+                    $menuposts = new WP_Query( $post_args );
 
-                    foreach( $menuposts as $post ) : setup_postdata( $post );
+					while ( $menuposts->have_posts())  : $menuposts->the_post();
 
                         $post_title = get_the_title();
                         $post_link = get_permalink();
@@ -294,7 +295,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                                     '</article>'.
                             '</div>';
 
-                    endforeach;
+                    endwhile;
                     wp_reset_query();
                 
                 }
