@@ -135,8 +135,10 @@ if ($slides->have_posts()): ?>
             } ?>
 			>
 	    <?php while($slides->have_posts()): $slides->the_post();
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small');
-            $image_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
+
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
+            $image_small = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
+
             $image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
             
             if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
@@ -144,7 +146,7 @@ if ($slides->have_posts()): ?>
             }
 
             if($big_articles_only) :
-                $image = $image_big;
+                
                 if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
                   $image_ratio = $image[2] * 100/$image[1];
                 }
@@ -156,8 +158,12 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                     <article class="article  article--billboard  article--billboard-big">
-                        <div>
-                            <div class="rsImg"><?php echo $image[0] ?></div>
+                        <div class="rsImg">
+                            <?php echo $image[0]; ?>
+                            <!-- <img 
+                                src="<?php echo $image[0]; ?>"
+                                data-big="<?php echo $image[0]; ?>"
+                            alt="img" /> -->
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
@@ -173,7 +179,7 @@ if ($slides->have_posts()): ?>
             <?php else :
 
                 if ($index++ % 3 == 0):
-                $image = $image_big;
+                
                 if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
                   $image_ratio = $image[2] * 100/$image[1];
                 }
@@ -185,9 +191,11 @@ if ($slides->have_posts()): ?>
                     $closed_group = false;
                 endif; ?>
                     <article class="article  article--billboard">
+
                         <div>
-                            <div class="rsImg"><?php echo $image[0] ?></div>
+                            <div class="rsImg"><?php echo $image[0]; ?></div>
                         </div>
+
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
                                 <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
@@ -214,10 +222,13 @@ if ($slides->have_posts()): ?>
                               data-move-offset="100"
                               <?php } ?>
                               >
-                        
+                        <?php 
+                            $image_post_small = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small'); 
+                            $image_post_big = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big'); 
+                        ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-                                <img src="<?php echo $image[0] ?>" data-src-big="<?php echo $image_big[0] ?>" alt="<?php the_title(); ?>" />
+                                <img class="riloadr-slider" data-src-big="<?php echo $image_post_big[0]; ?>" data-src-small="<?php echo $image_post_small[0]; ?>" alt="img" />
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">

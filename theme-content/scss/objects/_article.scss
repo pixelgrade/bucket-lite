@@ -471,7 +471,7 @@
 
 
 .billboard--article-group {
-    // display: none;
+    visibility: hidden;
     position: relative;
     top:0;
     left:0;
@@ -491,7 +491,7 @@
     }
 
     .slider--loaded &{
-        display: block;
+        visibility: visible;
     }
 }
 

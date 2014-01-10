@@ -29,7 +29,7 @@
             ?>
 
                 <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                    <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+                    <img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                 </div>
                 <?php post_format_icon();
             	if ( bucket::has_average_score() ) { ?>

@@ -215,10 +215,10 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                             
                             $post_title = get_the_title();
                             $post_link = get_permalink();
-                            $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-big" );
+                            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
-                            if ( $post_image ){
-                                $menu_post_image = '<img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" class="rsImg"/>';
+                            if ( $image ){
+                                $menu_post_image = '<img class="lazy" data-src="' . $image[0] . '" alt="' . $post_title . '" width="' . $image[1]. '" height="' . $image[2]. '" class="rsImg"/>';
                             } else {
                                 // $menu_post_image = '<div class="image-wrap"></div>';
                                 $menu_post_image = '';
@@ -247,9 +247,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                     $item_output .= '</div>';
                     wp_reset_query();
-					
-					//a bit of clean up
-					unset($post_args['meta_query']);
+                    
+                    //a bit of clean up
+                    unset($post_args['meta_query']);
                 }
                 
                 if ($menu_layout == 'latest_posts' || $menu_layout == 'slider_latest_posts') {
@@ -263,15 +263,16 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                         $post_title = get_the_title();
                         $post_link = get_permalink();
-                        $post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );
+                        
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-small" );                        
 
 //                        $image_ratio = 70; // some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
 //                        if (isset($post_image[1]) && isset($post_image[2]) && $post_image[1] > 0) {
 //                            $image_ratio = $post_image[2] * 100/$post_image[1];
 //                        }
 
-                        if ( $post_image ){
-                            $menu_post_image = '<div class="article__thumb" style=""><img src="' . $post_image[0]. '" alt="' . $post_title . '" width="' . $post_image[1]. '" height="' . $post_image[2]. '" /></div>';
+                        if ( $image ){
+                            $menu_post_image = '<div class="article__thumb" style=""><img class="lazy" data-src="' . $image[0] . '" alt="' . $post_title . '" width="' . $image[1]. '" height="' . $image[2]. '" /></div>';
                         } else {
                             $menu_post_image = '<div class="article__thumb"></div>';
                             $menu_post_image = '';
@@ -321,65 +322,65 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
         
         // parse the HTML and find the megamenu posts and switch them with the submenus so those are first
         if ($depth == 0) {
-			
-			set_error_handler("custom_warning_handler", E_WARNING);
+            
+            set_error_handler("custom_warning_handler", E_WARNING);
 
-			//load up the library
-			if(!function_exists('wpgrade_file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
-			
-			// Create DOM from string
-			$_doc = wpgrade_str_get_html($output);
+            //load up the library
+            if(!function_exists('wpgrade_file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
+            
+            // Create DOM from string
+            $_doc = wpgrade_str_get_html($output);
 
-			$zagrid = $_doc->find('.sub-menu--mega',-1)->find('.sub-menu__grid',0);
-			if (!empty($zagrid) && !empty($zagrid->innertext)) {
+            $zagrid = $_doc->find('.sub-menu--mega',-1)->find('.sub-menu__grid',0);
+            if (!empty($zagrid) && !empty($zagrid->innertext)) {
                 $submenu = $_doc->find('.sub-menu--mega', -1)->find('.sub-menu', 0);
                 if (!empty($submenu)) {
-					//cleanup
-					$submenu->removeClass('sub-menu');
-					$submenu->removeClass('one-fifth');
-					//add classes
-					$submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
-					//wrap it
-					$submenu->outertext = '<div class="sub-menu__grid__item  grid__item  one-fifth">'.$submenu->outertext.'</div>';
-					//prepend it
-					$zagrid->innertext = $submenu->outertext.$zagrid->innertext;
-					//empty it
-					$submenu->outertext = '';
+                    //cleanup
+                    $submenu->removeClass('sub-menu');
+                    $submenu->removeClass('one-fifth');
+                    //add classes
+                    $submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
+                    //wrap it
+                    $submenu->outertext = '<div class="sub-menu__grid__item  grid__item  one-fifth">'.$submenu->outertext.'</div>';
+                    //prepend it
+                    $zagrid->innertext = $submenu->outertext.$zagrid->innertext;
+                    //empty it
+                    $submenu->outertext = '';
                 }
 
             } else {
                 // the megamenu wrapper is empty
-				$whereto = $_doc->find('.sub-menu--mega',-1);
+                $whereto = $_doc->find('.sub-menu--mega',-1);
                 $submenu = $whereto->find('.sub-menu', 0);
                 if (!empty($submenu) && !empty($submenu->innertext)) {
 
                     $_nav__item = $whereto->parent();
                     $_nav__item->addClass('nav__item--relative');
-					
-					//cleanup
-					$submenu->removeClass('sub-menu');
-					$submenu->removeClass('one-fifth');
-					//add classes
-					$submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
-					//insert it
-					$whereto->outertext = $submenu->outertext;
-					
-					//empty it
-					$submenu->outertext = '';
+                    
+                    //cleanup
+                    $submenu->removeClass('sub-menu');
+                    $submenu->removeClass('one-fifth');
+                    //add classes
+                    $submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
+                    //insert it
+                    $whereto->outertext = $submenu->outertext;
+                    
+                    //empty it
+                    $submenu->outertext = '';
                 } else {
-					//just delete it
-					$whereto->outertext = '';
-				}
+                    //just delete it
+                    $whereto->outertext = '';
+                }
             }
-			
-			// swap the $output
-			$output = $_doc->outertext;
-			
-			//cleanup
-			$_doc->__destruct();
-			unset($_doc);
-			
-			restore_error_handler();
+            
+            // swap the $output
+            $output = $_doc->outertext;
+            
+            //cleanup
+            $_doc->__destruct();
+            unset($_doc);
+            
+            restore_error_handler();
         }
     }
 

@@ -129,7 +129,7 @@ if ($slides->have_posts()): ?>
 						$image_ratio = $image[2] * 100/$image[1]; 
 					} ?>
                     <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                        <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+                        <img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                         <div class="article__title">
                             <h3 class="hN"><?php the_title(); ?></h3>
                         </div>
@@ -171,7 +171,7 @@ if ($slides->have_posts()): ?>
 											$image_ratio = $image[2] * 100/$image[1];
 										} ?>
                                         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                                            <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+                                            <img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                                         </a>
 	                                <?php endif; ?>
 	                            </div>

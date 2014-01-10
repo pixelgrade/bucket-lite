@@ -225,7 +225,7 @@ $is_review = bucket::has_average_score();
                     </div><!--                    
                     <?php endif; ?>
                 --></nav>
-                
+
                 <?php endif; ?>
                 
                 <hr class="separator  separator--section">
