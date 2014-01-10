@@ -1,6 +1,8 @@
+[![Build Status](http://95.85.9.10:8080/buildStatus/icon?job=wpgrade-core)](http://95.85.9.10:8080/job/wpgrade-core/)
+
 General system classes are located in this section.
 
-[!!] Please DO NOT add theme css or other theme specific information
+[!!] Please DO NOT add theme cssor other theme specific information
 
 General guidelines:
 

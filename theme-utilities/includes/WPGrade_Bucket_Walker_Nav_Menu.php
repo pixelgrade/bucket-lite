@@ -159,14 +159,14 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                         );
 				 
 				if ($item->object == 'category') {
-					
+
 					$post_args['category'] = $item->object_id;
-					
+
 				} elseif ($item->object == 'post_format') {
-					
+
 					//first get the post format information
 					$menu_item_post_format = get_term( $item->object_id, 'post_format' );
-					
+
 					$post_args['tax_query'] =
 						array(
 							array(
@@ -191,17 +191,17 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                 if ($menu_layout == 'slider_latest_posts') {
                     
                     //lets grab the posts that are marked as being part of the category slider
-                    $post_args['meta_query'] = 
+                    $post_args['meta_query'] =
 						array(
 							array(
 								'key' => wpgrade::prefix() . 'category_slide',
 								'value' => 'on'
 							)
 						);
-                    
+
                     $slideposts = get_posts( $post_args );
 
-                    
+
                     $item_output .= '<div class="sub-menu__grid__item  grid__item  two-fifths">';
 
                     if (count($slideposts)):

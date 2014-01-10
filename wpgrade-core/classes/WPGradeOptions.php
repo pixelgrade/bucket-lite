@@ -21,9 +21,9 @@ class WPGradeOptions {
 	/**
 	 * The constructor must remain accessible for testing purposes.
 	 */
-	function __construct() {
+	function __construct($default_options = array()) {
 		$this->drivers = array();
-		$this->coredriver = new WPGradeOptionDriver_Config(array());
+		$this->coredriver = new WPGradeOptionDriver_Config($default_options);
 		$this->add_optiondriver($this->coredriver);
 	}
 
@@ -33,8 +33,8 @@ class WPGradeOptions {
 	/**
 	 * @return WPGradeOptions working instance
 	 */
-	static function instance() {
-		if (self::$instance == null) {
+	static function instance($reinitialize = false) {
+		if (self::$instance == null || $reinitialize) {
 			$config = wpgrade::config();
 			self::$instance = new WPGradeOptions($config['theme-options']);
 		}

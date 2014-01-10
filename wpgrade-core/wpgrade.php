@@ -243,6 +243,11 @@ class wpgrade {
 	 */
 	static function filter_content($content, $filtergroup) {
 		$config = self::config();
+
+		if ( ! isset($config['content-filters']) || ! isset($config['content-filters'][$filtergroup])) {
+			return $content;
+		}
+
 		$enabled_filters = array();
 		foreach ($config['content-filters'][$filtergroup] as $filterfunc => $priority) {
 			if ($priority !== false && $priority !== null) {
@@ -439,6 +444,7 @@ class wpgrade {
 	 * @return string uri to file
 	 */
 	static function uri($file) {
+		$file = '/'.ltrim($file, '/');
 		return get_template_directory_uri().$file;
 	}
 

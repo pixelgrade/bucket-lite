@@ -49,11 +49,11 @@ class WPGradePaginationFormatter {
 		}
 		else { // no pager configuration entry
 			// fallback to listing pagination
-			if ( is_front_page() || is_home() ){
-				$this->pager = 'page';
-			} else {
+			//if ( is_front_page() ){
+			//	$this->pager = 'page';
+			//} else {
 				$this->pager = 'paged';
-			}
+			//}
 		}
 
 		$this->conf = wpgrade::merge($config_defaults, $conf);
@@ -78,7 +78,6 @@ class WPGradePaginationFormatter {
 		// the boring defaults that are ommited in the wpgrade-config.php
 		// configuration for clarity and bravity, and also because some require
 		// extensive logic handling
-
 		$defaults = array
 			(
 				// dynamically resolve to pretty or non-pretty base
@@ -167,14 +166,6 @@ class WPGradePaginationFormatter {
 
 		// processing return type
 		$conf['type'] = 'array';
-
-		/*
-		 * On homepage ( Notice: not front_page ) this param has a strange result, it forces the paged query arg
-		 * when it should be page
-		 */
-		if ( is_home() ) {
-			unset( $conf['base'] );
-		}
 
 		$links = paginate_links($conf);
 
