@@ -29,7 +29,7 @@ $args = array(
 	'posts_per_page' => $number_of_posts,
 	'order' => 'DESC',
 	'orderby' => 'date',
-	'ignore_sticky_posts' => true,
+	'ignore_sticky_posts' => false,
 );
 
 $offset = get_sub_field('offset');
