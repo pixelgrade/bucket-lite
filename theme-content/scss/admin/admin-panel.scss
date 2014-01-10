@@ -1434,3 +1434,18 @@ $heading-font: 'Open Sans', sans-serif;
     max-width: none;
     max-height: none;
 }
+
+#redux-main .redux-group-tab .form-table .text_sortable {
+	clear: both;
+}
+#redux-main .redux-group-tab .form-table .text_sortable label {
+	float: left;
+	display: block;
+	width: 100px;
+}
+#redux-main .redux-group-tab .form-table .text_sortable input {
+	width: 300px;
+}
+#redux-main .redux-group-tab .form-table .text_sortable .drag {
+	margin-left: 1em;
+}

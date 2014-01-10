@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Redux Framework is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,11 +16,7 @@
  * @package     Redux_Framework
  * @subpackage  Core
  * @author      Redux Framework Team
-<<<<<<< HEAD
  * @version     3.1.4
-=======
- * @version     3.1.4 
->>>>>>> 326ea88ff9c8b8d400bd0458cf3a722032c811d7
  */
 
 // Exit if accessed directly
@@ -1047,9 +1042,10 @@ if( !class_exists( 'ReduxFramework' ) ) {
 			//echo $pagenow;
 			//echo $this->args['page_parent'];
 
-			if ( !isset( $_GET['page'] ) || $_GET['page'] != $this->args['page_slug'] ) {
-				return;
-			}
+            if ( !isset( $_GET['page'] ) || $_GET['page'] != $this->args['page_slug'] ) {
+                if ($pagenow != "edit.php" && $pagenow != "page-new.php" && $pagenow != "post.php")
+                return;
+            }
 
 			global $wp_styles;
 
@@ -1213,7 +1209,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 									}
 									$theField = new $field_class( $field, $this->options[$field['id']], $this );
 
-									if ( !wp_script_is( 'redux-field-'.$field['type'].'-js', 'enqueued' ) && class_exists($field_class) && method_exists( $field_class, 'enqueue' ) ) {
+									if ( !wp_script_is( 'redux-field-'.$field['type'].'-js', 'enqueued' ) && class_exists($field_class) && $this->args['dev_mode'] === true && method_exists( $field_class, 'enqueue' ) ) {
 										/** @noinspection PhpUndefinedMethodInspection */
 										//echo "DOVY";
 										$theField->enqueue();
