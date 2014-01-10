@@ -495,7 +495,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	*/
 	function sliderInit($slider){
 
-		  $slider.find('img').removeClass('invisible');
+		  $slider.find('img').removeClass('invisible');		  
 
 		  var $children = $(this).children(),
 			  rs_arrows = typeof $slider.data('arrows') !== "undefined",
@@ -600,8 +600,6 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			});
 
 			$slider.addClass('slider--loaded');
-
-
 	}
 
 
@@ -736,7 +734,12 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			// Cache The Original Billboard Slider HTML Markup
 			$original_billboard_slider = $(this).outerHTML();
 			slider_billboard($(this));
+
+			var height = $(this).find('img').first().height();
+
 			sliderInit($(this));
+
+
 		});		
 	}
 
@@ -966,7 +969,12 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			defer: {
 				mode: 'invisible',
 				threshold: 100
+			},
+			oncomplete: function(){
+				console.log(this);
+				this.addClass('img--loaded');
 			}
+
 		});        
 
 		var riloadrSingle = new Riloadr({
