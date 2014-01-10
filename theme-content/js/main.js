@@ -962,7 +962,11 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			name : 'lazy',
 			breakpoints: [
 				{name: 'whatever' , minWidth: 1}
-			]
+			],
+			defer: {
+				mode: 'invisible',
+				threshold: 100
+			}
 		});        
 
 		var riloadrSingle = new Riloadr({
