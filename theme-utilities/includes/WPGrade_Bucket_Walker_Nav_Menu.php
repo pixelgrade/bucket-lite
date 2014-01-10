@@ -152,7 +152,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             
             if (!empty($menu_layout)) {
 				 $post_args = array( 
-							'numberposts' => -1,
+							'posts_per_page' => -1,
 							'offset'=> 0,
 							'post_type'     => 'post',
 							'post_status'   => 'publish',
@@ -208,7 +208,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     
                     $item_output .= '<div class="pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="410" data-autoScaleSliderHeight="280">';
 
-                        while ( $slideposts->have_posts())  : $slideposts->the_post();
+                        while ( $slideposts->have_posts() )  : $slideposts->the_post();
 
                             //add the id to the array
                             $slideposts_ids[] = $post->ID;
@@ -254,7 +254,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                 
                 if ($menu_layout == 'latest_posts' || $menu_layout == 'slider_latest_posts') {
                 
-                    $post_args['numberposts'] = $numberposts;  
+                    $post_args['posts_per_page'] = $numberposts;
                     $post_args['post__not_in'] = $slideposts_ids;
 
                     $menuposts = new WP_Query( $post_args );
