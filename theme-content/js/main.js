@@ -716,29 +716,29 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	/*
 	* First Slider Initialization
 	*/
-	var royalSliderInitiated = false;
 
 	function royalSliderInit() {
-		royalSliderInitiated = true;
-
-		// Helper function
-		function padLeft(nr, n, str){
-			return Array(n-String(nr).length+1).join(str||'0')+nr;
-		}
-
 		// Transform Wordpress Galleries to Sliders
 		$('.wp-gallery').each(function() { sliderMarkupGallery($(this)); });
 
 		// Find and initialize each slider
 		$('.js-pixslider').each(function(){
-			if($(this).hasClass('billboard')) {
-			  // Cache The Original Billboard Slider HTML Markup
-			  $original_billboard_slider = $(this).outerHTML();
-			  slider_billboard($(this));
-			}
-			sliderInit($(this));
+			if(!$(this).hasClass('billboard'))
+				sliderInit($(this));
 		});
 	};
+
+	var royalSliderBillboardInitiated = false;
+	function royalSliderBillboardInit(){
+		royalSliderBillboardInitiated = true;
+
+		$('.js-pixslider.billboard').each(function(){
+			// Cache The Original Billboard Slider HTML Markup
+			$original_billboard_slider = $(this).outerHTML();
+			slider_billboard($(this));
+			sliderInit($(this));
+		});		
+	}
 
 
 
@@ -1005,14 +1005,12 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			],
 			watchViewportWidth: "*",
 			oncomplete: function(){
-				if(royalSliderInitiated == false)
-					royalSliderInit();
+				if(royalSliderBillboardInitiated == false)
+					royalSliderBillboardInit();
 			}
 		});       
 
-		if(royalSliderInitiated == false)
-			royalSliderInit();
-
+		royalSliderInit();
 		magnificPopupInit();           
 	}
 
