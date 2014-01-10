@@ -323,6 +323,10 @@ button.mfp-arrow-right{
     text-align: center;
 }
 
-img.lazy{
+img[src], img.lazy[src], img.riloadr-single[src]{
+    visibility: visible;
+}
+
+img.lazy, img.riloadr-single{
     visibility: hidden;
 }
