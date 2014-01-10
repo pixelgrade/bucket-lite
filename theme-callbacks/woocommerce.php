@@ -277,6 +277,20 @@ function wpgrade_filter_product_categories($term_links){
 
 }
 
+add_filter('term_links-product_tag', 'wpgrade_filter_product_tags', 10, 1);
+
+function wpgrade_filter_product_tags($term_links){
+
+	if ( !empty($term_links) ) {
+		foreach($term_links as &$link){
+			$link = str_replace('<a ', '<a class="btn  btn--small  btn--tertiary" ', $link);
+		}
+	}
+
+	return $term_links;
+
+}
+
 function woo_related_products_limit() {
   global $product;
 	
