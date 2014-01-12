@@ -31,7 +31,7 @@ function wpgrade_callback_load_woocommerce_assets(){
 
 
 }
-add_action('wp_enqueue_scripts','wpgrade_callback_load_woocommerce_assets',999);
+add_action('wp_enqueue_scripts','wpgrade_callback_load_woocommerce_assets',1);
 
 add_action('wp_ajax_woopix_remove_from_cart', 'woopix_remove_from_cart');
 

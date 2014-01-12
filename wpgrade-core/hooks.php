@@ -94,7 +94,7 @@ function wpgrade_callback_themesetup() {
 			$handler = 'wpgrade_callback_inlined_custom_style';
 		}
 
-		add_action('wp_enqueue_scripts', $handler);
+		add_action('wp_enqueue_scripts', $handler,999999);
 	}
 
 	// Other Settings

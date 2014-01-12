@@ -968,7 +968,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			],
 			defer: {
 				mode: 'invisible',
-				threshold: 100
+				threshold: 270
 			},
 			oncomplete: function(){
 				console.log(this);
