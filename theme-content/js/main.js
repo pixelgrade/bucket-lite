@@ -962,28 +962,23 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		if($('body.single').length) { shareBox(); }
 
 		var riloadrImages = new Riloadr({
-			name : 'lazy',
-			breakpoints: [
-				{name: 'whatever' , minWidth: 1}
-			],
-			defer: {
-				mode: 'invisible',
-				threshold: 270
-			},
-			oncomplete: function(){
-				console.log(this);
-				this.addClass('img--loaded');
-			}
-
+                    name : 'lazy',
+                    breakpoints: [
+                        {name: 'whatever' , minWidth: 1}
+                    ],
+                    defer: {
+                        mode: 'invisible',
+                        threshold: 270
+                    }
 		});        
 
 		var riloadrSingle = new Riloadr({
-			name : 'riloadr-single',
-			breakpoints: [
-				{name: 'small' , maxWidth: 400},
-				{name: 'big'   , minWidth: 401}
-			],
-			watchViewportWidth: "*"
+                    name : 'riloadr-single',
+                    breakpoints: [
+                        {name: 'small' , maxWidth: 400},
+                        {name: 'big'   , minWidth: 401}
+                    ],
+                    watchViewportWidth: "*"
 		});        
 	};
 
