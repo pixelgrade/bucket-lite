@@ -116,7 +116,7 @@ msgstr "Article"
 msgid "There is <em>1</em> comment"
 msgid_plural "There are <em>%1$s</em> comments"
 msgstr[0] "Il est <em>1</em> commentaire"
-msgstr[1] "Il ya <em>%1$s</em> commentaires"
+msgstr[1] "Il y a <em>%1$s</em> commentaires"
 
 #: ../comments.php:31
 msgid "There are no comments"
@@ -1550,7 +1550,7 @@ msgstr "Sélection"
 #: ../woocommerce/loop/add-to-cart.php:40
 #: ../woocommerce/loop/add-to-cart.php:49
 msgid "Read More"
-msgstr "Lire plus"
+msgstr "Lire la suite"
 
 #: ../theme-partials/header/site-type1.php:6
 #: ../theme-partials/header/site-type2.php:6
@@ -2149,47 +2149,47 @@ msgstr "Nombre de tweets par diapositive"
 #, php-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
-msgstr[0] "il ya %d an"
-msgstr[1] "il ya %d ans"
+msgstr[0] "il y a %d an"
+msgstr[1] "il y a %d ans"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:155
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
-msgstr[0] "il ya %d mois"
-msgstr[1] "il ya %d mois"
+msgstr[0] "il y a %d mois"
+msgstr[1] "il y a %d mois"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:158
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
-msgstr[0] "il ya %d semaine"
-msgstr[1] "il ya %d semaines"
+msgstr[0] "il y a %d semaine"
+msgstr[1] "il y a %d semaines"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:161
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "il ya %d jour"
-msgstr[1] "il ya %d jours"
+msgstr[0] "il y a %d jour"
+msgstr[1] "il y a %d jours"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:164
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
-msgstr[0] "il ya %d heure"
-msgstr[1] "il ya %d heures"
+msgstr[0] "il y a %d heure"
+msgstr[1] "il y a %d heures"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:167
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
-msgstr[0] "il ya %d minute"
-msgstr[1] "il ya %d minutes"
+msgstr[0] "il y a %d minute"
+msgstr[1] "il y a %d minutes"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:169
 msgid "moments ago"
-msgstr "il ya quelques instants"
+msgstr "il y a quelques instants"
 
 #: ../theme-utilities/includes/functions/password-protection.php:11
 msgid ""
@@ -2536,8 +2536,8 @@ msgstr[1] "Ce thème recommande les plugins suivants: %1$s ."
 #, php-format
 msgid "There is a new update for %1$s."
 msgid_plural "There are several plugins updates available %1$s."
-msgstr[0] "Il ya une nouvelle mise à jour pour %1$s ."
-msgstr[1] "Il ya plusieurs mises à jour de plugins disponibles %1$s ."
+msgstr[0] "Il y a une nouvelle mise à jour pour %1$s ."
+msgstr[1] "Il y a plusieurs mises à jour de plugins disponibles %1$s ."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:174
 #, php-format

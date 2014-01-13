@@ -185,7 +185,7 @@ $is_review = bucket::has_average_score();
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
                             <a href="<?php echo get_permalink($prev_post->ID); ?>">
                                 <div class="post-nav-link__label">
-                                    <?php _e("Previous Article", wpgrade::textdomain()); ?>
+                                    <?php _e('Previous Article', wpgrade::textdomain() ); ?>
                                 </div>
                                 <div class="post-nav-link__title">
                                     <div class="hN"><?php echo $prev_post->post_title; ?></div>

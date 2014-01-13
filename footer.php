@@ -43,7 +43,7 @@
             <?php endif; 
 
                   if (wpgrade::option('back_to_top')): ?>
-            <div class="back-to-top"><a href="#page">Back to Top</a></div>
+            <div class="back-to-top"><a href="#page"><?php _e('Back to Top'); ?></a></div>
             <?php endif; ?>
         </div>
     </div>
