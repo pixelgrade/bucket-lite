@@ -1550,7 +1550,7 @@ msgstr "Sélection"
 #: ../woocommerce/loop/add-to-cart.php:40
 #: ../woocommerce/loop/add-to-cart.php:49
 msgid "Read More"
-msgstr "Lire plus"
+msgstr "Lire la suite"
 
 #: ../theme-partials/header/site-type1.php:6
 #: ../theme-partials/header/site-type2.php:6
