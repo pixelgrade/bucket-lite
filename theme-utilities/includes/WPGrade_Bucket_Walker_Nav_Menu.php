@@ -160,7 +160,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 				 
 				if ($item->object == 'category') {
 
-					$post_args['category'] = $item->object_id;
+					$post_args['cat'] = $item->object_id;
 
 				} elseif ($item->object == 'post_format') {
 
@@ -246,7 +246,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     endif;
 
                     $item_output .= '</div>';
-                    wp_reset_query();
+                    wp_reset_postdata();
                     
                     //a bit of clean up
                     unset($post_args['meta_query']);
@@ -297,7 +297,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                             '</div>';
 
                     endwhile;
-                    wp_reset_query();
+                    wp_reset_postdata();
                 
                 }
             }
