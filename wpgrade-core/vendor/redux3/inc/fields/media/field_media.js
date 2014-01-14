@@ -8,7 +8,7 @@ function redux_add_file(event, selector) {
 
 	var frame;
 	var jQueryel = jQuery(this);
-	
+
 
 
 	// If the media frame already exists, reopen it.
