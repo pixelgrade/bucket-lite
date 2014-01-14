@@ -727,7 +727,7 @@ jQuery(document).ready(function($) { 	console.log('ceva');
 	jQuery('.redux-section-tabs div').hide();
 	jQuery('.redux-section-tabs div:first').show();
 	jQuery('.redux-section-tabs ul li:first').addClass('active');
-	console.lg(jQuery('.redux-section-tabs ul li:first'));
+
 	jQuery('.redux-section-tabs ul li a').click(function(){
 		jQuery('.redux-section-tabs ul li').removeClass('active');
 		jQuery(this).parent().addClass('active');
