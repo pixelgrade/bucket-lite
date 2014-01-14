@@ -235,7 +235,14 @@ if ($slides->have_posts()): ?>
                                     <span class="hN"><?php the_title(); ?></span>
                                 </h2>
                                 <span class="article__description">
-                                    <?php  echo substr(get_the_excerpt(), 0, 75).'..'; ?>
+                                    <?php
+										//we need to differentiate here for mb strings
+										if (wpgrade_contains_any_multibyte(get_the_excerpt())) {
+											echo short_text(get_the_excerpt(), 50, 55);
+										} else {
+											echo short_text(get_the_excerpt(), 75, 80);
+										}
+									?>
                                 </span>
                                 <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
                             </div> 

@@ -1,8 +1,45 @@
 <?php
+function wpgrade_is_all_multibyte($string)
+{
+	if (function_exists('mb_check_encoding')) {
+		// check if the string doesn't contain invalid byte sequence
+		if (mb_check_encoding($string, 'UTF-8') === false) return false;
+
+		$length = mb_strlen($string, 'UTF-8');
+
+		for ($i = 0; $i < $length; $i += 1) {
+			$char = mb_substr($string, $i, 1, 'UTF-8');
+
+			// check if the string doesn't contain single character
+			if (mb_check_encoding($char, 'ASCII')) {
+				return false;
+			}
+		}
+
+		return true;
+	} else {
+    	return false;
+    }
+
+}
+
+function wpgrade_contains_any_multibyte($string)
+{
+	if (function_exists('mb_check_encoding')) {
+    	return !mb_check_encoding($string, 'ASCII') && mb_check_encoding($string, 'UTF-8');
+    } else {
+    	return false;
+    }
+}
 
 //@todo CLEANUP refactor function
-function wpgrade_better_excerpt($text) {
+function wpgrade_better_excerpt($text = '') {
 	global $post;
+
+	if (empty($text)) {
+		//need to grab the content
+		$text = get_the_content();
+	}
 
 	//if the post has a manual excerpt ignore the content given
 	if (function_exists('has_excerpt') && has_excerpt()) {
@@ -24,7 +61,6 @@ function wpgrade_better_excerpt($text) {
 	}
 	else {
 		$raw_excerpt = $text;
-
 		$text = strip_shortcodes( $text );
 		$text = apply_filters('the_content', $text);
 		$text = str_replace(']]>', ']]&gt;', $text);
@@ -44,14 +80,24 @@ function wpgrade_better_excerpt($text) {
 		}
 
 		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-		$words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-		if ( count($words) > $excerpt_length ) {
-			array_pop($words);
-			$text = implode(' ', $words);
+		
+		//test if we are dealing with a utf8 text - like chinese
+		if (wpgrade_contains_any_multibyte($text)) {
+			//then we simply split my mb characters rather than words
+			$text = short_text($text,$excerpt_length,excerpt_length);
 			$text = force_balance_tags( $text );
 			$text = $text . $excerpt_more;
 		} else {
-			$text = implode(' ', $words);
+			$words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+		
+			if ( count($words) > $excerpt_length ) {
+				array_pop($words);
+				$text = implode(' ', $words);
+				$text = force_balance_tags( $text );
+				$text = $text . $excerpt_more;
+			} else {
+				$text = implode(' ', $words);
+			}
 		}
 	}
 
@@ -99,6 +145,27 @@ function wpgrade_comments($comment, $args, $depth) {
 } // don't remove this bracket!
 
 	//in case the mb_ PHP extension is not activated
+
+	//in case the mb_ PHP extension is not activated
+	if ( !function_exists('mb_strlen') ) {
+		function mb_strlen ($text, $encode) {
+			if ($encode=='UTF-8') {
+				return preg_match_all('%(?:
+						  [\x09\x0A\x0D\x20-\x7E]           # ASCII
+						| [\xC2-\xDF][\x80-\xBF]            # non-overlong 2-byte
+						|  \xE0[\xA0-\xBF][\x80-\xBF]       # excluding overlongs
+						| [\xE1-\xEC\xEE\xEF][\x80-\xBF]{2} # straight 3-byte
+						|  \xED[\x80-\x9F][\x80-\xBF]       # excluding surrogates
+						|  \xF0[\x90-\xBF][\x80-\xBF]{2}    # planes 1-3
+						| [\xF1-\xF3][\x80-\xBF]{3}         # planes 4-15
+						|  \xF4[\x80-\x8F][\x80-\xBF]{2}    # plane 16
+						)%xs',$text,$out);
+			}else{
+				return strlen($text);
+			}
+		}
+	}
+	
 	if (!function_exists('mb_substr')) {
 		function mb_substr($string, $offset, $length)
 		{
@@ -116,8 +183,8 @@ function wpgrade_comments($comment, $args, $depth) {
      * @return [type]             [description]
      */
     function short_text($text, $cut_length, $limit){
-		$char_count = function_exists('mb_strlen') ? mb_strlen($text) : strlen($text);
-        $text = ( $char_count > $limit ) ? mb_substr($text,0,$cut_length).'...' : $text;
+		$char_count = mb_strlen($text);
+        $text = ( $char_count > $limit ) ? mb_substr($text,0,$cut_length).wpgrade::option('blog_excerpt_more_text') : $text;
 
         echo $text;
     }
