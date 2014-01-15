@@ -32,32 +32,36 @@ class wpgrade_twitter_widget extends WP_Widget {
 
 		$twitter = new StormTwitter($config);
 		$results = $twitter->getTweets($count, $username);
+		if (!isset($results['error'])) {
+			
+			$link = 'https://twitter.com/'. $username;
+			$slide_count = 1;
+			$tweets_nr = count($results);
+			if ( $results ){
+				echo '<div class="wp-slider widget-content"><ul class="widget-tweets__list pixslider js-pixslider nav cf" data-bullets data-slidesspacing="24" data-autoheight><li class="widget-tweets__tweet">';
+				foreach ($results as $key => $result) { ?>
+					<div class="tweet__block">
+					<div class="tweet__content"><?php echo $this->get_parsed_tweet($result); ?></div>
+					<?php
+					echo
+						'<div class="tweet__meta">' .
+						//'<span class="twitter-screenname">' . ucwords($config['screenname']) . '</span>' .
+						'<span class="tweet__meta-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>';
+					if ( isset( $result["created_at"] ) ) {
+						echo '<span class="tweet__meta-date">' . $this->wpgrade_convert_twitter_date($result["created_at"]) . '</span></div></div>';
+					}
 
-		$link = 'https://twitter.com/'. $username;
-		$slide_count = 1;
-		$tweets_nr = count($results);
-		if ( $results ){
-			echo '<div class="wp-slider widget-content"><ul class="widget-tweets__list pixslider js-pixslider nav cf" data-bullets data-slidesspacing="24" data-autoheight><li class="widget-tweets__tweet">';
-			foreach ($results as $key => $result) { ?>
-				<div class="tweet__block">
-				<div class="tweet__content"><?php echo $this->get_parsed_tweet($result); ?></div>
-				<?php
-				echo
-					'<div class="tweet__meta">' .
-					//'<span class="twitter-screenname">' . ucwords($config['screenname']) . '</span>' .
-					'<span class="tweet__meta-username"><a href="'.$link.'">@' . $config['screenname'] . '</a></span>';
-				if ( isset( $result["created_at"] ) ) {
-					echo '<span class="tweet__meta-date">' . $this->wpgrade_convert_twitter_date($result["created_at"]) . '</span></div></div>';
+					if ( $slide_count == $tweets_nr ){
+						echo '</li>';
+					} elseif ( $slide_count % $nr_per_slide == 0 ) {
+						echo '</li><li class="widget-tweets__tweet">';
+					}
+					$slide_count++;
 				}
-
-				if ( $slide_count == $tweets_nr ){
-					echo '</li>';
-				} elseif ( $slide_count % $nr_per_slide == 0 ) {
-					echo '</li><li class="widget-tweets__tweet">';
-				}
-				$slide_count++;
+				echo '</ul></div>';
 			}
-			echo '</ul></div>';
+		} else {
+			echo '<div class="wp-slider widget-content">'.$results['error'].'</div>';
 		}
 		echo $after_widget;
 	}
