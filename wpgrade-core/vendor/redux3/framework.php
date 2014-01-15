@@ -1039,13 +1039,15 @@ if( !class_exists( 'ReduxFramework' ) ) {
 		public function _enqueue() {
 			global $pagenow;
 
-			//echo $pagenow;
-			//echo $this->args['page_parent'];
-
-            if ( !isset( $_GET['page'] ) || $_GET['page'] != $this->args['page_slug'] ) {
-                if ($pagenow != "edit.php" && $pagenow != "page-new.php" && $pagenow != "post.php")
-                return;
-            }
+			/**
+			 * If these two requirements are not fulfilled we are not on the
+			 * theme options page so we don't need redux assets
+			 */
+			if ( $pagenow != "admin.php"  ) {
+				return;
+			} elseif ( !isset($_GET['page']) || $_GET['page'] != $this->args['page_slug'] ) {
+				return;
+			}
 
 			global $wp_styles;
 
