@@ -58,7 +58,8 @@ if( !class_exists( 'ReduxFramework' ) ) {
 			// Windows-proof constants: replace backward by forward slashes. Thanks to: @peterbouwmeester
 			self::$_dir     = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
 			$wp_content_dir = trailingslashit( str_replace( '\\', '/', WP_CONTENT_DIR ) );
-			$wp_content_dir = trailingslashit( str_replace( '//', '/', WP_CONTENT_DIR ) );
+			//make sure we don't have double slashes in the path
+			$wp_content_dir = trailingslashit( str_replace( '//', '/', $wp_content_dir ) );
 			$relative_url   = str_replace( $wp_content_dir, '', self::$_dir );
 			$wp_content_url = ( is_ssl() ? str_replace( 'http://', 'https://', WP_CONTENT_URL ) : WP_CONTENT_URL );
 			self::$_url     = trailingslashit( $wp_content_url ) . $relative_url;
