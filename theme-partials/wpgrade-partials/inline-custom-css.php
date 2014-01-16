@@ -172,7 +172,8 @@ if ( isset($fonts['google_titles_font']) ) {?>
     .widget--footer__title .widget_calendar caption, 
     .widget_calendar .widget--footer__title caption,
     .score-box--after-text, .latest-comments__author,
-    .review__title, .share-total__value, .pagination li a, .pagination li span
+    .review__title, .share-total__value, .pagination li a, .pagination li span,
+    .heading span.archive__side-title
       {
 		<?php wpgrade::display_font_params($fonts['google_titles_font']); ?>
 	}
