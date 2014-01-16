@@ -42,7 +42,7 @@
             echo 'There is been an error around';
         }
     }
-	add_action( 'redux-saved-'. wpgrade::shortname() .'_options', 'wpgrade_write_custom_css' );
+	add_action( 'redux/options/'. wpgrade::shortname() .'_options/saved', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
