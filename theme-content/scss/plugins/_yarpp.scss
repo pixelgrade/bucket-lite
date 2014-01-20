@@ -1,0 +1,54 @@
+/*----------------------------------------*\
+  Yet Another Related Posts Plugin (YARPP)
+\*----------------------------------------*/
+/**
+ * Arqam
+ * Plugin URI: http://wordpress.org/plugins/yet-another-related-posts-plugin/
+ * Description: Display a list of related posts on your site based on a powerful unique algorithm.
+ */
+
+.yarpp-related .article--billboard-small {
+	width: auto;
+	position: static;
+	margin: 0;	
+}
+.related-projects_items-list {
+	@include rem(margin-left, -$_u2)
+}
+	.related-projects_item {
+		position:relative;
+		@include rem(padding-left, $_u2);
+	}
+
+.related-projects_item .article--billboard-small {
+
+    @include media-query(lap-and-up) {
+        & {
+            @include rem(height, 260px);
+        }
+
+        .article__title {
+        	@include rem(max-height,72px);
+        	height:auto;
+        	line-height:1;
+        	.hN {
+	        	font-size:16px;
+        	}
+        }        
+
+        .article__content {
+            height:128px;
+            margin-bottom:$_u4;
+            padding:0 0 0 10px;
+            margin-left:2px;
+            margin-right:-1px;
+        }
+
+
+        &:hover {
+            .article__thumb {
+                 @include translateY(-8px);
+            }
+        }
+    } 
+}
