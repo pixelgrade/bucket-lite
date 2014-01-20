@@ -1,6 +1,6 @@
 <?php
 /*
-YARPP Template: Portfolio Related Projects
+YARPP Template: Related Articles
 */
 ?>
 
