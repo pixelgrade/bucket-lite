@@ -12,7 +12,12 @@
 			if (has_post_thumbnail($post->ID)) {
 				$socialimg = $src[0];
 			}
-			else { // ! has_post_thumbnail
+			elseif (is_front_page() && wpgrade::option_image_src('main_logo')) {
+				//if this is the front page we get the logo if no featured image is assigned
+				$socialimg = wpgrade::option_image_src('main_logo');
+				
+			} else { 
+				// ! has_post_thumbnail and no front page
 				$socialimg = '';
 				preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 				if (array_key_exists(1, $matches) && array_key_exists(0, $matches[1])) {

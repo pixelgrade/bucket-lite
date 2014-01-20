@@ -10,7 +10,7 @@
 <?php endif; ?>
 
 <?php # we only add the publisher link on the home page ?>
-<?php if (is_home() && wpgrade::option('google_page_url')): ?>
+<?php if (is_front_page() && wpgrade::option('google_page_url')): ?>
 <link rel="publisher" href="http://plus.google.com/<?php echo wpgrade::option( 'google_page_url') ?>"/>
 <?php endif; ?>
 <!-- end google +1 tags -->
