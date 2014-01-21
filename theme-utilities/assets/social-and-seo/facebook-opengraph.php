@@ -1,5 +1,5 @@
 <?php
-global $wp, $pagename, $post;
+global $wp, $post;
 $current_url = wpgrade_get_current_canonical_url();
 ?>
 <!-- facebook open graph stuff -->
@@ -12,9 +12,7 @@ $current_url = wpgrade_get_current_canonical_url();
 <?php endif; ?>
 <meta property="og:site_name" content="<?php echo get_bloginfo("name") ?>"/>
 <meta property="og:url" content="<?php echo $current_url ?>"/>
-<?php if ( ! empty($pagename)): ?>
-<meta property="og:title" content="<?php echo $pagename ?>" />
-<?php endif; ?>
+<meta property="og:title" content="<?php wp_title('|', true, 'right'); ?>" />
 <?php if (is_singular()):  setup_postdata($post); ?>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt()) ?>" />
