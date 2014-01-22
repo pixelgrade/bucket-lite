@@ -18,7 +18,9 @@ function wpgrade_custom_backgrounds_suport(){
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
-	add_theme_support( 'custom-background', $background_args );
+	if(wpgrade::option('layout_boxed')){
+		add_theme_support( 'custom-background', $background_args );
+	}
 }
 
 // Hook into the 'after_setup_theme' action
