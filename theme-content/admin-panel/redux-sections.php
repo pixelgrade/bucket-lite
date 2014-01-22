@@ -567,7 +567,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Custom JavaScript (header)', wpgrade::textdomain()),
 			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', wpgrade::textdomain()),
-			'mode' => 'javascript',
+			'mode' => 'text',
 			'theme' => 'chrome'
 		),
 		array(
@@ -575,7 +575,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Custom JavaScript (footer)', wpgrade::textdomain()),
 			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
-			'mode' => 'javascript',
+			'mode' => 'text',
 			'theme' => 'chrome'
 		),
 	)
