@@ -1,0 +1,36 @@
+/*--------------------------------*\
+         BOXED LAYOUT STYLE
+\*--------------------------------*/
+
+/*body*/.layout--boxed {
+    .container {
+        background:#fff;
+    }
+
+    .navigation--top .container {
+         background:transparent;
+    }
+
+    .site__stats:after {
+        display:none; 
+    }
+
+    .site__footer {
+        max-width: 1096px;
+        margin: 0 auto;
+        &, .container {
+            background:$dark;
+        }
+    }
+
+    .footer__copyright .container {
+        background: transparent;
+    }
+
+    &.custom-background {
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}

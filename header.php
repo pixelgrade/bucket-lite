@@ -15,6 +15,7 @@ if (is_single()) {
 
 if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
 if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
+if(wpgrade::option('layout_boxed') == 1) $class_name .= " layout--boxed";
 
 // woocommerce hotfix
 // prevent class product to overwrite our css but keep javascript dependencies
