@@ -472,6 +472,13 @@ $heading-font: 'Open Sans', sans-serif;
 		.branch-3-7 & {
 
 		}
+
+	}
+
+	select, .select_wrapper {
+		width:auto;
+		float:left;
+		margin:0 3px 3px 0;
 	}
 
 	//Checkbox Share links
@@ -779,6 +786,8 @@ $heading-font: 'Open Sans', sans-serif;
 
 	.typography-preview {
 		word-break: break-all;
+		padding:12px;
+		border:1px dotted #ccc;
 	}
 	.redux-field .redux-typography-container .typography-family {
 		width:240px !important;
