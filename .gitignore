@@ -9,6 +9,7 @@ theme-content/css/*
 theme-utilities/includes/vendor/twitter-api/cache.tweetcache
 
 .DS_Store
+.test.path
 nbproject
 .sass-cache
 *.sublime-project

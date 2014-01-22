@@ -288,7 +288,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                                                     '<span class="hN">' . $post_title . '</span>' .
                                                 '</h2>
                                                 <div class="article__description">'.
-                                                    substr(get_the_excerpt(), 0, 75). 
+												short_text(get_the_excerpt(), 75, 80, false). 
                                                 '</div>
                                                 <span class="small-link">'.__('Read More', wpgrade::textdomain()).'<em>+</em></span>
                                             </div>
