@@ -19,9 +19,6 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 		$options = array( 'posts_per_page' => $number );
 		$latest_posts = new WP_Query( $options );
 
-		// Reset Post Data
-		wp_reset_postdata();
-
 		echo $before_widget;
 
 		if ($title) echo $before_title . $title . $after_title;
@@ -40,7 +37,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 									$image_ratio = $image[2] * 100/$image[1];
 								}
 								?>
-								<img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+								<img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
 							<?php else : ?>
 								<div class="post-format-icon  post-format-icon__icon">
 									<i class="icon-camera"></i>
@@ -78,7 +75,8 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 		<?php endif;
 		echo $after_widget;
 
-		wp_reset_query();
+		// Reset Post Data
+		wp_reset_postdata();
 	}
 
 	function update($new_instance, $old_instance) {
