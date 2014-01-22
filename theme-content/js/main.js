@@ -486,6 +486,30 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	  });      
 	}
 
+	/* RILOADR INIT */
+	function riloadrInit() {
+		// Lazy loading for images with '.lazy' class
+		var riloadrImages = new Riloadr({
+                    name : 'lazy',
+                    breakpoints: [
+                        {name: 'whatever' , minWidth: 1}
+                    ],
+                    defer: {
+                        mode: 'load'
+                    }
+		});        
+
+		// Responsive Featured Image for single post page
+		var riloadrSingle = new Riloadr({
+                    name : 'riloadr-single',
+                    breakpoints: [
+                        {name: 'small' , maxWidth: 400},
+                        {name: 'big'   , minWidth: 401}
+                    ],
+                    watchViewportWidth: "*"
+		});
+	}
+
 	/* --- $ROYALSLIDER --- */
 	var $original_billboard_slider;
 
@@ -960,25 +984,9 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		//if($('body.single').length) { setTimeout(function(){shareBox();},500); }
 		if($('body.single').length) { shareBox(); }
 
-		var riloadrImages = new Riloadr({
-                    name : 'lazy',
-                    breakpoints: [
-                        {name: 'whatever' , minWidth: 1}
-                    ],
-                    defer: {
-                        mode: 'invisible',
-                        threshold: 270
-                    }
-		});        
-
-		var riloadrSingle = new Riloadr({
-                    name : 'riloadr-single',
-                    breakpoints: [
-                        {name: 'small' , maxWidth: 400},
-                        {name: 'big'   , minWidth: 401}
-                    ],
-                    watchViewportWidth: "*"
-		});        
+		/* INSTANTIATE RILOADR (lazy loading and responsive images) */
+		riloadrInit();
+		   
 	};
 
 
