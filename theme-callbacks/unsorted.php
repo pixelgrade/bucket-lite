@@ -207,7 +207,7 @@ function wpgrade_better_excerpt($text = '') {
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 
 		// Enable formatting in excerpts - Add HTML tags that you want to be parsed in excerpts
-		$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
+		$allowed_tags = '<p><a><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
 		$text = strip_tags($text, $allowed_tags);
 //		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
 //		$text .= $excerpt_more;
@@ -228,8 +228,8 @@ function wpgrade_better_excerpt($text = '') {
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 
 		// Enable formatting in excerpts - Add HTML tags that you want to be parsed in excerpts
-		$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
-		$text = strip_tags($text, $allowed_tags);
+		//$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
+		$text = strip_tags($text, '');
 
 		// Set custom excerpt length - number of words to be shown in excerpts
 		if (wpgrade::option('blog_excerpt_length'))	{
@@ -246,10 +246,34 @@ function wpgrade_better_excerpt($text = '') {
 			$text = short_text($text,$excerpt_length,$excerpt_length);
 			$text = $text . $excerpt_more;
 		} else {
-			$options = array(
-				'ending' => $excerpt_more, 'exact' => false, 'html' => true
-			);
-			$text = truncate($text, $excerpt_length, $options);
+//			$options = array(
+//				'ending' => $excerpt_more, 'exact' => false, 'html' => true
+//			);
+//			$text = truncate($text, $excerpt_length, $options);
+			
+			$words = preg_split("/[\n\r\t\s]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+			
+			//some further testing to ensure that we catch the mb languages like chinese
+			//test for extra long average word length - means that each sentence is enterpreted as a word
+			$temp_words = $words;
+			array_pop($temp_words);
+			if (mb_strlen(implode(' ', $temp_words))/count($temp_words) > 20) {
+				//we have a mb language
+				//then we simply split my mb characters rather than words
+				$text = short_text($text,$excerpt_length,$excerpt_length);
+				$text = $text . $excerpt_more;
+			} else {
+		
+				if ( count($words) > $excerpt_length ) {
+					array_pop($words);
+					$text = implode(' ', $words);
+					//$text = force_balance_tags( $text );
+					$text = $text . $excerpt_more;
+				} else {
+					$text = implode(' ', $words);
+				}
+			}
+			
 		}
 	}
 
