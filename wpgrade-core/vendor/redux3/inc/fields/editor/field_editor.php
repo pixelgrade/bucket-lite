@@ -65,7 +65,7 @@ if( !class_exists( 'ReduxFramework_editor' ) ) {
 
             // Setup up default editor_options
             $defaults = array(
-                'textarea_name' => $this->parent->args['opt_name'] . '[' . $this->field['id'] . ']', 
+                'textarea_name' => $this->field['name'], 
                 'editor_class'  => $this->field['class'],
 				'wpautop' => (isset($this->field['autop'])) ? $this->field['autop'] : true,
                 'textarea_rows' => 8, //Wordpress default

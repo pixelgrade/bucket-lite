@@ -33,7 +33,7 @@ $heading-font: 'Open Sans', sans-serif;
               GENERAL + OVERWRITES
 \*-----------------------------------------------*/
 
-#redux-container  {
+.redux-container  {
 	font-family: $body-font;
 	margin-left:-19px;
 	margin-right:-15px;
@@ -118,7 +118,7 @@ $heading-font: 'Open Sans', sans-serif;
 	}
 }
 
-#redux-main {
+.redux-main {
 	padding: 140px $_2u $_u4+$_2u;
 	margin-left:$sidebar-width;
 	max-width: $content-width;
@@ -194,7 +194,7 @@ $heading-font: 'Open Sans', sans-serif;
 			}
 		}
 
-		#expand_options {
+		.expand_options {
 			display:none;
 		}
 	}
@@ -249,14 +249,14 @@ $heading-font: 'Open Sans', sans-serif;
 /*-----------------------------------------------*\
               MENU
 \*-----------------------------------------------*/
-#redux-sidebar {
+.redux-sidebar {
 	background: $sidebar-bg;
 	padding-top: 6 * $_u;
 	width: $sidebar-width;
 	height:100%;
 	position:absolute;
 
-	#redux-group-menu  {
+	.redux-group-menu  {
 		li {
 			a {
 				font-weight:normal;
@@ -301,7 +301,7 @@ $heading-font: 'Open Sans', sans-serif;
 /*-----------------------------------------------*\
               CONTENT
 \*-----------------------------------------------*/
-#redux-container {
+.redux-container {
 	.redux-group-tab .form-table {
 		tr {
 			border:none;
@@ -323,7 +323,7 @@ $heading-font: 'Open Sans', sans-serif;
 	/*
 	* Divider
 	*/
-	#redux-sidebar #redux-group-menu li.divide {
+	.redux-sidebar .redux-group-menu li.divide {
 		margin-top:$_15u;
 		margin-bottom:$_15u;
 	}
@@ -331,7 +331,7 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 //Change the layout to stacked
-#redux-container tr {
+.redux-container tr {
 	th, td {
 		display:block;
 		width:100%;
@@ -341,7 +341,7 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 //Buttons
-#redux-container {
+.redux-container {
 	.button {
 
 		&.remove-image {
@@ -391,7 +391,7 @@ $heading-font: 'Open Sans', sans-serif;
 /*
 * Forms
 */
-#redux-main {
+.redux-main {
 	input, select, textarea {
 		background-color:#fff !important;
 		border:1px solid $border-color;
@@ -568,7 +568,7 @@ $heading-font: 'Open Sans', sans-serif;
 		z-index:99;
 	}
 
-	#redux-main .wp-picker-container {
+	.redux-main .wp-picker-container {
 
 		input.wp-color-picker, input.wp-picker-default {
 			width: 60px;
@@ -994,7 +994,7 @@ $heading-font: 'Open Sans', sans-serif;
 \*-----------------------------------------------*/
 
 //When Update Bar is present (eg. WordPress 3.7.1 is available! Please update now.)
-.update-nag + .clear + .wrap #redux-container {
+.update-nag + .clear + .wrap .redux-container {
 	.redux-group-tab>h3 {
 		top: 58px;
 	}
@@ -1017,7 +1017,7 @@ $heading-font: 'Open Sans', sans-serif;
 
 
 //Last Menu Item (help and support)
-#redux-sidebar #redux-group-menu li:last-child {
+.redux-sidebar .redux-group-menu li:last-child {
 	position: fixed;
 	bottom:50px;
 	width:$sidebar-width;
@@ -1204,14 +1204,14 @@ $heading-font: 'Open Sans', sans-serif;
 	background-image:none;
 }
 
-#redux-sidebar #redux-group-menu li {
+.redux-sidebar .redux-group-menu li {
 }
 
-#redux-sidebar #redux-group-menu li.divide {
+.redux-sidebar .redux-group-menu li.divide {
 	height: 2px;
 	background: #f0f0f0;
 }
-#redux-sidebar #redux-group-menu li.divide.big {
+.redux-sidebar .redux-group-menu li.divide.big {
 	height:250px;
 }
 
@@ -1444,17 +1444,17 @@ $heading-font: 'Open Sans', sans-serif;
     max-height: none;
 }
 
-#redux-main .redux-group-tab .form-table .text_sortable {
+.redux-main .redux-group-tab .form-table .text_sortable {
 	clear: both;
 }
-#redux-main .redux-group-tab .form-table .text_sortable label {
+.redux-main .redux-group-tab .form-table .text_sortable label {
 	float: left;
 	display: block;
 	width: 100px;
 }
-#redux-main .redux-group-tab .form-table .text_sortable input {
+.redux-main .redux-group-tab .form-table .text_sortable input {
 	width: 300px;
 }
-#redux-main .redux-group-tab .form-table .text_sortable .drag {
+.redux-main .redux-group-tab .form-table .text_sortable .drag {
 	margin-left: 1em;
 }

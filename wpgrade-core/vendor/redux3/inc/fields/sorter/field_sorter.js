@@ -45,8 +45,7 @@ jQuery(function() {
 				}
                 jQuery(this).find('.position').each(function() {
                     var listID = jQuery(this).parent().attr('id');
-                    var parentID = jQuery(this).parent().parent().attr('id');
-                    parentID = parentID.replace(id + '_', '');
+                    var parentID = jQuery(this).parent().parent().attr('data-group-id');
                     redux_change(jQuery(this));
                     var optionID = jQuery(this).parent().parent().parent().attr('id');
                     jQuery(this).prop("name", redux_opts.opt_name + '[' + optionID + '][' + parentID + '][' + listID + ']');

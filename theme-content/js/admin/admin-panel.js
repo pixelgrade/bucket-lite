@@ -414,12 +414,12 @@
 	var ensure_height_of_container = function(){
 
 		var min_height = $(window).height() -62;
-		$('#redux-main') .css({'min-height': min_height +'px'});
+		$('.redux-main') .css({'min-height': min_height +'px'});
 	}
 
 	ensure_height_of_container();
     $(window).resize(function(){
-        //$('#redux-main') .css({'min-height': (($(window).height()))+'px'});
+        //$('.redux-main') .css({'min-height': (($(window).height()))+'px'});
 	    ensure_height_of_container();
     });
 
@@ -428,7 +428,7 @@
     
 
     //Remove last divider from the menu
-	$('#redux-sidebar #redux-group-menu li:last-child').remove();    
+	$('.redux-sidebar .redux-group-menu li:last-child').remove();
 
 
 	$(document).ready(function () {
@@ -456,13 +456,14 @@
     /* ====== INTERNAL FUNCTIONS ====== */
 
     //Fixed Title + Save button
-	var redux_container = $('#redux-container'),
+	var redux_container = $('.redux-container'),
 		redux_container_position = redux_container.position();
-	function fixDiv() {
+
+	var fixDiv = function() {
       	if ($(window).scrollTop() > redux_container_position.top) 
-        	$('#redux-container').addClass('fixed-header');
+        	$('.redux-container').addClass('fixed-header');
       	else
-        	$('#redux-container').removeClass('fixed-header');
+        	$('.redux-container').removeClass('fixed-header');
     }
     
 
@@ -473,7 +474,7 @@
 
     $(function(){
         //Admin Panel Styling
-		if($('#redux-container').length) {
+		if($('.redux-container').length) {
 			$('body').addClass('redux-page');
 			fixDiv();	
 		}

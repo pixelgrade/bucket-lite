@@ -89,71 +89,71 @@ class ReduxFramework_slider extends ReduxFramework{
             true
         );
 
-        wp_enqueue_script(
-            'redux-field-slider-js', 
-            ReduxFramework::$_url.'inc/fields/slider/field_slider.js', 
-            array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'),
-            time(),
-            true
-        );      
+		wp_enqueue_script(
+			'redux-field-slider-js', 
+			ReduxFramework::$_url.'inc/fields/slider/field_slider.js', 
+			array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'),
+			time(),
+			true
+		);		
 
-        wp_enqueue_style(
-            'redux-field-slider-css', 
-            ReduxFramework::$_url.'inc/fields/slider/field_slider.css', 
-            time(),
-            true
-        );      
+		wp_enqueue_style(
+			'redux-field-slider-css', 
+			ReduxFramework::$_url.'inc/fields/slider/field_slider.css', 
+			time(),
+			true
+		);		
 
-    }//function
-
-
-    /**
-     * 
-     * Functions to pass data from the PHP to the JS at render time.
-     * 
-     * @return array Params to be saved as a javascript object accessable to the UI.
-     * 
-     * @since  Redux_Framework 3.1.1
-     * 
-     */
-    function localize() {
-
-        $params = array(
-            'id' => '',
-            'min' => '',
-            'max' => '',
-            'step' => '',
-            'val' => null,
-            'default' => '',
-        );
-
-        $params = wp_parse_args( $this->field, $params );
-        $params['val'] = $this->value;
-
-        return $params;
-
-    }
+	}//function
 
 
-    /**
-     * Field Render Function.
-     *
-     * Takes the vars and outputs the HTML for the field in the settings
-     *
-     * @since ReduxFramework 0.0.4
-    */
-    function render(){
+	/**
+	 * 
+	 * Functions to pass data from the PHP to the JS at render time.
+	 * 
+	 * @return array Params to be saved as a javascript object accessable to the UI.
+	 * 
+	 * @since  Redux_Framework 3.1.1
+	 * 
+	 */
+	function localize() {
 
-        // Don't allow input edit if there's a step
-        $readonly = "";
-        
-        if ( isset($this->field['edit']) && $this->field['edit'] == false ) {
-            $readonly = ' readonly="readonly"';
-        }
-        
-        echo '<input type="text" name="'.$this->parent->args['opt_name'].'['.$this->field['id'].']" id="' . $this->field['id'] . '" value="'. $this->value .'" class="mini slider-input'.$this->field['class'].'"'.$readonly.'/>';
-        echo '<div id="'.$this->field['id'].'-slider" class="redux_slider" rel="'.$this->field['id'].'"></div>';
+		$params = array(
+			'id' => '',
+			'min' => '',
+			'max' => '',
+			'step' => '',
+			'val' => null,
+			'default' => '',
+		);
 
-    }//function
+		$params = wp_parse_args( $this->field, $params );
+		$params['val'] = $this->value;
+
+		return $params;
+
+	}
+
+
+	/**
+	 * Field Render Function.
+	 *
+	 * Takes the vars and outputs the HTML for the field in the settings
+	 *
+	 * @since ReduxFramework 0.0.4
+	*/
+	function render(){
+
+		// Don't allow input edit if there's a step
+		$readonly = "";
+		
+		if ( isset($this->field['edit']) && $this->field['edit'] == false ) {
+			$readonly = ' readonly="readonly"';
+		}
+		
+		echo '<input type="text" name="' . $this->field['id'] . '" id="' . $this->field['id'] . '" value="'. $this->value .'" class="mini slider-input'.$this->field['class'].'"'.$readonly.'/>';
+		echo '<div id="'.$this->field['id'].'-slider" class="redux_slider" rel="'.$this->field['id'].'"></div>';
+
+	}//function
 
 }//class

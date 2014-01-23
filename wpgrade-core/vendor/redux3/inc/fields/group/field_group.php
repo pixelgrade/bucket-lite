@@ -65,6 +65,11 @@ if (!class_exists('ReduxFramework_group')) {
          */
         public function render() {
 
+            if ( isset( $this->field['subfields'] ) && empty( $this->field['fields'] ) ) {
+                $this->field['fields'] = $this->field['subfields'];
+                unset( $this->field['subfields'] );
+            }
+
             if (empty($this->value) || !is_array($this->value)) {
                 $this->value = array(
                     array(
@@ -88,7 +93,7 @@ if (!class_exists('ReduxFramework_group')) {
             echo '<fieldset><input type="hidden" id="' . $this->field['id'] . '_slide-title" data-name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][@][slide_title]" value="" class="regular-text slide-title" /></fieldset>';
             echo '<input type="hidden" class="slide-sort" data-name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][@][slide_sort]" id="' . $this->field['id'] . '-slide_sort" value="" />';
             $field_is_title = true;
-                foreach ($this->field['subfields'] as $field) {
+                foreach ($this->field['fields'] as $field) {
                     //we will enqueue all CSS/JS for sub fields if it wasn't enqueued
                     $this->enqueue_dependencies($field['type']);
 
@@ -110,7 +115,7 @@ if (!class_exists('ReduxFramework_group')) {
                     $content = ob_get_contents();
 
                     //adding sorting number to the name of each fields in group
-                    $name = $this->parent->args['opt_name'] . '[' . $field['id'] . ']';
+                    $name = '[' . $field['id'] . ']';
                     $content = str_replace($name,$this->parent->args['opt_name'] . '[' . $this->field['id'] . '][@]['.$field['id'].']', $content);
                     // remove the name property. asigned by the controller, create new data-name property for js
                     $content = str_replace('name', 'data-name', $content);
@@ -174,7 +179,7 @@ if (!class_exists('ReduxFramework_group')) {
                     $content = ob_get_contents();
 
                     //adding sorting number to the name of each fields in group
-                    $name = $this->parent->args['opt_name'] . '[' . $field['id'] . ']';
+                    $name = '[' . $field['id'] . ']';
                     $content = str_replace($name, $this->parent->args['opt_name'] . '[' . $this->field['id'] . ']['.$x.']['.$field['id'].']', $content);
 
                     //we should add $sort to id to fix problem with select field

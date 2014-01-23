@@ -41,7 +41,7 @@ class ReduxFramework_radio extends ReduxFramework{
 
 			echo '<ul class="'.$this->field['data_class'].'">';
 			
-			foreach($this->field['options'] as $k => $v){
+			foreach($this->field['options'] as $k => $v) {
 				
 				echo '<li>';
 				echo '<label for="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'">';

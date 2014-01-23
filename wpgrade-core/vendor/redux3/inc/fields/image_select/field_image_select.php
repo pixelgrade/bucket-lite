@@ -148,7 +148,7 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
                     echo '<li class="redux-image-select">';
                     echo '<label class="' . $selected . ' redux-image-select' . $is_preset_class . $this->field['id'] . '_' . $x . '" for="' . $this->field['id'] . '_' . (array_search( $k, array_keys( $this->field['options'] ) ) + 1) . '">';
 
-                    echo '<input type="radio" class="' . $this->field['class'] . '" id="' . $this->field['id'] . '_' . (array_search( $k, array_keys( $this->field['options'] ) ) + 1) . '" name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . ']" value="' . $theValue . '" ' . checked( $this->value, $theValue, false ) . $presets . '/>';
+                    echo '<input type="radio" class="' . $this->field['class'] . '" id="' . $this->field['id'] . '_' . (array_search( $k, array_keys( $this->field['options'] ) ) + 1) . '" name="' . $this->field['name'] . '" value="' . $theValue . '" ' . checked( $this->value, $theValue, false ) . $presets . '/>';
                     
                     if( !empty( $this->field['tiles'] ) && $this->field['tiles'] == true ) {
                         echo '<span class="tiles" style="background-image: url(' . $v['img'] . ');" rel="'.$v['img'].'"">&nbsp;</span>';
@@ -200,5 +200,38 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
             );
         
         }
+        
+        public function getCSS() {
+            $css = '';
+            $value = $this->value;
+
+            if (!empty($value)) {
+                $css .= "background-image: url('" . $value . "');";
+            }
+            return $css;
+        }        
+        
+        public function output() {
+            if ( ( !isset( $this->field['output'] ) || !is_array( $this->field['output'] ) ) && ( !isset( $this->field['compiler'] ) || !is_array( $this->field['compiler'] ) ) ) {
+                return;
+            }
+
+            $style = $this->getCSS();
+
+            if ( !empty( $style ) ) {
+
+                if ( !empty( $this->field['output'] ) && is_array( $this->field['output'] ) ) {
+                    $keys = implode(",", $this->field['output']);
+                    $this->parent->outputCSS .= $style;
+                }
+
+                if ( !empty( $this->field['compiler'] ) && is_array( $this->field['compiler'] ) ) {
+                    $keys = implode(",", $this->field['compiler']);
+                    $style = $keys . "{" . $style . '}';
+                    $this->parent->compilerCSS .= $style; //$keys . "{" . $style . '}';
+                }
+            }
+        }        
+        
     }
 }
