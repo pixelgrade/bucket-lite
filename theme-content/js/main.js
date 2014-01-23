@@ -419,6 +419,18 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	};
 
 
+	/* --- Set Query Parameter--- */
+	function setQueryParameter(uri, key, value) {
+	  var re = new RegExp("([?|&])" + key + "=.*?(&|$)", "i");
+	  separator = uri.indexOf('?') !== -1 ? "&" : "?";
+	  if (uri.match(re)) {
+	    return uri.replace(re, '$1' + key + "=" + value + '$2');
+	  }
+	  else {
+	    return uri + separator + key + "=" + value;
+	  }
+	}
+
 
 	/* --- $VIDEOS --- */
 
@@ -452,9 +464,11 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		// Firefox Opacity Video Hack
 		$('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function(){
 			var url = $(this).attr("src");
-			$(this).attr("src", url+"?wmode=transparent");
+
+			$(this).attr("src", setQueryParameter(url, "wmode", "transparent"));
 		});
 	}
+
 
 	/* MAGNIFIC POPUP INIT */
 
