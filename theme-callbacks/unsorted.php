@@ -255,7 +255,10 @@ function wpgrade_better_excerpt($text = '') {
 			//some further testing to ensure that we catch the mb languages like chinese
 			//test for extra long average word length - means that each sentence is enterpreted as a word
 			$temp_words = $words;
-			array_pop($temp_words);
+			if (count($temp_words) > 1) {
+				array_pop($temp_words);
+			}
+			
 			if (mb_strlen(implode(' ', $temp_words))/count($temp_words) > 20) {
 				//we have a mb language
 				//then we simply split my mb characters rather than words
