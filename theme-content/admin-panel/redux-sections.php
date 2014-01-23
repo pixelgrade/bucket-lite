@@ -47,19 +47,7 @@ $sections[] = array(
 			'type' => 'media',
 			'title' => __('Metro Icon', wpgrade::textdomain()),
 			'subtitle' => __('The size of this icon must be 144x144px.', wpgrade::textdomain())
-		),
-		array(
-			'id'=>'layout-21',
-			'desc'=> __('<h3>Layout</h3>', wpgrade::textdomain()),
-			'type' => 'info'
-		), 
-		array(
-			'id' => 'layout_boxed',
-			'type' => 'switch',
-			'title' => __('Boxed Layout', wpgrade::textdomain()),
-			'subtitle' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', wpgrade::textdomain()),
-			'default' => '0'
-		),
+		)
 	)
 );
 
@@ -125,6 +113,18 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Body Font', wpgrade::textdomain()),
 			'subtitle'=> __('Font for content text and widget text.', wpgrade::textdomain()),
+		),
+		array(
+			'id'=>'layout-21',
+			'desc'=> __('<h3>Layout</h3>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
+		array(
+			'id' => 'layout_boxed',
+			'type' => 'switch',
+			'title' => __('Boxed Layout', wpgrade::textdomain()),
+			'subtitle' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', wpgrade::textdomain()),
+			'default' => '0'
 		),
 	)
 );
