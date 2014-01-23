@@ -69,20 +69,20 @@ function wpgrade_pagination_custom_markup($link, $key) {
     $suffix = '<!--';
     switch ( $key ) {
         case $current:
-                //$class .= 'class="pagination-item pagination-item--current"';
+                $class .= 'class="pagination-item pagination-item--current"';
                 $link = '<span>' . $link . '</span>';
             break;
         case 'prev':
-				//$class .= 'class="pagination-item pagination-item--prev"';
+                $class .= 'class="pagination-item pagination-item--prev"';
             break;
         case 'next':
-                //$class .= 'class="pagination-item pagination-item--next"';
+                $class .= 'class="pagination-item pagination-item--next"';
             break;
         default:
             break;
     }
 
-    $link = $prefix .'<li>' . $link . '</li>' . $suffix;
+    $link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
     return $link;
 
 }
