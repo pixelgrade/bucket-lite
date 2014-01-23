@@ -1,6 +1,12 @@
 /*------------------------------------*\
     $PAGINATIONS
 \*------------------------------------*/
+
+%current {
+    background-color: $accent;
+    color: white;
+    display: inline-block;
+}
 .pagination{
     border: none;
     text-align: center;
@@ -8,12 +14,10 @@
     padding-left: 0;
 
     .current {
-        background-color: $accent;
-        color: white;
-        display: inline-block;
+       @extend %current;
     }
 
-    a.prev, a.next {
+    a.prev, a.next, .pagination-item a {
         &:before, &:after{
             display: inline-block;
             @include transform(rotate(45deg));
@@ -32,7 +36,7 @@
         }            
     }        
 
-    a.prev {
+    a.prev, .pagination-item--prev a {
         @include rem(margin-right, $_u);
         
         &:before {
@@ -42,7 +46,7 @@
         } 
     }
 
-    a.next {        
+    a.next, .pagination-item--next a {        
         @include rem(margin-left, $_u);
 
         &:after {
@@ -83,8 +87,6 @@
 
 /*body*/.single .pagination {
     span {
-        background-color: $accent;
-        color: white;
-        display: inline-block;
+        @extend %current;
     }
 }
