@@ -7,48 +7,45 @@
     @include rem(margin, $_2u 0);
     padding-left: 0;
 
-    .pagination-item--current span {
+    .current {
         background-color: $accent;
         color: white;
         display: inline-block;
     }
 
-    .pagination-item--prev, .pagination-item--next {
+    a.prev, a.next {
+        &:before, &:after{
+            display: inline-block;
+            @include transform(rotate(45deg));
+            @include rem(width, 10px);
+            @include rem(height, 10px);
+            @include rem(margin, 0 $_u4);
+            border-color: $dark;
+            border-width: 2px;
+            @include transition(all .15s linear);
+        }
 
-        a {
+        &:hover {
             &:before, &:after{
-                display: inline-block;
-                @include transform(rotate(45deg));
-                @include rem(width, 10px);
-                @include rem(height, 10px);
-                @include rem(margin, 0 $_u4);
-                border-color: $dark;
-                border-width: 2px;
-                @include transition(all .15s linear);
-            }
+                border-color: white;
+            }              
+        }            
+    }        
 
-            &:hover {
-                &:before, &:after{
-                    border-color: white;
-                }              
-            }            
-        }        
-    }
-
-    .pagination-item--prev {
+    a.prev {
         @include rem(margin-right, $_u);
         
-        a:before {
+        &:before {
             content: '';
             border-left-style: solid;
             border-bottom-style: solid;
         } 
     }
 
-    .pagination-item--next {        
+    a.next {        
         @include rem(margin-left, $_u);
 
-        a:after {
+        &:after {
             content: '';
             border-right-style: solid;
             border-top-style: solid;                 
@@ -76,5 +73,18 @@
             background: white;
             color: $dark;
         }
+    }
+}
+
+
+/*------------------------------------*\
+    $SINGLE
+\*------------------------------------*/
+
+/*body*/.single .pagination {
+    span {
+        background-color: $accent;
+        color: white;
+        display: inline-block;
     }
 }
