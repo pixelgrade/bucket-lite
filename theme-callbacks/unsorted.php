@@ -244,7 +244,6 @@ function wpgrade_better_excerpt($text = '') {
 		if (wpgrade_is_all_multibyte($text)) {
 			//then we simply split my mb characters rather than words
 			$text = short_text($text,$excerpt_length,$excerpt_length);
-			$text = $text . $excerpt_more;
 		} else {
 //			$options = array(
 //				'ending' => $excerpt_more, 'exact' => false, 'html' => true
@@ -261,7 +260,6 @@ function wpgrade_better_excerpt($text = '') {
 				//we have a mb language
 				//then we simply split my mb characters rather than words
 				$text = short_text($text,$excerpt_length,$excerpt_length);
-				$text = $text . $excerpt_more;
 			} else {
 		
 				if ( count($words) > $excerpt_length ) {
