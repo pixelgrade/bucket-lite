@@ -44,6 +44,6 @@ YARPP Template: Related Articles
             --></ul>
 
         <?php else: ?>
-        <p><?php _e("No related articles yet.", wpgrade::textdomain()); ?>.</p>
+        <p><?php _e("No related articles yet.", wpgrade::textdomain()); ?></p>
         <?php endif; ?>
     </div>
