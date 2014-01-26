@@ -273,6 +273,7 @@ function wpgrade_better_excerpt($text = '') {
 				} else {
 					$text = implode(' ', $words);
 				}
+				
 			}
 			
 		}

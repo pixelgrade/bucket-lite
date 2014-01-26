@@ -173,16 +173,16 @@
 			// Only the template needs to be updated.
 			if (is_child_theme()) {
 				$template = wp_get_theme($theme_data->template);
-				$theme_name = $template->Name;
+				$theme_dirname = $template->Template;
 			}
 			else { // ! is_child_theme
-				$theme_name = $theme_data->Name;
+				$theme_dirname = $theme_data->Template;
 			}
 
 			$upgrader = new WPGradeAjaxUpgrader();
 
 			try {
-				if ($upgrader->backup_theme($theme_name)) {
+				if ($upgrader->backup_theme($theme_dirname)) {
 					$response['data'] = array('state' => 'available', 'html' => null);
 				}
 				else { // failed to backup file

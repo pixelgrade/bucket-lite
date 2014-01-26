@@ -1,3 +1,9 @@
+# Ignore temporary files
+# -----------------------------
+tests/report
+features/.test.path
+tests/assets/mock-theme/.test.path
+
 # Ignore Eclipse project files
 # -----------------------------
 .settings/

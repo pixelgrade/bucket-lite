@@ -449,4 +449,55 @@ class wpgradeTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('success', wpgrade::option('unittest_test_option'));
 	}
 
+	/**
+	 * @test
+	 */
+	function features_testurl() {
+		$features_test_path = wpgrade::corepath().'features/.test.path';
+		$theme_features_test_path = wpgrade::corepath().'../.test.path';
+
+		$original_copy = null;
+		if (file_exists($features_test_path)) {
+			$original_copy = file_get_contents($features_test_path);
+			unlink($features_test_path);
+		}
+
+		$theme_original_copy = null;
+		if (file_exists($theme_features_test_path)) {
+			$theme_original_copy = file_get_contents($theme_features_test_path);
+			unlink($theme_features_test_path);
+		}
+
+		try {
+			wpgrade::features_testurl();
+			throw new Exception('Expected exception was not thrown.');
+		}
+		catch (Exception $e) {
+			$this->assertEquals('Please create the file wpgrade-core/features/.test.path and place the url to your wordpress inside it.', $e->getMessage());
+		}
+
+		file_put_contents($features_test_path, 'example.url');
+		$this->assertEquals('example.url/', wpgrade::features_testurl());
+		file_put_contents($features_test_path, 'example.url/path/');
+		$this->assertEquals('example.url/path/', wpgrade::features_testurl());
+		unlink($features_test_path);
+
+		file_put_contents($theme_features_test_path, 'example.url');
+		$this->assertEquals('example.url/', wpgrade::features_testurl());
+		file_put_contents($theme_features_test_path, 'example.url/path/');
+		$this->assertEquals('example.url/path/', wpgrade::features_testurl());
+		unlink($theme_features_test_path);
+
+		// Restore original .test.path if one existed
+		// ------------------------------------------
+
+		if ($original_copy != null) {
+			file_put_contents($features_test_path, $original_copy);
+		}
+
+		if ($theme_original_copy != null) {
+			file_put_contents($theme_features_test_path, $original_copy);
+		}
+	}
+
 } # class

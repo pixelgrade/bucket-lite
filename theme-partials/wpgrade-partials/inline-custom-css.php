@@ -103,7 +103,7 @@ a:hover > .pixcode--icon,
 }
 
 .heading--main .hN, .widget--sidebar__title, 
-.pagination .pagination-item--current span,
+.pagination .pagination-item--current span,.pagination .current span,
 .pagination li a:hover, .pagination li span:hover, 
 .rsNavSelected, .badge, .progressbar__progress,
 .btn:hover, .comments_add-comment:hover, 
