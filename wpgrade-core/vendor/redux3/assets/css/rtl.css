@@ -1,11 +1,11 @@
-#redux-container .redux-action_bar {
+.redux-container .redux-action_bar {
 	float: left;
 }
-#redux-container #expand_options , #redux-sidebar , .cb-enable, .cb-disable, .cb-enable span, .cb-disable span
+.redux-container #expand_options , .redux-sidebar , .cb-enable, .cb-disable, .cb-enable span, .cb-disable span
 ,#redux-footer #redux-share{
 	float:right;
 }
-#redux-main {
+.redux-main {
 	border-left: 0px;
 	margin-left: 0px;
 	border-right: 1px solid #d8d8d8;

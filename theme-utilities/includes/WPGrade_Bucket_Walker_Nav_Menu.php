@@ -280,20 +280,20 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 
                         $item_output .= 
                             '<div class="sub-menu__grid__item  grid__item  one-fifth">' .
-                                    '<article class="article article--billboard-small">' .
-                                        '<a href="' . $post_link . '">' .
-                                            $menu_post_image .
-                                            '<div class="article__content">
-                                                <h2 class="article__title article--billboard-small__title">' .
-                                                    '<span class="hN">' . $post_title . '</span>' .
-                                                '</h2>
-                                                <div class="article__description">'.
-												short_text(get_the_excerpt(), 75, 80, false). 
-                                                '</div>
-                                                <span class="small-link">'.__('Read More', wpgrade::textdomain()).'<em>+</em></span>
-                                            </div>
-                                        </a>'.
-                                    '</article>'.
+								'<article class="article article--billboard-small">' .
+									'<a href="' . $post_link . '">' .
+										$menu_post_image .
+										'<div class="article__content">
+											<h2 class="article__title article--billboard-small__title">' .
+												'<span class="hN">' . $post_title . '</span>' .
+											'</h2>
+											<div class="article__description">'.
+											short_text(get_the_excerpt(), 75, 80, false). 
+											'</div>
+											<span class="small-link">'.__('Read More', wpgrade::textdomain()).'<em>+</em></span>
+										</div>
+									</a>'.
+								'</article>'.
                             '</div>';
 
                     endwhile;

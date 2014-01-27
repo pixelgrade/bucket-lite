@@ -1,4 +1,4 @@
-[![Build Status](http://95.85.9.10:8080/buildStatus/icon?job=wpgrade-core)](http://95.85.9.10:8080/job/wpgrade-core/)
+[![Build Status](http://jenkins.pixelgrade.com:8080/buildStatus/icon?job=wpgrade-core)](http://jenkins.pixelgrade.com:8080/job/wpgrade-core/)
 
 General system classes are located in this section.
 

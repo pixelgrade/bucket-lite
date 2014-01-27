@@ -231,7 +231,7 @@
 						function (data) {
 							$step_downloading_theme_updates = $('.wpgrade-upgrade-step-downloading-theme-updates');
 							var $download_progress = $('.wpg-download-progress', $step_downloading_theme_updates);
-							$('.downloaded .done', $download_progress).html(end + 1);
+							$('.downloaded .done', $download_progress).html(Math.floor((end + 1) / 1024));
 							processor(part, partsize, data);
 						},
 						{
@@ -301,8 +301,8 @@
 								$('.method-info', $download_progress).html('Downloading using the Range method.');
 								$('.downloaded').show();
 								$('.downloaded .done', $download_progress).html('0');
-								$('.downloaded .total', $download_progress).html(program['download']['content-length']);
-								$('.downloaded .type', $download_progress).html('bytes');
+								$('.downloaded .total', $download_progress).html(Math.floor(program['download']['content-length'] / 1024));
+								$('.downloaded .type', $download_progress).html('kilobytes'); // intentionally not "kibibytes" to avoid people asking
 							}
 							else if (data['info']['accept-ranges'] == 'none') {
 								program['download']['method'] = 'direct';

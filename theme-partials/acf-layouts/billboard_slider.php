@@ -1,4 +1,5 @@
 <?php
+global $showed_posts_ids;
 /**
  * Fields available:
  * @posts_source select (featured / latest / latest_by_cat / latest_by_format / latest_by_reviews)
@@ -21,6 +22,13 @@ $offset = get_sub_field('offset');
 
 if ( is_numeric($offset) && $offset > 0 ) {
 	$query_args['offset'] = $offset;
+}
+
+if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicate_posts', true) == 'on') {
+	//exclude the already showed posts from the current block loop
+	if (!empty($showed_posts_ids)) {
+		$query_args['post__not_in'] = $showed_posts_ids;
+	}
 }
 
 $posts_source = get_sub_field('posts_source');
@@ -135,7 +143,9 @@ if ($slides->have_posts()): ?>
             } ?>
 			>
 	    <?php while($slides->have_posts()): $slides->the_post();
-
+			//first let's remember the post id
+			$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
+			
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
             $image_small = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
 

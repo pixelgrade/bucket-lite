@@ -39,9 +39,19 @@ class ReduxFramework_select extends ReduxFramework{
 			}
 			if ($this->field['data'] == "elusive-icons" || $this->field['data'] == "elusive-icon" || $this->field['data'] == "elusive" ) {
        			$icons_file = ReduxFramework::$_dir.'inc/fields/select/elusive-icons.php';
+	            /**
+	             * filter 'redux-font-icons-file}'
+	             * @param  array $icon_file  File for the icons
+	             */       			
        			$icons_file = apply_filters('redux-font-icons-file',$icons_file);
-       			if(file_exists($icons_file))
-       				require_once $icons_file;
+				/**
+	             * filter 'redux/{opt_name}/field/font/icons/file'
+	             * @param  array $icon_file  File for the icons
+	             */       			
+       			$icons_file = apply_filters("redux/{$this->parent->args['opt_name']}/field/font/icons/file",$icons_file);
+       			if( file_exists( $icons_file ) ) {
+       				require_once( $icons_file );
+       			}
 			}        	
         	$this->field['options'] = $this->get_wordpress_data($this->field['data'], $this->field['args']);
         }
@@ -89,7 +99,7 @@ class ReduxFramework_select extends ReduxFramework{
 			}
 		
 			$sortable = (isset($this->field['sortable']) && $this->field['sortable']) ? ' select2-sortable"' : "";
-			echo '<select '.$multi.' id="'.$this->field['id'].'-select" data-placeholder="'.$placeholder.'" name="'.$this->parent->args['opt_name'].'['.$this->field['id'].']'.$nameBrackets.'" class="redux-select-item '.$this->field['class'].$sortable.'"'.$width.' rows="6">';
+			echo '<select '.$multi.' id="'.$this->field['id'].'-select" data-placeholder="'.$placeholder.'" name="' . $this->field['name'] . ''.$nameBrackets.'" class="redux-select-item '.$this->field['class'].$sortable.'"'.$width.' rows="6">';
 				echo '<option></option>';
 
 

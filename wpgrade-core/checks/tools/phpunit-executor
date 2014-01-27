@@ -1,6 +1,0 @@
-#!/bin/sh
-echo "Running phpunit..."
-wpgrade-core/checks/bin/phpunit --bootstrap wpgrade-core/tests/bootstrap.php --coverage-html wpgrade-core/checks/reports/code-coverage wpgrade-core/tests
-echo
-echo
-read -p "Testing complete. Press any key to close... " -n1 -s

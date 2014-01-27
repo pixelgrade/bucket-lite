@@ -6,7 +6,8 @@
 
 
 	$(document).ready(function(){
-
+		// Intense debug  ;)
+		//jQuery('input[type="hidden"]').attr("type","text");
 		//console.log(redux);
 		
 		jQuery.fn.isOnScreen = function() {
@@ -493,7 +494,9 @@ jQuery(document).ready(function($) { 	console.log('ceva');
 		// Show the group
 		jQuery('#' + oldid + '_section_group').hide();
 		jQuery('#' + relid + '_section_group').fadeIn(200, function() {
-			stickyInfo(); // race condition fix
+			if (jQuery('#redux-footer').length !== 0) {
+				stickyInfo(); // race condition fix
+			}
 		});
 		jQuery('#' + relid + '_section_group_li').addClass('active');
 	});
@@ -541,21 +544,22 @@ jQuery(document).ready(function($) { 	console.log('ceva');
 		}
 		window.onbeforeunload = null;
 	});	
-	jQuery('#expand_options').click(function(e) {
-		e.preventDefault();
-		var trigger = jQuery('#expand_options');
-		var width = jQuery('#redux-sidebar').width();
-		var id = jQuery('#redux-group-menu .active a').data('rel') + '_section_group';
+
+	function redux_expand_options(parent) {
+		console.log('here');
+		var trigger = parent.find('.expand_options');
+		var width = parent.find('.redux-sidebar').width();
+		var id = jQuery('.redux-group-menu .active a').data('rel') + '_section_group';
 		if (trigger.hasClass('expanded')) {
 			trigger.removeClass('expanded');
-			jQuery('.redux-main').removeClass('expand');
-			jQuery('#redux-sidebar').stop().animate({
+			parent.find('.redux-main').removeClass('expand');
+			parent.find('.redux-sidebar').stop().animate({
 				'margin-left': '0px'
 			}, 500);
-			jQuery('.redux-main').stop().animate({
+			parent.find('.redux-main').stop().animate({
 				'margin-left': width
 			}, 500);
-			jQuery('.redux-group-tab').each(function() {
+			parent.find('.redux-group-tab').each(function() {
 				if (jQuery(this).attr('id') !== id) {
 					jQuery(this).fadeOut('fast');
 				}
@@ -563,15 +567,22 @@ jQuery(document).ready(function($) { 	console.log('ceva');
 			// Show the only active one
 		} else {
 			trigger.addClass('expanded');
-			jQuery('.redux-main').addClass('expand');
-			jQuery('#redux-sidebar').stop().animate({
-				'margin-left': -width - 2
+			parent.find('.redux-main').addClass('expand');
+			parent.find('.redux-sidebar').stop().animate({
+				'margin-left': -width - 102
 			}, 500);
-			jQuery('.redux-main').stop().animate({
+			parent.find('.redux-main').stop().animate({
 				'margin-left': '0px'
 			}, 500);
-			jQuery('.redux-group-tab').fadeIn();
+			parent.find('.redux-group-tab').fadeIn();
 		}
+		return false;
+	}
+
+	jQuery('.expand_options').click(function(e) {
+		e.preventDefault();
+
+		redux_expand_options(jQuery(this).parents('.redux-container:first'));
 		return false;
 	});
 	jQuery('#redux-import').click(function(e) {
@@ -586,7 +597,7 @@ jQuery(document).ready(function($) { 	console.log('ceva');
 	if (jQuery('#redux-imported').is(':visible')) {
 		jQuery('#redux-imported').slideDown();
 	}
-	jQuery(document.body).on('change', 'input, textarea, select', function() {
+	jQuery(document.body).on('change', '.redux-field input, .redux-field textarea, .redux-field select', function() {
 		if (!jQuery(this).hasClass('noUpdate')) {
 			redux_change(jQuery(this));
 		}

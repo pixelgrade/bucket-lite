@@ -259,7 +259,8 @@ function wpgrade_better_excerpt($text = '') {
 				array_pop($temp_words);
 			}
 			
-			if (mb_strlen(implode(' ', $temp_words))/count($temp_words) > 20) {
+			//we have taken a large average word length - 20
+			if (count($temp_words) > 0 && mb_strlen(implode(' ', $temp_words))/count($temp_words) > 20) {
 				//we have a mb language
 				//then we simply split my mb characters rather than words
 				$text = short_text($text,$excerpt_length,$excerpt_length);
@@ -273,6 +274,7 @@ function wpgrade_better_excerpt($text = '') {
 				} else {
 					$text = implode(' ', $words);
 				}
+				
 			}
 			
 		}
