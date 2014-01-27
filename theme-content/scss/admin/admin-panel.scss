@@ -320,6 +320,10 @@ $heading-font: 'Open Sans', sans-serif;
 		}
 	}
 
+	.redux_field_th, .redux-main .redux-field-container {
+		padding:0;
+	}
+
 	/*
 	* Divider
 	*/
@@ -331,7 +335,7 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 //Change the layout to stacked
-.redux-container tr {
+.redux-group-tab .form-table tr {
 	th, td {
 		display:block;
 		width:100%;
@@ -485,9 +489,9 @@ $heading-font: 'Open Sans', sans-serif;
 	tr[data-check-field="blog_single_show_share_links"] {
 		position:relative;
 		float:left;
-		width:33%;
+		width:50%;
 		margin-top: 18px;
-		margin-bottom: 48px;
+		margin-bottom: 18px;
 
 		th {
 			padding-left:40px;
@@ -671,7 +675,7 @@ $heading-font: 'Open Sans', sans-serif;
 		border:none;
 		color:$dark;
 		padding:0;
-		margin-bottom: -22px;
+		margin-bottom: -44px;
 		margin-top: -22px;
 
 		h3 {
@@ -757,6 +761,16 @@ $heading-font: 'Open Sans', sans-serif;
 		&#bucket_options-blog_layout ul li label:after{
 			left:20px;
 		}
+	}
+
+	.redux-option-image {
+		margin-top: 0;
+		border: none;
+		background: none;
+		padding: 5px 0;
+		min-width:16px;
+		min-height:16px;
+		background:url('../../images/admin/transparent_bg.png');
 	}
 
 
