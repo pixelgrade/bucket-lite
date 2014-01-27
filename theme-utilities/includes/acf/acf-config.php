@@ -638,7 +638,7 @@ if(function_exists("register_field_group")){
 								'label' => __('Posts Source', wpgrade::textdomain()),
 								'name' => 'posts_source',
 								'type' => 'select',
-								'instructions' => __('Set the maximum number of posts to be displayed.', wpgrade::textdomain()),
+								'instructions' => __('Select what type of posts to be displayed.', wpgrade::textdomain()),
 								'column_width' => '',
 								'choices' => array (
 									'featured' => __('Featured Posts', wpgrade::textdomain()),

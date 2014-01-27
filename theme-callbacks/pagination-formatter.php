@@ -23,11 +23,6 @@
  */
 function wpgrade_callback_pagination_formatter($links, $conf) {
     $linkcount = count($links);
-    
-    //load up the library
-    if(!function_exists('wpgrade_str_get_html')) { 
-		require_once wpgrade::themefilepath('theme-utilities/includes/vendor/simplehtmldom/simple_html_dom.php');
-	}
             
 	//don't show anything when no pagination is needed
 	if ($linkcount == 0) {
@@ -37,48 +32,26 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$suffix = '<!--';
 
 	$current = $conf['current'];
-    
 	foreach ( $links as $key => &$link ) {
-        // Create DOM from string
-        $element = wpgrade_str_get_html($link);
-        $classes = '';
-        $anchor = $element->find('a',0);
-        if (!empty($anchor)) {
-            $classes = $anchor->class;
-            
-            //lets do some SEO shit
-            //remove the page parameter from the link when the first page
-            //prevent different urls pointing to the same page
-            if ($anchor->innertext == '1' || ($conf['current'] == 2 && $anchor->innertext == $conf['prev_text'])) {
-                $anchor->href = get_pagenum_link( 1 );
-                $link = $anchor->outertext;
-            }
-        } else {
-            //try and see if it is a span
-            $span = $element->find('span',0);
-            if (!empty($span)) {
-                $classes = $span->class;
-            }
-        }
-        
+		
+		//some SEO shit
+		//prevent pagination parameters for the links to the first page
+		if ($key == 0 && $current == 2 && strpos($link, 'prev')) {
+			//the first link - should be prev and since we are on page 2 it will hold the link to the first page
+			$link = preg_replace('/href=(["\'])(http:\/\/)?([^"\']+)(["\'])/', 'href="'.  get_pagenum_link(1) .'"', $link);
+		}
+		
+		//change the link of the first page to be more SEO friendly
+		$link_text = strip_tags($link);
+		if ($current != 1 && $link_text == "1") {
+			$link = preg_replace('/href=(["\'])(http:\/\/)?([^"\']+)(["\'])/', 'href="'.  get_pagenum_link(1) .'"', $link);
+		}
+     
         if ( $key == $linkcount - 1 ) {
             $suffix = '';
 		}
-        
-        //the li classes to be added
-        $class = '';
-        
-        //first test for current
-        if (strpos($classes, 'current') !== false) {
-            $class .= 'class="pagination-item pagination-item--current"';
-        } elseif (strpos($classes, 'prev') !== false){
-            $class .= 'class="pagination-item pagination-item--prev"';
-        } elseif (strpos($classes, 'next') !== false){
-            $class .= 'class="pagination-item pagination-item--next"';
-        }
 
-
-        $link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
+        $link = $prefix .'<li>' . $link . '</li>' . $suffix;
         $prefix = "\n-->";
     }
 

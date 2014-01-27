@@ -66,7 +66,8 @@ if (count($slideposts)): ?>
             </article>
 		<?php
 			endif;
-		endforeach; 
+		endforeach;
+		wp_reset_postdata();
 		wp_reset_query(); ?>
 	</div>
 </div>
