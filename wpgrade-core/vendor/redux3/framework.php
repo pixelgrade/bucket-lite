@@ -41,6 +41,9 @@ if(has_action('ecpt_field_options_')) {
 // Don't duplicate me!
 if( !class_exists( 'ReduxFramework' ) ) {
 
+    // General helper functions
+    include_once(dirname(__FILE__).'/inc/class.redux_helpers.php');
+
     /**
      * Main ReduxFramework class
      *
@@ -1137,7 +1140,9 @@ if( !class_exists( 'ReduxFramework' ) ) {
                                 $value = isset($this->options[$field['id']])?$this->options[$field['id']]:'';
                                 $enqueue = new $field_class( $field, $value, $this );
                                 /** @noinspection PhpUndefinedMethodInspection */
-                                $enqueue->output();
+                                if ( ( isset( $field['output'] ) && !empty( $field['output'] ) ) || ( isset( $field['compiler'] ) && !empty( $field['compiler'] ) ) ) {
+                                    $enqueue->output();
+                                }
                             }
                         }
                     }
@@ -1352,12 +1357,12 @@ if( !class_exists( 'ReduxFramework' ) ) {
                                     }
                                     if ( method_exists( $field_class, 'localize' ) ) {
                                         /** @noinspection PhpUndefinedMethodInspection */
-                                        $params = $theField->localize();
+                                        $params = $theField->localize($field);
                                         if ( !isset( $this->localize_data[$field['type']] ) ) {
                                             $this->localize_data[$field['type']] = array();
                                         }
-                                        $this->localize_data[$field['type']][$field['id']] = $theField->localize();
-                                    }
+                                        $this->localize_data[$field['type']][$field['id']] = $theField->localize($field);
+                                    } 
                                     unset($theField);
                                 }
                             }
@@ -1524,8 +1529,8 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 echo $content;
                 exit;
             } else {
-                header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); 
-                header("Last-Modified: " . gmdate( "D, d M Y H:i:s" ) . "GMT"); 
+                header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+                header("Last-Modified: " . gmdate( "D, d M Y H:i:s" ) . "GMT");
                 header( 'Expires: Sat, 26 Jul 1997 05:00:00 GMT' );
                 header( 'Cache-Control: no-store, no-cache, must-revalidate' );
                 header( 'Cache-Control: post-check=0, pre-check=0', false );
@@ -1536,7 +1541,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 echo $content;
                 exit;
             }
-        }        
+        }
 
         /**
          * Show page help
@@ -1738,8 +1743,8 @@ if( !class_exists( 'ReduxFramework' ) ) {
                         if (isset($field['permissions'])) {
                             if ( !current_user_can($field['permissions']) ) {
                                 continue;
-                            }
-                        }
+                            }                            
+                        }                        
 
                         if (!isset($field['id'])) {
                             echo '<br /><h3>No field ID is set.</h3><pre>';
@@ -2000,7 +2005,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             }
 
             // Validate fields (if needed)
-            $plugin_options = $this->_validate_values( $plugin_options, $this->options );
+            $plugin_options = $this->_validate_values( $plugin_options, $this->options, $this->sections );
 
             if( !empty( $this->errors ) || !empty( $this->warnings ) ) {
                 set_transient( 'redux-notices-' . $this->args['opt_name'], array( 'errors' => $this->errors, 'warnings' => $this->warnings ), 1000 );
@@ -2041,15 +2046,16 @@ if( !class_exists( 'ReduxFramework' ) ) {
          * @param       array $options
          * @return      array $plugin_options
          */
-        public function _validate_values( $plugin_options, $options ) {
-            foreach( $this->sections as $k => $section ) {
+        public function _validate_values( $plugin_options, $options, $sections ) {
+            foreach( $sections as $k => $section ) {
                 if( isset( $section['fields'] ) ) {
                     foreach( $section['fields'] as $fkey => $field ) {
                         $field['section_id'] = $k;
 
                         if( isset( $field['type'] ) && ( $field['type'] == 'checkbox' || $field['type'] == 'checkbox_hide_below' || $field['type'] == 'checkbox_hide_all' ) ) {
-                            if( !isset( $plugin_options[$field['id']] ) )
+                            if( !isset( $plugin_options[$field['id']] ) ) {
                                 $plugin_options[$field['id']] = 0;
+                            }
                         }
 
                         if( !isset( $plugin_options[$field['id']] ) || $plugin_options[$field['id']] == '' ) continue;
