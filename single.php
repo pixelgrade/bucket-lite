@@ -233,8 +233,8 @@ $is_review = bucket::has_average_score();
                 <hr class="separator  separator--section">
                 
                 <?php 
-                if ( function_exists('yarpp_related') ) {
-                    yarpp_related();
+                if ( function_exists('related_posts') ) {
+                    related_posts();
                 }
 
                 // If comments are open or we have at least one comment, load up the comment template

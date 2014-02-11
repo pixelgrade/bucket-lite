@@ -36,7 +36,7 @@
 		</div>
 		<div class="article--grid__body">
 	        <div class="article__content">
-	            <?php  the_excerpt(); ?>
+	            <?php echo wpgrade_better_excerpt(); ?>
 	        </div>
 	    </div>
 	    <ul class="nav  article__meta-links">
