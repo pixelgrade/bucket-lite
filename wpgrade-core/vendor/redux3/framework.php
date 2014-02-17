@@ -1879,7 +1879,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 
             foreach($folders as $folder){
 
-                if ($folder === '.' or $folder === '..' or !is_dir($path . $folder) ) {
+				if (strpos($folder,'.') === 0 or !is_dir($path . $folder) ) {
                     continue;
                 }
                 $extension_class = 'ReduxFramework_Extension_' . $folder;

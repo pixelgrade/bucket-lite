@@ -539,7 +539,8 @@ class wpgrade {
 
 		foreach ($files as $value) {
 			// skip special dot files
-			if ($value === '.' || $value === '..') {
+			// and any file that starts with a . - think hidden directories like .svn or .git
+			if (strpos($value,'.') === 0) {
 				continue;
 			}
 
