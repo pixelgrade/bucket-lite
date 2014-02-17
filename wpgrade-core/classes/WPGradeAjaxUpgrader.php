@@ -470,11 +470,11 @@ class WPGradeAjaxUpgrader {
 		if ( ! file_exists("$copy_theme/style.css")) {
 
 			// may be inner arhive
-			$inner_files = array_values(array_diff(scandir($copy_theme), array('.', '..', '.DS_Store')));
+			$inner_files = array_values(array_diff(scandir($copy_theme), array('.', '..', '.DS_Store', '__MACOSX' )));
 
 			if (count($inner_files) == 1 && is_dir("$copy_theme/$inner_files[0]")) {
 				rename("$copy_theme/$inner_files[0]", $copy_theme.'-temp');
-				rmdir($copy_theme);
+                $this->rmdir($copy_theme);
 				rename($copy_theme.'-temp', $copy_theme);
 			}
 

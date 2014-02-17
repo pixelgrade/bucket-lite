@@ -11,7 +11,7 @@ function wpgrade_callback_send_activation_stats(){
 
 	$themedata = wpgrade::themedata();
 
-	$the_post_to = wp_remote_post('http://vps5.cgwizz.com/stats',  array(
+	$the_post_to = wp_remote_post('http://pixelgrade.com/stats',  array(
 		'method' => 'POST',
 		'body' => array(
 			'send_stats' => true,
