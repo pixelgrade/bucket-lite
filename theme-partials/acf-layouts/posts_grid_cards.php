@@ -1,4 +1,5 @@
 <?php
+global $showed_posts_ids;
 /**
  * Posts Grid Card Component
  * Fields available:
@@ -11,19 +12,19 @@ global $wp_query;
 $wp_query->query_vars['thumbnail_size'] = 'post-medium';
 
 $number_of_posts = get_sub_field('number_of_posts');
-$read_more_label = get_sub_field('read_more_label');
-
-if ( empty($read_more_label) ) {
-	$read_more_label = __('Read Full Story', wpgrade::textdomain());
-}
 
 $query_args = array(
 	'posts_per_page' => $number_of_posts,
 	'ignore_sticky_posts' => true,
 );
 
+if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicate_posts', true) == 'on') {
+	//exclude the already showed posts from the current block loop
+	if (!empty($showed_posts_ids)) {
+		$query_args['post__not_in'] = $showed_posts_ids;
+	}
+}
 $posts_source = get_sub_field('posts_source');
-
 
 $offset = get_sub_field('offset');
 
@@ -123,7 +124,10 @@ $index = 0;
 
 if ($slides->have_posts()): ?>
     	<div class="posts-grid-cards grid fullwidth"><!--
-        	<?php while($slides->have_posts()): $slides->the_post(); 
+        	<?php while($slides->have_posts()): $slides->the_post();
+				//first let's remember the post id
+				$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
+				
         		//When there are more than 3 posts split them into groups of 3
 				if($index++ % 3 == 0) { ?>
 	 	--></div>
@@ -133,3 +137,5 @@ if ($slides->have_posts()): ?>
         	<?php endwhile; wp_reset_postdata(); ?>
  	 	--></div>
 <?php endif;
+
+wp_reset_query();

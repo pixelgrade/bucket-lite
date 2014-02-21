@@ -31,7 +31,7 @@ function wpgrade_callback_load_woocommerce_assets(){
 
 
 }
-add_action('wp_enqueue_scripts','wpgrade_callback_load_woocommerce_assets',999);
+add_action('wp_enqueue_scripts','wpgrade_callback_load_woocommerce_assets',1);
 
 add_action('wp_ajax_woopix_remove_from_cart', 'woopix_remove_from_cart');
 
@@ -266,6 +266,20 @@ function woopix_update_cart() {
 add_filter('term_links-product_cat', 'wpgrade_filter_product_categories', 10, 1);
 
 function wpgrade_filter_product_categories($term_links){
+
+	if ( !empty($term_links) ) {
+		foreach($term_links as &$link){
+			$link = str_replace('<a ', '<a class="btn  btn--small  btn--tertiary" ', $link);
+		}
+	}
+
+	return $term_links;
+
+}
+
+add_filter('term_links-product_tag', 'wpgrade_filter_product_tags', 10, 1);
+
+function wpgrade_filter_product_tags($term_links){
 
 	if ( !empty($term_links) ) {
 		foreach($term_links as &$link){

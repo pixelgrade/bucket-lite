@@ -13,56 +13,56 @@ $is_review = bucket::has_average_score();
     <div class="grid">
 
         <?php
-		// let's get to know this post a little better
-		$full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
-		$disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
+        // let's get to know this post a little better
+        $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
+        $disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
 
-		// let's use what we know
-		$content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
-		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+        // let's use what we know
+        $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+        $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
 
-		if ( wpgrade::option('title_position', 'below') == 'above' ) {
+        if ( wpgrade::option('title_position', 'below') == 'above' ) {
             echo '<div class="article_title--before grid__item  float--left '.$featured_image_width.'">';
-			    get_template_part('theme-partials/post-templates/single-title');
+                get_template_part('theme-partials/post-templates/single-title');
             echo '</div>';
-		}
+        }
 
-		get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
+        get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 
         <article class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $content_width; ?>">
             <?php while (have_posts()): the_post();
 
-				if ( wpgrade::option('title_position', 'below') == 'below' ) {
-					get_template_part('theme-partials/post-templates/single-title');
-				}
+                if ( wpgrade::option('title_position', 'below') == 'below' ) {
+                    get_template_part('theme-partials/post-templates/single-title');
+                }
 
-				if ( $is_review && get_field('placement') == ('before') ) { ?>
-					<div class="score-box score-box--inside">
-						<div class="score__average-wrapper">
-							<div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
-								<?php
-								echo '<div class="score__note" itemprop="rating" >'.bucket::get_average_score().'</div>';
-								if (get_field('note')) {
-									echo '<div class="score__desc">'.get_field('note').'</div>';
-								} ?>
-								<meta itemprop="worst" content = "1">
-								<meta itemprop="best" content = "10">
+                if ( $is_review && get_field('placement') == ('before') ) { ?>
+                    <div class="score-box score-box--inside">
+                        <div class="score__average-wrapper">
+                            <div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
+                                <?php
+                                echo '<div class="score__note" itemprop="rating" >'.bucket::get_average_score().'</div>';
+                                if (get_field('note')) {
+                                    echo '<div class="score__desc">'.get_field('note').'</div>';
+                                } ?>
+                                <meta itemprop="worst" content = "1">
+                                <meta itemprop="best" content = "10">
                             </div>
                         </div>
                     </div>
                 <?php } ?>
 
                 <?php
-		        the_content();
+                the_content();
 
-		        $args = array(
-			        'before' => "<ol class=\"nav pagination\"><!--",
-			        'after' => "\n--></ol>",
-			        'next_or_number' => 'next_and_number',
-			        'previouspagelink' => __('Previous', wpgrade::textdomain()),
-			        'nextpagelink' => __('Next', wpgrade::textdomain())
-		        );
-		        wp_link_pages( $args ); ?>
+                $args = array(
+                    'before' => "<ol class=\"nav pagination\"><!--",
+                    'after' => "\n--></ol>",
+                    'next_or_number' => 'next_and_number',
+                    'previouspagelink' => __('Previous', wpgrade::textdomain()),
+                    'nextpagelink' => __('Next', wpgrade::textdomain())
+                );
+                wp_link_pages( $args ); ?>
 
                 <div class="grid"><!--
                     <?php if ( $is_review && get_field('placement') == ('after') ) :
@@ -80,6 +80,8 @@ $is_review = bucket::has_average_score();
                                         echo '<div class="score__desc">'.get_field('note').'</div>';
                                     }
                                 ?>
+								<meta itemprop="worst" content = "1">
+                                <meta itemprop="best" content = "10">
                             </div>
                         </div>
                     </div>
@@ -119,23 +121,23 @@ $is_review = bucket::has_average_score();
                 --></div>
 
                 <?php
-				if (get_field('enable_review_score')):
-					//don't show the breakdown if there is only one - it means the guy just wanted the average score
-					if (get_field('score_breakdown') && count(get_field('score_breakdown')) > 1 ): ?>
-						<h3><?php _e('The Breakdown', wpgrade::textdomain()); ?></h3>
-						<hr class="separator  separator--subsection">
-						<?php while (has_sub_fields('score_breakdown')): ?>
-							<div class="review__score">
-								<div class="score__label"><?php echo get_sub_field('label'); ?></div>
-								<span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
-								<div class="score__progressbar  progressbar">
-									<div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
-								</div>
-							</div>
-						<?php endwhile; ?>
-						<hr class="separator  separator--subsection">
-					<?php endif;
-				endif; ?>
+                if (get_field('enable_review_score')):
+                    //don't show the breakdown if there is only one - it means the guy just wanted the average score
+                    if (get_field('score_breakdown') && count(get_field('score_breakdown')) > 1 ): ?>
+                        <h3><?php _e('The Breakdown', wpgrade::textdomain()); ?></h3>
+                        <hr class="separator  separator--subsection">
+                        <?php while (has_sub_fields('score_breakdown')): ?>
+                            <div class="review__score">
+                                <div class="score__label"><?php echo get_sub_field('label'); ?></div>
+                                <span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
+                                <div class="score__progressbar  progressbar">
+                                    <div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                        <hr class="separator  separator--subsection">
+                    <?php endif;
+                endif; ?>
 
                 <div class="article__meta  article--single__meta">
                     <?php
@@ -147,81 +149,99 @@ $is_review = bucket::has_average_score();
                             </div>
                         <?php endwhile;
                     endif; ?>
-					
-					<?php 
-					$categories = get_the_category();
+                    
+                    <?php 
+                    $categories = get_the_category();
                     if ($categories): ?>
                     <div class="btn-list">
                         <div class="btn  btn--small  btn--secondary"><?php _e('Categories', wpgrade::textdomain()) ?></div>
                         <?php
-						foreach ($categories as $category):
-							echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
-						endforeach; ?>
+                        foreach ($categories as $category):
+                            echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
+                        endforeach; ?>
                     </div>
-					<?php endif;
+                    <?php endif;
 
-					$tags = get_the_tags();
+                    $tags = get_the_tags();
                     if ($tags): ?>
                     <div class="btn-list">
                         <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', wpgrade::textdomain()) ?></div>
                         <?php
-							foreach ($tags as $tag):
-								echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", wpgrade::textdomain()), $tag->name)) .'">'. $tag->name.'</a>';
-							endforeach;
+                            foreach ($tags as $tag):
+                                echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", wpgrade::textdomain()), $tag->name)) .'">'. $tag->name.'</a>';
+                            endforeach;
                         ?>
                     </div>
-					<?php endif; ?>
+                    <?php endif; ?>
                 </div>
-				<?php get_template_part('theme-partials/post-templates/share-box'); ?>
-				<?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' ); ?>
+                <?php get_template_part('theme-partials/post-templates/share-box'); ?>
+                <?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' ); ?>
                 
                 <?php
-				$next_post = get_next_post();
-				$prev_post = get_previous_post();
-				if (!empty($prev_post) || !empty($next_post)): ?>
-				
-				<nav class="post-nav  grid"><!--
-					<?php if (!empty($prev_post)): ?>
+                $next_post = get_next_post();
+                $prev_post = get_previous_post();
+                if (!empty($prev_post) || !empty($next_post)): ?>
+                
+                <nav class="post-nav  grid"><!--
+                    <?php if (!empty($prev_post) && !empty($next_post)): ?>
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
-							<a href="<?php echo get_permalink($prev_post->ID); ?>">
-								<div class="post-nav-link__label">
-									<?php _e("Previous Article", wpgrade::textdomain()); ?>
-								</div>
-								<div class="post-nav-link__title">
-									<div class="hN"><?php echo $prev_post->post_title; ?></div>
-								</div>
-							</a>
+                            <a href="<?php echo get_permalink($prev_post->ID); ?>">
+                                <div class="post-nav-link__label">
+                                    <?php _e('Previous Article', wpgrade::textdomain() ); ?>
+                                </div>
+                                <div class="post-nav-link__title">
+                                    <div class="hN"><?php echo $prev_post->post_title; ?></div>
+                                </div>
+                            </a>
                     </div><!-- 
-					<?php endif;
+                    <?php endif;
                     
                     if(!empty($prev_post) && !empty($next_post)) : ?>
                  --><div class="divider--pointer"></div><!--
                     <?php endif; 
 
-                    if (!empty($next_post)): ?>
+                    if (!empty($next_post) && !empty($prev_post)): ?>
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
-							<a href="<?php echo get_permalink($next_post->ID); ?>">
-								<div class="post-nav-link__label">
-									<?php _e("Next Article", wpgrade::textdomain()); ?>
-								</div>
-								<div class="post-nav-link__title">
-									<div class="hN"><?php echo $next_post->post_title; ?></div>
-								</div>
-							</a>
+                            <a href="<?php echo get_permalink($next_post->ID); ?>">
+                                <div class="post-nav-link__label">
+                                    <?php _e("Next Article", wpgrade::textdomain()); ?>
+                                </div>
+                                <div class="post-nav-link__title">
+                                    <div class="hN"><?php echo $next_post->post_title; ?></div>
+                                </div>
+                            </a>
                     </div><!--
-					<?php endif; ?>
-				--></nav>
-				
+                    <?php elseif (!empty($next_post) && empty($prev_post)): ?>
+                    --><div class="post-nav-link  post-nav-link--blank  grid__item  one-whole  lap-and-up-one-half">
+                        &nbsp;
+                    </div><!--                     
+                 --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
+                            <a href="<?php echo get_permalink($next_post->ID); ?>">
+                                <div class="post-nav-link__label">
+                                    <?php _e("Next Article", wpgrade::textdomain()); ?>
+                                </div>
+                                <div class="post-nav-link__title">
+                                    <div class="hN"><?php echo $next_post->post_title; ?></div>
+                                </div>
+                            </a>
+                    </div><!--                    
+                    <?php endif; ?>
+                --></nav>
+
                 <?php endif; ?>
-				
+                
                 <hr class="separator  separator--section">
-				
-                <?php
+                
+                <?php 
+                if ( function_exists('related_posts') ) {
+                    related_posts();
+                }
+
                 // If comments are open or we have at least one comment, load up the comment template
                 if ( comments_open() || '0' != get_comments_number() )
                     comments_template();
 
-	        endwhile; ?>
+            endwhile; ?>
         </article><!--
         
         <?php if ($disable_sidebar != 'on'): ?>

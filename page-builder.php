@@ -10,24 +10,37 @@
 get_header();?>
 <div class="container container--main">
 
-	<?php while(has_sub_field("blocks")):
-
-		if(get_row_layout() == "billboard_slider"): // layout:Billboard Slider
-			get_template_part('theme-partials/acf-layouts/billboard_slider');
-		elseif(get_row_layout() == "posts_grid_cards"): // layout: Posts Grid Cards
-			get_template_part('theme-partials/acf-layouts/posts_grid_cards');
-		elseif(get_row_layout() == "hero_posts_module"): // layout: Hero Posts Module
-			get_template_part('theme-partials/acf-layouts/hero_posts_module');
-		elseif(get_row_layout() == "latest_posts"): // layout: Latest Posts
-			get_template_part('theme-partials/acf-layouts/latest_posts');
-		elseif(get_row_layout() == "content"): // layout: Content
-			get_template_part('theme-partials/acf-layouts/content');
-		elseif(get_row_layout() == "heading_title"): // layout: Head
-			get_template_part('theme-partials/acf-layouts/heading_title');
-		endif;
+	<?php 
+	//let's remember what post ids we have outputed so we can avoid double posts
+	$showed_posts_ids = array();
+	
+	//let's get to displaying the rows
+	while(has_sub_field("blocks")):
+		$row_layout = get_row_layout();
+		switch ($row_layout) {
+			case "billboard_slider":
+				get_template_part('theme-partials/acf-layouts/billboard_slider');
+				break;
+			case "posts_grid_cards":
+				get_template_part('theme-partials/acf-layouts/posts_grid_cards');
+				break;
+			case "hero_posts_module":
+				get_template_part('theme-partials/acf-layouts/hero_posts_module');
+				break;
+			case "latest_posts":
+				get_template_part('theme-partials/acf-layouts/latest_posts');
+				break;
+			case "content":
+				get_template_part('theme-partials/acf-layouts/content');
+				break;
+			case "heading_title":
+				get_template_part('theme-partials/acf-layouts/heading_title');
+				break;
+			default:
+				
+		}
 
 	endwhile; ?>
-
 </div>
 <?php get_footer();
 

@@ -16,6 +16,10 @@
 				<img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>"/>
 			</a>
 		<?php endif; ?>
+		<?php post_format_icon();
+			if ( bucket::has_average_score() ) { ?>
+			<div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', wpgrade::textdomain()) ?></span></div>
+		<?php } ?>
 	</div>
 	<div class="media__body grid__item seven-twelfths palm-one-whole">
 		<?php
@@ -32,7 +36,7 @@
 		</div>
 		<div class="article--grid__body">
 	        <div class="article__content">
-	            <?php  the_excerpt(); ?>
+	            <?php echo wpgrade_better_excerpt(); ?>
 	        </div>
 	    </div>
 	    <ul class="nav  article__meta-links">

@@ -12,13 +12,15 @@ function wpgrade_callback_custom_theme_features() {
 function wpgrade_custom_backgrounds_suport(){
 
 	$background_args = array(
-		'default-color'          => '#fff',
+		'default-color'          => '1a1717',
 		'default-image'          => '',
 		'wp-head-callback'       => '_custom_background_cb',
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
-	add_theme_support( 'custom-background', $background_args );
+	if(wpgrade::option('layout_boxed')){
+		add_theme_support( 'custom-background', $background_args );
+	}
 }
 
 // Hook into the 'after_setup_theme' action

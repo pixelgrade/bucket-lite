@@ -40,15 +40,13 @@
 	// though wordpress so no wordpress functions are loaded.
 
 	require $testspath.'assets/wordpress-functions'.EXT;
+	require $testspath.'assets/mockup-callbacks'.EXT;
 
 
 	// Load in system
 	// ------------------------------------------------------------------------
 
 	require $testspath.'../bootstrap'.EXT;
-
-	// mock configuration
-	wpgrade::overwrite_configuration(include $testspath.'assets/wpgrade-config'.EXT);
 
 	$config = wpgrade::config();
 	wpgrade::options()->add_optiondriver(new WPGradeOptionDriver_Config($config['theme-options']));

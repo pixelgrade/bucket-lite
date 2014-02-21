@@ -29,6 +29,23 @@ function wpgrade_callback_geting_active() {
 	$types_options[$theme_key] = array();
 
 	$types_options[$theme_key]['metaboxes'] = array(
+		'page' => array(
+			'id' => 'page',
+			'title' => __('Settings', wpgrade::textdomain()),
+			'pages'      => array('page'), // Post type
+			'context' => 'side',
+			'priority' => 'low',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => __('Prevent Duplicate Posts', wpgrade::textdomain()),
+					'desc' => '<div class="tooltip" title="'.__('Activate this if you want page composer blocks NOT to display posts displayed above them in the page.<br />The Latest Posts block will ignore this setting.', wpgrade::textdomain()).'"></div>',
+					'id' => wpgrade::prefix() . 'prevent_duplicate_posts',
+					'type' => 'checkbox',
+					'std' => '0',
+				),
+			)
+		),
 		'post' => array(
 			'id' => 'post',
 			'title' => __('Settings', wpgrade::textdomain()),

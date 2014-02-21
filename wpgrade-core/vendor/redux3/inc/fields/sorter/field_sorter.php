@@ -25,13 +25,13 @@ class ReduxFramework_sorter extends ReduxFramework {
      * Required - must call the parent constructor, then assign field and value to vars, and obviously call the render field function
      * @since Redux_Options 1.0.0
      */
-    function __construct($field = array(), $value = '', $parent) {
-        parent::__construct($parent->sections, $parent->args);
-        $this->field = $field;
-        $this->value = $value;
-        if (!is_array($this->value) && isset($this->field['options'])) {
-            $this->value = $this->field['options'];
-        }
+	function __construct( $field = array(), $value ='', $parent ) {
+    
+		//parent::__construct( $parent->sections, $parent->args );
+		$this->parent = $parent;
+		$this->field = $field;
+		$this->value = $value;
+    
     }
 
     /**
@@ -88,19 +88,28 @@ class ReduxFramework_sorter extends ReduxFramework {
 			    if ($sortlists) {
 			    	echo '<fieldset id="'.$this->field['id'].'" class="redux-sorter-container sorter">';
 
-					foreach ($sortlists as $group=>$sortlist) {
+					foreach ( $sortlists as $group => $sortlist ) {
+                        $filled = "";
 
-					    echo '<ul id="'.$this->field['id'].'_'.$group.'" class="sortlist_'.$this->field['id'].'">';
+                        if ( isset( $this->field['limits'][$group] ) && count( $sortlist ) >= $this->field['limits'][$group] ) {
+                            $filled = " filled";
+                        }
+
+					    echo '<ul id="'.$this->field['id'].'_'.$group.'" class="sortlist_'.$this->field['id'].$filled.'" data-id="'.$this->field['id'].'" data-group-id="' . $group . '">';
 					    echo '<h3>'.$group.'</h3>';
+
+                        if (!isset($sortlist['placebo'])){
+                            array_unshift($sortlist, array( "placebo" => "placebo" ));
+                        }
 
 					    foreach ($sortlist as $key => $list) {
 
-							echo '<input class="sorter-placebo" type="hidden" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $group . '][placebo]" value="placebo">';
+							echo '<input class="sorter-placebo" type="hidden" name="' . $this->field['id'] . '[' . $group . '][placebo]" value="placebo">';
 
 							if ($key != "placebo") {
 
 							    echo '<li id="'.$key.'" class="sortee">';
-							    echo '<input class="position '.$this->field['class'].'" type="hidden" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $group . '][' . $key . ']" value="'.$list.'">';
+							    echo '<input class="position '.$this->field['class'].'" type="hidden" name="' . $this->field['id'] . '[' . $group . '][' . $key . ']" value="'.$list.'">';
 							    echo $list;
 							    echo '</li>';
 
@@ -125,5 +134,32 @@ class ReduxFramework_sorter extends ReduxFramework {
         wp_enqueue_script('options-sorter');
         wp_enqueue_style('options-sorter');
     }
+
+
+    /**
+     * 
+     * Functions to pass data from the PHP to the JS at render time.
+     * 
+     * @return array Params to be saved as a javascript object accessable to the UI.
+     * 
+     * @since  Redux_Framework 3.1.5
+     * 
+     */
+    function localize($field, $value = "") {
+
+    	$params = array();
+    	
+    	if ( isset( $field['limits'] ) && !empty( $field['limits'] ) ) {
+    		$params['limits'] = $field['limits'];
+    	}
+
+        if ( empty( $value ) ) {
+            $value = $this->value;
+        }       
+        $params['val'] = $value;
+
+        return $params;
+
+    }    
 
 }

@@ -470,11 +470,11 @@ class WPGradeAjaxUpgrader {
 		if ( ! file_exists("$copy_theme/style.css")) {
 
 			// may be inner arhive
-			$inner_files = array_values(array_diff(scandir($copy_theme), array('.', '..')));
+			$inner_files = array_values(array_diff(scandir($copy_theme), array('.', '..', '.DS_Store', '__MACOSX' )));
 
 			if (count($inner_files) == 1 && is_dir("$copy_theme/$inner_files[0]")) {
 				rename("$copy_theme/$inner_files[0]", $copy_theme.'-temp');
-				rmdir($copy_theme);
+                $this->rmdir($copy_theme);
 				rename($copy_theme.'-temp', $copy_theme);
 			}
 
@@ -591,15 +591,15 @@ class WPGradeAjaxUpgrader {
 	 *
 	 * @return boolean
 	 */
-	function backup_theme($theme) {
+	function backup_theme($theme_dirname) {
 		// initialize errors
 		$this->errors = array();
 
 		// configure backup
 		$theme_backup = Envato_Backup::get_instance();
 		$theme_backup->path = WP_CONTENT_DIR.'/envato-backups/';
-		$theme_backup->root = get_theme_root().'/'.$theme.'/';
-		$theme_backup->archive_filename = strtolower(sanitize_file_name($theme.'.backup.'.date('Y-m-d-H-i-s', time() + (current_time('timestamp') - time())).'.zip'));
+		$theme_backup->root = get_theme_root().'/'.$theme_dirname.'/';
+		$theme_backup->archive_filename = strtolower(sanitize_file_name($theme_dirname.'.backup.'.date('Y-m-d-H-i-s', time() + (current_time('timestamp') - time())).'.zip'));
 
 		if ( ! $this->is_valid_dir_path($theme_backup->path())) {
 			array_push($this->errors, 'Invalid backup path: '.$this->secure_display_path($theme_backup->path()).' (bad permissions or does not exist)');

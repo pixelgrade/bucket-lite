@@ -16,6 +16,12 @@
 	.media__img--rev { 
 		float:left;
 		margin-left:0;
+		position: relative;
+		
+		.post-format-icon {
+			@include rem(margin-top, -50px);
+			@include rem(margin-left, -39px);
+		}
 	}
 
 	.media__body {

@@ -50,7 +50,11 @@
 
 .header-ad-link{
     display: block;
-    text-align: right;
+    text-align: center;
+
+    @include media-query(lap-and-up) {
+        text-align: right;
+    }
 }
 
 // @include media-query(palm) {

@@ -28,7 +28,7 @@ $sections[] = array(
 			'id' => 'retina_main_logo',
 			'type' => 'media',
 			'title' => __('Retina 2x Logo Image', wpgrade::textdomain()),
-			'required' => array('use_retina_logo', '=', 1)
+			'required' => array('use_retina_logo', 'equals', 1)
 		),
 		array(
 			'id' => 'favicon',
@@ -47,14 +47,7 @@ $sections[] = array(
 			'type' => 'media',
 			'title' => __('Metro Icon', wpgrade::textdomain()),
 			'subtitle' => __('The size of this icon must be 144x144px.', wpgrade::textdomain())
-		),
-		array(
-			'id' => 'enable_acf_ui',
-			'type' => 'switch',
-			'title' => __('Enable Advanced Custom Fields Settings', wpgrade::textdomain()),
-			'subtitle' => __(' Advanced Custom Fields plugin is already included in Bucket, instead of installing it again you can enable it from here.', wpgrade::textdomain()),
-			'default' => '0'
-		),
+		)
 	)
 );
 
@@ -120,6 +113,18 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Body Font', wpgrade::textdomain()),
 			'subtitle'=> __('Font for content text and widget text.', wpgrade::textdomain()),
+		),
+		array(
+			'id'=>'layout-21',
+			'desc'=> __('<h3>Layout</h3>', wpgrade::textdomain()),
+			'type' => 'info'
+		), 
+		array(
+			'id' => 'layout_boxed',
+			'type' => 'switch',
+			'title' => __('Boxed Layout', wpgrade::textdomain()),
+			'subtitle' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', wpgrade::textdomain()),
+			'default' => '0'
 		),
 	)
 );
@@ -257,7 +262,7 @@ $sections[] = array(
 			'type' => 'text',
 			'title' => __('Autoplay delay between slides (in milliseconds)', wpgrade::textdomain()),
 			'default' => '2000',
-			'required' => array('blog_cat_slider_autoplay', '=', 1)
+			'required' => array('blog_archive_show_cat_billboard', '=', 1)
 		)	
 	)
 );
@@ -574,7 +579,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Custom JavaScript (header)', wpgrade::textdomain()),
 			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', wpgrade::textdomain()),
-			'mode' => 'javascript',
+			'mode' => 'text',
 			'theme' => 'chrome'
 		),
 		array(
@@ -582,7 +587,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Custom JavaScript (footer)', wpgrade::textdomain()),
 			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
-			'mode' => 'javascript',
+			'mode' => 'text',
 			'theme' => 'chrome'
 		),
 	)
@@ -662,6 +667,14 @@ $sections[] = array(
 						<div class="wpGrade-import-results hidden"></div>
 						<div class="hr"><div class="inner"><span>&nbsp;</span></div></div>
 					',
+		),
+
+		array(
+			'id' => 'enable_acf_ui',
+			'type' => 'switch',
+			'title' => __('Enable Advanced Custom Fields Settings', wpgrade::textdomain()),
+			'subtitle' => __(' Advanced Custom Fields plugin is already included in Bucket, instead of installing it again you can enable it from here.', wpgrade::textdomain()),
+			'default' => '0'
 		),
 
 		array(

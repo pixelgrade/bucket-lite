@@ -9,4 +9,12 @@
     	width:$_u2;
     	height:$_u2;
     }
+
+    .pixslider{
+        display: none;
+
+        &.slider--loaded{
+            display: block;
+        }
+    }
 }

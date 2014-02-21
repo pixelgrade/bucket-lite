@@ -8,7 +8,7 @@ function redux_add_file(event, selector) {
 
 	var frame;
 	var jQueryel = jQuery(this);
-	
+
 
 
 	// If the media frame already exists, reopen it.
@@ -92,6 +92,7 @@ function redux_remove_file(selector) {
 	selector.find('.upload-id').val('');
 	selector.find('.upload-height').val('');
 	selector.find('.upload-width').val('');
+	selector.find('.upload-thumbnail').val('');
 	redux_change( jQuery(selector).find( '.upload-id' ) );
 	selector.find('.redux-background-properties').hide();
 	var screenshot = selector.find('.screenshot');

@@ -49,7 +49,7 @@ class WPGradePaginationFormatter {
 		}
 		else { // no pager configuration entry
 			// fallback to listing pagination
-			if ( is_front_page() ){
+			if ( is_front_page() && is_page() ){
 				$this->pager = 'page';
 			} else {
 				$this->pager = 'paged';
@@ -78,6 +78,7 @@ class WPGradePaginationFormatter {
 		// the boring defaults that are ommited in the wpgrade-config.php
 		// configuration for clarity and bravity, and also because some require
 		// extensive logic handling
+        
 		$defaults = array
 			(
 				// dynamically resolve to pretty or non-pretty base
@@ -166,7 +167,7 @@ class WPGradePaginationFormatter {
 
 		// processing return type
 		$conf['type'] = 'array';
-
+        
 		$links = paginate_links($conf);
 
 		if (empty($links)) {

@@ -8,7 +8,9 @@ class ReduxFramework_raw {
      *
      * @since ReduxFramework 3.0.4
     */
-    function __construct($field = array(), $value ='', $parent) {
+    function __construct( $field = array(), $value ='', $parent ) {
+    
+        //parent::__construct( $parent->sections, $parent->args );
         $this->parent = $parent;
         $this->field = $field;
 	$this->value = $value;
@@ -37,7 +39,7 @@ class ReduxFramework_raw {
         do_action('redux-field-raw-'.$this->parent->args['opt_name'].'-'.$this->field['id']);
 
         echo '</fieldset>';
-        echo '</td></tr></table><table class="form-table no-border" style="margin-top: 0;"><tbody><tr><th></th><td>';        
+        echo '</td></tr></table><table class="form-table no-border" style="margin-top: 0;"><tbody><tr style="border-bottom: 0;"><th></th><td>';        
 
     }
 }

@@ -25,7 +25,6 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Don't duplicate me!
 if( !class_exists( 'ReduxFramework_media' ) ) {
-
     /**
      * Main ReduxFramework_media class
      *
@@ -42,12 +41,12 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
          * @access      public
          * @return      void
          */
-        public function __construct( $field = array(), $value ='', $parent ) {
+        function __construct( $field = array(), $value ='', $parent ) {
         
-            parent::__construct( $parent->sections, $parent->args );
-
-            $this->field = $field;
-            $this->value = $value;
+          //parent::__construct( $parent->sections, $parent->args );
+          $this->parent = $parent;
+          $this->field = $field;
+          $this->value = $value;
         
         }
 
@@ -115,11 +114,11 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
 
             $placeholder = isset($this->field['placeholder']) ? $this->field['placeholder'] : __('No media selected','redux-framework');
 
-            echo '<input placeholder="' . $placeholder .'" type="text" class="' . $hide . 'upload ' . $this->field['class'] . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][url]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][url]" value="' . $this->value['url'] . '" readonly="readonly" />';
-            echo '<input type="hidden" class="upload-id ' . $this->field['class'] . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][id]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][id]" value="' . $this->value['id'] . '" />';
-            echo '<input type="hidden" class="upload-height" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][height]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][height]" value="' . $this->value['height'] . '" />';
-            echo '<input type="hidden" class="upload-width" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][width]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][width]" value="' . $this->value['width'] . '" />';
-            echo '<input type="hidden" class="upload-thumbnail" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][thumbnail]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][thumbnail]" value="' . $this->value['thumbnail'] . '" />';
+            echo '<input placeholder="' . $placeholder .'" type="text" class="' . $hide . 'upload ' . $this->field['class'] . '" name="' . $this->field['name'] . '[url]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][url]" value="' . $this->value['url'] . '" readonly="readonly" />';
+            echo '<input type="hidden" class="upload-id ' . $this->field['class'] . '" name="' . $this->field['name'] . '[id]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][id]" value="' . $this->value['id'] . '" />';
+            echo '<input type="hidden" class="upload-height" name="' . $this->field['name'] . '[height]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][height]" value="' . $this->value['height'] . '" />';
+            echo '<input type="hidden" class="upload-width" name="' . $this->field['name'] . '[width]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][width]" value="' . $this->value['width'] . '" />';
+            echo '<input type="hidden" class="upload-thumbnail" name="' . $this->field['name'] . '[thumbnail]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][thumbnail]" value="' . $this->value['thumbnail'] . '" />';
 
             //Preview
             $hide = '';
@@ -156,27 +155,36 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
             echo '<span class="button remove-image' . $hide . '" id="reset_' . $this->field['id'] . '" rel="' . $this->field['id'] . '">' . __( 'Remove', 'redux-framework' ) . '</span>';
 
             echo '</div>';  
-
-            if ( ( isset( $this->field['mode'] ) && !empty( $this->field['mode'] ) ) || $this->field['mode'] != false ) {
-                // Use javascript globalization, better than any other method.
-                global $wp_scripts;
-                $data = $wp_scripts->get_data('redux-field-media-js', 'data');
-
-                if(!empty($data)) { // Adding to the previous localize script object
-                  if(!is_array($data)) {
-                    $data = json_decode(str_replace('var reduxMedia = ', '', substr($data, 0, -1)), true);
-                  }
-                  foreach($data as $key => $value) {
-                    $localized_data[$key] = $value;
-                  }
-                  $wp_scripts->add_data('redux-field-media-js', 'data', '');
-                }
-                $localized_data[$this->field['id']] = $this->field['mode'];
-                wp_localize_script('redux-field-media-js', 'reduxMedia', $localized_data);                  
-            }
                            
             
         }
+
+    		/**
+    		 * 
+    		 * Functions to pass data from the PHP to the JS at render time.
+    		 * 
+    		 * @return array Params to be saved as a javascript object accessable to the UI.
+    		 * 
+    		 * @since  Redux_Framework 3.1.1
+    		 * 
+    		 */
+    		function localize($field, $value = "") {
+                
+          $params = array();
+
+          if ( !isset( $field['mode'] ) ) {
+            $field['mode'] = "image";
+          }          
+          $params['mode'] = $field['mode'];
+
+          if ( empty( $value ) ) {
+            $value = $this->value;
+          }   
+          $params['val'] = $value;
+
+          return $params;
+          
+    		}        
 
         /**
          * Enqueue Function.
@@ -188,14 +196,6 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
          * @return      void
          */
         public function enqueue() {
-
-            if( function_exists( 'wp_enqueue_media' ) ) {
-                wp_enqueue_media();
-            } else {
-                wp_enqueue_script( 'media-upload' );
-                wp_enqueue_script( 'thickbox' );
-                wp_enqueue_style( 'thickbox' );
-            }
 
             wp_enqueue_script(
                 'redux-field-media-js',

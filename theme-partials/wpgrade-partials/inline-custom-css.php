@@ -95,12 +95,15 @@ a, blockquote, .small-link, .tabs__nav a.current,
 .widget_wpgrade_twitter_widget .widget--footer__title h3:before,
 a:hover > .pixcode--icon,
 .score__pros__title, .score__cons__title,
-.comments-area-title .hN em {
+.comments-area-title .hN em,
+.comment__author-name, .woocommerce .amount,
+.panel__title em, .woocommerce .star-rating span:before, 
+.woocommerce-page .star-rating span:before {
     color: <?php echo $main_color; ?>;
 }
 
 .heading--main .hN, .widget--sidebar__title, 
-.pagination .pagination-item--current span,
+.pagination .pagination-item--current span,.pagination .current, .single .pagination span,
 .pagination li a:hover, .pagination li span:hover, 
 .rsNavSelected, .badge, .progressbar__progress,
 .btn:hover, .comments_add-comment:hover, 
@@ -109,7 +112,8 @@ a:hover > .pixcode--icon,
 .comments_add-comment, .form-submit #comment-submit,
 a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
 .article--list__link:hover .badge, .score__average-wrapper,
-.site__stats .stat__value:after, .site__stats .stat__title:after {
+.site__stats .stat__value:after, .site__stats .stat__title:after,
+.btn--add-to-cart {
     background-color: <?php echo $main_color; ?>;
 }
 
@@ -134,6 +138,10 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
     }
 }
 
+.woocommerce ul.products li.product a:hover img{
+    border-bottom: 5px solid <?php echo $main_color; ?>;
+}
+
 ol {
     border-left: 0 solid <?php echo $main_color; ?>;
 }
@@ -142,7 +150,7 @@ ol {
 if ( isset($fonts['google_titles_font']) ) {?>
 	/* Select classes here */
     .badge, h1, h2, h3, h4, h5, h6, hgroup,
-    .hN, .article__author-name, .comment__author-name, 
+    .hN, .article__author-name, .comment__author-name,
     .score__average-wrapper, .score__label, 
     .widget_calendar caption, blockquote,
     .tabs__nav, .popular-posts__time,
@@ -164,7 +172,8 @@ if ( isset($fonts['google_titles_font']) ) {?>
     .widget--footer__title .widget_calendar caption, 
     .widget_calendar .widget--footer__title caption,
     .score-box--after-text, .latest-comments__author,
-    .review__title, .share-total__value, .pagination li a, .pagination li span
+    .review__title, .share-total__value, .pagination li a, .pagination li span,
+    .heading span.archive__side-title
       {
 		<?php wpgrade::display_font_params($fonts['google_titles_font']); ?>
 	}

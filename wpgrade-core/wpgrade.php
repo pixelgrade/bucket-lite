@@ -243,6 +243,11 @@ class wpgrade {
 	 */
 	static function filter_content($content, $filtergroup) {
 		$config = self::config();
+
+		if ( ! isset($config['content-filters']) || ! isset($config['content-filters'][$filtergroup])) {
+			return $content;
+		}
+
 		$enabled_filters = array();
 		foreach ($config['content-filters'][$filtergroup] as $filterfunc => $priority) {
 			if ($priority !== false && $priority !== null) {
@@ -439,6 +444,7 @@ class wpgrade {
 	 * @return string uri to file
 	 */
 	static function uri($file) {
+		$file = '/'.ltrim($file, '/');
 		return get_template_directory_uri().$file;
 	}
 
@@ -533,7 +539,8 @@ class wpgrade {
 
 		foreach ($files as $value) {
 			// skip special dot files
-			if ($value === '.' || $value === '..') {
+			// and any file that starts with a . - think hidden directories like .svn or .git
+			if (strpos($value,'.') === 0) {
 				continue;
 			}
 
@@ -1096,6 +1103,30 @@ class wpgrade {
 		}
 		else { // null passed; delete configuration
 			self::$configuration = null;
+		}
+	}
+
+//// Behavior Testing Helpers //////////////////////////////////////////////////
+
+	/**
+	 * This method is used to return the base path to the wordpress test
+	 * instance.
+	 */
+	static function features_testurl() {
+		$feature_test_path = self::corepath().'features/.test.path';
+		$theme_features_path = self::corepath().'../.test.path';
+		if (file_exists($feature_test_path)) {
+			$path = file_get_contents($feature_test_path);
+			$path = trim($path);
+			return rtrim($path, '/').'/';
+		}
+		else if (file_exists($theme_features_path)) {
+			$path = file_get_contents($theme_features_path);
+			$path = trim($path);
+			return rtrim($path, '/').'/';
+		}
+		else { # the file does not exist
+			throw new Exception('Please create the file wpgrade-core/features/.test.path and place the url to your wordpress inside it.');
 		}
 	}
 

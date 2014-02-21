@@ -493,7 +493,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if (!isset($data->response)) {
 						$data->response = array();
 					}
-					if ( ! is_object($data->response[$plugin['slug']]))
+					if (!isset($data->response[$plugin['slug']]) || ! is_object($data->response[$plugin['slug']]))
 						$data->response[$plugin['slug']] = new stdClass;
 					
 					$data->response[$plugin['slug']]->package = $source;

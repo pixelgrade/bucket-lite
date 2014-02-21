@@ -22,8 +22,8 @@
  * @return string
  */
 function wpgrade_callback_pagination_formatter($links, $conf) {
-	$linkcount = count($links);
-
+    $linkcount = count($links);
+            
 	//don't show anything when no pagination is needed
 	if ($linkcount == 0) {
 		return '';
@@ -31,71 +31,59 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$prefix = '';
 	$suffix = '<!--';
 
-	$current = (get_query_var('paged')) ? get_query_var('paged') : '';
-	if( empty($current)){
-		$current = (get_query_var('page')) ? get_query_var('page') : '';
-	}
-
+	$current = $conf['current'];
 	foreach ( $links as $key => &$link ) {
-
-		if ( $key == $linkcount - 1 ) {
-			$suffix = '';
+		
+		//some SEO shit
+		//prevent pagination parameters for the links to the first page
+		if ($key == 0 && $current == 2 && strpos($link, 'prev')) {
+			//the first link - should be prev and since we are on page 2 it will hold the link to the first page
+			$link = preg_replace('/href=(["\'])(http:\/\/)?([^"\']+)(["\'])/', 'href="'.  get_pagenum_link(1) .'"', $link);
 		}
-		$class = '';
-		switch ( $key ) {
-			case $current:
-				$class .= 'class="pagination-item pagination-item--current"';
-				break;
-			case 0:
-				$class .= 'class="pagination-item pagination-item--prev"';
-				break;
-			case $linkcount - 1:
-				$class .= 'class="pagination-item pagination-item--next"';
-				break;
-			case 1:
-				if ( is_front_page() && $current != '') {
-					$link = "<a class='page-numbers' href='" . home_url() ."'>1</a>";
-				}
-				break;
-			default:
-				break;
+		
+		//change the link of the first page to be more SEO friendly
+		$link_text = strip_tags($link);
+		if ($current != 1 && $link_text == "1") {
+			$link = preg_replace('/href=(["\'])(http:\/\/)?([^"\']+)(["\'])/', 'href="'.  get_pagenum_link(1) .'"', $link);
+		}
+     
+        if ( $key == $linkcount - 1 ) {
+            $suffix = '';
 		}
 
+        $link = $prefix .'<li>' . $link . '</li>' . $suffix;
+        $prefix = "\n-->";
+    }
 
-		$link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
-		$prefix = "\n-->";
-	}
-
-	return
-		'<ol class="nav pagination">'.implode('', $links).'</ol>';
+    return '<ol class="nav pagination">'.implode('', $links).'</ol>';
 }
 
 
 /** Do the same thing on single post pagination */
 
 function wpgrade_pagination_custom_markup($link, $key) {
-	global $wp_query;
-	$current = (get_query_var('page')) ? get_query_var('page') : '1';
-	$class = '';
-	$prefix = '-->';
-	$suffix = '<!--';
-	switch ( $key ) {
-		case $current:
-				$class .= 'class="pagination-item pagination-item--current"';
-				$link = '<span>' . $link . '</span>';
-			break;
-		case 'prev':
-				$class .= 'class="pagination-item pagination-item--prev"';
-			break;
-		case 'next':
-				$class .= 'class="pagination-item pagination-item--next"';
-			break;
-		default:
-			break;
-	}
+    global $wp_query;
+    $current = (get_query_var('page')) ? get_query_var('page') : '1';
+    $class = '';
+    $prefix = '-->';
+    $suffix = '<!--';
+    switch ( $key ) {
+        case $current:
+                $class .= 'class="pagination-item pagination-item--current"';
+                $link = '<span>' . $link . '</span>';
+            break;
+        case 'prev':
+                $class .= 'class="pagination-item pagination-item--prev"';
+            break;
+        case 'next':
+                $class .= 'class="pagination-item pagination-item--next"';
+            break;
+        default:
+            break;
+    }
 
-	$link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
-	return $link;
+    $link = $prefix .'<li '.$class.'>' . $link . '</li>' . $suffix;
+    return $link;
 
 }
 add_filter('wp_link_pages_link', 'wpgrade_pagination_custom_markup', 10, 2);

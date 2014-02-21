@@ -15,6 +15,7 @@ if (is_single()) {
 
 if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
 if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
+if(wpgrade::option('layout_boxed') == 1) $class_name .= " layout--boxed";
 
 // woocommerce hotfix
 // prevent class product to overwrite our css but keep javascript dependencies
@@ -32,6 +33,9 @@ if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerc
     <div id="page">
         <nav class="navigation  navigation--mobile">
             <h2 class="accessibility"><?php _e('Primary Mobile Navigation', wpgrade::textdomain()) ?></h2>
+            <div class="search-form  push-half--top  push--bottom  soft--bottom">
+                <?php get_search_form(); ?>
+            </div>            
             <?php 
                 wpgrade_main_nav_mobile();
                 wpgrade_top_nav_left('nav--stacked', true);

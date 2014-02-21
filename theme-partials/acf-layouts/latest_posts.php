@@ -29,8 +29,14 @@ $args = array(
 	'posts_per_page' => $number_of_posts,
 	'order' => 'DESC',
 	'orderby' => 'date',
-	'ignore_sticky_posts' => true,
+	'ignore_sticky_posts' => false,
 );
+
+$offset = get_sub_field('offset');
+
+if ( is_numeric($offset) && $offset > 0 ) {
+	$args['offset'] = $offset;
+}
 
 /** Return posts from selected categories */
 $categories = get_sub_field('posts_source_category');
@@ -73,7 +79,8 @@ if ($latest_query->have_posts()):
         <div <?php echo $grid_class ?>><!--
             <?php while($latest_query->have_posts()): $latest_query->the_post();  ?>
                 --><div><?php get_template_part('theme-partials/post-templates/content-'. $blog_layout); ?></div><!--
-            <?php endwhile; wp_reset_postdata(); ?>
+            <?php endwhile; 
+			wp_reset_postdata(); ?>
      --></div>
     <?php
 
@@ -90,3 +97,5 @@ if ($latest_query->have_posts()):
     <?php endif;
 
 endif;
+
+wp_reset_query();

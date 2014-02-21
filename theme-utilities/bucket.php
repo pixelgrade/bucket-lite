@@ -2163,7 +2163,7 @@ class bucket
 						// otherwise the mad dog will put the password form again in the_content() and other filters
 						global $wp_hasher;
 						if ( empty( $wp_hasher ) ) {
-							require_once( ABSPATH . 'wp-includes/class-phpass.php' );
+							require_once(ABSPATH . 'wp-includes/class-phpass.php');
 							$wp_hasher = new PasswordHash(8, true);
 						}
 

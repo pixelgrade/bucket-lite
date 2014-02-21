@@ -1,11 +1,201 @@
 <?php
+function wpgrade_is_all_multibyte($string)
+{
+	if (function_exists('mb_check_encoding')) {
+		// check if the string doesn't contain invalid byte sequence
+		if (mb_check_encoding($string, 'UTF-8') === false) return false;
+
+		$length = mb_strlen($string, 'UTF-8');
+
+		for ($i = 0; $i < $length; $i += 1) {
+			$char = mb_substr($string, $i, 1, 'UTF-8');
+
+			// check if the string doesn't contain single character
+			if (mb_check_encoding($char, 'ASCII')) {
+				return false;
+			}
+		}
+
+		return true;
+	} else {
+    	return false;
+    }
+
+}
+
+function wpgrade_contains_any_multibyte($string)
+{
+	if (function_exists('mb_check_encoding')) {
+    	return !mb_check_encoding($string, 'ASCII') && mb_check_encoding($string, 'UTF-8');
+    } else {
+    	return false;
+    }
+}
+
+//in case the mb_ PHP extension is not activated
+if ( !function_exists('mb_strlen') ) {
+	function mb_strlen ($text, $encode) {
+		if ($encode=='UTF-8') {
+			return preg_match_all('%(?:
+					  [\x09\x0A\x0D\x20-\x7E]           # ASCII
+					| [\xC2-\xDF][\x80-\xBF]            # non-overlong 2-byte
+					|  \xE0[\xA0-\xBF][\x80-\xBF]       # excluding overlongs
+					| [\xE1-\xEC\xEE\xEF][\x80-\xBF]{2} # straight 3-byte
+					|  \xED[\x80-\x9F][\x80-\xBF]       # excluding surrogates
+					|  \xF0[\x90-\xBF][\x80-\xBF]{2}    # planes 1-3
+					| [\xF1-\xF3][\x80-\xBF]{3}         # planes 4-15
+					|  \xF4[\x80-\x8F][\x80-\xBF]{2}    # plane 16
+					)%xs',$text,$out);
+		}else{
+			return strlen($text);
+		}
+	}
+}
+
+if (!function_exists('mb_substr')) {
+	function mb_substr($string, $offset, $length)
+	{
+	  $arr = preg_split("//u", $string);
+	  $slice = array_slice($arr, $offset + 1, $length);
+	  return implode("", $slice);
+	}
+}
+
+/**
+* Cutting the titles and adding '...' after
+* @param  [string] $text       [description]
+* @param  [int] $cut_length [description]
+* @param  [int] $limit      [description]
+* @return [type]             [description]
+*/
+function short_text($text, $cut_length, $limit, $echo = true){
+   $char_count = mb_strlen($text);
+   $text = ( $char_count > $limit ) ? mb_substr($text,0,$cut_length).wpgrade::option('blog_excerpt_more_text') : $text;
+   if ($echo) {
+	   echo $text;
+   } else {
+	   return $text;
+   }
+}
+
+/**
+* Borrowed from CakePHP
+*
+* Truncates text.
+*
+* Cuts a string to the length of $length and replaces the last characters
+* with the ending if the text is longer than length.
+*
+* ### Options:
+*
+* - `ending` Will be used as Ending and appended to the trimmed string
+* - `exact` If false, $text will not be cut mid-word
+* - `html` If true, HTML tags would be handled correctly
+*
+* @param string  $text String to truncate.
+* @param integer $length Length of returned string, including ellipsis.
+* @param array $options An array of html attributes and options.
+* @return string Trimmed string.
+* @access public
+* @link http://book.cakephp.org/view/1469/Text#truncate-1625
+*/
+
+function truncate($text, $length = 100, $options = array()) {
+    $default = array(
+        'ending' => '...', 'exact' => true, 'html' => false
+    );
+    $options = array_merge($default, $options);
+    extract($options);
+
+    if ($html) {
+        if (mb_strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
+            return $text;
+        }
+        $totalLength = mb_strlen(strip_tags($ending));
+        $openTags = array();
+        $truncate = '';
+
+        preg_match_all('/(<\/?([\w+]+)[^>]*>)?([^<>]*)/', $text, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            if (!preg_match('/img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param/s', $tag[2])) {
+                if (preg_match('/<[\w]+[^>]*>/s', $tag[0])) {
+                    array_unshift($openTags, $tag[2]);
+                } else if (preg_match('/<\/([\w]+)[^>]*>/s', $tag[0], $closeTag)) {
+                    $pos = array_search($closeTag[1], $openTags);
+                    if ($pos !== false) {
+                        array_splice($openTags, $pos, 1);
+                    }
+                }
+            }
+            $truncate .= $tag[1];
+
+            $contentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $tag[3]));
+            if ($contentLength + $totalLength > $length) {
+                $left = $length - $totalLength;
+                $entitiesLength = 0;
+                if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', $tag[3], $entities, PREG_OFFSET_CAPTURE)) {
+                    foreach ($entities[0] as $entity) {
+                        if ($entity[1] + 1 - $entitiesLength <= $left) {
+                            $left--;
+                            $entitiesLength += mb_strlen($entity[0]);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+
+                $truncate .= mb_substr($tag[3], 0 , $left + $entitiesLength);
+                break;
+            } else {
+                $truncate .= $tag[3];
+                $totalLength += $contentLength;
+            }
+            if ($totalLength >= $length) {
+                break;
+            }
+        }
+    } else {
+        if (mb_strlen($text) <= $length) {
+            return $text;
+        } else {
+            $truncate = mb_substr($text, 0, $length - mb_strlen($ending));
+        }
+    }
+    if (!$exact) {
+        $spacepos = mb_strrpos($truncate, ' ');
+        if (isset($spacepos)) {
+            if ($html) {
+                $bits = mb_substr($truncate, $spacepos);
+                preg_match_all('/<\/([a-z]+)>/', $bits, $droppedTags, PREG_SET_ORDER);
+                if (!empty($droppedTags)) {
+                    foreach ($droppedTags as $closingTag) {
+                        if (!in_array($closingTag[1], $openTags)) {
+                            array_unshift($openTags, $closingTag[1]);
+                        }
+                    }
+                }
+            }
+            $truncate = mb_substr($truncate, 0, $spacepos);
+        }
+    }
+    $truncate .= $ending;
+
+    if ($html) {
+        foreach ($openTags as $tag) {
+            $truncate .= '</'.$tag.'>';
+        }
+    }
+
+    return $truncate;
+}
 
 //@todo CLEANUP refactor function
-function wpgrade_better_excerpt($text) {
+function wpgrade_better_excerpt($text = '') {
 	global $post;
+	$raw_excerpt = '';
 
 	//if the post has a manual excerpt ignore the content given
-	if (function_exists('has_excerpt') && has_excerpt()) {
+	if ($text == '' && function_exists('has_excerpt') && has_excerpt()) {
 		$text = get_the_excerpt();
 		$raw_excerpt = $text;
 
@@ -17,14 +207,19 @@ function wpgrade_better_excerpt($text) {
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 
 		// Enable formatting in excerpts - Add HTML tags that you want to be parsed in excerpts
-		$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
+		$allowed_tags = '<p><a><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
 		$text = strip_tags($text, $allowed_tags);
-		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-		$text .= $excerpt_more;
-	}
-	else {
+//		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+//		$text .= $excerpt_more;
+		
+	} else {
+		
+		if (empty($text)) {
+			//need to grab the content
+			$text = get_the_content();
+		}
+		
 		$raw_excerpt = $text;
-
 		$text = strip_shortcodes( $text );
 		$text = apply_filters('the_content', $text);
 		$text = str_replace(']]>', ']]&gt;', $text);
@@ -33,8 +228,8 @@ function wpgrade_better_excerpt($text) {
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 
 		// Enable formatting in excerpts - Add HTML tags that you want to be parsed in excerpts
-		$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
-		$text = strip_tags($text, $allowed_tags);
+		//$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
+		$text = strip_tags($text, '');
 
 		// Set custom excerpt length - number of words to be shown in excerpts
 		if (wpgrade::option('blog_excerpt_length'))	{
@@ -44,14 +239,44 @@ function wpgrade_better_excerpt($text) {
 		}
 
 		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-		$words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-		if ( count($words) > $excerpt_length ) {
-			array_pop($words);
-			$text = implode(' ', $words);
-			$text = force_balance_tags( $text );
-			$text = $text . $excerpt_more;
+		
+		//test if we are dealing with a utf8 text - like chinese
+		if (wpgrade_is_all_multibyte($text)) {
+			//then we simply split my mb characters rather than words
+			$text = short_text($text,$excerpt_length,$excerpt_length);
 		} else {
-			$text = implode(' ', $words);
+//			$options = array(
+//				'ending' => $excerpt_more, 'exact' => false, 'html' => true
+//			);
+//			$text = truncate($text, $excerpt_length, $options);
+			
+			$words = preg_split("/[\n\r\t\s]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+			
+			//some further testing to ensure that we catch the mb languages like chinese
+			//test for extra long average word length - means that each sentence is enterpreted as a word
+			$temp_words = $words;
+			if (count($temp_words) > 1) {
+				array_pop($temp_words);
+			}
+			
+			//we have taken a large average word length - 20
+			if (count($temp_words) > 0 && mb_strlen(implode(' ', $temp_words))/count($temp_words) > 20) {
+				//we have a mb language
+				//then we simply split my mb characters rather than words
+				$text = short_text($text,$excerpt_length,$excerpt_length);
+			} else {
+		
+				if ( count($words) > $excerpt_length ) {
+					array_pop($words);
+					$text = implode(' ', $words);
+					//$text = force_balance_tags( $text );
+					$text = $text . $excerpt_more;
+				} else {
+					$text = implode(' ', $words);
+				}
+				
+			}
+			
 		}
 	}
 
@@ -97,18 +322,6 @@ function wpgrade_comments($comment, $args, $depth) {
 	<!-- </li> is added by WordPress automatically -->
 <?php
 } // don't remove this bracket!
-
-/**
- * Cutting the titles and adding '...' after
- * @param  [string] $text       [description]
- * @param  [int] $cut_length [description]
- * @param  [int] $limit      [description]
- * @return [type]             [description]
- */
-function short_text($text, $cut_length, $limit){
-	$text = (strlen($text) > $limit) ? substr($text,0,$cut_length).'...' : $text;
-	echo $text;
-}
 
 function custom_excerpt_length( $length ) {
 	// Set custom excerpt length - number of words to be shown in excerpts

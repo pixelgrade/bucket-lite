@@ -1,4 +1,5 @@
 <?php
+global $showed_posts_ids;
 /**
  * Hero Posts Module
  * Fields available:
@@ -7,16 +8,18 @@
  */
 
 $number_of_posts = get_sub_field('number_of_posts');
-$more = $number_of_posts - 1;
-$read_more_label = get_sub_field('read_more_label');
-if ( empty($read_more_label) ) {
-	$read_more_label = __('Read Full Story', wpgrade::textdomain());
-}
 
 $query_args = array(
-	'posts_per_page' => 1,
+	'posts_per_page' => $number_of_posts,
 	'ignore_sticky_posts' => true,
 );
+
+if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicate_posts', true) == 'on') {
+	//exclude the already showed posts from the current block loop
+	if (!empty($showed_posts_ids)) {
+		$query_args['post__not_in'] = $showed_posts_ids;
+	}
+}
 
 $posts_source = get_sub_field('posts_source');
 
@@ -119,7 +122,10 @@ $slides = new WP_Query( $query_args );
 if ($slides->have_posts()): ?>
 
     <div class="featured-area"><!--
-        <?php while($slides->have_posts()): $slides->the_post(); ?>
+        <?php if($slides->have_posts()): $slides->the_post(); 
+			//first let's remember the post id
+			$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
+		?>
             --><div class="featured-area__article  article--big">
                 <?php
                 if (has_post_thumbnail()):
@@ -129,7 +135,7 @@ if ($slides->have_posts()): ?>
 						$image_ratio = $image[2] * 100/$image[1]; 
 					} ?>
                     <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                        <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+                        <img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                         <div class="article__title">
                             <h3 class="hN"><?php the_title(); ?></h3>
                         </div>
@@ -143,23 +149,15 @@ if ($slides->have_posts()): ?>
                 <?php endif;
 	            post_format_icon('post-format-icon--featured'); ?>
             </div><!--
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php endif; ?>
      --><div class="featured-area__aside">
             <ul class="block-list  block-list--alt">
                 <?php
-	            $query_args['posts_per_page'] = $more;
-
-				$offset = get_sub_field('offset');
-
-				if ( is_numeric($offset) && $offset > 0 ) {
-					$query_args['offset'] = $offset + 1;
-				} else {
-					$query_args['offset'] = 1;
-				}
-
-                if ($more > 0):
-                    $myquery = new WP_Query( $query_args );
-                    while($myquery->have_posts()): $myquery->the_post(); ?>
+                if ($slides->have_posts()):
+                    while($slides->have_posts()): $slides->the_post(); 
+					//first let's remember the post id
+					$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
+					?>
 	                    <li class="hard--sides">
 	                        <article class="article  article--thumb  media  flush--bottom">
 	                            <div class="media__img--rev  four-twelfths">
@@ -171,7 +169,7 @@ if ($slides->have_posts()): ?>
 											$image_ratio = $image[2] * 100/$image[1];
 										} ?>
                                         <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                                            <img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+                                            <img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
                                         </a>
 	                                <?php endif; ?>
 	                            </div>
@@ -199,7 +197,9 @@ if ($slides->have_posts()): ?>
 	                            </div>
 	                        </article>
 	                    </li>
-                <?php endwhile; wp_reset_postdata(); endif; ?>
+                <?php endwhile; 
+			endif;
+			wp_reset_postdata(); ?>
             </ul>
         </div>
     </div>
