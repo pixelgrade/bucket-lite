@@ -14,7 +14,7 @@ function wpgrade_callback_load_woocommerce_assets(){
 	global $woocommerce;
 
 	if ( !wpgrade::option('enable_woocommerce_support', '0') ) return;
-	wp_enqueue_style('wpgrade-woocommerce', get_template_directory_uri() . '/theme-content/css/woocommerce.css', array(), wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/css/woocommerce.css')) );
+	wp_enqueue_style('wpgrade-woocommerce', get_template_directory_uri() . '/theme-content/css/woocommerce.css', array('woocommerce-general'), wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/css/woocommerce.css')) );
 	wp_enqueue_script('wpgrade-woocommerce', get_template_directory_uri() . '/theme-content/js/woocommerce.js', array('jquery'), wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/js/woocommerce.js')), true );
 
 
@@ -50,13 +50,13 @@ function woopgrade_header_add_to_cart_fragment( $fragments ) {
 
 }
 
-add_filter( 'woocommerce_add_to_cart_message', 'wpgrade_add_to_cart_button', 999);
+add_filter( 'wc_add_to_cart_message', 'wpgrade_add_to_cart_button', 999);
 function wpgrade_add_to_cart_button( $message )
 {
 	// Here you should modify $message as you want, and then return it.
 	$newButtonString = 'View cart';
 	$replaceString = '<p><a$1class="btn ">' . $newButtonString .'</a>';
-	$message = preg_replace('#<a(.*?)class="button">(.*?)</a>#', $replaceString, $message);
+	$message = preg_replace('#<a(.*?)class="btn">(.*?)</a>#', $replaceString, $message);
 	return $message.'</p>';
 }
 
