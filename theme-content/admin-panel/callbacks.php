@@ -16,6 +16,8 @@
 
     function wpgrade_write_custom_css($options) {
 
+	    var_dump(wpgrade::option('inject_custom_css'));
+
         if ( wpgrade::option('inject_custom_css') !== 'file' ) return;
 
         $error = false;

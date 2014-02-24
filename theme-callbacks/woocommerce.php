@@ -56,7 +56,7 @@ function wpgrade_add_to_cart_button( $message )
 	// Here you should modify $message as you want, and then return it.
 	$newButtonString = 'View cart';
 	$replaceString = '<p><a$1class="btn ">' . $newButtonString .'</a>';
-	$message = preg_replace('#<a(.*?)class="btn">(.*?)</a>#', $replaceString, $message);
+	$message = preg_replace('#<a(.*?)class="button wc-forward">(.*?)</a>#', $replaceString, $message);
 	return $message.'</p>';
 }
 
