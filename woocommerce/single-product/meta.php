@@ -21,9 +21,15 @@ global $post, $product;
 
 	<?php endif; ?>
 
-	<?php echo $product->get_categories( ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', sizeof( get_the_terms( $post->ID, 'product_cat' ) ), 'woocommerce' ) . ' ', '.</span>' ); ?>
+	<?php
+		$size = sizeof( get_the_terms( $post->ID, 'product_cat' ) );
+		echo $product->get_categories( ' ', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Category</div>', '<div class="btn  btn--small  btn--secondary">Categories</div>', $size, wpgrade::textdomain() ) . ' ', '</div>' );
+	?>
 
-	<?php echo $product->get_tags( ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', sizeof( get_the_terms( $post->ID, 'product_tag' ) ), 'woocommerce' ) . ' ', '.</span>' ); ?>
+	<?php
+		$size = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
+		echo $product->get_tags( ' ', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Tag:</div>', '<div class="btn  btn--small  btn--secondary">Tags:</div>', $size, wpgrade::textdomain() ) . ' ', '</div>' );
+	?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 

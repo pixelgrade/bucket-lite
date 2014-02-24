@@ -14,10 +14,16 @@
 }
 
 @include media-query(lap-and-up) {
-    .woocommerce-ordering{
+    .woo-sorting-helper-container{
         position: absolute;
         top: 0;
-        right: 0;
+        right: $_u2;
+
+        > .flexbox{height: 50px;}
+
+        .woocommerce-ordering{
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -123,7 +129,7 @@
 }
 
 .woocommerce-ordering select.orderby{
-    height: 50px;
+    margin-bottom: 0;
     color: #807d7c;
     @include font-size(12px);
     text-transform: uppercase;
@@ -139,5 +145,56 @@
     .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering{
         float: none;
     }
-    
+}
+
+body.woocommerce{
+    #content div.product div.summary, div.product div.summary, #content div.product div.summary, div.product div.summary{
+        width: 100% !important;
+        float: none;
+    }
+
+    #content div.product div.thumbnails a, div.product div.thumbnails a, #content div.product div.thumbnails a, div.product div.thumbnails a{
+        width: auto;
+    }    
+
+    #content div.product div.images img, div.product div.images img, #content div.product div.images img, div.product div.images img{
+        @include box-shadow(none);       
+    }  
+
+    #content div.product form.cart div.quantity, div.product form.cart div.quantity, #content div.product form.cart div.quantity, div.product form.cart div.quantity{
+        float: none;
+    }      
+
+    #reviews #comments ol.commentlist li img.avatar, #reviews #comments ol.commentlist li img.avatar{
+        float: left;
+    }
+
+    #reviews #comments ol.commentlist li .comment-text, #reviews #comments ol.commentlist li .comment-text{
+        margin-left: 70px;
+        padding: 0;
+        border: 0;
+    }
+
+    #review_form #commentform #submit{
+        @extend .btn;
+        @extend .btn--secondary;
+        float: right;
+        text-shadow: none;
+        border: 0;
+        background: black;
+        @include border-radius(0);
+        @include box-shadow(none);
+        font-weight: 300;
+    }
+
+    .comment-form-rating{
+        padding-left: $_u;
+    }
+}
+
+.badge--product.badge--sale{
+    width: auto;
+    @include font-size(12px);
+    padding: $_u4;
+    font-family: $alt-font-family;
 }
