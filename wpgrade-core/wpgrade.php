@@ -784,18 +784,19 @@ class wpgrade {
 		if (  self::option($font) ) {
 			$thefont = self::option($font);
 
-			if ( $thefont['google'] == 'true' ){
-				if ( isset( $thefont['font-family'] )) {
+			if ( !empty($thefont) && !empty($thefont['google']) && $thefont['google'] == 'true' ){
+				if ( !empty( $thefont['font-family'] )) {
 					$returnString = $thefont['font-family'];
 
-					//put in the font weight - still needs the : so it will skip this when using subsets
-					if ( isset( $thefont['font-weight'] )) {
+					//put in the font weight
+					if ( !empty( $thefont['font-weight'] )) {
 						$returnString .= ':' . $thefont['font-weight'];
-					} else {
+					} else if ( !empty( $thefont['subsets'] )) {
+						//still needs the : so it will skip this when using subsets
 						$returnString .= ':';
 					}
 
-					if ( isset( $thefont['subsets'] )) {
+					if ( !empty( $thefont['subsets'] )) {
 						$returnString .= ':' . $thefont['subsets'];
 					}
 				}
