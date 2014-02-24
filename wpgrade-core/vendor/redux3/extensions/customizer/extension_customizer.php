@@ -82,9 +82,8 @@ if( !class_exists( 'ReduxFramework_extension_customizer' ) ) {
 
         //add_action( 'wp_enqueue_scripts', array( &$this, '_enqueue_previewer_css' ) ); // Enqueue previewer css
         //add_action( 'wp_enqueue_scripts', array( &$this, '_enqueue_previewer_js' ) ); // Enqueue previewer javascript
-        add_action( 'customize_save', array( $this, 'customizer_save_before' ) ); // Before save
+        //add_action( 'customize_save', array( $this, 'customizer_save_before' ) ); // Before save
         //add_action( 'customize_save_after', array( &$this, 'customizer_save_after' ) ); // After save
-
 
       }
 
