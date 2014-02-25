@@ -117,7 +117,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>
 
-		</form>
 	</div><!--
 	--><div class="grid__item  one-half  push--one-half">
 		<div class="cart-collaterals">
@@ -125,6 +124,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
 			<?php woocommerce_cart_totals(); ?>
+			</form>
 
 			<?php woocommerce_shipping_calculator(); ?>
 

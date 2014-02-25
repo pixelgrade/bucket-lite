@@ -9,7 +9,7 @@
         text-shadow: none;
         background: none;
         border: 1px solid #c7c0c7;
-        padding: $_u;
+        padding: $_u !important;
         @include box-shadow(none);
         @include border-radius(0);
 

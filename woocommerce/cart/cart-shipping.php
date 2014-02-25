@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		if ( $show_package_details ) {
 			printf( __( 'Shipping #%d', 'woocommerce' ), $index + 1 );
 		} else {
-			_e( 'Shipping and Handling', 'woocommerce' );
+			_e( 'Shipping', 'woocommerce' );
 		}
 	?></th>
 	<td>
