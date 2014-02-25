@@ -9,6 +9,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+return;
+
 global $product;
 
 echo apply_filters( 'woocommerce_loop_add_to_cart_link',
