@@ -565,7 +565,6 @@ $sections[] = array(
 			'desc' => __('', wpgrade::textdomain()),
 			'mode' => 'css',
 			'theme' => 'chrome',
-			'validate' => 'html',
 			'compiler' => true,
 		),
 		array(
