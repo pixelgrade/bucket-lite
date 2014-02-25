@@ -2,6 +2,18 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8403",
   "files" : {
+    "\/scss\/layout\/_boxed.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/layout\/_boxed.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_boxed.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/scss\/_shame.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -112,7 +124,7 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/images\/blog-classic.png",
-      "processed" : 1,
+      "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/blog-classic.png",
       "initialSize" : 17988,
       "fileType" : 8192
@@ -493,15 +505,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/admin\/acf-custom-admin.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/admin\/acf-custom-admin.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/js\/admin\/min\/admin-panel.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -554,6 +557,17 @@
       "outputAbbreviatedPath" : "\/css\/_reset.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/images\/admin\/transparent_bg.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/admin\/transparent_bg.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/admin\/transparent_bg.png",
+      "initialSize" : 2819,
+      "fileType" : 8192
     },
     "\/scss\/objects\/_navigation.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -729,6 +743,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/scss\/plugins\/_yarpp.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/plugins\/_yarpp.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_yarpp.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/scss\/layout\/_footer.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -738,6 +764,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_footer.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/scss\/_vendor\/inuit.css\/objects\/_sprite.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/_vendor\/inuit.css\/objects\/_sprite.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_sprite.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -761,18 +799,6 @@
       "inputAbbreviatedPath" : "\/admin-panel\/redux-sections.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/scss\/_vendor\/inuit.css\/objects\/_sprite.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_vendor\/inuit.css\/objects\/_sprite.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_sprite.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/scss\/_vendor\/inuit.css\/base\/_quotes.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -865,15 +891,6 @@
       "outputAbbreviatedPath" : "\/images\/blog-grid.png",
       "initialSize" : 1040,
       "fileType" : 8192
-    },
-    "\/scss\/admin\/admin-panel.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/admin\/admin-panel.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/admin-panel\/bootstrap.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1010,17 +1027,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/js\/woocommerce.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/woocommerce.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/woocommerce-ck.js",
-      "fileType" : 64
-    },
     "\/scss\/_vendor\/inuit.css\/objects\/_breadcrumb.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1032,6 +1038,17 @@
       "outputAbbreviatedPath" : "\/css\/_breadcrumb.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/js\/woocommerce.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/woocommerce.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/woocommerce-ck.js",
+      "fileType" : 64
     },
     "\/scss\/_vendor\/inuit.css\/generic\/_push.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1607,15 +1624,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/custom.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/custom.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/images\/grabbing.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1674,18 +1682,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/layout\/_featured-area.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/layout\/_featured-area.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_featured-area.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/scss\/screen.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1695,6 +1691,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/screen.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/scss\/layout\/_featured-area.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/layout\/_featured-area.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_featured-area.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1815,15 +1823,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/_vars.scss" : {
+    "\/scss\/_vendor\/inuit.css\/objects\/_island.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_vars.scss",
+      "inputAbbreviatedPath" : "\/scss\/_vendor\/inuit.css\/objects\/_island.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_vars.css",
+      "outputAbbreviatedPath" : "\/css\/_island.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1839,15 +1847,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/_vendor\/inuit.css\/objects\/_island.scss" : {
+    "\/scss\/_vars.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_vendor\/inuit.css\/objects\/_island.scss",
+      "inputAbbreviatedPath" : "\/scss\/_vars.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_island.css",
+      "outputAbbreviatedPath" : "\/css\/_vars.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1863,17 +1871,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/images\/rs-default.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/rs-default.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/rs-default.png",
-      "initialSize" : 3160,
-      "fileType" : 8192
-    },
     "\/images\/admin\/bg_pattern.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1883,6 +1880,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/admin\/bg_pattern.png",
       "initialSize" : 91,
+      "fileType" : 8192
+    },
+    "\/images\/rs-default.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/rs-default.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/rs-default.png",
+      "initialSize" : 3160,
       "fileType" : 8192
     },
     "\/scss\/_vendor\/inuit.css\/objects\/_split.scss" : {
