@@ -625,16 +625,16 @@ class ReduxFramework_typography extends ReduxFramework {
 
         $this->getGoogleArray();
         
-        if (empty($googleArray)) {
+        if (!isset( $this->parent->googleArray ) || empty( $this->parent->googleArray )) {
           return;
         }
         $gfonts = '<optgroup label="'.__('Google Webfonts', 'redux-framework').'">';
-        foreach ($googleArray as $i => $face) {
+        foreach ($this->parent->$googleArray as $i => $face) {
             $gfonts .= '<option data-details="'.urlencode(json_encode($face)).'" data-google="true" value="'.$i.'">'. $i .'</option>';
         }
         $gfonts .= '</optgroup>';
         //endif;
-        if (empty($googleArray)) {
+        if (empty($this->parent->$googleArray)) {
             $gfonts = "";
         }
 
@@ -708,9 +708,11 @@ class ReduxFramework_typography extends ReduxFramework {
             }
         }
 
-        array_push($result, array_pop($italic));
+	    foreach($italic as $item) {
+		    $result[] = $item;
+	    }
 
-        return array_filter($result);
+	    return array_filter($result);
     }//function
 
 

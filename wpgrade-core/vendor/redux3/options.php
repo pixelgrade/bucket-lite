@@ -755,23 +755,13 @@ function setup_framework_options() {
 
     $tabs = array();
 
-    if (function_exists('wp_get_theme')){
-        $theme_data = wp_get_theme();
-        $item_uri = $theme_data->get('ThemeURI');
-        $description = $theme_data->get('Description');
-        $author = $theme_data->get('Author');
-        $author_uri = $theme_data->get('AuthorURI');
-        $version = $theme_data->get('Version');
-        $tags = $theme_data->get('Tags');
-    }else{
-        $theme_data = get_theme_data(trailingslashit(get_stylesheet_directory()) . 'style.css');
-        $item_uri = $theme_data['URI'];
-        $description = $theme_data['Description'];
-        $author = $theme_data['Author'];
-        $author_uri = $theme_data['AuthorURI'];
-        $version = $theme_data['Version'];
-        $tags = $theme_data['Tags'];
-     }
+    $theme_data = wp_get_theme();
+    $item_uri = $theme_data->get('ThemeURI');
+    $description = $theme_data->get('Description');
+    $author = $theme_data->get('Author');
+    $author_uri = $theme_data->get('AuthorURI');
+    $version = $theme_data->get('Version');
+    $tags = $theme_data->get('Tags');
 
     $item_info = '<div class="redux-opts-section-desc">';
     $item_info .= '<p class="redux-opts-item-data description item-uri">' . __('<strong>Theme URL:</strong> ', Redux_TEXT_DOMAIN) . '<a href="' . $item_uri . '" target="_blank">' . $item_uri . '</a></p>';

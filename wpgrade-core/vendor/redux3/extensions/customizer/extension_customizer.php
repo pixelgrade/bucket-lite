@@ -85,6 +85,7 @@ if( !class_exists( 'ReduxFramework_extension_customizer' ) ) {
         //add_action( 'customize_save', array( $this, 'customizer_save_before' ) ); // Before save
         //add_action( 'customize_save_after', array( &$this, 'customizer_save_after' ) ); // After save
 
+
       }
 
 
