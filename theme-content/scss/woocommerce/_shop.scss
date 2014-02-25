@@ -10,6 +10,7 @@
     select{
         background: #f0f0f0;
         border: 0;
+        padding: 6px;
     }
 }
 
@@ -190,6 +191,23 @@ body.woocommerce{
     .comment-form-rating{
         padding-left: $_u;
     }
+
+    .button.wc-forward{
+        @extend .btn;
+        @extend .btn--secondary;
+
+        background: black;
+        border: 0;
+        @include border-radius(0);
+        @include box-shadow(none);
+        font-family: $alt-font-family;
+        font-weight: normal;
+
+        &:after{
+            content: none;
+        }
+    }
+
 }
 
 .badge--product.badge--sale{

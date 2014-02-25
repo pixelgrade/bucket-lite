@@ -59,7 +59,7 @@ td.product-quantity .quantity{
 
     .shipping-calculator-button {
         float:left;
-        margin-top:-47px;
+        margin-top: -50px;
     }
 }
 
@@ -77,4 +77,23 @@ td.product-quantity .quantity{
 
 .woocommerce-page .woocommerce + .separator{
     display: none;
+}
+
+.woocommerce-page .shop_table.cart input.btn{
+    line-height: 2.167;
+}
+
+.woocommerce .cart-collaterals .cart_totals table, .woocommerce-page .cart-collaterals .cart_totals table{
+    @include border-radius(0);
+}
+
+.woocommerce #content table.cart td.actions .coupon .input-text, .woocommerce table.cart td.actions .coupon .input-text, .woocommerce-page #content table.cart td.actions .coupon .input-text, .woocommerce-page table.cart td.actions .coupon .input-text{
+    padding: 0 5px;
+    width: auto;
+    line-height: 1.8;
+}
+
+body.woocommerce .cart-collaterals .cart_totals, body.woocommerce-page .cart-collaterals .cart_totals{
+    float: none;
+    width: auto;
 }

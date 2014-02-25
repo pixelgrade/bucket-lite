@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2><?php _e( 'Cart Totals', 'woocommerce' ); ?></h2>
+	<!--h2><?php _e( 'Cart Totals', 'woocommerce' ); ?></h2-->
 
 	<table cellspacing="0">
 
@@ -78,7 +78,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 
-	</table>
+
+	</table>	
 
 	<?php if ( WC()->cart->get_cart_tax() ) : ?>
 		<p><small><?php
@@ -95,3 +96,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
 </div>
+
+<input type="submit" class="checkout-button btn btn--primary  alt wc-forward  float--right" name="proceed" value="<?php _e( 'Checkout', 'woocommerce' ); ?>" />
+<input type="submit" class="btn  float--right  push-half--right" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+
+<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+
+<?php wp_nonce_field( 'woocommerce-cart' ); ?>
