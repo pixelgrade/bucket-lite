@@ -15,8 +15,8 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); ?>
 <div class="grid">
+	<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 	<div class="grid__item  one-whole">
-		<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -124,12 +124,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
 			<?php woocommerce_cart_totals(); ?>
-			</form>
-
-			<?php woocommerce_shipping_calculator(); ?>
-
 		</div>
 	</div>
+	</form>
+	<div class="grid__item  one-half  push--one-half">
+		<?php woocommerce_shipping_calculator(); ?>
+	</div>	
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
