@@ -68,6 +68,7 @@ $sections[] = array(
 			'subtitle' => __('Use the color picker to change the main color of the site to match your brand color.', wpgrade::textdomain()),
 			'default' => '#fb4834',
 			'validate' => 'color',
+			'compiler' => true,
 		),
 
 
@@ -82,6 +83,7 @@ $sections[] = array(
 			'title' => __('Do you need custom web fonts?', wpgrade::textdomain()),
 			'subtitle' => __('Tap into the massive <a href="http://www.google.com/fonts/">Google Fonts</a> collection (with Live preview).', wpgrade::textdomain()),
 			'default' => '0',
+			'compiler' => true,
 		),
 		// Headings Font
 		array(
@@ -93,6 +95,7 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Headings Font', wpgrade::textdomain()),
 			'subtitle' => __('Font for titles and headings.', wpgrade::textdomain()),
+			'compiler' => true,
 		),
 		// Navigation Font
 		array(
@@ -104,6 +107,7 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Navigation Font', wpgrade::textdomain()),
 			'subtitle' => __('Font for navigation menu.', wpgrade::textdomain()),
+			'compiler' => true,
 		),
 		// Body Font
 		array(
@@ -113,6 +117,7 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Body Font', wpgrade::textdomain()),
 			'subtitle'=> __('Font for content text and widget text.', wpgrade::textdomain()),
+			'compiler' => true,
 		),
 		array(
 			'id'=>'layout-21',

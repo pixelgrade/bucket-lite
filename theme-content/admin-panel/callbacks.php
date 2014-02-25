@@ -16,8 +16,6 @@
 
     function wpgrade_write_custom_css($options) {
 
-	    var_dump(wpgrade::option('inject_custom_css'));
-
         if ( wpgrade::option('inject_custom_css') !== 'file' ) return;
 
         $error = false;
@@ -44,12 +42,10 @@
             echo 'There is been an error around';
         }
     }
-	add_action( 'redux/options/'. wpgrade::shortname() .'_options/saved', 'wpgrade_write_custom_css' );
+	add_action('redux/options/'. wpgrade::shortname() .'_options/compiler', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
-
-	// @todo CLEANUP refactor function names
 
 	/**
 	 * Imports the demo data from the demo_data.xml file
