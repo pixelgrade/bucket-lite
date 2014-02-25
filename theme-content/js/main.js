@@ -1494,7 +1494,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		if (is_retina && $('.site-logo--image-2x').length) {
 			var image = $('.site-logo--image-2x').find('img');
 
-			if (image.data('logo2x') !== undefined) {
+			if (image.data('logo2x') !== undefined && image.data('logo2x').length) {
 				image.attr('src', image.data('logo2x'));
 			}
 		}
