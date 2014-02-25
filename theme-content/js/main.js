@@ -1,7 +1,26 @@
-(function($, window, undefined) {
+/* ====== JS PLUGINS & EXTENSIONS ====== */
 
-	/* ====== SHARED VARS ====== */
+/* --- $OVERTHROW --- */
+/* Overthrow. An overflow:auto polyfill for responsive design. 
+ * (c) 2012: Scott Jehl, Filament Group, Inc.
+ */
+/* Detect */
+ (function(w,undefined){var doc=w.document,docElem=doc.documentElement,enabledClassName="overthrow-enabled",canBeFilledWithPoly="ontouchmove"in doc,nativeOverflow="WebkitOverflowScrolling"in docElem.style||("msOverflowStyle"in docElem.style||(!canBeFilledWithPoly&&w.screen.width>800||function(){var ua=w.navigator.userAgent,webkit=ua.match(/AppleWebKit\/([0-9]+)/),wkversion=webkit&&webkit[1],wkLte534=webkit&&wkversion>=534;return ua.match(/Android ([0-9]+)/)&&(RegExp.$1>=3&&wkLte534)||(ua.match(/ Version\/([0-9]+)/)&&
+(RegExp.$1>=0&&(w.blackberry&&wkLte534))||(ua.indexOf("PlayBook")>-1&&(wkLte534&&!ua.indexOf("Android 2")===-1)||(ua.match(/Firefox\/([0-9]+)/)&&RegExp.$1>=4||(ua.match(/wOSBrowser\/([0-9]+)/)&&(RegExp.$1>=233&&wkLte534)||ua.match(/NokiaBrowser\/([0-9\.]+)/)&&(parseFloat(RegExp.$1)===7.3&&(webkit&&wkversion>=533))))))}()));w.overthrow={};w.overthrow.enabledClassName=enabledClassName;w.overthrow.addClass=function(){if(docElem.className.indexOf(w.overthrow.enabledClassName)===-1)docElem.className+=
+" "+w.overthrow.enabledClassName};w.overthrow.removeClass=function(){docElem.className=docElem.className.replace(w.overthrow.enabledClassName,"")};w.overthrow.set=function(){if(nativeOverflow)w.overthrow.addClass()};w.overthrow.canBeFilledWithPoly=canBeFilledWithPoly;w.overthrow.forget=function(){w.overthrow.removeClass()};w.overthrow.support=nativeOverflow?"native":"none"})(this);
 
+/* Polifyll */
+ (function(w,o,undefined){if(o===undefined)return;o.scrollIndicatorClassName="overthrow";var doc=w.document,docElem=doc.documentElement,nativeOverflow=o.support==="native",canBeFilledWithPoly=o.canBeFilledWithPoly,configure=o.configure,set=o.set,forget=o.forget,scrollIndicatorClassName=o.scrollIndicatorClassName;o.closest=function(target,ascend){return!ascend&&(target.className&&(target.className.indexOf(scrollIndicatorClassName)>-1&&target))||o.closest(target.parentNode)};var enabled=false;o.set=
+function(){set();if(enabled||(nativeOverflow||!canBeFilledWithPoly))return;w.overthrow.addClass();enabled=true;o.support="polyfilled";o.forget=function(){forget();enabled=false;if(doc.removeEventListener)doc.removeEventListener("touchstart",start,false)};var elem,lastTops=[],lastLefts=[],lastDown,lastRight,resetVertTracking=function(){lastTops=[];lastDown=null},resetHorTracking=function(){lastLefts=[];lastRight=null},inputs,setPointers=function(val){inputs=elem.querySelectorAll("textarea, input");
+for(var i=0,il=inputs.length;i<il;i++)inputs[i].style.pointerEvents=val},changeScrollTarget=function(startEvent,ascend){if(doc.createEvent){var newTarget=(!ascend||ascend===undefined)&&elem.parentNode||(elem.touchchild||elem),tEnd;if(newTarget!==elem){tEnd=doc.createEvent("HTMLEvents");tEnd.initEvent("touchend",true,true);elem.dispatchEvent(tEnd);newTarget.touchchild=elem;elem=newTarget;newTarget.dispatchEvent(startEvent)}}},start=function(e){if(o.intercept)o.intercept();resetVertTracking();resetHorTracking();
+elem=o.closest(e.target);if(!elem||(elem===docElem||e.touches.length>1))return;setPointers("none");var touchStartE=e,scrollT=elem.scrollTop,scrollL=elem.scrollLeft,height=elem.offsetHeight,width=elem.offsetWidth,startY=e.touches[0].pageY,startX=e.touches[0].pageX,scrollHeight=elem.scrollHeight,scrollWidth=elem.scrollWidth,move=function(e){var ty=scrollT+startY-e.touches[0].pageY,tx=scrollL+startX-e.touches[0].pageX,down=ty>=(lastTops.length?lastTops[0]:0),right=tx>=(lastLefts.length?lastLefts[0]:
+0);if(ty>0&&ty<scrollHeight-height||tx>0&&tx<scrollWidth-width)e.preventDefault();else changeScrollTarget(touchStartE);if(lastDown&&down!==lastDown)resetVertTracking();if(lastRight&&right!==lastRight)resetHorTracking();lastDown=down;lastRight=right;elem.scrollTop=ty;elem.scrollLeft=tx;lastTops.unshift(ty);lastLefts.unshift(tx);if(lastTops.length>3)lastTops.pop();if(lastLefts.length>3)lastLefts.pop()},end=function(e){setPointers("auto");setTimeout(function(){setPointers("none")},450);elem.removeEventListener("touchmove",
+move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListener("touchmove",move,false);elem.addEventListener("touchend",end,false)};doc.addEventListener("touchstart",start,false)}})(this,this.overthrow);
+
+
+
+
+/* ====== SHARED VARS ====== */
 	var phone, touch, ltie9, lteie9, wh, ww, dh, ar, fonts;
 
 	var ua = navigator.userAgent;
@@ -40,8 +59,8 @@
 		}
 	}
 
-	
-	
+(function($, window, undefined) {
+
 	/* --- DETECT PLATFORM --- */
 
 	function platformDetect(){
@@ -92,7 +111,7 @@
 	*/
 	(function(e){e.fn.hoverIntent=function(t,n,r){var i={interval:100,sensitivity:7,timeout:0};if(typeof t==="object"){i=e.extend(i,t)}else if(e.isFunction(n)){i=e.extend(i,{over:t,out:n,selector:r})}else{i=e.extend(i,{over:t,out:t,selector:n})}var s,o,u,a;var f=function(e){s=e.pageX;o=e.pageY};var l=function(t,n){n.hoverIntent_t=clearTimeout(n.hoverIntent_t);if(Math.abs(u-s)+Math.abs(a-o)<i.sensitivity){e(n).off("mousemove.hoverIntent",f);n.hoverIntent_s=1;return i.over.apply(n,[t])}else{u=s;a=o;n.hoverIntent_t=setTimeout(function(){l(t,n)},i.interval)}};var c=function(e,t){t.hoverIntent_t=clearTimeout(t.hoverIntent_t);t.hoverIntent_s=0;return i.out.apply(t,[e])};var h=function(t){var n=jQuery.extend({},t);var r=this;if(r.hoverIntent_t){r.hoverIntent_t=clearTimeout(r.hoverIntent_t)}if(t.type=="mouseenter"){u=n.pageX;a=n.pageY;e(r).on("mousemove.hoverIntent",f);if(r.hoverIntent_s!=1){r.hoverIntent_t=setTimeout(function(){l(n,r)},i.interval)}}else{e(r).off("mousemove.hoverIntent",f);if(r.hoverIntent_s==1){r.hoverIntent_t=setTimeout(function(){c(n,r)},i.timeout)}}};return this.on({"mouseenter.hoverIntent":h,"mouseleave.hoverIntent":h},i.selector)}})(jQuery)
 
-	
+
   
 	/* --- $SALVATTORE --- */
 
@@ -1479,6 +1498,9 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		
 		/* DETECT PLATFORM */
 		platformDetect();
+
+		/* Overthrow Polyfill */
+		overthrow.set();
 
 		FastClick.attach(document.body);
 
