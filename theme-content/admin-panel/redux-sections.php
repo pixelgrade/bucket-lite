@@ -565,7 +565,8 @@ $sections[] = array(
 			'desc' => __('', wpgrade::textdomain()),
 			'mode' => 'css',
 			'theme' => 'chrome',
-			'validate' => 'html'
+			'validate' => 'html',
+			'compiler' => true,
 		),
 		array(
 			'id' => 'inject_custom_css',
@@ -573,6 +574,7 @@ $sections[] = array(
 			'title' => __('Apply Custom CSS', wpgrade::textdomain()),
 			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', wpgrade::textdomain()),wpgrade::themename()),
 			'default' => 'inline',
+			'compiler' => true,
 			'options' => array( 'inline' => __('Inline <em>(recommended)</em>', wpgrade::textdomain()), 'file' => __('Write To File (might require file permissions)', wpgrade::textdomain())),
 			'select2' => array( // here you can provide params for the select2 jquery call
 			    'minimumResultsForSearch' => -1, // this way the search box will be disabled
@@ -585,6 +587,7 @@ $sections[] = array(
 			'title' => __('Custom JavaScript (header)', wpgrade::textdomain()),
 			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', wpgrade::textdomain()),
 			'mode' => 'text',
+			'compiler' => true,
 			'theme' => 'chrome'
 		),
 		array(
@@ -593,6 +596,7 @@ $sections[] = array(
 			'title' => __('Custom JavaScript (footer)', wpgrade::textdomain()),
 			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', wpgrade::textdomain()),
 			'mode' => 'text',
+			'compiler' => true,
 			'theme' => 'chrome'
 		),
 	)
