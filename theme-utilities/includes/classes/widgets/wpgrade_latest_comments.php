@@ -54,7 +54,9 @@ class wpgrade_latest_comments extends WP_Widget {
 			_prime_post_caches( $post_ids, strpos( get_option( 'permalink_structure' ), '%category%' ), false );
 
 			foreach ( (array)$comments as $comment) {
-
+				if ( isset($comment->post_password) && !empty($comment->post_password) ) {
+					continue;
+				}
 				ob_start(); ?>
 				<article class="latest-comments__list">
 					<a class="media__img  latest-comments__avatar" href="<?php echo get_comment_author_url($comment->comment_ID) ?>">
