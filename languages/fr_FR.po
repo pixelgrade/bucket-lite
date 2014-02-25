@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2014-01-23 16:54+0200\n"
-"PO-Revision-Date: 2014-01-23 16:54+0200\n"
+"POT-Creation-Date: 2014-02-11 14:15+0200\n"
+"PO-Revision-Date: 2014-02-11 14:15+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: fr\n"
@@ -95,6 +95,7 @@ msgid "Archives"
 msgstr "Archives"
 
 #: ../author-bio.php:14
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:104
 msgid "Author"
 msgstr "Auteur"
 
@@ -148,11 +149,13 @@ msgstr "Laisser un commentaire"
 
 #: ../comments.php:95 ../comments.php:109
 #: ../theme-utilities/includes/acf/acf-config.php:57
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:420
 #: ../woocommerce/single-product-reviews.php:84
 msgid "Name"
 msgstr "Nom"
 
 #: ../comments.php:96 ../comments.php:110
+#: ../theme-utilities/includes/acf/core/fields/email.php:19
 #: ../woocommerce/single-product-reviews.php:86
 #: ../woocommerce/myaccount/form-login.php:78
 msgid "Email"
@@ -167,6 +170,9 @@ msgid "Comment"
 msgstr "Commentaire"
 
 #: ../comments.php:100 ../comments.php:115
+#: ../theme-utilities/includes/acf/core/fields/message.php:19
+#: ../theme-utilities/includes/acf/core/fields/message.php:70
+#: ../theme-utilities/includes/acf/core/fields/true_false.php:79
 msgid "Message"
 msgstr "Message"
 
@@ -226,7 +232,6 @@ msgstr "Précédent"
 
 #: ../page-no-sidebar.php:44 ../page.php:38 ../single.php:63
 #: ../wpgrade-config.php:234
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:227
 msgid "Next"
 msgstr "Suivant"
 
@@ -236,6 +241,7 @@ msgid "Search Results for: %s"
 msgstr "Résultats de la recherche pour: %s"
 
 #: ../searchform.php:2
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:428
 msgid "Search..."
 msgstr ""
 
@@ -252,11 +258,12 @@ msgid "The Breakdown"
 msgstr "Score Breakdown"
 
 #: ../single.php:157
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:107
 msgid "Categories"
 msgstr "Catégories"
 
-#: ../single.php:160 ../theme-partials/acf-layouts/hero_posts_module.php:184
-#: ../theme-partials/post-templates/content-classic.php:26
+#: ../single.php:160 ../theme-partials/acf-layouts/hero_posts_module.php:182
+#: ../theme-partials/post-templates/content-classic.php:30
 #: ../theme-partials/post-templates/content-masonry.php:20
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:57
 #, php-format
@@ -285,9 +292,7 @@ msgstr "Article suivant"
 msgid "Tag Archives: %s"
 msgstr "Archives du tags : %s"
 
-#: ../wpgrade-config.php:108
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:100
-#: ../wpgrade-core/vendor/redux3/framework.php:1505
+#: ../wpgrade-config.php:108 ../wpgrade-core/vendor/redux3/framework.php:1658
 msgid "Default"
 msgstr "Par défaut"
 
@@ -296,32 +301,26 @@ msgstr "Par défaut"
 #: ../theme-utilities/includes/acf/acf-config.php:559
 #: ../theme-utilities/includes/acf/acf-config.php:645
 #: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:90
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:101
 msgid "Latest Posts"
 msgstr "Derniers articles"
 
 #: ../wpgrade-config.php:110
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:102
 msgid "Slider + Latest Posts"
 msgstr "Slider + Derniers articles"
 
 #: ../wpgrade-config.php:183
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:176
 msgid "Previous (Left arrow key)"
 msgstr "Précédente (Flèche gauche)"
 
 #: ../wpgrade-config.php:184
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:177
 msgid "Next (Right arrow key)"
 msgstr "Suivant (flèche droite)"
 
 #: ../wpgrade-config.php:185
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:178
 msgid "of"
 msgstr "de"
 
 #: ../wpgrade-config.php:233
-#: ../wpgrade-core/tests/assets/mock-theme/wpgrade-config.php:226
 msgid "Prev"
 msgstr "Précédent"
 
@@ -331,7 +330,7 @@ msgid "<em>Related</em> Articles"
 msgstr "Derniers articles"
 
 #: ../yarpp-template-portfolio.php:37
-#: ../theme-partials/acf-layouts/billboard_slider.php:247
+#: ../theme-partials/acf-layouts/billboard_slider.php:257
 #: ../theme-utilities/includes/WPGrade_Bucket_Walker_Nav_Menu.php:293
 #: ../woocommerce/loop/add-to-cart.php:18
 #: ../woocommerce/loop/add-to-cart.php:40
@@ -355,51 +354,63 @@ msgid ""
 msgstr ""
 
 #: ../theme-callbacks/activation-hooks.php:34
+#: ../theme-callbacks/activation-hooks.php:51
 msgid "Settings"
 msgstr "Paramètres"
 
 #: ../theme-callbacks/activation-hooks.php:41
+msgid "Prevent Duplicate Posts"
+msgstr ""
+
+#: ../theme-callbacks/activation-hooks.php:42
+msgid ""
+"Activate this if you want page composer blocks NOT to display posts "
+"displayed above them in the page.<br />The Latest Posts block will ignore "
+"this setting."
+msgstr ""
+
+#: ../theme-callbacks/activation-hooks.php:58
 msgid "Full Width Featured Image"
 msgstr "Full Width Featured Image"
 
-#: ../theme-callbacks/activation-hooks.php:42
+#: ../theme-callbacks/activation-hooks.php:59
 msgid "The featured image could be full width if you check this on"
 msgstr "L'image sélectionnée peut être pleine largeur si vous cochez cette sur"
 
-#: ../theme-callbacks/activation-hooks.php:48
+#: ../theme-callbacks/activation-hooks.php:65
 msgid "Mark as Featured Post"
 msgstr "Marquer comme Featured Post"
 
-#: ../theme-callbacks/activation-hooks.php:49
+#: ../theme-callbacks/activation-hooks.php:66
 msgid "Is this post more important than others?"
 msgstr "Est-ce après plus importants que d'autres?"
 
-#: ../theme-callbacks/activation-hooks.php:55
+#: ../theme-callbacks/activation-hooks.php:72
 msgid "Add to Category Slider"
 msgstr "Ajouter à la catégorie slider"
 
-#: ../theme-callbacks/activation-hooks.php:56
+#: ../theme-callbacks/activation-hooks.php:73
 msgid "You can add this post to the category slider"
 msgstr "Vous pouvez ajouter ce poste à la catégorie slider"
 
-#: ../theme-callbacks/activation-hooks.php:62
+#: ../theme-callbacks/activation-hooks.php:79
 msgid "Disable Sidebar"
 msgstr "Désactivé sidebar"
 
-#: ../theme-callbacks/activation-hooks.php:63
+#: ../theme-callbacks/activation-hooks.php:80
 msgid "You may want this post to be full width"
 msgstr "Vous voudrez peut-être ce post pour être pleine largeur"
 
-#: ../theme-callbacks/activation-hooks.php:72
+#: ../theme-callbacks/activation-hooks.php:89
 msgid "Video Settings"
 msgstr "Paramètres Vidéo"
 
-#: ../theme-callbacks/activation-hooks.php:79
-#: ../theme-callbacks/activation-hooks.php:240
+#: ../theme-callbacks/activation-hooks.php:96
+#: ../theme-callbacks/activation-hooks.php:257
 msgid "Embed Code"
 msgstr "Code d'embed:"
 
-#: ../theme-callbacks/activation-hooks.php:80
+#: ../theme-callbacks/activation-hooks.php:97
 msgid ""
 "Enter here a Youtube, Vimeo (or other online video services) embed code "
 "here. The width should be a minimum of 640px. We will use this if filled, "
@@ -409,19 +420,19 @@ msgstr ""
 "embed ici. La largeur doit être au minimum de 640px. Nous allons utiliser "
 "cette option si rempli, pas le choix selfhosted ci-dessous!"
 
-#: ../theme-callbacks/activation-hooks.php:89
+#: ../theme-callbacks/activation-hooks.php:106
 msgid "Gallery Settings"
 msgstr "Paramètres de la galerie"
 
-#: ../theme-callbacks/activation-hooks.php:96
+#: ../theme-callbacks/activation-hooks.php:113
 msgid "Images"
 msgstr "Images"
 
-#: ../theme-callbacks/activation-hooks.php:101
+#: ../theme-callbacks/activation-hooks.php:118
 msgid "Image Scaling"
 msgstr "Redimensionnement de l'image"
 
-#: ../theme-callbacks/activation-hooks.php:102
+#: ../theme-callbacks/activation-hooks.php:119
 msgid ""
 "<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to "
 "completely fill slider container (recommended for landscape images)</p>\n"
@@ -445,114 +456,114 @@ msgstr ""
 "<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit."
 "ly/slider-image-scaling\">Explication visuelle</a></p>"
 
-#: ../theme-callbacks/activation-hooks.php:111
+#: ../theme-callbacks/activation-hooks.php:128
 msgid "Fit"
 msgstr "Fit"
 
-#: ../theme-callbacks/activation-hooks.php:115
+#: ../theme-callbacks/activation-hooks.php:132
 msgid "Fill"
 msgstr "Fill"
 
-#: ../theme-callbacks/activation-hooks.php:119
+#: ../theme-callbacks/activation-hooks.php:136
 msgid "Fit if Smaller"
 msgstr "Fit si petit"
 
-#: ../theme-callbacks/activation-hooks.php:127
+#: ../theme-callbacks/activation-hooks.php:144
 msgid "Slider height"
 msgstr "Hauteur Slider"
 
-#: ../theme-callbacks/activation-hooks.php:128
+#: ../theme-callbacks/activation-hooks.php:145
 msgid ""
 "Enter a slider height here (only digits, without 'px'). If left blank, it "
 "will default to 525px"
 msgstr ""
 
-#: ../theme-callbacks/activation-hooks.php:134
+#: ../theme-callbacks/activation-hooks.php:151
 msgid "Show Nearby Images"
 msgstr "Montrer des images à proximité"
 
-#: ../theme-callbacks/activation-hooks.php:135
+#: ../theme-callbacks/activation-hooks.php:152
 msgid ""
 "Enable this if you want to avoid having empty space on the sides of the "
 "image when using mostly portrait images."
 msgstr ""
 
-#: ../theme-callbacks/activation-hooks.php:140
-#: ../theme-callbacks/activation-hooks.php:172
+#: ../theme-callbacks/activation-hooks.php:157
+#: ../theme-callbacks/activation-hooks.php:189
 msgid "Enabled"
 msgstr "Activé"
 
-#: ../theme-callbacks/activation-hooks.php:144
-#: ../theme-callbacks/activation-hooks.php:176
+#: ../theme-callbacks/activation-hooks.php:161
+#: ../theme-callbacks/activation-hooks.php:193
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: ../theme-callbacks/activation-hooks.php:151
+#: ../theme-callbacks/activation-hooks.php:168
 #: ../theme-content/admin-panel/redux-sections.php:241
 #: ../theme-utilities/includes/acf/acf-config.php:508
 msgid "Slider transition"
 msgstr "Transition Slider"
 
-#: ../theme-callbacks/activation-hooks.php:156
+#: ../theme-callbacks/activation-hooks.php:173
 #: ../theme-content/admin-panel/redux-sections.php:243
 msgid "Slide/Move"
 msgstr "Glisser/Déplacer"
 
-#: ../theme-callbacks/activation-hooks.php:160
+#: ../theme-callbacks/activation-hooks.php:177
 #: ../theme-content/admin-panel/redux-sections.php:244
 #: ../theme-utilities/includes/acf/acf-config.php:514
 msgid "Fade"
 msgstr "Fade"
 
-#: ../theme-callbacks/activation-hooks.php:167
+#: ../theme-callbacks/activation-hooks.php:184
 #: ../theme-content/admin-panel/redux-sections.php:256
 msgid "Slider autoplay"
 msgstr "Slider autoplay"
 
-#: ../theme-callbacks/activation-hooks.php:183
+#: ../theme-callbacks/activation-hooks.php:200
 #: ../theme-content/admin-panel/redux-sections.php:263
 msgid "Autoplay delay between slides (in milliseconds)"
 msgstr "Autoplay délai entre les diapositives (en millisecondes)"
 
-#: ../theme-callbacks/activation-hooks.php:233
+#: ../theme-callbacks/activation-hooks.php:250
 msgid "Audio Settings"
 msgstr "Paramètres audio"
 
-#: ../theme-callbacks/activation-hooks.php:241
+#: ../theme-callbacks/activation-hooks.php:258
 msgid "Enter here a embed code here. The width should be a minimum of 640px."
 msgstr ""
 "Entrez ici un code embed ici. La largeur doit être au minimum de 640px."
 
-#: ../theme-callbacks/activation-hooks.php:247
+#: ../theme-callbacks/activation-hooks.php:264
 msgid "MP3 File URL"
 msgstr "URL du fichier MP3"
 
-#: ../theme-callbacks/activation-hooks.php:248
+#: ../theme-callbacks/activation-hooks.php:265
 msgid "Please enter in the URL to the .mp3 file"
 msgstr "S'il vous plaît entrer dans l'URL du fichier .mp3"
 
-#: ../theme-callbacks/activation-hooks.php:254
+#: ../theme-callbacks/activation-hooks.php:271
 msgid "M4A File URL"
 msgstr "M4A URL du fichier"
 
-#: ../theme-callbacks/activation-hooks.php:255
+#: ../theme-callbacks/activation-hooks.php:272
 msgid "Please enter in the URL to the .m4a file"
 msgstr "S'il vous plaît entrer dans l'URL pour le fichier .m4a"
 
-#: ../theme-callbacks/activation-hooks.php:261
+#: ../theme-callbacks/activation-hooks.php:278
 msgid "OGA File URL"
 msgstr "URL du fichier OGA"
 
-#: ../theme-callbacks/activation-hooks.php:262
+#: ../theme-callbacks/activation-hooks.php:279
 msgid "Please enter in the URL to the .ogg or .oga file"
 msgstr ""
 "S'il vous plaît entrer dans l'URL pour le fichier .ogg ou un fichier .oga"
 
-#: ../theme-callbacks/activation-hooks.php:268
+#: ../theme-callbacks/activation-hooks.php:285
 msgid "Poster Image"
 msgstr "Image de l'affiche"
 
-#: ../theme-callbacks/activation-hooks.php:269
+#: ../theme-callbacks/activation-hooks.php:286
 msgid ""
 "This will be the image displayed above the audio controls. The image should "
 "be at least 640px wide. Click the \"Upload\" button to open the Media "
@@ -572,26 +583,30 @@ msgstr "Vidéo URL"
 msgid "<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>"
 msgstr ""
 
-#: ../theme-callbacks/unsorted.php:301
+#: ../theme-callbacks/unsorted.php:304
 #: ../theme-partials/post-templates/single-title.php:14
 msgid "j F, Y \\a\\t H:i"
 msgstr "j F Y \\a\\t H:i"
 
-#: ../theme-callbacks/unsorted.php:304
+#: ../theme-callbacks/unsorted.php:307
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:168
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:82
+#: ../theme-utilities/includes/acf/core/fields/image.php:84
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:108
 #: ../woocommerce/myaccount/my-address.php:45
 msgid "Edit"
 msgstr "Éditer"
 
-#: ../theme-callbacks/unsorted.php:311
+#: ../theme-callbacks/unsorted.php:314
 #: ../woocommerce/single-product/review.php:39
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../theme-callbacks/unsorted.php:358
+#: ../theme-callbacks/unsorted.php:361
 msgid "Category Custom Accent Color"
 msgstr ""
 
-#: ../theme-callbacks/unsorted.php:364
+#: ../theme-callbacks/unsorted.php:367
 msgid ""
 "Set here a custom accent color for this category. We will change the main "
 "accent color with this one in the category archives and posts in that "
@@ -599,7 +614,7 @@ msgid ""
 "to work (Theme Options > Custom Code)."
 msgstr ""
 
-#: ../theme-callbacks/unsorted.php:434 ../theme-callbacks/unsorted.php:448
+#: ../theme-callbacks/unsorted.php:437 ../theme-callbacks/unsorted.php:451
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
@@ -653,10 +668,13 @@ msgid "Theme Options"
 msgstr "Options du thème"
 
 #: ../theme-content/admin-panel/redux-args.php:85
-#: ../wpgrade-core/vendor/redux3/framework.php:116
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:397
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:49
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:51
 #: ../wpgrade-core/vendor/redux3/framework.php:122
-#: ../wpgrade-core/vendor/redux3/framework.php:283
-#: ../wpgrade-core/vendor/redux3/framework.php:286
+#: ../wpgrade-core/vendor/redux3/framework.php:128
+#: ../wpgrade-core/vendor/redux3/framework.php:300
+#: ../wpgrade-core/vendor/redux3/framework.php:303
 #: ../wpgrade-core/vendor/redux3/options.php:141
 #: ../wpgrade-core/vendor/redux3/options.php:145
 msgid "Options"
@@ -729,7 +747,8 @@ msgid "The size of this icon must be 144x144px."
 msgstr "La taille de cette icône doit être 144x144px."
 
 #: ../theme-content/admin-panel/redux-sections.php:61
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:189
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:64
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:203
 msgid "Style"
 msgstr "Style"
 
@@ -1577,15 +1596,13 @@ msgstr "Pour le lire, veuillez saisir votre mot de passe ci-dessous:"
 msgid "Password.."
 msgstr "Mot de passe.."
 
-#: ../theme-partials/acf-layouts/billboard_slider.php:12
-#: ../theme-partials/acf-layouts/hero_posts_module.php:13
-#: ../theme-partials/acf-layouts/posts_grid_cards.php:17
+#: ../theme-partials/acf-layouts/billboard_slider.php:13
 #: ../theme-utilities/includes/acf/acf-config.php:476
 msgid "Read Full Story"
 msgstr "Lire l'article complet"
 
-#: ../theme-partials/acf-layouts/billboard_slider.php:170
-#: ../theme-partials/acf-layouts/billboard_slider.php:201
+#: ../theme-partials/acf-layouts/billboard_slider.php:180
+#: ../theme-partials/acf-layouts/billboard_slider.php:211
 msgid "Featured"
 msgstr "Sélection"
 
@@ -1603,6 +1620,7 @@ msgstr "Navigation par commentaire"
 msgid "Primary Navigation"
 msgstr "Navigation par commentaire"
 
+#: ../theme-partials/post-templates/content-classic.php:21
 #: ../theme-partials/post-templates/header-blog-image.php:37
 #: ../theme-partials/post-templates/header-blog-link.php:36
 #: ../theme-partials/post-templates/header-blog.php:36
@@ -1655,6 +1673,8 @@ msgstr "Full URL"
 #: ../theme-utilities/includes/acf/acf-config.php:98
 #: ../theme-utilities/includes/acf/acf-config.php:310
 #: ../theme-utilities/includes/acf/acf-config.php:352
+#: ../theme-utilities/includes/acf/acf.php:457
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:54
 msgid "Add New"
 msgstr "Ajouter un nouveau"
 
@@ -1758,6 +1778,7 @@ msgstr "Posts Source"
 
 #: ../theme-utilities/includes/acf/acf-config.php:394
 #: ../theme-utilities/includes/acf/acf-config.php:555
+#: ../theme-utilities/includes/acf/acf-config.php:641
 #, fuzzy
 msgid "Select what type of posts to be displayed."
 msgstr "Pas d'infos de contact à afficher"
@@ -1910,7 +1931,6 @@ msgid "Posts Grid Cards"
 msgstr "Messages Cards Grid"
 
 #: ../theme-utilities/includes/acf/acf-config.php:604
-#: ../theme-utilities/includes/acf/acf-config.php:641
 #: ../theme-utilities/includes/acf/acf-config.php:690
 #: ../theme-utilities/includes/acf/acf-config.php:727
 msgid "Set the maximum number of posts to be displayed."
@@ -1968,13 +1988,14 @@ msgstr "Intitulé titre"
 
 #: ../theme-utilities/includes/acf/acf-config.php:850
 #: ../theme-utilities/includes/acf/acf-config.php:855
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:147
 #: ../theme-utilities/includes/classes/widgets/wpgrade_dribbble_widget.php:62
 #: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:214
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_reviews.php:72
 #: ../theme-utilities/includes/classes/widgets/wpgrade_social_links_widget.php:49
 #: ../theme-utilities/includes/classes/widgets/wpgrade_twitter_widget.php:87
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:129
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:188
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:133
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:197
 msgid "Title"
 msgstr "Titre"
 
@@ -1993,6 +2014,2232 @@ msgstr "Liens s'ouvrent dans une nouvelle fenêtre"
 #: ../theme-utilities/includes/acf/acf-config.php:884
 msgid "Add Block"
 msgstr "Ajouter un bloc"
+
+#: ../theme-utilities/includes/acf/acf.php:455
+msgid "Field&nbsp;Groups"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:456
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:214
+#, fuzzy
+msgid "Advanced Custom Fields"
+msgstr "Champs personnalisés"
+
+#: ../theme-utilities/includes/acf/acf.php:458
+msgid "Add New Field Group"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:459
+msgid "Edit Field Group"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:460
+msgid "New Field Group"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:461
+msgid "View Field Group"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:462
+#, fuzzy
+msgid "Search Field Groups"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/acf.php:463
+msgid "No Field Groups found"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:464
+#, fuzzy
+msgid "No Field Groups found in Trash"
+msgstr "Aucun projet trouvé dans Trash"
+
+#: ../theme-utilities/includes/acf/acf.php:567
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:99
+#: ../wpgrade-core/vendor/redux3/options.php:508
+msgid "Custom Fields"
+msgstr "Champs personnalisés"
+
+#: ../theme-utilities/includes/acf/acf.php:585
+#: ../theme-utilities/includes/acf/acf.php:588
+msgid "Field group updated."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:586
+#, fuzzy
+msgid "Custom field updated."
+msgstr "Champs personnalisés"
+
+#: ../theme-utilities/includes/acf/acf.php:587
+#, fuzzy
+msgid "Custom field deleted."
+msgstr "Champs personnalisés"
+
+#. translators: %s: date and time of the revision
+#: ../theme-utilities/includes/acf/acf.php:590
+#, php-format
+msgid "Field group restored to revision from %s"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:591
+msgid "Field group published."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:592
+msgid "Field group saved."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:593
+msgid "Field group submitted."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:594
+msgid "Field group scheduled for."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:595
+msgid "Field group draft updated."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:730
+#, fuzzy
+msgid "Thumbnail"
+msgstr "Vignettes de la grille"
+
+#: ../theme-utilities/includes/acf/acf.php:731
+msgid "Medium"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:732
+msgid "Large"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/acf.php:733
+#, fuzzy
+msgid "Full"
+msgstr "Full URL"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:22
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:453
+#, fuzzy
+msgid "Flexible Content"
+msgstr "Avant contenu"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:23
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:16
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:47
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/repeater.php:23
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:30
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:356
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:183
+#: ../theme-utilities/includes/acf/core/fields/message.php:20
+#: ../theme-utilities/includes/acf/core/fields/radio.php:212
+#: ../theme-utilities/includes/acf/core/fields/tab.php:20
+msgid "Layout"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:28
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/repeater.php:29
+#, fuzzy
+msgid "Add Row"
+msgstr "Ajouter un nouveau"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:31
+msgid "layout"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:32
+msgid "layouts"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:33
+msgid "remove {layout}?"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:34
+msgid "This field requires at least {min} {identifier}"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:35
+msgid "This field has a limit of {max} {identifier}"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:36
+msgid "This field requires at least {min} {label} {identifier}"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:37
+msgid "Maximum {label} limit reached ({max} {identifier})"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:38
+msgid "{available} {label} {identifier} available (max {max})"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:39
+msgid "{required} {label} {identifier} required (min {min})"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/flexible-content.php:133
+msgid "Flexible Content requires at least 1 layout"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/field.php:75
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:38
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:22
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:24
+#, fuzzy
+msgid "New Field"
+msgstr "Text Field"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:39
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:23
+msgid "new_field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:49
+msgid "Reorder Layout"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:49
+#, fuzzy
+msgid "Reorder"
+msgstr "Commentaires récents"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:50
+#, fuzzy
+msgid "Delete Layout"
+msgstr "Sélectionnez Mise en megamenu:"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:50
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:171
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:85
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:111
+#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:138
+#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:200
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:54
+#, fuzzy
+msgid "Add New Layout"
+msgstr "Ajouter un nouveau projet"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:55
+msgid "Duplicate Layout"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:55
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:170
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:84
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:110
+msgid "Duplicate"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:90
+msgid "Display"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:99
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:367
+msgid "Row"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:100
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:366
+#, fuzzy
+msgid "Table"
+msgstr "Activé"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:137
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:52
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:74
+msgid "Field Order"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:138
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:186
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:53
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:101
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:75
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:127
+#, fuzzy
+msgid "Field Label"
+msgstr "Etiquette"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:139
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:202
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:54
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:117
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:76
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:143
+#, fuzzy
+msgid "Field Name"
+msgstr "Nom du client"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:140
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:217
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:55
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:132
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:308
+#: ../theme-utilities/includes/acf/core/fields/user.php:251
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:77
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:159
+#, fuzzy
+msgid "Field Type"
+msgstr "Header Type"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:149
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:63
+msgid ""
+"No fields. Click the \"+ Add Sub Field button\" to create your first field."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:165
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:168
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:79
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:82
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:105
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:108
+msgid "Edit this Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:169
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:83
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:109
+msgid "Read documentation for this field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:169
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:83
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:109
+msgid "Docs"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:170
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:84
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:110
+msgid "Duplicate this Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:171
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:85
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:111
+#, fuzzy
+msgid "Delete this Field"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:187
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:102
+msgid "This is the name which will appear on the edit page"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:203
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:118
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:144
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:232
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:147
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:173
+msgid "Field Instructions"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:251
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:166
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:186
+#, fuzzy
+msgid "Required?"
+msgstr "(Obligatoire)"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:259
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:305
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:174
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:219
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:461
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:137
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:158
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:327
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:348
+#: ../theme-utilities/includes/acf/core/fields/select.php:223
+#: ../theme-utilities/includes/acf/core/fields/select.php:242
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:342
+#: ../theme-utilities/includes/acf/core/fields/user.php:284
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:255
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:194
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:217
+msgid "Yes"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:260
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:306
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:175
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:220
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:460
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:138
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:159
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:328
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:349
+#: ../theme-utilities/includes/acf/core/fields/select.php:224
+#: ../theme-utilities/includes/acf/core/fields/select.php:243
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:343
+#: ../theme-utilities/includes/acf/core/fields/user.php:285
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:256
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:195
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:218
+#, fuzzy
+msgid "No"
+msgstr "Remarque"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:269
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:184
+#, fuzzy
+msgid "Column Width"
+msgstr "Contactez Widget"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:270
+msgid "Leave blank for auto"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:297
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:211
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:209
+#, fuzzy
+msgid "Conditional Logic"
+msgstr "Informations additionnelles"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:348
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:262
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:260
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:117
+msgid "is equal to"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:349
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:263
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:261
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:118
+msgid "is not equal to"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:367
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:281
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:279
+msgid "Show this field when"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:373
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:287
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:285
+#, fuzzy
+msgid "all"
+msgstr "Tous"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:374
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:288
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:286
+msgid "any"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:377
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:291
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:289
+#, fuzzy
+msgid "these rules are met"
+msgstr "Il n'y a aucun commentaire"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:389
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:305
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:303
+#, fuzzy
+msgid "Close Field"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:389
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:305
+msgid "Close Sub Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:404
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:320
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:316
+msgid "Drag and drop to reorder"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:405
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:321
+msgid "+ Add Sub Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:414
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:375
+msgid "Button Label"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:430
+msgid "Minimum Layouts"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-flexible-content/views/options.php:444
+msgid "Maximum Layouts"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/repeater.php:22
+msgid "Repeater"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/repeater.php:32
+msgid "Minimum rows reached ( {min} rows )"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/repeater.php:33
+msgid "Maximum rows reached ( {max} rows )"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:44
+#, fuzzy
+msgid "Repeater Fields"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:300
+#, fuzzy
+msgid "Save Field"
+msgstr "Text Field"
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:328
+msgid "Minimum Rows"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/add-ons/acf-repeater/views/options.php:342
+msgid "Maximum Rows"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/api.php:1162
+#, fuzzy
+msgid "Update"
+msgstr "Non Mise à jour"
+
+#: ../theme-utilities/includes/acf/core/api.php:1163
+#, fuzzy
+msgid "Post updated"
+msgstr "Non Mise à jour"
+
+#: ../theme-utilities/includes/acf/core/actions/export.php:26
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:58
+msgid "Error"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/actions/export.php:33
+#, fuzzy
+msgid "No ACF groups selected"
+msgstr "Aucun média sélectionné"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:42
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:307
+msgid "Add-ons"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:130
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:429
+#, fuzzy
+msgid "Repeater Field"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:131
+msgid "Create infinite rows of repeatable data with this versatile interface!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:137
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:437
+#, fuzzy
+msgid "Gallery Field"
+msgstr "Détail de la galerie"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:138
+msgid "Create image galleries in a simple and intuitive interface!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:144
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:445
+#, fuzzy
+msgid "Options Page"
+msgstr "Options"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:145
+msgid "Create global data to use throughout your website!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:151
+msgid "Flexible Content Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:152
+msgid "Create unique designs with a flexible content layout manager!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:161
+msgid "Gravity Forms Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:162
+msgid "Creates a select field populated with Gravity Forms!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:168
+msgid "Date & Time Picker"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:169
+msgid "jQuery date & time picker"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:175
+msgid "Location Field"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:176
+msgid "Find addresses and coordinates of a desired location"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:182
+#, fuzzy
+msgid "Contact Form 7 Field"
+msgstr "Champs personnalisés"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:183
+msgid "Assign one or more contact form 7 forms to a post"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:193
+#, fuzzy
+msgid "Advanced Custom Fields Add-Ons"
+msgstr "Champs personnalisés"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:196
+msgid ""
+"The following Add-ons are available to increase the functionality of the "
+"Advanced Custom Fields plugin."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:197
+msgid ""
+"Each Add-on can be installed as a separate plugin (receives updates) or "
+"included in your theme (does not receive updates)."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:219
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:240
+#, fuzzy
+msgid "Installed"
+msgstr "Installez"
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:221
+msgid "Purchase & Install"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/addons.php:242
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:422
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:431
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:439
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:447
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:455
+#: ../wpgrade-core/vendor/redux3/framework.php:2471
+#: ../wpgrade-core/vendor/redux3/inc/fields/export/field_export.php:69
+#, fuzzy
+msgid "Download"
+msgstr "Télécharger sauvegarde"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:50
+#: ../theme-utilities/includes/acf/core/controllers/export.php:159
+#, fuzzy
+msgid "Export"
+msgstr "Importation"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:216
+#, fuzzy
+msgid "Export Field Groups"
+msgstr "Options d'exportation"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:221
+msgid "Field Groups"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:222
+#, fuzzy
+msgid "Select the field groups to be exported"
+msgstr "Pas d'infos de contact à afficher"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:239
+#: ../theme-utilities/includes/acf/core/controllers/export.php:252
+#, fuzzy
+msgid "Export to XML"
+msgstr "Options d'exportation"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:242
+#: ../theme-utilities/includes/acf/core/controllers/export.php:267
+#, fuzzy
+msgid "Export to PHP"
+msgstr "Options d'exportation"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:253
+msgid ""
+"ACF will create a .xml export file which is compatible with the native WP "
+"import plugin."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:254
+msgid ""
+"Imported field groups <b>will</b> appear in the list of editable field "
+"groups. This is useful for migrating fields groups between Wp websites."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:256
+msgid "Select field group(s) from the list and click \"Export XML\""
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:257
+msgid "Save the .xml file when prompted"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:258
+msgid "Navigate to Tools &raquo; Import and select WordPress"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:259
+msgid "Install WP import plugin if prompted"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:260
+msgid "Upload and import your exported .xml file"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:261
+msgid "Select your user and ignore Import Attachments"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:262
+msgid "That's it! Happy WordPressing"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:268
+msgid "ACF will create the PHP code to include in your theme."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:269
+#: ../theme-utilities/includes/acf/core/controllers/export.php:310
+msgid ""
+"Registered field groups <b>will not</b> appear in the list of editable field "
+"groups. This is useful for including fields in themes."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:270
+#: ../theme-utilities/includes/acf/core/controllers/export.php:311
+msgid ""
+"Please note that if you export and register field groups within the same WP, "
+"you will see duplicate fields on your edit screens. To fix this, please move "
+"the original field group to the trash or remove the code from your functions."
+"php file."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:272
+msgid "Select field group(s) from the list and click \"Create PHP\""
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:273
+#: ../theme-utilities/includes/acf/core/controllers/export.php:302
+msgid "Copy the PHP code generated"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:274
+#: ../theme-utilities/includes/acf/core/controllers/export.php:303
+msgid "Paste into your functions.php file"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:275
+#: ../theme-utilities/includes/acf/core/controllers/export.php:304
+msgid "To activate any Add-ons, edit and use the code in the first few lines."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:295
+msgid "Export Field Groups to PHP"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:300
+#: ../theme-utilities/includes/acf/core/fields/tab.php:65
+msgid "Instructions"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:309
+#, fuzzy
+msgid "Notes"
+msgstr "Remarque"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:316
+msgid "Include in theme"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:317
+msgid ""
+"The Advanced Custom Fields plugin can be included within a theme. To do so, "
+"move the ACF plugin inside your theme and add the following code to your "
+"functions.php file:"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:323
+msgid ""
+"To remove all visual interfaces from the ACF plugin, you can use a constant "
+"to enable lite mode. Add the following code to your functions.php file "
+"<b>before</b> the include_once code:"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:331
+#, fuzzy
+msgid "Back to export"
+msgstr "Retour en haut"
+
+#: ../theme-utilities/includes/acf/core/controllers/export.php:400
+#, fuzzy
+msgid "No field groups were selected"
+msgstr "Aucun média sélectionné"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:358
+msgid "Move to trash. Are you sure?"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:359
+msgid "checked"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:360
+msgid "No toggle fields available"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:361
+msgid "Field group title is required"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:362
+msgid "copy"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:363
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:62
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:159
+msgid "or"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:364
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:395
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:457
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:148
+#, fuzzy
+msgid "Fields"
+msgstr "Champs de texte"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:365
+#, fuzzy
+msgid "Parent fields"
+msgstr "Champs de texte"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:366
+msgid "Sibling fields"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:367
+msgid "Hide / Show All"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:396
+#, fuzzy
+msgid "Location"
+msgstr "Documentation"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:459
+msgid "Show Field Key:"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:645
+#, fuzzy
+msgid "Front Page"
+msgstr "Page de contact"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:646
+#, fuzzy
+msgid "Posts Page"
+msgstr "Image de l'affiche"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:647
+msgid "Top Level Page (parent of 0)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:648
+msgid "Parent Page (has children)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:649
+msgid "Child Page (has parent)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:657
+#, fuzzy
+msgid "Default Template"
+msgstr "Par défaut"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:734
+msgid "Publish"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:735
+msgid "Pending Review"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:736
+msgid "Draft"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:737
+#, fuzzy
+msgid "Future"
+msgstr "Sélection"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:738
+#, fuzzy
+msgid "Private"
+msgstr "Activer"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:739
+#, fuzzy
+msgid "Revision"
+msgstr "Critiques"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:740
+msgid "Trash"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:753
+msgid "Super Admin"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:768
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:789
+#: ../theme-utilities/includes/acf/core/controllers/field_group.php:796
+#: ../theme-utilities/includes/acf/core/fields/file.php:186
+#: ../theme-utilities/includes/acf/core/fields/image.php:170
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:109
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:274
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:298
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:598
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:622
+#: ../theme-utilities/includes/acf/core/fields/user.php:229
+#: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:103
+#: ../wpgrade-core/vendor/redux3/inc/fields/border/field_border.php:112
+#: ../wpgrade-core/vendor/redux3/inc/fields/spacing/field_spacing.php:126
+msgid "All"
+msgstr "Tous"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:216
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:253
+msgid "Changelog"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:217
+msgid "See what's new in"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:217
+msgid "version"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:219
+#, fuzzy
+msgid "Resources"
+msgstr "Source"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:221
+#: ../wpgrade-core/vendor/redux3/options.php:210
+#, fuzzy
+msgid "Getting Started"
+msgstr "Démarrer une partie"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:222
+#, fuzzy
+msgid "Field Types"
+msgstr "Header Type"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:223
+#, fuzzy
+msgid "Functions"
+msgstr "Options"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:224
+#, fuzzy
+msgid "Actions"
+msgstr "Options"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:225
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:641
+#, fuzzy
+msgid "Filters"
+msgstr "Filtrez"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:226
+msgid "'How to' guides"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:227
+msgid "Tutorials"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:232
+msgid "Created by"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:244
+#, fuzzy
+msgid "Welcome to Advanced Custom Fields"
+msgstr "Ce thème nécessite sa propre version du Advanced Custom Fields."
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:245
+msgid "Thank you for updating to the latest version!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:245
+msgid "is more polished and enjoyable than ever before. We hope you like it."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:252
+msgid "What’s New"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:255
+#, fuzzy
+msgid "Download Add-ons"
+msgstr "Télécharger sauvegarde"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:309
+msgid "Activation codes have grown into plugins!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:310
+msgid ""
+"Add-ons are now activated by downloading and installing individual plugins. "
+"Although these plugins will not be hosted on the wordpress.org repository, "
+"each Add-on will continue to receive updates in the usual way."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:316
+msgid "All previous Add-ons have been successfully installed"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:320
+msgid "This website uses premium Add-ons which need to be downloaded"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:320
+msgid "Download your activated Add-ons"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:325
+msgid ""
+"This website does not use premium Add-ons and will not be affected by this "
+"change."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:335
+msgid "Easier Development"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:337
+#, fuzzy
+msgid "New Field Types"
+msgstr "Champs de texte"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:339
+#, fuzzy
+msgid "Taxonomy Field"
+msgstr "Text Field"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:340
+#, fuzzy
+msgid "User Field"
+msgstr "Text Field"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:341
+#, fuzzy
+msgid "Email Field"
+msgstr "Messagerie"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:342
+#, fuzzy
+msgid "Password Field"
+msgstr "Mot de passe"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:344
+#, fuzzy
+msgid "Custom Field Types"
+msgstr "Champs personnalisés"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:345
+msgid ""
+"Creating your own field type has never been easier! Unfortunately, version 3 "
+"field types are not compatible with version 4."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:346
+msgid "Migrating your field types is easy, please"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:346
+msgid "follow this tutorial"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:346
+#, fuzzy
+msgid "to learn more."
+msgstr "Lire la suite"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:348
+msgid "Actions &amp; Filters"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:349
+msgid ""
+"All actions & filters have received a major facelift to make customizing ACF "
+"even easier! Please"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:349
+msgid "read this guide"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:349
+msgid "to find the updated naming convention."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:351
+msgid "Preview draft is now working!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:352
+msgid "This bug has been squashed along with many other little critters!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:352
+msgid "See the full changelog"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:356
+#, fuzzy
+msgid "Important"
+msgstr "Importation"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:358
+#, fuzzy
+msgid "Database Changes"
+msgstr "Enregistrer les modifications"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:359
+msgid ""
+"Absolutely <strong>no</strong> changes have been made to the database "
+"between versions 3 and 4. This means you can roll back to version 3 without "
+"any issues."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:361
+msgid "Potential Issues"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:362
+msgid ""
+"Do to the sizable changes surounding Add-ons, field types and action/"
+"filters, your website may not operate correctly. It is important that you "
+"read the full"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:362
+msgid "Migrating from v3 to v4"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:362
+msgid "guide to view the full list of changes."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:365
+msgid "Really Important!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:365
+msgid ""
+"If you updated the ACF plugin without prior knowledge of such changes, "
+"please roll back to the latest"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:365
+msgid "version 3"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:365
+msgid "of this plugin."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:370
+msgid "Thank You"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:371
+msgid ""
+"A <strong>BIG</strong> thank you to everyone who has helped test the version "
+"4 beta and for all the support I have received."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:372
+msgid "Without you all, this release would not have been possible!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:376
+msgid "Changelog for"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:393
+#, fuzzy
+msgid "Learn more"
+msgstr "Lire la suite"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:399
+#, fuzzy
+msgid "Overview"
+msgstr "Critiques"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:401
+msgid ""
+"Previously, all Add-ons were unlocked via an activation code (purchased from "
+"the ACF Add-ons store). New to v4, all Add-ons act as separate plugins which "
+"need to be individually downloaded, installed and updated."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:403
+msgid ""
+"This page will assist you in downloading and installing each available Add-"
+"on."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:405
+msgid "Available Add-ons"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:407
+msgid "The following Add-ons have been detected as activated on this website."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:421
+#, fuzzy
+msgid "Activation Code"
+msgstr "Activer"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:463
+#, fuzzy
+msgid "Installation"
+msgstr "Installez"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:465
+msgid "For each Add-on available, please perform the following:"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:467
+msgid "Download the Add-on plugin (.zip file) to your desktop"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:468
+#, fuzzy
+msgid "Navigate to"
+msgstr "Font du navigation"
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:468
+msgid "Plugins > Add New > Upload"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:469
+msgid "Use the uploader to browse, select and install your Add-on (.zip file)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:470
+msgid ""
+"Once the plugin has been uploaded and installed, click the 'Activate Plugin' "
+"link"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:471
+msgid "The Add-on is now installed and activated!"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/field_groups.php:485
+msgid "Awesome. Let's get to work"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/input.php:63
+#, fuzzy
+msgid "Expand Details"
+msgstr "Masquer les détails"
+
+#: ../theme-utilities/includes/acf/core/controllers/input.php:64
+#, fuzzy
+msgid "Collapse Details"
+msgstr "Détail de la galerie"
+
+#: ../theme-utilities/includes/acf/core/controllers/input.php:67
+msgid "Validation Failed. One or more fields below are required."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/upgrade.php:86
+msgid "Upgrade"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/upgrade.php:139
+msgid "What's new"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/upgrade.php:150
+#, fuzzy
+msgid "credits"
+msgstr "Crédits"
+
+#: ../theme-utilities/includes/acf/core/controllers/upgrade.php:684
+msgid "Modifying field group options 'show on page'"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/upgrade.php:738
+msgid "Modifying field option 'taxonomy'"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/controllers/upgrade.php:835
+msgid "Moving user custom fields from wp_options to wp_usermeta'"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/_base.php:124
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:74
+msgid "Basic"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:19
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:319
+#, fuzzy
+msgid "Checkbox"
+msgstr "Option de case à cocher"
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:20
+#: ../theme-utilities/includes/acf/core/fields/radio.php:19
+#: ../theme-utilities/includes/acf/core/fields/select.php:19
+#: ../theme-utilities/includes/acf/core/fields/true_false.php:20
+msgid "Choice"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:146
+#: ../theme-utilities/includes/acf/core/fields/radio.php:147
+#: ../theme-utilities/includes/acf/core/fields/select.php:177
+msgid "Choices"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:147
+#: ../theme-utilities/includes/acf/core/fields/select.php:178
+msgid "Enter each choice on a new line."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:148
+#: ../theme-utilities/includes/acf/core/fields/select.php:179
+msgid "For more control, you may specify both a value and label like this:"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:149
+#: ../theme-utilities/includes/acf/core/fields/radio.php:153
+#: ../theme-utilities/includes/acf/core/fields/select.php:180
+msgid "red : Red"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:149
+#: ../theme-utilities/includes/acf/core/fields/radio.php:154
+#: ../theme-utilities/includes/acf/core/fields/select.php:180
+msgid "blue : Blue"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:166
+#: ../theme-utilities/includes/acf/core/fields/color_picker.php:89
+#: ../theme-utilities/includes/acf/core/fields/email.php:106
+#: ../theme-utilities/includes/acf/core/fields/number.php:116
+#: ../theme-utilities/includes/acf/core/fields/radio.php:196
+#: ../theme-utilities/includes/acf/core/fields/select.php:197
+#: ../theme-utilities/includes/acf/core/fields/text.php:116
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:96
+#: ../theme-utilities/includes/acf/core/fields/true_false.php:94
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:198
+#, fuzzy
+msgid "Default Value"
+msgstr "Par défaut"
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:167
+#: ../theme-utilities/includes/acf/core/fields/select.php:198
+msgid "Enter each default value on a new line"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:194
+#: ../theme-utilities/includes/acf/core/fields/radio.php:223
+#, fuzzy
+msgid "Vertical"
+msgstr "Article"
+
+#: ../theme-utilities/includes/acf/core/fields/checkbox.php:195
+#: ../theme-utilities/includes/acf/core/fields/radio.php:224
+msgid "Horizontal"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/color_picker.php:19
+msgid "Color Picker"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/color_picker.php:20
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:19
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:20
+msgid "jQuery"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/dummy.php:19
+msgid "Dummy"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:107
+#: ../theme-utilities/includes/acf/core/fields/number.php:117
+#: ../theme-utilities/includes/acf/core/fields/text.php:117
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:97
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:199
+msgid "Appears when creating a new post"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:123
+#: ../theme-utilities/includes/acf/core/fields/number.php:133
+#: ../theme-utilities/includes/acf/core/fields/password.php:105
+#: ../theme-utilities/includes/acf/core/fields/text.php:131
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:111
+msgid "Placeholder Text"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:124
+#: ../theme-utilities/includes/acf/core/fields/number.php:134
+#: ../theme-utilities/includes/acf/core/fields/password.php:106
+#: ../theme-utilities/includes/acf/core/fields/text.php:132
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:112
+msgid "Appears within the input"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:138
+#: ../theme-utilities/includes/acf/core/fields/number.php:148
+#: ../theme-utilities/includes/acf/core/fields/password.php:120
+#: ../theme-utilities/includes/acf/core/fields/text.php:146
+msgid "Prepend"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:139
+#: ../theme-utilities/includes/acf/core/fields/number.php:149
+#: ../theme-utilities/includes/acf/core/fields/password.php:121
+#: ../theme-utilities/includes/acf/core/fields/text.php:147
+msgid "Appears before the input"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:153
+#: ../theme-utilities/includes/acf/core/fields/number.php:163
+#: ../theme-utilities/includes/acf/core/fields/password.php:135
+#: ../theme-utilities/includes/acf/core/fields/text.php:161
+msgid "Append"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/email.php:154
+#: ../theme-utilities/includes/acf/core/fields/number.php:164
+#: ../theme-utilities/includes/acf/core/fields/password.php:136
+#: ../theme-utilities/includes/acf/core/fields/text.php:162
+msgid "Appears after the input"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:19
+msgid "File"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:20
+#: ../theme-utilities/includes/acf/core/fields/image.php:20
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:36
+#, fuzzy
+msgid "Content"
+msgstr "Après contenu"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:26
+#, fuzzy
+msgid "Select File"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:27
+#, fuzzy
+msgid "Edit File"
+msgstr "Éditer"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:28
+msgid "Update File"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:29
+#: ../theme-utilities/includes/acf/core/fields/image.php:30
+msgid "uploaded to this post"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:123
+#, fuzzy
+msgid "No File Selected"
+msgstr "Aucun média sélectionné"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:123
+#, fuzzy
+msgid "Add File"
+msgstr "Ajouter un nouveau"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:153
+#: ../theme-utilities/includes/acf/core/fields/image.php:118
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:367
+msgid "Return Value"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:164
+#, fuzzy
+msgid "File Object"
+msgstr "Options"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:165
+#, fuzzy
+msgid "File URL"
+msgstr "URL du fichier MP3"
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:166
+msgid "File ID"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:175
+#: ../theme-utilities/includes/acf/core/fields/image.php:158
+msgid "Library"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/file.php:187
+#: ../theme-utilities/includes/acf/core/fields/image.php:171
+#, fuzzy
+msgid "Uploaded to post"
+msgstr "Téléchargez Option"
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:18
+#, fuzzy
+msgid "Google Map"
+msgstr "Lien vers Google Maps"
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:33
+msgid "Locating"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:34
+msgid "Sorry, this browser does not support geolocation"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:120
+#, fuzzy
+msgid "Clear location"
+msgstr "Cats Choisissez l'option"
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:125
+msgid "Find current location"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:126
+msgid "Search for address..."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:162
+msgid "Center"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:163
+msgid "Center the initial map"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:199
+msgid "Zoom"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:200
+msgid "Set the initial zoom level"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:217
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:257
+#, fuzzy
+msgid "Height"
+msgstr "Auto Hauteur"
+
+#: ../theme-utilities/includes/acf/core/fields/google-map.php:218
+msgid "Customise the map height"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:19
+#, fuzzy
+msgid "Image"
+msgstr "Images"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:27
+#, fuzzy
+msgid "Select Image"
+msgstr "Sélectionner un formulaire"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:28
+#, fuzzy
+msgid "Edit Image"
+msgstr "Pas d'image"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:29
+#, fuzzy
+msgid "Update Image"
+msgstr "Image de l'affiche"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:83
+#: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:31
+#: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:35
+#: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:38
+#: ../wpgrade-core/vendor/redux3/inc/fields/background/field_background.php:313
+#: ../wpgrade-core/vendor/redux3/inc/fields/media/field_media.php:155
+#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:74
+#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:78
+#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:81
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:128
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:192
+msgid "Remove"
+msgstr "Supprimer"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:90
+#, fuzzy
+msgid "No image selected"
+msgstr "Aucun média sélectionné"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:90
+#, fuzzy
+msgid "Add Image"
+msgstr "Pas d'image"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:119
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:573
+msgid "Specify the returned value on front end"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:129
+msgid "Image Object"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:130
+#, fuzzy
+msgid "Image URL"
+msgstr "Images"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:131
+#, fuzzy
+msgid "Image ID"
+msgstr "Images"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:139
+#, fuzzy
+msgid "Preview Size"
+msgstr "Poster Score des commentaires"
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:140
+msgid "Shown when entering data"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/image.php:159
+msgid "Limit the media library choice"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/message.php:71
+msgid "Text &amp; HTML entered here will appear inline with the fields"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/message.php:72
+msgid "Please note that all text will first be passed through the wp function "
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/number.php:19
+msgid "Number"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/number.php:178
+msgid "Minimum Value"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/number.php:194
+msgid "Maximum Value"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/number.php:210
+#, fuzzy
+msgid "Step Size"
+msgstr "Taille"
+
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:18
+#, fuzzy
+msgid "Page Link"
+msgstr "Page %s"
+
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:19
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:19
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:19
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:19
+#: ../theme-utilities/includes/acf/core/fields/user.php:19
+msgid "Relational"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:103
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:268
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:592
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:671
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:75
+#, fuzzy
+msgid "Post Type"
+msgstr "Catégorie"
+
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:127
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:317
+#: ../theme-utilities/includes/acf/core/fields/select.php:214
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:333
+#: ../theme-utilities/includes/acf/core/fields/user.php:275
+msgid "Allow Null?"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/page_link.php:148
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:338
+#: ../theme-utilities/includes/acf/core/fields/select.php:233
+#, fuzzy
+msgid "Select multiple values?"
+msgstr "Sélectionner les champs"
+
+#: ../theme-utilities/includes/acf/core/fields/password.php:19
+#: ../theme-utilities/includes/functions/password-protection.php:14
+#: ../woocommerce/myaccount/form-login.php:33
+#: ../woocommerce/myaccount/form-login.php:85
+#: ../woocommerce/shop/form-login.php:24
+#: ../wpgrade-core/vendor/redux3/inc/fields/password/field_password.php:55
+msgid "Password"
+msgstr "Mot de passe"
+
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:18
+#, fuzzy
+msgid "Post Object"
+msgstr "Options"
+
+#: ../theme-utilities/includes/acf/core/fields/post_object.php:292
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:616
+msgid "Filter from Taxonomy"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:18
+#, fuzzy
+msgid "Radio Button"
+msgstr "Option Radio"
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:105
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:91
+msgid "Other"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:148
+msgid "Enter your choices one per line"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:150
+msgid "Red"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:151
+msgid "Blue"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:175
+msgid "Add 'other' choice to allow for custom values"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/radio.php:187
+msgid "Save 'other' values to the field's choices"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:18
+msgid "Relationship"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:29
+msgid "Maximum values reached ( {max} values )"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:439
+msgid "Filter by post type"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:572
+#, fuzzy
+msgid "Return Format"
+msgstr "Poster formats"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:583
+#, fuzzy
+msgid "Post Objects"
+msgstr "Projets"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:584
+#, fuzzy
+msgid "Post IDs"
+msgstr "Poster formats"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:650
+msgid "Search"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:651
+#, fuzzy
+msgid "Post Type Select"
+msgstr "Post Type Choisissez l'option"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:659
+#, fuzzy
+msgid "Elements"
+msgstr "Placement"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:660
+msgid "Selected elements will be displayed in each result"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:669
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:106
+#, fuzzy
+msgid "Featured Image"
+msgstr "Sélection"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:670
+#, fuzzy
+msgid "Post Title"
+msgstr "Titre"
+
+#: ../theme-utilities/includes/acf/core/fields/relationship.php:682
+msgid "Maximum posts"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/select.php:18
+#: ../theme-utilities/includes/acf/core/fields/select.php:109
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:324
+#: ../theme-utilities/includes/acf/core/fields/user.php:266
+#, fuzzy
+msgid "Select"
+msgstr "- Sélectionner -"
+
+#: ../theme-utilities/includes/acf/core/fields/tab.php:19
+msgid "Tab"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/tab.php:68
+msgid ""
+"Use \"Tab Fields\" to better organize your edit screen by grouping your "
+"fields together under separate tab headings."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/tab.php:69
+msgid ""
+"All the fields following this \"tab field\" (or until another \"tab field\" "
+"is defined) will be grouped together."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/tab.php:70
+msgid "Use multiple tabs to divide your fields into sections."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:18
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:278
+msgid "Taxonomy"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:222
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:231
+msgid "None"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:318
+#: ../theme-utilities/includes/acf/core/fields/user.php:260
+msgid "Multiple Values"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:320
+#: ../theme-utilities/includes/acf/core/fields/user.php:262
+#, fuzzy
+msgid "Multi Select"
+msgstr "Choisissez l'option multi"
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:322
+#: ../theme-utilities/includes/acf/core/fields/user.php:264
+msgid "Single Value"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:323
+#, fuzzy
+msgid "Radio Buttons"
+msgstr "Option Radio"
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:352
+msgid "Load & Save Terms to Post"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:360
+msgid ""
+"Load value based on the post's terms and update the post's terms on save"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:377
+msgid "Term Object"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/taxonomy.php:378
+msgid "Term ID"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:19
+msgid "Text"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:176
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:141
+msgid "Formatting"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:177
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:142
+msgid "Effects value on front end"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:186
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:151
+#, fuzzy
+msgid "No formatting"
+msgstr "Theme Information"
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:187
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:153
+msgid "Convert HTML into tags"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:195
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:126
+msgid "Character Limit"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/text.php:196
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:127
+msgid "Leave blank for no limit"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:19
+#, fuzzy
+msgid "Text Area"
+msgstr "Article suivant"
+
+#: ../theme-utilities/includes/acf/core/fields/textarea.php:152
+msgid "Convert new lines into &lt;br /&gt; tags"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/true_false.php:19
+msgid "True / False"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/true_false.php:80
+msgid "eg. Show extra content"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/user.php:18
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:94
+#, fuzzy
+msgid "User"
+msgstr "Nom d'utilisateur"
+
+#: ../theme-utilities/includes/acf/core/fields/user.php:224
+#, fuzzy
+msgid "Filter by role"
+msgstr "Filtrez"
+
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:35
+msgid "Wysiwyg Editor"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:213
+msgid "Toolbar"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/wysiwyg.php:245
+msgid "Show Media Upload Buttons?"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:19
+msgid "Date Picker"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:55
+msgid "Done"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:56
+#: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:100
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:59
+msgid "Show a different month"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:126
+msgid "Save format"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:127
+msgid ""
+"This format will determin the value saved to the database and returned via "
+"the API"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:128
+msgid "\"yymmdd\" is the most versatile save format. Read more about"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:128
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:144
+msgid "jQuery date formats"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:142
+#, fuzzy
+msgid "Display format"
+msgstr "Afficher vos informations de contact"
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:143
+msgid "This format will be seen by the user when entering a value"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:144
+msgid ""
+"\"dd/mm/yy\" or \"mm/dd/yy\" are the most used display formats. Read more "
+"about"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/fields/date_picker/date_picker.php:158
+msgid "Week Starts On"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:58
+msgid "Field type does not exist"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:78
+msgid "Field Key"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:90
+msgid ""
+"No fields. Click the <strong>+ Add Field</strong> button to create your "
+"first field."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:128
+msgid "This is the name which will appear on the EDIT page"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:174
+msgid "Instructions for authors. Shown when submitting data"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_fields.php:317
+#, fuzzy
+msgid "+ Add Field"
+msgstr "Ajouter un nouveau"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:48
+msgid "Rules"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:49
+msgid ""
+"Create a set of rules to determine which edit screens will use these "
+"advanced custom fields"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:60
+msgid "Show this field group if"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:76
+#, fuzzy
+msgid "Logged in User Type"
+msgstr "Header Type"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:78
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:79
+#: ../woocommerce/shop/breadcrumb.php:205
+#, fuzzy
+msgid "Page"
+msgstr "Pages:"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:80
+#, fuzzy
+msgid "Page Type"
+msgstr "Header Type"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:81
+msgid "Page Parent"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:82
+msgid "Page Template"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:84
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:85
+msgid "Post"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:86
+#, fuzzy
+msgid "Post Category"
+msgstr "La catégorie de portefeuille"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:87
+#, fuzzy
+msgid "Post Format"
+msgstr "Poster formats"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:88
+#, fuzzy
+msgid "Post Status"
+msgstr "Poster formats"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:89
+msgid "Post Taxonomy"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:92
+#, fuzzy
+msgid "Attachment"
+msgstr "Importer les pièces-jointes"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:93
+msgid "Taxonomy Term"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:146
+#, fuzzy
+msgid "and"
+msgstr "Étendre"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_location.php:161
+msgid "Add rule group"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:25
+msgid "Order No."
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:26
+msgid "Field groups are created in order <br />from lowest to highest"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:42
+#, fuzzy
+msgid "Position"
+msgstr "Pagination"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:52
+msgid "High (after title)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:53
+#, fuzzy
+msgid "Normal (after content)"
+msgstr "Après contenu"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:54
+#, fuzzy
+msgid "Side"
+msgstr "Barre latérale"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:74
+msgid "Seamless (no metabox)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:75
+msgid "Standard (WP metabox)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:84
+msgid "Hide on screen"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:85
+msgid "<b>Select</b> items to <b>hide</b> them from the edit screen"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:86
+msgid ""
+"If multiple field groups appear on an edit screen, the first field group's "
+"options will be used. (the one with the lowest order number)"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:96
+msgid "Permalink"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:97
+msgid "Content Editor"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:98
+#, fuzzy
+msgid "Excerpt"
+msgstr "Extrait longueur"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:100
+msgid "Discussion"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:101
+#, fuzzy
+msgid "Comments"
+msgstr "Commentaire"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:102
+#, fuzzy
+msgid "Revisions"
+msgstr "Critiques"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:103
+msgid "Slug"
+msgstr ""
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:105
+#, fuzzy
+msgid "Format"
+msgstr "Poster formats"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:108
+#: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:222
+msgid "Tags"
+msgstr "Tags"
+
+#: ../theme-utilities/includes/acf/core/views/meta_box_options.php:109
+msgid "Send Trackbacks"
+msgstr ""
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_dribbble_widget.php:7
 msgid "Dribbble Widget"
@@ -2039,10 +4286,6 @@ msgstr "Flickr Shots"
 #: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:218
 msgid "Username or RSS url"
 msgstr "Nom d'utilisateur ou URL du flux RSS"
-
-#: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:222
-msgid "Tags"
-msgstr "Tags"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_comments.php:9
 msgid "The latest comments"
@@ -2111,10 +4354,6 @@ msgstr ""
 "et connecté. Elle exige également le module Statistiques Jetpack doit être "
 "activé."
 
-#: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:100
-msgid "Today"
-msgstr "Aujourd'hui"
-
 #: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:101
 msgid "Week"
 msgstr "Semaine"
@@ -2122,12 +4361,6 @@ msgstr "Semaine"
 #: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:102
 msgid "Month"
 msgstr "Mois"
-
-#: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:103
-#: ../wpgrade-core/vendor/redux3/inc/fields/border/field_border.php:112
-#: ../wpgrade-core/vendor/redux3/inc/fields/spacing/field_spacing.php:126
-msgid "All"
-msgstr "Tous"
 
 #: ../theme-utilities/includes/classes/widgets/wpgrade_popular_posts.php:164
 msgid ""
@@ -2238,14 +4471,6 @@ msgid ""
 msgstr ""
 "Cet article est protégé par mot. Pour le lire, veuillez saisir votre mot de "
 "passe ci-dessous:"
-
-#: ../theme-utilities/includes/functions/password-protection.php:14
-#: ../woocommerce/myaccount/form-login.php:33
-#: ../woocommerce/myaccount/form-login.php:85
-#: ../woocommerce/shop/form-login.php:24
-#: ../wpgrade-core/vendor/redux3/inc/fields/password/field_password.php:55
-msgid "Password"
-msgstr "Mot de passe"
 
 #: ../theme-utilities/includes/functions/password-protection.php:42
 msgid "Sorry, your password didn’t match"
@@ -2542,23 +4767,23 @@ msgstr ""
 "et l'importation."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:167
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:85
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:75
 msgid "Install Required Plugins"
 msgstr "Installer des plugins obligatoires"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:168
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:86
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:76
 msgid "Install Plugins"
 msgstr "Installer des plugins"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:169
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:87
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:77
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Installation Plugin: %s"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:171
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:89
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:79
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -2566,7 +4791,7 @@ msgstr[0] "Ce thème nécessite le plugin suivant: %1$s ."
 msgstr[1] "Ce thème nécessite les plugins suivants: %1$s ."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:172
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:90
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:80
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -2588,7 +4813,7 @@ msgstr[0] "Ce thème nécessite le plugin suivant: %1$s ."
 msgstr[1] "Ce thème nécessite les plugins suivants soient mis à jour: %1$s ."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:175
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:91
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:81
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -2608,7 +4833,7 @@ msgstr[1] ""
 "l'obtention des plugins installés."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:176
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:92
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:82
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -2616,7 +4841,7 @@ msgstr[0] "Le plugin requis suivant est actuellement inactif: %1$s ."
 msgstr[1] "Les plugins requis suivants sont actuellement inactives: %1$s ."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:177
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:93
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:83
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -2625,7 +4850,7 @@ msgstr[1] ""
 "Les plugins recommandées suivantes sont actuellement inactives: %1$s ."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:178
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:94
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:84
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -2645,7 +4870,7 @@ msgstr[1] ""
 "des plugins activés."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:179
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:95
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:85
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -2661,7 +4886,7 @@ msgstr[1] ""
 "afin d'assurer une compatibilité maximale avec ce thème: %1$s ."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:180
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:96
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:86
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -2681,7 +4906,7 @@ msgstr[1] ""
 "l'obtention des plugins mis à jour."
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:181
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:97
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:87
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Commencez l'installation plug-in"
@@ -2694,7 +4919,7 @@ msgstr[0] "Commencer la mise à jour plug-in"
 msgstr[1] "Commencer la mise à jour des plugins"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:183
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:98
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:88
 msgid "Activate installed plugin"
 msgid_plural "Activate installed plugins"
 msgstr[0] "Activer plug-in installé"
@@ -2702,13 +4927,13 @@ msgstr[1] "Activer les plugins installés"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:184
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:520
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:99
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:89
 msgid "Return to Required Plugins Installer"
 msgstr "Retour à Plugins requis Installer"
 
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:185
 #: ../theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:1918
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:100
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:90
 msgid "Plugin activated successfully."
 msgstr "Plugin activé avec succès."
 
@@ -2911,11 +5136,11 @@ msgstr "Toutes les installations ont été achevées."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installation Plugin %1$s ( %2$d / %3$d )"
 
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:88
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:78
 msgid "Something went wrong with the plugin API."
 msgstr "Quelque chose n'allait pas avec l'API de plugin."
 
-#: ../theme-utilities/includes/required-plugins/required-plugins.php:101
+#: ../theme-utilities/includes/required-plugins/required-plugins.php:91
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr "Tous les plugins sont installés et activés avec succès. %s"
@@ -3844,11 +6069,6 @@ msgstr ""
 msgid "Author:"
 msgstr "Auteur"
 
-#: ../woocommerce/shop/breadcrumb.php:205
-#, fuzzy
-msgid "Page"
-msgstr "Pages:"
-
 #: ../woocommerce/single-product/meta.php:19
 msgid "SKU:"
 msgstr ""
@@ -4039,136 +6259,79 @@ msgstr "L'API \"set\" est un paramètre obligatoire."
 msgid "The Envato Marketplace \"item ID\" is a required parameter."
 msgstr "Le marché Envato \"item ID\" est un paramètre obligatoire."
 
-#: ../wpgrade-core/vendor/redux3/framework.php:280
-#, fuzzy, php-format
-msgid "Options panel created using %1$s"
-msgstr "panneau Options créé à l'aide"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:62
+#, php-format
+msgid ""
+"<span id=\"footer-thankyou\">Options panel created using <a href=\"%s\" "
+"target=\"_blank\">Redux Framework</a> v%s</span>"
+msgstr ""
+"<span id=\"footer-thankyou\">Panneau Options créé à l'aide <a href=\"%s\" "
+"target=\"_blank\">Redux Framework</a> v%s</span>"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:280
-msgid "Redux Framework"
-msgstr "Redux cadre"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:935
-#: ../wpgrade-core/vendor/redux3/framework.php:936
-#: ../wpgrade-core/vendor/redux3/framework.php:1964
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:250
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:251
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:694
+#: ../wpgrade-core/vendor/redux3/framework.php:1048
+#: ../wpgrade-core/vendor/redux3/framework.php:1049
+#: ../wpgrade-core/vendor/redux3/framework.php:2354
 msgid "Import / Export"
 msgstr "Importer/Exporter"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:946
-#: ../wpgrade-core/vendor/redux3/framework.php:947
-#: ../wpgrade-core/vendor/redux3/framework.php:1980
-#: ../wpgrade-core/vendor/redux3/framework.php:2078
-#, fuzzy
-msgid "Options Object"
-msgstr "Options"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:270
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:271
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:725
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:799
+msgid "Dev Mode Info"
+msgstr "Dev Info mode"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:957
-#: ../wpgrade-core/vendor/redux3/framework.php:958
-#: ../wpgrade-core/vendor/redux3/framework.php:1994
-#: ../wpgrade-core/vendor/redux3/framework.php:2098
-msgid "System Info"
-msgstr "System Info"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1243
-#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:338
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr ""
-"Vous avez des modifications qui ne sont pas sauvés. Aimeriez-vous pour les "
-"sauver maintenant?"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1244
-#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:339
-#, fuzzy
-msgid "Are you sure? Resetting will lose all custom values."
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:362
+msgid "Are you sure? You will lose all custom values."
 msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
 
-#: ../wpgrade-core/vendor/redux3/framework.php:1245
-#, fuzzy
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1246
-#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:340
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-"Vos options actuelles seront remplacées par les valeurs de cette "
-"présélection. Voulez-vous procéder?"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1824
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Avertissement-Ce panneau d'options ne fonctionnera pas correctement sans "
-"javascript!"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1878
-msgid "Expand"
-msgstr "Étendre"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1880
-#: ../wpgrade-core/vendor/redux3/framework.php:2139
-msgid "Save Changes"
-msgstr "Enregistrer les modifications"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1882
-#: ../wpgrade-core/vendor/redux3/framework.php:2141
-#, fuzzy
-msgid "Reset Section"
-msgstr "Cats Choisissez l'option"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1884
-#: ../wpgrade-core/vendor/redux3/framework.php:2143
-msgid "Reset All"
-msgstr ""
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1887
-#: ../wpgrade-core/vendor/redux3/framework.php:2146
-msgid "Working..."
-msgstr "De travail ..."
-
-#: ../wpgrade-core/vendor/redux3/framework.php:1894
-#, fuzzy
-msgid "Settings Imported!"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:644
+msgid "<strong>Settings Imported!</strong>"
 msgstr "<strong>Paramètres importés</strong>"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:1896
-#, fuzzy
-msgid "Settings Saved!"
-msgstr "Démarrer une partie"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:646
+msgid "<strong>Settings Saved!</strong>"
+msgstr "<strong>Paramètres ont été sauvés!</strong>"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:1900
-#, fuzzy
-msgid "Settings have changed, you should save them!"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:654
+msgid "<strong>Settings have changed, you should save them!</strong>"
 msgstr "<strong>Paramètres ont changé, vous devez les sauver!</strong>"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:1901
-msgid "error(s) were found!"
-msgstr "erreur (s) ont été trouvés!"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:655
+msgid "<strong><span></span> error(s) were found!</strong>"
+msgstr "<strong><span></ span> erreur (s) ont été trouvé!</strong>"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:1902
-msgid "warning(s) were found!"
-msgstr "Avertissement (s) ont été trouvés!"
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:656
+msgid "<strong><span></span> warning(s) were found!</strong>"
+msgstr "<strong><span></ span> avertissement (s) ont été trouvé!</strong>"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2031
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:743
+#: ../wpgrade-core/vendor/redux3/framework.php:2421
 msgid "Import / Export Options"
 msgstr "Import / Export options"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2032
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:744
+#: ../wpgrade-core/vendor/redux3/framework.php:2422
 msgid "Import Options"
 msgstr "Options d'importation"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2033
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:745
+#: ../wpgrade-core/vendor/redux3/framework.php:2423
 #: ../wpgrade-core/vendor/redux3/inc/fields/import/field_import.php:67
 msgid "Import from file"
 msgstr "Importer un fichier"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2033
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:745
+#: ../wpgrade-core/vendor/redux3/framework.php:2423
 #: ../wpgrade-core/vendor/redux3/inc/fields/import/field_import.php:68
 msgid "Import from URL"
 msgstr "Importer à partir d'URL"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2038
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:750
+#: ../wpgrade-core/vendor/redux3/framework.php:2432
 #: ../wpgrade-core/vendor/redux3/inc/fields/import/field_import.php:74
 msgid ""
 "Input your backup file below and hit Import to restore your sites options "
@@ -4177,7 +6340,8 @@ msgstr ""
 "Saisissez votre fichier de sauvegarde ci-dessous et cliquez sur Importer "
 "pour restaurer vos options de sites à partir d'une sauvegarde."
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2048
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:760
+#: ../wpgrade-core/vendor/redux3/framework.php:2446
 #: ../wpgrade-core/vendor/redux3/inc/fields/import/field_import.php:84
 msgid ""
 "Input the URL to another sites options set and hit Import to load the "
@@ -4186,12 +6350,224 @@ msgstr ""
 "Entrée de l'URL à un autre choix des sites mis et a frappé Importer pour "
 "charger les options de ce site."
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2055
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:767
+#: ../wpgrade-core/vendor/redux3/framework.php:2457
 #: ../wpgrade-core/vendor/redux3/inc/fields/import/field_import.php:92
 msgid "Import"
 msgstr "Importation"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2055
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:767
+msgid ""
+"WARNING! This will overwrite any existing options, please proceed with "
+"caution!"
+msgstr ""
+"ATTENTION! Cela va écraser toutes les options existantes, veuillez procéder "
+"avec prudence!"
+
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:770
+#: ../wpgrade-core/vendor/redux3/framework.php:2460
+msgid "Export Options"
+msgstr "Options d'exportation"
+
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:772
+msgid ""
+"Here you can download your current option settings. Keep this safe as you "
+"can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+"Ici vous pouvez télécharger vos paramètres d'options actuels. Gardez cette "
+"sûrs que vous pouvez l'utiliser comme une sauvegarde en cas de problème, ou "
+"vous pouvez l'utiliser pour restaurer vos paramètres sur ce site (ou tout "
+"autre site)."
+
+#: ../wpgrade-core/vendor/redux2/options/defaults.php:823
+msgid "Reset to Defaults"
+msgstr "Rétablir les paramètres par défaut"
+
+#: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:28
+#: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:33
+msgid "From:"
+msgstr "de:"
+
+#: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:29
+#: ../wpgrade-core/vendor/redux2/options/fields/color_gradient/field_color_gradient.php:35
+msgid "To:"
+msgstr "Vers:"
+
+#: ../wpgrade-core/vendor/redux2/options/fields/multi_text/field_multi_text.php:40
+#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:52
+msgid "Add More"
+msgstr "Ajouter plus"
+
+#: ../wpgrade-core/vendor/redux2/options/fields/upload/field_upload.php:30
+#: ../wpgrade-core/vendor/redux3/inc/fields/background/field_background.php:307
+#: ../wpgrade-core/vendor/redux3/inc/fields/media/field_media.php:149
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:121
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:190
+msgid "Upload"
+msgstr "Télécharger"
+
+#: ../wpgrade-core/vendor/redux2/options/fields/upload/field_upload.php:31
+msgid "Remove Upload"
+msgstr "Retirer Téléchargez"
+
+#: ../wpgrade-core/vendor/redux2/options/validation/color/validation_color.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/color/validation_color.php:15
+#: ../wpgrade-core/vendor/redux3/inc/validation/color_rgba/validation_color_rgba.php:15
+#: ../wpgrade-core/vendor/redux3/inc/validation/colorrgba/validation_colorrgba.php:15
+msgid "This field must be a valid color value."
+msgstr "Ce champ doit être une valeur de couleur valide."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/comma_numeric/validation_comma_numeric.php:13
+msgid ""
+"You must provide a comma seperated list of numerical values for this option."
+msgstr ""
+"Vous devez fournir une liste séparé par des virgules de valeurs numériques "
+"pour cette option."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/date/validation_date.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/date/validation_date.php:15
+msgid "This field must be a valid date."
+msgstr "Ce champ doit être une date valide."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/email/validation_email.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/email/validation_email.php:15
+msgid "You must provide a valid email for this option."
+msgstr "Vous devez fournir une adresse email valide pour cette option."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/no_html/validation_no_html.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+"Vous ne devez pas entrer n'importe quel code HTML dans ce domaine, toutes "
+"les balises HTML ont été supprimés."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/no_special_chars/validation_no_special_chars.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/no_special_chars/validation_no_special_chars.php:15
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+"Vous ne devez pas entrer des caractères spéciaux dans ce domaine, tous les "
+"caractères spéciaux ont été supprimés."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/numeric/validation_numeric.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/numeric/validation_numeric.php:15
+msgid "You must provide a numerical value for this option."
+msgstr "Vous devez fournir une valeur numérique pour cette option."
+
+#: ../wpgrade-core/vendor/redux2/options/validation/url/validation_url.php:13
+#: ../wpgrade-core/vendor/redux3/inc/validation/url/validation_url.php:15
+msgid "You must provide a valid URL for this option."
+msgstr "Vous devez fournir une adresse URL valide pour cette option."
+
+#: ../wpgrade-core/vendor/redux3/framework.php:297
+#, fuzzy, php-format
+msgid "Options panel created using %1$s"
+msgstr "panneau Options créé à l'aide"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:297
+msgid "Redux Framework"
+msgstr "Redux cadre"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:1060
+#: ../wpgrade-core/vendor/redux3/framework.php:1061
+#: ../wpgrade-core/vendor/redux3/framework.php:2370
+#: ../wpgrade-core/vendor/redux3/framework.php:2485
+#, fuzzy
+msgid "Options Object"
+msgstr "Options"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:1072
+#: ../wpgrade-core/vendor/redux3/framework.php:1073
+#: ../wpgrade-core/vendor/redux3/framework.php:2384
+#: ../wpgrade-core/vendor/redux3/framework.php:2503
+msgid "System Info"
+msgstr "System Info"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:1380
+#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:341
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+"Vous avez des modifications qui ne sont pas sauvés. Aimeriez-vous pour les "
+"sauver maintenant?"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:1381
+#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:342
+#, fuzzy
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
+
+#: ../wpgrade-core/vendor/redux3/framework.php:1382
+#, fuzzy
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
+
+#: ../wpgrade-core/vendor/redux3/framework.php:1383
+#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:343
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+"Vos options actuelles seront remplacées par les valeurs de cette "
+"présélection. Voulez-vous procéder?"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2221
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Avertissement-Ce panneau d'options ne fonctionnera pas correctement sans "
+"javascript!"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2283
+msgid "Expand"
+msgstr "Étendre"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2285
+#: ../wpgrade-core/vendor/redux3/framework.php:2553
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2287
+#: ../wpgrade-core/vendor/redux3/framework.php:2555
+#, fuzzy
+msgid "Reset Section"
+msgstr "Cats Choisissez l'option"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2289
+#: ../wpgrade-core/vendor/redux3/framework.php:2557
+msgid "Reset All"
+msgstr ""
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2292
+#: ../wpgrade-core/vendor/redux3/framework.php:2560
+msgid "Working..."
+msgstr "De travail ..."
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2303
+#, fuzzy
+msgid "Settings Imported!"
+msgstr "<strong>Paramètres importés</strong>"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2309
+#, fuzzy
+msgid "Settings Saved!"
+msgstr "Démarrer une partie"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2316
+#, fuzzy
+msgid "Settings have changed, you should save them!"
+msgstr "<strong>Paramètres ont changé, vous devez les sauver!</strong>"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2317
+msgid "error(s) were found!"
+msgstr "erreur (s) ont été trouvés!"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2318
+msgid "warning(s) were found!"
+msgstr "Avertissement (s) ont été trouvés!"
+
+#: ../wpgrade-core/vendor/redux3/framework.php:2457
 #: ../wpgrade-core/vendor/redux3/inc/fields/import/field_import.php:92
 #, fuzzy
 msgid ""
@@ -4201,11 +6577,7 @@ msgstr ""
 "ATTENTION! Cela va écraser toutes les options existantes, veuillez procéder "
 "avec prudence!"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2058
-msgid "Export Options"
-msgstr "Options d'exportation"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:2060
+#: ../wpgrade-core/vendor/redux3/framework.php:2466
 #: ../wpgrade-core/vendor/redux3/inc/fields/export/field_export.php:66
 msgid ""
 "Here you can copy/download your current option settings. Keep this safe as "
@@ -4217,23 +6589,17 @@ msgstr ""
 "problème, ou vous pouvez l'utiliser pour restaurer vos paramètres sur ce "
 "site (ou tout autre site)."
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2064
+#: ../wpgrade-core/vendor/redux3/framework.php:2471
 #: ../wpgrade-core/vendor/redux3/inc/fields/export/field_export.php:69
 msgid "Copy"
 msgstr "Copier"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2064
-#: ../wpgrade-core/vendor/redux3/inc/fields/export/field_export.php:69
-#, fuzzy
-msgid "Download"
-msgstr "Télécharger sauvegarde"
-
-#: ../wpgrade-core/vendor/redux3/framework.php:2064
+#: ../wpgrade-core/vendor/redux3/framework.php:2471
 #: ../wpgrade-core/vendor/redux3/inc/fields/export/field_export.php:69
 msgid "Copy Link"
 msgstr "Copier le lien"
 
-#: ../wpgrade-core/vendor/redux3/framework.php:2087
+#: ../wpgrade-core/vendor/redux3/framework.php:2492
 msgid "Show Object in Javascript Console Object"
 msgstr "Afficher l'objet dans la console JavaScript Object"
 
@@ -4285,11 +6651,6 @@ msgstr "Thème information 2"
 #: ../wpgrade-core/vendor/redux3/options.php:196
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr "<p>Ceci est le contenu de la barre latérale, HTML est autorisé.</p>"
-
-#: ../wpgrade-core/vendor/redux3/options.php:210
-#, fuzzy
-msgid "Getting Started"
-msgstr "Démarrer une partie"
 
 #: ../wpgrade-core/vendor/redux3/options.php:211
 msgid ""
@@ -4563,10 +6924,6 @@ msgstr "Sélect option"
 msgid "Multi Select Option"
 msgstr "Choisissez l'option multi"
 
-#: ../wpgrade-core/vendor/redux3/options.php:508
-msgid "Custom Fields"
-msgstr "Champs personnalisés"
-
 #: ../wpgrade-core/vendor/redux3/options.php:514
 #, fuzzy
 msgid "Color Option"
@@ -4748,7 +7105,7 @@ msgstr ""
 "ce domaine. Assurez-vous de définir la fonction cependant."
 
 #: ../wpgrade-core/vendor/redux3/options.php:687
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:568
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:631
 msgid "Google Webfonts"
 msgstr "Google polices WebFonts"
 
@@ -4789,19 +7146,19 @@ msgstr ""
 msgid "Documentation"
 msgstr "Documentation"
 
-#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:369
+#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:372
 #, fuzzy
 msgid "You have changes that are not saved.  Would you like to save them now?"
 msgstr ""
 "Vous avez des modifications qui ne sont pas sauvés. Aimeriez-vous pour les "
 "sauver maintenant?"
 
-#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:370
+#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:373
 #, fuzzy
 msgid "Are you sure?  Resetting will lose all custom values."
 msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
 
-#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:371
+#: ../wpgrade-core/vendor/redux3/extensions/customizer/extension_customizer.php:374
 #, fuzzy
 msgid ""
 "Your current options will be replaced with the values of this preset.  Would "
@@ -4919,27 +7276,10 @@ msgid "Background Position"
 msgstr ""
 
 #: ../wpgrade-core/vendor/redux3/inc/fields/background/field_background.php:273
-#: ../wpgrade-core/vendor/redux3/inc/fields/media/field_media.php:116
+#: ../wpgrade-core/vendor/redux3/inc/fields/media/field_media.php:115
 #, fuzzy
 msgid "No media selected"
 msgstr "Aucun média sélectionné"
-
-#: ../wpgrade-core/vendor/redux3/inc/fields/background/field_background.php:307
-#: ../wpgrade-core/vendor/redux3/inc/fields/media/field_media.php:150
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:118
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:181
-msgid "Upload"
-msgstr "Télécharger"
-
-#: ../wpgrade-core/vendor/redux3/inc/fields/background/field_background.php:313
-#: ../wpgrade-core/vendor/redux3/inc/fields/media/field_media.php:156
-#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:74
-#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:77
-#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:80
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:124
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:183
-msgid "Remove"
-msgstr "Supprimer"
 
 #: ../wpgrade-core/vendor/redux3/inc/fields/border/field_border.php:125
 #: ../wpgrade-core/vendor/redux3/inc/fields/spacing/field_spacing.php:150
@@ -5006,21 +7346,16 @@ msgstr "Modifier la galerie"
 msgid "Clear Gallery"
 msgstr "Nouvelle galerie"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:71
+#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:76
 #, fuzzy
 msgid "New"
 msgstr "Ajouter un nouveau"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:84
+#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:89
 msgid "New "
 msgstr ""
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:133
-#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:195
-msgid "Delete"
-msgstr "Supprimer"
-
-#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:200
+#: ../wpgrade-core/vendor/redux3/inc/fields/group/field_group.php:205
 #, fuzzy
 msgid "Add"
 msgstr "Ajouter un nouveau"
@@ -5048,106 +7383,85 @@ msgstr "Passez"
 msgid "Visited"
 msgstr ""
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/multi_text/field_multi_text.php:52
-msgid "Add More"
-msgstr "Ajouter plus"
-
-#: ../wpgrade-core/vendor/redux3/inc/fields/select/field_select.php:67
+#: ../wpgrade-core/vendor/redux3/inc/fields/select/field_select.php:77
 #: ../wpgrade-core/vendor/redux3/inc/fields/select_image/field_select_image.php:59
 #, fuzzy
 msgid "Select an item"
 msgstr "Sélectionnez une galerie"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/select/field_select.php:108
+#: ../wpgrade-core/vendor/redux3/inc/fields/select/field_select.php:118
 #: ../wpgrade-core/vendor/redux3/inc/fields/select_image/field_select_image.php:134
 msgid "No items of this type were found."
 msgstr "Aucun élément de ce type n'a été trouvé."
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:130
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:190
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:135
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:199
 #, fuzzy
 msgid "Description"
 msgstr "Option de date"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:131
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:192
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:137
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:201
 msgid "URL"
 msgstr "URL"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:139
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:201
-#, fuzzy
-msgid "Select an Option"
-msgstr "Sélect option"
-
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:159
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:221
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:168
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:231
 #, fuzzy
 msgid "Delete Slide"
 msgstr "Style Template"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:224
+#: ../wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:234
 #, fuzzy
 msgid "Add Slide"
 msgstr "Ajouter un nouveau"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:108
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:140
 msgid "Font family"
 msgstr "La famille de polices"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:149
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:163
 #, fuzzy
 msgid "Standard Fonts"
 msgstr "Norme"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:185
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:189
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:199
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:203
 msgid "Font style"
 msgstr "Le style de police"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:215
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:229
 msgid "Font subsets"
 msgstr "sous-ensembles de polices"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:216
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:230
 msgid "Subsets"
 msgstr "Sous-ensembles"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:216
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:230
 msgid "Font script"
 msgstr "script de police"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:234
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:248
 msgid "Size"
 msgstr "Taille"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:243
-#, fuzzy
-msgid "Height"
-msgstr "Auto Hauteur"
-
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:251
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:265
 msgid "Word Spacing"
 msgstr "Espacement des mots"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:259
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:273
 msgid "Letter Spacing"
 msgstr "Interlettrage"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:273
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:287
 msgid "Backup Font Family"
 msgstr "Sauvegarde famille de polices"
 
-#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:293
+#: ../wpgrade-core/vendor/redux3/inc/fields/typography/field_typography.php:307
 #, fuzzy
 msgid "Font color"
 msgstr "Couleur principale"
-
-#: ../wpgrade-core/vendor/redux3/inc/validation/color/validation_color.php:15
-#: ../wpgrade-core/vendor/redux3/inc/validation/color_rgba/validation_color_rgba.php:15
-#: ../wpgrade-core/vendor/redux3/inc/validation/colorrgba/validation_colorrgba.php:15
-msgid "This field must be a valid color value."
-msgstr "Ce champ doit être une valeur de couleur valide."
 
 #: ../wpgrade-core/vendor/redux3/inc/validation/comma_numeric/validation_comma_numeric.php:15
 #, fuzzy
@@ -5157,88 +7471,17 @@ msgstr ""
 "Vous devez fournir une liste séparé par des virgules de valeurs numériques "
 "pour cette option."
 
-#: ../wpgrade-core/vendor/redux3/inc/validation/date/validation_date.php:15
-msgid "This field must be a valid date."
-msgstr "Ce champ doit être une date valide."
-
-#: ../wpgrade-core/vendor/redux3/inc/validation/email/validation_email.php:15
-msgid "You must provide a valid email for this option."
-msgstr "Vous devez fournir une adresse email valide pour cette option."
-
-#: ../wpgrade-core/vendor/redux3/inc/validation/no_html/validation_no_html.php:15
-msgid ""
-"You must not enter any HTML in this field, all HTML tags have been removed."
-msgstr ""
-"Vous ne devez pas entrer n'importe quel code HTML dans ce domaine, toutes "
-"les balises HTML ont été supprimés."
-
-#: ../wpgrade-core/vendor/redux3/inc/validation/no_special_chars/validation_no_special_chars.php:15
-msgid ""
-"You must not enter any special characters in this field, all special "
-"characters have been removed."
-msgstr ""
-"Vous ne devez pas entrer des caractères spéciaux dans ce domaine, tous les "
-"caractères spéciaux ont été supprimés."
-
-#: ../wpgrade-core/vendor/redux3/inc/validation/numeric/validation_numeric.php:15
-msgid "You must provide a numerical value for this option."
-msgstr "Vous devez fournir une valeur numérique pour cette option."
-
-#: ../wpgrade-core/vendor/redux3/inc/validation/url/validation_url.php:15
-msgid "You must provide a valid URL for this option."
-msgstr "Vous devez fournir une adresse URL valide pour cette option."
+#, fuzzy
+#~ msgid "Select an Option"
+#~ msgstr "Sélect option"
 
 #, fuzzy
 #~ msgid "Are you sure? Resetting will loose all custom values."
 #~ msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
 
-#~ msgid "Reset to Defaults"
-#~ msgstr "Rétablir les paramètres par défaut"
-
 #, fuzzy
 #~ msgid "License Status"
 #~ msgstr "Statut"
-
-#~ msgid ""
-#~ "<span id=\"footer-thankyou\">Options panel created using <a href=\"%s\" "
-#~ "target=\"_blank\">Redux Framework</a> v%s</span>"
-#~ msgstr ""
-#~ "<span id=\"footer-thankyou\">Panneau Options créé à l'aide <a href=\"%s\" "
-#~ "target=\"_blank\">Redux Framework</a> v%s</span>"
-
-#~ msgid "Dev Mode Info"
-#~ msgstr "Dev Info mode"
-
-#~ msgid "Are you sure? You will lose all custom values."
-#~ msgstr "Etes-vous sûr? Vous allez perdre toutes les valeurs personnalisées."
-
-#~ msgid "<strong>Settings Imported!</strong>"
-#~ msgstr "<strong>Paramètres importés</strong>"
-
-#~ msgid "<strong>Settings Saved!</strong>"
-#~ msgstr "<strong>Paramètres ont été sauvés!</strong>"
-
-#~ msgid "<strong>Settings have changed, you should save them!</strong>"
-#~ msgstr "<strong>Paramètres ont changé, vous devez les sauver!</strong>"
-
-#~ msgid "<strong><span></span> error(s) were found!</strong>"
-#~ msgstr "<strong><span></ span> erreur (s) ont été trouvé!</strong>"
-
-#~ msgid "<strong><span></span> warning(s) were found!</strong>"
-#~ msgstr "<strong><span></ span> avertissement (s) ont été trouvé!</strong>"
-
-#~ msgid ""
-#~ "WARNING! This will overwrite any existing options, please proceed with "
-#~ "caution!"
-#~ msgstr ""
-#~ "ATTENTION! Cela va écraser toutes les options existantes, veuillez "
-#~ "procéder avec prudence!"
-
-#~ msgid "From:"
-#~ msgstr "de:"
-
-#~ msgid "To:"
-#~ msgstr "Vers:"
 
 #~ msgid ""
 #~ "The fonts provided below are free to use custom fonts from the <a href="
@@ -5248,16 +7491,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ "Les polices fournies ci-dessous sont libres d'utiliser des polices "
 #~ "personnalisées à partir du <a href=\"http://www.google.com/webfonts\" "
 #~ "target=\"_blank\"> Google répertoire Fonts Web </ a>"
-
-#~ msgid "Remove Upload"
-#~ msgstr "Retirer Téléchargez"
-
-#~ msgid ""
-#~ "You must provide a comma seperated list of numerical values for this "
-#~ "option."
-#~ msgstr ""
-#~ "Vous devez fournir une liste séparé par des virgules de valeurs "
-#~ "numériques pour cette option."
 
 #~ msgid ""
 #~ "Error: The theme was not updated, because the automatic backup is "
@@ -5298,13 +7531,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ msgid "Change footer related options from here."
 #~ msgstr "Modifier les options connexes Footer partir d'ici."
 
-#, fuzzy
-#~ msgid "Contact Widget"
-#~ msgstr "Contactez Widget"
-
-#~ msgid "Display your contact information"
-#~ msgstr "Afficher vos informations de contact"
-
 #~ msgid "No contact info to be displayed"
 #~ msgstr "Pas d'infos de contact à afficher"
 
@@ -5335,16 +7561,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 
 #~ msgid "%s"
 #~ msgstr "%s"
-
-#~ msgid ""
-#~ "Here you can download your current option settings. Keep this safe as you "
-#~ "can use it as a backup should anything go wrong, or you can use it to "
-#~ "restore your settings on this site (or any other site)."
-#~ msgstr ""
-#~ "Ici vous pouvez télécharger vos paramètres d'options actuels. Gardez "
-#~ "cette sûrs que vous pouvez l'utiliser comme une sauvegarde en cas de "
-#~ "problème, ou vous pouvez l'utiliser pour restaurer vos paramètres sur ce "
-#~ "site (ou tout autre site)."
 
 #~ msgid ""
 #~ "General settings contains toggles for various site preferences, including "
@@ -5417,17 +7633,11 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ msgid "Header Options"
 #~ msgstr "Options de la barre latérale"
 
-#~ msgid "Contact Page"
-#~ msgstr "Page de contact"
-
 #, fuzzy
 #~ msgid "General settings for the contact page template!"
 #~ msgstr ""
 #~ "<p class=\"description\">Paramètres généraux pour le modèle de page de "
 #~ "contact!</p>"
-
-#~ msgid "Google Maps Link"
-#~ msgstr "Lien vers Google Maps"
 
 #~ msgid ""
 #~ "Paste here the the URL that you've got from Google Maps, after navigating "
@@ -5486,9 +7696,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ msgid "Project"
 #~ msgstr "Projet"
 
-#~ msgid "Add New Project"
-#~ msgstr "Ajouter un nouveau projet"
-
 #~ msgid "Edit Project"
 #~ msgstr "Modifier projet"
 
@@ -5506,12 +7713,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 
 #~ msgid "No Project found"
 #~ msgstr "Pas de projets trouvés"
-
-#~ msgid "No Project found in Trash"
-#~ msgstr "Aucun projet trouvé dans Trash"
-
-#~ msgid "Projects"
-#~ msgstr "Projets"
 
 #~ msgid "Add New Gallery"
 #~ msgstr "Ajouter une nouvelle galerie"
@@ -5533,9 +7734,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 
 #~ msgid "Portfolio Categories"
 #~ msgstr "Catégories de portefeuille"
-
-#~ msgid "Portfolio Category"
-#~ msgstr "La catégorie de portefeuille"
 
 #~ msgid "Search Portfolio Category"
 #~ msgstr "Rechercher une catégorie de portefeuille"
@@ -5595,9 +7793,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ msgid "Project Details"
 #~ msgstr "Détails du projet"
 
-#~ msgid "Client Name"
-#~ msgstr "Nom du client"
-
 #~ msgid "Client Link"
 #~ msgstr "URL du client"
 
@@ -5631,12 +7826,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ "échelles du conteneur pour ajuster l'image en taille réelle.</p>\n"
 #~ "<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://"
 #~ "bit.ly/slider-image-scaling\">Explication visuelle</a></p>"
-
-#~ msgid "Gallery Detail"
-#~ msgstr "Détail de la galerie"
-
-#~ msgid "Grid Thumbnails"
-#~ msgstr "Vignettes de la grille"
 
 #~ msgid "Full Screen Slider"
 #~ msgstr "Full Screen Slider"
@@ -5751,9 +7940,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ "Cochez cette case pour ouvrir les liens sociaux dans une nouvelle fenêtre "
 #~ "(target=\"_blank\")."
 
-#~ msgid "Select Form"
-#~ msgstr "Sélectionner un formulaire"
-
 #~ msgid ""
 #~ "Select a contact form previously created with the Contact Form 7 plugin. "
 #~ "You can create one <a href=\"%s\" title=\"Contact Form 7\">here</a>"
@@ -5822,9 +8008,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 #~ msgid "Instagram username"
 #~ msgstr "Instagram nom d'utilisateur"
 
-#~ msgid "No Image"
-#~ msgstr "Pas d'image"
-
 #~ msgid "From the Blog"
 #~ msgstr "Du blog"
 
@@ -5839,9 +8022,6 @@ msgstr "Vous devez fournir une adresse URL valide pour cette option."
 
 #~ msgid "See more about :author"
 #~ msgstr "Voir plus sur: auteur"
-
-#~ msgid "Filter"
-#~ msgstr "Filtrez"
 
 #~ msgid "Next post"
 #~ msgstr "Post suivant"

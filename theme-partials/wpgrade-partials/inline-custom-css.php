@@ -103,7 +103,7 @@ a:hover > .pixcode--icon,
 }
 
 .heading--main .hN, .widget--sidebar__title, 
-.pagination .pagination-item--current span,.pagination .current span,
+.pagination .pagination-item--current span,.pagination .current, .single .pagination span,
 .pagination li a:hover, .pagination li span:hover, 
 .rsNavSelected, .badge, .progressbar__progress,
 .btn:hover, .comments_add-comment:hover, 
@@ -190,6 +190,8 @@ if ( isset($fonts['google_nav_font']) ) {?>
 
 if ( isset($fonts['google_body_font']) ) {
 
+	// setup a default
+	$font_size = '12px';
     if(isset($fonts['google_body_font']['font-size'])) {
         $font_size = $fonts['google_body_font']['font-size'];
         unset($fonts['google_body_font']['font-size']);

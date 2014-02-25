@@ -2114,6 +2114,31 @@ class bucket
 	}
 
 	/**
+	 * Echo author page link
+	 * @return bool|string
+	 */
+	static function the_author_posts_link() {
+		global $authordata;
+		if ( !is_object( $authordata ) )
+			return false;
+		$link = sprintf(
+			'<a href="%1$s" title="%2$s">%3$s</a>',
+			esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ),
+			esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
+			get_the_author()
+		);
+
+		/**
+		 * Filter the link to the author page of the author of the current post.
+		 *
+		 * @since 2.9.0
+		 *
+		 * @param string $link HTML link.
+		 */
+		echo apply_filters( 'the_author_posts_link', $link );
+	}
+
+	/**
 	* get youtube video ID from URL
 	*
 	* @param string $url

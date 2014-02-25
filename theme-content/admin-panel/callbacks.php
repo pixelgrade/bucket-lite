@@ -1,19 +1,5 @@
 <?php
 
-	// @todo CLEANUP check if this function is actually used anywhere
-	// andrei: is just a freaking test
-	function validate_callback_function($field, $value, $existing_value) {
-		$error = false;
-		$value =  'just testing';
-
-		$return['value'] = $value;
-
-		if($error == true) {
-			$return['error'] = $field;
-		}
-		return $return;
-	}
-
     function wpgrade_write_custom_css($options) {
 
         if ( wpgrade::option('inject_custom_css') !== 'file' ) return;
@@ -42,12 +28,10 @@
             echo 'There is been an error around';
         }
     }
-	add_action( 'redux/options/'. wpgrade::shortname() .'_options/saved', 'wpgrade_write_custom_css' );
+	add_action('redux/options/'. wpgrade::shortname() .'_options/compiler', 'wpgrade_write_custom_css' );
 
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
-
-	// @todo CLEANUP refactor function names
 
 	/**
 	 * Imports the demo data from the demo_data.xml file
@@ -148,4 +132,18 @@
 
 		//hook into wordpress admin.php
 		add_action('wp_ajax_wpGrade_ajax_import_widgets', 'wpGrade_ajax_import_widgets');
+	}
+
+	// @todo CLEANUP check if this function is actually used anywhere
+	// andrei: is just a freaking test
+	function validate_callback_function($field, $value, $existing_value) {
+		$error = false;
+		$value =  'just testing';
+
+		$return['value'] = $value;
+
+		if($error == true) {
+			$return['error'] = $field;
+		}
+		return $return;
 	}

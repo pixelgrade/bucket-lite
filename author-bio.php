@@ -13,7 +13,7 @@
 		<div class="author__title">
 			<h3 class="accessibility"><?php _e('Author', wpgrade::textdomain()); ?></h3>
 			<div class="hN">
-				<span itemprop="name"><?php the_author_posts_link(); ?></span>
+				<span itemprop="name"><?php bucket::the_author_posts_link(); ?></span>
 			</div>
 		</div>
 		<p class="author__bio" itemprop="description"><?php the_author_meta('description'); ?></p>

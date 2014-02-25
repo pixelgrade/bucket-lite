@@ -69,7 +69,7 @@ if (!function_exists('mb_substr')) {
 * @return [type]             [description]
 */
 function short_text($text, $cut_length, $limit, $echo = true){
-   $char_count = mb_strlen($text);
+   $char_count = mb_strlen($text,'UTF-8');
    $text = ( $char_count > $limit ) ? mb_substr($text,0,$cut_length).wpgrade::option('blog_excerpt_more_text') : $text;
    if ($echo) {
 	   echo $text;
@@ -108,10 +108,10 @@ function truncate($text, $length = 100, $options = array()) {
     extract($options);
 
     if ($html) {
-        if (mb_strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
+        if (mb_strlen(preg_replace('/<.*?>/', '', $text),'UTF-8') <= $length) {
             return $text;
         }
-        $totalLength = mb_strlen(strip_tags($ending));
+        $totalLength = mb_strlen(strip_tags($ending),'UTF-8');
         $openTags = array();
         $truncate = '';
 
@@ -129,7 +129,7 @@ function truncate($text, $length = 100, $options = array()) {
             }
             $truncate .= $tag[1];
 
-            $contentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $tag[3]));
+            $contentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $tag[3]),'UTF-8');
             if ($contentLength + $totalLength > $length) {
                 $left = $length - $totalLength;
                 $entitiesLength = 0;
@@ -137,7 +137,7 @@ function truncate($text, $length = 100, $options = array()) {
                     foreach ($entities[0] as $entity) {
                         if ($entity[1] + 1 - $entitiesLength <= $left) {
                             $left--;
-                            $entitiesLength += mb_strlen($entity[0]);
+                            $entitiesLength += mb_strlen($entity[0],'UTF-8');
                         } else {
                             break;
                         }
@@ -155,10 +155,10 @@ function truncate($text, $length = 100, $options = array()) {
             }
         }
     } else {
-        if (mb_strlen($text) <= $length) {
+        if (mb_strlen($text,'UTF-8') <= $length) {
             return $text;
         } else {
-            $truncate = mb_substr($text, 0, $length - mb_strlen($ending));
+            $truncate = mb_substr($text, 0, $length - mb_strlen($ending,'UTF-8'));
         }
     }
     if (!$exact) {
@@ -260,7 +260,7 @@ function wpgrade_better_excerpt($text = '') {
 			}
 			
 			//we have taken a large average word length - 20
-			if (count($temp_words) > 0 && mb_strlen(implode(' ', $temp_words))/count($temp_words) > 20) {
+			if (count($temp_words) > 0 && mb_strlen(implode(' ', $temp_words),'UTF-8')/count($temp_words) > 20) {
 				//we have a mb language
 				//then we simply split my mb characters rather than words
 				$text = short_text($text,$excerpt_length,$excerpt_length);
