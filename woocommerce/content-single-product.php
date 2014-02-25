@@ -58,6 +58,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	</div>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
+
+	<div class="grid__item">
 	<hr class="separator  separator--striped" />
 
 	<?php
@@ -69,6 +71,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 */
 	do_action( 'woocommerce_after_single_product_summary' );
 	?>
+	
+	</div>
 
 </div><!-- #product-<?php the_ID(); ?> -->
 

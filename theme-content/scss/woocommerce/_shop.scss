@@ -210,7 +210,7 @@ body.woocommerce{
 
 }
 
-.badge--product.badge--sale{
+span.badge--product{
     width: auto;
     @include font-size(12px);
     padding: $_u4;
