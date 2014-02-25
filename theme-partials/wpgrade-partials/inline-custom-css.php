@@ -190,6 +190,8 @@ if ( isset($fonts['google_nav_font']) ) {?>
 
 if ( isset($fonts['google_body_font']) ) {
 
+	// setup a default
+	$font_size = '12px';
     if(isset($fonts['google_body_font']['font-size'])) {
         $font_size = $fonts['google_body_font']['font-size'];
         unset($fonts['google_body_font']['font-size']);
