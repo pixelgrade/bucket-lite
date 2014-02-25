@@ -539,7 +539,8 @@ class wpgrade {
 
 		foreach ($files as $value) {
 			// skip special dot files
-			if ($value === '.' || $value === '..') {
+			// and any file that starts with a . - think hidden directories like .svn or .git
+			if (strpos($value,'.') === 0) {
 				continue;
 			}
 
@@ -778,21 +779,30 @@ class wpgrade {
 	 */
 	static function get_google_font_name($font) {
 
+		$returnString = '';
+
 		if (  self::option($font) ) {
 			$thefont = self::option($font);
 
-			if ( $thefont['google'] == 'true' ){
-				if ( isset( $thefont['font-family'] )) {
+			if ( !empty($thefont) && !empty($thefont['google']) && $thefont['google'] == 'true' ){
+				if ( !empty( $thefont['font-family'] )) {
+					$returnString = $thefont['font-family'];
 
-					if ( isset( $thefont['subsets'] )) {
-						return $thefont['font-family'] . '::' . $thefont['subsets'];
-					} else {
-						return $thefont['font-family'];
+					//put in the font weight
+					if ( !empty( $thefont['font-weight'] )) {
+						$returnString .= ':' . $thefont['font-weight'];
+					} else if ( !empty( $thefont['subsets'] )) {
+						//still needs the : so it will skip this when using subsets
+						$returnString .= ':';
+					}
+
+					if ( !empty( $thefont['subsets'] )) {
+						$returnString .= ':' . $thefont['subsets'];
 					}
 				}
 			}
 		}
-		return '';
+		return $returnString;
 	}
 
 	static function display_font_params( $font_args = array() ){

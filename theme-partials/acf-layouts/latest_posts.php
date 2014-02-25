@@ -35,7 +35,8 @@ $args = array(
 $offset = get_sub_field('offset');
 
 if ( is_numeric($offset) && $offset > 0 ) {
-	$args['offset'] = $offset;
+	//we need to paginate ourselves because WP will ignore paging (paged) when offset is present
+	$args['offset'] = $offset + ($paged - 1) * $number_of_posts;
 }
 
 /** Return posts from selected categories */
