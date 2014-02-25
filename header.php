@@ -31,7 +31,7 @@ if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerc
         <div class="pace-activity"></div>
     </div>    
     <div id="page">
-        <nav class="navigation  navigation--mobile">
+        <nav class="navigation  navigation--mobile  overthrow">
             <h2 class="accessibility"><?php _e('Primary Mobile Navigation', wpgrade::textdomain()) ?></h2>
             <div class="search-form  push-half--top  push--bottom  soft--bottom">
                 <?php get_search_form(); ?>
