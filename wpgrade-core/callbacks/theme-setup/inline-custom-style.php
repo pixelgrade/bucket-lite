@@ -9,11 +9,8 @@
 
 		ob_start();
 		include wpgrade::corepartial('inline-custom-css'.EXT);
-		$custom_css = ob_get_clean();;
+		$custom_css = ob_get_clean();
 		$style = 'wpgrade-main-style';
-//		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-//			$style = 'woocommerce_frontend_styles';
-//		}
 
 		wp_add_inline_style( $style, $custom_css );
 	}
