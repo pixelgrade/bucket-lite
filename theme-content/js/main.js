@@ -1358,10 +1358,10 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	function shareBox() {
 		//get the via username for twitter share
 		var twitterVia = $('#twitter').data('via');
-		
+
 		$('#twitter').sharrre({
 			share: {
-			  twitter: true
+				twitter: true
 			},
 			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-twitter  circle  small"></i></div><div class="share-item__value">{total}</div>',
 			enableHover: false,
@@ -1375,21 +1375,21 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				twitter: {via: twitterVia}
 			}
 		}).each(function() { shareTypes++; });
-		
+
 		$('#facebook').sharrre({
-		  share: {
-			facebook: true
-		  },
-		  template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-facebook  circle  small"></i></div><div class="share-item__value">{total}</div>',
-		  enableHover: false,
-		  enableTracking: false,
-		  shorterTotal: false,
-		  click: function(api, options){
-			api.simulateClick();
-			api.openPopup('facebook');
-		  }
+			share: {
+				facebook: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-facebook  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			shorterTotal: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('facebook');
+			}
 		}).each(function() { shareTypes++; });
-		
+
 		$('#gplus').sharrre({
 			share: {
 				googlePlus: true
@@ -1403,7 +1403,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				api.openPopup('googlePlus');
 			}
 		}).each(function() { shareTypes++; });
-		
+
 		$('#pinterest').sharrre({
 			share: {
 				pinterest: true
@@ -1420,7 +1420,77 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				pinterest: {
 					media: getArticleImage(),
 					description: $('#pinterest').data('text')
-				} 
+				}
+			}
+		}).each(function() { shareTypes++; });
+	}
+
+	function shareBoxTop() {
+		//get the via username for twitter share
+		var twitterVia = $('#twitter-top').data('via');
+
+		$('#twitter-top').sharrre({
+			share: {
+				twitter: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-twitter  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			shorterTotal: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('twitter');
+			},
+			buttons: {
+				twitter: {via: twitterVia}
+			}
+		}).each(function() { shareTypes++; });
+
+		$('#facebook-top').sharrre({
+			share: {
+				facebook: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-facebook  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			shorterTotal: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('facebook');
+			}
+		}).each(function() { shareTypes++; });
+
+		$('#gplus-top').sharrre({
+			share: {
+				googlePlus: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-gplus  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			shorterTotal: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('googlePlus');
+			}
+		}).each(function() { shareTypes++; });
+
+		$('#pinterest-top').sharrre({
+			share: {
+				pinterest: true
+			},
+			template: '<div class="share-item__icon"><i class="pixcode pixcode--icon icon-e-pinterest  circle  small"></i></div><div class="share-item__value">{total}</div>',
+			enableHover: false,
+			enableTracking: false,
+			shorterTotal: false,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('pinterest');
+			},
+			buttons: {
+				pinterest: {
+					media: getArticleImage(),
+					description: $('#pinterest-top').data('text')
+				}
 			}
 		}).each(function() { shareTypes++; });
 	}
@@ -1436,13 +1506,24 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			var total_shares = 0;
 			$('#share-box .share-item__value').each(function(i,e){
 
-			  var value = parseInt($(this).text());
-			  if ( !isNaN(value) ) {
-				total_shares = total_shares + value;
-			  }
-			  $(this).text(wpgrade_shorterTotal(value));
+				var value = parseInt($(this).text());
+				if ( !isNaN(value) ) {
+					total_shares = total_shares + value;
+				}
+				$(this).text(wpgrade_shorterTotal(value));
 			});
 			$('.share-total__value').html(wpgrade_shorterTotal(total_shares));
+
+			total_shares = 0;
+			$('#share-box-top .share-item__value').each(function(i,e){
+
+				var value = parseInt($(this).text());
+				if ( !isNaN(value) ) {
+					total_shares = total_shares + value;
+				}
+				$(this).text(wpgrade_shorterTotal(value));
+			});
+			$('.share-total__value-top').html(wpgrade_shorterTotal(total_shares));
 		}
 	});
 
@@ -1532,7 +1613,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 		/* SHARE BOX BUTTONS (single only) */
 		//if($('body.single').length) { setTimeout(function(){shareBox();},500); }
-		if($('body.single').length) { shareBox(); }
+		if($('body.single').length) { shareBox(); shareBoxTop(); }
 
 		/* INSTANTIATE RILOADR (lazy loading and responsive images) */
 		riloadrInit();

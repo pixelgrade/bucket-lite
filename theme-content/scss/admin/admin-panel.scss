@@ -486,7 +486,10 @@ $heading-font: 'Open Sans', sans-serif;
 	}
 
 	//Checkbox Share links
-	tr[data-check-field="blog_single_show_share_links"] {
+	tr[data-check-id="blog_single_share_links_twitter"],
+	tr[data-check-id="blog_single_share_links_facebook"],
+	tr[data-check-id="blog_single_share_links_googleplus"],
+	tr[data-check-id="blog_single_share_links_pinterest"]{
 		position:relative;
 		float:left;
 		width:50%;

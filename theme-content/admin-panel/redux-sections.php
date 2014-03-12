@@ -158,10 +158,17 @@ $sections[] = array(
 			)
 		),
 		array(
+			'id' => 'blog_single_show_title_meta_info',
+			'type' => 'switch',
+			'title' => __('Show Post Title Extra Info', wpgrade::textdomain()),
+			'subtitle' => __('Do you want to show the date and the author under the title?', wpgrade::textdomain()),
+			'default' => '1',
+		),
+		array(
 			'id' => 'blog_single_show_share_links',
 			'type' => 'switch',
 			'title' => __('Show Share Links', wpgrade::textdomain()),
-			'subtitle' => __('Do you want to show the share links bellow the article?', wpgrade::textdomain()),
+			'subtitle' => __('Do you want to show share icon links in your articles?', wpgrade::textdomain()),
 			'default' => '1',
 		),
 		array(
@@ -197,7 +204,24 @@ $sections[] = array(
 			'required' => array('blog_single_show_share_links', '=', 1)
 		),
 		array(
-			'id' => 'blog_single_show_author_box',
+			'id' => 'blog_single_share_links_position',
+			'type' => 'select',
+			'title' => __('Share Links Position', wpgrade::textdomain()),
+			'subtitle' => __('Choose where to display the share links.', wpgrade::textdomain()),
+			'options' => array(
+				'top' => 'Top',
+				'bottom' => 'Bottom',
+				'both' => 'Both Top & Bottom',
+			),
+			'default' => 'bottom',
+			'select2' => array( // here you can provide params for the select2 jquery call
+				'minimumResultsForSearch' => -1, // this way the search box will be disabled
+				'allowClear' => false // don't allow a empty select
+			),
+			'required' => array('blog_single_show_share_links', '=', 1)
+		),
+		array(
+			'id' => 'blog_single_show_title_meta',
 			'type' => 'switch',
 			'title' => __('Show Author Info Box', wpgrade::textdomain()),
 			'subtitle' => __('Do you want to show author info box with avatar and description bellow the post?', wpgrade::textdomain()),
