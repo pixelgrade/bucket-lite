@@ -787,11 +787,13 @@
 
         .article__content {
             @include rem(padding, $_u2);
-            height:135px;
             position:absolute;
             bottom:0;
             left:0;
             right: 0;
+            z-index: 1;
+            
+            height:135px;
         }
 
         .article__description {

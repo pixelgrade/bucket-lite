@@ -324,10 +324,9 @@ $menu_transition_speed: 0.15s;
             @include transition(all 0.15s linear);
 
             > .sub-menu {
-                display:inline-block;
-                opacity:0;
-                @include transition(all $menu_transition_speed ease-in);
-                @include translate3d(0, 0px, 0);
+                display: inline-block;
+                @include opacity(0);
+                @include transition(opacity $menu_transition_speed ease-in);
             }
 
             &:hover, &.current-menu-item {
@@ -342,16 +341,15 @@ $menu_transition_speed: 0.15s;
             }            
 
             &.hidden > .sub-menu {
+                @include opacity(0);
                 display:none;
             }
             
             &.open {
                 @include media-query(lap-and-up) {
                     > .sub-menu {
-                        opacity:1;
-                        display: inline-block;
-                         @include translate3d(0, 0, 0);
-                         @include transition(all $menu_transition_speed ease-out 0);
+                        @include opacity(1);
+                        @include transition(opacity $menu_transition_speed ease-out 0);
                     }
                 }
             }
