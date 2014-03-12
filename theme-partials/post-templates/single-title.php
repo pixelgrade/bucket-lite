@@ -11,7 +11,7 @@ if (get_the_title()): ?>
 <div class="article__title__meta">
 	<?php if (wpgrade::option('blog_single_show_title_meta_info')):?>
 		<?php $author_display_name = get_the_author_meta( 'display_name' );
-		printf('<div class="article__author-name">%s</div>', '<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" title="'.sprintf(__('Posts by %s', wpgrade::textdomain()), $author_display_name).'" itemprop="reviewer">'.$author_display_name.'</a>') ?>
+		printf('<div class="article__author-name">%s</div>', '<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" title="'.sprintf(__('Posts by %s', wpgrade::textdomain()), $author_display_name).'" '.($is_review ? 'itemprop="reviewer author"' : 'itemprop="author"').'>'.$author_display_name.'</a>') ?>
 		<time class="article__time" <?php echo $is_review ? 'itemprop="dtreviewed"' : ''; ?> datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s at %s', wpgrade::textdomain()),get_the_date(),get_the_time()); ?></time>
 	<?php endif; ?>
 </div>
