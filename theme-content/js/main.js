@@ -1617,6 +1617,12 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 		/* INSTANTIATE RILOADR (lazy loading and responsive images) */
 		riloadrInit();
+
+		if($('body').hasClass('custom-background')){
+			if($('body').css('background-repeat') == 'no-repeat') {
+				$('body').addClass('background-cover');
+			}
+		}
 		   
 	};
 
