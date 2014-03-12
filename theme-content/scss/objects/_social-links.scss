@@ -5,13 +5,13 @@
 $icon-size: 32px;
 
 
-#share-box {
+#share-box, #share-box-top {
     ul {
         text-align:center;
     }
     
     @include media-query(palm) { 
-        .share-total{
+        .share-total, .share-total-top {
             display: block;
         }   
     }
@@ -54,13 +54,13 @@ $icon-size: 32px;
 }
 
 @include media-query(lap-and-up) {
-    .share-total {
+    .share-total, .share-total-top {
         border-left:1px solid $dark;
         padding-left:$_u;
         margin-left:$_u;
     }
 }
-    .share-total__value {
+    .share-total__value, .share-total__value-top {
         @include font-size(32px);
         font-family:$heading-font-family;
         position:relative;
@@ -73,19 +73,23 @@ $icon-size: 32px;
     }
 
 
-#pixlikes i {
-    background-color:#232323;
-}
-#twitter i {
-    background-color:#00aced;
-}
+.share-item {
 
-#facebook i {
-    background-color:#0b59aa;
-}
-
-#gplus i {
-    background-color:#d84d2f;
+	&.pixlikes-share i.pixcode--icon.circle {
+		background-color:#232323;
+	}
+	&.twitter-share i.pixcode--icon.circle {
+		background-color:#00aced;
+	}
+	&.facebook-share i.pixcode--icon.circle {
+		background-color:#0b59aa;
+	}
+	&.gplus-share i.pixcode--icon.circle {
+		background-color:#d84d2f;
+	}
+	&.pinterest-share i.pixcode--icon.circle {
+		background-color:#ce1c1e;
+	}
 }
 
 #pinterest i {
@@ -99,10 +103,6 @@ $icon-size: 32px;
 #buffer i {
     background-color:#232323;
 }
-
-
-
-
 
 .social-icon-link{
     display: block;

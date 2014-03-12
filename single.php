@@ -174,7 +174,9 @@ $is_review = bucket::has_average_score();
                     </div>
                     <?php endif; ?>
                 </div>
-                <?php get_template_part('theme-partials/post-templates/share-box'); ?>
+                <?php if (wpgrade::option('blog_single_show_share_links') && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'bottom' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
+					get_template_part('theme-partials/post-templates/share-box');
+				} ?>
                 <?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' ); ?>
                 
                 <?php
