@@ -715,7 +715,7 @@ if(function_exists("register_field_group")){
 						),
 					),
 					array (
-						'label' => 'Display Posts',
+						'label' => 'List of Posts',
 						'name' => 'latest_posts',
 						'display' => 'row',
 						'sub_fields' => array (
