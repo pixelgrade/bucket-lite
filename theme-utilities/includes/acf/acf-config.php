@@ -733,7 +733,7 @@ if(function_exists("register_field_group")){
 									'latest_by_format' => __('Latest Posts By Post Format', wpgrade::textdomain()),
 									'latest_by_reviews' => __('Latest Posts With Reviews', wpgrade::textdomain()),
 								),
-								'default_value' => 'featured',
+								'default_value' => 'latest',
 								'allow_null' => 0,
 								'multiple' => 0,
 							),
