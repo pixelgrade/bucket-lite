@@ -352,7 +352,7 @@ $sections[] = array(
 			'id' => 'nav_main_sticky',
 			'type' => 'switch',
 			'title' =>  __('Enable sticky navigation', wpgrade::textdomain()),
-			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', wpgrade::textdomain()),
+			'subtitle' => __('Pin the main navigation to the top of the viewport when scrolling down.', wpgrade::textdomain()),
 			'default' => '0'
 		),		
 	)
