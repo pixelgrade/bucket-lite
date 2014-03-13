@@ -116,7 +116,7 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 	/* --- $SALVATTORE --- */
 
 	/*
-	 * Salvattore 1.0.4 by @rnmp and @ppold
+	 * Salvattore 1.0.5 by @rnmp and @ppold
 	 * https://github.com/rnmp/salvattore
 	 */
 	function salvattore(){(function(root, factory) {
@@ -492,26 +492,26 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 
 				var children = grid.children
 					, m = children.length
-					, highestRowCount
+					, lowestRowCount = 0
 					, child
 					, currentRowCount
-					, i = children.length - 1
+					, i
+				    , index = 0
 					;
 
-				for (i; i >= 0; i--) {
+				for (i = 0; i < m; i++) {
 					child = children[i];
 					currentRowCount = child.children.length;
-					if (i !== 0 && highestRowCount > currentRowCount) {
-						break;
-					} else if (i + 1 === m) {
-						i = 0;
-						break;
+					if(lowestRowCount == 0) {
+						    lowestRowCount = currentRowCount;
+						  }
+					    if(currentRowCount < lowestRowCount) {
+						      index = i;
+						      lowestRowCount = currentRowCount;
 					}
-
-					highestRowCount = currentRowCount;
 				}
 
-				return i;
+				return index;
 			};
 
 
@@ -537,16 +537,11 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 				var columns = grid.children
 					, numberOfColumns = columns.length
 					, fragments = self.create_list_of_fragments(numberOfColumns)
-					, columnIndex = self.next_element_column_index(grid)
 					;
 
 				elements.forEach(function append_to_next_fragment(element) {
+					var columnIndex = self.next_element_column_index(grid);
 					fragments[columnIndex].appendChild(element);
-					if (columnIndex === numberOfColumns - 1) {
-						columnIndex = 0;
-					} else {
-						columnIndex++;
-					}
 				});
 
 				Array.prototype.forEach.call(columns, function insert_column(column, index) {
@@ -612,6 +607,13 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 
 
 			self.init = function init() {
+				// adds required CSS rule to hide 'content' based
+				// configuration.
+
+				var css = document.createElement("style");
+				css.innerHTML = "[data-columns]::before{visibility:hidden;position:absolute;font-size:1px;}";
+				document.head.appendChild(css);
+
 				// scans all the grids in the document and generates
 				// columns from their configuration.
 
