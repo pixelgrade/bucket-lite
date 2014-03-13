@@ -24,6 +24,10 @@ if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerc
 		$class_name .= " product";
 }
 
+
+if ( wpgrade::option('nav_main_sticky') == 1 )
+    $class_name .= "  sticky-nav";
+
 ?>
 
 <body <?php body_class($class_name); ?> <?php echo $schema_org ?> >

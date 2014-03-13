@@ -12,6 +12,32 @@
     background-color: #262525;
 }
 
+.nav--main__wrapper{
+
+    &.pre-sticky{
+        @include transform(translateY(-100%));
+    }
+
+    &.sticky{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+
+        .admin-bar &{
+            top: 32px;
+        }
+
+        .nav--main{
+            max-width: 1048px;
+            margin: 0 auto;
+
+            background: $dark;
+        }
+    }    
+}
+
 
 
 /**

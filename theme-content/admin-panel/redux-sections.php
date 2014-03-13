@@ -347,6 +347,14 @@ $sections[] = array(
 			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', wpgrade::textdomain()),
 			'default' => '1'
 		),
+
+		array(
+			'id' => 'nav_main_sticky',
+			'type' => 'switch',
+			'title' =>  __('Enable sticky navigation', wpgrade::textdomain()),
+			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', wpgrade::textdomain()),
+			'default' => '0'
+		),		
 	)
 );
 

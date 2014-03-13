@@ -43,7 +43,7 @@
                     'menu'            => '',
                     'container'       => '',
                     'container_id'    => '',
-                    'menu_class'      => 'nav  nav--main',
+                    'menu_class'      => 'nav  nav--main  js-nav--main',
                     'menu_id'         => '',
                     'fallback_cb'     => 'wp_page_menu',
                     'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',

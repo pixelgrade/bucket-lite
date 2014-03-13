@@ -41,9 +41,11 @@
         
 		<hr class="nav-top-separator separator separator--subsection flush--bottom" />
 		
-        <nav class="navigation  navigation--main">
+        <nav class="navigation  navigation--main  js-navigation--main">
             <h2 class="accessibility"><?php _e('Primary Navigation', wpgrade::textdomain()) ?></h2>
-            <?php wpgrade_main_nav(); ?>
+            <div class="nav--main__wrapper  js-sticky">
+                <?php wpgrade_main_nav(); ?>
+            </div>
         </nav>
 
     </div>
