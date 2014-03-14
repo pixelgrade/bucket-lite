@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     lr = require('tiny-lr'),
     server = lr(),
     path = './theme-content/',
-    jspath = path + 'js/';
+    jspath = path + 'js/',
+	debug = require('gulp-debug');
 
 var options = {
 	silent: true,
@@ -25,10 +26,9 @@ gulp.task('styles', function() {
 /**
  * Cleanup the css folder and recreate the css files
  */
-gulp.task('production-nested', function(cb) {
-    gulp.src('./')
+gulp.task('production-nested', function() {
+    return gulp.src('./')
         .pipe( exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-nested.rb',options) );
-	cb(err);
 });
 
 gulp.task('dev', function() {
@@ -59,47 +59,33 @@ gulp.task('default', ['help'], function() {
 
 gulp.task('start', ['production-nested'], function(cb){
 	console.log('Compiled styles');
-	cb(err);
+	cb();
 });
 
 /**
  * Create a zip archive out of the cleaned folder and delete the folder
  */
-gulp.task('zip', ['build'], function(cb){
+gulp.task('zip', ['build'], function(){
 
-	gulp.src('./')
-		.pipe(exec('cd ./../build/; ls -al; rm -rf bucket.zip; zip -r -X ../bucket.zip bucket; cd ./../bucket/',options))
-		.pipe(gulp.dest('./../../'))
-		.pipe(exec('cd ../; rm -rf build',options));
+	return gulp.src('./')
+		.pipe(exec('cd ./../; rm -rf bucket.zip; zip -r -X bucket.zip ./build/bucket; rm -rf build',options));
 
-	cb(err);
-});
-
-gulp.task('prezip',function(cb){
-
-	gulp.src('./')
-		.pipe(exec('cd ./../build/; ls -al; rm -rf bucket.zip; zip -r -X ../bucket.zip bucket; cd ./../bucket/',options))
-		.pipe(gulp.dest('./../../'))
-		.pipe(exec('cd ../; rm -rf build',options));
-
-	cb(err);
 });
 
 /**
  * Copy theme folder outside in a build folder, recreate styles before that
  */
-gulp.task('copy-folder', ['start'], function(cb){
+gulp.task('copy-folder', ['production-nested'], function(){
 
-	gulp.src('./**')
-		.pipe(gulp.dest('../build/bucket/'));
-
-	cb(err); // if err is not null and not undefined, the run will stop, and note that it failed
+	return gulp.src('./')
+		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; cp -Rf ./* ./../build/bucket/',options));
 });
 
 /**
  * Clean the folder of unneeded files and folders
  */
-gulp.task('build', ['copy-folder'], function(cb){
+gulp.task('build', ['copy-folder'], function(){
+
 	// files that should not be present in build zip
 	files_to_remove = [
 		'**/codekit-config.json',
@@ -112,18 +98,18 @@ gulp.task('build', ['copy-folder'], function(cb){
 		'wpgrade-core/tests',
 		'pxg.json',
 		'build',
+		'css',
 		'**/*.css.map',
-		'**/.gitignore'
+		'**/.sass*',
+		'**/.git*'
 	];
 
 	files_to_remove.forEach( function(e,k){
 		files_to_remove[k] = '../build/bucket/' + e;
 	});
 
-	gulp.src( files_to_remove, { read: false } )
+	return gulp.src( files_to_remove, { read: false } )
 		.pipe( clean({force: true}) );
-
-	cb(err);
 });
 
 
