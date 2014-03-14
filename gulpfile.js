@@ -68,7 +68,7 @@ gulp.task('start', ['production-nested'], function(cb){
 gulp.task('zip', ['build'], function(){
 
 	return gulp.src('./')
-		.pipe(exec('cd ./../; rm -rf bucket.zip; zip -r -X bucket.zip ./build/bucket; rm -rf build',options));
+		.pipe(exec('cd ./../; rm -rf bucket.zip; cd ./build; zip -r -X ./../bucket.zip ./bucket; cd ./../; rm -rf build',options));
 
 });
 
