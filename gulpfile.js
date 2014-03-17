@@ -7,17 +7,13 @@ var gulp = require('gulp'),
     lr = require('tiny-lr'),
     server = lr(),
     path = './theme-content/',
-    jspath = path + 'js/';
+    jspath = path + 'js/',
+	debug = require('gulp-debug');
 
 var options = {
 	silent: true,
 	continueOnError: true // default: false
 };
-
-
-gulp.task('start', ['production-nested'], function(){
-    console.log('theme should be ready');
-});
 
 gulp.task('styles', function() {
 
@@ -27,9 +23,12 @@ gulp.task('styles', function() {
 
 });
 
+/**
+ * Cleanup the css folder and recreate the css files
+ */
 gulp.task('production-nested', function() {
-    gulp.src('./')
-        .pipe( exec('ruby theme-content/+production-nested.rb',options) );
+    return gulp.src('./')
+        .pipe( exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-nested.rb',options) );
 });
 
 gulp.task('dev', function() {
@@ -58,54 +57,60 @@ gulp.task('default', ['help'], function() {
     // silence
 });
 
-gulp.task('zip', ['prezip', 'build'], function(){
-	// silance
+gulp.task('start', ['production-nested'], function(cb){
+	console.log('Compiled styles');
+	cb();
 });
 
-	gulp.task('prezip',function(){
+/**
+ * Create a zip archive out of the cleaned folder and delete the folder
+ */
+gulp.task('zip', ['build'], function(){
 
-		gulp.src('./')
-			.pipe(exec('cd ./../build/; ls -al; rm -rf bucket.zip; zip -r -X ../bucket.zip bucket; cd ./../bucket/',options))
-			.pipe(gulp.dest('./../../'))
-			.pipe(exec('cd ../; rm -rf build',options));
+	return gulp.src('./')
+		.pipe(exec('cd ./../; rm -rf bucket.zip; cd ./build; zip -r -X ./../bucket.zip ./bucket; cd ./../; rm -rf build',options));
 
+});
+
+/**
+ * Copy theme folder outside in a build folder, recreate styles before that
+ */
+gulp.task('copy-folder', ['production-nested'], function(){
+
+	return gulp.src('./')
+		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; cp -Rf ./* ./../build/bucket/',options));
+});
+
+/**
+ * Clean the folder of unneeded files and folders
+ */
+gulp.task('build', ['copy-folder'], function(){
+
+	// files that should not be present in build zip
+	files_to_remove = [
+		'**/codekit-config.json',
+		'node_modules',
+		'config.rb',
+		'gulpfile.js',
+		'package.json',
+		'wpgrade-core/vendor/redux2',
+		'wpgrade-core/features',
+		'wpgrade-core/tests',
+		'pxg.json',
+		'build',
+		'css',
+		'**/*.css.map',
+		'**/.sass*',
+		'**/.git*'
+	];
+
+	files_to_remove.forEach( function(e,k){
+		files_to_remove[k] = '../build/bucket/' + e;
 	});
 
-    /**
-     * Create a prezip archive
-     */
-    gulp.task('create-prezip', function(){
-        return gulp.src('./**')
-            .pipe(gulp.dest('../build/bucket/'));
-    });
-
-    /**
-     * Clean the prezip archive
-     */
-    gulp.task('build', ['start', 'create-prezip'], function(){
-        // files that should not be present in build zip
-        files_to_remove = [
-            'codekit-config.json',
-            'node_modules',
-            'config.rb',
-            'gulpfile.js',
-            'package.json',
-            'wpgrade-core/vendor/redux2',
-	        'wpgrade-core/features',
-	        'wpgrade-core/tests',
-            'pxg.json',
-	        'build'
-        ];
-
-        files_to_remove.forEach( function(e,k){
-            files_to_remove[k] = '../build/bucket/' + e;
-        });
-
-        var clean_stream = gulp.src( files_to_remove, { read: false } ) ;
-        clean_stream.pipe( clean({force: true}) );
-        return clean_stream;
-
-    });
+	return gulp.src( files_to_remove, { read: false } )
+		.pipe( clean({force: true}) );
+});
 
 
 
@@ -119,11 +124,11 @@ gulp.task('help', function(){
     var $help = '\nCommands available : \n \n' +
         '=== General Commands === \n' +
         'start              Compiles all styles and scripts and makes the theme ready to start \n' +
-        'build              Create a build folder for the current theme \n' +
-        'zip                Create a zip archive from the current build \n' +
+        'build              Create a cleaned up build folder for the current theme \n' +
+        'zip                Create a zip archive from the current build folder and deletes it \n' +
         '=== Style === \n' +
-        'styles             Compiles styles \n' +
-        'production-nested  Prepare the style for production \n' +
+        'styles             Compiles styles in development mode \n' +
+        'production-nested  Prepare the style for production (deletes all existing files in the css folder) \n' +
         '=== Scripts === \n' +
         'scripts            Concatenate all js scripts \n' +
         '=== Watchers === \n' +

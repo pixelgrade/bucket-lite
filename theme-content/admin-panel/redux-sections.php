@@ -307,7 +307,7 @@ $sections[] = array(
 		array(
 			'id' => 'header_type',
 			'type' => 'image_select',
-			'title' => __('Header Type', wpgrade::textdomain()),
+			'title' => __('Header Layout Style', wpgrade::textdomain()),
 			'subtitle' => __('Choose the layout for the header area.', wpgrade::textdomain()),
 			'default' => 'type1',
 			'options' => array(
@@ -347,14 +347,13 @@ $sections[] = array(
 			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', wpgrade::textdomain()),
 			'default' => '1'
 		),
-
 		array(
 			'id' => 'nav_main_sticky',
 			'type' => 'switch',
-			'title' =>  __('Enable sticky navigation', wpgrade::textdomain()),
-			'subtitle' => __('Pin the main navigation to the top of the viewport when scrolling down.', wpgrade::textdomain()),
+			'title' =>  __('Sticky Main Navigation', wpgrade::textdomain()),
+			'subtitle' => __('Pin the Main Navigation to the top of the screen when scrolling down.', wpgrade::textdomain()),
 			'default' => '0'
-		),		
+		)		
 	)
 );
 
