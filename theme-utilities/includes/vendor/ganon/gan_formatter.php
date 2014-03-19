@@ -169,63 +169,6 @@ class HTML_Formatter {
 	}
 
 	/**
-	 * Minifies javascript using JSMin+
-	 * @param HTML_Node $root
-	 * @param string $indent_string
-	 * @param bool $wrap_comment Wrap javascript in HTML comments (<!-- ~text~ //-->)
-	 * @param bool $recursive
-	 * @return bool|array Array of errors on failure, true on succes
-	 */
-	static function minify_javascript(&$root, $indent_string = ' ', $wrap_comment = true, $recursive = true) {
-	#php4 JSMin+ doesn't support PHP4
-	#return true;
-	#php4e
-	#php5
-		include_once('third party/jsminplus.php');
-
-		$errors = array();
-		foreach($root->select('script:not-empty > "~text~"', false, $recursive, true) as $c) {
-			try {
-				$text = $c->text;
-				while ($text) {
-					$text = trim($text);
-					//Remove comment/CDATA tags at begin and end
-					if (substr($text, 0, 4) === '<!--') {
-						$text = substr($text, 5);
-						continue;
-					} elseif (strtolower(substr($text, 0, 9)) === '<![cdata[') {
-						$text = substr($text, 10);
-						continue;
-					}
-
-					if (($end = substr($text, -3)) && (($end === '-->') || ($end === ']]>'))) {
-						$text = substr($text, 0, -3);
-						continue;
-					}
-
-					break;
-				}
-
-				if (trim($text)) {
-					$text = JSMinPlus::minify($text);
-					if ($wrap_comment) {
-						$text = "<!--\n".$text."\n//-->";
-					}
-					if ($indent_string && ($wrap_comment || (strpos($text, "\n") !== false))) {
-						$text = indent_text("\n".$text, $c->indent(), $indent_string);
-					}
-				}
-				$c->text = $text;
-			} catch (Exception $e) {
-				$errors[] = array($e, $c->parent->dumpLocation());
-			}
-		}
-
-		return (($errors) ? $errors : true);
-	#php5e
-	}
-
-	/**
 	 * Formats HTML
 	 * @param HTML_Node $root
 	 * @param bool $recursive
