@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bucket\n"
-"POT-Creation-Date: 2014-03-19 16:09+0200\n"
-"PO-Revision-Date: 2014-03-19 16:09+0200\n"
+"POT-Creation-Date: 2014-03-19 17:40+0200\n"
+"PO-Revision-Date: 2014-03-19 17:40+0200\n"
 "Last-Translator: Vlad Olaru <vlad.olaru@pixelgrade.com>\n"
 "Language-Team: PixelGrade <contact@pixelgrade.com>\n"
 "Language: fr\n"
@@ -186,8 +186,8 @@ msgstr "Footer"
 msgid "Primary Mobile Navigation"
 msgstr "Primary Navigation mobile"
 
-#: ../index.php:23 ../theme-utilities/includes/acf/acf-config.php:838
-#: ../theme-utilities/includes/acf/acf-config.php:839
+#: ../index.php:23 ../theme-utilities/includes/acf/acf-config.php:852
+#: ../theme-utilities/includes/acf/acf-config.php:853
 msgid "Latest Articles"
 msgstr "Derniers articles"
 
@@ -440,7 +440,7 @@ msgstr "Désactivé"
 
 #: ../theme-callbacks/activation-hooks.php:168
 #: ../theme-content/admin-panel/redux-sections.php:270
-#: ../theme-utilities/includes/acf/acf-config.php:508
+#: ../theme-utilities/includes/acf/acf-config.php:522
 msgid "Slider transition"
 msgstr "Transition Slider"
 
@@ -451,7 +451,7 @@ msgstr "Glisser/Déplacer"
 
 #: ../theme-callbacks/activation-hooks.php:177
 #: ../theme-content/admin-panel/redux-sections.php:273
-#: ../theme-utilities/includes/acf/acf-config.php:514
+#: ../theme-utilities/includes/acf/acf-config.php:528
 msgid "Fade"
 msgstr "Fade"
 
@@ -1540,7 +1540,7 @@ msgid "Theme Information"
 msgstr "Theme Information"
 
 #: ../theme-partials/acf-layouts/billboard_slider.php:13
-#: ../theme-utilities/includes/acf/acf-config.php:476
+#: ../theme-utilities/includes/acf/acf-config.php:490
 msgid "Read Full Story"
 msgstr "Lire l'article complet"
 
@@ -1602,7 +1602,7 @@ msgid "Untitled"
 msgstr "Sans titre"
 
 #: ../theme-partials/post-templates/single-title.php:14
-#: ../theme-utilities/bucket.php:2127
+#: ../theme-utilities/bucket.php:2135
 #, php-format
 msgid "Posts by %s"
 msgstr "Tous les articles de: %s"
@@ -1638,8 +1638,8 @@ msgid "Full URL"
 msgstr "Full URL"
 
 #: ../theme-utilities/includes/acf/acf-config.php:98
-#: ../theme-utilities/includes/acf/acf-config.php:310
-#: ../theme-utilities/includes/acf/acf-config.php:352
+#: ../theme-utilities/includes/acf/acf-config.php:324
+#: ../theme-utilities/includes/acf/acf-config.php:366
 msgid "Add New"
 msgstr "Ajouter un nouveau"
 
@@ -1664,200 +1664,205 @@ msgstr "par exemple Caractéristiques"
 msgid "Score"
 msgstr "Score"
 
-#: ../theme-utilities/includes/acf/acf-config.php:181
+#: ../theme-utilities/includes/acf/acf-config.php:179
+#, fuzzy
+msgid "Weight"
+msgstr "hauteur"
+
+#: ../theme-utilities/includes/acf/acf-config.php:195
 msgid "New Score Row"
 msgstr "New Score Row"
 
-#: ../theme-utilities/includes/acf/acf-config.php:185
 #: ../theme-utilities/includes/acf/acf-config.php:199
+#: ../theme-utilities/includes/acf/acf-config.php:213
 msgid "Average Score Box"
 msgstr "Moyenne Box Score"
 
-#: ../theme-utilities/includes/acf/acf-config.php:203
+#: ../theme-utilities/includes/acf/acf-config.php:217
 msgid "Placement"
 msgstr "Placement"
 
-#: ../theme-utilities/includes/acf/acf-config.php:219
+#: ../theme-utilities/includes/acf/acf-config.php:233
 msgid "Before Content"
 msgstr "Avant contenu"
 
-#: ../theme-utilities/includes/acf/acf-config.php:220
+#: ../theme-utilities/includes/acf/acf-config.php:234
 msgid "After Content"
 msgstr "Après contenu"
 
-#: ../theme-utilities/includes/acf/acf-config.php:221
+#: ../theme-utilities/includes/acf/acf-config.php:235
 msgid "Using Shortcode"
 msgstr "Utiliser Shortcode"
 
-#: ../theme-utilities/includes/acf/acf-config.php:229
+#: ../theme-utilities/includes/acf/acf-config.php:243
 msgid "Note"
 msgstr "Remarque"
 
-#: ../theme-utilities/includes/acf/acf-config.php:244
+#: ../theme-utilities/includes/acf/acf-config.php:258
 msgid "A short note about the score (optional)"
 msgstr "Une courte note sur la partition (en option)"
 
-#: ../theme-utilities/includes/acf/acf-config.php:252
-#: ../theme-utilities/includes/acf/acf-config.php:267
+#: ../theme-utilities/includes/acf/acf-config.php:266
+#: ../theme-utilities/includes/acf/acf-config.php:281
 msgid "Enable Pros&Cons Lists"
 msgstr "Activer Pros listes"
 
-#: ../theme-utilities/includes/acf/acf-config.php:255
+#: ../theme-utilities/includes/acf/acf-config.php:269
 msgid "Display a comparison lists with Good and Bad things."
 msgstr ""
 "Afficher une listes de comparaison avec les bonnes et mauvaises choses."
 
-#: ../theme-utilities/includes/acf/acf-config.php:272
+#: ../theme-utilities/includes/acf/acf-config.php:286
 msgid "Pros List"
 msgstr "Liste des pros"
 
-#: ../theme-utilities/includes/acf/acf-config.php:295
+#: ../theme-utilities/includes/acf/acf-config.php:309
 msgid "Pros Note"
 msgstr "Pour noter"
 
-#: ../theme-utilities/includes/acf/acf-config.php:314
+#: ../theme-utilities/includes/acf/acf-config.php:328
 msgid "Cons List"
 msgstr "Liste Cons"
 
-#: ../theme-utilities/includes/acf/acf-config.php:337
+#: ../theme-utilities/includes/acf/acf-config.php:351
 msgid "Cons Note"
 msgstr "Moins Remarque"
 
-#: ../theme-utilities/includes/acf/acf-config.php:376
+#: ../theme-utilities/includes/acf/acf-config.php:390
 msgid "Custom Page Composer"
 msgstr "Page personnalisée Compositeur"
 
-#: ../theme-utilities/includes/acf/acf-config.php:380
+#: ../theme-utilities/includes/acf/acf-config.php:394
 msgid "Blocks"
 msgstr "Blocks"
 
-#: ../theme-utilities/includes/acf/acf-config.php:385
+#: ../theme-utilities/includes/acf/acf-config.php:399
 msgid "Billboard Slider"
 msgstr "Billboard Slider"
 
-#: ../theme-utilities/includes/acf/acf-config.php:391
-#: ../theme-utilities/includes/acf/acf-config.php:552
-#: ../theme-utilities/includes/acf/acf-config.php:638
-#: ../theme-utilities/includes/acf/acf-config.php:724
+#: ../theme-utilities/includes/acf/acf-config.php:405
+#: ../theme-utilities/includes/acf/acf-config.php:566
+#: ../theme-utilities/includes/acf/acf-config.php:652
+#: ../theme-utilities/includes/acf/acf-config.php:738
 msgid "Posts Source"
 msgstr "Posts Source"
 
-#: ../theme-utilities/includes/acf/acf-config.php:394
-#: ../theme-utilities/includes/acf/acf-config.php:555
-#: ../theme-utilities/includes/acf/acf-config.php:641
-#: ../theme-utilities/includes/acf/acf-config.php:727
+#: ../theme-utilities/includes/acf/acf-config.php:408
+#: ../theme-utilities/includes/acf/acf-config.php:569
+#: ../theme-utilities/includes/acf/acf-config.php:655
+#: ../theme-utilities/includes/acf/acf-config.php:741
 #, fuzzy
 msgid "Select what type of posts to be displayed."
 msgstr "Pas d'infos de contact à afficher"
 
-#: ../theme-utilities/includes/acf/acf-config.php:397
-#: ../theme-utilities/includes/acf/acf-config.php:558
-#: ../theme-utilities/includes/acf/acf-config.php:644
-#: ../theme-utilities/includes/acf/acf-config.php:730
+#: ../theme-utilities/includes/acf/acf-config.php:411
+#: ../theme-utilities/includes/acf/acf-config.php:572
+#: ../theme-utilities/includes/acf/acf-config.php:658
+#: ../theme-utilities/includes/acf/acf-config.php:744
 msgid "Featured Posts"
 msgstr "Postes en vedette"
-
-#: ../theme-utilities/includes/acf/acf-config.php:398
-#: ../theme-utilities/includes/acf/acf-config.php:559
-#: ../theme-utilities/includes/acf/acf-config.php:645
-#: ../theme-utilities/includes/acf/acf-config.php:731
-#: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:90
-#: ../wpgrade-config.php:109
-msgid "Latest Posts"
-msgstr "Derniers articles"
-
-#: ../theme-utilities/includes/acf/acf-config.php:399
-#: ../theme-utilities/includes/acf/acf-config.php:560
-#: ../theme-utilities/includes/acf/acf-config.php:646
-#: ../theme-utilities/includes/acf/acf-config.php:732
-#, fuzzy
-msgid "Latest Posts From a Category"
-msgstr "Parent de la catégorie de portefeuille"
-
-#: ../theme-utilities/includes/acf/acf-config.php:400
-#: ../theme-utilities/includes/acf/acf-config.php:561
-#: ../theme-utilities/includes/acf/acf-config.php:647
-#: ../theme-utilities/includes/acf/acf-config.php:733
-msgid "Latest Posts By Post Format"
-msgstr "Derniers messages de Message Format"
-
-#: ../theme-utilities/includes/acf/acf-config.php:401
-#: ../theme-utilities/includes/acf/acf-config.php:562
-#: ../theme-utilities/includes/acf/acf-config.php:648
-#: ../theme-utilities/includes/acf/acf-config.php:734
-msgid "Latest Posts With Reviews"
-msgstr "Derniers articles avec des critiques"
-
-#: ../theme-utilities/includes/acf/acf-config.php:409
-#: ../theme-utilities/includes/acf/acf-config.php:570
-#: ../theme-utilities/includes/acf/acf-config.php:656
-#: ../theme-utilities/includes/acf/acf-config.php:742
-msgid "Category"
-msgstr "Catégorie"
 
 #: ../theme-utilities/includes/acf/acf-config.php:412
 #: ../theme-utilities/includes/acf/acf-config.php:573
 #: ../theme-utilities/includes/acf/acf-config.php:659
 #: ../theme-utilities/includes/acf/acf-config.php:745
-msgid ""
-"Hold down Command key (or CTRL on Windows) to select multiple categories."
-msgstr ""
-"Maintenez enfoncée la touche de commande (ou CTRL sous Windows) pour "
-"sélectionner plusieurs catégories."
+#: ../theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:90
+#: ../wpgrade-config.php:109
+msgid "Latest Posts"
+msgstr "Derniers articles"
+
+#: ../theme-utilities/includes/acf/acf-config.php:413
+#: ../theme-utilities/includes/acf/acf-config.php:574
+#: ../theme-utilities/includes/acf/acf-config.php:660
+#: ../theme-utilities/includes/acf/acf-config.php:746
+#, fuzzy
+msgid "Latest Posts From a Category"
+msgstr "Parent de la catégorie de portefeuille"
+
+#: ../theme-utilities/includes/acf/acf-config.php:414
+#: ../theme-utilities/includes/acf/acf-config.php:575
+#: ../theme-utilities/includes/acf/acf-config.php:661
+#: ../theme-utilities/includes/acf/acf-config.php:747
+msgid "Latest Posts By Post Format"
+msgstr "Derniers messages de Message Format"
+
+#: ../theme-utilities/includes/acf/acf-config.php:415
+#: ../theme-utilities/includes/acf/acf-config.php:576
+#: ../theme-utilities/includes/acf/acf-config.php:662
+#: ../theme-utilities/includes/acf/acf-config.php:748
+msgid "Latest Posts With Reviews"
+msgstr "Derniers articles avec des critiques"
 
 #: ../theme-utilities/includes/acf/acf-config.php:423
 #: ../theme-utilities/includes/acf/acf-config.php:584
 #: ../theme-utilities/includes/acf/acf-config.php:670
 #: ../theme-utilities/includes/acf/acf-config.php:756
-msgid "Post Formats"
-msgstr "Poster formats"
+msgid "Category"
+msgstr "Catégorie"
 
 #: ../theme-utilities/includes/acf/acf-config.php:426
 #: ../theme-utilities/includes/acf/acf-config.php:587
 #: ../theme-utilities/includes/acf/acf-config.php:673
 #: ../theme-utilities/includes/acf/acf-config.php:759
 msgid ""
+"Hold down Command key (or CTRL on Windows) to select multiple categories."
+msgstr ""
+"Maintenez enfoncée la touche de commande (ou CTRL sous Windows) pour "
+"sélectionner plusieurs catégories."
+
+#: ../theme-utilities/includes/acf/acf-config.php:437
+#: ../theme-utilities/includes/acf/acf-config.php:598
+#: ../theme-utilities/includes/acf/acf-config.php:684
+#: ../theme-utilities/includes/acf/acf-config.php:770
+msgid "Post Formats"
+msgstr "Poster formats"
+
+#: ../theme-utilities/includes/acf/acf-config.php:440
+#: ../theme-utilities/includes/acf/acf-config.php:601
+#: ../theme-utilities/includes/acf/acf-config.php:687
+#: ../theme-utilities/includes/acf/acf-config.php:773
+msgid ""
 "Hold down Command key (or CTRL on Windows) to select multiple post formats."
 msgstr ""
 "Maintenez enfoncée la touche de commande (ou CTRL sous Windows) pour "
 "sélectionner plusieurs formats de poste."
 
-#: ../theme-utilities/includes/acf/acf-config.php:429
-#: ../theme-utilities/includes/acf/acf-config.php:590
-#: ../theme-utilities/includes/acf/acf-config.php:676
-#: ../theme-utilities/includes/acf/acf-config.php:762
+#: ../theme-utilities/includes/acf/acf-config.php:443
+#: ../theme-utilities/includes/acf/acf-config.php:604
+#: ../theme-utilities/includes/acf/acf-config.php:690
+#: ../theme-utilities/includes/acf/acf-config.php:776
 msgid "Standard"
 msgstr "Norme"
 
-#: ../theme-utilities/includes/acf/acf-config.php:430
-#: ../theme-utilities/includes/acf/acf-config.php:591
-#: ../theme-utilities/includes/acf/acf-config.php:677
-#: ../theme-utilities/includes/acf/acf-config.php:763
+#: ../theme-utilities/includes/acf/acf-config.php:444
+#: ../theme-utilities/includes/acf/acf-config.php:605
+#: ../theme-utilities/includes/acf/acf-config.php:691
+#: ../theme-utilities/includes/acf/acf-config.php:777
 msgid "Gallery"
 msgstr "Galerie"
 
-#: ../theme-utilities/includes/acf/acf-config.php:431
-#: ../theme-utilities/includes/acf/acf-config.php:592
-#: ../theme-utilities/includes/acf/acf-config.php:678
-#: ../theme-utilities/includes/acf/acf-config.php:764
+#: ../theme-utilities/includes/acf/acf-config.php:445
+#: ../theme-utilities/includes/acf/acf-config.php:606
+#: ../theme-utilities/includes/acf/acf-config.php:692
+#: ../theme-utilities/includes/acf/acf-config.php:778
 msgid "Video"
 msgstr "Vidéo"
 
-#: ../theme-utilities/includes/acf/acf-config.php:432
-#: ../theme-utilities/includes/acf/acf-config.php:593
-#: ../theme-utilities/includes/acf/acf-config.php:679
-#: ../theme-utilities/includes/acf/acf-config.php:765
+#: ../theme-utilities/includes/acf/acf-config.php:446
+#: ../theme-utilities/includes/acf/acf-config.php:607
+#: ../theme-utilities/includes/acf/acf-config.php:693
+#: ../theme-utilities/includes/acf/acf-config.php:779
 msgid "Audio"
 msgstr "Audio"
 
-#: ../theme-utilities/includes/acf/acf-config.php:440
-#: ../theme-utilities/includes/acf/acf-config.php:601
-#: ../theme-utilities/includes/acf/acf-config.php:687
-#: ../theme-utilities/includes/acf/acf-config.php:774
+#: ../theme-utilities/includes/acf/acf-config.php:454
+#: ../theme-utilities/includes/acf/acf-config.php:615
+#: ../theme-utilities/includes/acf/acf-config.php:701
+#: ../theme-utilities/includes/acf/acf-config.php:788
 msgid "Number of Posts"
 msgstr "Nombre d'articles"
 
-#: ../theme-utilities/includes/acf/acf-config.php:443
+#: ../theme-utilities/includes/acf/acf-config.php:457
 msgid ""
 "Set the maximum number of posts to be displayed (for unlimited number of "
 "posts type \"-1\")"
@@ -1865,116 +1870,116 @@ msgstr ""
 "Définissez le nombre maximum de messages à afficher (pour un nombre illimité "
 "de type de messages \"-1\")"
 
-#: ../theme-utilities/includes/acf/acf-config.php:455
-#: ../theme-utilities/includes/acf/acf-config.php:616
-#: ../theme-utilities/includes/acf/acf-config.php:702
-#: ../theme-utilities/includes/acf/acf-config.php:789
+#: ../theme-utilities/includes/acf/acf-config.php:469
+#: ../theme-utilities/includes/acf/acf-config.php:630
+#: ../theme-utilities/includes/acf/acf-config.php:716
+#: ../theme-utilities/includes/acf/acf-config.php:803
 msgid "Offset"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:458
-#: ../theme-utilities/includes/acf/acf-config.php:619
-#: ../theme-utilities/includes/acf/acf-config.php:705
-#: ../theme-utilities/includes/acf/acf-config.php:792
+#: ../theme-utilities/includes/acf/acf-config.php:472
+#: ../theme-utilities/includes/acf/acf-config.php:633
+#: ../theme-utilities/includes/acf/acf-config.php:719
+#: ../theme-utilities/includes/acf/acf-config.php:806
 msgid "Number of post to pass over"
 msgstr "Nombre d'articles à passer au-dessus"
 
-#: ../theme-utilities/includes/acf/acf-config.php:470
+#: ../theme-utilities/includes/acf/acf-config.php:484
 msgid "Read More Label"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:473
+#: ../theme-utilities/includes/acf/acf-config.php:487
 msgid "Main Slider Read More Link Text"
 msgstr "Curseur principal Lire la suite Link Text"
 
-#: ../theme-utilities/includes/acf/acf-config.php:484
+#: ../theme-utilities/includes/acf/acf-config.php:498
 msgid "Only big articles"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:493
+#: ../theme-utilities/includes/acf/acf-config.php:507
 msgid "Slider height (px)"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:511
+#: ../theme-utilities/includes/acf/acf-config.php:525
 msgid "Select the transition between slides."
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:515
+#: ../theme-utilities/includes/acf/acf-config.php:529
 msgid "Slide"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:523
+#: ../theme-utilities/includes/acf/acf-config.php:537
 msgid "Slider auto play"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:531
+#: ../theme-utilities/includes/acf/acf-config.php:545
 #, fuzzy
 msgid "Delay between slides on autoplay in miliseconds"
 msgstr "Autoplay délai entre les diapositives (en millisecondes)"
 
-#: ../theme-utilities/includes/acf/acf-config.php:546
+#: ../theme-utilities/includes/acf/acf-config.php:560
 msgid "Posts Grid Cards"
 msgstr "Messages Cards Grid"
 
-#: ../theme-utilities/includes/acf/acf-config.php:604
-#: ../theme-utilities/includes/acf/acf-config.php:690
-#: ../theme-utilities/includes/acf/acf-config.php:777
+#: ../theme-utilities/includes/acf/acf-config.php:618
+#: ../theme-utilities/includes/acf/acf-config.php:704
+#: ../theme-utilities/includes/acf/acf-config.php:791
 msgid "Set the maximum number of posts to be displayed."
 msgstr "Définissez le nombre maximum de messages à afficher."
 
-#: ../theme-utilities/includes/acf/acf-config.php:632
+#: ../theme-utilities/includes/acf/acf-config.php:646
 msgid "Hero Posts Module"
 msgstr "Messages Module Hero"
 
-#: ../theme-utilities/includes/acf/acf-config.php:804
+#: ../theme-utilities/includes/acf/acf-config.php:818
 #, fuzzy
 msgid "Posts Style"
 msgstr "Titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:809
+#: ../theme-utilities/includes/acf/acf-config.php:823
 msgid "Masonry"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:810
+#: ../theme-utilities/includes/acf/acf-config.php:824
 msgid "Classic"
 msgstr "Classic"
 
-#: ../theme-utilities/includes/acf/acf-config.php:819
+#: ../theme-utilities/includes/acf/acf-config.php:833
 msgid "Pagination"
 msgstr "Pagination"
 
-#: ../theme-utilities/includes/acf/acf-config.php:824
-#: ../theme-utilities/includes/acf/acf-config.php:852
+#: ../theme-utilities/includes/acf/acf-config.php:838
+#: ../theme-utilities/includes/acf/acf-config.php:866
 msgid "Enable"
 msgstr "Activé"
 
-#: ../theme-utilities/includes/acf/acf-config.php:825
-#: ../theme-utilities/includes/acf/acf-config.php:853
+#: ../theme-utilities/includes/acf/acf-config.php:839
+#: ../theme-utilities/includes/acf/acf-config.php:867
 msgid "Disable"
 msgstr "Désactivé"
 
-#: ../theme-utilities/includes/acf/acf-config.php:834
+#: ../theme-utilities/includes/acf/acf-config.php:848
 msgid "Section Title"
 msgstr "Titre de la section"
 
-#: ../theme-utilities/includes/acf/acf-config.php:847
+#: ../theme-utilities/includes/acf/acf-config.php:861
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: ../theme-utilities/includes/acf/acf-config.php:863
+#: ../theme-utilities/includes/acf/acf-config.php:877
 msgid "Text/Image Block"
 msgstr "Texte / image Bloquer"
 
-#: ../theme-utilities/includes/acf/acf-config.php:869
+#: ../theme-utilities/includes/acf/acf-config.php:883
 msgid "Editor"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:880
+#: ../theme-utilities/includes/acf/acf-config.php:894
 msgid "Heading title"
 msgstr "Intitulé titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:886
-#: ../theme-utilities/includes/acf/acf-config.php:891
+#: ../theme-utilities/includes/acf/acf-config.php:900
+#: ../theme-utilities/includes/acf/acf-config.php:905
 #: ../theme-utilities/includes/classes/widgets/wpgrade_dribbble_widget.php:62
 #: ../theme-utilities/includes/classes/widgets/wpgrade_flickr_widget.php:214
 #: ../theme-utilities/includes/classes/widgets/wpgrade_latest_reviews.php:72
@@ -1985,19 +1990,19 @@ msgstr "Intitulé titre"
 msgid "Title"
 msgstr "Titre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:899
+#: ../theme-utilities/includes/acf/acf-config.php:913
 msgid "Heading link(optional)"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:904
+#: ../theme-utilities/includes/acf/acf-config.php:918
 msgid "#"
 msgstr ""
 
-#: ../theme-utilities/includes/acf/acf-config.php:912
+#: ../theme-utilities/includes/acf/acf-config.php:926
 msgid "Open link in new tab"
 msgstr "Liens s'ouvrent dans une nouvelle fenêtre"
 
-#: ../theme-utilities/includes/acf/acf-config.php:920
+#: ../theme-utilities/includes/acf/acf-config.php:934
 msgid "Add Block"
 msgstr "Ajouter un bloc"
 
@@ -5430,10 +5435,6 @@ msgstr "Pas de projets connexes"
 #, fuzzy
 #~ msgid "Order Updates"
 #~ msgstr "Articles plus anciens"
-
-#, fuzzy
-#~ msgid "Weight"
-#~ msgstr "hauteur"
 
 #, fuzzy
 #~ msgid "Related Products"
