@@ -13,8 +13,12 @@ $current_url = wpgrade_get_current_canonical_url();
 <meta property="og:site_name" content="<?php echo get_bloginfo("name") ?>"/>
 <meta property="og:url" content="<?php echo $current_url ?>"/>
 <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?>" />
-<?php if (is_singular()):  setup_postdata($post); ?>
+<?php if (is_singular()):  setup_postdata($post);
+	if (get_post_format() == 'video'): ?>
+<meta property="og:type" content="video"/>
+<?php else: ?>
 <meta property="og:type" content="article"/>
+<?php endif; ?>
 <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt()) ?>" />
 <meta property="article:published_time" content="<?php echo get_the_time('Y-m-j') ?>">
 <meta property="article:section" content="<?php echo ucfirst(wpgrade_main_category(get_the_category(), false)) ?>">
