@@ -17,15 +17,17 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 		if ($depth == 0 && ($item->object == 'category' || $item->object == 'post_format')) {
 			
 			//load up the library
-			if(!function_exists('wpgrade_file_get_html')) { require_once 'vendor/simplehtmldom/simple_html_dom.php'; }
+			if(!function_exists('wpgrade_str_get_dom')) { require_once 'vendor/ganon/ganon.php'; }
 
 			// Create DOM from string
-			$_doc = wpgrade_str_get_html($output);
-			$_li = $_doc->find( '.menu-item-depth-0',-1); // "-1" aka the last element is important, because $output will contain all the menu elements before current element
-		
+			$_doc = wpgrade_str_get_dom($output);
+
+			$_li = $_doc->select( '.menu-item-depth-0',-1); // "-1" aka the last element is important, because $output will contain all the menu elements before current element
+
 			// if the last <li>'s id attribute doesn't match $item->ID something is very wrong, don't do anything
 			// just a safety, should never happen...
 			$menu_item_id = str_replace( 'menu-item-', '', $_li->getAttribute( 'id' ) );
+
 			if( $menu_item_id != $item->ID ) {
 				return;
 			}
@@ -40,7 +42,7 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 			//go through the options values and titles
 			$themeconfiguration = wpgrade::config();
 			if (!empty($themeconfiguration['megamenu_layouts'])) {
-				$newHtml .= '<p class="description description-wide wpgrade_custom_menu_meta"><label>'.__('Select MegaMenu Layout:',wpgrade::textdomain()).' <select name="wpgrade_megamenu_layout_'.$menu_item_id.'">';
+				$newHtml .= '<p class="link-to-original wpgrade_custom_menu_meta"><label>'.__('Select MegaMenu Layout:',wpgrade::textdomain()).' <select name="wpgrade_megamenu_layout_'.$menu_item_id.'">';
 				foreach ($themeconfiguration['megamenu_layouts'] as $key => $value) {
 					$selected = '';
 					if ($key == $current_val) $selected = 'selected';
@@ -51,15 +53,15 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 			}
 
 			// inject the new input field
-			$whereto = $_li->find( '.menu-item-actions',0);
+			$whereto = $_li->select( '.menu-item-actions',0);
 			//add it before
-			$whereto->outertext = $newHtml.$whereto->outertext;
+			$whereto->setInnerText($newHtml.$whereto->getInnerText());
 			
 			// swap the $output
-			$output = $_doc->outertext;
+			$output = $_doc->getInnerText();
 			
 			//cleanup
-			$_doc->__destruct();
+			//$_doc->__destruct();
 			unset($_doc);
 		}
 		
