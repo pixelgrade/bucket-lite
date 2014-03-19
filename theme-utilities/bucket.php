@@ -2102,11 +2102,19 @@ class bucket
 		if (get_field('enable_review_score') && get_field('score_breakdown')):
 			$average = 0;
 			$scores = 0;
+			$weights = 0;
 			while (has_sub_fields('score_breakdown')):
-				$average = $average + get_sub_field('score');
+				$average = $average + get_sub_field('score')*get_sub_field('weight');
 				$scores++;
+				$weights += get_sub_field('weight');
 			endwhile;
-			$average = round($average / $scores, 1);
+
+			if ($weights > 0) {
+				$average = round($average / $weights, 1);
+			} else {
+				return false;
+			}
+
 			return $average;
 		endif;
 
