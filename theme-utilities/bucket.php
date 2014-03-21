@@ -2104,9 +2104,10 @@ class bucket
 			$scores = 0;
 			$weights = 0;
 			while (has_sub_fields('score_breakdown')):
-				$average = $average + get_sub_field('score')*get_sub_field('weight');
+				$weight_temp = get_sub_field('weight');
+				$average = $average + get_sub_field('score')*$weight_temp;
 				$scores++;
-				$weights += get_sub_field('weight');
+				$weights += $weight_temp;
 			endwhile;
 
 			if ($weights > 0) {

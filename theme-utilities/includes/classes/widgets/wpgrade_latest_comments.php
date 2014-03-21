@@ -11,17 +11,18 @@ class wpgrade_latest_comments extends WP_Widget {
 		$this->alt_option_name = 'widget_recent_comments';
 
 		add_action( 'comment_post', array($this, 'flush_widget_cache') );
+		add_action( 'edit_comment', array($this, 'flush_widget_cache') );
 		add_action( 'transition_comment_status', array($this, 'flush_widget_cache') );
 	}
 
 	function flush_widget_cache() {
-		wp_cache_delete('widget_recent_comments', 'widget');
+		wp_cache_delete('wpgrade_latest_comments', 'widget');
 	}
 
 	function widget( $args, $instance ) {
 		global $comments, $comment;
 
-		$cache = wp_cache_get('widget_recent_comments', 'widget');
+		$cache = wp_cache_get('wpgrade_latest_comments', 'widget');
 
 		if ( ! is_array( $cache ) )
 			$cache = array();
@@ -87,7 +88,7 @@ class wpgrade_latest_comments extends WP_Widget {
 
 		echo $output;
 		$cache[$args['widget_id']] = $output;
-		wp_cache_set('widget_recent_comments', $cache, 'widget');
+		wp_cache_set('wpgrade_latest_comments', $cache, 'widget');
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -97,8 +98,8 @@ class wpgrade_latest_comments extends WP_Widget {
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset($alloptions['widget_recent_comments']) )
-			delete_option('widget_recent_comments');
+		if ( isset($alloptions['wpgrade_latest_comments']) )
+			delete_option('wpgrade_latest_comments');
 
 		return $instance;
 	}
