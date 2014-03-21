@@ -64,10 +64,16 @@ class wpgrade_latest_comments extends WP_Widget {
 					</a>
 					<div class="media__body  latest-comments__body">
 						<div class="comment__meta">
-							<a class="latest-comments__author" href="<?php echo get_comment_author_url() ?>"><?php echo $comment->comment_author; ?></a>
+							<?php
+							$author_url = get_comment_author_url( $comment->comment_ID );
+							if (!empty($author_url)) : ?>
+							<a class="latest-comments__author" href="<?php echo $author_url ?>"><?php echo get_comment_author( $comment->comment_ID ) ?></a>
+							<?php else : ?>
+							<span class="latest-comments__author"><?php echo get_comment_author( $comment->comment_ID ) ?></span>
+							<?php endif; ?>
 							<span class="comment__date"><?php _e('on', wpgrade::textdomain()); ?> <?php echo date( 'd M' ,strtotime($comment->comment_date)); ?></span>
 						</div>
-						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
+						<a class="latest-comments__title" href="<?php echo esc_url( get_comment_link($comment->comment_ID) ) ?>"><?php echo get_the_title($comment->comment_post_ID); ?></a>
 						<div class="latest-comments__content">
 							<p><?php echo bucket::limit_words(strip_tags(get_comment_text($comment->comment_ID)), 25, ' [&hellip;]'); ?></p>
 						</div>
