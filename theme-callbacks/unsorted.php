@@ -34,7 +34,7 @@ function wpgrade_contains_any_multibyte($string)
 
 //in case the mb_ PHP extension is not activated
 if ( !function_exists('mb_strlen') ) {
-	function mb_strlen ($text, $encode) {
+	function mb_strlen ($text, $encode = 'UTF-8') {
 		if ($encode=='UTF-8') {
 			return preg_match_all('%(?:
 					  [\x09\x0A\x0D\x20-\x7E]           # ASCII

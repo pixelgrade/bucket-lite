@@ -8,10 +8,31 @@ class wpgrade_latest_reviews extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct( 'wpgrade_latest_reviews', wpgrade::themename() .' '.__('Latest Reviews', wpgrade::textdomain() ), array('description' => __( "Display the latest posts with reviews", wpgrade::textdomain() )) );
+		$this->alt_option_name = 'wpgrade_latest_reviews';
+
+		add_action( 'save_post', array($this, 'flush_widget_cache') );
+		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
+		add_action( 'switch_theme', array($this, 'flush_widget_cache') );
 	}
 
 	function widget($args, $instance) {
 		global $post;
+
+		//CACHING MAN
+		$cache = wp_cache_get('wpgrade_latest_reviews', 'widget');
+
+		if ( !is_array($cache) )
+			$cache = array();
+
+		if ( ! isset( $args['widget_id'] ) )
+			$args['widget_id'] = $this->id;
+
+		if ( isset( $cache[ $args['widget_id'] ] ) ) {
+			echo $cache[ $args['widget_id'] ];
+			return;
+		}
+
+		ob_start();
 		
 		extract( $args );
 		$title = apply_filters('widget_title', $instance['title']);
@@ -30,8 +51,9 @@ class wpgrade_latest_reviews extends WP_Widget {
 
 		$reviews_posts = get_posts($query_args);
 
-		echo $before_widget;
-		if (count($reviews_posts)): ?>
+		if (count($reviews_posts)):
+			echo $before_widget;
+			?>
 			<?php if ($title): ?>
 				<div class="widget__title  widget--sidebar__title  flush--bottom">
 					<h2 class="hN"><?php echo $title; ?></h2>
@@ -49,19 +71,36 @@ class wpgrade_latest_reviews extends WP_Widget {
 					</li>
 				<?php endforeach; ?>
 			</ol>
-		<?php endif;
+		<?php
+			echo $after_widget;
 
-		// Reset Post Data
-		wp_reset_postdata();
+			// Reset Post Data
+			wp_reset_postdata();
+
+		endif;
+
 		wp_reset_query();
-		echo $after_widget;
+
+		// Cache the widget
+		$cache[$args['widget_id']] = ob_get_flush();
+		wp_cache_set('wpgrade_latest_reviews', $cache, 'widget');
 	}
 
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['number'] = absint( $new_instance['number'] );
+		$this->flush_widget_cache();
+
+		$alloptions = wp_cache_get( 'alloptions', 'options' );
+		if ( isset($alloptions['wpgrade_latest_reviews']) )
+			delete_option('wpgrade_latest_reviews');
+
 		return $instance;
+	}
+
+	function flush_widget_cache() {
+		wp_cache_delete('wpgrade_latest_reviews', 'widget');
 	}
 
 	function form($instance) {
