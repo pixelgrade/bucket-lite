@@ -11,17 +11,18 @@ class wpgrade_latest_comments extends WP_Widget {
 		$this->alt_option_name = 'widget_recent_comments';
 
 		add_action( 'comment_post', array($this, 'flush_widget_cache') );
+		add_action( 'edit_comment', array($this, 'flush_widget_cache') );
 		add_action( 'transition_comment_status', array($this, 'flush_widget_cache') );
 	}
 
 	function flush_widget_cache() {
-		wp_cache_delete('widget_recent_comments', 'widget');
+		wp_cache_delete('wpgrade_latest_comments', 'widget');
 	}
 
 	function widget( $args, $instance ) {
 		global $comments, $comment;
 
-		$cache = wp_cache_get('widget_recent_comments', 'widget');
+		$cache = wp_cache_get('wpgrade_latest_comments', 'widget');
 
 		if ( ! is_array( $cache ) )
 			$cache = array();
@@ -64,10 +65,16 @@ class wpgrade_latest_comments extends WP_Widget {
 					</a>
 					<div class="media__body  latest-comments__body">
 						<div class="comment__meta">
-							<a class="latest-comments__author" href="<?php echo get_comment_author_url() ?>"><?php echo $comment->comment_author; ?></a>
+							<?php
+							$author_url = get_comment_author_url( $comment->comment_ID );
+							if (!empty($author_url)) : ?>
+							<a class="latest-comments__author" href="<?php echo $author_url ?>"><?php echo get_comment_author( $comment->comment_ID ) ?></a>
+							<?php else : ?>
+							<span class="latest-comments__author"><?php echo get_comment_author( $comment->comment_ID ) ?></span>
+							<?php endif; ?>
 							<span class="comment__date"><?php _e('on', wpgrade::textdomain()); ?> <?php echo date( 'd M' ,strtotime($comment->comment_date)); ?></span>
 						</div>
-						<a class="latest-comments__title" href="<?php echo $comment->guid; ?>"><?php echo $comment->post_title; ?></a>
+						<a class="latest-comments__title" href="<?php echo esc_url( get_comment_link($comment->comment_ID) ) ?>"><?php echo get_the_title($comment->comment_post_ID); ?></a>
 						<div class="latest-comments__content">
 							<p><?php echo bucket::limit_words(strip_tags(get_comment_text($comment->comment_ID)), 25, ' [&hellip;]'); ?></p>
 						</div>
@@ -81,7 +88,7 @@ class wpgrade_latest_comments extends WP_Widget {
 
 		echo $output;
 		$cache[$args['widget_id']] = $output;
-		wp_cache_set('widget_recent_comments', $cache, 'widget');
+		wp_cache_set('wpgrade_latest_comments', $cache, 'widget');
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -91,8 +98,8 @@ class wpgrade_latest_comments extends WP_Widget {
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset($alloptions['widget_recent_comments']) )
-			delete_option('widget_recent_comments');
+		if ( isset($alloptions['wpgrade_latest_comments']) )
+			delete_option('wpgrade_latest_comments');
 
 		return $instance;
 	}

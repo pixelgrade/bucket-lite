@@ -53,6 +53,9 @@ class wpgrade_popular_posts extends WP_Widget {
 		/* Create the widget. */
 		parent::__construct( 'wpgrade_popular_posts', wpgrade::themename().' '.__('Popular Posts', wpgrade::textdomain() ), $widget_ops, $control_ops );
 
+		add_action( 'save_post', array($this, 'flush_widget_cache') );
+		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
+		add_action( 'switch_theme', array($this, 'flush_widget_cache') );
 	}
 
 	function update ( $new_instance, $old_instance ) {
@@ -61,6 +64,11 @@ class wpgrade_popular_posts extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = esc_attr( $new_instance['title'] );
 		$instance['number'] = intval( $new_instance['number'] );
+		$this->flush_widget_cache();
+
+		$alloptions = wp_cache_get( 'alloptions', 'options' );
+		if ( isset($alloptions['wpgrade_popular_posts']) )
+			delete_option('wpgrade_popular_posts');
 
 		return $instance;
 
@@ -88,6 +96,21 @@ class wpgrade_popular_posts extends WP_Widget {
 	} // End form()
 
 	function widget($args, $instance) {
+		//CACHING MAN
+		$cache = wp_cache_get('wpgrade_popular_posts', 'widget');
+
+		if ( !is_array($cache) )
+			$cache = array();
+
+		if ( ! isset( $args['widget_id'] ) )
+			$args['widget_id'] = $this->id;
+
+		if ( isset( $cache[ $args['widget_id'] ] ) ) {
+			echo $cache[ $args['widget_id'] ];
+			return;
+		}
+
+		ob_start();
 
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 		self::$current_instance = $instance;
@@ -142,6 +165,10 @@ class wpgrade_popular_posts extends WP_Widget {
 		</div>
 
 		<?php echo $after_widget;
+
+		// Cache the widget
+		$cache[$args['widget_id']] = ob_get_flush();
+		wp_cache_set('wpgrade_popular_posts', $cache, 'widget');
 
 	}
 
@@ -298,6 +325,10 @@ class wpgrade_popular_posts extends WP_Widget {
 
 		return $posts;
 
+	}
+
+	function flush_widget_cache() {
+		wp_cache_delete('wpgrade_popular_posts', 'widget');
 	}
 
 } // End Class
