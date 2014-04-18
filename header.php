@@ -2,9 +2,6 @@
 get_template_part('theme-partials/header/head');
 
 $class_name = '';
-if(is_page() && get_page_template_slug(wpgrade::lang_original_post_id(get_the_ID())) == 'template-journal.php') {
-	$class_name .= ' blog';
-}
 
 $schema_org = '';
 if (is_single()) {
