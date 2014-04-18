@@ -10,6 +10,8 @@
 	@extend .cf;
 	border: 0 !important;
 	@include rem(margin-left, -$_u/2);
+
+	list-style-type: none;
 }
 
 .wpgrade-flickr-item {
