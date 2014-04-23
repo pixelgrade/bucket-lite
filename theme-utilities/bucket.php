@@ -2100,20 +2100,23 @@ class bucket
 	static function get_average_score() {
 
 		if (get_field('enable_review_score') && get_field('score_breakdown')):
-			$average = 0;
+			$score_sum = 0;
+			$score_sum_weighted = 0;
 			$scores = 0;
 			$weights = 0;
 			while (has_sub_fields('score_breakdown')):
 				$weight_temp = get_sub_field('weight');
-				$average = $average + get_sub_field('score')*$weight_temp;
-				$scores++;
+				$score_sum_weighted = $score_sum_weighted + get_sub_field('score')*$weight_temp;
 				$weights += $weight_temp;
+
+				$score_sum = $score_sum + get_sub_field('score');
+				$scores++;
 			endwhile;
 
 			if ($weights > 0) {
-				$average = round($average / $weights, 1);
+				$average = round($score_sum_weighted / $weights, 1);
 			} else {
-				return false;
+				$average = round($score_sum / $scores, 1);
 			}
 
 			return $average;
