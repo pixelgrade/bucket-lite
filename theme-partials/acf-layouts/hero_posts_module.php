@@ -122,34 +122,77 @@ $slides = new WP_Query( $query_args );
 if ($slides->have_posts()): ?>
 
     <div class="featured-area"><!--
-        <?php if($slides->have_posts()): $slides->the_post(); 
-			//first let's remember the post id
-			$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
-		?>
-            --><div class="featured-area__article  article--big">
-                <?php
-                if (has_post_thumbnail()):
-                    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
+        <?php
+		if ($slides->post_count <= 4) : //we just display a single big image, no slider required
+			if($slides->have_posts()): $slides->the_post();
+				//first let's remember the post id
+				$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
+			?>
+			--><div class="featured-area__article  article--big">
+				<?php
+				if (has_post_thumbnail()):
+					$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
 					$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
 					if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-						$image_ratio = $image[2] * 100/$image[1]; 
+						$image_ratio = $image[2] * 100/$image[1];
 					} ?>
-                    <a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-                        <img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
-                        <div class="article__title">
-                            <h3 class="hN"><?php the_title(); ?></h3>
-                        </div>
-                    </a>
-	            <?php else : ?>
-	                <a href="<?php the_permalink(); ?>" class="image-wrap no-image" >
-		                <div class="article__title">
-			                <h3 class="hN"><?php the_title(); ?></h3>
-		                </div>
-	                </a>
-                <?php endif;
-	            post_format_icon('post-format-icon--featured'); ?>
-            </div><!--
-        <?php endif; ?>
+					<a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+						<img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+						<div class="article__title">
+							<h3 class="hN"><?php the_title(); ?></h3>
+						</div>
+					</a>
+				<?php else : ?>
+					<a href="<?php the_permalink(); ?>" class="image-wrap no-image" >
+						<div class="article__title">
+							<h3 class="hN"><?php the_title(); ?></h3>
+						</div>
+					</a>
+				<?php endif;
+				post_format_icon('post-format-icon--featured'); ?>
+			</div><!--
+			<?php endif;
+		else : //we have more than 4 posts
+			// we will take the first n-3 posts and make a slider out of them
+		?>
+		--><div class="heroslider pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="600"><!--
+		<?php
+			$idx = 0;
+			while ($idx < ($slides->post_count - 3)) : $slides->the_post();
+				//first let's remember the post id
+				$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
+				$idx++;
+				?>
+			--><div class="article--big">
+					<?php
+					if (has_post_thumbnail()):
+						$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
+						$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+						if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+							$image_ratio = $image[2] * 100/$image[1];
+						} ?>
+						<a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+							<img class="lazy" data-src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
+							<div class="article__title">
+								<h3 class="hN"><?php the_title(); ?></h3>
+							</div>
+						</a>
+					<?php else : ?>
+						<a href="<?php the_permalink(); ?>" class="image-wrap no-image" >
+							<div class="article__title">
+								<h3 class="hN"><?php the_title(); ?></h3>
+							</div>
+						</a>
+					<?php endif;
+					post_format_icon('post-format-icon--featured'); ?>
+				</div><!--
+			<?php
+			endwhile;
+			?>
+		--></div><!--
+		<?php
+		endif;
+		?>
      --><div class="featured-area__aside">
             <ul class="block-list  block-list--alt">
                 <?php
