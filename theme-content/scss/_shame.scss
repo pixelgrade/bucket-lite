@@ -284,6 +284,13 @@ html {
 }
 
 
+.pixslider{
+    @include opacity(0);
+
+    &.slider--loaded{
+        @include opacity(1);
+    }
+}
 
 
 /**
