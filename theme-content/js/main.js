@@ -1732,38 +1732,39 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		  
 		  //the main params for Royal Slider
 			var royalSliderParams = {
-					autoHeight: rs_autoheight,
-					autoScaleSlider: rs_autoScaleSlider,
-					loop: true,
-					autoScaleSliderWidth: rs_autoScaleSliderWidth,
-					autoScaleSliderHeight: rs_autoScaleSliderHeight,
-					imageScaleMode: rs_imageScale,
-					imageAlignCenter: rs_imageAlignCenter,
-					slidesSpacing: rs_slidesSpacing,
-					arrowsNav: rs_arrows,
-					controlNavigation: rs_bullets,
-					keyboardNavEnabled: rs_keyboardNav,
-					arrowsNavAutoHide: false,
-					sliderDrag: rs_drag,
-					transitionType: rs_transition,
-					autoPlay: {
-							enabled: rs_autoPlay,
-							stopAtAction: true,
-							pauseOnHover: true,
-							delay: rs_delay
-					},
-					globalCaption:rs_globalCaption
+				autoHeight: rs_autoheight,
+				autoScaleSlider: rs_autoScaleSlider,
+				loop: true,
+				autoScaleSliderWidth: rs_autoScaleSliderWidth,
+				autoScaleSliderHeight: rs_autoScaleSliderHeight,
+				imageScaleMode: rs_imageScale,
+				imageAlignCenter: rs_imageAlignCenter,
+				slidesSpacing: rs_slidesSpacing,
+				arrowsNav: rs_arrows,
+				controlNavigation: rs_bullets,
+				keyboardNavEnabled: rs_keyboardNav,
+				arrowsNavAutoHide: false,
+				sliderDrag: rs_drag,
+				transitionType: rs_transition,
+				autoPlay: {
+						enabled: rs_autoPlay,
+						stopAtAction: true,
+						pauseOnHover: true,
+						delay: rs_delay
+				},
+				numImagesToPreload: 2,
+				globalCaption:rs_globalCaption
 			};
 
 			if (rs_visibleNearby) {
-					royalSliderParams['visibleNearby'] = {
-							enabled: true,
-							//centerArea: 0.8,
-							center: true,
-							breakpoint: 0,
-							//breakpointCenterArea: 0.64,
-							navigateByCenterClick: false
-					}
+				royalSliderParams['visibleNearby'] = {
+						enabled: true,
+						//centerArea: 0.8,
+						center: true,
+						breakpoint: 0,
+						//breakpointCenterArea: 0.64,
+						navigateByCenterClick: false
+				}
 			}
 
 			//lets fire it up
@@ -1777,25 +1778,25 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			$slider.find('.rsArrow').appendTo($slider);
 
 			royalSlider.ev.on('rsVideoPlay', function() {
-					if(rs_imageScale == 'fill'){
-							var $frameHolder = $('.rsVideoFrameHolder');
-							var top = Math.abs(royalSlider.height - $frameHolder.closest('.rsVideoContainer').height())/2;
+				if(rs_imageScale == 'fill'){
+						var $frameHolder = $('.rsVideoFrameHolder');
+						var top = Math.abs(royalSlider.height - $frameHolder.closest('.rsVideoContainer').height())/2;
 
-							$frameHolder.height(royalSlider.height);
-							$frameHolder.css('margin-top', top+'px');
+						$frameHolder.height(royalSlider.height);
+						$frameHolder.css('margin-top', top+'px');
 
-					} else {
-							var $frameHolder = $('.rsVideoFrameHolder');
-							var $videoContainer = $('.rsVideoFrameHolder').closest('.rsVideoContainer');
-							var top = parseInt($frameHolder.closest('.rsVideoContainer').css('margin-top'), 10);
+				} else {
+						var $frameHolder = $('.rsVideoFrameHolder');
+						var $videoContainer = $('.rsVideoFrameHolder').closest('.rsVideoContainer');
+						var top = parseInt($frameHolder.closest('.rsVideoContainer').css('margin-top'), 10);
 
-							if(top < 0){
-									top = Math.abs(top);
-									$frameHolder
-											.height(royalSlider.height)
-											.css('top', top + 'px');
-							}
-					}
+						if(top < 0){
+								top = Math.abs(top);
+								$frameHolder
+										.height(royalSlider.height)
+										.css('top', top + 'px');
+						}
+				}
 			});
 
 			$slider.addClass('slider--loaded');

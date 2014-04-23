@@ -218,7 +218,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "post-medium" );
 
                             if ( $image ){
-                                $menu_post_image = '<img class="lazy" data-src="' . $image[0] . '" alt="' . $post_title . '" width="' . $image[1]. '" height="' . $image[2]. '" />';
+                                $menu_post_image = '<div class="rsImg" >'.$image[0].'</div>';
                             } else {
                                 // $menu_post_image = '<div class="image-wrap"></div>';
                                 $menu_post_image = '';
