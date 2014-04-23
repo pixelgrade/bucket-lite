@@ -31,7 +31,7 @@
 	/**
 	 * The following code is inspired by Yoast SEO.
 	 */
-	function wpgrade_get_current_canonical_url() {
+	function wpgrade_get_current_canonical_url($no_pagination = false) {
 		global $wp_query;
 
 		if ($wp_query->is_404 || $wp_query->is_search) {
@@ -78,18 +78,18 @@
 		}
 		elseif ($wp_query->is_day && $haspost) {
 			$link = get_day_link
-				(
-					get_query_var('year'),
-					get_query_var('monthnum'),
-					get_query_var('day')
-				);
+			(
+				get_query_var('year'),
+				get_query_var('monthnum'),
+				get_query_var('day')
+			);
 		}
 		elseif ($wp_query->is_month && $haspost) {
 			$link = get_month_link
-				(
-					get_query_var('year'),
-					get_query_var('monthnum')
-				);
+			(
+				get_query_var('year'),
+				get_query_var('monthnum')
+			);
 		}
 		elseif ($wp_query->is_year && $haspost) {
 			$link = get_year_link(get_query_var('year'));
@@ -119,15 +119,17 @@
 			return false;
 		}
 
-		//let's see about the page number
-		$page = get_query_var('page');
-		if (empty($page )) {
-			$page = get_query_var('paged');
-		}
+		if (!$no_pagination) {
+			//let's see about the page number
+			$page = get_query_var('page');
+			if (empty($page )) {
+				$page = get_query_var('paged');
+			}
 
-		if ( ! empty($page) && $page > 1) {
-			$link = trailingslashit($link) ."page/$page";
-			$link = user_trailingslashit($link, 'paged');
+			if ( ! empty($page) && $page > 1) {
+				$link = trailingslashit($link) ."page/$page";
+				$link = user_trailingslashit($link, 'paged');
+			}
 		}
 
 		return $link;

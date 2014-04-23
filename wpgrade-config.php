@@ -128,14 +128,14 @@
 
 			'footer-scripts' => array
 			(
-				'google-maps-api' => array
-				(
-					'path' => 'http://maps.google.com/maps/api/js?sensor=false&amp;language=en',
-					'require' => array
-					(
-						'jquery'
-					),
-				),
+//				'google-maps-api' => array
+//				(
+//					'path' => 'http://maps.google.com/maps/api/js?sensor=false&amp;language=en',
+//					'require' => array
+//					(
+//						'jquery'
+//					),
+//				),
 				'wpgrade-main-scripts' => array
 				(
 					'path' => get_template_directory_uri() . '/theme-content/js/main.js',
@@ -166,7 +166,7 @@
 		// auto invoke scripts previously registered on theme setup
 		'auto-enqueue-scripts' => array
 		(
-			'google-maps-api',
+//			'google-maps-api',
 			'wpgrade-main-scripts'
 		),
 

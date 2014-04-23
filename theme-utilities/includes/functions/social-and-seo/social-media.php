@@ -61,6 +61,13 @@
 			return '';
 		}
 	}
+
+	/**
+	 * Rel Links
+	 */
+	function wpgrade_callback_rel_links() {
+		include wpgrade::themefilepath('theme-utilities/assets/social-and-seo/rel-links'.EXT);
+	}
 	
 	/**
 	 * General SEO
@@ -91,11 +98,15 @@
 	}
 
 	function load_social_share() {
+		add_action('wp_head', 'wpgrade_callback_rel_links');
 		if (wpgrade::option('prepare_for_social_share')) {
 			add_action('wp_head', 'wpgrade_callback_general_seo');
 			add_action('wp_head', 'wpgrade_callback_facebook_opengraph');
 			add_action('wp_head', 'wpgrade_callback_google_metas');
 			add_action('wp_head', 'wpgrade_callback_twitter_card');
+
+			# Remove WordPress' canonical links
+			remove_action('wp_head', 'rel_canonical');
 		}
 	}
 

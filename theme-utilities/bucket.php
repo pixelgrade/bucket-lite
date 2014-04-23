@@ -2122,6 +2122,34 @@ class bucket
 		return false;
 	}
 
+	//function borrowed from WP SEO by Yoast so we can make sure that the theme plays nice with this plugin
+	//the plugin will now output rel=next links for the first page of the Custom Page Builder
+	static function adjacent_rel_link( $rel, $url, $page, $incl_pagination_base ) {
+		global $wp_rewrite;
+		if ( ! $wp_rewrite->using_permalinks() ) {
+			if ( $page > 1 )
+				$url = add_query_arg( 'paged', $page, $url );
+		} else {
+			if ( $page > 1 ) {
+				$base = '';
+				if ( $incl_pagination_base ) {
+					$base = trailingslashit( $wp_rewrite->pagination_base );
+				}
+				$url = user_trailingslashit( trailingslashit( $url ) . $base . $page );
+			}
+		}
+		/**
+		 * Filter: 'wpseo_' . $rel . '_rel_link' - Allow changing link rel output by WP SEO
+		 *
+		 * @api string $unsigned The full `<link` element.
+		 */
+		$link = apply_filters( 'wpseo_' . $rel . '_rel_link', '<link rel="' . $rel . '" href="' . esc_url( $url ) . "\" />\n" );
+
+		if ( is_string( $link ) && $link !== '' ) {
+			echo $link;
+		}
+	}
+
 	/**
 	 * Echo author page link
 	 * @return bool|string
