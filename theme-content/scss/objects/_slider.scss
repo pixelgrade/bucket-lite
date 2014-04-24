@@ -2,9 +2,7 @@
                SLIDER ARROWS
 \*------------------------------------*/
 
-.rsArrow{
-    @include transform(translateY(-50%));
-}
+
 
 .rsArrow .rsArrowIcn{
     @include rem(height, 26px);
