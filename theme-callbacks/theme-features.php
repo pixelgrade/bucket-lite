@@ -1,12 +1,13 @@
 <?php
-/**
- * Invoked by wpgrade_callback_themesetup
- */
+
 function wpgrade_callback_custom_theme_features() {
 	add_theme_support('automatic-feed-links');
-	// @todo CLEANUP consider options for spliting editor style out of main style
-	add_editor_style(get_template_directory_uri().'/theme-content/css/style.css');
+
+	//load editor-style.css if present in parent and/or child theme
+	add_editor_style(array('theme-content/css/editor-style.css', 'editor-style.css'));
 }
+
+add_action('after_setup_theme', 'wpgrade_callback_custom_theme_features');
 
 
 function wpgrade_custom_backgrounds_suport(){
