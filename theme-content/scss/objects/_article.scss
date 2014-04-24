@@ -97,6 +97,12 @@
     padding-bottom: 0;
     @include rem(margin-bottom, $_u + $_u2 - 5px);
 
+    -webkit-backface-visibility: hidden;
+
+    .image-wrap{
+        -webkit-backface-visibility: hidden;
+    }
+
     .article__featured-image {
         
     }
