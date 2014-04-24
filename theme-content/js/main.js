@@ -1593,10 +1593,16 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 		// Figure out and save aspect ratio for each video
 		videos.each(function() {
-			$(this).data('aspectRatio', this.width / this.height)
-				// and remove the hard coded width/height
-				.removeAttr('height')
-				.removeAttr('width');
+			if( this.width != 0 && this.height != 0 ){
+				$(this).data('aspectRatio', this.width / this.height)
+					// and remove the hard coded width/height
+					.removeAttr('height')
+					.removeAttr('width');
+			} else { // for the conflict with jetpack set an default aspect ration of 16/9
+				$(this).data('aspectRatio', 16/9 )
+					.removeAttr('height')
+					.removeAttr('width');				
+			}
 		});
 
 		resizeVideos();
@@ -2282,7 +2288,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 	function loadUp(){
 
-		initVideos();
+		// initVideos();
 		footerWidgetsTitles();
 	
 		//Set textareas to autosize
