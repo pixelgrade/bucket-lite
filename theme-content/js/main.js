@@ -2282,7 +2282,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 	function loadUp(){
 
-		// initVideos();
+		initVideos();
 		footerWidgetsTitles();
 	
 		//Set textareas to autosize
