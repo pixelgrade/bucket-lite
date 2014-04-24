@@ -26,5 +26,5 @@
     @extend .grid__item;
     @extend .palm-one-whole;
     @extend .five-twelfths;
-    @include rem(margin-bottom, $_u);
+    @include rem(margin-bottom, $_u + $_u2);
 }

@@ -155,7 +155,7 @@ if ($slides->have_posts()): ?>
 		else : //we have more than 4 posts
 			// we will take the first n-3 posts and make a slider out of them
 		?>
-		--><div class="heroslider pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="600"><!--
+		--><div class="heroslider pixslider js-pixslider" data-imagealign="center" data-imagescale="fill" data-arrows data-autoScaleSliderWidth="600" data-autoScaleSliderHeight="373"><!--
 		<?php
 			$idx = 0;
 			while ($idx < ($slides->post_count - 3)) : $slides->the_post();
