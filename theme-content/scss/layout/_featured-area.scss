@@ -1,5 +1,13 @@
 .featured-area {
     @extend .grid;
+
+	.heroslider {
+		@extend .grid__item;
+		@extend .palm-one-whole;
+		@extend .seven-twelfths;
+		position: relative;
+		@include rem(margin-bottom, $_u + $_u2);
+	}
 }
 
 .featured-area__article {

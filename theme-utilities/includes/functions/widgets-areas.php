@@ -71,6 +71,9 @@ function wpgrade_register_sidebars() {
 		)
 	);
 
+	// Use shortcodes in text widgets.
+	add_filter('widget_text', 'do_shortcode');
+
 }
 add_action('widgets_init', 'wpgrade_register_sidebars');
 
