@@ -250,6 +250,9 @@ html {
     position: relative; 
     overflow: hidden;
 
+    //another fucking bug in chrome
+    -webkit-backface-visibility: hidden;
+
     img, .wp-post-image {
         position: absolute;
         top: 0; left: 0;
