@@ -348,7 +348,11 @@
 }
 
 
-
+.heroslider{
+    .rsArrowLeft{
+        left: $_u;
+    }
+}
 
 /**
  * Posts Grid Cards ( ++styling if flexbox is supported )

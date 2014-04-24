@@ -2,6 +2,10 @@
                SLIDER ARROWS
 \*------------------------------------*/
 
+.rsArrow{
+    @include transform(translateY(-50%));
+}
+
 .rsArrow .rsArrowIcn{
     @include rem(height, 26px);
     @include rem(width, 26px);
@@ -19,6 +23,7 @@
         top: 30%;
     }
 }
+
 
 // @include media-query(lap-and-up) {
 //     .arrows--outside .rsArrow{
