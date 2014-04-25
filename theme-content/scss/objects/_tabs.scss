@@ -44,4 +44,8 @@
         z-index: 10;
         display: none;
     }
+
+    &.visible{
+        display: block;
+    }
 }

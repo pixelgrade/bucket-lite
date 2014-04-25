@@ -687,15 +687,19 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 		var $allListWrap = base.$el.find(".tabs__content"),
 			curList = base.$el.find("a.current").attr("href").substring(1);
 		$allListWrap.height(base.$el.find("#" + curList).height());
-		base.$nav.find("li > a").click(function(event) {
-			
+
+		base.$nav.find("li > a").click(function(event) {		
 			var curList = base.$el.find("a.current").attr("href").substring(1),
 				$newList = $(this),
 				listID = $newList.attr("href").substring(1);
 			if ((listID != curList) && (base.$el.find(":animated").length == 0)) {
+
+				$('#' + currlist).addClass('visible');
+
 				base.$el.find("#" + curList).css({
 					opacity: 0,
 					"z-index": 10
+
 				});
 				
 				var newHeight = base.$el.find("#" + listID).height();
