@@ -695,8 +695,15 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 			if ((listID != curList) && (base.$el.find(":animated").length == 0)) {
 				base.$el.find("#" + curList).css({
 					opacity: 0,
-					"z-index": 10
+					"z-index": 10,
 				});
+
+				setTimeout(function(){
+					base.$el.find("#" + curList).css({
+						display: "none"
+					});		
+				}, 250);
+
 				var newHeight = base.$el.find("#" + listID).height();
 				$allListWrap.css({
 					height: newHeight
@@ -706,7 +713,9 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 					base.$el.find("#" + listID).css({
 						opacity: 1,
 						"z-index": 20
+						display: "block"
 					});
+
 					base.$el.find(".tabs__nav li a").removeClass("current");
 					$newList.addClass("current");
 				}, 250);
