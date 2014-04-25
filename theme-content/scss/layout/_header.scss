@@ -109,7 +109,18 @@
     display: inline-block;
 
     @include media-query(palm) {
-        height: 50px;
+        display: block;
+        margin: $_u4 0;
+
+        img{
+            max-height: 100px !important;
+        }
+    }
+}
+
+.site-logo--image-2x{
+    @include media-query(lap-and-up) {
+       max-width: 50%;
     }
 }
 
