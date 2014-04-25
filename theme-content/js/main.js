@@ -712,7 +712,7 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 					base.$el.find("#" + curList);
 					base.$el.find("#" + listID).css({
 						opacity: 1,
-						"z-index": 20
+						"z-index": 20,
 						display: "block"
 					});
 
