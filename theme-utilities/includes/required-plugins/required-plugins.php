@@ -27,7 +27,7 @@ function wpgrade_register_required_plugins() {
 			'slug'     				=> 'pixtypes',
 			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixtypes.zip',
 			'required' 				=> true,
-			'version' 				=> '1.2.0',
+			'version' 				=> '1.2.1',
 			'force_activation' 		=> false,
 			'force_deactivation' 	=> false,
 			'external_url' 			=> '',
