@@ -117,7 +117,12 @@
 
     .gallery-item {
         @include rem(margin, 0 0 $_u2 0);
-        @include rem(padding-left, $_u4);
+        @include rem(padding-left, 10px);
+        margin-bottom: 0;
+
+        img{
+            display: block;
+        }
     }
 
     .gallery-icon {

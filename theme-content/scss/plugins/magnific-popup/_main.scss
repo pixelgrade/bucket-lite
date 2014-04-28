@@ -85,6 +85,10 @@ $use-visuallyhidden:              false !default; // Hide content from browsers,
 
   background: $overlay-color;
   opacity: $overlay-opacity;
+  
+  -webkit-transform: translate3d(0,0,0);
+  display: block;
+
   @if $IE7support {
     filter: alpha(opacity=$overlay-opacity*100);
   }
