@@ -85,9 +85,6 @@ $use-visuallyhidden:              false !default; // Hide content from browsers,
 
   background: $overlay-color;
   opacity: $overlay-opacity;
-  
-  -webkit-transform: translate3d(0,0,0);
-  display: block;
 
   @if $IE7support {
     filter: alpha(opacity=$overlay-opacity*100);
@@ -657,7 +654,7 @@ button::-moz-focus-inner {
     @include perspective(1000px);
 
     @include opacity(0);
-    @include transition(all .2s ease-in-out);
+    // @include transition(all .2s ease-in-out);
 }
 
 /* overlay animate in */
@@ -666,7 +663,7 @@ button::-moz-focus-inner {
 }
 /* overlay animate out */
 .mfp-fade.mfp-bg.mfp-removing {
-    @include transition(all .2s .1s ease-in-out);
+    // @include transition(all .2s .1s ease-in-out);
     @include opacity(0);
 }
 
@@ -678,7 +675,7 @@ button::-moz-focus-inner {
 
     @include scale(.75);
     @include opacity(0);
-    @include transition(all .2s .1s ease-in-out);
+    // @include transition(all .2s .1s ease-in-out);
 }
 
 /* content animate it */
@@ -689,7 +686,7 @@ button::-moz-focus-inner {
 
 /* content animate out */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-    @include transition(all .2s ease-in-out);
+    // @include transition(all .2s ease-in-out);
     @include scale(.75);
     @include opacity(0);
 }
