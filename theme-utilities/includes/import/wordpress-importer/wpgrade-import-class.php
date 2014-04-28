@@ -529,7 +529,9 @@ class wpGrade_import extends WPGrade_WP_Import
 	   $new_widgets = array();
 
 	   foreach ( $sidebars_data as $import_sidebar => $import_widgets ) :
-
+		   //yes it exists - for now just force it
+		   $current_sidebars[$import_sidebar] = array();
+		   
 		   foreach ( $import_widgets as $import_widget ) :
 			   //if the sidebar exists
 			   if ( isset( $current_sidebars[$import_sidebar] ) ) :

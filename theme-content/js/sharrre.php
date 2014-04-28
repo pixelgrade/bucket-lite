@@ -8,20 +8,7 @@
   
   if(filter_var($_GET['url'], FILTER_VALIDATE_URL)){
     if($type == 'googlePlus'){  //source http://www.helmutgranda.com/2011/11/01/get-a-url-google-count-via-php/
-      $content = parse("https://plusone.google.com/u/0/_/+1/fastbutton?url=".$url."&count=true");
-      
-      $dom = new DOMDocument;
-      $dom->preserveWhiteSpace = false;
-      @$dom->loadHTML($content);
-      $domxpath = new DOMXPath($dom);
-      $newDom = new DOMDocument;
-      $newDom->formatOutput = true;
-      
-      $filtered = $domxpath->query("//div[@id='aggregateCount']");
-      if (isset($filtered->item(0)->nodeValue))
-      {
-        $json['count'] = str_replace('>', '', $filtered->item(0)->nodeValue);
-      }
+		$json['count'] = getGooglePlusShares($url);
     }
     else if($type == 'stumbleupon'){
       $content = parse("http://www.stumbleupon.com/services/1.01/badge.getinfo?url=$url");
@@ -113,3 +100,21 @@
     }
     return $content;
   }
+
+function getGooglePlusShares($url) {
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, "https://clients6.google.com/rpc");
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $url . '","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]');
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
+	$curl_results = curl_exec ($curl);
+	curl_close ($curl);
+	$json = json_decode($curl_results, true);
+	if (isset($json[0]['result']['metadata']['globalCounts']['count'])) {
+		return intval( $json[0]['result']['metadata']['globalCounts']['count'] );
+	} else {
+		return 0;
+	}
+}
