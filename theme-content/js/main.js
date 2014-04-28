@@ -2259,6 +2259,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 			if (image.data('logo2x') !== undefined && image.data('logo2x').length) {
 				image.attr('src', image.data('logo2x'));
+				image.addClass('has--2x-image');
 			}
 		}
 

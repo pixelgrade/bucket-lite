@@ -106,10 +106,10 @@
 .site-logo--image{
     // Fixed heigth because on retinas 
     // the logo was getting huge
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
 
     @include media-query(palm) {
-        display: block;
         margin: $_u4 0;
 
         img{
@@ -118,7 +118,7 @@
     }
 }
 
-.site-logo--image-2x{
+.has--2x-image{
     @include media-query(lap-and-up) {
        max-width: 50%;
     }
