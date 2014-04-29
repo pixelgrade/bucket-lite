@@ -127,10 +127,10 @@ gulp.task('diff', function(){
 
 	require('conventional-changelog')({
 		repository: jsonFile.repository.url,
-		version: jsonFile.version,
-		from: '965976566792d95f5afd1f95e0b18276f799307d'
+		version: jsonFile.version
+//		from: '965976566792d95f5afd1f95e0b18276f799307d'
 	}, function(err, log) {
-		console.log('Here is your changelog!', log);
+		console.log(log);
 	});
 
 //	console.log(gulpConventionalChangelog());
