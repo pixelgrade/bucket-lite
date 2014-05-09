@@ -4,13 +4,14 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.1.0
+ * @version     2.1.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
-<div id="order_review">
+
+<?php if ( ! is_ajax() ) : ?><div id="order_review"><?php endif; ?>
 
 	<table class="shop_table">
 		<thead>
@@ -147,9 +148,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				} else {
 
 					if ( ! WC()->customer->get_country() )
-						echo '<p>' . __( 'Please fill in your details above to see available payment methods.', 'woocommerce' ) . '</p>';
+						$no_gateways_message = __( 'Please fill in your details above to see available payment methods.', 'woocommerce' );
 					else
-						echo '<p>' . __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) . '</p>';
+						$no_gateways_message = __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' );
+
+					echo '<p>' . apply_filters( 'woocommerce_no_available_payment_methods_message', $no_gateways_message ) . '</p>';
 
 				}
 			?>
@@ -189,4 +192,4 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<?php do_action( 'woocommerce_review_order_after_payment' ); ?>
 
-</div>
+<?php if ( ! is_ajax() ) : ?></div><?php endif; ?>
