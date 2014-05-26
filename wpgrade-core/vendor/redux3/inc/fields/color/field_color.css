@@ -1,18 +1,17 @@
-/*-------------------------------------------------------------------------------------------*/
-/* Color picker overwrite
-/*-------------------------------------------------------------------------------------------*/
+.redux-main {
+  /*-------------------------------------------------------------------------------------------*/
+  /* Color picker overwrite
+    /*-------------------------------------------------------------------------------------------*/
+}
 .redux-main input.redux-color {
   float: left;
   width: 70px;
   margin-left: 5px;
 }
-.redux-main .wp-color-result.wp-picker-open {
-  t2op: -3px;
-}
-.redux-main #content .section-color .controls {
+.redux-main .section-color .controls {
   width: 345px;
 }
-.redux-main #content .section-color .explain {
+.redux-main .section-color .explain {
   width: 225px;
 }
 .redux-main .iris-picker .iris-strip .ui-slider-handle {
