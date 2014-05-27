@@ -88,24 +88,23 @@ if (!class_exists('ReduxFramework_color_rgba')) {
                 return;
             }
 
-            $style = '';
             if (!empty($this->value)) {
                 $mode = ( isset($this->field['mode']) && !empty($this->field['mode']) ? $this->field['mode'] : 'color' );
 
                 if ($this->value['alpha'] == "0.00" || empty($this->value['color'])) {
-                    $style .= $mode . ':transparent;';
+                    $style = $mode . ':transparent;';
                 } elseif (!empty($this->value['color'])) {
-                    $style .= $mode . ':rgba(' . Redux_Helpers::hex2rgba($this->value['color']) . ',' . $this->value['alpha'] . ');';
+                    $style = $mode . ':rgba(' . Redux_Helpers::hex2rgba($this->value['color']) . ',' . $this->value['alpha'] . ');';
                 }
 
                 if (!empty($this->field['output']) && is_array($this->field['output'])) {
-                    $keys = implode(",", $this->field['output']);
-                    $this->parent->outputCSS .= $keys . "{" . $style . '}';
+                    $css = Redux_Functions::parseCSS($this->field['output'], $style, $this->value);
+                    $this->parent->outputCSS .= $css;
                 }
 
                 if (!empty($this->field['compiler']) && is_array($this->field['compiler'])) {
-                    $keys = implode(",", $this->field['compiler']);
-                    $this->parent->compilerCSS .= $keys . "{" . $style . '}';
+                    $css = Redux_Functions::parseCSS($this->field['compiler'], $style, $this->value);
+                    $this->parent->compilerCSS .= $css;
                 }
             }
         }
@@ -121,9 +120,11 @@ if (!class_exists('ReduxFramework_color_rgba')) {
          */
         public function enqueue() {
 
+            $min = Redux_Functions::isMin();
+            
             wp_enqueue_script(
                 'redux-field-color_rgba-minicolors-js', 
-                ReduxFramework::$_url . 'assets/js/vendor/minicolors/jquery.minicolors.js', 
+                ReduxFramework::$_url . 'inc/fields/color_rgba/vendor/minicolors/jquery.minicolors' . $min . '.js', 
                 array('jquery'), 
                 time(), 
                 true
@@ -131,7 +132,7 @@ if (!class_exists('ReduxFramework_color_rgba')) {
             
             wp_enqueue_script(
                 'redux-field-color_rgba-js', 
-                ReduxFramework::$_url . 'inc/fields/color_rgba/field_color_rgba.js', 
+                ReduxFramework::$_url . 'inc/fields/color_rgba/field_color_rgba' . $min . '.js', 
                 array('jquery'), 
                 time(), 
                 true

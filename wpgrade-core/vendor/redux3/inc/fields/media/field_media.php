@@ -120,7 +120,7 @@ if (!class_exists('ReduxFramework_media')) {
                 $readOnly = '';
             }
 
-            echo '<input placeholder="' . $placeholder . '" type="text" class="' . $hide . 'upload ' . $this->field['class'] . '" name="' . $this->field['name'] . '[url]' . $this->field['name_suffix'] . '" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][url]" value="' . $this->value['url'] . '"' . $readOnly . '/>';
+            echo '<input placeholder="' . $placeholder . '" type="text" class="' . $hide . 'upload regular-text ' . $this->field['class'] . '" name="' . $this->field['name'] . '[url]' . $this->field['name_suffix'] . '" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][url]" value="' . $this->value['url'] . '"' . $readOnly . '/>';
             echo '<input type="hidden" class="upload-id ' . $this->field['class'] . '" name="' . $this->field['name'] . '[id]' . $this->field['name_suffix'] . '" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][id]" value="' . $this->value['id'] . '" />';
             echo '<input type="hidden" class="upload-height" name="' . $this->field['name'] . '[height]' . $this->field['name_suffix'] . '" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][height]" value="' . $this->value['height'] . '" />';
             echo '<input type="hidden" class="upload-width" name="' . $this->field['name'] . '[width]' . $this->field['name_suffix'] . '" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][width]" value="' . $this->value['width'] . '" />';
@@ -203,7 +203,7 @@ if (!class_exists('ReduxFramework_media')) {
 
             wp_enqueue_script(
                 'redux-field-media-js',
-                ReduxFramework::$_url . 'inc/fields/media/field_media.js',
+                ReduxFramework::$_url . 'inc/fields/media/field_media' . Redux_Functions::isMin() . '.js',
                 array('jquery', 'wp-color-picker'),
                 time(),
                 true

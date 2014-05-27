@@ -115,41 +115,40 @@ if (!class_exists('ReduxFramework_border')) {
             echo '<input type="hidden" class="redux-border-value" id="' . $this->field['id'] . '-bottom" name="' . $this->field['name'] . '[border-bottom]' . $this->field['name_suffix'] . '" value="' . ( $this->value['bottom'] ? $this->value['bottom'] . 'px' : 0 ) . '">';
             echo '<input type="hidden" class="redux-border-value" id="' . $this->field['id'] . '-left" name="' . $this->field['name'] . '[border-left]' . $this->field['name_suffix'] . '" value="' . ( $this->value['left'] ? $this->value['left'] . 'px' : 0 ) . '">';
 
-            if (!isset($this->field['all']) || $this->field['all'] !== true) :
+            if (!isset($this->field['all']) || $this->field['all'] !== true) {
                 /**
                   Top
                  * */
-                if ($this->field['top'] === true):
+                if ($this->field['top'] === true){
                     echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-up icon-large"></i></span><input type="text" class="redux-border-top redux-border-input mini' . $this->field['class'] . '" placeholder="' . __('Top', 'redux-framework') . '" rel="' . $this->field['id'] . '-top" value="' . $this->value['top'] . '"></div>';
-                endif;
+                }
 
                 /**
                   Right
                  * */
-                if ($this->field['right'] === true):
+                if ($this->field['right'] === true){
                     echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-right icon-large"></i></span><input type="text" class="redux-border-right redux-border-input mini' . $this->field['class'] . '" placeholder="' . __('Right', 'redux-framework') . '" rel="' . $this->field['id'] . '-right" value="' . $this->value['right'] . '"></div>';
-                endif;
+                }
 
                 /**
                   Bottom
                  * */
-                if ($this->field['bottom'] === true):
+                if ($this->field['bottom'] === true){
                     echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-down icon-large"></i></span><input type="text" class="redux-border-bottom redux-border-input mini' . $this->field['class'] . '" placeholder="' . __('Bottom', 'redux-framework') . '" rel="' . $this->field['id'] . '-bottom" value="' . $this->value['bottom'] . '"></div>';
-                endif;
+                }
 
                 /**
                   Left
                  * */
-                if ($this->field['left'] === true):
+                if ($this->field['left'] === true){
                     echo '<div class="field-border-input input-prepend"><span class="add-on"><i class="el-icon-arrow-left icon-large"></i></span><input type="text" class="redux-border-left redux-border-input mini' . $this->field['class'] . '" placeholder="' . __('Left', 'redux-framework') . '" rel="' . $this->field['id'] . '-left" value="' . $this->value['left'] . '"></div>';
-                endif;
-
-            endif;
+                }
+            }
 
             /**
               Border-style
              * */
-            if ($this->field['style'] != false):
+            if ($this->field['style'] != false){
                 $options = array(
                     'solid'     => 'Solid',
                     'dashed'    => 'Dashed',
@@ -161,8 +160,9 @@ if (!class_exists('ReduxFramework_border')) {
                     echo '<option value="' . $k . '"' . selected($value['style'], $k, false) . '>' . $v . '</option>';
                 }
                 echo '</select>';
-
-            endif;
+            } else {
+                echo '<input type="hidden" id="' . $this->field['id'] . '[border-style]" name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][border-style]' . '" value="' . $this->value['style'] . '" data-id="'. $this->field['id'] . '">';
+            }
 
             /**
               Color
@@ -170,11 +170,14 @@ if (!class_exists('ReduxFramework_border')) {
             if ($this->field['color'] != false) {
                 $default = isset($this->field['default']['border-color']) ? $this->field['default']['border-color'] : '';
 
+
                 if (empty($default)) {
                     $default = (isset($this->field['default']['color']) ) ? $this->field['default']['color'] : '#ffffff';
                 }
 
                 echo '<input name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][border-color]' . $this->field['name_suffix'] . '" id="' . $this->field['id'] . '-border" class="redux-border-color redux-color redux-color-init ' . $this->field['class'] . '"  type="text" value="' . $this->value['color'] . '"  data-default-color="' . $default . '" data-id="' . $this->field['id'] . '" />';
+            } else {
+                echo '<input type="hidden" id="' . $this->field['id'] . '[border-color]" name="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][border-color]' . '" value="' . $this->value['style'] . '" data-id="'. $this->field['id'] . '">';
             }
         }
 
@@ -188,13 +191,20 @@ if (!class_exists('ReduxFramework_border')) {
          * @since ReduxFramework 1.0.0
          */
         function enqueue() {
-            wp_enqueue_script('select2-js');
-            wp_enqueue_style('select2-css');
-
+            $min = Redux_Functions::isMin();
+            
+            wp_enqueue_script(
+                'redux-field-color-js',
+                ReduxFramework::$_url . 'assets/js/color-picker/color-picker' . $min . '.js',
+                array('jquery', 'wp-color-picker'),
+                time(),
+                true
+            );            
+            
             wp_enqueue_script(
                 'redux-field-border-js', 
-                ReduxFramework::$_url . 'inc/fields/border/field_border.js', 
-                array('jquery', 'select2-js', 'redux-vendor'), 
+                ReduxFramework::$_url . 'inc/fields/border/field_border' . $min . '.js', 
+                array('jquery', 'select2-js'), 
                 time(), 
                 true
             );
@@ -208,16 +218,47 @@ if (!class_exists('ReduxFramework_border')) {
         }  //function
 
         public function output() {
+            if ( isset($this->field['all']) &&  true == $this->field['all']) {
+                $borderWidth = isset($this->value['border-width']) ? $this->value['border-width'] : '0px';
+                $val = isset($this->value['border-top']) ? $this->value['border-top'] : $borderWidth;
+                
+                $this->value['border-top'] = $val;
+                $this->value['border-bottom'] = $val;
+                $this->value['border-left'] = $val;
+                $this->value['border-right'] = $val;
+            } 
 
             $cleanValue = array(
-                'top'       => !empty($this->value['border-top']) ? $this->value['border-top'] : 'inherit',
-                'right'     => !empty($this->value['border-right']) ? $this->value['border-right'] : 'inherit',
-                'bottom'    => !empty($this->value['border-bottom']) ? $this->value['border-bottom'] : 'inherit',
-                'left'      => !empty($this->value['border-left']) ? $this->value['border-left'] : 'inherit',
                 'color'     => !empty($this->value['border-color']) ? $this->value['border-color'] : 'inherit',
                 'style'     => !empty($this->value['border-style']) ? $this->value['border-style'] : 'inherit'
             );
 
+            $borderWidth = '0px';
+            if (isset($this->value['border-width'])) {
+                $borderWidth = $this->value['border-width'];
+            }
+            
+            $this->field['top'] = isset($this->field['top']) ? $this->field['top'] : true;
+            $this->field['bottom'] = isset($this->field['bottom']) ? $this->field['bottom'] : true;
+            $this->field['left'] = isset($this->field['left']) ? $this->field['left'] : true;
+            $this->field['right'] = isset($this->field['right']) ? $this->field['right'] : true;
+            
+            if ( $this->field['top'] === true ){
+                $cleanValue['top'] = !empty($this->value['border-top']) ? $this->value['border-top'] : $borderWidth;
+            }
+
+            if ( $this->field['bottom'] == true ){
+                $cleanValue['bottom'] = !empty($this->value['border-bottom']) ? $this->value['border-bottom'] : $borderWidth;
+            }
+            
+            if ( $this->field['left'] === true ){
+                $cleanValue['left'] = !empty($this->value['border-left']) ? $this->value['border-left'] : $borderWidth;
+            }
+            
+            if (  $this->field['right'] === true ){
+                $cleanValue['right'] = !empty($this->value['border-right']) ? $this->value['border-right'] : $borderWidth;
+            }
+            
             $style = "";
 
             //absolute, padding, margin

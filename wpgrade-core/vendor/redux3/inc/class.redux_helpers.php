@@ -49,6 +49,16 @@ if( !class_exists( 'Redux_Helpers' ) ) {
             }
         }
 
+        public static function isFieldInUseByType($fields, $field =  array()) {
+            foreach($field as $name) {
+                if (array_key_exists($name, $fields)) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
         public static function isFieldInUse($parent, $field) {
           foreach( $parent->sections as $k => $section ) {
                 if ( !isset( $section['title'] ) ){

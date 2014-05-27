@@ -60,8 +60,7 @@
             }
 
             $("#" + spinner.id).val(value);
-
-        }
+       }
 
         // Update the spinner from the input and vice versa
         $(".spinner-input").blur(function() {
