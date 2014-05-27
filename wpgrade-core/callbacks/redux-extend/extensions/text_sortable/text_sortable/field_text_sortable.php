@@ -12,6 +12,21 @@ class ReduxFramework_text_sortable {
         $this->field = $field;
 		$this->value = $value;
 		$this->args = $parent->args;
+
+      if ( empty( $this->extension_dir ) ) {
+        $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
+        $this->extension_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->extension_dir ) );
+      }
+
+      // Set default args for this field to avoid bad indexes. Change this to anything you use.
+      $defaults = array(
+        'options'           => array(),
+        'stylesheet'        => '',
+        'output'            => true,
+        'enqueue'           => true,
+        'enqueue_frontend'  => true
+      );
+      $this->field = wp_parse_args( $this->field, $defaults );
     }
 
     /**
@@ -101,17 +116,18 @@ class ReduxFramework_text_sortable {
     }
 
     function enqueue() {
+
         wp_enqueue_script(
             'redux-field-text-sortable-js',
-	        ReduxFramework::$_url . 'inc/fields/text_sortable/field_text_sortable.js',
+            $this->extension_url . '/field_text_sortable.js',
             array('jquery'),
             time(),
             true
         );
-		
+
 		wp_enqueue_style(
 			'redux-field-text-sortable-css',
-			ReduxFramework::$_url . 'inc/fields/text_sortable/field_text_sortable.css',
+            $this->extension_url . 'field_text_sortable.css',
 			time(),
 			true
 		);	
