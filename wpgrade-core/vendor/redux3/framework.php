@@ -347,7 +347,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 $this->get_options();
                 
                 // Tracking
-                $this->_tracking();
+                //$this->_tracking();
 
                 // Set option with defaults
                 //add_action( 'init', array( &$this, '_set_default_options' ), 101 );

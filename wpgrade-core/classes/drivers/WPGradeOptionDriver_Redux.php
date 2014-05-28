@@ -45,4 +45,12 @@ class WPGradeOptionDriver_Redux extends WPGradeOptionDriver {
 		return $this;
 	}
 
+	function get_args(){
+		return $this->redux->args;
+	}
+
+	function get_sections(){
+		return $this->redux->sections;
+	}
+
 } # class

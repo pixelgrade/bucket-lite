@@ -85,6 +85,24 @@ class WPGradeOptions {
 		return $default;
 	}
 
+	function get_args(){
+		$drivers = array_reverse($this->drivers);
+		foreach ($drivers as $driver) {
+			$val =  $driver->get_args();
+			if (!empty($val)) return $val;
+		}
+		return false;
+	}
+
+	function get_sections(){
+		$drivers = array_reverse($this->drivers);
+		foreach ($drivers as $driver) {
+			$val =  $driver->get_sections();
+			if (!empty($val)) return $val;
+		}
+		return false;
+	}
+
 	/**
 	 * Adds a key to the options. The value is added to the core driver which
 	 * is at the bottom of the stack.
@@ -92,8 +110,11 @@ class WPGradeOptions {
 	 * @return static $this
 	 */
 	function set($key, $value) {
-		$this->coredriver->set($key, $value);
-		return $this;
+
+		$drivers = array_reverse($this->drivers);
+		foreach ($drivers as $driver) {
+			$driver->set($key, $value);
+		}
 	}
 
 } # class

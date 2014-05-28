@@ -42,6 +42,12 @@
 		foreach ($themeconfiguration['resources']['auto-localize-scripts'] as $stylename => $script) {
 			// allow child themes to remove the localization
 			if ($script !== null) {
+
+				// localize the theme_name, we are gonna need it
+				if ( $stylename === 'wpgrade-main-scripts' ) {
+					$script['theme_name'] = wpgrade::shortname();
+				}
+
 				foreach ( $script as $key => $data) {
 					wp_localize_script($stylename, $key, $data);
 				}

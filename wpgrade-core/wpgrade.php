@@ -30,18 +30,43 @@ class wpgrade {
 	 * The theme configuration as read by the system is defined in
 	 * wpgrade-config.php
 	 *
+	 * @deprecated
 	 * @return array theme configuration
 	 */
 	static function config() {
-		if (self::$configuration === null) {
-			self::$configuration = include self::themepath().'wpgrade-config'.EXT;
-		}
+		//		if (self::$configuration === null) {
+		//			self::$configuration = include self::themepath().'wpgrade-config'.EXT;
+		//		}
+		//
+		//		return self::$configuration;
+		return self::get_config();
+	}
 
+	static function get_config() {
+		if ( !self::has_config()) {
+			self::set_config();
+		}
 		return self::$configuration;
 	}
 
+	static function set_config(){
+		if ( file_exists(self::themepath().'wpgrade-config'.EXT))
+			self::$configuration = include self::themepath().'wpgrade-config'.EXT;
+	}
+
+	static function has_config(){
+		if (self::$configuration === null) {
+			return false;
+		}
+		return true;
+	}
+
+	static $shortname = null;
+
 	/** @var WPGradeMeta wpgrade state information */
 	protected static $state = null;
+
+	protected static $customizer_options = null;
 
 	/**
 	 * The state consists of variables set by the system, and used to pass data
@@ -86,7 +111,7 @@ class wpgrade {
 	}
 
 
-//// Options ///////////////////////////////////////////////////////////////////
+	//// Options ///////////////////////////////////////////////////////////////////
 
 	/** @var WPGradeOptions */
 	protected static $options_handler = null;
@@ -109,12 +134,29 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option($option, $default = null) {
+		global $pagenow;
+
+		// if there is set an key in url force that value
 		if (isset($_GET[$option]) && ! empty($option)) {
+
 			return $_GET[$option];
-		}
-		else {
+
+		} elseif( isset( $_POST['customized'] ) && self::customizer_option_exists($option) ) {
+			// so we are on the customizer page
+			// overwrite every option if we have one
+			return self::get_customizer_option($option);
+
+		} else {
 			return self::options()->get($option, $default);
 		}
+	}
+
+	static function get_redux_args(){
+		return self::options()->get_args();
+	}
+
+	static function get_redux_sections(){
+		return self::options()->get_sections();
 	}
 
 	/**
@@ -129,7 +171,7 @@ class wpgrade {
 			return $_GET[$target];
 		}
 		else { // empty target, or no query
-			$image = self::options()->get($target, array());
+			$image = self::option($target, array());
 			if (isset($image['url'])) {
 				return $image['url'];
 			}
@@ -195,7 +237,7 @@ class wpgrade {
 	}
 
 
-//// Resolvers /////////////////////////////////////////////////////////////////
+	//// Resolvers /////////////////////////////////////////////////////////////////
 
 	/** @var array */
 	protected static $resolvers = array();
@@ -233,7 +275,7 @@ class wpgrade {
 	}
 
 
-//// Wordpress Defferred Helpers ///////////////////////////////////////////////
+	//// Wordpress Defferred Helpers ///////////////////////////////////////////////
 
 	/**
 	 * Filter content based on settings in wpgrade-config.php
@@ -347,13 +389,20 @@ class wpgrade {
 	 * @return string the lowercase version of the name
 	 */
 	static function shortname() {
-		$config = self::config();
-		if (isset($config['shortname'])) {
-			return $config['shortname'];
+		return self::get_shortname();
+	}
+
+	static function get_shortname(){
+		if (self::$shortname === null) {
+			$config = self::get_config();
+			if (isset($config['shortname'])) {
+				self::$shortname = $config['shortname'];
+			}
+			else { // use name to determine apropriate shortname
+				self::$shortname = str_replace(' ', '_', strtolower($config['name']));
+			}
 		}
-		else { // use name to determine apropriate shortname
-			return str_replace(' ', '_', strtolower($config['name']));
-		}
+		return self::$shortname;
 	}
 
 	/**
@@ -478,7 +527,7 @@ class wpgrade {
 	}
 
 
-//// Helpers ///////////////////////////////////////////////////////////////////
+	//// Helpers ///////////////////////////////////////////////////////////////////
 
 	/**
 	 * Hirarchical array merge. Will always return an array.
@@ -852,14 +901,14 @@ class wpgrade {
 		$hex = str_replace('#', '', $hex);
 
 		if (strlen($hex) == 3) {
-		   $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-		   $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-		   $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
 		}
 		else { // strlen($hex) != 3
-		   $r = hexdec(substr($hex,0,2));
-		   $g = hexdec(substr($hex,2,2));
-		   $b = hexdec(substr($hex,4,2));
+			$r = hexdec(substr($hex,0,2));
+			$g = hexdec(substr($hex,2,2));
+			$b = hexdec(substr($hex,4,2));
 		}
 
 		$rgb = array($r, $g, $b);
@@ -911,7 +960,7 @@ class wpgrade {
 	}
 
 
-//// Media Handlers & Helpers //////////////////////////////////////////////////
+	//// Media Handlers & Helpers //////////////////////////////////////////////////
 
 	#
 	# Audio
@@ -991,7 +1040,7 @@ class wpgrade {
 	}
 
 
-//// Internal Bootstrapping Helpers ////////////////////////////////////////////
+	//// Internal Bootstrapping Helpers ////////////////////////////////////////////
 
 	/**
 	 * Loads in core dependency.
@@ -1025,7 +1074,7 @@ class wpgrade {
 	}
 
 
-//// WPML Related Functions ////////////////////////////////////////////////////
+	//// WPML Related Functions ////////////////////////////////////////////////////
 
 	static function lang_post_id($id) {
 		if(function_exists('icl_object_id')) {
@@ -1100,7 +1149,7 @@ class wpgrade {
 	}
 
 
-//// Unit Test Helpers /////////////////////////////////////////////////////////
+	//// Unit Test Helpers /////////////////////////////////////////////////////////
 
 	/**
 	 * This method is mainly used in testing.
@@ -1115,7 +1164,7 @@ class wpgrade {
 		}
 	}
 
-//// Behavior Testing Helpers //////////////////////////////////////////////////
+	//// Behavior Testing Helpers //////////////////////////////////////////////////
 
 	/**
 	 * This method is used to return the base path to the wordpress test
@@ -1137,6 +1186,125 @@ class wpgrade {
 		else { # the file does not exist
 			throw new Exception('Please create the file wpgrade-core/features/.test.path and place the url to your wordpress inside it.');
 		}
+	}
+
+	// == Customizer overridden helpers ==
+
+	/**
+	 * Check if an option exists in customizer's post
+	 * @param $option
+	 * @return bool
+	 */
+	static function customizer_option_exists( $option ){
+
+		// cache this json so we don't scramble it every time
+		if ( !self::has_customizer_options() && isset( $_POST['customized']) ) {
+			self::set_customizer_options( $_POST['customized'] );
+		}
+		$options = self::get_customizer_options();
+		if ( isset( $options[$option] ) ) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Get an options from our static customizer options array
+	 * @param $option
+	 * @return mixed
+	 */
+	static function get_customizer_option($option) {
+		$options = self::get_customizer_options();
+		return $options[$option];
+	}
+
+	/**
+	 * Check we we have cached our customizer options
+	 * @return bool
+	 */
+	static function has_customizer_options() {
+		if ( !empty(self::$customizer_options) ) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Get our static customizer options or false if they don't exist
+	 * @return bool|null
+	 */
+	static function get_customizer_options() {
+		if ( !empty(self::$customizer_options) ) {
+			return self::$customizer_options;
+		}
+		return false;
+	}
+
+	/**
+	 * Cache the customizer's options in a static array (converted from an given json)
+	 * @param $json
+	 */
+	static function set_customizer_options( $json ) {
+		if ( empty(self::$customizer_options) ) {
+			$options = json_decode( wp_unslash( $json ), true );
+
+			$theme_key = self::shortname() . '_options';
+
+			$options[$theme_key] = array();
+			foreach ( $options as $key => $opt ) {
+				$new_key = '';
+				if ( stripos($key, $theme_key) === 0 && stripos($key, $theme_key) !== false ) {
+					$new_key = str_replace( $theme_key.'[', '',$key);
+					$new_key = rtrim( $new_key, ']');
+					$options[$theme_key][$new_key] = $opt;
+				}
+			}
+			self::$customizer_options = $options[$theme_key];
+		}
+	}
+
+	static function display_dynamic_css_rule( $rule, $key, $option_value, $important = false ) {
+
+		if ( isset($rule['media'])) {
+			echo '@media ' . $rule['media'] . " {\n";
+		}
+
+		if ( $important ) {
+			$important = ' !important';
+		} else {
+			$important = '';
+		}
+
+		if ( isset($rule['unit'])) {
+			$option_value .= $rule['unit'];
+		}
+
+		if ( isset($rule['selector']) ) {
+			echo $rule['selector'] . " {\n";
+			echo "\t" . $key . ": " . $option_value . $important . "; \n";
+			echo "\n}\n";
+		}
+
+		if ( isset($rule['negative_selector']) ) {
+			echo $rule['negative_selector'] . " {\n";
+			echo "\t" . $key . ": -" . $option_value . $important . "; \n";
+			echo "\n}\n";
+		}
+
+		if ( isset($rule['media'])) {
+			echo "\n}\n";
+		}
+
+	}
+
+	static function count_sidebar_widgets( $sidebar_id, $echo = true ) {
+		$the_sidebars = wp_get_sidebars_widgets();
+		if( !isset( $the_sidebars[$sidebar_id] ) )
+			return __( 'Invalid sidebar ID', wpgrade::textdomain() );
+		if( $echo )
+			echo count( $the_sidebars[$sidebar_id] );
+		else
+			return count( $the_sidebars[$sidebar_id] );
 	}
 
 } # class
