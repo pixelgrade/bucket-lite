@@ -1,4 +1,4 @@
-/* global redux_change, redux_opts */
+/* global redux, redux_opts */
 /*
  * Field Sorter jquery function
  * Based on
@@ -6,52 +6,61 @@
  * Version 1.4.2
  */
 
-jQuery(function() {
-    /**	Sorter (Layout Manager) */
-    jQuery('.sorter').each(function() {
-        var id = jQuery(this).attr('id');
-        jQuery('#' + id).find('ul').sortable({
-            items: 'li',
-            placeholder: "placeholder",
-            connectWith: '.sortlist_' + id,
-            opacity: 0.8,
-			stop: function(event, ui) {
-				var sorter = redux.sorter[jQuery(this).attr('data-id')];
-				var id = jQuery(this).find('h3').text();
-				if ( sorter && sorter[id].limits ) {
-					if(jQuery(this).children('li').length >= sorter[id].limits) {
-						jQuery(this).addClass('filled');
-						if (jQuery(this).children('li').length > sorter[id].limits) {
-							jQuery(ui.sender).sortable('cancel');	
-						}
-					} else {
-						jQuery(this).removeClass('filled');
-					}
-				}
-			},
-            update: function(event, ui) {
+(function($) {
+    "use strict";
+    
+    $(function() {
+        /**	Sorter (Layout Manager) */
+        $('.redux-sorter').each(function() {
+            var id = $(this).attr('id');
+            
+            $('#' + id).find('ul').sortable({
+                items:          'li',
+                placeholder:    "placeholder",
+                connectWith:    '.sortlist_' + id,
+                opacity:        0.8,
+                stop: function(event, ui) {
+                    var sorter = redux.sorter[$(this).attr('data-id')];
+                    var id = $(this).find('h3').text();
 
-				var sorter = redux.sorter[jQuery(this).attr('data-id')];
-				var id = jQuery(this).find('h3').text();
-				if ( sorter && sorter[id].limits ) {
-					if(jQuery(this).children('li').length >= sorter[id].limits) {
-						jQuery(this).addClass('filled');
-						if (jQuery(this).children('li').length > sorter[id].limits) {
-							jQuery(ui.sender).sortable('cancel');	
-						}
-					} else {
-						jQuery(this).removeClass('filled');
-					}
-				}
-                jQuery(this).find('.position').each(function() {
-                    var listID = jQuery(this).parent().attr('id');
-                    var parentID = jQuery(this).parent().parent().attr('data-group-id');
-                    redux_change(jQuery(this));
-                    var optionID = jQuery(this).parent().parent().parent().attr('id');
-                    jQuery(this).prop("name", redux_opts.opt_name + '[' + optionID + '][' + parentID + '][' + listID + ']');
-                });
-            }
+                    if (sorter.limits && id && sorter.limits[id]) {
+                        if ($(this).children('li').length >= sorter.limits[id]) {
+                            $(this).addClass('filled');
+                            if ($(this).children('li').length > sorter.limits[id]) {
+                                $(ui.sender).sortable('cancel');
+                            }
+                        } else {
+                            $(this).removeClass('filled');
+                        }
+                    }
+                },
+                update: function(event, ui) {
+                    var sorter  = redux.sorter[$(this).attr('data-id')];
+                    var id      = $(this).find('h3').text();
+                    
+                    if (sorter.limits && id && sorter.limits[id]) {
+                        if ($(this).children('li').length >= sorter.limits[id]) {
+                            $(this).addClass('filled');
+                            if ($(this).children('li').length > sorter.limits[id]) {
+                                $(ui.sender).sortable('cancel');
+                            }
+                        } else {
+                            $(this).removeClass('filled');
+                        }
+                    }
+
+                    $(this).find('.position').each(function() {
+                        var listID      = $(this).parent().attr('id');
+                        var parentID    = $(this).parent().parent().attr('data-group-id');
+                        
+                        redux_change($(this));
+                        
+                        var optionID = $(this).parent().parent().parent().attr('id');
+                        
+                        $(this).prop("name", redux.args.opt_name + '[' + optionID + '][' + parentID + '][' + listID + ']');
+                    });
+                }
+            });
         });
     });
-
-});
+})(jQuery);
