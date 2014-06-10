@@ -325,81 +325,131 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
             
             set_error_handler("custom_warning_handler", E_WARNING);
 
-            //load up the library
-			if(!function_exists('wpgrade_str_get_dom')) { require_once 'vendor/ganon/ganon.php'; }
-            
-            // Create DOM from string
-			$_doc = wpgrade_str_get_dom($output);
+	        /*
+			 * first we try to do it with the faster phpQuery
+			 */
+	        if (class_exists('DOMDocument')) {
 
-			$sub_mega_menu = $_doc->select('.sub-menu--mega',-1);
-            $zagrid = $sub_mega_menu->select('.sub-menu__grid',0);
+		        if ( ! class_exists( 'phpQuery') ) {
+			        // load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
+			        require_once 'vendor/phpQuery.php';
+		        }
+		        // enable debugging messages
+		        //phpQuery::$debug = 0;
+		        $_doc = phpQuery::newDocumentHTML( $output );
+		        //var_dump($_doc->html());
+		        if ($_doc->find('.sub-menu--mega:last > .sub-menu__grid')->html() != '') {
 
-			$zagrid_content = '';
-			if (!empty($zagrid)) {
-				$zagrid_content = $zagrid->getInnerText();
-			}
+			        if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
+				        $_doc->find('.sub-menu--mega:last')->children('.sub-menu')
+				             ->removeClass('sub-menu')
+				             ->removeClass('one-fifth')
+				             ->addClass('nav nav--stacked nav--sub-menu sub-menu')
+				             ->prependTo('.sub-menu--mega:last > .grid')
+				             ->wrap('<div class="sub-menu__grid__item  grid__item  one-fifth"></div>');
+			        }
 
-            if (!empty($zagrid) && !empty($zagrid_content)) {
-                $submenu = $sub_mega_menu->select('.sub-menu', 0);
-				$submenu_content = '';
-				if (!empty($submenu)) {
-					$submenu_content =  $submenu->getInnerText();
-				}
+		        } else {
+			        // the megamenu wrapper is empty
+			        if ($_doc->find('.sub-menu--mega:last .sub-menu')->length()) {
 
-				if (!empty($submenu) && !empty($submenu_content)) {
-                    //cleanup
-                    $submenu->removeClass('sub-menu');
-                    $submenu->removeClass('one-fifth');
-                    //add classes
-                    $submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
+				        $_nav__item = $_doc->find('.sub-menu--mega:last')->parent();
+				        $_nav__item
+					        ->addClass('nav__item--relative');
 
-                    //prepend it
-					$temp = '<div class="sub-menu__grid__item  grid__item  one-fifth">'.$submenu->html().'</div>'.$zagrid->getInnerText();
-					//empty it
-					$submenu->delete();
-					$zagrid->clear();
+				        $_doc->find('.sub-menu--mega:last')->children('.sub-menu')
+				             ->removeClass('sub-menu')
+				             ->removeClass('one-fifth')
+				             ->addClass('nav nav--stacked nav--sub-menu sub-menu')
+				             ->insertBefore('.sub-menu--mega:last');
+			        }
 
-					$zagrid->setInnerText($temp);
-                }
+			        $_doc->find('.sub-menu--mega:last')->remove();
+		        }
 
-            } else { // the megamenu wrapper doesn't have any fancy posts or sliders
-                $submenu = $sub_mega_menu->select('.sub-menu', 0);
+		        // swap the $output
+		        $output = $_doc->html();
 
-				$submenu_content = '';
-				if (!empty($submenu)) {
-					$submenu_content =  $submenu->getInnerText();
+	        } else {
 
-				}
+		        //load up the library
+		        if ( ! function_exists( 'wpgrade_str_get_dom' ) ) {
+			        require_once 'vendor/ganon/ganon.php';
+		        }
 
-				if (!empty($submenu) && !empty($submenu_content)) {
-					//we do have regular submenu links and we need to move them up so they are just regular <ul> and <li>s
+		        // Create DOM from string
+		        $_doc = wpgrade_str_get_dom( $output );
 
-                    $_nav__item = $sub_mega_menu->parent;
+		        $sub_mega_menu = $_doc->select( '.sub-menu--mega', - 1 );
+		        $zagrid        = $sub_mega_menu->select( '.sub-menu__grid', 0 );
 
-                    $_nav__item->addClass('nav__item--relative');
+		        $zagrid_content = '';
+		        if ( ! empty( $zagrid ) ) {
+			        $zagrid_content = $zagrid->getInnerText();
+		        }
 
-                    //cleanup
-                    $submenu->removeClass('sub-menu');
-                    $submenu->removeClass('one-fifth');
-                    //add classes
-                    $submenu->addClass('nav nav--stacked nav--sub-menu sub-menu');
-                    //insert it
-					$sub_mega_menu->setOuterText($submenu->html());
-                    //empty it
-					$submenu->delete();
-                } else {
-					//there is no submenu
-                    //just delete it
-					$sub_mega_menu->delete();
-                }
-            }
-            
-            // swap the $output
-            $output = $_doc->getInnerText();
-            
-            //cleanup
-            //$_doc->__destruct();
-            unset($_doc);
+		        if ( ! empty( $zagrid ) && ! empty( $zagrid_content ) ) {
+			        $submenu         = $sub_mega_menu->select( '.sub-menu', 0 );
+			        $submenu_content = '';
+			        if ( ! empty( $submenu ) ) {
+				        $submenu_content = $submenu->getInnerText();
+			        }
+
+			        if ( ! empty( $submenu ) && ! empty( $submenu_content ) ) {
+				        //cleanup
+				        $submenu->removeClass( 'sub-menu' );
+				        $submenu->removeClass( 'one-fifth' );
+				        //add classes
+				        $submenu->addClass( 'nav nav--stacked nav--sub-menu sub-menu' );
+
+				        //prepend it
+				        $temp = '<div class="sub-menu__grid__item  grid__item  one-fifth">' . $submenu->html() . '</div>' . $zagrid->getInnerText();
+				        //empty it
+				        $submenu->delete();
+				        $zagrid->clear();
+
+				        $zagrid->setInnerText( $temp );
+			        }
+
+		        } else { // the megamenu wrapper doesn't have any fancy posts or sliders
+			        $submenu = $sub_mega_menu->select( '.sub-menu', 0 );
+
+			        $submenu_content = '';
+			        if ( ! empty( $submenu ) ) {
+				        $submenu_content = $submenu->getInnerText();
+
+			        }
+
+			        if ( ! empty( $submenu ) && ! empty( $submenu_content ) ) {
+				        //we do have regular submenu links and we need to move them up so they are just regular <ul> and <li>s
+
+				        $_nav__item = $sub_mega_menu->parent;
+
+				        $_nav__item->addClass( 'nav__item--relative' );
+
+				        //cleanup
+				        $submenu->removeClass( 'sub-menu' );
+				        $submenu->removeClass( 'one-fifth' );
+				        //add classes
+				        $submenu->addClass( 'nav nav--stacked nav--sub-menu sub-menu' );
+				        //insert it
+				        $sub_mega_menu->setOuterText( $submenu->html() );
+				        //empty it
+				        $submenu->delete();
+			        } else {
+				        //there is no submenu
+				        //just delete it
+				        $sub_mega_menu->delete();
+			        }
+		        }
+
+		        // swap the $output
+		        $output = $_doc->getInnerText();
+
+		        //cleanup
+		        //$_doc->__destruct();
+		        unset( $_doc );
+	        }
             
             restore_error_handler();
         }
