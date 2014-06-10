@@ -37,7 +37,7 @@ function wpgrade_register_required_plugins() {
 			'slug'     				=> 'pixlikes',
 			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixlikes.zip',
 			'required' 				=> false,
-			'version' 				=> '1.1.0',
+			'version' 				=> '1.1.1',
 			'force_activation' 		=> false,
 			'force_deactivation' 	=> false,
 			'external_url' 			=> '',
