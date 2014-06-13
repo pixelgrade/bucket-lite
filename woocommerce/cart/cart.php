@@ -127,7 +127,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		</div>
 	</div>
 	</form>
-	<div class="grid__item  one-half  push--one-half">
+	<div class="grid__item">
 		<?php woocommerce_shipping_calculator(); ?>
 	</div>	
 </div>
