@@ -57,9 +57,12 @@ gulp.task('default', ['help'], function() {
     // silence
 });
 
-gulp.task('start', ['production-nested'], function(cb){
-	console.log('Compiled styles');
-	cb();
+gulp.task('start', ['styles-nested', 'scripts'], function(){
+	console.log('theme should be ready');
+});
+
+gulp.task('server', ['styles-compressed', 'scripts-compressed'], function () {
+	console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
 });
 
 /**
@@ -156,6 +159,7 @@ gulp.task('help', function(){
         '=== General Commands === \n' +
         'start              Compiles all styles and scripts and makes the theme ready to start \n' +
         'build              Create a cleaned up build folder for the current theme \n' +
+		'server             Recompile the styles and scripts compressed for server \n' +
         'zip                Create a zip archive from the current build folder and deletes it \n' +
         '=== Style === \n' +
         'styles             Compiles styles in development mode \n' +
