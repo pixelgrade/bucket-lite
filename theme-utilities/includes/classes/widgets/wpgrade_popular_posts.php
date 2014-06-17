@@ -214,7 +214,7 @@ class wpgrade_popular_posts extends WP_Widget {
 				<a href="<?php echo $p['permalink']; ?>" title="<?php echo $p['title']; ?>" class="article--list__link">
 					<?php if ( !empty( $postImage['src'] ) ){ ?>
 						<div class="media__img  push-half--right">
-							<img class="lazy popular-posts-widget__img" data-src="<?php echo $postImage['src']; ?>" alt="<?php echo $postImage['alt']; ?>" />
+							<?php bucket::the_img_tag($postImage['src'], $postImage['alt'], false, false, 'popular-posts-widget__img') ?>
 						</div>
 					<?php } ?>
 					<div class="media__body">

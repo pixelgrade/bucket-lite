@@ -272,9 +272,9 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 //                        }
 
                         if ( $image ){
-                            $menu_post_image = '<div class="article__thumb" style=""><img class="lazy" data-src="' . $image[0] . '" alt="' . $post_title . '" width="' . $image[1]. '" height="' . $image[2]. '" /></div>';
+                            $menu_post_image = '<div class="article__thumb" style="">' . bucket::get_img_tag($image[0], $post_title, $image[1], $image[2]) . '</div>';
                         } else {
-                            $menu_post_image = '<div class="article__thumb"></div>';
+//                            $menu_post_image = '<div class="article__thumb"></div>';
                             $menu_post_image = '';
                         }
 

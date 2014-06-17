@@ -2272,6 +2272,41 @@ class bucket
 
 	   return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
    }
+
+	static function the_img_tag ($image_src, $image_alt = '', $image_width = false, $image_height = false, $class = '') {
+		echo self::get_img_tag($image_src, $image_alt, $image_width, $image_height, $class);
+	}
+
+	static function get_img_tag ($image_src, $image_alt = '', $image_width = false, $image_height = false, $class = '') {
+		$output = '';
+
+		if (!empty($image_src)) {
+			$output .= '<img ';
+
+			if (wpgrade::option('enable_lazy_loading_images')) {
+				$class .= ' lazy ';
+				$output .= 'data-src="' . $image_src . '" ';
+			} else {
+				$output .= 'src="' . $image_src . '" ';
+			}
+			$output .= 'alt="' . $image_alt . '" ';
+
+			if ($image_width !== false) {
+				$output .= 'width="' . $image_width . '" ';
+			}
+
+			if ($image_height !== false) {
+				$output .= 'height="' . $image_height . '" ';
+			}
+
+			if (!empty($class)) {
+				$output .= ' class="' . $class . '" ';
+			}
+			$output .= '/>' . PHP_EOL;
+		}
+
+		return $output;
+	}
    
 }
 
