@@ -126,37 +126,37 @@ gulp.task('build', ['copy-folder'], function(){
 		.pipe( clean({force: true}) );
 });
 
-var fs = require('fs'),
-	gulpConventionalChangelog = require('gulp-conventional-changelog');
-
-var getJsonFile = function(){
-	return JSON.parse(
-		fs.readFileSync('./package.json', 'utf-8'));
-};
-
-gulp.task('diff', function(){
-	var jsonFile = getJsonFile()
-		, commitMsg = "chore(release): v" + jsonFile.version;
-
-
-	require('conventional-changelog')({
-		repository: jsonFile.repository.url,
-		version: jsonFile.version
-//		from: '965976566792d95f5afd1f95e0b18276f799307d'
-	}, function(err, log) {
-		console.log(log);
-	});
-
-//	console.log(gulpConventionalChangelog());
-
-//	return gulp
-//		.src(['package.json', 'CHANGELOG.md']) // pass package.json to read data-from
-//		.pipe(gulpConventionalChangelog())
-//		.pipe(gulp.dest('.')) // only output CHANGELOG.md
-//		.pipe(gulpExec('git add -A')) // so the following git commands only execute once
-//		.pipe(gulpExec("git commit -m '" + commitMsg + "'"))
-//		.pipe(gulpExec("git tag -a v" + jsonFile.version + " -m '" + commitMsg + "'"));
-});
+//var fs = require('fs'),
+//	gulpConventionalChangelog = require('gulp-conventional-changelog');
+//
+//var getJsonFile = function(){
+//	return JSON.parse(
+//		fs.readFileSync('./package.json', 'utf-8'));
+//};
+//
+//gulp.task('diff', function(){
+//	var jsonFile = getJsonFile()
+//		, commitMsg = "chore(release): v" + jsonFile.version;
+//
+//
+//	require('conventional-changelog')({
+//		repository: jsonFile.repository.url,
+//		version: jsonFile.version
+////		from: '965976566792d95f5afd1f95e0b18276f799307d'
+//	}, function(err, log) {
+//		console.log(log);
+//	});
+//
+////	console.log(gulpConventionalChangelog());
+//
+////	return gulp
+////		.src(['package.json', 'CHANGELOG.md']) // pass package.json to read data-from
+////		.pipe(gulpConventionalChangelog())
+////		.pipe(gulp.dest('.')) // only output CHANGELOG.md
+////		.pipe(gulpExec('git add -A')) // so the following git commands only execute once
+////		.pipe(gulpExec("git commit -m '" + commitMsg + "'"))
+////		.pipe(gulpExec("git tag -a v" + jsonFile.version + " -m '" + commitMsg + "'"));
+//});
 
 
 /**

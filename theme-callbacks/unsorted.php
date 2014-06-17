@@ -265,9 +265,7 @@ function wpgrade_comments($comment, $args, $depth) {
 	<li <?php comment_class(); ?>>
 	<article id="comment-<?php comment_ID(); ?>" class="comment-article  media">
 		<aside class="comment__avatar  media__img">
-			<!-- custom gravatar call -->
-			<?php $bgauthemail = get_comment_author_email(); ?>
-			<img src="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>?s=60" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
+			<img src="<?php echo bucket::get_avatar_url($comment->comment_author_email, '60') ?>" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
 		</aside>
 		<div class="media__body">
 			<header class="comment__meta comment-author">
