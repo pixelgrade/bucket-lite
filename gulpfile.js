@@ -4,8 +4,10 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
+	replace = require('gulp-replace'),
     lr = require('tiny-lr'),
     server = lr(),
+	themeTextDomain = '\'bucket_txtd\'',
     path = './theme-content/',
     jspath = path + 'js/',
 	debug = require('gulp-debug');
@@ -85,9 +87,18 @@ gulp.task('copy-folder', ['production-nested'], function(){
 });
 
 /**
+ * Replace the bad dynamic text domain with a static one
+ */
+gulp.task('txtdomain-replace', ['copy-folder'], function(){
+	gulp.src('../build/bucket/**/*.php')
+		.pipe(replace(/wpgrade\:\:textdomain\(\)/g, themeTextDomain))
+		.pipe(gulp.dest('../build/bucket'));
+});
+
+/**
  * Clean the folder of unneeded files and folders
  */
-gulp.task('build', ['copy-folder'], function(){
+gulp.task('build', ['txtdomain-replace'], function(){
 
 	// files that should not be present in build zip
 	files_to_remove = [
