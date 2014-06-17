@@ -22,3 +22,20 @@ function wpgrade_warrning_about_acf(){
 		__('Please uninstall the Advanced Custom Fields plugin and enable it from Theme Options -> General -> Enable Advanced Custom Fields Settings.', wpgrade::textdomain() ) .
 		'</p></div>';
 }
+
+add_filter( 'acf_the_content', 'wpgrade_remove_spaces_around_shortcodes', 11 );
+
+if (!function_exists('wpgrade_remove_spaces_around_shortcodes')) {
+
+	function wpgrade_remove_spaces_around_shortcodes($content){
+
+		$array = array (
+			'<p>[' => '[',
+			']</p>' => ']',
+			']<br />' => ']'
+		);
+
+		$content = strtr($content, $array);
+		return $content;
+	}
+}

@@ -5,7 +5,14 @@ $class_name = '';
 
 $schema_org = '';
 if (is_single()) {
-	$schema_org .= 'itemscope itemtype="http://schema.org/Article"';
+	$post_format = get_post_format();
+
+	switch ($post_format) {
+		case 'video' :
+			$schema_org .= 'itemscope itemtype="http://schema.org/VideoGallery"';
+		default:
+			$schema_org .= 'itemscope itemtype="http://schema.org/Article"';
+	}
 } else {
 	$schema_org .= 'itemscope itemtype="http://schema.org/WebPage"';
 }
@@ -20,7 +27,6 @@ if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerc
 	if (is_product())
 		$class_name .= " product";
 }
-
 
 if ( wpgrade::option('nav_main_sticky') == 1 )
     $class_name .= "  sticky-nav";

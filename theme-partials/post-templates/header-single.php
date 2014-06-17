@@ -23,7 +23,11 @@ if (has_post_thumbnail()):
 
     <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
         <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
-            <img class="riloadr-single" data-src-big="<?php echo $image[0]; ?>" data-src-small="<?php echo $image_medium[0]; ?>" alt="<?php echo get_the_title($featured_image_ID) ?>" />
+	        <?php if (wpgrade::option('enable_lazy_loading_images')) : ?>
+                <img class="riloadr-single" data-src-big="<?php echo $image[0]; ?>" data-src-small="<?php echo $image_medium[0]; ?>" alt="<?php echo get_the_title($featured_image_ID) ?>" />
+			<?php else : ?>
+		        <img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title($featured_image_ID) ?>" />
+			<?php endif; ?>
         </div>
     </div>
 
