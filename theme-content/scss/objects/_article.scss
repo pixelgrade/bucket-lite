@@ -741,11 +741,6 @@
         }
     }
 
-    + .article--billboard-small {
-        @include rem(right, $_u);
-        
-    }
-
     & > a {
         display:block;
     }
@@ -786,6 +781,11 @@
             @include rem(right, 9 * $_u + $_u4 * 3);                
             padding-left: 0;        
         }
+
+	    + .article--billboard-small {
+		    @include rem(right, $_u);
+
+	    }
 
         .article__thumb {
             position:relative;
