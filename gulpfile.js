@@ -28,9 +28,17 @@ gulp.task('styles', function() {
 /**
  * Cleanup the css folder and recreate the css files
  */
-gulp.task('production-nested', function() {
-    return gulp.src('./')
-        .pipe( exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-nested.rb',options) );
+gulp.task('styles-nested', function() {
+	return gulp.src('./')
+		.pipe( exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-nested.rb',options) );
+});
+
+/**
+ * Cleanup the css folder and recreate the css files compressed
+ */
+gulp.task('styles-compressed', function () {
+	return gulp.src('./')
+		.pipe(exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-compressed.rb'));
 });
 
 gulp.task('dev', function() {
@@ -63,7 +71,7 @@ gulp.task('start', ['styles-nested', 'scripts'], function(){
 	console.log('theme should be ready');
 });
 
-gulp.task('server', ['styles-compressed', 'scripts-compressed'], function () {
+gulp.task('server', ['styles-compressed'], function () {
 	console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
 });
 
@@ -80,7 +88,7 @@ gulp.task('zip', ['build'], function(){
 /**
  * Copy theme folder outside in a build folder, recreate styles before that
  */
-gulp.task('copy-folder', ['production-nested'], function(){
+gulp.task('copy-folder', ['styles-nested'], function(){
 
 	return gulp.src('./')
 		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; cp -Rf ./* ./../build/bucket/',options));
