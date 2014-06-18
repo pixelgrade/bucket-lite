@@ -12,6 +12,7 @@
 
     .badge {
         float: right;
+	    margin-top: 1px;
         @include rem(margin-bottom, -$_u4);
         @include font-size(19px);
         padding: .35em 0;
