@@ -876,7 +876,23 @@
  * Content Module
  */
 .content-module {
-    @include rem(margin-bottom, $_u + $_u4);    
+    @include rem(margin-bottom, $_u + $_u4);
+
+	.rsArrow{
+		@include transform(translateY(-75%));
+
+		.rsArrowIcn{
+			border-color: black;
+		}
+	}
+
+	.rsArrowLeft{
+		left: -70px;
+	}
+
+	.rsArrowRight{
+		right: -70px;
+	}
 }
 
 
