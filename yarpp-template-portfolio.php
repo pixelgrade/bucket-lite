@@ -18,7 +18,7 @@ YARPP Template: Related Articles
                         <?php $image_post_small = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-small'); ?>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__thumb">
-                                <img class="lazy" data-src="<?php echo $image_post_small[0]; ?>" alt="img" />
+	                            <?php bucket::the_img_tag($image_post_small[0], 'img') ?>
                             </div>
                             <div class="article__content">
                                 <h2 class="article__title article--billboard-small__title">

@@ -2305,7 +2305,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		if ($('.masonry').length && !lteie9 && !is_android)
 			salvattore();
                     
-		//lets test first of we have some riloadr images to work on
+		//lets test first if we have some riloadr images to work on
 		if ($('.riloadr-slider').length > 0) {
 			var riloadrSlider = new Riloadr({
 				name : 'riloadr-slider',

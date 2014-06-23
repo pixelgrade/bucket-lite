@@ -29,5 +29,7 @@ if ($posttags): ?>
 <?php endforeach; ?>
 <?php endif; ?>
 <meta property="og:image" content="<?php echo wpgrade_get_socialimage() ?>"/>
-<?php endif;?>
+<?php
+wp_reset_postdata();
+endif;?>
 <!-- end facebook open graph -->

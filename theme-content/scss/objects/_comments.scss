@@ -122,6 +122,7 @@ li.comment, li.pingback{
 .comment__content {
     position: relative;
     @include rem(margin-bottom, $_u);
+	clear: both;
 }
 
 .comment__links {

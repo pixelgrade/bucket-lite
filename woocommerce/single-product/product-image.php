@@ -19,7 +19,7 @@ global $post, $woocommerce, $product;
 
 			$image_title 		= esc_attr( get_the_title( get_post_thumbnail_id() ) );
 			$image_link  		= wp_get_attachment_url( get_post_thumbnail_id() );
-			$image_size         = 'blog-big';// apply_filters( 'single_product_large_thumbnail_size', 'shop_single' );
+			$image_size         = apply_filters( 'single_product_large_thumbnail_size', 'shop_single' );
 
 			$image       		= get_the_post_thumbnail( $post->ID, $image_size, array(
 				'title' => $image_title

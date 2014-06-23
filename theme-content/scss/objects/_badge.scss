@@ -22,7 +22,7 @@
         top: 100%;
         border: 0 solid transparent;
         @include rem(border-width, $_u4 $_u2);
-        border-left: 0;
+        border-left-width: 0;
         border-top-color: $dark;
     }
 }

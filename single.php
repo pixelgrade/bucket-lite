@@ -18,7 +18,7 @@ $is_review = bucket::has_average_score();
         $disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
 
         // let's use what we know
-        $content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+        $the_content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
         $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
 
         if ( wpgrade::option('title_position', 'below') == 'above' ) {
@@ -29,7 +29,7 @@ $is_review = bucket::has_average_score();
 
         get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 
-        <article class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $content_width; ?>">
+        <article class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $the_content_width; ?>">
             <?php while (have_posts()): the_post();
 
                 if ( wpgrade::option('title_position', 'below') == 'below' ) {

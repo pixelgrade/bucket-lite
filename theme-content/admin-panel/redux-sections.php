@@ -11,7 +11,6 @@ $sections[] = array(
 	'title' => __('General', wpgrade::textdomain()),
 	'desc' => sprintf('<p class="description">'.__('General settings contains options that have a site-wide effect like defining your site branding (including logo and other icons).', wpgrade::textdomain()).'</p>',wpgrade::themename()),
 	'fields' => array(
-
 		array(
 			'id' => 'main_logo',
 			'type' => 'media',
@@ -47,7 +46,14 @@ $sections[] = array(
 			'type' => 'media',
 			'title' => __('Metro Icon', wpgrade::textdomain()),
 			'subtitle' => __('The size of this icon must be 144x144px.', wpgrade::textdomain())
-		)
+		),
+		array(
+			'id' => 'enable_lazy_loading_images',
+			'type' => 'switch',
+			'title' => __('Enable Images Lazy Loading?', wpgrade::textdomain()),
+			'subtitle' => __('Enable this to allow us to lazy load the images so you will increase your page loading speed.', wpgrade::textdomain()),
+			'default' => '1',
+		),
 	)
 );
 
@@ -73,7 +79,7 @@ $sections[] = array(
 
 
 		array(
-			'id'=>'typography-21',
+			'id'=>'typography-info',
 			'desc'=> '<h3>'.__('Typography', wpgrade::textdomain()).'</h3>',
 			'type' => 'info'
 		), 
@@ -120,7 +126,7 @@ $sections[] = array(
 			'compiler' => true,
 		),
 		array(
-			'id'=>'layout-21',
+			'id'=>'layout-info',
 			'desc'=> __('<h3>Layout</h3>', wpgrade::textdomain()),
 			'type' => 'info'
 		), 
@@ -228,7 +234,7 @@ $sections[] = array(
 			'default' => '1',
 		),
 		array(
-			'id'=>'article-21',
+			'id'=>'blog-archive-info',
 			'desc'=> __('<h3>Blog Archive</h3>', wpgrade::textdomain()),
 			'type' => 'info'
 		), 
@@ -642,7 +648,7 @@ $sections[] = array(
 	'desc' => '<p class="description">'.__('Utilities help you keep up-to-date with new versions of the theme. Also you can import the demo data from here.', wpgrade::textdomain()).'</p>',
 	'fields' => array(
 		array(
-			'id'=>'typography-21',
+			'id'=>'theme-auto-update-info',
 			'desc'=> __('<h3>Theme Auto Update</h3>
 				<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>', wpgrade::textdomain()),
 			'type' => 'info'
@@ -677,7 +683,7 @@ $sections[] = array(
 			'required' => array('themeforest_upgrade', '=', 1)
 		),
 		array(
-			'id'=>'typography-21',
+			'id'=>'import-demo-data-info',
 			'desc'=> __('<h3>Import Demo Data</h3>
 				<p class="description">'.__('Here you can import the demo data and get on your way of setting up the site like the theme demo.', wpgrade::textdomain()).'</p>', wpgrade::textdomain()),
 			'type' => 'info'

@@ -6,14 +6,15 @@
     "url": "https://github.com/pixelgrade/bucket"
   },
   "devDependencies": {
-    "gulp-livereload": "~1.0.1",
-    "gulp-concat": "~2.1.7",
-    "gulp-clean": "~0.2.4",
-    "tiny-lr": "0.0.5",
-    "gulp-notify": "~0.4.1",
-    "gulp-exec": "~1.0.4",
-    "gulp-debug": "~0.2.0",
-    "gulp-conventional-changelog": "~0.1.2",
-    "conventional-changelog": "0.0.8"
+		"gulp-livereload": "~1.0.1",
+		"gulp-concat": "~2.1.7",
+		"gulp-rename": "~1.0.0",
+		"gulp-clean": "~0.2.4",
+		"tiny-lr": "0.0.5",
+		"gulp-notify": "~0.4.1",
+		"gulp-exec": "~1.0.4",
+		"gulp-debug": "~0.2.0",
+		"gulp-zip": "~0.1.2",
+		"gulp-replace": "~0.3.0"
   }
 }
