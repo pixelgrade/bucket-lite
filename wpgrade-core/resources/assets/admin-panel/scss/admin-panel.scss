@@ -74,6 +74,7 @@ $heading-font: 'Open Sans', sans-serif;
 		line-height: 130px;
 		padding-left: 48px;
 		left: 0;
+		border-bottom: none;
 
 		&:after {
 			content: "";
@@ -85,9 +86,11 @@ $heading-font: 'Open Sans', sans-serif;
 	}
 
 	h4 {
-		font-size: 21px;
 		margin-bottom: $_u4;
 		margin-top: $_u;
+		font-size: 17px;
+		font-weight: 400;
+		text-transform: uppercase;
 	}
 
 	h5 {
@@ -136,8 +139,7 @@ $heading-font: 'Open Sans', sans-serif;
 }
 
 // 'Theme Options' title + description
-#redux-intro-text {
-	height: 6 * $_u;
+.redux-container #redux-intro-text {
 	width: $sidebar-width;
 	background: transparent;
 	border: none;
@@ -150,7 +152,7 @@ $heading-font: 'Open Sans', sans-serif;
 
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 24px;
 	z-index: 10;
 
 	p {
@@ -287,13 +289,17 @@ $heading-font: 'Open Sans', sans-serif;
 				background: transparent;
 			}
 
-			&.active a {
+			&.active a, &:first-child.active a {
 				color: $dark;
 				width: auto;
 				margin-right: 0;
-				border-top-color: $border-color;
-				border-bottom-color: $border-color;
+				border-top: 1px solid $border-color !important;
+				border-bottom: 1px solid $border-color;
 				background: $content-bg !important;
+			}
+
+			&:first-child a, &.divide + li a {
+				border-top: none !important;
 			}
 		}
 	}
@@ -811,6 +817,11 @@ $heading-font: 'Open Sans', sans-serif;
 		width: 240px !important;
 	}
 
+	.field-desc {
+		font-size: 12px;
+		color: #9d9d9d;
+	}
+
 	/*
 	  * Select2
 	  */
@@ -921,6 +932,7 @@ $heading-font: 'Open Sans', sans-serif;
 			position: relative;
 			left: -45px;
 			padding-left: 45px;
+			margin-bottom: 6px !important;
 
 			input[type="checkbox"] {
 				width: 30px !important;
@@ -943,7 +955,7 @@ $heading-font: 'Open Sans', sans-serif;
 
 		.drag {
 			position: absolute;
-			top: -2px;
+			top: 4px;
 			left: 12px;
 			margin: 0 !important;
 			opacity: 0;
@@ -1042,11 +1054,11 @@ $heading-font: 'Open Sans', sans-serif;
 \*-----------------------------------------------*/
 @font-face {
 	font-family: 'linecons';
-	src: url('../../fonts/linecons/linecons.eot?98525679');
-	src: url('../../fonts/linecons/linecons.eot?98525679#iefix') format('embedded-opentype'),
-	url('../../fonts/linecons/linecons.woff?98525679') format('woff'),
-	url('../../fonts/linecons/linecons.ttf?98525679') format('truetype'),
-	url('../../fonts/linecons/linecons.svg?98525679#linecons') format('svg');
+	src: url('../fonts/linecons.eot');
+	src: url('../fonts/linecons.eot') format('embedded-opentype'),
+	url('../fonts/linecons.woff') format('woff'),
+	url('../fonts/linecons.ttf') format('truetype'),
+	url('../fonts/linecons.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1514,250 +1526,3 @@ $heading-font: 'Open Sans', sans-serif;
 .redux-main .redux-group-tab .form-table .text_sortable .drag {
 	margin-left: 1em;
 }
-
-/*-----------------------------------------------*\
-            THEME SPECIFIC - BORDER
-\*-----------------------------------------------*/
-
-/*
- * Left Checkbox Extender
- */
-%checkbox {
-	tr {
-		width: 45%;
-		margin-right: 5%;
-
-		th {
-			width: 87%;
-			float: right;
-		}
-
-		td {
-			width: 10%;
-			float: left;
-			margin-top: 39px;
-		}
-	}
-}
-
-/*
- * Style Tab
- */
-#info-live-customizer-button + table {
-	display: none;
-}
-
-/*
- * Branding
- */
-#info-branding-header-90821 + table {
-	tr {
-		width: 33%;
-		float: left;
-		padding-right: 30px;
-
-		.description {
-			padding-right: 0;
-		}
-
-		&:nth-child(-n+4) {
-			width: 50%;
-		}
-
-		&:nth-child(1) {
-			//Title
-			width: 100%;
-		}
-		&:nth-child(2) {
-			//Main Logo
-			// width:100%;
-		}
-		&:nth-child(3) {
-			//Retina Switcher
-			padding-right: 0;
-			.description {
-				padding-right: 130px;
-			}
-			.switch-options {
-				top: -52px;
-			}
-		}
-		&:nth-child(4) {
-			//Retina Image
-			th {
-				display: none;
-			}
-		}
-		&:nth-child(5) {
-			//Fav Icon
-			clear: left;
-		}
-
-		&:nth-child(5), &:nth-child(6), &:nth-child(7) {
-			//Last 3
-			margin-top: 40px;
-			border-top: 1px solid #dfdfdf;
-		}
-
-	}
-}
-
-/*
- * Header 
- */
-#info-left-area-218293203 + table {
-	@extend %checkbox;
-	tr th {
-		width: 94%;
-	}
-	tr td {
-		width: 5%;
-	}
-	tr:nth-child(1) {
-
-	}
-}
-
-#info-right-area-218293204 + table {
-	tr:nth-child(2), tr:nth-child(4), tr:nth-child(5) {
-		th {
-			width: 94%;
-		}
-		td {
-			width: 5%;
-		}
-
-		th {
-			// width:87%;
-			float: right;
-		}
-
-		td {
-			// width:10%;
-			float: left;
-			margin-top: 39px;
-		}
-	}
-}
-
-/*
- * Archives 
- */
-#info-masonry_columns-218293204 {
-	margin-bottom: -44px;
-}
-
-#info-masonry_columns-218293204 + table {
-	tr:nth-child(1) {
-		display: none;
-	}
-	tr {
-		width: 29%;
-		float: left;
-		margin-right: 4%;
-
-		&:nth-child(4) {
-			width: 33%;
-			margin-right: 0;
-		}
-	}
-	.select2-container {
-		width: 100% !important;
-	}
-}
-
-// Posts Meta Data
-
-#info-posts_meta_data-218293204 + table {
-	tr:nth-child(1) {
-		width: 100% !important;
-	}
-	tr:nth-child(-n+5) {
-		width: 45%;
-		float: left;
-		margin-right: 5%;
-
-		th {
-			width: 87%;
-			float: right;
-		}
-
-		td {
-			width: 10%;
-			float: left;
-			margin-top: 39px;
-		}
-	}
-
-	tr:nth-child(6), tr:nth-child(7) {
-		width: 45%;
-		float: left;
-		margin-right: 5%;
-	}
-
-	.field-desc {
-		font-size: 12px;
-		color: #9d9d9d;
-	}
-
-	th .description {
-		padding-right: 0 !important;
-	}
-
-	input {
-		width: 100% !important;
-	}
-}
-
-// Navigation Style
-#info-navigation_style-21829384 + table {
-	tr:nth-child(1) {
-		width: 100% !important;
-	}
-	tr:nth-child(3), tr:nth-child(4) {
-		float: left;
-
-		th .description {
-			padding-right: 0 !important;
-		}
-	}
-
-	tr:nth-child(3) {
-		width: 45%;
-		margin-right: 5%;
-
-		th {
-			width: 87%;
-			float: right;
-		}
-
-		td {
-			width: 10%;
-			float: left;
-			margin-top: 39px;
-		}
-	}
-
-	tr:nth-child(4) {
-		width: 50%;
-		margin-right: 0;
-
-		th {
-			margin-top: 18px;
-		}
-	}
-
-	.field-desc {
-		font-size: 12px;
-		color: #9d9d9d;
-	}
-
-	input {
-		width: 100% !important;
-	}
-}
-
-
-
-
-

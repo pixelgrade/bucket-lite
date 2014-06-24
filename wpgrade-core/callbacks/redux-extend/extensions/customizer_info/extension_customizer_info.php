@@ -22,14 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Don't duplicate me!
-if ( ! class_exists( 'ReduxFramework_extension_customizer_typography' ) ) {
+if ( ! class_exists( 'ReduxFramework_extension_customizer_info' ) ) {
 
 
 	/**
-	 * Main ReduxFramework customizer_typography extension class
+	 * Main ReduxFramework customizer_info extension class
 	 * @since       3.1.6
 	 */
-	class ReduxFramework_extension_customizer_typography extends ReduxFramework {
+	class ReduxFramework_extension_customizer_info extends ReduxFramework {
 
 		// Protected vars
 		protected $parent;
@@ -42,8 +42,8 @@ if ( ! class_exists( 'ReduxFramework_extension_customizer_typography' ) ) {
 		 * @since       1.0.0
 		 * @access      public
 		 *
-		 * @param       array $sections   Panel sections.
-		 * @param       array $args       Class constructor arguments.
+		 * @param       array $sections Panel sections.
+		 * @param       array $args Class constructor arguments.
 		 * @param       array $extra_tabs Extra panel tabs.
 		 *
 		 * @return      void
@@ -54,14 +54,14 @@ if ( ! class_exists( 'ReduxFramework_extension_customizer_typography' ) ) {
 			if ( empty( $this->extension_dir ) ) {
 				$this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
 			}
-			$this->field_name = 'customizer_typography';
+			$this->field_name = 'customizer_info';
 
 			self::$theInstance = $this;
 
 			add_filter( 'redux/' . $this->parent->args['opt_name'] . '/field/class/' . $this->field_name, array(
-				&$this,
-				'overload_field_path'
-			) ); // Adds the local field
+					&$this,
+					'overload_field_path'
+				) ); // Adds the local field
 
 		}
 
