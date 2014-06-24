@@ -193,9 +193,8 @@ gulp.task('help', function(){
         'zip                Create a zip archive from the current build folder and deletes it \n' +
         '=== Style === \n' +
         'styles             Compiles styles in development mode \n' +
-        'production-nested  Prepare the style for production (deletes all existing files in the css folder) \n' +
-        '=== Scripts === \n' +
-        'scripts            Concatenate all js scripts \n' +
+        'styles-nested      Prepare the style for production (deletes all existing files in the css folder) \n' +
+		'styles-compressed  Prepare the style for production (deletes all existing files in the css folder) \n' +
         '=== Watchers === \n' +
         'watch              Watches all js and scss files \n' +
         'watch styles       Watch only styles\n' +
