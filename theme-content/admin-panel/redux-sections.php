@@ -731,14 +731,9 @@ $sections[] = array(
 
 		array(
 			'id' => 'theme_options_import',
-			'type' => 'import',
+			'type' => 'import_export',
 			'required' => array('admin_panel_options', '=', 1)
 		),
-		array(
-			'id' => 'theme_options_export',
-			'type' => 'export',
-			'required' => array('admin_panel_options', '=', 1)
-		)
 	)
 );
 
