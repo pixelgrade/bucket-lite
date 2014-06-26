@@ -172,7 +172,7 @@ if(function_exists("register_field_group")){
 						'append' => '',
 						'min' => 1,
 						'max' => 10,
-						'step' => 1,
+						'step' => 0.1,
 					),
 					array (
 						'key' => 'field_525fddf64687b',
