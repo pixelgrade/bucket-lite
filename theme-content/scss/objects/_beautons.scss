@@ -69,6 +69,14 @@
     margin: 0 0 0 -2px;
     list-style: none;
 
+	div{
+		cursor: default;
+		&:hover{
+			color: white;
+			background: black;
+		}
+	}
+
     > .btn, > li, > a {
         float: left;
         margin-left: 2px;
