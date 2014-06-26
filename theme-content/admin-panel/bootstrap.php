@@ -39,8 +39,8 @@
 //	/**
 //	 * Enquue our custom css on admin panel
 //	 */
-//	function wpgrade_add_admin_custom_style() {
-//		// this is our custom field and it wont get loaded by redux
+	function wpgrade_add_admin_custom_style() {
+		// this is our custom field and it wont get loaded by redux
 //		wp_register_script(
 //			'redux-field-text-sortable-js',
 //			wpgrade::coremoduleuri('redux3') . 'inc/fields/text_sortable/field_text_sortable.js',
@@ -48,25 +48,25 @@
 //			time(),
 //			true
 //		);
-//
-//		wp_enqueue_style(
-//			'redux-custom-css',
-//			wpgrade::resourceuri('css/admin/admin-panel.css'),
-//			array(), // Be sure to include redux-css so it's appended after the core css is applied
-//			time(),
-//			'all'
-//		);
-//
+
+		wp_enqueue_style(
+			'bucket-redux-custom-css',
+			wpgrade::resourceuri('css/admin/admin-panel.css'),
+			array(), // Be sure to include redux-css so it's appended after the core css is applied
+			time(),
+			'all'
+		);
+
 //		wp_enqueue_script(
-//			'redux-custom-js',
+//			'bucket-redux-custom-js',
 //			wpgrade::resourceuri('js/admin/admin-panel.js'),
 //			array('jquery', 'redux-js','wp-ajax-response', 'redux-field-text-sortable-js' ), // Be sure to include redux-css so it's appended after the core css is applied
 //			time(),
 //			true
 //		);
-//	}
-//	// This example assumes your opt_name is set to redux, replace with your opt_name value
-//	add_action('redux-enqueue-'. wpgrade::shortname() . '_options', 'wpgrade_add_admin_custom_style',0);
+	}
+	// This example assumes your opt_name is set to redux, replace with your opt_name value
+	add_action('redux-enqueue-'. wpgrade::shortname() . '_options', 'wpgrade_add_admin_custom_style',0);
 
 	// register callbacks
 	require $currentpath.'callbacks'.EXT;
