@@ -49,13 +49,13 @@
 //			true
 //		);
 
-		wp_enqueue_style(
-			'bucket-redux-custom-css',
-			wpgrade::resourceuri('css/admin/admin-panel.css'),
-			array(), // Be sure to include redux-css so it's appended after the core css is applied
-			time(),
-			'all'
-		);
+//		wp_enqueue_style(
+//			'bucket-redux-custom-css',
+//			wpgrade::resourceuri('css/admin/admin-panel.css'),
+//			array(), // Be sure to include redux-css so it's appended after the core css is applied
+//			time(),
+//			'all'
+//		);
 
 //		wp_enqueue_script(
 //			'bucket-redux-custom-js',
@@ -66,7 +66,7 @@
 //		);
 	}
 	// This example assumes your opt_name is set to redux, replace with your opt_name value
-	add_action('redux-enqueue-'. wpgrade::shortname() . '_options', 'wpgrade_add_admin_custom_style',0);
+	//add_action('admin_enqueue_scripts', 'wpgrade_add_admin_custom_style', 999999 );
 
 	// register callbacks
 	require $currentpath.'callbacks'.EXT;

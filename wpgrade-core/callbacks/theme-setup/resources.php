@@ -85,10 +85,6 @@ function wpgrade_callback_gtkywb() {
 	) );
 }
 
-/*
-* We would like to GetToKnowYourWorkBetter
-*
-*/
 function wpgrade_add_redux_custom_style() {
 	wp_enqueue_style( 'redux-custom-css', wpgrade::coreresourceuri( 'admin-panel/css/admin-panel.css' ), array(), // Be sure to include redux-css so it's appended after the core css is applied
 		time(), 'all' );
@@ -100,5 +96,4 @@ function wpgrade_add_redux_custom_style() {
 		), // Be sure to include redux-css so it's appended after the core css is applied
 		time(), true );
 }
-
-add_action( 'redux-enqueue-' . wpgrade::shortname() . '_options', 'wpgrade_add_redux_custom_style', 0 );
+add_action( 'admin_enqueue_scripts', 'wpgrade_add_redux_custom_style', 99999999 );

@@ -276,4 +276,12 @@
 //					)
 	),
 
+	/**
+	 * You can choose to have separate options for each language.
+	 * for example for english you can chose a background color and for french another
+	 * Note: Keep in mind that this option will create a total separate set of options for each language.
+	 *       This means that if you change an option on english it will not be changed for other languages.
+	 */
+	'wpml_separate_options' => true, // default: false
+
 ); # end theme configuration
