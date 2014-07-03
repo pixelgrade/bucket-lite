@@ -12,8 +12,12 @@
     }
 
     .site__stats:after {
-        display:none; 
+        display:none;
     }
+
+	.site__stats .container:after{
+		display: block;
+	}
 
     .site__footer {
         max-width: 1096px;

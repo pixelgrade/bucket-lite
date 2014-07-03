@@ -35,6 +35,20 @@
 	.container {
 		position:relative;
 		min-height:30px;
+
+		&:after {
+			background:#f2f2f2;
+			content:"";
+			display:none;
+
+			width:100%;
+			height:5px;
+
+			position:absolute;
+			left: 0; right: 0;
+			bottom:30px;
+			z-index:100;
+		}
 	}
 
 	.stat-group {
@@ -109,10 +123,12 @@
 		background:#f2f2f2;
 		content:"";
 		display:block;
+
 		width:100%;
 		height:5px;
 
 		position:absolute;
+		left: 0; right: 0;
 		bottom:30px;
 		z-index:100;
 	}
