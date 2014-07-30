@@ -410,20 +410,6 @@
 
 	})(jQuery);
 
-
-	//Min-height of the container
-
-	var ensure_height_of_container = function () {
-		var min_height = $(window).height() - 32;
-		$('.redux-main').css({'min-height': min_height + 'px'});
-	}
-	ensure_height_of_container();
-
-	$(window).resize(function () {
-		//$('#redux-main') .css({'min-height': (($(window).height()))+'px'});
-		ensure_height_of_container();
-	});
-
 	$(document).ready(function () {
 		// $('.redux-page .settings-error').parent().hide();
 	});
@@ -453,6 +439,27 @@
 			$('.redux-container').removeClass('fixed-header');
 	}
 
+	//Min-height of the container
+
+	var ensure_height_of_container = function () {
+		var min_height = $(window).height() - 32;
+		$('.redux-main').css({'min-height': min_height + 'px'});
+	}
+
+	// set top / bottom of fixed elements
+
+	var top = $('.redux-main').offset().top + 'px';
+
+	function sidebarPlace() {
+
+		if ($('.redux-sidebar').outerHeight() < $(window).height() - 32) {
+			$('.redux-sidebar').css('top', top);
+			$('.redux-container').addClass('fixed-sidebar');
+		} else {
+			$('.redux-container').removeClass('fixed-sidebar');
+		}
+	}
+
 
 	/* ====== ON DOCUMENT READY ====== */
 
@@ -462,13 +469,16 @@
 			$('body').addClass('redux-page');
 			fixDiv();
 		}
-	});
 
+		$('#redux-intro-text').css('top', top);
+
+		sidebarPlace();
+	});
 
 	/* ====== ON WINDOW LOAD ====== */
 
 	$(window).load(function () {
-
+		ensure_height_of_container();
 	});
 
 
@@ -476,5 +486,112 @@
 	$(window).scroll(function (e) {
 		fixDiv();
 	});
+
+
+	var $screenshot = $('.redux-main').find('.screenshot');
+
+	$screenshot.each(function (i, obj) {
+
+		var $this = $(obj),
+			$newScreenshot = $("<div class='screenshot'></div>");
+
+
+		$this.closest('tr').addClass('row--image');
+		$newScreenshot.prependTo($this.closest('.row--image'));
+
+		$this.on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			$newScreenshot.parent().find('.media_upload_button').trigger('click');
+		});
+
+		$newScreenshot.on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			$newScreenshot.parent().find('.media_upload_button').trigger('click');
+		});
+	});
+
+
+	// Set the big icon in .redux-main
+	var $bigIcon = null,
+		iconClass = null;
+
+
+	setTimeout(function () {
+		iconClass = $('.redux-group-tab-link-li.active').find('i').attr('class');
+		$bigIcon = $('<i>', {class: iconClass + ' big-icon', id: 'big-icon'});
+		$('.redux-main').append($bigIcon);
+
+		// move initial description to sidebar
+		var $active = $('.redux-group-tab-link-li.active > a'),
+			tabNo = $active.data('key'),
+			$tab = $("#" + tabNo + "_section_group"),
+			description = $tab.find('.redux-section-desc .description').text();
+
+		$("#redux-intro-text").append("<p class='description'>" + description + "</p>");
+
+		// let's get some classes where we want them
+		$(".js-class-hook").each(function (i, obj) {
+			var $obj = $(obj),
+				classes = $obj.attr("class"),
+				$row = $obj.closest("tr");
+
+			if ($row.hasClass("hide")) {
+				$row.addClass(classes).removeClass("js-class-hook select2-container select2-offscreen");
+			} else {
+				$row.addClass(classes).removeClass("js-class-hook select2-container select2-offscreen hide");
+			}
+		});
+
+		$(".redux-container").on('change input select', function () {
+				if (!jQuery(this).hasClass('noUpdate')) {
+					$('#redux-sticky').addClass('is-visible');
+				}
+			}
+		);
+
+	}, 100);
+
+	$('.redux-group-menu a').on('click', function () {
+
+		var tabNo = $(this).data('key'),
+			$tab = $("#" + tabNo + "_section_group"),
+			description = $tab.find('.redux-section-desc .description').text(),
+			sidebarHeight = $('.redux-sidebar').height();
+
+		$("#redux-intro-text .description").text(description);
+
+
+		setTimeout(function () {
+			// change floating text
+			var text = $('.redux-group-tab:visible > h3').html();
+			$('#floating-title').html(text);
+
+
+			// change the big icon accordingly
+			iconClass = $('.redux-group-tab-link-li.active').find('i').attr('class');
+
+			$bigIcon.removeClass();
+			$bigIcon.attr('class', iconClass);
+
+		}, 100);
+
+		setTimeout(function(){
+			$('.redux-main').css('height', '');
+
+			if ($tab.outerHeight() < sidebarHeight) {
+				$('.redux-main').height(sidebarHeight);
+			}
+		}, 200)
+	});
+
+
+
+	$(window).resize(function () {
+		sidebarPlace();
+		ensure_height_of_container();
+	});
+
 
 })(jQuery, window);

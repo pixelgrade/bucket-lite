@@ -107,7 +107,7 @@
 
                     $sortable = ( isset( $this->field['sortable'] ) && $this->field['sortable'] ) ? ' select2-sortable"' : "";
 
-                    echo '<select ' . $multi . ' id="' . $this->field['id'] . '-select" data-placeholder="' . $placeholder . '" name="' . $this->field['name'] . '' . $nameBrackets . $this->field['name_suffix'] . '" class="redux-select-item ' . $this->field['class'] . $sortable . '"' . $width . ' rows="6">';
+                    echo '<select ' . $multi . ' id="' . $this->field['id'] . '-select" data-placeholder="' . $placeholder . '" name="' . $this->field['name'] . $this->field['name_suffix'] . $nameBrackets . '" class="redux-select-item ' . $this->field['class'] . $sortable . '"' . $width . ' rows="6">';
                     echo '<option></option>';
 
                     foreach ( $this->field['options'] as $k => $v ) {
@@ -138,7 +138,7 @@
                 wp_enqueue_script(
                     'field-select-js',
                     ReduxFramework::$_url . 'inc/fields/select/field_select' . Redux_Functions::isMin() . '.js',
-                    array( 'jquery', 'select2-js' ),
+                    array( 'jquery', 'select2-js', 'redux-js' ),
                     time(),
                     true
                 );

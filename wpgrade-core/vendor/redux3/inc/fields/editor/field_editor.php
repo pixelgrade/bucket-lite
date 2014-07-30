@@ -63,9 +63,11 @@
                     $this->field['args'] = array();
                 }
 
+                $this->field['args']['onchange_callback'] = "alert('here')";
+
                 // Setup up default args
                 $defaults = array(
-                    'textarea_name' => $this->field['name'],
+                    'textarea_name' => $this->field['name'] . $this->field['name_suffix'],
                     'editor_class'  => $this->field['class'],
                     'textarea_rows' => 10, //Wordpress default
                     'teeny'         => true,
@@ -80,6 +82,7 @@
 
                 wp_editor( $this->value, $this->field['id'], $this->field['args'] );
             }
+
 
             /**
              * Enqueue Function.
@@ -97,6 +100,21 @@
                     time(),
                     true
                 );
+
+                wp_enqueue_script(
+                    'redux-field-editor2-js',
+                    ReduxFramework::$_url . 'inc/fields/editor/field_editor' . Redux_Functions::isMin() . '.js',
+                    array( 'jquery', 'redux-js' ),
+                    time(),
+                    true
+                );
             }
+
+
+
+
+
         }
     }
+
+

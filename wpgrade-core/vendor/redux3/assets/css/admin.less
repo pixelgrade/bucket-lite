@@ -99,7 +99,7 @@
 
     #redux-footer {
         border-top: 1px solid #E7E7E7;
-        z-index: 2;
+        z-index: 9999;
 
         #redux-share {
             float: left;
@@ -363,6 +363,10 @@
         width: 50px;
         text-align: center;
     }
+    
+    input {
+        line-height: 19px;
+    }
 
     img {
         max-width: 100%;
@@ -445,6 +449,9 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         margin-right: 0;
+        float:left;
+        margin-top: 0;
+        display: block;
     }
     .input-append .add-on {
         border-top-right-radius: 3px;
@@ -452,6 +459,7 @@
         margin-left: -2px;
         padding-top: 4px !important;
         padding-bottom: 2px !important;
+        float: left;
     }
     .input-prepend input {
         border-left: 0;
@@ -461,10 +469,14 @@
         margin-left: 0;
         padding-top: 2px;
         padding-bottom: 5px;
+        float:left;
+        margin-top: 0;
+        display: block;
     }
     .input-prepend .add-on {
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
+        float: left;
     }
 
     .input-append {
@@ -598,6 +610,14 @@
             margin-left: -3px;
             margin-top: -3px;
         }
+    }
+    .redux-menu-error {
+        background-color: rgb(185, 74, 72);
+        color: rgb(242, 222, 222);
+    }
+    .redux-menu-warning {
+        background-color: #C09853;
+        color: #FCF8E3;
     }
 
     ul {
@@ -845,7 +865,8 @@ pre {
     }
 
     .redux-container-switch .cb-disable,
-    .redux-container-switch .cb-enable, .ui-state-default,
+    .redux-container-switch .cb-enable, 
+    .ui-state-default,
     .ui-widget-content .ui-state-default,
     .ui-widget-header .ui-state-default {
         .backgroundGradient(#f5f5f5, #f8f8f8);
@@ -1341,3 +1362,22 @@ pre {
         margin-left: 100px;
     }
 }*/
+
+#redux-header {
+    position: relative;
+}
+.redux-container #redux-header .display_header span.redux-dev-mode-notice {
+    position: absolute;
+    left: 20px;
+    bottom: 9px;
+    background-color: #f0ad4e;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff !important;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}

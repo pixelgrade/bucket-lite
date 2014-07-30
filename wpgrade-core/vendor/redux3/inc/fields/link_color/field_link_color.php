@@ -84,19 +84,19 @@
             public function render() {
 
                 if ( $this->field['regular'] === true && $this->field['default']['regular'] !== false ) {
-                    echo '<span class="linkColor"><strong>' . __( 'Regular', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-regular" name="' . $this->field['name'] . '[regular]' . $this->field['name_suffix'] . '" value="' . $this->value['regular'] . '" class="redux-color redux-color-regular redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['regular'] . '" /></span>';
+                    echo '<span class="linkColor"><strong>' . __( 'Regular', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-regular" name="' . $this->field['name'] . $this->field['name_suffix'] . '[regular]' . '" value="' . $this->value['regular'] . '" class="redux-color redux-color-regular redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['regular'] . '" /></span>';
                 }
 
                 if ( $this->field['hover'] === true && $this->field['default']['hover'] !== false ) {
-                    echo '<span class="linkColor"><strong>' . __( 'Hover', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-hover" name="' . $this->field['name'] . '[hover]' . $this->field['name_suffix'] . '" value="' . $this->value['hover'] . '" class="redux-color redux-color-hover redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['hover'] . '" /></span>';
+                    echo '<span class="linkColor"><strong>' . __( 'Hover', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-hover" name="' . $this->field['name'] . $this->field['name_suffix'] . '[hover]' . '" value="' . $this->value['hover'] . '" class="redux-color redux-color-hover redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['hover'] . '" /></span>';
                 }
 
                 if ( $this->field['visited'] === true && $this->field['default']['visited'] !== false ) {
-                    echo '<span class="linkColor"><strong>' . __( 'Visited', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-hover" name="' . $this->field['name'] . '[visited]' . $this->field['name_suffix'] . '" value="' . $this->value['visited'] . '" class="redux-color redux-color-visited redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['visited'] . '" /></span>';
+                    echo '<span class="linkColor"><strong>' . __( 'Visited', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-hover" name="' . $this->field['name'] . $this->field['name_suffix'] . '[visited]' . '" value="' . $this->value['visited'] . '" class="redux-color redux-color-visited redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['visited'] . '" /></span>';
                 }
 
                 if ( $this->field['active'] === true && $this->field['default']['active'] !== false ) {
-                    echo '<span class="linkColor"><strong>' . __( 'Active', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-active" name="' . $this->field['name'] . '[active]' . $this->field['name_suffix'] . '" value="' . $this->value['active'] . '" class="redux-color redux-color-active redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['active'] . '" /></span>';
+                    echo '<span class="linkColor"><strong>' . __( 'Active', 'redux-framework' ) . '</strong>&nbsp;<input id="' . $this->field['id'] . '-active" name="' . $this->field['name'] . $this->field['name_suffix'] . '[active]' . '" value="' . $this->value['active'] . '" class="redux-color redux-color-active redux-color-init ' . $this->field['class'] . '"  type="text" data-default-color="' . $this->field['default']['active'] . '" /></span>';
                 }
             }
 
@@ -111,9 +111,9 @@
             public function enqueue() {
 
                 wp_enqueue_script(
-                    'redux-field-color-js',
-                    ReduxFramework::$_url . 'assets/js/color-picker/color-picker' . Redux_Functions::isMin() . '.js',
-                    array( 'jquery', 'wp-color-picker' ),
+                    'redux-field-link-color-js',
+                    ReduxFramework::$_url . 'inc/fields/link_color/field_link_color' . Redux_Functions::isMin() . '.js',
+                    array( 'jquery', 'wp-color-picker', 'redux-js' ),
                     time(),
                     true
                 );
@@ -157,7 +157,14 @@
                                 if ( count( $this->field['output'] ) == 1 ) {
                                     $styleString .= $this->field['output'][0] . ":" . $key . "{" . $value . '}';
                                 } else {
-                                    $styleString .= implode( ":" . $key . ",", $this->field['output'] ) . "{" . $value . '}';
+                                    $blah = '';
+                                    foreach($this->field['output'] as $k => $sel) {
+                                        $blah .= $sel . ':' . $key . ',';
+                                    }
+                                    
+                                    $blah = substr($blah, 0, strlen($blah) - 1);
+                                    $styleString .= $blah . '{' . $value . '}';
+
                                 }
                             }
                         }
@@ -171,11 +178,18 @@
                         foreach ( $style as $key => $value ) {
                             if ( is_numeric( $key ) ) {
                                 $styleString .= implode( ",", $this->field['compiler'] ) . "{" . $value . '}';
+                                
                             } else {
                                 if ( count( $this->field['compiler'] ) == 1 ) {
                                     $styleString .= $this->field['compiler'][0] . ":" . $key . "{" . $value . '}';
                                 } else {
-                                    $styleString .= implode( ":" . $key . ",", $this->field['compiler'] ) . "{" . $value . '}';
+                                    $blah = '';
+                                    foreach($this->field['compiler'] as $k => $sel) {
+                                        $blah .= $sel . ':' . $key . ',';
+                                    }
+                                    
+                                    $blah = substr($blah, 0, strlen($blah) - 1);
+                                    $styleString .= $blah . '{' . $value . '}';
                                 }
                             }
                         }
