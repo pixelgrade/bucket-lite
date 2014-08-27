@@ -67,7 +67,7 @@ gulp.task('default', ['help'], function() {
     // silence
 });
 
-gulp.task('start', ['styles-nested', 'scripts'], function(){
+gulp.task('start', ['styles-nested'], function(){
 	console.log('theme should be ready');
 });
 
