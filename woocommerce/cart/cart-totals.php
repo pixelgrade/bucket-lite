@@ -95,10 +95,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
-</div>
 
-<input type="submit" class="checkout-button btn btn--primary  alt wc-forward  float--right" name="proceed" value="<?php _e( 'Checkout', 'woocommerce' ); ?>" />
-<input type="submit" class="btn  float--right  push-half--right" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+  <input type="submit" class="checkout-button btn btn--primary  alt wc-forward  float--right" name="proceed" value="<?php _e( 'Checkout', 'woocommerce' ); ?>" />
+  <input type="submit" class="btn  float--right  push-half--right" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+</div>
 
 <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 
