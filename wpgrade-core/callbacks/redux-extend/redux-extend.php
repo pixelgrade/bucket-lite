@@ -59,3 +59,16 @@ function wpgrade_hook_after_redux_save_btn(){
     echo '</li></ul></div></div>';
 
 }
+
+add_action( 'customize_register', 'remove_customizer_controls' ); // remove controls
+
+function remove_customizer_controls( $wp_customize ) {
+
+	$sections = wpgrade::get_redux_arg( 'remove_customizer_sections' );
+
+	if ( ! empty( $sections ) && is_array( $sections ) ) {
+		foreach ( $sections as $key => $section ) {
+			$wp_customize->remove_section( $section );
+		}
+	}
+}
