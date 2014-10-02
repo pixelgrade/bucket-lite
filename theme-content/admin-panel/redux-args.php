@@ -134,6 +134,12 @@ return array
 
 		// Set the help sidebar for the options page.
 		// 'help_sidebar' => __('<p>This is the sidebar content, HTML is allowed.</p>', wpgrade::textdomain()),
-
+//		'remove_customizer_sections' => array(
+//			'blogdescription',
+//			'static_front_page',
+//			'title_tagline',
+//			'nav',
+//			'sidebars_widgets'
+//		)
 
 	); # config

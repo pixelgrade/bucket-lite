@@ -36,19 +36,19 @@ if ( wpgrade::option('nav_main_sticky') == 1 )
 <body <?php body_class($class_name); ?> <?php echo $schema_org ?> >
     <div class="pace">
         <div class="pace-activity"></div>
-    </div>    
+    </div>
     <div id="page">
         <nav class="navigation  navigation--mobile  overthrow">
             <h2 class="accessibility"><?php _e('Primary Mobile Navigation', wpgrade::textdomain()) ?></h2>
             <div class="search-form  push-half--top  push--bottom  soft--bottom">
                 <?php get_search_form(); ?>
-            </div>            
-            <?php 
+            </div>
+            <?php
                 wpgrade_main_nav_mobile();
                 wpgrade_top_nav_left('nav--stacked', true);
                 wpgrade_top_nav_right('nav--stacked', true);
             ?>
-        </nav>    
+        </nav>
         <div class="wrapper">
             <?php //get the main header section - logo, nav, footer
 			get_template_part('theme-partials/header/site', wpgrade::option('header_type')); ?>
