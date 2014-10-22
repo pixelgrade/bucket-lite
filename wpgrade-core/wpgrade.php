@@ -972,11 +972,23 @@ class wpgrade {
 	 */
 	static function audio_selfhosted( $postID ) {
 		$audio_mp3    = get_post_meta( $postID, wpgrade::prefix() . 'audio_mp3', true );
-		$audio_m4a    = get_post_meta( $postID, wpgrade::prefix() . 'audio_m4a', true );
-		$audio_oga    = get_post_meta( $postID, wpgrade::prefix() . 'audio_ogg', true );
+		$audio_ogg    = get_post_meta( $postID, wpgrade::prefix() . 'audio_ogg', true );
 		$audio_poster = get_post_meta( $postID, wpgrade::prefix() . 'audio_poster', true );
 
-		include wpgrade::corepartial( 'audio-selfhosted' . EXT );
+		$audio_m4a    = get_post_meta( $postID, wpgrade::prefix() . 'audio_m4a', true );
+		 
+		$mp3_attr = '';
+		$ogg_attr = '';
+
+		if(!empty($audio_mp3)) {
+			$mp3_attr = 'mp3="'.$audio_mp3 .'"';
+		}
+
+		if(!empty($audio_ogg)) {
+			$ogg_attr = 'ogg="'.$audio_ogg .'"';
+		}
+
+		echo(do_shortcode('[audio '.$mp3_attr.' '.$ogg_attr.'][/audio]'));
 	}
 
 	#
