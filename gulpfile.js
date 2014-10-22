@@ -1,97 +1,84 @@
-// Load plugins
 var gulp = require('gulp'),
+    sass = require('gulp-ruby-sass'),
+    prefix = require('gulp-autoprefixer'),
     exec = require('gulp-exec'),
     clean = require('gulp-clean'),
+    livereload = require('gulp-livereload'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-	replace = require('gulp-replace'),
-    lr = require('tiny-lr'),
-    server = lr(),
-	themeTextDomain = '\'bucket_txtd\'',
-    path = './theme-content/',
-    jspath = path + 'js/',
-	debug = require('gulp-debug');
+    csscomb = require('gulp-csscomb'),
+	compress = require('gulp-yuicompressor' ),
+    beautify = require('gulp-beautify'),
+    csscomb = require('gulp-csscomb'),
+	themeTextDomain = '\'bucket_txtd\'';
+
 
 var options = {
-	silent: true,
-	continueOnError: true // default: false
+    silent: true,
+    continueOnError: true // default: false
 };
 
-gulp.task('styles', function() {
-
-    gulp.src('./')
-        .pipe( exec('sass --force --update --compass --sourcemap theme-content/scss:theme-content/css --style expanded -E utf-8  2> /dev/null', options) );
-//        .pipe(livereload(server));
-
+// styles related
+gulp.task('styles-dev', function () {
+    return gulp.src('theme-content/scss/**/*.scss')
+        .pipe(sass({compass: true, sourcemap: true, style: 'compact'}))
+        .on('error', function (e) {
+            console.log(e.message);
+        })
+        .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+        .pipe(gulp.dest('./theme-content/css/'))
+        .pipe(livereload())
+        .pipe(notify('Styles task complete'));
 });
 
-/**
- * Cleanup the css folder and recreate the css files
- */
-gulp.task('styles-nested', function() {
-	return gulp.src('./')
-		.pipe( exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-nested.rb',options) );
+gulp.task('styles', function () {
+    return gulp.src('theme-content/scss/**/*.scss')
+        .pipe(sass({compass: true, sourcemap: true, style: 'nested'}))
+        .on('error', function (e) {
+            console.log(e.message);
+        })
+        .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+        .pipe(gulp.dest('./theme-content/css/'))
+        .pipe(notify('Styles task complete'));
 });
 
-/**
- * Cleanup the css folder and recreate the css files compressed
- */
+gulp.task('styles-prod', function () {
+    return gulp.src('theme-content/scss/**/*.scss')
+        .pipe(sass({compass: true, sourcemap: false, style: 'nested'}))
+        .on('error', function (e) {
+            console.log(e.message);
+        })
+        .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+        .pipe(csscomb())
+        .pipe(gulp.dest('./theme-content/css/'));
+});
+
 gulp.task('styles-compressed', function () {
-	return gulp.src('./')
-		.pipe(exec('rm -Rf ./theme-content/css/* ; ruby theme-content/+production-compressed.rb'));
+	return gulp.src('theme-content/scss/**/*.scss')
+		.pipe(sass({compass: true, sourcemap: false, style: 'compressed'}))
+		.on('error', function (e) {
+			console.log(e.message);
+		})
+		.pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+		.pipe(gulp.dest('./theme-content/css/'));
 });
 
-gulp.task('dev', function() {
-    gulp.src('./')
-        .pipe(
-            exec('sass --force --update --compass --sourcemap theme-content/scss:theme-content/css --style expanded -E utf-8',options)
-        )
+gulp.task('styles-watch', function () {
+    return gulp.watch('theme-content/scss/**/*.scss', ['styles-dev']);
 });
 
-gulp.task('watch-win', function() {
-
-    // Watch .scss files
-    gulp.watch('./theme-content/scss/**/*.scss', ['dev']);
-
+gulp.task('watch', function () {
+    gulp.watch('theme-content/scss/**/*.scss', ['styles-dev']);
+    gulp.watch('theme-content/js/**/*.js');
 });
 
-gulp.task('watch styles', function() {
-
-    // Watch .js files
-    gulp.watch('./theme-content/scss/**/*.scss', ['styles']);
-
-});
-
-gulp.task('default', ['help'], function() {
-
+// usually there is a default task  for lazy people who just wanna type gulp
+gulp.task('start', ['styles'], function () {
     // silence
 });
 
-gulp.task('start', ['styles-nested'], function(){
-	console.log('theme should be ready');
-});
-
 gulp.task('server', ['styles-compressed'], function () {
-	console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
-});
-
-/**
- * Create a zip archive out of the cleaned folder and delete the folder
- */
-gulp.task('zip', ['build'], function(){
-
-	return gulp.src('./')
-		.pipe(exec('cd ./../; rm -rf bucket.zip; cd ./build; zip -r -X ./../bucket.zip ./bucket; cd ./../; rm -rf build',options));
-
-});
-
-/**
- * Copy theme folder outside in a build folder, recreate styles before that
- */
-gulp.task('copy-folder', ['styles-nested'], function(){
-
-	return gulp.src('./')
-		.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; cp -Rf ./* ./../build/bucket/',options));
+    console.log('The styles have been completed for production! Go and clear the caches!');
 });
 
 /**
@@ -103,105 +90,94 @@ gulp.task('txtdomain-replace', ['copy-folder'], function(){
 		.pipe(gulp.dest('../build/bucket'));
 });
 
+
+/**
+ * Copy theme folder outside in a build folder, recreate styles before that
+ */
+gulp.task('copy-folder', ['styles-prod'], function () {
+
+    return gulp.src('./')
+        .pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; rsync -av --exclude="node_modules" ./* ./../build/bucket/', options));
+});
+
 /**
  * Clean the folder of unneeded files and folders
  */
-gulp.task('build', ['txtdomain-replace'], function(){
+gulp.task('build', ['txtdomain-replace'], function () {
 
-	// files that should not be present in build zip
-	files_to_remove = [
-		'**/codekit-config.json',
-		'node_modules',
-		'config.rb',
-		'gulpfile.js',
-		'package.json',
-		'wpgrade-core/vendor/redux2',
-		'wpgrade-core/features',
-		'wpgrade-core/tests',
-		'wpgrade-core/**/*.less',
-		'wpgrade-core/**/*.scss',
-		'wpgrade-core/**/*.rb',
-		'wpgrade-core/**/sass',
-		'wpgrade-core/**/scss',
-		'pxg.json',
-		'build',
-		'css',
-		'**/*.css.map',
-		'**/.sass*',
-		'.sass*',
-		'**/.git*',
-		'*.sublime-project',
-		'.DS_Store',
-		'**/.DS_Store',
-		'__MACOSX',
-		'**/__MACOSX'
-	];
+    // files that should not be present in build
+    files_to_remove = [
+        '**/codekit-config.json',
+        'node_modules',
+        'config.rb',
+        'gulpfile.js',
+        'package.json',
+        'pxg.json',
+        'build',
+        'css',
+        '.idea',
+        '**/.svn*',
+        '**/*.css.map',
+        '**/.sass*',
+        '.sass*',
+        '**/.git*',
+        '*.sublime-project',
+        '.DS_Store',
+        '**/.DS_Store',
+        '__MACOSX',
+        '**/__MACOSX',
+        'README.md',
+        '.csscomb'
+    ];
 
-	files_to_remove.forEach( function(e,k){
-		files_to_remove[k] = '../build/bucket/' + e;
-	});
+    files_to_remove.forEach(function (e, k) {
+        files_to_remove[k] = '../build/bucket/' + e;
+    });
 
-	return gulp.src( files_to_remove, { read: false } )
-		.pipe( clean({force: true}) );
+    return gulp.src(files_to_remove, {read: false})
+        .pipe(clean({force: true}));
 });
 
-//var fs = require('fs'),
-//	gulpConventionalChangelog = require('gulp-conventional-changelog');
-//
-//var getJsonFile = function(){
-//	return JSON.parse(
-//		fs.readFileSync('./package.json', 'utf-8'));
-//};
-//
-//gulp.task('diff', function(){
-//	var jsonFile = getJsonFile()
-//		, commitMsg = "chore(release): v" + jsonFile.version;
-//
-//
-//	require('conventional-changelog')({
-//		repository: jsonFile.repository.url,
-//		version: jsonFile.version
-////		from: '965976566792d95f5afd1f95e0b18276f799307d'
-//	}, function(err, log) {
-//		console.log(log);
-//	});
-//
-////	console.log(gulpConventionalChangelog());
-//
-////	return gulp
-////		.src(['package.json', 'CHANGELOG.md']) // pass package.json to read data-from
-////		.pipe(gulpConventionalChangelog())
-////		.pipe(gulp.dest('.')) // only output CHANGELOG.md
-////		.pipe(gulpExec('git add -A')) // so the following git commands only execute once
-////		.pipe(gulpExec("git commit -m '" + commitMsg + "'"))
-////		.pipe(gulpExec("git tag -a v" + jsonFile.version + " -m '" + commitMsg + "'"));
-//});
+/**
+ * Create a zip archive out of the cleaned folder and delete the folder
+ */
+gulp.task('zip', ['build'], function(){
 
+    return gulp.src('./')
+        .pipe(exec('cd ./../; rm -rf bucket.zip; cd ./build/; zip -r -X ./../bucket.zip ./bucket; cd ./../; rm -rf build'));
+
+});
+
+// usually there is a default task  for lazy people who just wanna type gulp
+gulp.task('default', ['start'], function () {
+    // silence
+});
 
 /**
  * Short commands help
  */
 
-
-gulp.task('help', function(){
+gulp.task('help', function () {
 
     var $help = '\nCommands available : \n \n' +
         '=== General Commands === \n' +
-        'start              Compiles all styles and scripts and makes the theme ready to start \n' +
-        'build              Create a cleaned up build folder for the current theme \n' +
-		'server             Recompile the styles and scripts compressed for server \n' +
-        'zip                Create a zip archive from the current build folder and deletes it \n' +
+        'start              (default)Combuckets all styles and scripts and makes the theme ready to start \n' +
+        'zip               	Generate the zip archive \n' +
+        'build				Generate the build directory with the cleaned theme \n' +
+        'help               Print all commands \n' +
         '=== Style === \n' +
-        'styles             Compiles styles in development mode \n' +
-        'styles-nested      Prepare the style for production (deletes all existing files in the css folder) \n' +
-		'styles-compressed  Prepare the style for production (deletes all existing files in the css folder) \n' +
+        'styles             Combuckets styles \n' +
+        'styles-prod        Combuckets styles in production mode \n' +
+		'styles-compressed  Combuckets styles in compressed mode \n' +
+        'styles-dev         Combuckets styles in development mode \n' +
+        '=== Scripts === \n' +
+        'scripts            Concatenate all js scripts \n' +
+        'scripts-dev        Concatenate all js scripts and live-reload \n' +
         '=== Watchers === \n' +
         'watch              Watches all js and scss files \n' +
-        'watch styles       Watch only styles\n' +
-        'watch scripts      Watch scripts only \n' +
-        'watch-win          Watch on damn windows';
+        'styles-watch       Watch only styles\n' +
+        'scripts-watch      Watch scripts only \n';
 
-
-    console.log( $help );
+    console.log($help);
 
 });
