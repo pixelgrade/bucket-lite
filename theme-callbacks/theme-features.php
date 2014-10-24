@@ -126,7 +126,7 @@ function wpgrade_register_attachments(){
 			}
 			return $form_fields;
 		}
-		add_filter("attachment_fields_to_edit", "add_video_url_field_to_attachments", 99999, 2);
+		add_filter("attachment_fields_to_edit", "add_video_url_field_to_attachments", 1, 2);
 	}
 
 	/**
