@@ -689,6 +689,7 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 		$allListWrap.height(base.$el.find("#" + curList).height());
 
 		base.$nav.find("li > a").click(function(event) {
+
 			var curList = base.$el.find("a.current").attr("href").substring(1),
 				$newList = $(this),
 				listID = $newList.attr("href").substring(1);
@@ -700,11 +701,6 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 					"z-index": 10,
 					display: "none"
 				});
-				
-				var newHeight = base.$el.find("#" + listID).height();
-				$allListWrap.css({
-					height: newHeight
-				});
 
 				setTimeout(function () {
 					base.$el.find("#" + curList);
@@ -715,6 +711,14 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 					});
 					base.$el.find(".tabs__nav li a").removeClass("current");
 					$newList.addClass("current");
+
+					resizeVideos();
+
+					var newHeight = base.$el.find("#" + listID).height();
+					$allListWrap.css({
+						height: newHeight
+					});
+
 				}, 250);
 			}
 			event.preventDefault();
@@ -1607,7 +1611,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 			} else { // for the conflict with jetpack set an default aspect ration of 16/9
 				$(this).data('aspectRatio', 16/9 )
 					.removeAttr('height')
-					.removeAttr('width');				
+					.removeAttr('width');
 			}
 		});
 
