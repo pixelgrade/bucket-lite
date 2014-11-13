@@ -467,6 +467,13 @@ class wpgrade {
 	}
 
 	/**
+	 * @return string
+	 */
+	static function template_folder() {
+		return wpgrade::themedata()->Template;
+	}
+
+	/**
 	 * Reads theme configuration and returns resolved classes.
 	 * @return array|boolean classes or false
 	 */
@@ -635,8 +642,25 @@ class wpgrade {
 		asort( $priority_list, SORT_ASC );
 
 		foreach ( $priority_list as $file => $priority ) {
-			$file = str_replace( EXT, '', $file  );
-			$file = str_replace( get_template_directory(), '', $file  );
+			if ( strpos( $file, EXT ) ) {
+
+				// we need to prepare the get_template_part param
+				// which should be a relative path but without the extension
+				// like "wpgrade-core/hooks"
+
+				// first time test if this is a linux based server path with backslash
+				$file = explode( 'themes/'. self::template_folder(), $file);
+				if ( isset( $file[1] ) ) {
+					$file = $file[1];
+				} else { // if not it must be a windows path with slash
+					$file = explode( 'themes\\'. self::template_folder(), $file[0]);
+					if ( isset( $file[1] ) ) {
+						$file = $file[1];
+					}
+				}
+				$file = str_replace( EXT, '', $file  );
+			}
+
 			get_template_part($file) ;
 		}
 	}
@@ -1151,7 +1175,6 @@ class wpgrade {
 			return substr( get_bloginfo( 'language' ), 0, 2 );
 		}
 	}
-
 
 	//// Unit Test Helpers /////////////////////////////////////////////////////////
 
