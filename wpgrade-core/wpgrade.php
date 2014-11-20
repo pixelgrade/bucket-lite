@@ -53,10 +53,14 @@ class wpgrade {
 		/**
 		 * this is the old path...keep it for legacy
 		 */
-		if ( file_exists( self::themepath() . 'wpgrade-config' . EXT ) ) {
-			self::$configuration = include self::themepath() . 'wpgrade-config' . EXT;
+		if ( file_exists( self::childpath() . 'config/wpgrade-config' . EXT ) ) {
+			self::$configuration = include self::childpath() . 'config/wpgrade-config' . EXT;
 		} elseif ( file_exists( self::themepath() . 'config/wpgrade-config' . EXT ) ) {
 			self::$configuration = include self::themepath() . 'config/wpgrade-config' . EXT;
+		} elseif ( file_exists( self::childpath() . 'wpgrade-config' . EXT ) ) {
+			self::$configuration = include self::childpath() . 'wpgrade-config' . EXT;
+		} elseif ( file_exists( self::themepath() . 'wpgrade-config' . EXT ) ) {
+			self::$configuration = include self::themepath() . 'wpgrade-config' . EXT;
 		}
 	}
 
@@ -463,6 +467,13 @@ class wpgrade {
 	}
 
 	/**
+	 * @return string
+	 */
+	static function template_folder() {
+		return wpgrade::themedata()->Template;
+	}
+
+	/**
 	 * Reads theme configuration and returns resolved classes.
 	 * @return array|boolean classes or false
 	 */
@@ -620,6 +631,7 @@ class wpgrade {
 	 * @param string path
 	 */
 	static function require_all( $path ) {
+
 		$files = self::find_files( rtrim( $path, '\\/' ) );
 
 		$priority_list = array();
@@ -631,8 +643,25 @@ class wpgrade {
 
 		foreach ( $priority_list as $file => $priority ) {
 			if ( strpos( $file, EXT ) ) {
-				require $file;
+
+				// we need to prepare the get_template_part param
+				// which should be a relative path but without the extension
+				// like "wpgrade-core/hooks"
+
+				// first time test if this is a linux based server path with backslash
+				$file = explode( 'themes/'. self::template_folder(), $file);
+				if ( isset( $file[1] ) ) {
+					$file = $file[1];
+				} else { // if not it must be a windows path with slash
+					$file = explode( 'themes\\'. self::template_folder(), $file[0]);
+					if ( isset( $file[1] ) ) {
+						$file = $file[1];
+					}
+				}
+				$file = str_replace( EXT, '', $file  );
 			}
+
+			get_template_part($file) ;
 		}
 	}
 
@@ -972,23 +1001,11 @@ class wpgrade {
 	 */
 	static function audio_selfhosted( $postID ) {
 		$audio_mp3    = get_post_meta( $postID, wpgrade::prefix() . 'audio_mp3', true );
-		$audio_ogg    = get_post_meta( $postID, wpgrade::prefix() . 'audio_ogg', true );
+		$audio_m4a    = get_post_meta( $postID, wpgrade::prefix() . 'audio_m4a', true );
+		$audio_oga    = get_post_meta( $postID, wpgrade::prefix() . 'audio_ogg', true );
 		$audio_poster = get_post_meta( $postID, wpgrade::prefix() . 'audio_poster', true );
 
-		$audio_m4a    = get_post_meta( $postID, wpgrade::prefix() . 'audio_m4a', true );
-		 
-		$mp3_attr = '';
-		$ogg_attr = '';
-
-		if(!empty($audio_mp3)) {
-			$mp3_attr = 'mp3="'.$audio_mp3 .'"';
-		}
-
-		if(!empty($audio_ogg)) {
-			$ogg_attr = 'ogg="'.$audio_ogg .'"';
-		}
-
-		echo(do_shortcode('[audio '.$mp3_attr.' '.$ogg_attr.'][/audio]'));
+		include wpgrade::corepartial( 'audio-selfhosted' . EXT );
 	}
 
 	#
@@ -1062,7 +1079,7 @@ class wpgrade {
 		if ( $modulename == 'redux2' ) {
 			require self::corepath() . 'vendor/redux2/options/defaults' . EXT;
 		} elseif ( $modulename == 'redux3' ) {
-			require self::corepath() . 'vendor/redux3/framework' . EXT;
+			get_template_part( 'wpgrade-core/vendor/redux3/framework' );
 		} else { // unsupported module
 			die( 'Unsuported core module: ' . $modulename );
 		}
@@ -1158,7 +1175,6 @@ class wpgrade {
 			return substr( get_bloginfo( 'language' ), 0, 2 );
 		}
 	}
-
 
 	//// Unit Test Helpers /////////////////////////////////////////////////////////
 
