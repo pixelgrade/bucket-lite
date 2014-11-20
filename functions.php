@@ -29,8 +29,11 @@ add_theme_support('post-formats', $formats);
 
 // Initialize system core
 // ----------------------
+do_action('wpgrade_before_core');
 
 require_once 'wpgrade-core/bootstrap'.EXT;
+
+do_action('wpgrade_after_core');
 
 #
 # Please perform any initialization via options in wpgrade-config and

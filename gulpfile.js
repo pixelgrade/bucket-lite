@@ -168,15 +168,11 @@ gulp.task('help', function () {
         '=== Style === \n' +
         'styles             Combuckets styles \n' +
         'styles-prod        Combuckets styles in production mode \n' +
-		'styles-compressed  Combuckets styles in compressed mode \n' +
+				'styles-compressed  Combuckets styles in compressed mode \n' +
         'styles-dev         Combuckets styles in development mode \n' +
-        '=== Scripts === \n' +
-        'scripts            Concatenate all js scripts \n' +
-        'scripts-dev        Concatenate all js scripts and live-reload \n' +
         '=== Watchers === \n' +
         'watch              Watches all js and scss files \n' +
         'styles-watch       Watch only styles\n' +
-        'scripts-watch      Watch scripts only \n';
 
     console.log($help);
 
