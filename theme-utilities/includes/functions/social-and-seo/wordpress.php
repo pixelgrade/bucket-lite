@@ -119,7 +119,7 @@
 			return false;
 		}
 
-		if (!$no_pagination) {
+		if ( $no_pagination !== true ) { //test for boolean true because we may receive data from filters in $no_pagination
 			//let's see about the page number
 			$page = get_query_var('page');
 			if (empty($page )) {

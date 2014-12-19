@@ -377,11 +377,6 @@ function colorpicker_enqueue() {
 }
 add_action( 'admin_enqueue_scripts', 'colorpicker_enqueue' );
 
-//fix the canonical url of YOAST because on the front page it ignores the pagination
-add_filter( 'wpseo_canonical', 'wpgrade_get_current_canonical_url' );
-//fix the canonical url of AIOSEOP because on the front page it breaks the pagination
-add_filter( 'aioseop_canonical_url', 'wpgrade_get_current_canonical_url' );
-
 /**
  * Filter the page title so that plugins can unhook this
  *

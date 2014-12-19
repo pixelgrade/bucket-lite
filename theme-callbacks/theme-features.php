@@ -70,6 +70,18 @@ function wpgrade_prepare_password_for_custom_post_types(){
 
 add_action('wp', 'wpgrade_prepare_password_for_custom_post_types');
 
+//Fix the URL Yoast uses when using our builder since it has no way of knowing it can be paginated
+function wpgrade_callback_fix_yoast_canonical() {
+	if ( is_page() && get_page_template_slug() == 'page-builder.php' ) {
+		//fix the canonical url of YOAST because on the front page it ignores the pagination
+		add_filter( 'wpseo_canonical', 'wpgrade_get_current_canonical_url' );
+		//fix the canonical url of AIOSEOP because on the front page it breaks the pagination
+		add_filter( 'aioseop_canonical_url', 'wpgrade_get_current_canonical_url' );
+	}
+}
+
+add_action('wp', 'wpgrade_callback_fix_yoast_canonical');
+
 // Add "Next page" button to TinyMCE
 function add_next_page_button( $mce_buttons ) {
 	$pos = array_search( 'wp_more', $mce_buttons, true );
