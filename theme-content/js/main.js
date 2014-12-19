@@ -690,6 +690,7 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 
 		base.$nav.find("li > a").click(function(event) {
 
+
 			var curList = base.$el.find("a.current").attr("href").substring(1),
 				$newList = $(this),
 				listID = $newList.attr("href").substring(1);
@@ -706,18 +707,31 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 					base.$el.find("#" + curList);
 					base.$el.find("#" + listID).css({
 						opacity: 1,
-						"z-index": 20,
-						display: "block"
-					});
-					base.$el.find(".tabs__nav li a").removeClass("current");
-					$newList.addClass("current");
+							"z-index": 20,
+							display: "block"
+						});
+						base.$el.find(".tabs__nav li a").removeClass("current");
+						$newList.addClass("current");
+
+					var $tabSlider = base.$el.find("#" + listID).find('.js-pixslider');
+					if($tabSlider.length) {
+						sliderUpdateSize($tabSlider);
+
+						setTimeout(function() {
+							var newHeight = base.$el.find("#" + listID).height();
+							$allListWrap.css({
+								height: newHeight
+							});
+						}, 200);
+					} else {
+						var newHeight = base.$el.find("#" + listID).height();
+						$allListWrap.css({
+							height: newHeight
+						});
+					}
 
 					resizeVideos();
 
-					var newHeight = base.$el.find("#" + listID).height();
-					$allListWrap.css({
-						height: newHeight
-					});
 
 				}, 250);
 			}
@@ -1710,7 +1724,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	*/
 	function sliderInit($slider){
 
-		  $slider.find('img').removeClass('invisible');		  
+		  $slider.find('img').removeClass('invisible');
 
 		  var $children = $(this).children(),
 			  rs_arrows = typeof $slider.data('arrows') !== "undefined",
@@ -1835,6 +1849,12 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		  $old_gallery.replaceWith($new_gallery);
 
 		  $new_gallery.data(gallery_data);
+	}
+
+	function sliderUpdateSize($slider) {
+		var $sliderObj = $slider.data('royalSlider');
+
+		$sliderObj.updateSliderSize(true);
 	}
 
 

@@ -7,6 +7,10 @@
 		@extend .seven-twelfths;
 		position: relative;
 		@include rem(margin-bottom, $_u + $_u2);
+
+        .article__title {
+            @include rem(bottom, 13px);
+        }
 	}
 }
 
