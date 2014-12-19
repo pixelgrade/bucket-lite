@@ -714,14 +714,24 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 						$newList.addClass("current");
 
 					var $tabSlider = base.$el.find("#" + listID).find('.js-pixslider');
-					if($tabSlider.length) sliderUpdateSize($tabSlider);
+					if($tabSlider.length) {
+						sliderUpdateSize($tabSlider);
+
+						setTimeout(function() {
+							var newHeight = base.$el.find("#" + listID).height();
+							$allListWrap.css({
+								height: newHeight
+							});
+						}, 200);
+					} else {
+						var newHeight = base.$el.find("#" + listID).height();
+						$allListWrap.css({
+							height: newHeight
+						});
+					}
 
 					resizeVideos();
 
-					var newHeight = base.$el.find("#" + listID).height();
-					$allListWrap.css({
-						height: newHeight
-					});
 
 				}, 250);
 			}
