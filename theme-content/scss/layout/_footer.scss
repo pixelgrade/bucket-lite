@@ -41,3 +41,9 @@
         }
     }
 }
+
+@include media-query(palm) {
+    .site-navigation--footer li {
+        display: block;
+    }
+}
