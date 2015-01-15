@@ -170,10 +170,6 @@ body.woocommerce{
         float: none;
     }
 
-    #content div.product div.thumbnails a, div.product div.thumbnails a, #content div.product div.thumbnails a, div.product div.thumbnails a{
-        width: auto;
-    }    
-
     #content div.product div.images img, div.product div.images img, #content div.product div.images img, div.product div.images img{
         @include box-shadow(none);       
     }  
