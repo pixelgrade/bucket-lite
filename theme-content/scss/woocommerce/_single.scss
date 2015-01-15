@@ -31,42 +31,15 @@
     #content .quantity{
         margin-left: 0;
         width: auto;
-        border: 1px solid #c7c0c7;
         display: inline-block;
-
-        input.qty, .minus, .plus{
-            margin: 0;
-            display: inline;
-            vertical-align: top;
-            height: 36px;
-            font-family: $base-font-family;
-        }
-
-        .minus, .plus{
-            position: static;
-            width: 36px;
-
-            background: #f4f4f4;
-            border: 0;
-            @include font-size(20px);
-            @include box-shadow(none);
-        }
-
-        .minus{
-            border-right: 0;
-        }
-
-        .plus{
-            border-left: 0;
-        }
+        margin-bottom: 12px;
 
         input.qty{
             float: none;
             display: inline-block;
-            width: 46px;
-            border-right: 1px solid #c7c0c7;
-            border-top: 0;
-            border-bottom: 0;
+            width: 70px;
+            padding: 12px 0;
+            border: 1px solid #c7c0c7;
             outline: none;
         }
     }
