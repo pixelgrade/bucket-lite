@@ -30,11 +30,18 @@
 
 .woocommerce-page ul.products{
     margin: 0 -1%;
+    font-size: 0;
 
     li.product.type-product{
         margin: 1%;
         clear: none;
         width: 100%;
+    }
+
+    li.product.type-product{
+        float: none;
+        display: inline-block;
+        vertical-align: top;
     }
 
     @include media-query(lap-and-up) {

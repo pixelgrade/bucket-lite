@@ -366,10 +366,13 @@ img.rsImg{
     color: white;
     position: absolute;
     top: 50%;
+    @include rem(width, $_2u);  
 
     .rsArrowIcn{
+        position: absolute;
+        top: 50%;
         border-bottom: 2px solid $dark;
-        @include rem(width, $_u2);       
+        @include rem(width, $_u2);
         @include rem(height, $_u2);       
     }
 }
@@ -378,8 +381,9 @@ img.rsImg{
     left: 0;
 
     .rsArrowIcn{
+        left: 0;
         border-left: 2px solid $dark;
-        @include rotate(45deg);
+        @include transform(translateY(-50%) rotate(45deg));
     }
 }
 
@@ -387,8 +391,9 @@ img.rsImg{
     right: 0;
 
     .rsArrowIcn{
+        right: 0;
         border-right: 2px solid $dark;
-        @include rotate(-45deg);
+        @include transform(translateY(-50%) rotate(-45deg));
     }
 }
 
