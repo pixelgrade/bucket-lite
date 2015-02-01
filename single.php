@@ -5,7 +5,7 @@
  */
 
 get_header(); 
-$is_review = bucket::has_average_score(); 
+$is_review = bucket::has_average_score();
 ?>
 
 <div class="container container--main" <?php echo $is_review ? 'itemscope itemtype="http://data-vocabulary.org/Review"' : ''; ?>>
