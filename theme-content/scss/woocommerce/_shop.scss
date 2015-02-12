@@ -98,6 +98,11 @@
     del .amount{
         color: #807d7c;
     }
+
+    del {
+        display: inline-block !important;
+        margin-right: 5px;
+    }
 }
 
 .woocommerce ul.products li.product.type-product .price{
@@ -109,6 +114,10 @@
 
     del .amount{
         @include font-size(16px);
+    }
+
+    .amount + .amount {
+        margin-left: 5px;
     }
 }
 
@@ -160,10 +169,6 @@ body.woocommerce{
         width: 100% !important;
         float: none;
     }
-
-    #content div.product div.thumbnails a, div.product div.thumbnails a, #content div.product div.thumbnails a, div.product div.thumbnails a{
-        width: auto;
-    }    
 
     #content div.product div.images img, div.product div.images img, #content div.product div.images img, div.product div.images img{
         @include box-shadow(none);       

@@ -26,9 +26,9 @@ gulp.task('styles-dev', function () {
             console.log(e.message);
         })
         .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
-        .pipe(gulp.dest('./theme-content/css/'))
-        .pipe(livereload())
-        .pipe(notify('Styles task complete'));
+        .pipe(gulp.dest('./theme-content/css/'));
+        //.pipe(livereload())
+        //.pipe(notify('Styles task complete'));
 });
 
 gulp.task('styles', function () {
