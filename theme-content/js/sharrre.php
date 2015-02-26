@@ -11,7 +11,7 @@ if(filter_var($_GET['url'], FILTER_VALIDATE_URL)){
     $contents = parse('https://plusone.google.com/u/0/_/+1/fastbutton?url=' . $url . '&count=true');
 
     preg_match( '/window\.__SSR = {c: ([\d]+)/', $contents, $matches );
-
+	var_dump($matches[0]);
     if(isset($matches[0])){
       $json['count'] = (int)str_replace('window.__SSR = {c: ', '', $matches[0]);
     }
