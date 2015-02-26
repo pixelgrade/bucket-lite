@@ -961,7 +961,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				title: '',
 				url: document.location.href,
 				text: document.title,
-				urlCurl: 'sharrre.php',  //PHP script for google plus...
+				urlCurl: sharrre_urlCurl,  //PHP script for google plus...
 				count: {}, //counter by social network
 				total: 0,  //total of sharing
 				shorterTotal: true, //show total by k or M when number is to big
