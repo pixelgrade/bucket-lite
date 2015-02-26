@@ -27,7 +27,7 @@ function wpgrade_register_required_plugins() {
 			'slug'     				=> 'pixtypes',
 			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixtypes.zip',
 			'required' 				=> true,
-			'version' 				=> '1.2.7',
+			'version' 				=> '1.2.10',
 			'force_activation' 		=> false,
 			'force_deactivation' 	=> false,
 			'external_url' 			=> '',
@@ -45,12 +45,8 @@ function wpgrade_register_required_plugins() {
 		array(
 			'name'     				=> 'PixCodes',
 			'slug'     				=> 'pixcodes',
-			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixcodes.zip',
 			'required' 				=> false,
-			'version' 				=> '2.2.9',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
+			'version' 				=> '2.3.0',
 		),
 //		array(
 //			'name' 		=> 'Contact Form 7',
