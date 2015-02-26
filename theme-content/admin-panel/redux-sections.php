@@ -393,7 +393,7 @@ $sections[] = array(
 			'id' => 'copyright_text',
 			'type' => 'editor',
 			'title' => __('Copyright Text', wpgrade::textdomain()),
-			'subtitle' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2015 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
+			'subtitle' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', wpgrade::textdomain()),wpgrade::themename()),
 			'default' => 'Copyright &copy; 2015 '. wpgrade::themename() .' | All rights reserved.',
 			'rows' => 3,
 		),
