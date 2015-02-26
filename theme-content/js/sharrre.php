@@ -35,7 +35,7 @@ function parse($encUrl){
     CURLOPT_HEADER => false, // don't return headers
     CURLOPT_FOLLOWLOCATION => true, // follow redirects
     CURLOPT_ENCODING => "", // handle all encodings
-    CURLOPT_USERAGENT => 'sharrre', // who am i
+    CURLOPT_USERAGENT => "sharrre", // who am i
     CURLOPT_AUTOREFERER => true, // set referer on redirect
     CURLOPT_CONNECTTIMEOUT => 5, // timeout on connect
     CURLOPT_TIMEOUT => 10, // timeout on response
@@ -43,9 +43,9 @@ function parse($encUrl){
     CURLOPT_SSL_VERIFYHOST => 0,
     CURLOPT_SSL_VERIFYPEER => false,
   );
-  $ch = curl_init();
+  $ch = curl_init($encUrl);
 
-  $options[CURLOPT_URL] = $encUrl;
+//  $options[CURLOPT_URL] = $encUrl;
   curl_setopt_array($ch, $options);
 
   $content = curl_exec($ch);
