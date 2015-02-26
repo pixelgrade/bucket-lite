@@ -55,8 +55,8 @@ function parse($encUrl){
   curl_close($ch);
 
   if ($errmsg != '' || $err != '') {
-    /*print_r($errmsg);
-    print_r($errmsg);*/
+    print_r($errmsg);
+    print_r($errmsg);
   }
   return $content;
 }
