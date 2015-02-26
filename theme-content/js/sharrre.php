@@ -11,9 +11,9 @@ if(filter_var($_GET['url'], FILTER_VALIDATE_URL)){
     $contents = parse('https://plusone.google.com/u/0/_/+1/fastbutton?url=' . $url . '&count=true');
 
     preg_match( '/window\.__SSR = {c: ([\d]+)/', $contents, $matches );
-	var_dump($contents,$matches);
-    if(isset($matches[0])){
-      $json['count'] = (int)str_replace('window.__SSR = {c: ', '', $matches[0]);
+
+    if(isset($matches[1])){
+      $json['count'] = (int) $matches[1];
     }
   }
   else if($type == 'stumbleupon'){
@@ -55,8 +55,8 @@ function parse($encUrl){
   curl_close($ch);
 
   if ($errmsg != '' || $err != '') {
-    print_r($errmsg);
-    print_r($errmsg);
+//    print_r($errmsg);
+//    print_r($errmsg);
   }
   return $content;
 }
