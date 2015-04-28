@@ -10,6 +10,7 @@ if (is_single()) {
 	switch ($post_format) {
 		case 'video' :
 			$schema_org .= 'itemscope itemtype="http://schema.org/VideoGallery"';
+			break;
 		default:
 			$schema_org .= 'itemscope itemtype="http://schema.org/Article"';
 	}
