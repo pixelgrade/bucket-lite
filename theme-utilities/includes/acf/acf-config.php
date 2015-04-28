@@ -499,9 +499,9 @@ if(function_exists("register_field_group")){
 								'name' => 'billboard_only_big_articles',
 								'type' => 'true_false',
 								'instructions' =>'Display only big articles in the billboard slider, one article per slide. The default is one big article and two smaller ones per slide.',
-								'message' => __('', wpgrade::textdomain()),
+								'message' => '', //__('', wpgrade::textdomain()),
 								'default_value' => 0,
-							),												
+							),
 							array (
 								'key' => 'field_5260ff377fc29',
 								'label' => __('Slider height (px)', wpgrade::textdomain()),
@@ -516,7 +516,7 @@ if(function_exists("register_field_group")){
 								'max' => '625',
 								'step' => 1,
 								'instructions' =>'Minimum 300, maximum 625.',
-							),														
+							),
 							array (
 								'key' => 'field_5260ff377fc30',
 								'label' => __('Slider transition', wpgrade::textdomain()),
@@ -537,7 +537,7 @@ if(function_exists("register_field_group")){
 								'label' => __('Slider auto play', wpgrade::textdomain()),
 								'name' => 'billboard_slider_autoplay',
 								'type' => 'true_false',
-								'message' => __('', wpgrade::textdomain()),
+								'message' => '', //__('', wpgrade::textdomain()),
 								'default_value' => 0,
 							),
 							array (
@@ -927,7 +927,7 @@ if(function_exists("register_field_group")){
 								'name' => 'heading_link_new_tab',
 								'type' => 'true_false',
 								'default_value' => 0,
-							),														
+							),
 						),
 					),
 				),

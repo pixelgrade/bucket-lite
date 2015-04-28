@@ -83,7 +83,7 @@ $sections[] = array(
 			'id'=>'typography-info',
 			'desc'=> '<h3>'.__('Typography', wpgrade::textdomain()).'</h3>',
 			'type' => 'info'
-		), 
+		),
 		array(
 			'id' => 'use_google_fonts',
 			'type' => 'switch',
@@ -133,7 +133,7 @@ $sections[] = array(
 			'id'=>'layout-info',
 			'desc'=> __('<h3>Layout</h3>', wpgrade::textdomain()),
 			'type' => 'info'
-		), 
+		),
 		array(
 			'id' => 'layout_boxed',
 			'type' => 'switch',
@@ -241,7 +241,7 @@ $sections[] = array(
 			'id'=>'blog-archive-info',
 			'desc'=> __('<h3>Blog Archive</h3>', wpgrade::textdomain()),
 			'type' => 'info'
-		), 
+		),
 		array(
 			'id' => 'blog_layout',
 			'type' => 'image_select',
@@ -302,7 +302,7 @@ $sections[] = array(
 			'title' => __('Autoplay delay between slides (in milliseconds)', wpgrade::textdomain()),
 			'default' => '2000',
 			'required' => array('blog_archive_show_cat_billboard', '=', 1)
-		)	
+		)
 	)
 );
 
@@ -363,7 +363,7 @@ $sections[] = array(
 			'title' =>  __('Sticky Main Navigation', wpgrade::textdomain()),
 			'subtitle' => __('Pin the Main Navigation to the top of the screen when scrolling down.', wpgrade::textdomain()),
 			'default' => '0'
-		)		
+		)
 	)
 );
 
@@ -603,7 +603,7 @@ $sections[] = array(
 			'type' => 'ace_editor',
 			'title' => __('Custom CSS', wpgrade::textdomain()),
 			'subtitle' => __('Enter your custom CSS code. It will be included in the head section of the page.', wpgrade::textdomain()),
-			'desc' => __('', wpgrade::textdomain()),
+			'desc' => '', //__('', wpgrade::textdomain()),
 			'mode' => 'css',
 			'theme' => 'chrome',
 			'compiler' => true,
@@ -656,7 +656,7 @@ $sections[] = array(
 			'desc'=> __('<h3>Theme Auto Update</h3>
 				<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', wpgrade::textdomain()).'</p>', wpgrade::textdomain()),
 			'type' => 'info'
-		), 
+		),
 		array(
 			'id' => 'themeforest_upgrade',
 			'type' => 'switch',
@@ -691,7 +691,7 @@ $sections[] = array(
 			'desc'=> __('<h3>Import Demo Data</h3>
 				<p class="description">'.__('Here you can import the demo data and get on your way of setting up the site like the theme demo.', wpgrade::textdomain()).'</p>', wpgrade::textdomain()),
 			'type' => 'info'
-		), 
+		),
 		array(
 			'id' => 'wpGrade_import_demodata_button',
 			'type' => 'info',
@@ -807,7 +807,7 @@ $sections[] = array(
 		</ul>
 	',
 	'fields' => array(
-		
+
 	)
 );
 
