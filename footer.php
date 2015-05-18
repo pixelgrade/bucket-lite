@@ -27,7 +27,12 @@
 						<?php } else { ?>
 							<div class="stat disable">
 						<?php }
-						$percent = ($month['count'] * 100) / $max_posts_nr; ?>
+						//$max_posts_nr might be 0 when one hasn't published in a long long time, more then a year
+						if ( $max_posts_nr > 0 ) {
+							$percent = ( $month['count'] * 100 ) / $max_posts_nr;
+						} else {
+							$percent = 0;
+						} ?>
 							<dd class="stat__value" <?php if($percent > 0) echo 'style="height:' . $percent . '%;"'; ?>><?php echo $month['count']; ?></dd>
 							<dt class="stat__title"><?php echo $month['month']; ?></dt>
 						
