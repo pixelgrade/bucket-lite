@@ -151,7 +151,7 @@
 			(
 				'google-webfonts' => array
 				(
-					'path' => 'http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
+					'path' => '//fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
 				),
 				'wpgrade-main-style' => array
 				(
