@@ -10,7 +10,7 @@
 
 
 //set some variables to pass to the content-blog.php loaded below
-global $wp_query;
+global $wp_query, $showed_posts_ids;
 $wp_query->query_vars['thumbnail_size'] = 'blog-medium';
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : '';
@@ -38,6 +38,13 @@ $offset = get_sub_field('offset');
 if ( is_numeric($offset) && $offset > 0 ) {
 	//we need to paginate ourselves because WP will ignore paging (paged) when offset is present
 	$args['offset'] = $offset + ($paged - 1) * $number_of_posts;
+}
+
+if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicate_posts', true) == 'on') {
+	//exclude the already showed posts from the current block loop
+	if (!empty($showed_posts_ids)) {
+		$args['post__not_in'] = $showed_posts_ids;
+	}
 }
 
 switch ( $posts_source ) :

@@ -4,7 +4,7 @@
  *
  */
 
-get_header();
+get_header(); 
 $is_review = bucket::has_average_score();
 ?>
 

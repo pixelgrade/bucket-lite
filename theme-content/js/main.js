@@ -1040,20 +1040,20 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				googlePlus: "",
 
 				//new FQL method by Sire
-				facebook: "https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%27{url}%27&callback=?",
+				facebook: getProtocol() + "graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%27{url}%27&callback=?",
 				//old method facebook: "http://graph.facebook.com/?id={url}&callback=?",
 				//facebook : "http://api.ak.facebook.com/restserver.php?v=1.0&method=links.getStats&urls={url}&format=json"
 
 				twitter: {
-					share: "http://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
-					follow: "https://cdn.api.twitter.com/1/users/show.json?screen_name={screen_name}&callback=?"
+					share: getProtocol() + "cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
+					follow: getProtocol() + "cdn.api.twitter.com/1/users/show.json?screen_name={screen_name}&callback=?"
 				},
-				digg: "http://services.digg.com/2.0/story.getInfo?links={url}&type=javascript&callback=?",
-				delicious: 'http://feeds.delicious.com/v2/json/urlinfo/data?url={url}&callback=?',
+				digg: getProtocol() + "services.digg.com/2.0/story.getInfo?links={url}&type=javascript&callback=?",
+				delicious: getProtocol() + 'feeds.delicious.com/v2/json/urlinfo/data?url={url}&callback=?',
 				//stumbleupon: "http://www.stumbleupon.com/services/1.01/badge.getinfo?url={url}&format=jsonp&callback=?",
 				stumbleupon: "",
-				linkedin: "http://www.linkedin.com/countserv/count/share?format=jsonp&url={url}&callback=?",
-				pinterest: "http://api.pinterest.com/v1/urls/count.json?url={url}&callback=?"
+				linkedin: getProtocol() + "www.linkedin.com/countserv/count/share?format=jsonp&url={url}&callback=?",
+				pinterest: getProtocol() + "api.pinterest.com/v1/urls/count.json?url={url}&callback=?"
 			},
 		/* Load share buttons asynchronously
 		 ================================================== */
@@ -1544,6 +1544,16 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 				});
 			}
 		};
+
+		/*   get protocol  (http or https)
+		 ================================================== */
+		function getProtocol() {
+			if (window.location.protocol != "https:") {
+				return "http://";
+			} else {
+				return "https://";
+			}
+		}
 	})(jQuery, window, document);
 
 

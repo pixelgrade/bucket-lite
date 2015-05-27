@@ -14,7 +14,7 @@
 
 	'update-notifier' => array
 	(
-		'xml-source' => 'http://pixelgrade.com/updates/',
+		'xml-source' => REQUEST_PROTOCOL . '//pixelgrade.com/updates/',
 //		'xml-file' => 'bucket.xml',
 		'cache-interval' => 10800, # 3 hours
 		'update-page-name' => 'theme-update-notifier',
@@ -151,7 +151,7 @@
 			(
 				'google-webfonts' => array
 				(
-					'path' => 'http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
+					'path' => REQUEST_PROTOCOL . '//fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
 				),
 				'wpgrade-main-style' => array
 				(

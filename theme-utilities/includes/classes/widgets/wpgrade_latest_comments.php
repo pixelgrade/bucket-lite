@@ -61,7 +61,7 @@ class wpgrade_latest_comments extends WP_Widget {
 				ob_start(); ?>
 				<article class="latest-comments__list">
 					<a class="media__img  latest-comments__avatar" href="<?php echo get_comment_author_url($comment->comment_ID) ?>">
-						<?php bucket::the_img_tag(bucket::get_avatar_url($comment->comment_author_email, '48'), '48x48', false, false, 'img--center') ?>
+						<?php bucket::the_img_tag(util::get_avatar_url($comment->comment_author_email, '48'), '48x48', false, false, 'img--center') ?>
 					</a>
 					<div class="media__body  latest-comments__body">
 						<div class="comment__meta">
@@ -76,7 +76,7 @@ class wpgrade_latest_comments extends WP_Widget {
 						</div>
 						<a class="latest-comments__title" href="<?php echo esc_url( get_comment_link($comment->comment_ID) ) ?>"><?php echo get_the_title($comment->comment_post_ID); ?></a>
 						<div class="latest-comments__content">
-							<p><?php echo bucket::limit_words(strip_tags(get_comment_text($comment->comment_ID)), 25, ' [&hellip;]'); ?></p>
+							<p><?php echo util::limit_words(strip_tags(get_comment_text($comment->comment_ID)), 25, ' [&hellip;]'); ?></p>
 						</div>
 					</div>
 				</article>
