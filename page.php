@@ -30,7 +30,7 @@ get_header(); ?>
         <div class="grid__item  main  float--left  <?php echo $the_content_width; ?>">
 
             <?php while (have_posts()): the_post(); ?>
-
+                <article <?php post_class(); ?>>
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <?php
 		        the_content();
@@ -51,7 +51,7 @@ get_header(); ?>
                     if ( comments_open() || '0' != get_comments_number() )
                         comments_template();
                 ?>
-                
+                </article>
             <?php endwhile; ?>
 
         </div><!--
