@@ -39,7 +39,7 @@ gulp.task('styles', function () {
         })
         .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
         .pipe(gulp.dest('./theme-content/css/'))
-        .pipe(notify('Styles task complete'));
+        //.pipe(notify('Styles task complete'));
 });
 
 gulp.task('styles-prod', function () {
