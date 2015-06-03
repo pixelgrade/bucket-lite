@@ -32,10 +32,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 							if(has_post_thumbnail()) :
 								$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-medium');
 
-								$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-								if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-									$image_ratio = $image[2] * 100/$image[1];
-								}
+								$image_ratio = bucket::get_image_aspect_ratio( $image );
 								?>
 								<img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>" />
 							<?php else : ?>

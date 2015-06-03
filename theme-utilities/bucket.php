@@ -287,6 +287,28 @@ class bucket {
 
 		return $output;
 	}
+
+	/**
+	 * @param array $image
+	 * @param int $default
+	 *
+	 * @return array
+	 */
+	static function get_image_aspect_ratio( $image, $default = 70 ) {
+		$aspect_ratio = $default; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
+		if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
+			$aspect_ratio = $image[2] * 100/$image[1];
+		} else {
+			//lets try another way in case Jetpack's Photon is activated
+			//when requesting full image size, it will return the dimensions
+			$image_for_aspect_ratio = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+			if (isset($image_for_aspect_ratio[1]) && isset($image_for_aspect_ratio[2]) && $image_for_aspect_ratio[1] > 0) {
+				$aspect_ratio = $image_for_aspect_ratio[2] * 100/$image_for_aspect_ratio[1];
+			}
+		}
+
+		return $aspect_ratio;
+	}
 }
 
 /**

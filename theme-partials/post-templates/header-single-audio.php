@@ -1,10 +1,7 @@
 <?php
 if (has_post_thumbnail()):
 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog-big');
-$image_ratio = 70; //some default aspect ratio in case something has gone wrong and the image has no dimensions - it happens
-if (isset($image[1]) && isset($image[2]) && $image[1] > 0) {
-	$image_ratio = $image[2] * 100/$image[1];
-}
+$image_ratio = bucket::get_image_aspect_ratio( $image );
 
 // let's get to know this post a little better
 $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
