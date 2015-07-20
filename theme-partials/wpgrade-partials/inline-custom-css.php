@@ -13,7 +13,7 @@ if (is_category()) {
 	$cat_id = get_query_var('cat');
 	//get the color
 	$cat_color = get_category_color($cat_id);
-	
+
 	if ($cat_color) {
 		$main_color = $cat_color;
 	}
@@ -57,7 +57,7 @@ if (wpgrade::option('portfolio_text_color')) {
 	$port_color = str_replace('#', '', $port_color);
 }
 
-function hex2rgb($hex) {
+function bucket_hex2rgb($hex) {
     $hex = str_replace("#", "", $hex);
 
     if(strlen($hex) == 3) {
@@ -75,39 +75,39 @@ function hex2rgb($hex) {
 }
 
 if ( !empty($main_color) ){
-$rgb = implode(",", hex2rgb($main_color)); ?>
+$rgb = implode(",", bucket_hex2rgb($main_color)); ?>
 
-a, blockquote, .small-link, .tabs__nav a.current, 
-.popular-posts__time a.current, .tabs__nav a:hover, 
+a, blockquote, .small-link, .tabs__nav a.current,
+.popular-posts__time a.current, .tabs__nav a:hover,
 .popular-posts__time a:hover, .widget--footer__title em,
-.widget_rss .widget--footer__title .hN, 
-.widget_rss .widget--footer__title .article__author-name, 
-.widget_rss .widget--footer__title .comment__author-name, 
-.widget_rss .widget--footer__title .widget_calendar caption, 
-.widget_calendar .widget_rss .widget--footer__title caption, 
-.widget_rss .widget--footer__title .score__average-wrapper, 
-.widget_rss .widget--footer__title .score__label, 
-.article--billboard-small .small-link em, 
-.article--billboard-small .post-nav-link__label em, 
+.widget_rss .widget--footer__title .hN,
+.widget_rss .widget--footer__title .article__author-name,
+.widget_rss .widget--footer__title .comment__author-name,
+.widget_rss .widget--footer__title .widget_calendar caption,
+.widget_calendar .widget_rss .widget--footer__title caption,
+.widget_rss .widget--footer__title .score__average-wrapper,
+.widget_rss .widget--footer__title .score__label,
+.article--billboard-small .small-link em,
+.article--billboard-small .post-nav-link__label em,
 .article--billboard-small .author__social-link em,
 .small-link, .post-nav-link__label, .author__social-link,
-.article--thumb__title a:hover, 
+.article--thumb__title a:hover,
 .widget_wpgrade_twitter_widget .widget--footer__title h3:before,
 a:hover > .pixcode--icon,
 .score__pros__title, .score__cons__title,
 .comments-area-title .hN em,
 .comment__author-name, .woocommerce .amount,
-.panel__title em, .woocommerce .star-rating span:before, 
+.panel__title em, .woocommerce .star-rating span:before,
 .woocommerce-page .star-rating span:before {
     color: <?php echo $main_color; ?>;
 }
 
-.heading--main .hN, .widget--sidebar__title, 
+.heading--main .hN, .widget--sidebar__title,
 .pagination .pagination-item--current span,.pagination .current, .single .pagination span,
-.pagination li a:hover, .pagination li span:hover, 
+.pagination li a:hover, .pagination li span:hover,
 .rsNavSelected, .badge, .progressbar__progress,
-.btn:hover, .comments_add-comment:hover, 
-.form-submit #comment-submit:hover, 
+.btn:hover, .comments_add-comment:hover,
+.form-submit #comment-submit:hover,
 .widget_tag_cloud a:hover, .btn--primary,
 .comments_add-comment, .form-submit #comment-submit,
 a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
@@ -124,15 +124,15 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
 
 @media only screen and (min-width: 900px){
     .nav--main li:hover, .nav--main li.current-menu-item {
-        border-bottom-color: <?php echo $main_color; ?>;     
+        border-bottom-color: <?php echo $main_color; ?>;
     }
     .back-to-top a:hover:after, .back-to-top a:hover:before {
-        border-color: <?php echo $main_color; ?>; 
+        border-color: <?php echo $main_color; ?>;
     }
-    .article--billboard > a:hover .article__title:before, 
-    .article--billboard > a:hover .article--list__title:before, 
+    .article--billboard > a:hover .article__title:before,
+    .article--billboard > a:hover .article--list__title:before,
     .article--billboard > a:hover .latest-comments__title:before,
-    .article--grid__header:hover .article--grid__title h3, 
+    .article--grid__header:hover .article--grid__title h3,
     .article--grid__header:hover .article--grid__title:after {
         background-color: <?php echo $main_color; ?>;
     }
@@ -151,25 +151,25 @@ if ( isset($fonts['google_titles_font']) ) {?>
 	/* Select classes here */
     .badge, h1, h2, h3, h4, h5, h6, hgroup,
     .hN, .article__author-name, .comment__author-name,
-    .score__average-wrapper, .score__label, 
+    .score__average-wrapper, .score__label,
     .widget_calendar caption, blockquote,
     .tabs__nav, .popular-posts__time,
-    .heading .hN, .widget--sidebar__title .hN, 
-    .widget--footer__title .hN, .heading .article__author-name, 
-    .widget--sidebar__title .article__author-name, 
-    .widget--footer__title .article__author-name, 
-    .heading .comment__author-name, 
-    .widget--sidebar__title .comment__author-name, 
-    .widget--footer__title .comment__author-name, 
-    .heading .score__average-wrapper, 
-    .widget--sidebar__title .score__average-wrapper, 
-    .widget--footer__title .score__average-wrapper, 
-    .heading .score__label, .widget--sidebar__title .score__label, 
-    .widget--footer__title .score__label, .heading .widget_calendar caption, 
-    .widget_calendar .heading caption, 
-    .widget--sidebar__title .widget_calendar caption, 
-    .widget_calendar .widget--sidebar__title caption, 
-    .widget--footer__title .widget_calendar caption, 
+    .heading .hN, .widget--sidebar__title .hN,
+    .widget--footer__title .hN, .heading .article__author-name,
+    .widget--sidebar__title .article__author-name,
+    .widget--footer__title .article__author-name,
+    .heading .comment__author-name,
+    .widget--sidebar__title .comment__author-name,
+    .widget--footer__title .comment__author-name,
+    .heading .score__average-wrapper,
+    .widget--sidebar__title .score__average-wrapper,
+    .widget--footer__title .score__average-wrapper,
+    .heading .score__label, .widget--sidebar__title .score__label,
+    .widget--footer__title .score__label, .heading .widget_calendar caption,
+    .widget_calendar .heading caption,
+    .widget--sidebar__title .widget_calendar caption,
+    .widget_calendar .widget--sidebar__title caption,
+    .widget--footer__title .widget_calendar caption,
     .widget_calendar .widget--footer__title caption,
     .score-box--after-text, .latest-comments__author,
     .review__title, .share-total__value, .pagination li a, .pagination li span,
@@ -197,14 +197,14 @@ if ( isset($fonts['google_body_font']) ) {
         unset($fonts['google_body_font']['font-size']);
     } ?>
 	/* Select classes here */
-	html, .wp-caption-text, .small-link, 
+	html, .wp-caption-text, .small-link,
     .post-nav-link__label, .author__social-link,
     .comment__links, .score__desc  {
 		<?php wpgrade::display_font_params($fonts['google_body_font']); ?>
 	}
- 
+
     /* Size Classes */
-    .article, .single .main, .page .main, 
+    .article, .single .main, .page .main,
     .comment__content,
     .footer__widget-area  {
         font-size: <?php echo $font_size ?>;
