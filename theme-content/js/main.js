@@ -700,15 +700,17 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 				base.$el.find("#" + curList).css({
 					opacity: 0,
 					"z-index": 10,
-					display: "none"
+					display: "none",
+					"pointer-events": "none"
 				});
 
 				setTimeout(function () {
 					base.$el.find("#" + curList);
 					base.$el.find("#" + listID).css({
 						opacity: 1,
-							"z-index": 20,
-							display: "block"
+							"z-index": 100,
+							display: "block",
+							"pointer-events": "auto"
 						});
 						base.$el.find(".tabs__nav li a").removeClass("current");
 						$newList.addClass("current");
