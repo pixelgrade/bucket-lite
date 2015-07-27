@@ -19,6 +19,9 @@ if ( ! defined('REQUEST_PROTOCOL')) {
 	}
 }
 
+// Loads the theme's translated strings
+load_theme_textdomain( 'bucket_txtd', get_stylesheet_directory() . '/languages' );
+
 // Theme specific settings
 // -----------------------
 
