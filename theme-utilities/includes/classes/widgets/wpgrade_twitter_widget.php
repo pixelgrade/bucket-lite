@@ -12,7 +12,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 
 		extract( $args );
 
-		$username 	= $instance['username'];
+		$username 	=isset( $instance['username'] ) ? $instance['username'] : 'pixelgrade'; // $instance['username'];
 
 		echo $before_widget;
 		if ( isset($instance['title']) && $instance['title'] != '') echo $before_title . apply_filters('widget_title', $instance['title']) . $after_title;
@@ -25,7 +25,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 		$config['secret'] = wpgrade::option('twitter_consumer_secret');
 		$config['token'] = wpgrade::option('twitter_oauth_access_token');
 		$config['token_secret'] = wpgrade::option('twitter_oauth_access_token_secret');
-		$config['screenname'] = $instance['username'];
+		$config['screenname'] = $username;
 		if ( isset($config['cache_expire']) && $config['cache_expire'] < 1) $config['cache_expire'] = 3600;
 //		$config['directory'] = plugin_dir_path(__FILE__) . 'vendor/twitter-api/cache';
 		$config['directory'] = wpgrade::themefilepath('theme-utilities/includes/vendor/twitter-api/cache');
@@ -33,7 +33,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 		$twitter = new StormTwitter($config);
 		$results = $twitter->getTweets($count, $username);
 		if (!isset($results['error'])) {
-			
+
 			$link = 'https://twitter.com/'. $username;
 			$slide_count = 1;
 			$tweets_nr = count($results);

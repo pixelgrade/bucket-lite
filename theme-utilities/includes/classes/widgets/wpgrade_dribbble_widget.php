@@ -9,7 +9,7 @@ class wpgrade_dribbble_widget extends WP_Widget {
 
 	function widget($args, $instance) {
 		extract( $args );
-		$title 		= apply_filters('widget_title', $instance['title']);
+		$title 		= isset( $instance['title'] ) ? apply_filters('widget_title', $instance['title']) : "";
 		$username 	= $instance['username'];
 
 		require_once( wpgrade::themefilepath('theme-utilities/includes/vendor/dribbble/src/Dribbble/Dribbble.php') );

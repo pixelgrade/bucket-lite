@@ -11,7 +11,7 @@ class wpgrade_social_links_widget extends WP_Widget {
 
 	function widget($args, $instance) {
 		extract( $args );
-		$title = apply_filters('widget_title', $instance['title']);
+		$title = isset( $instance['title'] ) ? apply_filters('widget_title', $instance['title']) : '';
 
 		$social_links = wpgrade::option('social_icons');
 		$target = '';

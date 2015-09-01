@@ -133,7 +133,7 @@ class wpgrade_popular_posts extends WP_Widget {
 			'thumb' => $thumb_size
 		);
 
-		$title = $instance['title'];
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		echo $before_widget;
 
 		/* If a title was input by the user, display it. */
