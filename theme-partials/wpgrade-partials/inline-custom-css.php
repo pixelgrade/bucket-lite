@@ -5,7 +5,7 @@
 	/* @var string $rgb */
 
 
-$main_color = wpgrade::option('main_color');
+$main_color = '';
 
 //if we are in a category page then let's see if we have a custom accent color
 if (is_category()) {
@@ -145,71 +145,6 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
 ol {
     border-left: 0 solid <?php echo $main_color; ?>;
 }
-<?php }
-
-if ( isset($fonts['google_titles_font']) ) {?>
-	/* Select classes here */
-    .badge, h1, h2, h3, h4, h5, h6, hgroup,
-    .hN, .article__author-name, .comment__author-name,
-    .score__average-wrapper, .score__label,
-    .widget_calendar caption, blockquote,
-    .tabs__nav, .popular-posts__time,
-    .heading .hN, .widget--sidebar__title .hN,
-    .widget--footer__title .hN, .heading .article__author-name,
-    .widget--sidebar__title .article__author-name,
-    .widget--footer__title .article__author-name,
-    .heading .comment__author-name,
-    .widget--sidebar__title .comment__author-name,
-    .widget--footer__title .comment__author-name,
-    .heading .score__average-wrapper,
-    .widget--sidebar__title .score__average-wrapper,
-    .widget--footer__title .score__average-wrapper,
-    .heading .score__label, .widget--sidebar__title .score__label,
-    .widget--footer__title .score__label, .heading .widget_calendar caption,
-    .widget_calendar .heading caption,
-    .widget--sidebar__title .widget_calendar caption,
-    .widget_calendar .widget--sidebar__title caption,
-    .widget--footer__title .widget_calendar caption,
-    .widget_calendar .widget--footer__title caption,
-    .score-box--after-text, .latest-comments__author,
-    .review__title, .share-total__value, .pagination li a, .pagination li span,
-    .heading span.archive__side-title
-      {
-		<?php wpgrade::display_font_params($fonts['google_titles_font']); ?>
-	}
-
-<?php }
-
-if ( isset($fonts['google_nav_font']) ) {?>
-	/* Select classes here */
-    nav {
-		<?php wpgrade::display_font_params($fonts['google_nav_font']); ?>
-	}
-
-<?php }
-
-if ( isset($fonts['google_body_font']) ) {
-
-	// setup a default
-	$font_size = '12px';
-    if(isset($fonts['google_body_font']['font-size'])) {
-        $font_size = $fonts['google_body_font']['font-size'];
-        unset($fonts['google_body_font']['font-size']);
-    } ?>
-	/* Select classes here */
-	html, .wp-caption-text, .small-link,
-    .post-nav-link__label, .author__social-link,
-    .comment__links, .score__desc  {
-		<?php wpgrade::display_font_params($fonts['google_body_font']); ?>
-	}
-
-    /* Size Classes */
-    .article, .single .main, .page .main,
-    .comment__content,
-    .footer__widget-area  {
-        font-size: <?php echo $font_size ?>;
-    }
-
 <?php }
 
 if (wpgrade::option('custom_css')):

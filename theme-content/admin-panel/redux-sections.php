@@ -4,7 +4,6 @@ $sections = array();
 
 // General Options
 // ------------------------------------------------------------------------
-
 $sections[] = array(
 	'icon' => 'database-1',
 	'icon_class' => '',
@@ -60,12 +59,13 @@ $sections[] = array(
 
 // Style Options
 // ------------------------------------------------------------------------
-
 $sections[] = array(
 	'icon' => "params",
 	'icon_class' => '',
+	'class'           => 'has-customizer customizer-only',
 	'title' => __('Style', wpgrade::textdomain()),
 	'desc' => '<p class="description">'.__('The style options control the general styling of the site, like accent color and Google Web Fonts. You can choose custom fonts for various typography elements with font weight, char set, size and/or height. You also have a live preview for them.', wpgrade::textdomain()).'</p>',
+	'type' => 'customizer_section',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
@@ -78,7 +78,6 @@ $sections[] = array(
 			'compiler' => true,
 		),
 
-
 		array(
 			'id'=>'typography-info',
 			'desc'=> '<h3>'.__('Typography', wpgrade::textdomain()).'</h3>',
@@ -90,7 +89,7 @@ $sections[] = array(
 			'title' => __('Do you need custom web fonts?', wpgrade::textdomain()),
 			'subtitle' => __('Tap into the massive <a href="http://www.google.com/fonts/">Google Fonts</a> collection (with Live preview).', wpgrade::textdomain()),
 			'default' => '0',
-			'compiler' => true,
+			'compiler' => false,
 		),
 		// Headings Font
 		array(
@@ -103,7 +102,7 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Headings Font', wpgrade::textdomain()),
 			'subtitle' => __('Font for titles and headings.', wpgrade::textdomain()),
-			'compiler' => true,
+			'compiler' => false,
 		),
 		// Navigation Font
 		array(
@@ -116,7 +115,7 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Navigation Font', wpgrade::textdomain()),
 			'subtitle' => __('Font for navigation menu.', wpgrade::textdomain()),
-			'compiler' => true,
+			'compiler' => false,
 		),
 		// Body Font
 		array(
@@ -127,7 +126,7 @@ $sections[] = array(
 			'required' => array('use_google_fonts', '=', 1),
 			'title' => __('Body Font', wpgrade::textdomain()),
 			'subtitle'=> __('Font for content text and widget text.', wpgrade::textdomain()),
-			'compiler' => true,
+			'compiler' => false,
 		),
 		array(
 			'id'=>'layout-info',

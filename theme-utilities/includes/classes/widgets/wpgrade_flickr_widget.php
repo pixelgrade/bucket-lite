@@ -15,7 +15,7 @@ class wpgrade_flickr_widget extends WP_Widget
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		$title = apply_filters( 'widget_title', $instance['title'] );
+		$title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
@@ -70,7 +70,7 @@ class wpgrade_flickr_widget extends WP_Widget
 		$tags = isset( $args['tags'] ) ? $args['tags'] : '';
 		$count = isset( $args['count'] ) ? absint( $args['count'] ) : 8;
 		$query = array('tagmode' => 'any','tags' => $tags);
-		
+
 		// If username is actually an RSS feed
 		if ( preg_match( '#^https?://api\.flickr\.com/services/feeds/photos_public\.gne#', $username ) )
 		{

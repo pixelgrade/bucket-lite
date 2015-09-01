@@ -61,7 +61,10 @@ return array
 		// enable the import/export feature
 		'show_import_export' => $debug_mod, # default: true
 
+		'global_variable'       => 'bucket_redux',
+
 		'customizer' => false,
+		'customizer_style' => false,
 
 		// Set the icon for the import/export tab.
 		// If 'icon_type' => 'image', this should be the path to the icon.

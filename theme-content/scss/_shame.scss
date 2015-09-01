@@ -124,7 +124,7 @@ img[width], img[height] {
 }
 
 .post-format-icon__border {
-    // @include box-shadow(0 0 0 rem(5px) white); 
+    // @include box-shadow(0 0 0 rem(5px) white);
     // -webkit-animation: post-format-icon-background .4s .6s forwards;
 }
 
@@ -165,7 +165,7 @@ img[width], img[height] {
 	img {
 		display: block;
 	}
-	
+
 	.featured-area__article {
         padding-left: 0;
         margin-bottom: 0;
@@ -247,7 +247,7 @@ html {
     display: block;
     padding-top: 67%;
     background: #ccc;
-    position: relative; 
+    position: relative;
     overflow: hidden;
 
     img, .wp-post-image {
@@ -319,7 +319,7 @@ button.mfp-arrow-left{
 
 button.mfp-arrow-right{
   right: 35px;
-  @include transform(rotate(-45deg));  
+  @include transform(rotate(-45deg));
   border-right: 2px solid white;
 }
 
@@ -336,4 +336,16 @@ img[src], img.lazy[src], img.riloadr-single[src]{
 
 img.lazy, img.riloadr-single{
     visibility: hidden;
+}
+
+/**
+ * Moved from inline-custom-css
+ */
+
+.woocommerce ul.products li.product a:hover img {
+    border-bottom: 5px solid $accent;
+}
+
+ol {
+    border-left: 0 solid $accent;
 }

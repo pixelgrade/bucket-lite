@@ -206,11 +206,11 @@
 		// handlers should be placed in theme's functions.php
 		'style-enqueue-handlers' => array
 		(
-			'dynamic-css' => array
-			(
-				'handler' => 'wpgrade_callback_enqueue_dynamic_css',
-				'priority' => 9999,
-			),
+//			'dynamic-css' => array
+//			(
+//				'handler' => 'wpgrade_callback_enqueue_dynamic_css',
+//				'priority' => 9999,
+//			),
 			'rtl-support' => 'wpgrade_callback_enqueue_rtl_support',
 		),
 

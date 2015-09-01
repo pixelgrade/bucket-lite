@@ -33,9 +33,9 @@ class wpgrade_latest_reviews extends WP_Widget {
 		}
 
 		ob_start();
-		
+
 		extract( $args );
-		$title = apply_filters('widget_title', $instance['title']);
+		$title = isset( $instance['title'] ) ? apply_filters('widget_title', $instance['title']) : '';
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
 
 		$query_args = array(
