@@ -94,7 +94,7 @@ $sections[] = array(
 		// Headings Font
 		array(
 			'id' => 'google_titles_font',
-			'type' => 'typography',
+			'type' => 'customizer_typography',
 			'color' => false,
 			'font-size'=>false,
             'line-height'=>false,
@@ -107,7 +107,7 @@ $sections[] = array(
 		// Navigation Font
 		array(
 			'id' => 'google_nav_font',
-			'type' => 'typography',
+			'type' => 'customizer_typography',
 			'color' => false,
 			'font-size'=>false,
             'line-height'=>false,
@@ -120,7 +120,7 @@ $sections[] = array(
 		// Body Font
 		array(
 			'id'=>'google_body_font',
-			'type' => 'typography',
+			'type' => 'customizer_typography',
 			'color' => false,
 			'text-align' => false,
 			'required' => array('use_google_fonts', '=', 1),
