@@ -2236,8 +2236,6 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		}
 	});
 
-
-
 	/* format total numbers like 1.2k or 5M
 	 ================================================== */
 	var wpgrade_shorterTotal = function (num) {
