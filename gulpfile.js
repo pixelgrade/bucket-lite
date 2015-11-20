@@ -120,6 +120,7 @@ gulp.task('build', ['txtdomain-replace'], function () {
         '**/*.css.map',
         '**/.sass*',
         '.sass*',
+        '.travis.yml',
         '**/.git*',
         '*.sublime-project',
         '.DS_Store',
