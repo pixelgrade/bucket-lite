@@ -138,6 +138,11 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 									.heading span.archive__side-title'
 					),
 
+					'this_divider_536649' => array(
+						'type' => 'html',
+						'html' => '<span class="separator" style="border:1px solid #ccc; display: block; width: 100%; height: 0; margin:25px 0 -20px 0; padding: 0; "></span>'
+					),
+
 					'google_nav_font'     => array(
 						'type'    => 'typography',
 						'label'   => __( 'Navigation', 'bucket_txtd' ),
@@ -148,6 +153,31 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 							'Open Sans',
 						),
 						'selector' => 'nav'
+					),
+
+					'navigation_font_size'	=> array(
+						'type' => 'range',
+								'label' => __( 'Font Size', 'bucket_txtd' ),
+								'live' => true,
+								'default' => 13,
+								'input_attrs' => array(
+									'min'   => 8,
+									'max'   => 25,
+									'step'  => 1,
+									'data-preview' => true
+								),
+								'css' => array(
+									array(
+										'property' => 'font-size',
+										'selector' => 'nav a',
+										'unit' => 'px',
+									)
+								)
+					),
+
+					'this_divider_536650' => array(
+						'type' => 'html',
+						'html' => '<span class="separator" style="border:1px solid #ccc; display: block; width: 100%; height: 0; margin:25px 0 -20px 0; padding: 0; "></span>'
 					),
 
 					'google_body_font'     => array(
@@ -163,6 +193,52 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 									.post-nav-link__label, .author__social-link,
 									.comment__links, .score__desc',
 						'load_all_weights' => true,
+					),
+
+					/* add font size and height removed on WordPress 4.3 from Theme Options*/
+
+					'body_font_size'	=> array(
+						'type' => 'range',
+								'label' => __( 'Font Size', 'bucket_txtd' ),
+								'live' => true,
+								'default' => 13,
+								'input_attrs' => array(
+									'min'   => 8,
+									'max'   => 25,
+									'step'  => 1,
+									'data-preview' => true
+								),
+								'css' => array(
+									array(
+										'property' => 'font-size',
+										'selector' => '.article, .single .main, .page .main,
+											.comment__content,
+											.footer__widget-area',
+										'unit' => 'px',
+									)
+								)
+					),
+
+					'body_line_height'	=> array(
+						'type' => 'range',
+								'label' => __( 'Line Height', 'bucket_txtd' ),
+								'live' => true,
+								'default'       => '1.6',
+								'input_attrs' => array(
+									'min'   => 0,
+									'max'   => 3,
+									'step'  => 0.1,
+									'data-preview' => true
+								),
+								'css' => array(
+									array(
+										'property' => 'line-height',
+										'selector' => 'body, .article, .single .main, .page .main,
+											.comment__content,
+											.footer__widget-area',
+										//'unit' => 'px',
+									)
+								)
 					),
 
 					'this_divider_536649' => array(
