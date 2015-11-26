@@ -56,24 +56,7 @@ if (wpgrade::option('portfolio_text_color')) {
 	$port_color = wpgrade::option('portfolio_text_color');
 	$port_color = str_replace('#', '', $port_color);
 }
-
-function bucket_hex2rgb($hex) {
-    $hex = str_replace("#", "", $hex);
-
-    if(strlen($hex) == 3) {
-        $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-        $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-        $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-    } else {
-        $r = hexdec(substr($hex,0,2));
-        $g = hexdec(substr($hex,2,2));
-        $b = hexdec(substr($hex,4,2));
-    }
-    $rgb = array($r, $g, $b);
-//     return implode(",", $rgb); // returns the rgb values separated by commas
-    return $rgb; // returns an array with the rgb values
-}
-
+/**
 if ( !empty($main_color) ){
 $rgb = implode(",", bucket_hex2rgb($main_color)); ?>
 
@@ -117,11 +100,6 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
     background-color: <?php echo $main_color; ?>;
 }
 
-.social-icon-link:hover .square, .social-icon-link:focus .square, .social-icon-link:active .square,
-.site__stats .stat__value:after, .site__stats .stat__title:after {
-    background-color: <?php echo $main_color; ?> !important;
-}
-
 @media only screen and (min-width: 900px){
     .nav--main li:hover, .nav--main li.current-menu-item {
         border-bottom-color: <?php echo $main_color; ?>;
@@ -145,8 +123,11 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
 ol {
     border-left: 0 solid <?php echo $main_color; ?>;
 }
-<?php }
 
+
+<?php }
+**
+*/
 if (wpgrade::option('custom_css')):
 	echo "\n" . wpgrade::option('custom_css') . "\n";
 endif; ?>
