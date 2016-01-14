@@ -2,16 +2,16 @@
 Contributors: elliotcondon
 Tags: custom, field, custom field, advanced, simple fields, magic fields, more fields, repeater, matrix, post, type, text, textarea, file, image, edit, admin
 Requires at least: 3.5.0
-Tested up to: 4.0
+Tested up to: 4.5.0
+Stable tag: 4.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Fully customise WordPress edit screens with powerful fields. Boasting a professional interface and a powerful API, it’s a must have for any web developer working with WordPress.Field types include: Wysiwyg, text, textarea, image, file, select, checkbox, page link, post object, date picker, color picker and more!
-
+Customise WordPress with powerful, professional and intuitive fields
 
 == Description ==
 
-Advanced Custom Fields is the perfect solution for any wordpress website which needs more flexible data like other Content Management Systems. 
+Advanced Custom Fields is the perfect solution for any WordPress website which needs more flexible data like other Content Management Systems. 
 
 * Visually create your Fields
 * Select from multiple input types (text, textarea, wysiwyg, image, file, page link, post object, relationship, select, checkbox, radio buttons, date picker, true / false, repeater, flexible content, gallery and more to come!)
@@ -22,7 +22,7 @@ Advanced Custom Fields is the perfect solution for any wordpress website which n
 
 = Field Types =
 * Text (type text, api returns text)
-* Text Area (type text, api returns text with `<br />` tags)
+* Text Area (type text, api returns text)
 * Number (type number, api returns integer)
 * Email (type email, api returns text)
 * Password (type password, api returns text)
@@ -43,10 +43,18 @@ Advanced Custom Fields is the perfect solution for any wordpress website which n
 * Color Picker (WP color swatch picker)
 * Tab (Group fields into tabs)
 * Message (Render custom messages into the fields)
-* Repeater (ability to create repeatable blocks of fields!)
-* Flexible Content (ability to create flexible blocks of fields!)
-* Gallery (Add, edit and order multiple images in 1 simple field)
 * [Custom](http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/) (Create your own field type!)
+
+= ACF PRO =
+The Advanced Custom Fields plugin is also available in a professional version which includes more fields, more functionality, and more flexibility!
+At the core of ACF PRO is a brand new version of ACF (version 5) which includes searchable drop downs, smarter and faster DB calls, improved UI and much much more!
+
+* Repeater - Create a set of sub fields which can be repeated again and again whilst editing content!
+* Gallery - Simple and intuitive interface for managing a collection of images.
+* Flexible Content - Define groups of sub fields and add, edit, and re-order them to create highly customised content!
+* Options pages - Add extra admin pages to edit ACF fields!
+
+http://www.advancedcustomfields.com/pro/
 
 = Tested on =
 * Mac Firefox 	:)
@@ -67,6 +75,7 @@ http://www.advancedcustomfields.com/
 * [Field Types](http://www.advancedcustomfields.com/resources/#field-types)
 * [Functions](http://www.advancedcustomfields.com/resources/#functions)
 * [Actions](http://www.advancedcustomfields.com/resources/#actions)
+* [Features](http://www.advancedcustomfields.com/resources/#features)
 * [Filters](http://www.advancedcustomfields.com/resources/#filters)
 * [How to guides](http://www.advancedcustomfields.com/resources/#how-to)
 * [Tutorials](http://www.advancedcustomfields.com/resources/#tutorials)
@@ -82,7 +91,7 @@ Your votes really make a difference! Thanks.
 
 1. Upload 'advanced-custom-fields' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Click on the new menu itme "Custom Fields" and create your first Custom Field Group!
+3. Click on the new menu item "Custom Fields" and create your first Custom Field Group!
 4. Your custom field group will now appear on the page / post / template you specified in the field group's location rules!
 5. Read the documentation to display your data: 
 
@@ -106,6 +115,36 @@ http://support.advancedcustomfields.com/
 
 
 == Changelog ==
+
+= 4.4.5=
+* Core: Fixed metabox title appearing on seamless field groups
+* Language: Updated Portuguese translation
+* Language: Updated Polish translation
+
+= 4.4.4 =
+* Field group: Fixed disabled update button after saving with empty title
+* Core: Minor fixes and improvements
+* Language: Updated Portuguese translation
+* Language: Updated French translation
+* Language: Updated Polish translation
+* Language: Added Finnish translation
+
+= 4.4.3 = 
+* WYSIWYG field: Added compatibility for WP 4.3 filters
+* Core: Minor fixes and improvements
+* Language: Updated Polish translation - thanks to Maciej
+
+= 4.4.2 =
+* Image field: Fixed UI bug when image has been removed via media library
+* Core: Minor fixes and improvements
+
+= 4.4.1 =
+* Taxonomy field: Added compatibility for upcoming 'term splitting' in WP 4.2
+* Taxonomy field: Major improvement to save/load setting allowing for different values on multiple sub fields
+* Core: Minor fixes and improvements
+
+= 4.4.0 =
+* Core: Fixed depreciated warnings
 
 = 4.3.9 =
 * Core: Added compatibility for WP4 media grid
