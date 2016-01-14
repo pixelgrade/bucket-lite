@@ -182,14 +182,14 @@ function wpgrade_better_excerpt($text = '') {
 		$text = strip_tags($text, $allowed_tags);
 //		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
 //		$text .= $excerpt_more;
-		
+
 	} else {
-		
+
 		if (empty($text)) {
 			//need to grab the content
 			$text = get_the_content();
 		}
-		
+
 		$raw_excerpt = $text;
 		$text = strip_shortcodes( $text );
 		$text = apply_filters('the_content', $text);
@@ -210,7 +210,7 @@ function wpgrade_better_excerpt($text = '') {
 		}
 
 		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-		
+
 		//test if we are dealing with a utf8 text - like chinese
 		if (wpgrade_is_all_multibyte($text)) {
 			//then we simply split my mb characters rather than words
@@ -220,23 +220,23 @@ function wpgrade_better_excerpt($text = '') {
 //				'ending' => $excerpt_more, 'exact' => false, 'html' => true
 //			);
 //			$text = truncate($text, $excerpt_length, $options);
-			
+
 			$words = preg_split("/[\n\r\t\s]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-			
+
 			//some further testing to ensure that we catch the mb languages like chinese
 			//test for extra long average word length - means that each sentence is enterpreted as a word
 			$temp_words = $words;
 			if (count($temp_words) > 1) {
 				array_pop($temp_words);
 			}
-			
+
 			//we have taken a large average word length - 20
 			if (count($temp_words) > 0 && mb_strlen(implode(' ', $temp_words),'UTF-8')/count($temp_words) > 20) {
 				//we have a mb language
 				//then we simply split my mb characters rather than words
 				$text = short_text($text,$excerpt_length,$excerpt_length);
 			} else {
-		
+
 				if ( count($words) > $excerpt_length ) {
 					array_pop($words);
 					$text = implode(' ', $words);
@@ -245,9 +245,9 @@ function wpgrade_better_excerpt($text = '') {
 				} else {
 					$text = implode(' ', $words);
 				}
-				
+
 			}
-			
+
 		}
 	}
 

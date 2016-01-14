@@ -23,7 +23,7 @@
  */
 function wpgrade_callback_pagination_formatter($links, $conf) {
     $linkcount = count($links);
-            
+
 	//don't show anything when no pagination is needed
 	if ($linkcount == 0) {
 		return '';
@@ -33,20 +33,20 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 
 	$current = $conf['current'];
 	foreach ( $links as $key => &$link ) {
-		
+
 		//some SEO shit
 		//prevent pagination parameters for the links to the first page
 		if ($key == 0 && $current == 2 && strpos($link, 'prev')) {
 			//the first link - should be prev and since we are on page 2 it will hold the link to the first page
 			$link = preg_replace('/href=(["\'])(http:\/\/)?([^"\']+)(["\'])/', 'href="'.  get_pagenum_link(1) .'"', $link);
 		}
-		
+
 		//change the link of the first page to be more SEO friendly
 		$link_text = strip_tags($link);
 		if ($current != 1 && $link_text == "1") {
 			$link = preg_replace('/href=(["\'])(http:\/\/)?([^"\']+)(["\'])/', 'href="'.  get_pagenum_link(1) .'"', $link);
 		}
-     
+
         if ( $key == $linkcount - 1 ) {
             $suffix = '';
 		}

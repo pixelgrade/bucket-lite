@@ -163,7 +163,7 @@ if ($latest_query->have_posts()):
         <div <?php echo $grid_class ?>><!--
             <?php while($latest_query->have_posts()): $latest_query->the_post();  ?>
                 --><div><?php get_template_part('theme-partials/post-templates/content-'. $blog_layout); ?></div><!--
-            <?php endwhile; 
+            <?php endwhile;
 			wp_reset_postdata(); ?>
      --></div>
     <?php
