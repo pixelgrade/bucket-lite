@@ -47,7 +47,7 @@
 
         &:hover {
             .article__thumb {
-                 @include translateY(-8px);
+                 transform: translateY(-8px);
             }
         }
     } 

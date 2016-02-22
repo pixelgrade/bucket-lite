@@ -15,7 +15,7 @@
 .nav--main__wrapper{
 
     &.pre-sticky{
-        @include transform(translateY(-100%));
+        transform: translateY(-100%);
     }
 
     &.sticky{
@@ -249,7 +249,7 @@ $mega_height: 280px;
     }
 
     .rsOverflow {
-        @include transition(none !important);
+        transition: none !important;
     }
 }
 
@@ -347,12 +347,12 @@ $menu_transition_speed: 0.15s;
 @include media-query(lap-and-up) {
     .nav--main {
         li {
-            @include transition(all 0.15s linear);
+            transition: all 0.15s linear;
 
             > .sub-menu {
                 display: inline-block;
-                @include opacity(0);
-                @include transition(opacity $menu_transition_speed ease-in);
+                opacity: 0;
+                transition: opacity $menu_transition_speed ease-in;
             }
 
             &:hover, &.current-menu-item {
@@ -367,15 +367,15 @@ $menu_transition_speed: 0.15s;
             }            
 
             &.hidden > .sub-menu {
-                @include opacity(0);
+                opacity: 0;
                 display:none;
             }
             
             &.open {
                 @include media-query(lap-and-up) {
                     > .sub-menu {
-                        @include opacity(1);
-                        @include transition(opacity $menu_transition_speed ease-out 0);
+                        opacity: 1;
+                        transition: opacity $menu_transition_speed ease-out 0;
                     }
                 }
             }
@@ -402,11 +402,11 @@ $menu_transition_speed: 0.15s;
             margin: 0;
 
             .article__thumb {
-                @include translateY(0);
+                transform: translateY(0);
             }
 
             .article__title {
-                color:white;       
+                color:white;
             }
 
             .article__content {
@@ -423,7 +423,7 @@ $menu_transition_speed: 0.15s;
 
             &:hover {
                 .article__thumb {
-                     @include translateY(0);
+                     transform: translateY(0);
                 }
                 .article__title {
                     
@@ -511,7 +511,7 @@ $transition_speed: 0.4s;
         background-color: $dark;
 
 
-        @include transition(visibility 0 linear $transition_speed);
+        transition: visibility 0 linear $transition_speed;
 
         > ul > li{
             &:last-child{
@@ -519,7 +519,7 @@ $transition_speed: 0.4s;
             }
 
             a{
-                @include rem(padding, $_u4 $_u);            
+                @include rem(padding, $_u4 $_u);
             }
         }
 
@@ -566,10 +566,10 @@ $transition_speed: 0.4s;
         cursor: pointer;
         color: #807f7d;
 
-        @include transition(color $transition_speed ease-in-out);
+        transition: color $transition_speed ease-in-out;
 
         &:active, &:focus {
-            @include transition(color $transition_speed ease-in-out);
+            transition: color $transition_speed ease-in-out;
         }
 
         i {
@@ -583,7 +583,7 @@ $transition_speed: 0.4s;
 
         // Icon Styling
         & {
-          @include transition(all $transition_speed);
+          transition: all $transition_speed;
           cursor: pointer;
           user-select: none;
           opacity: .8;
@@ -597,7 +597,7 @@ $transition_speed: 0.4s;
           height: 6px;
           background: $gray;
           border-radius: 2.5rem;
-          @include transition(all $transition_speed);
+          transition: all $transition_speed;
           
           &:after, &:before {
             display: block;
@@ -608,7 +608,7 @@ $transition_speed: 0.4s;
             position: absolute;
             z-index: -1;
             border-radius: 1rem;
-            @include transition(all $transition_speed);
+            transition: all $transition_speed;
           }
 
           &:after { top: -$half-spacing-unit; }
@@ -629,8 +629,8 @@ $transition_speed: 0.4s;
 
         position: relative; 
         z-index: 1;
-        @include transform(translateZ(0));
-        @include transition(all $transition_speed ease-in-out);
+        transform: translateZ(0);
+        transition: all $transition_speed ease-in-out;
     }
 
 
@@ -642,13 +642,13 @@ $transition_speed: 0.4s;
     .navigation--is-visible {
 
         .wrapper {
-            @include transform(translateX(-75%));
+            transform: translateX(-75%);
         }
 
         .navigation--mobile{
             visibility: visible;
             z-index: 1;
-            @include transition(z-index 0 linear $transition_speed);
+            transition: z-index 0 linear $transition_speed;
         }
 
         // Trigger icon animations 
@@ -656,8 +656,8 @@ $transition_speed: 0.4s;
             background: transparent;
             top:20px !important;
 
-            &:before { @include rotate(-45deg); top: 0 !important; }  
-            &:after { @include rotate(45deg); top: 0 !important; }  
+            &:before { transform: rotate(-45deg); top: 0 !important; }
+            &:after { transform: rotate(45deg); top: 0 !important; }
         }
    
     }

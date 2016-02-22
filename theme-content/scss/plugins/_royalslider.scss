@@ -339,7 +339,7 @@ img.rsImg{
     height: auto;
     overflow: hidden;
     margin: 0;
-    @include transform(translateZ(0));
+    transform: translateZ(0);
 
     img {
         width: 100%;
@@ -383,7 +383,7 @@ img.rsImg{
     .rsArrowIcn{
         left: 0;
         border-left: 2px solid $dark;
-        @include transform(translateY(-50%) rotate(45deg));
+        transform: translateY(-50%) rotate(45deg);
     }
 }
 
@@ -393,7 +393,7 @@ img.rsImg{
     .rsArrowIcn{
         right: 0;
         border-right: 2px solid $dark;
-        @include transform(translateY(-50%) rotate(-45deg));
+        transform: translateY(-50%) rotate(-45deg);
     }
 }
 

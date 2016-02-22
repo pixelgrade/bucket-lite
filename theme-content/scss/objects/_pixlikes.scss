@@ -33,9 +33,9 @@
 		background: transparent !important;
 
 		border: 3px solid $dark;
-		@include border-radius(50%);
+		border-radius: 50%;
 
-		@include transform(scale(1));
+		transform: scale(1);
 
 		&:before{
 			position: relative;
@@ -52,8 +52,8 @@
 			height:100%;
 			background:$dark;
 
-			@include border-radius(50%);
-			@include transition(all 1s ease-out);
+			border-radius: 50%;
+			transition: all 1s ease-out;
 			z-index:-1;
 
 			backface-visibility: visible;
@@ -63,7 +63,7 @@
 	}
 
 	.image__item-meta & i{
-		@include transform(scale(1));
+		transform: scale(1);
 		background-color: transparent;
 	}
 
@@ -86,8 +86,8 @@
 			font-weight: bold;
 			color:$dark;
 
-			@include opacity(0);
-			@include transition(opacity .2s linear);
+			opacity: 0;
+			transition: opacity .2s linear;
 		}
 	}
 }
@@ -103,7 +103,7 @@
 	i {
 		// background-color: transparent;
 		&:after {
-			@include transform(scale(0.15));
+			transform: scale(0.15);
 		}
 	}
 }
@@ -114,13 +114,13 @@
 */
 .likes-box.pixlikes-box.animate {
 	i:after {
-		@include transform(scale(1.1));
-		@include transition(all 1.7s);
+		transform: scale(1.1);
+		transition: all 1.7s;
 	}
 
 	.likes-text {
 		&:after {
-			@include opacity(1);
+			opacity: 1;
 		}
 	}
 }
@@ -134,10 +134,9 @@
 		background-color: $dark;
 		@include rem(font-size, 24px);
 		animation: bounce 1s;
-		-webkit-animation: bounce 1s;
 
 		&:after {
-			@include transform(scale(1.1));
+			transform: scale(1.1);
 		}
 	}
 }
@@ -153,7 +152,7 @@
 		@include rem(font-size, 24px);
 
 		&:after {
-			@include transform(scale(1.1));
+			transform: scale(1.1);
 		}
 	}
 }

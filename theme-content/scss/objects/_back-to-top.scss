@@ -32,9 +32,9 @@
 				border: 0 solid $light;
 				border-top-width: 2px;
 				border-right-width: 0.14286rem;
-				@include rotate(-45deg);
+				transform: rotate(-45deg);
 
-				@include transition(all 0.15s);
+				transition: all 0.15s;
 			}
 
 

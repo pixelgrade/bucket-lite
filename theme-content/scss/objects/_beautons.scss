@@ -9,7 +9,7 @@
     letter-spacing: .0625em;
     @include font-size(12px, true, 1.083);
     padding: 0 1.5em;
-    @include transition(all .15s);
+    transition: all .15s;
 
     &:hover {
         background-color: $accent;

@@ -83,10 +83,10 @@
         width: 7px;
         border-bottom: 2px solid black;
         border-right: 2px solid black;
-        @include rotate(45deg);
+        transform: rotate(45deg);
 
         .panel-active &{
-            @include rotate(-135deg);            
+            transform: rotate(-135deg);
         }
     }
 }
@@ -189,7 +189,7 @@ div.pp_woocommerce a.pp_contract{
     border: 0;
     background: transparent;
     top: 10px;
-    @include box-shadow(none);
+    box-shadow: none;
 }
 
 div.pp_woocommerce .pp_close{

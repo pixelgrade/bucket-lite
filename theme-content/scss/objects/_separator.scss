@@ -42,7 +42,7 @@
     @include rem(margin-left, $_u2 - 4px);
     @include rem(margin-top, -4px);
     background-color: #fff;
-    @include transform(rotate(45deg) translateZ(0));
+    transform: rotate(45deg) translateZ(0);
 }
 
 // .separator{

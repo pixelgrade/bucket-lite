@@ -28,7 +28,7 @@ $icon-size: 32px;
             line-height:32px;
             width: $icon-size;
             height: $icon-size;
-            @include box-shadow(0 1px 1px 0 rgba(0,0,0,0.5) inset, 0 1px 0px 0 rgba(255,255,255,0.8));
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5) inset, 0 1px 0px 0 rgba(255,255,255,0.8);
             background-color:$gray;
 
             &:before {
@@ -39,7 +39,7 @@ $icon-size: 32px;
 
         &:hover {
             i.pixcode--icon.circle {
-                @include box-shadow(0 2px 0px 0 rgba(255,255,255,0.2) inset, 0 -1px 0px 0 rgba(0,0,0,0.2) inset);
+                box-shadow: 0 2px 0px 0 rgba(255,255,255,0.2) inset, 0 -1px 0px 0 rgba(0,0,0,0.2) inset;
             }
         }
     }
@@ -110,7 +110,7 @@ $icon-size: 32px;
     color: $light;
     text-align: center;
 
-    @include transition(all 0.15s);
+    transition: all 0.15s;
 
     &:hover, &:focus, &:active { 
         .square{

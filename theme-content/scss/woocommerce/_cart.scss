@@ -3,7 +3,7 @@
     border: 0;
     border-bottom: 5px solid black;
     border-collapse: collapse;
-    @include border-radius(0);
+    border-radius: 0;
 
     td{
         border-top: 0;
@@ -63,7 +63,7 @@ td.product-quantity .quantity{
 
 .woocommerce-page .shop_table.cart .quantity{
     input.qty, .minus, .plus{
-        @include border-radius(0);
+	    border-radius: 0;
     }  
 
     .minus, .plus{
@@ -81,7 +81,7 @@ td.product-quantity .quantity{
 }
 
 .woocommerce .cart-collaterals .cart_totals table, .woocommerce-page .cart-collaterals .cart_totals table{
-    @include border-radius(0);
+	border-radius: 0;
     border-collapse: collapse;
     margin-bottom: $_u2;
 
@@ -120,7 +120,7 @@ body.woocommerce .cart-collaterals .cart_totals, body.woocommerce-page .cart-col
 
 .woocommerce table.shop_table, .woocommerce-page table.shop_table{
     border: 1px solid rgba(0, 0, 0, 0.1);
-    @include border-radius(0);
+	border-radius: 0;
 
     tr{
         border-top: 1px solid rgba(0, 0, 0, 0.1);

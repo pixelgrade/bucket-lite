@@ -76,7 +76,7 @@
 		width:100%;
 		z-index:1;
 
-		@include transition(all 0.15s 0.07s);
+		transition: all 0.15s 0.07s;
 
 		&:after {
 			background:$accent;
@@ -91,7 +91,7 @@
 			left:0;
 			z-index:-1;
 
-			@include transition(max-height 0.40s bezier(easeOutBack) 0.07s);
+			transition: max-height 0.40s bezier(easeOutBack) 0.07s;
 		}
 	}
 

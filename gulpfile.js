@@ -1,16 +1,27 @@
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    prefix = require('gulp-autoprefixer'),
-    exec = require('gulp-exec'),
+var theme = 'bucket',
+    gulp = require('gulp'),
+    prefix 		= require('gulp-autoprefixer'),
+    sass 		= require('gulp-ruby-sass'),
+    jshint = require('gulp-jshint'),
     clean = require('gulp-clean'),
-    livereload = require('gulp-livereload'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    replace = require('gulp-replace'),
-	compress = require('gulp-yuicompressor' ),
-    beautify = require('gulp-beautify'),
-    csscomb = require('gulp-csscomb'),
-	themeTextDomain = '\'bucket_txtd\'';
+    zip = require('gulp-zip'),
+    cache = require('gulp-cache'),
+    lr = require('tiny-lr'),
+    server = lr(),
+    exec 		= require('gulp-exec'),
+    replace 	= require('gulp-replace'),
+    minify 		= require('gulp-minify-css'),
+    concat 		= require('gulp-concat'),
+    notify 		= require('gulp-notify'),
+    beautify 	= require('gulp-beautify'),
+    uglify 		= require('gulp-uglify'),
+    csscomb 	= require('gulp-csscomb'),
+    chmod 		= require('gulp-chmod'),
+    fs          = require('fs'),
+    rtlcss 		= require('rtlcss'),
+    postcss 	= require('gulp-postcss'),
+    del         = require('del'),
+    rename 		= require('gulp-rename');
 
 
 var options = {
@@ -18,68 +29,71 @@ var options = {
     continueOnError: true // default: false
 };
 
-// styles related
+/**
+ *   #STYLES
+ */
+
 gulp.task('styles-dev', function () {
-    return gulp.src('theme-content/scss/**/*.scss')
-        .pipe(sass({compass: true, sourcemap: true, style: 'compact'}))
-        .on('error', function (e) {
-            console.log(e.message);
-        })
-        .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
-        .pipe(gulp.dest('./theme-content/css/'));
-        //.pipe(livereload())
-        //.pipe(notify('Styles task complete'));
+    return gulp.src(['theme-content/scss/**/*.scss'])
+            .pipe(sass({'sourcemap': true, style: 'compact'}))
+            .on('error', function (e) {
+                console.log(e.message);
+            })
+            .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+            .pipe(gulp.dest('./theme-content/css/'))
+            .pipe(notify({message: 'Styles task complete'}));
+    // .pipe(postcss([
+    //     require('rtlcss')({ /* options */ })
+    // ]))
+    // .pipe(rename("rtl.css"))
+    // .pipe(gulp.dest('./'))
 });
 
 gulp.task('styles', function () {
-    return gulp.src('theme-content/scss/**/*.scss')
-        .pipe(sass({compass: true, sourcemap: true, style: 'nested'}))
-        .on('error', function (e) {
-            console.log(e.message);
-        })
-        .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
-        .pipe(gulp.dest('./theme-content/css/'))
-        //.pipe(notify('Styles task complete'));
+    return gulp.src(['theme-content/scss/**/*.scss'])
+            .pipe(sass({'sourcemap': true, style: 'expanded'}))
+            .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+            // .pipe(cmq())
+            .pipe(csscomb())
+            .pipe(chmod(644))
+            .pipe(gulp.dest('./theme-content/css/'))
+    // .pipe(postcss([
+    //     require('rtlcss')({ /* options */ })
+    // ]))
+    // .pipe(rename("rtl.css"))
+    // .pipe(gulp.dest('./'));
 });
 
-gulp.task('styles-prod', function () {
-    return gulp.src('theme-content/scss/**/*.scss')
-        .pipe(sass({compass: true, sourcemap: false, style: 'nested'}))
-        .on('error', function (e) {
-            console.log(e.message);
-        })
-        .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
-        .pipe(csscomb())
-        .pipe(gulp.dest('./theme-content/css/'));
+gulp.task('styles-admin', function () {
+    return gulp.src('./assets/scss/admin/*.scss')
+            .pipe(sass({'sourcemap': true, style: 'expanded'}))
+            .on('error', function (e) {
+                console.log(e.message);
+            })
+            .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+            .pipe(chmod(644))
+            .pipe(gulp.dest('./assets/css/admin/'));
 });
 
-gulp.task('styles-compressed', function () {
-	return gulp.src('theme-content/scss/**/*.scss')
-		.pipe(sass({compass: true, sourcemap: false, style: 'compressed'}))
-		.on('error', function (e) {
-			console.log(e.message);
-		})
-		.pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
-		.pipe(gulp.dest('./theme-content/css/'));
-});
 
-gulp.task('styles-watch', function () {
-    return gulp.watch('theme-content/scss/**/*.scss', ['styles-dev']);
-});
+
+
 
 gulp.task('watch', function () {
-    gulp.watch('theme-content/scss/**/*.scss', ['styles-dev']);
-    gulp.watch('theme-content/js/**/*.js');
+    gulp.watch('assets/scss/**/*.scss', ['styles']);
 });
 
-// usually there is a default task  for lazy people who just wanna type gulp
-gulp.task('start', ['styles'], function () {
-    // silence
+gulp.task('watch-admin', function () {
+    gulp.watch('assets/scss/admin/*.scss', ['styles-admin']);
 });
 
-gulp.task('server', ['styles-compressed'], function () {
-    console.log('The styles have been completed for production! Go and clear the caches!');
+gulp.task('server', ['styles'], function () {
+    console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
 });
+
+
+
+
 
 /**
  * Replace the bad dynamic text domain with a static one

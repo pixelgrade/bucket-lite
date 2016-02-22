@@ -13,7 +13,7 @@
 
 @keyframes clockwise {
     to {
-        @include transform(rotate(360deg) translatez(0));
+        transform: rotate(360deg) translatez(0);
     }
 }
 
@@ -24,7 +24,6 @@
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    -webkit-animation: clockwise 0.75s bezier(easeInOutQuad) infinite;
     animation: clockwise 0.75s bezier(easeInOutQuad) infinite;
     // display: none !important;
 }

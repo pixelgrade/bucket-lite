@@ -1,5 +1,4 @@
 // RTL
-@import "compass";
 @import "../vars";
 @import "../_vendor/inuit.css/defaults";
 @import "../_vendor/inuit.css/generic/mixins";
@@ -110,7 +109,7 @@
 	@include media-query(lap-and-up) {
 
 		.article--billboard > a:hover .article__title:before {
-			@include translateX(-50px);
+			transform: translateX(-50px);
 		}
 
 		.article--billboard-small + .article--billboard-small {
@@ -235,7 +234,7 @@
 
 		&:after {
 			right: 0;
-			@include transform(translateZ(0) rotate(-135deg));
+			transform: translateZ(0) rotate(-135deg);
 		}
 	}
 
@@ -245,7 +244,7 @@
 		&:after {
 			right: auto;
 			@include rem(left, $_u);
-			@include transform(translateZ(0) rotate(135deg));
+			transform: translateZ(0) rotate(135deg);
 		}
 	}
 

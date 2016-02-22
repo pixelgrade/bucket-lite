@@ -76,7 +76,7 @@ img[width], img[height] {
     line-height: 2.3;
     color: white;
     text-align: center;
-    @include transform(translateZ(0));
+    transform: translateZ(0);
 
     // background
     background-color: rgba(white, .25);
@@ -85,7 +85,7 @@ img[width], img[height] {
     @include rem(border-width, 5px);
 
     // border
-    @include box-shadow(0 0 0 rem(5px) white);
+    box-shadow: 0 0 0 rem(5px) white;
 
     // opacity: 0;
     border-radius: 50%;
@@ -262,7 +262,7 @@ html {
         position: absolute;
         bottom: 0; width: 100%;
         z-index: 20;
-        @include background-image(linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,.8)));
+        background-image: linear-gradient(rgba(0,0,0,0) 10%, rgba(0,0,0,.8));
         color: white;
         @include rem(padding, $_2u $_u $_u);
 
@@ -285,10 +285,10 @@ html {
 
 
 .pixslider{
-    @include opacity(0);
+    opacity: 0;
 
     &.slider--loaded{
-        @include opacity(1);
+        opacity: 1;
     }
 }
 
@@ -313,13 +313,13 @@ button.mfp-arrow{
 
 button.mfp-arrow-left{
   left: 35px;
-  @include transform(rotate(45deg));
+  transform: rotate(45deg);
   border-left: 2px solid white;
 }
 
 button.mfp-arrow-right{
   right: 35px;
-  @include transform(rotate(-45deg));
+  transform: rotate(-45deg);
   border-right: 2px solid white;
 }
 

@@ -171,7 +171,7 @@ body.woocommerce{
     }
 
     #content div.product div.images img, div.product div.images img, #content div.product div.images img, div.product div.images img{
-        @include box-shadow(none);       
+        box-shadow: none;
     }  
 
     #content div.product form.cart div.quantity, div.product form.cart div.quantity, #content div.product form.cart div.quantity, div.product form.cart div.quantity{
@@ -195,8 +195,8 @@ body.woocommerce{
         text-shadow: none;
         border: 0;
         background: black;
-        @include border-radius(0);
-        @include box-shadow(none);
+        border-radius: 0;
+        box-shadow: none;
         font-weight: 300;
     }
 
@@ -210,8 +210,8 @@ body.woocommerce{
 
         background: black;
         border: 0;
-        @include border-radius(0);
-        @include box-shadow(none);
+        border-radius: 0;
+        box-shadow: none;
         font-family: $alt-font-family;
         font-weight: normal;
 

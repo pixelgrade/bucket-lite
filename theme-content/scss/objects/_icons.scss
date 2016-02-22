@@ -34,7 +34,7 @@
     }
 
     &.circle {
-        @include border-radius(999px);
+        border-radius: 999px;
     }
 
     &.small {
@@ -79,7 +79,7 @@
 .pixcode--icon {
 
     a > & {
-        @include transition(all 0.15s);
+        transition: all 0.15s;
     }
 
     a:hover > & {

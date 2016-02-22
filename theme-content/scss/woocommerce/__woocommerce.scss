@@ -10,8 +10,8 @@
         background: none;
         border: 1px solid #c7c0c7;
         padding: $_u !important;
-        @include box-shadow(none);
-        @include border-radius(0);
+        box-shadow: none;
+        border-radius: 0;
 
         &:before{
             content: none;

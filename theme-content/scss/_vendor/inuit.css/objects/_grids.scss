@@ -63,7 +63,7 @@
         @include rem(padding-left, $base-spacing-unit);
         vertical-align:top;
         @if $global-border-box == false{
-            @include vendor(box-sizing, border-box);
+            box-sizing: border-box;
         }
     }
 
