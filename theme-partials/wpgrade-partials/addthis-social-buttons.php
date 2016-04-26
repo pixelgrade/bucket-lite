@@ -23,13 +23,13 @@ if ( ! empty( $share_buttons_types ) || $share_buttons_types !== 'false' ) { ?>
 				switch ( $buttons[ $k ] ) {
 					case 'preferred':
 						$preferred_count ++;
-						$display_share_buttons .= '<a class="addthis_button_' . $buttons[ $k ] . '_' . $preferred_count . ' addthis_counter_' . $preferred_count . '"></a>';
+						$display_share_buttons .= '<a class="addthis_button_' . $buttons[ $k ] . '_' . $preferred_count . '"></a>';
 						break;
 					case 'more':
 						$display_share_buttons .= '<a class="addthis_button_compact"></a>';
 						break;
 					case 'counter':
-						$display_share_buttons .= '<a class="addthis_counter  addthis_bubble_style"></a>';
+						$display_share_buttons .= '<a class="addthis_counter addthis_bubble_style"></a>';
 						break;
 					default :
 						$display_share_buttons .= '<a class="addthis_button_' . $buttons[ $k ] . '"></a>';
