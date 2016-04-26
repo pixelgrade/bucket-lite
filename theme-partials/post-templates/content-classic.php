@@ -16,7 +16,7 @@
 		<?php endif; ?>
 		<?php post_format_icon();
 			if ( bucket::has_average_score() ) { ?>
-			<div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', wpgrade::textdomain()) ?></span></div>
+			<div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', 'bucket') ?></span></div>
 		<?php } ?>
 	</div>
 	<div class="media__body grid__item seven-twelfths palm-one-whole">
@@ -25,7 +25,7 @@
 		if ($categories) {
 			echo '<div class="article__category">';
 			foreach ($categories as $category):
-	                    echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
+	                    echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>';
             endforeach;
 	        echo '</div>';
 		} ?>
@@ -42,7 +42,7 @@
 			<?php if ( comments_open() ): ?>
 			<li class="xpost_comments"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
 			<?php endif; ?>
-			<?php if ( wpgrade::option('blog_single_show_share_links') && function_exists('get_pixlikes')) : ?>
+			<?php if ( function_exists('get_pixlikes')) : ?>
 			<li class="xpost_likes"><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
 			<?php endif; ?>
 		</ul>

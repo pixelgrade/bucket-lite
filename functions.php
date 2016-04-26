@@ -20,7 +20,7 @@ if ( ! defined('REQUEST_PROTOCOL')) {
 }
 
 // Loads the theme's translated strings
-load_theme_textdomain( 'bucket_txtd', get_stylesheet_directory() . '/languages' );
+load_theme_textdomain( 'bucket', get_stylesheet_directory() . '/languages' );
 
 // Theme specific settings
 // -----------------------
@@ -33,6 +33,18 @@ add_theme_support('post-formats', $formats);
 // Initialize system core
 // ----------------------
 do_action('wpgrade_before_core');
+
+
+/// load assets
+if ( ! function_exists( 'bucket_load_assets' ) ) {
+	function bucket_load_assets(){
+
+		if ( is_single() ) {
+			wp_enqueue_script( 'addthis-api', '//s7.addthis.com/js/300/addthis_widget.js#async=1', array( 'jquery' ), null, true );
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'bucket_load_assets' );
 
 require_once 'wpgrade-core/bootstrap'.EXT;
 
@@ -84,6 +96,11 @@ function post_format_icon($class_name = '') {
 	<?php
 	endif;
 }
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
 
 //Automagical updates
 function wupdates_check_MXD0M( $transient ) {

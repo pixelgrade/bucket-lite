@@ -3,7 +3,7 @@
     <nav class="navigation  navigation--top">
 
         <div class="container">
-            <h2 class="accessibility"><?php _e('Secondary Navigation', wpgrade::textdomain()) ?></h2>
+            <h2 class="accessibility"><?php _e('Secondary Navigation', 'bucket') ?></h2>
             
             <div class="grid">
                 <div class="grid__item one-half">
@@ -38,7 +38,7 @@
         <hr class="nav-top-separator separator separator--subsection flush--bottom" />
 		
         <nav class="navigation  navigation--main  js-navigation--main">
-            <h2 class="accessibility"><?php _e('Primary Navigation', wpgrade::textdomain()) ?></h2>
+            <h2 class="accessibility"><?php _e('Primary Navigation', 'bucket') ?></h2>
             <div class="nav--main__wrapper  js-sticky">
                 <?php wpgrade_main_nav(); ?>
             </div>

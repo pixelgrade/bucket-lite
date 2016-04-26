@@ -40,7 +40,7 @@ if ( wpgrade::option('nav_main_sticky') == 1 )
     </div>
     <div id="page">
         <nav class="navigation  navigation--mobile  overthrow">
-            <h2 class="accessibility"><?php _e('Primary Mobile Navigation', wpgrade::textdomain()) ?></h2>
+            <h2 class="accessibility"><?php _e('Primary Mobile Navigation', 'bucket') ?></h2>
             <div class="search-form  push-half--top  push--bottom  soft--bottom">
                 <?php get_search_form(); ?>
             </div>

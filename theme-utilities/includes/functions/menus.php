@@ -10,10 +10,10 @@
 //				'nav_menus',
 //				array
 //				(
-//                    'main_menu' => __('Header Menu', wpgrade::textdomain()),
-//					'top_menu_left' => __('Top Menu Left', wpgrade::textdomain()),
-//                    'top_menu_right' => __('Top Menu Right', wpgrade::textdomain()),
-//					'footer_menu' => __('Footer Menu', wpgrade::textdomain()),
+//                    'main_menu' => __('Header Menu', 'bucket'),
+//					'top_menu_left' => __('Top Menu Left', 'bucket'),
+//                    'top_menu_right' => __('Top Menu Right', 'bucket'),
+//					'footer_menu' => __('Footer Menu', 'bucket'),
 //				)
 //			);
 

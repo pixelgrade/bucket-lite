@@ -5,7 +5,7 @@ class wpgrade_twitter_widget extends WP_Widget {
 	public function __construct()
 	{
 
-		parent::__construct( 'wpgrade_twitter_widget', wpgrade::themename().' '.__('Twitter Widget',wpgrade::textdomain()), array('description' => __('Display Latest Tweets', wpgrade::textdomain())) );
+		parent::__construct( 'wpgrade_twitter_widget', wpgrade::themename().' '.__('Twitter Widget','bucket'), array('description' => __('Display Latest Tweets', 'bucket')) );
 	}
 
 	function widget($args, $instance) {
@@ -79,24 +79,24 @@ class wpgrade_twitter_widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		$title = isset( $instance['title'] ) ? $instance['title'] : __('Tweets',wpgrade::textdomain());
+		$title = isset( $instance['title'] ) ? $instance['title'] : __('Tweets','bucket');
 		$username = isset ($instance['username']) ? esc_attr($instance['username']) : '';
 		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 5;
 		$nr_per_slide = isset( $instance['nr_per_slide'] ) ? absint( $instance['nr_per_slide'] ) : 1;?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'bucket'); ?>:</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('username'); ?>"><?php _e('Twitter username', wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id('username'); ?>"><?php _e('Twitter username', 'bucket'); ?>:</label>
 			<input id="<?php echo $this->get_field_id('username'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('username'); ?>" value="<?php echo $username; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of tweets',wpgrade::textdomain()); ?>:</label><br />
+			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of tweets','bucket'); ?>:</label><br />
 			<input type="number" min="1" max="20" value="<?php echo esc_attr( $count ); ?>" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'nr_per_slide' ); ?>"><?php _e( 'Number of tweets per slide',wpgrade::textdomain()); ?>:</label><br />
+			<label for="<?php echo $this->get_field_id( 'nr_per_slide' ); ?>"><?php _e( 'Number of tweets per slide','bucket'); ?>:</label><br />
 			<input type="number" min="1" max="20" value="<?php echo esc_attr( $nr_per_slide ); ?>" id="<?php echo $this->get_field_id( 'nr_per_slide' ); ?>" name="<?php echo $this->get_field_name( 'nr_per_slide' ); ?>" />
 		</p>
 	<?php
@@ -153,24 +153,24 @@ class wpgrade_twitter_widget extends WP_Widget {
 
 		if ( $difference >= 60*60*24*365 ){        // if more than a year ago
 			$int = intval( $difference / ( 60*60*24*365 ) );
-			$r = sprintf( _n( '%d year ago', '%d years ago', $int, wpgrade::textdomain() ), $int );
+			$r = sprintf( _n( '%d year ago', '%d years ago', $int, 'bucket' ), $int );
 		} elseif ( $difference >= 60*60*24*7*5 ){  // if more than five weeks ago
 			$int = intval( $difference / ( 60*60*24*30 ) );
-			$r = sprintf( _n( '%d month ago', '%d months ago', $int, wpgrade::textdomain() ), $int );
+			$r = sprintf( _n( '%d month ago', '%d months ago', $int, 'bucket' ), $int );
 		} elseif ( $difference >= 60*60*24*7 ){        // if more than a week ago
 			$int = intval( $difference / ( 60*60*24*7 ) );
-			$r = sprintf( _n( '%d week ago', '%d weeks ago', $int, wpgrade::textdomain() ), $int );
+			$r = sprintf( _n( '%d week ago', '%d weeks ago', $int, 'bucket' ), $int );
 		} elseif ( $difference >= 60*60*24){      // if more than a day ago
 			$int = intval( $difference / ( 60*60*24 ) );
-			$r = sprintf( _n( '%d day ago', '%d days ago', $int, wpgrade::textdomain() ), $int );
+			$r = sprintf( _n( '%d day ago', '%d days ago', $int, 'bucket' ), $int );
 		} elseif ( $difference >= 60*60 ){         // if more than an hour ago
 			$int = intval( $difference / ( 60*60 ) );
-			$r = sprintf( _n( '%d hour ago', '%d hours ago', $int, wpgrade::textdomain() ), $int );
+			$r = sprintf( _n( '%d hour ago', '%d hours ago', $int, 'bucket' ), $int );
 		} elseif ( $difference >= 60 ){            // if more than a minute ago
 			$int = intval( $difference / ( 60 ) );
-			$r = sprintf( _n( '%d minute ago', '%d minutes ago', $int, wpgrade::textdomain() ), $int );
+			$r = sprintf( _n( '%d minute ago', '%d minutes ago', $int, 'bucket' ), $int );
 		} else {                                // if less than a minute ago
-			$r = __( 'moments ago', wpgrade::textdomain() );
+			$r = __( 'moments ago', 'bucket' );
 		}
 
 		return $r;

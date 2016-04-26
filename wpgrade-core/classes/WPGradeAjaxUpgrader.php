@@ -77,7 +77,7 @@ class WPGradeAjaxUpgrader {
 		$installed_theme = $this->retrieve_installed_theme( $theme_name );
 
 		if ( $installed_theme == null ) {
-			$transalated_message = __( 'The theme <b>:theme_name</b> is not installed.<br><i>If you are certain the theme it is installed, please contact support.</i>', wpgrade::textdomain() );
+			$transalated_message = __( 'The theme <b>:theme_name</b> is not installed.<br><i>If you are certain the theme it is installed, please contact support.</i>', 'bucket' );
 			$this->errors        = array( strtr( $transalated_message, array( ':theme_name' => $theme_name ) ) );
 
 			return false;
@@ -93,7 +93,7 @@ class WPGradeAjaxUpgrader {
 		}
 
 		if ( $errors !== null ) {
-			$this->errors = array( __( 'Failed to retrieve theme list via Envato API.', wpgrade::textdomain() ) );
+			$this->errors = array( __( 'Failed to retrieve theme list via Envato API.', 'bucket' ) );
 
 			return false;
 		}
@@ -103,7 +103,7 @@ class WPGradeAjaxUpgrader {
 				if ( $this->is_newer_version_available( $installed_theme['Version'], $purchased->version ) ) {
 					return true;
 				} else { // no new version available
-					$transalated_message = __( 'There is no update available for the theme <b>:theme_name</b>', wpgrade::textdomain() );
+					$transalated_message = __( 'There is no update available for the theme <b>:theme_name</b>', 'bucket' );
 					$this->errors        = array( strtr( $transalated_message, array( ':theme_name' => $theme_name ) ) );
 
 					return false;
@@ -111,7 +111,7 @@ class WPGradeAjaxUpgrader {
 			}
 		}
 
-		$transalated_message = __( 'Failed to find the theme <b>:theme_name</b>', wpgrade::textdomain() );
+		$transalated_message = __( 'Failed to find the theme <b>:theme_name</b>', 'bucket' );
 		$this->errors        = array( strtr( $transalated_message, array( ':theme_name' => $theme_name ) ) );
 
 		return false;
@@ -164,7 +164,7 @@ class WPGradeAjaxUpgrader {
 		$installed_theme = $this->retrieve_installed_theme( $theme_name );
 
 		if ( $installed_theme == null ) {
-			$transalated_message = __( 'The theme <b>:theme_name</b> is not installed.<br><i>If you are certain the theme it is installed, please contact support.</i>', wpgrade::textdomain() );
+			$transalated_message = __( 'The theme <b>:theme_name</b> is not installed.<br><i>If you are certain the theme it is installed, please contact support.</i>', 'bucket' );
 			$this->errors        = array( strtr( $transalated_message, array( ':theme_name' => $theme_name ) ) );
 
 			return null;
@@ -176,14 +176,14 @@ class WPGradeAjaxUpgrader {
 		$internal_errors  = ob_get_clean();
 
 		if ( ! empty( $internal_errors ) || $purchased_themes === false ) {
-			$transalated_message = __( 'TeamForest/Envato API error.', wpgrade::textdomain() );
+			$transalated_message = __( 'TeamForest/Envato API error.', 'bucket' );
 			$this->errors        = array( $transalated_message );
 
 			return null;
 		}
 
 		if ( $errors !== null ) {
-			$this->errors = array( __( 'Failed to retrieve theme list via Envato API.', wpgrade::textdomain() ) );
+			$this->errors = array( __( 'Failed to retrieve theme list via Envato API.', 'bucket' ) );
 
 			return null;
 		}
@@ -195,7 +195,7 @@ class WPGradeAjaxUpgrader {
 					$marketplace_theme_data = $purchased;
 					break;
 				} else { // no new version available
-					$transalated_message = __( 'There is no update available for the theme <b>:theme_name</b>', wpgrade::textdomain() );
+					$transalated_message = __( 'There is no update available for the theme <b>:theme_name</b>', 'bucket' );
 					$this->errors        = array( strtr( $transalated_message, array( ':theme_name' => $theme_name ) ) );
 
 					return null;
@@ -204,7 +204,7 @@ class WPGradeAjaxUpgrader {
 		}
 
 		if ( $marketplace_theme_data == null ) {
-			$transalated_message = __( 'Failed to find <b>:theme_name</b> in your list of purchased themes. (please contact support)', wpgrade::textdomain() );
+			$transalated_message = __( 'Failed to find <b>:theme_name</b> in your list of purchased themes. (please contact support)', 'bucket' );
 			$this->errors        = array( strtr( $transalated_message, array( ':theme_name' => $theme_name ) ) );
 
 			return null;

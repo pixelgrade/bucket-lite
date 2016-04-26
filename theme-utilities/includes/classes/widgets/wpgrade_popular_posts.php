@@ -40,7 +40,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		/* Widget settings. */
 		$widget_ops = array(
 			'classname' => 'wpgrade_popular_posts',
-			'description' => __( 'This widget is the Tabs that classically goes into the sidebar. It contains the Popular posts, Latest Posts and Recent comments.', wpgrade::textdomain() )
+			'description' => __( 'This widget is the Tabs that classically goes into the sidebar. It contains the Popular posts, Latest Posts and Recent comments.', 'bucket' )
 		);
 
 		/* Widget control settings. */
@@ -51,7 +51,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		);
 
 		/* Create the widget. */
-		parent::__construct( 'wpgrade_popular_posts', wpgrade::themename().' '.__('Popular Posts', wpgrade::textdomain() ), $widget_ops, $control_ops );
+		parent::__construct( 'wpgrade_popular_posts', wpgrade::themename().' '.__('Popular Posts', 'bucket' ), $widget_ops, $control_ops );
 
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
 		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
@@ -83,13 +83,13 @@ class wpgrade_popular_posts extends WP_Widget {
 			<input type="text" name="<?php echo $this->get_field_name('title'); ?>"  value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts:', wpgrade::textdomain() ); ?>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts:', 'bucket' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo isset( $instance['number'] ) ? $instance['number'] : ''; ?>" />
 			</label>
 		</p>
 
 		<?php if( !self::$_stats_enabled ) : ?>
-			<div class="pptwj-require-error" style="background: #FFEBE8; border: 1px solid #c00; color: #333; margin: 1em 0; padding: 3px 5px; "><?php _e('Popular Posts tab requires the <a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> to be activated and connected. It also requires the Jetpack Stats module to be enabled.', wpgrade::textdomain() ); ?></div>
+			<div class="pptwj-require-error" style="background: #FFEBE8; border: 1px solid #c00; color: #333; margin: 1em 0; padding: 3px 5px; "><?php _e('Popular Posts tab requires the <a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> to be activated and connected. It also requires the Jetpack Stats module to be enabled.', 'bucket' ); ?></div>
 		<?php endif; ?>
 
 	<?php
@@ -120,10 +120,10 @@ class wpgrade_popular_posts extends WP_Widget {
 		$number = isset( $instance['number'] ) ? $instance['number'] : 5;
 
 		$filter_links = array(
-			'daily' => __('Today', wpgrade::textdomain()),
-			'weekly' => __('Week', wpgrade::textdomain()),
-			'monthly' => __('Month', wpgrade::textdomain()),
-			'all' => __('All', wpgrade::textdomain())
+			'daily' => __('Today', 'bucket'),
+			'weekly' => __('Week', 'bucket'),
+			'monthly' => __('Month', 'bucket'),
+			'all' => __('All', 'bucket')
 		);
 		$thumb_size = 72;
 		$data = array(
@@ -188,7 +188,7 @@ class wpgrade_popular_posts extends WP_Widget {
 		ob_start();
 
 		if( !$popular ):
-			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', wpgrade::textdomain()) : __('Sorry. No data yet.', wpgrade::textdomain());
+			$message = !self::$_stats_enabled ? __('<a href="http://wordpress.org/extend/plugins/jetpack/" target="_blank">Jetpack plugin</a> with Stats module needs to be enabled.', 'bucket') : __('Sorry. No data yet.', 'bucket');
 			?>
 			<span><?php echo $message; ?></span>
 			<?php

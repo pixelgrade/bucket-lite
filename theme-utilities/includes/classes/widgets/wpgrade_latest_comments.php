@@ -6,8 +6,8 @@
 class wpgrade_latest_comments extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget--latest-comments', 'description' => __( 'The latest comments', wpgrade::textdomain() ) );
-		parent::__construct('recent-comments', wpgrade::themename().' '.__('Latest Comments', wpgrade::textdomain()), $widget_ops);
+		$widget_ops = array('classname' => 'widget--latest-comments', 'description' => __( 'The latest comments', 'bucket' ) );
+		parent::__construct('recent-comments', wpgrade::themename().' '.__('Latest Comments', 'bucket'), $widget_ops);
 		$this->alt_option_name = 'widget_recent_comments';
 
 		add_action( 'comment_post', array($this, 'flush_widget_cache') );
@@ -38,7 +38,7 @@ class wpgrade_latest_comments extends WP_Widget {
 		extract($args, EXTR_SKIP);
 		$output = '';
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments', wpgrade::textdomain() );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments', 'bucket' );
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
 		if ( ! $number )
@@ -72,7 +72,7 @@ class wpgrade_latest_comments extends WP_Widget {
 							<?php else : ?>
 							<span class="latest-comments__author"><?php echo get_comment_author( $comment->comment_ID ) ?></span>
 							<?php endif; ?>
-							<span class="comment__date"><?php _e('on', wpgrade::textdomain()); ?> <?php echo date( 'd M' ,strtotime($comment->comment_date)); ?></span>
+							<span class="comment__date"><?php _e('on', 'bucket'); ?> <?php echo date( 'd M' ,strtotime($comment->comment_date)); ?></span>
 						</div>
 						<a class="latest-comments__title" href="<?php echo esc_url( get_comment_link($comment->comment_ID) ) ?>"><?php echo get_the_title($comment->comment_post_ID); ?></a>
 						<div class="latest-comments__content">
@@ -107,10 +107,10 @@ class wpgrade_latest_comments extends WP_Widget {
 	function form( $instance ) {
 		$title  = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5; ?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', wpgrade::textdomain() ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'bucket' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:', wpgrade::textdomain() ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:', 'bucket' ); ?></label>
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 	<?php
 	}

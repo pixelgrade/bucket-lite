@@ -7,7 +7,7 @@ class wpgrade_latest_reviews extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_latest_reviews', wpgrade::themename() .' '.__('Latest Reviews', wpgrade::textdomain() ), array('description' => __( "Display the latest posts with reviews", wpgrade::textdomain() )) );
+		parent::__construct( 'wpgrade_latest_reviews', wpgrade::themename() .' '.__('Latest Reviews', 'bucket' ), array('description' => __( "Display the latest posts with reviews", 'bucket' )) );
 		$this->alt_option_name = 'wpgrade_latest_reviews';
 
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
@@ -104,14 +104,14 @@ class wpgrade_latest_reviews extends WP_Widget {
 	}
 
 	function form($instance) {
-		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('Latest Reviews',wpgrade::textdomain());
+		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('Latest Reviews','bucket');
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'bucket'); ?>:</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of reviews to show:',wpgrade::textdomain() ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of reviews to show:','bucket' ); ?></label>
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 
 	<?php }

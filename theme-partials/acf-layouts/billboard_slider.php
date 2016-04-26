@@ -10,7 +10,7 @@ global $showed_posts_ids;
 $number_of_posts = get_sub_field('number_of_posts');
 $read_more_label = get_sub_field('read_more_label');
 if ( empty($read_more_label) ) {
-	$read_more_label = __('Read Full Story', wpgrade::textdomain());
+	$read_more_label = __('Read Full Story', 'bucket');
 }
 
 $query_args = array(
@@ -173,7 +173,7 @@ if ($slides->have_posts()): ?>
                         </div>
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
-                                <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
+                                <span class="billboard__category"><?php _e('Featured', 'bucket'); ?></span>
                                 <h2 class="article__title article--billboard__title">
                                     <span class="hN"><?php the_title(); ?></span>
                                 </h2>
@@ -204,7 +204,7 @@ if ($slides->have_posts()): ?>
 
                         <a href="<?php the_permalink(); ?>">
                             <div class="article__header  article--billboard__header">
-                                <span class="billboard__category"><?php _e('Featured', wpgrade::textdomain()); ?></span>
+                                <span class="billboard__category"><?php _e('Featured', 'bucket'); ?></span>
                                 <h2 class="article__title article--billboard__title">
                                     <span class="hN"><?php the_title(); ?></span>
                                 </h2>
@@ -250,7 +250,7 @@ if ($slides->have_posts()): ?>
 										}
 									?>
                                 </span>
-                                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
+                                <span class="small-link"><?php _e('Read More', 'bucket'); ?><em>+</em></span>
                             </div> 
                         </a>
                     </article>

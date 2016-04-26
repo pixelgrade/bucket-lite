@@ -7,7 +7,7 @@ class wpgrade_flickr_widget extends WP_Widget
 {
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_flickr_widget', wpgrade::themename().' '.__('Flickr Widget',wpgrade::textdomain()), array('description' => __('Display Flickr images in your sidebar or footer (maximum 20 but we recommend less).',wpgrade::textdomain()),) );
+		parent::__construct( 'wpgrade_flickr_widget', wpgrade::themename().' '.__('Flickr Widget','bucket'), array('description' => __('Display Flickr images in your sidebar or footer (maximum 20 but we recommend less).','bucket'),) );
 	}
 
 	/**
@@ -98,7 +98,7 @@ class wpgrade_flickr_widget extends WP_Widget
 
 		if ( ! $photos )
 		{
-			return new WP_Error( 'error', __('Something went wrong.', wpgrade::textdomain()) );
+			return new WP_Error( 'error', __('Something went wrong.', 'bucket') );
 		}
 
 		$photos = array_slice( $photos, 0, $count );
@@ -205,25 +205,25 @@ class wpgrade_flickr_widget extends WP_Widget
 	 */
 	public function form( $instance )
 	{
-		$title = isset( $instance['title'] ) ? $instance['title'] : __('Flickr Shots',wpgrade::textdomain());
+		$title = isset( $instance['title'] ) ? $instance['title'] : __('Flickr Shots','bucket');
 		$username = isset( $instance['username'] ) ? $instance['username'] : '';
 		$tags = isset( $instance['tags'] ) ? $instance['tags'] : '';
 		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 8;
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title',wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title','bucket'); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'username' ); ?>"><?php _e( 'Username or RSS url',wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'username' ); ?>"><?php _e( 'Username or RSS url','bucket'); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'username' ); ?>" name="<?php echo $this->get_field_name( 'username' ); ?>" type="text" value="<?php echo esc_attr( $username ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'tags' ); ?>"><?php _e( 'Tags' ,wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'tags' ); ?>"><?php _e( 'Tags' ,'bucket'); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'tags' ); ?>" name="<?php echo $this->get_field_name( 'tags' ); ?>" type="text" value="<?php echo esc_attr( $tags ); ?>" /><br />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of images',wpgrade::textdomain()); ?>:</label><br />
+			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of images','bucket'); ?>:</label><br />
 			<input type="number" min="1" max="20" value="<?php echo esc_attr( $count ); ?>" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" />
 		</p>
 

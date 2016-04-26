@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php if (wpgrade::option('blog_archive_show_cat_billboard')) get_template_part('theme-partials/post-templates/header-category'); ?>
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php echo single_cat_title( '', false ); ?></h2><span class="archive__side-title beta"><?php _e( 'Articles', wpgrade::textdomain() ); ?></span>
+                    <h2 class="hN"><?php echo single_cat_title( '', false ); ?></h2><span class="archive__side-title beta"><?php _e( 'Articles', 'bucket' ); ?></span>
                 </div>
 				
 				<?php if ( category_description() ) : // Show an optional category description ?>

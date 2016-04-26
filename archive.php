@@ -28,33 +28,33 @@ get_header(); ?>
 						$var = get_query_var('post_format');
 						// POST FORMATS
 						if ($var == 'post-format-aside') :
-							_e('Aside Archives', wpgrade::textdomain());
+							_e('Aside Archives', 'bucket');
 						elseif ($var == 'post-format-image') :
-							_e('Image Archives', wpgrade::textdomain());
+							_e('Image Archives', 'bucket');
 						elseif ($var == 'post-format-link') :
-							_e('Link Archives', wpgrade::textdomain());
+							_e('Link Archives', 'bucket');
 						elseif ($var == 'post-format-quote') :
-							_e('Quote Archives', wpgrade::textdomain());
+							_e('Quote Archives', 'bucket');
 						elseif ($var == 'post-format-status') :
-							_e('Status Archives', wpgrade::textdomain());
+							_e('Status Archives', 'bucket');
 						elseif ($var == 'post-format-gallery') :
-							_e('Gallery Archives', wpgrade::textdomain());
+							_e('Gallery Archives', 'bucket');
 						elseif ($var == 'post-format-video') :
-							_e('Video Archives', wpgrade::textdomain());
+							_e('Video Archives', 'bucket');
 						elseif ($var == 'post-format-audio') :
-							_e('Audio Archives', wpgrade::textdomain());
+							_e('Audio Archives', 'bucket');
 						elseif ($var == 'post-format-chat') :
-							_e('Chat Archives', wpgrade::textdomain());
+							_e('Chat Archives', 'bucket');
 						endif;
 
 						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', wpgrade::textdomain() ), get_the_date() );
+							printf( __( 'Daily Archives: %s', 'bucket' ), get_the_date() );
 						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', wpgrade::textdomain() ), get_the_date( _x( 'F Y', 'monthly archives date format', wpgrade::textdomain() ) ) );
+							printf( __( 'Monthly Archives: %s', 'bucket' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bucket' ) ) );
 						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', wpgrade::textdomain() ), get_the_date( _x( 'Y', 'yearly archives date format', wpgrade::textdomain() ) ) );
+							printf( __( 'Yearly Archives: %s', 'bucket' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bucket' ) ) );
 						else :
-							_e( 'Archives', wpgrade::textdomain() );
+							_e( 'Archives', 'bucket' );
 						endif;
 					?></h2>
 				</div>

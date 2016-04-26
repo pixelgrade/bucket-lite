@@ -4,7 +4,7 @@
  *
  */
 
-get_header(); 
+get_header();
 $is_review = bucket::has_average_score();
 ?>
 
@@ -59,8 +59,8 @@ $is_review = bucket::has_average_score();
         'before' => "<ol class=\"nav pagination\"><!--",
         'after' => "\n--></ol>",
         'next_or_number' => 'next_and_number',
-        'previouspagelink' => __('Previous', wpgrade::textdomain()),
-        'nextpagelink' => __('Next', wpgrade::textdomain())
+        'previouspagelink' => __('Previous', 'bucket'),
+        'nextpagelink' => __('Next', 'bucket')
     );
     wp_link_pages( $args ); ?>
 
@@ -94,7 +94,7 @@ $is_review = bucket::has_average_score();
                     <?php if (get_field('pros_list')): ?><!--
                                  --><div class="score__pros  grid__item  lap-and-up-one-half">
                         <div class="score__pros__title">
-                            <h3 class="hN"><?php _e('Good Things', wpgrade::textdomain()); ?></h3>
+                            <h3 class="hN"><?php _e('Good Things', 'bucket'); ?></h3>
                         </div>
                         <ul class="score__pros__list">
                             <?php while(has_sub_fields('pros_list')): ?>
@@ -106,7 +106,7 @@ $is_review = bucket::has_average_score();
                     if (get_field('cons_list')): ?>
                                  --><div class="score__cons  grid__item  lap-and-up-one-half">
                         <div class="score__cons__title">
-                            <h3 class="hN"><?php _e('Bad Things', wpgrade::textdomain()); ?></h3>
+                            <h3 class="hN"><?php _e('Bad Things', 'bucket'); ?></h3>
                         </div>
                         <ul class="score__cons__list">
                             <?php while(has_sub_fields('cons_list')): ?>
@@ -124,7 +124,7 @@ $is_review = bucket::has_average_score();
         if (get_field('enable_review_score')):
             //don't show the breakdown if there is only one - it means the guy just wanted the average score
             if (get_field('score_breakdown') && count(get_field('score_breakdown')) > 1 ): ?>
-                <h3><?php _e('The Breakdown', wpgrade::textdomain()); ?></h3>
+                <h3><?php _e('The Breakdown', 'bucket'); ?></h3>
                 <hr class="separator  separator--subsection">
                 <?php while (has_sub_fields('score_breakdown')): ?>
                     <div class="review__score">
@@ -148,16 +148,15 @@ $is_review = bucket::has_average_score();
                         <a href="<?php echo get_sub_field('full_url'); ?>" class="btn  btn--small  btn--primary"><?php echo get_sub_field('label'); ?></a>
                     </div>
                 <?php endwhile;
-            endif; ?>
+            endif;
 
-            <?php
             $categories = get_the_category();
             if ($categories): ?>
                 <div class="btn-list">
-                    <div class="btn  btn--small  btn--secondary"><?php _e('Categories', wpgrade::textdomain()) ?></div>
+                    <div class="btn  btn--small  btn--secondary"><?php _e('Categories', 'bucket') ?></div>
                     <?php
                     foreach ($categories as $category):
-                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
+                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>';
                     endforeach; ?>
                 </div>
             <?php endif;
@@ -165,21 +164,19 @@ $is_review = bucket::has_average_score();
             $tags = get_the_tags();
             if ($tags): ?>
                 <div class="btn-list">
-                    <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', wpgrade::textdomain()) ?></div>
+                    <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', 'bucket') ?></div>
                     <?php
                     foreach ($tags as $tag):
-                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", wpgrade::textdomain()), $tag->name)) .'">'. $tag->name.'</a>';
-                    endforeach;
-                    ?>
+                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", 'bucket'), $tag->name)) .'">'. $tag->name.'</a>';
+                    endforeach; ?>
                 </div>
             <?php endif; ?>
         </div>
-        <?php if (wpgrade::option('blog_single_show_share_links') && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'bottom' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
+        <?php if ( ! empty( wpgrade::option('share_buttons_settings') ) && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'bottom' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
             get_template_part('theme-partials/post-templates/share-box');
         } ?>
-        <?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' ); ?>
+        <?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' );
 
-        <?php
         $next_post = get_next_post();
         $prev_post = get_previous_post();
         if (!empty($prev_post) || !empty($next_post)): ?>
@@ -189,7 +186,7 @@ $is_review = bucket::has_average_score();
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($prev_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e('Previous Article', wpgrade::textdomain() ); ?>
+                                    <?php _e('Previous Article', 'bucket' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
@@ -200,7 +197,7 @@ $is_review = bucket::has_average_score();
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($prev_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e('Previous Article', wpgrade::textdomain() ); ?>
+                                    <?php _e('Previous Article', 'bucket' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
@@ -220,7 +217,7 @@ $is_review = bucket::has_average_score();
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e("Next Article", wpgrade::textdomain()); ?>
+                                    <?php _e("Next Article", 'bucket'); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
@@ -234,7 +231,7 @@ $is_review = bucket::has_average_score();
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e("Next Article", wpgrade::textdomain()); ?>
+                                    <?php _e("Next Article", 'bucket'); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
@@ -259,7 +256,7 @@ $is_review = bucket::has_average_score();
 
         endwhile; ?>
     </article><!--
-        
+
         <?php if ($disable_sidebar != 'on'): ?>
          --><div class="grid__item  one-third  palm-one-whole  sidebar">
         <?php get_sidebar(); ?>

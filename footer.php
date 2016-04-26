@@ -48,7 +48,7 @@
             <?php endif; 
 
                   if (wpgrade::option('back_to_top')): ?>
-            <div class="back-to-top"><a href="#page"><?php _e('Back to Top', wpgrade::textdomain()); ?></a></div>
+            <div class="back-to-top"><a href="#page"><?php _e('Back to Top', 'bucket'); ?></a></div>
             <?php endif; ?>
         </div>
     </div>
@@ -57,7 +57,7 @@
     
     <footer class="site__footer">
         
-        <h2 class="accessibility"><?php __('Footer', wpgrade::textdomain()) ?></h2>
+        <h2 class="accessibility"><?php __('Footer', 'bucket') ?></h2>
 		
     	<?php
 

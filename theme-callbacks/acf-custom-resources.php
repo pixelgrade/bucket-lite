@@ -17,9 +17,9 @@ function wpgrade_callback_add_acf_custom_resources (){
  */
 function wpgrade_warrning_about_acf(){
 	echo '<div id="message" class="error"><p><b>'.
-		__("This theme requires it's own version of Advanced Custom Fields.", wpgrade::textdomain() ) .
+		__("This theme requires it's own version of Advanced Custom Fields.", 'bucket' ) .
 		'</b></br>' .
-		__('Please uninstall the Advanced Custom Fields plugin and enable it from Theme Options -> General -> Enable Advanced Custom Fields Settings.', wpgrade::textdomain() ) .
+		__('Please uninstall the Advanced Custom Fields plugin and enable it from Theme Options -> General -> Enable Advanced Custom Fields Settings.', 'bucket' ) .
 		'</p></div>';
 }
 

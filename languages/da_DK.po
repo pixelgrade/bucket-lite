@@ -179,7 +179,7 @@ msgid "Post a new comment"
 msgstr "Tilføj en ny kommentar"
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: comments.php:107 comments.php:121
 #: theme-utilities/includes/acf/acf-config.php:57
 #: theme-utilities/includes/acf/core/controllers/field_groups.php:420
@@ -233,7 +233,7 @@ msgid "Primary Mobile Navigation"
 msgstr "Primær mobil Navigation"
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: index.php:23 theme-utilities/includes/acf/acf-config.php:852
 #: theme-utilities/includes/acf/acf-config.php:853
 msgid "Latest Articles"
@@ -272,7 +272,7 @@ msgid "Previous"
 msgstr "Tidligere"
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: page-no-sidebar.php:49 page.php:43 single.php:63 wpgrade-config.php:234
 msgid "Next"
 msgstr "Næste"
@@ -511,7 +511,7 @@ msgid "Disabled"
 msgstr ""
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: theme-callbacks/activation-hooks.php:168
 #: theme-content/admin-panel/redux-sections.php:280
 #: theme-utilities/includes/acf/acf-config.php:522
@@ -525,7 +525,7 @@ msgid "Slide/Move"
 msgstr ""
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: theme-callbacks/activation-hooks.php:177
 #: theme-content/admin-panel/redux-sections.php:283
 #: theme-utilities/includes/acf/acf-config.php:528
@@ -1636,7 +1636,7 @@ msgid "Theme Information"
 msgstr "Tema information"
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: theme-partials/acf-layouts/billboard_slider.php:13
 #: theme-utilities/includes/acf/acf-config.php:490
 msgid "Read Full Story"
@@ -1733,29 +1733,29 @@ msgstr "Ingen artikler i denne kategori"
 msgid "Select MegaMenu Layout:"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:50
 msgid "Credits"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:53
 msgid "Sources, credits, via or other useful links."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 # @ acf
 #: theme-utilities/includes/acf/acf-config.php:70
 #: theme-utilities/includes/acf/acf-config.php:152
 msgid "Label"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:83
 msgid "Full URL"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 # @ acf
 #: theme-utilities/includes/acf/acf-config.php:98
 #: theme-utilities/includes/acf/acf-config.php:324
@@ -1765,28 +1765,28 @@ msgstr ""
 msgid "Add New"
 msgstr "Tilføj ny"
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:122
 msgid "Post Review Score"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:126
 #: theme-utilities/includes/acf/acf-config.php:129
 msgid "Enable Review Score"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:134
 msgid "Score Breakdown"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:157
 msgid "e.g. Features"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:165
 msgid "Score"
 msgstr ""
@@ -1795,94 +1795,94 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:195
 msgid "New Score Row"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:199
 #: theme-utilities/includes/acf/acf-config.php:213
 msgid "Average Score Box"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:217
 msgid "Placement"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:233
 msgid "Before Content"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:234
 msgid "After Content"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:235
 msgid "Using Shortcode"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:243
 msgid "Note"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:258
 msgid "A short note about the score (optional)"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:266
 #: theme-utilities/includes/acf/acf-config.php:281
 msgid "Enable Pros&Cons Lists"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:269
 msgid "Display a comparison lists with Good and Bad things."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:286
 msgid "Pros List"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:309
 msgid "Pros Note"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:328
 msgid "Cons List"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:351
 msgid "Cons Note"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:390
 msgid "Custom Page Composer"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:394
 msgid "Blocks"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:399
 msgid "Billboard Slider"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:405
 #: theme-utilities/includes/acf/acf-config.php:566
 #: theme-utilities/includes/acf/acf-config.php:652
@@ -1890,7 +1890,7 @@ msgstr ""
 msgid "Posts Source"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:408
 #: theme-utilities/includes/acf/acf-config.php:569
 #: theme-utilities/includes/acf/acf-config.php:655
@@ -1898,7 +1898,7 @@ msgstr ""
 msgid "Select what type of posts to be displayed."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:411
 #: theme-utilities/includes/acf/acf-config.php:572
 #: theme-utilities/includes/acf/acf-config.php:658
@@ -1906,7 +1906,7 @@ msgstr ""
 msgid "Featured Posts"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 # @ acf
 #: theme-utilities/includes/acf/acf-config.php:412
 #: theme-utilities/includes/acf/acf-config.php:573
@@ -1917,7 +1917,7 @@ msgstr ""
 msgid "Latest Posts"
 msgstr "Seneste artikel"
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:413
 #: theme-utilities/includes/acf/acf-config.php:574
 #: theme-utilities/includes/acf/acf-config.php:660
@@ -1925,7 +1925,7 @@ msgstr "Seneste artikel"
 msgid "Latest Posts From a Category"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:414
 #: theme-utilities/includes/acf/acf-config.php:575
 #: theme-utilities/includes/acf/acf-config.php:661
@@ -1933,7 +1933,7 @@ msgstr ""
 msgid "Latest Posts By Post Format"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:415
 #: theme-utilities/includes/acf/acf-config.php:576
 #: theme-utilities/includes/acf/acf-config.php:662
@@ -1941,7 +1941,7 @@ msgstr ""
 msgid "Latest Posts With Reviews"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:423
 #: theme-utilities/includes/acf/acf-config.php:584
 #: theme-utilities/includes/acf/acf-config.php:670
@@ -1949,7 +1949,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:426
 #: theme-utilities/includes/acf/acf-config.php:587
 #: theme-utilities/includes/acf/acf-config.php:673
@@ -1958,7 +1958,7 @@ msgid ""
 "Hold down Command key (or CTRL on Windows) to select multiple categories."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:437
 #: theme-utilities/includes/acf/acf-config.php:598
 #: theme-utilities/includes/acf/acf-config.php:684
@@ -1966,7 +1966,7 @@ msgstr ""
 msgid "Post Formats"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:440
 #: theme-utilities/includes/acf/acf-config.php:601
 #: theme-utilities/includes/acf/acf-config.php:687
@@ -1975,7 +1975,7 @@ msgid ""
 "Hold down Command key (or CTRL on Windows) to select multiple post formats."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:443
 #: theme-utilities/includes/acf/acf-config.php:604
 #: theme-utilities/includes/acf/acf-config.php:690
@@ -1983,7 +1983,7 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:444
 #: theme-utilities/includes/acf/acf-config.php:605
 #: theme-utilities/includes/acf/acf-config.php:691
@@ -1991,7 +1991,7 @@ msgstr ""
 msgid "Gallery"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:445
 #: theme-utilities/includes/acf/acf-config.php:606
 #: theme-utilities/includes/acf/acf-config.php:692
@@ -1999,7 +1999,7 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:446
 #: theme-utilities/includes/acf/acf-config.php:607
 #: theme-utilities/includes/acf/acf-config.php:693
@@ -2007,7 +2007,7 @@ msgstr ""
 msgid "Audio"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:454
 #: theme-utilities/includes/acf/acf-config.php:615
 #: theme-utilities/includes/acf/acf-config.php:701
@@ -2015,7 +2015,7 @@ msgstr ""
 msgid "Number of Posts"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:457
 msgid ""
 "Set the maximum number of posts to be displayed (for unlimited number of "
@@ -2036,12 +2036,12 @@ msgstr ""
 msgid "Number of post to pass over"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:484
 msgid "Read More Label"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:487
 msgid "Main Slider Read More Link Text"
 msgstr ""
@@ -2054,40 +2054,40 @@ msgstr ""
 msgid "Slider height (px)"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:525
 msgid "Select the transition between slides."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:529
 #: wpgrade-core/vendor/redux3/inc/fields/slides/field_slides.php:68
 msgid "Slide"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:537
 msgid "Slider auto play"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:545
 msgid "Delay between slides on autoplay in miliseconds"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:560
 msgid "Posts Grid Cards"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:618
 #: theme-utilities/includes/acf/acf-config.php:704
 #: theme-utilities/includes/acf/acf-config.php:791
 msgid "Set the maximum number of posts to be displayed."
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:646
 msgid "Hero Posts Module"
 msgstr ""
@@ -2098,59 +2098,59 @@ msgstr ""
 msgid "Posts Style"
 msgstr "Skrevet af %s"
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:823
 msgid "Masonry"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:824
 msgid "Classic"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:833
 msgid "Pagination"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:838
 #: theme-utilities/includes/acf/acf-config.php:866
 msgid "Enable"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:839
 #: theme-utilities/includes/acf/acf-config.php:867
 msgid "Disable"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:848
 msgid "Section Title"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:861
 msgid "Sidebar"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:877
 msgid "Text/Image Block"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:883
 msgid "Editor"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:894
 msgid "Heading title"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 # @ acf
 # @ redux-framework
 #: theme-utilities/includes/acf/acf-config.php:900
@@ -2178,7 +2178,7 @@ msgstr ""
 msgid "Open link in new tab"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: theme-utilities/includes/acf/acf-config.php:934
 msgid "Add Block"
 msgstr ""
@@ -5293,7 +5293,7 @@ msgstr ""
 msgid "There are no reviews yet."
 msgstr "Der er ingen kommentarer - endnu. "
 
-# @ bucket_txtd
+# @ bucket
 # @ acf
 #: woocommerce/single-product-reviews.php:60
 #, fuzzy
@@ -5389,7 +5389,7 @@ msgstr[1] ""
 msgid "Sale!"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 # @ redux-framework
 #: wpgrade-config.php:108
 #: wpgrade-core/vendor/redux3/extensions/customizer/controls/background.php:46
@@ -5397,27 +5397,27 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: wpgrade-config.php:110
 msgid "Slider + Latest Posts"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: wpgrade-config.php:183
 msgid "Previous (Left arrow key)"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: wpgrade-config.php:184
 msgid "Next (Right arrow key)"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: wpgrade-config.php:185
 msgid "of"
 msgstr ""
 
-# @ bucket_txtd
+# @ bucket
 #: wpgrade-config.php:233
 msgid "Prev"
 msgstr ""
@@ -6301,7 +6301,7 @@ msgid "Invalid sidebar ID"
 msgstr ""
 
 # @ acf
-# @ bucket_txtd
+# @ bucket
 #: yarpp-template-portfolio.php:10
 #, fuzzy
 msgid "<em>Related</em> Articles"

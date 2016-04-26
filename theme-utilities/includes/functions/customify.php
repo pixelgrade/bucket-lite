@@ -9,14 +9,14 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 		$config['sections'] = array(
 			'colors_section' => array(
-				'title'    => __( 'Bucket Style', 'bucket_txtd' ),
+				'title'    => __( 'Bucket Style', 'bucket' ),
 				'priority' => 1,
-				'description'            => __( 'The style options control the general styling of the site, like accent color and Google Web Fonts. You can choose custom fonts for various typography elements with font weight, char set, size and/or height.If you want to override these elements you can always use the CSS Editor panel.', 'bucket_txtd' ),
+				'description'            => __( 'The style options control the general styling of the site, like accent color and Google Web Fonts. You can choose custom fonts for various typography elements with font weight, char set, size and/or height.If you want to override these elements you can always use the CSS Editor panel.', 'bucket' ),
 				'options' => array(
 					'main_color'   => array(
 						'type'      => 'color',
-						'label'     => __( 'Main Color', 'bucket_txtd' ),
-						//'desc'   => __( 'Use the color picker to change the main color of the site to match your brand color.', 'bucket_txtd' ),
+						'label'     => __( 'Main Color', 'bucket' ),
+						//'desc'   => __( 'Use the color picker to change the main color of the site to match your brand color.', 'bucket' ),
 						'live' => true,
 						'default'   => '#fb4834',
 						'css'  => array(
@@ -103,7 +103,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'google_titles_font' => array(
 						'type'     => 'typography',
-						'label'    => __( 'Headings', 'bucket_txtd' ),
+						'label'    => __( 'Headings', 'bucket' ),
 						'desc'       => __( 'Font for titles and headings.', 'rosa_txtd' ),
 						'recommended' => array(
 							'Arvo',
@@ -145,7 +145,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'google_nav_font'     => array(
 						'type'    => 'typography',
-						'label'   => __( 'Navigation', 'bucket_txtd' ),
+						'label'   => __( 'Navigation', 'bucket' ),
 						'desc'       => __( 'Font for the navigation menu.', 'rosa_txtd' ),
 						'recommended' => array(
 							'PT Sans',
@@ -157,7 +157,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'navigation_font_size'	=> array(
 						'type' => 'range',
-								'label' => __( 'Font Size', 'bucket_txtd' ),
+								'label' => __( 'Font Size', 'bucket' ),
 								'live' => true,
 								'default' => 13,
 								'input_attrs' => array(
@@ -182,7 +182,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'google_body_font'     => array(
 						'type'    => 'typography',
-						'label'   => __( 'Body', 'bucket_txtd' ),
+						'label'   => __( 'Body', 'bucket' ),
 						'desc'       => __( 'Font for content and widget text.', 'rosa_txtd' ),
 						'recommended' => array(
 							'PT Sans',
@@ -199,7 +199,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'body_font_size'	=> array(
 						'type' => 'range',
-								'label' => __( 'Font Size', 'bucket_txtd' ),
+								'label' => __( 'Font Size', 'bucket' ),
 								'live' => true,
 								'default' => 13,
 								'input_attrs' => array(
@@ -221,7 +221,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'body_line_height'	=> array(
 						'type' => 'range',
-								'label' => __( 'Line Height', 'bucket_txtd' ),
+								'label' => __( 'Line Height', 'bucket' ),
 								'live' => true,
 								'default'       => '1.6',
 								'input_attrs' => array(
@@ -248,16 +248,78 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'layout_boxed' => array(
 						'type' => 'checkbox',
-						'label' => __('Boxed Layout', 'bucket_txtd'),
-						'desc' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', 'bucket_txtd'),
+						'label' => __('Boxed Layout', 'bucket'),
+						'desc' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', 'bucket'),
 						'default' => '0'
 					)
 
 				)
 			),
+			'share_settings' => array(
+				'title'    => __( 'Sharing', 'lens' ),
+				'options' => array(
+					'share_buttons_settings'        => array(
+						'type'    => 'textarea',
+						'label'   => esc_html__( 'Share Services', 'border' ),
+						'default' => 'more,preferred,preferred,preferred,preferred',
+						'desc'    => __( '<p>Add the share services, delimited by a single comma (no spaces). You can find the full list of services <a href="http://www.addthis.com/services/list">here</a>.</p>
+								Notes:
+								<ul>
+								<li>— use the <span style="text-decoration:underline;"><strong>more</strong></span> tag to show the plus sign</li>
+								<li>— use the <span style="text-decoration:underline;"><strong>counter</strong></span> for a global share counter</li>
+								<li>— use the <span style="text-decoration:underline;"><strong>preferred</strong></span> tag&nbsp;to show your visitors a personalized lists of buttons (read <a href="http://www.addthis.com/academy/preferred-services-personalization/">more</a>)</li>
+								</ul>')
+					),
+					'share_buttons_enable_tracking' => array(
+						'type'    => 'checkbox',
+						'label'   => esc_html__( 'Enable AddThis Sharing Analytics', 'border' ),
+						'default' => 0,
+					),
+
+					'share_buttons_enable_addthis_tracking'   => array(
+						'type'    => 'checkbox',
+						'label'   => esc_html__( 'Enable AddThis Tracking', 'border' ),
+						'default' => 0,
+						//'required' => array( 'share_buttons_enable_tracking', '=', 1 ),
+					),
+
+					'share_buttons_addthis_username'          => array(
+						'type'    => 'text',
+						'label'   => esc_html__( 'AddThis Username', 'border' ),
+//						'default' => 'more,preferred,preferred,preferred,preferred',
+						'desc'    => esc_html__( 'Enter here your AddThis username so you will receive analytics data.', 'border' ),
+						//'required' => array( 'share_buttons_enable_addthis_tracking', '=', 1 ),
+					),
+
+					'share_buttons_enable_ga_tracking'        => array(
+						'type'    => 'checkbox',
+						'label'   => esc_html__( 'AddThis Google Analytics Tracking', 'border' ),
+						'desc'    => __( 'Read more on <a href="http://bit.ly/1kxPg7K">Integrating with Google Analytics</a> article.'),
+						'default' => 0,
+						//'required' => array( 'share_buttons_enable_tracking', '=', 1 ),
+					),
+
+					'share_buttons_ga_id'        => array(
+						'type'    => 'text',
+						'label'   => esc_html__( 'GA Property ID', 'rosa' ),
+						'desc' => esc_html__( 'Enter here your GA property ID (generally a serial number of the form UA-xxxxxx-x).', 'rosa' ),
+						'default' => '',
+						//'required' => array( 'share_buttons_enable_ga_tracking', '=', 1 ),
+					),
+
+					'share_buttons_enable_ga_social_tracking'        => array(
+						'type'    => 'checkbox',
+						'label'   => esc_html__( 'GA Social Tracking', 'rosa' ),
+						'desc' =>  __( 'If you are using the latest version of GA code, you can take advantage of Google\'s new <a href="http://bit.ly/1iVvkbk">social interaction analytics</a>.', 'rosa' ),
+						'default' => 0,
+						//'required' => array( 'share_buttons_enable_ga_tracking', '=', 1 ),
+					),
+				)
+			),
 		);
 
-		$config['panels'] = array(
+
+		$config['panels']['theme_options'] = array(
 
 		);
 

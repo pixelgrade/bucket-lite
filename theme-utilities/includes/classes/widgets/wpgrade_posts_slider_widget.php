@@ -6,7 +6,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_posts_slider_widget', wpgrade::themename().' '.__('Latest Posts Slider',wpgrade::textdomain()), array('description' => __('Display the latest blog posts in your sidebar or footer', wpgrade::textdomain())) );
+		parent::__construct( 'wpgrade_posts_slider_widget', wpgrade::themename().' '.__('Latest Posts Slider','bucket'), array('description' => __('Display the latest blog posts in your sidebar or footer', 'bucket')) );
 	}
 
 	function widget($args, $instance) {
@@ -51,7 +51,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 									$categories = get_the_category();
 									if ($categories) {
 										$category = $categories[0];
-										echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>';
+										echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>';
 									}
 									?>
 								</div>
@@ -59,8 +59,8 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 									<li class="xpost_date"><i class="icon-time"></i> <?php the_time('j M') ?></li>
 									<?php if ( comments_open() ): ?>
 									<li class="xpost_comments"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
-									<?php endif; ?>
-									<?php if ( wpgrade::option('blog_single_show_share_links') && function_exists('get_pixlikes')) : ?>
+									<?php endif;
+									if ( function_exists('get_pixlikes')) : ?>
 									<li class="xpost_likes"><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
 									<?php endif; ?>
 								</ul>
@@ -84,18 +84,18 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('Latest Posts',wpgrade::textdomain());
+		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('Latest Posts','bucket');
 		// default to 4 posts
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 4; ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">
-				<?php __('Title:', wpgrade::textdomain()); ?>
+				<?php __('Title:', 'bucket'); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>">
-				<?php __('Number of posts:', wpgrade::textdomain()); ?>
+				<?php __('Number of posts:', 'bucket'); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('number'); ?>" class="widefat" type="number" name="<?php echo $this->get_field_name('number'); ?>" value="<?php echo $number; ?>" />
 		</p>

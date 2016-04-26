@@ -7,7 +7,7 @@ YARPP Template: Related Articles
 
     <div class="related-projects_items-list-container">
         <div class="comments-area-title">
-            <h4 class="hN"><?php _e('<em>Related</em> Articles', wpgrade::textdomain()); ?></h4>
+            <h4 class="hN"><?php _e('<em>Related</em> Articles', 'bucket'); ?></h4>
         </div>
         <?php if (have_posts()):?>
             <ul class="related-projects_items-list grid"><!--
@@ -34,7 +34,7 @@ YARPP Template: Related Articles
                                         }
                                     ?>
                                 </span>
-                                <span class="small-link"><?php _e('Read More', wpgrade::textdomain()); ?><em>+</em></span>
+                                <span class="small-link"><?php _e('Read More', 'bucket'); ?><em>+</em></span>
                             </div> 
                         </a>
                     </article>
@@ -44,6 +44,6 @@ YARPP Template: Related Articles
             --></ul>
 
         <?php else: ?>
-        <p><?php _e("No related articles yet.", wpgrade::textdomain()); ?></p>
+        <p><?php _e("No related articles yet.", 'bucket'); ?></p>
         <?php endif; ?>
     </div>

@@ -6,7 +6,7 @@ class wpgrade_social_links_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_social_links', wpgrade::themename().' '.__('Social Links', wpgrade::textdomain() ), array('description' => __( "Display the social links defined in the theme's options", wpgrade::textdomain() )) );
+		parent::__construct( 'wpgrade_social_links', wpgrade::themename().' '.__('Social Links', 'bucket' ), array('description' => __( "Display the social links defined in the theme's options", 'bucket' )) );
 	}
 
 	function widget($args, $instance) {
@@ -43,10 +43,10 @@ class wpgrade_social_links_widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('We Are Social',wpgrade::textdomain()); ?>
+		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('We Are Social','bucket'); ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'bucket'); ?>:</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 	<?php }

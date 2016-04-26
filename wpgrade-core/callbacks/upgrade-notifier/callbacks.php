@@ -75,10 +75,10 @@ function wpgrade_callback_update_notifier_update_notice() {
 				$backup_uri = wpgrade::state()->get( 'backup_uri', null );
 
 				if ( ! empty( $backup_uri ) ) {
-					$message .= '<br/><br/><i>' . __( 'If you want, you can download the automatic theme backup.', wpgrade::textdomain() ) . ' <a href="' . $backup_uri . '" title="' . esc_attr( __( 'Download Backup', wpgrade::textdomain() ) ) . '">' . esc_attr( __( 'Download Backup', wpgrade::textdomain() ) ) . '</a></i>';
+					$message .= '<br/><br/><i>' . __( 'If you want, you can download the automatic theme backup.', 'bucket' ) . ' <a href="' . $backup_uri . '" title="' . esc_attr( __( 'Download Backup', 'bucket' ) ) . '">' . esc_attr( __( 'Download Backup', 'bucket' ) ) . '</a></i>';
 				}
 			} else { // error while updating theme
-				$message = '<b>' . __( 'Upgrade Process Failed', wpgrade::textdomain() ) . '</b><br>' . __( 'The process has encountered the following errors:', wpgrade::textdoamin() );
+				$message = '<b>' . __( 'Upgrade Process Failed', 'bucket' ) . '</b><br>' . __( 'The process has encountered the following errors:', wpgrade::textdoamin() );
 
 				$upgrader = wpgrade::state()->get( 'theme_upgrader', null );
 
@@ -88,7 +88,7 @@ function wpgrade_callback_update_notifier_update_notice() {
 						$message .= "<li>$error</li>";
 					}
 				} else { // failed to retrieve upgrade handler
-					$message .= '<li>' . __( 'Upgrade handler failed to initialize self-diagnostics. (please contact support)', wpgrade::textdomain() ) . '</li>';
+					$message .= '<li>' . __( 'Upgrade handler failed to initialize self-diagnostics. (please contact support)', 'bucket' ) . '</li>';
 				}
 				$message .= '</ul>';
 
@@ -107,7 +107,7 @@ function wpgrade_callback_update_notifier_update_notice() {
 			$message      = 'Error: The theme was not updated, because the cURL extension is not enabled on your server. In order to update the theme automatically, the Envato Toolkit Library requires cURL to be enabled on your server. You can contact your hosting provider to enable this extension for you.';
 			$message_type = "error";
 		} elseif ( wpgrade::state()->has( 'backup_failed' ) && wpgrade::state()->get( 'backup_failed' ) === true ) {
-			$message = '<b>' . __( 'Upgrade Backup Process Failed', wpgrade::textdomain() ) . '</b><br>' . __( 'The backup process has encountered the following errors:', wpgrade::textdomain() );
+			$message = '<b>' . __( 'Upgrade Backup Process Failed', 'bucket' ) . '</b><br>' . __( 'The backup process has encountered the following errors:', 'bucket' );
 
 			$upgrader = wpgrade::state()->get( 'theme_upgrader', null );
 
@@ -117,13 +117,13 @@ function wpgrade_callback_update_notifier_update_notice() {
 					$message .= "<li>$error</li>";
 				}
 			} else { // failed to retrieve upgrade handler
-				$message .= '<li>' . __( 'Upgrade handler failed to initialize self-diagnostics. (please contact support)', wpgrade::textdomain() ) . '</li>';
+				$message .= '<li>' . __( 'Upgrade handler failed to initialize self-diagnostics. (please contact support)', 'bucket' ) . '</li>';
 			}
 			$message .= '</ul>';
 
 			// @todo in translation refactor :theme_options_url to use absolute url instead of relative
 			// @todo update based on basecamp discussion
-			$message .= '<i>' . strtr( __( 'You may bypass the backup system by turning off automatic backups in your <a href=":theme_options_url">utilities section of theme options</a>.', wpgrade::textdomain() ), array( ':theme_options_url' => admin_url( 'admin.php?page=bucket_options&amp;tab=6' ) ) ) . '<br>' . __( 'Should you choose to disable automatic backups you are <b>strongly encouraged to perform a manual backup</b>.', wpgrade::textdomain() ) . '<br>' . __( 'Skipping the backup process entirely will result, upon a failed upgrade attempt, in the loss of any modifications you have made to the theme.', wpgrade::textdomain() ) . '</i>' . '<br><br><b>' . __( 'Tip', wpgrade::textdomain() ) . '</b>: ' . __( 'Modifying a theme via a child theme is the best way to easily deal with theme upgrade issues.', wpgrade::textdomain() );
+			$message .= '<i>' . strtr( __( 'You may bypass the backup system by turning off automatic backups in your <a href=":theme_options_url">utilities section of theme options</a>.', 'bucket' ), array( ':theme_options_url' => admin_url( 'admin.php?page=bucket_options&amp;tab=6' ) ) ) . '<br>' . __( 'Should you choose to disable automatic backups you are <b>strongly encouraged to perform a manual backup</b>.', 'bucket' ) . '<br>' . __( 'Skipping the backup process entirely will result, upon a failed upgrade attempt, in the loss of any modifications you have made to the theme.', 'bucket' ) . '</i>' . '<br><br><b>' . __( 'Tip', 'bucket' ) . '</b>: ' . __( 'Modifying a theme via a child theme is the best way to easily deal with theme upgrade issues.', 'bucket' );
 
 			$message_type = "error";
 		}

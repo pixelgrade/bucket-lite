@@ -240,7 +240,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
                     else:
 
                         $item_output .= '<div class="no-slides-message">';
-                        $item_output .= __('No posts added to the category slider in this category' , wpgrade::textdomain());
+                        $item_output .= __('No posts added to the category slider in this category' , 'bucket');
                         $item_output .= '</div>';
 
                     endif;
@@ -284,7 +284,7 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 											<div class="article__description">'.
 											short_text(get_the_excerpt(), 75, 80, false). 
 											'</div>
-											<span class="small-link">'.__('Read More', wpgrade::textdomain()).'<em>+</em></span>
+											<span class="small-link">'.__('Read More', 'bucket').'<em>+</em></span>
 										</div>
 									</a>'.
 								'</article>'.

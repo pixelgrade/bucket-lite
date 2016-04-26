@@ -42,13 +42,13 @@ switch ( $posts_source ) :
 			)
 		);
 		break;
-	
+
 	case 'latest' :
 		/** Return the latest posts only */
 		$query_args['order'] = 'DESC';
 		$query_args['orderby'] = 'date';
 		break;
-	
+
 	case 'latest_by_cat' :
 		/** Return posts from selected categories */
 		$categories = get_sub_field('posts_source_category');
@@ -56,10 +56,10 @@ switch ( $posts_source ) :
 		foreach ($categories as $key => $value) {
 			$catarr[] = (int) $value;
 		}
-		
+
 		$query_args['category__in'] = $catarr;
 		break;
-		
+
 	case 'latest_by_format' :
 		/** Return posts with the selected post format */
 		$formats = get_sub_field('posts_source_post_formats');
@@ -193,7 +193,7 @@ if ($slides->have_posts()): ?>
             <ul class="block-list  block-list--alt">
                 <?php
                 if ($slides->have_posts()):
-                    while($slides->have_posts()): $slides->the_post(); 
+                    while($slides->have_posts()): $slides->the_post();
 					//first let's remember the post id
 					$showed_posts_ids[] = wpgrade::lang_post_id(get_the_ID());
 					?>
@@ -216,7 +216,7 @@ if ($slides->have_posts()): ?>
                                     if ($categories) {
                                         $category = $categories[0];
                                         echo '<div class="article__category">
-                                                <a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", wpgrade::textdomain()), $category->name)) .'">'. $category->cat_name.'</a>
+                                                <a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>
                                               </div>';
                                     } ?>
 	                                <div class="article__title  article--thumb__title">
@@ -227,14 +227,14 @@ if ($slides->have_posts()): ?>
 										<?php if ( comments_open() ): ?>
 	                                    <li class="xpost_comments"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
 										<?php endif; ?>
-										<?php if ( wpgrade::option('blog_single_show_share_links') && function_exists('get_pixlikes')) : ?>
+										<?php if ( function_exists('get_pixlikes')) : ?>
 	                                    <li class="xpost_likes"><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
 										<?php endif; ?>
 	                                </ul>
 	                            </div>
 	                        </article>
 	                    </li>
-                <?php endwhile; 
+                <?php endwhile;
 			endif;
 			wp_reset_postdata(); ?>
             </ul>

@@ -28,16 +28,16 @@
 			<div class="redux-opts-section-desc">
 
 				<p class="redux-opts-item-data description item-uri">
-					'.__('<strong>Theme URL:</strong> ', wpgrade::textdomain()).'
+					'.__('<strong>Theme URL:</strong> ', 'bucket').'
 					<a href="' . $item_uri . '" target="_blank">'.$item_uri.'</a>
 				</p>
 
 				<p class="redux-opts-item-data description item-author">
-					'.__('<strong>Author:</strong> ', wpgrade::textdomain()).$author_title.'
+					'.__('<strong>Author:</strong> ', 'bucket').$author_title.'
 				</p>
 
 				<p class="redux-opts-item-data description item-version">
-					'. __('<strong>Version:</strong> ', wpgrade::textdomain()).$version.'
+					'. __('<strong>Version:</strong> ', 'bucket').$version.'
 				</p>
 
 				<p class="redux-opts-item-data description item-description">
@@ -45,7 +45,7 @@
 				</p>
 
 				<p class="redux-opts-item-data description item-tags">
-					'.__('<strong>Tags:</strong> ', wpgrade::textdomain()).$tags.'
+					'.__('<strong>Tags:</strong> ', 'bucket').$tags.'
 				</p>
 
 			</div>
@@ -55,7 +55,7 @@
 	    $tabs['item_info'] = array(
 			'icon' => 'info-sign',
 			'icon_class' => '',
-	        'title' => __('Theme Information', wpgrade::textdomain()),
+	        'title' => __('Theme Information', 'bucket'),
 	        'content' => $item_info
 	    );
 	}

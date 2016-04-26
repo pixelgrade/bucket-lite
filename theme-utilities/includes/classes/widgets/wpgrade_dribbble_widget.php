@@ -4,7 +4,7 @@ class wpgrade_dribbble_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_dribbble_widget', wpgrade::themename().' '.__('Dribbble Widget',wpgrade::textdomain()), array('description' => __('Display Dribbble images in your sidebar or footer', wpgrade::textdomain())) );
+		parent::__construct( 'wpgrade_dribbble_widget', wpgrade::themename().' '.__('Dribbble Widget','bucket'), array('description' => __('Display Dribbble images in your sidebar or footer', 'bucket')) );
 	}
 
 	function widget($args, $instance) {
@@ -53,21 +53,21 @@ class wpgrade_dribbble_widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		$title = isset( $instance['title'] ) ? $instance['title'] : __('Dribbble shots',wpgrade::textdomain());
+		$title = isset( $instance['title'] ) ? $instance['title'] : __('Dribbble shots','bucket');
 		$username = isset ($instance['username']) ? esc_attr($instance['username']) : '';
 		//default to 8 images
 		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 4;
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'bucket'); ?>:</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('username'); ?>"><?php _e('Dribbble username', wpgrade::textdomain()); ?>:</label>
+			<label for="<?php echo $this->get_field_id('username'); ?>"><?php _e('Dribbble username', 'bucket'); ?>:</label>
 			<input id="<?php echo $this->get_field_id('username'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('username'); ?>" value="<?php echo $username; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of images',wpgrade::textdomain()); ?>:</label><br />
+			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of images','bucket'); ?>:</label><br />
 			<input type="number" min="1" max="20" value="<?php echo esc_attr( $count ); ?>" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" />
 		</p>
 	<?php

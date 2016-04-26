@@ -2247,6 +2247,41 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 		return num;
 	};
 
+
+
+
+
+	/* --- Load AddThis Async --- */
+	function loadAddThisScript() {
+		if (window.addthis) {
+			// Listen for the ready event
+			addthis.addEventListener('addthis.ready', addthisReady);
+			addthis.init();
+		}
+	}
+
+	/* --- AddThis On Ready - The API is fully loaded --- */
+//only fire this the first time we load the AddThis API - even when using ajax
+	function addthisReady( obj ) {
+		addThisInit(obj);
+	}
+
+	/* --- AddThis Init --- */
+	function addThisInit(obj) {
+		if (window.addthis) {
+			addthis.toolbox('.addthis_toolbox');
+
+			addthis.sharecounters.getShareCounts('twitter', function(obj) {
+				console.log(obj)
+			});
+		}
+	}
+
+
+
+
+
+
 	// Mega-Menu Hover with delay
 	function megaMenusHover() {
 	  $('.nav--main > li').hoverIntent({
@@ -2273,9 +2308,6 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	}
 
 
-
-
-
 	/* ====== INITIALIZE ====== */
 
 	function init() {
@@ -2291,6 +2323,8 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 
 		/* Overthrow Polyfill */
 		overthrow.set();
+
+		loadAddThisScript();
 
 		FastClick.attach(document.body);
 

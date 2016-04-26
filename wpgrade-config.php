@@ -8,7 +8,7 @@
 	'name'       => 'Bucket',
 	'shortname'  => 'bucket',
 	'prefix'     => '_bucket_',
-	'textdomain' => 'bucket_txtd',
+	'textdomain' => 'bucket',
 
 	'language-path' => 'languages',
 
@@ -105,9 +105,9 @@
 
 	'megamenu_layouts' => array
 	(
-		'default' => __('Default','bucket_txtd'),
-		'latest_posts' => __('Latest Posts','bucket_txtd'),
-		'slider_latest_posts' => __('Slider + Latest Posts','bucket_txtd'),
+		'default' => __('Default','bucket'),
+		'latest_posts' => __('Latest Posts','bucket'),
+		'slider_latest_posts' => __('Slider + Latest Posts','bucket'),
 	),
 
 	// importer
@@ -180,9 +180,9 @@
 					'sharrre_urlCurl' => get_template_directory_uri().'/theme-content/js/sharrre.php',
 					'objectl10n' => array
 					(
-						'tPrev' => __('Previous (Left arrow key)', 'bucket_txtd'),
-						'tNext' => __('Next (Right arrow key)', 'bucket_txtd'),
-						'tCounter' => __('of', 'bucket_txtd')
+						'tPrev' => __('Previous (Left arrow key)', 'bucket'),
+						'tNext' => __('Next (Right arrow key)', 'bucket'),
+						'tCounter' => __('of', 'bucket')
 					),
 				),
 		),
@@ -230,8 +230,8 @@
 		'prev_next' => true,
 
 		// pagination text
-		'prev_text' => __('Prev', 'bucket_txtd'),
-		'next_text' => __('Next', 'bucket_txtd'),
+		'prev_text' => __('Prev', 'bucket'),
+		'next_text' => __('Next', 'bucket'),
 
 		// are the terms used for paging relative to the sort order?
 		// ie. older/newer instead of sorting agnostic previous/next
@@ -271,8 +271,8 @@
 //				'gallery' => array
 //					(
 //						'formatter' => null,
-//						'prev_text' => __('Prev Images', 'bucket_txtd'),
-//						'next_text' => __('Next Images', 'bucket_txtd'),
+//						'prev_text' => __('Prev Images', 'bucket'),
+//						'next_text' => __('Next Images', 'bucket'),
 //					)
 	),
 
