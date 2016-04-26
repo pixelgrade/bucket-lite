@@ -114,7 +114,7 @@ $icon-size: 32px;
 
     &:hover, &:focus, &:active { 
         .square{
-            background-color: $accent !important;
+            background-color: $accent;
             color: white !important;
         }
     }
