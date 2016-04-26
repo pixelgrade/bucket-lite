@@ -1566,7 +1566,7 @@ a._i7:a.slider}),a.ev.on("rsAfterSizePropSet",function(){var b,c=a.st.visibleNea
 	 * http://css-tricks.com/snippets/jquery/smooth-scrolling/
 	 */
 	$(function() {
-		$('a[href*=#]:not([href=#])').click(function(event) {
+		$('a[href*="#"]:not([href="#"])').click(function(event) {
 			//exclude some links from smooth scrolling like tabs
 			if ($(this).parents('.tabs__nav').length) {
 				//do nothing
