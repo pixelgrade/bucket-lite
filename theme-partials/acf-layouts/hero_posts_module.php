@@ -166,6 +166,7 @@ if ($slides->have_posts()): ?>
 					if (has_post_thumbnail()):
 						$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-big');
 						$image_ratio = bucket::get_image_aspect_ratio( $image );
+
 						?>
 						<a href="<?php the_permalink(); ?>" class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
 							<?php bucket::the_img_tag($image[0], get_the_title()) ?>
