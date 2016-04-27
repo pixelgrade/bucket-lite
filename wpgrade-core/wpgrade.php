@@ -954,48 +954,6 @@ class wpgrade {
 	}
 
 
-	// Upgrade Notifier
-	// ------------------------------------------------------------------------
-
-	/**
-	 * @return string xml file url
-	 */
-	static function updade_notifier_xml() {
-		$config   = self::config();
-		$notifier = $config['update-notifier'];
-
-		$baseurl = rtrim( $notifier['xml-source'], '/' ) . '/';
-
-		if ( isset( $notifier['xml-file'] ) ) {
-			$xmlfile = $notifier['xml-file'];
-		} else { // no custom xml filename specified
-			$xmlfile = self::shortname() . '.xml';
-		}
-
-		return $baseurl . $xmlfile;
-	}
-
-	/**
-	 * @return int seconds
-	 */
-	static function update_notifier_cacheinterval() {
-		$config   = self::config();
-		$notifier = $config['update-notifier'];
-
-		return $notifier['cache-interval'];
-	}
-
-	/**
-	 * @return string
-	 */
-	static function update_notifier_pagename() {
-		$config   = self::config();
-		$notifier = $config['update-notifier'];
-
-		return $notifier['update-page-name'];
-	}
-
-
 	//// Media Handlers & Helpers //////////////////////////////////////////////////
 
 	#

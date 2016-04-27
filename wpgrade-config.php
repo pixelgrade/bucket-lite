@@ -12,14 +12,6 @@
 
 	'language-path' => 'languages',
 
-	'update-notifier' => array
-	(
-		'xml-source' => REQUEST_PROTOCOL . '//pixelgrade.com/updates/',
-//		'xml-file' => 'bucket.xml',
-		'cache-interval' => 10800, # 3 hours
-		'update-page-name' => 'theme-update-notifier',
-	),
-
 	// additional file includes (classes, functions, etc), files are loaded
 	// via wpgrade::require_all and entries should be directories; if the
 	// path does not exist it is automatically ignored
