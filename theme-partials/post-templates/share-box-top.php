@@ -9,9 +9,10 @@ $excerpt = htmlentities(strip_tags($excerpt, $allowed_tags));
 
 <div id="share-box-top" class="share-box-top">
 	<?php
-	get_template_part('theme-partials/wpgrade-partials/addthis-social-buttons');
-
 	if ( function_exists( 'display_pixlikes' ) ) {
 		display_pixlikes();
-	} ?>
+	}
+
+	get_template_part('theme-partials/wpgrade-partials/addthis-social-buttons');
+	?>
 </div>

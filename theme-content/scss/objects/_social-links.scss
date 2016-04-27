@@ -44,6 +44,10 @@ $icon-size: 32px;
     }
 }
 
+.share-box-top {
+    margin-bottom: rem($_u);
+}
+
 .share-item {
     text-align:center;
     margin-left:$_u2;
