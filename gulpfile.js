@@ -28,7 +28,7 @@ var options = {
     silent: true,
     continueOnError: true // default: false
 };
-
+var themeTextDomain = 'bucket';
 /**
  *   #STYLES
  */
@@ -109,7 +109,7 @@ gulp.task('txtdomain-replace', ['copy-folder'], function(){
 /**
  * Copy theme folder outside in a build folder, recreate styles before that
  */
-gulp.task('copy-folder', ['styles-prod'], function () {
+gulp.task('copy-folder', ['styles'], function () {
 
     return gulp.src('./')
         .pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; rsync -av --exclude="node_modules" ./* ./../build/bucket/', options));
@@ -184,7 +184,7 @@ gulp.task('help', function () {
         '=== Style === \n' +
         'styles             Combuckets styles \n' +
         'styles-prod        Combuckets styles in production mode \n' +
-				'styles-compressed  Combuckets styles in compressed mode \n' +
+		'styles-compressed  Combuckets styles in compressed mode \n' +
         'styles-dev         Combuckets styles in development mode \n' +
         '=== Watchers === \n' +
         'watch              Watches all js and scss files \n' +
