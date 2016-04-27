@@ -144,8 +144,8 @@ $english-quotes:    true!default;
  * If you want English quotes then please do not edit these; they’re only here
  * because Sass needs them.
  */
-$open-quote:    null;
-$close-quote:   null;
+$open-quote:    “;
+$close-quote:   ”;
 
 /**
  * If you need non-English quotes, please alter the following values accordingly:

@@ -66,14 +66,14 @@ gulp.task('styles', function () {
 });
 
 gulp.task('styles-admin', function () {
-    return gulp.src('./assets/scss/admin/*.scss')
+    return gulp.src('./theme-content/scss/admin/*.scss')
             .pipe(sass({'sourcemap': true, style: 'expanded'}))
             .on('error', function (e) {
                 console.log(e.message);
             })
             .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
             .pipe(chmod(644))
-            .pipe(gulp.dest('./assets/css/admin/'));
+            .pipe(gulp.dest('./theme-content/css/admin/'));
 });
 
 
@@ -81,11 +81,11 @@ gulp.task('styles-admin', function () {
 
 
 gulp.task('watch', function () {
-    gulp.watch('assets/scss/**/*.scss', ['styles']);
+    gulp.watch('theme-content/scss/**/*.scss', ['styles']);
 });
 
 gulp.task('watch-admin', function () {
-    gulp.watch('assets/scss/admin/*.scss', ['styles-admin']);
+    gulp.watch('theme-content/scss/admin/*.scss', ['styles-admin']);
 });
 
 gulp.task('server', ['styles'], function () {
