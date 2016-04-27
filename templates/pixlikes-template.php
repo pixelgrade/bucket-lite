@@ -17,7 +17,7 @@
 	</div>
 </div>
 */ ?>
-<li id="pixlikes" class="share-item pixlikes-box likes-box <?php echo $display_only . ' ' . $class ?>"  <?php echo $data_id ?> >
+<div id="pixlikes" class="share-item pixlikes-box likes-box <?php echo $display_only . ' ' . $class ?>"  <?php echo $data_id ?> >
 	<div class="share-item__icon like-link"><i class="pixcode pixcode--icon icon-e-heart  circle  small"></i></div>
 	<div class="share-item__value likes-count  likes-text"><?php echo $likes_number ?></div>
-</li>
+</div>

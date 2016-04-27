@@ -7,7 +7,7 @@ $allowed_tags = '<a><strong><i>';
 $excerpt = htmlentities(strip_tags($excerpt, $allowed_tags));
 ?>
 
-<div id="share-box-top">
+<div id="share-box-top" class="share-box-top">
 	<?php
 	get_template_part('theme-partials/wpgrade-partials/addthis-social-buttons');
 

@@ -5,17 +5,45 @@
 $icon-size: 32px;
 
 
-#share-box, #share-box-top {
-    ul {
-        text-align:center;
+.share-box, .share-box-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .at-icon-wrapper {
+        border-radius: 50%;
     }
-    
-    @include media-query(palm) { 
-        .share-total, .share-total-top {
-            display: block;
-        }   
+
+    .pixlikes-box {
+        position: relative;
+        padding-right: rem(32px);
+        margin-right: rem(32px);
+
+        &:after {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            height: 100%;
+            width: 0;
+            border-right: 1px solid #000000;
+        }
+    }
+
+    a.addthis_counter.addthis_bubble_style {
+        background: none;
+
+        a.addthis_button_expanded {
+            font-size: rem(32px);
+            font-family: "Arvo", serif !important;
+            line-height: 1.135;
+            font-weight: normal;
+        }
     }
 }
+
 .share-item {
     text-align:center;
     margin-left:$_u2;
@@ -43,79 +71,10 @@ $icon-size: 32px;
             }
         }
     }
-    .share-item__value {
-        @include font-size(12px);
-    }
-
-@include media-query(palm) {
-    .share-total, .share-item:first-child {
-        margin-left: 0;
-    }
-}
-
-@include media-query(lap-and-up) {
-    .share-total, .share-total-top {
-        border-left:1px solid $dark;
-        padding-left:$_u;
-        margin-left:$_u;
-    }
-}
-    .share-total__value, .share-total__value-top {
-        @include font-size(32px);
-        font-family:$heading-font-family;
-        position:relative;
-        top:2px;
-    }
-    .share-total__title {
-        @include font-size(12px);
-        color:$light;
-        text-transform:uppercase;
-    }
 
 
 .share-item {
-
 	&.pixlikes-share i.pixcode--icon.circle {
 		background-color:#232323;
 	}
-	&.twitter-share i.pixcode--icon.circle {
-		background-color:#00aced;
-	}
-	&.facebook-share i.pixcode--icon.circle {
-		background-color:#0b59aa;
-	}
-	&.gplus-share i.pixcode--icon.circle {
-		background-color:#d84d2f;
-	}
-	&.pinterest-share i.pixcode--icon.circle {
-		background-color:#ce1c1e;
-	}
-}
-
-#pinterest i {
-    background-color:#ce1c1e;
-}
-
-#linkedin i {
-    background-color:#0375b3;
-}
-
-#buffer i {
-    background-color:#232323;
-}
-
-.social-icon-link{
-    display: block;
-    background-color: $dark;
-    color: $light;
-    text-align: center;
-
-    transition: all 0.15s;
-
-    &:hover, &:focus, &:active { 
-        .square{
-            background-color: $accent;
-            color: white !important;
-        }
-    }
 }
