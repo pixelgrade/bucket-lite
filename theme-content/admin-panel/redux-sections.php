@@ -644,41 +644,6 @@ $sections[] = array(
 	'desc' => '<p class="description">'.__('Utilities help you keep up-to-date with new versions of the theme. Also you can import the demo data from here.', 'bucket').'</p>',
 	'fields' => array(
 		array(
-			'id'=>'theme-auto-update-info',
-			'desc'=> __('<h3>Theme Auto Update</h3>
-				<p class="description">'.__('Let us notify you when new versions of this theme are live on ThemeForest! Update with just one button click. Forget about manual updates!', 'bucket').'</p>', 'bucket'),
-			'type' => 'info'
-		),
-		array(
-			'id' => 'themeforest_upgrade',
-			'type' => 'switch',
-			'title' => __('Use Auto Update', 'bucket'),
-			'subtitle' => __('Activate this to enter the info needed for the theme auto update to work.', 'bucket'),
-			'default' => '1',
-		),
-		array(
-			'id' => 'marketplace_username',
-			'type' => 'text',
-			'title' => __('ThemeForest Username', 'bucket'),
-			'subtitle' => __('Enter here your ThemeForest (or Envato) username account (i.e. pixelgrade).', 'bucket'),
-			'required' => array('themeforest_upgrade', '=', 1)
-		),
-		array(
-			'id' => 'marketplace_api_key',
-			'type' => 'text',
-			'title' => __('ThemeForest Secret API Key', 'bucket'),
-			'subtitle' => __('Enter here the secret api key you\'ve created on ThemeForest. You can create a new one in the Settings > API Keys section of your profile.', 'bucket'),
-			'required' => array('themeforest_upgrade', '=', 1)
-		),
-		array(
-			'id' => 'themeforest_upgrade_backup',
-			'type' => 'switch',
-			'title' => __('Backup Theme Before Upgrade?', 'bucket'),
-			'subtitle' => __('Check this if you want us to automatically save your theme as a ZIP archive before an upgrade. The directory those backups get saved to is <code>wp-content/envato-backups</code>. However, if you\'re experiencing problems while attempting to upgrade, it\'s likely to be a permissions issue and you may want to manually backup your theme before upgrading. Alternatively, if you don\'t want to backup your theme you can uncheck this.', 'bucket'),
-			'default' => '0',
-			'required' => array('themeforest_upgrade', '=', 1)
-		),
-		array(
 			'id'=>'import-demo-data-info',
 			'desc'=> __('<h3>Import Demo Data</h3>
 				<p class="description">'.__('Here you can import the demo data and get on your way of setting up the site like the theme demo.', 'bucket').'</p>', 'bucket'),
