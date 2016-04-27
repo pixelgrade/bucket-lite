@@ -15,6 +15,8 @@ if (get_the_title()): ?>
 		<time class="article__time" <?php echo $is_review ? 'itemprop="dtreviewed"' : ''; ?> datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s at %s', 'bucket'),get_the_date(),get_the_time()); ?></time>
 	<?php endif; ?>
 </div>
-<?php if ( ! empty( wpgrade::option('share_buttons_settings') ) && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'top' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
+<?php
+$share_buttons_settings = wpgrade::option('share_buttons_settings');
+if ( ! empty( $share_buttons_settings ) && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'top' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
 	get_template_part('theme-partials/post-templates/share-box-top');
 } ?>

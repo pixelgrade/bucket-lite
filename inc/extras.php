@@ -18,7 +18,8 @@ function bucket_option( $option, $default = null ) {
 if ( ! function_exists( 'bucket_callback_addthis' ) ) {
 	function bucket_callback_addthis() {
 		//lets determine if we need the addthis script at all
-		if ( is_single() && ! empty( bucket_option( 'share_buttons_settings' ) ) ):
+		$share_buttons_settings = bucket_option( 'share_buttons_settings' );
+		if ( is_single() && ! empty( $share_buttons_settings ) ):
 			wp_enqueue_script( 'addthis-api' );
 
 			//here we will configure the AddThis sharing globally
