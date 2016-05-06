@@ -13,12 +13,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.checkbox = redux.field_objects.checkbox || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.checkbox.init();
-        }
-    );
-
     redux.field_objects.checkbox.init = function( selector ) {
         if ( !selector ) {
             selector = $( document ).find( '.redux-container-checkbox' );

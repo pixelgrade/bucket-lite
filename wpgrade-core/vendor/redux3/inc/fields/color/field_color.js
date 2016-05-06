@@ -10,12 +10,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.color = redux.field_objects.color || {};
 
-    $( document ).ready(
-        function() {
-
-        }
-    );
-
     redux.field_objects.color.init = function( selector ) {
         
         if ( !selector ) {

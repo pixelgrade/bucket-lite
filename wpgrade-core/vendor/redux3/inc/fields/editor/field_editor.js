@@ -13,12 +13,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.editor = redux.field_objects.editor || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.editor.init();
-        }
-    );
-
     redux.field_objects.editor.init = function( selector ) {
         setTimeout(
             function() {

@@ -3,7 +3,6 @@ var theme = 'bucket',
     prefix 		= require('gulp-autoprefixer'),
     sass 		= require('gulp-ruby-sass'),
     jshint = require('gulp-jshint'),
-    clean = require('gulp-clean'),
     zip = require('gulp-zip'),
     cache = require('gulp-cache'),
     lr = require('tiny-lr'),
@@ -150,8 +149,7 @@ gulp.task('build', ['txtdomain-replace'], function () {
         files_to_remove[k] = '../build/bucket/' + e;
     });
 
-    return gulp.src(files_to_remove, {read: false})
-        .pipe(clean({force: true}));
+    return del.sync(files_to_remove, {force: true});
 });
 
 /**
@@ -159,8 +157,29 @@ gulp.task('build', ['txtdomain-replace'], function () {
  */
 gulp.task('zip', ['build'], function(){
 
+    var versionString = '';
+    //get theme version from styles.css
+    var contents = fs.readFileSync("./style.css", "utf8");
+
+    // split it by lines
+    var lines = contents.split(/[\r\n]/);
+
+    function checkIfVersionLine(value, index, ar) {
+        var myRegEx = /^[Vv]ersion:/;
+        if ( myRegEx.test(value) ) {
+            return true;
+        }
+        return false;
+    }
+
+    // apply the filter
+    var versionLine = lines.filter(checkIfVersionLine);
+
+    versionString = versionLine[0].replace(/^[Vv]ersion:/, '' ).trim();
+    versionString = '-' + versionString.replace(/\./g,'-');
+
     return gulp.src('./')
-        .pipe(exec('cd ./../; rm -rf bucket.zip; cd ./build/; zip -r -X ./../bucket.zip ./bucket; cd ./../; rm -rf build'));
+        .pipe(exec('cd ./../; rm -rf' + theme[0].toUpperCase() + theme.slice(1) + '*.zip; cd ./build/; zip -r -X ./../' + theme[0].toUpperCase() + theme.slice(1) + '-Installer' + versionString +'.zip ./; cd ./../; rm -rf build'));
 
 });
 

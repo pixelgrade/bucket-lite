@@ -6,12 +6,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.spacing = redux.field_objects.spacing || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.spacing.init();
-        }
-    );
-
     redux.field_objects.spacing.init = function( selector ) {
 
         if ( !selector ) {

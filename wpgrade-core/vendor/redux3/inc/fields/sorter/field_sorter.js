@@ -14,12 +14,6 @@
 
     var scroll = '';
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.sorter.init();
-        }
-    );
-
     redux.field_objects.sorter.init = function( selector ) {
 
         if ( !selector ) {

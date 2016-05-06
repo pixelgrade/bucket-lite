@@ -13,12 +13,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.background = redux.field_objects.background || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.background.init();
-        }
-    );
-
     redux.field_objects.background.init = function( selector ) {
         if ( !selector ) {
             selector = $( document ).find( '.redux-container-background' );

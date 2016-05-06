@@ -7,12 +7,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.dimensions = redux.field_objects.dimensions || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.dimensions.init();
-        }
-    );
-
     redux.field_objects.dimensions.init = function( selector ) {
 
         if ( !selector ) {

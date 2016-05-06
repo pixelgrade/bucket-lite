@@ -13,12 +13,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.media = redux.field_objects.media || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.media.init();
-        }
-    );
-
     redux.field_objects.media.init = function( selector ) {
         if ( !selector ) {
             selector = $( document ).find( '.redux-container-media' );

@@ -8,12 +8,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.gallery = redux.field_objects.gallery || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.gallery.init();
-        }
-    );
-
     redux.field_objects.gallery.init = function( selector ) {
 
 

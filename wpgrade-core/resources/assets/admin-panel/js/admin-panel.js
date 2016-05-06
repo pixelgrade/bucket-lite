@@ -410,10 +410,6 @@
 
 	})(jQuery);
 
-	$(document).ready(function () {
-		// $('.redux-page .settings-error').parent().hide();
-	});
-
 	//End helpers and beautiful things-----------------------------------------
 })(jQuery);
 

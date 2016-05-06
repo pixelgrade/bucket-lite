@@ -6,12 +6,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.select_image = redux.field_objects.select_image || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.select_image.init();
-        }
-    );
-
     redux.field_objects.select_image.init = function( selector ) {
 
         if ( !selector ) {

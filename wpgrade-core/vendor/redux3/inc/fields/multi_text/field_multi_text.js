@@ -6,12 +6,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.multi_text = redux.field_objects.multi_text || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.multi_text.init();
-        }
-    );
-
     redux.field_objects.multi_text.init = function( selector ) {
 
         if ( !selector ) {

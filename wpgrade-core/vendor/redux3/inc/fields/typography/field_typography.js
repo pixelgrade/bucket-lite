@@ -25,12 +25,6 @@
         allowClear: true
     };
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.typography.init();
-        }
-    );
-
     redux.field_objects.typography.init = function( selector ) {
 
         if ( !selector ) {
