@@ -28,7 +28,7 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 
 	var is_webkit = ua.match(/webkit/i);
 	var is_firefox = ua.match(/gecko/i);
-	var is_newer_ie = ua.match(/msie (9|([1-9][0-9]))/i);
+	var is_newer_ie = typeof (is_ie) !== "undefined" || (!(window.ActiveXObject) && "ActiveXObject" in window);
 	var is_older_ie = ua.match(/msie/i) && !is_newer_ie;
 	var is_ancient_ie = ua.match(/msie 6/i);
 	var is_mobile = ua.match(/mobile/i);
@@ -58,6 +58,8 @@ move,false);elem.removeEventListener("touchend",end,false)};elem.addEventListene
 			transform = prefixes.ie;
 		}
 	}
+
+	if ( is_newer_ie ) jQuery('html').addClass('is--ie');
 
 (function($, window, undefined) {
 

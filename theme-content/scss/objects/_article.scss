@@ -371,38 +371,16 @@
 .flexbox .posts-grid-cards, .flexboxlegacy .posts-grid-cards {
 
     @include media-query(lap-and-up) {
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
-        -webkit-box-direction: normal;
-        -moz-box-direction: normal;
-        -webkit-box-orient: horizontal;
-        -moz-box-orient: horizontal;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
         flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -moz-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
         justify-content: space-between;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
         align-content: stretch;
-        -webkit-box-align: stretch;
-        -moz-box-align: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
         align-items: stretch;
 
         .grid__item {
             display: flex;
-            flex: 1 33.333%;
+            flex: 1 0 33.333%;
 
             position: relative;
         }
@@ -427,8 +405,14 @@
     }
 }
 
-
-
+@include media-query(lap-and-up) {
+    .is--ie.flexbox .posts-grid-cards,
+    .is--ie.flexboxlegacy .posts-grid-cards {
+        .grid__item {
+            flex: 1 0 30%;
+        }
+    }
+}
 /**
  * Billboard Slider Module
  */
@@ -528,7 +512,7 @@
             position:absolute;
             top:0;
             left:0;
-            background-image: linear-gradient(left, rgba(0,0,0,0) 80%, rgba(0,0,0,.8));
+            background-image: linear-gradient(to left, rgba(0,0,0,0) 80%, rgba(0,0,0,.8));
         }
     }
 
