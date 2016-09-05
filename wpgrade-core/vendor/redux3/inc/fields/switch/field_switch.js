@@ -13,12 +13,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.switch = redux.field_objects.switch || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.switch.init();
-        }
-    );
-
     redux.field_objects.switch.init = function( selector ) {
 
         if ( !selector ) {

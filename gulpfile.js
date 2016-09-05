@@ -16,8 +16,8 @@ var theme       = 'bucket',
 
 
 var options = {
-	silent: true,
-	continueOnError: true // default: false
+    silent: true,
+    continueOnError: true // default: false
 };
 var themeTextDomain = 'bucket';
 /**
@@ -25,66 +25,73 @@ var themeTextDomain = 'bucket';
  */
 
 gulp.task('styles-dev', function () {
-	return gulp.src(['theme-content/scss/**/*.scss'])
-			.pipe(sass({'sourcemap=auto': true, style: 'compact'}))
-			.on('error', function (e) {
-				console.log(e.message);
-			})
-			.pipe(prefix("last 3 versions", "> 1%", "ie 8", "ie 7"))
-			.pipe(gulp.dest('./theme-content/css/'))
-	// .pipe(postcss([
-	//     require('rtlcss')({ /* options */ })
-	// ]))
-	// .pipe(rename("rtl.css"))
-	// .pipe(gulp.dest('./'))
+    return gulp.src(['theme-content/scss/**/*.scss'])
+            .pipe(sass({'sourcemap=auto': true, style: 'compact'}))
+            .on('error', function (e) {
+                console.log(e.message);
+            })
+            .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+            .pipe(gulp.dest('./theme-content/css/'))
+            .pipe(notify({message: 'Styles task complete'}));
+    // .pipe(postcss([
+    //     require('rtlcss')({ /* options */ })
+    // ]))
+    // .pipe(rename("rtl.css"))
+    // .pipe(gulp.dest('./'))
 });
 
 gulp.task('styles', function () {
-	return gulp.src(['theme-content/scss/**/*.scss'])
-			.pipe(sass({'sourcemap=auto': true, style: 'expanded'}))
-			.pipe(prefix("last 3 versions", "> 1%", "ie 8", "ie 7"))
-			// .pipe(cmq())
-			.pipe(chmod(644))
-			.pipe(gulp.dest('./theme-content/css/'))
-	// .pipe(postcss([
-	//     require('rtlcss')({ /* options */ })
-	// ]))
-	// .pipe(rename("rtl.css"))
-	// .pipe(gulp.dest('./'));
+    return gulp.src(['theme-content/scss/**/*.scss'])
+            .pipe(sass({'sourcemap=auto': true, style: 'expanded'}))
+            .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+            // .pipe(cmq())
+            .pipe(chmod(644))
+            .pipe(gulp.dest('./theme-content/css/'))
+    // .pipe(postcss([
+    //     require('rtlcss')({ /* options */ })
+    // ]))
+    // .pipe(rename("rtl.css"))
+    // .pipe(gulp.dest('./'));
 });
 
 gulp.task('styles-admin', function () {
-	return gulp.src('./theme-content/scss/admin/*.scss')
-			.pipe(sass({'sourcemap': true, style: 'expanded'}))
-			.on('error', function (e) {
-				console.log(e.message);
-			})
-			.pipe(prefix("last 3 versions", "> 1%", "ie 8", "ie 7"))
-			.pipe(chmod(644))
-			.pipe(gulp.dest('./theme-content/css/admin/'));
+    return gulp.src('./theme-content/scss/admin/*.scss')
+            .pipe(sass({'sourcemap': true, style: 'expanded'}))
+            .on('error', function (e) {
+                console.log(e.message);
+            })
+            .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+            .pipe(chmod(644))
+            .pipe(gulp.dest('./theme-content/css/admin/'));
 });
+
+
+
 
 
 gulp.task('watch', function () {
-	gulp.watch('theme-content/scss/**/*.scss', ['styles']);
+    gulp.watch('theme-content/scss/**/*.scss', ['styles']);
 });
 
 gulp.task('watch-admin', function () {
-	gulp.watch('theme-content/scss/admin/*.scss', ['styles-admin']);
+    gulp.watch('theme-content/scss/admin/*.scss', ['styles-admin']);
 });
 
 gulp.task('server', ['styles'], function () {
-	console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
+    console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
 });
+
+
+
 
 
 /**
  * Replace the bad dynamic text domain with a static one
  */
-gulp.task('txtdomain-replace', ['copy-folder'], function () {
+gulp.task('txtdomain-replace', ['copy-folder'], function(){
 	gulp.src('../build/bucket/**/*.php')
-			.pipe(replace(/wpgrade\:\:textdomain\(\)/g, themeTextDomain))
-			.pipe(gulp.dest('../build/bucket'));
+		.pipe(replace(/wpgrade\:\:textdomain\(\)/g, themeTextDomain))
+		.pipe(gulp.dest('../build/bucket'));
 });
 
 
@@ -93,8 +100,8 @@ gulp.task('txtdomain-replace', ['copy-folder'], function () {
  */
 gulp.task('copy-folder', ['styles'], function () {
 
-	return gulp.src('./')
-			.pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; rsync -av --exclude="node_modules" ./* ./../build/bucket/', options));
+    return gulp.src('./')
+        .pipe(exec('rm -Rf ./../build; mkdir -p ./../build/bucket; rsync -av --exclude="node_modules" ./* ./../build/bucket/', options));
 });
 
 /**
@@ -102,52 +109,73 @@ gulp.task('copy-folder', ['styles'], function () {
  */
 gulp.task('build', ['txtdomain-replace'], function () {
 
-	// files that should not be present in build
-	files_to_remove = [
-		'**/codekit-config.json',
-		'node_modules',
-		'config.rb',
-		'gulpfile.js',
-		'package.json',
-		'pxg.json',
-		'build',
-		'css',
-		'.idea',
-		'**/.svn*',
-		'**/*.css.map',
-		'**/.sass*',
-		'.sass*',
-		'.travis.yml',
-		'**/.git*',
-		'*.sublime-project',
-		'.DS_Store',
-		'**/.DS_Store',
-		'__MACOSX',
-		'**/__MACOSX',
-		'README.md'
-	];
+    // files that should not be present in build
+    files_to_remove = [
+        '**/codekit-config.json',
+        'node_modules',
+        'config.rb',
+        'gulpfile.js',
+        'package.json',
+        'pxg.json',
+        'build',
+        'css',
+        '.idea',
+        '**/.svn*',
+        '**/*.css.map',
+        '**/.sass*',
+        '.sass*',
+        '.travis.yml',
+        '**/.git*',
+        '*.sublime-project',
+        '.DS_Store',
+        '**/.DS_Store',
+        '__MACOSX',
+        '**/__MACOSX',
+        'README.md',
+        '.csscomb'
+    ];
 
-	files_to_remove.forEach(function (e, k) {
-		files_to_remove[k] = '../build/bucket/' + e;
-	});
+    files_to_remove.forEach(function (e, k) {
+        files_to_remove[k] = '../build/bucket/' + e;
+    });
 
-	return gulp.src(files_to_remove, {read: false})
-			.pipe(clean({force: true}));
+    return del.sync(files_to_remove, {force: true});
 });
 
 /**
  * Create a zip archive out of the cleaned folder and delete the folder
  */
-gulp.task('zip', ['build'], function () {
+gulp.task('zip', ['build'], function(){
 
-	return gulp.src('./')
-			.pipe(exec('cd ./../; rm -rf bucket.zip; cd ./build/; zip -r -X ./../bucket.zip ./bucket; cd ./../; rm -rf build'));
+    var versionString = '';
+    //get theme version from styles.css
+    var contents = fs.readFileSync("./style.css", "utf8");
+
+    // split it by lines
+    var lines = contents.split(/[\r\n]/);
+
+    function checkIfVersionLine(value, index, ar) {
+        var myRegEx = /^[Vv]ersion:/;
+        if ( myRegEx.test(value) ) {
+            return true;
+        }
+        return false;
+    }
+
+    // apply the filter
+    var versionLine = lines.filter(checkIfVersionLine);
+
+    versionString = versionLine[0].replace(/^[Vv]ersion:/, '' ).trim();
+    versionString = '-' + versionString.replace(/\./g,'-');
+
+    return gulp.src('./')
+        .pipe(exec('cd ./../; rm -rf' + theme[0].toUpperCase() + theme.slice(1) + '*.zip; cd ./build/; zip -r -X ./../' + theme[0].toUpperCase() + theme.slice(1) + '-Installer' + versionString +'.zip ./; cd ./../; rm -rf build'));
 
 });
 
 // usually there is a default task  for lazy people who just wanna type gulp
 gulp.task('default', ['start'], function () {
-	// silence
+    // silence
 });
 
 /**
@@ -156,21 +184,21 @@ gulp.task('default', ['start'], function () {
 
 gulp.task('help', function () {
 
-	var $help = '\nCommands available : \n \n' +
-			'=== General Commands === \n' +
-			'start              (default)Combuckets all styles and scripts and makes the theme ready to start \n' +
-			'zip               	Generate the zip archive \n' +
-			'build				Generate the build directory with the cleaned theme \n' +
-			'help               Print all commands \n' +
-			'=== Style === \n' +
-			'styles             Combuckets styles \n' +
-			'styles-prod        Combuckets styles in production mode \n' +
-			'styles-compressed  Combuckets styles in compressed mode \n' +
-			'styles-dev         Combuckets styles in development mode \n' +
-			'=== Watchers === \n' +
-			'watch              Watches all js and scss files \n' +
-			'styles-watch       Watch only styles\n' +
+    var $help = '\nCommands available : \n \n' +
+        '=== General Commands === \n' +
+        'start              (default)Combuckets all styles and scripts and makes the theme ready to start \n' +
+        'zip               	Generate the zip archive \n' +
+        'build				Generate the build directory with the cleaned theme \n' +
+        'help               Print all commands \n' +
+        '=== Style === \n' +
+        'styles             Combuckets styles \n' +
+        'styles-prod        Combuckets styles in production mode \n' +
+		'styles-compressed  Combuckets styles in compressed mode \n' +
+        'styles-dev         Combuckets styles in development mode \n' +
+        '=== Watchers === \n' +
+        'watch              Watches all js and scss files \n' +
+        'styles-watch       Watch only styles\n' +
 
-			console.log($help);
+    console.log($help);
 
 });

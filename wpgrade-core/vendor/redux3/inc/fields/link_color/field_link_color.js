@@ -10,12 +10,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.link_color = redux.field_objects.link_color || {};
 
-    $( document ).ready(
-        function() {
-
-        }
-    );
-
     redux.field_objects.link_color.init = function( selector ) {
 
         if ( !selector ) {

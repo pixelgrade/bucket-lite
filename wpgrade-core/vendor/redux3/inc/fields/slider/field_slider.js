@@ -6,12 +6,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.slider = redux.field_objects.slider || {};
 
-    $( document ).ready(
-        function() {
-            
-        }
-    );
-
     redux.field_objects.slider.init = function( selector ) {
 
         if ( !selector ) {

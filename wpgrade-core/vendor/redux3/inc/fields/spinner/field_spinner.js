@@ -6,12 +6,6 @@
     redux.field_objects = redux.field_objects || {};
     redux.field_objects.spinner = redux.field_objects.spinner || {};
 
-    $( document ).ready(
-        function() {
-            //redux.field_objects.spinner.init();
-        }
-    );
-
     redux.field_objects.spinner.init = function( selector ) {
 
         if ( !selector ) {
