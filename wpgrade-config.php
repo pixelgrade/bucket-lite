@@ -115,26 +115,30 @@
 		(
 			'head-scripts' => array
 			(
-				// empty
+				'modernizr'      => array(
+					'path'    => get_template_directory_uri() . '/theme-content/js/vendor/modernizr.min.js',
+					'require' => array(
+						'jquery'
+					),
+				),
 			),
 
 			'footer-scripts' => array
 			(
-//				'google-maps-api' => array
-//				(
-//					'path' => 'http://maps.google.com/maps/api/js?sensor=false&amp;language=en',
-//					'require' => array
-//					(
-//						'jquery'
-//					),
-//				),
+				'bucket-vendor-scripts-1' => array(
+					'path'    => REQUEST_PROTOCOL . '//pxgcdn.com/js/rs/9.5.7/index.js',
+					'require' => array(
+						'jquery'
+					),
+				),
 				'wpgrade-main-scripts' => array
 				(
 					'path' => get_template_directory_uri() . '/theme-content/js/main.js',
-					'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/js/main.js')),
+					'cache_bust' => '1.6.5',
 					'require' => array
 					(
 						'jquery',
+						'bucket-vendor-scripts-1',
 					),
 				),
 			),
@@ -148,7 +152,7 @@
 				'wpgrade-main-style' => array
 				(
 					'path' => get_template_directory_uri().'/theme-content/css/style.css',
-					'cache_bust' => wpgrade::cachebust_string(wpgrade::themefilepath('theme-content/css/style.css')),
+					'cache_bust' => '1.6.5',
 				),
 
 			)
