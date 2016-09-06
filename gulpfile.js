@@ -8,6 +8,7 @@ var theme       = 'bucket',
 	replace     = require('gulp-replace'),
 	minify      = require('gulp-minify-css'),
 	concat      = require('gulp-concat'),
+    notify 		= require('gulp-notify'),
 	chmod       = require('gulp-chmod'),
 	rtlcss      = require('rtlcss'),
 	postcss     = require('gulp-postcss'),
@@ -15,11 +16,31 @@ var theme       = 'bucket',
 	rename      = require('gulp-rename');
 
 
+var
+    themeTextDomain = '\'bucket\'',
+    jsPath = './theme-content/js/',
+    jsMainPath = jsPath + 'main/',
+    jsFiles = [
+        'shared_vars',
+        'wrapper_start',
+        'magnific-popup',
+        'riloadr',
+        'royalslider',
+        'main',
+        'unsorted',
+        'wrapper_end',
+        'functions'
+    ];
+
+// Prepare js paths
+jsFiles.forEach(function (e, k) {
+    jsFiles[k] = jsMainPath + e + ".js";
+});
+
 var options = {
     silent: true,
     continueOnError: true // default: false
 };
-var themeTextDomain = 'bucket';
 /**
  *   #STYLES
  */
@@ -66,7 +87,36 @@ gulp.task('styles-admin', function () {
 });
 
 
+/**
+ *   #SCRIPTS
+ */
 
+gulp.task('scripts', function () {
+    gulp.src('./theme-content/js/plugins/*.js')
+        .pipe(concat('plugins.js'))
+        .pipe(gulp.dest('./theme-content/js/'));
+
+    return gulp.src(jsFiles)
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('./theme-content/js/'))
+        .pipe(notify({message: 'Scripts task complete'}));
+});
+
+gulp.task('scripts-watch', function () {
+    return gulp.watch('assets/js/**/*.js', ['scripts']);
+});
+
+gulp.task('scripts-server', function () {
+
+    gulp.src('./theme-content/js/plugins/*.js')
+        .pipe(concat('plugins.js'))
+        .pipe(gulp.dest('./theme-content/js/'));
+
+    return gulp.src(jsFiles)
+        .pipe(concat('main.js'))
+        .pipe(chmod(644))
+        .pipe(gulp.dest('./theme-content/js/'));
+});
 
 
 gulp.task('watch', function () {
@@ -132,7 +182,11 @@ gulp.task('build', ['txtdomain-replace'], function () {
         '__MACOSX',
         '**/__MACOSX',
         'README.md',
-        '.csscomb'
+        '.csscomb',
+
+        'theme-content/scss',
+        'theme-content/js/main',
+        'theme-content/js/plugins'
     ];
 
     files_to_remove.forEach(function (e, k) {
