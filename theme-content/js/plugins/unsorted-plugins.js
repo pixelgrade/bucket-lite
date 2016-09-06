@@ -25,19 +25,19 @@
 // Place any jQuery/helper plugins in here.
 
 /* --- $outerHTML Plugin --- */
+( function($) {
+	$.fn.outerHTML = function () {
 
-$.fn.outerHTML = function(){
-
-	// IE, Chrome & Safari will comply with the non-standard outerHTML, all others (FF) will have a fall-back for cloning
-	return (!this.length) ? this : (this[0].outerHTML || (
-		function(el){
+		// IE, Chrome & Safari will comply with the non-standard outerHTML, all others (FF) will have a fall-back for cloning
+		return (!this.length) ? this : (this[0].outerHTML || (function (el) {
 			var div = document.createElement('div');
 			div.appendChild(el.cloneNode(true));
 			var contents = div.innerHTML;
 			div = null;
 			return contents;
 		})(this[0]));
-};
+	};
+})(jQuery);
 
 /* --- $DEBOUNCES RESIZE --- */
 
@@ -63,7 +63,7 @@ $.fn.outerHTML = function(){
  * Performs a smooth page scroll to an anchor on the same page.
  * http://css-tricks.com/snippets/jquery/smooth-scrolling/
  */
-$(function() {
+( function($) {
 	$('a[href*="#"]:not([href="#"])').click(function(event) {
 		//exclude some links from smooth scrolling like tabs
 		if ($(this).parents('.tabs__nav').length) {
@@ -79,4 +79,4 @@ $(function() {
 			}
 		}
 	});
-});
+})(jQuery);

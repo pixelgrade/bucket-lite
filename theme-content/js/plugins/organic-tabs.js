@@ -1,5 +1,6 @@
 // --- MODIFIED
 // https://github.com/CSS-Tricks/jQuery-Organic-Tabs
+(function ($) {
 $.organicTabs = function (el, options) {
     var base = this;
     base.$el = $(el);
@@ -72,3 +73,5 @@ $.fn.organicTabs = function (options) {
         (new $.organicTabs(this, options));
     });
 };
+
+})(jQuery);

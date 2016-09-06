@@ -118,7 +118,7 @@
 				'modernizr'      => array(
 					'path'    => get_template_directory_uri() . '/theme-content/js/vendor/modernizr.min.js',
 					'require' => array(
-						'jquery'
+						'jquery',
 					),
 				),
 			),
@@ -128,7 +128,14 @@
 				'bucket-vendor-scripts-1' => array(
 					'path'    => REQUEST_PROTOCOL . '//pxgcdn.com/js/rs/9.5.7/index.js',
 					'require' => array(
-						'jquery'
+						'jquery',
+					),
+				),
+				'bucket-plugins-scripts' => array(
+					'path' => get_template_directory_uri() . '/theme-content/js/plugins.js',
+					'cache_bust' => '1.6.5',
+					'require' => array(
+						'jquery',
 					),
 				),
 				'wpgrade-main-scripts' => array
@@ -138,6 +145,7 @@
 					'require' => array
 					(
 						'jquery',
+						'bucket-plugins-scripts',
 						'bucket-vendor-scripts-1',
 					),
 				),
