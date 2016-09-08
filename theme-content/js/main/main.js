@@ -15,19 +15,6 @@ function setQueryParameter(uri, key, value) {
 
 /* --- $VIDEOS --- */
 
-function resizeVideos() {
-
-    var videos = $('iframe[src*="youtube.com"], iframe[src*="youtube-nocookie.com"], iframe[src*="vimeo.com"], video');
-
-    videos.each(function() {
-        var video = $(this),
-            ratio = video.data('aspectRatio'),
-            w = video.css('width', '100%').width(),
-            h = w/ratio;
-        video.height(h);
-    });
-}
-
 function initVideos() {
 
     var videos = $('iframe[src*="youtube.com"], iframe[src*="vimeo.com"], video');

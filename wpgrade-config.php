@@ -131,13 +131,6 @@
 						'jquery',
 					),
 				),
-				'bucket-plugins-scripts' => array(
-					'path' => get_template_directory_uri() . '/theme-content/js/plugins.js',
-					'cache_bust' => '1.6.5',
-					'require' => array(
-						'jquery',
-					),
-				),
 				'wpgrade-main-scripts' => array
 				(
 					'path' => get_template_directory_uri() . '/theme-content/js/main.js',
@@ -145,7 +138,6 @@
 					'require' => array
 					(
 						'jquery',
-						'bucket-plugins-scripts',
 						'bucket-vendor-scripts-1',
 					),
 				),

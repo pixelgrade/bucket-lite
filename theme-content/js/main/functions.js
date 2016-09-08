@@ -64,3 +64,16 @@ function setQueryParameter(uri, key, value) {
 		return uri + separator + key + "=" + value;
 	}
 }
+
+function resizeVideos() {
+
+	var videos = jQuery('iframe[src*="youtube.com"], iframe[src*="youtube-nocookie.com"], iframe[src*="vimeo.com"], video');
+
+	videos.each(function() {
+		var video = jQuery(this),
+				ratio = video.data('aspectRatio'),
+				w = video.css('width', '100%').width(),
+				h = w/ratio;
+		video.height(h);
+	});
+}

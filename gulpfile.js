@@ -13,7 +13,8 @@ var theme       = 'bucket',
 	rtlcss      = require('rtlcss'),
 	postcss     = require('gulp-postcss'),
 	del         = require('del'),
-	rename      = require('gulp-rename');
+	rename      = require('gulp-rename'),
+    fs          = require('fs');
 
 
 var
@@ -36,6 +37,8 @@ var
 jsFiles.forEach(function (e, k) {
     jsFiles[k] = jsMainPath + e + ".js";
 });
+
+jsFiles.push('./theme-content/js/plugins/*.js');
 
 var options = {
     silent: true,
@@ -93,8 +96,6 @@ gulp.task('styles-admin', function () {
 
 gulp.task('scripts', function () {
     gulp.src('./theme-content/js/plugins/*.js')
-        .pipe(concat('plugins.js'))
-        .pipe(gulp.dest('./theme-content/js/'));
 
     return gulp.src(jsFiles)
         .pipe(concat('main.js'))
@@ -107,10 +108,6 @@ gulp.task('scripts-watch', function () {
 });
 
 gulp.task('scripts-server', function () {
-
-    gulp.src('./theme-content/js/plugins/*.js')
-        .pipe(concat('plugins.js'))
-        .pipe(gulp.dest('./theme-content/js/'));
 
     return gulp.src(jsFiles)
         .pipe(concat('main.js'))
@@ -127,7 +124,7 @@ gulp.task('watch-admin', function () {
     gulp.watch('theme-content/scss/admin/*.scss', ['styles-admin']);
 });
 
-gulp.task('server', ['styles'], function () {
+gulp.task('server', ['styles', 'scripts'], function () {
     console.log('The styles and scripts have been compiled for production! Go and clear the caches!');
 });
 

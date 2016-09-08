@@ -65,7 +65,7 @@ function sliderInit($slider){
 			pauseOnHover: true,
 			delay: rs_delay
 		},
-		numImagesToPreload: 2,
+		numImagesToPreload: 10,
 		globalCaption:rs_globalCaption
 	};
 
