@@ -112,6 +112,10 @@ function sliderInit($slider){
 		}
 	});
 
+	royalSlider.ev.on('rsAfterSlideChange', function() {
+		Riload.refresh();
+	});
+
 	$slider.addClass('slider--loaded');
 }
 

@@ -366,7 +366,7 @@ function get_category_color($cat_id) {
 	if (!empty($cat_data['cat_custom_accent']) && ($cat_data['cat_custom_accent'] != wpgrade::option('main_color'))) {
 		return $cat_data['cat_custom_accent'];
 	} else {
-		return false;
+		return wpgrade::option('main_color');
 	}
 }
 

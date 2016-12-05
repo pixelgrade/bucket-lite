@@ -198,7 +198,7 @@ function init() {
     eventHandlers();
 
     /* INSTANTIATE RILOADR (lazy loading and responsive images) */
-    riloadrInit();
+    Riload.init();
 
     if($('body').hasClass('custom-background')){
         if($('body').css('background-repeat') == 'no-repeat') {

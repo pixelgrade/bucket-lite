@@ -21,6 +21,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 						'default'   => '#fb4834',
 						'css'  => array(
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'color',
 								'selector' => 'a, blockquote, .small-link, .tabs__nav a.current,
 									.popular-posts__time a.current, .tabs__nav a:hover,
@@ -46,6 +47,7 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 									.woocommerce-page .star-rating span:before',
 							),
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'background-color',
 								'selector' => '.heading--main .hN, .widget--sidebar__title,
 									.pagination .pagination-item--current span,.pagination .current, .single .pagination span,
@@ -63,18 +65,21 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 									.site__stats .stat__value:after, .site__stats .stat__title:after'
 							),
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'border-bottom-color',
 								'selector' => '.nav--main li:hover, .nav--main li.current-menu-item',
 								'media' => 'only screen and (min-width: 900px)'
 							),
 
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'border-color',
 								'selector' => '.back-to-top a:hover:after, .back-to-top a:hover:before',
 								'media' => ' only screen and (min-width: 900px)'
 							),
 
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'background-color',
 								'selector' => '.article--billboard > a:hover .article__title:before,
 									.article--billboard > a:hover .article--list__title:before,
@@ -85,11 +90,13 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 							),
 
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'border-bottom-color',
 								'selector' => '.woocommerce ul.products li.product a:hover img'
 							),
 
 							array(
+								'callback_filter' => 'bucket_category_color_first',
 								'property'     => 'border-left-color',
 								'selector' => 'ol'
 							),
@@ -377,3 +384,30 @@ function bucket_hex2rgb($hex) {
 }
 
 add_action('admin_init', 'convert_bucket_for_wp_43_once');
+
+
+function bucket_category_color_first( $value, $selector, $property, $unit ) {
+
+	global $post;
+	global $wp_query;
+
+	if ( is_category() ) {
+		$category_id = $wp_query->get_queried_object_id();
+		if ( ! empty( $category_id ) && ! is_wp_error($category_id) )  {
+			$value = get_category_color( $category_id );
+		}
+
+	} elseif( is_single() ) {
+		$categories = get_the_category(  $post->ID );
+		if ( ! empty( $categories[0] ) ) {
+			$category_id = $categories[0]->cat_ID;
+			$value = get_category_color( $category_id );
+		}
+	}
+
+	$output = $selector .'{
+		' . $property . ": " . $value . ";\n" .
+	"}\n";
+
+	return $output;
+}
