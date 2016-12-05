@@ -17,7 +17,6 @@
 		"gulp-csscomb": "*",
 		"gulp-rename": "*",
 		"gulp-combine-media-queries": "*",
-		"gulp-chmod": "*",
 		"del": "*",
 		"gulp-postcss": "*",
 		"rtlcss": "*",
