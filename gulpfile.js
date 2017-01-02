@@ -68,7 +68,7 @@ gulp.task('styles', function () {
             .pipe(sass({'sourcemap=auto': true, style: 'expanded'}))
             .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
             // .pipe(cmq())
-            .pipe(gulp.dest('./theme-content/css/', {"mode": "0644"}))
+            .pipe(gulp.dest('./theme-content/css/', {"mode": "0644"}));
     // .pipe(postcss([
     //     require('rtlcss')({ /* options */ })
     // ]))
@@ -92,12 +92,11 @@ gulp.task('styles-admin', function () {
  */
 
 gulp.task('scripts', function () {
-    gulp.src('./theme-content/js/plugins/*.js')
+    gulp.src('./theme-content/js/plugins/*.js');
 
     return gulp.src(jsFiles)
         .pipe(concat('main.js'))
-        .pipe(gulp.dest('./theme-content/js/'))
-        .pipe(notify({message: 'Scripts task complete'}));
+        .pipe(gulp.dest('./theme-content/js/'));
 });
 
 gulp.task('scripts-watch', function () {

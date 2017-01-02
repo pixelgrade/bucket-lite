@@ -1,11 +1,7 @@
 theme-content/.sass-cache
-theme-content/css/style.css
-theme-content/css/login.css
 theme-content/inc/metaboxes/.sass-cache
-theme-content/css/style.css.map
-theme-content/css/localization/rtl.css
-theme-content/css/localization/rtl.css.map
-theme-content/css/*
+theme-content/css/*.map
+theme-content/css/**/*.map
 theme-utilities/includes/vendor/twitter-api/cache.tweetcache
 
 .DS_Store
