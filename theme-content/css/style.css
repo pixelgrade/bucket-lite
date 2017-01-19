@@ -7273,8 +7273,7 @@ a:hover > .pixcode--icon {
 .article--list {
   margin-bottom: 0; }
   .article--list img {
-    -webkit-filter: grayscale(1);
-            filter: grayscale(1); }
+    filter: grayscale(1); }
   .article--list .badge {
     background-color: #807d7c; }
 
@@ -7292,8 +7291,7 @@ a:hover > .pixcode--icon {
   margin-bottom: 12px;
   margin-bottom: 0.85714rem; }
   .article--list__link:hover img {
-    -webkit-filter: none;
-            filter: none; }
+    filter: none; }
   .article--list__link:hover .badge {
     background-color: #fb4834; }
 
