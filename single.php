@@ -6,14 +6,12 @@
 
 get_header();
 
-$schema_org = 'itemprop="mainEntity"';
-
 $is_review = bucket::has_average_score();
 if ( $is_review ) {
-	$schema_org .= ' itemscope itemtype="https://schema.org/Review"';
+	$schema_org = 'itemprop="mainEntity review" itemscope itemtype="http://schema.org/Review"';
 } else {
+	$schema_org = 'itemprop="mainEntity"';
 	$post_format = get_post_format();
-
 	switch ( $post_format ) {
 		case 'video' :
 			$schema_org .= ' itemscope itemtype="http://schema.org/VideoGallery"';
@@ -55,14 +53,14 @@ if ( $is_review ) {
     if ( $is_review && get_field('placement') == ('before') ) { ?>
         <div class="score-box score-box--inside">
             <div class="score__average-wrapper">
-                <div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
+                <div class="score__average <?php echo get_field('note') ? 'average--with-desc' : '' ?>" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
                     <?php
-                    echo '<div class="score__note" itemprop="rating" >'.bucket::get_average_score().'</div>';
+                    echo '<div class="score__note" itemprop="ratingValue" >'.bucket::get_average_score().'</div>';
                     if (get_field('note')) {
                         echo '<div class="score__desc">'.get_field('note').'</div>';
                     } ?>
-                    <meta itemprop="worst" content = "1">
-                    <meta itemprop="best" content = "10">
+                    <meta itemprop="worstRating" content = "1">
+                    <meta itemprop="bestRating" content = "10">
                 </div>
             </div>
         </div>
@@ -81,7 +79,7 @@ if ( $is_review ) {
     wp_link_pages( $args ); ?>
 
     <div class="grid"><!--
-                    <?php if ( $is_review && get_field('placement') == ('after') ) :
+        <?php if ( $is_review && get_field('placement') == ('after') ) :
         if(!get_field('enable_pros_cons_lists')) : ?>
                     --><div class="grid__item center-score">
             <?php else: ?>
@@ -89,15 +87,15 @@ if ( $is_review ) {
                 <?php endif; ?>
                 <div class="score-box score-box--after">
                     <div class="score__average-wrapper">
-                        <div class="score__average  <?php echo get_field('note') ? 'average--with-desc' : '' ?>">
+                        <div class="score__average  <?php echo get_field('note') ? 'average--with-desc' : '' ?>" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
                             <?php
-                            echo '<div class="score__note" itemprop="rating">'.bucket::get_average_score().'</div>';
+                            echo '<div class="score__note" itemprop="ratingValue">'.bucket::get_average_score().'</div>';
                             if (get_field('note')) {
                                 echo '<div class="score__desc">'.get_field('note').'</div>';
                             }
                             ?>
-                            <meta itemprop="worst" content = "1">
-                            <meta itemprop="best" content = "10">
+                            <meta itemprop="worstRating" content = "1">
+                            <meta itemprop="bestRating" content = "10">
                         </div>
                     </div>
                 </div>
