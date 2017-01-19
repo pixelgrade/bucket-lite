@@ -3,21 +3,6 @@ get_template_part('theme-partials/header/head');
 
 $class_name = '';
 
-$schema_org = '';
-if (is_single()) {
-	$post_format = get_post_format();
-
-	switch ($post_format) {
-		case 'video' :
-			$schema_org .= 'itemscope itemtype="http://schema.org/VideoGallery"';
-			break;
-		default:
-			$schema_org .= 'itemscope itemtype="http://schema.org/Article"';
-	}
-} else {
-	$schema_org .= 'itemscope itemtype="http://schema.org/WebPage"';
-}
-
 if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
 if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
 if(wpgrade::option('layout_boxed') == 1) $class_name .= " layout--boxed";
@@ -34,7 +19,7 @@ if ( wpgrade::option('nav_main_sticky') == 1 )
 
 ?>
 
-<body <?php body_class($class_name); ?> <?php echo $schema_org ?> >
+<body <?php body_class($class_name); ?> itemscope itemtype="http://schema.org/WebPage">
     <div class="pace">
         <div class="pace-activity"></div>
     </div>

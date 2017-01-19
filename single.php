@@ -5,10 +5,26 @@
  */
 
 get_header();
+
+$schema_org = 'itemprop="mainEntity"';
+
 $is_review = bucket::has_average_score();
+if ( $is_review ) {
+	$schema_org .= ' itemscope itemtype="https://schema.org/Review"';
+} else {
+	$post_format = get_post_format();
+
+	switch ( $post_format ) {
+		case 'video' :
+			$schema_org .= ' itemscope itemtype="http://schema.org/VideoGallery"';
+			break;
+		default:
+			$schema_org .= ' itemscope itemtype="http://schema.org/BlogPosting"';
+	}
+}
 ?>
 
-    <div class="container container--main" <?php echo $is_review ? 'itemscope itemtype="http://data-vocabulary.org/Review"' : ''; ?>>
+    <div class="container container--main" <?php echo $schema_org; ?>>
 
     <div class="grid">
 
