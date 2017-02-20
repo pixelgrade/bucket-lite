@@ -1,4 +1,4 @@
-var theme       = 'bucket',
+var theme       = theme_name = main_branch = 'bucket',
 	gulp        = require('gulp'),
 	prefix      = require('gulp-autoprefixer'),
 	sass        = require('gulp-sass'),
@@ -13,8 +13,7 @@ var theme       = 'bucket',
 	postcss     = require('gulp-postcss'),
 	del         = require('del'),
 	rename      = require('gulp-rename'),
-    fs          = require('fs');
-
+	prompt      = require('gulp-prompt');
 
 var
     themeTextDomain = '\'bucket\'',
@@ -151,6 +150,9 @@ gulp.task('build', ['txtdomain-replace'], function () {
         '**/__MACOSX',
         'README.md',
         '.csscomb',
+        'circle.yml',
+        'circle_scripts',
+        'tests',
 
         'theme-content/scss',
         'theme-content/js/main',
@@ -200,6 +202,49 @@ gulp.task('default', ['start'], function () {
     // silence
 });
 
+
+gulp.task('update-demo', function () {
+
+	var run_exec = require('child_process').exec;
+
+	gulp.src('./')
+		.pipe(prompt.confirm( "This task will stash all your local changes without commiting them,\n Make sure you did all your commits and pushes to the main " + main_branch + " branch! \n Are you sure you want to continue?!? "))
+		.pipe(prompt.prompt({
+			type: 'list',
+			name: 'demo_update',
+			message: 'Which demo would you like to update?',
+			choices: ['cancel', 'test.demos.pixelgrade.com/' + theme_name, 'demos.pixelgrade.com/' + theme_name]
+		}, function(res){
+
+			if ( res.demo_update === 'cancel' ) {
+				console.log( 'No hard feelings!' );
+				return false;
+			}
+
+			console.log('This task may ask for a github user / password or a ssh passphrase');
+
+			if ( res.demo_update === 'test.demos.pixelgrade.com/' + theme_name ) {
+				run_exec('git fetch; git checkout test; git pull origin ' + main_branch + '; git push origin test; git checkout ' + main_branch + ';', function (err, stdout, stderr) {
+					// console.log(stdout);
+					// console.log(stderr);
+				});
+				console.log( " ==== The master branch is up-to-date now. But is the CircleCi job to update the remote test.demo.pixelgrade.com" );
+				return true;
+			}
+
+			if ( res.demo_update === 'demos.pixelgrade.com/' + theme_name ) {
+				run_exec('git fetch; git checkout master; git pull origin test; git push origin master; git checkout ' + main_branch + ';', function (err, stdout, stderr) {
+					console.log(stdout);
+					console.log(stderr);
+				});
+
+				console.log( " ==== The master branch is up-to-date now. But is the CircleCi job to update the remote demo.pixelgrade.com" );
+				return true;
+			}
+		}));
+});
+
+
 /**
  * Short commands help
  */
@@ -217,6 +262,8 @@ gulp.task('help', function () {
         '=== Watchers === \n' +
         'watch              Watches all js and scss files \n' +
         'styles-watch       Watch only styles\n' +
+	    '=== CircleCI Scripts === \n' +
+	    'update-demo       Creates a prompt command which allows you to update the demos \n';
 
     console.log($help);
 
