@@ -50,7 +50,7 @@ function woopgrade_header_add_to_cart_fragment( $fragments ) {
 
 }
 
-add_filter( 'wc_add_to_cart_message', 'wpgrade_add_to_cart_button', 999);
+add_filter( 'wc_add_to_cart_message_html', 'wpgrade_add_to_cart_button', 999);
 function wpgrade_add_to_cart_button( $message )
 {
 	// Here you should modify $message as you want, and then return it.
