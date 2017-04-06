@@ -104,14 +104,15 @@ require get_template_directory() . '/inc/extras.php';
 
 /* Automagical updates */
 function wupdates_check_MXD0M( $transient ) {
-	// Nothing to do here if the checked transient entry is empty
-	if ( empty( $transient->checked ) ) {
+	// First get the theme directory name (the theme slug - unique)
+	$slug = basename( get_template_directory() );
+
+	// Nothing to do here if the checked transient entry is empty or if we have already checked
+	if ( empty( $transient->checked ) || empty( $transient->checked[ $slug ] ) || ! empty( $transient->response[ $slug ] ) ) {
 		return $transient;
 	}
 
 	// Let's start gathering data about the theme
-	// First get the theme directory name (the theme slug - unique)
-	$slug = basename( get_template_directory() );
 	// Then WordPress version
 	include( ABSPATH . WPINC . '/version.php' );
 	$http_args = array (
@@ -179,6 +180,14 @@ function wupdates_check_MXD0M( $transient ) {
 	return $transient;
 }
 add_filter( 'pre_set_site_transient_update_themes', 'wupdates_check_MXD0M' );
+
+function wupdates_add_id_MXD0M( $ids = array() ) {
+	$slug = basename( get_template_directory() );
+	$ids[ $slug ] = array( 'id' => 'MXD0M', 'type' => 'theme', );
+
+	return $ids;
+}
+add_filter( 'wupdates_gather_ids', 'wupdates_add_id_MXD0M', 10, 1 );
 
 /* Only allow theme updates with a valid Envato purchase code */
 function wupdates_add_purchase_code_field_MXD0M( $themes ) {
