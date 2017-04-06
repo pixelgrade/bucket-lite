@@ -147,10 +147,7 @@ class wpgrade {
 		global $pagenow;
 		global $pixcustomify_plugin;
 
-		// if there is set an key in url force that value
-		if ( isset( $_GET[ $option ] ) && ! empty( $option ) ) {
-			return $_GET[ $option ];
-		} elseif ( $pixcustomify_plugin !== null && $pixcustomify_plugin->has_option( $option ) ) {
+		if ( $pixcustomify_plugin !== null && $pixcustomify_plugin->has_option( $option ) ) {
 			// if this is a customify value get it here
 			return $pixcustomify_plugin->get_option( $option, $default );
 		} elseif ( isset( $_POST['customized'] ) && self::customizer_option_exists( $option ) ) {
@@ -196,13 +193,9 @@ class wpgrade {
 	 * @return string|false
 	 */
 	static function image_src( $target ) {
-		if ( isset( $_GET[ $target ] ) && ! empty( $target ) ) {
-			return $_GET[ $target ];
-		} else { // empty target, or no query
-			$image = self::option( $target, array() );
-			if ( isset( $image['url'] ) ) {
-				return $image['url'];
-			}
+		$image = self::option( $target, array() );
+		if ( isset( $image['url'] ) ) {
+			return $image['url'];
 		}
 
 		return false;
@@ -220,14 +213,10 @@ class wpgrade {
 	 * @return mixed
 	 */
 	static function option_image_src( $option, $default = null ) {
-		if ( isset( $_GET[ $option ] ) && ! empty( $option ) ) {
-			return $_GET[ $option ];
-		} else {
-			$image = self::options()->get( $option, $default );
+		$image = self::options()->get( $option, $default );
 
-			if ( isset( $image['url'] ) ) {
-				return $image['url'];
-			}
+		if ( isset( $image['url'] ) ) {
+			return $image['url'];
 		}
 
 		return false;
