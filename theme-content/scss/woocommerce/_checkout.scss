@@ -20,7 +20,8 @@
     background: none;
     box-shadow: none;
 
-    &:after{
+    &:after,
+    &:before {
         content: none;
     }
 }

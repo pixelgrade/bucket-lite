@@ -34,14 +34,14 @@ global $product;
 
 	<?php
 	if ( function_exists('wc_get_product_category_list') ) {
-		echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' );
+		echo wc_get_product_category_list( $product->get_id(), '', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Category:</div>', '<div class="btn  btn--small  btn--secondary">Categories:</div>', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</div>' );
 	} else {
 		$size = sizeof( get_the_terms( $post->ID, 'product_cat' ) );
 		echo $product->get_categories( ' ', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Category</div>', '<div class="btn  btn--small  btn--secondary">Categories</div>', $size, 'bucket' ) . ' ', '</div>' );
 	}
 
 	if ( function_exists('wc_get_product_tag_list') ) {
-		echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' );
+		echo wc_get_product_tag_list( $product->get_id(), '', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Tag:</div>', '<div class="btn  btn--small  btn--secondary">Tags:</div>', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</div>' );
 	} else {
 		$size = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 		echo $product->get_tags( ' ', '<div class="btn-list">' . _n( '<div class="btn  btn--small  btn--secondary">Tag:</div>', '<div class="btn  btn--small  btn--secondary">Tags:</div>', $size, 'bucket' ) . ' ', '</div>' );
