@@ -36,7 +36,7 @@ add_action('wp_enqueue_scripts','wpgrade_callback_load_woocommerce_assets',1);
 add_action('wp_ajax_woopix_remove_from_cart', 'woopix_remove_from_cart');
 
 // Ensure cart contents update when products are added to the cart via AJAX
-add_filter('add_to_cart_fragments', 'woopgrade_header_add_to_cart_fragment');
+add_filter('woocommerce_add_to_cart_fragments', 'woopgrade_header_add_to_cart_fragment');
 function woopgrade_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
 
