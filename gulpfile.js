@@ -13,6 +13,7 @@ var theme       = theme_name = main_branch = 'bucket',
 	postcss     = require('gulp-postcss'),
 	del         = require('del'),
 	rename      = require('gulp-rename'),
+	fs      = require('fs'),
 	prompt      = require('gulp-prompt');
 
 var

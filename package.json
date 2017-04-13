@@ -1,30 +1,31 @@
 {
-	"name": "bucket",
-	"version": "1.4.1",
-	"repository": {
-	"type": "git",
-	"url": "https://github.com/pixelgrade/bucket"
-	},
-	"devDependencies": {
-		"gulp": "*",
-		"gulp-sass": "*",
-		"gulp-autoprefixer": "*",
-		"gulp-minify-css": "*",
-		"gulp-notify": "*",
-		"gulp-concat": "*",
-		"gulp-exec": "*",
-		"gulp-replace": "*",
-		"gulp-csscomb": "*",
-		"gulp-rename": "*",
-		"gulp-combine-media-queries": "*",
-		"del": "*",
-		"gulp-postcss": "*",
-		"rtlcss": "*",
-		"es6-promise": "*",
-		"gulp-clean": "*",
-		"gulp-livereload": "*",
-		"gulp-util": "*",
-		"gulp-zip": "*",
-		"browser-sync": "*"
-	}
+  "name": "bucket",
+  "version": "1.4.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelgrade/bucket"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "es6-promise": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean": "*",
+    "gulp-combine-media-queries": "*",
+    "gulp-concat": "*",
+    "gulp-csscomb": "*",
+    "gulp-exec": "*",
+    "gulp-livereload": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-postcss": "*",
+    "gulp-prompt": "^0.2.0",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-util": "*",
+    "gulp-zip": "*",
+    "rtlcss": "*"
+  }
 }
