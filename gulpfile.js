@@ -157,7 +157,9 @@ gulp.task('build', ['txtdomain-replace'], function () {
 
         'theme-content/scss',
         'theme-content/js/main',
-        'theme-content/js/plugins'
+        'theme-content/js/plugins',
+
+        '.labels'
     ];
 
     files_to_remove.forEach(function (e, k) {
