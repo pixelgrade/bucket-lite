@@ -23,6 +23,17 @@ function wpgrade_register_required_plugins() {
 //	);
 	$plugins = array(
 		array(
+			'name'               => 'Pixelgrade Care',
+			'slug'               => 'pixelgrade-care',
+			'force_activation'   => true,
+			'force_deactivation' => true,
+			'required'           => true,
+			'source'             => 'https://wupdates.com/api_wupl_version/JxbVe/2v5t1czd3vw4kmb5xqmyxj1kkwmnt9q0463lhj393r5yxtshdyg05jssgd4jglnfx7A2vdxtfdcf78r9r1sm217k4ht3r2g7pkdng5f6tgwyrk23wryA0pjxvs7gwhhb',
+			'external_url'       => 'https://github.com/pixelgrade/pixelgrade_care',
+			'version'            => '1.0.0',
+			'is_automatic'       => true
+		),
+		array(
 			'name'     				=> 'PixTypes',
 			'slug'     				=> 'pixtypes',
 			'required' 				=> true,
@@ -34,26 +45,17 @@ function wpgrade_register_required_plugins() {
 			'force_activation' 		=> true,
 		),
 		array(
-			'name'     				=> 'PixLikes',
-			'slug'     				=> 'pixlikes',
-			'source'   				=> get_template_directory() . '/theme-utilities/includes/required-plugins/plugins/pixlikes.zip',
-			'required' 				=> false,
-			'version' 				=> '1.1.2',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
+			'name'               => 'PixLikes',
+			'slug'               => 'pixlikes',
+			'version'            => '1.1.3',
+			'external_url'       => 'https://github.com/pixelgrade/pixlikes',
+			'source'             => 'https://wupdates.com/api_wupl_version/v75R3/zfj7hxx36y35qssyp1tAfyk4g5y1dl3sshkxph1cdzx74jtgjdkctlwkrx033lv1b4jx5mcs41w5wf72srsysn31ccyg6lbvg3n0yf0xnfyj3330fqpbp52wmlsmtszf',
 		),
 		array(
 			'name'     				=> 'PixCodes',
 			'slug'     				=> 'pixcodes',
 			'required' 				=> false,
-		),
-//		array(
-//			'name' 		=> 'Contact Form 7',
-//			'slug' 		=> 'contact-form-7',
-//			'required' 	=> false,
-//			'version' 	=> ''
-//		),
+		)
 	);
 	// Change this to your theme text domain, used for internationalising strings
 	$theme_text_domain = 'bucket';
