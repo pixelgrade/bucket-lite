@@ -164,22 +164,22 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'navigation_font_size'	=> array(
 						'type' => 'range',
-								'label' => __( 'Font Size', 'bucket' ),
-								'live' => true,
-								'default' => 13,
-								'input_attrs' => array(
-									'min'   => 8,
-									'max'   => 25,
-									'step'  => 1,
-									'data-preview' => true
-								),
-								'css' => array(
-									array(
-										'property' => 'font-size',
-										'selector' => 'nav a',
-										'unit' => 'px',
-									)
-								)
+						'label' => __( 'Font Size', 'bucket' ),
+						'live' => true,
+						'default' => 13,
+						'input_attrs' => array(
+							'min'   => 8,
+							'max'   => 25,
+							'step'  => 1,
+							'data-preview' => true
+						),
+						'css' => array(
+							array(
+								'property' => 'font-size',
+								'selector' => 'nav a',
+								'unit' => 'px',
+							)
+						)
 					),
 
 					'this_divider_536650' => array(
@@ -206,46 +206,46 @@ if ( ! function_exists('add_customify_bucket_options') ) {
 
 					'body_font_size'	=> array(
 						'type' => 'range',
-								'label' => __( 'Font Size', 'bucket' ),
-								'live' => true,
-								'default' => 13,
-								'input_attrs' => array(
-									'min'   => 8,
-									'max'   => 25,
-									'step'  => 1,
-									'data-preview' => true
-								),
-								'css' => array(
-									array(
-										'property' => 'font-size',
-										'selector' => '.article, .single .main, .page .main,
+						'label' => __( 'Font Size', 'bucket' ),
+						'live' => true,
+						'default' => 13,
+						'input_attrs' => array(
+							'min'   => 8,
+							'max'   => 25,
+							'step'  => 1,
+							'data-preview' => true
+						),
+						'css' => array(
+							array(
+								'property' => 'font-size',
+								'selector' => '.article, .single .main, .page .main,
 											.comment__content,
 											.footer__widget-area',
-										'unit' => 'px',
-									)
-								)
+								'unit' => 'px',
+							)
+						)
 					),
 
 					'body_line_height'	=> array(
 						'type' => 'range',
-								'label' => __( 'Line Height', 'bucket' ),
-								'live' => true,
-								'default'       => '1.6',
-								'input_attrs' => array(
-									'min'   => 0,
-									'max'   => 3,
-									'step'  => 0.1,
-									'data-preview' => true
-								),
-								'css' => array(
-									array(
-										'property' => 'line-height',
-										'selector' => 'body, .article, .single .main, .page .main,
+						'label' => __( 'Line Height', 'bucket' ),
+						'live' => true,
+						'default'       => '1.6',
+						'input_attrs' => array(
+							'min'   => 0,
+							'max'   => 3,
+							'step'  => 0.1,
+							'data-preview' => true
+						),
+						'css' => array(
+							array(
+								'property' => 'line-height',
+								'selector' => 'body, .article, .single .main, .page .main,
 											.comment__content,
 											.footer__widget-area',
-										//'unit' => 'px',
-									)
-								)
+								//'unit' => 'px',
+							)
+						)
 					),
 
 					'this_divider_536649' => array(
@@ -344,28 +344,6 @@ function bucket_range_negative_value( $value, $selector, $property, $unit ) {
 	return $output;
 }
 
-/**
- * With the new wp 43 version we've made some big changes in customizer, so we really need a first time save
- * for the old options to work in the new customizer
- */
-function convert_bucket_for_wp_43_once (){
-	if ( ! is_admin() || ! function_exists( 'is_plugin_active' ) || ! is_plugin_active('customify/customify.php') || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-		return;
-	}
-
-	$is_not_old = get_option('wpgrade_converted_to_43');
-
-	$this_wp_version = get_bloginfo('version');
-	$this_wp_version = explode( '.', $this_wp_version );
-	$is_wp43 = false;
-	if ( ! $is_not_old && (int) $this_wp_version[0] >= 4 && (int) $this_wp_version[1] >= 3 ) {
-		$is_wp43 = true;
-		update_option('wpgrade_converted_to_43', true);
-		header( 'Location: '.admin_url().'customize.php?save_customizer_once=true');
-		die();
-	}
-}
-
 function bucket_hex2rgb($hex) {
 	$hex = str_replace("#", "", $hex);
 
@@ -382,9 +360,6 @@ function bucket_hex2rgb($hex) {
 //     return implode(",", $rgb); // returns the rgb values separated by commas
 	return $rgb; // returns an array with the rgb values
 }
-
-add_action('admin_init', 'convert_bucket_for_wp_43_once');
-
 
 function bucket_category_color_first( $value, $selector, $property, $unit ) {
 
@@ -407,7 +382,7 @@ function bucket_category_color_first( $value, $selector, $property, $unit ) {
 
 	$output = $selector .'{
 		' . $property . ": " . $value . ";\n" .
-	"}\n";
+	          "}\n";
 
 	return $output;
 }
