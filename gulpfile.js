@@ -152,7 +152,7 @@ gulp.task('build', ['txtdomain-replace'], function () {
         'README.md',
         '.csscomb',
         'circle.yml',
-        'circle_scripts',
+        '.circleci',
         'tests',
 
         'theme-content/scss',
