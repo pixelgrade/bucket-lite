@@ -308,3 +308,9 @@ function woo_related_products_limit() {
 	return $args;
 }
 add_filter( 'woocommerce_related_products_args', 'woo_related_products_limit' );
+
+function woo_filter_woocommerce_loop_add_to_cart_args( $args ) {
+	$args['class'] = str_replace( 'button', 'btn', $args['class'] );
+	return $args;
+};
+add_filter( 'woocommerce_loop_add_to_cart_args', 'woo_filter_woocommerce_loop_add_to_cart_args', 10, 1 );
