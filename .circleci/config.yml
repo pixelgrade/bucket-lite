@@ -9,7 +9,6 @@ jobs:
         ports:
           - 8080:80
           - 3306:3306
-#      - image: phpunit/phpunit
       - image: mysql:5.7
         environment:
           MYSQL_ROOT_HOST: "%"
@@ -49,3 +48,15 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               sh ./.circleci/deploy_production.sh
             fi
+
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - build:
+          context: org-global
+          filters:
+            branches:
+              only:
+                - test
+                - master

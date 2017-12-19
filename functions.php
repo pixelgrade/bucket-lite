@@ -44,7 +44,7 @@ if ( ! function_exists(' bucket_theme_setup' ) ) {
 				'support_url'   => 'https://pixelgrade.com/docs/bucket/',
 				'changelog_url' => 'https://wupdates.com/bucket-changelog',
 				'ock'           => 'Lm12n034gL19',
-				'ocs'           => '6AU8WKBK1yZRDerL57ObzDPM7SGWRp21Csi5Ti5LdVNG9MbP'
+				'ocs'           => '6AU8WKBK1yZRDerL57ObzDPM7SGWRp21Csi5Ti5LdVNG9MbP',
 			)
 		);
 	}
