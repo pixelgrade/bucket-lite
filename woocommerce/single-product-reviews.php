@@ -2,28 +2,39 @@
 /**
  * Display single product reviews (comments)
  *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product-reviews.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.3.2
+ * @version     3.2.0
  */
-global $product;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+global $product;
 
 if ( ! comments_open() ) {
 	return;
 }
 
 ?>
-<div id="reviews">
+<div id="reviews" class="woocommerce-Reviews">
 	<div id="comments">
-		<h2><?php
-			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
-				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'woocommerce' ), $count, get_the_title() );
-			else
+		<h2 class="woocommerce-Reviews-title"><?php
+			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) ) {
+				/* translators: 1: reviews count 2: product name */
+				printf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'woocommerce' ) ), esc_html( $count ), '<span>' . get_the_title() . '</span>' );
+			} else {
 				_e( 'Reviews', 'woocommerce' );
+			}
 			?></h2>
 
 		<?php if ( have_comments() ) : ?>
