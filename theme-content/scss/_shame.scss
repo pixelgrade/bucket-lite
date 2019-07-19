@@ -338,14 +338,6 @@ img.lazy, img.riloadr-single{
     visibility: hidden;
 }
 
-/**
- * Moved from inline-custom-css
- */
-
-.woocommerce ul.products li.product a:hover img {
-    border-bottom: 5px solid $accent;
-}
-
 ol {
     border-left: 0 solid $accent;
 }

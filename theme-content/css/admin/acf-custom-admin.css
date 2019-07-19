@@ -1,4 +1,5 @@
-/*-----------------------------------------------*              $VARS and %EXTENDERS
+/*-----------------------------------------------*\
+              $VARS and %EXTENDERS
 \*-----------------------------------------------*/
 .border-separator-bottom, #acf-enable_review_score, #acf-score_breakdown {
   border-bottom: 1px solid #dfdfdf;
@@ -14,7 +15,7 @@
   display: table;
   clear: both; }
 
-.btn-secondary, a.acf-button, input[type="submit"].acf-button {
+.btn-secondary, a.acf-button, input.acf-button[type="submit"] {
   background: #f3f3f3;
   background-image: linear-gradient(to bottom, #fefefe, #f4f4f4);
   border-color: #bbb;
@@ -31,7 +32,8 @@
   color: #21759b;
   margin: 2em 0 0em; }
 
-/*-----------------------------------------------*              GENERAL STYLES
+/*-----------------------------------------------*\
+              GENERAL STYLES
 \*-----------------------------------------------*/
 #acf_acf_post-review-score *, #acf_acf_credits * {
   box-sizing: border-box; }
@@ -75,7 +77,8 @@ table.acf-input-table {
 .repeater > table > thead > tr > th.remove, .repeater > table > tbody > tr > td.remove {
   padding: 0; }
 
-/*-----------------------------------------------*              POST REVIEW SCORE
+/*-----------------------------------------------*\
+              POST REVIEW SCORE
 \*-----------------------------------------------*/
 #acf-score_breakdown {
   padding-top: 2em;
@@ -99,7 +102,8 @@ table.acf-input-table {
   margin-top: -2em;
   padding-bottom: 2em; }
 
-/*-----------------------------------------------*              SIDEBAR SETTINGS
+/*-----------------------------------------------*\
+              SIDEBAR SETTINGS
 \*-----------------------------------------------*/
 #side-sortables table.cmb_metabox input[type="checkbox"] {
   margin: 5px 3px 0 0;

@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/*------------------------------------*    VARS.SCSS
+/*------------------------------------*\
+    VARS.SCSS
 \*------------------------------------*/
 /**
  * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
@@ -9,7 +10,8 @@
  * using your own, so you can completely modify how inuit.css works without ever
  * having to alter the framework itself.
  */
-/*------------------------------------*    $OBJECTS-AND-ABSTRACTIONS
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
 \*------------------------------------*/
 /**
  * All of inuit.css’ objects and abstractions are initially turned off by
@@ -17,7 +19,8 @@
  * and introducing objects and abstractions is as simple as switching the
  * following variables to `true`.
  */
-/*------------------------------------*    $OVERRIDES
+/*------------------------------------*\
+    $OVERRIDES
 \*------------------------------------*/
 /**
  * Place any variables that should override inuit.css’ defaults here.
@@ -25,12 +28,14 @@
 /**
  * Base stuff
  */
-/*------------------------------------*    $CUSTOM
+/*------------------------------------*\
+    $CUSTOM
 \*------------------------------------*/
 /**
  * Place any of your own variables that sit on top of inuit.css here.
  */
-/*-----------------------------------------------*     $STYLE GUIDE
+/*-----------------------------------------------*\
+     $STYLE GUIDE
 \*-----------------------------------------------*/
 /*
  * Colors
@@ -38,25 +43,29 @@
 /*
  * Spacing Units
  */
-/*------------------------------------*    $DEFAULTS
+/*------------------------------------*\
+    $DEFAULTS
 \*------------------------------------*/
 /**
  * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
  * in the inuit.css-web-template) to override them.
  */
-/*------------------------------------*    $DEBUG
+/*------------------------------------*\
+    $DEBUG
 \*------------------------------------*/
 /**
  * Debug mode will visually highlight any potential markup/accessibility quirks
  * in the browser. Set to `true` or `false`.
  */
-/*------------------------------------*    $BORDER-BOX
+/*------------------------------------*\
+    $BORDER-BOX
 \*------------------------------------*/
 /**
  * Do you want all elements to adopt `box-sizing:border-box;` as per
  * paulirish.com/2012/box-sizing-border-box-ftw ?
  */
-/*------------------------------------*    $BASE
+/*------------------------------------*\
+    $BASE
 \*------------------------------------*/
 /**
  * Base stuff
@@ -67,7 +76,8 @@
 /**
  * Default colour for objects’ borders etc.
  */
-/*------------------------------------*    $RESPONSIVE
+/*------------------------------------*\
+    $RESPONSIVE
 \*------------------------------------*/
 /**
  * Responsiveness?
@@ -89,12 +99,14 @@
 /**
  * Tell inuit.css when breakpoints start.
  */
-/*------------------------------------*    $FONT-SIZES
+/*------------------------------------*\
+    $FONT-SIZES
 \*------------------------------------*/
 /**
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
  */
-/*------------------------------------*    $QUOTES
+/*------------------------------------*\
+    $QUOTES
 \*------------------------------------*/
 /**
  * English quote marks?
@@ -106,7 +118,8 @@
 /**
  * If you need non-English quotes, please alter the following values accordingly:
  */
-/*------------------------------------*    $BRAND
+/*------------------------------------*\
+    $BRAND
 \*------------------------------------*/
 /**
  * Brand stuff
@@ -114,31 +127,36 @@
 /**
  * How big would you like round corners to be by default?
  */
-/*------------------------------------*    $OBJECTS AND ABSTRACTIONS
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
 \*------------------------------------*/
 /**
  * Which objects and abstractions would you like to use?
  */
-/*------------------------------------*    $FRAMEWORK
+/*------------------------------------*\
+    $FRAMEWORK
 \*------------------------------------*/
 /**
  * inuit.css will work these next ones out for use within the framework.
  *
  * Assign our `$base-line-height` to a new spacing var for more transparency.
  */
-/*------------------------------------*    $MIXINS
+/*------------------------------------*\
+    $MIXINS
 \*------------------------------------*/
 /**
  * Convert basic px measurements into rem units
  */
-/*------------------------------------*    $CLEARFIX
+/*------------------------------------*\
+    $CLEARFIX
 \*------------------------------------*/
 .cf:after {
   content: "";
   display: table;
   clear: both; }
 
-/*------------------------------------*    $SHARED
+/*------------------------------------*\
+    $SHARED
 \*------------------------------------*/
 /**
  * Where `margin-bottom` is concerned, this value will be the same as the
@@ -274,7 +292,8 @@ ul, ol, dd {
 
 @media only screen and (min-width: 900px) {
   .rtl .article--billboard > a:hover .article__title:before {
-    transform: translateX(-50px); }
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px); }
   .rtl .article--billboard-small + .article--billboard-small {
     right: auto;
     left: 234px;
@@ -370,14 +389,16 @@ ul, ol, dd {
     text-align: left; }
     .post-nav-link--prev:after {
       right: 0;
-      transform: translateZ(0) rotate(-135deg); }
+      -webkit-transform: translateZ(0) rotate(-135deg);
+              transform: translateZ(0) rotate(-135deg); }
   .post-nav-link--next {
     text-align: right; }
     .post-nav-link--next:after {
       right: auto;
       left: 24px;
       left: 1.71429rem;
-      transform: translateZ(0) rotate(135deg); }
+      -webkit-transform: translateZ(0) rotate(135deg);
+              transform: translateZ(0) rotate(135deg); }
   .comments-area-title .hN,
   .comments-area-title .article__author-name,
   .comments-area-title .comment__author-name,

@@ -7,13 +7,6 @@ if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
 if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
 if(wpgrade::option('layout_boxed') == 1) $class_name .= " layout--boxed";
 
-// woocommerce hotfix
-// prevent class product to overwrite our css but keep javascript dependencies
-if ( wpgrade::option('enable_woocommerce_support') == 1 && in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	if (is_product())
-		$class_name .= " product";
-}
-
 if ( wpgrade::option('nav_main_sticky') == 1 )
     $class_name .= "  sticky-nav";
 
