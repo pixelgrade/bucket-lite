@@ -49,28 +49,6 @@ function wpgrade_register_sidebars() {
 		)
 	);
 
-	register_sidebar( array(
-			'id'            => 'sidebar-footer-second-1',
-			'name'          => __( 'Footer | Second Row [1]', 'bucket' ),
-			'description'   => __( 'Widgets in this area will have 2/3rd the width of the footer.', 'bucket' ),
-			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
-			'after_title'   => '</h3></div>',
-			'before_widget' => '<div id="%1$s" class="widget  widget-area__second  widget--footer %2$s">',
-			'after_widget'  => '</div>',
-		)
-	);
-
-	register_sidebar( array(
-			'id'            => 'sidebar-footer-second-2',
-			'name'          => __( 'Footer | Second Row [2]', 'bucket' ),
-			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket' ),
-			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
-			'after_title'   => '</h3></div>',
-			'before_widget' => '<div id="%1$s" class="widget  widget-area__second  widget--footer %2$s">',
-			'after_widget'  => '</div>',
-		)
-	);
-
 	// Use shortcodes in text widgets.
 	add_filter('widget_text', 'do_shortcode');
 
