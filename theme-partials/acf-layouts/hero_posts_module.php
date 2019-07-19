@@ -228,9 +228,6 @@ if ($slides->have_posts()): ?>
 										<?php if ( comments_open() ): ?>
 	                                    <li class="xpost_comments"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
 										<?php endif; ?>
-										<?php if ( function_exists('get_pixlikes')) : ?>
-	                                    <li class="xpost_likes"><i class="icon-heart"></i> <?php echo get_pixlikes(wpgrade::lang_original_post_id(get_the_ID())); ?></li>
-										<?php endif; ?>
 	                                </ul>
 	                            </div>
 	                        </article>
