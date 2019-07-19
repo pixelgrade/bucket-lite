@@ -3,13 +3,12 @@
     <nav class="navigation  navigation--top">
 
         <div class="container">
-            <h2 class="accessibility"><?php _e('Secondary Navigation', 'bucket') ?></h2>
             <div class="grid">
                 <div class="grid__item one-half">
-                    <?php wpgrade_top_nav_left(); ?>
+
                 </div><!--
                 --><div class="grid__item one-half">
-                    <?php wpgrade_top_nav_right(); ?>
+
                 </div>
             </div>
         </div>

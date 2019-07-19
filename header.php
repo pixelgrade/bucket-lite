@@ -24,8 +24,6 @@ if ( wpgrade::option('nav_main_sticky') == 1 )
             </div>
             <?php
                 wpgrade_main_nav_mobile();
-                wpgrade_top_nav_left('nav--stacked', true);
-                wpgrade_top_nav_right('nav--stacked', true);
             ?>
         </nav>
         <div class="wrapper">
