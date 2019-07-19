@@ -82,38 +82,6 @@
     }
 }
 
-.score__pros__title,
-.score__cons__title {
-    color: $accent;
-    border-bottom: 1px dotted #b2b2b2;
-    @include rem(margin-bottom, $_u4);
-
-    .hN {
-        @include font-size(15px, false);
-        line-height:1;
-        margin-top: 0;
-        @include rem(margin-bottom, $_u2); 
-    }
-}
-
-.score__pros__list,
-.score__cons__list {
-    list-style-position: inside;
-    margin-left: 0; 
-    @include font-size(14px);
-
-
-    li {
-        margin-bottom:3px;
-    }
-
-
-    @include media-query(lap-and-up) {
-        margin-bottom:0;
-    }
-}
-
-
 // Positioning
 .score-box--inside {
     @include rem(width, 145px);

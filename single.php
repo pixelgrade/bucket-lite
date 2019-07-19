@@ -101,36 +101,6 @@ if ( $is_review ) {
                 </div>
 
             </div><!--
-                    <?php endif;
-            if (get_field('enable_pros_cons_lists')): ?>
-                     --><div class="grid__item lap-and-up-six-eighths">
-                <div class="grid">
-                    <?php if (get_field('pros_list')): ?><!--
-                                 --><div class="score__pros  grid__item  lap-and-up-one-half">
-                        <div class="score__pros__title">
-                            <h3 class="hN"><?php _e('Good Things', 'bucket'); ?></h3>
-                        </div>
-                        <ul class="score__pros__list">
-                            <?php while(has_sub_fields('pros_list')): ?>
-                                <li class="score_pro"><?php echo get_sub_field('pros_note'); ?></li>
-                            <?php endwhile; ?>
-                        </ul>
-                    </div><!--
-                                <?php endif;
-                    if (get_field('cons_list')): ?>
-                                 --><div class="score__cons  grid__item  lap-and-up-one-half">
-                        <div class="score__cons__title">
-                            <h3 class="hN"><?php _e('Bad Things', 'bucket'); ?></h3>
-                        </div>
-                        <ul class="score__cons__list">
-                            <?php while(has_sub_fields('cons_list')): ?>
-                                <li class="score__con"><?php echo get_sub_field('cons_note'); ?></li>
-                            <?php endwhile; ?>
-                        </ul>
-                    </div>
-                    <?php endif; ?>
-                </div>
-            </div><!--
                     <?php endif; ?>
                 --></div>
 

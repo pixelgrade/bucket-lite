@@ -8940,42 +8940,6 @@ li.comment, li.pingback {
   .score__badge:after {
     display: none; }
 
-.score__pros__title,
-.score__cons__title {
-  color: #fb4834;
-  border-bottom: 1px dotted #b2b2b2;
-  margin-bottom: 6px;
-  margin-bottom: 0.42857rem; }
-  .score__pros__title .hN, .score__pros__title .article__author-name, .score__pros__title .comment__author-name, .score__pros__title .score__average-wrapper, .score__pros__title .score__label, .score__pros__title .widget_calendar caption, .widget_calendar .score__pros__title caption,
-  .score__cons__title .hN,
-  .score__cons__title .article__author-name,
-  .score__cons__title .comment__author-name,
-  .score__cons__title .score__average-wrapper,
-  .score__cons__title .score__label,
-  .score__cons__title .widget_calendar caption,
-  .widget_calendar .score__cons__title caption {
-    font-size: 15px;
-    font-size: 1.07143rem;
-    line-height: 1;
-    margin-top: 0;
-    margin-bottom: 12px;
-    margin-bottom: 0.85714rem; }
-
-.score__pros__list,
-.score__cons__list {
-  list-style-position: inside;
-  margin-left: 0;
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 1.72429; }
-  .score__pros__list li,
-  .score__cons__list li {
-    margin-bottom: 3px; }
-  @media only screen and (min-width: 900px) {
-    .score__pros__list,
-    .score__cons__list {
-      margin-bottom: 0; } }
-
 .score-box--inside {
   width: 145px;
   width: 10.35714rem;
