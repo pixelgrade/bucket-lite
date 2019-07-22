@@ -7,7 +7,7 @@
 ?>   
     </div><!-- .wrapper --> 
     
-    <?php if (wpgrade::option('posts_stats') || wpgrade::option('back_to_top')):
+    <?php
 
 	$months = bucket::wpgrade_count_posts();
 
@@ -17,8 +17,7 @@
 	if ( !empty($months) ) { ?>
     <div class="site__stats">
         <div class="container">
-        
-            <?php if (wpgrade::option('posts_stats')): ?>
+
             <ul class="stat-group nav nav--banner">
 				<?php foreach($months as $key => $month ) { ?>
 					<li>
@@ -45,15 +44,9 @@
 					</li>
 				<?php } ?>
             </ul>
-            <?php endif; 
-
-                  if (wpgrade::option('back_to_top')): ?>
-            <div class="back-to-top"><a href="#page"><?php _e('Back to Top', 'bucket'); ?></a></div>
-            <?php endif; ?>
         </div>
     </div>
-    <?php }
-	endif; ?>
+    <?php } ?>
     
     <footer class="site__footer">
         

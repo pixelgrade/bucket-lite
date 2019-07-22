@@ -203,11 +203,7 @@ function wpgrade_better_excerpt($text = '') {
 		$text = strip_tags($text, '');
 
 		// Set custom excerpt length - number of words to be shown in excerpts
-		if (wpgrade::option('blog_excerpt_length'))	{
-			$excerpt_length = absint(wpgrade::option('blog_excerpt_length'));
-		} else {
-			$excerpt_length = 180;
-		}
+        $excerpt_length = 45;
 
 		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
 

@@ -3,13 +3,6 @@ get_template_part('theme-partials/header/head');
 
 $class_name = '';
 
-if(wpgrade::option('nav_inverse_top') == 1) $class_name .= " nav-inverse-top";
-if(wpgrade::option('nav_inverse_main') == 1) $class_name .= " nav-inverse-main";
-if(wpgrade::option('layout_boxed') == 1) $class_name .= " layout--boxed";
-
-if ( wpgrade::option('nav_main_sticky') == 1 )
-    $class_name .= "  sticky-nav";
-
 ?>
 
 <body <?php body_class($class_name); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -28,4 +21,4 @@ if ( wpgrade::option('nav_main_sticky') == 1 )
         </nav>
         <div class="wrapper">
             <?php //get the main header section - logo, nav, footer
-			get_template_part('theme-partials/header/site', wpgrade::option('header_type')); ?>
+			get_template_part('theme-partials/header/site-type1'); ?>

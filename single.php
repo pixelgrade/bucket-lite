@@ -35,20 +35,12 @@ if ( $is_review ) {
     $the_content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
     $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
 
-    if ( wpgrade::option('title_position', 'below') == 'above' ) {
-        echo '<div class="article_title--before grid__item  float--left '.$featured_image_width.'">';
-        get_template_part('theme-partials/post-templates/single-title');
-        echo '</div>';
-    }
-
     get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
 
     <article class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $the_content_width; ?>">
     <?php while (have_posts()): the_post();
 
-    if ( wpgrade::option('title_position', 'below') == 'below' ) {
-        get_template_part('theme-partials/post-templates/single-title');
-    }
+    get_template_part('theme-partials/post-templates/single-title');
 
     if ( $is_review && get_field('placement') == ('before') ) { ?>
         <div class="score-box score-box--inside">
@@ -160,8 +152,9 @@ if ( $is_review ) {
         $share_buttons_settings = wpgrade::option('share_buttons_settings');
         if ( ! empty( $share_buttons_settings ) && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'bottom' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
             get_template_part('theme-partials/post-templates/share-box');
-        } ?>
-        <?php if (wpgrade::option('blog_single_show_author_box')) get_template_part( 'author-bio' );
+        }
+
+        get_template_part( 'author-bio' );
 
         $next_post = get_next_post();
         $prev_post = get_previous_post();

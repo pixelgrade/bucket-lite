@@ -11,11 +11,10 @@ if (get_the_title()): ?>
 	<meta itemprop="dateModified" content="<?php the_modified_time('c'); ?>" />
     <?php endif; ?>
 
-	<?php if (wpgrade::option('blog_single_show_title_meta_info')):?>
 		<?php $author_display_name = get_the_author_meta( 'display_name' );
 		printf('<div class="article__author-name" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s</span></div>', '<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" title="'.sprintf(__('Posts by %s', 'bucket'), $author_display_name).'" itemprop="sameAs">'.$author_display_name.'</a>') ?>
 		<time class="article__time" datetime="<?php the_time('c'); ?>"> <?php printf(__('on %s at %s', 'bucket'),get_the_date(),get_the_time()); ?></time>
-	<?php endif; ?>
+
 </div><!-- .article__title__meta -->
 <?php
 $share_buttons_settings = wpgrade::option('share_buttons_settings');
