@@ -38,16 +38,10 @@ get_header(); ?>
 			
 				<?php if ( get_the_author_meta( 'description' ) ) : ?>
 					<?php get_template_part( 'author-bio' ); ?>
-	            <?php endif;
-	            if(wpgrade::option('blog_layout') == 'masonry') {
-		            $grid_class= 'class="grid  masonry" data-columns';
-	            } else {
-		            $grid_class = 'class="classic"';
-	            } ?>
-
-	            <div <?php echo $grid_class;?>>
-                    <?php while (have_posts()): the_post(); ?><!--
-                        --><div class="<?php echo wpgrade::option('blog_layout')?>__item"><?php get_template_part('theme-partials/post-templates/content-'. wpgrade::option('blog_layout', 'masonry') ); ?></div><!--
+	            <?php endif; ?>
+                <div class="grid  masonry" data-columns>
+		            <?php while (have_posts()): the_post(); ?><!--
+                        --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-masonry'); ?></div><!--
                  --><?php endwhile; ?>
                 </div>
 				<?php echo wpgrade::pagination();
