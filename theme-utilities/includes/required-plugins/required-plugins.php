@@ -34,12 +34,6 @@ function wpgrade_register_required_plugins() {
 			'required' 				=> true,
 		),
 		array(
-			'name'     				=> 'Customify',
-			'slug'     				=> 'customify',
-			'required' 				=> true,
-			'force_activation' 		=> true,
-		),
-		array(
 			'name'     				=> 'PixCodes',
 			'slug'     				=> 'pixcodes',
 			'required' 				=> false,

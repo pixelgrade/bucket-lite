@@ -51,7 +51,7 @@
 
 //		wp_enqueue_style(
 //			'bucket-redux-custom-css',
-//			wpgrade::resourceuri('css/admin/admin-panel.css'),
+//			wpgrade::resourceuri('css/admin/customizer.css'),
 //			array(), // Be sure to include redux-css so it's appended after the core css is applied
 //			time(),
 //			'all'
