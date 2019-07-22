@@ -50,7 +50,7 @@
     
     <footer class="site__footer">
         
-        <h2 class="accessibility"><?php __('Footer', 'bucket') ?></h2>
+        <h2 class="accessibility"><?php __('Footer', 'bucket-lite') ?></h2>
 		
     	<?php
 

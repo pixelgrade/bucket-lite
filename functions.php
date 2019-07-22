@@ -20,7 +20,7 @@ if ( ! defined('REQUEST_PROTOCOL')) {
 }
 
 // Loads the theme's translated strings
-load_theme_textdomain( 'bucket', get_stylesheet_directory() . '/languages' );
+load_theme_textdomain( 'bucket-lite', get_stylesheet_directory() . '/languages' );
 
 // Theme specific settings
 // -----------------------

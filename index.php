@@ -20,7 +20,7 @@ get_header(); ?>
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php _e('Latest Articles', 'bucket') ?></h2>
+                    <h2 class="hN"><?php _e('Latest Articles', 'bucket-lite') ?></h2>
                 </div>
 
 	            <div class="grid  masonry" data-columns>

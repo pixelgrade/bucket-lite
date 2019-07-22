@@ -126,10 +126,10 @@ function wpgrade_register_attachments(){
 		function add_video_url_field_to_attachments($form_fields, $post){
 			if ( !isset($form_fields["video_url"]) ) {
 				$form_fields["video_url"] = array(
-					"label" => __("Video URL", 'pixtypes_txtd'),
+					"label" => __("Video URL", 'bucket-lite'),
 					"input" => "text", // this is default if "input" is omitted
 					"value" => esc_url( get_post_meta($post->ID, "_video_url", true) ),
-					"helps" => __("<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>", 'pixtypes_txtd'),
+					"helps" => __("<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>", 'bucket-lite'),
 				);
 			}
 			return $form_fields;

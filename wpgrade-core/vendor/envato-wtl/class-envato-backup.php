@@ -354,7 +354,7 @@ class Envato_Backup {
 		}
 
 		if ( ! file_exists( $this->archive_filepath() ) ) {
-			$this->error( $this->archive_method(), __( 'The backup file was not created', 'bucket' ) );
+			$this->error( $this->archive_method(), __( 'The backup file was not created', 'bucket-lite' ) );
 		}
 
 		/* Verify using the zip command if possible */
@@ -427,7 +427,7 @@ class Envato_Backup {
 		}
 
 		if ( ! empty( $this->unreadable_files ) ) {
-			$this->warning( $this->archive_method(), __( 'The following files are unreadable and could not be backed up: ', 'bucket' ) . implode( ', ', $this->unreadable_files ) );
+			$this->warning( $this->archive_method(), __( 'The following files are unreadable and could not be backed up: ', 'bucket-lite' ) . implode( ', ', $this->unreadable_files ) );
 		}
 
 		return $this->files;

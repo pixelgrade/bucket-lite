@@ -14,7 +14,7 @@ get_header(); ?>
 		<div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php echo single_cat_title( '', false ); ?></h2><span class="archive__side-title beta"><?php _e( 'Articles', 'bucket' ); ?></span>
+                    <h2 class="hN"><?php echo single_cat_title( '', false ); ?></h2><span class="archive__side-title beta"><?php _e( 'Articles', 'bucket-lite' ); ?></span>
                 </div>
 				
 				<?php if ( category_description() ) : // Show an optional category description ?>

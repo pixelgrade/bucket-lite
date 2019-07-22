@@ -28,33 +28,33 @@ get_header(); ?>
 						$var = get_query_var('post_format');
 						// POST FORMATS
 						if ($var == 'post-format-aside') :
-							_e('Aside Archives', 'bucket');
+							_e('Aside Archives', 'bucket-lite');
 						elseif ($var == 'post-format-image') :
-							_e('Image Archives', 'bucket');
+							_e('Image Archives', 'bucket-lite');
 						elseif ($var == 'post-format-link') :
-							_e('Link Archives', 'bucket');
+							_e('Link Archives', 'bucket-lite');
 						elseif ($var == 'post-format-quote') :
-							_e('Quote Archives', 'bucket');
+							_e('Quote Archives', 'bucket-lite');
 						elseif ($var == 'post-format-status') :
-							_e('Status Archives', 'bucket');
+							_e('Status Archives', 'bucket-lite');
 						elseif ($var == 'post-format-gallery') :
-							_e('Gallery Archives', 'bucket');
+							_e('Gallery Archives', 'bucket-lite');
 						elseif ($var == 'post-format-video') :
-							_e('Video Archives', 'bucket');
+							_e('Video Archives', 'bucket-lite');
 						elseif ($var == 'post-format-audio') :
-							_e('Audio Archives', 'bucket');
+							_e('Audio Archives', 'bucket-lite');
 						elseif ($var == 'post-format-chat') :
-							_e('Chat Archives', 'bucket');
+							_e('Chat Archives', 'bucket-lite');
 						endif;
 
 						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'bucket' ), get_the_date() );
+							printf( __( 'Daily Archives: %s', 'bucket-lite' ), get_the_date() );
 						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'bucket' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bucket' ) ) );
+							printf( __( 'Monthly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bucket-lite' ) ) );
 						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'bucket' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bucket' ) ) );
+							printf( __( 'Yearly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bucket-lite' ) ) );
 						else :
-							_e( 'Archives', 'bucket' );
+							_e( 'Archives', 'bucket-lite' );
 						endif;
 					?></h2>
 				</div>

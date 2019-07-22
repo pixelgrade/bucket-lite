@@ -7,8 +7,8 @@ function wpgrade_register_sidebars() {
 
 	register_sidebar( array(
 			'id'            => 'sidebar',
-			'name'          => __( 'Main Right Sidebar', 'bucket' ),
-			'description'   => __( 'Main Sidebar', 'bucket' ),
+			'name'          => __( 'Main Right Sidebar', 'bucket-lite' ),
+			'description'   => __( 'Main Sidebar', 'bucket-lite' ),
 			'before_title'  => '<div class="widget__title  widget--sidebar__title"><h2 class="hN">',
 			'after_title'   => '</h2></div>',
 			'before_widget' => '<div id="%1$s" class="widget  widget--main %2$s">',
@@ -18,8 +18,8 @@ function wpgrade_register_sidebars() {
 
 	register_sidebar( array(
 			'id'            => 'sidebar-footer-first-1',
-			'name'          => __( 'Footer | First Row [1]', 'bucket' ),
-			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket' ),
+			'name'          => __( 'Footer | First Row [1]', 'bucket-lite' ),
+			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket-lite' ),
 			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
 			'after_title'   => '</h3></div>',
 			'before_widget' => '<div id="%1$s" class="%2$s  widget  widget-area__first  widget--footer">',
@@ -29,8 +29,8 @@ function wpgrade_register_sidebars() {
 
 	register_sidebar( array(
 			'id'            => 'sidebar-footer-first-2',
-			'name'          => __( 'Footer | First Row [2]', 'bucket' ),
-			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket' ),
+			'name'          => __( 'Footer | First Row [2]', 'bucket-lite' ),
+			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket-lite' ),
 			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
 			'after_title'   => '</h3></div>',
 			'before_widget' => '<div id="%1$s" class="%2$s  widget  widget-area__first  widget--footer">',
@@ -40,8 +40,8 @@ function wpgrade_register_sidebars() {
 
 	register_sidebar( array(
 			'id'            => 'sidebar-footer-first-3',
-			'name'          => __( 'Footer | First Row [3]', 'bucket' ),
-			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket' ),
+			'name'          => __( 'Footer | First Row [3]', 'bucket-lite' ),
+			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket-lite' ),
 			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
 			'after_title'   => '</h3></div>',
 			'before_widget' => '<div id="%1$s" class="%2$s  widget  widget-area__first  widget--footer">',

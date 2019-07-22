@@ -28,16 +28,16 @@
 			<div class="redux-opts-section-desc">
 
 				<p class="redux-opts-item-data description item-uri">
-					'.__('<strong>Theme URL:</strong> ', 'bucket').'
+					'.__('<strong>Theme URL:</strong> ', 'bucket-lite').'
 					<a href="' . $item_uri . '" target="_blank">'.$item_uri.'</a>
 				</p>
 
 				<p class="redux-opts-item-data description item-author">
-					'.__('<strong>Author:</strong> ', 'bucket').$author_title.'
+					'.__('<strong>Author:</strong> ', 'bucket-lite').$author_title.'
 				</p>
 
 				<p class="redux-opts-item-data description item-version">
-					'. __('<strong>Version:</strong> ', 'bucket').$version.'
+					'. __('<strong>Version:</strong> ', 'bucket-lite').$version.'
 				</p>
 
 				<p class="redux-opts-item-data description item-description">
@@ -45,7 +45,7 @@
 				</p>
 
 				<p class="redux-opts-item-data description item-tags">
-					'.__('<strong>Tags:</strong> ', 'bucket').$tags.'
+					'.__('<strong>Tags:</strong> ', 'bucket-lite').$tags.'
 				</p>
 
 			</div>
@@ -55,7 +55,7 @@
 	    $tabs['item_info'] = array(
 			'icon' => 'info-sign',
 			'icon_class' => '',
-	        'title' => __('Theme Information', 'bucket'),
+	        'title' => __('Theme Information', 'bucket-lite'),
 	        'content' => $item_info
 	    );
 	}

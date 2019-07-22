@@ -17,7 +17,7 @@ get_header(); ?>
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php printf( __( 'Tag Archives: %s', 'bucket' ), single_tag_title( '', false ) ); ?></h2>
+                    <h2 class="hN"><?php printf( __( 'Tag Archives: %s', 'bucket-lite' ), single_tag_title( '', false ) ); ?></h2>
 					
                 </div>
 				<?php if ( tag_description() ) : // Show an optional tag description ?>

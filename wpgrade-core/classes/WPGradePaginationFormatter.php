@@ -120,15 +120,15 @@ class WPGradePaginationFormatter {
 		# requesting the translation when not required
 
 		if ( empty( $conf['prev_text'] ) ) {
-			$conf['prev_text'] = __( '&laquo; Previous', 'bucket' );
+			$conf['prev_text'] = __( '&laquo; Previous', 'bucket-lite' );
 		} else { // exists; translate
-			$conf['prev_text'] = __( $conf['prev_text'], 'bucket' );
+			$conf['prev_text'] = __( $conf['prev_text'], 'bucket-lite' );
 		}
 
 		if ( empty( $conf['next_text'] ) ) {
-			$conf['next_text'] = __( 'Next &raquo;', 'bucket' );
+			$conf['next_text'] = __( 'Next &raquo;', 'bucket-lite' );
 		} else { // exists; translate
-			$conf['next_text'] = __( $conf['next_text'], 'bucket' );
+			$conf['next_text'] = __( $conf['next_text'], 'bucket-lite' );
 		}
 
 		// is the pager sorted?

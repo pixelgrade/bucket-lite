@@ -42,8 +42,8 @@ get_header(); ?>
 		            'before' => "<ol class=\"nav pagination\"><!--",
 		            'after' => "\n--></ol>",
 		            'next_or_number' => 'next_and_number',
-		            'previouspagelink' => __('Previous', 'bucket'),
-		            'nextpagelink' => __('Next', 'bucket')
+		            'previouspagelink' => __('Previous', 'bucket-lite'),
+		            'nextpagelink' => __('Next', 'bucket-lite')
 	            );
 	            wp_link_pages( $args ); ?>
 

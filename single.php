@@ -35,8 +35,8 @@ get_header();
         'before' => "<ol class=\"nav pagination\"><!--",
         'after' => "\n--></ol>",
         'next_or_number' => 'next_and_number',
-        'previouspagelink' => __('Previous', 'bucket'),
-        'nextpagelink' => __('Next', 'bucket')
+        'previouspagelink' => __('Previous', 'bucket-lite'),
+        'nextpagelink' => __('Next', 'bucket-lite')
     );
     wp_link_pages( $args ); ?>
 
@@ -44,7 +44,7 @@ get_header();
         if (get_field('enable_review_score')):
             //don't show the breakdown if there is only one - it means the guy just wanted the average score
             if (get_field('score_breakdown') && count(get_field('score_breakdown')) > 1 ): ?>
-                <h3><?php _e('The Breakdown', 'bucket'); ?></h3>
+                <h3><?php _e('The Breakdown', 'bucket-lite'); ?></h3>
                 <hr class="separator  separator--subsection">
                 <?php while (has_sub_fields('score_breakdown')): ?>
                     <div class="review__score">
@@ -73,10 +73,10 @@ get_header();
             $categories = get_the_category();
             if ($categories): ?>
                 <div class="btn-list">
-                    <div class="btn  btn--small  btn--secondary"><?php _e('Categories', 'bucket') ?></div>
+                    <div class="btn  btn--small  btn--secondary"><?php _e('Categories', 'bucket-lite') ?></div>
                     <?php
                     foreach ($categories as $category):
-                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>';
+                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket-lite'), $category->name)) .'">'. $category->cat_name.'</a>';
                     endforeach; ?>
                 </div>
             <?php endif;
@@ -84,10 +84,10 @@ get_header();
             $tags = get_the_tags();
             if ($tags): ?>
                 <div class="btn-list">
-                    <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', 'bucket') ?></div>
+                    <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', 'bucket-lite') ?></div>
                     <?php
                     foreach ($tags as $tag):
-                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", 'bucket'), $tag->name)) .'">'. $tag->name.'</a>';
+                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", 'bucket-lite'), $tag->name)) .'">'. $tag->name.'</a>';
                     endforeach; ?>
                 </div>
             <?php endif; ?>
@@ -109,7 +109,7 @@ get_header();
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($prev_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e('Previous Article', 'bucket' ); ?>
+                                    <?php _e('Previous Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
@@ -120,7 +120,7 @@ get_header();
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($prev_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e('Previous Article', 'bucket' ); ?>
+                                    <?php _e('Previous Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
@@ -140,7 +140,7 @@ get_header();
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e("Next Article", 'bucket'); ?>
+                                    <?php _e("Next Article", 'bucket-lite'); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
@@ -154,7 +154,7 @@ get_header();
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e("Next Article", 'bucket'); ?>
+                                    <?php _e("Next Article", 'bucket-lite'); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $next_post->post_title; ?></h3>

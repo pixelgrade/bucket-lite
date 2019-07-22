@@ -5,10 +5,10 @@
 	# name, unless a custom value is provided)
 	# ---------------------------------------------------------------------
 
-	'name'       => 'Bucket',
-	'shortname'  => 'bucket',
+	'name'       => 'bucket-lite',
+	'shortname'  => 'bucket-lite',
 	'prefix'     => '_bucket_',
-	'textdomain' => 'bucket',
+	'textdomain' => 'bucket-lite',
 
 	'language-path' => 'languages',
 
@@ -31,13 +31,7 @@
 		// main theme class
 		'theme-utilities/bucket'.EXT,
 		'theme-utilities/includes/required-plugins/required-plugins.php',
-//		'theme-utilities/includes/acf/acf.php',
 		'theme-utilities/includes/acf/acf-config.php',
-		// widgets & template tags
-//		'theme-content/inc/template-tags'.EXT,
-//		'theme-content/inc/theme-defaults'.EXT,
-//		'theme-content/inc/thumbnails'.EXT,
-//		'theme-content/inc/widgets'.EXT,
 	),
 
 	// the path where overwrites on the core partials are stored, any files
@@ -97,9 +91,9 @@
 
 	'megamenu_layouts' => array
 	(
-		'default' => __('Default','bucket'),
-		'latest_posts' => __('Latest Posts','bucket'),
-		'slider_latest_posts' => __('Slider + Latest Posts','bucket'),
+		'default' => __('Default','bucket-lite'),
+		'latest_posts' => __('Latest Posts','bucket-lite'),
+		'slider_latest_posts' => __('Slider + Latest Posts','bucket-lite'),
 	),
 
 	// importer
@@ -176,9 +170,9 @@
 					'sharrre_urlCurl' => get_template_directory_uri().'/theme-content/js/sharrre.php',
 					'objectl10n' => array
 					(
-						'tPrev' => __('Previous (Left arrow key)', 'bucket'),
-						'tNext' => __('Next (Right arrow key)', 'bucket'),
-						'tCounter' => __('of', 'bucket')
+						'tPrev' => __('Previous (Left arrow key)', 'bucket-lite'),
+						'tNext' => __('Next (Right arrow key)', 'bucket-lite'),
+						'tCounter' => __('of', 'bucket-lite')
 					),
 				),
 		),
@@ -202,11 +196,6 @@
 		// handlers should be placed in theme's functions.php
 		'style-enqueue-handlers' => array
 		(
-//			'dynamic-css' => array
-//			(
-//				'handler' => 'wpgrade_callback_enqueue_dynamic_css',
-//				'priority' => 9999,
-//			),
 			'rtl-support' => 'wpgrade_callback_enqueue_rtl_support',
 		),
 
@@ -226,8 +215,8 @@
 		'prev_next' => true,
 
 		// pagination text
-		'prev_text' => __('Prev', 'bucket'),
-		'next_text' => __('Next', 'bucket'),
+		'prev_text' => __('Prev', 'bucket-lite'),
+		'next_text' => __('Next', 'bucket-lite'),
 
 		// are the terms used for paging relative to the sort order?
 		// ie. older/newer instead of sorting agnostic previous/next
@@ -267,8 +256,8 @@
 //				'gallery' => array
 //					(
 //						'formatter' => null,
-//						'prev_text' => __('Prev Images', 'bucket'),
-//						'next_text' => __('Next Images', 'bucket'),
+//						'prev_text' => __('Prev Images', 'bucket-lite'),
+//						'next_text' => __('Next Images', 'bucket-lite'),
 //					)
 	),
 

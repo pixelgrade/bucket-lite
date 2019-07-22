@@ -17,7 +17,7 @@
                     $categories = get_the_category();
                     if ($categories) {
                         $category = $categories[0];
-                        echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>';
+                        echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket-lite'), $category->name)) .'">'. $category->cat_name.'</a>';
                     }
                 ?>
             </div>

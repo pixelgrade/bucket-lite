@@ -11,7 +11,7 @@
 	</div>
 	<div class="author__text">
 		<div class="author__title">
-			<h3 class="accessibility"><?php _e('Author', 'bucket'); ?></h3>
+			<h3 class="accessibility"><?php _e('Author', 'bucket-lite'); ?></h3>
 			<div class="hN">
 				<span itemprop="name"><?php bucket::the_author_posts_link(); ?></span>
 			</div>
@@ -20,7 +20,7 @@
 		<ul class="author__social-links">
 			<?php if ( get_the_author_meta('url') ): ?>
 				<li class="author__social-links__list-item">
-					<a class="author__social-link" href="<?php echo get_the_author_meta('url') ?>" target="_blank"><?php _e('Website', 'bucket'); ?></a>
+					<a class="author__social-link" href="<?php echo get_the_author_meta('url') ?>" target="_blank"><?php _e('Website', 'bucket-lite'); ?></a>
 				</li>
 			<?php endif; ?>
 			<?php if ( get_the_author_meta('user_tw') ): ?>

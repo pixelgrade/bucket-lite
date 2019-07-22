@@ -27,13 +27,13 @@ return array
 		'admin_stylesheet' => 'custom', # default: 'standard'
 
 		// add HTML before the form
-		'intro_text' => __('<h4>Theme Options</h4><p>These allow you to adjust the overall settings for your website.</p>', 'bucket'),
+		'intro_text' => __('<h4>Theme Options</h4><p>These allow you to adjust the overall settings for your website.</p>', 'bucket-lite'),
 
 		// add content after the form
-//		'footer_text' => __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'bucket'),
+//		'footer_text' => __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'bucket-lite'),
 
 		// set footer/credit line
-//		'footer_credit' => __('<p>This text is displayed in the options panel footer across from the WordPress version (where it normally says \'Thank you for creating with WordPress\'). This field accepts all HTML.</p>', 'bucket'),
+//		'footer_credit' => __('<p>This text is displayed in the options panel footer across from the WordPress version (where it normally says \'Thank you for creating with WordPress\'). This field accepts all HTML.</p>', 'bucket-lite'),
 
 		// setup custom links in the footer for share icons
 		'share_icons' => array
@@ -41,19 +41,19 @@ return array
 				'twitter' => array
 					(
 						'link' => 'http://twitter.com/pixelgrade',
-						'title' => __('Follow me on Twitter', 'bucket'),
+						'title' => __('Follow me on Twitter', 'bucket-lite'),
 						'img' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/social/Twitter.png'
 					),
 				'linked_in' => array
 					(
 						'link' => 'http://www.linkedin.com/company/pixelgrade-media',
-						'title' => __('Find me on LinkedIn', 'bucket'),
+						'title' => __('Find me on LinkedIn', 'bucket-lite'),
 						'img' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/social/LinkedIn.png'
 					),
 				'facebook' => array
 					(
 						'link' => 'http://www.facebook.com/PixelGradeMedia',
-						'title' => __('Find me on LinkedIn', 'bucket'),
+						'title' => __('Find me on LinkedIn', 'bucket-lite'),
 						'img' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/social/Facebook.png'
 					),
 			),
@@ -82,10 +82,10 @@ return array
 		'menu_icon' => wpgrade::coremoduleuri($wpgrade_redux_coremodule).'assets/img/theme_options.png',
 
 		// set a custom title for the options page
-		'menu_title' => __('Theme Options', 'bucket'), # default: Options
+		'menu_title' => __('Theme Options', 'bucket-lite'), # default: Options
 
 		// Set a custom page title for the options page.
-		'page_title' => __('Options', 'bucket'), # default: Options
+		'page_title' => __('Options', 'bucket-lite'), # default: Options
 
 		// Set a custom page slug for options page (wp-admin/themes.php?page=***).
 		'page_slug' => wpgrade::shortname().'_options', # default: redux_options
@@ -124,19 +124,19 @@ return array
 //				array
 //				(
 //					'id' => 'redux-opts-1',
-//					'title' => __('Theme Information 1', 'bucket'),
-//					'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'bucket')
+//					'title' => __('Theme Information 1', 'bucket-lite'),
+//					'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'bucket-lite')
 //				),
 //				array
 //				(
 //					'id' => 'redux-opts-2',
-//					'title' => __('Theme Information 2', 'bucket'),
-//					'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'bucket')
+//					'title' => __('Theme Information 2', 'bucket-lite'),
+//					'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'bucket-lite')
 //				)
 //			),
 
 		// Set the help sidebar for the options page.
-		// 'help_sidebar' => __('<p>This is the sidebar content, HTML is allowed.</p>', 'bucket'),
+		// 'help_sidebar' => __('<p>This is the sidebar content, HTML is allowed.</p>', 'bucket-lite'),
 //		'remove_customizer_sections' => array(
 //			'blogdescription',
 //			'static_front_page',

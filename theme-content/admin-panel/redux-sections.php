@@ -7,50 +7,50 @@ $sections = array();
 $sections[] = array(
 	'icon' => 'database-1',
 	'icon_class' => '',
-	'title' => __('General', 'bucket'),
-	'desc' => sprintf('<p class="description">'.__('General settings contains options that have a site-wide effect like defining your site branding (including logo and other icons).', 'bucket').'</p>',wpgrade::themename()),
+	'title' => __('General', 'bucket-lite'),
+	'desc' => sprintf('<p class="description">'.__('General settings contains options that have a site-wide effect like defining your site branding (including logo and other icons).', 'bucket-lite').'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
 			'id' => 'main_logo',
 			'type' => 'media',
-			'title' => __('Main Logo', 'bucket'),
-			'subtitle' => __('If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', 'bucket'),
+			'title' => __('Main Logo', 'bucket-lite'),
+			'subtitle' => __('If there is no image uploaded, plain text will be used instead (generated from the site\'s name).', 'bucket-lite'),
 		),
 		array(
 			'id' => 'use_retina_logo',
 			'type' => 'switch',
-			'title' => __('Retina 2x Logo', 'bucket'),
-			'subtitle' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', 'bucket'),
+			'title' => __('Retina 2x Logo', 'bucket-lite'),
+			'subtitle' => __('To be Retina-ready you need to add a 2x logo image (double the dimensions of the 1x logo above).', 'bucket-lite'),
 		),
 		array(
 			'id' => 'retina_main_logo',
 			'type' => 'media',
-			'title' => __('Retina 2x Logo Image', 'bucket'),
+			'title' => __('Retina 2x Logo Image', 'bucket-lite'),
 			'required' => array('use_retina_logo', 'equals', 1)
 		),
 		array(
 			'id' => 'favicon',
 			'type' => 'media',
-			'title' => __('Favicon', 'bucket'),
-			'subtitle' => __('Upload a 16px x 16px image that will be used as a favicon.', 'bucket'),
+			'title' => __('Favicon', 'bucket-lite'),
+			'subtitle' => __('Upload a 16px x 16px image that will be used as a favicon.', 'bucket-lite'),
 		),
 		array(
 			'id' => 'apple_touch_icon',
 			'type' => 'media',
-			'title' => __('Apple Touch Icon', 'bucket'),
-			'subtitle' => __('You can customize the icon for the Apple touch shortcut to your website. The size of this icon must be 77x77px.', 'bucket')
+			'title' => __('Apple Touch Icon', 'bucket-lite'),
+			'subtitle' => __('You can customize the icon for the Apple touch shortcut to your website. The size of this icon must be 77x77px.', 'bucket-lite')
 		),
 		array(
 			'id' => 'metro_icon',
 			'type' => 'media',
-			'title' => __('Metro Icon', 'bucket'),
-			'subtitle' => __('The size of this icon must be 144x144px.', 'bucket')
+			'title' => __('Metro Icon', 'bucket-lite'),
+			'subtitle' => __('The size of this icon must be 144x144px.', 'bucket-lite')
 		),
 		array(
 			'id' => 'enable_lazy_loading_images',
 			'type' => 'switch',
-			'title' => __('Enable Images Lazy Loading?', 'bucket'),
-			'subtitle' => __('Enable this to allow us to lazy load the images so you will increase your page loading speed.', 'bucket'),
+			'title' => __('Enable Images Lazy Loading?', 'bucket-lite'),
+			'subtitle' => __('Enable this to allow us to lazy load the images so you will increase your page loading speed.', 'bucket-lite'),
 			'default' => '1',
 		),
 	)
@@ -63,15 +63,15 @@ $sections[] = array(
 	'icon' => "params",
 	'icon_class' => '',
 	'class'           => 'has-customizer customizer-only',
-	'title' => __('Style', 'bucket'),
-	'desc' => '<p class="description">'.__('The style options control the general styling of the site, like accent color and Google Web Fonts. You can choose custom fonts for various typography elements with font weight, char set, size and/or height. You also have a live preview for them.', 'bucket').'</p>',
+	'title' => __('Style', 'bucket-lite'),
+	'desc' => '<p class="description">'.__('The style options control the general styling of the site, like accent color and Google Web Fonts. You can choose custom fonts for various typography elements with font weight, char set, size and/or height. You also have a live preview for them.', 'bucket-lite').'</p>',
 	'type' => 'customizer_section',
 	'fields' => array(
 		array(
 			'id' => 'main_color',
 			'type' => 'color',
-			'title' => __('Main Color', 'bucket'),
-			'subtitle' => __('Use the color picker to change the main color of the site to match your brand color.', 'bucket'),
+			'title' => __('Main Color', 'bucket-lite'),
+			'subtitle' => __('Use the color picker to change the main color of the site to match your brand color.', 'bucket-lite'),
 			'default' => '#fb4834',
 			'validate' => 'color',
 			'transparent' => false,
@@ -80,14 +80,14 @@ $sections[] = array(
 
 		array(
 			'id'=>'typography-info',
-			'desc'=> '<h3>'.__('Typography', 'bucket').'</h3>',
+			'desc'=> '<h3>'.__('Typography', 'bucket-lite').'</h3>',
 			'type' => 'info'
 		),
 		array(
 			'id' => 'use_google_fonts',
 			'type' => 'switch',
-			'title' => __('Do you need custom web fonts?', 'bucket'),
-			'subtitle' => __('Tap into the massive <a href="http://www.google.com/fonts/">Google Fonts</a> collection (with Live preview).', 'bucket'),
+			'title' => __('Do you need custom web fonts?', 'bucket-lite'),
+			'subtitle' => __('Tap into the massive <a href="http://www.google.com/fonts/">Google Fonts</a> collection (with Live preview).', 'bucket-lite'),
 			'default' => '0',
 			'compiler' => false,
 		),
@@ -100,8 +100,8 @@ $sections[] = array(
             'line-height'=>false,
             'text-align' => false,
 			'required' => array('use_google_fonts', '=', 1),
-			'title' => __('Headings Font', 'bucket'),
-			'subtitle' => __('Font for titles and headings.', 'bucket'),
+			'title' => __('Headings Font', 'bucket-lite'),
+			'subtitle' => __('Font for titles and headings.', 'bucket-lite'),
 			'compiler' => false,
 		),
 		// Navigation Font
@@ -113,8 +113,8 @@ $sections[] = array(
             'line-height'=>false,
             'text-align' => false,
 			'required' => array('use_google_fonts', '=', 1),
-			'title' => __('Navigation Font', 'bucket'),
-			'subtitle' => __('Font for navigation menu.', 'bucket'),
+			'title' => __('Navigation Font', 'bucket-lite'),
+			'subtitle' => __('Font for navigation menu.', 'bucket-lite'),
 			'compiler' => false,
 		),
 		// Body Font
@@ -124,20 +124,20 @@ $sections[] = array(
 			'color' => false,
 			'text-align' => false,
 			'required' => array('use_google_fonts', '=', 1),
-			'title' => __('Body Font', 'bucket'),
-			'subtitle'=> __('Font for content text and widget text.', 'bucket'),
+			'title' => __('Body Font', 'bucket-lite'),
+			'subtitle'=> __('Font for content text and widget text.', 'bucket-lite'),
 			'compiler' => false,
 		),
 		array(
 			'id'=>'layout-info',
-			'desc'=> __('<h3>Layout</h3>', 'bucket'),
+			'desc'=> __('<h3>Layout</h3>', 'bucket-lite'),
 			'type' => 'info'
 		),
 		array(
 			'id' => 'layout_boxed',
 			'type' => 'switch',
-			'title' => __('Boxed Layout', 'bucket'),
-			'subtitle' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', 'bucket'),
+			'title' => __('Boxed Layout', 'bucket-lite'),
+			'subtitle' => __('With Boxed Layout enabled you can use an image as background (go to Appearance - Background).', 'bucket-lite'),
 			'default' => '0'
 		),
 	)
@@ -148,14 +148,14 @@ $sections[] = array(
 
 $sections[] = array(
 	'icon' => 'pencil-1',
-	'title' => __('Articles', 'bucket'),
-	'desc' => sprintf('<p class="description">'.__('Article options control the various aspects related to displaying posts both in archives and single articles. You can control things like excerpt length and social sharing.', 'bucket').'</p>',wpgrade::themename()),
+	'title' => __('Articles', 'bucket-lite'),
+	'desc' => sprintf('<p class="description">'.__('Article options control the various aspects related to displaying posts both in archives and single articles. You can control things like excerpt length and social sharing.', 'bucket-lite').'</p>',wpgrade::themename()),
 	'fields' => array(
 		array(
 			'id' => 'title_position',
 			'type' => 'select',
-			'title' => __('Single Post Title Position', 'bucket'),
-			'subtitle' => __('Choose where to display the article title and meta tags.', 'bucket'),
+			'title' => __('Single Post Title Position', 'bucket-lite'),
+			'subtitle' => __('Choose where to display the article title and meta tags.', 'bucket-lite'),
 			'options' => array(
 				'above' => 'Above the Featured Image',
 				'below' => 'Below the Featured Image'
@@ -169,14 +169,14 @@ $sections[] = array(
 		array(
 			'id' => 'blog_single_show_title_meta_info',
 			'type' => 'switch',
-			'title' => __('Show Post Title Extra Info', 'bucket'),
-			'subtitle' => __('Do you want to show the date and the author under the title?', 'bucket'),
+			'title' => __('Show Post Title Extra Info', 'bucket-lite'),
+			'subtitle' => __('Do you want to show the date and the author under the title?', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'blog_single_share_links_twitter',
 			'type' => 'checkbox',
-			'title' => __('Twitter Share Link', 'bucket'),
+			'title' => __('Twitter Share Link', 'bucket-lite'),
 			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
@@ -184,7 +184,7 @@ $sections[] = array(
 		array(
 			'id' => 'blog_single_share_links_facebook',
 			'type' => 'checkbox',
-			'title' => __('Facebook Share Link', 'bucket'),
+			'title' => __('Facebook Share Link', 'bucket-lite'),
 			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
@@ -192,7 +192,7 @@ $sections[] = array(
 		array(
 			'id' => 'blog_single_share_links_googleplus',
 			'type' => 'checkbox',
-			'title' => __('Google+ Share Link', 'bucket'),
+			'title' => __('Google+ Share Link', 'bucket-lite'),
 			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
@@ -200,7 +200,7 @@ $sections[] = array(
 		array(
 			'id' => 'blog_single_share_links_pinterest',
 			'type' => 'checkbox',
-			'title' => __('Pinterest Share Link', 'bucket'),
+			'title' => __('Pinterest Share Link', 'bucket-lite'),
 			'desc' => '',
 			'default' => '1',
 			'required' => array('blog_single_show_share_links', '=', 1)
@@ -208,8 +208,8 @@ $sections[] = array(
 		array(
 			'id' => 'blog_single_share_links_position',
 			'type' => 'select',
-			'title' => __('Share Links Position', 'bucket'),
-			'subtitle' => __('Choose where to display the share links.', 'bucket'),
+			'title' => __('Share Links Position', 'bucket-lite'),
+			'subtitle' => __('Choose where to display the share links.', 'bucket-lite'),
 			'options' => array(
 				'top' => 'Top',
 				'bottom' => 'Bottom',
@@ -225,20 +225,20 @@ $sections[] = array(
 		array(
 			'id' => 'blog_single_show_author_box',
 			'type' => 'switch',
-			'title' => __('Show Author Info Box', 'bucket'),
-			'subtitle' => __('Do you want to show author info box with avatar and description bellow the post?', 'bucket'),
+			'title' => __('Show Author Info Box', 'bucket-lite'),
+			'subtitle' => __('Do you want to show author info box with avatar and description bellow the post?', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id'=>'blog-archive-info',
-			'desc'=> __('<h3>Blog Archive</h3>', 'bucket'),
+			'desc'=> __('<h3>Blog Archive</h3>', 'bucket-lite'),
 			'type' => 'info'
 		),
 		array(
 			'id' => 'blog_layout',
 			'type' => 'image_select',
-			'title' => __('Blog Posts Layout', 'bucket'),
-			'subtitle' => __('Choose the layout for blog areas (eg. blog archive page, categories, search results).', 'bucket'),
+			'title' => __('Blog Posts Layout', 'bucket-lite'),
+			'subtitle' => __('Choose the layout for blog areas (eg. blog archive page, categories, search results).', 'bucket-lite'),
 			'default' => 'masonry',
 			'options' => array(
 				'masonry' => array('Masonry', 'img' => wpgrade::resourceuri('images/blog-masonry.png')),
@@ -248,31 +248,31 @@ $sections[] = array(
 		array(
 			'id' => 'blog_excerpt_length',
 			'type' => 'text',
-			'title' => __('Excerpt Length', 'bucket'),
-			'subtitle' => __('Set the number of words for posts excerpt.', 'bucket'),
+			'title' => __('Excerpt Length', 'bucket-lite'),
+			'subtitle' => __('Set the number of words for posts excerpt.', 'bucket-lite'),
 			'default' => '20',
 		),
 		array(
 			'id' => 'blog_excerpt_more_text',
 			'type' => 'text',
-			'title' => __('Excerpt "More" Text', 'bucket'),
-			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', 'bucket'),
+			'title' => __('Excerpt "More" Text', 'bucket-lite'),
+			'subtitle' => __('Change the default [...] with something else (leave empty if you want to remove it).', 'bucket-lite'),
 			'default' => '..',
 		),
 		array(
 			'id' => 'blog_archive_show_cat_billboard',
 			'type' => 'switch',
-			'title' => __('Show Slider On Category Pages?', 'bucket'),
-			'subtitle' => __('Check this if you want to display at the top of your category archives a slider with the posts marked as making part of the category slider.', 'bucket'),
+			'title' => __('Show Slider On Category Pages?', 'bucket-lite'),
+			'subtitle' => __('Check this if you want to display at the top of your category archives a slider with the posts marked as making part of the category slider.', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'blog_cat_slider_transition',
 			'type' => 'select',
-			'title' => __('Slider transition', 'bucket'),
+			'title' => __('Slider transition', 'bucket-lite'),
 			'options' => array(
-					'move' => __('Slide/Move', 'bucket'),
-					'fade' => __('Fade', 'bucket'),
+					'move' => __('Slide/Move', 'bucket-lite'),
+					'fade' => __('Fade', 'bucket-lite'),
 			),
 			'default' => 'move',
 			'select2' => array( // here you can provide params for the select2 jquery call
@@ -284,14 +284,14 @@ $sections[] = array(
 		array(
 			'id' => 'blog_cat_slider_autoplay',
 			'type' => 'switch',
-			'title' => __('Slider autoplay', 'bucket'),
+			'title' => __('Slider autoplay', 'bucket-lite'),
 			'default' => '0',
 			'required' => array('blog_archive_show_cat_billboard', '=', 1)
 		),
 		array(
 			'id' => 'blog_cat_slider_delay',
 			'type' => 'text',
-			'title' => __('Autoplay delay between slides (in milliseconds)', 'bucket'),
+			'title' => __('Autoplay delay between slides (in milliseconds)', 'bucket-lite'),
 			'default' => '2000',
 			'required' => array('blog_archive_show_cat_billboard', '=', 1)
 		)
@@ -303,14 +303,14 @@ $sections[] = array(
 
 $sections[] = array(
 	'icon' => 'note-1',
-	'title' => __('Header', 'bucket'),
-	'desc' => '<p class="description">'.__('Header options allow you to control both the visual and functional aspect of the site header. You can choose various layouts, show or hide elements, and change the color scheme (light or dark).', 'bucket').'</p>',
+	'title' => __('Header', 'bucket-lite'),
+	'desc' => '<p class="description">'.__('Header options allow you to control both the visual and functional aspect of the site header. You can choose various layouts, show or hide elements, and change the color scheme (light or dark).', 'bucket-lite').'</p>',
 	'fields' => array(
 		array(
 			'id' => 'header_type',
 			'type' => 'image_select',
-			'title' => __('Header Layout Style', 'bucket'),
-			'subtitle' => __('Choose the layout for the header area.', 'bucket'),
+			'title' => __('Header Layout Style', 'bucket-lite'),
+			'subtitle' => __('Choose the layout for the header area.', 'bucket-lite'),
 			'default' => 'type1',
 			'options' => array(
 				'type1' => array('Type 1', 'img' => wpgrade::resourceuri('images/header-type1.png')),
@@ -321,8 +321,8 @@ $sections[] = array(
 		array(
 			'id' => 'header_728_90_ad',
 			'type' => 'ace_editor',
-			'title' => __('Header Ad Code', 'bucket'),
-			'subtitle' => __('Paste here the code for the header ad (optimally 720x90px). We will also parse any shortcodes present.', 'bucket'),
+			'title' => __('Header Ad Code', 'bucket-lite'),
+			'subtitle' => __('Paste here the code for the header ad (optimally 720x90px). We will also parse any shortcodes present.', 'bucket-lite'),
 			'required' => array('header_type', 'equals', 'type2'),
 			'default' => '<a class="header-ad-link" href="#"><img src="http://placehold.it/728x90" alt="#" /></a>',
 			'mode' => 'html',
@@ -331,29 +331,29 @@ $sections[] = array(
 		array(
 			'id' => 'nav_inverse_top',
 			'type' => 'switch',
-			'title' => __('Header Top Nav Inverse', 'bucket'),
-			'subtitle' => __('Inverse the contrast of the header top navigation bar (black text on white background).', 'bucket'),
+			'title' => __('Header Top Nav Inverse', 'bucket-lite'),
+			'subtitle' => __('Inverse the contrast of the header top navigation bar (black text on white background).', 'bucket-lite'),
 			'default' => '0'
 		),
 		array(
 			'id' => 'nav_inverse_main',
 			'type' => 'switch',
-			'title' => __('Header Main Nav Inverse', 'bucket'),
-			'subtitle' => __('Inverse the contrast of the main navigation bar including sub-menus and mega-menus (black text on white background).', 'bucket'),
+			'title' => __('Header Main Nav Inverse', 'bucket-lite'),
+			'subtitle' => __('Inverse the contrast of the main navigation bar including sub-menus and mega-menus (black text on white background).', 'bucket-lite'),
 			'default' => '0'
 		),
 		array(
 			'id' => 'nav_show_header_search',
 			'type' => 'switch',
-			'title' =>  __('Show Header Search Form', 'bucket'),
-			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', 'bucket'),
+			'title' =>  __('Show Header Search Form', 'bucket-lite'),
+			'subtitle' => __('Display the search form in the header (it\'s position may vary depending the Header Type).', 'bucket-lite'),
 			'default' => '1'
 		),
 		array(
 			'id' => 'nav_main_sticky',
 			'type' => 'switch',
-			'title' =>  __('Sticky Main Navigation', 'bucket'),
-			'subtitle' => __('Pin the Main Navigation to the top of the screen when scrolling down.', 'bucket'),
+			'title' =>  __('Sticky Main Navigation', 'bucket-lite'),
+			'subtitle' => __('Pin the Main Navigation to the top of the screen when scrolling down.', 'bucket-lite'),
 			'default' => '0'
 		)
 	)
@@ -364,28 +364,28 @@ $sections[] = array(
 
 $sections[] = array(
 	'icon' => 'tag-1',
-	'title' => __('Footer', 'bucket'),
-	'desc' => '<p class="description">'.__('Footer related options including Copyright Text. Other footer elements including widgets and menus can be set from Appearance - Widgets/Menus admin page. ', 'bucket').'</p>',
+	'title' => __('Footer', 'bucket-lite'),
+	'desc' => '<p class="description">'.__('Footer related options including Copyright Text. Other footer elements including widgets and menus can be set from Appearance - Widgets/Menus admin page. ', 'bucket-lite').'</p>',
 	'fields' => array(
 		array(
 			'id' => 'posts_stats',
 			'type' => 'switch',
-			'title' => __('Posts Stats', 'bucket'),
-			'subtitle' => __('Display a monthly based vertical bar graph for posts.', 'bucket'),
+			'title' => __('Posts Stats', 'bucket-lite'),
+			'subtitle' => __('Display a monthly based vertical bar graph for posts.', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'back_to_top',
 			'type' => 'switch',
-			'title' => __('Back to Top Link', 'bucket'),
-			'subtitle' => __('Add a link that helps users jump to the top of the page (instead of pressing "Home" key).', 'bucket'),
+			'title' => __('Back to Top Link', 'bucket-lite'),
+			'subtitle' => __('Add a link that helps users jump to the top of the page (instead of pressing "Home" key).', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'copyright_text',
 			'type' => 'editor',
-			'title' => __('Copyright Text', 'bucket'),
-			'subtitle' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', 'bucket'),wpgrade::themename()),
+			'title' => __('Copyright Text', 'bucket-lite'),
+			'subtitle' => sprintf(__('Text that will appear in footer left area (eg. Copyright 2013 %s | All Rights Reserved).', 'bucket-lite'),wpgrade::themename()),
 			'default' => 'Copyright &copy; 2015 '. wpgrade::themename() .' | All rights reserved.',
 			'rows' => 3,
 		),
@@ -403,86 +403,86 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => "thumbs-up-1",
 	'icon_class' => '',
-	'title' => __('Social and SEO', 'bucket'),
+	'title' => __('Social and SEO', 'bucket-lite'),
 
-	'desc' => '<p class="description">'.__('Social and SEO options allow you to input your social links and choose where to display them. Then you can set the social SEO related info added in the meta tags or used in various widgets.', 'bucket').'</p>',
+	'desc' => '<p class="description">'.__('Social and SEO options allow you to input your social links and choose where to display them. Then you can set the social SEO related info added in the meta tags or used in various widgets.', 'bucket-lite').'</p>',
 	'fields' => array(
         array(
             'id' => 'social_icons',
             'type' => 'text_sortable',
-            'title' => __('Social Icons', 'bucket'),
-            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.<br /><br /><strong> You need to imput the entire URL (ie. http://twitter.com/username)</strong>', 'bucket'),wpgrade::themename()),
-            'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', 'bucket'),
+            'title' => __('Social Icons', 'bucket-lite'),
+            'subtitle' => sprintf(__('Define and reorder your social links.<br /><b>Note:</b> These will be displayed in the "%s Social Links" widget so you can put them anywhere on your site. Only those filled will appear.<br /><br /><strong> You need to imput the entire URL (ie. http://twitter.com/username)</strong>', 'bucket-lite'),wpgrade::themename()),
+            'desc' => __('Icons provided by <strong>FontAwesome</strong> and <strong>Entypo</strong>.', 'bucket-lite'),
 			'checkboxes' => array(
-				'widget'=> __('Widget', 'bucket'),
-				'header'=> __('Header', 'bucket')
+				'widget'=> __('Widget', 'bucket-lite'),
+				'header'=> __('Header', 'bucket-lite')
 			),
             'options' => array(
-                'flickr' => __('Flickr', 'bucket'),
-                'tumblr' => __('Tumblr', 'bucket'),
-                'pinterest' => __('Pinterest', 'bucket'),
-                'instagram' => __('Instagram', 'bucket'),
-                'behance' => __('Behance', 'bucket'),
-                'fivehundredpx' => __('500px', 'bucket'),
-                'deviantart' => __('DeviantART', 'bucket'),
-                'dribbble' => __('Dribbble', 'bucket'),
-                'twitter' => __('Twitter', 'bucket'),
-                'facebook' => __('Facebook', 'bucket'),
-                'gplus' => __('Google+', 'bucket'),
-                'youtube' => __('Youtube', 'bucket'),
-                'vimeo' => __('Vimeo', 'bucket'),
-                'linkedin' => __('LinkedIn', 'bucket'),
-                'skype' => __('Skype', 'bucket'),
-                'soundcloud' => __('SoundCloud', 'bucket'),
-                'digg' => __('Digg', 'bucket'),
-                'lastfm' => __('Last.FM', 'bucket'),
-                'appnet' => __('App.net', 'bucket'),
-                'rss' => __('RSS Feed', 'bucket'),
+                'flickr' => __('Flickr', 'bucket-lite'),
+                'tumblr' => __('Tumblr', 'bucket-lite'),
+                'pinterest' => __('Pinterest', 'bucket-lite'),
+                'instagram' => __('Instagram', 'bucket-lite'),
+                'behance' => __('Behance', 'bucket-lite'),
+                'fivehundredpx' => __('500px', 'bucket-lite'),
+                'deviantart' => __('DeviantART', 'bucket-lite'),
+                'dribbble' => __('Dribbble', 'bucket-lite'),
+                'twitter' => __('Twitter', 'bucket-lite'),
+                'facebook' => __('Facebook', 'bucket-lite'),
+                'gplus' => __('Google+', 'bucket-lite'),
+                'youtube' => __('Youtube', 'bucket-lite'),
+                'vimeo' => __('Vimeo', 'bucket-lite'),
+                'linkedin' => __('LinkedIn', 'bucket-lite'),
+                'skype' => __('Skype', 'bucket-lite'),
+                'soundcloud' => __('SoundCloud', 'bucket-lite'),
+                'digg' => __('Digg', 'bucket-lite'),
+                'lastfm' => __('Last.FM', 'bucket-lite'),
+                'appnet' => __('App.net', 'bucket-lite'),
+                'rss' => __('RSS Feed', 'bucket-lite'),
             )
         ),
 
 //		array(
 //			'id'=>"social_icons",
 //			'type' => 'group',//doesnt need to be called for callback fields
-//			'title' => __('Social Icons', 'bucket'),
-//			'subtitle' => __('Group any items together.', 'bucket'),
-//			'desc' => __('No limit as to what you can group. Just don\'t try to group a group.', 'bucket'),
-//			'groupname' => __('Social Icon', 'bucket'), // Group name
+//			'title' => __('Social Icons', 'bucket-lite'),
+//			'subtitle' => __('Group any items together.', 'bucket-lite'),
+//			'desc' => __('No limit as to what you can group. Just don\'t try to group a group.', 'bucket-lite'),
+//			'groupname' => __('Social Icon', 'bucket-lite'), // Group name
 //			'subfields' => array(
 //				array(
 //					'id'=>'social_icons_name',
 //					'type' => 'text',
-//					'title' => __('Social Icon Name', 'bucket'),
-//					'subtitle'=> __('This will apear as alt text on icon', 'bucket'),
+//					'title' => __('Social Icon Name', 'bucket-lite'),
+//					'subtitle'=> __('This will apear as alt text on icon', 'bucket-lite'),
 //				),
 //				array(
 //					'id'=>'social_icons_url',
 //					'type' => 'text',
-//					'title' => __('Link', 'bucket'),
-//					'subtitle' => __('Here you put your subtitle', 'bucket'),
+//					'title' => __('Link', 'bucket-lite'),
+//					'subtitle' => __('Here you put your subtitle', 'bucket-lite'),
 //				),
 //				array(
 //					'id' => 'social_icons_image_type',
 //					'type' => 'image_select',
-//					'title' => __('Icon Type', 'bucket'),
+//					'title' => __('Icon Type', 'bucket-lite'),
 //					'options' => array(
-//						'image' => array( __('Image', 'bucket' ), 'img' => 'images/align-right.png' ),
-//						'font-awesome'=> array( __('Font Awesome', 'bucket'), 'img' => 'images/align-left.png' )
+//						'image' => array( __('Image', 'bucket-lite' ), 'img' => 'images/align-right.png' ),
+//						'font-awesome'=> array( __('Font Awesome', 'bucket-lite'), 'img' => 'images/align-left.png' )
 //					),
 //					'default' => 'image',
 //				),
 //				array(
 //					'id'=>'social_icons_image',
 //					'type' => 'media',
-//					'title' => __('Image', 'bucket'),
-//					'subtitle' => __('Upload the image.', 'bucket'),
+//					'title' => __('Image', 'bucket-lite'),
+//					'subtitle' => __('Upload the image.', 'bucket-lite'),
 //					'required' => array('social_icons_image_type', '=', 'image'),
 //				),
 //				array(
 //					'id'=>'social_icons_font_awesome',
 //					'type' => 'text',
-//					'title' => __('Icon Name', 'bucket'),
-//					'subtitle' => __('Here you can write a font-awesome class name (e.g. fa-facebook).', 'bucket'),
+//					'title' => __('Icon Name', 'bucket-lite'),
+//					'subtitle' => __('Here you can write a font-awesome class name (e.g. fa-facebook).', 'bucket-lite'),
 //					'required' => array('social_icons_image_type', '=', 'font-awesome'),
 //				),
 //			),
@@ -491,90 +491,90 @@ $sections[] = array(
 		array(
 			'id' => 'social_icons_target_blank',
 			'type' => 'switch',
-			'title' => __('Open social icons links in new a window?', 'bucket'),
-			'subtitle' => __('Do you want to open social links in a new window ?', 'bucket'),
+			'title' => __('Open social icons links in new a window?', 'bucket-lite'),
+			'subtitle' => __('Do you want to open social links in a new window ?', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'prepare_for_social_share',
 			'type' => 'switch',
-			'title' => __('Add Social Meta Tags', 'bucket'),
-			'subtitle' => __('Let us properly prepare your theme for the social sharing and discovery by adding the needed metatags in the <head> section.', 'bucket'),
+			'title' => __('Add Social Meta Tags', 'bucket-lite'),
+			'subtitle' => __('Let us properly prepare your theme for the social sharing and discovery by adding the needed metatags in the <head> section.', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'facebook_id_app',
 			'type' => 'text',
-			'title' => __('Facebook Application ID', 'bucket'),
-			'subtitle' => __('Enter the Facebook Application ID of the Fan Page which is associated with this website. You can create one <a href="https://developers.facebook.com/apps">here</a>.', 'bucket'),
+			'title' => __('Facebook Application ID', 'bucket-lite'),
+			'subtitle' => __('Enter the Facebook Application ID of the Fan Page which is associated with this website. You can create one <a href="https://developers.facebook.com/apps">here</a>.', 'bucket-lite'),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'facebook_admin_id',
 			'type' => 'text',
-			'title' => __('Facebook Admin ID', 'bucket'),
-			'subtitle' => __('The id of the user that has administrative privileges to your Facebook App so you can access the <a href="https://www.facebook.com/insights/">Facebook Insights</a>.', 'bucket'),
+			'title' => __('Facebook Admin ID', 'bucket-lite'),
+			'subtitle' => __('The id of the user that has administrative privileges to your Facebook App so you can access the <a href="https://www.facebook.com/insights/">Facebook Insights</a>.', 'bucket-lite'),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'google_page_url',
 			'type' => 'text',
-			'title' => __('Google+ Publisher', 'bucket'),
-			'subtitle' => __('Enter your Google Plus page ID (example: https://plus.google.com/<b>105345678532237339285</b>) here if you have set up a "Google+ Page".', 'bucket'),
+			'title' => __('Google+ Publisher', 'bucket-lite'),
+			'subtitle' => __('Enter your Google Plus page ID (example: https://plus.google.com/<b>105345678532237339285</b>) here if you have set up a "Google+ Page".', 'bucket-lite'),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'twitter_card_site',
 			'type' => 'text',
-			'title' => __('Twitter Site Username', 'bucket'),
-			'subtitle' => __('The Twitter username of the entire site. The username for the author will be taken from the author\'s profile (skip the @)', 'bucket'),
+			'title' => __('Twitter Site Username', 'bucket-lite'),
+			'subtitle' => __('The Twitter username of the entire site. The username for the author will be taken from the author\'s profile (skip the @)', 'bucket-lite'),
 			'required' => array('prepare_for_social_share', '=', 1)
 		),
 		array(
 			'id' => 'social_share_default_image',
 			'type' => 'media',
-			'title' => __('Default Social Share Image', 'bucket'),
-			'desc' => __('If an image is uploaded, this will be used for content sharing if you don\'t upload a custom image with your content (at least 200px wide recommended).', 'bucket'),
+			'title' => __('Default Social Share Image', 'bucket-lite'),
+			'desc' => __('If an image is uploaded, this will be used for content sharing if you don\'t upload a custom image with your content (at least 200px wide recommended).', 'bucket-lite'),
 		),
 		array(
 			'id' => 'use_twitter_widget',
 			'type' => 'switch',
-			'title' => __('Use Twitter Widget', 'bucket'),
-			'subtitle' => __('Just a widget to show your latest tweets (Twitter API v1.1 compatible). You can add it in your blog or footer sidebars.<div class="description">', 'bucket'),
+			'title' => __('Use Twitter Widget', 'bucket-lite'),
+			'subtitle' => __('Just a widget to show your latest tweets (Twitter API v1.1 compatible). You can add it in your blog or footer sidebars.<div class="description">', 'bucket-lite'),
 			'default' => '1',
 		),
 		array(
 			'id' => 'info_about_twitter_app',
 			'type' => 'info',
-			'title' => __('Important Note : ', 'bucket'),
-			'desc' => __('<div>In order to use the Twitter widget you will need to create a Twitter application <a href="https://dev.twitter.com/apps/new" >here</a> and get your own key, secrets and access tokens. This is due to the changes that Twitter made to it\'s API (v1.1). Please note that these defaults are used on the theme demo site but they might be disabled at any time, so we <strong>strongly</strong> recommend you to input your own bellow.</div>', 'bucket'),
+			'title' => __('Important Note : ', 'bucket-lite'),
+			'desc' => __('<div>In order to use the Twitter widget you will need to create a Twitter application <a href="https://dev.twitter.com/apps/new" >here</a> and get your own key, secrets and access tokens. This is due to the changes that Twitter made to it\'s API (v1.1). Please note that these defaults are used on the theme demo site but they might be disabled at any time, so we <strong>strongly</strong> recommend you to input your own bellow.</div>', 'bucket-lite'),
 			'required' => array('use_twitter_widget', '=', 1)
 		),
 		array(
 			'id' => 'twitter_consumer_key',
 			'type' => 'text',
-			'title' => __('Consumer Key', 'bucket'),
+			'title' => __('Consumer Key', 'bucket-lite'),
 			'default' => 'UGciUkPwjDpCRyEqcGsbg',
 			'required' => array('use_twitter_widget', '=', 1)
 		),
 		array(
 			'id' => 'twitter_consumer_secret',
 			'type' => 'text',
-			'title' => __('Consumer Secret', 'bucket'),
+			'title' => __('Consumer Secret', 'bucket-lite'),
 			'default' => 'nuHkqRLxKTEIsTHuOjr1XX5YZYetER6HF7pKxkV11E',
 			'required' => array('use_twitter_widget', '=', 1)
 		),
 		array(
 			'id' => 'twitter_oauth_access_token',
 			'type' => 'text',
-			'title' => __('Oauth Access Token', 'bucket'),
+			'title' => __('Oauth Access Token', 'bucket-lite'),
 			'default' => '205813011-oLyghRwqRNHbZShOimlGKfA6BI4hk3KRBWqlDYIX',
 			'required' => array('use_twitter_widget', '=', 1)
 		),
 		array(
 			'id' => 'twitter_oauth_access_token_secret',
 			'type' => 'text',
-			'title' => __('Oauth Access Token Secret', 'bucket'),
+			'title' => __('Oauth Access Token Secret', 'bucket-lite'),
 			'default' => '4LqlZjf7jDqmxqXQjc6MyIutHCXPStIa3TvEHX9NEYw',
 			'required' => array('use_twitter_widget', '=', 1)
 		),
@@ -587,15 +587,15 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => "database-1",
 	'icon_class' => '',
-	'title' => __('Custom Code', 'bucket'),
-	'desc' => '<p class="description">'.__('You can change the site style and behaviour by adding custom scripts to all pages within your site using the custom code areas below.', 'bucket').'</p>',
+	'title' => __('Custom Code', 'bucket-lite'),
+	'desc' => '<p class="description">'.__('You can change the site style and behaviour by adding custom scripts to all pages within your site using the custom code areas below.', 'bucket-lite').'</p>',
 	'fields' => array(
 		array(
 			'id' => 'custom_css',
 			'type' => 'ace_editor',
-			'title' => __('Custom CSS', 'bucket'),
-			'subtitle' => __('Enter your custom CSS code. It will be included in the head section of the page.', 'bucket'),
-			'desc' => '', //__('', 'bucket'),
+			'title' => __('Custom CSS', 'bucket-lite'),
+			'subtitle' => __('Enter your custom CSS code. It will be included in the head section of the page.', 'bucket-lite'),
+			'desc' => '', //__('', 'bucket-lite'),
 			'mode' => 'css',
 			'theme' => 'chrome',
 			'compiler' => true,
@@ -603,11 +603,11 @@ $sections[] = array(
 		array(
 			'id' => 'inject_custom_css',
 			'type' => 'select',
-			'title' => __('Apply Custom CSS', 'bucket'),
-			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', 'bucket'),wpgrade::themename()),
+			'title' => __('Apply Custom CSS', 'bucket-lite'),
+			'subtitle' => sprintf(__('Select how to insert the custom CSS into your site.', 'bucket-lite'),wpgrade::themename()),
 			'default' => 'inline',
 			'compiler' => true,
-			'options' => array( 'inline' => __('Inline <em>(recommended)</em>', 'bucket'), 'file' => __('Write To File (might require file permissions)', 'bucket')),
+			'options' => array( 'inline' => __('Inline <em>(recommended)</em>', 'bucket-lite'), 'file' => __('Write To File (might require file permissions)', 'bucket-lite')),
 			'select2' => array( // here you can provide params for the select2 jquery call
 			    'minimumResultsForSearch' => -1, // this way the search box will be disabled
 				'allowClear' => false // don't allow a empty select
@@ -616,8 +616,8 @@ $sections[] = array(
 		array(
 			'id' => 'custom_js',
 			'type' => 'ace_editor',
-			'title' => __('Custom JavaScript (header)', 'bucket'),
-			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', 'bucket'),
+			'title' => __('Custom JavaScript (header)', 'bucket-lite'),
+			'subtitle' => __('Enter your custom Javascript code. This code will be loaded in the head section', 'bucket-lite'),
 			'mode' => 'text',
 			'compiler' => true,
 			'theme' => 'chrome'
@@ -625,8 +625,8 @@ $sections[] = array(
 		array(
 			'id' => 'custom_js_footer',
 			'type' => 'ace_editor',
-			'title' => __('Custom JavaScript (footer)', 'bucket'),
-			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', 'bucket'),
+			'title' => __('Custom JavaScript (footer)', 'bucket-lite'),
+			'subtitle' => __('This javascript code will be loaded in the footer. You can paste here your <strong>Google Analytics tracking code</strong> (or for what matters any tracking code) and we will put it on every page.', 'bucket-lite'),
 			'mode' => 'text',
 			'compiler' => true,
 			'theme' => 'chrome'
@@ -640,13 +640,13 @@ $sections[] = array(
 $sections[] = array(
 	'icon' => "truck",
 	'icon_class' => '',
-	'title' => __('Utilities', 'bucket'),
-	'desc' => '<p class="description">'.__('Utilities help you keep up-to-date with new versions of the theme. Also you can import the demo data from here.', 'bucket').'</p>',
+	'title' => __('Utilities', 'bucket-lite'),
+	'desc' => '<p class="description">'.__('Utilities help you keep up-to-date with new versions of the theme. Also you can import the demo data from here.', 'bucket-lite').'</p>',
 	'fields' => array(
 		array(
 			'id'=>'import-demo-data-info',
 			'desc'=> __('<h3>Import Demo Data</h3>
-				<p class="description">'.__('Here you can import the demo data and get on your way of setting up the site like the theme demo.', 'bucket').'</p>', 'bucket'),
+				<p class="description">'.__('Here you can import the demo data and get on your way of setting up the site like the theme demo.', 'bucket-lite').'</p>', 'bucket-lite'),
 			'type' => 'info'
 		),
 		array(
@@ -660,13 +660,13 @@ $sections[] = array(
 						<input type="hidden" name="wpGrade_import_ajax_url" value="'.admin_url("admin-ajax.php").'" />
 
 						<a href="#" class="button button-primary" id="wpGrade_import_demodata_button">
-							'.__('Import demo data', 'bucket').'
+							'.__('Import demo data', 'bucket-lite').'
 						</a>
 
 						<div class="wpGrade-loading-wrap hidden">
 							<span class="wpGrade-loading wpGrade-import-loading"></span>
 							<div class="wpGrade-import-wait">
-								'.__('Please wait a few minutes (between 1 and 3 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', 'bucket').'
+								'.__('Please wait a few minutes (between 1 and 3 minutes usually, but depending on your hosting it can take longer) and <strong>don\'t reload the page</strong>. You will be notified as soon as the import has finished!', 'bucket-lite').'
 							</div>
 						</div>
 
@@ -678,16 +678,16 @@ $sections[] = array(
 		array(
 			'id' => 'enable_acf_ui',
 			'type' => 'switch',
-			'title' => __('Enable Advanced Custom Fields Settings', 'bucket'),
-			'subtitle' => __(' Advanced Custom Fields plugin is already included in Bucket, instead of installing it again you can enable it from here.', 'bucket'),
+			'title' => __('Enable Advanced Custom Fields Settings', 'bucket-lite'),
+			'subtitle' => __(' Advanced Custom Fields plugin is already included in Bucket, instead of installing it again you can enable it from here.', 'bucket-lite'),
 			'default' => '0'
 		),
 
 		array(
 			'id' => 'admin_panel_options',
 			'type' => 'switch',
-			'title' => __('Admin Panel Options', 'bucket'),
-			'subtitle' => __('Here you can copy/download your current admin option settings. Keep this safe as you can use it as a backup should anything go wrong, or you can use it to restore your settings on this site (or any other site).', 'bucket'),
+			'title' => __('Admin Panel Options', 'bucket-lite'),
+			'subtitle' => __('Here you can copy/download your current admin option settings. Keep this safe as you can use it as a backup should anything go wrong, or you can use it to restore your settings on this site (or any other site).', 'bucket-lite'),
 		),
 
 		array(
@@ -708,21 +708,21 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	$sections[] = array(
 		'icon' => "cart",
 		'icon_class' => '',
-		'title' => __('WooCommerce', 'bucket'),
-		'desc' => '<p class="description">'.__('WooCommerce options!', 'bucket').'</p>',
+		'title' => __('WooCommerce', 'bucket-lite'),
+		'desc' => '<p class="description">'.__('WooCommerce options!', 'bucket-lite').'</p>',
 		'fields' => array(
 			array(
 				'id' => 'enable_woocommerce_support',
 				'type' => 'switch',
-				'title' => __('Enable WooCommerce Support', 'bucket'),
-				'subtitle' => __('Turn this off to avoid loading the WooCommerce assets (CSS and JS).', 'bucket'),
+				'title' => __('Enable WooCommerce Support', 'bucket-lite'),
+				'subtitle' => __('Turn this off to avoid loading the WooCommerce assets (CSS and JS).', 'bucket-lite'),
 				'default' => '1',
 			),
 //			array(
 //				'id' => 'woocommerce_products_numbers',
 //				'type' => 'text',
-//				'title' => __('Products per page', 'bucket'),
-//				'subtitle' => __('Select the number of products per page.This must be numeric.', 'bucket'),
+//				'title' => __('Products per page', 'bucket-lite'),
+//				'subtitle' => __('Select the number of products per page.This must be numeric.', 'bucket-lite'),
 //				'validate' => 'numeric',
 //				'default' => '12',
 //				'class' => 'small-text'
@@ -737,8 +737,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 $sections[] = array(
 	'icon' => "cd-1",
 	'icon_class' => '',
-	'title' => __('Help and Support', 'bucket'),
-	'desc' => '<p class="description">'.__('If you had anything less than a great experience with this theme please contact us now. You can also find answers in our community site, or official articles and tutorials in our knowledge base.', 'bucket').'</p>
+	'title' => __('Help and Support', 'bucket-lite'),
+	'desc' => '<p class="description">'.__('If you had anything less than a great experience with this theme please contact us now. You can also find answers in our community site, or official articles and tutorials in our knowledge base.', 'bucket-lite').'</p>
 		<ul class="help-and-support">
 			<li>
 				<a href="http://bit.ly/19G56H1">

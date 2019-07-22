@@ -50,7 +50,7 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 					//go through the options values and titles
 					$themeconfiguration = wpgrade::config();
 					if (!empty($themeconfiguration['megamenu_layouts'])) {
-						$newHtml .= '<p class="description description-wide wpgrade_custom_menu_meta"><label>'.__('Select MegaMenu Layout:','bucket').' <select name="wpgrade_megamenu_layout_'.$menu_item_id.'">';
+						$newHtml .= '<p class="description description-wide wpgrade_custom_menu_meta"><label>'.__('Select MegaMenu Layout:','bucket-lite').' <select name="wpgrade_megamenu_layout_'.$menu_item_id.'">';
 						foreach ($themeconfiguration['megamenu_layouts'] as $key => $value) {
 							$selected = '';
 							if ($key == $current_val) $selected = 'selected';
@@ -98,7 +98,7 @@ class WPGrade_Bucket_Walker_Nav_Menu_Edit extends Walker_Nav_Menu_Edit {
 				//go through the options values and titles
 				$themeconfiguration = wpgrade::config();
 				if ( ! empty( $themeconfiguration['megamenu_layouts'] ) ) {
-					$newHtml .= '<p class="link-to-original wpgrade_custom_menu_meta"><label>' . __( 'Select MegaMenu Layout:', 'bucket' ) . ' <select name="wpgrade_megamenu_layout_' . $menu_item_id . '">';
+					$newHtml .= '<p class="link-to-original wpgrade_custom_menu_meta"><label>' . __( 'Select MegaMenu Layout:', 'bucket-lite' ) . ' <select name="wpgrade_megamenu_layout_' . $menu_item_id . '">';
 					foreach ( $themeconfiguration['megamenu_layouts'] as $key => $value ) {
 						$selected = '';
 						if ( $key == $current_val )

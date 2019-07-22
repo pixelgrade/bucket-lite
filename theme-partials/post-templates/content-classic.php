@@ -16,7 +16,7 @@
 		<?php endif; ?>
 		<?php post_format_icon();
 			if ( bucket::has_average_score() ) { ?>
-			<div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', 'bucket') ?></span></div>
+			<div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', 'bucket-lite') ?></span></div>
 		<?php } ?>
 	</div>
 	<div class="media__body grid__item seven-twelfths palm-one-whole">
@@ -25,7 +25,7 @@
 		if ($categories) {
 			echo '<div class="article__category">';
 			foreach ($categories as $category):
-	                    echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket'), $category->name)) .'">'. $category->cat_name.'</a>';
+	                    echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket-lite'), $category->name)) .'">'. $category->cat_name.'</a>';
             endforeach;
 	        echo '</div>';
 		} ?>
