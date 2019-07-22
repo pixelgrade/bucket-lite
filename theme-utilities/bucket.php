@@ -95,13 +95,6 @@ class bucket {
 		return array('max_posts_nr' => $max_posts_nr, 'months' => $months_posts );
 	}
 
-	static function has_average_score(){
-		if (get_field('enable_review_score') && get_field('score_breakdown')) {
-			return true;
-		}
-		return false;
-	}
-
 	/**
 	 * Get the score of the current post
 	 * @return bool|float
