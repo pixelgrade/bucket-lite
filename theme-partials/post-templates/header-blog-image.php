@@ -30,9 +30,6 @@
             ?>
 	        <?php bucket::the_img_tag($image[0], get_the_title()) ?>
             <?php post_format_icon();
-        	if ( bucket::has_average_score() ) { ?>
-                <div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', 'bucket-lite') ?></span></div>
-        	<?php }
             endif;
             ?>
         </div>
