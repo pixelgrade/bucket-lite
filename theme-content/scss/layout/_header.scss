@@ -326,17 +326,6 @@
                     }
                 }
 
-                .article--billboard-small {
-                    background-color: white;
-                    border-bottom-color: #ccc;
-
-                    @include media-query(palm) {
-                        .hN {
-                            color: black;
-                        }
-                    }
-                }
-
             } // li
 
             > li {
