@@ -17,9 +17,7 @@ Stable Tag: 1.0.0
 == Description ==
 Bucket Lite is an indispensable Magazine Style WordPress Theme aimed at providing you with an easy-to-use tool to share your discoveries and showcase the latest findings.
 
-Whether you’re looking to share the latest cool things out there, write reviews for your favorite products, keep your visitors engaged with the latest videos, the hottest breaking news or special events, BUCKET is designed to fulfill these and more.
-
-A powerful unique Admin Panel and a Custom Page Builder designed with ease of use in mind will enable you to setup your website in a matter of minutes. Everything just works the way you expect it to.
+Whether you’re looking to share the latest cool things out there, write reviews for your favorite products, keep your visitors engaged with the latest videos, the hottest breaking news or special events, Bucket is designed to fulfill these and more.
 
 == Installation ==
 
