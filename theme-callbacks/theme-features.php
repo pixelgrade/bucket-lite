@@ -23,14 +23,6 @@ function wpgrade_custom_backgrounds_suport(){
 // Hook into the 'after_setup_theme' action
 add_action( 'after_setup_theme', 'wpgrade_custom_backgrounds_suport' );
 
-//function wpgrade_callback_sort_query_by_post_in( $sortby, $thequery ) {
-//	if ( !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
-//		$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
-//
-//	return $sortby;
-//}
-//add_filter( 'posts_orderby', 'wpgrade_callback_sort_query_by_post_in', 10, 2 );
-
 function wpgrade_add_desktop_icons(){
 
 	if ( wpgrade::image_src( 'favicon' ) ) {
