@@ -50,3 +50,7 @@ The Bucket Lite Theme bundles the following third-party resources:
 * Riloadr https://github.com/tubalmartin/riloadr, (c) 2013 Tubal Martin, licensed under [MIT](https://opensource.org/licenses/MIT)
 * Salvattore https://github.com/rnmp/salvattore, (c) 2013-2014 Rolando Murillo and Giorgio Leveroni, licensed under [MIT](https://opensource.org/licenses/MIT)
 * Autosize http://www.jacklmoore.com/autosize, (c) 2013 Jack Moore, licensed under [MIT](https://opensource.org/licenses/MIT)
+
+* Images: images by PublicCo — 
+[Source](https://pxhere.com/en/photo/98964), PublicCo — [Source](https://pxhere.com/en/photo/857613), PublicCo — [Source](https://pxhere.com/en/photo/493363), licensed under CC0 Public Domain.
+
