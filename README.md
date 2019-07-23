@@ -1,5 +1,5 @@
 # Bucket – A Digital Magazine Style WordPress Theme
-### BUCKET is an indispensable Magazine Style WordPress Theme aimed at providing you with an easy-to-use tool to share your discoveries and showcase the latest findings.
+### Bucket is an indispensable Magazine Style WordPress Theme aimed at providing you with an easy-to-use tool to share your discoveries and showcase the latest findings.
 
 [View Demo](https://demos.pixelgrade.com/bucket-lite/) &nbsp;·&nbsp; [Documentation](https://pixelgrade.com/bucket-lite-documentation/) &nbsp;·&nbsp; [Download for Free](https://downloads.wordpress.org/theme/bucket-lite.latest-stable.zip) &nbsp;·&nbsp; [ View Pro Version](https://pixelgrade.com/themes/bucket-pro/)
 
