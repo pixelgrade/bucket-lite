@@ -128,7 +128,7 @@
 				'wpgrade-main-scripts' => array
 				(
 					'path' => get_template_directory_uri() . '/theme-content/js/main.js',
-					'cache_bust' => '1.6.9.1',
+					'cache_bust' => '1.0',
 					'require' => array
 					(
 						'jquery',
@@ -146,7 +146,7 @@
 				'wpgrade-main-style' => array
 				(
 					'path' => get_template_directory_uri().'/theme-content/css/style.css',
-					'cache_bust' => '1.6.9.1',
+					'cache_bust' => '1.0',
 				),
 
 			)
