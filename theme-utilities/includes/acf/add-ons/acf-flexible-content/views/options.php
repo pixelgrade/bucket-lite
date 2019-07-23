@@ -13,7 +13,7 @@ if( empty($field['layouts']) )
 
 // get name of all fields for use in field type drop down
 $fields_names = apply_filters('acf/registered_fields', array());
-unset( $fields_names[ __("Layout",'acf') ]['flexible_content'], $fields_names[ __("Layout",'acf') ]['tab'] );
+unset( $fields_names[ __("Layout",'bucket-lite') ]['flexible_content'], $fields_names[ __("Layout",'bucket-lite') ]['tab'] );
 
 
 // conditional logic dummy data
@@ -35,8 +35,8 @@ foreach( $field['layouts'] as $layout_key => $layout ):
 	$layout['sub_fields'][] = apply_filters('acf/load_field_defaults',  array(
 		'key'	=> 'field_clone',
 		'type'	=> 'text',
-		'label'	=> __("New Field",'acf'),
-		'name'	=> __("new_field",'acf'),
+		'label'	=> __("New Field",'bucket-lite'),
+		'name'	=> __("new_field",'bucket-lite'),
 	));
 	
 	?>
@@ -46,8 +46,8 @@ foreach( $field['layouts'] as $layout_key => $layout ):
 
 			<label><?php _e("Layout",'acf'); ?></label>
 			<p class="desription">
-				<span><a class="acf-fc-reorder" title="<?php _e("Reorder Layout",'acf'); ?>" href="javascript:;"><?php _e("Reorder",'acf'); ?></a> | </span>
-				<span><a class="acf-fc-delete" title="<?php _e("Delete Layout",'acf'); ?>" href="javascript:;"><?php _e("Delete",'acf'); ?></a>
+				<span><a class="acf-fc-reorder" title="<?php _e("Reorder Layout",'bucket-lite'); ?>" href="javascript:;"><?php _e("Reorder",'acf'); ?></a> | </span>
+				<span><a class="acf-fc-delete" title="<?php _e("Delete Layout",'bucket-lite'); ?>" href="javascript:;"><?php _e("Delete",'acf'); ?></a>
 				
 				<br />
 				

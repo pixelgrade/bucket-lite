@@ -30,6 +30,8 @@ load_theme_textdomain( 'bucket-lite', get_stylesheet_directory() . '/languages' 
 $formats = array('video', 'audio', 'gallery', 'image', 'link');
 add_theme_support('post-formats', $formats);
 
+add_theme_support( 'title-tag' );
+
 // Initialize system core
 // ----------------------
 do_action('wpgrade_before_core');

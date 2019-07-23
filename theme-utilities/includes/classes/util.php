@@ -1246,60 +1246,6 @@ class util
 	}
 
 	/**
-	 * Transmit headers that force a browser to display the download file
-	 * dialog. Cross browser compatible. Only fires if headers have not
-	 * already been sent.
-	 *
-	 * @param   string  $filename  The name of the filename to display to
-	 *                             browsers
-	 * @param   string  $content   The content to output for the download.
-	 *                             If you don't specify this, just the
-	 *                             headers will be sent
-	 * @return  bool
-	 *
-	 * @link    http://www.php.net/manual/en/function.header.php#102175
-	 *
-	 * @access  public
-	 * @since   1.0.000
-	 * @static
-	 */
-	static function force_download( $filename, $content = FALSE )
-	{
-		if ( ! headers_sent() ) {
-			// Required for some browsers
-			if ( ini_get( 'zlib.output_compression' ) ) {
-				@ini_set( 'zlib.output_compression', 'Off' );
-			}
-
-			header( 'Pragma: public' );
-			header( 'Expires: 0' );
-			header( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
-
-			// Required for certain browsers
-			header( 'Cache-Control: private', FALSE );
-
-			header( 'Content-Disposition: attachment; filename="' . basename( str_replace( '"', '', $filename ) ) . '";' );
-			header( 'Content-Type: application/force-download' );
-			header( 'Content-Transfer-Encoding: binary' );
-
-			if ( $content ) {
-			   header( 'Content-Length: ' . strlen( $content ) );
-			}
-
-			ob_clean();
-			flush();
-
-			if ( $content ) {
-				echo $content;
-			}
-
-			return TRUE;
-		} else {
-			return FALSE;
-		}
-	}
-
-	/**
 	 * Sets the headers to prevent caching for the different browsers
 	 *
 	 * Different browsers support different nocache headers, so several

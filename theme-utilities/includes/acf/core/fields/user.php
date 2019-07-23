@@ -305,11 +305,9 @@ class acf_field_user extends acf_field
 			'value'	=>	$field['field_type'],
 			'choices' => array(
 				__("Multiple Values",'acf') => array(
-					//'checkbox' => __('Checkbox', 'acf'),
-					'multi_select' => __('Multi Select', 'acf')
+					'multi_select' => __('Multi Select', 'bucket-lite')
 				),
 				__("Single Value",'acf') => array(
-					//'radio' => __('Radio Buttons', 'acf'),
 					'select' => __('Select', 'acf')
 				)
 			)

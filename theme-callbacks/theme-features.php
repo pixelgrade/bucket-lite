@@ -70,18 +70,6 @@ function wpgrade_callback_fix_yoast_canonical() {
 
 add_action('wp', 'wpgrade_callback_fix_yoast_canonical');
 
-// Add "Next page" button to TinyMCE
-function add_next_page_button( $mce_buttons ) {
-	$pos = array_search( 'wp_more', $mce_buttons, true );
-	if ( $pos !== false ) {
-		$tmp_buttons = array_slice( $mce_buttons, 0, $pos+1 );
-		$tmp_buttons[] = 'wp_page';
-		$mce_buttons = array_merge( $tmp_buttons, array_slice( $mce_buttons, $pos+1 ) );
-	}
-	return $mce_buttons;
-}
-add_filter( 'mce_buttons', 'add_next_page_button' );
-
 // Customize the "wp_link_pages()" to be able to display both numbers and prev/next links
 function add_next_and_number( $args ) {
 	if ( $args['next_or_number'] == 'next_and_number' ) {

@@ -48,11 +48,6 @@ class acf
 			'include_3rd_party'	=> false
 		);
 		
-		
-		// set text domain
-		load_textdomain('acf', $this->settings['path'] . 'lang/acf-' . get_locale() . '.mo');
-		
-		
 		// actions
 		add_action('init', array($this, 'init'), 1);
 		add_action('acf/pre_save_post', array($this, 'save_post_lock'), 0);
@@ -482,16 +477,16 @@ class acf
 		
 		// Create ACF post type
 		$labels = array(
-		    'name' => __( 'Field&nbsp;Groups', 'acf' ),
-			'singular_name' => __( 'Advanced Custom Fields', 'acf' ),
-		    'add_new' => __( 'Add New' , 'acf' ),
-		    'add_new_item' => __( 'Add New Field Group' , 'acf' ),
-		    'edit_item' =>  __( 'Edit Field Group' , 'acf' ),
-		    'new_item' => __( 'New Field Group' , 'acf' ),
-		    'view_item' => __('View Field Group', 'acf'),
-		    'search_items' => __('Search Field Groups', 'acf'),
-		    'not_found' =>  __('No Field Groups found', 'acf'),
-		    'not_found_in_trash' => __('No Field Groups found in Trash', 'acf'), 
+		    'name' => __( 'Field&nbsp;Groups', 'bucket-lite' ),
+			'singular_name' => __( 'Advanced Custom Fields', 'bucket-lite' ),
+		    'add_new' => __( 'Add New' , 'bucket-lite' ),
+		    'add_new_item' => __( 'Add New Field Group' , 'bucket-lite' ),
+		    'edit_item' =>  __( 'Edit Field Group' , 'bucket-lite' ),
+		    'new_item' => __( 'New Field Group' , 'bucket-lite' ),
+		    'view_item' => __('View Field Group', 'bucket-lite'),
+		    'search_items' => __('Search Field Groups', 'bucket-lite'),
+		    'not_found' =>  __('No Field Groups found', 'bucket-lite'),
+		    'not_found_in_trash' => __('No Field Groups found in Trash', 'bucket-lite'),
 		);
 		
 		register_post_type('acf', array(
@@ -576,7 +571,7 @@ class acf
 	
 	function admin_menu()
 	{
-		add_menu_page(__("Custom Fields",'acf'), __("Custom Fields",'acf'), 'manage_options', 'edit.php?post_type=acf', false, false, '80.025');
+		add_menu_page(__("Custom Fields",'bucket-lite'), __("Custom Fields",'bucket-lite'), 'manage_options', 'edit.php?post_type=acf', false, false, '80.025');
 	}
 	
 	
@@ -594,17 +589,17 @@ class acf
 	
 		$messages['acf'] = array(
 			0 => '', // Unused. Messages start at index 1.
-			1 => __('Field group updated.', 'acf'),
-			2 => __('Custom field updated.', 'acf'),
-			3 => __('Custom field deleted.', 'acf'),
-			4 => __('Field group updated.', 'acf'),
+			1 => __('Field group updated.', 'bucket-lite'),
+			2 => __('Custom field updated.', 'bucket-lite'),
+			3 => __('Custom field deleted.', 'bucket-lite'),
+			4 => __('Field group updated.', 'bucket-lite'),
 			/* translators: %s: date and time of the revision */
-			5 => isset($_GET['revision']) ? sprintf( __('Field group restored to revision from %s', 'acf'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-			6 => __('Field group published.', 'acf'),
-			7 => __('Field group saved.', 'acf'),
-			8 => __('Field group submitted.', 'acf'),
-			9 => __('Field group scheduled for.', 'acf'),
-			10 => __('Field group draft updated.', 'acf'),
+			5 => isset($_GET['revision']) ? sprintf( __('Field group restored to revision from %s', 'bucket-lite'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			6 => __('Field group published.', 'bucket-lite'),
+			7 => __('Field group saved.', 'bucket-lite'),
+			8 => __('Field group submitted.', 'bucket-lite'),
+			9 => __('Field group scheduled for.', 'bucket-lite'),
+			10 => __('Field group draft updated.', 'bucket-lite'),
 		);
 	
 		return $messages;
@@ -739,10 +734,10 @@ class acf
 		
 		// define default sizes
 		$sizes = array_merge($sizes, array(
-			'thumbnail'	=>	__("Thumbnail",'acf'),
-			'medium'	=>	__("Medium",'acf'),
-			'large'		=>	__("Large",'acf'),
-			'full'		=>	__("Full",'acf')
+			'thumbnail'	=>	__("Thumbnail",'bucket-lite'),
+			'medium'	=>	__("Medium",'bucket-lite'),
+			'large'		=>	__("Large",'bucket-lite'),
+			'full'		=>	__("Full",'bucket-lite')
 		));
 		
 		

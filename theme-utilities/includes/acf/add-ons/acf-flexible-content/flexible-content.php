@@ -19,24 +19,24 @@ class acf_field_flexible_content extends acf_field
 	{
 		// vars
 		$this->name = 'flexible_content';
-		$this->label = __("Flexible Content",'acf');
-		$this->category = __("Layout",'acf');
+		$this->label = __("Flexible Content",'bucket-lite');
+		$this->category = __("Layout",'bucket-lite');
 		$this->defaults = array(
 			'layouts'		=>	array(),
 			'min'			=>	'',
 			'max'			=>	'',
-			'button_label'	=>	__("Add Row",'acf'),
+			'button_label'	=>	__("Add Row",'bucket-lite'),
 		);
 		$this->l10n = array(
-			'layout' 		=> __("layout", 'acf'),
-			'layouts'		=> __("layouts", 'acf'),
-			'remove'		=> __("remove {layout}?", 'acf'),
-			'min'			=> __("This field requires at least {min} {identifier}",'acf'),
-			'max'			=> __("This field has a limit of {max} {identifier}",'acf'),
-			'min_layout'	=> __("This field requires at least {min} {label} {identifier}",'acf'),
-			'max_layout'	=> __("Maximum {label} limit reached ({max} {identifier})",'acf'),
-			'available'		=> __("{available} {label} {identifier} available (max {max})",'acf'),
-			'required'		=> __("{required} {label} {identifier} required (min {min})",'acf'),
+			'layout' 		=> __("layout", 'bucket-lite'),
+			'layouts'		=> __("layouts", 'bucket-lite'),
+			'remove'		=> __("remove {layout}?", 'bucket-lite'),
+			'min'			=> __("This field requires at least {min} {identifier}",'bucket-lite'),
+			'max'			=> __("This field has a limit of {max} {identifier}",'bucket-lite'),
+			'min_layout'	=> __("This field requires at least {min} {label} {identifier}",'bucket-lite'),
+			'max_layout'	=> __("Maximum {label} limit reached ({max} {identifier})",'bucket-lite'),
+			'available'		=> __("{available} {label} {identifier} available (max {max})",'bucket-lite'),
+			'required'		=> __("{required} {label} {identifier} required (min {min})",'bucket-lite'),
 		);		
 		
 		// do not delete!
@@ -130,7 +130,7 @@ class acf_field_flexible_content extends acf_field
 	{
 		?>
 		<script type="text/javascript">
-			acf.l10n.flexible_content_delete = "<?php _e('Flexible Content requires at least 1 layout','acf'); ?>";
+			acf.l10n.flexible_content_delete = "<?php _e('Flexible Content requires at least 1 layout','bucket-lite'); ?>";
 		</script>
 		<?php
 	}

@@ -72,7 +72,7 @@ $atts = array(
 <div <?php acf_join_attr( $atts ); ?>>
 	
 	<div class="no_value_message" <?php if( $field['value'] ){ echo 'style="display:none;"'; } ?>>
-		<?php printf( __('Click the "%s" button below to start creating your layout','acf'), $field['button_label']); ?>
+		<?php printf( __('Click the "%s" button below to start creating your layout','bucket-lite'), $field['button_label']); ?>
 	</div>
 	
 	<div class="clones">
