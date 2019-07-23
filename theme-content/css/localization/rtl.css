@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*------------------------------------*\
     VARS.SCSS
 \*------------------------------------*/
@@ -292,8 +291,7 @@ ul, ol, dd {
 
 @media only screen and (min-width: 900px) {
   .rtl .article--billboard > a:hover .article__title:before {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px); }
+    transform: translateX(-50px); }
   .rtl .article--billboard-small + .article--billboard-small {
     right: auto;
     left: 234px;
@@ -389,16 +387,14 @@ ul, ol, dd {
     text-align: left; }
     .post-nav-link--prev:after {
       right: 0;
-      -webkit-transform: translateZ(0) rotate(-135deg);
-              transform: translateZ(0) rotate(-135deg); }
+      transform: translateZ(0) rotate(-135deg); }
   .post-nav-link--next {
     text-align: right; }
     .post-nav-link--next:after {
       right: auto;
       left: 24px;
       left: 1.71429rem;
-      -webkit-transform: translateZ(0) rotate(135deg);
-              transform: translateZ(0) rotate(135deg); }
+      transform: translateZ(0) rotate(135deg); }
   .comments-area-title .hN,
   .comments-area-title .article__author-name,
   .comments-area-title .comment__author-name,
@@ -491,3 +487,5 @@ ul, ol, dd {
     float: left; }
   .woocommerce #payment ul.payment_methods li, .woocommerce-page #payment ul.payment_methods li {
     text-align: right; } }
+
+/*# sourceMappingURL=rtl.css.map */
