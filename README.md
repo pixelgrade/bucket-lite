@@ -5,6 +5,9 @@
 
 [![](https://img.shields.io/github/issues-closed/pixelgrade/bucket-lite.svg?color=6cc644&label=Issues)](https://github.com/pixelgrade/bucket-lite/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed+) [![](https://img.shields.io/github/issues/pixelgrade/bucket-lite.svg?color=4078c0&label=%20)](https://github.com/pixelgrade/bucket-lite/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen)
 
+
+[![](https://user-images.githubusercontent.com/1632775/61714481-9da95a80-ad63-11e9-905a-d4b52aa280f1.jpg)](https://demos.pixelgrade.com/bucket-lite/)
+
 ## Contributing
 The essence of **open source** is that by freely sharing the code, you have the freedom to use it for any purpose, study how it works and adapt it to your needs, improve the program and **share your improvements** with the community so that we all benefit. 🙏
 
