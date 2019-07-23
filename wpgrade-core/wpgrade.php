@@ -1,14 +1,14 @@
 <?php
 
-/* This file is property of Pixel Grade Media. You may NOT copy, or redistribute
+/* This file is property of Pixelgrade Media. You may NOT copy, or redistribute
  * it. Please see the license that came with your copy for more information.
  */
 
 /**
  * @package        wpgrade
  * @category       functions
- * @author         Pixel Grade Team
- * @copyright  (c) 2013, Pixel Grade Media
+ * @author         Pixelgrade Team
+ * @copyright  (c) 2013, Pixelgrade Media
  */
 class wpgrade {
 
@@ -33,11 +33,6 @@ class wpgrade {
 	 * @return array theme configuration
 	 */
 	static function config() {
-		//		if (self::$configuration === null) {
-		//			self::$configuration = include self::themepath().'wpgrade-config'.EXT;
-		//		}
-		//
-		//		return self::$configuration;
 		return self::get_config();
 	}
 
@@ -158,33 +153,6 @@ class wpgrade {
 		} else {
 			return self::options()->get( $option, $default );
 		}
-	}
-
-	/**
-	 * Get a redux config argument
-	 * @param $arg
-	 *
-	 * @return bool
-	 */
-	static function get_redux_arg( $arg ) {
-		$args = self::get_redux_args();
-
-		if (!empty($arg) && isset($args[$arg]) ) {
-			return $args[$arg];
-		}
-		return false;
-	}
-
-	static function get_redux_args() {
-		return self::options()->get_args();
-	}
-
-	static function get_redux_sections() {
-		return self::options()->get_sections();
-	}
-
-	static function get_redux_defaults() {
-		return self::options()->get_defaults();
 	}
 
 	/**
@@ -1020,37 +988,6 @@ class wpgrade {
 
 		return $first_img;
 	}
-
-
-	//// Internal Bootstrapping Helpers ////////////////////////////////////////////
-
-	/**
-	 * Loads in core dependency.
-	 */
-	static function require_coremodule( $modulename ) {
-
-		if ( $modulename == 'redux2' ) {
-			require self::corepath() . 'vendor/redux2/options/defaults' . EXT;
-		} elseif ( $modulename == 'redux3' ) {
-			get_template_part( 'wpgrade-core/vendor/redux3/framework' );
-		} else { // unsupported module
-			die( 'Unsuported core module: ' . $modulename );
-		}
-	}
-
-	/**
-	 * @return string partial uri path to core module
-	 */
-	static function coremoduleuri( $modulename ) {
-		if ( $modulename == 'redux2' ) {
-			return wpgrade::coreuri() . 'vendor/redux2/';
-		} elseif ( $modulename == 'redux3' ) {
-			return wpgrade::coreuri() . 'vendor/redux3/';
-		} else { // unsupported module
-			die( 'Unsuported core module: ' . $modulename );
-		}
-	}
-
 
 	//// WPML Related Functions ////////////////////////////////////////////////////
 

@@ -1,35 +1,4 @@
 <?php
-
-    function wpgrade_write_custom_css($options) {
-
-        if ( wpgrade::option('inject_custom_css') !== 'file' ) return;
-
-        $error = false;
-
-        global $wp_filesystem;
-        // Initialise the Wordpress filesystem, no more using file_put_contents function
-        if (empty($wp_filesystem)) {
-            require_once(ABSPATH .'/wp-admin/includes/file.php');
-            WP_Filesystem();
-        }
-
-        $css_dir = get_template_directory() . '/theme-content/css/';
-
-	    ob_start();
-        include wpgrade::corepartial('inline-custom-css'.EXT);
-	    $css = ob_get_clean();
-
-        $wp_filesystem->put_contents(
-            $css_dir . 'custom.css',
-            $css,
-            FS_CHMOD_FILE // predefined mode settings for WP files
-        );
-        if($error == true) {
-            echo 'There is been an error around';
-        }
-    }
-	add_action('redux/options/'. wpgrade::shortname() .'_options/compiler', 'wpgrade_write_custom_css' );
-
 	// "One-Click import for demo data" feature
 	// ----------------------------------------
 

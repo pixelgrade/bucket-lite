@@ -13,7 +13,7 @@
 class WPGradeOptionDriver_Config extends WPGradeOptionDriver {
 
 	/**
-	 * @var Redux_Options
+	 * @var
 	 */
 	protected $config = null;
 
