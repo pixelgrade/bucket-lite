@@ -16,6 +16,7 @@
 get_header(); ?>
 
 <div id="main" class="container container--main">
+	<?php get_template_part('theme-partials/post-templates/content-slider'); ?>
     <div class="grid">
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if (have_posts()): ?>
