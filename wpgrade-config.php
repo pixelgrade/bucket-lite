@@ -160,6 +160,9 @@
 			'wpgrade-main-scripts'
 		),
 
+		// enques script and localizes
+		'auto-localize-scripts' => array(),
+
 		// calls function to perform extra enqueue's on theme setup
 		// handlers should be placed in theme's functions.php
 		'script-enqueue-handlers' => array
