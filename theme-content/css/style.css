@@ -8086,9 +8086,6 @@ a:hover > .pixcode--icon {
 .menu-item--parent > .nav--sub-menu {
   margin-top: 5px; }
 
-/*
-* $MegaMenus
-*/
 /*----------------------------------------*\
     $MOBILE NAVIGATION
 \*----------------------------------------*/
@@ -8152,7 +8149,7 @@ a:hover > .pixcode--icon {
     background-color: #4c4a4a;
     margin: 48px 0;
     margin: 3.42857rem 0; }
-  /* 
+  /*
     * Trigger Icon
     */
   .site-navigation__trigger {
@@ -8243,6 +8240,32 @@ a:hover > .pixcode--icon {
     .navigation--is-visible .nav-icon:after {
       transform: rotate(45deg);
       top: 0 !important; } }
+
+@media only screen and (min-width: 900px) {
+  .nav--main li {
+    transition: all 0.15s linear; }
+    .nav--main li:hover, .nav--main li.current-menu-item {
+      border-bottom-color: #fb4834;
+      background-color: rgba(255, 255, 255, 0.05); }
+    .nav--main li:hover > a {
+      color: white; } }
+  @media only screen and (min-width: 900px) and (min-width: 900px) {
+    .nav--main li.open > .sub-menu {
+      opacity: 1;
+      transition: opacity 0.4s ease-out 0; } }
+
+@media only screen and (min-width: 900px) {
+  .nav--main > li {
+    border-top-width: 5px;
+    border-top-width: 0.35714rem;
+    border-bottom-width: 5px;
+    border-bottom-width: 0.35714rem; }
+    .nav--main > li a {
+      color: #a6a1a1; }
+    .nav--main > li > a {
+      padding: 6px 24px;
+      padding: 0.42857rem 1.71429rem;
+      text-transform: uppercase; } }
 
 /*------------------------------------*\
     $PAGINATIONS
