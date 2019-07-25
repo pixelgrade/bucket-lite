@@ -31,7 +31,6 @@
 		// main theme class
 		'theme-utilities/bucket'.EXT,
 		'theme-utilities/includes/required-plugins/required-plugins.php',
-		'theme-utilities/includes/acf/acf-config.php',
 	),
 
 	// the path where overwrites on the core partials are stored, any files
