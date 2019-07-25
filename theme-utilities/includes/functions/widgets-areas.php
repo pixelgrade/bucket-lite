@@ -51,7 +51,7 @@ function wpgrade_register_sidebars() {
 
 	register_sidebar( array(
 			'id'            => 'sidebar-footer-second-1',
-			'name'          => __( 'Footer | Second Row [1]', 'bucket' ),
+			'name'          => __( 'Footer | Second Row [1]', 'bucket-lite' ),
 			'description'   => __( 'Widgets in this area will have 2/3rd the width of the footer.', 'bucket-lite' ),
 			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
 			'after_title'   => '</h3></div>',
@@ -62,7 +62,7 @@ function wpgrade_register_sidebars() {
 
 	register_sidebar( array(
 			'id'            => 'sidebar-footer-second-2',
-			'name'          => __( 'Footer | Second Row [2]', 'bucket' ),
+			'name'          => __( 'Footer | Second Row [2]', 'bucket-lite' ),
 			'description'   => __( 'Widgets in this area will have 1/3rd the width of the footer.', 'bucket-lite' ),
 			'before_title'  => '<div class="widget__title  widget--footer__title"><h3 class="hN">',
 			'after_title'   => '</h3></div>',
