@@ -16,6 +16,8 @@ function logError( err, res ) {
 }
 
 var jsFiles = [
+	'./theme-content/js/vendor/*.js',
+	'./theme-content/js/plugins/*.js',
 	'./theme-content/js/main/shared_vars.js',
 	'./theme-content/js/main/wrapper_start.js',
 	'./theme-content/js/main/magnific-popup.js',
