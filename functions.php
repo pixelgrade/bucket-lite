@@ -87,10 +87,7 @@ function post_format_icon($class_name = '') {
 				break;
 			default:
 				break;
-		}
-		/* ?>
-		<div class="post-format-icon <?php echo $class_name; ?> post-format-icon__background"></div>
-		<div class="post-format-icon <?php echo $class_name; ?> post-format-icon__border"></div><?php */ ?>
+		} ?>
 		<div class="post-format-icon <?php echo $class_name; ?> post-format-icon__icon">
 			<i class="<?php echo $icon_class; ?>"></i>
 		</div>
