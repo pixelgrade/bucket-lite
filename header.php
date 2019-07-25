@@ -17,6 +17,8 @@ $class_name = '';
             </div>
             <?php
                 wpgrade_main_nav_mobile();
+                wpgrade_top_nav_left('nav--stacked', true);
+                wpgrade_top_nav_right('nav--stacked', true);
             ?>
         </nav>
         <div class="wrapper">

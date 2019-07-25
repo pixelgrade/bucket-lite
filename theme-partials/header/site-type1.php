@@ -5,10 +5,10 @@
         <div class="container">
             <div class="grid">
                 <div class="grid__item one-half">
-
+	                <?php wpgrade_top_nav_left(); ?>
                 </div><!--
                 --><div class="grid__item one-half">
-
+		            <?php wpgrade_top_nav_right(); ?>
                 </div>
             </div>
         </div>
