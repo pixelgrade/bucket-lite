@@ -9,11 +9,6 @@
     @include rem(width, 26px);
     @include rem(margin, 0 20px);
     border-color: white;
-
-    .sub-menu--mega &{
-        @include rem(height, 20px);
-        @include rem(width, 20px);        
-    }
 }
 
 @include media-query(palm) {

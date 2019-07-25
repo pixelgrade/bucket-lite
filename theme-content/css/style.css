@@ -557,8 +557,8 @@ textarea:focus {
 /*------------------------------------*\
     $CLEARFIX
 \*------------------------------------*/
-.cf:after, .nav:after, .rsBullets:after, .tabs__nav:after, .sub-menu:after, .sub-menu--mega:after, .commentlist:after, .author__social-links:after, .media:after, .author:after, .island:after,
-.islet:after, .matrix:after, .multi-list:after, .widget_nav_menu ul:after, .widget_categories ul:after, .widget_meta ul:after, .stat-group:after, .wp-caption:after, .gallery__item__caption:after, .heading:after, .widget--sidebar__title:after, .widget--footer__title:after, .btn-list:after, .widget_tag_cloud .wp-tag-cloud:after, .article--list__link:after, .nav--main:after, .sub-menu__grid:after, .comments-area-title:after, .pixcode--grid:after, .container:after {
+.cf:after, .nav:after, .rsBullets:after, .tabs__nav:after, .sub-menu:after, .commentlist:after, .author__social-links:after, .media:after, .author:after, .island:after,
+.islet:after, .matrix:after, .multi-list:after, .widget_nav_menu ul:after, .widget_categories ul:after, .widget_meta ul:after, .stat-group:after, .wp-caption:after, .gallery__item__caption:after, .heading:after, .widget--sidebar__title:after, .widget--footer__title:after, .btn-list:after, .widget_tag_cloud .wp-tag-cloud:after, .article--list__link:after, .nav--main:after, .comments-area-title:after, .pixcode--grid:after, .container:after {
   content: "";
   display: table;
   clear: both; }
@@ -1270,15 +1270,14 @@ html.flexbox {
  * Demo: jsfiddle.net/inuitcss/Vnph4
  *
  */
-.nav, .rsBullets, .tabs__nav, .sub-menu, .sub-menu--mega, .commentlist, .author__social-links {
+.nav, .rsBullets, .tabs__nav, .sub-menu, .commentlist, .author__social-links {
   list-style: none;
   margin-left: 0; }
-  .nav > li, .rsBullets > li, .tabs__nav > li, .sub-menu > li, .sub-menu--mega > li, .commentlist > li, .author__social-links > li,
+  .nav > li, .rsBullets > li, .tabs__nav > li, .sub-menu > li, .commentlist > li, .author__social-links > li,
   .nav > li > a,
   .rsBullets > li > a,
   .tabs__nav > li > a,
   .sub-menu > li > a,
-  .sub-menu--mega > li > a,
   .commentlist > li > a,
   .author__social-links > li > a {
     display: inline-block;
@@ -1296,9 +1295,9 @@ html.flexbox {
    </ul>
  *
  */
-.nav--stacked > li, .sub-menu > li, .sub-menu--mega > li {
+.nav--stacked > li, .sub-menu > li {
   display: list-item; }
-  .nav--stacked > li > a, .sub-menu > li > a, .sub-menu--mega > li > a {
+  .nav--stacked > li > a, .sub-menu > li > a {
     display: block; }
 
 /**
@@ -5836,9 +5835,6 @@ article[class*="post"] .rsArrow {
 article[class*="post"] .rsArrowIcn {
   border-color: #000000; }
 
-.sub-menu--mega .rsArrow {
-  transform: translateY(-50%); }
-
 /*----------------------------------------*\
     $BULLETS CUSTOM STYLING
 \*----------------------------------------*/
@@ -7972,7 +7968,7 @@ a:hover > .pixcode--icon {
 /**
  * Top Bar Navigation - including Top Menu Left and Top Menu Right
  */
-.navigation--top .nav, .navigation--top .rsBullets, .navigation--top .tabs__nav, .navigation--top .sub-menu, .navigation--top .sub-menu--mega, .navigation--top .commentlist, .navigation--top .author__social-links {
+.navigation--top .nav, .navigation--top .rsBullets, .navigation--top .tabs__nav, .navigation--top .sub-menu, .navigation--top .commentlist, .navigation--top .author__social-links {
   margin-bottom: 0; }
 
 .nav--top li {
@@ -8000,7 +7996,7 @@ a:hover > .pixcode--icon {
       height: 24px;
       height: 1.71429rem;
       border-left: 1px dotted #4c4a4a; }
-  .nav--top > li .sub-menu, .nav--top > li .sub-menu--mega {
+  .nav--top > li .sub-menu {
     width: 192px;
     width: 13.71429rem;
     font-size: 14px;
@@ -8010,7 +8006,7 @@ a:hover > .pixcode--icon {
 .nav--top li:hover > a {
   color: white; }
 
-.nav--top li:hover > .sub-menu, .nav--top li:hover > .sub-menu--mega {
+.nav--top li:hover > .sub-menu {
   display: block; }
 
 .nav--top-left {
@@ -8019,7 +8015,7 @@ a:hover > .pixcode--icon {
 
 .nav--top-right {
   text-align: right; }
-  .nav--top-right .sub-menu, .nav--top-right .sub-menu--mega {
+  .nav--top-right .sub-menu {
     text-align: left; }
 
 /**
@@ -8047,7 +8043,7 @@ a:hover > .pixcode--icon {
     $SUBMENUS
 \*----------------------------------------*/
 /*ul*/
-.sub-menu, .sub-menu--mega {
+.sub-menu {
   padding-top: 0;
   border-bottom: 0;
   margin-bottom: 0;
@@ -8058,30 +8054,30 @@ a:hover > .pixcode--icon {
   padding: 5px;
   padding: 0.35714rem; }
   @media only screen and (max-width: 899px) {
-    .sub-menu, .sub-menu--mega {
+    .sub-menu {
       padding-left: 24px;
       padding-left: 1.71429rem; } }
   @media only screen and (min-width: 900px) {
-    .sub-menu, .sub-menu--mega {
+    .sub-menu {
       width: 210px;
       width: 15rem;
       background: black;
       background-clip: padding-box;
       position: absolute;
       display: none; } }
-  .sub-menu > li, .sub-menu--mega > li {
+  .sub-menu > li {
     position: relative; }
-    .sub-menu > li > a, .sub-menu--mega > li > a {
+    .sub-menu > li > a {
       padding: 6px 19px;
       padding: 0.42857rem 19px; }
     @media only screen and (min-width: 900px) {
-      .sub-menu > li + li > a, .sub-menu--mega > li + li > a {
+      .sub-menu > li + li > a {
         border-top: 1px solid #333131;
         margin-top: -1px; } }
-    .sub-menu > li.menu-item-has-children:hover > .sub-menu, .sub-menu--mega > li.menu-item-has-children:hover > .sub-menu, .sub-menu > li.menu-item-has-children:hover > .sub-menu--mega, .sub-menu--mega > li.menu-item-has-children:hover > .sub-menu--mega {
+    .sub-menu > li.menu-item-has-children:hover > .sub-menu {
       display: block;
       opacity: 1; }
-  .sub-menu .sub-menu, .sub-menu--mega .sub-menu, .sub-menu .sub-menu--mega, .sub-menu--mega .sub-menu--mega {
+  .sub-menu .sub-menu {
     top: 0;
     left: 100%;
     margin-top: -5px;
@@ -8093,127 +8089,6 @@ a:hover > .pixcode--icon {
 /*
 * $MegaMenus
 */
-/*div*/
-.sub-menu--mega {
-  border: 0;
-  border-bottom: 36px solid rgba(0, 0, 0, 0.3);
-  border-bottom: 2.57143rem solid rgba(0, 0, 0, 0.3);
-  width: 100%; }
-  .sub-menu--mega .nav--sub-menu {
-    width: 100%;
-    min-height: 100%;
-    left: 0;
-    display: block;
-    padding-left: 0;
-    border-bottom: 5px solid #001a17; }
-  .sub-menu--mega .rsOverflow {
-    transition: none !important; }
-
-.sub-menu__grid {
-  height: 250px; }
-
-.sub-menu__grid__item {
-  margin-bottom: -24px;
-  margin-bottom: -1.71429rem;
-  min-height: 48px;
-  min-height: 3.42857rem;
-  background-color: #262525;
-  float: left;
-  height: 280px;
-  position: relative;
-  background-clip: content-box;
-  padding-left: 0 !important;
-  border-left: 6px solid transparent;
-  border-left: 0.42857rem solid transparent; }
-  .sub-menu__grid__item .nav--sub-menu {
-    background-color: #262525;
-    border-bottom: 5px solid black;
-    border-bottom: 0.35714rem solid black;
-    padding-right: 0;
-    padding-top: 0;
-    margin-top: 0; }
-  .sub-menu__grid__item .pixslider {
-    position: relative;
-    display: block;
-    height: 280px;
-    width: 412px;
-    min-height: 72px;
-    min-height: 5.14286rem; }
-  .sub-menu__grid__item .featured-area__article {
-    padding-left: 0;
-    margin-bottom: 0;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: block; }
-    .sub-menu__grid__item .featured-area__article .image-wrap {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: block;
-      padding: 0; }
-      .sub-menu__grid__item .featured-area__article .image-wrap img {
-        max-width: none;
-        position: relative; }
-      .sub-menu__grid__item .featured-area__article .image-wrap .article__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .article__title caption, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title caption {
-        width: 100%;
-        font-size: 19px;
-        font-size: 1.35714rem;
-        line-height: 1.27316;
-        line-height: 1.4; }
-
-/**
- * MegaMenu Hover Effects
- * And other stuff for bigger screens
- */
-@media only screen and (min-width: 900px) {
-  .nav--main li {
-    transition: all 0.15s linear; }
-    .nav--main li > .sub-menu, .nav--main li > .sub-menu--mega {
-      display: inline-block;
-      opacity: 0;
-      transition: opacity 0.15s ease-in; }
-    .nav--main li:hover, .nav--main li.current-menu-item {
-      border-bottom-color: #fb4834;
-      background-color: rgba(255, 255, 255, 0.05); }
-    .nav--main li:hover > a {
-      color: white; }
-    .nav--main li.hidden > .sub-menu, .nav--main li.hidden > .sub-menu--mega {
-      opacity: 0;
-      display: none; } }
-  @media only screen and (min-width: 900px) and (min-width: 900px) {
-    .nav--main li.open > .sub-menu, .nav--main li.open > .sub-menu--mega {
-      opacity: 1;
-      transition: opacity 0.15s ease-out 0; } }
-
-@media only screen and (min-width: 900px) {
-  .nav--main > li {
-    border-top-width: 5px;
-    border-top-width: 0.35714rem;
-    border-bottom-width: 5px;
-    border-bottom-width: 0.35714rem; }
-    .nav--main > li a {
-      color: #a6a1a1; }
-    .nav--main > li > a {
-      padding: 6px 24px;
-      padding: 0.42857rem 1.71429rem;
-      text-transform: uppercase; }
-  .nav--main .article--billboard-small {
-    background-color: #262525;
-    width: auto;
-    position: static;
-    margin: 0; }
-    .nav--main .article--billboard-small .article__thumb {
-      transform: translateY(0); }
-    .nav--main .article--billboard-small .article__title, .nav--main .article--billboard-small .article--list__title {
-      color: white; }
-    .nav--main .article--billboard-small .article__content {
-      background: #1a1717; }
-    .nav--main .article--billboard-small .article__description {
-      color: white; }
-    .nav--main .article--billboard-small:hover .article__thumb {
-      transform: translateY(0); } }
-
 /*----------------------------------------*\
     $MOBILE NAVIGATION
 \*----------------------------------------*/
@@ -8368,10 +8243,6 @@ a:hover > .pixcode--icon {
     .navigation--is-visible .nav-icon:after {
       transform: rotate(45deg);
       top: 0 !important; } }
-
-.lt-ie9 .sub-menu__grid {
-  width: 1050px;
-  background-color: #eee; }
 
 /*------------------------------------*\
     $PAGINATIONS
@@ -8613,11 +8484,6 @@ li.comment, li.pingback {
   margin: 0 20px;
   margin: 0 1.42857rem;
   border-color: white; }
-  .sub-menu--mega .rsArrow .rsArrowIcn {
-    height: 20px;
-    height: 1.42857rem;
-    width: 20px;
-    width: 1.42857rem; }
 
 @media only screen and (max-width: 899px) {
   .billboard .rsArrow {
@@ -9051,7 +8917,7 @@ li.comment, li.pingback {
       color: #888; }
     .nav-inverse-top .nav--top li:hover > a {
       color: black; }
-  .nav-inverse-top .nav--top .sub-menu, .nav-inverse-top .nav--top .sub-menu--mega {
+  .nav-inverse-top .nav--top .sub-menu {
     background: #ddd; }
   /*----------------------------------------*\
             $NAV MAIN INVERSE
@@ -9080,11 +8946,11 @@ li.comment, li.pingback {
         background-color: transparent; }
         .nav-inverse-main .nav--main > li:hover > a {
           color: black; }
-    .nav-inverse-main .nav--main .sub-menu, .nav-inverse-main .nav--main .sub-menu--mega {
+    .nav-inverse-main .nav--main .sub-menu {
       background-color: #ccc;
       padding-top: 0;
       margin-top: 0; }
-      .nav-inverse-main .nav--main .sub-menu .sub-menu, .nav-inverse-main .nav--main .sub-menu--mega .sub-menu, .nav-inverse-main .nav--main .sub-menu .sub-menu--mega, .nav-inverse-main .nav--main .sub-menu--mega .sub-menu--mega {
+      .nav-inverse-main .nav--main .sub-menu .sub-menu {
         margin-top: -5px;
         margin-top: -0.35714rem;
         padding-top: 5px;
@@ -9094,15 +8960,7 @@ li.comment, li.pingback {
       margin-top: 0.35714rem;
       padding-top: 5px;
       padding-top: 0.35714rem;
-      border-bottom: 0; }
-    .nav-inverse-main .nav--main .sub-menu--mega {
-      margin-top: 5px;
-      margin-top: 0.35714rem;
-      padding-top: 5px;
-      padding-top: 0.35714rem;
-      border-bottom-color: rgba(255, 255, 255, 0.4); }
-  .nav-inverse-main .sub-menu__grid__item {
-    background-color: white; } }
+      border-bottom: 0; } }
 
 @media only screen and (min-width: 900px) and (min-width: 900px) {
   .nav-inverse-main .nav-top-separator {

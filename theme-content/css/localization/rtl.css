@@ -234,12 +234,9 @@ ul, ol, dd {
   left: auto;
   right: 0; }
 
-.rtl .sub-menu, .rtl .sub-menu--mega {
+.rtl .sub-menu {
   left: auto;
   right: 0; }
-
-.rtl .sub-menu__grid__item {
-  float: right; }
 
 .rtl .header-bar-container {
   text-align: left; }

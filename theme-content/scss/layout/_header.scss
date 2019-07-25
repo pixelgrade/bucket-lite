@@ -358,17 +358,7 @@
                 @include rem(padding-top, 5px);
                 border-bottom: 0;
             }
-
-            .sub-menu--mega {
-                @include rem(margin-top, 5px);
-                @include rem(padding-top, 5px);
-                border-bottom-color: rgba(white, .4);
-            }
         } // .nav--main
-
-        .sub-menu__grid__item {
-            background-color: white;
-        }
 
         @include media-query(lap-and-up) {
             .nav-top-separator{
