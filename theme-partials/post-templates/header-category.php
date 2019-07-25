@@ -18,11 +18,7 @@ $post_args['meta_query'] =
 
 $slideposts = get_posts( $post_args );
 
-$slider_transition = wpgrade::option('blog_cat_slider_transition');
-$slider_autoplay = wpgrade::option('blog_cat_slider_autoplay');
-if ($slider_autoplay) {
-	$slider_delay = wpgrade::option('blog_cat_slider_delay');
-}
+$slider_transition = 'move';
 
 $slider_height = '400';
 
@@ -39,11 +35,7 @@ if (count($slideposts)): ?>
 		data-autoscalesliderwidth="692"
 		data-autoscalesliderheight="<?php echo $slider_height; ?>"
 		data-imagescale="fill"
-		data-slidertransition="<?php echo $slider_transition; ?>"
-		<?php if ($slider_autoplay) {
-			echo 'data-sliderautoplay="" ';
-			echo 'data-sliderdelay='. $slider_delay;
-		} ?> >
+		data-slidertransition="<?php echo $slider_transition; ?>">
 		<?php
 		foreach( $slideposts as $post ) : setup_postdata( $post );			
 			$post_title = get_the_title();

@@ -12,6 +12,7 @@ get_header(); ?>
 
     <div class="grid">
 		<div class="grid__item  two-thirds  palm-one-whole">
+			<?php get_template_part('theme-partials/post-templates/header-category'); ?>
             <?php if (have_posts()): ?>
                 <div class="heading  heading--main">
                     <h2 class="hN"><?php echo single_cat_title( '', false ); ?></h2><span class="archive__side-title beta"><?php _e( 'Articles', 'bucket-lite' ); ?></span>
