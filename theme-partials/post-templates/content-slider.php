@@ -26,7 +26,6 @@ $query_args = array(
     )
 );
 
-$offset = get_sub_field('offset');
 
 if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicate_posts', true) == 'on') {
 	//exclude the already showed posts from the current block loop
