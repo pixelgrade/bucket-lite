@@ -167,7 +167,6 @@
 		// handlers should be placed in theme's functions.php
 		'script-enqueue-handlers' => array
 		(
-			'contact-form' => 'wpgrade_callback_contact_script',
 			'thread-comments' => 'wpgrade_callback_thread_comments_scripts',
 		),
 

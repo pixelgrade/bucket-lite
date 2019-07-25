@@ -33,11 +33,6 @@ wpgrade::options_handler( new WPGradeOptions() );
 
 # [!!] driver priority works like a LIFO stack, last in = highest priority
 
-// register basic configuration driver
-$config = wpgrade::config();
-wpgrade::options()->add_optiondriver( new WPGradeOptionDriver_Config( $config['theme-options'] ) );
-
-
 // Hooks
 // -----
 get_template_part( 'wpgrade-core/hooks' );

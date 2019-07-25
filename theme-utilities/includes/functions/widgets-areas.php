@@ -76,17 +76,3 @@ function wpgrade_register_sidebars() {
 
 }
 add_action('widgets_init', 'wpgrade_register_sidebars');
-
-/*
- * Display the tag cloud
- */
-function custom_tag_cloud_widget($args)
-{
-	$args['number'] = 0; //adding a 0 will display all tags
-	$args['largest'] = 19; //largest tag
-	$args['smallest'] = 19; //smallest tag
-	$args['unit'] = 'px'; //tag font unit
-	$args['format'] = 'list'; //ul with a class of wp-tag-cloud
-	return $args;
-}
-add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );

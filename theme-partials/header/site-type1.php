@@ -25,7 +25,6 @@
                     <?php if (wpgrade::option('nav_show_header_search')): ?>
                     <li class="search-item"><?php get_search_form(); ?></li>
                     <?php endif; ?>
-                    <?php get_template_part('theme-partials/wpgrade-partials/social-icons-list'); ?>
                 </ul>
             </div>
         </div>

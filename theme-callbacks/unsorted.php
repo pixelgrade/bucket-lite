@@ -160,99 +160,6 @@ function truncate($text, $length = 100, $options = array()) {
     return $truncate;
 }
 
-//@todo CLEANUP refactor function
-function wpgrade_better_excerpt($text = '') {
-	global $post;
-	$raw_excerpt = '';
-
-	//if the post has a manual excerpt ignore the content given
-	if ($text == '' && function_exists('has_excerpt') && has_excerpt()) {
-		$text = get_the_excerpt();
-		$raw_excerpt = $text;
-
-		$text = strip_shortcodes( $text );
-		$text = apply_filters('the_content', $text);
-		$text = str_replace(']]>', ']]&gt;', $text);
-
-		// Removes any JavaScript in posts (between <script> and </script> tags)
-		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-
-		// Enable formatting in excerpts - Add HTML tags that you want to be parsed in excerpts
-		$allowed_tags = '<p><a><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
-		$text = strip_tags($text, $allowed_tags);
-//		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-//		$text .= $excerpt_more;
-
-	} else {
-
-		if (empty($text)) {
-			//need to grab the content
-			$text = get_the_content();
-		}
-
-		$raw_excerpt = $text;
-		$text = strip_shortcodes( $text );
-		$text = apply_filters('the_content', $text);
-		$text = str_replace(']]>', ']]&gt;', $text);
-
-		// Removes any JavaScript in posts (between <script> and </script> tags)
-		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-
-		// Enable formatting in excerpts - Add HTML tags that you want to be parsed in excerpts
-		//$allowed_tags = '<p><a><em><strong><i><br><h1><h2><h3><h4><h5><h6><blockquote><ul><li><ol>';
-		$text = strip_tags($text, '');
-
-		// Set custom excerpt length - number of words to be shown in excerpts
-        $excerpt_length = 45;
-
-		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-
-		//test if we are dealing with a utf8 text - like chinese
-		if (wpgrade_is_all_multibyte($text)) {
-			//then we simply split my mb characters rather than words
-			$text = short_text($text,$excerpt_length,$excerpt_length);
-		} else {
-//			$options = array(
-//				'ending' => $excerpt_more, 'exact' => false, 'html' => true
-//			);
-//			$text = truncate($text, $excerpt_length, $options);
-
-			$words = preg_split("/[\n\r\t\s]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-
-			//some further testing to ensure that we catch the mb languages like chinese
-			//test for extra long average word length - means that each sentence is enterpreted as a word
-			$temp_words = $words;
-			if (count($temp_words) > 1) {
-				array_pop($temp_words);
-			}
-
-			//we have taken a large average word length - 20
-			if (count($temp_words) > 0 && mb_strlen(implode(' ', $temp_words),'UTF-8')/count($temp_words) > 20) {
-				//we have a mb language
-				//then we simply split my mb characters rather than words
-				$text = short_text($text,$excerpt_length,$excerpt_length);
-			} else {
-
-				if ( count($words) > $excerpt_length ) {
-					array_pop($words);
-					$text = implode(' ', $words);
-					//$text = force_balance_tags( $text );
-					$text = $text . $excerpt_more;
-				} else {
-					$text = implode(' ', $words);
-				}
-
-			}
-
-		}
-	}
-
-	// IMPORTANT! Prevents tags cutoff by excerpt (i.e. unclosed tags) from breaking formatting
-	$text = force_balance_tags( $text );
-
-	return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
-}
-
 /*
  * COMMENT LAYOUT
  */
@@ -288,23 +195,6 @@ function wpgrade_comments($comment, $args, $depth) {
 <?php
 } // don't remove this bracket!
 
-function custom_excerpt_length( $length ) {
-	// Set custom excerpt length - number of words to be shown in excerpts
-	if (wpgrade::option('blog_excerpt_length'))	{
-		return absint(wpgrade::option('blog_excerpt_length'));
-	} else {
-		return 55;
-	}
-}
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
-/**
- * Replace the [...] wordpress puts in when using the the_excerpt() method.
- */
-function new_excerpt_more($excerpt) {
-	return wpgrade::option('blog_excerpt_more_text');
-}
-add_filter('excerpt_more', 'new_excerpt_more');
 
 function remove_more_link_scroll( $link ) {
 	$link = preg_replace( '|#more-[0-9]+|', '', $link );
@@ -399,18 +289,3 @@ function wpgrade_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'wpgrade_wp_title', 10, 2 );
-
-
-function wpgrade_fix_yoast_page_number( $title ) {
-
-	global $paged, $page, $sep;
-
-	if ( is_home() || is_front_page() ) {
-		// Add a page number if necessary.
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'bucket-lite' ), max( $paged, $page ) );
-	}
-	return $title;
-}
-//filter the YOAST title so we can correct the page number missing on frontpage
-add_filter('wpseo_title', 'wpgrade_fix_yoast_page_number');
