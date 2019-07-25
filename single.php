@@ -40,25 +40,6 @@ get_header();
     );
     wp_link_pages( $args ); ?>
 
-        <?php
-        if (get_field('enable_review_score')):
-            //don't show the breakdown if there is only one - it means the guy just wanted the average score
-            if (get_field('score_breakdown') && count(get_field('score_breakdown')) > 1 ): ?>
-                <h3><?php _e('The Breakdown', 'bucket-lite'); ?></h3>
-                <hr class="separator  separator--subsection">
-                <?php while (has_sub_fields('score_breakdown')): ?>
-                    <div class="review__score">
-                        <div class="score__label"><?php echo get_sub_field('label'); ?></div>
-                        <span class="score__badge  badge"><?php echo get_sub_field('score'); ?></span>
-                        <div class="score__progressbar  progressbar">
-                            <div class="progressbar__progress" style="width: <?php echo get_sub_field('score')*10; ?>%;"></div>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-                <hr class="separator  separator--subsection">
-            <?php endif;
-        endif; ?>
-
         <div class="article__meta  article--single__meta">
             <?php
             if (get_field('credits')):

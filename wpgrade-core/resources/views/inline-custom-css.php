@@ -45,7 +45,6 @@
 			.main-footer_twitter:before, .main-footer_twitter:after,
 			.homepage-slider .flex-control-paging > li > a.flex-active,
 			.gallery_format_slider .flex-direction-nav a:hover, .block-color,
-			.progressbar-progress,
 			.mejs-container .mejs-controls .mejs-time-rail .mejs-time-current,
 			.mejs-container .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 			.homepage-slider .flex-direction-nav > li > a,

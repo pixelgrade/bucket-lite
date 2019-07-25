@@ -207,22 +207,6 @@
 	.grid__item.float--left {
 		float: right !important;
 	}
-
-	.score__badge {
-		right: auto;
-		left: -1px;
-	}
-
-	.progressbar:after {
-		border-right-color: transparent;
-		border-left-color: white;
-		right: auto;
-		left: -1px;
-	}
-
-	.progressbar__progress {
-		float: right;
-	}
 }
 
 // NEXT / PREV
@@ -251,8 +235,6 @@
 	.comments-area-title .hN,
 	.comments-area-title .article__author-name,
 	.comments-area-title .comment__author-name,
-	.comments-area-title .score__average-wrapper,
-	.comments-area-title .score__label,
 	.comments-area-title .widget_calendar caption,
 	.widget_calendar .comments-area-title caption {
 		float: right;
