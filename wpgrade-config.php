@@ -85,7 +85,7 @@
 
 	'shortcodes' => array
 	(
-		'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'Separator', 'Slider', 'AverageScore'
+		'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'Separator', 'Slider'
 	),
 
 	'megamenu_layouts' => array
@@ -157,23 +157,6 @@
 		(
 //			'google-maps-api',
 			'wpgrade-main-scripts'
-		),
-
-		// enques script and localizes
-		'auto-localize-scripts' => array
-		(
-			'wpgrade-main-scripts' =>
-				array
-				(
-					'ajaxurl' => admin_url('admin-ajax.php'),
-					'sharrre_urlCurl' => get_template_directory_uri().'/theme-content/js/sharrre.php',
-					'objectl10n' => array
-					(
-						'tPrev' => __('Previous (Left arrow key)', 'bucket-lite'),
-						'tNext' => __('Next (Right arrow key)', 'bucket-lite'),
-						'tCounter' => __('of', 'bucket-lite')
-					),
-				),
 		),
 
 		// calls function to perform extra enqueue's on theme setup
