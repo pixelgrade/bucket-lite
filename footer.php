@@ -116,7 +116,7 @@
         <div class="footer__copyright">
             <div class="container">
                 <div class="flexbox">
-                    <div class="footer-copyright flexbox__item"><?php echo wpgrade::option('copyright_text') ?></div>
+                    <div class="footer-copyright flexbox__item"><?php bucket_lite_footer_the_copyright();?></div>
                     <div class="footer-menu flexbox__item "><?php wpgrade_footer_nav() ?></div>
                 </div>
             </div>
