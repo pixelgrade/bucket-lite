@@ -62,6 +62,8 @@
     	if (is_active_sidebar('sidebar-footer-first-1')
     	 || is_active_sidebar('sidebar-footer-first-2')
     	 || is_active_sidebar('sidebar-footer-first-3')
+         || is_active_sidebar('sidebar-footer-second-1')
+         || is_active_sidebar('sidebar-footer-second-2')
     	):
 
     	// If we get this far, we have widgets. Let do this.
@@ -87,6 +89,22 @@
                                 <?php dynamic_sidebar( 'sidebar-footer-first-3' ); ?>
                             </div><!--
                         <?php endif; ?>
+                 --></div>
+
+                    <div class="footer__widget-area  grid"><!--
+
+                        <?php if ( is_active_sidebar( 'sidebar-footer-second-1' ) ) : ?>
+                         --><div class="grid__item two-thirds  palm-one-whole">
+			                <?php dynamic_sidebar( 'sidebar-footer-second-1' ); ?>
+                        </div><!--
+                        <?php endif; ?>
+
+                        <?php if ( is_active_sidebar( 'sidebar-footer-second-2' ) ) : ?>
+                            --><div class="grid__item one-third  palm-one-whole">
+			                <?php dynamic_sidebar( 'sidebar-footer-second-2' ); ?>
+                        </div><!--
+                        <?php endif; ?>
+
                  --></div>
 
                 </div>
