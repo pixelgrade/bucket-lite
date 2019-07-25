@@ -102,28 +102,6 @@ function getArticleImage() {
     return "";
 }
 
-/* --- Load AddThis Async --- */
-function loadAddThisScript() {
-    if (window.addthis) {
-        // Listen for the ready event
-        addthis.addEventListener('addthis.ready', addthisReady);
-        addthis.init();
-    }
-}
-
-/* --- AddThis On Ready - The API is fully loaded --- */
-//only fire this the first time we load the AddThis API - even when using ajax
-function addthisReady( obj ) {
-    addThisInit(obj);
-}
-
-/* --- AddThis Init --- */
-function addThisInit(obj) {
-    if (window.addthis) {
-        addthis.toolbox('.addthis_toolbox');
-    }
-}
-
 // Mega-Menu Hover with delay
 function megaMenusHover() {
     $('.nav--main > li').hoverIntent({
@@ -165,8 +143,6 @@ function init() {
 
     /* Overthrow Polyfill */
     overthrow.set();
-
-    loadAddThisScript();
 
     FastClick.attach(document.body);
 

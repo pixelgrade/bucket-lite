@@ -15,49 +15,6 @@ function bucket_option( $option, $default = null ) {
 	return $default;
 }
 
-if ( ! function_exists( 'bucket_callback_addthis' ) ) {
-	function bucket_callback_addthis() {
-		//lets determine if we need the addthis script at all
-		$share_buttons_settings = bucket_option( 'share_buttons_settings' );
-		if ( is_single() && ! empty( $share_buttons_settings ) ):
-			wp_enqueue_script( 'addthis-api' );
-
-			//here we will configure the AddThis sharing globally
-			global $post;
-			if ( empty( $post ) ) {
-				return;
-			} ?>
-			<script type="text/javascript">
-				addthis_config = {
-					<?php if ( bucket_option( 'share_buttons_enable_tracking' ) && bucket_option( 'share_buttons_enable_addthis_tracking' ) ):
-					echo 'username : "' . bucket_option( 'share_buttons_addthis_username' ) . '",';
-				endif; ?>
-					ui_click: false,
-					ui_delay: 100,
-					ui_offset_top: 42,
-					ui_use_css: true,
-					data_track_addressbar: false,
-					data_track_clickback: false
-					<?php if ( bucket_option( 'share_buttons_enable_tracking' ) && bucket_option( 'share_buttons_enable_ga_tracking' ) ):
-					echo ', data_ga_property: "' . bucket_option( 'share_buttons_ga_id' ) . '"';
-					if ( bucket_option( 'share_buttons_enable_ga_social_tracking' ) ):
-						echo ', data_ga_social : true';
-					endif;
-				endif; ?>
-				};
-
-				addthis_share = {
-					url: "<?php echo bucket_get_current_canonical_url(); ?>",
-					title: "<?php wp_title( '|', true, 'right' ); ?>",
-					description: "<?php echo trim( strip_tags( get_the_excerpt() ) ) ?>"
-				};
-			</script>
-			<?php
-		endif;
-	}
-}
-add_action( 'wp_enqueue_scripts', 'bucket_callback_addthis' );
-
 /**
  * The following code is inspired by Yoast SEO.
  */

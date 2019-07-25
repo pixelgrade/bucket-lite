@@ -36,17 +36,6 @@ add_theme_support( 'title-tag' );
 // ----------------------
 do_action('wpgrade_before_core');
 
-/// load assets
-if ( ! function_exists( 'bucket_load_assets' ) ) {
-	function bucket_load_assets(){
-
-		if ( is_single() ) {
-			wp_enqueue_script( 'addthis-api', '//s7.addthis.com/js/300/addthis_widget.js#async=1', array( 'jquery' ), null, true );
-		}
-	}
-}
-add_action( 'wp_enqueue_scripts', 'bucket_load_assets' );
-
 require_once 'wpgrade-core/bootstrap'.EXT;
 
 do_action('wpgrade_after_core');

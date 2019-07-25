@@ -65,10 +65,6 @@ get_header();
             <?php endif; ?>
         </div>
         <?php
-        $share_buttons_settings = wpgrade::option('share_buttons_settings');
-        if ( ! empty( $share_buttons_settings ) && (wpgrade::option('blog_single_share_links_position', 'bottom') == 'bottom' || wpgrade::option('blog_single_share_links_position', 'bottom') == 'both') ) {
-            get_template_part('theme-partials/post-templates/share-box');
-        }
 
         get_template_part( 'author-bio' );
 
