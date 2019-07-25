@@ -89,13 +89,6 @@
 		'Columns', 'Button', 'Icon', 'Tabs', 'Quote', 'Separator', 'Slider'
 	),
 
-	'megamenu_layouts' => array
-	(
-		'default' => __('Default','bucket-lite'),
-		'latest_posts' => __('Latest Posts','bucket-lite'),
-		'slider_latest_posts' => __('Slider + Latest Posts','bucket-lite'),
-	),
-
 	// importer
 	'import_homepage_name' => 'Home',
 	'import_blogpage_name' => false,

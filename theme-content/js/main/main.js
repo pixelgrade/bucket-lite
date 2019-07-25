@@ -102,32 +102,6 @@ function getArticleImage() {
     return "";
 }
 
-// Mega-Menu Hover with delay
-function megaMenusHover() {
-    $('.nav--main > li').hoverIntent({
-        interval: 100,
-        timeout: 300,
-        over: showMegaMenu,
-        out: hideMegaMenu,
-    })
-
-    function showMegaMenu() {
-        var self = $(this);
-        self.removeClass('hidden');
-        setTimeout(function(){
-            self.addClass('open');
-        }, 50);
-    }
-    function hideMegaMenu() {
-        var self = $(this);
-        self.removeClass('open');
-        setTimeout(function(){
-            self.addClass('hidden');
-        }, 150);
-    }
-}
-
-
 /* ====== INITIALIZE ====== */
 
 function init() {
@@ -163,9 +137,6 @@ function init() {
             image.addClass('has--2x-image');
         }
     }
-
-    /* Mega Menu */
-    megaMenusHover();
 
     /* ONE TIME EVENT HANDLERS */
     eventHandlersOnce();
