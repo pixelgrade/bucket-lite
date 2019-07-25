@@ -10,7 +10,7 @@ global $showed_posts_ids;
 $number_of_posts = 999;
 $read_more_label = 'Read More';
 if ( empty($read_more_label) ) {
-	$read_more_label = __('Read Full Story', 'bucket');
+	$read_more_label = __('Read Full Story', 'bucket-lite');
 }
 
 $query_args = array(
@@ -88,7 +88,7 @@ if ($slides->have_posts()): ?>
 						</div>
 						<a href="<?php the_permalink(); ?>">
 							<div class="article__header  article--billboard__header">
-								<span class="billboard__category"><?php _e( 'Featured', 'bucket' ); ?></span>
+								<span class="billboard__category"><?php _e( 'Featured', 'bucket-lite' ); ?></span>
 								<h2 class="article__title article--billboard__title">
 									<span class="hN"><?php the_title(); ?></span>
 								</h2>
@@ -119,7 +119,7 @@ if ($slides->have_posts()): ?>
 
 							<a href="<?php the_permalink(); ?>">
 								<div class="article__header  article--billboard__header">
-									<span class="billboard__category"><?php _e( 'Featured', 'bucket' ); ?></span>
+									<span class="billboard__category"><?php _e( 'Featured', 'bucket-lite' ); ?></span>
 									<h2 class="article__title article--billboard__title">
 										<span class="hN"><?php the_title(); ?></span>
 									</h2>
@@ -166,7 +166,7 @@ if ($slides->have_posts()): ?>
                                     }
                                     ?>
                                 </span>
-									<span class="small-link"><?php _e( 'Read More', 'bucket' ); ?><em>+</em></span>
+									<span class="small-link"><?php _e( 'Read More', 'bucket-lite' ); ?><em>+</em></span>
 								</div>
 							</a>
 						</article>
