@@ -42,15 +42,6 @@ get_header();
 
         <div class="article__meta  article--single__meta">
             <?php
-            if (get_field('credits')):
-                while (has_sub_field('credits')): ?>
-                    <div class="btn-list">
-                        <div class="btn  btn--small  btn--secondary"><?php echo get_sub_field('name'); ?></div>
-                        <a href="<?php echo get_sub_field('full_url'); ?>" class="btn  btn--small  btn--primary"><?php echo get_sub_field('label'); ?></a>
-                    </div>
-                <?php endwhile;
-            endif;
-
             $categories = get_the_category();
             if ($categories): ?>
                 <div class="btn-list">
