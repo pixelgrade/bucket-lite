@@ -324,10 +324,6 @@ class WPGrade_Bucket_Walker_Nav_Menu extends Walker_Nav_Menu {
 			 */
 	        if (class_exists('DOMDocument')) {
 
-		        if ( ! class_exists( 'phpQuery') ) {
-			        // load phpQuery at the last moment, to minimise chance of conflicts (ok, it's probably a bit too defensive)
-			        require_once 'vendor/phpQuery.php';
-		        }
 		        // enable debugging messages
 		        //phpQuery::$debug = 0;
 		        $_doc = phpQuery::newDocumentHTML( $output );
