@@ -557,8 +557,8 @@ textarea:focus {
 /*------------------------------------*\
     $CLEARFIX
 \*------------------------------------*/
-.cf:after, .nav:after, .rsBullets:after, .tabs__nav:after, .sub-menu:after, .sub-menu--mega:after, .commentlist:after, .author__social-links:after, .media:after, .author:after, .latest-comments__list:after, .island:after, .reviews:after,
-.islet:after, .matrix:after, .multi-list:after, .widget_nav_menu ul:after, .widget_categories ul:after, .widget_meta ul:after, .stat-group:after, .wp-caption:after, .gallery__item__caption:after, .heading:after, .widget--sidebar__title:after, .widget--footer__title:after, .btn-list:after, .widget_tag_cloud .wp-tag-cloud:after, .article--list__link:after, .nav--main:after, .sub-menu__grid:after, .comments-area-title:after, .progressbar:after, .pixcode--grid:after, .container:after {
+.cf:after, .nav:after, .rsBullets:after, .tabs__nav:after, .sub-menu:after, .sub-menu--mega:after, .commentlist:after, .author__social-links:after, .media:after, .author:after, .island:after,
+.islet:after, .matrix:after, .multi-list:after, .widget_nav_menu ul:after, .widget_categories ul:after, .widget_meta ul:after, .stat-group:after, .wp-caption:after, .gallery__item__caption:after, .heading:after, .widget--sidebar__title:after, .widget--footer__title:after, .btn-list:after, .widget_tag_cloud .wp-tag-cloud:after, .article--list__link:after, .nav--main:after, .sub-menu__grid:after, .comments-area-title:after, .pixcode--grid:after, .container:after {
   content: "";
   display: table;
   clear: both; }
@@ -583,9 +583,7 @@ pre,
 .form-fields > li,
 .media,
 .author,
-.latest-comments__list,
 .island,
-.reviews,
 .islet {
   margin-bottom: 24px;
   margin-bottom: 1.71429rem; }
@@ -594,7 +592,8 @@ pre,
   blockquote, .islet p, .islet address, .islet
   table, .islet
   fieldset, .islet figure, .islet
-  pre, .islet .form-fields > li, .islet .media, .islet .author, .islet .latest-comments__list, .islet .island, .islet .reviews, .islet
+  pre, .islet .form-fields > li, .islet .media, .islet .author, .islet
+  .island, .islet
   .islet {
     margin-bottom: 12px;
     margin-bottom: 0.85714rem; }
@@ -647,17 +646,17 @@ h2, .arqam-widget-counter li span, .beta {
   font-size: 1.64286rem;
   line-height: 1.05348; }
 
-h3, .gamma, .heading--sidebar .hN, .widget--sidebar__title .hN, .heading--sidebar .article__author-name, .widget--sidebar__title .article__author-name, .heading--sidebar .comment__author-name, .widget--sidebar__title .comment__author-name, .heading--sidebar .score__average-wrapper, .widget--sidebar__title .score__average-wrapper, .heading--sidebar .score__label, .widget--sidebar__title .score__label, .heading--sidebar .widget_calendar caption, .widget_calendar .heading--sidebar caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption, .heading--footer .hN, .widget--footer__title .hN, .heading--footer .article__author-name, .widget--footer__title .article__author-name, .heading--footer .comment__author-name, .widget--footer__title .comment__author-name, .heading--footer .score__average-wrapper, .widget--footer__title .score__average-wrapper, .heading--footer .score__label, .widget--footer__title .score__label, .heading--footer .widget_calendar caption, .widget_calendar .heading--footer caption, .widget--footer__title .widget_calendar caption, .widget_calendar .widget--footer__title caption, .article--billboard-small__title .hN, .article--billboard-small__title .article__author-name, .article--billboard-small__title .comment__author-name, .article--billboard-small__title .score__average-wrapper, .article--billboard-small__title .score__label, .article--billboard-small__title .widget_calendar caption, .widget_calendar .article--billboard-small__title caption, .post-nav-link__title, .comments-area-title .hN, .comments-area-title .article__author-name, .comments-area-title .comment__author-name, .comments-area-title .score__average-wrapper, .comments-area-title .score__label, .comments-area-title .widget_calendar caption, .widget_calendar .comments-area-title caption, .widget_calendar caption {
+h3, .gamma, .heading--sidebar .hN, .widget--sidebar__title .hN, .heading--sidebar .article__author-name, .widget--sidebar__title .article__author-name, .heading--sidebar .comment__author-name, .widget--sidebar__title .comment__author-name, .heading--sidebar .widget_calendar caption, .widget_calendar .heading--sidebar caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption, .heading--footer .hN, .widget--footer__title .hN, .heading--footer .article__author-name, .widget--footer__title .article__author-name, .heading--footer .comment__author-name, .widget--footer__title .comment__author-name, .heading--footer .widget_calendar caption, .widget_calendar .heading--footer caption, .widget--footer__title .widget_calendar caption, .widget_calendar .widget--footer__title caption, .article--billboard-small__title .hN, .article--billboard-small__title .article__author-name, .article--billboard-small__title .comment__author-name, .article--billboard-small__title .widget_calendar caption, .widget_calendar .article--billboard-small__title caption, .post-nav-link__title, .comments-area-title .hN, .comments-area-title .article__author-name, .comments-area-title .comment__author-name, .comments-area-title .widget_calendar caption, .widget_calendar .comments-area-title caption, .widget_calendar caption {
   font-size: 19px;
   font-size: 1.35714rem;
   line-height: 1.27316; }
 
-h4, .delta, .article__author-name, .comment__author-name, .score__label {
+h4, .delta, .article__author-name, .comment__author-name {
   font-size: 15px;
   font-size: 1.07143rem;
   line-height: 1.61; }
 
-h5, .epsilon, .article--slider__title .hN, .article--slider__title .article__author-name, .article--slider__title .comment__author-name, .article--slider__title .score__average-wrapper, .article--slider__title .score__label, .article--slider__title .widget_calendar caption, .widget_calendar .article--slider__title caption {
+h5, .epsilon, .article--slider__title .hN, .article--slider__title .article__author-name, .article--slider__title .comment__author-name, .article--slider__title .widget_calendar caption, .widget_calendar .article--slider__title caption {
   font-size: 12px;
   font-size: 0.85714rem;
   line-height: 2.01; }
@@ -667,7 +666,7 @@ h6, .zeta {
   font-size: 0.78571rem;
   line-height: 1.10091; }
 
-hgroup .hN, hgroup .article__author-name, hgroup .comment__author-name, hgroup .score__average-wrapper, hgroup .score__label, hgroup .widget_calendar caption, .widget_calendar hgroup caption {
+hgroup .hN, hgroup .article__author-name, hgroup .comment__author-name, hgroup .widget_calendar caption, .widget_calendar hgroup caption {
   margin-bottom: 0; }
 
 .giga {
@@ -1426,11 +1425,10 @@ html.flexbox {
  */
 
 .media,
-.author,
-.latest-comments__list {
+.author {
   display: block; }
 
-.media__img, .author__avatar, .latest-comments__avatar {
+.media__img, .author__avatar {
   float: left;
   margin-right: 24px;
   margin-right: 1.71429rem; }
@@ -1443,23 +1441,22 @@ html.flexbox {
   margin-left: 24px;
   margin-left: 1.71429rem; }
 
-.media__img img, .author__avatar img, .latest-comments__avatar img,
+.media__img img, .author__avatar img,
 .media__img--rev img {
   display: block; }
 
-.media__body, .author__text, .latest-comments__body {
+.media__body, .author__text {
   overflow: hidden; }
 
-.media__body, .author__text, .latest-comments__body,
+.media__body, .author__text,
 .media__body > :last-child,
-.author__text > :last-child,
-.latest-comments__body > :last-child {
+.author__text > :last-child {
   margin-bottom: 0; }
 
 /**
      * `.img`s in `.islet`s need an appropriately sized margin.
      */
-.islet .media__img, .islet .author__avatar, .islet .latest-comments__avatar {
+.islet .media__img, .islet .author__avatar {
   margin-right: 12px;
   margin-right: 0.85714rem; }
 
@@ -1481,19 +1478,15 @@ html.flexbox {
  * Demo: jsfiddle.net/inuitcss/u8pV3
  *
  */
-
 .island,
-.reviews,
 .islet {
   display: block; }
 
-
-.island,
-.reviews {
+.island {
   padding: 24px;
   padding: 1.71429rem; }
 
-.island > :last-child, .reviews > :last-child,
+.island > :last-child,
 .islet > :last-child {
   margin-bottom: 0; }
 
@@ -6353,12 +6346,12 @@ img.mfp-img {
   .related-projects_item .article--billboard-small {
     height: 260px;
     height: 18.57143rem; }
-  .related-projects_item .article--billboard-small .article__title, .related-projects_item .article--billboard-small .article--list__title, .related-projects_item .article--billboard-small .latest-comments__title {
+  .related-projects_item .article--billboard-small .article__title, .related-projects_item .article--billboard-small .article--list__title {
     max-height: 72px;
     max-height: 5.14286rem;
     height: auto;
     line-height: 1; }
-    .related-projects_item .article--billboard-small .article__title .hN, .related-projects_item .article--billboard-small .article--list__title .hN, .related-projects_item .article--billboard-small .latest-comments__title .hN, .related-projects_item .article--billboard-small .article__title .article__author-name, .related-projects_item .article--billboard-small .article--list__title .article__author-name, .related-projects_item .article--billboard-small .latest-comments__title .article__author-name, .related-projects_item .article--billboard-small .article__title .comment__author-name, .related-projects_item .article--billboard-small .article--list__title .comment__author-name, .related-projects_item .article--billboard-small .latest-comments__title .comment__author-name, .related-projects_item .article--billboard-small .article__title .score__average-wrapper, .related-projects_item .article--billboard-small .article--list__title .score__average-wrapper, .related-projects_item .article--billboard-small .latest-comments__title .score__average-wrapper, .related-projects_item .article--billboard-small .article__title .score__label, .related-projects_item .article--billboard-small .article--list__title .score__label, .related-projects_item .article--billboard-small .latest-comments__title .score__label, .related-projects_item .article--billboard-small .article__title .widget_calendar caption, .widget_calendar .related-projects_item .article--billboard-small .article__title caption, .related-projects_item .article--billboard-small .article--list__title .widget_calendar caption, .widget_calendar .related-projects_item .article--billboard-small .article--list__title caption, .related-projects_item .article--billboard-small .latest-comments__title .widget_calendar caption, .widget_calendar .related-projects_item .article--billboard-small .latest-comments__title caption {
+    .related-projects_item .article--billboard-small .article__title .hN, .related-projects_item .article--billboard-small .article--list__title .hN, .related-projects_item .article--billboard-small .article__title .article__author-name, .related-projects_item .article--billboard-small .article--list__title .article__author-name, .related-projects_item .article--billboard-small .article__title .comment__author-name, .related-projects_item .article--billboard-small .article--list__title .comment__author-name, .related-projects_item .article--billboard-small .article__title .widget_calendar caption, .widget_calendar .related-projects_item .article--billboard-small .article__title caption, .related-projects_item .article--billboard-small .article--list__title .widget_calendar caption, .widget_calendar .related-projects_item .article--billboard-small .article--list__title caption {
       font-size: 16px; }
   .related-projects_item .article--billboard-small .article__content {
     height: 128px;
@@ -6598,13 +6591,13 @@ h1, h2, .arqam-widget-counter li span, h3, h4, h5, h6, hgroup {
   font-family: "Arvo", serif;
   font-weight: 500; }
 
-.article__title, .article--list__title, .latest-comments__title, .article__title .hN, .article--list__title .hN, .latest-comments__title .hN, .article__title .article__author-name, .article--list__title .article__author-name, .latest-comments__title .article__author-name, .article__title .comment__author-name, .article--list__title .comment__author-name, .latest-comments__title .comment__author-name, .article__title .score__average-wrapper, .article--list__title .score__average-wrapper, .latest-comments__title .score__average-wrapper, .article__title .score__label, .article--list__title .score__label, .latest-comments__title .score__label, .article__title .widget_calendar caption, .widget_calendar .article__title caption, .article--list__title .widget_calendar caption, .widget_calendar .article--list__title caption, .latest-comments__title .widget_calendar caption, .widget_calendar .latest-comments__title caption, .widget__title .hN, .widget__title .article__author-name, .widget__title .comment__author-name, .widget__title .score__average-wrapper, .widget__title .score__label, .widget__title .widget_calendar caption, .widget_calendar .widget__title caption, .heading .hN, .widget--sidebar__title .hN, .widget--footer__title .hN, .heading .article__author-name, .widget--sidebar__title .article__author-name, .widget--footer__title .article__author-name, .heading .comment__author-name, .widget--sidebar__title .comment__author-name, .widget--footer__title .comment__author-name, .heading .score__average-wrapper, .widget--sidebar__title .score__average-wrapper, .widget--footer__title .score__average-wrapper, .heading .score__label, .widget--sidebar__title .score__label, .widget--footer__title .score__label, .heading .widget_calendar caption, .widget_calendar .heading caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption, .widget--footer__title .widget_calendar caption, .widget_calendar .widget--footer__title caption {
+.article__title, .article--list__title, .article__title .hN, .article--list__title .hN, .article__title .article__author-name, .article--list__title .article__author-name, .article__title .comment__author-name, .article--list__title .comment__author-name, .article__title .widget_calendar caption, .widget_calendar .article__title caption, .article--list__title .widget_calendar caption, .widget_calendar .article--list__title caption, .widget__title .hN, .widget__title .article__author-name, .widget__title .comment__author-name, .widget__title .widget_calendar caption, .widget_calendar .widget__title caption, .heading .hN, .widget--sidebar__title .hN, .widget--footer__title .hN, .heading .article__author-name, .widget--sidebar__title .article__author-name, .widget--footer__title .article__author-name, .heading .comment__author-name, .widget--sidebar__title .comment__author-name, .widget--footer__title .comment__author-name, .heading .widget_calendar caption, .widget_calendar .heading caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption, .widget--footer__title .widget_calendar caption, .widget_calendar .widget--footer__title caption {
   margin-top: 0; }
 
 h2, .arqam-widget-counter li span, h3, h4, h5, h6 {
   text-transform: uppercase; }
 
-.hN, .article__author-name, .comment__author-name, .score__average-wrapper, .score__label, .widget_calendar caption {
+.hN, .article__author-name, .comment__author-name, .widget_calendar caption {
   font-family: "Arvo", serif;
   font-weight: normal;
   text-transform: uppercase; }
@@ -6616,7 +6609,7 @@ article {
 .heading, .widget--sidebar__title, .widget--footer__title {
   margin-bottom: 24px;
   margin-bottom: 1.71429rem; }
-  .heading .hN, .widget--sidebar__title .hN, .widget--footer__title .hN, .heading .article__author-name, .widget--sidebar__title .article__author-name, .widget--footer__title .article__author-name, .heading .comment__author-name, .widget--sidebar__title .comment__author-name, .widget--footer__title .comment__author-name, .heading .score__average-wrapper, .widget--sidebar__title .score__average-wrapper, .widget--footer__title .score__average-wrapper, .heading .score__label, .widget--sidebar__title .score__label, .widget--footer__title .score__label, .heading .widget_calendar caption, .widget_calendar .heading caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption, .widget--footer__title .widget_calendar caption, .widget_calendar .widget--footer__title caption, .heading .archive__side-title, .widget--sidebar__title .archive__side-title, .widget--footer__title .archive__side-title {
+  .heading .hN, .widget--sidebar__title .hN, .widget--footer__title .hN, .heading .article__author-name, .widget--sidebar__title .article__author-name, .widget--footer__title .article__author-name, .heading .comment__author-name, .widget--sidebar__title .comment__author-name, .widget--footer__title .comment__author-name, .heading .widget_calendar caption, .widget_calendar .heading caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption, .widget--footer__title .widget_calendar caption, .widget_calendar .widget--footer__title caption, .heading .archive__side-title, .widget--sidebar__title .archive__side-title, .widget--footer__title .archive__side-title {
     margin-bottom: 0;
     font-family: "Arvo", serif;
     font-weight: normal;
@@ -6627,7 +6620,7 @@ article {
 
 .heading--main {
   background-color: #1a1717; }
-  .heading--main .hN, .heading--main .article__author-name, .heading--main .comment__author-name, .heading--main .score__average-wrapper, .heading--main .score__label, .heading--main .widget_calendar caption, .widget_calendar .heading--main caption {
+  .heading--main .hN, .heading--main .article__author-name, .heading--main .comment__author-name, .heading--main .widget_calendar caption, .widget_calendar .heading--main caption {
     padding: 12px 24px;
     padding: 0.85714rem 1.71429rem;
     background-color: #fb4834;
@@ -6639,7 +6632,7 @@ article {
 
 .heading--sidebar, .widget--sidebar__title {
   background-color: #fb4834; }
-  .heading--sidebar .hN, .widget--sidebar__title .hN, .heading--sidebar .article__author-name, .widget--sidebar__title .article__author-name, .heading--sidebar .comment__author-name, .widget--sidebar__title .comment__author-name, .heading--sidebar .score__average-wrapper, .widget--sidebar__title .score__average-wrapper, .heading--sidebar .score__label, .widget--sidebar__title .score__label, .heading--sidebar .widget_calendar caption, .widget_calendar .heading--sidebar caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption {
+  .heading--sidebar .hN, .widget--sidebar__title .hN, .heading--sidebar .article__author-name, .widget--sidebar__title .article__author-name, .heading--sidebar .comment__author-name, .widget--sidebar__title .comment__author-name, .heading--sidebar .widget_calendar caption, .widget_calendar .heading--sidebar caption, .widget--sidebar__title .widget_calendar caption, .widget_calendar .widget--sidebar__title caption {
     padding: 12px 24px;
     padding: 0.85714rem 1.71429rem; }
 
@@ -7130,7 +7123,7 @@ a:hover > .pixcode--icon {
   border: 0;
   height: 0; }
 
-.separator--section, .arqam-widget-counter, table, .pixcode--tabs, .article--grid__meta, .article--slider, .article--single__meta, .article--billboard-small, .widget--latest-comments {
+.separator--section, .arqam-widget-counter, table, .pixcode--tabs, .article--grid__meta, .article--slider, .article--single__meta, .article--billboard-small {
   padding-bottom: 24px;
   padding-bottom: 1.71429rem;
   margin-bottom: 19px;
@@ -7234,7 +7227,7 @@ a:hover > .pixcode--icon {
   font-size: 14px;
   font-size: 1rem; }
 
-.article__title, .article--list__title, .latest-comments__title {
+.article__title, .article--list__title {
   margin-bottom: 12px;
   margin-bottom: 0.85714rem; }
 
@@ -7266,13 +7259,13 @@ a:hover > .pixcode--icon {
   .article__featured-image img {
     display: block; }
 
-.article__title, .article--list__title, .latest-comments__title {
+.article__title, .article--list__title {
   display: block;
   position: relative; }
-  .article__title .hN, .article--list__title .hN, .latest-comments__title .hN, .article__title .article__author-name, .article--list__title .article__author-name, .latest-comments__title .article__author-name, .article__title .comment__author-name, .article--list__title .comment__author-name, .latest-comments__title .comment__author-name, .article__title .score__average-wrapper, .article--list__title .score__average-wrapper, .latest-comments__title .score__average-wrapper, .article__title .score__label, .article--list__title .score__label, .latest-comments__title .score__label, .article__title .widget_calendar caption, .widget_calendar .article__title caption, .article--list__title .widget_calendar caption, .widget_calendar .article--list__title caption, .latest-comments__title .widget_calendar caption, .widget_calendar .latest-comments__title caption {
+  .article__title .hN, .article--list__title .hN, .article__title .article__author-name, .article--list__title .article__author-name, .article__title .comment__author-name, .article--list__title .comment__author-name, .article__title .widget_calendar caption, .widget_calendar .article__title caption, .article--list__title .widget_calendar caption, .widget_calendar .article--list__title caption {
     margin-bottom: 0; }
 
-.article__title--inverse, .article--grid__title, .article--list__link:hover .article--list__title, .article--slider__title, .latest-comments__title {
+.article__title--inverse, .article--grid__title, .article--list__link:hover .article--list__title, .article--slider__title {
   color: white;
   background-color: #1a1717; }
 
@@ -7291,7 +7284,7 @@ a:hover > .pixcode--icon {
   .container--single {
     padding-top: 4rem; } }
 
-.article__title, .article--list__title, .latest-comments__title {
+.article__title, .article--list__title {
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
@@ -7342,7 +7335,7 @@ a:hover > .pixcode--icon {
 .article--grid__title {
   background-color: transparent;
   z-index: 22; }
-  .article--grid__title .hN, .article--grid__title .article__author-name, .article--grid__title .comment__author-name, .article--grid__title .score__average-wrapper, .article--grid__title .score__label, .article--grid__title .widget_calendar caption, .widget_calendar .article--grid__title caption {
+  .article--grid__title .hN, .article--grid__title .article__author-name, .article--grid__title .comment__author-name, .article--grid__title .widget_calendar caption, .widget_calendar .article--grid__title caption {
     text-align: center;
     padding: 6px 24px;
     padding: 0.42857rem 1.71429rem;
@@ -7461,7 +7454,7 @@ a:hover > .pixcode--icon {
  * Hero Posts Module
  */
 @media only screen and (max-width: 899px) {
-  .featured-area__article.article--big .article__title .hN, .featured-area__article.article--big .article--list__title .hN, .featured-area__article.article--big .latest-comments__title .hN, .featured-area__article.article--big .article__title .article__author-name, .featured-area__article.article--big .article--list__title .article__author-name, .featured-area__article.article--big .latest-comments__title .article__author-name, .featured-area__article.article--big .article__title .comment__author-name, .featured-area__article.article--big .article--list__title .comment__author-name, .featured-area__article.article--big .latest-comments__title .comment__author-name, .featured-area__article.article--big .article__title .score__average-wrapper, .featured-area__article.article--big .article--list__title .score__average-wrapper, .featured-area__article.article--big .latest-comments__title .score__average-wrapper, .featured-area__article.article--big .article__title .score__label, .featured-area__article.article--big .article--list__title .score__label, .featured-area__article.article--big .latest-comments__title .score__label, .featured-area__article.article--big .article__title .widget_calendar caption, .widget_calendar .featured-area__article.article--big .article__title caption, .featured-area__article.article--big .article--list__title .widget_calendar caption, .widget_calendar .featured-area__article.article--big .article--list__title caption, .featured-area__article.article--big .latest-comments__title .widget_calendar caption, .widget_calendar .featured-area__article.article--big .latest-comments__title caption {
+  .featured-area__article.article--big .article__title .hN, .featured-area__article.article--big .article--list__title .hN, .featured-area__article.article--big .article__title .article__author-name, .featured-area__article.article--big .article--list__title .article__author-name, .featured-area__article.article--big .article__title .comment__author-name, .featured-area__article.article--big .article--list__title .comment__author-name, .featured-area__article.article--big .article__title .widget_calendar caption, .widget_calendar .featured-area__article.article--big .article__title caption, .featured-area__article.article--big .article--list__title .widget_calendar caption, .widget_calendar .featured-area__article.article--big .article--list__title caption {
     font-size: 19px;
     width: 100%; } }
 
@@ -7596,7 +7589,7 @@ a:hover > .pixcode--icon {
       position: relative;
       transform: translateY(-8px);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275); }
-    .article--billboard-small .article__title, .article--billboard-small .article--list__title, .article--billboard-small .latest-comments__title {
+    .article--billboard-small .article__title, .article--billboard-small .article--list__title {
       height: 48px;
       height: 3.42857rem; }
     .article--billboard-small .article__content {
@@ -7628,7 +7621,7 @@ a:hover > .pixcode--icon {
 .article--billboard-small__title {
   overflow: hidden;
   color: #1a1717; }
-  .article--billboard-small__title .hN, .article--billboard-small__title .article__author-name, .article--billboard-small__title .comment__author-name, .article--billboard-small__title .score__average-wrapper, .article--billboard-small__title .score__label, .article--billboard-small__title .widget_calendar caption, .widget_calendar .article--billboard-small__title caption {
+  .article--billboard-small__title .hN, .article--billboard-small__title .article__author-name, .article--billboard-small__title .comment__author-name, .article--billboard-small__title .widget_calendar caption, .widget_calendar .article--billboard-small__title caption {
     max-width: 100%;
     overflow: hidden;
     -ms-text-overflow: ellipsis;
@@ -7638,7 +7631,7 @@ a:hover > .pixcode--icon {
       padding: 9px 0;
       padding: 0.64286rem 0;
       margin-bottom: 0; }
-      .article--billboard-small__title .hN, .article--billboard-small__title .article__author-name, .article--billboard-small__title .comment__author-name, .article--billboard-small__title .score__average-wrapper, .article--billboard-small__title .score__label, .article--billboard-small__title .widget_calendar caption, .widget_calendar .article--billboard-small__title caption {
+      .article--billboard-small__title .hN, .article--billboard-small__title .article__author-name, .article--billboard-small__title .comment__author-name, .article--billboard-small__title .widget_calendar caption, .widget_calendar .article--billboard-small__title caption {
         font-size: 19px;
         font-size: 1.35714rem;
         line-height: 1.27316; } }
@@ -7971,7 +7964,7 @@ a:hover > .pixcode--icon {
       .sub-menu__grid__item .featured-area__article .image-wrap img {
         max-width: none;
         position: relative; }
-      .sub-menu__grid__item .featured-area__article .image-wrap .article__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .score__average-wrapper, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .score__average-wrapper, .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title .score__average-wrapper, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .score__label, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .score__label, .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title .score__label, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .article__title caption, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title caption, .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .latest-comments__title caption {
+      .sub-menu__grid__item .featured-area__article .image-wrap .article__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .hN, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .article__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .comment__author-name, .sub-menu__grid__item .featured-area__article .image-wrap .article__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .article__title caption, .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .sub-menu__grid__item .featured-area__article .image-wrap .article--list__title caption {
         width: 100%;
         font-size: 19px;
         font-size: 1.35714rem;
@@ -8021,7 +8014,7 @@ a:hover > .pixcode--icon {
     margin: 0; }
     .nav--main .article--billboard-small .article__thumb {
       transform: translateY(0); }
-    .nav--main .article--billboard-small .article__title, .nav--main .article--billboard-small .article--list__title, .nav--main .article--billboard-small .latest-comments__title {
+    .nav--main .article--billboard-small .article__title, .nav--main .article--billboard-small .article--list__title {
       color: white; }
     .nav--main .article--billboard-small .article__content {
       background: #1a1717; }
@@ -8273,18 +8266,18 @@ a:hover > .pixcode--icon {
   margin-bottom: 24px;
   margin-bottom: 1.71429rem;
   border-bottom: 1px dotted #807f7e; }
-  .comments-area-title .hN, .comments-area-title .article__author-name, .comments-area-title .comment__author-name, .comments-area-title .score__average-wrapper, .comments-area-title .score__label, .comments-area-title .widget_calendar caption, .widget_calendar .comments-area-title caption {
+  .comments-area-title .hN, .comments-area-title .article__author-name, .comments-area-title .comment__author-name, .comments-area-title .widget_calendar caption, .widget_calendar .comments-area-title caption {
     margin-top: 0;
     margin-bottom: 0;
     float: left;
     margin-right: 12px;
     margin-right: 0.85714rem; }
     @media only screen and (max-width: 899px) {
-      .comments-area-title .hN, .comments-area-title .article__author-name, .comments-area-title .comment__author-name, .comments-area-title .score__average-wrapper, .comments-area-title .score__label, .comments-area-title .widget_calendar caption, .widget_calendar .comments-area-title caption {
+      .comments-area-title .hN, .comments-area-title .article__author-name, .comments-area-title .comment__author-name, .comments-area-title .widget_calendar caption, .widget_calendar .comments-area-title caption {
         font-size: 16px;
         font-size: 1.14286rem;
         line-height: 1.51; } }
-    .comments-area-title .hN em, .comments-area-title .article__author-name em, .comments-area-title .comment__author-name em, .comments-area-title .score__average-wrapper em, .comments-area-title .score__label em, .comments-area-title .widget_calendar caption em, .widget_calendar .comments-area-title caption em {
+    .comments-area-title .hN em, .comments-area-title .article__author-name em, .comments-area-title .comment__author-name em, .comments-area-title .widget_calendar caption em, .widget_calendar .comments-area-title caption em {
       font-style: normal;
       color: #fb4834; }
 
@@ -8417,34 +8410,6 @@ li.comment, li.pingback {
   float: right; }
   .lt-ie9 .form-submit #comment-submit {
     width: 100px; }
-
-/*-------------------------------------*\
-               PROGRESSBAR
-\*-------------------------------------*/
-.progressbar {
-  height: 12px;
-  height: 0.85714rem;
-  background-color: #1a1717;
-  position: relative; }
-  .progressbar:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    bottom: 0;
-    right: -1px;
-    border: 0 solid transparent;
-    border-width: 3px 6px;
-    border-width: 0.21429rem 0.42857rem;
-    border-bottom-color: white;
-    border-right-color: white; }
-
-.progressbar__progress {
-  float: left;
-  height: 12px;
-  height: 0.85714rem;
-  background-color: #fb4834; }
 
 /*------------------------------------*\
                SLIDER ARROWS
@@ -8654,90 +8619,6 @@ li.comment, li.pingback {
   font-size: 11px;
   font-size: 0.78571rem;
   line-height: 1.10091; }
-
-/*---------------------------------*\
-               REVIEWS
-\*---------------------------------*/
-.score-box {
-  max-width: 145px;
-  max-width: 10.35714rem;
-  margin: 0 auto 24px; }
-  @media only screen and (min-width: 900px) {
-    .score-box {
-      margin: 0; } }
-  .center-score .score-box {
-    margin-left: auto;
-    margin-right: auto; }
-
-.score__average-wrapper {
-  position: relative;
-  background-color: #fb4834;
-  color: white;
-  padding: 12px 0;
-  padding: 0.85714rem 0; }
-
-.score__average {
-  width: 100%;
-  font-size: 72px;
-  font-size: 5.14286rem;
-  text-align: center; }
-
-.score__note {
-  line-height: 1;
-  padding: 24px 0;
-  padding: 1.71429rem 0; }
-
-.average--with-desc .score__note {
-  padding: 0; }
-
-.score__desc {
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  margin: 12px 12px 0 12px;
-  margin: 0.85714rem 0.85714rem 0 0.85714rem;
-  padding-top: 12px;
-  padding-top: 0.85714rem;
-  border-top: 1px dotted white; }
-
-.score-box--after-text {
-  text-align: center;
-  text-transform: uppercase;
-  display: block;
-  font-size: 32px;
-  font-size: 2.28571rem;
-  line-height: 1.135;
-  font-family: "Arvo", serif; }
-
-.review__score {
-  position: relative; }
-
-.score__progressbar {
-  margin-bottom: 24px;
-  margin-bottom: 1.71429rem; }
-
-.score__badge {
-  width: 1.75em;
-  position: absolute;
-  bottom: 7px;
-  bottom: 0.5rem;
-  right: -1px;
-  z-index: 20; }
-  .score__badge:after {
-    display: none; }
-
-.score-box--inside {
-  width: 145px;
-  width: 10.35714rem;
-  float: left;
-  margin-top: 12px;
-  margin-top: 0.85714rem;
-  margin-right: 24px;
-  margin-right: 1.71429rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.71429rem; }
 
 /*---------------------------------*\
          		STATS
@@ -9159,7 +9040,7 @@ li.comment, li.pingback {
   margin-bottom: 36px;
   margin-bottom: 2.57143rem; }
 
-.article--big .article__title, .article--big .article--list__title, .article--big .latest-comments__title {
+.article--big .article__title, .article--big .article--list__title {
   margin-bottom: 0; }
 
 .featured-area__aside {
@@ -9187,7 +9068,7 @@ li.comment, li.pingback {
     margin-left: -39px;
     margin-left: -2.78571rem; }
 
-.classic .article__title, .classic .article--list__title, .classic .latest-comments__title {
+.classic .article__title, .classic .article--list__title {
   height: auto;
   line-height: 1.2;
   width: 100%;
@@ -9370,7 +9251,7 @@ li.comment, li.pingback {
 .widget--sidebar__title .rsswidget img {
   display: none; }
 
-.widget_rss .widget--footer__title .hN, .widget_rss .widget--footer__title .article__author-name, .widget_rss .widget--footer__title .comment__author-name, .widget_rss .widget--footer__title .score__average-wrapper, .widget_rss .widget--footer__title .score__label, .widget_rss .widget--footer__title .widget_calendar caption, .widget_calendar .widget_rss .widget--footer__title caption {
+.widget_rss .widget--footer__title .hN, .widget_rss .widget--footer__title .article__author-name, .widget_rss .widget--footer__title .comment__author-name, .widget_rss .widget--footer__title .widget_calendar caption, .widget_calendar .widget_rss .widget--footer__title caption {
   color: #fb4834; }
 
 .widget select {
@@ -9428,55 +9309,6 @@ li.comment, li.pingback {
 .widget_calendar th, .widget_calendar td {
   text-align: center; }
 
-/*------------------------------------------------*\
-               $LATEST COMMENTS WIDGET
-\*------------------------------------------------*/
-.widget--latest-comments {
-  padding-bottom: 0; }
-
-.latest-comments__list {
-  font-size: 13px;
-  font-size: 0.92857rem;
-  line-height: 1.85615; }
-  .latest-comments__list:last-child {
-    margin-bottom: 0; }
-    .latest-comments__list:last-child .latest-comments__body {
-      border-bottom: 0; }
-
-.latest-comments__author {
-  font-family: "Arvo", serif;
-  text-transform: uppercase;
-  color: #1a1717; }
-
-.latest-comments__avatar {
-  margin-right: 12px;
-  margin-right: 0.85714rem; }
-
-.latest-comments__body {
-  border-bottom: 1px solid #ccc; }
-
-.latest-comments__title {
-  padding: 0 6px;
-  padding: 0 0.42857rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  background-color: #1a1717; }
-
-.latest-comments__content {
-  font-style: italic;
-  margin-top: 12px;
-  margin-top: 0.85714rem;
-  line-height: 1.4; }
-
-.widget--footer .latest-comments__title {
-  background-color: #262525;
-  color: #e2e2e2; }
-
-.widget--footer .latest-comments__body {
-  border-bottom-color: #262525; }
-
 .widget_wpgrade_posts_slider_widget {
   position: relative;
   overflow: hidden; }
@@ -9489,57 +9321,6 @@ li.comment, li.pingback {
     display: none; }
     .widget_wpgrade_posts_slider_widget .pixslider.slider--loaded {
       display: block; }
-
-/*-----------------------------------------------*\
-               $LATEST REVIEWS WIDGET
-\*-----------------------------------------------*/
-.reviews {
-  background-color: #1a1717;
-  color: white;
-  border-left: 0;
-  list-style: none;
-  margin-left: 0; }
-  .reviews .badge {
-    float: right;
-    margin-top: 1px;
-    margin-bottom: -6px;
-    margin-bottom: -0.42857rem;
-    font-size: 19px;
-    font-size: 1.35714rem;
-    line-height: 1.27316;
-    padding: .35em 0;
-    position: relative;
-    z-index: 10; }
-  .reviews .progressbar {
-    height: 6px;
-    height: 0.42857rem;
-    background-color: #4c4a4a;
-    clear: right; }
-    .reviews .progressbar:after {
-      display: none; }
-  .reviews .progressbar__progress {
-    height: 6px;
-    height: 0.42857rem; }
-
-.review {
-  margin-bottom: 18px;
-  margin-bottom: 1.28571rem; }
-
-.review__title {
-  display: inline-block;
-  font-family: "Arvo", serif;
-  font-weight: normal;
-  text-transform: uppercase;
-  color: white;
-  white-space: nowrap;
-  overflow: hidden;
-  -ms-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  width: 100%;
-  margin-right: -24px;
-  margin-right: -1.71429rem;
-  padding-right: 24px;
-  padding-right: 1.71429rem; }
 
 /*------------------------------------*\
     $SHORTCODES
@@ -9726,7 +9507,7 @@ img[height] {
       .category__featured-posts .featured-area__article .image-wrap img {
         max-width: none;
         position: relative; }
-      .category__featured-posts .featured-area__article .image-wrap .article__title .hN, .category__featured-posts .featured-area__article .image-wrap .article--list__title .hN, .category__featured-posts .featured-area__article .image-wrap .latest-comments__title .hN, .category__featured-posts .featured-area__article .image-wrap .article__title .article__author-name, .category__featured-posts .featured-area__article .image-wrap .article--list__title .article__author-name, .category__featured-posts .featured-area__article .image-wrap .latest-comments__title .article__author-name, .category__featured-posts .featured-area__article .image-wrap .article__title .comment__author-name, .category__featured-posts .featured-area__article .image-wrap .article--list__title .comment__author-name, .category__featured-posts .featured-area__article .image-wrap .latest-comments__title .comment__author-name, .category__featured-posts .featured-area__article .image-wrap .article__title .score__average-wrapper, .category__featured-posts .featured-area__article .image-wrap .article--list__title .score__average-wrapper, .category__featured-posts .featured-area__article .image-wrap .latest-comments__title .score__average-wrapper, .category__featured-posts .featured-area__article .image-wrap .article__title .score__label, .category__featured-posts .featured-area__article .image-wrap .article--list__title .score__label, .category__featured-posts .featured-area__article .image-wrap .latest-comments__title .score__label, .category__featured-posts .featured-area__article .image-wrap .article__title .widget_calendar caption, .widget_calendar .category__featured-posts .featured-area__article .image-wrap .article__title caption, .category__featured-posts .featured-area__article .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .category__featured-posts .featured-area__article .image-wrap .article--list__title caption, .category__featured-posts .featured-area__article .image-wrap .latest-comments__title .widget_calendar caption, .widget_calendar .category__featured-posts .featured-area__article .image-wrap .latest-comments__title caption {
+      .category__featured-posts .featured-area__article .image-wrap .article__title .hN, .category__featured-posts .featured-area__article .image-wrap .article--list__title .hN, .category__featured-posts .featured-area__article .image-wrap .article__title .article__author-name, .category__featured-posts .featured-area__article .image-wrap .article--list__title .article__author-name, .category__featured-posts .featured-area__article .image-wrap .article__title .comment__author-name, .category__featured-posts .featured-area__article .image-wrap .article--list__title .comment__author-name, .category__featured-posts .featured-area__article .image-wrap .article__title .widget_calendar caption, .widget_calendar .category__featured-posts .featured-area__article .image-wrap .article__title caption, .category__featured-posts .featured-area__article .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .category__featured-posts .featured-area__article .image-wrap .article--list__title caption {
         width: 100%;
         font-size: 23px;
         font-size: 1.64286rem;
@@ -9778,7 +9559,7 @@ html {
     width: 100% !important;
     height: auto !important;
     z-index: 20; }
-  .image-wrap .article__title, .image-wrap .article--list__title, .image-wrap .latest-comments__title {
+  .image-wrap .article__title, .image-wrap .article--list__title {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -9787,7 +9568,7 @@ html {
     color: white;
     padding: 48px 24px 24px;
     padding: 3.42857rem 1.71429rem 1.71429rem; }
-    .image-wrap .article__title .hN, .image-wrap .article--list__title .hN, .image-wrap .latest-comments__title .hN, .image-wrap .article__title .article__author-name, .image-wrap .article--list__title .article__author-name, .image-wrap .latest-comments__title .article__author-name, .image-wrap .article__title .comment__author-name, .image-wrap .article--list__title .comment__author-name, .image-wrap .latest-comments__title .comment__author-name, .image-wrap .article__title .score__average-wrapper, .image-wrap .article--list__title .score__average-wrapper, .image-wrap .latest-comments__title .score__average-wrapper, .image-wrap .article__title .score__label, .image-wrap .article--list__title .score__label, .image-wrap .latest-comments__title .score__label, .image-wrap .article__title .widget_calendar caption, .widget_calendar .image-wrap .article__title caption, .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .image-wrap .article--list__title caption, .image-wrap .latest-comments__title .widget_calendar caption, .widget_calendar .image-wrap .latest-comments__title caption {
+    .image-wrap .article__title .hN, .image-wrap .article--list__title .hN, .image-wrap .article__title .article__author-name, .image-wrap .article--list__title .article__author-name, .image-wrap .article__title .comment__author-name, .image-wrap .article--list__title .comment__author-name, .image-wrap .article__title .widget_calendar caption, .widget_calendar .image-wrap .article__title caption, .image-wrap .article--list__title .widget_calendar caption, .widget_calendar .image-wrap .article--list__title caption {
       width: 60%;
       font-size: 26px;
       font-size: 1.85714rem;
