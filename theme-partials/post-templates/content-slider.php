@@ -36,10 +36,7 @@ if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicat
 
 $posts_source = 'featured';
 
-$big_articles_only = false;
-
 $slider_transition = 'fade';
-$slider_autoplay = false;
 
 $slider_height = 625;
 
@@ -53,9 +50,6 @@ if ($slides->have_posts()): ?>
 	     data-autoScaleSliderWidth="1050"
 	     data-autoScaleSliderHeight="<?php echo $slider_height; ?>"
 	     data-slidertransition="<?php echo $slider_transition; ?>"
-		<?php if ($slider_autoplay) {
-			echo 'data-sliderautoplay="" ';
-		} ?>
 	>
 		<?php while($slides->have_posts()): $slides->the_post();
 
@@ -66,38 +60,6 @@ if ($slides->have_posts()): ?>
 
 				$image_ratio = bucket::get_image_aspect_ratio( $image );
 
-				if ( $big_articles_only ) :
-
-					if ( isset( $image[1] ) && isset( $image[2] ) && $image[1] > 0 ) {
-						$image_ratio = $image[2] * 100 / $image[1];
-					}
-
-					if ( ! $closed_group ):
-						echo '</div><div class="billboard--article-group">';
-					else:
-						echo '<div class="billboard--article-group">';
-						$closed_group = false;
-					endif; ?>
-					<article class="article  article--billboard  article--billboard-big">
-						<div class="rsImg">
-							<?php echo $image[0]; ?>
-							<!-- <img
-                                src="<?php echo $image[0]; ?>"
-                                data-big="<?php echo $image[0]; ?>"
-                            alt="img" /> -->
-						</div>
-						<a href="<?php the_permalink(); ?>">
-							<div class="article__header  article--billboard__header">
-								<span class="billboard__category"><?php _e( 'Featured', 'bucket-lite' ); ?></span>
-								<h2 class="article__title article--billboard__title">
-									<span class="hN"><?php the_title(); ?></span>
-								</h2>
-								<span class="small-link read-more-label"><?php echo $read_more_label; ?> &raquo;</span>
-							</div>
-						</a>
-					</article>
-
-				<?php else :
 
 					if ( $index ++ % 3 == 0 ):
 
@@ -171,7 +133,6 @@ if ($slides->have_posts()): ?>
 							</a>
 						</article>
 					<?php endif; /* if ($index++ % 3 == 0): */
-				endif;
 			}
 		endwhile;
 		wp_reset_postdata();
