@@ -7157,64 +7157,6 @@ a:hover > .pixcode--icon {
   background-color: #fff;
   transform: rotate(45deg) translateZ(0); }
 
-/*-------------------------------*\
-               $BADGE
-\*-------------------------------*/
-.badge {
-  width: 2.5em;
-  padding: .15em 0;
-  font-family: "Arvo", serif;
-  font-size: 16px;
-  font-size: 1.14286rem;
-  line-height: 1.51;
-  position: relative;
-  text-align: center;
-  background-color: #fb4834;
-  color: white; }
-  .badge:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    border: 0 solid transparent;
-    border-width: 6px 12px;
-    border-width: 0.42857rem 0.85714rem;
-    border-left-width: 0;
-    border-top-color: #1a1717; }
-
-.badge__text {
-  display: block;
-  text-transform: uppercase;
-  font-size: 10px;
-  font-size: 0.71429rem;
-  margin-top: -.2em;
-  margin-bottom: .4em; }
-
-.badge--article {
-  position: absolute;
-  top: 12px;
-  top: 0.85714rem;
-  right: -12px;
-  right: -0.85714rem;
-  font-size: 24px;
-  font-size: 1.71429rem;
-  z-index: 30; }
-
-.badge--article--list {
-  width: 2em;
-  padding: 4px 0;
-  padding: 0.28571rem 0;
-  font-size: 16px;
-  font-size: 1.14286rem; }
-
-.badge--review {
-  display: inline-block;
-  margin-right: -36px;
-  margin-right: -2.57143rem; }
-
 /*---------------------------------*\
                ARTICLE
 \*---------------------------------*/

@@ -28,10 +28,7 @@
                 <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
 	                <?php bucket::the_img_tag($image[0], get_the_title()) ?>
                 </div>
-                <?php post_format_icon();
-            	if ( bucket::has_average_score() ) { ?>
-			<div class="badge  badge--article"><?php echo bucket::get_average_score();?> <span class="badge__text"><?php __('score', 'bucket-lite') ?></span></div>
-            	<?php } ?>
+                <?php post_format_icon(); ?>
 
             <?php
             endif;
