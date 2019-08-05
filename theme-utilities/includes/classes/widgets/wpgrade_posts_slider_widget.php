@@ -86,13 +86,13 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 4; ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">
-				<?php esc_html__('Title:', 'bucket-lite'); ?>
+				<?php esc_html_e('Title:', 'bucket-lite'); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>">
-				<?php esc_html__('Number of posts:', 'bucket-lite'); ?>
+				<?php esc_html_e('Number of posts:', 'bucket-lite'); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('number'); ?>" class="widefat" type="number" name="<?php echo $this->get_field_name('number'); ?>" value="<?php echo $number; ?>" />
 		</p>
