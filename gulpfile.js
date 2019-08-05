@@ -30,12 +30,7 @@ var jsFiles = [
 ];
 
 var theme_name = 'bucket-lite',
-	theme = theme_name,
-	main_branch = 'master',
-	options = {
-		silent: true,
-		continueOnError: true
-	};
+	theme = theme_name;
 
 var config = {
 	"baseurl": "demos.dev/bucket-lite"
