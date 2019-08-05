@@ -17,15 +17,15 @@
                     $categories = get_the_category();
                     if ($categories) {
                         $category = $categories[0];
-                        echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket-lite'), $category->name)) .'">'. $category->cat_name.'</a>';
+                        echo '<a class="small-link" href="'. get_category_link( $category->term_id ) .'" title="'. sprintf( esc_html__( "View all posts in %s", 'bucket-lite'), esc_html( $category->name ) ) .'">'. esc_html( $category->cat_name ) . '</a>';
                     }
                 ?>
             </div>
 			<ul class="nav  article__meta-links">
 				<li class="xpost_date"><i class="icon-time"></i> <?php the_time('j M') ?></li>
-				<?php if ( comments_open() ): ?>
+				<?php if ( comments_open() ){ ?>
 					<li class="xpost_comments"><i class="icon-comment"></i>  <?php comments_number('0', '1', '%'); ?></li>
-				<?php endif; ?>
+				<?php } ?>
 			</ul>
         </div>
     </div>

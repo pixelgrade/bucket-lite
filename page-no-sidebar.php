@@ -19,7 +19,7 @@ get_header(); ?>
         ?>
 
        <?php
-		if (has_post_thumbnail()):
+		if ( has_post_thumbnail() ){
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'blog-big' );
 			$image_ratio = bucket::get_image_aspect_ratio( $image );
 		?>
@@ -28,11 +28,11 @@ get_header(); ?>
 				<img src="<?php echo $image[0] ?>" alt="<?php echo $image[0] ?>" />
 			</div>
 		</div>
-		<?php endif; ?>
+		<?php } ?>
 
         <div class="grid__item  main  float--left  <?php echo $the_content_width; ?>">
 
-            <?php while (have_posts()): the_post(); ?>
+            <?php while ( have_posts() ){ the_post(); ?>
 
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <?php
@@ -42,8 +42,8 @@ get_header(); ?>
 		            'before' => "<ol class=\"nav pagination\"><!--",
 		            'after' => "\n--></ol>",
 		            'next_or_number' => 'next_and_number',
-		            'previouspagelink' => __('Previous', 'bucket-lite'),
-		            'nextpagelink' => __('Next', 'bucket-lite')
+		            'previouspagelink' => esc_html__('Previous', 'bucket-lite'),
+		            'nextpagelink' => esc_html__('Next', 'bucket-lite')
 	            );
 	            wp_link_pages( $args ); ?>
 
@@ -55,7 +55,7 @@ get_header(); ?>
                         comments_template();
                 ?>
                 
-            <?php endwhile; ?>
+            <?php } ?>
 
         </div>    
 

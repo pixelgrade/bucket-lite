@@ -172,18 +172,18 @@ function wpgrade_comments($comment, $args, $depth) {
 		</aside>
 		<div class="media__body">
 			<header class="comment__meta comment-author">
-				<?php printf('<cite class="comment__author-name">%s</cite>', get_comment_author_link()) ?>
-				<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time(__('j F, Y \a\t H:i', 'bucket-lite')); ?> </a></time>
+				<?php printf('<cite class="comment__author-name">%s</cite>', esc_url( get_comment_author_link() ) ) ?>
+				<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time( __('j F, Y \a\t H:i', 'bucket-lite')); ?> </a></time>
 				<div class="comment__links">
 					<?php
-					edit_comment_link(__('Edit', 'bucket-lite'),'  ','');
-					comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));
+					edit_comment_link( esc_html__('Edit', 'bucket-lite'),'  ','');
+					comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));
 					?>
 				</div>
 			</header><!-- .comment-meta -->
 			<?php if ($comment->comment_approved == '0') : ?>
 				<div class="alert info">
-					<p><?php _e('Your comment is awaiting moderation.', 'bucket-lite') ?></p>
+					<p><?php esc_html_e('Your comment is awaiting moderation.', 'bucket-lite') ?></p>
 				</div>
 			<?php endif; ?>
 			<section class="comment__content comment">
@@ -213,13 +213,13 @@ function extra_category_fields( $tag ) {
 	}
 	?>
 	<tr class="form-field">
-		<th scope="row" valign="top"><label for="meta-color"><?php _e('Category Custom Accent Color', 'bucket-lite'); ?></label></th>
+		<th scope="row" valign="top"><label for="meta-color"><?php esc_html_e('Category Custom Accent Color', 'bucket-lite'); ?></label></th>
 		<td>
 			<div id="colorpicker">
 				<input type="text" name="cat_meta[cat_custom_accent]" class="colorpicker" size="3" style="width:20%;" value="<?php echo (isset($cat_meta['cat_custom_accent'])) ? $cat_meta['cat_custom_accent'] : wpgrade::option('main_color'); ?>" />
 			</div>
 			<br />
-			<span class="description"><?php _e('Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code).', 'bucket-lite'); ?></span>
+			<span class="description"><?php  echo wp_kses_post( __( 'Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code).', 'bucket-lite') ); ?></span>
 			<br />
 		</td>
 	</tr>
@@ -284,7 +284,7 @@ function wpgrade_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'bucket-lite' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'bucket-lite' ), max( $paged, $page ) );
 
 	return $title;
 }

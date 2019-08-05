@@ -29,7 +29,7 @@ get_header(); ?>
 
         <div class="grid__item  main  float--left  <?php echo $the_content_width; ?>">
 
-            <?php while (have_posts()): the_post(); ?>
+            <?php while (have_posts()){ the_post(); ?>
                 <article <?php post_class(); ?>>
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <?php
@@ -39,8 +39,8 @@ get_header(); ?>
 		            'before' => "<ol class=\"nav pagination\"><!--",
 		            'after' => "\n--></ol>",
 		            'next_or_number' => 'next_and_number',
-		            'previouspagelink' => __('Previous', 'bucket-lite'),
-		            'nextpagelink' => __('Next', 'bucket-lite')
+		            'previouspagelink' =>  esc_html__('Previous', 'bucket-lite'),
+		            'nextpagelink' => esc_html__('Next', 'bucket-lite')
 	            );
 	            wp_link_pages( $args ); ?>
 
@@ -48,21 +48,22 @@ get_header(); ?>
 				
                 <?php
                 // If comments are open or we have at least one comment, load up the comment template
-                    if ( comments_open() || '0' != get_comments_number() )
-                        comments_template();
+                    if ( comments_open() || '0' != get_comments_number() ) {
+	                    comments_template();
+                    }
                 ?>
                 </article>
-            <?php endwhile; ?>
+            <?php } ?>
 
         </div><!--
         
-        <?php if ($disable_sidebar != 'on'): ?>
+        <?php if ($disable_sidebar != 'on'){ ?>
          --><div class="grid__item  one-third  palm-one-whole  sidebar">
                 <?php get_sidebar(); ?>
             </div>
-        <?php else: // ugly ?>
+        <?php } else{ // ugly ?>
          -->
-        <?php endif; ?>
+        <?php } ?>
 
     </div>
 

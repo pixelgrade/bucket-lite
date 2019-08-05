@@ -50,11 +50,11 @@ function wpgrade_register_required_plugins() {
 
 
 		'strings' => array(
-			'page_title'                      => __( 'Install Required Plugins', 'bucket-lite' ),
-			'menu_title'                      => __( 'Install Plugins', 'bucket-lite' ),
-			'installing'                      => __( 'Installing Plugin: %s', 'bucket-lite' ),
+			'page_title'                      => esc_html__( 'Install Required Plugins', 'bucket-lite' ),
+			'menu_title'                      => esc_html__( 'Install Plugins', 'bucket-lite' ),
+			'installing'                      => esc_html__( 'Installing Plugin: %s', 'bucket-lite' ),
 			// %1$s = plugin name
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'bucket-lite' ),
+			'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'bucket-lite' ),
 			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'bucket-lite' ),
 			// %1$s = plugin name(s)
 			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'bucket-lite' ),
@@ -73,9 +73,9 @@ function wpgrade_register_required_plugins() {
 			// %1$s = plugin name(s)
 			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'bucket-lite' ),
 			'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins', 'bucket-lite' ),
-			'return'                          => __( 'Return to Required Plugins Installer', 'bucket-lite' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'bucket-lite' ),
-			'complete'                        => __( 'All plugins installed and activated successfully. %s', 'bucket-lite' )
+			'return'                          => esc_html__( 'Return to Required Plugins Installer', 'bucket-lite' ),
+			'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'bucket-lite' ),
+			'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'bucket-lite' )
 			// %1$s = dashboard link
 		)
 

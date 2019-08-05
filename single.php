@@ -8,155 +8,158 @@ get_header();
 
 ?>
 
-    <div class="container container--main">
+<div class="container container--main">
 
     <div class="grid">
 
-    <?php
-    // let's get to know this post a little better
-    $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
-    $disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
+		<?php
+		// let's get to know this post a little better
+		$full_width_featured_image = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), '_bucket_full_width_featured_image', true );
+		$disable_sidebar           = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), '_bucket_disable_sidebar', true );
 
-    // let's use what we know
-    $the_content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
-    $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+		// let's use what we know
+		$the_content_width    = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
+		$featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
 
-    get_template_part('theme-partials/post-templates/header-single', get_post_format()); ?>
+		get_template_part( 'theme-partials/post-templates/header-single', get_post_format() ); ?>
 
-    <article class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $the_content_width; ?>">
-    <?php while (have_posts()): the_post();
+        <article
+                class="post-article  js-post-gallery  grid__item  main  float--left  <?php echo $the_content_width; ?>">
+			<?php while ( have_posts() ) {
+				the_post();
 
-    get_template_part('theme-partials/post-templates/single-title'); ?>
+				get_template_part( 'theme-partials/post-templates/single-title' ); ?>
 
-    <?php
-    the_content();
+				<?php
+				the_content();
 
-    $args = array(
-        'before' => "<ol class=\"nav pagination\"><!--",
-        'after' => "\n--></ol>",
-        'next_or_number' => 'next_and_number',
-        'previouspagelink' => __('Previous', 'bucket-lite'),
-        'nextpagelink' => __('Next', 'bucket-lite')
-    );
-    wp_link_pages( $args ); ?>
+				$args = array(
+					'before'           => "<ol class=\"nav pagination\"><!--",
+					'after'            => "\n--></ol>",
+					'next_or_number'   => 'next_and_number',
+					'previouspagelink' => esc_html__( 'Previous', 'bucket-lite' ),
+					'nextpagelink'     => esc_html__( 'Next', 'bucket-lite' )
+				);
+				wp_link_pages( $args ); ?>
 
-        <div class="article__meta  article--single__meta">
-            <?php
-            $categories = get_the_category();
-            if ($categories): ?>
-                <div class="btn-list">
-                    <div class="btn  btn--small  btn--secondary"><?php _e('Categories', 'bucket-lite') ?></div>
-                    <?php
-                    foreach ($categories as $category):
-                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket-lite'), $category->name)) .'">'. $category->cat_name.'</a>';
-                    endforeach; ?>
+                <div class="article__meta  article--single__meta">
+					<?php
+					$categories = get_the_category();
+					if ( $categories ) { ?>
+                        <div class="btn-list">
+                            <div class="btn  btn--small  btn--secondary"><?php esc_html_e( 'Categories', 'bucket-lite' ) ?></div>
+							<?php
+							foreach ( $categories as $category ) {
+								echo '<a class="btn  btn--small  btn--tertiary" href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( esc_attr__( "View all posts in %s", 'bucket-lite' ), esc_html( $category->name ) ) . '">' . esc_html( $category->cat_name ) . '</a>';
+							} ?>
+                        </div>
+					<?php }
+
+					$tags = get_the_tags();
+					if ( $tags ) { ?>
+                        <div class="btn-list">
+                            <div class="btn  btn--small  btn--secondary"><?php esc_html_e( 'Tagged', 'bucket-lite' ) ?></div>
+							<?php
+							foreach ( $tags as $tag ) {
+								echo '<a class="btn  btn--small  btn--tertiary" href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( esc_attr__( "View all posts tagged %s", 'bucket-lite' ), esc_html( $tag->name ) ) . '">' . esc_html( $tag->name ) . '</a>';
+							} ?>
+                        </div>
+					<?php } ?>
                 </div>
-            <?php endif;
+				<?php
 
-            $tags = get_the_tags();
-            if ($tags): ?>
-                <div class="btn-list">
-                    <div class="btn  btn--small  btn--secondary"><?php _e('Tagged', 'bucket-lite') ?></div>
-                    <?php
-                    foreach ($tags as $tag):
-                        echo '<a class="btn  btn--small  btn--tertiary" href="'. get_tag_link($tag->term_id) .'" title="'. esc_attr(sprintf(__("View all posts tagged %s", 'bucket-lite'), $tag->name)) .'">'. $tag->name.'</a>';
-                    endforeach; ?>
-                </div>
-            <?php endif; ?>
-        </div>
-        <?php
+				get_template_part( 'author-bio' );
 
-        get_template_part( 'author-bio' );
-
-        $next_post = get_next_post();
-        $prev_post = get_previous_post();
-        if (!empty($prev_post) || !empty($next_post)): ?>
-
-            <nav class="post-nav  grid"><!--
-                    <?php if (!empty($prev_post) && !empty($next_post)): ?>
+				$next_post = get_next_post();
+				$prev_post = get_previous_post();
+				if ( ! empty( $prev_post ) || ! empty( $next_post ) ) { ?>
+                    <nav class="post-nav  grid"><!--
+                    <?php if ( ! empty( $prev_post ) && ! empty( $next_post ) ){ ?>
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
-                    <a href="<?php echo get_permalink($prev_post->ID); ?>">
+                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e('Previous Article', 'bucket-lite' ); ?>
+                                    <?php esc_html_e( 'Previous Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
                                 </span>
-                    </a>
-                </div><!--
-                    <?php elseif (empty($next_post) && !empty($prev_post)): ?>
+                            </a>
+                        </div><!--
+                    <?php } elseif ( empty( $next_post ) && ! empty( $prev_post ) ){ ?>
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
-                    <a href="<?php echo get_permalink($prev_post->ID); ?>">
+                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e('Previous Article', 'bucket-lite' ); ?>
+                                    <?php esc_html_e( 'Previous Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
                                 </span>
-                    </a>
-                </div><!--
+                            </a>
+                        </div><!--
                     --><div class="post-nav-link  post-nav-link--blank  grid__item  one-whole  lap-and-up-one-half">
-                    &nbsp;
-                </div><!--
-                    <?php endif;
+                            &nbsp;
+                        </div><!--
+                    <?php }
 
-                if(!empty($prev_post) && !empty($next_post)) : ?>
+						if ( ! empty( $prev_post ) && ! empty( $next_post ) ){ ?>
                  --><div class="divider--pointer"></div><!--
-                    <?php endif;
+                    <?php }
 
-                if (!empty($next_post) && !empty($prev_post)): ?>
+						if ( ! empty( $next_post ) && ! empty( $prev_post ) ){ ?>
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
-                    <a href="<?php echo get_permalink($next_post->ID); ?>">
+                            <a href="<?php echo get_permalink( $next_post->ID ); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e("Next Article", 'bucket-lite'); ?>
+                                    <?php esc_html_e( "Next Article", 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
                                 </span>
-                    </a>
-                </div><!--
-                    <?php elseif (!empty($next_post) && empty($prev_post)): ?>
+                            </a>
+                        </div><!--
+                    <?php } elseif ( ! empty( $next_post ) && empty( $prev_post ) ){ ?>
                     --><div class="post-nav-link  post-nav-link--blank  grid__item  one-whole  lap-and-up-one-half">
-                    &nbsp;
-                </div><!--
+                            &nbsp;
+                        </div><!--
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
-                    <a href="<?php echo get_permalink($next_post->ID); ?>">
+                            <a href="<?php echo get_permalink( $next_post->ID ); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php _e("Next Article", 'bucket-lite'); ?>
+                                    <?php esc_html_e( "Next Article", 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
                                     <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
                                 </span>
-                    </a>
-                </div><!--
-                    <?php endif; ?>
+                            </a>
+                        </div><!--
+                    <?php } ?>
                 --></nav>
 
-        <?php endif; ?>
+				<?php } ?>
 
-        <hr class="separator  separator--section">
+                <hr class="separator  separator--section">
 
-        <?php
-        if ( function_exists('related_posts') ) {
-            related_posts();
-        }
+				<?php
+				if ( function_exists( 'related_posts' ) ) {
+					related_posts();
+				}
 
-        // If comments are open or we have at least one comment, load up the comment template
-        if ( comments_open() || '0' != get_comments_number() )
-            comments_template();
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() ) {
+					comments_template();
+				}
 
-        endwhile; ?>
-    </article><!--
+			} ?>
+        </article><!--
 
-        <?php if ($disable_sidebar != 'on'): ?>
-         --><div class="grid__item  one-third  palm-one-whole  sidebar">
-        <?php get_sidebar(); ?>
-    </div>
-    <?php else: // ugly ?>
+        <?php if ( $disable_sidebar != 'on' ){ ?>
+         -->
+        <div class="grid__item  one-third  palm-one-whole  sidebar">
+			<?php get_sidebar(); ?>
+        </div>
+	<?php } else { // ugly ?>
         -->
-    <?php endif; ?>
+	<?php } ?>
 
     </div>
-    </div>
+</div>
 
 <?php get_footer(); ?>

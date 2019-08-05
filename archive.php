@@ -18,61 +18,66 @@ get_header(); ?>
 
 <div id="main" class="container container--main">
 
-	<div class="grid">
+    <div class="grid">
 
-		<div class="grid__item  two-thirds  palm-one-whole">
-			<?php if (have_posts()): ?>
-				<div class="heading  heading--main">
-					<h2 class="hN"><?php
+        <div class="grid__item  two-thirds  palm-one-whole">
+			<?php if ( have_posts() ) { ?>
+                <div class="heading  heading--main">
+                    <h2 class="hN"><?php
 
-						$var = get_query_var('post_format');
+						$var = get_query_var( 'post_format' );
 						// POST FORMATS
-						if ($var == 'post-format-aside') :
-							_e('Aside Archives', 'bucket-lite');
-						elseif ($var == 'post-format-image') :
-							_e('Image Archives', 'bucket-lite');
-						elseif ($var == 'post-format-link') :
-							_e('Link Archives', 'bucket-lite');
-						elseif ($var == 'post-format-quote') :
-							_e('Quote Archives', 'bucket-lite');
-						elseif ($var == 'post-format-status') :
-							_e('Status Archives', 'bucket-lite');
-						elseif ($var == 'post-format-gallery') :
-							_e('Gallery Archives', 'bucket-lite');
-						elseif ($var == 'post-format-video') :
-							_e('Video Archives', 'bucket-lite');
-						elseif ($var == 'post-format-audio') :
-							_e('Audio Archives', 'bucket-lite');
-						elseif ($var == 'post-format-chat') :
-							_e('Chat Archives', 'bucket-lite');
-						endif;
+						if ( $var == 'post-format-aside' ) {
+							esc_html_e( 'Aside Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-image' ) {
+							esc_html_e( 'Image Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-link' ) {
+							esc_html_e( 'Link Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-quote' ) {
+							esc_html_e( 'Quote Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-status' ) {
+							esc_html_e( 'Status Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-gallery' ) {
+							esc_html_e( 'Gallery Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-video' ) {
+							esc_html_e( 'Video Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-audio' ) {
+							esc_html_e( 'Audio Archives', 'bucket-lite' );
+						} elseif ( $var == 'post-format-chat' ) {
+							esc_html_e( 'Chat Archives', 'bucket-lite' );
+						}
 
-						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'bucket-lite' ), get_the_date() );
-						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bucket-lite' ) ) );
-						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bucket-lite' ) ) );
-						else :
-							_e( 'Archives', 'bucket-lite' );
-						endif;
-					?></h2>
-				</div>
+						if ( is_day() ) {
+							printf( esc_html__( 'Daily Archives: %s', 'bucket-lite' ), get_the_date() );
+						} elseif ( is_month() ) {
+							printf( esc_html__( 'Monthly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bucket-lite' ) ) );
+						} elseif ( is_year() ) {
+							printf( esc_html__( 'Yearly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bucket-lite' ) ) );
+						} else {
+							esc_html_e( 'Archives', 'bucket-lite' );
+						}
+						?></h2>
+                </div>
 
                 <div class="grid  masonry" data-columns>
-					<?php while (have_posts()): the_post(); ?><!--
-                        --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-masonry'); ?></div><!--
-                 --><?php endwhile; ?>
+					<?php while ( have_posts() ){
+					            the_post(); ?><!--
+                        -->
+                    <div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
+                 --><?php } ?>
                 </div>
 				<?php echo wpgrade::pagination();
-				else: get_template_part( 'no-results', 'index' ); endif; ?>
-		</div><!--
+			} else {
+				get_template_part( 'no-results', 'index' );
+			} ?>
+        </div><!--
 
-     --><div class="grid__item  one-third  palm-one-whole  sidebar">
-				<?php get_sidebar(); ?>
-		</div>
+     -->
+        <div class="grid__item  one-third  palm-one-whole  sidebar">
+			<?php get_sidebar(); ?>
+        </div>
 
-	</div>
+    </div>
 </div>
 
 <?php get_footer(); ?>
