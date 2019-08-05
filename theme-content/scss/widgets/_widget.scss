@@ -51,6 +51,7 @@
         @extend .btn;
         @extend .btn--negative;
         @include rem(font-size, 12px !important);
+        margin-bottom: .35em;
     }
 
     &.widget--main {

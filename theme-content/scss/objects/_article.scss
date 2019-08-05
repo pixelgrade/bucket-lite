@@ -316,6 +316,8 @@
 .article--single__meta {
     @extend %separator--section;
     @include rem(padding-top, $_u);
+
+    clear: both;
 }
 
 
@@ -600,16 +602,10 @@
 
 .post-password-submit{
     @include rem(padding, $_u2);
-    margin-top: 1px;
+    margin-top: .5em;
     line-height: normal;
     font-size: 100%;
-}
-
-@include media-query(palm) {
-    .post-password-submit{
-        width: 100%;
-        @include rem(margin-top, $_u);
-    }
+    width: 100%;
 }
 
 .wrong-password-message{

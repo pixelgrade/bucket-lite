@@ -7383,7 +7383,8 @@ a:hover > .pixcode--icon {
 
 .article--single__meta {
   padding-top: 24px;
-  padding-top: 1.71429rem; }
+  padding-top: 1.71429rem;
+  clear: both; }
 
 /*---------------------------------*\
         CUSTOM PAGE BUILDER
@@ -7598,15 +7599,10 @@ a:hover > .pixcode--icon {
 .post-password-submit {
   padding: 12px;
   padding: 0.85714rem;
-  margin-top: 1px;
+  margin-top: .5em;
   line-height: normal;
-  font-size: 100%; }
-
-@media only screen and (max-width: 899px) {
-  .post-password-submit {
-    width: 100%;
-    margin-top: 24px;
-    margin-top: 1.71429rem; } }
+  font-size: 100%;
+  width: 100%; }
 
 .wrong-password-message {
   color: #fb4834;
@@ -9160,7 +9156,8 @@ li.comment, li.pingback {
 \*-----------------------------------*/
 .widget_tag_cloud a {
   font-size: 12px !important;
-  font-size: 0.85714rem !important; }
+  font-size: 0.85714rem !important;
+  margin-bottom: .35em; }
 
 .widget_tag_cloud.widget--main a {
   background-color: #eee;

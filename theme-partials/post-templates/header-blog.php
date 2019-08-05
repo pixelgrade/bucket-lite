@@ -1,9 +1,9 @@
 <div class="article--grid__header">
-	<a href="<?php the_permalink(); ?>">
-		<div class="article--grid__thumb article__featured-image">
+    <a href="<?php the_permalink(); ?>">
+        <div class="article--grid__thumb article__featured-image">
 
 			<?php
-			$flush_top = 'push--top';
+			$flush_top     = 'push--top';
 
 			if ( has_post_thumbnail() ):
 
@@ -25,19 +25,21 @@
 				$image_ratio = bucket::get_image_aspect_ratio( $image );
 				?>
 
-				<div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
+                <div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
 					<?php bucket::the_img_tag( $image[0], get_the_title() ) ?>
-				</div>
+                </div>
 				<?php post_format_icon(); ?>
 
 			<?php
 			endif;
 			?>
 
-		</div>
+        </div>
 
-		<div class="article__title  article--grid__title <?php echo $flush_top; ?>">
-			<h3 class="hN"><?php the_title(); ?></h3>
-		</div>
-	</a>
+		<?php if ( ! empty( $post->post_title ) ) : ?>
+            <div class="article__title  article--grid__title <?php echo $flush_top; ?>">
+                <h3 class="hN"><?php the_title(); ?></h3>
+            </div>
+		<?php endif; ?>
+    </a>
 </div>
