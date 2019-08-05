@@ -148,7 +148,6 @@
 		// auto invoke scripts previously registered on theme setup
 		'auto-enqueue-scripts' => array
 		(
-//			'google-maps-api',
 			'wpgrade-main-scripts'
 		),
 
@@ -229,13 +228,7 @@
 	// time later
 	'pagination-targets' => array
 	(
-		// the following is an example
-//				'gallery' => array
-//					(
-//						'formatter' => null,
-//						'prev_text' => __('Prev Images', 'bucket-lite'),
-//						'next_text' => __('Next Images', 'bucket-lite'),
-//					)
+
 	),
 
 	/**
