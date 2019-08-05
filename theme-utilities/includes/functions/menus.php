@@ -34,6 +34,7 @@ function wpgrade_main_nav() {
 			'menu_id'        => '',
 			'fallback_cb'    => 'wp_page_menu',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'          => 1
 		);
 
 		wp_nav_menu( $args );
@@ -86,6 +87,7 @@ function wpgrade_top_nav_left( $menu_classes = 'nav--top  nav--top-left  nav--bl
 			'fallback_cb'    => 'wp_page_menu',
 			'menu_id'        => '',
 			'items_wrap'     => $wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'          => 1
 
 		);
 
@@ -115,6 +117,7 @@ function wpgrade_top_nav_right( $menu_classes = 'nav--top  nav--top-right  nav--
 			'fallback_cb'    => 'wp_page_menu',
 			'menu_id'        => '',
 			'items_wrap'     => $wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'          => 1
 		);
 
 		wp_nav_menu( $args );
