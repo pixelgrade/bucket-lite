@@ -22,9 +22,9 @@
             </div><!--
             --><div class="header-bar-container flexbox__item one-half split">
                 <ul class="header-bar nav flush--bottom">
-                    <?php if (wpgrade::option('nav_show_header_search')): ?>
+                    <?php if ( wpgrade::option('nav_show_header_search') ){ ?>
                     <li class="search-item"><?php get_search_form(); ?></li>
-                    <?php endif; ?>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@
         <hr class="nav-top-separator separator separator--subsection flush--bottom" />
         <nav class="navigation  navigation--main  js-navigation--main">
 
-            <h2 class="accessibility"><?php _e('Primary Navigation', 'bucket-lite') ?></h2>
+            <h2 class="accessibility"><?php esc_html_e('Primary Navigation', 'bucket-lite') ?></h2>
             <div class="nav--main__wrapper  js-sticky">
                 <?php wpgrade_main_nav(); ?>
             </div>

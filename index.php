@@ -19,18 +19,20 @@ get_header(); ?>
 	<?php get_template_part('theme-partials/post-templates/content-slider'); ?>
     <div class="grid">
         <div class="grid__item  two-thirds  palm-one-whole">
-            <?php if (have_posts()): ?>
+            <?php if (have_posts()){ ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php _e('Latest Articles', 'bucket-lite') ?></h2>
+                    <h2 class="hN"><?php esc_html_e('Latest Articles', 'bucket-lite') ?></h2>
                 </div>
 
 	            <div class="grid  masonry" data-columns>
-                    <?php while (have_posts()): the_post(); ?><!--
+                    <?php while (have_posts()){ the_post(); ?><!--
                         --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-masonry'); ?></div><!--
-                 --><?php endwhile; ?>
+                 --><?php } ?>
                 </div>
 				<?php echo wpgrade::pagination();
-	        else: get_template_part( 'no-results', 'index' ); endif; ?>
+	        } else{
+                get_template_part( 'no-results', 'index' );
+            } ?>
         </div><!--
         
      --><div class="grid__item  one-third  palm-one-whole  sidebar">

@@ -10,7 +10,7 @@ global $showed_posts_ids;
 $number_of_posts = 999;
 $read_more_label = 'Read More';
 if ( empty($read_more_label) ) {
-	$read_more_label = __('Read Full Story', 'bucket-lite');
+	$read_more_label = esc_html__('Read Full Story', 'bucket-lite');
 }
 
 $query_args = array(
@@ -27,7 +27,7 @@ $query_args = array(
 );
 
 
-if (get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_prevent_duplicate_posts', true) == 'on') {
+if (get_post_meta(wpgrade::lang_post_id( get_the_ID() ), '_bucket_prevent_duplicate_posts', true) == 'on') {
 	//exclude the already showed posts from the current block loop
 	if (!empty($showed_posts_ids)) {
 		$query_args['post__not_in'] = $showed_posts_ids;
@@ -81,7 +81,7 @@ if ($slides->have_posts()): ?>
 
 							<a href="<?php the_permalink(); ?>">
 								<div class="article__header  article--billboard__header">
-									<span class="billboard__category"><?php _e( 'Featured', 'bucket-lite' ); ?></span>
+									<span class="billboard__category"><?php esc_html_e( 'Featured', 'bucket-lite' ); ?></span>
 									<h2 class="article__title article--billboard__title">
 										<span class="hN"><?php the_title(); ?></span>
 									</h2>
@@ -128,7 +128,7 @@ if ($slides->have_posts()): ?>
                                     }
                                     ?>
                                 </span>
-									<span class="small-link"><?php _e( 'Read More', 'bucket-lite' ); ?><em>+</em></span>
+									<span class="small-link"><?php esc_html_e( 'Read More', 'bucket-lite' ); ?><em>+</em></span>
 								</div>
 							</a>
 						</article>

@@ -192,8 +192,8 @@
 		'prev_next' => true,
 
 		// pagination text
-		'prev_text' => __('Prev', 'bucket-lite'),
-		'next_text' => __('Next', 'bucket-lite'),
+		'prev_text' => esc_html__('Prev', 'bucket-lite'),
+		'next_text' => esc_html__('Next', 'bucket-lite'),
 
 		// are the terms used for paging relative to the sort order?
 		// ie. older/newer instead of sorting agnostic previous/next
@@ -233,8 +233,8 @@
 //				'gallery' => array
 //					(
 //						'formatter' => null,
-//						'prev_text' => __('Prev Images', 'bucket-lite'),
-//						'next_text' => __('Next Images', 'bucket-lite'),
+//						'prev_text' => esc_html__('Prev Images', 'bucket-lite'),
+//						'next_text' => esc_html__('Next Images', 'bucket-lite'),
 //					)
 	),
 

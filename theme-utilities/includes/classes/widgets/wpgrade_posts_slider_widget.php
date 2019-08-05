@@ -6,7 +6,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 
 	public function __construct()
 	{
-		parent::__construct( 'wpgrade_posts_slider_widget', wpgrade::themename().' '.__('Latest Posts Slider','bucket-lite'), array('description' => __('Display the latest blog posts in your sidebar or footer', 'bucket-lite')) );
+		parent::__construct( 'wpgrade_posts_slider_widget', wpgrade::themename() . ' '. esc_html__('Latest Posts Slider','bucket-lite'), array('description' => esc_html__('Display the latest blog posts in your sidebar or footer', 'bucket-lite')) );
 	}
 
 	function widget($args, $instance) {
@@ -51,7 +51,7 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 									$categories = get_the_category();
 									if ($categories) {
 										$category = $categories[0];
-										echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'. esc_attr(sprintf(__("View all posts in %s", 'bucket-lite'), $category->name)) .'">'. $category->cat_name.'</a>';
+										echo '<a class="small-link" href="'. get_category_link($category->term_id) .'" title="'.  sprintf( esc_attr__("View all posts in %s", 'bucket-lite'), $category->name) .'">'. $category->cat_name.'</a>';
 									}
 									?>
 								</div>
@@ -81,18 +81,18 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 	}
 
 	function form($instance) {
-		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = __('Latest Posts','bucket-lite');
+		!empty($instance['title'])  ? $title = esc_attr($instance['title']) : $title = esc_html__('Latest Posts','bucket-lite');
 		// default to 4 posts
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 4; ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">
-				<?php __('Title:', 'bucket-lite'); ?>
+				<?php esc_html__('Title:', 'bucket-lite'); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('title'); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>">
-				<?php __('Number of posts:', 'bucket-lite'); ?>
+				<?php esc_html__('Number of posts:', 'bucket-lite'); ?>
 			</label>
 			<input id="<?php echo $this->get_field_id('number'); ?>" class="widefat" type="number" name="<?php echo $this->get_field_name('number'); ?>" value="<?php echo $number; ?>" />
 		</p>
