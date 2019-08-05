@@ -148,7 +148,6 @@
 		// auto invoke scripts previously registered on theme setup
 		'auto-enqueue-scripts' => array
 		(
-//			'google-maps-api',
 			'wpgrade-main-scripts'
 		),
 
@@ -227,16 +226,7 @@
 	// is not avilable the pagination system will ignore the request so you
 	// can use the template names while developing and customize at any
 	// time later
-	'pagination-targets' => array
-	(
-		// the following is an example
-//				'gallery' => array
-//					(
-//						'formatter' => null,
-//						'prev_text' => esc_html__('Prev Images', 'bucket-lite'),
-//						'next_text' => esc_html__('Next Images', 'bucket-lite'),
-//					)
-	),
+	'pagination-targets' => array(),
 
 	/**
 	 * You can choose to have separate options for each language.
