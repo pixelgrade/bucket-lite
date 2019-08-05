@@ -226,7 +226,10 @@
 	// is not avilable the pagination system will ignore the request so you
 	// can use the template names while developing and customize at any
 	// time later
-	'pagination-targets' => array(),
+	'pagination-targets' => array
+	(
+
+	),
 
 	/**
 	 * You can choose to have separate options for each language.
