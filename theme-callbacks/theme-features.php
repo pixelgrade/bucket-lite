@@ -23,32 +23,6 @@ function wpgrade_custom_backgrounds_suport(){
 // Hook into the 'after_setup_theme' action
 add_action( 'after_setup_theme', 'wpgrade_custom_backgrounds_suport' );
 
-function wpgrade_add_desktop_icons(){
-
-	if ( wpgrade::image_src( 'favicon' ) ) {
-		echo "<link rel='icon' href=\"".wpgrade::image_src( 'favicon' )."\" >\n";
-	}
-
-	if ( wpgrade::image_src( 'apple_touch_icon' ) ) {
-		echo "<link rel=\"apple-touch-icon\" href=\"".wpgrade::image_src( 'apple_touch_icon' )."\" >\n";
-	}
-
-	if ( wpgrade::image_src( 'metro_icon' ) ) {
-		echo "<meta name=\"msapplication-TileColor\" content=\"#f01d4f\">\n";
-		echo "<meta name=\"msapplication-TileImage\" content=\"".wpgrade::image_src( 'metro_icon' )."\" >\n";
-	}
-
-}
-add_action('wp_head', 'wpgrade_add_desktop_icons');
-
-
-add_action('admin_head', 'wpgrade_add_admin_favicon');
-function wpgrade_add_admin_favicon() {
-	if ( wpgrade::image_src( 'favicon' ) ) {
-		echo "<link rel='icon' href=\"" . wpgrade::image_src( 'favicon' ) . "\" >\n";
-	}
-}
-
 function wpgrade_prepare_password_for_custom_post_types(){
 
 	global $wpgrade_private_post;

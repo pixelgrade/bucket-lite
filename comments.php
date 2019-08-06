@@ -26,7 +26,7 @@
             <h4 class="hN">
                 <?php
                     if ( have_comments() ) {
-                        echo '<span class="comment-number total">' . esc_html( number_format_i18n( get_comments_number() ) ) . '</span>' . esc_html( _n( 'Comment', 'Comments', get_comments_number(), 'bucket-lite' ) );
+                        echo '<span class="comment-number total">' . esc_html( number_format_i18n( get_comments_number() ) ) . '</span>' . esc_html( _n( ' Comment', ' Comments', get_comments_number(), 'bucket-lite' ) );
                     } else {
 	                    esc_html_e('There are no comments', 'bucket-lite');
                     } ?>

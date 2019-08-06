@@ -10,22 +10,22 @@ $main_color = '';
 //if we are in a category page then let's see if we have a custom accent color
 if (is_category()) {
 	//first get the current category ID
-	$cat_id = get_query_var('cat');
+	$category_id = get_query_var('cat');
 	//get the color
-	$cat_color = get_category_color($cat_id);
+	$category_color = get_category_color($category_id);
 
-	if ($cat_color) {
-		$main_color = $cat_color;
+	if ($category_color) {
+		$main_color = $category_color;
 	}
 } else if (is_single()) { //also for single posts we also take the color of the first category
 	//get the categories
 	$categories = get_the_category();
 	if (!empty($categories)) {
 		//get the color
-		$cat_color = get_category_color($categories[0]->cat_ID);
+		$category_color = get_category_color($categories[0]->cat_ID);
 
-		if ($cat_color) {
-			$main_color = $cat_color;
+		if ($category_color) {
+			$main_color = $category_color;
 		}
 	}
 }
