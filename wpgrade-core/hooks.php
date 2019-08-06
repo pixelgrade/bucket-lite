@@ -11,8 +11,8 @@ $ds = DIRECTORY_SEPARATOR;
 
 $themeincludepaths = wpgrade::confoption( 'include-paths', array() );
 
-foreach ( $themeincludepaths as $path ) {
-	$fullpath = wpgrade::themepath() . $ds . $path;
+foreach ( $themeincludepaths as $one_path ) {
+	$fullpath = wpgrade::themepath() . $ds . $one_path;
 	if ( file_exists( $fullpath ) ) {
 		wpgrade::require_all( $fullpath );
 	}
