@@ -126,14 +126,3 @@ function wpgrade_callbacks_setup_shortcodes_plugin() {
 }
 
 add_action( 'admin_head', 'wpgrade_callbacks_setup_shortcodes_plugin' );
-
-
-/**
- * ...
- */
-function wpgrade_callbacks_html5_shim() {
-	global $is_IE;
-	if ( $is_IE ) {
-		include wpgrade::corepartial( 'ie-shim' . EXT );
-	}
-}

@@ -219,7 +219,7 @@ class wpgrade {
 
 	/**
 	 * The point of a resolver is to deal with various anti-pattern adopted by
-	 * sadly quite a few wordpress specific plugins and frameworks. The pattern
+	 * sadly quite a few WordPress specific plugins and frameworks. The pattern
 	 * offers an alternative to techniques such as globals and mitigates the
 	 * use of various "god object" patterns (generally manifesting themselves
 	 * as classes that do their work in the damn constructor, and other
@@ -249,7 +249,7 @@ class wpgrade {
 	}
 
 
-	//// Wordpress Defferred Helpers ///////////////////////////////////////////////
+	//// WordPress Defferred Helpers ///////////////////////////////////////////////
 
 	/**
 	 * Filter content based on settings in wpgrade-config.php

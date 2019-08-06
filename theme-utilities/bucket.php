@@ -197,7 +197,7 @@ class bucket {
 					if ( $post->post_password ===  $_POST['post_password'] ) {
 						$private_post['allowed'] = true;
 
-						// ok if we have a correct password we should inform wordpress too
+						// ok if we have a correct password we should inform WordPress too
 						// otherwise the mad dog will put the password form again in the_content() and other filters
 						global $wp_hasher;
 						if ( empty( $wp_hasher ) ) {

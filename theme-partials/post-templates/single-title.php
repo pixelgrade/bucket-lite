@@ -13,8 +13,14 @@ if ( get_the_title() ) { ?>
 	<?php } ?>
 
 	<?php $author_display_name = get_the_author_meta( 'display_name' );
-	printf( '<div class="article__author-name" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s</span></div>', '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . sprintf( esc_html__( 'Posts by %s', 'bucket-lite' ), $author_display_name ) . '" itemprop="sameAs">' . $author_display_name . '</a>' ) ?>
+	/* translators: %s: Author name. */
+	printf( '<div class="article__author-name" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s</span></div>',
+            '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . sprintf( esc_html__( 'Posts by %s', 'bucket-lite' ), $author_display_name ) . '" itemprop="sameAs">' . $author_display_name . '</a>' ); ?>
     <time class="article__time"
-          datetime="<?php the_time( 'c' ); ?>"> <?php printf( esc_html__( 'on %s at %s', 'bucket-lite' ), get_the_date(), get_the_time() ); ?></time>
+          datetime="<?php the_time( 'c' ); ?>"> <?php printf( /* translators: %1$s: The date, %2$s: The time. */
+                                                                esc_html__( 'on %1$s at %2$s', 'bucket-lite' ),
+                                                                get_the_date(),
+                                                                get_the_time() ); ?>
+    </time>
 
 </div><!-- .article__title__meta -->

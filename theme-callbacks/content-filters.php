@@ -26,7 +26,7 @@
 	 * @return string filtered content
 	 */
 	function wpgrade_callback_shortcode_filters($content) {
-		// including Wordpress plugin.php for is_plugin_active function
+		// including WordPress plugin.php for is_plugin_active function
 		include_once(ABSPATH.'wp-admin/includes/plugin.php');
 
 		return $content;
@@ -61,7 +61,7 @@ function wpgrade_media_handlers() {
 add_action( 'after_wpgrade_core', 'wpgrade_media_handlers');
 
 /**
- * Make sure wordpress allows our mime types.
+ * Make sure WordPress allows our mime types.
  * @return array
  */
 function wpgrade_callback_custom_upload_mimes( $existing_mimes = null ) {
