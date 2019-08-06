@@ -60,8 +60,8 @@ get_header();
                         <div class="btn-list">
                             <div class="btn  btn--small  btn--secondary"><?php esc_html_e( 'Tagged', 'bucket-lite' ) ?></div>
 							<?php
-							foreach ( $tags as $tag ) {
-								echo '<a class="btn  btn--small  btn--tertiary" href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( esc_attr__( "View all posts tagged %s", 'bucket-lite' ), esc_html( $tag->name ) ) . '">' . esc_html( $tag->name ) . '</a>';
+							foreach ( $tags as $one_tag ) {
+								echo '<a class="btn  btn--small  btn--tertiary" href="' . get_tag_link( $one_tag->term_id ) . '" title="' . sprintf( esc_attr__( "View all posts tagged %s", 'bucket-lite' ), esc_html( $one_tag->name ) ) . '">' . esc_html( $one_tag->name ) . '</a>';
 							} ?>
                         </div>
 					<?php } ?>

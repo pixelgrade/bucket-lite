@@ -172,7 +172,8 @@ function wpgrade_comments($comment, $args, $depth) {
 		</aside>
 		<div class="media__body">
 			<header class="comment__meta comment-author">
-				<?php printf('<cite class="comment__author-name">%s</cite>', esc_url( get_comment_author_link() ) ) ?>
+				<?php /* translators: %s: Comment author link */
+                printf('<cite class="comment__author-name">%s</cite>', esc_url( get_comment_author_link() ) ); ?>
 				<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time( __('j F, Y \a\t H:i', 'bucket-lite')); ?> </a></time>
 				<div class="comment__links">
 					<?php
@@ -219,7 +220,7 @@ function extra_category_fields( $tag ) {
 				<input type="text" name="cat_meta[cat_custom_accent]" class="colorpicker" size="3" style="width:20%;" value="<?php echo (isset($cat_meta['cat_custom_accent'])) ? $cat_meta['cat_custom_accent'] : wpgrade::option('main_color'); ?>" />
 			</div>
 			<br />
-			<span class="description"><?php  echo wp_kses_post( __( 'Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code).', 'bucket-lite') ); ?></span>
+			<span class="description"><?php echo wp_kses_post( __( 'Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code).', 'bucket-lite') ); ?></span>
 			<br />
 		</td>
 	</tr>
@@ -249,7 +250,7 @@ add_action ( 'edited_category', 'save_extra_category_fields');
 function get_category_color($cat_id) {
 	$cat_data = get_option("category_$cat_id");
 
-	if (!empty($cat_data['cat_custom_accent']) && ($cat_data['cat_custom_accent'] != wpgrade::option('main_color'))) {
+	if ( !empty( $cat_data['cat_custom_accent'] ) && ( $cat_data['cat_custom_accent'] != wpgrade::option( 'main_color') ) ) {
 		return $cat_data['cat_custom_accent'];
 	} else {
 		return wpgrade::option('main_color');

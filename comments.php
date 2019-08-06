@@ -25,12 +25,11 @@
         <div class="comments-area-title">
             <h4 class="hN">
                 <?php
-                    if ( have_comments() ){
-	                    printf( wp_kses_post( _n( 'There is <em>1</em> comment', 'There are <em>%1$s</em> comments', get_comments_number(), 'bucket-lite' ) ), number_format_i18n( get_comments_number() ) );
-                    }else{
-                        esc_html_e('There are no comments', 'bucket-lite');
-                    }
-                ?>
+                    if ( have_comments() ) {
+                        echo '<span class="comment-number total">' . esc_html( number_format_i18n( get_comments_number() ) ) . '</span>' . esc_html( _n( 'Comment', 'Comments', get_comments_number(), 'bucket-lite' ) );
+                    } else {
+	                    esc_html_e('There are no comments', 'bucket-lite');
+                    } ?>
             </h4>
             <?php echo '<a class="comments_add-comment" href="#reply-title">'. esc_html__('Add yours', 'bucket-lite') .'</a>'; ?>
         </div>
