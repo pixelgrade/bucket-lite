@@ -2,6 +2,8 @@
 /**
  * The template for displaying Author bios.
  *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

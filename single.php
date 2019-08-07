@@ -2,15 +2,15 @@
 /**
  * The Template for displaying all single posts.
  *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header();
-
-?>
+get_header(); ?>
 
 <div class="container container--main">
 
@@ -54,7 +54,8 @@ get_header();
                             <div class="btn  btn--small  btn--secondary"><?php esc_html_e( 'Categories', 'bucket-lite' ) ?></div>
 							<?php
 							foreach ( $categories as $category ) {
-								echo '<a class="btn  btn--small  btn--tertiary" href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( esc_attr__( "View all posts in %s", 'bucket-lite' ), esc_html( $category->name ) ) . '">' . esc_html( $category->cat_name ) . '</a>';
+								/* translators: %s: Category name */
+								echo '<a class="btn  btn--small  btn--tertiary" href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . sprintf( esc_attr__( 'View all posts in %s', 'bucket-lite' ), esc_html( $category->name ) ) . '">' . esc_html( $category->name ) . '</a>';
 							} ?>
                         </div>
 					<?php }
@@ -65,7 +66,8 @@ get_header();
                             <div class="btn  btn--small  btn--secondary"><?php esc_html_e( 'Tagged', 'bucket-lite' ) ?></div>
 							<?php
 							foreach ( $tags as $one_tag ) {
-								echo '<a class="btn  btn--small  btn--tertiary" href="' . get_tag_link( $one_tag->term_id ) . '" title="' . sprintf( esc_attr__( "View all posts tagged %s", 'bucket-lite' ), esc_html( $one_tag->name ) ) . '">' . esc_html( $one_tag->name ) . '</a>';
+								/* translators: %s: Tag name */
+								echo '<a class="btn  btn--small  btn--tertiary" href="' . esc_url( get_tag_link( $one_tag->term_id ) ) . '" title="' . sprintf( esc_attr__( 'View all posts tagged %s', 'bucket-lite' ), esc_html( $one_tag->name ) ) . '">' . esc_html( $one_tag->name ) . '</a>';
 							} ?>
                         </div>
 					<?php } ?>
@@ -85,7 +87,7 @@ get_header();
                                     <?php esc_html_e( 'Previous Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
-                                    <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
+                                    <h3 class="hN"><?php echo esc_html( $prev_post->post_title ); ?></h3>
                                 </span>
                             </a>
                         </div><!--
@@ -96,7 +98,7 @@ get_header();
                                     <?php esc_html_e( 'Previous Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
-                                    <h3 class="hN"><?php echo $prev_post->post_title; ?></h3>
+                                    <h3 class="hN"><?php echo esc_html( $prev_post->post_title ); ?></h3>
                                 </span>
                             </a>
                         </div><!--
@@ -113,10 +115,10 @@ get_header();
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
                             <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php esc_html_e( "Next Article", 'bucket-lite' ); ?>
+                                    <?php esc_html_e( 'Next Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
-                                    <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
+                                    <h3 class="hN"><?php echo esc_html( $next_post->post_title ); ?></h3>
                                 </span>
                             </a>
                         </div><!--
@@ -127,10 +129,10 @@ get_header();
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
                             <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
                                 <span class="post-nav-link__label">
-                                    <?php esc_html_e( "Next Article", 'bucket-lite' ); ?>
+                                    <?php esc_html_e( 'Next Article', 'bucket-lite' ); ?>
                                 </span>
                                 <span class="post-nav-link__title">
-                                    <h3 class="hN"><?php echo $next_post->post_title; ?></h3>
+                                    <h3 class="hN"><?php echo esc_html( $next_post->post_title ); ?></h3>
                                 </span>
                             </a>
                         </div><!--
@@ -142,9 +144,6 @@ get_header();
                 <hr class="separator  separator--section">
 
 				<?php
-				if ( function_exists( 'related_posts' ) ) {
-					related_posts();
-				}
 
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() ) {
@@ -155,13 +154,12 @@ get_header();
         </article><!--
 
         <?php if ( $disable_sidebar != 'on' ){ ?>
-         -->
-        <div class="grid__item  one-third  palm-one-whole  sidebar">
-			<?php get_sidebar(); ?>
+         --><div class="grid__item  one-third  palm-one-whole  sidebar">
+		    <?php get_sidebar();
+		    } else { // ugly ?>
+                -->
+		    <?php } ?>
         </div>
-	<?php } else { // ugly ?>
-        -->
-	<?php } ?>
 
     </div>
 </div>

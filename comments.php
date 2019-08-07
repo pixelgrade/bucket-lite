@@ -8,23 +8,21 @@
  * located in the functions.php file.
  *
  * @package wpGrade
- * @since wpGrade 1.0
+ * @since wpGrade 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-?>
-
-<?php
-    /*
-     * If the current post is protected by a password and
-     * the visitor has not yet entered the password we will
-     * return early without loading the comments.
-     */
-    if (post_password_required()) return;
-?>
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+    return;
+} ?>
 
     <div id="comments" class="comments-area">
         <div class="comments-area-title">
@@ -36,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	                    esc_html_e('There are no comments', 'bucket-lite');
                     } ?>
             </h4>
-            <?php echo '<a class="comments_add-comment" href="#reply-title">'. esc_html__('Add yours', 'bucket-lite') .'</a>'; ?>
+            <?php echo '<a class="comments_add-comment" href="#reply-title">' . esc_html__('Add yours', 'bucket-lite') .'</a>'; ?>
         </div>
 
         <?php // You can start editing here -- including this comment! ?>
@@ -85,8 +83,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             
             <hr class="separator separator--subsection" />
 
-        <?php } // have_comments() ?>
-        <?php
+        <?php } // have_comments()
+
             // If comments are closed and there are comments, let's leave a little note, shall we?
             if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) && !is_page() ){
         ?>
@@ -99,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
 
-    if (is_user_logged_in()) {
+    if ( is_user_logged_in() ) {
         $current_user = wp_get_current_user();
         $comments_args = array(
             // change the title of send button
@@ -121,19 +119,22 @@ if ( ! defined( 'ABSPATH' ) ) {
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_before' => '',
         'comment_notes_after' => '',
-        'fields' => apply_filters( 'comment_form_default_fields', array(
-                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">' . esc_html__('Name', 'bucket-lite') .'</label><input id="author" name="author" value="' . esc_attr( $commenter['comment_author'] ) . '" type="text" placeholder="' . esc_html__('Name', 'bucket-lite') . '..." size="30" ' .  $aria_req . ' /></p><!--',
-                'email' => '--><p class="comment-form-email"><label for="name" class="show-on-ie8">' . esc_html__('Email', 'bucket-lite') .'</label><input id="email" name="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" type="text" placeholder="' . esc_html__('Email', 'bucket-lite') . '..." ' . $aria_req . ' /></p><!--',
-                'url' => '--><p class="comment-form-url"><label for="url" class="show-on-ie8">' . esc_html__('Url', 'bucket-lite') .'</label><input id="url" name="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . esc_html__('Website', 'bucket-lite') .'..." type="text"></p>') ),
+        'fields' => apply_filters( 'comment_form_default_fields',
+            array(
+                'author' => '<p class="comment-form-author"><label for="author" class="show-on-ie8">' . esc_html__('Name', 'bucket-lite') . '</label><input id="author" name="author" value="' . esc_attr( $commenter['comment_author'] ) . '" type="text" placeholder="' . esc_html__('Name', 'bucket-lite') . '..." size="30" ' .  $aria_req . ' /></p><!--',
+                'email' => '--><p class="comment-form-email"><label for="name" class="show-on-ie8">' . esc_html__('Email', 'bucket-lite') . '</label><input id="email" name="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" type="text" placeholder="' . esc_html__('Email', 'bucket-lite') . '..." ' . $aria_req . ' /></p><!--',
+                'url' => '--><p class="comment-form-url"><label for="url" class="show-on-ie8">' . esc_html__('Url', 'bucket-lite') . '</label><input id="url" name="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . esc_html__('Website', 'bucket-lite') .'..." type="text"></p>'
+            )
+        ),
         'id_submit' => 'comment-submit',
         'label_submit' => esc_html__('Send', 'bucket-lite'),
         // redefine your own textarea (the comment body)
         'comment_field' => '<p class="comment-form-comment"><label for="comment" class="show-on-ie8">' . esc_html__('Comment', 'bucket-lite') . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . esc_html__( 'Message', 'bucket-lite' ) . '"></textarea></p>');
     }
 	
-	//if we have no comments than we don't a second title, one is enough
+	//if we have no comments then we don't need a second title, one is enough
 	if ( !have_comments() ){
 		$comments_args['title_reply'] = '';
 	}
 	
-    comment_form($comments_args);
+    comment_form( $comments_args );

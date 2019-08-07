@@ -1,6 +1,9 @@
 <?php
 /**
  * The template for displaying Search Results pages.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,13 +19,14 @@ get_header(); ?>
         <div class="grid__item  two-thirds  palm-one-whole">
 			<?php if ( have_posts() ) { ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php printf( esc_html__( 'Search Results for: %s', 'bucket-lite' ), get_search_query() ); ?></h2>
+                    <h2 class="hN"><?php
+	                    /* translators: %s: Search query */
+                        printf( esc_html__( 'Search Results for: %s', 'bucket-lite' ), get_search_query() ); ?></h2>
                 </div>
                 <div class="grid  masonry" data-columns>
 					<?php while ( have_posts() ){
 					the_post(); ?><!--
-                        -->
-                    <div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
+                        --><div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
                  --><?php } ?>
                 </div>
 				<?php echo wpgrade::pagination();
@@ -31,8 +35,7 @@ get_header(); ?>
 			} ?>
         </div><!--
         
-     -->
-        <div class="grid__item  one-third  palm-one-whole  sidebar">
+     --><div class="grid__item  one-third  palm-one-whole  sidebar">
 			<?php get_sidebar(); ?>
         </div>
 

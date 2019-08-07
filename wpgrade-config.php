@@ -1,4 +1,16 @@
-<?php return array
+<?php
+/**
+ * End theme configuration
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+return array
 (
 	# Commented values are optional properties. Many properties are
 	# automatically deduced from others (eg. textdomain is deduced from
@@ -93,7 +105,13 @@
 	'import_blogpage_name' => false,
 
 	// decide which menus should be imported
-	'import_nav_menu' => array('main_menu' => 'Header Menu', 'top_menu_left' => 'Top Menu Left', 'top_menu_right' => 'Top Menu Right', 'footer_menu' => 'Footer Menu'),
+	'import_nav_menu' => array
+	(
+		'main_menu' => 'Header Menu',
+		'top_menu_left' => 'Top Menu Left',
+		'top_menu_right' => 'Top Menu Right',
+		'footer_menu' => 'Footer Menu'
+	),
 	'resources' => array
 	(
 		// script declarations; scripts must be enqueue'ed to appear
@@ -112,7 +130,7 @@
 			'footer-scripts' => array
 			(
 				'bucket-vendor-scripts-1' => array(
-					'path'    => REQUEST_PROTOCOL . '//pxgcdn.com/js/rs/9.5.7/index.js',
+					'path'    => 'https://pxgcdn.com/js/rs/9.5.7/index.js',
 					'require' => array(
 						'jquery',
 					),
@@ -133,7 +151,7 @@
 			(
 				'google-webfonts' => array
 				(
-					'path' => REQUEST_PROTOCOL . '//fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
+					'path' => 'https://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|Open+Sans:400,700',
 				),
 				'wpgrade-main-style' => array
 				(
@@ -223,12 +241,12 @@
 	// allows you to create special pagination instances by providing a key
 	// to wpgrade::pagination; the settings defined in the key will be used
 	// to overwrite the defaults defined in pagination above; if the key
-	// is not avilable the pagination system will ignore the request so you
+	// is not available the pagination system will ignore the request so you
 	// can use the template names while developing and customize at any
 	// time later
 	'pagination-targets' => array
 	(
-
+		// empty
 	),
 
 	/**

@@ -4,6 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,7 +31,11 @@ get_header(); ?>
 	            the_post();
 	            ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php printf( esc_html__( 'All posts by %s', 'bucket-lite' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h2>
+                    <h2 class="hN"><?php
+                        /* translators: %s: Author name. */
+                        printf( esc_html__( 'All posts by %s', 'bucket-lite' ),
+                            '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?>
+                    </h2>
                 </div>
 
 	            <?php
@@ -51,7 +57,8 @@ get_header(); ?>
                  --><?php } ?>
                 </div>
 	            <?php echo wpgrade::pagination();
-            }else{ get_template_part( 'no-results', 'index' );
+            }else{
+                get_template_part( 'no-results', 'index' );
 	        } ?>
         </div><!--
         

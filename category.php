@@ -2,8 +2,8 @@
 /**
  * The template for displaying Category pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

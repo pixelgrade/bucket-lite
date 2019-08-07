@@ -1,9 +1,10 @@
 <?php
 /**
  * The template for displaying the footer widget areas.
- * @package Bucket
- * @since   Bucket 1.0
-**/
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -23,10 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="container">
 
             <ul class="stat-group nav nav--banner">
-				<?php foreach($months as $key => $month ) { ?>
+				<?php foreach( $months as $key => $month ) { ?>
 					<li>
 						<?php if ( isset($month['url'])) { ?>
-							<a href="<?php echo $month['url'] ;?>" class="stat">
+							<a href="<?php echo esc_url( $month['url'] ) ;?>" class="stat">
 						<?php } else { ?>
 							<div class="stat disable">
 						<?php }
@@ -36,10 +37,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 						} else {
 							$percent = 0;
 						} ?>
-							<dd class="stat__value" <?php if($percent > 0) echo 'style="height:' . $percent . '%;"'; ?>><?php echo $month['count']; ?></dd>
-							<dt class="stat__title"><?php echo $month['month']; ?></dt>
+							<dd class="stat__value" <?php if( $percent > 0 ) echo 'style="height:' . $percent . '%;"'; ?>><?php echo esc_html( $month['count'] ); ?></dd>
+							<dt class="stat__title"><?php echo esc_html( $month['month'] ); ?></dt>
 						
-                        <?php if ( isset($month['url'])) { ?>
+                        <?php if ( isset( $month['url'] ) ) { ?>
                             </a>
                         <?php } else { ?>
                             </div>

@@ -6,6 +6,8 @@
  * Please note that this is the WordPress construct of pages and that other
  * 'pages' on your WordPress site will use a different template.
  *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,8 +23,8 @@ get_header(); ?>
         <?php 
 
         // let's get to know this post a little better
-        $full_width_featured_image = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_full_width_featured_image', true);
-        $disable_sidebar = get_post_meta(wpgrade::lang_post_id(get_the_ID()), '_bucket_disable_sidebar', true);
+        $full_width_featured_image = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), '_bucket_full_width_featured_image', true);
+        $disable_sidebar = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), '_bucket_disable_sidebar', true);
 
         // let's use what we know
         $the_content_width = $disable_sidebar == 'on' ? 'one-whole' : 'lap-and-up-two-thirds';
@@ -33,7 +35,8 @@ get_header(); ?>
 
         <div class="grid__item  main  float--left  <?php echo $the_content_width; ?>">
 
-            <?php while (have_posts()){ the_post(); ?>
+            <?php while ( have_posts() ){
+                the_post(); ?>
                 <article <?php post_class(); ?>>
                 <h1 class="article__title  article__title--single"><?php the_title(); ?></h1>
                 <?php
@@ -61,7 +64,7 @@ get_header(); ?>
 
         </div><!--
         
-        <?php if ($disable_sidebar != 'on'){ ?>
+        <?php if ('on' != $disable_sidebar ){ ?>
          --><div class="grid__item  one-third  palm-one-whole  sidebar">
                 <?php get_sidebar(); ?>
             </div>

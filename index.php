@@ -9,8 +9,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Bucket
- * @since Bucket 1.0
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,13 +23,13 @@ get_header(); ?>
 	<?php get_template_part('theme-partials/post-templates/content-slider'); ?>
     <div class="grid">
         <div class="grid__item  two-thirds  palm-one-whole">
-            <?php if (have_posts()){ ?>
+            <?php if ( have_posts() ){ ?>
                 <div class="heading  heading--main">
                     <h2 class="hN"><?php esc_html_e('Latest Articles', 'bucket-lite') ?></h2>
                 </div>
 
 	            <div class="grid  masonry" data-columns>
-                    <?php while (have_posts()){ the_post(); ?><!--
+                    <?php while ( have_posts() ){ the_post(); ?><!--
                         --><div class="masonry__item"><?php get_template_part('theme-partials/post-templates/content-masonry'); ?></div><!--
                  --><?php } ?>
                 </div>

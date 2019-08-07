@@ -1,6 +1,9 @@
 <?php
 /**
  * Template Name: Full Width Page
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,24 +20,18 @@ get_header(); ?>
 
         // let's get to know this post a little better
 
-        // let's use what we know
-        $the_content_width = 'one-whole';
-        $featured_image_width = 'one-whole';
-        ?>
-
-       <?php
 		if ( has_post_thumbnail() ){
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'blog-big' );
 			$image_ratio = bucket::get_image_aspect_ratio( $image );
 		?>
-		<div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
+		<div class="grid__item  float--left one-whole article__featured-image">
 			<div class="image-wrap" style="padding-top: <?php echo $image_ratio; ?>%">
 				<img src="<?php echo $image[0] ?>" alt="<?php echo $image[0] ?>" />
 			</div>
 		</div>
 		<?php } ?>
 
-        <div class="grid__item  main  float--left  <?php echo $the_content_width; ?>">
+        <div class="grid__item  main  float--left  one-whole">
 
             <?php while ( have_posts() ){ the_post(); ?>
 

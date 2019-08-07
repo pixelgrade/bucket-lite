@@ -12,6 +12,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -52,10 +54,13 @@ get_header(); ?>
 						}
 
 						if ( is_day() ) {
+							/* translators: %s: The day in which the posts from the archive were made. */
 							printf( esc_html__( 'Daily Archives: %s', 'bucket-lite' ), get_the_date() );
 						} elseif ( is_month() ) {
+							/* translators: %s: The month in which the posts from the archive were made. */
 							printf( esc_html__( 'Monthly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bucket-lite' ) ) );
 						} elseif ( is_year() ) {
+							/* translators: %s: The year in which the posts from the archive were made. */
 							printf( esc_html__( 'Yearly Archives: %s', 'bucket-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bucket-lite' ) ) );
 						} else {
 							esc_html_e( 'Archives', 'bucket-lite' );
@@ -66,8 +71,7 @@ get_header(); ?>
                 <div class="grid  masonry" data-columns>
 					<?php while ( have_posts() ){
 					            the_post(); ?><!--
-                        -->
-                    <div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
+                        --><div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
                  --><?php } ?>
                 </div>
 				<?php echo wpgrade::pagination();
@@ -76,8 +80,7 @@ get_header(); ?>
 			} ?>
         </div><!--
 
-     -->
-        <div class="grid__item  one-third  palm-one-whole  sidebar">
+     --><div class="grid__item  one-third  palm-one-whole  sidebar">
 			<?php get_sidebar(); ?>
         </div>
 

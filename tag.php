@@ -6,6 +6,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,9 +23,12 @@ get_header(); ?>
         <div class="grid__item  two-thirds  palm-one-whole">
             <?php if ( have_posts() ){ ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php printf( esc_html__( 'Tag Archives: %s', 'bucket-lite' ), single_tag_title( '', false ) ); ?></h2>
-					
+                    <h2 class="hN"><?php
+                        /* translators: %s: Tag Archive Name */
+                        printf( esc_html__( 'Tag Archives: %s', 'bucket-lite' ), single_tag_title( '', false ) );
+                        ?></h2>
                 </div>
+
 	            <?php if ( get_the_archive_description() ){ // Show an optional tag description ?>
                     <div class="archive-meta"><?php the_archive_description(); ?></div>
 	            <?php } ?>
