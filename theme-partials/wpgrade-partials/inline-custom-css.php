@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 	/* @var string $main_color */
 	/* @var array  $fonts */
 	/* @var string $port_color */
@@ -8,7 +13,7 @@
 $main_color = '';
 
 //if we are in a category page then let's see if we have a custom accent color
-if (is_category()) {
+if ( is_category() ) {
 	//first get the current category ID
 	$category_id = get_query_var('cat');
 	//get the color
@@ -128,6 +133,6 @@ ol {
 <?php }
 **
 */
-if (wpgrade::option('custom_css')):
-	echo "\n" . wpgrade::option('custom_css') . "\n";
-endif; ?>
+if ( wpgrade::option('custom_css' ) ){
+	echo "\n" . wpgrade::option('custom_css' ) . "\n";
+}

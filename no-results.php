@@ -1,17 +1,23 @@
-<?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
+<?php
 
-<p><?php printf( wp_kses_post( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bucket-lite' ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
-<?php }elseif ( is_search() ){ ?>
+if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
 
-<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with different keywords.', 'bucket-lite' ); ?></p>
-<div class="search-form">
-	<?php get_search_form(); ?>
-</div>
-<?php }else{ ?>
+    <p><?php printf( wp_kses_post( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bucket-lite' ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bucket-lite' ); ?></p>
-<div class="search-form  search-form--404">
-	<?php get_search_form(); ?>
-</div>
+<?php } elseif ( is_search() ) { ?>
+
+    <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with different keywords.', 'bucket-lite' ); ?></p>
+    <div class="search-form">
+		<?php get_search_form(); ?>
+    </div>
+<?php } else { ?>
+
+    <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bucket-lite' ); ?></p>
+    <div class="search-form  search-form--404">
+		<?php get_search_form(); ?>
+    </div>
 <?php } ?>

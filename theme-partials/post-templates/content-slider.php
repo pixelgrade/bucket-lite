@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 global $showed_posts_ids;
 /**
  * Fields available:
@@ -44,14 +49,15 @@ $slides = new WP_Query( $query_args );
 $index = 0;
 $closed_group = true;
 
-if ($slides->have_posts()): ?>
+if ( $slides->have_posts() ){ ?>
 	<div class="billboard pixslider js-pixslider arrows--outside"
 	     data-arrows="true"
 	     data-autoScaleSliderWidth="1050"
 	     data-autoScaleSliderHeight="<?php echo $slider_height; ?>"
 	     data-slidertransition="<?php echo $slider_transition; ?>"
 	>
-		<?php while($slides->have_posts()): $slides->the_post();
+		<?php while( $slides->have_posts() ){
+		    $slides->the_post();
 
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'slider-big');
 			if ( ! empty( $image ) ) {
@@ -61,18 +67,18 @@ if ($slides->have_posts()): ?>
 				$image_ratio = bucket::get_image_aspect_ratio( $image );
 
 
-					if ( $index ++ % 3 == 0 ):
+					if ( $index ++ % 3 == 0 ){
 
 						if ( isset( $image[1] ) && isset( $image[2] ) && $image[1] > 0 ) {
 							$image_ratio = $image[2] * 100 / $image[1];
 						}
 
-						if ( ! $closed_group ):
+						if ( ! $closed_group ) {
 							echo '</div><div class="billboard--article-group">';
-						else:
+						}else {
 							echo '<div class="billboard--article-group">';
 							$closed_group = false;
-						endif; ?>
+						} ?>
 						<article class="article  article--billboard">
 
 							<div>
@@ -89,7 +95,7 @@ if ($slides->have_posts()): ?>
 								</div>
 							</a>
 						</article>
-					<?php else: /* for this: if ($index++ % 3 == 0): */ ?>
+					<?php } else{ /* for this: if ($index++ % 3 == 0): */ ?>
 						<article class="rsABlock  article article--billboard-small"
 						         data-move-effect="right"
 						         data-speed="400"
@@ -109,7 +115,7 @@ if ($slides->have_posts()): ?>
 							$image_post_small = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-small' );
 							$image_post_big   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-big' );
 							?>
-							<a href="<?php the_permalink(); ?>">
+							<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 								<div class="article__thumb">
 									<img class="riloadr-slider" data-src-big="<?php echo $image_post_big[0]; ?>"
 									     data-src-small="<?php echo $image_post_small[0]; ?>" alt="img"/>
@@ -132,13 +138,13 @@ if ($slides->have_posts()): ?>
 								</div>
 							</a>
 						</article>
-					<?php endif; /* if ($index++ % 3 == 0): */
+					<?php } /* if ($index++ % 3 == 0): */
 			}
-		endwhile;
+        }
 		wp_reset_postdata();
-		if (!$closed_group):
+		if (!$closed_group){
 			echo '</div>';
 			$closed_group = false;
-		endif; ?>
+        } ?>
 	</div>
-<?php endif;
+<?php }

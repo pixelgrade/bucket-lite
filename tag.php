@@ -8,6 +8,10 @@
  *
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 get_header(); ?>
 
 <div id="main" class="container container--main">
@@ -43,4 +47,4 @@ get_header(); ?>
     </div>
 </div>
     
-<?php get_footer(); ?>
+<?php get_footer();

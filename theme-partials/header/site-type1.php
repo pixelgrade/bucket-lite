@@ -1,3 +1,9 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+} ?>
+
 <header class="header header--type1">
 
     <nav class="navigation  navigation--top">

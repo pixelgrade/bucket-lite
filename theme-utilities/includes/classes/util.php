@@ -619,7 +619,7 @@ class util
 		parse_str( $query, $qs );
 
 		// This re-URL-encodes things that were already in the query string
-		$qs = self::array_map_deep( $qs, 'urlencode' );
+		$qs = self::array_map_deep( $qs, 'rawurlencode' );
 
 		if ( is_array( func_get_arg( 0 ) ) ) {
 			$kayvees = func_get_arg( 0 );

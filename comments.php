@@ -10,6 +10,11 @@
  * @package wpGrade
  * @since wpGrade 1.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 ?>
 
 <?php

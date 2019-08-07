@@ -15,12 +15,12 @@ get_header(); ?>
 			<?php get_template_part( 'theme-partials/post-templates/header-category' ); ?>
 			<?php if ( have_posts() ) { ?>
                 <div class="heading  heading--main">
-                    <h2 class="hN"><?php echo single_cat_title( '', false ); ?></h2><span
+                    <h2 class="hN"><?php the_archive_title( '' ); ?></h2><span
                             class="archive__side-title beta"><?php esc_html_e( 'Articles', 'bucket-lite' ); ?></span>
                 </div>
 
-				<?php if ( category_description() ) { // Show an optional category description ?>
-                    <div class="archive-meta"><?php echo category_description(); ?></div>
+				<?php if ( get_the_archive_description() ) { // Show an optional category description ?>
+                    <div class="archive-meta"><?php the_archive_description(); ?></div>
 				<?php } ?>
                 <div class="grid  masonry" data-columns>
 					<?php while ( have_posts() ){

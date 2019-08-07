@@ -49,7 +49,7 @@ function bucket_lite_customize_register( $wp_customize ) {
 
                     </ul> %s </div>', 'bucket-lite' ),
 			/* translators: %1$s: The view pro URL, %2$s: The view pro link text. */
-			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( bucket_lite_get_pro_link() ), esc_html__( 'View Bucket Pro PRO', 'bucket-lite' ) )
+			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( bucket_lite_get_pro_link() ), esc_html__( 'View Bucket PRO', 'bucket-lite' ) )
 		),
 	) );
 

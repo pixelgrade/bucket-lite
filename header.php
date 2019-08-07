@@ -1,4 +1,10 @@
-<?php //this is just for the doctype and <head> section
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+//this is just for the doctype and <head> section
 get_template_part('theme-partials/header/head');
 
 $class_name = '';
@@ -23,4 +29,4 @@ $class_name = '';
         </nav>
         <div class="wrapper">
             <?php //get the main header section - logo, nav, footer
-			get_template_part('theme-partials/header/site-type1'); ?>
+			get_template_part('theme-partials/header/site-type1');

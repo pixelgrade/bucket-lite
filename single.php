@@ -4,6 +4,10 @@
  *
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 get_header();
 
 ?>
@@ -76,7 +80,7 @@ get_header();
                     <nav class="post-nav  grid"><!--
                     <?php if ( ! empty( $prev_post ) && ! empty( $next_post ) ){ ?>
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
-                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
+                            <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
                                 <span class="post-nav-link__label">
                                     <?php esc_html_e( 'Previous Article', 'bucket-lite' ); ?>
                                 </span>
@@ -87,7 +91,7 @@ get_header();
                         </div><!--
                     <?php } elseif ( empty( $next_post ) && ! empty( $prev_post ) ){ ?>
                     --><div class="post-nav-link  post-nav-link--prev  grid__item  one-whole  lap-and-up-one-half">
-                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>">
+                            <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
                                 <span class="post-nav-link__label">
                                     <?php esc_html_e( 'Previous Article', 'bucket-lite' ); ?>
                                 </span>
@@ -107,7 +111,7 @@ get_header();
 
 						if ( ! empty( $next_post ) && ! empty( $prev_post ) ){ ?>
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
-                            <a href="<?php echo get_permalink( $next_post->ID ); ?>">
+                            <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
                                 <span class="post-nav-link__label">
                                     <?php esc_html_e( "Next Article", 'bucket-lite' ); ?>
                                 </span>
@@ -121,7 +125,7 @@ get_header();
                             &nbsp;
                         </div><!--
                  --><div class="post-nav-link  post-nav-link--next  grid__item  one-whole  lap-and-up-one-half">
-                            <a href="<?php echo get_permalink( $next_post->ID ); ?>">
+                            <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
                                 <span class="post-nav-link__label">
                                     <?php esc_html_e( "Next Article", 'bucket-lite' ); ?>
                                 </span>
@@ -162,4 +166,4 @@ get_header();
     </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();

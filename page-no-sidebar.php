@@ -3,6 +3,10 @@
  * Template Name: Full Width Page
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 get_header(); ?>
 
 <div class="container container--main">
@@ -63,4 +67,4 @@ get_header(); ?>
 
 </div>
     
-<?php get_footer(); ?>
+<?php get_footer();

@@ -3,6 +3,11 @@
  * The template for displaying Author bios.
  *
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 ?>
 
 <aside class="author" itemscope itemtype="http://schema.org/Person">

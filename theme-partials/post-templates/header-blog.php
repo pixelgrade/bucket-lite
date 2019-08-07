@@ -1,11 +1,17 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+?>
+
 <div class="article--grid__header">
-    <a href="<?php the_permalink(); ?>">
+    <a href="<?php echo esc_url( get_the_permalink() ); ?>">
         <div class="article--grid__thumb article__featured-image">
 
 			<?php
 			$flush_top     = 'push--top';
 
-			if ( has_post_thumbnail() ):
+			if ( has_post_thumbnail() ) {
 
 				$thumbsize = 'blog-medium';
 				$has_thumb = has_post_thumbnail();
@@ -30,16 +36,15 @@
                 </div>
 				<?php post_format_icon(); ?>
 
-			<?php
-			endif;
-			?>
+				<?php
+			} ?>
 
         </div>
 
-		<?php if ( ! empty( $post->post_title ) ) : ?>
+		<?php if ( ! empty( $post->post_title ) ){ ?>
             <div class="article__title  article--grid__title <?php echo $flush_top; ?>">
                 <h3 class="hN"><?php the_title(); ?></h3>
             </div>
-		<?php endif; ?>
+		<?php } ?>
     </a>
 </div>

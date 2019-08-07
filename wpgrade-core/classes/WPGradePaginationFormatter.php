@@ -122,13 +122,13 @@ class WPGradePaginationFormatter {
 		if ( empty( $conf['prev_text'] ) ) {
 			$conf['prev_text'] = esc_html__( '&laquo; Previous', 'bucket-lite' );
 		} else { // exists; translate
-			$conf['prev_text'] = esc_html( $conf['prev_text'], 'bucket-lite' );
+			$conf['prev_text'] = esc_html( $conf['prev_text'] );
 		}
 
 		if ( empty( $conf['next_text'] ) ) {
 			$conf['next_text'] = esc_html__( 'Next &raquo;', 'bucket-lite' );
 		} else { // exists; translate
-			$conf['next_text'] = esc_html( $conf['next_text'], 'bucket-lite' );
+			$conf['next_text'] = esc_html( $conf['next_text'] );
 		}
 
 		// is the pager sorted?
@@ -150,7 +150,7 @@ class WPGradePaginationFormatter {
 		// processing return type
 		$conf['type'] = 'array';
 
-		$links = paginate_links( $conf );
+		$links = get_the_posts_pagination( $conf );
 
 		if ( empty( $links ) ) {
 			$links = array();

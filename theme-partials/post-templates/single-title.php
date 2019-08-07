@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 if ( get_the_title() ) { ?>
     <h1 class="article__title  article__title--single" itemprop="name headline"><?php the_title(); ?></h1>
 <?php } else { ?>

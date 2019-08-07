@@ -1,5 +1,9 @@
 <?php
-    
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 $gallery_ids = get_post_meta( wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix() . 'main_gallery', true );
 if (!empty($gallery_ids)) {
 	$gallery_ids = explode(',',$gallery_ids);
@@ -42,7 +46,7 @@ $arrows_class= '';
 
 if($full_width_featured_image == 'on' || $disable_sidebar == 'on') $arrows_class = '  arrows--outside';
 
-if ($attachments): ?>
+if ( $attachments ){ ?>
 <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
 	<div class="pixslider js-pixslider<?php echo $arrows_class; ?>"
 		data-arrows
@@ -66,7 +70,7 @@ if ($attachments): ?>
 		}
 		?> >
 		<?php
-		foreach ($attachments as $attachment):
+		foreach ($attachments as $attachment){
 			$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
 			$thumbimg = wp_get_attachment_image_src($attachment->ID, 'blog-big');
 			$attachment_fields = get_post_custom( $attachment->ID );
@@ -94,7 +98,7 @@ if ($attachments): ?>
 					</span>
 				</div>
 			<?php }
-		endforeach; ?>
+        } ?>
 	</div>
 </div>
-<?php endif; ?>
+<?php }

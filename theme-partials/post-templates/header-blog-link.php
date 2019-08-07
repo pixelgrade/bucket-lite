@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+} ?>
+
 <div class="article--grid__header">
     <a href="<?php echo esc_url( bucket::get_content_link_url() ); ?>">
         <div class="article--grid__thumb article__featured-image">
@@ -5,7 +10,7 @@
             <?php
 			$flush_top = 'push--top';
 
-            if (has_post_thumbnail()):
+            if ( has_post_thumbnail() ){
 
         		$thumbsize = 'blog-medium';
                 $has_thumb = has_post_thumbnail();
@@ -31,7 +36,7 @@
                 <?php post_format_icon(); ?>
 
             <?php
-            endif;
+            }
             ?>
 
         </div>

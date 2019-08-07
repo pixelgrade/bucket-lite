@@ -1,4 +1,10 @@
-<?php global $wpgrade_private_post; ?>
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+global $wpgrade_private_post; ?>
 <div id="main" class="content djax-updatable">
 	<div class="page-content">
 		<div class="page-main">
