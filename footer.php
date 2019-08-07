@@ -7,9 +7,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-}
+} ?>
 
-?>   
     </div><!-- .wrapper --> 
     
     <?php
@@ -69,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     	 || is_active_sidebar('sidebar-footer-first-3')
          || is_active_sidebar('sidebar-footer-second-1')
          || is_active_sidebar('sidebar-footer-second-2')
-    	):
+    	){
 
     	// If we get this far, we have widgets. Let do this.
     	?>
@@ -79,36 +78,36 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="container">
                     
                     <div class="footer__widget-area  grid"><!--
-                        <?php if ( is_active_sidebar( 'sidebar-footer-first-1' ) ) : ?>
+                        <?php if ( is_active_sidebar( 'sidebar-footer-first-1' ) ) { ?>
                          --><div class="grid__item one-third  palm-one-whole">
                                 <?php dynamic_sidebar( 'sidebar-footer-first-1' ); ?>
                             </div><!--
-                        <?php endif; ?>
-                        <?php if ( is_active_sidebar( 'sidebar-footer-first-2' ) ) : ?>
+                        <?php }?>
+                        <?php if ( is_active_sidebar( 'sidebar-footer-first-2' ) ) { ?>
                             --><div class="grid__item one-third  palm-one-whole">
                                 <?php dynamic_sidebar( 'sidebar-footer-first-2' ); ?>
                             </div><!--
-                        <?php endif; ?>
-                        <?php if ( is_active_sidebar( 'sidebar-footer-first-3' ) ) : ?>
+                        <?php } ?>
+                        <?php if ( is_active_sidebar( 'sidebar-footer-first-3' ) ) { ?>
                             --><div class="grid__item one-third  palm-one-whole">
                                 <?php dynamic_sidebar( 'sidebar-footer-first-3' ); ?>
                             </div><!--
-                        <?php endif; ?>
+                        <?php } ?>
                  --></div>
 
                     <div class="footer__widget-area  grid"><!--
 
-                        <?php if ( is_active_sidebar( 'sidebar-footer-second-1' ) ) : ?>
+                        <?php if ( is_active_sidebar( 'sidebar-footer-second-1' ) ) { ?>
                          --><div class="grid__item two-thirds  palm-one-whole">
 			                <?php dynamic_sidebar( 'sidebar-footer-second-1' ); ?>
                         </div><!--
-                        <?php endif; ?>
+                        <?php } ?>
 
-                        <?php if ( is_active_sidebar( 'sidebar-footer-second-2' ) ) : ?>
+                        <?php if ( is_active_sidebar( 'sidebar-footer-second-2' ) ) { ?>
                             --><div class="grid__item one-third  palm-one-whole">
 			                <?php dynamic_sidebar( 'sidebar-footer-second-2' ); ?>
                         </div><!--
-                        <?php endif; ?>
+                        <?php } ?>
 
                  --></div>
 
@@ -116,7 +115,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-    	<?php endif; ?>
+    	<?php } ?>
 		
         <div class="footer__copyright">
             <div class="container">

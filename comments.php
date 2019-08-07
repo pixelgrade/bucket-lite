@@ -136,4 +136,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$comments_args['title_reply'] = '';
 	}
 	
-    comment_form($comments_args); ?>
+    comment_form($comments_args);

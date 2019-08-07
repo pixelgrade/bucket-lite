@@ -168,13 +168,13 @@ function wpgrade_comments($comment, $args, $depth) {
 	<li <?php comment_class(); ?>>
 	<article id="comment-<?php comment_ID(); ?>" class="comment-article  media">
 		<aside class="comment__avatar  media__img">
-			<img src="<?php echo util::get_avatar_url($comment->comment_author_email, '60') ?>" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
+			<img src="<?php echo util::get_avatar_url($comment->comment_author_email, '60'); ?>" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
 		</aside>
 		<div class="media__body">
 			<header class="comment__meta comment-author">
 				<?php /* translators: %s: Comment author link */
-                printf('<cite class="comment__author-name">%s</cite>', esc_url( get_comment_author_link() ) ); ?>
-				<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="comment__timestamp">on <?php comment_time( __('j F, Y \a\t H:i', 'bucket-lite')); ?> </a></time>
+                printf('<cite class="comment__author-name">%s</cite>', get_comment_author_link() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<time class="comment__time" datetime="<?php comment_time('c'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>" class="comment__timestamp">on <?php comment_time( __('j F, Y \a\t H:i', 'bucket-lite') ); ?> </a></time>
 				<div class="comment__links">
 					<?php
 					edit_comment_link( esc_html__('Edit', 'bucket-lite'),'  ','');
@@ -184,7 +184,7 @@ function wpgrade_comments($comment, $args, $depth) {
 			</header><!-- .comment-meta -->
 			<?php if ($comment->comment_approved == '0') : ?>
 				<div class="alert info">
-					<p><?php esc_html_e('Your comment is awaiting moderation.', 'bucket-lite') ?></p>
+					<p><?php esc_html_e('Your comment is awaiting moderation.', 'bucket-lite'); ?></p>
 				</div>
 			<?php endif; ?>
 			<section class="comment__content comment">

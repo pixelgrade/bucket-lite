@@ -11,10 +11,10 @@ function wpgrade_callback_the_password_form($form){
 		<p>' . esc_html__("This post is password protected. To view it please enter your password below:", 'bucket-lite') . '</p>
 		<div class="row">
 			<div class="span-12  hand-span-10">
-				<input name="post_password" id="' . $label . '" type="password" size="20" placeholder="'. esc_attr__("Password", 'bucket-lite') . '"/>
+				<input name="post_password" id="' . esc_attr( $label ) . '" type="password" size="20" placeholder="'. esc_attr__('Password', 'bucket-lite') . '"/>
 			</div>
 			<div class="span-12  hand-span-2">
-				<input type="submit" name="Access" value="' . esc_attr__("Access", 'bucket-lite') . '" class="btn post-password-submit"/>
+				<input type="submit" name="Access" value="' . esc_attr__('Access', 'bucket-lite') . '" class="btn post-password-submit"/>
 			</div>
 		</div>
 	</form>';
@@ -30,9 +30,9 @@ function wpgrade_callback_the_password_form($form){
 	}
 
 	require_once ABSPATH . 'wp-includes/class-phpass.php';
-	$hasher = new PasswordHash( 8, true );
+	$hasher = new PasswordHash( 8, true ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
-	$hash = wp_unslash( $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] );
+	$hash = wp_unslash( $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 	if ( 0 !== strpos( $hash, '$P$B' ) )
 		return $form;
 

@@ -6,9 +6,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-}
-
-?>
+} ?>
 
 <aside class="author" itemscope itemtype="http://schema.org/Person">
 	<div class="author__avatar">

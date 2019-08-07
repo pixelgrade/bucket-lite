@@ -192,8 +192,9 @@ class bucket {
 
 		if ( isset( $_POST['submit_password']) ) { // when we have a submision check the password and its submision
 			if ( isset( $_POST['submit_password_nonce'] ) && wp_verify_nonce( $_POST['submit_password_nonce'], 'password_protection') ) {
-				if ( isset ( $_POST['post_password'] ) && !empty($_POST['post_password']) ) { // some simple checks on password
+				if ( isset ( $_POST['post_password'] ) && ! empty( $_POST['post_password'] ) ) { // some simple checks on password
 					// finally test if the password submitted is correct
+					// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 					if ( $post->post_password ===  $_POST['post_password'] ) {
 						$private_post['allowed'] = true;
 
@@ -201,11 +202,11 @@ class bucket {
 						// otherwise the mad dog will put the password form again in the_content() and other filters
 						global $wp_hasher;
 						if ( empty( $wp_hasher ) ) {
-							require_once(ABSPATH . 'wp-includes/class-phpass.php');
-							$wp_hasher = new PasswordHash(8, true);
+							require_once(ABSPATH . 'wp-includes/class-phpass.php'); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+							$wp_hasher = new PasswordHash(8, true); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 						}
 
-						setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH );
+						setcookie( 'wp-postpass_' . COOKIEHASH, $wp_hasher->HashPassword( stripslashes( $_POST['post_password'] ) ), 0, COOKIEPATH ); // phpcs:ignore
 
 					} else {
 						$private_post['error'] = '<h4 class="text--error">Wrong Password</h4>';

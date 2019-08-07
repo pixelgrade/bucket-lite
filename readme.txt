@@ -12,7 +12,7 @@ Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, editor
 Requires PHP: 5.3.0
 Requires at least: 4.9.9
 Tested up to: 5.2.2
-Stable Tag: 1.0.0
+Version: 1.0.0
 
 == Description ==
 Bucket Lite is an indispensable Magazine Style WordPress Theme aimed at providing you with an easy-to-use tool to share your discoveries and showcase the latest findings.

@@ -150,7 +150,7 @@ class WPGradePaginationFormatter {
 		// processing return type
 		$conf['type'] = 'array';
 
-		$links = get_the_posts_pagination( $conf );
+		$links = paginate_links( $conf );
 
 		if ( empty( $links ) ) {
 			$links = array();

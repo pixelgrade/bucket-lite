@@ -6,6 +6,10 @@
  *
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 get_header(); ?>
 
 <div id="main" class="container container--main">
@@ -25,8 +29,7 @@ get_header(); ?>
                 <div class="grid  masonry" data-columns>
 					<?php while ( have_posts() ){
 					the_post(); ?><!--
-                        -->
-                    <div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
+                        --><div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
                  --><?php } ?>
                 </div>
 				<?php echo wpgrade::pagination();
@@ -34,12 +37,12 @@ get_header(); ?>
 				get_template_part( 'no-results', 'index' );
 			} ?>
         </div><!--
-     -->
-        <div class="grid__item  one-third  palm-one-whole  sidebar">
+
+     --><div class="grid__item  one-third  palm-one-whole  sidebar">
 			<?php get_sidebar(); ?>
         </div>
 
     </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();

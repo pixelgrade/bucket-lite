@@ -24,9 +24,9 @@ get_header(); ?>
                     <h2 class="hN"><?php printf( esc_html__( 'Tag Archives: %s', 'bucket-lite' ), single_tag_title( '', false ) ); ?></h2>
 					
                 </div>
-				<?php if ( tag_description() ){ // Show an optional tag description ?>
-				    <div class="archive-meta"><?php echo tag_description(); ?></div>
-				<?php } ?>
+	            <?php if ( get_the_archive_description() ){ // Show an optional tag description ?>
+                    <div class="archive-meta"><?php the_archive_description(); ?></div>
+	            <?php } ?>
 
                 <div class="grid  masonry" data-columns>
 		            <?php while ( have_posts() ){
@@ -37,7 +37,7 @@ get_header(); ?>
                 <?php echo wpgrade::pagination();
 	        } else {
 	            get_template_part( 'no-results', 'index' );
-            }?>
+            } ?>
         </div><!--
         
      --><div class="grid__item  one-third  palm-one-whole  sidebar">

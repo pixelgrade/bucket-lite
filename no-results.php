@@ -20,4 +20,4 @@ if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
     <div class="search-form  search-form--404">
 		<?php get_search_form(); ?>
     </div>
-<?php } ?>
+<?php }
