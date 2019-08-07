@@ -34,30 +34,6 @@ class phpQueryObjectPlugin_WebBrowser {
 	public static function browser($self, $callback = null, $location = null) {
 		return $self->WebBrowser($callback, $location);
 	}
-	public static function downloadTo($self, $dir = null, $filename = null) {
-		$url = null;
-		if ($self->is('a[href]'))
-			$url = $self->attr('href');
-		else if ($self->find('a')->length)
-			$url = $self->find('a')->attr('href');
-		if ($url) {
-			$url = resolve_url($self->document->location, $url);
-			if (! $dir)
-				$dir = getcwd();
-			// TODO resolv name from response headers
-			if (! $filename) {
-				$matches = null;
-				preg_match('@/([^/]+)$@', $url, $matches);
-				$filename = $matches[1];
-			}
-			//print $url;
-			$path = rtrim($dir, '/').'/'.$filename;
-			phpQuery::debug("Requesting download of $url\n");
-			// TODO use AJAX instead of file_get_contents
-			file_put_contents($path, file_get_contents($url));
-		}
-		return $self;
-	}
 	/**
 	 * Method changing browser location.
 	 * Fires callback registered with WebBrowser(), if any.

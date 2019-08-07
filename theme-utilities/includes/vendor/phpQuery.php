@@ -397,68 +397,7 @@ abstract class phpQuery {
 				);
 		return $content;
 	}
-	/**
-	 * Creates new document from file $file.
-	 * Chainable.
-	 *
-	 * @param string $file URLs allowed. See File wrapper page at php.net for more supported sources.
-	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
-	 */
-	public static function newDocumentFile($file, $contentType = null) {
-		$documentID = self::createDocumentWrapper(
-			file_get_contents($file), $contentType
-		);
-		return new phpQueryObject($documentID);
-	}
-	/**
-	 * Creates new document from markup.
-	 * Chainable.
-	 *
-	 * @param unknown_type $markup
-	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
-	 */
-	public static function newDocumentFileHTML($file, $charset = null) {
-		$contentType = $charset
-			? ";charset=$charset"
-			: '';
-		return self::newDocumentFile($file, "text/html{$contentType}");
-	}
-	/**
-	 * Creates new document from markup.
-	 * Chainable.
-	 *
-	 * @param unknown_type $markup
-	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
-	 */
-	public static function newDocumentFileXML($file, $charset = null) {
-		$contentType = $charset
-			? ";charset=$charset"
-			: '';
-		return self::newDocumentFile($file, "text/xml{$contentType}");
-	}
-	/**
-	 * Creates new document from markup.
-	 * Chainable.
-	 *
-	 * @param unknown_type $markup
-	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
-	 */
-	public static function newDocumentFileXHTML($file, $charset = null) {
-		$contentType = $charset
-			? ";charset=$charset"
-			: '';
-		return self::newDocumentFile($file, "application/xhtml+xml{$contentType}");
-	}
-	/**
-	 * Creates new document from markup.
-	 * Chainable.
-	 *
-	 * @param unknown_type $markup
-	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
-	 */
-	public static function newDocumentFilePHP($file, $contentType = null) {
-		return self::newDocumentPHP(file_get_contents($file), $contentType);
-	}
+
 	/**
 	 * Reuses existing DOMDocument object.
 	 * Chainable.
