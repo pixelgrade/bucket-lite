@@ -3,7 +3,7 @@
  * Bucket Lite Theme Customizer
  *
  * @package Bucket Lite
- * @since Bucket Lite 1.0
+ * @since Bucket Lite 1.0.0
  */
 
 /**

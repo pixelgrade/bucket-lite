@@ -1,9 +1,8 @@
 <?php
 /**
- * hook shortcodes params
+ * Hook shortcodes params
  */
 
-add_filter('pixcodes_filter_params_for_separator', 'wpgrade_callback_remove_separator_params', 10, 1);
 function wpgrade_callback_remove_separator_params( $params ){
 	//unset unneeded params and keep only the style one
 	if ( isset( $params['style'] )) {
@@ -12,8 +11,8 @@ function wpgrade_callback_remove_separator_params( $params ){
 	}
 	return $params;
 }
+add_filter('pixcodes_filter_params_for_separator', 'wpgrade_callback_remove_separator_params', 10, 1);
 
-add_filter('pixcodes_filter_params_for_columns', 'wpgrade_callback_remove_columns_params', 10, 1);
 function wpgrade_callback_remove_columns_params( $params ){
 
 	// unset unneeded params
@@ -23,3 +22,4 @@ function wpgrade_callback_remove_columns_params( $params ){
 
 	return $params;
 }
+add_filter('pixcodes_filter_params_for_columns', 'wpgrade_callback_remove_columns_params', 10, 1);
