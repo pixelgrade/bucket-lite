@@ -1,9 +1,9 @@
 <?php
 
-add_action('the_password_form', 'wpgrade_callback_the_password_form');
+function wpgrade_callback_the_password_form( $form ){
 
-function wpgrade_callback_the_password_form($form){
 	global $post;
+
 	$post = get_post( $post );
 	$postID = wpgrade::lang_post_id($post->ID);
 	$label = 'pwbox-' . ( empty($postID) ? rand() : $postID );
@@ -19,7 +19,7 @@ function wpgrade_callback_the_password_form($form){
 		</div>
 	</form>';
 
-	// on form submit put a wrong passwordp msg.
+	// on form submit put a wrong password msg.
 	if ( get_permalink() != wp_get_referer() ) {
 		return $form;
 	}
@@ -46,3 +46,4 @@ function wpgrade_callback_the_password_form($form){
 	return $form;
 
 }
+add_action('the_password_form', 'wpgrade_callback_the_password_form');

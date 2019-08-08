@@ -96,66 +96,6 @@ class bucket {
 	}
 
 	/**
-	 * Get the score of the current post
-	 * @return bool|float
-	 */
-	static function get_average_score() {
-
-		if (get_field('enable_review_score') && get_field('score_breakdown')):
-			$score_sum = 0;
-			$score_sum_weighted = 0;
-			$scores = 0;
-			$weights = 0;
-			while (has_sub_fields('score_breakdown')):
-				$weight_temp = get_sub_field('weight');
-				$score_sum_weighted = $score_sum_weighted + get_sub_field('score')*$weight_temp;
-				$weights += $weight_temp;
-
-				$score_sum = $score_sum + get_sub_field('score');
-				$scores++;
-			endwhile;
-
-			if ($weights > 0) {
-				$average = round($score_sum_weighted / $weights, 1);
-			} else {
-				$average = round($score_sum / $scores, 1);
-			}
-
-			return $average;
-		endif;
-
-		return false;
-	}
-
-	//function borrowed from WP SEO by Yoast so we can make sure that the theme plays nice with this plugin
-	//the plugin will now output rel=next links for the first page of the Custom Page Builder
-	static function adjacent_rel_link( $rel, $url, $page, $incl_pagination_base ) {
-		global $wp_rewrite;
-		if ( ! $wp_rewrite->using_permalinks() ) {
-			if ( $page > 1 )
-				$url = add_query_arg( 'paged', $page, $url );
-		} else {
-			if ( $page > 1 ) {
-				$base = '';
-				if ( $incl_pagination_base ) {
-					$base = trailingslashit( $wp_rewrite->pagination_base );
-				}
-				$url = user_trailingslashit( trailingslashit( $url ) . $base . $page );
-			}
-		}
-		/**
-		 * Filter: 'wpseo_' . $rel . '_rel_link' - Allow changing link rel output by WP SEO
-		 *
-		 * @api string $unsigned The full `<link` element.
-		 */
-		$link = apply_filters( 'wpseo_' . $rel . '_rel_link', '<link rel="' . $rel . '" href="' . esc_url( $url ) . "\" />\n" );
-
-		if ( is_string( $link ) && $link !== '' ) {
-			echo $link;
-		}
-	}
-
-	/**
 	 * Echo author page link
 	 * @return bool|string
 	 */
@@ -164,8 +104,10 @@ class bucket {
 		if ( !is_object( $authordata ) )
 			return false;
 		$link = sprintf(
-			'<a href="%1$s" title="%2$s">%3$s</a>',
+			/* translators: 1: Link to authors' posts, 2: Context string, 3: Author name. */
+		'<a href="%1$s" title="%2$s">%3$s</a>',
 			esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ),
+			/* translators: %s: Author name. */
 			sprintf( esc_attr__( 'Posts by %s', 'bucket-lite' ), get_the_author() ),
 			get_the_author()
 		);
@@ -528,8 +470,7 @@ class wpGrade_Get_The_Image{
 
 	/**
 	 * Checks for images using a custom version of the WordPress 2.9+ get_the_post_thumbnail() function.
-	 * If an image is found, return it and the $post_thumbnail_id.  The WordPress function's other filters are
-	 * later added in the self::display_the_image() function.
+	 * If an image is found, return it and the $post_thumbnail_id.
 	 *
 	 * @since 0.7.0
 	 * @param array $args Arguments for how to load and display the image.
@@ -737,62 +678,6 @@ class wpGrade_Get_The_Image{
 	}
 
 	/**
-	 * @since 0.1.0
-	 * @deprecated 0.3.0
-	 */
-	static function get_the_image_link( $deprecated = '', $deprecated_2 = '', $deprecated_3 = '' ) {
-		self::get_the_image();
-	}
-
-	/**
-	 * @since 0.3.0
-	 * @deprecated 0.7.0
-	 */
-	static function image_by_custom_field( $args = array() ) {
-		return self::get_the_image_by_meta_key( $args );
-	}
-
-	/**
-	 * @since 0.4.0
-	 * @deprecated 0.7.0
-	 */
-	static function image_by_the_post_thumbnail( $args = array() ) {
-		return self::get_the_image_by_post_thumbnail( $args );
-	}
-
-	/**
-	 * @since 0.3.0
-	 * @deprecated 0.7.0
-	 */
-	static function image_by_attachment( $args = array() ) {
-		return self::get_the_image_by_attachment( $args );
-	}
-
-	/**
-	 * @since 0.3.0
-	 * @deprecated 0.7.0
-	 */
-	static function image_by_scan( $args = array() ) {
-		return self::get_the_image_by_scan( $args );
-	}
-
-	/**
-	 * @since 0.3.0
-	 * @deprecated 0.7.0
-	 */
-	static function image_by_default( $args = array() ) {
-		return self::get_the_image_by_default( $args );
-	}
-
-	/**
-	 * @since 0.1.0
-	 * @deprecated 0.7.0
-	 */
-	static function display_the_image( $args = array(), $image = false ) {
-		return self::get_the_image_format( $args, $image );
-	}
-
-	/**
 	 * @since 0.5.0
 	 * @deprecated 0.7.0 Replaced by cache delete functions specifically for the post ID.
 	 */
@@ -800,79 +685,4 @@ class wpGrade_Get_The_Image{
 		return;
 	}
 
-
-	/**
-	 * We check if there is a gallery shortcode in the content, extract it and
-	 * display it in the form of a slideshow.
-	 */
-	static function gallery_slideshow($current_post, $template = null) {
-		if ($template === null) {
-
-			$image_scale_mode = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_image_scale_mode', true);
-			$slider_transition = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_transition', true);
-			$slider_autoplay = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_autoplay', true);
-			if($slider_autoplay)
-				$slider_delay = get_post_meta($current_post->ID, wpgrade::prefix() . 'post_slider_delay', true);
-
-			$template = '<div class="wp-gallery" data-royalslider data-customarrows data-sliderpauseonhover data-slidertransition="' . $slider_transition . '" ';
-			$template .= ' data-imagescale="' . $image_scale_mode . '" ';
-			if($slider_autoplay){
-				$template .= ' data-sliderautoplay="" ';
-				$template .= ' data-sliderdelay="' . $slider_delay . '" ';
-			}
-			if($image_scale_mode != 'fill'){
-				$template .= ' data-imagealigncenter ';
-			}
-			$template .= '>:gallery</div>';
-		}
-
-		// first check if we have a meta with a gallery
-		$gallery_ids = array();
-		$gallery_ids = get_post_meta( $current_post->ID, wpgrade::prefix() . 'main_gallery', true );
-
-		if ( ! empty($gallery_ids)) {
-			//recreate the gallery shortcode
-			$gallery = '[gallery ids="'.$gallery_ids.'"]';
-
-			if (strpos($gallery, 'style') === false) {
-				$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
-			}
-
-			$shrtcode = do_shortcode($gallery);
-
-			if (!empty($shrtcode)) {
-				return strtr($template, array(':gallery' => $shrtcode));
-			} else {
-				return null;
-			}
-		}
-		else { // empty gallery_ids
-			// search for the first gallery shortcode
-			$gallery_matches = null;
-			preg_match("!\[gallery.+?\]!", $current_post->post_content, $gallery_matches);
-
-			if ( ! empty($gallery_matches)) {
-				$gallery = $gallery_matches[0];
-
-				if (strpos($gallery, 'style') === false) {
-					$gallery = str_replace("]", " style='big_thumb' size='blog-big' link='file']", $gallery);
-				}
-				$shrtcode = do_shortcode($gallery);
-
-				if (!empty($shrtcode)) {
-					return strtr($template, array(':gallery' => $shrtcode));
-				} else {
-					return null;
-				}
-			}
-			else { // gallery_matches is empty
-				return null;
-			}
-		}
-	}
-
 }//wpGrade_Get_The_Image class
-
-function custom_warning_handler($errno, $errstr) {
-// do something - nothing right now
-}

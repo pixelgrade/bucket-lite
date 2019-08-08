@@ -12,17 +12,18 @@ function wpgrade_register_custom_menus() {
 	}
 }
 
-add_action( "after_setup_theme", "wpgrade_register_custom_menus" );
+add_action( 'after_setup_theme', 'wpgrade_register_custom_menus' );
 
 
 /*
  * Function for displaying The Main Header Menu
  */
 function wpgrade_main_nav() {
+
 	// test if there are menu locations to prevent errors
 	$theme_locations = get_nav_menu_locations();
 
-	if ( isset( $theme_locations["main_menu"] ) && ( $theme_locations["main_menu"] != 0 ) ) {
+	if ( isset( $theme_locations['main_menu'] ) && ( $theme_locations['main_menu'] != 0 ) ) {
 
 		$args = array
 		(
@@ -48,7 +49,7 @@ function wpgrade_main_nav_mobile() {
 	// test if there are menu locations to prevent errors
 	$theme_locations = get_nav_menu_locations();
 
-	if ( isset( $theme_locations["main_menu"] ) && ( $theme_locations["main_menu"] != 0 ) ) {
+	if ( isset( $theme_locations['main_menu'] ) && ( $theme_locations['main_menu'] != 0 ) ) {
 
 		$args = array
 		(
@@ -59,7 +60,8 @@ function wpgrade_main_nav_mobile() {
 			'menu_class'     => 'nav  nav--main',
 			'menu_id'        => '',
 			'fallback_cb'    => 'wp_page_menu',
-			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>'
+			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'          => 1
 		);
 
 		wp_nav_menu( $args );
@@ -70,13 +72,14 @@ function wpgrade_main_nav_mobile() {
 * Function for displaying The Top Left Menu
 */
 function wpgrade_top_nav_left( $menu_classes = 'nav--top  nav--top-left  nav--block', $mobile = false ) {
+
 	$theme_locations = get_nav_menu_locations();
 	$wrap            = '';
 	if ( $mobile ) {
 		$wrap = '<hr class="separator  separator--mobile-nav" />';
 	}
 
-	if ( isset( $theme_locations["top_menu_left"] ) && ( $theme_locations["top_menu_left"] != 0 ) ) {
+	if ( isset( $theme_locations['top_menu_left'] ) && ( $theme_locations['top_menu_left'] != 0 ) ) {
 		$args = array
 		(
 			'theme_location' => 'top_menu_left',
@@ -100,13 +103,14 @@ function wpgrade_top_nav_left( $menu_classes = 'nav--top  nav--top-left  nav--bl
  * Function for displaying The Top Right Menu
  */
 function wpgrade_top_nav_right( $menu_classes = 'nav--top  nav--top-right  nav--block', $mobile = false ) {
+
 	$theme_locations = get_nav_menu_locations();
 	$wrap            = '';
 	if ( $mobile ) {
 		$wrap = '<hr class="separator  separator--mobile-nav" />';
 	}
 
-	if ( isset( $theme_locations["top_menu_right"] ) && ( $theme_locations["top_menu_right"] != 0 ) ) {
+	if ( isset( $theme_locations['top_menu_right'] ) && ( $theme_locations['top_menu_right'] != 0 ) ) {
 		$args = array
 		(
 			'theme_location' => 'top_menu_right',
@@ -129,6 +133,7 @@ function wpgrade_top_nav_right( $menu_classes = 'nav--top  nav--top-right  nav--
  * Function for displaying The Footer Menu
  */
 function wpgrade_footer_nav() {
+
 	$theme_locations = get_nav_menu_locations();
 
 	if ( isset( $theme_locations['footer_menu'] ) && ( $theme_locations['footer_menu'] != 0 ) ) {
@@ -141,8 +146,8 @@ function wpgrade_footer_nav() {
 			'menu_class'     => 'site-navigation site-navigation--footer site-navigation--secondary flush--bottom',
 			'fallback_cb'    => 'wp_page_menu',
 			'menu_id'        => '',
-			'depth'          => 1,
 			'items_wrap'     => '<ul id="%1$s" class="%2$s nav nav--block">%3$s</ul>',
+			'depth'          => 1,
 		);
 
 		wp_nav_menu( $args );

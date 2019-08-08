@@ -17,7 +17,7 @@ function wpgrade_is_all_multibyte( $string ) {
 		$length = mb_strlen($string, 'UTF-8');
 
 		for ($i = 0; $i < $length; $i += 1) {
-			$char = mb_substr($string, $i, 1, 'UTF-8');
+			$char = mb_substr( $string, $i, 1, 'UTF-8');
 
 			// check if the string doesn't contain single character
 			if ( mb_check_encoding( $char, 'ASCII') ) {
