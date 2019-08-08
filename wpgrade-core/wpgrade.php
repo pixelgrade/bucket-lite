@@ -226,42 +226,6 @@ class wpgrade {
 	//// WordPress Defferred Helpers ///////////////////////////////////////////////
 
 	/**
-	 * Filter content based on settings in wpgrade-config.php
-	 * Filters may be disabled by setting priority to false or null.
-	 * @return string $content after being filtered
-	 */
-	static function filter_content( $content, $filtergroup ) {
-		$config = self::config();
-
-		if ( ! isset( $config['content-filters'] ) || ! isset( $config['content-filters'][ $filtergroup ] ) ) {
-			return $content;
-		}
-
-		$enabled_filters = array();
-		foreach ( $config['content-filters'][ $filtergroup ] as $filterfunc => $priority ) {
-			if ( $priority !== false && $priority !== null ) {
-				$enabled_filters[ $filterfunc ] = $priority;
-			}
-		}
-
-		asort( $enabled_filters );
-
-		foreach ( $enabled_filters as $filterfunc => $priority ) {
-			$content = call_user_func( $filterfunc, $content );
-		}
-
-		return $content;
-	}
-
-	/**
-	 * @param type $content
-	 */
-	static function display_content( $content, $filtergroup = null ) {
-		$filtergroup !== null or $filtergroup = 'default';
-		echo self::filter_content( $content, $filtergroup );
-	}
-
-	/**
 	 * @return string template path WITH TRAILING SLASH
 	 */
 	static function themepath() {
@@ -743,103 +707,6 @@ class wpgrade {
 	}
 
 	/**
-	 * @param string font
-	 *
-	 * @return string css value for the font
-	 */
-	static function get_font_name( $font ) {
-
-		if ( self::option( $font ) ) {
-			$thefont = self::option( $font );
-
-			if ( isset( $thefont['font-family'] ) ) {
-				return $thefont['font-family'];
-			}
-		}
-
-		return '';
-	}
-
-	/**
-	 * @param string font
-	 *
-	 * @return string css value for a google font
-	 */
-	static function get_google_font_name( $font ) {
-
-		$returnString = '';
-
-		$thefont = self::option( $font );
-
-		if ( ! empty( $thefont ) && ( isset( $thefont['google'] ) && $thefont['google'] ) ) {
-			if ( ! empty( $thefont['font-family'] ) ) {
-				$returnString = $thefont['font-family'];
-
-				//put in the font weight
-				if ( ! empty( $thefont['font-weight'] ) ) {
-					$returnString .= ':' . $thefont['font-weight'];
-				} else if ( ! empty( $thefont['subsets'] ) ) {
-					//still needs the : so it will skip this when using subsets
-					$returnString .= ':';
-				}
-
-				if ( ! empty( $thefont['subsets'] ) ) {
-					$returnString .= ':' . $thefont['subsets'];
-				}
-			}
-		}
-
-		return $returnString;
-	}
-
-	static function display_font_params( $font_args = array() ) {
-
-		if ( empty( $font_args ) ) {
-			return;
-		}
-
-		if ( isset( $font_args['font-family'] ) && ! empty( $font_args['font-family'] ) ) {
-			echo 'font-family: ' . $font_args['font-family'] . ";\n\t";
-		}
-
-		if ( isset( $font_args['font-weight'] ) && ! empty( $font_args['font-weight'] ) ) {
-			echo 'font-weight: ' . $font_args['font-weight'] . ";\n\t";
-		}
-
-		if ( isset( $font_args['font-size'] ) && ! empty( $font_args['font-size'] ) ) {
-			echo 'font-size: ' . $font_args['font-size'] . ";\n\t";
-		}
-
-		if ( isset( $font_args['font-style'] ) && ! empty( $font_args['font-style'] ) ) {
-			echo 'font-style: ' . $font_args['font-style'] . ";\n\t";
-		}
-
-		if ( isset( $font_args['line-height'] ) && ! empty( $font_args['line-height'] ) ) {
-			echo 'line-height: ' . $font_args['line-height'] . ";\n\t";
-		}
-
-		if ( isset( $font_args['color'] ) && ! empty( $font_args['color'] ) ) {
-			echo 'color: ' . $font_args['color'] . ";\n\t";
-		}
-
-		if ( isset( $font_args['text-transform'] ) && ! empty( $font_args['text-transform'] ) ) {
-			echo 'text-transform: ' . $font_args['text-transform'] . ";\n\t";
-		}
-	}
-
-	/**
-	 * @param string font
-	 *
-	 * @return string css value for the font
-	 * @depricated since 3.2.1
-	 */
-	static function css_friendly_font( $font ) {
-		$thefont = explode( ":", str_replace( "+", " ", self::option( $font ) ) );
-
-		return $thefont[0];
-	}
-
-	/**
 	 * @param string hex
 	 *
 	 * @return array rgb
@@ -869,9 +736,6 @@ class wpgrade {
 	# Audio
 	#
 
-	/**
-	 * ...
-	 */
 	static function audio_selfhosted( $postID ) {
 		$audio_mp3    = get_post_meta( $postID, wpgrade::prefix() . 'audio_mp3', true );
 		$audio_m4a    = get_post_meta( $postID, wpgrade::prefix() . 'audio_m4a', true );
@@ -879,50 +743,6 @@ class wpgrade {
 		$audio_poster = get_post_meta( $postID, wpgrade::prefix() . 'audio_poster', true );
 
 		include wpgrade::corepartial( 'audio-selfhosted' . EXT );
-	}
-
-	/**
-	 * Given a video link returns an array containing the matched services and
-	 * the corresponding video id.
-	 * @return array (youtube, vimeo) id hash if matched
-	 */
-	static function post_videos_id( $post_id ) {
-		$result = array();
-
-		$vembed   = get_post_meta( $post_id, wpgrade::prefix() . 'vimeo_link', true );
-		$vmatches = null;
-		if ( preg_match( '#(src=\"[^0-9]*)?vimeo\.com/(video/)?(?P<id>[0-9]+)([^\"]*\"|$)#', $vembed, $vmatches ) ) {
-			$result['vimeo'] = $vmatches["id"];
-		}
-
-		$yembed   = get_post_meta( $post_id, wpgrade::prefix() . 'youtube_id', true );
-		$ymatches = null;
-		if ( preg_match( '/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)(?P<id>[^#\&\?\"]*).*/', $yembed, $ymatches ) ) {
-			$result['youtube'] = $ymatches["id"];
-		}
-
-		return $result;
-	}
-
-	#
-	# Gallery
-	#
-
-	/**
-	 * Extract the fist image in the content.
-	 */
-	static function post_first_image() {
-		global $post, $posts;
-		$first_img = '';
-		preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
-		$first_img = $matches[1][0];
-
-		// define a default image
-		if ( empty( $first_img ) ) {
-			$first_img = "";
-		}
-
-		return $first_img;
 	}
 
 	//// WPML Related Functions ////////////////////////////////////////////////////
@@ -940,79 +760,6 @@ class wpgrade {
 			return icl_object_id( $id, $post_type, true );
 		} else {
 			return $id;
-		}
-	}
-
-	static function lang_page_id( $id ) {
-		if ( function_exists( 'icl_object_id' ) ) {
-			return icl_object_id( $id, 'page', true );
-		} else {
-			return $id;
-		}
-	}
-
-	static function lang_category_id( $id ) {
-		if ( function_exists( 'icl_object_id' ) ) {
-			return icl_object_id( $id, 'category', true );
-		} else {
-			return $id;
-		}
-	}
-
-	// a dream
-	static function lang_portfolio_tax_id( $id ) {
-		if ( function_exists( 'icl_object_id' ) ) {
-			return icl_object_id( $id, 'portfolio_cat', true );
-		} else {
-			return $id;
-		}
-	}
-
-	static function lang_post_tag_id( $id ) {
-		if ( function_exists( 'icl_object_id' ) ) {
-			return icl_object_id( $id, 'post_tag', true );
-		} else {
-			return $id;
-		}
-	}
-
-	static function lang_original_post_id( $id ) {
-		if ( function_exists( 'icl_object_id' ) ) {
-			global $post;
-
-			// make this work with custom post types
-			if ( isset( $post->post_type ) ) {
-				$post_type = $post->post_type;
-			} else {
-				$post_type = 'post';
-			}
-
-			return icl_object_id( $id, $post_type, true, self::get_short_defaultwp_language() );
-		} else {
-			return $id;
-		}
-	}
-
-	static function get_short_defaultwp_language() {
-		global $sitepress;
-		if ( isset( $sitepress ) ) {
-			return $sitepress->get_default_language();
-		} else {
-			return substr( get_bloginfo( 'language' ), 0, 2 );
-		}
-	}
-
-	//// Unit Test Helpers /////////////////////////////////////////////////////////
-
-	/**
-	 * This method is mainly used in testing.
-	 */
-	static function overwrite_configuration( $conf ) {
-		if ( $conf !== null ) {
-			$current_config      = self::config();
-			self::$configuration = array_merge( $current_config, $conf );
-		} else { // null passed; delete configuration
-			self::$configuration = null;
 		}
 	}
 
@@ -1097,52 +844,6 @@ class wpgrade {
 				}
 			}
 			self::$customizer_options = $options[ $theme_key ];
-		}
-	}
-
-	static function display_dynamic_css_rule( $rule, $key, $option_value, $important = false ) {
-
-		if ( isset( $rule['media'] ) ) {
-			echo '@media ' . $rule['media'] . " {\n";
-		}
-
-		if ( $important ) {
-			$important = ' !important';
-		} else {
-			$important = '';
-		}
-
-		if ( isset( $rule['unit'] ) ) {
-			$option_value .= $rule['unit'];
-		}
-
-		if ( isset( $rule['selector'] ) ) {
-			echo $rule['selector'] . " {\n";
-			echo "\t" . $key . ": " . $option_value . $important . "; \n";
-			echo "\n}\n";
-		}
-
-		if ( isset( $rule['negative_selector'] ) ) {
-			echo $rule['negative_selector'] . " {\n";
-			echo "\t" . $key . ": -" . $option_value . $important . "; \n";
-			echo "\n}\n";
-		}
-
-		if ( isset( $rule['media'] ) ) {
-			echo "\n}\n";
-		}
-
-	}
-
-	static function count_sidebar_widgets( $sidebar_id, $echo = true ) {
-		$the_sidebars = wp_get_sidebars_widgets();
-		if ( ! isset( $the_sidebars[ $sidebar_id ] ) ) {
-			return esc_html__( 'Invalid sidebar ID', 'bucket-lite' );
-		}
-		if ( $echo ) {
-			echo count( $the_sidebars[ $sidebar_id ] );
-		} else {
-			return count( $the_sidebars[ $sidebar_id ] );
 		}
 	}
 

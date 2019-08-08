@@ -146,7 +146,6 @@ function removeUnneededFiles(done) {
 		'config.rb',
 		'gulpfile.js',
 		'package.json',
-		'pxg.json',
 		'build',
 		'css',
 		'.idea',
