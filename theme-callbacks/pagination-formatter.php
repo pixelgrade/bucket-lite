@@ -1,4 +1,10 @@
 <?php
+/**
+ * Pagination special logic.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 /**
  * Note: next_text and prev_text are already flipped as per sorted_paging
@@ -34,7 +40,7 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 	$current = $conf['current'];
 	foreach ( $links as $key => &$link ) {
 
-		//some SEO shit
+		//some SEO stuff
 		//prevent pagination parameters for the links to the first page
 		if ($key == 0 && $current == 2 && strpos($link, 'prev')) {
 			//the first link - should be prev and since we are on page 2 it will hold the link to the first page
@@ -61,9 +67,9 @@ function wpgrade_callback_pagination_formatter($links, $conf) {
 
 /** Do the same thing on single post pagination */
 
-function wpgrade_pagination_custom_markup($link, $key) {
+function wpgrade_pagination_custom_markup( $link, $key ) {
     global $wp_query;
-    $current = (get_query_var('page')) ? get_query_var('page') : '1';
+    $current = ( get_query_var('page') ) ? get_query_var('page') : '1';
     $class = '';
     $prefix = '-->';
     $suffix = '<!--';

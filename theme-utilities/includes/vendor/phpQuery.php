@@ -802,7 +802,7 @@ abstract class phpQuery {
 			$callback = $data;
 			$data = null;
 		}
-		// TODO some array_values on this shit
+		// TODO some array_values on this stuff
 		return phpQuery::ajax(array(
 			'type' => 'GET',
 			'url' => $url,
@@ -829,7 +829,7 @@ abstract class phpQuery {
 			$callback = $data;
 			$data = null;
 		}
-		// TODO some array_values on this shit
+		// TODO some array_values on this stuff
 		return phpQuery::ajax(array(
 			'type' => 'GET',
 			'url' => $url,

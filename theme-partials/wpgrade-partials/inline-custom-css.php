@@ -23,19 +23,19 @@ if ( is_category() ) {
 	//first get the current category ID
 	$category_id = get_query_var('cat');
 	//get the color
-	$category_color = get_category_color($category_id);
+	$category_color = get_category_color( $category_id );
 
-	if ($category_color) {
+	if ( $category_color ) {
 		$main_color = $category_color;
 	}
 } else if ( is_single() ) { //also for single posts we also take the color of the first category
 	//get the categories
 	$categories = get_the_category();
-	if (!empty($categories)) {
+	if ( !empty( $categories ) ) {
 		//get the color
-		$category_color = get_category_color($categories[0]->cat_ID);
+		$category_color = get_category_color( $categories[0]->cat_ID );
 
-		if ($category_color) {
+		if ( $category_color ) {
 			$main_color = $category_color;
 		}
 	}

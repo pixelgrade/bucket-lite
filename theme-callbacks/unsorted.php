@@ -1,9 +1,18 @@
 <?php
-function wpgrade_is_all_multibyte($string)
-{
-	if (function_exists('mb_check_encoding')) {
+/**
+ * Helpers.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
+
+function wpgrade_is_all_multibyte( $string ) {
+
+	if ( function_exists('mb_check_encoding' )) {
 		// check if the string doesn't contain invalid byte sequence
-		if (mb_check_encoding($string, 'UTF-8') === false) return false;
+		if ( mb_check_encoding( $string, 'UTF-8') === false ){
+		    return false;
+		}
 
 		$length = mb_strlen($string, 'UTF-8');
 
@@ -11,7 +20,7 @@ function wpgrade_is_all_multibyte($string)
 			$char = mb_substr($string, $i, 1, 'UTF-8');
 
 			// check if the string doesn't contain single character
-			if (mb_check_encoding($char, 'ASCII')) {
+			if ( mb_check_encoding( $char, 'ASCII') ) {
 				return false;
 			}
 		}
@@ -23,10 +32,10 @@ function wpgrade_is_all_multibyte($string)
 
 }
 
-function wpgrade_contains_any_multibyte($string)
-{
+function wpgrade_contains_any_multibyte( $string ) {
+
 	if (function_exists('mb_check_encoding')) {
-    	return !mb_check_encoding($string, 'ASCII') && mb_check_encoding($string, 'UTF-8');
+    	return !mb_check_encoding( $string, 'ASCII' ) && mb_check_encoding( $string, 'UTF-8');
     } else {
     	return false;
     }
@@ -40,8 +49,9 @@ function wpgrade_contains_any_multibyte($string)
 * @return [type]             [description]
 */
 function short_text($text, $cut_length, $limit, $echo = true){
-   $char_count = mb_strlen($text,'UTF-8');
-   $text = ( $char_count > $limit ) ? mb_substr($text,0,$cut_length).wpgrade::option('blog_excerpt_more_text') : $text;
+
+   $char_count = mb_strlen( $text, 'UTF-8');
+   $text = ( $char_count > $limit ) ? mb_substr( $text, 0, $cut_length ). wpgrade::option( 'blog_excerpt_more_text') : $text;
    if ($echo) {
 	   echo $text;
    } else {
@@ -49,126 +59,15 @@ function short_text($text, $cut_length, $limit, $echo = true){
    }
 }
 
-/**
-* Borrowed from CakePHP
-*
-* Truncates text.
-*
-* Cuts a string to the length of $length and replaces the last characters
-* with the ending if the text is longer than length.
-*
-* ### Options:
-*
-* - `ending` Will be used as Ending and appended to the trimmed string
-* - `exact` If false, $text will not be cut mid-word
-* - `html` If true, HTML tags would be handled correctly
-*
-* @param string  $text String to truncate.
-* @param integer $length Length of returned string, including ellipsis.
-* @param array $options An array of html attributes and options.
-* @return string Trimmed string.
-* @access public
-* @link http://book.cakephp.org/view/1469/Text#truncate-1625
-*/
-
-function truncate($text, $length = 100, $options = array()) {
-    $default = array(
-        'ending' => '...', 'exact' => true, 'html' => false
-    );
-    $options = array_merge($default, $options);
-    extract($options);
-
-    if ($html) {
-        if (mb_strlen(preg_replace('/<.*?>/', '', $text),'UTF-8') <= $length) {
-            return $text;
-        }
-        $totalLength = mb_strlen(strip_tags($ending),'UTF-8');
-        $openTags = array();
-        $truncate = '';
-
-        preg_match_all('/(<\/?([\w+]+)[^>]*>)?([^<>]*)/', $text, $tags, PREG_SET_ORDER);
-        foreach ($tags as $tag) {
-            if (!preg_match('/img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param/s', $tag[2])) {
-                if (preg_match('/<[\w]+[^>]*>/s', $tag[0])) {
-                    array_unshift($openTags, $tag[2]);
-                } else if (preg_match('/<\/([\w]+)[^>]*>/s', $tag[0], $closeTag)) {
-                    $pos = array_search($closeTag[1], $openTags);
-                    if ($pos !== false) {
-                        array_splice($openTags, $pos, 1);
-                    }
-                }
-            }
-            $truncate .= $tag[1];
-
-            $contentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $tag[3]),'UTF-8');
-            if ($contentLength + $totalLength > $length) {
-                $left = $length - $totalLength;
-                $entitiesLength = 0;
-                if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', $tag[3], $entities, PREG_OFFSET_CAPTURE)) {
-                    foreach ($entities[0] as $entity) {
-                        if ($entity[1] + 1 - $entitiesLength <= $left) {
-                            $left--;
-                            $entitiesLength += mb_strlen($entity[0],'UTF-8');
-                        } else {
-                            break;
-                        }
-                    }
-                }
-
-                $truncate .= mb_substr($tag[3], 0 , $left + $entitiesLength);
-                break;
-            } else {
-                $truncate .= $tag[3];
-                $totalLength += $contentLength;
-            }
-            if ($totalLength >= $length) {
-                break;
-            }
-        }
-    } else {
-        if (mb_strlen($text,'UTF-8') <= $length) {
-            return $text;
-        } else {
-            $truncate = mb_substr($text, 0, $length - mb_strlen($ending,'UTF-8'));
-        }
-    }
-    if (!$exact) {
-        $spacepos = mb_strrpos($truncate, ' ');
-        if (isset($spacepos)) {
-            if ($html) {
-                $bits = mb_substr($truncate, $spacepos);
-                preg_match_all('/<\/([a-z]+)>/', $bits, $droppedTags, PREG_SET_ORDER);
-                if (!empty($droppedTags)) {
-                    foreach ($droppedTags as $closingTag) {
-                        if (!in_array($closingTag[1], $openTags)) {
-                            array_unshift($openTags, $closingTag[1]);
-                        }
-                    }
-                }
-            }
-            $truncate = mb_substr($truncate, 0, $spacepos);
-        }
-    }
-    $truncate .= $ending;
-
-    if ($html) {
-        foreach ($openTags as $tag) {
-            $truncate .= '</'.$tag.'>';
-        }
-    }
-
-    return $truncate;
-}
-
 /*
  * COMMENT LAYOUT
  */
-function wpgrade_comments($comment, $args, $depth) {
+function wpgrade_comments( $comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
 	<article id="comment-<?php comment_ID(); ?>" class="comment-article  media">
 		<aside class="comment__avatar  media__img">
-			<img src="<?php echo util::get_avatar_url($comment->comment_author_email, '60'); ?>" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
+			<img src="<?php echo util::get_avatar_url( $comment->comment_author_email, '60'); ?>" class="comment__avatar-image" height="60" width="60" style="background-image: <?php echo get_template_directory_uri(). '/library/images/nothing.gif'; ?>; background-size: 100% 100%" />
 		</aside>
 		<div class="media__body">
 			<header class="comment__meta comment-author">
@@ -178,15 +77,15 @@ function wpgrade_comments($comment, $args, $depth) {
 				<div class="comment__links">
 					<?php
 					edit_comment_link( esc_html__('Edit', 'bucket-lite'),'  ','');
-					comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));
+					comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
 					?>
 				</div>
 			</header><!-- .comment-meta -->
-			<?php if ($comment->comment_approved == '0') : ?>
+			<?php if ($comment->comment_approved == '0') { ?>
 				<div class="alert info">
 					<p><?php esc_html_e('Your comment is awaiting moderation.', 'bucket-lite'); ?></p>
 				</div>
-			<?php endif; ?>
+			<?php } ?>
 			<section class="comment__content comment">
 				<?php comment_text() ?>
 			</section>
@@ -195,14 +94,6 @@ function wpgrade_comments($comment, $args, $depth) {
 	<!-- </li> is added by WordPress automatically -->
 <?php
 } // don't remove this bracket!
-
-
-function remove_more_link_scroll( $link ) {
-	$link = preg_replace( '|#more-[0-9]+|', '', $link );
-	return $link;
-}
-add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
-
 
 /** Add New Field To Category **/
 function extra_category_fields( $tag ) {
@@ -217,7 +108,7 @@ function extra_category_fields( $tag ) {
 		<th scope="row" valign="top"><label for="meta-color"><?php esc_html_e('Category Custom Accent Color', 'bucket-lite'); ?></label></th>
 		<td>
 			<div id="colorpicker">
-				<input type="text" name="cat_meta[cat_custom_accent]" class="colorpicker" size="3" style="width:20%;" value="<?php echo (isset($cat_meta['cat_custom_accent'])) ? $cat_meta['cat_custom_accent'] : wpgrade::option('main_color'); ?>" />
+				<input type="text" name="cat_meta[cat_custom_accent]" class="colorpicker" size="3" style="width:20%;" value="<?php echo ( isset( $cat_meta['cat_custom_accent'] ) ) ? $cat_meta['cat_custom_accent'] : wpgrade::option('main_color'); ?>" />
 			</div>
 			<br />
 			<span class="description"><?php echo wp_kses_post( __( 'Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code).', 'bucket-lite') ); ?></span>
@@ -226,8 +117,8 @@ function extra_category_fields( $tag ) {
 	</tr>
 <?php
 }
-add_action ( 'category_add_form_fields', 'extra_category_fields');
-add_action('category_edit_form_fields','extra_category_fields');
+add_action ( 'category_add_form_fields', 'extra_category_fields' );
+add_action( 'category_edit_form_fields', 'extra_category_fields' );
 
 /** Save Category Meta **/
 function save_extra_category_fields( $term_id ) {
@@ -236,8 +127,8 @@ function save_extra_category_fields( $term_id ) {
 		$t_id = $term_id;
 		$cat_meta = get_option( "category_$t_id");
 		$cat_keys = array_keys($_POST['cat_meta']);
-		foreach ($cat_keys as $key){
-			if (isset($_POST['cat_meta'][$key])){
+		foreach ( $cat_keys as $key ){
+			if ( isset( $_POST['cat_meta'][$key] ) ){
 				$cat_meta[$key] = $_POST['cat_meta'][$key];
 			}
 		}
@@ -247,7 +138,7 @@ function save_extra_category_fields( $term_id ) {
 }
 add_action ( 'edited_category', 'save_extra_category_fields');
 
-function get_category_color($cat_id) {
+function get_category_color( $cat_id ) {
 	$cat_data = get_option("category_$cat_id");
 
 	if ( !empty( $cat_data['cat_custom_accent'] ) && ( $cat_data['cat_custom_accent'] != wpgrade::option( 'main_color') ) ) {
@@ -256,13 +147,6 @@ function get_category_color($cat_id) {
 		return wpgrade::option('main_color');
 	}
 }
-
-/** Enqueue Color Picker **/
-function colorpicker_enqueue() {
-	wp_enqueue_style( 'wp-color-picker' );
-	wp_enqueue_script( 'colorpicker-js', wpgrade::resourceuri('js/admin/color-picker.js'), array( 'wp-color-picker' ) );
-}
-add_action( 'admin_enqueue_scripts', 'colorpicker_enqueue' );
 
 /**
  * Filter the page title so that plugins can unhook this

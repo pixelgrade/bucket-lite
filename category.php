@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Category pages.
+ * The template for displaying Category archive.
  *
  * @package Bucket Lite
  * @since Bucket Lite 1.0.0
@@ -28,7 +28,7 @@ get_header(); ?>
 				<?php } ?>
                 <div class="grid  masonry" data-columns>
 					<?php while ( have_posts() ){
-					the_post(); ?><!--
+					        the_post(); ?><!--
                         --><div class="masonry__item"><?php get_template_part( 'theme-partials/post-templates/content-masonry' ); ?></div><!--
                  --><?php } ?>
                 </div>
@@ -37,7 +37,6 @@ get_header(); ?>
 				get_template_part( 'no-results', 'index' );
 			} ?>
         </div><!--
-
      --><div class="grid__item  one-third  palm-one-whole  sidebar">
 			<?php get_sidebar(); ?>
         </div>

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Content filters.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 	#
 	# See wpgrade-config.php for the order in which the following filters are
@@ -10,13 +16,13 @@
 	 * @param string content
 	 * @return string filtered content
 	 */
-	function wpgrade_callback_theme_general_filters($content) {
+	function wpgrade_callback_theme_general_filters( $content ) {
 		// since we cannot apply "the_content" filter on some content blocks
 		// we should apply at least these bellow
-		$wptexturize = apply_filters('wptexturize', $content);
-		$convert_smilies = apply_filters('convert_smilies', $wptexturize);
-		$convert_chars = apply_filters('convert_chars', $convert_smilies);
-		$wpautop = wpautop($convert_chars);
+		$wptexturize = apply_filters( 'wptexturize', $content );
+		$convert_smilies = apply_filters( 'convert_smilies', $wptexturize );
+		$convert_chars = apply_filters( 'convert_chars', $convert_smilies );
+		$wpautop = wpautop( $convert_chars );
 
 		return $wpautop;
 	}
@@ -27,7 +33,7 @@
 	 */
 	function wpgrade_callback_shortcode_filters($content) {
 		// including WordPress plugin.php for is_plugin_active function
-		include_once(ABSPATH.'wp-admin/includes/plugin.php');
+		include_once( ABSPATH.'wp-admin/includes/plugin.php' );
 
 		return $content;
 	}
@@ -36,16 +42,16 @@
 	 * @param string content
 	 * @return string filtered content
 	 */
-	function wpgrade_callback_attachement_filters($content) {
-		return apply_filters( 'prepend_attachment', $content);
+	function wpgrade_callback_attachment_filters( $content ) {
+		return apply_filters( 'prepend_attachment', $content );
 	}
 
 	/**
 	 * @param string content
 	 * @return string filtered content
 	 */
-	function wpgrade_callback_paragraph_filters($content) {
-		return do_shortcode($content);
+	function wpgrade_callback_paragraph_filters( $content ) {
+		return do_shortcode( $content );
 	}
 
 
@@ -57,7 +63,6 @@ function wpgrade_media_handlers() {
 	// make sure that WordPress allows the upload of our used mime types
 	add_filter( 'upload_mimes', 'wpgrade_callback_custom_upload_mimes' );
 }
-
 add_action( 'after_wpgrade_core', 'wpgrade_media_handlers');
 
 /**

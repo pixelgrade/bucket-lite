@@ -1,4 +1,13 @@
 <?php
+/**
+ * Integration with the PixTypes plugin.
+ *
+ * @link https://wordpress.org/plugins/pixtypes/
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
+
 // theme activation
 function wpgrade_callback_geting_active() {
 	/**

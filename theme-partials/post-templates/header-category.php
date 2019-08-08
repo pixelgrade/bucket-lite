@@ -50,7 +50,7 @@ if ( count( $slideposts ) ){ ?>
 			$post_link = get_permalink();
 			$thumb_id = get_post_thumbnail_id( $post->ID );
 			$thumb_img = wp_get_attachment_image_src( $thumb_id, "post-big" );
-			if (!empty($thumb_id)){
+			if ( !empty( $thumb_id ) ){
 				//add the id to the array
 				$slideposts_ids[] = $post->ID;
 			?>

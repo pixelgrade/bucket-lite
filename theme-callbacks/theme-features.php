@@ -1,12 +1,17 @@
 <?php
+/**
+ * Theme features.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 function wpgrade_callback_custom_theme_features() {
 	add_theme_support('automatic-feed-links');
 
 	//load editor-style.css if present in parent and/or child theme
-	add_editor_style(array('theme-content/css/editor-style.css', 'editor-style.css'));
+	add_editor_style( array( 'theme-content/css/editor-style.css', 'editor-style.css'));
 }
-
 add_action('after_setup_theme', 'wpgrade_callback_custom_theme_features');
 
 
@@ -19,7 +24,6 @@ function wpgrade_custom_backgrounds_suport(){
 
 	add_theme_support( 'custom-background', $background_args );
 }
-
 // Hook into the 'after_setup_theme' action
 add_action( 'after_setup_theme', 'wpgrade_custom_backgrounds_suport' );
 
@@ -27,20 +31,18 @@ function wpgrade_prepare_password_for_custom_post_types(){
 
 	global $wpgrade_private_post;
 	$wpgrade_private_post = bucket::is_password_protected();
-
 }
-
 add_action('wp', 'wpgrade_prepare_password_for_custom_post_types');
 
-// Customize the "wp_link_pages()" to be able to display both numbers and prev/next links
+// Customize the 'wp_link_pages()' to be able to display both numbers and prev/next links
 function add_next_and_number( $args ) {
 	if ( $args['next_or_number'] == 'next_and_number' ) {
-		global $page, $numpages, $multipage, $more, $pagenow;
+		global $page, $numpages, $multipage, $more;
 		$args['next_or_number'] = 'number';
 		$prev = '';
 		$next = '';
 		if ( $multipage and $more ) {
-			$i = $page-1;
+			$i = $page - 1;
 			if ( $i and $more ) {
 				$prev .= _wp_link_page( $i );
 				$prev .= $args['link_before'] . $args['previouspagelink'] . $args['link_after'] . '</a>';
@@ -65,18 +67,18 @@ function wpgrade_register_attachments(){
 
 	// add video support for attachments
 	if ( !function_exists( 'add_video_url_field_to_attachments' ) ) {
-		function add_video_url_field_to_attachments($form_fields, $post){
-			if ( !isset($form_fields["video_url"]) ) {
-				$form_fields["video_url"] = array(
-					"label" => esc_html__("Video URL", 'bucket-lite'),
-					"input" => "text", // this is default if "input" is omitted
-					"value" => esc_url( get_post_meta($post->ID, "_video_url", true) ),
-					"helps" => wp_kses_post( __("<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>", 'bucket-lite') ),
+		function add_video_url_field_to_attachments( $form_fields, $post){
+			if ( !isset( $form_fields['video_url'] ) ) {
+				$form_fields['video_url'] = array(
+					'label' => esc_html__('Video URL', 'bucket-lite'),
+					'input' => 'text', // this is default if 'input' is omitted
+					'value' => esc_url( get_post_meta( $post->ID, '_video_url', true) ),
+					'helps' => wp_kses_post( __('<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>', 'bucket-lite') ),
 				);
 			}
 			return $form_fields;
 		}
-		add_filter("attachment_fields_to_edit", "add_video_url_field_to_attachments", 1, 2);
+		add_filter( 'attachment_fields_to_edit', 'add_video_url_field_to_attachments', 1, 2);
 	}
 
 	/**
@@ -91,14 +93,13 @@ function wpgrade_register_attachments(){
 	 */
 
 	if ( !function_exists( 'add_image_attachment_fields_to_save' ) ) {
-		add_filter("attachment_fields_to_save", "add_image_attachment_fields_to_save", 9999 , 2);
+		add_filter( 'attachment_fields_to_save', 'add_image_attachment_fields_to_save', 9999 , 2);
 		function add_image_attachment_fields_to_save( $post, $attachment ) {
 			if ( isset( $attachment['video_url'] ) )
-				update_post_meta( $post['ID'], '_video_url', esc_url($attachment['video_url']) );
+				update_post_meta( $post['ID'], '_video_url', esc_url( $attachment['video_url'] ) );
 
 			return $post;
 		}
 	}
 }
-
 add_action('init', 'wpgrade_register_attachments');
