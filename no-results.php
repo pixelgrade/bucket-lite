@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
 
     <p><?php
-	    /* translators: %1$s: New post link */
+	    /* translators: 1: New post link */
         printf( wp_kses_post( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bucket-lite' ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
 <?php } elseif ( is_search() ) { ?>

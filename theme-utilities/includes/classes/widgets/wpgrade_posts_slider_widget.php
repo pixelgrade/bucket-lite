@@ -50,10 +50,10 @@ class wpgrade_posts_slider_widget extends WP_Widget {
 								<div class="split__title  article__category">
 									<?php
 									$categories = get_the_category();
-									if ($categories) {
+									if ( $categories ) {
 										$category = $categories[0];
 										/* translators: %s: Category name. */
-										echo '<a class="small-link" href="'. get_category_link($category->term_id) . '" title="' .  sprintf( esc_attr__("View all posts in %s", 'bucket-lite'), $category->name) .'">'. $category->cat_name.'</a>';
+										echo '<a class="small-link" href="'. get_category_link( $category->term_id ) . '" title="' .  sprintf( esc_attr__('View all posts in %s', 'bucket-lite'), $category->name) .'">'. $category->cat_name.'</a>';
 									}
 									?>
 								</div>

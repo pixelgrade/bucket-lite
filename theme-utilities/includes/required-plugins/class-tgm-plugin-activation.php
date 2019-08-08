@@ -390,7 +390,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				/* translators: 1: plugin name. */
 				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'bucket-lite' ),
 				/* translators: 1: plugin name. */
-				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'bucket-lite' ),
+				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %1$s is needed for this theme. Please update the plugin.', 'bucket-lite' ),
 				/* translators: 1: dashboard link. */
 				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'bucket-lite' ),
 				'dismiss'                         => esc_html__( 'Dismiss this notice', 'bucket-lite' ),

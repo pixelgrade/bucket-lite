@@ -26,11 +26,11 @@ function bucket_lite_customize_register( $wp_customize ) {
 		/* translators: %s: The view pro link. */
 			__( '<div class="upsell-container">
 					<h2>Need More? Go PRO</h2>
-					<p>Take it to the next level and stand out. See the hotspots of Timber PRO:</p>
+					<p>Take it to the next level and stand out. See the hotspots of Bucket PRO:</p>
 					<ul class="upsell-features">
                             <li>
                             	<h4>Advanced Customizations</h4>
-                            	<div class="description">Having different tastes and preferences might be tricky for users, but not with Timber onboard. It has an intuitive and catchy interface which allows you to <strong>change fonts, colors, or layout sizes</strong> in a blink of an eye.</div>
+                            	<div class="description">Having different tastes and preferences might be tricky for users, but not with Bucket onboard. It has an intuitive and catchy interface which allows you to <strong>change fonts, colors, or layout sizes</strong> in a blink of an eye.</div>
                             </li>
 
                             <li>
@@ -48,7 +48,7 @@ function bucket_lite_customize_register( $wp_customize ) {
                             </li>
 
                     </ul> %s </div>', 'bucket-lite' ),
-			/* translators: %1$s: The view pro URL, %2$s: The view pro link text. */
+			/* translators: 1: The view pro URL, 2: The view pro link text. */
 			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( bucket_lite_get_pro_link() ), esc_html__( 'View Bucket PRO', 'bucket-lite' ) )
 		),
 	) );

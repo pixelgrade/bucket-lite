@@ -168,8 +168,10 @@ function wpgrade_wp_title( $title, $sep ) {
 		$title = "$title $sep $site_description";
 
 	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 || $page >= 2 ) {
+	    /* translators: %s: page number */
 		$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'bucket-lite' ), max( $paged, $page ) );
+	}
 
 	return $title;
 }

@@ -368,25 +368,17 @@ ul, ol, dd {
 
 @media only screen and (min-width: 900px) {
   .post-nav-link--prev {
-    text-align: left;
-  }
-
-  .post-nav-link--prev:after {
-    right: 0;
-    transform: translateZ(0) rotate(-135deg);
-  }
-
+    text-align: left; }
+    .post-nav-link--prev:after {
+      right: 0;
+      transform: translateZ(0) rotate(-135deg); }
   .post-nav-link--next {
-    text-align: right;
-  }
-
-  .post-nav-link--next:after {
-    right: auto;
-    left: 24px;
-    left: 1.71429rem;
-    transform: translateZ(0) rotate(135deg);
-  }
-
+    text-align: right; }
+    .post-nav-link--next:after {
+      right: auto;
+      left: 24px;
+      left: 1.71429rem;
+      transform: translateZ(0) rotate(135deg); }
   .comments-area-title .hN,
   .comments-area-title .article__author-name,
   .comments-area-title .comment__author-name,
@@ -395,65 +387,37 @@ ul, ol, dd {
     float: right;
     margin-right: 0;
     margin-left: 12px;
-    margin-left: 0.85714rem;
-  }
-
+    margin-left: 0.85714rem; }
   .author__social-links__list-item {
     margin-right: 0;
     margin-left: 18px;
-    margin-left: 1.28571rem;
-  }
-
+    margin-left: 1.28571rem; }
   .wp-caption-text {
-    float: right;
-  }
-
+    float: right; }
   blockquote {
     padding-left: 0;
     padding-right: 96px;
-    padding-right: 6.85714rem;
-  }
-
-  blockquote:before {
-    left: auto;
-    right: 0;
-  }
-
-  blockquote:after {
-    left: auto;
-    right: 12px;
-    right: 0.85714rem;
-  }
-
+    padding-right: 6.85714rem; }
+    blockquote:before {
+      left: auto;
+      right: 0; }
+    blockquote:after {
+      left: auto;
+      right: 12px;
+      right: 0.85714rem; }
   .pagination a.prev:after, .pagination .pagination-item--prev a:after {
     border-top-style: solid;
     border-right-style: solid;
     border-bottom-style: hidden;
-    border-left-style: hidden;
-  }
-
+    border-left-style: hidden; }
   .pagination a.next:after, .pagination .pagination-item--next a:after {
     border-top-style: hidden;
     border-right-style: hidden;
     border-bottom-style: solid;
-    border-left-style: solid;
-  }
-
+    border-left-style: solid; }
   .heading--main .archive__side-title {
-    float: right;
-  }
-
+    float: right; }
   .hN {
-    text-align: right;
-  }
+    text-align: right; } }
 
-  .panel__title--h3:after {
-    right: auto;
-    left: 15px;
-  }
-
-  .badge--product.badge--product-single {
-    left: 12px;
-  }
-}
 /*# sourceMappingURL=rtl.css.map */
