@@ -1,4 +1,11 @@
 <?php
+/**
+ * The default template for blog post/page image.
+ * Requested by page.php and single.php.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

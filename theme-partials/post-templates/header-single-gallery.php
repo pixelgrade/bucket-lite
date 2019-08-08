@@ -1,4 +1,11 @@
 <?php
+/**
+ * The default template for a blog post/page, requested when the post format is 'gallery'.
+ * Requested by page.php and single.php.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -22,13 +29,13 @@ if ( !empty($gallery_ids) ) {
 	$attachments = array();
 }
 
-$image_scale_mode = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_image_scale', true);
-$slider_transition = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_transition', true);
-$slider_autoplay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_autoplay', true);
+$image_scale_mode = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), wpgrade::prefix(). 'post_slider_image_scale', true);
+$slider_transition = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), wpgrade::prefix(). 'post_slider_transition', true);
+$slider_autoplay = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), wpgrade::prefix(). 'post_slider_autoplay', true);
 if ($slider_autoplay) {
-	$slider_delay = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_delay', true);
+	$slider_delay = get_post_meta( wpgrade::lang_post_id( get_the_ID() ), wpgrade::prefix(). 'post_slider_delay', true);
 }
-$slider_height = get_post_meta(wpgrade::lang_post_id(get_the_ID()), wpgrade::prefix().'post_slider_height', true);
+$slider_height = get_post_meta(wpgrade::lang_post_id( get_the_ID() ), wpgrade::prefix(). 'post_slider_height', true);
 if($slider_height == '') $slider_height = '525';
 $slider_captions = true;
 
@@ -44,7 +51,9 @@ $featured_image_width = $full_width_featured_image == 'on' || $disable_sidebar =
 
 $arrows_class= '';
 
-if($full_width_featured_image == 'on' || $disable_sidebar == 'on') $arrows_class = '  arrows--outside';
+if( $full_width_featured_image == 'on' || $disable_sidebar == 'on'){
+    $arrows_class = '  arrows--outside';
+}
 
 if ( $attachments ){ ?>
 <div class="grid__item  float--left  <?php echo $featured_image_width; ?>  article__featured-image">
@@ -79,7 +88,7 @@ if ( $attachments ){ ?>
 			$video_url = ( isset($attachment_fields['_video_url'][0] ) && !empty( $attachment_fields['_video_url'][0]) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
 
 			//  if there is a video let royal slider know about it
-			if ( !empty($video_url) ) { ?>
+			if ( !empty( $video_url ) ) { ?>
 				<div class="gallery__item video">
 					<img src="<?php echo $thumbimg[0]; ?>" class="rsImg  invisible" data-rsVideo="<?php echo $video_url; ?>" />
 					<span class="wp-caption  gallery__item__caption  rsCaption">

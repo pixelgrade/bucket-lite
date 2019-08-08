@@ -1,10 +1,20 @@
 <?php
+/**
+ * The default template for the a post that has the 'audio' post format.
+ * It displays the audio player.
+ *
+ * Requested by header-single-audio.php.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
 global $wpgrade_private_post; ?>
+
 <div id="main" class="content djax-updatable">
 	<div class="page-content">
 		<div class="page-main">
@@ -13,12 +23,12 @@ global $wpgrade_private_post; ?>
 				<div class="bleed--left"><hr class="separator separator--dotted grow"></div>
 			</header>
 			<div class="entry__body">
-				<form method="post" action="<?php the_permalink() ?>" class="comment-respond">
+				<form method="post" action="<?php echo esc_url( get_the_permalink() ); ?>" class="comment-respond">
 					<?php wp_nonce_field('password_protection','submit_password_nonce'); ?>
 					<input type="hidden" name="submit_password" value="1" />
 				
 					<?php 
-						if($wpgrade_private_post['error']) {
+						if( $wpgrade_private_post['error'] ) {
 							echo $wpgrade_private_post['error'];
 							echo '<p>' . esc_html__('Please enter your password again:', 'bucket-lite') . '</p>';
 						} else {

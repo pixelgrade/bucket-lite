@@ -1,12 +1,15 @@
 <?php
 /**
  * The default template for displaying content. Used for both single and index/archive/search.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-}
-?>
+} ?>
+
 <article <?php post_class('article  article--grid'); ?>>
 	<?php get_template_part('theme-partials/post-templates/header-blog', get_post_format()); ?>
     <div class="article--grid__body">
@@ -21,7 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                     $categories = get_the_category();
                     if ($categories) {
                         $category = $categories[0];
-                        echo '<a class="small-link" href="'. esc_url( get_category_link( $category->term_id ) ) .'" title="'. sprintf( esc_html__( "View all posts in %s", 'bucket-lite'), esc_html( $category->name ) ) .'">'. esc_html( $category->cat_name ) . '</a>';
+                        /* translators: %s: Category name. */
+                        echo '<a class="small-link" href="'. esc_url( get_category_link( $category->term_id ) ) . '" title="' . sprintf( esc_html__( "View all posts in %s", 'bucket-lite'), esc_html( $category->name ) ) .'">'. esc_html( $category->cat_name ) . '</a>';
                     }
                 ?>
             </div>

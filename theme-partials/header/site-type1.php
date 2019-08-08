@@ -1,4 +1,10 @@
 <?php
+/**
+ * The Template file for the main header section.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

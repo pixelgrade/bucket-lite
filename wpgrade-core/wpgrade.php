@@ -170,27 +170,6 @@ class wpgrade {
 	}
 
 	/**
-	 * Get the image src
-	 * [!!] Methods that retrieve a specific type of data and for which the
-	 * $default would only cause an error (especially when set to null), should
-	 * just be presented as an independent method even if they use the options
-	 * interface under the hood. Presented it as part of the options interface
-	 * will only cause confusion, unreadability and propagate nonsense.
-	 * [!!] please replace instances of this method with wpgrade::image_src
-	 * @deprecated
-	 * @return mixed
-	 */
-	static function option_image_src( $option, $default = null ) {
-		$image = self::options()->get( $option, $default );
-
-		if ( isset( $image['url'] ) ) {
-			return $image['url'];
-		}
-
-		return false;
-	}
-
-	/**
 	 * Shorthand.
 	 * Please try using wpgrade::options()->set instead, it's clearer.
 	 * @return WPGradeOptions

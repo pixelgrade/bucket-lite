@@ -1,8 +1,14 @@
 <?php
+/**
+ * The default template for the article header when the post format is 'image', required by the content-masonry template.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-}
-?>
+} ?>
 
 <div class="article--grid__header">
     <a href="<?php echo esc_url( get_the_permalink() ); ?>">

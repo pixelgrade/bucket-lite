@@ -1,4 +1,11 @@
 <?php
+/**
+ * The default template for the single post meta.
+ * Requested by single.php.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

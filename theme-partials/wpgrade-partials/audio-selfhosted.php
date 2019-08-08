@@ -1,4 +1,14 @@
 <?php
+/**
+ * The default template for the a post that has the 'audio' post format.
+ * It displays the audio player.
+ *
+ * Requested by header-single-audio.php.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }

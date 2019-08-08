@@ -1,4 +1,11 @@
 <?php
+/**
+ * The default template for the slider that contains posts from a specific category.
+ * Requested by category.php.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -22,10 +29,6 @@ $post_args['meta_query'] =
 
 $slideposts = get_posts( $post_args );
 
-$slider_transition = 'move';
-
-$slider_height = '400';
-
 //hold the post slides ids so we exclude them from the rest of the posts
 $slideposts_ids = array();
 //catch the output so we can prevent the slider if no post with thumbnails found
@@ -37,9 +40,9 @@ if ( count( $slideposts ) ){ ?>
 		data-fullscreen
 		data-imagealigncenter
 		data-autoscalesliderwidth="692"
-		data-autoscalesliderheight="<?php echo $slider_height; ?>"
+		data-autoscalesliderheight="400"
 		data-imagescale="fill"
-		data-slidertransition="<?php echo $slider_transition; ?>">
+		data-slidertransition="move">
 		<?php
 		foreach( $slideposts as $post ) {
 		    setup_postdata( $post );

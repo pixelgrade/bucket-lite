@@ -1,4 +1,11 @@
 <?php
+/**
+ * The default template for the article header, required by the content-masonry template.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -36,13 +43,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
 				<?php post_format_icon(); ?>
 
-				<?php
+                <?php
 			} ?>
 
         </div>
 
 		<?php if ( ! empty( $post->post_title ) ){ ?>
-            <div class="article__title  article--grid__title <?php echo $flush_top; ?>">
+            <div class="article__title  article--grid__title <?php echo esc_attr( $flush_top ); ?>">
                 <h3 class="hN"><?php the_title(); ?></h3>
             </div>
 		<?php } ?>

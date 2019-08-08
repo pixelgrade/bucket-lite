@@ -1,4 +1,10 @@
 <?php
+/**
+ * Inline CSS.
+ *
+ * @package Bucket Lite
+ * @since Bucket Lite 1.0.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -22,7 +28,7 @@ if ( is_category() ) {
 	if ($category_color) {
 		$main_color = $category_color;
 	}
-} else if (is_single()) { //also for single posts we also take the color of the first category
+} else if ( is_single() ) { //also for single posts we also take the color of the first category
 	//get the categories
 	$categories = get_the_category();
 	if (!empty($categories)) {
@@ -36,10 +42,10 @@ if ( is_category() ) {
 }
 
 
-$rgb = implode(',', wpgrade::hex2rgb_array($main_color));
+$rgb = implode(',', wpgrade::hex2rgb_array( $main_color ) );
 $fonts = array();
 
-if (wpgrade::option('use_google_fonts')) {
+if ( wpgrade::option( 'use_google_fonts' ) ) {
 	$fonts_array = array
 	(
 		'google_titles_font',
@@ -48,17 +54,17 @@ if (wpgrade::option('use_google_fonts')) {
 		'google_body_font'
 	);
 
-	foreach ($fonts_array as $font) {
-		$the_font = wpgrade::get_the_typo($font);
-		if ( isset($the_font['font-family'] ) && ! empty($the_font['font-family'])) {
+	foreach( $fonts_array as $font ) {
+		$the_font = wpgrade::get_the_typo( $font );
+		if ( isset($the_font['font-family'] ) && ! empty( $the_font['font-family'] ) ) {
 			$fonts[$font] = $the_font;
 		}
 	}
 }
 
 $port_color = '';
-if (wpgrade::option('portfolio_text_color')) {
-	$port_color = wpgrade::option('portfolio_text_color');
+if ( wpgrade::option( 'portfolio_text_color' ) ) {
+	$port_color = wpgrade::option( 'portfolio_text_color' );
 	$port_color = str_replace('#', '', $port_color);
 }
 /**
@@ -84,9 +90,7 @@ a, blockquote, .small-link, .tabs__nav a.current,
 a:hover > .pixcode--icon,
 .score__pros__title, .score__cons__title,
 .comments-area-title .hN em,
-.comment__author-name, .woocommerce .amount,
-.panel__title em, .woocommerce .star-rating span:before,
-.woocommerce-page .star-rating span:before {
+.comment__author-name {
     color: <?php echo $main_color; ?>;
 }
 
@@ -119,10 +123,6 @@ a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square,
     .article--grid__header:hover .article--grid__title:after {
         background-color: <?php echo $main_color; ?>;
     }
-}
-
-.woocommerce ul.products li.product a:hover img{
-    border-bottom: 5px solid <?php echo $main_color; ?>;
 }
 
 ol {
