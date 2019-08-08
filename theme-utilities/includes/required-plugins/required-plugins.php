@@ -18,6 +18,11 @@ function wpgrade_register_required_plugins() {
 			'name'     => 'PixCodes',
 			'slug'     => 'pixcodes',
 			'required' => false,
+		),
+		array(
+			'name'     => 'Pixelgrade Assistant',
+			'slug'     => 'pixelgrade-assistant',
+			'required' => false,
 		)
 	);
 
