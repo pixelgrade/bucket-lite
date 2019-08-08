@@ -1,0 +1,1135 @@
+# Copyright (C) 2019 Pixelgrade
+# This file is distributed under the GNU General Public License v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bucket Lite 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bucket-lite\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-08-08T15:01:05+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.1.0\n"
+"X-Domain: bucket-lite\n"
+
+#. Theme Name of the theme
+msgid "Bucket Lite"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://github.com/pixelgrade/bucket-lite"
+msgstr ""
+
+#. Description of the theme
+msgid "Bucket Lite is an indispensable Magazine Style WordPress Theme aimed at providing you with an easy-to-use tool to share your discoveries and showcase the latest findings."
+msgstr ""
+
+#. Author of the theme
+msgid "Pixelgrade"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://pixelgrade.com"
+msgstr ""
+
+#: category.php:23
+msgid "Articles"
+msgstr ""
+
+#: 404.php:21
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#. translators: %s: Homepage URL
+#: 404.php:25
+msgid "This may be because of a mistyped URL, faulty referral or out-of-date search engine listing.<br/>You should try the <a href=\"%s\">homepage</a> instead or maybe do a search?"
+msgstr ""
+
+#: inc/customizer.php:19
+msgid "Display Site Title &amp; Tagline"
+msgstr ""
+
+#: inc/customizer.php:23
+msgid "View PRO Version"
+msgstr ""
+
+#. translators: %s: The view pro link.
+#: inc/customizer.php:27
+msgid ""
+"<div class=\"upsell-container\">\n"
+"\t\t\t\t\t<h2>Need More? Go PRO</h2>\n"
+"\t\t\t\t\t<p>Take it to the next level and stand out. See the hotspots of Bucket PRO:</p>\n"
+"\t\t\t\t\t<ul class=\"upsell-features\">\n"
+"                            <li>\n"
+"                            \t<h4>Advanced Customizations</h4>\n"
+"                            \t<div class=\"description\">Having different tastes and preferences might be tricky for users, but not with Bucket onboard. It has an intuitive and catchy interface which allows you to <strong>change fonts, colors, or layout sizes</strong> in a blink of an eye.</div>\n"
+"                            </li>\n"
+"\n"
+"                            <li>\n"
+"                            \t<h4>More ways to display your portfolio</h4>\n"
+"                            \t<div class=\"description\">Showcasing your work in different ways will give you more opportunities to express your creativity. That's why Timber PRO lets you use <strong>multiple layout styles, add text</strong> anywhere in your portfolio to add more context, <strong>insert videos</strong> to show behind the scenes, or highlight your film-making skills.</div>\n"
+"                            </li>\n"
+"\n"
+"                            <li>\n"
+"                            \t<h4>Thrilling Page Transitions & Extra Filtering Options</h4>\n"
+"                            \t<div class=\"description\">We packed the whole experience into a <strong>fascinating loader</strong> that goes beyond what's ordinary and familiar. Besides, the social media <strong>sharing</strong>, portfolio, and blog <strong>category</strong> filtering options will equip you with the right tool to wow your audience.</div>\n"
+"                            </li>\n"
+"                              <li>\n"
+"                            \t<h4>Premium Customer Support</h4>\n"
+"                            \t<div class=\"description\">You will benefit by priority support from a caring and devoted team, eager to help and to spread happiness. We work hard to provide a flawless experience for those who vote us with trust and choose to be our special client.</div>\n"
+"                            </li>\n"
+"\n"
+"                    </ul> %s </div>"
+msgstr ""
+
+#. translators: 1: The view pro URL, 2: The view pro link text.
+#: inc/customizer.php:52
+msgid "View Bucket PRO"
+msgstr ""
+
+#. translators: 1: New post link
+#: no-results.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr ""
+
+#: no-results.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: index.php:28
+msgid "Latest Articles"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:328
+#: theme-utilities/includes/required-plugins/required-plugins.php:53
+msgid "Install Required Plugins"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:329
+#: theme-utilities/includes/required-plugins/required-plugins.php:54
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:331
+#: theme-utilities/includes/required-plugins/required-plugins.php:56
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:333
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:334
+#: theme-utilities/includes/required-plugins/required-plugins.php:57
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:335
+#: theme-utilities/includes/required-plugins/required-plugins.php:59
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+
+#. translators: 1: plugin name(s).
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:341
+#: theme-utilities/includes/required-plugins/required-plugins.php:61
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+
+#. translators: 1: plugin name(s).
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:347
+#: theme-utilities/includes/required-plugins/required-plugins.php:71
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+
+#. translators: 1: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:353
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+
+#. translators: 1: plugin name(s).
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:359
+#: theme-utilities/includes/required-plugins/required-plugins.php:65
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+
+#. translators: 1: plugin name(s).
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:365
+#: theme-utilities/includes/required-plugins/required-plugins.php:67
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:371
+#: theme-utilities/includes/required-plugins/required-plugins.php:74
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:386
+#: theme-utilities/includes/required-plugins/required-plugins.php:76
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:387
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:837
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2589
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3650
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:388
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3224
+#: theme-utilities/includes/required-plugins/required-plugins.php:77
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:389
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3011
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:391
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:393
+msgid "Plugin not activated. A higher version of %1$s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:395
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:396
+msgid "Dismiss this notice"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:397
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:398
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:530
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:531
+msgid "Update Required"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:945
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:945
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:951
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:951
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:1139
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3007
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2026
+msgid "TGMPA v%s"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2322
+msgid "Required"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2325
+msgid "Recommended"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2342
+msgid "WordPress Repository"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2345
+msgid "External Source"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2348
+msgid "Pre-Packaged"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2366
+msgid "Not Installed"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2370
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2372
+msgid "Active"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2378
+msgid "Required Update not Available"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2381
+msgid "Requires Update"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2384
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2393
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2440
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+
+#. translators: 1: number of plugins.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2444
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+
+#. translators: 1: number of plugins.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2448
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+
+#. translators: 1: number of plugins.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2452
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2538
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2546
+msgid "Installed version:"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2554
+msgid "Minimum required version:"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2566
+msgid "Available version:"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2589
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2603
+msgid "Plugin"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2604
+msgid "Source"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2605
+msgid "Type"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2609
+msgid "Version"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2610
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2660
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2665
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2671
+msgid "Activate %2$s"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2743
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2776
+msgid "Install"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2782
+msgid "Update"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2785
+msgid "Activate"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2816
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2818
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2859
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2861
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2967
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:2993
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3223
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3568
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3571
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3573
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3577
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3579
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3579
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3587
+msgid "Show Details"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3579
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3587
+msgid "Hide Details"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3580
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3582
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3585
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3587
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3588
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: theme-utilities/includes/required-plugins/class-tgm-plugin-activation.php:3590
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/required-plugins.php:63
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/required-plugins.php:69
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+
+#. translators: %1$s: plugin name(s).
+#: theme-utilities/includes/required-plugins/required-plugins.php:73
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+
+#: theme-utilities/includes/required-plugins/required-plugins.php:75
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+
+#. translators: %1$s: dashboard link.
+#: theme-utilities/includes/required-plugins/required-plugins.php:79
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:9
+msgid "Latest Posts Slider"
+msgstr ""
+
+#: theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:9
+msgid "Display the latest blog posts in your sidebar or footer"
+msgstr ""
+
+#. translators: %s: Category name.
+#. translators: %s: Category name
+#: theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:56
+#: single.php:58
+#: theme-partials/post-templates/content-masonry.php:28
+msgid "View all posts in %s"
+msgstr ""
+
+#: theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:86
+msgid "Latest Posts"
+msgstr ""
+
+#: theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:91
+msgid "Title:"
+msgstr ""
+
+#: theme-utilities/includes/classes/widgets/wpgrade_posts_slider_widget.php:97
+msgid "Number of posts:"
+msgstr ""
+
+#: theme-utilities/includes/functions/password-protection.php:11
+msgid "This post is password protected. To view it please enter your password below:"
+msgstr ""
+
+#: theme-utilities/includes/functions/password-protection.php:14
+msgid "Password"
+msgstr ""
+
+#: theme-utilities/includes/functions/password-protection.php:17
+msgid "Access"
+msgstr ""
+
+#: theme-utilities/includes/functions/password-protection.php:42
+msgid "Sorry, your password didn’t match"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:10
+msgid "Main Right Sidebar"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:11
+msgid "Main Sidebar"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:21
+msgid "Footer | First Row [1]"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:22
+#: theme-utilities/includes/functions/widgets-areas.php:33
+#: theme-utilities/includes/functions/widgets-areas.php:44
+#: theme-utilities/includes/functions/widgets-areas.php:66
+msgid "Widgets in this area will have 1/3rd the width of the footer."
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:32
+msgid "Footer | First Row [2]"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:43
+msgid "Footer | First Row [3]"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:54
+msgid "Footer | Second Row [1]"
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:55
+msgid "Widgets in this area will have 2/3rd the width of the footer."
+msgstr ""
+
+#: theme-utilities/includes/functions/widgets-areas.php:65
+msgid "Footer | Second Row [2]"
+msgstr ""
+
+#. translators: %s: WordPress.
+#: theme-utilities/includes/functions/template-tags.php:11
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. translators: %s: WordPress.
+#: theme-utilities/includes/functions/template-tags.php:11
+msgid "Proudly powered by %s"
+msgstr ""
+
+#. translators: 1: The theme name, 2: The theme author name.
+#: theme-utilities/includes/functions/template-tags.php:16
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#. translators: 1: The theme name, 2: The theme author name.
+#: theme-utilities/includes/functions/template-tags.php:16
+msgid "The Pixelgrade Website"
+msgstr ""
+
+#. translators: %s: Author name.
+#: theme-utilities/bucket.php:111
+#: theme-partials/post-templates/single-title.php:30
+msgid "Posts by %s"
+msgstr ""
+
+#: archive.php:37
+msgid "Aside Archives"
+msgstr ""
+
+#: archive.php:39
+msgid "Image Archives"
+msgstr ""
+
+#: archive.php:41
+msgid "Link Archives"
+msgstr ""
+
+#: archive.php:43
+msgid "Quote Archives"
+msgstr ""
+
+#: archive.php:45
+msgid "Status Archives"
+msgstr ""
+
+#: archive.php:47
+msgid "Gallery Archives"
+msgstr ""
+
+#: archive.php:49
+msgid "Video Archives"
+msgstr ""
+
+#: archive.php:51
+msgid "Audio Archives"
+msgstr ""
+
+#: archive.php:53
+msgid "Chat Archives"
+msgstr ""
+
+#. translators: %s: The day in which the posts from the archive were made.
+#: archive.php:58
+msgid "Daily Archives: %s"
+msgstr ""
+
+#. translators: %s: The month in which the posts from the archive were made.
+#: archive.php:61
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#. translators: %s: The month in which the posts from the archive were made.
+#: archive.php:61
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#. translators: %s: The year in which the posts from the archive were made.
+#: archive.php:64
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#. translators: %s: The year in which the posts from the archive were made.
+#: archive.php:64
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:66
+msgid "Archives"
+msgstr ""
+
+#: comments.php:32
+msgid " Comment"
+msgid_plural " Comments"
+msgstr[0] ""
+
+#: comments.php:34
+msgid "There are no comments"
+msgstr ""
+
+#: comments.php:37
+msgid "Add yours"
+msgstr ""
+
+#: comments.php:46
+#: comments.php:72
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:49
+#: comments.php:75
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:52
+#: comments.php:78
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:91
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:104
+#: comments.php:118
+msgid "Post a new comment"
+msgstr ""
+
+#: comments.php:109
+#: comments.php:124
+msgid "Name"
+msgstr ""
+
+#: comments.php:110
+#: comments.php:125
+msgid "Email"
+msgstr ""
+
+#: comments.php:112
+#: comments.php:130
+msgid "Send"
+msgstr ""
+
+#: comments.php:114
+#: comments.php:132
+msgid "Comment"
+msgstr ""
+
+#: comments.php:114
+#: comments.php:132
+msgid "Message"
+msgstr ""
+
+#: comments.php:126
+msgid "Url"
+msgstr ""
+
+#: comments.php:126
+#: author-bio.php:30
+msgid "Website"
+msgstr ""
+
+#: wpgrade-config.php:212
+msgid "Prev"
+msgstr ""
+
+#: wpgrade-config.php:213
+#: single.php:45
+#: page.php:50
+#: page-no-sidebar.php:47
+msgid "Next"
+msgstr ""
+
+#. translators: %s: Tag Archive Name
+#: tag.php:28
+msgid "Tag Archives: %s"
+msgstr ""
+
+#. translators: %s: Search query
+#: search.php:24
+msgid "Search Results for: %s"
+msgstr ""
+
+#: wpgrade-core/classes/WPGradePaginationFormatter.php:119
+msgid "&laquo; Previous"
+msgstr ""
+
+#: wpgrade-core/classes/WPGradePaginationFormatter.php:125
+msgid "Next &raquo;"
+msgstr ""
+
+#: wpgrade-core/resources/views/read-more.php:14
+#: wpgrade-core/resources/views/read-more-content.php:16
+msgid "Read more about"
+msgstr ""
+
+#: wpgrade-core/resources/views/read-more.php:16
+#: wpgrade-core/resources/views/read-more-content.php:18
+msgid "Read more"
+msgstr ""
+
+#: header.php:26
+msgid "Primary Mobile Navigation"
+msgstr ""
+
+#: theme-callbacks/unsorted.php:76
+msgid "j F, Y \\a\\t H:i"
+msgstr ""
+
+#: theme-callbacks/unsorted.php:79
+msgid "Edit"
+msgstr ""
+
+#: theme-callbacks/unsorted.php:86
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: theme-callbacks/unsorted.php:108
+msgid "Category Custom Accent Color"
+msgstr ""
+
+#: theme-callbacks/unsorted.php:114
+msgid "Set here a custom accent color for this category. We will change the main accent color with this one in the category archives and posts in that category. <b>Note:</b> You must apply the custom CSS <b>Inline</b> for this to work (Theme Options > Custom Code)."
+msgstr ""
+
+#. translators: %s: page number
+#: theme-callbacks/unsorted.php:173
+msgid "Page %s"
+msgstr ""
+
+#: theme-callbacks/theme-features.php:60
+msgid "Video URL"
+msgstr ""
+
+#: theme-callbacks/theme-features.php:63
+msgid "<p>Here you can link a video.</p><small>Only YouTube or Vimeo!</small>"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:27
+#: theme-callbacks/activation-hooks.php:44
+msgid "Settings"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:34
+msgid "Prevent Duplicate Posts"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:35
+msgid "Activate this if you want page composer blocks NOT to display posts displayed above them in the page.<br/>The Latest Posts block will ignore this setting."
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:51
+msgid "Full Width Featured Image"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:52
+msgid "The featured image could be full width if you check this on"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:58
+msgid "Mark as Featured Post"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:59
+msgid "Is this post more important than others?"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:65
+msgid "Add to Category Slider"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:66
+msgid "You can add this post to the category slider"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:72
+msgid "Disable Sidebar"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:73
+msgid "You may want this post to be full width"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:82
+msgid "Video Settings"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:89
+#: theme-callbacks/activation-hooks.php:209
+msgid "Embed Code"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:90
+msgid "Enter here a Youtube, Vimeo (or other online video services) embed code here. The width should be a minimum of 640px. We will use this if filled, not the selfhosted options bellow!"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:99
+msgid "Gallery Settings"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:106
+msgid "Images"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:111
+msgid "Image Scaling"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:112
+msgid ""
+"<p class=\"cmb_metabox_description\"><strong>Fill</strong> scales image to completely fill slider container (recommended for landscape images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit</strong> scales image to fit the container (recommended for portrait images)</p>\n"
+"<p class=\"cmb_metabox_description\"><strong>Fit if Smaller</strong> scales image to fit only if size of slider container is less than size of image.</p>\n"
+"<p class=\"cmb_metabox_description\"><a target=\"_blank\" href=\"http://bit.ly/slider-image-scaling\">Visual explanation</a></p>"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:121
+msgid "Fit"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:125
+msgid "Fill"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:129
+msgid "Fit if Smaller"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:137
+msgid "Slider height"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:138
+msgid "Enter a slider height here (only digits, without 'px'). If left blank, it will default to 525px"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:144
+msgid "Show Nearby Images"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:145
+msgid "Enable this if you want to avoid having empty space on the sides of the image when using mostly portrait images."
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:150
+#: theme-callbacks/activation-hooks.php:182
+msgid "Enabled"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:154
+#: theme-callbacks/activation-hooks.php:186
+msgid "Disabled"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:161
+msgid "Slider transition"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:166
+msgid "Slide/Move"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:170
+msgid "Fade"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:177
+msgid "Slider autoplay"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:193
+msgid "Autoplay delay between slides (in milliseconds)"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:202
+msgid "Audio Settings"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:210
+msgid "Enter here a embed code here. The width should be a minimum of 640px."
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:216
+msgid "MP3 File URL"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:217
+msgid "Please enter in the URL to the .mp3 file"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:223
+msgid "M4A File URL"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:224
+msgid "Please enter in the URL to the .m4a file"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:230
+msgid "OGA File URL"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:231
+msgid "Please enter in the URL to the .ogg or .oga file"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:237
+msgid "Poster Image"
+msgstr ""
+
+#: theme-callbacks/activation-hooks.php:238
+msgid "This will be the image displayed above the audio controls. The image should be at least 640px wide. Click the \"Upload\" button to open the Media Manager, and click \"Use as Poster Image\" once you have uploaded or chosen an image from the media library."
+msgstr ""
+
+#: footer.php:58
+msgid "Footer"
+msgstr ""
+
+#: author-bio.php:19
+msgid "Author"
+msgstr ""
+
+#: single.php:44
+#: page.php:49
+#: page-no-sidebar.php:46
+msgid "Previous"
+msgstr ""
+
+#: single.php:54
+msgid "Categories"
+msgstr ""
+
+#: single.php:66
+msgid "Tagged"
+msgstr ""
+
+#. translators: %s: Tag name
+#: single.php:70
+msgid "View all posts tagged %s"
+msgstr ""
+
+#: single.php:87
+#: single.php:98
+msgid "Previous Article"
+msgstr ""
+
+#: single.php:118
+#: single.php:132
+msgid "Next Article"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width Page"
+msgstr ""
+
+#: theme-partials/password-request-form.php:19
+msgid "Password "
+msgstr ""
+
+#: theme-partials/password-request-form.php:30
+msgid "Please enter your password again:"
+msgstr ""
+
+#: theme-partials/password-request-form.php:32
+msgid "To view it please enter your password below:"
+msgstr ""
+
+#: theme-partials/password-request-form.php:38
+msgid "Password.."
+msgstr ""
+
+#: theme-partials/post-templates/single-title.php:18
+msgid "Untitled"
+msgstr ""
+
+#. translators: 1: The date, 2: The time.
+#: theme-partials/post-templates/single-title.php:33
+msgid "on %1$s at %2$s"
+msgstr ""
+
+#: theme-partials/post-templates/content-slider.php:23
+msgid "Read Full Story"
+msgstr ""
+
+#: theme-partials/post-templates/content-slider.php:85
+msgid "Featured"
+msgstr ""
+
+#: theme-partials/post-templates/content-slider.php:132
+msgid "Read More"
+msgstr ""
+
+#: theme-partials/header/site-type1.php:49
+msgid "Primary Navigation"
+msgstr ""
+
+#. translators: %s: Author name.
+#: author.php:36
+msgid "All posts by %s"
+msgstr ""
+
+#: searchform.php:14
+msgid "Search..."
+msgstr ""
