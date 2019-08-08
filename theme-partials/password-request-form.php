@@ -1,9 +1,6 @@
 <?php
 /**
- * The default template for the a post that has the 'audio' post format.
- * It displays the audio player.
- *
- * Requested by header-single-audio.php.
+ * The default template for a password protected post.
  *
  * @package Bucket Lite
  * @since Bucket Lite 1.0.0
