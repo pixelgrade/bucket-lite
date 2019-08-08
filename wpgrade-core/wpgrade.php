@@ -614,28 +614,6 @@ class wpgrade {
 	}
 
 	/**
-	 * Helper function for safely calculating cachebust string. The filemtime is
-	 * prone to failure.
-	 *
-	 * @param  string file path to test
-	 *
-	 * @return string cache bust based on filemtime or monthly
-	 */
-	static function cachebust_string( $filepath ) {
-		$filemtime = @filemtime( $filepath );
-
-		if ( $filemtime == null ) {
-			$filemtime = @filemtime( utf8_decode( $filepath ) );
-		}
-
-		if ( $filemtime != null ) {
-			return date( 'YmdHi', $filemtime );
-		} else { // can't get filemtime, fallback to cachebust every month
-			return date( 'Ym' );
-		}
-	}
-
-	/**
 	 * Helper for registering scripts based on a wpgrade configuration pattern.
 	 * Used in wpgrade-system/hook for reading wpgrade-config values
 	 *
