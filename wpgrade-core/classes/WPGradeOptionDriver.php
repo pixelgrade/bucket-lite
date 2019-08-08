@@ -1,9 +1,5 @@
 <?php
 
-/* This file is property of Pixelgrade. You may NOT copy, or redistribute
- * it. Please see the license that came with your copy for more information.
- */
-
 /**
  * @package        wpgrade
  * @category       core

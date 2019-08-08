@@ -1,4 +1,9 @@
-<?php defined( 'ABSPATH' ) or die;
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 /* @var stdClass $post */
 /* @var mixed $more_link */
 /* @var mixed $more_link_text */

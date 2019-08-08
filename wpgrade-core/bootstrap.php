@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 #
 # This file performs initial environment setup.
 #

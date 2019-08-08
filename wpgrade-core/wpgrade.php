@@ -1,9 +1,5 @@
 <?php
 
-/* This file is property of Pixelgrade Media. You may NOT copy, or redistribute
- * it. Please see the license that came with your copy for more information.
- */
-
 /**
  * @package        wpgrade
  * @category       functions
@@ -29,7 +25,6 @@ class wpgrade {
 	/**
 	 * The theme configuration as read by the system is defined in
 	 * wpgrade-config.php
-	 * @deprecated
 	 * @return array theme configuration
 	 */
 	static function config() {
@@ -906,22 +901,6 @@ class wpgrade {
 		$audio_poster = get_post_meta( $postID, wpgrade::prefix() . 'audio_poster', true );
 
 		include wpgrade::corepartial( 'audio-selfhosted' . EXT );
-	}
-
-	#
-	# Video
-	#
-
-	/**
-	 * ...
-	 */
-	static function video_selfhosted( $postID ) {
-		$video_m4v    = get_post_meta( $postID, wpgrade::prefix() . 'video_m4v', true );
-		$video_webm   = get_post_meta( $postID, wpgrade::prefix() . 'video_webm', true );
-		$video_ogv    = get_post_meta( $postID, wpgrade::prefix() . 'video_ogv', true );
-		$video_poster = get_post_meta( $postID, wpgrade::prefix() . 'video_poster', true );
-
-		include wpgrade::corepartial( 'video-selfhosted' . EXT );
 	}
 
 	/**

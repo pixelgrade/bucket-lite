@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for a blog post/page, requested when the post format is 'gallery'.
+ * The default template for a blog post/page, appearing when the post format is 'gallery'.
  * Requested by page.php and single.php.
  *
  * @package Bucket Lite

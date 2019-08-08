@@ -124,5 +124,4 @@ function wpgrade_callbacks_setup_shortcodes_plugin() {
 		update_option( 'wpgrade_metaboxes_prefix', wpgrade::prefix() );
 	}
 }
-
 add_action( 'admin_head', 'wpgrade_callbacks_setup_shortcodes_plugin' );

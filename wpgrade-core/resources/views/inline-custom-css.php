@@ -1,4 +1,9 @@
-<?php defined( 'ABSPATH' ) or die;
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 /* @var string $main_color */
 /* @var array $fonts */
 /* @var string $port_color */
@@ -7,7 +12,7 @@
 
 <style>
 
-<?php if ( ! empty($main_color)): ?>
+<?php if ( ! empty($main_color ) ){ ?>
 
 /*		.sidebar-footer-container a:hover, .team-member-position,
 		.wpgrade_pagination a:hover, #comment-submit, .entry-content a,
@@ -219,18 +224,18 @@
 				}
 			}*/
 
-<?php endif; ?>
+<?php } ?>
 
-<?php if (isset($fonts['main_font'])):  ?>
+<?php if ( isset( $fonts['main_font'] ) ) {  ?>
 
 h1, h2, h3, h4, h5, h6, .portfolio_items article li a .title,
 input.dial, blockquote, blockquote p, .site-branding a {
 	font-family: "<?php echo $fonts['main_font']; ?>" !important;
 }
 
-<?php endif; ?>
+<?php } ?>
 
-<?php if (isset($fonts["menu_font"])): ?>
+<?php if ( isset( $fonts["menu_font"] ) ){ ?>
 
 <?php $menu_font = $fonts["menu_font"]; ?>
 
@@ -238,9 +243,9 @@ input.dial, blockquote, blockquote p, .site-branding a {
 	font-family: "<?php echo $menu_font; ?>" !important;
 }
 
-<?php endif; ?>
+<?php } ?>
 
-<?php if (isset($fonts["body_font"])): ?>
+<?php if ( isset( $fonts["body_font"] ) ) { ?>
 
 <?php $body_font = $fonts["body_font"]; ?>
 
@@ -248,9 +253,9 @@ body, .testimonial-content {
 	font-family: "<?php echo $body_font; ?>" !important;
 }
 
-<?php endif; ?>
+<?php } ?>
 
-<?php if ( ! empty($port_color)): ?>
+<?php if ( ! empty($port_color) ) { ?>
 
 <?php $port_color = '#'.$port_color; ?>
 
@@ -267,10 +272,10 @@ body, .testimonial-content {
 	border: 1px solid <?php echo $port_color ?>
 }
 
-<?php endif; ?>
+<?php } ?>
 
-<?php if (wpgrade::option('custom_css')): ?>
+<?php if ( wpgrade::option('custom_css') ){ ?>
 <?php echo wpgrade::option('custom_css'); ?>
-<?php endif; ?>
+<?php } ?>
 
 </style>
