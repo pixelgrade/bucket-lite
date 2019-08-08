@@ -218,7 +218,7 @@ class bucket {
 			if (!empty($class)) {
 				$output .= ' class="' . $class . '" ';
 			}
-			$output .= '/>' . PHP_EOL;
+			$output .= '/>' . "\n";
 		}
 
 		return $output;
