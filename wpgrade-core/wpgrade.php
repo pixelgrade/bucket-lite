@@ -7,7 +7,7 @@
 /**
  * @package        wpgrade
  * @category       functions
- * @author         Pixelgrade Team
+ * @author         Pixelgrade
  * @copyright  (c) 2013, Pixelgrade Media
  */
 class wpgrade {

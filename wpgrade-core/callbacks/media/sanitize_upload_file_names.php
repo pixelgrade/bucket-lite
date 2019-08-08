@@ -1,8 +1,6 @@
 <?php
 /*=========== SANITIZE UPLOADED FILE NAMES ==========*/
 
-add_filter( 'sanitize_file_name', 'wpgrade_sanitize_file_name', 10 );
-
 /**
  * Clean up uploaded file names
  * @author toscho
@@ -16,6 +14,7 @@ function wpgrade_sanitize_file_name( $filename ) {
 
 	return $filename;
 }
+add_filter( 'sanitize_file_name', 'wpgrade_sanitize_file_name', 10 );
 
 function wpgrade_lower_ascii( $str ) {
 	$str   = strtolower( $str );
