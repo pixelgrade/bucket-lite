@@ -368,17 +368,25 @@ ul, ol, dd {
 
 @media only screen and (min-width: 900px) {
   .post-nav-link--prev {
-    text-align: left; }
-    .post-nav-link--prev:after {
-      right: 0;
-      transform: translateZ(0) rotate(-135deg); }
+    text-align: left;
+  }
+
+  .post-nav-link--prev:after {
+    right: 0;
+    transform: translateZ(0) rotate(-135deg);
+  }
+
   .post-nav-link--next {
-    text-align: right; }
-    .post-nav-link--next:after {
-      right: auto;
-      left: 24px;
-      left: 1.71429rem;
-      transform: translateZ(0) rotate(135deg); }
+    text-align: right;
+  }
+
+  .post-nav-link--next:after {
+    right: auto;
+    left: 24px;
+    left: 1.71429rem;
+    transform: translateZ(0) rotate(135deg);
+  }
+
   .comments-area-title .hN,
   .comments-area-title .article__author-name,
   .comments-area-title .comment__author-name,
@@ -387,84 +395,65 @@ ul, ol, dd {
     float: right;
     margin-right: 0;
     margin-left: 12px;
-    margin-left: 0.85714rem; }
+    margin-left: 0.85714rem;
+  }
+
   .author__social-links__list-item {
     margin-right: 0;
     margin-left: 18px;
-    margin-left: 1.28571rem; }
+    margin-left: 1.28571rem;
+  }
+
   .wp-caption-text {
-    float: right; }
+    float: right;
+  }
+
   blockquote {
     padding-left: 0;
     padding-right: 96px;
-    padding-right: 6.85714rem; }
-    blockquote:before {
-      left: auto;
-      right: 0; }
-    blockquote:after {
-      left: auto;
-      right: 12px;
-      right: 0.85714rem; }
+    padding-right: 6.85714rem;
+  }
+
+  blockquote:before {
+    left: auto;
+    right: 0;
+  }
+
+  blockquote:after {
+    left: auto;
+    right: 12px;
+    right: 0.85714rem;
+  }
+
   .pagination a.prev:after, .pagination .pagination-item--prev a:after {
     border-top-style: solid;
     border-right-style: solid;
     border-bottom-style: hidden;
-    border-left-style: hidden; }
+    border-left-style: hidden;
+  }
+
   .pagination a.next:after, .pagination .pagination-item--next a:after {
     border-top-style: hidden;
     border-right-style: hidden;
     border-bottom-style: solid;
-    border-left-style: solid; }
+    border-left-style: solid;
+  }
+
   .heading--main .archive__side-title {
-    float: right; }
+    float: right;
+  }
+
   .hN {
-    text-align: right; }
-  .woo-sorting-helper-container {
-    right: auto;
-    left: 12px; }
+    text-align: right;
+  }
+
   .panel__title--h3:after {
     right: auto;
-    left: 15px; }
-  .badge--product.badge--product-single {
-    left: 12px; }
-  .woocommerce p.stars a.star-1,
-  .woocommerce p.stars a.star-2,
-  .woocommerce p.stars a.star-3,
-  .woocommerce p.stars a.star-4,
-  .woocommerce p.stars a.star-5,
-  .woocommerce-page p.stars a.star-1,
-  .woocommerce-page p.stars a.star-2,
-  .woocommerce-page p.stars a.star-3,
-  .woocommerce-page p.stars a.star-4,
-  .woocommerce-page p.stars a.star-5 {
-    border-right: 0;
-    border-left: 1px solid #ccc; }
-  .woocommerce p.stars a.star-5,
-  .woocommerce-page p.stars a.star-5 {
-    border-left: 0; }
-  .woocommerce p.stars a,
-  .woocommerce-page p.stars a {
-    margin-right: 0;
-    margin-left: .5em; }
-  .woocommerce p.stars a.star-1:after,
-  .woocommerce p.stars a.star-2:after,
-  .woocommerce p.stars a.star-3:after,
-  .woocommerce p.stars a.star-4:after,
-  .woocommerce p.stars a.star-5:after,
-  .woocommerce-page p.stars a.star-1:after,
-  .woocommerce-page p.stars a.star-2:after,
-  .woocommerce-page p.stars a.star-3:after,
-  .woocommerce-page p.stars a.star-4:after,
-  .woocommerce-page p.stars a.star-5:after {
-    left: 0;
-    right: 0; }
-  #reviews #commentform label {
-    margin-right: 0; }
-  .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
-    float: right; }
-  .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
-    float: left; }
-  .woocommerce #payment ul.payment_methods li, .woocommerce-page #payment ul.payment_methods li {
-    text-align: right; } }
+    left: 15px;
+  }
 
+  .badge--product.badge--product-single {
+    left: 12px;
+  }
+}
 /*# sourceMappingURL=rtl.css.map */
