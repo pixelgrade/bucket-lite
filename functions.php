@@ -83,6 +83,27 @@ function post_format_icon($class_name = '') {
 }
 
 /**
+ * Invoked in wpgrade-config.php
+ */
+function wpgrade_callback_thread_comments_scripts() {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script('comment-reply');
+	}
+}
+
+/**
+ * Enqueue rtl style, if it's the case.
+ */
+
+function wpgrade_callback_enqueue_rtl_support(){
+
+	if ( is_rtl() ) {
+		wp_enqueue_style('rtl-support', wpgrade::resourceuri('css/localization/rtl.css') );
+	}
+
+}
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
